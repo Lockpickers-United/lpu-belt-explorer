@@ -67,8 +67,34 @@
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
     "shippingType": "",
-    "shipsToUS": "Buyer pays fees",
-    "dateAdded": ""
+    "shipsToUS": "Winner pays fees",
+    "dateAdded": "",
+    "media": [
+      {
+        "title": "By: CollateralTech",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54975333272_8ee7b66a2d_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54975333272/in/album-72177720330595608/",
+        "sequenceId": 5,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54975333272_ff82ddb566_o.jpg"
+      },
+      {
+        "title": "By: CollateralTech",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54976521170_26a4c3ee46_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54976521170/in/album-72177720330595608/",
+        "sequenceId": 6,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54976521170_e4ceb9ee7e_o.jpg"
+      },
+      {
+        "title": "By: CollateralTech",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54976224271_6996d48c7d_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54976224271/in/album-72177720330595608/",
+        "sequenceId": 7,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54976224271_a72fdf9d59_o.jpg"
+      }
+    ]
   },
   {
     "id": "2026-003",
@@ -142,7 +168,7 @@
     "splitShipping": "shippingNotSplit",
     "splitShippingBoolean": true,
     "shippingType": "Split international shipping",
-    "shipsToUS": "Buyer pays fees",
+    "shipsToUS": "Winner pays fees",
     "dateAdded": "20251126",
     "media": [
       {
@@ -179,7 +205,7 @@
     "splitShipping": "shippingNotSplit",
     "splitShippingBoolean": true,
     "shippingType": "Split international shipping",
-    "shipsToUS": "Buyer pays fees",
+    "shipsToUS": "Winner pays fees",
     "dateAdded": "20251126",
     "media": [
       {
@@ -235,8 +261,26 @@
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
     "shippingType": "",
-    "shipsToUS": "",
-    "dateAdded": ""
+    "shipsToUS": "Split",
+    "dateAdded": "",
+    "media": [
+      {
+        "title": "By: Craig 3.0",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54976224661_fbab45e0c0_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54976224661/in/album-72177720330595608/",
+        "sequenceId": 9,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54976224661_9677d834c9_o.jpg"
+      },
+      {
+        "title": "By: Craig 3.0",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54976399693_5cac19fbac_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54976399693/in/album-72177720330595608/",
+        "sequenceId": 10,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54976399693_1f3b8d86dc_o.jpg"
+      }
+    ]
   },
   {
     "id": "2026-009",
@@ -260,7 +304,17 @@
     "splitShippingBoolean": false,
     "shippingType": "",
     "shipsToUS": "",
-    "dateAdded": ""
+    "dateAdded": "",
+    "media": [
+      {
+        "title": "By: Craig 3.0",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54976471814_4fe10838d1_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54976471814/in/album-72177720330595608/",
+        "sequenceId": 4,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54976471814_536a960067_o.jpg"
+      }
+    ]
   },
   {
     "id": "2026-010",
@@ -289,7 +343,7 @@
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
     "shippingType": "International shipping included",
-    "shipsToUS": "Buyer pays fees",
+    "shipsToUS": "Winner pays fees",
     "dateAdded": "20251127"
   },
   {
@@ -313,7 +367,7 @@
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
     "shippingType": "International shipping included",
-    "shipsToUS": "Buyer pays fees",
+    "shipsToUS": "Winner pays fees",
     "dateAdded": "20251201"
   },
   {
@@ -337,7 +391,7 @@
     "splitShipping": "shippingNotSplit",
     "splitShippingBoolean": true,
     "shippingType": "Split international shipping",
-    "shipsToUS": "Buyer pays fees",
+    "shipsToUS": "Winner pays fees",
     "dateAdded": "20251202"
   },
   {
@@ -471,7 +525,17 @@
     "splitShippingBoolean": false,
     "shippingType": "No international shipping",
     "shipsToUS": "Yes",
-    "dateAdded": "20251204"
+    "dateAdded": "20251204",
+    "media": [
+      {
+        "title": "By: spoon",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54976521500_f3912cde74_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54976521500/in/album-72177720330595608/",
+        "sequenceId": 8,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54976521500_5bbddf5dfb_o.jpg"
+      }
+    ]
   },
   {
     "id": "2026-018",
@@ -524,7 +588,7 @@
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
     "shippingType": "",
-    "shipsToUS": "Buyer pays fees",
+    "shipsToUS": "Winner pays fees",
     "dateAdded": "20251206"
   },
   {
@@ -551,7 +615,7 @@
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
     "shippingType": "International shipping included",
-    "shipsToUS": "Buyer pays fees",
+    "shipsToUS": "Winner pays fees",
     "dateAdded": "20251206"
   },
   {
