@@ -64,12 +64,14 @@
       "EDC",
       "Puzzle"
     ],
-    "country": [],
+    "country": [
+      "USA"
+    ],
     "shippingInfo": "",
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
     "shippingType": "",
-    "shipsToUS": "Winner pays fees",
+    "shipsToUS": "",
     "dateAdded": "",
     "media": [
       {
@@ -173,7 +175,7 @@
     "splitShipping": "shippingNotSplit",
     "splitShippingBoolean": true,
     "shippingType": "Split international shipping",
-    "shipsToUS": "Winner pays fees",
+    "shipsToUS": "",
     "dateAdded": "20251126",
     "media": [
       {
@@ -211,7 +213,7 @@
     "splitShipping": "shippingNotSplit",
     "splitShippingBoolean": true,
     "shippingType": "Split international shipping",
-    "shipsToUS": "Winner pays fees",
+    "shipsToUS": "",
     "dateAdded": "20251126",
     "media": [
       {
@@ -403,7 +405,7 @@
     "splitShipping": "shippingNotSplit",
     "splitShippingBoolean": true,
     "shippingType": "Split international shipping",
-    "shipsToUS": "Winner pays fees",
+    "shipsToUS": "",
     "dateAdded": "20251202"
   },
   {
@@ -427,7 +429,7 @@
     "country": [
       "USA"
     ],
-    "shippingInfo": "Domestic only",
+    "shippingInfo": "Domestic shipping only",
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
     "shippingType": "No international shipping",
@@ -455,7 +457,7 @@
     "country": [
       "USA"
     ],
-    "shippingInfo": "Domestic only",
+    "shippingInfo": "Domestic shipping only",
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
     "shippingType": "No international shipping",
@@ -537,7 +539,7 @@
     "country": [
       "USA"
     ],
-    "shippingInfo": "Domestic only",
+    "shippingInfo": "Domestic shipping only",
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
     "shippingType": "No international shipping",
@@ -631,7 +633,7 @@
     "country": [
       "Australia"
     ],
-    "shippingInfo": "",
+    "shippingInfo": "International shipping included",
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
     "shippingType": "International shipping included",
@@ -659,11 +661,11 @@
     "country": [
       "USA"
     ],
-    "shippingInfo": "",
+    "shippingInfo": "International shipping included",
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
     "shippingType": "International shipping included",
-    "shipsToUS": "Yes",
+    "shipsToUS": "",
     "dateAdded": "20251207"
   },
   {
@@ -679,6 +681,31 @@
     "keywords": "",
     "contributedBy": [
       "Wyte"
+    ],
+    "tags": [],
+    "country": [
+      "USA"
+    ],
+    "shippingInfo": "",
+    "splitShipping": "shippingSplit",
+    "splitShippingBoolean": false,
+    "shippingType": "",
+    "shipsToUS": "",
+    "dateAdded": ""
+  },
+  {
+    "id": "2026-023",
+    "year": 2026,
+    "potNumber": 0,
+    "title": "Tour-caliber Tensioners",
+    "winnerCount": 1,
+    "displayName": "",
+    "description": "",
+    "descriptionContinued": "",
+    "potContents": "",
+    "keywords": "",
+    "contributedBy": [
+      "Nightmare"
     ],
     "tags": [],
     "country": [
