@@ -124,7 +124,7 @@ export default function RafflePreviewBar({refresh, page}) {
                             </Slide>
                         }
                     </Box>
-                    {oldPreview &&
+                    {oldPreview && showPreview &&
                         <div style={{fontSize: '0.8rem', color: '#d33030'}}>
                             Preview version is older than latest import.
                         </div>

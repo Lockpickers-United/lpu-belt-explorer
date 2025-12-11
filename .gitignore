@@ -37,8 +37,8 @@ src/data/linkCache.json
 /public/test
 src/data/data.json
 src/data/rafl.json
-.env.keys
 src/data/lockStats.json
+.env.keys
 allure-report/*
 allure-results/*
 playwright-report/*
