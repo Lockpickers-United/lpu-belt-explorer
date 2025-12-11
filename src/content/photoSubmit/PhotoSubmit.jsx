@@ -145,7 +145,7 @@ function PhotoSubmit({profile, user}) {
     }, [])
 
     const searchBoxOpacity = altLock ? 0.5 : 1
-    const {flexStyle} = useWindowSize()
+    const {flexStyle, isMobile} = useWindowSize()
 
     return (
 
@@ -176,10 +176,15 @@ function PhotoSubmit({profile, user}) {
                     <br/><br/>
 
                     <div style={{display: flexStyle}}>
-                        <div style={{marginRight: 50, width: 350}}>
+                        <div style={{marginRight: 50, marginBottom:20, width: 350}}>
                             <div style={{fontSize: '1.5rem', fontWeight: 500, marginBottom: 10}}>Files to
                                 Upload<br/>
                             </div>
+                            {isMobile &&
+                                <div style={{fontSize: '0.9rem', marginBottom: 10, fontStyle: 'italic'}}>
+                                    Previews may not appear on some mobile devices, but images will be uploaded.
+                                </div>
+                            }
 
                             <Dropzone files={files || []} otherFiles={[]}
                                       handleDroppedFiles={handleDroppedFiles}

@@ -137,19 +137,23 @@ function RaffleEntry({entry, expanded, onExpand, single, drawing}) {
 
                             {!showSimple && shippingFiltered &&
                                 <div style={{display: 'flex', marginTop: 6, opacity: infoOpacity}}>
-                                    <div style={{marginRight: 10}}>
-                                        <FieldValue name='Country' headerStyle={{marginBottom: 4}} value={
-                                            entry.country.map((country, index) => {
-                                                const separator = index < entry.country.length - 1 ? ', ' : ''
-                                                return (
-                                                    <span key={index}><FilterChip value={country} field='country'
-                                                                                  mode={'text'}/>{separator}</span>
-                                                )
-                                            })}
-                                        />
-                                    </div>
-                                    <FieldValue name='Shipping Info' headerStyle={{marginBottom: 4}}
-                                                value={entry.shippingInfo}/>
+                                    {entry.country.length > 0 &&
+                                        <div style={{marginRight: 10}}>
+                                            <FieldValue name='Country' headerStyle={{marginBottom: 4}} value={
+                                                entry.country.map((country, index) => {
+                                                    const separator = index < entry.country.length - 1 ? ', ' : ''
+                                                    return (
+                                                        <span key={index}><FilterChip value={country} field='country'
+                                                                                      mode={'text'}/>{separator}</span>
+                                                    )
+                                                })}
+                                            />
+                                        </div>
+                                    }
+                                    {entry.shippingInfo &&
+                                        <FieldValue name='Shipping Info' headerStyle={{marginBottom: 4}}
+                                                    value={entry.shippingInfo}/>
+                                    }
                                 </div>
                             }
                             {entry.description &&
@@ -174,8 +178,7 @@ function RaffleEntry({entry, expanded, onExpand, single, drawing}) {
                 </div>
 
             </AccordionSummary>
-            {
-                expanded &&
+            {expanded &&
                 <React.Fragment>
                     <AccordionDetails sx={{padding: '0px 16px 0px 16px'}}>
                         {entry.shipsToUS && entry.shipsToUS !== 'Yes' && !drawing &&
@@ -213,40 +216,44 @@ function RaffleEntry({entry, expanded, onExpand, single, drawing}) {
 
                         {!showSimple && !shippingFiltered &&
                             <div style={{display: 'flex', marginTop: 6}}>
-                                <div style={{marginRight: 10}}>
-                                    <FieldValue name='Country' headerStyle={{marginBottom: 4}} value={
-                                        entry.country.map((country, index) => {
-                                            const separator = index < entry.country.length - 1 ? ', ' : ''
-                                            return (
-                                                <span key={index}><FilterChip value={country} field='country'
-                                                                              mode={'text'}/>{separator}</span>
-                                            )
-                                        })}
-                                    />
-                                </div>
-                                <FieldValue name='Shipping Info' headerStyle={{marginBottom: 4}}
-                                            value={entry.shippingInfo}/>
+                                {entry.country.length > 0 &&
+                                    <div style={{marginRight: 10}}>
+                                        <FieldValue name='Country' headerStyle={{marginBottom: 4}} value={
+                                            entry.country.map((country, index) => {
+                                                const separator = index < entry.country.length - 1 ? ', ' : ''
+                                                return (
+                                                    <span key={index}><FilterChip value={country} field='country'
+                                                                                  mode={'text'}/>{separator}</span>
+                                                )
+                                            })}
+                                        />
+                                    </div>
+                                }
+                                {entry.shippingInfo &&
+                                    <FieldValue name='Shipping Info' headerStyle={{marginBottom: 4}}
+                                                value={entry.shippingInfo}/>
+                                }
                             </div>
                         }
 
-                        {
-                            entry.potContents &&
+                        {entry.potContents &&
                             <Stack direction='row' spacing={1} sx={{width: '100%', flexWrap: 'wrap', marginTop: '4px'}}>
                                 <FieldValue name='Contents' textStyle={{fontSize: contentsFontSize}} value={
-                                    <ReactMarkdown rehypePlugins={[[rehypeExternalLinks, {target: '_blank'}]]}>
+                                    <ReactMarkdown rehypePlugins={[[rehypeExternalLinks, {
+                                        target: '_blank',
+                                        rel: ['nofollow', 'noopener', 'noreferrer']
+                                    }]]}>
                                         {entry.potContents}
                                     </ReactMarkdown>
                                 }/>
                             </Stack>
                         }
-                        {
-                            !!entry.media?.length &&
+                        {!!entry.media?.length &&
                             <FieldValue value={
                                 <RaffleImageGallery entry={entry}/>
                             }/>
                         }
-                        {
-                            !!entry.links?.length &&
+                        {!!entry.links?.length &&
                             <FieldValue name='Links' value={
                                 <Stack direction='row' spacing={1} sx={{flexWrap: 'wrap'}}>
                                     {entry.links.map(({title, url}, index) =>

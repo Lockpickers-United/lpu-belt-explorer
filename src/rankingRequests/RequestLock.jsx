@@ -293,8 +293,13 @@ function RequestLock() {
                         <div style={{width: fullWidth, marginTop: 30}}>
                             <div style={{fontSize: '1.1rem', fontWeight: 500, marginBottom: 5}}>
                                 Lock Photos (at least 1 required)<br/>
-                                <span style={{fontSize: '1.0rem', fontWeight: 400}}>Please include body, key, keyway, and if guttable, pictures of all relevant features</span>
+                                <span style={{fontSize: '1.0rem', fontWeight: 400}}>Please include body, key, keyway, and if guttable, pictures of all relevant features.</span>
                             </div>
+                            {isMobile &&
+                                <div style={{fontSize: '0.9rem', marginBottom: 10, fontStyle: 'italic'}}>
+                                    Previews may not appear on some mobile devices, but images will be uploaded.
+                                </div>
+                            }
 
                             <Dropzone files={files || []} otherFiles={[]}
                                       handleDroppedFiles={handleDroppedFiles}

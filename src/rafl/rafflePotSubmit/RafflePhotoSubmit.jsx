@@ -24,7 +24,7 @@ import {useNavigate} from 'react-router-dom'
  */
 
 function RafflePhotoSubmit({profile, user}) {
-    const {allPots=[]} = useContext(RaffleContext)
+    const {allPots = []} = useContext(RaffleContext)
     const {updateProfileField} = useContext(DBContext)
     const [lockDetails, setLockDetails] = useState({})
     const [lock, setLock] = useState(undefined)
@@ -39,7 +39,7 @@ function RafflePhotoSubmit({profile, user}) {
     const [reset, setReset] = useState(false)
     const navigate = useNavigate()
 
-    const allEntries = useMemo(() => [...allPots],[allPots])
+    const allEntries = useMemo(() => [...allPots], [allPots])
 
     const dt = dayjs().format('YYYYMMDD-HHMMss')
     const uploadable = (!!lockDetails?.lockFullName && !!lockDetails?.lockId && !!photoCredit && files.length > 0)
@@ -81,7 +81,7 @@ function RafflePhotoSubmit({profile, user}) {
         const snackBars = true
         const timeoutDuration = 45000
         try {
-            setResponse( await postData({user, url, formData, snackBars, timeoutDuration}) )
+            setResponse(await postData({user, url, formData, snackBars, timeoutDuration}))
             savePhotoCredit(photoCredit)
         } catch (error) {
             setUploadError(cleanError(error))
@@ -143,9 +143,9 @@ function RafflePhotoSubmit({profile, user}) {
     }, [])
 
     const searchBoxOpacity = altLock ? 0.5 : 1
-    const {flexStyle} = useWindowSize()
+    const {flexStyle, isMobile} = useWindowSize()
     const linkSx = {
-        color: '#bbb', textDecoration: 'underline', cursor: 'pointer', fontWeight:500, '&:hover': {
+        color: '#bbb', textDecoration: 'underline', cursor: 'pointer', fontWeight: 500, '&:hover': {
             color: '#fff'
         }
     }
@@ -158,9 +158,9 @@ function RafflePhotoSubmit({profile, user}) {
         }}>
 
             <div style={{fontSize: '1.7rem', fontWeight: 600, marginBottom: 20}}>
-                Pot <Link onClick={()=>navigate('/rafl/contribute')} sx={linkSx}>Info</Link> |
+                Pot <Link onClick={() => navigate('/rafl/contribute')} sx={linkSx}>Info</Link> |
                 &nbsp; Photos |
-                &nbsp;<Link onClick={()=>navigate('/rafl/potpreview')} sx={linkSx}>Preview</Link>
+                &nbsp;<Link onClick={() => navigate('/rafl/potpreview')} sx={linkSx}>Preview</Link>
             </div>
 
             <form action={null} encType='multipart/form-data' method='post'
@@ -170,7 +170,7 @@ function RafflePhotoSubmit({profile, user}) {
                     <div style={{fontSize: '1.5rem', fontWeight: 500, margin: '0px 0px 0px'}}>Select Pot</div>
                     <div style={{opacity: searchBoxOpacity}}>
                         <RaflPotSearchBox handleChangeLock={handleChangeLock} allEntries={allEntries}
-                                            disabled={altLock} reset={reset}/>
+                                          disabled={altLock} reset={reset}/>
                     </div>
                     <div style={{marginTop: 0}}>
                         <Checkbox onChange={handleAltLockToggle} color='info' size='small' id='notInList'
@@ -185,10 +185,15 @@ function RafflePhotoSubmit({profile, user}) {
                     <br/><br/>
 
                     <div style={{display: flexStyle}}>
-                        <div style={{marginRight: 50, width: 350}}>
+                        <div style={{marginRight: 50, marginBottom: 20, width: 350}}>
                             <div style={{fontSize: '1.5rem', fontWeight: 500, marginBottom: 10}}>Files to
                                 Upload<br/>
                             </div>
+                            {isMobile &&
+                                <div style={{fontSize: '0.9rem', marginBottom: 10, fontStyle: 'italic'}}>
+                                    Previews may not appear on some mobile devices, but images will be uploaded.
+                                </div>
+                            }
 
                             <Dropzone files={files || []} otherFiles={[]}
                                       handleDroppedFiles={handleDroppedFiles}
@@ -283,13 +288,15 @@ function RafflePhotoSubmit({profile, user}) {
                             fontWeight: 500,
                             marginBottom: 10,
                             textAlign: 'center'
-                        }}>{title} Uploaded Successfully!</div>
+                        }}>{title} Uploaded Successfully!
+                        </div>
                         <div style={{
                             fontSize: '1.1rem',
                             fontWeight: 400,
                             marginBottom: 60,
                             textAlign: 'center'
-                        }}>Images will be added to the site shortly</div>
+                        }}>Images will be added to the site shortly
+                        </div>
                         <div style={{width: '100%', textAlign: 'center'}}>
                             <Button onClick={handleReload} variant='contained' color='info'
                                     style={{marginLeft: 'auto', marginRight: 'auto'}}>
@@ -311,7 +318,7 @@ function RafflePhotoSubmit({profile, user}) {
                             Please try again later.<br/>
                         </div>
                         <div style={{fontSize: '0.95rem', fontWeight: 400, marginBottom: 20, textAlign: 'center'}}>
-                             {uploadError?.message}<br/>
+                            {uploadError?.message}<br/>
                             (Error code {uploadError?.status})
                         </div>
                         <div style={{width: '100%', textAlign: 'center'}}>
