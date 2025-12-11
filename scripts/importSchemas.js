@@ -172,6 +172,7 @@ export const raflSchema = Joi.array().items(
         'Winner Count': Joi.number().allow(''),
         'Display Name': Joi.string().allow(''),
         'Description': Joi.string().allow(''),
+        'Description Continued': Joi.string().allow(''),
         'Pot Contents': Joi.string().allow(''),
         'Tags': Joi.string().allow(''),
         'Keywords': Joi.string().allow(''),

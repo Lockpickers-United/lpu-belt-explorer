@@ -25,7 +25,7 @@ import Box from '@mui/material/Box'
 import CopyEntryIdButton from '../entries/CopyEntryIdButton.jsx'
 import LogEntryButton from '../entries/LogEntryButton.jsx'
 
-function RaffleEntry({entry, expanded, onExpand, single, drawing}) {
+function RaffleEntry({entry, expanded, onExpand, drawing}) {
 
     if (!entry) return null
 
@@ -37,9 +37,7 @@ function RaffleEntry({entry, expanded, onExpand, single, drawing}) {
     const shippingFiltered = !!filters.shippingType || !!filters.splitShipping
 
     const [scrolled, setScrolled] = useState(false)
-    const style = {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto'}
     const ref = useRef(null)
-    const showSimple = single === '2'
 
     const ticketCount = entry.totalTickets
         ? new Intl.NumberFormat().format(entry.totalTickets)
@@ -67,6 +65,7 @@ function RaffleEntry({entry, expanded, onExpand, single, drawing}) {
     }, [entry.id, onExpand])
 
     const {isMobile, flexStyle} = useWindowSize()
+    const style = {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto'}
     const titleMargin = !isMobile ? '12px 0px 8px 8px' : '12px 0px 8px 0px'
     const contribMargin = !isMobile ? '0px 0px 0px 8px' : '0px 0px 0px 0px'
     const descriptionMargin = !isMobile ? '12px 0px 0px 8px' : '12px 0px 0px 0px'
@@ -74,18 +73,18 @@ function RaffleEntry({entry, expanded, onExpand, single, drawing}) {
     const contentsFontSize = isMobile ? '0.95rem' : '1.0rem'
     const infoOpacity = entry.winners?.length > 0 && !expanded ? 0.5 : 1
 
-    const usShipColor = {Yes: '#50af53', No: '#d7584d', Split: '#e39a29', 'Buyer pays fees': '#e39a29'}
+    const usShipColor = {Yes: '#50af53', No: '#ec5345', Split: '#e39a29', 'Winner pays fees': '#e39a29'}
     const usShipText = {
         Yes: '',
         No: 'Cannot ship to the US',
         Split: 'US winner splits duties & fees',
-        'Buyer pays fees': 'US winner pays duties & fees'
+        'Winner pays fees': 'US winner pays duties & fees'
     }
 
     return (
         <Accordion expanded={expanded} onChange={handleChange} style={style} ref={ref}>
-            <AccordionSummary expandIcon={!showSimple ? <ExpandMoreIcon/> : null}>
-                <div style={{width: '100%', marginBottom: 20}}>
+            <AccordionSummary expandIcon={<ExpandMoreIcon/>} style={{marginBottom: 10}}>
+                <div style={{width: '100%', marginBottom: 0}}>
                     <div style={{display: 'flex', alignItems: 'center', flexGrow: 1}}>
                         <div style={{display: 'block', marginBottom: 0, flexGrow: 1}}>
                             <div style={{display: 'flex', width: '100%', alignItems: 'center'}}>
@@ -135,24 +134,36 @@ function RaffleEntry({entry, expanded, onExpand, single, drawing}) {
                                 }
                             </div>
 
-                            {!showSimple && shippingFiltered &&
-                                <div style={{display: 'flex', marginTop: 6, opacity: infoOpacity}}>
-                                    {entry.country.length > 0 &&
-                                        <div style={{marginRight: 10}}>
-                                            <FieldValue name='Country' headerStyle={{marginBottom: 4}} value={
-                                                entry.country.map((country, index) => {
-                                                    const separator = index < entry.country.length - 1 ? ', ' : ''
-                                                    return (
-                                                        <span key={index}><FilterChip value={country} field='country'
-                                                                                      mode={'text'}/>{separator}</span>
-                                                    )
-                                                })}
-                                            />
-                                        </div>
-                                    }
-                                    {entry.shippingInfo &&
-                                        <FieldValue name='Shipping Info' headerStyle={{marginBottom: 4}}
-                                                    value={entry.shippingInfo}/>
+                            {shippingFiltered &&
+                                <div style={{display: flexStyle, marginTop: 6, opacity: infoOpacity}}>
+                                    <div style={{display: 'flex'}}>
+                                        {entry.country.length > 0 &&
+                                            <div style={{marginRight: 10}}>
+                                                <FieldValue name='Country' headerStyle={{marginBottom: 4}} value={
+                                                    entry.country.map((country, index) => {
+                                                        const separator = index < entry.country.length - 1 ? ', ' : ''
+                                                        return (
+                                                            <span key={index}><FilterChip value={country}
+                                                                                          field='country'
+                                                                                          mode={'text'}/>{separator}</span>
+                                                        )
+                                                    })}
+                                                />
+                                            </div>
+                                        }
+                                        {entry.shippingInfo &&
+                                            <div style={{marginRight: 10}}>
+                                                <FieldValue name='Shipping Info'
+                                                            headerStyle={{marginBottom: 4}}
+                                                            value={entry.shippingInfo}/>
+                                            </div>
+                                        }
+                                    </div>
+                                    {entry.shipsToUS && entry.shipsToUS !== 'Yes' &&
+                                        <FieldValue name='US Shipping Details'
+                                                    headerStyle={{marginBottom: 4}}
+                                                    textStyle={{color: usShipColor[entry.shipsToUS]}}
+                                                    value={usShipText[entry.shipsToUS]}/>
                                     }
                                 </div>
                             }
@@ -181,23 +192,19 @@ function RaffleEntry({entry, expanded, onExpand, single, drawing}) {
             {expanded &&
                 <React.Fragment>
                     <AccordionDetails sx={{padding: '0px 16px 0px 16px'}}>
-                        {entry.shipsToUS && entry.shipsToUS !== 'Yes' && !drawing &&
-                            <div
-                                style={{
-                                    textAlign: 'right',
-                                    width: '100%',
-                                    marginTop: 5,
-                                    paddingRight: 20,
-                                    color: usShipColor[entry.shipsToUS],
-                                    fontWeight: 'bold',
-                                    fontSize: '0.95rem'
-                                }}>{usShipText[entry.shipsToUS]}
+                        {entry.descriptionContinued?.length > 0 &&
+                            <div style={{
+                                margin: !isMobile ? '0px 0px 12px 8px' : '0px 0px 12px 0px',
+                                fontSize: descriptionFontSize,
+                                opacity: infoOpacity
+                            }}>
+                                {entry.descriptionContinued}
                             </div>
                         }
 
                         <div style={{display: flexStyle}}>
                             <Stack direction='row' alignItems='flex-start' style={{}}>
-                                {!!entry.tags?.length && !showSimple &&
+                                {!!entry.tags?.length &&
                                     <FieldValue name='Tags' value={
                                         <Stack direction='row' spacing={0} sx={{flexWrap: 'wrap'}}>
                                             {entry.tags.map((tag, index) =>
@@ -214,24 +221,38 @@ function RaffleEntry({entry, expanded, onExpand, single, drawing}) {
                             </Stack>
                         </div>
 
-                        {!showSimple && !shippingFiltered &&
-                            <div style={{display: 'flex', marginTop: 6}}>
-                                {entry.country.length > 0 &&
-                                    <div style={{marginRight: 10}}>
-                                        <FieldValue name='Country' headerStyle={{marginBottom: 4}} value={
-                                            entry.country.map((country, index) => {
-                                                const separator = index < entry.country.length - 1 ? ', ' : ''
-                                                return (
-                                                    <span key={index}><FilterChip value={country} field='country'
-                                                                                  mode={'text'}/>{separator}</span>
-                                                )
-                                            })}
-                                        />
-                                    </div>
-                                }
-                                {entry.shippingInfo &&
-                                    <FieldValue name='Shipping Info' headerStyle={{marginBottom: 4}}
-                                                value={entry.shippingInfo}/>
+                        {!shippingFiltered &&
+                            <div style={{display: flexStyle, marginTop: 6}}>
+                                <div style={{display: 'flex'}}>
+                                    {entry.country.length > 0 &&
+                                        <div style={{marginRight: 10}}>
+                                            <FieldValue name='Country' headerStyle={{marginBottom: 4}} value={
+                                                entry.country.map((country, index) => {
+                                                    const separator = index < entry.country.length - 1 ? ', ' : ''
+                                                    return (
+                                                        <span key={index}><FilterChip value={country} field='country'
+                                                                                      mode={'text'}/>{separator}</span>
+                                                    )
+                                                })}
+                                            />
+                                        </div>
+                                    }
+                                    {entry.shippingInfo &&
+                                        <div style={{marginRight: 10}}>
+                                            <FieldValue name='Shipping Info'
+                                                        headerStyle={{marginBottom: 4}}
+                                                        value={entry.shippingInfo}/>
+                                        </div>
+                                    }
+                                </div>
+                                {entry.shipsToUS && entry.shipsToUS !== 'Yes' &&
+                                    <FieldValue name='US Shipping Details'
+                                                headerStyle={{marginBottom: 4}}
+                                                textStyle={{
+                                                    color: usShipColor[entry.shipsToUS],
+                                                    fontWeight: entry.shipsToUS === 'No' ? 500 : 400
+                                                }}
+                                                value={usShipText[entry.shipsToUS]}/>
                                 }
                             </div>
                         }
@@ -277,22 +298,20 @@ function RaffleEntry({entry, expanded, onExpand, single, drawing}) {
                             <Tracker feature='raflPot' id={entry.id}/>
                         }
                     </AccordionDetails>
-                    {!showSimple &&
-                        <AccordionActions disableSpacing>
-                            <div style={{display: 'flex', width: '100%'}}>
-                                <div style={{flexGrow: 1, justifyItems: 'left'}}>
-                                    <CopyEntryIdButton entry={entry}/>
-                                    <LogEntryButton entry={entry}/>
-                                </div>
-                                <div style={{display: 'flex'}}>
-                                    <CopyPotTextButton entry={entry}/>
-                                    {showFull &&
-                                        <CopyLinkToRaflPotButton entry={entry}/>
-                                    }
-                                </div>
+                    <AccordionActions disableSpacing>
+                        <div style={{display: 'flex', width: '100%'}}>
+                            <div style={{flexGrow: 1, justifyItems: 'left'}}>
+                                <CopyEntryIdButton entry={entry}/>
+                                <LogEntryButton entry={entry}/>
                             </div>
-                        </AccordionActions>
-                    }
+                            <div style={{display: 'flex'}}>
+                                <CopyPotTextButton entry={entry}/>
+                                {showFull &&
+                                    <CopyLinkToRaflPotButton entry={entry}/>
+                                }
+                            </div>
+                        </div>
+                    </AccordionActions>
                 </React.Fragment>
             }
         </Accordion>

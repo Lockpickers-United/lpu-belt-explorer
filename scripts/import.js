@@ -515,6 +515,7 @@ if (importRaflData) {
             winnerCount: parseInt(datum['Winner Count']) || 1,
             displayName: datum['Display Name'],
             description: datum['Description'],
+            descriptionContinued: datum['Description Continued'],
             potContents: datum['Pot Contents'],
             keywords: datum['Keywords'],
             contributedBy: splitCommaValues(datum['Contributed By']),

@@ -9,7 +9,7 @@ import filterEntriesAdvanced from '../filters/filterEntriesAdvanced'
 export function RaffleDataProvider({children, allEntries = []}) {
     const {summary} = useContext(RaffleContext)
     const {filters: allFilters, advancedFilterGroups} = useContext(FilterContext)
-    const {search, id, tab, name, sort, image, preview, single, expandAll, ..._filters} = allFilters
+    const {search, id, tab, name, sort, image, preview, expandAll, ..._filters} = allFilters
 
     const searchCutoff = 0.3
 

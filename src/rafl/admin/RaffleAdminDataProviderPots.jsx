@@ -1,14 +1,12 @@
 import React, {useCallback, useContext, useMemo} from 'react'
-import fuzzysort from 'fuzzysort'
 import DataContext from '../../context/DataContext'
 import FilterContext from '../../context/FilterContext'
-import removeAccents from 'remove-accents'
 import dayjs from 'dayjs'
 import RaffleContext from '../RaffleContext.jsx'
 import {raffleStatusSort} from '../../data/filterFields'
 import DBContext from '../../app/DBContext.jsx'
 import searchEntriesForText from '../../filters/searchEntriesForText'
-import filterEntriesAdvanced from '../../filters/filterEntriesAdvanced.js'
+import filterEntriesAdvanced from '../../filters/filterEntriesAdvanced'
 
 export function RaffleAdminDataProviderPots({children, drawing}) {
 
@@ -17,10 +15,8 @@ export function RaffleAdminDataProviderPots({children, drawing}) {
     const {allPots} = useContext(RaffleContext)
     const {allRaffleEntries} = useContext(DBContext)
 
-    console.log('RaffleAdminDataProviderPots', allPots)
-
     const {filters: allFilters, advancedFilterGroups} = useContext(FilterContext)
-    const {search, id, tab, name, sort, image, preview, single, expandAll, ...filters} = allFilters || {}
+    const {search, id, tab, name, sort, image, preview, expandAll, ..._filters} = allFilters || {}
 
     const flatEntries = useMemo(() => {
         return allRaffleEntries
@@ -48,8 +44,6 @@ export function RaffleAdminDataProviderPots({children, drawing}) {
             return pot
         }, [])
     }, [allPots, flatEntries])
-
-    console.log('mappedPotEntries', mappedPotEntries)
 
     const searchCutoff = 0.3
 
@@ -83,7 +77,7 @@ export function RaffleAdminDataProviderPots({children, drawing}) {
             })
         if (drawing) sorted = sorted.filter(pot => pot.entrants?.length > 0)
         return sorted
-    }, [drawing, mappedPotEntries, search, sort])
+    }, [advancedFilterGroups, drawing, mappedPotEntries, search, sort])
 
     const getPotFromId = useCallback(id => {
         return mappedPotEntries.find(e => e.id === id)
@@ -93,11 +87,12 @@ export function RaffleAdminDataProviderPots({children, drawing}) {
         ...globalContext,
         allEntries: allPots,
         visibleEntries,
+        searchedEntries,
         mappedPotEntries,
         getPotFromId,
         expandAll,
         statusLabels
-    }), [globalContext, allPots, visibleEntries, mappedPotEntries, getPotFromId, expandAll])
+    }), [globalContext, allPots, visibleEntries, searchedEntries, mappedPotEntries, getPotFromId, expandAll])
 
     return (
         <DataContext.Provider value={value}>
@@ -105,8 +100,6 @@ export function RaffleAdminDataProviderPots({children, drawing}) {
         </DataContext.Provider>
     )
 }
-
-const fuzzySortKeys = ['fuzzy']
 
 export const statusLabels = {
     pending: {entryColor: 'Blue', backgroundColor: '#3e71bd', textColor: '#fff'},
