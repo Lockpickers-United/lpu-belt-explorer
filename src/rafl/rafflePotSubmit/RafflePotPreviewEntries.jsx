@@ -6,6 +6,9 @@ import RaffleEntry from '../RaffleEntry.jsx'
 import RaffleExportButton from '../RaffleExportButton.jsx'
 import Link from '@mui/material/Link'
 import {useNavigate} from 'react-router-dom'
+import RaffleSearchBar from '../RaffleSearchBar.jsx'
+import {raffleSortFields} from '../../data/sortFields.js'
+import AdvancedFilters from '../../filters/AdvancedFilters.jsx'
 
 function RafflePotPreviewEntries({drawing = false}) {
     const {filters} = useContext(FilterContext)
@@ -43,6 +46,9 @@ function RafflePotPreviewEntries({drawing = false}) {
                 <strong>Please note:</strong> newly submitted pots and photos will not appear until they
                 are manually added to the database.
             </div>
+
+            <RaffleSearchBar label='Raffle Pots' sortValues={raffleSortFields} entryCount={visibleEntries.length}/>
+            <AdvancedFilters/>
             {visibleEntries.length === 0 && <NoEntriesCard label='Rafl Pots'/>}
 
             {sortEntries.map(entry =>
