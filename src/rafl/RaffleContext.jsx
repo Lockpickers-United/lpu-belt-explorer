@@ -107,8 +107,8 @@ export function RaffleProvider({children}) {
                 const usShipText = {
                     Yes: 'Ships to the US',
                     No: 'Cannot ship to the US',
-                    Split: 'US winner splits duties & fees',
-                    'Winner pays fees': 'US winner pays duties & fees'
+                    Split: 'US winner splits fees & tariffs',
+                    'Winner pays fees': 'US winner pays fees & tariffs '
                 }
 
                 return {

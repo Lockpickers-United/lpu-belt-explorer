@@ -34,7 +34,7 @@ function RaffleEntry({entry, expanded, onExpand, drawing}) {
     const showFull = ['live', 'post'].includes(raflState) || raffleAdminRole
 
     const {filters} = useContext(FilterContext)
-    const shippingFiltered = !!filters.shippingType || !!filters.splitShipping
+    const shippingFiltered = !!filters.shippingType || !!filters.splitShipping || !!filters.usShipText
 
     const [scrolled, setScrolled] = useState(false)
     const ref = useRef(null)
@@ -77,8 +77,8 @@ function RaffleEntry({entry, expanded, onExpand, drawing}) {
     const usShipText = {
         Yes: '',
         No: 'Cannot ship to the US',
-        Split: 'US winner splits duties & fees',
-        'Winner pays fees': 'US winner pays duties & fees'
+        Split: 'US winner splits tariffs & fees',
+        'Winner pays fees': 'US winner pays tariffs & fees'
     }
 
     return (

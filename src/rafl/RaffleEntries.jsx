@@ -10,9 +10,10 @@ import RaffleExportButton from './RaffleExportButton.jsx'
 import AdvancedFilters from '../filters/AdvancedFilters.jsx'
 
 function RaffleEntries({drawing = false}) {
-    const {filters} = useContext(FilterContext)
-    const [expanded, setExpanded] = useState(filters.id)
     const {visibleEntries = [], expandAll} = useContext(DataContext)
+    const {filters} = useContext(FilterContext)
+    const {id, shippingType, splitShipping} = filters
+    const [expanded, setExpanded] = useState(id)
 
     const defExpanded = useDeferredValue(expanded)
     const handleExpand = useCallback(id => {
@@ -29,6 +30,13 @@ function RaffleEntries({drawing = false}) {
             <RaffleSearchBar label='Raffle Pots' sortValues={raffleSortFields} entryCount={visibleEntries.length}/>
             <AdvancedFilters/>
 
+            {(shippingType === 'Intl. shipping included' || splitShipping === 'shippingSplit') &&
+                <div style={{margin: '18px 12px', fontSize: '0.9rem', color: '#eee'}}>
+                    <strong>Please note:</strong> some of the pots below are offered with
+                    international shipping included but US winners will
+                    need to pay for any additional tariffs and fees.
+                </div>
+            }
             {visibleEntries.length === 0 && <NoEntriesCard label='Rafl Pots'/>}
 
             {visibleEntries.map(entry =>

@@ -7,7 +7,7 @@ import RaffleExportButton from '../RaffleExportButton.jsx'
 import Link from '@mui/material/Link'
 import {useNavigate} from 'react-router-dom'
 import RaffleSearchBar from '../RaffleSearchBar.jsx'
-import {raffleSortFields} from '../../data/sortFields.js'
+import {raffleSortFields} from '../../data/sortFields'
 import AdvancedFilters from '../../filters/AdvancedFilters.jsx'
 
 function RafflePotPreviewEntries({drawing = false}) {
@@ -24,7 +24,6 @@ function RafflePotPreviewEntries({drawing = false}) {
     const sortEntries = useMemo(() => {
         return visibleEntries.sort((a, b) => a.contributedBy[0].localeCompare(b.contributedBy[0]) || a.title.localeCompare(b.title))
     }, [visibleEntries])
-
 
     const linkSx = {
         color: '#bbb', textDecoration: 'underline', cursor: 'pointer', fontWeight: 500, '&:hover': {
