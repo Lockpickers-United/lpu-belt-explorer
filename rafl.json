@@ -79,7 +79,7 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/54975333272_8ee7b66a2d_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54975333272/in/album-72177720330595608/",
-        "sequenceId": 5,
+        "sequenceId": 7,
         "fullSizeUrl": "https://live.staticflickr.com/65535/54975333272_ff82ddb566_o.jpg"
       },
       {
@@ -87,7 +87,7 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/54976521170_26a4c3ee46_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54976521170/in/album-72177720330595608/",
-        "sequenceId": 6,
+        "sequenceId": 12,
         "fullSizeUrl": "https://live.staticflickr.com/65535/54976521170_e4ceb9ee7e_o.jpg"
       },
       {
@@ -95,7 +95,7 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/54976224271_6996d48c7d_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54976224271/in/album-72177720330595608/",
-        "sequenceId": 7,
+        "sequenceId": 16,
         "fullSizeUrl": "https://live.staticflickr.com/65535/54976224271_a72fdf9d59_o.jpg"
       }
     ]
@@ -121,7 +121,7 @@
     "shippingInfo": "International shipping included",
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
-    "shippingType": "International shipping included",
+    "shippingType": "Intl. shipping included",
     "shipsToUS": "Yes",
     "dateAdded": ""
   },
@@ -146,7 +146,7 @@
     "shippingInfo": "International shipping included",
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
-    "shippingType": "International shipping included",
+    "shippingType": "Intl. shipping included",
     "shipsToUS": "Yes",
     "dateAdded": ""
   },
@@ -174,7 +174,7 @@
     "shippingInfo": "$20 towards international shipping",
     "splitShipping": "shippingNotSplit",
     "splitShippingBoolean": true,
-    "shippingType": "Split international shipping",
+    "shippingType": "Split Intl. shipping",
     "shipsToUS": "",
     "dateAdded": "20251126",
     "media": [
@@ -212,7 +212,7 @@
     "shippingInfo": "$20 towards international shipping",
     "splitShipping": "shippingNotSplit",
     "splitShippingBoolean": true,
-    "shippingType": "Split international shipping",
+    "shippingType": "Split Intl. shipping",
     "shipsToUS": "",
     "dateAdded": "20251126",
     "media": [
@@ -279,7 +279,7 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/54976224661_fbab45e0c0_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54976224661/in/album-72177720330595608/",
-        "sequenceId": 9,
+        "sequenceId": 5,
         "fullSizeUrl": "https://live.staticflickr.com/65535/54976224661_9677d834c9_o.jpg"
       },
       {
@@ -287,7 +287,7 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/54976399693_5cac19fbac_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54976399693/in/album-72177720330595608/",
-        "sequenceId": 10,
+        "sequenceId": 11,
         "fullSizeUrl": "https://live.staticflickr.com/65535/54976399693_1f3b8d86dc_o.jpg"
       }
     ]
@@ -354,7 +354,7 @@
     "shippingInfo": "International shipping included",
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
-    "shippingType": "International shipping included",
+    "shippingType": "Intl. shipping included",
     "shipsToUS": "Winner pays fees",
     "dateAdded": "20251127"
   },
@@ -379,7 +379,7 @@
     "shippingInfo": "International shipping included",
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
-    "shippingType": "International shipping included",
+    "shippingType": "Intl. shipping included",
     "shipsToUS": "Winner pays fees",
     "dateAdded": "20251201"
   },
@@ -404,7 +404,7 @@
     "shippingInfo": "€20 towards international shipping",
     "splitShipping": "shippingNotSplit",
     "splitShippingBoolean": true,
-    "shippingType": "Split international shipping",
+    "shippingType": "Split Intl. shipping",
     "shipsToUS": "",
     "dateAdded": "20251202"
   },
@@ -429,10 +429,10 @@
     "country": [
       "USA"
     ],
-    "shippingInfo": "Domestic shipping only",
+    "shippingInfo": "Domestic only (USA)",
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
-    "shippingType": "No international shipping",
+    "shippingType": "No Intl. shipping",
     "shipsToUS": "Yes",
     "dateAdded": "20251202"
   },
@@ -457,10 +457,10 @@
     "country": [
       "USA"
     ],
-    "shippingInfo": "Domestic shipping only",
+    "shippingInfo": "Domestic only (USA)",
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
-    "shippingType": "No international shipping",
+    "shippingType": "No Intl. shipping",
     "shipsToUS": "Yes",
     "dateAdded": "20251202"
   },
@@ -539,10 +539,10 @@
     "country": [
       "USA"
     ],
-    "shippingInfo": "Domestic shipping only",
+    "shippingInfo": "Domestic only (USA)",
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
-    "shippingType": "No international shipping",
+    "shippingType": "No Intl. shipping",
     "shipsToUS": "Yes",
     "dateAdded": "20251204",
     "media": [
@@ -551,7 +551,7 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/54976521500_f3912cde74_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54976521500/in/album-72177720330595608/",
-        "sequenceId": 8,
+        "sequenceId": 6,
         "fullSizeUrl": "https://live.staticflickr.com/65535/54976521500_5bbddf5dfb_o.jpg"
       }
     ]
@@ -579,9 +579,67 @@
     "shippingInfo": "$100 towards international shipping",
     "splitShipping": "shippingNotSplit",
     "splitShippingBoolean": true,
-    "shippingType": "Split international shipping",
+    "shippingType": "Split Intl. shipping",
     "shipsToUS": "",
-    "dateAdded": "20251204"
+    "dateAdded": "20251204",
+    "media": [
+      {
+        "title": "By: NoodleThumb",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54980543594_6f119a3ba8_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54980543594/in/album-72177720330595608/",
+        "sequenceId": 8,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54980543594_e4672d36c9_o.jpg"
+      },
+      {
+        "title": "By: NoodleThumb",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54979413997_4706dcd1e7_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54979413997/in/album-72177720330595608/",
+        "sequenceId": 13,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54979413997_1a3ffeecbe_o.jpg"
+      },
+      {
+        "title": "By: NoodleThumb",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54980478063_1a731d2196_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54980478063/in/album-72177720330595608/",
+        "sequenceId": 17,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54980478063_de0b2f5890_o.jpg"
+      },
+      {
+        "title": "By: NoodleThumb",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54980478243_7bbb434e4f_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54980478243/in/album-72177720330595608/",
+        "sequenceId": 20,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54980478243_56039d56f5_o.jpg"
+      },
+      {
+        "title": "By: NoodleThumb",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54980478433_7b6c43505c_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54980478433/in/album-72177720330595608/",
+        "sequenceId": 23,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54980478433_02dcc678bf_o.jpg"
+      },
+      {
+        "title": "By: NoodleThumb",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54980544339_5da7c8cc56_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54980544339/in/album-72177720330595608/",
+        "sequenceId": 25,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54980544339_2efc8be89e_o.jpg"
+      },
+      {
+        "title": "By: NoodleThumb",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54980595630_41661c29c6_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54980595630/in/album-72177720330595608/",
+        "sequenceId": 27,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54980595630_e9139e862f_o.jpg"
+      }
+    ]
   },
   {
     "id": "2026-019",
@@ -636,7 +694,7 @@
     "shippingInfo": "International shipping included",
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
-    "shippingType": "International shipping included",
+    "shippingType": "Intl. shipping included",
     "shipsToUS": "Winner pays fees",
     "dateAdded": "20251206"
   },
@@ -664,7 +722,7 @@
     "shippingInfo": "International shipping included",
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
-    "shippingType": "International shipping included",
+    "shippingType": "Intl. shipping included",
     "shipsToUS": "",
     "dateAdded": "20251207"
   },
@@ -716,18 +774,52 @@
     "splitShippingBoolean": false,
     "shippingType": "",
     "shipsToUS": "",
-    "dateAdded": ""
+    "dateAdded": "",
+    "media": [
+      {
+        "title": "By: Nightmare",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54980604100_89b04dc2fc_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54980604100/in/album-72177720330595608/",
+        "sequenceId": 10,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54980604100_a312b9f89f_o.jpg"
+      },
+      {
+        "title": "By: Nightmare",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54980487773_78d467622b_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54980487773/in/album-72177720330595608/",
+        "sequenceId": 15,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54980487773_6eac30cdc6_o.jpg"
+      },
+      {
+        "title": "By: Nightmare",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54980604615_72d8f4ff2b_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54980604615/in/album-72177720330595608/",
+        "sequenceId": 19,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54980604615_a9e8d7cec9_o.jpg"
+      },
+      {
+        "title": "By: Nightmare",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54980307626_f076f9aca6_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54980307626/in/album-72177720330595608/",
+        "sequenceId": 22,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54980307626_31ab159839_o.jpg"
+      }
+    ]
   },
   {
     "id": "2026-024",
     "year": 2026,
     "potNumber": 0,
-    "title": "Moki Pouch + Master No.19",
+    "title": "Moki Pouch + Master No.19 (can be separated)",
     "winnerCount": 1,
     "displayName": "",
     "description": "",
     "descriptionContinued": "",
-    "potContents": "- Moki Pouch\n- Old Master No.19 with key",
+    "potContents": "- Moki Pouch\n- Vintage Master No.19 with key",
     "keywords": "",
     "contributedBy": [
       "Atti182"
@@ -736,12 +828,70 @@
     "country": [
       "USA"
     ],
-    "shippingInfo": "Domestic shipping only",
+    "shippingInfo": "Domestic only (USA)",
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
-    "shippingType": "Domestic shipping only",
+    "shippingType": "No Intl. shipping",
     "shipsToUS": "",
-    "dateAdded": "20251212"
+    "dateAdded": "20251212",
+    "media": [
+      {
+        "title": "By: Atti182",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54980478898_e274379fff_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54980478898/in/album-72177720330595608/",
+        "sequenceId": 9,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54980478898_46fa809c89_o.jpg"
+      },
+      {
+        "title": "By: Atti182",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54979415202_01f3d9d1b2_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54979415202/in/album-72177720330595608/",
+        "sequenceId": 14,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54979415202_eb092d14d7_o.jpg"
+      },
+      {
+        "title": "By: Atti182",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54980479273_f0a1758023_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54980479273/in/album-72177720330595608/",
+        "sequenceId": 18,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54980479273_ce8eb2df05_o.jpg"
+      },
+      {
+        "title": "By: Atti182",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54979415517_0553b43c80_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54979415517/in/album-72177720330595608/",
+        "sequenceId": 21,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54979415517_939488aec4_o.jpg"
+      },
+      {
+        "title": "By: Atti182",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54980298951_a8caa3e4ce_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54980298951/in/album-72177720330595608/",
+        "sequenceId": 24,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54980298951_f9d1647a72_o.jpg"
+      },
+      {
+        "title": "By: Atti182",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54980299081_89efd6d5ce_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54980299081/in/album-72177720330595608/",
+        "sequenceId": 26,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54980299081_154d8bd4f2_o.jpg"
+      },
+      {
+        "title": "By: Atti182",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54980479733_b090b955ac_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54980479733/in/album-72177720330595608/",
+        "sequenceId": 28,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54980479733_4913327c4f_o.jpg"
+      }
+    ]
   },
   {
     "id": "2026-025",
@@ -761,10 +911,10 @@
     "country": [
       "USA"
     ],
-    "shippingInfo": "Domestic shipping only",
+    "shippingInfo": "Domestic only (USA)",
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
-    "shippingType": "Domestic shipping only",
+    "shippingType": "No Intl. shipping",
     "shipsToUS": "",
     "dateAdded": "20251212"
   }
