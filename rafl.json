@@ -107,9 +107,9 @@
     "title": "The Paladin",
     "winnerCount": 1,
     "displayName": "",
-    "description": "",
+    "description": "*Town Crier enters.* Hear ye, hear ye! Good peoples of the lockpicking guild, lend thine ears to this proclamation most grand! By order of chance and fortune, a prize of noble bearing shall be drawn in our raffle. Behold! “The Paladin”. A mat of steadfast craft, upon which the worthy locksmith may lay their tools, keeping order and honor in their practice. Two flags of matching heraldry, proud tokens to mark thy implements, that all may know thee as a knight of the pick and pin. This treasure stands as guardian of thy craft, a companion in every noble endeavor of locks and keys. Step forth, take thy chance, and may fortune’s warded gate swing wide for thee!",
     "descriptionContinued": "",
-    "potContents": "",
+    "potContents": "- 2x BurnB1 Fancy flags (N2 and N3 profiles)\n- Lockjaw Paladin pinning mat\n- 3D printed flag holder\n- Various stickers",
     "keywords": "",
     "contributedBy": [
       "BurnB1"
@@ -741,6 +741,31 @@
     "splitShippingBoolean": false,
     "shippingType": "Domestic shipping only",
     "shipsToUS": "",
-    "dateAdded": ""
+    "dateAdded": "20251212"
+  },
+  {
+    "id": "2026-025",
+    "year": 2026,
+    "potNumber": 0,
+    "title": "TOOOL Set and more",
+    "winnerCount": 1,
+    "displayName": "",
+    "description": "",
+    "descriptionContinued": "",
+    "potContents": "- TOOOL Necessary Nine v2 pickset\n- TOOOL Epic Expansion pickset\n- TOOOL Wicked Waves rake set\n- TOOOL leather zipper lockpick set case\n- TOOOL logo morale velcro patch\n- KiK-lock padlock, 3rd edition\n- Ilco UD keyway 6 pin kik cylinder\n- 2x handcuff shims (not pictured)\n- Stickers!",
+    "keywords": "",
+    "contributedBy": [
+      "TOOOL"
+    ],
+    "tags": [],
+    "country": [
+      "USA"
+    ],
+    "shippingInfo": "Domestic shipping only",
+    "splitShipping": "shippingSplit",
+    "splitShippingBoolean": false,
+    "shippingType": "Domestic shipping only",
+    "shipsToUS": "",
+    "dateAdded": "20251212"
   }
 ]
