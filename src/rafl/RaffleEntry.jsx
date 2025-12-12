@@ -248,10 +248,7 @@ function RaffleEntry({entry, expanded, onExpand, drawing}) {
                                 {entry.shipsToUS && entry.shipsToUS !== 'Yes' &&
                                     <FieldValue name='US Shipping Details'
                                                 headerStyle={{marginBottom: 4}}
-                                                textStyle={{
-                                                    color: usShipColor[entry.shipsToUS],
-                                                    fontWeight: entry.shipsToUS === 'No' ? 500 : 400
-                                                }}
+                                                textStyle={{color: usShipColor[entry.shipsToUS], fontWeight: entry.shipsToUS === 'No' ? 500 : 400}}
                                                 value={usShipText[entry.shipsToUS]}/>
                                 }
                             </div>

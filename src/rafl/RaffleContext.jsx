@@ -127,7 +127,7 @@ export function RaffleProvider({children}) {
                         entry.media?.length > 0 ? 'Has Images' : 'No Images'
                     ],
                     sortPotNumber: entry.potNumber === 0 ? 98 : entry.potNumber,
-                    usShipText: usShipText[entry.shipsToUS] || '',
+                    usShipText: usShipText[entry.shipsToUS] || 'Ships to the US',
                     winners: potWinners,
                     winnerUsernames,
                     winnerEntryIds,
