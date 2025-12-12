@@ -53,7 +53,7 @@
     "@mui/material": "^5.15.4",
     "@mui/styles": "^6.4.11",
     "@mui/x-date-pickers": "^7.10.0",
-    "@nivo/bar": "^0.96.0",
+    "@nivo/bar": "^0.99.0",
     "@nivo/chord": "^0.96.0",
     "@nivo/core": "^0.96.0",
     "@nivo/line": "^0.96.0",
