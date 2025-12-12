@@ -702,7 +702,7 @@
     "displayName": "",
     "description": "",
     "descriptionContinued": "",
-    "potContents": "",
+    "potContents": "Golf club tensioners complete with stand bag",
     "keywords": "",
     "contributedBy": [
       "Nightmare"
@@ -715,6 +715,31 @@
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
     "shippingType": "",
+    "shipsToUS": "",
+    "dateAdded": ""
+  },
+  {
+    "id": "2026-024",
+    "year": 2026,
+    "potNumber": 0,
+    "title": "Moki Pouch + Master No.19",
+    "winnerCount": 1,
+    "displayName": "",
+    "description": "",
+    "descriptionContinued": "",
+    "potContents": "- Moki Pouch\n- Old Master No.19 with key",
+    "keywords": "",
+    "contributedBy": [
+      "Atti182"
+    ],
+    "tags": [],
+    "country": [
+      "USA"
+    ],
+    "shippingInfo": "Domestic shipping only",
+    "splitShipping": "shippingSplit",
+    "splitShippingBoolean": false,
+    "shippingType": "Domestic shipping only",
     "shipsToUS": "",
     "dateAdded": ""
   }
