@@ -16,7 +16,7 @@ function PrivacyPage() {
                 marginLeft: 'auto',
                 marginRight: 'auto',
                 marginTop: 16,
-                marginButtom: 16
+                marginBottom: 16
             }}>
                 <CardHeader title='LPU Belt Explorer, Belt Ranking Content Usage' action={
                     <GithubButton url='https://github.com/Lockpickers-United/lpu-belt-explorer'/>
@@ -26,7 +26,7 @@ function PrivacyPage() {
                         target: '_blank',
                         rel: ['nofollow', 'noopener', 'noreferrer']
                     }]]} remarkPlugins={[remarkGfm]}>
-                        {usageMd}
+                        {String(usageMd)}
                     </ReactMarkdown>
                 </CardContent>
             </Card>

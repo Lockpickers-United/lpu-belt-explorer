@@ -20,14 +20,14 @@ function DansPage() {
                 marginLeft: 'auto',
                 marginRight: 'auto',
                 marginTop: 16,
-                marginButtom: 16
+                marginBottom: 16
             }}>
                 <CardHeader title='Dan System' action={
                     <GithubButton url='https://github.com/Lockpickers-United/lpu-belt-explorer/blob/main/src/resources/dans.md'/>
                 }/>
                 <CardContent>
                     <ReactMarkdown rehypePlugins={[[rehypeExternalLinks, {target: '_blank'}]]} remarkPlugins={[remarkGfm]}>
-                        {dansMd}
+                        {String(dansMd)}
                     </ReactMarkdown>
                 </CardContent>
                 <CardActions>

@@ -22,7 +22,7 @@ function TestPageRoute() {
                 marginLeft: 'auto',
                 marginRight: 'auto',
                 marginTop: 16,
-                marginButtom: 16,
+                marginBottom: 16,
                 padding: '0px 30px'
             }}>
                 <BeltFlowChord/>

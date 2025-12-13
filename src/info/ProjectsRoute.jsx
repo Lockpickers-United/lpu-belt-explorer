@@ -4,13 +4,15 @@ import Nav from '../nav/Nav'
 import usePageTitle from '../util/usePageTitle'
 import ProjectsPage from './ProjectsPage'
 import Tracker from '../app/Tracker.jsx'
+import {dialFilterFields} from '../data/filterFields'
+import {FilterProvider} from '../context/FilterContext.jsx'
 
 export default function ProjectsRoute() {
 
     usePageTitle("Master's Projects")
 
     return (
-        <React.Fragment>
+        <FilterProvider filterFields={dialFilterFields}>
             <Nav title="Master's Projects"/>
 
             <ProjectsPage/>
@@ -19,6 +21,6 @@ export default function ProjectsRoute() {
 
             <Tracker feature='projects'/>
 
-        </React.Fragment>
+        </FilterProvider>
     )
 }

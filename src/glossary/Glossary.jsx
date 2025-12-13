@@ -19,7 +19,7 @@ function Glossary() {
             marginLeft: 'auto',
             marginRight: 'auto',
             marginTop: 16,
-            marginButtom: 16
+            marginBottom: 16
         }}>
             <GlossaryIntro/>
 

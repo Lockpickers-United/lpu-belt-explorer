@@ -15,14 +15,14 @@ function AboutPage() {
                 marginLeft: 'auto',
                 marginRight: 'auto',
                 marginTop: 16,
-                marginButtom: 16
+                marginBottom: 16
             }}>
                 <CardHeader title='About LPU Belts' action={
                     <GithubButton url='https://github.com/Lockpickers-United/lpu-belt-explorer/blob/main/src/resources/about.md'/>
                 }/>
                 <CardContent>
                     <ReactMarkdown rehypePlugins={[[rehypeExternalLinks, {target: '_blank'}]]}>
-                        {aboutMD}
+                        {String(aboutMD)}
                     </ReactMarkdown>
                 </CardContent>
             </Card>

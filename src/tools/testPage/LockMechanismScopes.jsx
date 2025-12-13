@@ -56,7 +56,7 @@ export default function LockMechanismScopes() {
                 marginLeft: 'auto',
                 marginRight: 'auto',
                 marginTop: 16,
-                marginButtom: 16,
+                marginBottom: 16,
                 padding: '0px 30px'
             }}>
                 <pre>

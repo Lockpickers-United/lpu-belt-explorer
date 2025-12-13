@@ -14,7 +14,7 @@ function InfoFaqBB() {
     const idText = user
         ? user.uid
         : '(your id)'
-    const markdownParsed = markdown.replace('[YourID]', idText)
+    const markdownParsed = String(markdown).replace('[YourID]', idText)
 
     return (
         <React.Fragment>
@@ -23,7 +23,7 @@ function InfoFaqBB() {
                 marginLeft: 'auto',
                 marginRight: 'auto',
                 marginTop: 16,
-                marginButtom: 16
+                marginBottom: 16
             }}>
                 <CardContent>
                     <ReactMarkdown rehypePlugins={[[rehypeExternalLinks, {target: '_blank'}]]} remarkPlugins={[remarkGfm]}>

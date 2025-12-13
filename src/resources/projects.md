@@ -1,24 +1,3 @@
-## Overview
-
-Master's Projects -- also known as Epic Quests -- are an integral part of Black Belt requirements and Dan System advancement. They give Black Belts further levels of mastery to aspire to and achieve, to incentivize them to remain in the community and enrich it with knowledge, and to increase the scope of what is possible within picking and locksport in general.
-
-Dan Points can be earned by completing projects within the following Disciplines:
-
-- Case Making
-- Challenge Locks
-- Community Involvement
-- Cutaway Making
-- Disc Detainer Pick Making
-- Impressioning
-- Lock Design
-- Lock Manufacturing
-- Pick Making
-- Picking Instruction
-- Safe Lock Manipulation
-- Tool Making
-- Tool Manufacturing
-- Other Approved Projects
-
 You can also nominate others to receive points through:
 - Exceptional Knowledge of Locks
 - Community Leadership
@@ -51,7 +30,7 @@ Please send the following information in PM to a mod, or include in your black b
 
 ## Voting Guidelines
 
-### Case Making Quest Guidelines
+### Case Making Project Guidelines
 Each progressive tier must fulfill all prior tier requirements.
 
 - **Tier 1** - Portfolio of at least 1 case of any material (cloth, canvas, leather, etc.) of satisfactory quality.
@@ -142,7 +121,7 @@ Safe dials should have the code set by another source (does not have to be an LP
 - **Tier 4** - Portfolio of at least 7 tools, including reproducing accurately at least two reasonably identical tools or producing a set of two or more tools with a (well planned and easily identifiable) theme at a high technical and artistic level. Examples of tools made of different groups of materials or components that demonstrate a high caliber of skills in a variety of advanced techniques. An emerging brand identity.
 - **Tier 5** - Portfolio of at least 10 high quality tools that utilize a multitude of techniques both basic and advanced in nature, ability to reproduce tools with high accuracy. A well-defined and refined brand identity.
 
-### Other Master's Projects
+### Other Approved Projects
 
 Below are general guidelines for Other Projects, though each will be evaluated on a case-by-case basis. Please contact LPU staff about the Tier levels for your project in advance.
 
@@ -158,6 +137,3 @@ Below are general guidelines for Other Projects, though each will be evaluated o
 - Make a lock from scratch
 - Formation and leadership of a TOOOL chapter or other community organization
 - Other projects may be evaluated for Dan points with prior LPU staff approval.
-
-
-##### Updated: March 24, 2025

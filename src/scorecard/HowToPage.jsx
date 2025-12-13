@@ -16,7 +16,7 @@ function HowToPage() {
     const idText = user
         ? user.uid
         : '(your id)'
-    const howToMdParsed = howToMd.replace('[YourID]', idText)
+    const howToMdParsed = String(howToMd).replace('[YourID]', idText)
 
     return (
         <React.Fragment>
@@ -25,7 +25,7 @@ function HowToPage() {
                 marginLeft: 'auto',
                 marginRight: 'auto',
                 marginTop: 16,
-                marginButtom: 16
+                marginBottom: 16
             }}>
                 <CardContent>
                     <ReactMarkdown rehypePlugins={[[rehypeExternalLinks, {target: '_blank'}]]} remarkPlugins={[remarkGfm]}>
