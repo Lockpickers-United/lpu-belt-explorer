@@ -527,7 +527,7 @@
     "displayName": "",
     "description": "",
     "descriptionContinued": "",
-    "potContents": "- 3 fragrances, male or female scents (winner's choice)\n- 1 brown+ lock (TBD)\n- MTL of spoon's choice",
+    "potContents": "- 3 fragrances, male or female scents (winner's choice)\n- 1 brown+ lock (TBD)\n- Mul-T-Lock of spoon's choice",
     "keywords": "",
     "contributedBy": [
       "spoon"
@@ -565,7 +565,7 @@
     "displayName": "",
     "description": "While this may look just exactly like a very ordinary box of Skittles, the truth is that this rainbow contains cleverly hidden secrets that will last you far longer than any other Skittles you’ll ever come across! Don’t put them in your mouth; they’re too large for that and won’t do your teeth any favors...",
     "descriptionContinued": "While some people may enjoy them by blindly taking one at random, others find it more pleasing to line them up like an OCD person and methodically complete one color before moving on to the next. I personally found each of these to be a good experience and would recommend this pot for a beginner to intermediate picker looking for a broad experience ascending the ranks.",
-    "potContents": "- 3+ white belt locks I haven't decided on yet, but that are decent to pick.\n- Abus 45/30\n- Master 140\n- Brinks 164\n- Master Vline 5150\n- Abus 55/40\n- Master 575\n- ACE 38mm brassie\n- American Lock 1100\n- Paclock 90A\n- Dom RS Sigma\n- Goal S\n- Paclock 90A Pro\n- A SFIC\n- Gen 3 Smartkey\n- Medeco biaxial",
+    "potContents": "- 3+ White Belt locks I haven't decided on yet, but that are decent to pick.\n- Abus 45/30 *(Yellow)*\n- Master 140 *(Yellow)*\n- Brinks 164 *(Yellow)*\n- Master V-line 5150 *(unranked)*\n- Abus 55/40 *(Orange)*\n- Master 575 *(Orange)*\n- ACE 38mm brassie *(Green)*\n- American Lock 1100 *(Green)*\n- Paclock 90A *(Green)*\n- Dom RS Sigma *(Blue)*\n- Goal S *(Blue)*\n- Paclock 90A Pro *(Blue)*\n- SFIC Cylinder *(Purple)*\n- Gen III Smartkey *(Purple)*\n- Medeco Biaxial *(Purple)*",
     "keywords": "",
     "contributedBy": [
       "NoodleThumb"
@@ -586,9 +586,17 @@
       {
         "title": "By: NoodleThumb",
         "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54979691827_f48812a5c4_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54979691827/in/album-72177720330595608/",
+        "sequenceId": 8,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54979691827_8c80a10976_o.jpg"
+      },
+      {
+        "title": "By: NoodleThumb",
+        "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/54980543594_6f119a3ba8_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54980543594/in/album-72177720330595608/",
-        "sequenceId": 8,
+        "sequenceId": 13,
         "fullSizeUrl": "https://live.staticflickr.com/65535/54980543594_e4672d36c9_o.jpg"
       },
       {
@@ -596,7 +604,7 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/54979413997_4706dcd1e7_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54979413997/in/album-72177720330595608/",
-        "sequenceId": 13,
+        "sequenceId": 17,
         "fullSizeUrl": "https://live.staticflickr.com/65535/54979413997_1a3ffeecbe_o.jpg"
       },
       {
@@ -604,7 +612,7 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/54980478063_1a731d2196_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54980478063/in/album-72177720330595608/",
-        "sequenceId": 17,
+        "sequenceId": 20,
         "fullSizeUrl": "https://live.staticflickr.com/65535/54980478063_de0b2f5890_o.jpg"
       },
       {
@@ -612,7 +620,7 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/54980478243_7bbb434e4f_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54980478243/in/album-72177720330595608/",
-        "sequenceId": 20,
+        "sequenceId": 23,
         "fullSizeUrl": "https://live.staticflickr.com/65535/54980478243_56039d56f5_o.jpg"
       },
       {
@@ -620,7 +628,7 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/54980478433_7b6c43505c_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54980478433/in/album-72177720330595608/",
-        "sequenceId": 23,
+        "sequenceId": 25,
         "fullSizeUrl": "https://live.staticflickr.com/65535/54980478433_02dcc678bf_o.jpg"
       },
       {
@@ -628,7 +636,7 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/54980544339_5da7c8cc56_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54980544339/in/album-72177720330595608/",
-        "sequenceId": 25,
+        "sequenceId": 27,
         "fullSizeUrl": "https://live.staticflickr.com/65535/54980544339_2efc8be89e_o.jpg"
       },
       {
@@ -636,7 +644,7 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/54980595630_41661c29c6_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54980595630/in/album-72177720330595608/",
-        "sequenceId": 27,
+        "sequenceId": 29,
         "fullSizeUrl": "https://live.staticflickr.com/65535/54980595630_e9139e862f_o.jpg"
       }
     ]
@@ -828,10 +836,10 @@
     "country": [
       "USA"
     ],
-    "shippingInfo": "Domestic only (USA)",
-    "splitShipping": "shippingSplit",
-    "splitShippingBoolean": false,
-    "shippingType": "No Intl. shipping",
+    "shippingInfo": "$20 towards international shipping",
+    "splitShipping": "shippingNotSplit",
+    "splitShippingBoolean": true,
+    "shippingType": "Split Intl. shipping",
     "shipsToUS": "",
     "dateAdded": "20251212",
     "media": [
