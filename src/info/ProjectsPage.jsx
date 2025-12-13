@@ -78,7 +78,6 @@ export default function ProjectsPage() {
                             }}>{section}</Link>
                     : <div style={{
                         color: '#fff',
-                        textDecorationColor: '#aaa',
                         fontWeight: 400
                     }}>{section}</div>
                 }

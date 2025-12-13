@@ -15,7 +15,7 @@ const RaffleReportDonationsDonorsLines = () => {
     const subHeadStyle = {margin: '30px 0px 0px 0px', width: '100%', textAlign: 'center', color: '#fff', fontSize:'1.2rem'}
     const chartHeight = 120
 
-    if (summary.lineDataCurrent.cumulativeDonations.length === 0) return (
+    if (summary?.lineDataCurrent?.cumulativeDonations?.length === 0) return (
         <div style={{color: '#fff', textAlign: 'center', fontSize: '1.2rem', margin: '20px 0px 0px 0px'}}>
             No data available
         </div>
