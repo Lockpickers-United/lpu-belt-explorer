@@ -2,6 +2,11 @@ import React, {useState, useCallback, useMemo} from 'react'
 import ChoiceButtonGroup from '../../util/ChoiceButtonGroup'
 import RaffleBeltDistributionBar from './RaffleBeltDistributionBar'
 
+/**
+ * @property beltDonorCount
+ * @property beltDonations
+ */
+
 function RaffleBeltDistribution({data}) {
 
     const beltDonations = useMemo(() => {
@@ -17,7 +22,7 @@ function RaffleBeltDistribution({data}) {
     const beltDonors = useMemo(() => {
         return uniqueBelts.map((belt) => {
             return {
-                value: data.beltDonorCountUnique[belt] ? data.beltDonorCountUnique[belt]/data.totalDonorCountUnique : 0,
+                value: data.beltDonorCount[belt] ? data.beltDonorCount[belt]/data.totalEntries : 0,
                 id: belt,
                 label: belt
             }

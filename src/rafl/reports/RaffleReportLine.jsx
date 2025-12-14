@@ -3,7 +3,7 @@ import {primaryTheme} from '../../admin/adminChartDefaults'
 import React from 'react'
 import useWindowSize from '../../util/useWindowSize.jsx'
 
-export default function RaffleReportLine({chartHeight, chartdata, showAxisBottom, colors, tickValues, curve}) {
+export default function RaffleReportLine({chartHeight, chartdata=[], showAxisBottom, colors, tickValues, curve}) {
 
     const chartMargin = showAxisBottom
         ? {top: 10, right: 20, bottom: 70, left: 50}

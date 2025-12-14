@@ -1,6 +1,5 @@
-import React, {useContext} from 'react'
+import React from 'react'
 import RaffleReportLine from './RaffleReportLine'
-import RaffleContext from '../RaffleContext.jsx'
 
 /**
  * @property totalDonors
@@ -9,13 +8,12 @@ import RaffleContext from '../RaffleContext.jsx'
  * @property cumulativeUniqueDonors
  */
 
-const RaffleReportDonationsDonorsLines = () => {
-    const {summary} = useContext(RaffleContext)
+const RaffleReportDonationsDonorsLines = ({data}) => {
 
     const subHeadStyle = {margin: '30px 0px 0px 0px', width: '100%', textAlign: 'center', color: '#fff', fontSize:'1.2rem'}
     const chartHeight = 120
 
-    if (summary?.lineDataCurrent?.cumulativeDonations?.length === 0) return (
+    if (data?.lineDataCurrent?.cumulativeDonations?.length === 0) return (
         <div style={{color: '#fff', textAlign: 'center', fontSize: '1.2rem', margin: '20px 0px 0px 0px'}}>
             No data available
         </div>
@@ -27,14 +25,14 @@ const RaffleReportDonationsDonorsLines = () => {
             <div style={subHeadStyle}>Donations</div>
             <div style={{height: chartHeight, width: '100%'}}>
                 <RaffleReportLine
-                    chartdata={[{id: 'Donations Cumulative', data: summary.lineDataCurrent.cumulativeDonations}]}
+                    chartdata={[{id: 'Donations Cumulative', data: data.lineDataCurrent.cumulativeDonations || []}]}
                     chartHeight={chartHeight} showAxisBottom={false}
                     colors={['#4fa720']} tickValues={5}
                 />
             </div>
             <div style={{height: chartHeight, width: '100%'}}>
                 <RaffleReportLine
-                    chartdata={[{id: 'Donations', data: summary.lineDataCurrent.totalDonations}]}
+                    chartdata={[{id: 'Donations', data: data.lineDataCurrent.totalDonations || []}]}
                     chartHeight={chartHeight} showAxisBottom={true}
                     colors={['#3a7919']} tickValues={2} curve={'step'}
                 />
@@ -43,14 +41,14 @@ const RaffleReportDonationsDonorsLines = () => {
 
             <div style={{height: chartHeight, width: '100%'}}>
                 <RaffleReportLine
-                    chartdata={[{id: 'Donors Cumulative', data: summary.lineDataCurrent.cumulativeUniqueDonors}]}
+                    chartdata={[{id: 'Donors Cumulative', data: data.lineDataCurrent.cumulativeUniqueDonors || []}]}
                     chartHeight={chartHeight} showAxisBottom={false}
                     colors={['#5265ed', '#082fd1', '#4fa720']}
                 />
             </div>
             <div style={{height: chartHeight, width: '100%'}}>
                 <RaffleReportLine
-                    chartdata={[{id: 'Donors', data: summary.lineDataCurrent.totalEntries}]}
+                    chartdata={[{id: 'Donors', data: data.lineDataCurrent.totalEntries || []}]}
                     chartHeight={chartHeight} showAxisBottom={true}
                     colors={['#082fd1', '#4fa720']} tickValues={2} curve={'step'}
                 />

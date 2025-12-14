@@ -4,7 +4,7 @@ import useData from '../../util/useData'
 import usePageTitle from '../../util/usePageTitle'
 import useWindowSize from '../../util/useWindowSize'
 import dayjs from 'dayjs'
-import {raflResponseDetails, raflSiteStats2025} from '../../data/dataUrls'
+import {raflResponseDetails, raflSiteStats} from '../../data/dataUrls'
 import RaffleSummary from './RaffleSummary.jsx'
 import RafflePageTrackingTable from './RafflePageTrackingTable.jsx'
 import RaffleReportsPotTable from './RaffleReportsPotTable.jsx'
@@ -21,8 +21,12 @@ function RaffleReport() {
     //TODO: switch back to main site stats file for 2026
 
     const {data, loading, error} = useData({urls})
-    const {raflResponseDetails, raflSiteStats2025} = data || {} //eslint-disable-line
+    const {raflResponseDetails, raflSiteStats} = data || {} //eslint-disable-line
     const {allPots} = useContext(RaffleContext)
+
+    const {summary} = useContext(RaffleContext)
+
+    console.log('summary', summary)
 
     const {width} = useWindowSize()
     const smallWindow = width < 560
@@ -65,29 +69,30 @@ function RaffleReport() {
 
             <div style={firstHeaderStyle}>Totals Over Time</div>
             <RaffleYOYLines/>
-            <RaffleReportDonationsDonorsLines data={raflResponseDetails?.['detailedData']}/>
+            <RaffleReportDonationsDonorsLines data={summary}/>
 
             <div style={headerStyle}>Site Traffic</div>
-            <RaffleSummary data={raflSiteStats2025}/>
+            <RaffleSummary data={raflSiteStats}/>
 
             <div style={headerStyle}>Belt Distribution</div>
-            <RaffleBeltDistribution data={raflResponseDetails?.summaryData}/>
+            <RaffleBeltDistribution data={summary}/>
 
             <div style={headerStyle}>Page Tracking</div>
-            <RafflePageTrackingTable data={raflSiteStats2025}/>
+            <RafflePageTrackingTable data={raflSiteStats}/>
 
             <div style={headerStyle}>Pot Details</div>
-            <RaffleReportsPotTable statsData={raflSiteStats2025} allPots={allPots}/>
+            <RaffleReportsPotTable statsData={raflSiteStats} allPots={allPots}/>
 
             <div style={headerStyle}>Charity Details</div>
             <RaffleReportsCharityTable/>
+
 
         </div>
     )
 }
 
 const urls = {
-    raflSiteStats2025,
+    raflSiteStats,
     raflResponseDetails
 }
 

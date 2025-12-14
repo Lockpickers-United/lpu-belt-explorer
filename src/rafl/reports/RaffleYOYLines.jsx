@@ -4,7 +4,7 @@ import useWindowSize from '../../util/useWindowSize.jsx'
 import RaffleContext from '../RaffleContext.jsx'
 
 /**
- @property cumulativeDonations2024
+ * @property cumulativeDonations2024
  * @property cumulativeDonations2025
  */
 
@@ -34,7 +34,7 @@ const RaffleYOYLines = () => {
             <div style={{height: chartHeight, width: '100%'}}>
                 <RaffleYOYLine
                     chartdata={[
-                        {id: '2026', data: summary.lineDataCurrent.cumulativeDonations},
+                        {id: '2026', data: summary.lineDataCurrent.cumulativeDonations || []},
                         {id: '2025', data: summary.historicalLineData.cumulativeDonations2025 || []},
                         {id: '2024', data: summary.historicalLineData.cumulativeDonations2024 || []},
                     ]}

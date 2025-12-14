@@ -15,8 +15,8 @@ function RaffleStatsHeader({animate = false}) {
     const redditDonations = summary.redditDonations || 1
 
     const chartWidth = 300
-    const discordWidth = (discordDonations / donationsTotal) * chartWidth
-    const redditWidth = (redditDonations / donationsTotal) * chartWidth
+    const discordWidth = donationsTotal ? (discordDonations / donationsTotal) * chartWidth : 0
+    const redditWidth = donationsTotal ? (redditDonations / donationsTotal) * chartWidth : 0
 
     const {isMobile, flexStyle} = useWindowSize()
     const statsPadding = !isMobile ? '14px 20px 12px 20px' : '10px 10px 16px 10px'

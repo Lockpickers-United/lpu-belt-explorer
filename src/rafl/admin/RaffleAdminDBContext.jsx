@@ -85,11 +85,14 @@ export function RaffleAdminDBProvider({children}) {
                 setDeepUnique(acc, ['entriesByDate', date, 'uniqueDonors'], `${entry.username}|${entry.platform}`)
                 setDeep(acc, ['entriesByDate', date, 'uniqueDonorCount'], acc.entriesByDate[date].uniqueDonors.length || 0)
 
+                setDeepAdd(acc, ['beltDonorCount', entry.belt], 1)
+
                 acc.redditDonations = (acc.redditDonations || 0) + (entry.platform === 'Reddit' ? entry.totalDonation : 0)
                 acc.discordDonations = (acc.discordDonations || 0) + (entry.platform === 'Discord' ? entry.totalDonation : 0)
                 entry.donations.forEach(donation => {
                     setDeepAdd(acc, ['charities', [donation.charity.itemId], 'totalDonations'], donation.amount)
                     setDeepUnique(acc, ['charities', [donation.charity.itemId], 'uniqueDonors'], `${entry.username}|${entry.platform}`)
+                    setDeepAdd(acc, ['beltDonations', entry.belt], donation.amount || 0)
                 }, [])
                 entry.pots.forEach(pot => {
                     setDeepAdd(acc, ['pots', [pot.itemId], 'totalTickets'], pot.tickets)
