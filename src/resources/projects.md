@@ -20,13 +20,16 @@ Completed projects will be submitted for a vote in the Black Belt community in â
 ### To request
 Please send the following information in PM to a mod, or include in your black belt application:
 
-- Project Title:
-- Discipline:
-- Hoped for Tier: (1-5)
-- Evidence:
+- Project Title
+- Discipline
+- Hoped for Tier (1-5)
+- Evidence
+- Current Tier (if applicable)
+- Link to evidence of current tier
 
 **Note:** Project submissions must include clear documentation of the project for review. This should comprise organized and labeled images or videos. A write-up of the project, including all relevant details, is required where additional context is needed (e.g., Safe Manipulation). PDF format is preferred if possible.
 
+If you currently have a Tier awarded in this discipline, please include a description of the progress you have made towards your desired Tier.
 
 ## Voting Guidelines
 
