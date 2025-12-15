@@ -558,22 +558,22 @@
       {
         "segment": "Ranked locks",
         "count": 808,
-        "media": 758,
+        "media": 759,
         "coverage": "93%"
       },
       {
         "segment": "All locks",
         "count": 918,
-        "media": 845,
+        "media": 846,
         "coverage": "92%"
       }
     ],
-    "uniqueImages": 4055,
+    "uniqueImages": 4063,
     "contributors": 265,
     "topPhotographers": [
       {
         "contributor": "LockPickingFisherman",
-        "images": 374
+        "images": 379
       },
       {
         "contributor": "mgsecure",
@@ -792,6 +792,10 @@
         "images": 14
       },
       {
+        "contributor": "TrapperLock",
+        "images": 14
+      },
+      {
         "contributor": "Least",
         "images": 13
       },
@@ -841,10 +845,6 @@
       },
       {
         "contributor": "Plz7",
-        "images": 11
-      },
-      {
-        "contributor": "TrapperLock",
         "images": 11
       },
       {
@@ -1634,6 +1634,6 @@
     ]
   },
   "metadata": {
-    "updatedDateTime": "2025-12-13 04:11"
+    "updatedDateTime": "2025-12-15 19:25"
   }
 }
