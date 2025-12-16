@@ -112,11 +112,19 @@ export default [
             const {default: DansRoute} = await import('../info/DansRoute')
             return {element: <DansRoute/>}
         }
-    }, {
+    },
+    {
         path: '/projects',
         lazy: async () => {
             const {default: ProjectsRoute} = await import('../info/ProjectsRoute')
             return {element: <ProjectsRoute/>}
+        }
+    },
+    {
+        path: '/projectsQuests',
+        lazy: async () => {
+            const {default: ProjectsQuestsRoute} = await import('../projectsQuests/ProjectsQuestsRoute.jsx')
+            return {element: <ProjectsQuestsRoute/>}
         }
     },
     {

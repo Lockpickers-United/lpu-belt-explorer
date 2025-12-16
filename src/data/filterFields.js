@@ -106,4 +106,10 @@ export const lockRequestFilterFields = [
     {label: 'User Belt', fieldName: 'userBelt', sort: beltSort}
 ]
 
+export const projectFilterFields = [
+    {label: 'Discipline', fieldName: 'discipline'},
+    {label: 'Project Tier', fieldName: 'tierName'},
+    {label: 'Picker Name', fieldName: 'pickerName'},
+]
+
 

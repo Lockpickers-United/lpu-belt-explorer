@@ -1,10 +1,11 @@
-import React, {useCallback, useState} from 'react'
+import React, {useCallback, useContext, useEffect, useState} from 'react'
 import {Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow} from '@mui/material'
 import Link from '@mui/material/Link'
 import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp'
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown'
 import IconButton from '@mui/material/IconButton'
 import useWindowSize from '../util/useWindowSize.jsx'
+import FilterContext from '../context/FilterContext.jsx'
 
 const DataTableSort = ({
                            tableData,
@@ -16,13 +17,19 @@ const DataTableSort = ({
 
 
     const {rows, columns, defaultSort = 'name', sortable, wrap = false} = tableData
-    const [sort, setSort] = useState(defaultSort)
+    const {filters: allFilters, addFilter} = useContext(FilterContext)
+    const {sort: urlSort} = allFilters
+    const [sort, setSort] = useState(urlSort || defaultSort)
     const [ascending, setAscending] = useState(!tableData.columns.find(c => c.id === defaultSort)?.descending)
+
+    useEffect(() => {
+        if (sort !== urlSort) setSort(urlSort)
+    }, [sort, urlSort])
+
 
     const overflowStyle = wrap
         ? {whiteSpace: 'inherit'}
         : {whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis'}
-
 
     const sortRows = useCallback(({rows, sort, defaultSort, ascending}) => {
         const list = (rows || []).slice()
@@ -84,12 +91,15 @@ const DataTableSort = ({
     const handleSort = useCallback((columnId) => {
         if (columnId !== sort) {
             setSort(columnId)
+            addFilter('sort', columnId, true)
             const defaultAscending = !tableData.columns.find(c => c.id === columnId)?.descending
             setAscending(defaultAscending)
         } else {
             setAscending(!ascending)
         }
-    }, [ascending, setAscending, setSort, sort, tableData])
+    }, [addFilter, ascending, sort, tableData.columns])
+
+
 
     const sortIcon = ascending
         ? <ArrowDropUpIcon/>

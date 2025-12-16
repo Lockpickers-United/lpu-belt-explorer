@@ -19,7 +19,7 @@ import DataContext from '../context/DataContext.jsx'
 import FilterScopeToggle from './FilterScopeToggle.jsx'
 import {motion} from 'motion/react'
 
-function AdvancedFilterDrawerButton() {
+function AdvancedFilterDrawerButton({entryType='Lock'}) {
     const [open, setOpen] = useState(false)
 
     const {isLoggedIn} = useContext(AuthContext)
@@ -157,7 +157,7 @@ function AdvancedFilterDrawerButton() {
                                 fontWeight: 400,
                                 fontSize: '1.0rem',
                                 marginLeft: 8
-                            }}>({(visibleBeltEntries || visibleEntries).length || 0} Lock{(visibleBeltEntries || visibleEntries).length !== 1 && 's'})
+                            }}>({(visibleBeltEntries || visibleEntries).length || 0} {entryType}{(visibleBeltEntries || visibleEntries).length !== 1 && 's'})
                             </div>
                             <div style={{flexGrow: 1, textAlign: 'right', fontSize: '0.9rem'}}>
                                 {!showAdvancedSearch

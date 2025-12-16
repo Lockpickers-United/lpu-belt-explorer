@@ -78,4 +78,11 @@ export const scorecardExploreSortFields = [
     {label: 'Belt (Descending)', value: 'beltDescending'},
 ]
 
+export const projectsSortFields = [
+    {label: 'Default', value: undefined},
+    {label: 'Picker Name', value: 'pickerName'},
+    {label: 'Discipline', value: 'discipline'},
+    {label: 'Project Tier', value: 'tier'},
+]
+
 

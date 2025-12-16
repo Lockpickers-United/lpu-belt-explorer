@@ -12,6 +12,7 @@ export const collectionsStatsCurrent = `${url}/collectionStatsCurrent.json`
 export const collectionStatsDaily = `${url}/collectionStatsDaily.json`
 export const leaderboardData = `${url}/leaderboardData.json`
 export const recentAwardsEvidence = `${url}/recentAwardsEvidence.json`
+export const allProjectsEvidence = `${url}/allProjectsEvidence.json`
 
 export const pickStatsData = `${url}/pickStats.json`
 export const scorecardStats = `${url}/scorecardStats.json`

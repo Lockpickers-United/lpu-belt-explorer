@@ -14,7 +14,8 @@ function ViewFilterButtons({
                                resetAll = false,
                                expandAll = false,
                                style,
-                               advancedEnabled = false
+                               advancedEnabled = false,
+                               entryType='Lock'
                            }) {
 
     const {filters, filterCount, isFiltered} = useContext(FilterContext)
@@ -49,7 +50,7 @@ function ViewFilterButtons({
         >
             <SortTextButton sortValues={sortValues} compactMode={compactMode} expandAll={expandAll}/>
             {advancedEnabled
-                ? <AdvancedFilterDrawerButton extraFilters={extraFilters}/>
+                ? <AdvancedFilterDrawerButton extraFilters={extraFilters} entryType={entryType}/>
                 : <FilterTextButton extraFilters={extraFilters}/>
             }
             {!!reset &&
