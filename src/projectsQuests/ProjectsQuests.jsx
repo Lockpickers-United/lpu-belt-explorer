@@ -12,6 +12,7 @@ import Tracker from '../app/Tracker.jsx'
 import Footer from '../nav/Footer.jsx'
 import AdvancedFilters from '../filters/AdvancedFilters.jsx'
 import ProjectEvidenceButton from './ProjectEvidenceButton.jsx'
+import dayjs from 'dayjs'
 
 function ProjectsQuests() {
     const {visibleEntries = [], expandAll, updateTime} = useContext(DataContext)
@@ -30,7 +31,7 @@ function ProjectsQuests() {
         {id: 'pickerName', align: 'left', name: 'Picker Name'},
         {id: 'discipline', align: 'left', name: 'Discipline'},
         {id: 'tier', align: 'left', name: 'Tier'},
-        {id: 'dateText', align: 'left', name: 'Date'},
+        {id: 'date', align: 'left', name: 'Date'},
         {id: 'source', align: 'left', name: 'Source'},
         {id: 'evidenceUrl', align: 'center', name: 'Evidence'},
     ]
@@ -40,6 +41,7 @@ function ProjectsQuests() {
 
     const linkFunction = useCallback((id, string) => {
         if (id === 'evidenceUrl') return <ProjectEvidenceButton evidenceUrl={string}/>
+        if (id === 'date') return dayjs(string).format('MM/DD/YY')
         return string
         const url = charity.url || `https://www.google.com/search?q=${encodeURIComponent(charity.name)}`
         return id === 'displayName'
