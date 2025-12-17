@@ -925,5 +925,103 @@
     "shippingType": "No Intl. shipping",
     "shipsToUS": "",
     "dateAdded": "20251212"
+  },
+  {
+    "id": "2026-026",
+    "year": 2026,
+    "potNumber": 0,
+    "title": "Badger Blade",
+    "winnerCount": 1,
+    "displayName": "",
+    "description": "",
+    "descriptionContinued": "",
+    "potContents": "",
+    "keywords": "",
+    "contributedBy": [
+      "Badger"
+    ],
+    "tags": [],
+    "country": [
+      "USA"
+    ],
+    "shippingInfo": "Domestic only (USA)",
+    "splitShipping": "shippingSplit",
+    "splitShippingBoolean": false,
+    "shippingType": "No Intl. shipping",
+    "shipsToUS": "",
+    "dateAdded": "20251216"
+  },
+  {
+    "id": "2026-027",
+    "year": 2026,
+    "potNumber": 0,
+    "title": "The Jimys",
+    "winnerCount": 1,
+    "displayName": "",
+    "description": "",
+    "descriptionContinued": "",
+    "potContents": "",
+    "keywords": "",
+    "contributedBy": [
+      "spy-c"
+    ],
+    "tags": [],
+    "country": [
+      "USA"
+    ],
+    "shippingInfo": "",
+    "splitShipping": "shippingSplit",
+    "splitShippingBoolean": false,
+    "shippingType": "",
+    "shipsToUS": "",
+    "dateAdded": ""
+  },
+  {
+    "id": "2026-028",
+    "year": 2026,
+    "potNumber": 0,
+    "title": "Lightweight Locks",
+    "winnerCount": 1,
+    "displayName": "",
+    "description": "",
+    "descriptionContinued": "",
+    "potContents": "Two cutaways, 1 working key for each\n-1x 8-pin Assa Desmo camlock\n-1x American 1305",
+    "keywords": "",
+    "contributedBy": [
+      "infinitelyExplosive"
+    ],
+    "tags": [],
+    "country": [
+      "USA"
+    ],
+    "shippingInfo": "International shipping included",
+    "splitShipping": "shippingSplit",
+    "splitShippingBoolean": false,
+    "shippingType": "Intl. shipping included",
+    "shipsToUS": "",
+    "dateAdded": "20251216"
+  },
+  {
+    "id": "2026-029",
+    "year": 2026,
+    "potNumber": 0,
+    "title": "Wild-Biliam Pot",
+    "winnerCount": 1,
+    "displayName": "",
+    "description": "",
+    "descriptionContinued": "",
+    "potContents": "",
+    "keywords": "",
+    "contributedBy": [
+      "Wild-Biliam"
+    ],
+    "tags": [],
+    "country": [],
+    "shippingInfo": "",
+    "splitShipping": "shippingSplit",
+    "splitShippingBoolean": false,
+    "shippingType": "",
+    "shipsToUS": "",
+    "dateAdded": ""
   }
 ]
