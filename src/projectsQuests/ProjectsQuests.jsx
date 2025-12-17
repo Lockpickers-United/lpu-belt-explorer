@@ -3,7 +3,7 @@ import useWindowSize from '../util/useWindowSize.jsx'
 import Link from '@mui/material/Link'
 import DataContext from '../locks/LockDataProvider.jsx'
 import DataTableSort from '../misc/DataTableSort.jsx'
-import ExportButton from '../locks/ExportButton.jsx'
+import ProjectsExportButton from './ProjectsExportButton.jsx'
 import SearchBox from '../nav/SearchBox.jsx'
 import ViewFilterButtons from '../filters/ViewFilterButtons.jsx'
 import {projectsSortFields} from '../data/sortFields'
@@ -64,10 +64,10 @@ function ProjectsQuests() {
         </React.Fragment>
     )
 
-    const footerBefore = undefined
-    const _footerBefore = (
+    const _footerBefore = undefined
+    const footerBefore = (
         <div style={{margin: '30px 0px'}}>
-            <ExportButton text={true} entries={visibleEntries} advancedEnabled={true}/>
+            <ProjectsExportButton text={true} entries={visibleEntries} advancedEnabled={true}/>
         </div>
     )
 
@@ -76,7 +76,7 @@ function ProjectsQuests() {
     return (
         <React.Fragment>
             <Nav title='Projects' extras={extras}/>
-            <div style={{margin: 8, paddingBottom: 22}}>
+            <div style={{margin: 8, paddingBottom: 8}}>
 
                 <AdvancedFilters/>
                 <div style={style}>

@@ -50,33 +50,38 @@ export function DataProvider({children, profile}) {
         })
     }, [allEntries])
 
-    const searchedEntries = searchEntriesForText(search, [...mappedEntries])
+    const searchedEntries = useMemo(() => {
+        return searchEntriesForText(search, [...mappedEntries])
+    },[mappedEntries, search])
 
     const visibleEntries = useMemo(() => {
         // Filter the data
         const filtered = filterEntriesAdvanced({
             advancedFilterGroups: advancedFilterGroups(),
             entries: mappedEntries
-        })
+        }).sort((a, b) => a.pickerName.toLowerCase().localeCompare(b.pickerName.toLowerCase()))
 
         const searched = searchEntriesForText(search, [...filtered])
 
         return sort
             ? searched.sort((a, b) => {
-                if (sort === 'popularity') {
-                    return b.collectionSaves - a.collectionSaves
-                        || b.views - a.views
-                        || a.fuzzy.localeCompare(b.fuzzy)
-                } else if (sort === 'alphaAscending') {
-                    return a.fuzzy.localeCompare(b.fuzzy)
-                } else if (sort === 'alphaDescending') {
-                    return b.fuzzy.localeCompare(a.fuzzy)
-                } else if (sort === 'recentlyUpdated') {
-                    return Math.floor(dayjs(b.lastUpdated).valueOf() / 3600) - Math.floor(dayjs(a.lastUpdated).valueOf() / 3600)
-                        || a.fuzzy.localeCompare(b.fuzzy)
-                } else if (sort === 'dateAdded') {
-                    return Math.floor(dayjs(b.dateAdded).valueOf() / 3600 * 24) - Math.floor(dayjs(a.dateAdded).valueOf() / 3600 * 24)
-                        || a.fuzzy.localeCompare(b.fuzzy)
+                if (sort === 'discipline') {
+                    return a.discipline.localeCompare(b.discipline)
+                        || a.pickerName.localeCompare(b.pickerName)
+                } else if (sort === 'tier') {
+                    return a.tier.localeCompare(b.tier)
+                        || a.pickerName.localeCompare(b.pickerName)
+                } else if (sort === 'date') {
+                    return a.date.localeCompare(b.date)
+                        || a.pickerName.localeCompare(b.pickerName)
+                } else if (sort === 'source') {
+                    return a.source.localeCompare(b.source)
+                        || a.pickerName.localeCompare(b.pickerName)
+                } else if (sort === 'evidenceUrl') {
+                    return a.evidenceUrl.localeCompare(b.evidenceUrl)
+                        || a.pickerName.localeCompare(b.pickerName)
+                } else {
+                    return a.pickerName.localeCompare(b.pickerName)
                 }
             })
             : searched
