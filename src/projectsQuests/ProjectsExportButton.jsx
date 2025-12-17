@@ -27,7 +27,7 @@ function ProjectsExportButton({text, entries}) {
         const data = JSON.stringify(exportEntries)
         handleClose()
         download('lpuProjectsData.json', data)
-        enqueueSnackbar('Current lock entries downloaded as lpuProjectsData.json')
+        enqueueSnackbar('Projects downloaded as lpuProjectsData.json')
     }, [handleClose, exportEntries])
 
     const handleExportClipboard = useCallback(() => {
@@ -46,7 +46,7 @@ function ProjectsExportButton({text, entries}) {
 
         handleClose()
         navigator.clipboard.writeText(clipboardText).then()
-        enqueueSnackbar('Current lock entries copied to clipboard.')
+        enqueueSnackbar('Projects copied to clipboard.')
     }, [handleClose, exportEntries])
 
     const handleExportCsv = useCallback(() => {
@@ -73,7 +73,7 @@ function ProjectsExportButton({text, entries}) {
         const csvFile = `${headers}\n${csvData}`
         handleClose()
         download('lpuProjectsData.csv', csvFile)
-        enqueueSnackbar('Current lock entries downloaded as lpuProjectsData.csv')
+        enqueueSnackbar('Projects downloaded as lpuProjectsData.csv')
     }, [handleClose, exportEntries])
 
     return (
