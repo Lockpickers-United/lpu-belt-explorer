@@ -1,4 +1,4 @@
-import React, {useCallback, useContext, useMemo, useState} from 'react'
+import React, {useCallback, useContext, useMemo} from 'react'
 import DataContext from '../context/DataContext'
 import FilterContext from '../context/FilterContext'
 import dayjs from 'dayjs'
@@ -22,7 +22,7 @@ export function DataProvider({children, profile}) {
 
     const mappedEntries = useMemo(() => {
         return allEntries?.map(entry => {
-            let host
+            let host = undefined
             try {
                 const url = new URL(entry.evidenceUrl)
                 host = url.hostname
@@ -35,7 +35,7 @@ export function DataProvider({children, profile}) {
                 tierName: tierNames[entry.tier],
                 dateText: dayjs(entry.date).format('MM/DD/YY'),
                 source: entry.unclaimed ? 'Dan Sheet' : 'Scorecard',
-                envidenceHost: host,
+                validLink: !!host,
                 fuzzy: removeAccents(
                     [entryName(entry, 'long')]
                         .concat([

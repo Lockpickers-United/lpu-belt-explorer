@@ -8,7 +8,7 @@ import Tooltip from '@mui/material/Tooltip'
 import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline'
 import isValidUrl from '../util/isValidUrl'
 
-export default function ProjectEvidenceButton({evidenceUrl, handleChange = ()=>{}, owner=false}) {
+export default function ProjectEvidenceButton({evidenceUrl, handleChange = ()=>{}}) {
 
 
     const handleClick = useCallback(event => {

@@ -12,9 +12,10 @@ const DataTableSort = ({
                            tableWidth,
                            tableHeight,
                            linkFunction,
-                           totalsRow
+                           linkColumnId,
+                           totalsRow,
+                           largeFontSize = '0.95rem'
                        }) => {
-
 
     const {rows, columns, defaultSort = 'name', sortable, wrap = false} = tableData
     const {filters: allFilters, addFilter} = useContext(FilterContext)
@@ -22,10 +23,11 @@ const DataTableSort = ({
     const [sort, setSort] = useState(urlSort || defaultSort)
     const [ascending, setAscending] = useState(!tableData.columns.find(c => c.id === defaultSort)?.descending)
 
+    //console.log('rows', rows)
+
     useEffect(() => {
         if (sort !== urlSort) setSort(urlSort)
     }, [sort, urlSort])
-
 
     const overflowStyle = wrap
         ? {whiteSpace: 'inherit'}
@@ -100,7 +102,6 @@ const DataTableSort = ({
     }, [addFilter, ascending, sort, tableData.columns])
 
 
-
     const sortIcon = ascending
         ? <ArrowDropUpIcon/>
         : <ArrowDropDownIcon/>
@@ -115,10 +116,9 @@ const DataTableSort = ({
     const fontSize = mobile360 ? '.8rem'
         : mobile395 ? '.85rem'
             : mobile428 ? '.9rem'
-                : window560 ? '.95rem'
-                    : window820 ? '.95rem'
-                        : '.95rem'
-
+                : window560 ? largeFontSize
+                    : window820 ? largeFontSize
+                        : largeFontSize
 
     const leftMargins = {left: 14, center: 0, right: 0}
     const rightMargins = {left: 0, center: 0, right: 20}
@@ -204,7 +204,7 @@ const DataTableSort = ({
                                                 marginRight: rightMargins[column.align],
                                                 fontWeight: totalsRow && index === displayData.data.length - 1 ? 700 : 'inherit'
                                             }}>
-                                                {linkFunction(column.id, row[column.id] ? (row[column.displayField] || row[column.id]).toLocaleString() : '')}
+                                                {linkFunction(column.id, row[column.id] ? (row[column.displayField] || row[column.id]).toLocaleString() : '', row[linkColumnId])}
                                             </div>
                                         </TableCell>
                                         : <TableCell key={index + 1} style={{border: 0}}/>

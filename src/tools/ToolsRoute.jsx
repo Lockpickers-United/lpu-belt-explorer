@@ -115,6 +115,20 @@ function ToolsRoute() {
                         Displays info for logged in user. Includes uid, claims, Scorecard stats, and Collection details.
                     </div>
 
+                    <div style={{marginTop: 20, backgroundColor: '#222', padding: itemPadding}}>
+                        <Link onClick={() => navigate('/projectsQuests')}
+                              style={{
+                                  color: '#fff',
+                                  textDecorationColor: '#bbb',
+                                  cursor: 'pointer',
+                                  fontSize: '1.1rem',
+                                  fontWeight: 700
+                              }}>
+                            Projects/Quests
+                        </Link><br/>
+                        Lists all Projects in Scorecards and Unclaimed Dan Sheet Tabs
+                    </div>
+
                 </div>
                 <Footer/>
                 <Tracker feature='flickrInfo'/>

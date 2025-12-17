@@ -110,6 +110,7 @@ export const projectFilterFields = [
     {label: 'Discipline', fieldName: 'discipline'},
     {label: 'Project Tier', fieldName: 'tierName'},
     {label: 'Picker Name', fieldName: 'pickerName'},
+    {label: 'Source', fieldName: 'source'},
 ]
 
 
