@@ -28,36 +28,37 @@ function CollectionBeltBar({beltData}) {
             '#000', '#ddd', '#ddd']
 
     return (
-        <div key='bar'
-             style={{height: chartHeight, padding: '0px 8px 0px 8px', width: '100%'}}
-        >
-            <ResponsiveBar
-                data={beltData}
-                margin={chartMargin}
-                padding={0.15}
-                colors={(bar) => beltColors[bar.index % beltColors.length]}
-                animate={true}
-                axisBottom={{
-                    tickRotation: -45,
-                }}
+        <div>
+            <div key='bar'
+                 style={{height: chartHeight, padding: '0px 8px 0px 8px', width: '100%'}}
+            >
+                <ResponsiveBar
+                    data={beltData}
+                    margin={chartMargin}
+                    padding={0.15}
+                    colors={(bar) => beltColors[bar.index % beltColors.length]}
+                    animate={true}
+                    axisBottom={{
+                        tickRotation: -45
+                    }}
 
-                axisLeft={null}
-                enableGridY={false}
-                theme={primaryTheme}
-                isInteractive={false}
-                enableLabel={true}
-                label={e => e.data.count}
-                labelSkipWidth={12}
-                labelSkipHeight={12}
-                labelTextColor={(bar) => labelColors[bar.index % labelColors.length]}
-            />
+                    axisLeft={null}
+                    enableGridY={false}
+                    theme={primaryTheme}
+                    isInteractive={false}
+                    enableLabel={true}
+                    label={e => e.data.count}
+                    labelSkipWidth={12}
+                    labelSkipHeight={12}
+                    labelTextColor={(bar) => labelColors[bar.index % labelColors.length]}
+                />
+            </div>
 
             <div className='chart-legend' style={{
                 fontSize: '.9rem', color: '#ddd', textAlign: 'center', width: '100%', marginTop: '3px'
             }}>
                 Belt Distribution
             </div>
-
         </div>
     )
 }
