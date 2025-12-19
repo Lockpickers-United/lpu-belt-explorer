@@ -5,8 +5,8 @@ import {
     raflPotStatsSchema,
     raflCharityStatsSchema,
     raflSummaryStatsSchema
-} from './src/schemas.js'
-import validate from './src/validate.js'
+} from './importSchemas.js'
+import validate from './importValidate.js'
 
 import {sheetIds} from '../../../keys/raflSheetIds.js'
 const {raflStatsId} = sheetIds

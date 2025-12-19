@@ -5,8 +5,8 @@ import {
     raflSchema,
     raflCharitySchema,
     raflMediaSchema,
-} from './src/schemas.js'
-import validate from './src/validate.js'
+} from './importSchemas.js'
+import validate from './importValidate.js'
 
 import {sheetIds} from '../../../keys/raflSheetIds.js'
 const {raflSheetId} = sheetIds
@@ -59,13 +59,14 @@ export default async function importRaflData(req, _res) {
             .map(datum => ({
                 id: datum['Unique ID'],
                 year: +datum['Year'],
-                potNumber: datum['Pot Number'],
-                formId: datum['Form ID'],
+                potNumber: parseInt(datum['Pot Number']),
                 title: datum['Title'],
-                winnerCount: datum['Winner Count'],
+                winnerCount: parseInt(datum['Winner Count']) || 1,
                 displayName: datum['Display Name'],
                 description: datum['Description'],
+                descriptionContinued: datum['Description Continued'],
                 potContents: datum['Pot Contents'],
+                keywords: datum['Keywords'],
                 contributedBy: splitCommaValues(datum['Contributed By']),
                 tags: splitCommaValues(datum['Tags']),
                 country: splitCommaValues(datum['Country']),
@@ -73,7 +74,8 @@ export default async function importRaflData(req, _res) {
                 splitShipping: datum['Split Shipping'] === 'TRUE' ? 'shippingNotSplit' : 'shippingSplit',
                 splitShippingBoolean: datum['Split Shipping'] === 'TRUE',
                 shippingType: datum['Shipping Type'],
-                winner: splitCommaValues(datum['Winner'])
+                shipsToUS: datum['Ships To US'],
+                dateAdded: datum['Date Added']
             })).filter(x => x)
 
         // RAFL Media data
@@ -113,12 +115,15 @@ export default async function importRaflData(req, _res) {
             donations2024: parseInt(datum['Donations 2024'].replace(/[^0-9]/, '')) || 0
         })).filter(x => x)
 
+        const version = {version: new Date()}
+
         const serverPath = process.env.LOGNAME === 'dh_m5s5pf'
             ? '/home/dh_m5s5pf/explore.lpubelts.com/public/data'
             : './'
 
         fs.writeFileSync(`${serverPath}/raflPreviewPots.json`, JSON.stringify(raflMainData, null, 2))
         fs.writeFileSync(`${serverPath}/raflPreviewCharities.json`, JSON.stringify(raflCharities, null, 2))
+        fs.writeFileSync(`${serverPath}/raflPreviewVersion.json`, JSON.stringify(version, null, 2))
 
     } catch (err) {
         console.log('err', err)
