@@ -568,8 +568,8 @@
         "coverage": "92%"
       }
     ],
-    "uniqueImages": 4063,
-    "contributors": 265,
+    "uniqueImages": 4091,
+    "contributors": 271,
     "topPhotographers": [
       {
         "contributor": "LockPickingFisherman",
@@ -792,6 +792,10 @@
         "images": 14
       },
       {
+        "contributor": "Sarius",
+        "images": 14
+      },
+      {
         "contributor": "TrapperLock",
         "images": 14
       },
@@ -848,6 +852,10 @@
         "images": 11
       },
       {
+        "contributor": "Wyte",
+        "images": 11
+      },
+      {
         "contributor": "Alpama",
         "images": 10
       },
@@ -889,10 +897,6 @@
       },
       {
         "contributor": "Two06",
-        "images": 10
-      },
-      {
-        "contributor": "Wyte",
         "images": 10
       },
       {
@@ -953,6 +957,10 @@
       },
       {
         "contributor": "Brummie Lock Picker",
+        "images": 7
+      },
+      {
+        "contributor": "Craig 3.0",
         "images": 7
       },
       {
@@ -1100,6 +1108,10 @@
         "images": 4
       },
       {
+        "contributor": "infinitelyExplosive",
+        "images": 4
+      },
+      {
         "contributor": "lockpickersbench",
         "images": 4
       },
@@ -1185,10 +1197,6 @@
       },
       {
         "contributor": "CollateralTech",
-        "images": 3
-      },
-      {
-        "contributor": "Craig 3.0",
         "images": 3
       },
       {
@@ -1368,6 +1376,10 @@
         "images": 2
       },
       {
+        "contributor": "Lockleisure",
+        "images": 2
+      },
+      {
         "contributor": "MidnightPhilopicker",
         "images": 2
       },
@@ -1500,6 +1512,10 @@
         "images": 1
       },
       {
+        "contributor": "elocksmith",
+        "images": 1
+      },
+      {
         "contributor": "escape goat",
         "images": 1
       },
@@ -1612,6 +1628,10 @@
         "images": 1
       },
       {
+        "contributor": "The Open Organisation of Lockpickers",
+        "images": 1
+      },
+      {
         "contributor": "theyeetbeetle",
         "images": 1
       },
@@ -1621,6 +1641,10 @@
       },
       {
         "contributor": "White_Bear",
+        "images": 1
+      },
+      {
+        "contributor": "Wild-Billiam",
         "images": 1
       },
       {
@@ -1634,6 +1658,6 @@
     ]
   },
   "metadata": {
-    "updatedDateTime": "2025-12-17 04:00"
+    "updatedDateTime": "2025-12-19 04:15"
   }
 }
