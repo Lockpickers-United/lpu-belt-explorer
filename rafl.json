@@ -254,24 +254,26 @@
     "id": "2026-007",
     "year": 2026,
     "potNumber": 0,
-    "title": "Abloy PL685",
+    "title": "Sight-seeing Abloy",
     "winnerCount": 1,
     "displayName": "",
-    "description": "One Abloy PL685 which was special ordered from Abloy factory in Finland into USA, so it could then be sent back to Finland where it's is now ready for next trip to lucky winner. Includes one Abloy PL685 padlock with Protec2 core, two keys and US keycard packed in original box",
+    "description": "One Abloy PL685 which was special ordered from Abloy factory in Finland into USA, so it could then be sent back to Finland where it's is now ready for next trip to lucky winner. ",
     "descriptionContinued": "",
-    "potContents": "",
+    "potContents": "-1x Abloy PL685 padlock with Protec2 core, two keys and US keycard packed in original box",
     "keywords": "",
     "contributedBy": [
       "imaginary_unit"
     ],
     "tags": [],
-    "country": [],
-    "shippingInfo": "",
+    "country": [
+      "Finland"
+    ],
+    "shippingInfo": "International shipping included",
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
-    "shippingType": "",
-    "shipsToUS": "",
-    "dateAdded": "",
+    "shippingType": "Intl. shipping included",
+    "shipsToUS": "Winner pays fees",
+    "dateAdded": "20251220",
     "media": [
       {
         "title": "By: imaginary_unit",
@@ -1196,12 +1198,12 @@
     "id": "2026-026",
     "year": 2026,
     "potNumber": 0,
-    "title": "Badger Blade",
+    "title": "Honey Badger Knives -- the tanto",
     "winnerCount": 1,
     "displayName": "",
     "description": "",
     "descriptionContinued": "",
-    "potContents": "",
+    "potContents": "- Honey Badger Knives, large green Tanto\n- A bottle of super slick knife oil",
     "keywords": "",
     "contributedBy": [
       "Badger"
@@ -1226,7 +1228,7 @@
     "displayName": "",
     "description": "",
     "descriptionContinued": "",
-    "potContents": "",
+    "potContents": "A $50 gift certificate to the [JimyLongs Lock Pick Store](https://jimylongs.com/products)",
     "keywords": "",
     "contributedBy": [
       "spy-c"
@@ -1319,10 +1321,10 @@
     "country": [
       "USA"
     ],
-    "shippingInfo": "",
+    "shippingInfo": "Winner pays international shipping",
     "splitShipping": "shippingSplit",
     "splitShippingBoolean": false,
-    "shippingType": "",
+    "shippingType": "Winner pays Intl. shipping",
     "shipsToUS": "",
     "dateAdded": "",
     "media": [
@@ -1387,5 +1389,155 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/54995806803_a32cb148a0_o.jpg"
       }
     ]
+  },
+  {
+    "id": "2026-031",
+    "year": 2026,
+    "potNumber": 0,
+    "title": "Dirty Old Man",
+    "winnerCount": 1,
+    "displayName": "",
+    "description": "",
+    "descriptionContinued": "",
+    "potContents": "1 dirty old challenge lock",
+    "keywords": "",
+    "contributedBy": [
+      "PickSmith"
+    ],
+    "tags": [],
+    "country": [
+      "USA"
+    ],
+    "shippingInfo": "$10 towards international shipping",
+    "splitShipping": "shippingNotSplit",
+    "splitShippingBoolean": true,
+    "shippingType": "Split Intl. shipping",
+    "shipsToUS": "",
+    "dateAdded": "20251220"
+  },
+  {
+    "id": "2026-032",
+    "year": 2026,
+    "potNumber": 0,
+    "title": "Master of France",
+    "winnerCount": 1,
+    "displayName": "",
+    "description": "",
+    "descriptionContinued": "",
+    "potContents": "-Eschlenz 3D printed vice plus all the extras (followers, holders, etc) \n-Masterlock 140 \n-Masterlock 150 \n-Masterlock 410 \n-Paclock 90A Pro \n-Random cutaways (most no keys): Fichet 666, Fichet 484, unknown French PT, unknown French dimple, unknown French dimple with warding, Bricard PT with miserable warding",
+    "keywords": "",
+    "contributedBy": [
+      "Powhoundgabe"
+    ],
+    "tags": [],
+    "country": [
+      "USA"
+    ],
+    "shippingInfo": "50% towards international shipping",
+    "splitShipping": "shippingNotSplit",
+    "splitShippingBoolean": true,
+    "shippingType": "Split Intl. shipping",
+    "shipsToUS": "",
+    "dateAdded": "20251220"
+  },
+  {
+    "id": "2026-033",
+    "year": 2026,
+    "potNumber": 0,
+    "title": "Gem from the deep",
+    "winnerCount": 1,
+    "displayName": "",
+    "description": "",
+    "descriptionContinued": "",
+    "potContents": "A custom pick with a really deep gem profile",
+    "keywords": "",
+    "contributedBy": [
+      "4550"
+    ],
+    "tags": [],
+    "country": [
+      "USA"
+    ],
+    "shippingInfo": "",
+    "splitShipping": "shippingSplit",
+    "splitShippingBoolean": false,
+    "shippingType": "",
+    "shipsToUS": "",
+    "dateAdded": "20251220"
+  },
+  {
+    "id": "2026-034",
+    "year": 2026,
+    "potNumber": 0,
+    "title": "Boxed Rarities",
+    "winnerCount": 1,
+    "displayName": "",
+    "description": "",
+    "descriptionContinued": "",
+    "potContents": "- One ABUS TS5000 double cylinder with 6 keys (punctured) and security card - new in box. \n- One CES RE5 (+3P) double cylinder, special profile, with 4 keys, 1 special \"short key\" and security card - new in box.\n\n*Can be shipped to non-EU internationally as gift with DHL (including to the US, no duties), or via UPS (duties apply). Winner selects (and pays) shipping.*",
+    "keywords": "",
+    "contributedBy": [
+      "decoder"
+    ],
+    "tags": [],
+    "country": [
+      "Germany"
+    ],
+    "shippingInfo": "Winner pays international shipping",
+    "splitShipping": "shippingSplit",
+    "splitShippingBoolean": false,
+    "shippingType": "Winner pays Intl. shipping",
+    "shipsToUS": "",
+    "dateAdded": "20251221"
+  },
+  {
+    "id": "2026-035",
+    "year": 2026,
+    "potNumber": 0,
+    "title": "Sealed ABUS Nostalgia",
+    "winnerCount": 1,
+    "displayName": "",
+    "description": "",
+    "descriptionContinued": "",
+    "potContents": "- One sealed ABUS EC700 double cylinder with 3 keys.\n- One sealed ABUS XP1 double cylinder with 3 keys.\n\n*Can be shipped to non-EU internationally as gift with DHL (including to the US, no duties apply), or can be shipped with UPS (duties apply). Winner selects (and pays) shipping method.*",
+    "keywords": "",
+    "contributedBy": [
+      "decoder"
+    ],
+    "tags": [],
+    "country": [
+      "Germany"
+    ],
+    "shippingInfo": "Winner pays international shipping",
+    "splitShipping": "shippingSplit",
+    "splitShippingBoolean": false,
+    "shippingType": "Winner pays Intl. shipping",
+    "shipsToUS": "",
+    "dateAdded": "20251221"
+  },
+  {
+    "id": "2026-036",
+    "year": 2026,
+    "potNumber": 0,
+    "title": "Electromechanic Future",
+    "winnerCount": 1,
+    "displayName": "",
+    "description": "",
+    "descriptionContinued": "",
+    "potContents": "One Abloy PL342 Protec2 Cliq padlock - super weather proof edition with keyhole cap. One working key included (Note: This is likely an unprogrammed demo key, do not use this for anything security-related (duh)).\n\nAlso, I would ask the winner to not publicly resell this lock (within LPU this is fine). I don't want this lock to end up with someone who is not a lockpicker/collector/lock enthusiast. I'll be doing this on a community trust basis, please take it seriously or I will not be able to provide more goods like this.\n\n*Can be shipped to non-EU internationally as gift with DHL (including to the US, no duties apply), or can be shipped with UPS (duties apply). Winner selects (and pays) shipping method.*",
+    "keywords": "",
+    "contributedBy": [
+      "decoder"
+    ],
+    "tags": [],
+    "country": [
+      "Germany"
+    ],
+    "shippingInfo": "Winner pays international shipping",
+    "splitShipping": "shippingSplit",
+    "splitShippingBoolean": false,
+    "shippingType": "Winner pays Intl. shipping",
+    "shipsToUS": "",
+    "dateAdded": "20251221"
   }
 ]
