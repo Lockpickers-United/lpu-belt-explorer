@@ -42,47 +42,66 @@ Each progressive tier must fulfill all prior tier requirements.
 - **Tier 4** - Portfolio of at least 7 cases, including reproducing accurately at least two reasonably identical cases or producing a set of two or more cases with a (well planned and easily identifiable) theme at a high technical and artistic level. Examples of cases made of different groups of materials or components that demonstrate a high caliber of skills in a variety of advanced techniques. An emerging brand identity.
 - **Tier 5** - Portfolio of at least 10 high quality cases that utilize a multitude of techniques both basic and advanced in nature, ability to reproduce cases with high accuracy. A well-defined and refined brand identity.
 
+Example Case Making Projects:
+- Tier 2 - [**Ragnar**](https://explore.lpubelts.com/projects/CaseMaking-Ragnar-T2.pdf)
+- Tier 3 - [**mgsecure**](https://explore.lpubelts.com/projects/CaseMaking-mgsecure-T3.pdf)
+
 ### Challenge Lock Making
 
 - **Tier 1** - Portfolio of 3 good CLs or a very high quality one-off
 - **Tier 2** - Portfolio of 5 well constructed CLs of high level craftsmanship including minimum 2 locks with unusual security features*. Artistic merit can help elevate a standard mid level CL to high level craftsmanship.
-  - Example of a tier 2 challenge lock project: [Challenge Lock Evidence](https://docs.google.com/document/d/1CSDu3E3V9ljTW4ADj_tRX4cNr7Q7VAUum_1h_u0LZyg/edit)
 - **Tier 3** - Portfolio of at least 10 well constructed CLs featuring minimum of 5 locks with unusual security features*. Thematic sets, high quality artistic merit, or an attempt at technical innovation can help elevate a mid-level quality CL to high level craftsmanship.
 - **Tier 4** - Relevant contribution to the pool of advanced high quality CLs (at least 20 CLs, many of which with advanced or unusual security features). Verifiable technical innovation in pin making or locking mechanisms. Significant contribution with mentoring the production and distribution of high quality challenge locks.
 - **Tier 5** - Significant portfolio of advanced challenge locks (at least 40 CLs, many of which with advanced or unusual security features). Recognized community wide as an expert challenge lock maker, innovator, mentor, promoter and distributor.
 
-*Examples of unusual security features may include: pin-in-pin, rattlesnake-style pins, articulated pins, secondary locking mechanisms, addition of magnets, combined core modifications, sleeve making, split core, upper chamber work, among others.
+*Unusual security features may include: pin-in-pin, rattlesnake-style pins, articulated pins, secondary locking mechanisms, addition of magnets, combined core modifications, sleeve making, split core, upper chamber work, among others.
+
+Example Challenge Lock Projects:
+- Tier 2 - [**LockpickingEngineer**](https://explore.lpubelts.com/projects/ChallengeLocks-LockpickingEngineer-T2.pdf)
+- Tier 3 - [**Bandito Brandino07**](https://www.youtube.com/watch?v=b5vfMNO2Hmo)
+- Tier 4 - [**PickSmith**](https://explore.lpubelts.com/projects/ChallengeLocks-PickSmith-T4.pdf)
+
 
 ### Community Involvement
 
 - **Tier 1** - Demonstrates a well-developed project with a recognizable community impact.
 - **Tier 2** - Demonstrates advanced community projects. Must show a higher level of community improvement and demonstrate a commitment outside the interest of being a black belt.
 - **Tier 3** - Demonstrates a unique impression on the community through the efforts of either a personal or community project. Usually, the effort of this level would be equivalent to 3 months of devotion to said project.
-  - Recently Accepted [Tier 3 Submission](/#/view?pageId=tierThreeExample)
 - **Tier 4** - Demonstrates a unique and lasting impression on the community through the efforts of a community-based project. Usually, the effort of this level would be equivalent to 6 months of devotion to said project.
 - **Tier 5** - Demonstrates a mastery of community projects that create a unique and lasting impression on the community. Usually, the effort of this level would be equivalent to a year of devotion to said project.
+
+Example Community Involvement Projects
+- Tier 2 - [**VectorPotential**](https://explore.lpubelts.com/projects/CommunityInvolvement-VectorPotential-T2.pdf)
+- Tier 3 - [**Lady Locks**](/#/view?pageId=tierThreeExample)
+- Tier 3 - [**LockNoob**](https://www.youtube.com/watch?v=a2rp9PtkqEI) (Knowledge of locks and keyways)
+- Tier 5 - [**mgsecure**](https://explore.lpubelts.com/projects/CommunityInvolvement-mgsecure-T5.pdf)
 
 ### Cutaway Making
 
 - **Tier 1** - At least one good quality cutaway
 - **Tier 2** - 2 good cutaways of separate locks or one of extraordinary quality. Leniency for handmade.
-  - Example of a tier 2 cutaway project: [Loose_Shirt6551 BB1 Quest Cutaways](https://docs.google.com/presentation/d/1Y7PGX88xdMlEWOWhMb7oRjJ1FBs62NNrCkwEJ0bjM5Q)
 - **Tier 3** - Portfolio of at least 5 good quality cutaways, including two from mechanisms other than pin tumbler, or a double locking mechanism.
 - **Tier 4** - Portfolio of at least 10 cutaways of high quality, including complex mechanisms, innovations, and various non pin tumbler mechanisms.
 - **Tier 5** - Significant portfolio of advanced cutaways. Recognized community wide as an expert cutaway lockmaker. Fabrication and distribution of rare high quality cutaways.
 
 The cutaway locks should be completely functional with a working key. Exceptions to this rule might be considered if the mechanism doesn't allow it in any obvious way, but the maker must justify this. 
 
+Example Cutaway Projects:
+- Tier 2 - [**LooseShirt**](https://docs.google.com/presentation/d/1Y7PGX88xdMlEWOWhMb7oRjJ1FBs62NNrCkwEJ0bjM5Q)
+
+
 ### Disc Detainer Pick Making
 
 - **Tier 1** - Create any functional front tensioning Disc Detainer pick tip/tensioner set from stock material or using parts from existing near-functional pick designs capable of picking the lock it was designed for.
 - **Tier 2** - Create BOTH front-tensioning **as well as** rear- or random-tensioning Disc Detainer pick tip/tensioner sets from stock material or using parts from existing near-functional pick designs capable of picking specific locks they were designed for. **OR** Create any functional pick tip and handle from stock material or using parts from existing near-functional pick designs capable of picking the lock it was designed for.
-  -- Recently Accepted [Tier 2 Submission](https://www.youtube.com/watch?v=F9bHUqpbcpA)
 - **Tier 3** - At least 2 additional advanced pick tips* for at least 2 different locks with at least 2 different tensioning methods. All tips must demonstrate working to pick the locks they were designed for.
 - **Tier 4** - Added 2 more advanced tips* for 2 different locks, fulfilling previous tiers. Must have created a handle for each of two different tensioning methods OR a handle capable of different types of tensioning. Must be of high quality of build.
 - **Tier 5** - Demonstrate ability to make state-of-the-art setups including EITHER handles with extra or innovative features OR notably high quality, advanced* and functional tips for many high difficulty DD locks
 
 *Other than generic, Abus Plus, Anchor Las, Abloy Classic, Abloy Disklock, and similar tips, or including any new design distinct from commonly available ones.
+
+Example Disc Detainer Pick Projects:
+- Tier 2 - [**LockChuck**](https://www.youtube.com/watch?v=F9bHUqpbcpA)
 
 ### Impressioning
 

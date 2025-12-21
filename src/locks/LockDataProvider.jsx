@@ -28,12 +28,12 @@ export function DataProvider({children, allEntries, profile}) {
 
     const mappedEntries = useMemo(() => {
         const userNotes = profile?.userLockNotes || {}
-        let photographers = []
         return allEntries
             .map(entry => {
+                let photographers = {}
                 const newMedia = entry.media?.map(m => {
                     if (m && m.title && m.title?.includes('By:')) {
-                        setDeepUnique(photographers, [''], m.title.replace('By: ', '').trim())
+                        setDeepUnique(photographers, ['names'], m.title.replace('By: ', '').trim())
                     }
                     if (m?.thumbnailUrl?.includes('flickr.com')) {
                         m.thumbnailUrl = m.thumbnailUrl.replace('_w_d.jpg', '_w.jpg')
@@ -83,7 +83,7 @@ export function DataProvider({children, allEntries, profile}) {
                     simpleBelt: entry.belt.replace(/\s\d/g, ''),
                     filterBelts: entry.belt.startsWith('Black') ? ['Black', entry.belt] : [entry.belt],
                     personalNotes: userNotes[entry.id],
-                    photographers: photographers?.names
+                    photographers: photographers?.names,
                 }
             })
     }, [allEntries, profile])

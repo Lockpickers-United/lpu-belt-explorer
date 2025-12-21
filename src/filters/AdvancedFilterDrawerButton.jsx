@@ -180,7 +180,7 @@ function AdvancedFilterDrawerButton({entryType='Lock'}) {
                                     .filter(field => {
                                         return !(scope === 'belt' && tab !== 'search' && field.label === 'Belt')
                                     })
-                                    .map((field) => {
+                                    .map((field, index) => {
                                         const groupsArr = advancedFilterGroups()
                                         const existingIndex = groupsArr.findIndex(g => g.fieldName === field.fieldName && Array.isArray(g.values) && g.values.length > 0)
                                         const existing = existingIndex >= 0 ? groupsArr[existingIndex] : null
@@ -201,7 +201,7 @@ function AdvancedFilterDrawerButton({entryType='Lock'}) {
                                         const operator = existing ? existing.operator || 'OR' : 'OR'
                                         const groupIndex = existing ? existingIndex : 0
                                         return (
-                                            <motion.div key={field.fieldName} layout
+                                            <motion.div key={field.fieldName || index} layout
                                                         transition={{visualDuration: 0.25, ease: ['easeOut']}}>
                                                 <AdvancedFilterByField
                                                     {...field}
