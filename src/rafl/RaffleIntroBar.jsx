@@ -29,7 +29,7 @@ export default function RaffleIntroBar() {
                         <div style={{fontSize: '1.2rem', fontWeight: 500, marginTop: 1, marginBottom: 7}}>
                             RAFL is coming soon!
                         </div>
-                        We will start accepting entries on January 1st. In the meantime,
+                        We will start accepting entries on Monday, January 19th. In the meantime,
                         here&#39;s a preview of the pots that folks are developing.
                         Please note that <strong>all pots and contents are subject to change</strong> until
                         the raffle begins in January.
@@ -43,7 +43,7 @@ export default function RaffleIntroBar() {
                         <div style={{fontSize: '1.2rem', fontWeight: 500, marginTop: 1, marginBottom: 7}}>
                             RAFL is coming soon!
                         </div>
-                        We will start accepting entries on January 1st. See you then!
+                        We will start accepting entries on Monday, January 19th. See you then!
                     </div>
                 </div>
             }
@@ -71,9 +71,9 @@ export default function RaffleIntroBar() {
                         </Link>
                         </div>
                         <div style={{fontSize: '1rem', fontWeight: 700}}>
-                            Entries will be accepted through January 31,
+                            Entries will be accepted through February 14th,
                             and the primary prize drawing will happen via livestream at 11 a.m. PDT
-                            on Sunday, February 1.
+                            on Sunday, February 15th.
                         </div>
                     </div>
                 </div>
@@ -85,7 +85,7 @@ export default function RaffleIntroBar() {
                         <div style={{fontSize: '1.2rem', fontWeight: 500, marginTop: 1, marginBottom: 7}}>
                             Entries for RAFL 2026 are no longer being accepted.
                         </div>
-                        Tune in to the livestream at 11am US Pacific Time (PDT) on February 1 to see if you won:&nbsp;
+                        Tune in to the livestream at 11am US Pacific Time (PDT) on Sunday, February 15th to see if you won:&nbsp;
                         <Link onClick={() => openInNewTab('https://www.youtube.com/live/5ZCMkFkv_Rc')} style={{
                             color: '#ffffff',
                             fontWeight: 600
