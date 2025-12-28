@@ -554,13 +554,17 @@
       {
         "make": "TrioVing",
         "model": "(Vingcard) 55##"
+      },
+      {
+        "make": "TrioVing",
+        "model": "508"
       }
     ],
     "version": "with trampoline pins",
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "name": "TrioVing (Vingcard) 55##",
+    "name": "TrioVing (Vingcard) 55##, 508",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "features": [
       "Trampoline drivers"
@@ -2694,12 +2698,16 @@
       {
         "make": "ABUS",
         "model": "Nautic T84MB/40"
+      },
+      {
+        "make": "ABUS",
+        "model": "84/35"
       }
     ],
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "name": "ABUS Nautic T84MB/40",
+    "name": "ABUS Nautic T84MB/40, 84/35",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -5654,6 +5662,10 @@
       {
         "make": "ABUS",
         "model": "64Ti Titalium"
+      },
+      {
+        "make": "ABUS",
+        "model": "MyLock T65AL"
       }
     ],
     "version": "40mm or larger (≥5 pins)",
@@ -5698,7 +5710,7 @@
         "url": "http://lockwiki.com/index.php/ABUS_64TI"
       }
     ],
-    "name": "ABUS 64Ti Titalium",
+    "name": "ABUS 64Ti Titalium, MyLock T65AL",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "views": 6919,
     "lastUpdated": "2025-03-19T01:20:51.356Z",
@@ -14100,12 +14112,16 @@
       {
         "make": "Master Lock",
         "model": "S32 LOTO (Lockout Tagout)"
+      },
+      {
+        "make": "Master Lock",
+        "model": "LOTO 406"
       }
     ],
     "features": [
       "Unguttable"
     ],
-    "name": "Master Lock S32 LOTO (Lockout Tagout)",
+    "name": "Master Lock S32 LOTO (Lockout Tagout), LOTO 406",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "lockingMechanisms": [
       "Pin-tumbler"
@@ -16070,17 +16086,13 @@
       },
       {
         "make": "ABUS",
-        "model": "E90"
-      },
-      {
-        "make": "Wuerth",
         "model": "NP (6-pin)"
       }
     ],
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "name": "ABUS E20, E30, E60, E70, E90 / Wuerth NP (6-pin)",
+    "name": "ABUS E20, E30, E60, E70, NP (6-pin)",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "views": 7343,
     "lastUpdated": "2025-03-19T01:20:51.365Z",
@@ -29390,6 +29402,10 @@
       {
         "make": "TrioVing",
         "model": "d12 level 1 (aka d13 no long pin)"
+      },
+      {
+        "make": "Ruko",
+        "model": "1200"
       }
     ],
     "version": "barrel drivers, forked keypins",
@@ -29498,7 +29514,7 @@
         "url": "https://blackbag.toool.nl/?p=1797"
       }
     ],
-    "name": "ASSA d12, P600, Neptun 1900 / Ruko Merkur / TrioVing d12 level 1 (aka d13 no long pin)",
+    "name": "ASSA d12, P600, Neptun 1900 / Ruko Merkur / TrioVing d12 level 1 (aka d13 no long pin) / Ruko 1200",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "views": 3001,
     "lastUpdated": "2025-03-19T15:44:57.301Z"
@@ -35051,6 +35067,10 @@
       {
         "make": "DOM",
         "model": "RS 8"
+      },
+      {
+        "make": "Dorma",
+        "model": "RS 8"
       }
     ],
     "lockingMechanisms": [
@@ -35114,7 +35134,7 @@
         "url": "http://lockwiki.com/index.php/DOM_RS_8"
       }
     ],
-    "name": "DOM RS 8",
+    "name": "DOM RS 8 / Dorma RS 8",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "views": 1579,
     "lastUpdated": "2025-03-19T01:20:51.386Z"
@@ -36772,6 +36792,10 @@
       {
         "make": "Kaba",
         "model": "Penta"
+      },
+      {
+        "make": "Kaba",
+        "model": "Penta Cross"
       }
     ],
     "version": "<15 pins",
@@ -36816,7 +36840,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/52728219335_5d928963f1_o.jpg"
       }
     ],
-    "name": "Kaba Penta",
+    "name": "Kaba Penta, Penta Cross",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "features": [
       "High pin count"
@@ -41169,8 +41193,7 @@
       }
     ],
     "views": 2156,
-    "lastUpdated": "2025-03-19T01:20:51.392Z",
-    "version": "With sprung rear disc"
+    "lastUpdated": "2025-03-19T01:20:51.392Z"
   },
   "3c73c705": {
     "id": "3c73c705",
@@ -43453,6 +43476,10 @@
       {
         "make": "Kaba",
         "model": "Penta"
+      },
+      {
+        "make": "Kaba",
+        "model": "Penta Cross"
       }
     ],
     "version": "15-20 pins",
@@ -43497,7 +43524,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/52728219335_5d928963f1_o.jpg"
       }
     ],
-    "name": "Kaba Penta",
+    "name": "Kaba Penta, Penta Cross",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "features": [
       "High pin count"
@@ -43516,6 +43543,10 @@
       {
         "make": "Kaba",
         "model": "Penta"
+      },
+      {
+        "make": "Kaba",
+        "model": "Penta Cross"
       }
     ],
     "version": "21 or more pins",
@@ -43560,7 +43591,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/52728219335_5d928963f1_o.jpg"
       }
     ],
-    "name": "Kaba Penta",
+    "name": "Kaba Penta, Penta Cross",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "features": [
       "High pin count"
@@ -49258,7 +49289,7 @@
   },
   "01c9e8d1": {
     "id": "01c9e8d1",
-    "belt": "Unranked",
+    "belt": "Orange",
     "makeModels": [
       {
         "make": "Medeco",
@@ -51344,11 +51375,11 @@
   },
   "895be796": {
     "id": "895be796",
-    "belt": "Unranked",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "ISEO",
-        "model": "F6 extra S3"
+        "model": "F6 extra"
       }
     ],
     "media": [
@@ -51381,7 +51412,7 @@
       }
     ],
     "lastUpdated": "2025-03-19T15:44:57.322Z",
-    "name": "ISEO F6 extra S3",
+    "name": "ISEO F6 extra",
     "dateAdded": "2023-04-18T00:07:14.000Z",
     "views": 279,
     "features": [
@@ -60712,5 +60743,93 @@
     ],
     "name": "FCV Dimple",
     "dateAdded": "2025-11-23T19:59:27.062Z"
+  },
+  "110675cf": {
+    "id": "110675cf",
+    "belt": "Yellow",
+    "makeModels": [
+      {
+        "make": "Thirard",
+        "model": "Eco"
+      }
+    ],
+    "version": "5 lever",
+    "lockingMechanisms": [
+      "Lever"
+    ],
+    "features": [
+      "Padlock",
+      "Pin key",
+      "Curtain"
+    ],
+    "name": "Thirard Eco",
+    "dateAdded": "2025-12-28T18:08:44.764Z"
+  },
+  "ab236116": {
+    "id": "ab236116",
+    "belt": "Blue",
+    "makeModels": [
+      {
+        "make": "ABUS",
+        "model": "E90"
+      }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "name": "ABUS E90",
+    "dateAdded": "2025-12-28T18:08:44.766Z"
+  },
+  "05f9773b": {
+    "id": "05f9773b",
+    "belt": "Brown",
+    "makeModels": [
+      {
+        "make": "Medeco",
+        "model": "Original"
+      },
+      {
+        "make": "Medeco",
+        "model": "Biaxial"
+      },
+      {
+        "make": "Medeco",
+        "model": "M3"
+      }
+    ],
+    "version": "≥ 6 pin with ≥ 4 key pins with false gates",
+    "lockingMechanisms": [
+      "Sidebar",
+      "Pin-tumbler"
+    ],
+    "features": [
+      "Rotating gated keypins",
+      "False gates",
+      "Active sidebar"
+    ],
+    "notes": "****** **Special Picking Requirement:** Prior to picking, operate the lock with the key or rake pins to reset rotational orientation.",
+    "name": "Medeco Original, Biaxial, M3",
+    "dateAdded": "2025-12-28T18:08:44.771Z"
+  },
+  "c1026783": {
+    "id": "c1026783",
+    "belt": "Black 1",
+    "makeModels": [
+      {
+        "make": "ALPHA",
+        "model": "Frost"
+      }
+    ],
+    "lockingMechanisms": [
+      "Disc detainer"
+    ],
+    "features": [
+      "Rear tension",
+      "Disc steering system",
+      "False gates"
+    ],
+    "notes": "Often can be front tensioned",
+    "name": "ALPHA Frost",
+    "dateAdded": "2025-12-28T18:08:44.772Z"
   }
 }

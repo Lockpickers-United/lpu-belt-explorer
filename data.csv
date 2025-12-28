@@ -24,7 +24,7 @@ Yellow,ABUS,65/35,"35mm or smaller",Pin-tumbler,Unguttable,,1ce31c29
 Yellow,ABUS,84/35,,Pin-tumbler,Unguttable,,805fc883
 Yellow,ABUS,85,"30mm or smaller (<5 pins)",Pin-tumbler,Unguttable,,7982c469
 Yellow,ABUS,"MyLock / T65AL",,Pin-tumbler,Unguttable,,423dbebe
-Yellow,ABUS,"Nautic T84MB/40",,Pin-tumbler,,,9d830052
+Yellow,"ABUS,ABUS","Nautic T84MB/40,84/35",,Pin-tumbler,,,9d830052
 Yellow,ACE,"Laminated padlock","40mm or larger, 4 pins",Pin-tumbler,Unguttable,,abdf3acd
 Yellow,ALPHA,1000,"40mm up to 45mm (4pins / spools)",Pin-tumbler,,,82ea52a4
 Yellow,"American Lock",5200,"bump stop model: all standards + 1 anti-bump pin",Pin-tumbler,,"The bumpstop model of the American Lock 5200 can be distinguished by the rounded shape of the bow of its key, compared to the angular shape of the non-bumpstop.",a0d1bf97
@@ -82,6 +82,7 @@ Yellow,Squire,440,"4 lever, pin key",Lever,"Padlock,Pin key,Curtain",,a460c971
 Yellow,Squire,660,"4 lever",Lever,"Padlock,Pin key,Curtain",,920b7da1
 Yellow,Squire,Defiant,"5 lever",Lever,"Padlock,Pin key,Curtain",,ed713b97
 Yellow,,Stabilit,,Pin-tumbler,,,9fd77c9a
+Yellow,Thirard,Eco,"5 lever",Lever,"Padlock,Pin key,Curtain",,110675cf
 Yellow,,Wolfdog,,Pin-tumbler,Unguttable,,4b32e9dd
 Orange,ABUS,41,"40mm or larger (5 pins)",,,,18ecc45b
 Orange,ABUS,45/40,"brass body, 40mm or larger",Pin-tumbler,Unguttable,,67b285d9
@@ -89,7 +90,7 @@ Orange,ABUS,"5/45 Silver Rock",,Pin-tumbler,,,0feafca7
 Orange,ABUS,"54TI/50 Titalium",,Pin-tumbler,Unguttable,,16e9d2ab
 Orange,ABUS,55/40,"40mm or larger",Pin-tumbler,Unguttable,,632f4069
 Orange,ABUS,60/50,,Pin-tumbler,Unguttable,,d7188e81
-Orange,ABUS,"64Ti Titalium","40mm or larger (≥5 pins)",Pin-tumbler,Unguttable,,52f1e117
+Orange,"ABUS,ABUS","64Ti Titalium,MyLock T65AL","40mm or larger (≥5 pins)",Pin-tumbler,Unguttable,,52f1e117
 Orange,ABUS,65/40,,Pin-tumbler,Unguttable,,a0e50505
 Orange,ABUS,82/63,,Pin-tumbler,"Latest changelog",,f6ef12e5
 Orange,ABUS,83/40,,Pin-tumbler,,,3653f376
@@ -144,6 +145,7 @@ Orange,"Master Lock","1921D ""100 Anniversary"" Padlock",,Pin-tumbler,,"4 pins a
 Orange,"Master Lock",532,,Pin-tumbler,Unguttable,,e2e15f47
 Orange,"Master Lock,Master Lock,Master Lock","570,575,576",,Pin-tumbler,"Unguttable,Picking Risk","Due to unbalanced stacks, drivers may rest below shear, risking damage to the springs if that chamber is not picked.",9ca2c109
 Orange,"Master Lock","V-line 4150",,Pin-tumbler,Unguttable,,9441e2cc
+Orange,Medeco,KeyMark,,Pin-tumbler,"Under Review ⚑",,01c9e8d1
 Orange,Schlage,"Original F-series KiK with collapsible bible",,Pin-tumbler,,,50fdf847
 Orange,,SIB,,Pin-tumbler,,,74f65a9c
 Orange,,SMB,,,,,029fef1f
@@ -273,7 +275,7 @@ Green,"Master Lock",6835,,Pin-tumbler,,,366d5f50
 Green,"Master Lock",911,,Pin-tumbler,,,b1915ecd
 Green,"Master Lock",931,,Pin-tumbler,,,cb471080
 Green,"Master Lock","Pro Series",,Pin-tumbler,,,2bf16de8
-Green,"Master Lock","S32 LOTO (Lockout Tagout)",,Pin-tumbler,Unguttable,,efbc853f
+Green,"Master Lock,Master Lock","S32 LOTO (Lockout Tagout),LOTO 406",,Pin-tumbler,Unguttable,,efbc853f
 Green,"Mauer,Mauer","Elite 1,Elite 2",,Dimple,,,b8f4f5f5
 Green,Mauer,"MLS Redline",,Pin-tumbler,,,e5a61936
 Green,MCM,SCX,,Dimple,,,1f4e3e05
@@ -318,7 +320,8 @@ Blue,"ABUS,ABUS","75/50,75IB/50",,Dimple,Unguttable,,9ec8706c
 Blue,"ABUS,ABUS,ABUS","Bravus 1000,Bravus 2000,Bravus 3000",,Dimple,"Trap element","Requires 360° picking: these locks have traps that require some work to pick",ea0efaca
 Blue,"ABUS,ABUS,ABUS","C73,C83,C90","new pinning: security keypins + serrated and spooled t-pins",Pin-tumbler,,,85d93eb1
 Blue,ABUS,D10,,Dimple,,,f96de7cc
-Blue,"ABUS,ABUS,ABUS,ABUS,ABUS,Wuerth","E20,E30,E60,E70,E90,NP (6-pin)",,Pin-tumbler,,,5c0d870b
+Blue,"ABUS,ABUS,ABUS,ABUS,ABUS","E20,E30,E60,E70,NP (6-pin)",,Pin-tumbler,,,5c0d870b
+Blue,ABUS,E90,,Pin-tumbler,,,ab236116
 Blue,"ABUS,ABUS","EC550,EC660",,Dimple,,,7130d7c3
 Blue,"ABUS,ABUS","EC750,EC850","T-spools and recessed pins version, not 700/800",Dimple,,,3515caae
 Blue,"ABUS,ABUS,ABUS","EC880,P12R,X12R",,Dimple,"Trap element","require 360° picking",d005e7b8
@@ -428,7 +431,7 @@ Blue,"Stanley,Ezcurra,Ezcurra,SEA","Vidmar SEA SL-10,SEA 23,SEA 3,Locking System
 Blue,Takigen,10-pin,,Dimple,"High pin count",,b0d2e04c
 Blue,TESA,T60,,Dimple,"Tapered drivers",,8b5b655e
 Blue,Tokoz,Tech,,"Pin-tumbler,Wafer",,,35330d19
-Blue,TrioVing,"(Vingcard) 55##","with trampoline pins",Pin-tumbler,"Trampoline drivers",,55511995
+Blue,"TrioVing,TrioVing","(Vingcard) 55##,508","with trampoline pins",Pin-tumbler,"Trampoline drivers",,55511995
 Blue,U-Shin,"Showa Mortise","6 spools, torpedo keypins",Pin-tumbler,,,49c381dc
 Blue,U-Shin,"Showa X Key","8 pins",Dimple,,,95a9b042
 Blue,Union,"Strongbolt (2100)","5 lever",Lever,"Mortise,Pin key,Curtain,False gates",,86703028
@@ -494,6 +497,7 @@ Purple,IFAM,WX1000,,Dimple,Pin-in-pin,"16 pins in three rows",3b848976
 Purple,IKON,"sk6 vectorprofil rib extra","5 sliders","Pin-tumbler,Slider","Sprung sliders,Active sidebar","IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",4ffe03a9
 Purple,Illinois,Duo,,Wafer,"Some formats guttable",,07bc680a
 Purple,Ingersoll,"10 lever padlock",,Lever/sidebar,,,c11aca1a
+Purple,ISEO,"F6 extra",,,"Under Review ⚑",,895be796
 Purple,ISEO,Perfecta,****,Pump/push,,"**** **Special Picking Requirement:** requires 360 for belting; 2 versions exist, with tapered pins, and with tapered spools",6eab0c38
 Purple,"ISEO,ISEO","R50,R7",,Dimple,"Latest changelog",,30aa78ef
 Purple,"Jixin,Jasafe","Z03,Z03",,"Pin-tumbler,Sidepins",,,92482cc9
@@ -570,7 +574,7 @@ Brown,ALPHA,FB,"<12 pins",Dimple,"High pin count",,054731a5
 Brown,ALPHA,"YKK AP",,Dimple,"High pin count",,2c58f220
 Brown,"Anbo,Lex,GLK,Apec","X18u,X18,X18,XS","Clavis Q18 clones",Dimple,,,f85f4ac0
 Brown,Ankerslot,"Infinity K",,"Pin-tumbler,Magnet",,,5329b0f3
-Brown,"ASSA,ASSA,ASSA,Ruko,TrioVing","d12,P600,Neptun 1900,Merkur,d12 level 1 (aka d13 no long pin)","barrel drivers, forked keypins",Pin-tumbler,"Barrel drivers,Serrated/threaded milling,Forked keypins",,d3ad5a73
+Brown,"ASSA,ASSA,ASSA,Ruko,TrioVing,Ruko","d12,P600,Neptun 1900,Merkur,d12 level 1 (aka d13 no long pin),1200","barrel drivers, forked keypins",Pin-tumbler,"Barrel drivers,Serrated/threaded milling,Forked keypins",,d3ad5a73
 Brown,ASSA,Desmo,"8 sliders, no mastered pins",Slider,"Unsprung sliders,Active sidebar",,1459e2c6
 Brown,ASSA,"Desmo RC","10 sliders, no mastered pins",Slider,"Unsprung sliders,Active sidebar","** **Special Picking Requirement:** Must be picked to control",93c49314
 Brown,"ASSA,ASSA,ASSA","Twin Combi,1800,4800","barrel drivers, 2 or 3 finger pins","Pin-tumbler,Sidepins,Sidebar","Barrel drivers,Serrated/threaded milling,Active sidebar,Rotating fingerpins",,fd7b514a
@@ -624,6 +628,7 @@ Brown,Mauer,"President (71111)","7 lever",Lever,"Safe lock,Pipe key,Double bitte
 Brown,Mauer,"Variator A (70091)","7 lever",Lever,"Safe lock,Pipe key,Double bitted",,620b6e5a
 Brown,"Medeco,Medeco","Biaxial Camlock,M3 Camlock","4 or more pins ***","Sidebar,Slider","Rotating gated keypins,False gates,Active sidebar","*** **Special Picking Requirement:** Must be raked prior to picking to reset pin combination",305473cf
 Brown,Medeco,Duracam,***,"Dimple,Slider,Sidebar","Rotating gated keypins,False gates,Active sidebar","*** **Special Picking Requirement:** Must be raked prior to picking to reset pin combination",848940e5
+Brown,"Medeco,Medeco,Medeco","Original,Biaxial,M3","≥ 6 pin with ≥ 4 key pins with false gates","Sidebar,Pin-tumbler","Rotating gated keypins,False gates,Active sidebar","****** **Special Picking Requirement:** Prior to picking, operate the lock with the key or rake pins to reset rotational orientation.",05f9773b
 Brown,"MG Serrature",HS,,Dimple,"High pin count",,540a14c0
 Brown,MIWA,EC,,Magnet,,,f257bf77
 Brown,"MIWA,Tostem","PS,DN","<7 unmastered wafers",Slider,,,2bf9f60e
@@ -659,7 +664,7 @@ Red,Clavis,T-20,"15-19 pins",Dimple,,,add0b067
 Red,Codkey,"Locksys L52","factory split core, 24 pins",Dimple,"Dual core",,7c6efd49
 Red,"Corbin Russwin",Emhart,"6 pins **",Pin-tumbler,"Interlocking pins","** **Special Picking Requirement:** Must be raked prior to picking to reset pin combination. Ideally assembled on video prior to picking.",c4f942f0
 Red,"DOM,INN","ix Saturn,Key Smart",,Dimple,"Interactive element,Torpedo keypins,Shark fin keypins",,6b06f591
-Red,DOM,"RS 8",,Pin-tumbler,"Magic DOM drivers,Sidepins,Torpedo keypins",,4993a918
+Red,"DOM,Dorma","RS 8,RS 8",,Pin-tumbler,"Magic DOM drivers,Sidepins,Torpedo keypins",,4993a918
 Red,Elzett,M,,Magnet,"Magnetic rotors",,ff0be785
 Red,"EVVA,EVVA,EVVA","3KS,3KS+,4KS","without False gates or 1-3 mastered sliders",Slider,"Unsprung sliders,False gates,Active sidebar",,265226b1
 Red,EVVA,Dual,">4 mastered elements",Slider,"False gates,Active sidebar",,00b569f2
@@ -680,7 +685,7 @@ Red,Kaba,Ace,"≥13 pins",Dimple,"High pin count",,434bdf9d
 Red,"Kaba,Kaba","experT,Quattro","<15 pins",Dimple,"High pin count",,0770580d
 Red,Kaba,Gemini,"≥13 pins",Dimple,"High pin count",,c8e86f14
 Red,Kaba,"Gemini pluS","≥14 pins",Dimple,"High pin count",,c4484574
-Red,Kaba,Penta,"<15 pins",Dimple,"High pin count",,e3081fd3
+Red,"Kaba,Kaba","Penta,Penta Cross","<15 pins",Dimple,"High pin count",,e3081fd3
 Red,Kaba,Star,"5+ directions, <16 pins",Dimple,"High pin count",,43deff29
 Red,Keso,8000Ω²,">= 13 pins",Dimple,"High pin count",,deb35ee7
 Red,Kromer,Novum,,Lever,"Pipe key,Double bitted,False gates",,281aa393
@@ -719,6 +724,7 @@ Red,Yanai,"R 2200M","<14 pins",Dimple,"High pin count,Latest changelog",,5eac6a2
 "Black 3",Abloy,Protec2,,"Disc detainer","Front tension,False gates,Bi-directional,Disc controller,Disc blocker system",,e87f0ca2
 "Black 2",Abloy,Sento,,"Disc detainer",,,cad3eff0
 "Black 1",Abloy,Sentry,,"Disc detainer","Rear tension,Disc steering system,False gates","Often can be front tensioned",2ae6a691
+"Black 1",ALPHA,Frost,,"Disc detainer","Rear tension,Disc steering system,False gates","Often can be front tensioned",c1026783
 "Black 1",ASSA,700,"gin/tree pins and matching countermilling in ≥ 4 chambers, ≥ 2 tree pins",Pin-tumbler,"Gin spool drivers,Tapered drivers,Undercut milling,Tree drivers",,f133510b
 "Black 3","ASSA,ASSA,TrioVing,Ruko","dp4400,dp11,dp,Garant+","6 pin with 10 sliders","Pin-tumbler,Slider","Unsprung sliders,Barrel drivers,Serrated/threaded milling,Active sidebar",,6e59ba12
 "Black 2",ASSA,"Twin 6000","gin drivers, 6 stacks with 5 side pins","Pin-tumbler,Sidepins","Gin spool drivers,Undercut milling,Sidepins,Active sidebar",,104776ef
@@ -741,7 +747,7 @@ Red,Yanai,"R 2200M","<14 pins",Dimple,"High pin count,Latest changelog",,5eac6a2
 "Black 1",Clavis,Q-18,,Dimple,"High pin count",,7ea33803
 "Black 2",Clavis,T-20,"20 pins",Dimple,"High pin count",,48cf387f
 "Black 1","Corbin Russwin",Emhart,"≥ 2 mastered chambers **",Pin-tumbler,"Interlocking pins","** **Special Picking Requirement:** Must be raked prior to picking to reset pin combination. Ideally assembled on video prior to picking.",c266d57b
-"Black 1",DOM,Diamant,"With sprung rear disc","Disc detainer","Front tension,False gates",,57fbcb1b
+"Black 1",DOM,Diamant,,"Disc detainer","Front tension,False gates",,57fbcb1b
 "Black 1",DOM,"ix Twinstar",,Dimple,"Shark fin keypins,Torpedo keypins,Interactive element",,3c73c705
 "Black 1","EVVA,EVVA","3KS,3KS+","false gates and no mastered sliders",Slider,"Unsprung sliders,False gates,Active sidebar",,f7452b9f
 "Black 1",EVVA,Dual,"1-4 mastered elements",Slider,"Active sidebar,False gates",,1e197456
@@ -767,8 +773,8 @@ Red,Yanai,"R 2200M","<14 pins",Dimple,"High pin count,Latest changelog",,5eac6a2
 "Black 1","JPM,Ruko","Surf,Combi Plus","6 pin with 5 side pins with 3 possible heights each","Pin-tumbler,Sidepins","Sidepins,Active sidebar,Barrel drivers,Serrated/threaded milling",,0082fa4c
 "Black 1","Kaba,MIWA,Kaba","20,JN,Star","4 directions, ≥ 15 pins",Dimple,"High pin count",,8f99236e
 "Black 1",Kaba,Matrix,"16 pins (fully pinned)",Dimple,"High pin count","High pin count",7d5c53c4
-"Black 1",Kaba,Penta,"15-20 pins",Dimple,"High pin count",,68b5a797
-"Black 2",Kaba,Penta,"21 or more pins",Dimple,"High pin count",,bc1509f5
+"Black 1","Kaba,Kaba","Penta,Penta Cross","15-20 pins",Dimple,"High pin count",,68b5a797
+"Black 2","Kaba,Kaba","Penta,Penta Cross","21 or more pins",Dimple,"High pin count",,bc1509f5
 "Black 1","Kaba,Kaba","Quattro,experT","15-20 pins",Dimple,"High pin count",,f7b52501
 "Black 2","Kaba,Kaba","Quattro,experT","21 or more pins",Dimple,"High pin count",,10968d37
 "Black 1",Kaba,Star,"≥ 5 rows, 16-20 pins",Dimple,"High pin count",,3ddfc71c
@@ -850,7 +856,6 @@ Unranked,Hobbs,"4 lever cabinet lock","uncurtained, no False gates",Lever,"Under
 Unranked,"Hong Dun","model tbd","security pinned dimple with sliders",,"Under Review ⚑",,4c90dcbd
 Unranked,Hori,1601,,Lever,,,476995cc
 Unranked,Hori,Trident,"standard pins",Dimple,"Under Review ⚑",,97e1ae9f
-Unranked,ISEO,"F6 extra S3",,,"Under Review ⚑",,895be796
 Unranked,Kaba,"Gemini T","≥13 pins",Dimple,"Under Review ⚑","High pin count",a7d98df3
 Unranked,"Kawaha,Magmaus","(any),(any)",,,"Under Review ⚑",,ab9df828
 Unranked,Kibb,"5 lever",,Lever,"Under Review ⚑",,991c6c07
@@ -863,7 +868,6 @@ Unranked,"Master Lock",160,,Pin-tumbler,"Under Review ⚑",,7b69a331
 Unranked,"Master Lock",2950EURD,,Dimple,"Under Review ⚑",,a6f31065
 Unranked,MCM,SS,,Dimple,"Under Review ⚑","Requires 360º",85f92137
 Unranked,"Medeco,Medeco","Biaxial Camlock,M3 Camlock","<4 pins ***","Sidebar,Slider","Rotating gated keypins,False gates,Active sidebar","*** **Special Picking Requirement:** Must be raked prior to picking to reset pin combination",58c676d3
-Unranked,Medeco,KeyMark,,Pin-tumbler,"Under Review ⚑",,01c9e8d1
 Unranked,Medeco,X4,,Pin-tumbler,"Under Review ⚑",,0684a655
 Unranked,Mindy,"AF 8-50 smiley dimple padlock",,Dimple,"Under Review ⚑",,e6872b30
 Unranked,MIWA,PX,,Pin-tumbler,,,fb472463

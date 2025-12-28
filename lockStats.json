@@ -3,15 +3,15 @@
     "description": "Locks",
     "data": [
       {
-        "value": 808,
+        "value": 814,
         "label": "Ranked"
       },
       {
-        "value": 918,
+        "value": 922,
         "label": "All"
       },
       {
-        "value": 110,
+        "value": 108,
         "label": "Unranked"
       }
     ]
@@ -20,68 +20,68 @@
     {
       "belt": "White",
       "count": 19,
-      "value": 0.020697167755991286,
+      "value": 0.020607375271149676,
       "id": "White"
     },
     {
       "belt": "Yellow",
-      "count": 66,
-      "value": 0.0718954248366013,
+      "count": 67,
+      "value": 0.07266811279826464,
       "id": "Yellow"
     },
     {
       "belt": "Orange",
-      "count": 80,
-      "value": 0.08714596949891068,
+      "count": 81,
+      "value": 0.0878524945770065,
       "id": "Orange"
     },
     {
       "belt": "Green",
       "count": 149,
-      "value": 0.16230936819172112,
+      "value": 0.1616052060737527,
       "id": "Green"
     },
     {
       "belt": "Blue",
-      "count": 131,
-      "value": 0.14270152505446623,
+      "count": 132,
+      "value": 0.14316702819956617,
       "id": "Blue"
     },
     {
       "belt": "Purple",
-      "count": 114,
-      "value": 0.12418300653594772,
+      "count": 115,
+      "value": 0.12472885032537961,
       "id": "Purple"
     },
     {
       "belt": "Brown",
-      "count": 83,
-      "value": 0.09041394335511982,
+      "count": 84,
+      "value": 0.0911062906724512,
       "id": "Brown"
     },
     {
       "belt": "Red",
       "count": 72,
-      "value": 0.0784313725490196,
+      "value": 0.07809110629067245,
       "id": "Red"
     },
     {
       "belt": "Black",
-      "count": 94,
-      "value": 0.10239651416122005,
+      "count": 95,
+      "value": 0.10303687635574837,
       "id": "Black"
     },
     {
       "belt": "Unranked",
-      "count": 110,
-      "value": 0.11982570806100218,
+      "count": 108,
+      "value": 0.11713665943600868,
       "id": "Unranked"
     }
   ],
   "lockingMechanisms": [
     {
       "label": "Pin-tumbler",
-      "value": 364,
+      "value": 365,
       "id": "pin-tumbler"
     },
     {
@@ -91,17 +91,17 @@
     },
     {
       "label": "Multiple",
-      "value": 95,
+      "value": 96,
       "id": "multiple"
     },
     {
       "label": "Lever",
-      "value": 76,
+      "value": 77,
       "id": "lever"
     },
     {
       "label": "Disc detainer",
-      "value": 33,
+      "value": 34,
       "id": "disc-detainer"
     },
     {
@@ -166,7 +166,7 @@
       },
       {
         "label": "Lever",
-        "value": 8,
+        "value": 9,
         "id": "lever"
       },
       {
@@ -178,7 +178,7 @@
     "Orange": [
       {
         "label": "Pin-tumbler",
-        "value": 70,
+        "value": 71,
         "id": "pin-tumbler"
       },
       {
@@ -242,7 +242,7 @@
     "Blue": [
       {
         "label": "Pin-tumbler",
-        "value": 64,
+        "value": 65,
         "id": "pin-tumbler"
       },
       {
@@ -351,7 +351,7 @@
       },
       {
         "label": "Multiple",
-        "value": 13,
+        "value": 14,
         "id": "multiple"
       },
       {
@@ -465,7 +465,7 @@
       },
       {
         "label": "Disc detainer",
-        "value": 11,
+        "value": 12,
         "id": "disc-detainer"
       },
       {
@@ -507,7 +507,7 @@
       },
       {
         "label": "Pin-tumbler",
-        "value": 22,
+        "value": 21,
         "id": "pin-tumbler"
       },
       {
@@ -557,19 +557,19 @@
       },
       {
         "segment": "Ranked locks",
-        "count": 808,
-        "media": 759,
+        "count": 814,
+        "media": 761,
         "coverage": "93%"
       },
       {
         "segment": "All locks",
-        "count": 918,
+        "count": 922,
         "media": 846,
-        "coverage": "92%"
+        "coverage": "91%"
       }
     ],
-    "uniqueImages": 4114,
-    "contributors": 274,
+    "uniqueImages": 4128,
+    "contributors": 277,
     "topPhotographers": [
       {
         "contributor": "LockPickingFisherman",
@@ -768,10 +768,6 @@
         "images": 16
       },
       {
-        "contributor": "Cheesehead",
-        "images": 15
-      },
-      {
         "contributor": "LockSportsman",
         "images": 15
       },
@@ -782,6 +778,10 @@
       {
         "contributor": "Scoooot",
         "images": 15
+      },
+      {
+        "contributor": "Cheesehead",
+        "images": 14
       },
       {
         "contributor": "Devo",
@@ -1072,6 +1072,10 @@
         "images": 5
       },
       {
+        "contributor": "Picksmith",
+        "images": 5
+      },
+      {
         "contributor": "Potti314",
         "images": 5
       },
@@ -1089,6 +1093,14 @@
       },
       {
         "contributor": "baek",
+        "images": 4
+      },
+      {
+        "contributor": "bask",
+        "images": 4
+      },
+      {
+        "contributor": "BurnB1",
         "images": 4
       },
       {
@@ -1178,6 +1190,10 @@
       {
         "contributor": "XEMON",
         "images": 4
+      },
+      {
+        "contributor": "4550",
+        "images": 3
       },
       {
         "contributor": "anonymous",
@@ -1324,10 +1340,6 @@
         "images": 2
       },
       {
-        "contributor": "bask",
-        "images": 2
-      },
-      {
         "contributor": "Bodhi-pickah",
         "images": 2
       },
@@ -1441,6 +1453,10 @@
       },
       {
         "contributor": "Skullsmashgame",
+        "images": 2
+      },
+      {
+        "contributor": "spoon",
         "images": 2
       },
       {
@@ -1636,10 +1652,6 @@
         "images": 1
       },
       {
-        "contributor": "spoon",
-        "images": 1
-      },
-      {
         "contributor": "The Open Organisation of Lockpickers",
         "images": 1
       },
@@ -1670,6 +1682,6 @@
     ]
   },
   "metadata": {
-    "updatedDateTime": "2025-12-21 23:57"
+    "updatedDateTime": "2025-12-28 18:08"
   }
 }

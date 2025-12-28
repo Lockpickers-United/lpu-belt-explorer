@@ -1403,6 +1403,10 @@
       {
         "make": "ABUS",
         "model": "Nautic T84MB/40"
+      },
+      {
+        "make": "ABUS",
+        "model": "84/35"
       }
     ],
     "lockingMechanisms": [
@@ -1430,7 +1434,7 @@
       }
     ],
     "views": 754,
-    "lastUpdated": "2025-12-02T23:39:17.928Z"
+    "lastUpdated": "2025-12-28T18:08:45.104Z"
   },
   {
     "id": "abdf3acd",
@@ -4358,6 +4362,27 @@
     "lastUpdated": "2025-12-02T23:39:17.930Z"
   },
   {
+    "id": "110675cf",
+    "belt": "Yellow",
+    "makeModels": [
+      {
+        "make": "Thirard",
+        "model": "Eco"
+      }
+    ],
+    "version": "5 lever",
+    "lockingMechanisms": [
+      "Lever"
+    ],
+    "features": [
+      "Padlock",
+      "Pin key",
+      "Curtain"
+    ],
+    "dateAdded": "2025-12-28T18:08:44.764Z",
+    "lastUpdated": "2025-12-28T18:08:45.104Z"
+  },
+  {
     "id": "4b32e9dd",
     "belt": "Yellow",
     "makeModels": [
@@ -4758,6 +4783,10 @@
       {
         "make": "ABUS",
         "model": "64Ti Titalium"
+      },
+      {
+        "make": "ABUS",
+        "model": "MyLock T65AL"
       }
     ],
     "version": "40mm or larger (≥5 pins)",
@@ -4806,7 +4835,7 @@
       }
     ],
     "views": 907,
-    "lastUpdated": "2025-12-02T23:39:17.930Z"
+    "lastUpdated": "2025-12-28T18:08:45.105Z"
   },
   {
     "id": "a0e50505",
@@ -7513,6 +7542,54 @@
     ],
     "views": 792,
     "lastUpdated": "2025-12-02T23:39:17.932Z"
+  },
+  {
+    "id": "01c9e8d1",
+    "belt": "Orange",
+    "makeModels": [
+      {
+        "make": "Medeco",
+        "model": "KeyMark"
+      }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "features": [
+      "Under Review ⚑"
+    ],
+    "dateAdded": "2023-03-02T19:05:25.000Z",
+    "media": [
+      {
+        "title": "By: Tyler J. Thomas",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52955645438_63c0e9517a_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52955645438/in/album-72177720308871093/",
+        "sequenceId": 36,
+        "dateAdded": "2025-12-02T23:39:17.840Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52955645438_d09181800d_o.jpg"
+      },
+      {
+        "title": "By: Tyler J. Thomas",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52955577075_85294ddc2e_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52955577075/in/album-72177720308871093/",
+        "sequenceId": 37,
+        "dateAdded": "2025-12-02T23:39:17.840Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52955577075_15d1473090_o.jpg"
+      },
+      {
+        "title": "By: Tyler J. Thomas",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52955198381_f2334dc995_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52955198381/in/album-72177720308871093/",
+        "sequenceId": 38,
+        "dateAdded": "2025-12-02T23:39:17.840Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52955198381_23be46350a_o.jpg"
+      }
+    ],
+    "views": 555,
+    "lastUpdated": "2025-12-28T18:08:45.105Z"
   },
   {
     "id": "50fdf847",
@@ -15044,6 +15121,10 @@
       {
         "make": "Master Lock",
         "model": "S32 LOTO (Lockout Tagout)"
+      },
+      {
+        "make": "Master Lock",
+        "model": "LOTO 406"
       }
     ],
     "lockingMechanisms": [
@@ -15128,7 +15209,7 @@
       }
     ],
     "views": 795,
-    "lastUpdated": "2025-12-02T23:39:17.936Z"
+    "lastUpdated": "2025-12-28T18:08:45.107Z"
   },
   {
     "id": "b8f4f5f5",
@@ -17783,10 +17864,6 @@
       },
       {
         "make": "ABUS",
-        "model": "E90"
-      },
-      {
-        "make": "Wuerth",
         "model": "NP (6-pin)"
       }
     ],
@@ -17892,7 +17969,22 @@
       }
     ],
     "views": 780,
-    "lastUpdated": "2025-12-02T23:39:17.938Z"
+    "lastUpdated": "2025-12-28T18:08:45.107Z"
+  },
+  {
+    "id": "ab236116",
+    "belt": "Blue",
+    "makeModels": [
+      {
+        "make": "ABUS",
+        "model": "E90"
+      }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "dateAdded": "2025-12-28T18:08:44.766Z",
+    "lastUpdated": "2025-12-28T18:08:45.107Z"
   },
   {
     "id": "7130d7c3",
@@ -25161,6 +25253,10 @@
       {
         "make": "TrioVing",
         "model": "(Vingcard) 55##"
+      },
+      {
+        "make": "TrioVing",
+        "model": "508"
       }
     ],
     "version": "with trampoline pins",
@@ -25228,7 +25324,7 @@
       }
     ],
     "views": 730,
-    "lastUpdated": "2025-12-02T23:39:17.943Z"
+    "lastUpdated": "2025-12-28T18:08:45.109Z"
   },
   {
     "id": "49c381dc",
@@ -30164,6 +30260,51 @@
     ],
     "views": 718,
     "lastUpdated": "2025-12-02T23:39:17.946Z"
+  },
+  {
+    "id": "895be796",
+    "belt": "Purple",
+    "makeModels": [
+      {
+        "make": "ISEO",
+        "model": "F6 extra"
+      }
+    ],
+    "features": [
+      "Under Review ⚑"
+    ],
+    "dateAdded": "2023-04-18T00:07:14.000Z",
+    "media": [
+      {
+        "title": "By: Dra9i",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52825810354_376e575ff4_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52825810354/in/album-72177720307578387/",
+        "sequenceId": 2208,
+        "dateAdded": "2025-12-02T23:39:17.879Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52825810354_b8ab7fd1b0_o.jpg"
+      },
+      {
+        "title": "By: Dra9i",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52825058127_2295f6b045_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52825058127/in/album-72177720307578387/",
+        "sequenceId": 2209,
+        "dateAdded": "2025-12-02T23:39:17.879Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52825058127_1c9192313f_o.jpg"
+      },
+      {
+        "title": "By: Dra9i",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52826068533_818d8a7b0d_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52826068533/in/album-72177720307578387/",
+        "sequenceId": 2210,
+        "dateAdded": "2025-12-02T23:39:17.879Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52826068533_04492b0444_o.jpg"
+      }
+    ],
+    "views": 266,
+    "lastUpdated": "2025-12-28T18:08:45.110Z"
   },
   {
     "id": "6eab0c38",
@@ -35977,6 +36118,10 @@
       {
         "make": "TrioVing",
         "model": "d12 level 1 (aka d13 no long pin)"
+      },
+      {
+        "make": "Ruko",
+        "model": "1200"
       }
     ],
     "version": "barrel drivers, forked keypins",
@@ -36127,7 +36272,7 @@
       }
     ],
     "views": 852,
-    "lastUpdated": "2025-12-02T23:39:17.949Z"
+    "lastUpdated": "2025-12-28T18:08:45.111Z"
   },
   {
     "id": "1459e2c6",
@@ -39834,6 +39979,37 @@
     "lastUpdated": "2025-12-02T23:39:17.952Z"
   },
   {
+    "id": "05f9773b",
+    "belt": "Brown",
+    "makeModels": [
+      {
+        "make": "Medeco",
+        "model": "Original"
+      },
+      {
+        "make": "Medeco",
+        "model": "Biaxial"
+      },
+      {
+        "make": "Medeco",
+        "model": "M3"
+      }
+    ],
+    "version": "≥ 6 pin with ≥ 4 key pins with false gates",
+    "lockingMechanisms": [
+      "Sidebar",
+      "Pin-tumbler"
+    ],
+    "features": [
+      "Rotating gated keypins",
+      "False gates",
+      "Active sidebar"
+    ],
+    "notes": "****** **Special Picking Requirement:** Prior to picking, operate the lock with the key or rake pins to reset rotational orientation.",
+    "dateAdded": "2025-12-28T18:08:44.771Z",
+    "lastUpdated": "2025-12-28T18:08:45.112Z"
+  },
+  {
     "id": "540a14c0",
     "belt": "Brown",
     "makeModels": [
@@ -42538,6 +42714,10 @@
       {
         "make": "DOM",
         "model": "RS 8"
+      },
+      {
+        "make": "Dorma",
+        "model": "RS 8"
       }
     ],
     "lockingMechanisms": [
@@ -42603,7 +42783,7 @@
       }
     ],
     "views": 802,
-    "lastUpdated": "2025-12-02T23:39:17.954Z"
+    "lastUpdated": "2025-12-28T18:08:45.113Z"
   },
   {
     "id": "ff0be785",
@@ -44314,6 +44494,10 @@
       {
         "make": "Kaba",
         "model": "Penta"
+      },
+      {
+        "make": "Kaba",
+        "model": "Penta Cross"
       }
     ],
     "version": "<15 pins",
@@ -44367,7 +44551,7 @@
       "68b5a797",
       "bc1509f5"
     ],
-    "lastUpdated": "2025-12-02T23:39:17.956Z"
+    "lastUpdated": "2025-12-28T18:08:45.113Z"
   },
   {
     "id": "43deff29",
@@ -47256,6 +47440,27 @@
     "lastUpdated": "2025-12-02T23:39:17.958Z"
   },
   {
+    "id": "c1026783",
+    "belt": "Black 1",
+    "makeModels": [
+      {
+        "make": "ALPHA",
+        "model": "Frost"
+      }
+    ],
+    "lockingMechanisms": [
+      "Disc detainer"
+    ],
+    "features": [
+      "Rear tension",
+      "Disc steering system",
+      "False gates"
+    ],
+    "notes": "Often can be front tensioned",
+    "dateAdded": "2025-12-28T18:08:44.772Z",
+    "lastUpdated": "2025-12-28T18:08:45.114Z"
+  },
+  {
     "id": "f133510b",
     "belt": "Black 1",
     "makeModels": [
@@ -49386,7 +49591,6 @@
         "model": "Diamant"
       }
     ],
-    "version": "With sprung rear disc",
     "lockingMechanisms": [
       "Disc detainer"
     ],
@@ -52087,6 +52291,10 @@
       {
         "make": "Kaba",
         "model": "Penta"
+      },
+      {
+        "make": "Kaba",
+        "model": "Penta Cross"
       }
     ],
     "version": "15-20 pins",
@@ -52170,7 +52378,7 @@
       "e3081fd3",
       "bc1509f5"
     ],
-    "lastUpdated": "2025-12-02T23:39:17.961Z"
+    "lastUpdated": "2025-12-28T18:08:45.115Z"
   },
   {
     "id": "bc1509f5",
@@ -52179,6 +52387,10 @@
       {
         "make": "Kaba",
         "model": "Penta"
+      },
+      {
+        "make": "Kaba",
+        "model": "Penta Cross"
       }
     ],
     "version": "21 or more pins",
@@ -52232,7 +52444,7 @@
       "e3081fd3",
       "68b5a797"
     ],
-    "lastUpdated": "2025-12-02T23:39:17.961Z"
+    "lastUpdated": "2025-12-28T18:08:45.115Z"
   },
   {
     "id": "f7b52501",
@@ -58436,51 +58648,6 @@
     "lastUpdated": "2025-12-02T23:39:17.966Z"
   },
   {
-    "id": "895be796",
-    "belt": "Unranked",
-    "makeModels": [
-      {
-        "make": "ISEO",
-        "model": "F6 extra S3"
-      }
-    ],
-    "features": [
-      "Under Review ⚑"
-    ],
-    "dateAdded": "2023-04-18T00:07:14.000Z",
-    "media": [
-      {
-        "title": "By: Dra9i",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52825810354_376e575ff4_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52825810354/in/album-72177720307578387/",
-        "sequenceId": 2208,
-        "dateAdded": "2025-12-02T23:39:17.879Z",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/52825810354_b8ab7fd1b0_o.jpg"
-      },
-      {
-        "title": "By: Dra9i",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52825058127_2295f6b045_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52825058127/in/album-72177720307578387/",
-        "sequenceId": 2209,
-        "dateAdded": "2025-12-02T23:39:17.879Z",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/52825058127_1c9192313f_o.jpg"
-      },
-      {
-        "title": "By: Dra9i",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52826068533_818d8a7b0d_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52826068533/in/album-72177720307578387/",
-        "sequenceId": 2210,
-        "dateAdded": "2025-12-02T23:39:17.879Z",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/52826068533_04492b0444_o.jpg"
-      }
-    ],
-    "views": 266,
-    "lastUpdated": "2025-12-02T23:39:17.966Z"
-  },
-  {
     "id": "a7d98df3",
     "belt": "Unranked",
     "makeModels": [
@@ -59056,54 +59223,6 @@
       }
     ],
     "views": 31,
-    "lastUpdated": "2025-12-02T23:39:17.966Z"
-  },
-  {
-    "id": "01c9e8d1",
-    "belt": "Unranked",
-    "makeModels": [
-      {
-        "make": "Medeco",
-        "model": "KeyMark"
-      }
-    ],
-    "lockingMechanisms": [
-      "Pin-tumbler"
-    ],
-    "features": [
-      "Under Review ⚑"
-    ],
-    "dateAdded": "2023-03-02T19:05:25.000Z",
-    "media": [
-      {
-        "title": "By: Tyler J. Thomas",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52955645438_63c0e9517a_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52955645438/in/album-72177720308871093/",
-        "sequenceId": 36,
-        "dateAdded": "2025-12-02T23:39:17.840Z",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/52955645438_d09181800d_o.jpg"
-      },
-      {
-        "title": "By: Tyler J. Thomas",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52955577075_85294ddc2e_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52955577075/in/album-72177720308871093/",
-        "sequenceId": 37,
-        "dateAdded": "2025-12-02T23:39:17.840Z",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/52955577075_15d1473090_o.jpg"
-      },
-      {
-        "title": "By: Tyler J. Thomas",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52955198381_f2334dc995_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52955198381/in/album-72177720308871093/",
-        "sequenceId": 38,
-        "dateAdded": "2025-12-02T23:39:17.840Z",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/52955198381_23be46350a_o.jpg"
-      }
-    ],
-    "views": 555,
     "lastUpdated": "2025-12-02T23:39:17.966Z"
   },
   {
