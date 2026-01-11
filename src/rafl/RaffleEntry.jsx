@@ -198,7 +198,11 @@ function RaffleEntry({entry, expanded, onExpand, drawing}) {
                                 fontSize: descriptionFontSize,
                                 opacity: infoOpacity
                             }}>
-                                {entry.descriptionContinued}
+                                <ReactMarkdown rehypePlugins={[[rehypeExternalLinks, {target: '_blank'}]]}
+                                               components={{p: 'div'}}>
+                                    {entry.descriptionContinued}
+                                </ReactMarkdown>
+
                             </div>
                         }
 

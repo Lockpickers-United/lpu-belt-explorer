@@ -6,9 +6,7 @@ const app = admin.initializeApp({
     databaseURL: 'https://lpu-belt-explorer.firebaseio.com'
 })
 
-
 const prod = false
-
 
 const db = prod ? getFirestore(app) : getFirestore(app, 'lpubelts-dev')
 
@@ -21,7 +19,6 @@ const _allClaims = {
 }
 const newClaims = {raflAdmin:true, dataAdmin:true}
 
-// List of user IDs to update
 const users = [
     {uid: '4qqxB0nW8dczUws5XuAyhEkgZEj2', name: 'mgtest'},
 ]
@@ -57,7 +54,7 @@ async function updateCustomClaimsForUsers() {
         }
     }
     console.log('Finished updating custom claims for all users.')
-    process.exit(0) // Exit process after finishing
+    process.exit(0)
 }
 
 async function getCustomClaimsForUsers() {
@@ -72,10 +69,9 @@ async function getCustomClaimsForUsers() {
             })
     }
     console.log('Finished logging custom claims for all users.')
-    process.exit(0) // Exit process after finishing
+    process.exit(0)
 }
 
-// Execute the functions
 updateCustomClaimsForUsers().then(() => {
     getCustomClaimsForUsers().then()
 })
