@@ -553,18 +553,18 @@
     "makeModels": [
       {
         "make": "TrioVing",
-        "model": "(Vingcard) 55##"
+        "model": "508"
       },
       {
-        "make": "TrioVing",
-        "model": "508"
+        "make": "Ving",
+        "model": "Vingcard 55##"
       }
     ],
     "version": "with trampoline pins",
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "name": "TrioVing (Vingcard) 55##, 508",
+    "name": "TrioVing 508 / Ving Vingcard 55##",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "features": [
       "Trampoline drivers"
@@ -29401,7 +29401,7 @@
       },
       {
         "make": "TrioVing",
-        "model": "d12 level 1 (aka d13 no long pin)"
+        "model": "d12 level 1 (aka Trioving Dmax)"
       },
       {
         "make": "Ruko",
@@ -29514,7 +29514,7 @@
         "url": "https://blackbag.toool.nl/?p=1797"
       }
     ],
-    "name": "ASSA d12, P600, Neptun 1900 / Ruko Merkur / TrioVing d12 level 1 (aka d13 no long pin) / Ruko 1200",
+    "name": "ASSA d12, P600, Neptun 1900 / Ruko Merkur / TrioVing d12 level 1 (aka Trioving Dmax) / Ruko 1200",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "views": 3001,
     "lastUpdated": "2025-03-19T15:44:57.301Z"
@@ -51417,6 +51417,9 @@
     "views": 279,
     "features": [
       "Under Review ⚑"
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
     ]
   },
   "2d1adbaf": {
@@ -60753,14 +60756,8 @@
         "model": "Eco"
       }
     ],
-    "version": "5 lever",
     "lockingMechanisms": [
-      "Lever"
-    ],
-    "features": [
-      "Padlock",
-      "Pin key",
-      "Curtain"
+      "Pin-tumbler"
     ],
     "name": "Thirard Eco",
     "dateAdded": "2025-12-28T18:08:44.764Z"
@@ -60821,14 +60818,12 @@
       }
     ],
     "lockingMechanisms": [
-      "Disc detainer"
+      "Dimple"
     ],
     "features": [
-      "Rear tension",
-      "Disc steering system",
-      "False gates"
+      "High pin count",
+      "Overmilling"
     ],
-    "notes": "Often can be front tensioned",
     "name": "ALPHA Frost",
     "dateAdded": "2025-12-28T18:08:44.772Z"
   }
