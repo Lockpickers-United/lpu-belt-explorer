@@ -232,7 +232,7 @@ Both photos and videos of your picking accomplishment are accepted for this rank
 - [Squire 660](https://lpubelts.com/#/locks?id=920b7da1) (4 lever)
 - [Squire Defiant](https://lpubelts.com/#/locks?id=ed713b97) (5 lever)
 - [Stabilit](https://lpubelts.com/#/locks?id=9fd77c9a)
-- [Thirard Eco](https://lpubelts.com/#/locks?id=110675cf) (5 lever)
+- [Thirard Eco](https://lpubelts.com/#/locks?id=110675cf)
 - [Wolfdog](https://lpubelts.com/#/locks?id=4b32e9dd)
 
 
@@ -696,7 +696,7 @@ To qualify for a Blue Belt, you must also submit a project that demonstrates you
 - [Takigen 10-pin](https://lpubelts.com/#/locks?id=b0d2e04c)
 - [TESA T60](https://lpubelts.com/#/locks?id=8b5b655e)
 - [Tokoz Tech](https://lpubelts.com/#/locks?id=35330d19)
-- [TrioVing (Vingcard) 55## / TrioVing 508](https://lpubelts.com/#/locks?id=55511995) (with trampoline pins)
+- [TrioVing 508 / Ving Vingcard 55##](https://lpubelts.com/#/locks?id=55511995) (with trampoline pins)
 - [U-Shin Showa Mortise](https://lpubelts.com/#/locks?id=49c381dc) (6 spools, torpedo keypins)
 - [U-Shin Showa X Key](https://lpubelts.com/#/locks?id=95a9b042) (8 pins)
 - [Union Strongbolt (2100)](https://lpubelts.com/#/locks?id=86703028) (5 lever)
@@ -917,7 +917,7 @@ keypins, and countermilling are the norm for you.
 - [ALPHA YKK AP](https://lpubelts.com/#/locks?id=2c58f220)
 - [Anbo X18u / Lex X18 / GLK X18 / Apec XS](https://lpubelts.com/#/locks?id=f85f4ac0) (Clavis Q18 clones)
 - [Ankerslot Infinity K](https://lpubelts.com/#/locks?id=5329b0f3)
-- [ASSA d12 / ASSA P600 / ASSA Neptun 1900 / Ruko Merkur / TrioVing d12 level 1 (aka d13 no long pin) / Ruko 1200](https://lpubelts.com/#/locks?id=d3ad5a73) (barrel drivers, forked keypins)
+- [ASSA d12 / ASSA P600 / ASSA Neptun 1900 / Ruko Merkur / TrioVing d12 level 1 (aka Trioving Dmax) / Ruko 1200](https://lpubelts.com/#/locks?id=d3ad5a73) (barrel drivers, forked keypins)
 - [ASSA Desmo](https://lpubelts.com/#/locks?id=1459e2c6) (8 sliders, no mastered pins)
 - [ASSA Desmo RC](https://lpubelts.com/#/locks?id=93c49314) (10 sliders, no mastered pins)
 - [ASSA Twin Combi / ASSA 1800 / ASSA 4800](https://lpubelts.com/#/locks?id=fd7b514a) (barrel drivers, 2 or 3 finger pins)

@@ -4370,17 +4370,11 @@
         "model": "Eco"
       }
     ],
-    "version": "5 lever",
     "lockingMechanisms": [
-      "Lever"
-    ],
-    "features": [
-      "Padlock",
-      "Pin key",
-      "Curtain"
+      "Pin-tumbler"
     ],
     "dateAdded": "2025-12-28T18:08:44.764Z",
-    "lastUpdated": "2025-12-28T18:08:45.104Z"
+    "lastUpdated": "2026-01-12T02:14:06.120Z"
   },
   {
     "id": "4b32e9dd",
@@ -25252,11 +25246,11 @@
     "makeModels": [
       {
         "make": "TrioVing",
-        "model": "(Vingcard) 55##"
+        "model": "508"
       },
       {
-        "make": "TrioVing",
-        "model": "508"
+        "make": "Ving",
+        "model": "Vingcard 55##"
       }
     ],
     "version": "with trampoline pins",
@@ -25324,7 +25318,7 @@
       }
     ],
     "views": 730,
-    "lastUpdated": "2025-12-28T18:08:45.109Z"
+    "lastUpdated": "2026-01-12T02:14:06.123Z"
   },
   {
     "id": "49c381dc",
@@ -30270,6 +30264,9 @@
         "model": "F6 extra"
       }
     ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
     "features": [
       "Under Review ⚑"
     ],
@@ -30304,7 +30301,7 @@
       }
     ],
     "views": 266,
-    "lastUpdated": "2025-12-28T18:08:45.110Z"
+    "lastUpdated": "2026-01-12T02:14:06.124Z"
   },
   {
     "id": "6eab0c38",
@@ -36117,7 +36114,7 @@
       },
       {
         "make": "TrioVing",
-        "model": "d12 level 1 (aka d13 no long pin)"
+        "model": "d12 level 1 (aka Trioving Dmax)"
       },
       {
         "make": "Ruko",
@@ -36272,7 +36269,7 @@
       }
     ],
     "views": 852,
-    "lastUpdated": "2025-12-28T18:08:45.111Z"
+    "lastUpdated": "2026-01-12T02:14:06.126Z"
   },
   {
     "id": "1459e2c6",
@@ -47449,16 +47446,14 @@
       }
     ],
     "lockingMechanisms": [
-      "Disc detainer"
+      "Dimple"
     ],
     "features": [
-      "Rear tension",
-      "Disc steering system",
-      "False gates"
+      "High pin count",
+      "Overmilling"
     ],
-    "notes": "Often can be front tensioned",
     "dateAdded": "2025-12-28T18:08:44.772Z",
-    "lastUpdated": "2025-12-28T18:08:45.114Z"
+    "lastUpdated": "2026-01-12T02:14:06.129Z"
   },
   {
     "id": "f133510b",

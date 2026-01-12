@@ -82,7 +82,7 @@ Yellow,Squire,440,"4 lever, pin key",Lever,"Padlock,Pin key,Curtain",,a460c971
 Yellow,Squire,660,"4 lever",Lever,"Padlock,Pin key,Curtain",,920b7da1
 Yellow,Squire,Defiant,"5 lever",Lever,"Padlock,Pin key,Curtain",,ed713b97
 Yellow,,Stabilit,,Pin-tumbler,,,9fd77c9a
-Yellow,Thirard,Eco,"5 lever",Lever,"Padlock,Pin key,Curtain",,110675cf
+Yellow,Thirard,Eco,,Pin-tumbler,,,110675cf
 Yellow,,Wolfdog,,Pin-tumbler,Unguttable,,4b32e9dd
 Orange,ABUS,41,"40mm or larger (5 pins)",,,,18ecc45b
 Orange,ABUS,45/40,"brass body, 40mm or larger",Pin-tumbler,Unguttable,,67b285d9
@@ -431,7 +431,7 @@ Blue,"Stanley,Ezcurra,Ezcurra,SEA","Vidmar SEA SL-10,SEA 23,SEA 3,Locking System
 Blue,Takigen,10-pin,,Dimple,"High pin count",,b0d2e04c
 Blue,TESA,T60,,Dimple,"Tapered drivers",,8b5b655e
 Blue,Tokoz,Tech,,"Pin-tumbler,Wafer",,,35330d19
-Blue,"TrioVing,TrioVing","(Vingcard) 55##,508","with trampoline pins",Pin-tumbler,"Trampoline drivers",,55511995
+Blue,"TrioVing,Ving","508,Vingcard 55##","with trampoline pins",Pin-tumbler,"Trampoline drivers",,55511995
 Blue,U-Shin,"Showa Mortise","6 spools, torpedo keypins",Pin-tumbler,,,49c381dc
 Blue,U-Shin,"Showa X Key","8 pins",Dimple,,,95a9b042
 Blue,Union,"Strongbolt (2100)","5 lever",Lever,"Mortise,Pin key,Curtain,False gates",,86703028
@@ -497,7 +497,7 @@ Purple,IFAM,WX1000,,Dimple,Pin-in-pin,"16 pins in three rows",3b848976
 Purple,IKON,"sk6 vectorprofil rib extra","5 sliders","Pin-tumbler,Slider","Sprung sliders,Active sidebar","IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",4ffe03a9
 Purple,Illinois,Duo,,Wafer,"Some formats guttable",,07bc680a
 Purple,Ingersoll,"10 lever padlock",,Lever/sidebar,,,c11aca1a
-Purple,ISEO,"F6 extra",,,"Under Review ⚑",,895be796
+Purple,ISEO,"F6 extra",,Pin-tumbler,"Under Review ⚑",,895be796
 Purple,ISEO,Perfecta,****,Pump/push,,"**** **Special Picking Requirement:** requires 360 for belting; 2 versions exist, with tapered pins, and with tapered spools",6eab0c38
 Purple,"ISEO,ISEO","R50,R7",,Dimple,"Latest changelog",,30aa78ef
 Purple,"Jixin,Jasafe","Z03,Z03",,"Pin-tumbler,Sidepins",,,92482cc9
@@ -574,7 +574,7 @@ Brown,ALPHA,FB,"<12 pins",Dimple,"High pin count",,054731a5
 Brown,ALPHA,"YKK AP",,Dimple,"High pin count",,2c58f220
 Brown,"Anbo,Lex,GLK,Apec","X18u,X18,X18,XS","Clavis Q18 clones",Dimple,,,f85f4ac0
 Brown,Ankerslot,"Infinity K",,"Pin-tumbler,Magnet",,,5329b0f3
-Brown,"ASSA,ASSA,ASSA,Ruko,TrioVing,Ruko","d12,P600,Neptun 1900,Merkur,d12 level 1 (aka d13 no long pin),1200","barrel drivers, forked keypins",Pin-tumbler,"Barrel drivers,Serrated/threaded milling,Forked keypins",,d3ad5a73
+Brown,"ASSA,ASSA,ASSA,Ruko,TrioVing,Ruko","d12,P600,Neptun 1900,Merkur,d12 level 1 (aka Trioving Dmax),1200","barrel drivers, forked keypins",Pin-tumbler,"Barrel drivers,Serrated/threaded milling,Forked keypins",,d3ad5a73
 Brown,ASSA,Desmo,"8 sliders, no mastered pins",Slider,"Unsprung sliders,Active sidebar",,1459e2c6
 Brown,ASSA,"Desmo RC","10 sliders, no mastered pins",Slider,"Unsprung sliders,Active sidebar","** **Special Picking Requirement:** Must be picked to control",93c49314
 Brown,"ASSA,ASSA,ASSA","Twin Combi,1800,4800","barrel drivers, 2 or 3 finger pins","Pin-tumbler,Sidepins,Sidebar","Barrel drivers,Serrated/threaded milling,Active sidebar,Rotating fingerpins",,fd7b514a
@@ -724,7 +724,7 @@ Red,Yanai,"R 2200M","<14 pins",Dimple,"High pin count,Latest changelog",,5eac6a2
 "Black 3",Abloy,Protec2,,"Disc detainer","Front tension,False gates,Bi-directional,Disc controller,Disc blocker system",,e87f0ca2
 "Black 2",Abloy,Sento,,"Disc detainer",,,cad3eff0
 "Black 1",Abloy,Sentry,,"Disc detainer","Rear tension,Disc steering system,False gates","Often can be front tensioned",2ae6a691
-"Black 1",ALPHA,Frost,,"Disc detainer","Rear tension,Disc steering system,False gates","Often can be front tensioned",c1026783
+"Black 1",ALPHA,Frost,,Dimple,"High pin count,Overmilling",,c1026783
 "Black 1",ASSA,700,"gin/tree pins and matching countermilling in ≥ 4 chambers, ≥ 2 tree pins",Pin-tumbler,"Gin spool drivers,Tapered drivers,Undercut milling,Tree drivers",,f133510b
 "Black 3","ASSA,ASSA,TrioVing,Ruko","dp4400,dp11,dp,Garant+","6 pin with 10 sliders","Pin-tumbler,Slider","Unsprung sliders,Barrel drivers,Serrated/threaded milling,Active sidebar",,6e59ba12
 "Black 2",ASSA,"Twin 6000","gin drivers, 6 stacks with 5 side pins","Pin-tumbler,Sidepins","Gin spool drivers,Undercut milling,Sidepins,Active sidebar",,104776ef

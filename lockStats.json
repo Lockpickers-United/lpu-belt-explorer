@@ -81,12 +81,12 @@
   "lockingMechanisms": [
     {
       "label": "Pin-tumbler",
-      "value": 365,
+      "value": 367,
       "id": "pin-tumbler"
     },
     {
       "label": "Dimple",
-      "value": 206,
+      "value": 207,
       "id": "dimple"
     },
     {
@@ -96,12 +96,12 @@
     },
     {
       "label": "Lever",
-      "value": 77,
+      "value": 76,
       "id": "lever"
     },
     {
       "label": "Disc detainer",
-      "value": 34,
+      "value": 33,
       "id": "disc-detainer"
     },
     {
@@ -161,12 +161,12 @@
     "Yellow": [
       {
         "label": "Pin-tumbler",
-        "value": 56,
+        "value": 57,
         "id": "pin-tumbler"
       },
       {
         "label": "Lever",
-        "value": 9,
+        "value": 8,
         "id": "lever"
       },
       {
@@ -299,7 +299,7 @@
       },
       {
         "label": "Pin-tumbler",
-        "value": 14,
+        "value": 15,
         "id": "pin-tumbler"
       },
       {
@@ -455,7 +455,7 @@
     "Black": [
       {
         "label": "Dimple",
-        "value": 26,
+        "value": 27,
         "id": "dimple"
       },
       {
@@ -465,7 +465,7 @@
       },
       {
         "label": "Disc detainer",
-        "value": 12,
+        "value": 11,
         "id": "disc-detainer"
       },
       {
@@ -1710,6 +1710,6 @@
     ]
   },
   "metadata": {
-    "updatedDateTime": "2026-01-10 21:42"
+    "updatedDateTime": "2026-01-12 02:14"
   }
 }

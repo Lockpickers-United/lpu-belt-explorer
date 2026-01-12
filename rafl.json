@@ -682,7 +682,7 @@
     "id": "2026-017",
     "year": 2026,
     "potNumber": 0,
-    "title": "spoon's manly scents",
+    "title": "spoon's masculine scents",
     "winnerCount": 1,
     "displayName": "",
     "description": "",
@@ -1570,8 +1570,8 @@
     "title": "Polished Gems",
     "winnerCount": 1,
     "displayName": "",
-    "description": "Two immaculately polished gem picks with intricate wood handles.\nCheck them out in motion [here](https://www.youtube.com/watch?v=B9z-XO8cGCI)\nCheck out the polished picks picking a Polish lock [here](https://www.youtube.com/watch?v=-jjNqj1H4RE)\n\nDeep gem:\nBloodwood handle, 12.5mm diameter\nInlay rings: maple + makore, peltogyne + red gum, jatoba + mahogany, ebony + anigre\nInlay slot: paldao\n\nShort gem:\nBubinga handle, 11mm diameter\nInlay rings: ebony + anigre + birch, maple + mahogany + spanish cedar, peltogyne + red gum + beech\nInlay slot: angic",
-    "descriptionContinued": "",
+    "description": "Two immaculately polished gem picks with intricate wood handles.\nCheck them out in motion [here](https://www.youtube.com/watch?v=B9z-XO8cGCI)\nCheck out the polished picks picking a Polish lock [here](https://www.youtube.com/watch?v=-jjNqj1H4RE)",
+    "descriptionContinued": "Deep gem:\n- Bloodwood handle, 12.5mm diameter\n- Inlay rings: maple + makore, peltogyne + red gum, jatoba + mahogany, ebony + anigre\n- Inlay slot: paldao\n\n\nShort gem:\n- Bubinga handle, 11mm diameter\n- Inlay rings: ebony + anigre + birch, maple + mahogany + spanish cedar, peltogyne + red gum + beech\n- Inlay slot: angic",
     "potContents": "2x custom picks with gem profiles, one deep, one shallow",
     "keywords": "",
     "contributedBy": [
@@ -2280,6 +2280,81 @@
     "splitShippingBoolean": false,
     "shippingType": "Winner pays Intl. shipping",
     "shipsToUS": "",
+    "dateAdded": "20260110"
+  },
+  {
+    "id": "2026-051",
+    "year": 2026,
+    "potNumber": 0,
+    "title": "Fantasm Pick Case",
+    "winnerCount": 1,
+    "displayName": "",
+    "description": "Fantasm Industries didn't come here to whisper.\n\nThis lime green Phantom case is built like it owes you money and wants to make things right. We're talking 1000D Cordura, mil-spec everything, PALS webbing that could probably survive a small explosion. It's the kind of overkill that makes you nod approvingly while stuffing it full of picks.",
+    "descriptionContinued": "- Inside: 20 pockets that actually fit the handles you own (yeah, even those chunky 44 Delta boys), plus a full-width zippered pocket for all your tension tools and \"I swear I'll use this someday\" gear. Velcro fields on the inside and outside mean you can slap whatever patches represent your personal brand of chaos.\n\n- Outside: Carry handles, D-rings for hanging or strapping, and enough visibility that you'll never lose this thing. Seriously. You could drop it in a forest and find it from space.\n\n- This case holds its shape when loaded, carries comfortably, and looks like it escaped from a highlighter factory.\n\n- Tools not included. Bad decisions optional. Fantasm Industries builds stuff for people who actually use it.",
+    "potContents": "1x [Phantom Case](https://fantasmindustries.com/products/phantom-lock-pick-case-mil-spec-build) in lime/neon green",
+    "keywords": "",
+    "contributedBy": [
+      "Fantasm Industries"
+    ],
+    "tags": [],
+    "country": [
+      "USA"
+    ],
+    "shippingInfo": "$30 towards international shipping",
+    "splitShipping": "shippingNotSplit",
+    "splitShippingBoolean": true,
+    "shippingType": "Split Intl. shipping",
+    "shipsToUS": "",
+    "dateAdded": "20260110"
+  },
+  {
+    "id": "2026-052",
+    "year": 2026,
+    "potNumber": 0,
+    "title": "$250 all-inclusive Amvgaert pass",
+    "winnerCount": 1,
+    "displayName": "",
+    "description": "",
+    "descriptionContinued": "",
+    "potContents": "$250 store credit to [Adam's Lock Store](https://docs.google.com/spreadsheets/d/1_Dk619Y3Zj_zsLHKLxGZlRdgSUH1pF0u2BxFScgJPXc/edit?gid=32499356#gid=32499356)",
+    "keywords": "",
+    "contributedBy": [
+      "Amvgaert"
+    ],
+    "tags": [],
+    "country": [
+      "USA"
+    ],
+    "shippingInfo": "Digital prize",
+    "splitShipping": "shippingSplit",
+    "splitShippingBoolean": false,
+    "shippingType": "Digital prize",
+    "shipsToUS": "Yes",
+    "dateAdded": "20260110"
+  },
+  {
+    "id": "2026-053",
+    "year": 2026,
+    "potNumber": 0,
+    "title": "Mounted",
+    "winnerCount": 1,
+    "displayName": "",
+    "description": "[Sargent & Greenleaf 6741](/#/dials?id=8a2dc6e5&name=Sargent__Greenleaf_6741), mounted, your choice of color (if available), with change key and dial ring key",
+    "descriptionContinued": "",
+    "potContents": "- [S&G 6741](/#/dials?id=8a2dc6e5&name=Sargent__Greenleaf_6741) with change key and dial ring key, 3D-printed mount of winner's choice of color",
+    "keywords": "",
+    "contributedBy": [
+      "DWeb"
+    ],
+    "tags": [],
+    "country": [
+      "USA"
+    ],
+    "shippingInfo": "Winner pays international shipping",
+    "splitShipping": "shippingSplit",
+    "splitShippingBoolean": false,
+    "shippingType": "Winner pays Intl. shipping",
+    "shipsToUS": "Yes",
     "dateAdded": "20260110"
   }
 ]
