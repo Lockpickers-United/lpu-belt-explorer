@@ -29401,14 +29401,14 @@
       },
       {
         "make": "TrioVing",
-        "model": "d12 level 1 (aka Trioving Dmax)"
+        "model": "d12 level 1"
       },
       {
         "make": "Ruko",
         "model": "1200"
       }
     ],
-    "version": "barrel drivers, forked keypins",
+    "version": "barrel drivers, forked keypins, optional long pin",
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
@@ -29514,7 +29514,7 @@
         "url": "https://blackbag.toool.nl/?p=1797"
       }
     ],
-    "name": "ASSA d12, P600, Neptun 1900 / Ruko Merkur / TrioVing d12 level 1 (aka Trioving Dmax) / Ruko 1200",
+    "name": "ASSA d12, P600, Neptun 1900 / Ruko Merkur / TrioVing d12 level 1 / Ruko 1200",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "views": 3001,
     "lastUpdated": "2025-03-19T15:44:57.301Z"

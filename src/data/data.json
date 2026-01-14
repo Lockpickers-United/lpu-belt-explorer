@@ -36114,14 +36114,14 @@
       },
       {
         "make": "TrioVing",
-        "model": "d12 level 1 (aka Trioving Dmax)"
+        "model": "d12 level 1"
       },
       {
         "make": "Ruko",
         "model": "1200"
       }
     ],
-    "version": "barrel drivers, forked keypins",
+    "version": "barrel drivers, forked keypins, optional long pin",
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
@@ -36269,7 +36269,7 @@
       }
     ],
     "views": 852,
-    "lastUpdated": "2026-01-12T02:14:06.126Z"
+    "lastUpdated": "2026-01-14T03:53:42.058Z"
   },
   {
     "id": "1459e2c6",

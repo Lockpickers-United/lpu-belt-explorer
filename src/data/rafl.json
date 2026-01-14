@@ -33,6 +33,22 @@
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54195687736/in/album-72177720322353676/",
         "sequenceId": 1,
         "fullSizeUrl": "https://live.staticflickr.com/65535/54195687736_bd9b0c97f7_o.jpg"
+      },
+      {
+        "title": "By: Greyhound Picking",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/55040307211_eb1d7d2b0d_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55040307211/in/album-72177720331439767/",
+        "sequenceId": 48,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/55040307211_011b83b392_o.jpg"
+      },
+      {
+        "title": "By: Greyhound Picking",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/55040644955_26a0ea3519_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55040644955/in/album-72177720331439767/",
+        "sequenceId": 50,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/55040644955_d2141e2f59_o.jpg"
       }
     ]
   },
@@ -67,12 +83,12 @@
     "country": [
       "USA"
     ],
-    "shippingInfo": "",
-    "splitShipping": "shippingSplit",
-    "splitShippingBoolean": false,
+    "shippingInfo": "50% towards international shipping",
+    "splitShipping": "shippingNotSplit",
+    "splitShippingBoolean": true,
     "shippingType": "",
     "shipsToUS": "",
-    "dateAdded": "",
+    "dateAdded": "20260111",
     "media": [
       {
         "title": "By: CollateralTech",
@@ -87,7 +103,7 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/54976521170_26a4c3ee46_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54976521170/in/album-72177720330595608/",
-        "sequenceId": 47,
+        "sequenceId": 54,
         "fullSizeUrl": "https://live.staticflickr.com/65535/54976521170_e4ceb9ee7e_o.jpg"
       },
       {
@@ -95,7 +111,7 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/54976224271_6996d48c7d_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54976224271/in/album-72177720330595608/",
-        "sequenceId": 68,
+        "sequenceId": 79,
         "fullSizeUrl": "https://live.staticflickr.com/65535/54976224271_a72fdf9d59_o.jpg"
       },
       {
@@ -103,7 +119,7 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/54995928200_542434c6e1_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54995928200/in/album-72177720331042473/",
-        "sequenceId": 81,
+        "sequenceId": 99,
         "fullSizeUrl": "https://live.staticflickr.com/65535/54995928200_ecf95417f0_o.jpg"
       },
       {
@@ -111,7 +127,7 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/54995928370_808f06fd34_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54995928370/in/album-72177720331042473/",
-        "sequenceId": 91,
+        "sequenceId": 112,
         "fullSizeUrl": "https://live.staticflickr.com/65535/54995928370_49172016c7_o.jpg"
       },
       {
@@ -119,7 +135,7 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/54995806233_e8d69fbbc1_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54995806233/in/album-72177720331042473/",
-        "sequenceId": 98,
+        "sequenceId": 121,
         "fullSizeUrl": "https://live.staticflickr.com/65535/54995806233_b4eda373cf_o.jpg"
       }
     ]
@@ -162,7 +178,7 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/55010432384_d4e7542819_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55010432384/in/album-72177720331152221/",
-        "sequenceId": 48,
+        "sequenceId": 55,
         "fullSizeUrl": "https://live.staticflickr.com/65535/55010432384_af8655b375_o.jpg"
       }
     ]
@@ -190,7 +206,17 @@
     "splitShippingBoolean": false,
     "shippingType": "Intl. shipping included",
     "shipsToUS": "Yes",
-    "dateAdded": ""
+    "dateAdded": "",
+    "media": [
+      {
+        "title": "By: BurnB1",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/55040306286_e10460517c_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55040306286/in/album-72177720331439767/",
+        "sequenceId": 39,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/55040306286_7b7ee16acf_o.jpg"
+      }
+    ]
   },
   {
     "id": "2026-005",
@@ -303,7 +329,7 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/54976399693_5cac19fbac_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54976399693/in/album-72177720330595608/",
-        "sequenceId": 49,
+        "sequenceId": 56,
         "fullSizeUrl": "https://live.staticflickr.com/65535/54976399693_1f3b8d86dc_o.jpg"
       }
     ]
@@ -404,7 +430,7 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/55033229512_1427348589_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55033229512/in/album-72177720331295330/",
-        "sequenceId": 67,
+        "sequenceId": 38,
         "fullSizeUrl": "https://live.staticflickr.com/65535/55033229512_7c8ef5d7bf_o.jpg"
       }
     ]
@@ -447,7 +473,7 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/54993303834_3106b2b2c1_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54993303834/in/album-72177720331000337/",
-        "sequenceId": 31,
+        "sequenceId": 46,
         "fullSizeUrl": "https://live.staticflickr.com/65535/54993303834_a0352b8943_o.jpg"
       },
       {
@@ -455,7 +481,7 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/54992162162_7a3cb73578_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54992162162/in/album-72177720331000337/",
-        "sequenceId": 34,
+        "sequenceId": 49,
         "fullSizeUrl": "https://live.staticflickr.com/65535/54992162162_e712aa36c4_o.jpg"
       },
       {
@@ -463,7 +489,7 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/54992162437_b85ef72b8b_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54992162437/in/album-72177720331000337/",
-        "sequenceId": 36,
+        "sequenceId": 51,
         "fullSizeUrl": "https://live.staticflickr.com/65535/54992162437_6859f0833f_o.jpg"
       },
       {
@@ -471,7 +497,7 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/54992162657_697f399fb1_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54992162657/in/album-72177720331000337/",
-        "sequenceId": 38,
+        "sequenceId": 52,
         "fullSizeUrl": "https://live.staticflickr.com/65535/54992162657_18aaaa8a4b_o.jpg"
       },
       {
@@ -479,7 +505,7 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/54993226563_bdee502c3c_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54993226563/in/album-72177720331000337/",
-        "sequenceId": 40,
+        "sequenceId": 53,
         "fullSizeUrl": "https://live.staticflickr.com/65535/54993226563_89881df7a3_o.jpg"
       },
       {
@@ -487,7 +513,7 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/54992160247_c2ffd97dab_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54992160247/in/album-72177720331000337/",
-        "sequenceId": 50,
+        "sequenceId": 57,
         "fullSizeUrl": "https://live.staticflickr.com/65535/54992160247_e5dc8558f0_o.jpg"
       },
       {
@@ -495,7 +521,7 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/54993302319_65a83d8b25_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54993302319/in/album-72177720331000337/",
-        "sequenceId": 69,
+        "sequenceId": 80,
         "fullSizeUrl": "https://live.staticflickr.com/65535/54993302319_4ac1e7290d_o.jpg"
       },
       {
@@ -503,7 +529,7 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/54993224383_8a96283294_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54993224383/in/album-72177720331000337/",
-        "sequenceId": 82,
+        "sequenceId": 100,
         "fullSizeUrl": "https://live.staticflickr.com/65535/54993224383_a6fa2a7f8d_o.jpg"
       },
       {
@@ -511,7 +537,7 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/54993302719_ec9b1cb8e4_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54993302719/in/album-72177720331000337/",
-        "sequenceId": 92,
+        "sequenceId": 113,
         "fullSizeUrl": "https://live.staticflickr.com/65535/54993302719_45af28e267_o.jpg"
       },
       {
@@ -519,7 +545,7 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/54993342230_1ff06df34d_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54993342230/in/album-72177720331000337/",
-        "sequenceId": 99,
+        "sequenceId": 122,
         "fullSizeUrl": "https://live.staticflickr.com/65535/54993342230_2a828736df_o.jpg"
       },
       {
@@ -527,7 +553,7 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/54993225038_86b6e72921_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54993225038/in/album-72177720331000337/",
-        "sequenceId": 104,
+        "sequenceId": 127,
         "fullSizeUrl": "https://live.staticflickr.com/65535/54993225038_a1cc031af7_o.jpg"
       },
       {
@@ -535,7 +561,7 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/54993044171_dfb5371e75_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54993044171/in/album-72177720331000337/",
-        "sequenceId": 109,
+        "sequenceId": 132,
         "fullSizeUrl": "https://live.staticflickr.com/65535/54993044171_08e1be01d6_o.jpg"
       },
       {
@@ -543,7 +569,7 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/54993044416_7b11237efd_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54993044416/in/album-72177720331000337/",
-        "sequenceId": 113,
+        "sequenceId": 135,
         "fullSizeUrl": "https://live.staticflickr.com/65535/54993044416_50151c90d1_o.jpg"
       }
     ]
@@ -760,10 +786,10 @@
     "id": "2026-018",
     "year": 2026,
     "potNumber": 0,
-    "title": "A Box of Skittles",
+    "title": "Pick the Rainbow",
     "winnerCount": 1,
     "displayName": "",
-    "description": "Pick the Rainbow While this box may look just exactly like a very ordinary box of Skittles, the truth is that in addition to actual Skittles, this nearly 10-pound pot from the end of the rainbow also contains some cleverly hidden secrets that will last you far longer than any other Skittles you'll ever come across!",
+    "description": "While this box may look just exactly like a very ordinary box of Skittles, the truth is that in addition to actual Skittles, this nearly 10-pound pot from the end of the rainbow also contains some cleverly hidden secrets that will last you far longer than any other Skittles you'll ever come across!",
     "descriptionContinued": "Be choosy about which ones you put in your mouth; the big ones are too large to comfortably fit, and they won't do your teeth any favors! Some people may enjoy these by blindly taking one at random, but others will find it more pleasing to line them up like an OCD person and methodically complete one color before moving on to the next. I personally found each of these to be a good experience and would recommend this pot for a beginner to intermediate picker looking for a broad experience ascending the ranks.",
     "potContents": "- 3+ White Belt locks I haven't decided on yet, but that are decent to pick.\n- [Abus 45/30](/#/locks?id=ecb469c3) *(Yellow)*\n- [Master 140](/#/locks?id=2455f0ae) *(Yellow)*\n- [Brinks 164](/#/locks?id=d974b48f) *(Yellow)*\n- [Master V-line 4150](/#/locks?id=9441e2cc) *(Orange)*\n- [Abus 55/40](/#/locks?id=632f4069) *(Orange)*\n- [Master 575](/#/locks?id=9ca2c109) *(Orange)*\n- [ACE 38mm brassie](/#/locks?id=1dafd552) *(Green)*\n- [American Lock 1100](/#/locks?id=2ae1e0b8) *(Green)*\n- [Paclock 90A](/#/locks?id=8ad36e8a) *(Green)*\n- [Dom RS Sigma](/#/locks?id=1dd28bf9) *(Blue)*\n- [Goal S](/#/locks?id=959a6b9d) *(Blue)*\n- [Paclock 90A Pro](/#/locks?id=fb5a9eb7) *(Blue)*\n- [SFIC Cylinder](/#/locks?id=c8259a23) *(Purple)*\n- [Gen III Smartkey](/#/locks?id=06ddb074) *(Purple)*\n- [Medeco Biaxial](/#/locks?id=23c7988c) *(Purple)*",
     "keywords": "",
@@ -796,7 +822,7 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/54980595630_41661c29c6_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54980595630/in/album-72177720330595608/",
-        "sequenceId": 32,
+        "sequenceId": 47,
         "fullSizeUrl": "https://live.staticflickr.com/65535/54980595630_e9139e862f_o.jpg"
       },
       {
@@ -804,7 +830,7 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/54995885784_937f8af30c_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54995885784/in/album-72177720331042473/",
-        "sequenceId": 51,
+        "sequenceId": 58,
         "fullSizeUrl": "https://live.staticflickr.com/65535/54995885784_8ec3f25ca4_o.jpg"
       },
       {
@@ -812,7 +838,7 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/54979691827_f48812a5c4_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54979691827/in/album-72177720330595608/",
-        "sequenceId": 70,
+        "sequenceId": 81,
         "fullSizeUrl": "https://live.staticflickr.com/65535/54979691827_8c80a10976_o.jpg"
       },
       {
@@ -820,7 +846,7 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/54980543594_6f119a3ba8_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54980543594/in/album-72177720330595608/",
-        "sequenceId": 83,
+        "sequenceId": 101,
         "fullSizeUrl": "https://live.staticflickr.com/65535/54980543594_e4672d36c9_o.jpg"
       },
       {
@@ -828,7 +854,7 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/54979413997_4706dcd1e7_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54979413997/in/album-72177720330595608/",
-        "sequenceId": 93,
+        "sequenceId": 114,
         "fullSizeUrl": "https://live.staticflickr.com/65535/54979413997_1a3ffeecbe_o.jpg"
       },
       {
@@ -836,7 +862,7 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/54980478063_1a731d2196_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54980478063/in/album-72177720330595608/",
-        "sequenceId": 100,
+        "sequenceId": 123,
         "fullSizeUrl": "https://live.staticflickr.com/65535/54980478063_de0b2f5890_o.jpg"
       },
       {
@@ -844,7 +870,7 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/54980478243_7bbb434e4f_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54980478243/in/album-72177720330595608/",
-        "sequenceId": 105,
+        "sequenceId": 128,
         "fullSizeUrl": "https://live.staticflickr.com/65535/54980478243_56039d56f5_o.jpg"
       },
       {
@@ -852,7 +878,7 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/54980478433_7b6c43505c_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54980478433/in/album-72177720330595608/",
-        "sequenceId": 110,
+        "sequenceId": 133,
         "fullSizeUrl": "https://live.staticflickr.com/65535/54980478433_02dcc678bf_o.jpg"
       },
       {
@@ -860,7 +886,7 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/54980544339_5da7c8cc56_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54980544339/in/album-72177720330595608/",
-        "sequenceId": 114,
+        "sequenceId": 136,
         "fullSizeUrl": "https://live.staticflickr.com/65535/54980544339_2efc8be89e_o.jpg"
       }
     ]
@@ -907,7 +933,7 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/54993339985_330c3533fd_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54993339985/in/album-72177720331000337/",
-        "sequenceId": 52,
+        "sequenceId": 59,
         "fullSizeUrl": "https://live.staticflickr.com/65535/54993339985_e36be471b2_o.jpg"
       },
       {
@@ -915,7 +941,7 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/54993041681_b97cb6b7f3_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54993041681/in/album-72177720331000337/",
-        "sequenceId": 71,
+        "sequenceId": 82,
         "fullSizeUrl": "https://live.staticflickr.com/65535/54993041681_3f4898ae04_o.jpg"
       },
       {
@@ -923,7 +949,7 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/54993041921_7a487199e3_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54993041921/in/album-72177720331000337/",
-        "sequenceId": 84,
+        "sequenceId": 102,
         "fullSizeUrl": "https://live.staticflickr.com/65535/54993041921_7eab937298_o.jpg"
       }
     ]
@@ -1007,7 +1033,7 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/54995884634_53d701b384_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54995884634/in/album-72177720331042473/",
-        "sequenceId": 53,
+        "sequenceId": 60,
         "fullSizeUrl": "https://live.staticflickr.com/65535/54995884634_272976b803_o.jpg"
       },
       {
@@ -1015,7 +1041,7 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/55010343698_9bc78118c2_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55010343698/in/album-72177720331152221/",
-        "sequenceId": 72,
+        "sequenceId": 83,
         "fullSizeUrl": "https://live.staticflickr.com/65535/55010343698_6237173108_o.jpg"
       }
     ]
@@ -1093,7 +1119,7 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/54980487773_78d467622b_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54980487773/in/album-72177720330595608/",
-        "sequenceId": 54,
+        "sequenceId": 61,
         "fullSizeUrl": "https://live.staticflickr.com/65535/54980487773_6eac30cdc6_o.jpg"
       },
       {
@@ -1101,7 +1127,7 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/54980604615_72d8f4ff2b_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54980604615/in/album-72177720330595608/",
-        "sequenceId": 73,
+        "sequenceId": 84,
         "fullSizeUrl": "https://live.staticflickr.com/65535/54980604615_a9e8d7cec9_o.jpg"
       },
       {
@@ -1109,7 +1135,7 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/54980307626_f076f9aca6_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54980307626/in/album-72177720330595608/",
-        "sequenceId": 85,
+        "sequenceId": 103,
         "fullSizeUrl": "https://live.staticflickr.com/65535/54980307626_31ab159839_o.jpg"
       }
     ]
@@ -1152,7 +1178,7 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/54979415202_01f3d9d1b2_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54979415202/in/album-72177720330595608/",
-        "sequenceId": 55,
+        "sequenceId": 62,
         "fullSizeUrl": "https://live.staticflickr.com/65535/54979415202_eb092d14d7_o.jpg"
       },
       {
@@ -1160,7 +1186,7 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/54980479273_f0a1758023_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54980479273/in/album-72177720330595608/",
-        "sequenceId": 74,
+        "sequenceId": 85,
         "fullSizeUrl": "https://live.staticflickr.com/65535/54980479273_ce8eb2df05_o.jpg"
       },
       {
@@ -1168,7 +1194,7 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/54979415517_0553b43c80_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54979415517/in/album-72177720330595608/",
-        "sequenceId": 86,
+        "sequenceId": 104,
         "fullSizeUrl": "https://live.staticflickr.com/65535/54979415517_939488aec4_o.jpg"
       },
       {
@@ -1176,7 +1202,7 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/54980298951_a8caa3e4ce_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54980298951/in/album-72177720330595608/",
-        "sequenceId": 94,
+        "sequenceId": 115,
         "fullSizeUrl": "https://live.staticflickr.com/65535/54980298951_f9d1647a72_o.jpg"
       },
       {
@@ -1184,7 +1210,7 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/54980299081_89efd6d5ce_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54980299081/in/album-72177720330595608/",
-        "sequenceId": 101,
+        "sequenceId": 124,
         "fullSizeUrl": "https://live.staticflickr.com/65535/54980299081_154d8bd4f2_o.jpg"
       },
       {
@@ -1192,7 +1218,7 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/54980479733_b090b955ac_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54980479733/in/album-72177720330595608/",
-        "sequenceId": 106,
+        "sequenceId": 129,
         "fullSizeUrl": "https://live.staticflickr.com/65535/54980479733_4913327c4f_o.jpg"
       }
     ]
@@ -1236,7 +1262,7 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/55026043657_69baf92fff_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55026043657/in/album-72177720331295330/",
-        "sequenceId": 43,
+        "sequenceId": 34,
         "fullSizeUrl": "https://live.staticflickr.com/65535/55026043657_ba9a65effe_o.jpg"
       },
       {
@@ -1244,7 +1270,7 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/55027267435_3619f9f1be_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55027267435/in/album-72177720331295330/",
-        "sequenceId": 44,
+        "sequenceId": 74,
         "fullSizeUrl": "https://live.staticflickr.com/65535/55027267435_299547ee92_o.jpg"
       }
     ]
@@ -1287,7 +1313,7 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/54998272364_8df947622a_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54998272364/in/album-72177720331042473/",
-        "sequenceId": 56,
+        "sequenceId": 63,
         "fullSizeUrl": "https://live.staticflickr.com/65535/54998272364_f0a4841c9a_o.jpg"
       },
       {
@@ -1295,7 +1321,7 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/54998183833_521a638dab_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54998183833/in/album-72177720331042473/",
-        "sequenceId": 75,
+        "sequenceId": 86,
         "fullSizeUrl": "https://live.staticflickr.com/65535/54998183833_0ce37b6001_o.jpg"
       }
     ]
@@ -1363,7 +1389,7 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/54992158227_74aec652cd_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54992158227/in/album-72177720331000337/",
-        "sequenceId": 57,
+        "sequenceId": 64,
         "fullSizeUrl": "https://live.staticflickr.com/65535/54992158227_7f7207cc25_o.jpg"
       },
       {
@@ -1371,7 +1397,7 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/54992158432_55713364b4_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54992158432/in/album-72177720331000337/",
-        "sequenceId": 76,
+        "sequenceId": 87,
         "fullSizeUrl": "https://live.staticflickr.com/65535/54992158432_9d50fc70be_o.jpg"
       },
       {
@@ -1379,7 +1405,7 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/54993041021_29442b9a18_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54993041021/in/album-72177720331000337/",
-        "sequenceId": 87,
+        "sequenceId": 105,
         "fullSizeUrl": "https://live.staticflickr.com/65535/54993041021_82d8820d46_o.jpg"
       }
     ]
@@ -1450,7 +1476,7 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/54995806468_1174716c3b_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54995806468/in/album-72177720331042473/",
-        "sequenceId": 102,
+        "sequenceId": 125,
         "fullSizeUrl": "https://live.staticflickr.com/65535/54995806468_20a3742af9_o.jpg"
       },
       {
@@ -1458,7 +1484,7 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/54995928965_a29d3c8734_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54995928965/in/album-72177720331042473/",
-        "sequenceId": 107,
+        "sequenceId": 130,
         "fullSizeUrl": "https://live.staticflickr.com/65535/54995928965_6226703e63_o.jpg"
       },
       {
@@ -1466,7 +1492,7 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/54995806803_9178b5297c_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54995806803/in/album-72177720331042473/",
-        "sequenceId": 111,
+        "sequenceId": 134,
         "fullSizeUrl": "https://live.staticflickr.com/65535/54995806803_a32cb148a0_o.jpg"
       }
     ]
@@ -1509,7 +1535,7 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/55010432789_a1e0eb8c76_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55010432789/in/album-72177720331152221/",
-        "sequenceId": 58,
+        "sequenceId": 65,
         "fullSizeUrl": "https://live.staticflickr.com/65535/55010432789_589be9d676_o.jpg"
       },
       {
@@ -1517,7 +1543,7 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/55010345198_9b7c0671f5_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55010345198/in/album-72177720331152221/",
-        "sequenceId": 77,
+        "sequenceId": 88,
         "fullSizeUrl": "https://live.staticflickr.com/65535/55010345198_6961c68d6a_o.jpg"
       },
       {
@@ -1525,7 +1551,7 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/55010433179_3941f63e73_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55010433179/in/album-72177720331152221/",
-        "sequenceId": 88,
+        "sequenceId": 106,
         "fullSizeUrl": "https://live.staticflickr.com/65535/55010433179_4f95452939_o.jpg"
       },
       {
@@ -1533,7 +1559,7 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/55010476810_aefc7686d7_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55010476810/in/album-72177720331152221/",
-        "sequenceId": 95,
+        "sequenceId": 116,
         "fullSizeUrl": "https://live.staticflickr.com/65535/55010476810_c4ee90ff49_o.jpg"
       }
     ]
@@ -1572,7 +1598,7 @@
     "displayName": "",
     "description": "Two immaculately polished gem picks with intricate wood handles.\nCheck them out in motion [here](https://www.youtube.com/watch?v=B9z-XO8cGCI)\nCheck out the polished picks picking a Polish lock [here](https://www.youtube.com/watch?v=-jjNqj1H4RE)",
     "descriptionContinued": "Deep gem:\n- Bloodwood handle, 12.5mm diameter\n- Inlay rings: maple + makore, peltogyne + red gum, jatoba + mahogany, ebony + anigre\n- Inlay slot: paldao\n\n\nShort gem:\n- Bubinga handle, 11mm diameter\n- Inlay rings: ebony + anigre + birch, maple + mahogany + spanish cedar, peltogyne + red gum + beech\n- Inlay slot: angic",
-    "potContents": "2x custom picks with gem profiles, one deep, one shallow",
+    "potContents": "- Custom deep gem with intricate wood handle\n- Custom shallow gem, also with an intricate wood handle\n- 1x Łucznik E8, so you can pick a Polish lock with your polished picks",
     "keywords": "",
     "contributedBy": [
       "4550"
@@ -1601,7 +1627,7 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/55034308303_2543dfd1fd_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55034308303/in/album-72177720331295330/",
-        "sequenceId": 45,
+        "sequenceId": 35,
         "fullSizeUrl": "https://live.staticflickr.com/65535/55034308303_68105b079b_o.jpg"
       },
       {
@@ -1609,7 +1635,7 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/55009283957_ece2e4f7e3_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55009283957/in/album-72177720331152221/",
-        "sequenceId": 59,
+        "sequenceId": 66,
         "fullSizeUrl": "https://live.staticflickr.com/65535/55009283957_7a0846acc1_o.jpg"
       },
       {
@@ -1617,7 +1643,7 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://i3.ytimg.com/vi/B9z-XO8cGCI/maxresdefault.jpg",
         "fullUrl": "https://www.youtube.com/watch?v=B9z-XO8cGCI",
-        "sequenceId": 60,
+        "sequenceId": 67,
         "subtitleUrl": "https://www.youtube.com/watch?v=B9z-XO8cGCI"
       }
     ]
@@ -1660,7 +1686,7 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/54998314375_b577941085_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54998314375/in/album-72177720331042473/",
-        "sequenceId": 61,
+        "sequenceId": 68,
         "fullSizeUrl": "https://live.staticflickr.com/65535/54998314375_b53926c83f_o.jpg"
       },
       {
@@ -1668,7 +1694,7 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/54997125372_97dd40cd74_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54997125372/in/album-72177720331042473/",
-        "sequenceId": 78,
+        "sequenceId": 89,
         "fullSizeUrl": "https://live.staticflickr.com/65535/54997125372_83b9ec34cf_o.jpg"
       },
       {
@@ -1676,7 +1702,7 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/54997125547_1531dc9f79_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54997125547/in/album-72177720331042473/",
-        "sequenceId": 89,
+        "sequenceId": 107,
         "fullSizeUrl": "https://live.staticflickr.com/65535/54997125547_979056108b_o.jpg"
       },
       {
@@ -1684,7 +1710,7 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/54998314880_b3943b60f9_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54998314880/in/album-72177720331042473/",
-        "sequenceId": 96,
+        "sequenceId": 117,
         "fullSizeUrl": "https://live.staticflickr.com/65535/54998314880_6b8384bf3c_o.jpg"
       }
     ]
@@ -1762,7 +1788,7 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/54997126012_5d5b7cabd0_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54997126012/in/album-72177720331042473/",
-        "sequenceId": 62,
+        "sequenceId": 69,
         "fullSizeUrl": "https://live.staticflickr.com/65535/54997126012_e3a26daf57_o.jpg"
       },
       {
@@ -1770,7 +1796,7 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/54998272034_90253c2101_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54998272034/in/album-72177720331042473/",
-        "sequenceId": 79,
+        "sequenceId": 90,
         "fullSizeUrl": "https://live.staticflickr.com/65535/54998272034_8d98e922d2_o.jpg"
       }
     ]
@@ -1798,7 +1824,17 @@
     "splitShippingBoolean": false,
     "shippingType": "",
     "shipsToUS": "",
-    "dateAdded": "20251222"
+    "dateAdded": "20251222",
+    "media": [
+      {
+        "title": "By: Ratyoke",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/55040646165_06532939b1_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55040646165/in/album-72177720331439767/",
+        "sequenceId": 44,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/55040646165_d80da15854_o.jpg"
+      }
+    ]
   },
   {
     "id": "2026-039",
@@ -1823,7 +1859,65 @@
     "splitShippingBoolean": false,
     "shippingType": "Intl. shipping included",
     "shipsToUS": "",
-    "dateAdded": "20251222"
+    "dateAdded": "20251222",
+    "media": [
+      {
+        "title": "By: Law Lock Tools",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/55039403982_7885462d8e_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55039403982/in/album-72177720331439767/",
+        "sequenceId": 42,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/55039403982_0e5e90cdab_o.jpg"
+      },
+      {
+        "title": "By: Law Lock Tools",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/55040564419_86886be0a3_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55040564419/in/album-72177720331439767/",
+        "sequenceId": 77,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/55040564419_4908401d98_o.jpg"
+      },
+      {
+        "title": "By: Law Lock Tools",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/55040564549_1d11e06cf9_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55040564549/in/album-72177720331439767/",
+        "sequenceId": 97,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/55040564549_bc787a282f_o.jpg"
+      },
+      {
+        "title": "By: Law Lock Tools",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/55040564634_26ba20fe0a_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55040564634/in/album-72177720331439767/",
+        "sequenceId": 110,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/55040564634_eafb520683_o.jpg"
+      },
+      {
+        "title": "By: Law Lock Tools",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/55040484288_28227df211_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55040484288/in/album-72177720331439767/",
+        "sequenceId": 119,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/55040484288_09e01d52f6_o.jpg"
+      },
+      {
+        "title": "By: Law Lock Tools",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/55040308156_0f873a94a3_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55040308156/in/album-72177720331439767/",
+        "sequenceId": 126,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/55040308156_df1df5e75e_o.jpg"
+      },
+      {
+        "title": "By: Law Lock Tools",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/55040645825_88ae9b3443_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55040645825/in/album-72177720331439767/",
+        "sequenceId": 131,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/55040645825_b4551bd42f_o.jpg"
+      }
+    ]
   },
   {
     "id": "2026-040",
@@ -1891,15 +1985,15 @@
     "id": "2026-042",
     "year": 2026,
     "potNumber": 0,
-    "title": "Digby lock and tool pot",
+    "title": "When an Alpha and a Bravo love each other very much",
     "winnerCount": 1,
     "displayName": "",
-    "description": "",
+    "description": "Nice.",
     "descriptionContinued": "",
-    "potContents": "- Digs Alpha - #060 \n- Digs Bravo - #069",
+    "potContents": "- Digs Alpha - #069 \n- Digs Bravo - #069",
     "keywords": "",
     "contributedBy": [
-      "Red Wanderer",
+      "Kewltune",
       "f-eq-ma"
     ],
     "tags": [
@@ -1981,31 +2075,31 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/55026043122_aea2c72018_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55026043122/in/album-72177720331295330/",
-        "sequenceId": 39,
+        "sequenceId": 33,
         "fullSizeUrl": "https://live.staticflickr.com/65535/55026043122_794a5cf90a_o.jpg"
-      },
-      {
-        "title": "By: bask",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/55026043257_4a85cb06f4_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55026043257/in/album-72177720331295330/",
-        "sequenceId": 41,
-        "fullSizeUrl": "https://live.staticflickr.com/65535/55026043257_f83d0b9c5f_o.jpg"
       },
       {
         "title": "By: bask",
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/55027188779_b0734672d7_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55027188779/in/album-72177720331295330/",
-        "sequenceId": 63,
+        "sequenceId": 70,
         "fullSizeUrl": "https://live.staticflickr.com/65535/55027188779_cc9a242a57_o.jpg"
+      },
+      {
+        "title": "By: bask",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/55026043257_4a85cb06f4_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55026043257/in/album-72177720331295330/",
+        "sequenceId": 73,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/55026043257_f83d0b9c5f_o.jpg"
       },
       {
         "title": "By: bask",
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/55027264705_fa8a7bd5fd_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55027264705/in/album-72177720331295330/",
-        "sequenceId": 80,
+        "sequenceId": 91,
         "fullSizeUrl": "https://live.staticflickr.com/65535/55027264705_e85c8aeeaa_o.jpg"
       },
       {
@@ -2013,7 +2107,7 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/55027264910_44468c5220_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55027264910/in/album-72177720331295330/",
-        "sequenceId": 90,
+        "sequenceId": 108,
         "fullSizeUrl": "https://live.staticflickr.com/65535/55027264910_2c0e8bbd2e_o.jpg"
       }
     ]
@@ -2046,33 +2140,9 @@
       {
         "title": "By: Zack Attack",
         "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/55026937336_0b7aee7c76_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55026937336/in/album-72177720331295330/",
-        "sequenceId": 33,
-        "fullSizeUrl": "https://live.staticflickr.com/65535/55026937336_b4ede7252e_o.jpg"
-      },
-      {
-        "title": "By: Zack Attack",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/55027190444_d7b67f88e9_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55027190444/in/album-72177720331295330/",
-        "sequenceId": 35,
-        "fullSizeUrl": "https://live.staticflickr.com/65535/55027190444_e84a2d3391_o.jpg"
-      },
-      {
-        "title": "By: Zack Attack",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/55027121003_b96bbf2f26_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55027121003/in/album-72177720331295330/",
-        "sequenceId": 37,
-        "fullSizeUrl": "https://live.staticflickr.com/65535/55027121003_6fef4b8a0f_o.jpg"
-      },
-      {
-        "title": "By: Zack Attack",
-        "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/55026042172_d8e970048a_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55026042172/in/album-72177720331295330/",
-        "sequenceId": 112,
+        "sequenceId": 32,
         "fullSizeUrl": "https://live.staticflickr.com/65535/55026042172_f23a7cbaf5_o.jpg"
       },
       {
@@ -2080,8 +2150,32 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/55027265975_fa243734d4_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55027265975/in/album-72177720331295330/",
-        "sequenceId": 115,
+        "sequenceId": 72,
         "fullSizeUrl": "https://live.staticflickr.com/65535/55027265975_2e0a4c9767_o.jpg"
+      },
+      {
+        "title": "By: Zack Attack",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/55026937336_0b7aee7c76_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55026937336/in/album-72177720331295330/",
+        "sequenceId": 93,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/55026937336_b4ede7252e_o.jpg"
+      },
+      {
+        "title": "By: Zack Attack",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/55027190444_d7b67f88e9_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55027190444/in/album-72177720331295330/",
+        "sequenceId": 109,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/55027190444_e84a2d3391_o.jpg"
+      },
+      {
+        "title": "By: Zack Attack",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/55027121003_b96bbf2f26_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55027121003/in/album-72177720331295330/",
+        "sequenceId": 118,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/55027121003_6fef4b8a0f_o.jpg"
       }
     ]
   },
@@ -2115,7 +2209,7 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/55027119603_bc6b7776b3_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55027119603/in/album-72177720331295330/",
-        "sequenceId": 97,
+        "sequenceId": 31,
         "fullSizeUrl": "https://live.staticflickr.com/65535/55027119603_7e7c8b2da5_o.jpg"
       },
       {
@@ -2123,7 +2217,7 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/55027119828_1a788bfc7c_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55027119828/in/album-72177720331295330/",
-        "sequenceId": 103,
+        "sequenceId": 71,
         "fullSizeUrl": "https://live.staticflickr.com/65535/55027119828_62f5a5b921_o.jpg"
       },
       {
@@ -2131,7 +2225,7 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/55027120038_2c2ae86320_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55027120038/in/album-72177720331295330/",
-        "sequenceId": 108,
+        "sequenceId": 92,
         "fullSizeUrl": "https://live.staticflickr.com/65535/55027120038_e7ee4d3da0_o.jpg"
       }
     ]
@@ -2166,7 +2260,7 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/55026043487_6f4d9c574a_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55026043487/in/album-72177720331295330/",
-        "sequenceId": 42,
+        "sequenceId": 94,
         "fullSizeUrl": "https://live.staticflickr.com/65535/55026043487_659e0f1b8f_o.jpg"
       }
     ]
@@ -2201,7 +2295,7 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/55033228747_4600bf00a8_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55033228747/in/album-72177720331295330/",
-        "sequenceId": 46,
+        "sequenceId": 36,
         "fullSizeUrl": "https://live.staticflickr.com/65535/55033228747_a4ec4ffceb_o.jpg"
       }
     ]
@@ -2236,7 +2330,7 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/55034131791_aaae416b29_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55034131791/in/album-72177720331295330/",
-        "sequenceId": 64,
+        "sequenceId": 37,
         "fullSizeUrl": "https://live.staticflickr.com/65535/55034131791_e7ec00b094_o.jpg"
       },
       {
@@ -2244,7 +2338,7 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/55034470795_4ae2948765_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55034470795/in/album-72177720331295330/",
-        "sequenceId": 65,
+        "sequenceId": 75,
         "fullSizeUrl": "https://live.staticflickr.com/65535/55034470795_9d1281417a_o.jpg"
       },
       {
@@ -2252,7 +2346,7 @@
         "subtitle": "CC BY-NC-SA 4.0",
         "thumbnailUrl": "https://live.staticflickr.com/65535/55033229302_ef2537a059_w.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55033229302/in/album-72177720331295330/",
-        "sequenceId": 66,
+        "sequenceId": 95,
         "fullSizeUrl": "https://live.staticflickr.com/65535/55033229302_3c2b99b0ab_o.jpg"
       }
     ]
@@ -2305,7 +2399,33 @@
     "splitShippingBoolean": true,
     "shippingType": "Split Intl. shipping",
     "shipsToUS": "",
-    "dateAdded": "20260110"
+    "dateAdded": "20260110",
+    "media": [
+      {
+        "title": "By: Fantasm Industries",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/55040644420_881513721b_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55040644420/in/album-72177720331439767/",
+        "sequenceId": 41,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/55040644420_12d6bbcc0c_o.jpg"
+      },
+      {
+        "title": "By: Fantasm Industries",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/55040483153_bc87564dff_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55040483153/in/album-72177720331439767/",
+        "sequenceId": 76,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/55040483153_7e603eef55_o.jpg"
+      },
+      {
+        "title": "By: Fantasm Industries",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/55040563824_80fdbc252b_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55040563824/in/album-72177720331439767/",
+        "sequenceId": 96,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/55040563824_d047f356a6_o.jpg"
+      }
+    ]
   },
   {
     "id": "2026-052",
@@ -2355,6 +2475,218 @@
     "splitShippingBoolean": false,
     "shippingType": "Winner pays Intl. shipping",
     "shipsToUS": "Yes",
-    "dateAdded": "20260110"
+    "dateAdded": "20260110",
+    "media": [
+      {
+        "title": "By: DWeb",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/55040308456_b16c576381_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55040308456/in/album-72177720331439767/",
+        "sequenceId": 43,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/55040308456_49ac03d922_o.jpg"
+      }
+    ]
+  },
+  {
+    "id": "2026-054",
+    "year": 2026,
+    "potNumber": 0,
+    "title": "Custom Leather Case",
+    "winnerCount": 1,
+    "displayName": "",
+    "description": "$250 to play with in customizing a leather lockpicking case made by Thegamingbug.",
+    "descriptionContinued": "",
+    "potContents": "- $250 credit to customize a large leather pick case by Thegamingbug",
+    "keywords": "",
+    "contributedBy": [
+      "Thegamingbug"
+    ],
+    "tags": [],
+    "country": [
+      "Australia"
+    ],
+    "shippingInfo": "Digital prize",
+    "splitShipping": "shippingSplit",
+    "splitShippingBoolean": false,
+    "shippingType": "Digital prize",
+    "shipsToUS": "Yes",
+    "dateAdded": "20260111"
+  },
+  {
+    "id": "2026-055",
+    "year": 2026,
+    "potNumber": 0,
+    "title": "The Nameless Lock Project Prototype",
+    "winnerCount": 1,
+    "displayName": "",
+    "description": "A one-of-a-kind, all brass, cube shaped padlock and key. The result of community input and countless hours of design work toward an outrageous lock. Please note: this project is ongoing and the prototype is still being worked on as of this listing. Digs is racing to finish this lock by the time the RAFL goes live for contributions, but it is likely you will need to wait to receive your prize.",
+    "descriptionContinued": "",
+    "potContents": "- Prototype padlock from the \"Nameless Lock Project\"",
+    "keywords": "",
+    "contributedBy": [
+      "Digs"
+    ],
+    "tags": [],
+    "country": [
+      "USA"
+    ],
+    "shippingInfo": "International shipping included",
+    "splitShipping": "shippingSplit",
+    "splitShippingBoolean": false,
+    "shippingType": "Intl. shipping included",
+    "shipsToUS": "Yes",
+    "dateAdded": "20260111"
+  },
+  {
+    "id": "2026-056",
+    "year": 2026,
+    "potNumber": 0,
+    "title": "The Picks and the Locks",
+    "winnerCount": 1,
+    "displayName": "",
+    "description": "",
+    "descriptionContinued": "",
+    "potContents": "- Purple heart wood lockpick\n- Googly eye lockpick\n- Abloy DD cutaway\n- [Patches](https://static.wikia.nocookie.net/eldenring/images/5/5a/ER_NPC_Patches_%28Murkwater_Cave%29_%281.1%29.png/revision/latest/scale-to-width-down/1000?cb=20230510180537)\n- \"I like lock\" magnet\n- Stickers",
+    "keywords": "",
+    "contributedBy": [
+      "LockpickingDev"
+    ],
+    "tags": [],
+    "country": [
+      "USA"
+    ],
+    "shippingInfo": "$15 towards international shipping",
+    "splitShipping": "shippingNotSplit",
+    "splitShippingBoolean": true,
+    "shippingType": "Split Intl. shipping",
+    "shipsToUS": "",
+    "dateAdded": "20260111",
+    "media": [
+      {
+        "title": "By: LockpickingDev",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/55040646295_c62fb3166f_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55040646295/in/album-72177720331439767/",
+        "sequenceId": 45,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/55040646295_eb13901dc4_o.jpg"
+      },
+      {
+        "title": "By: LockpickingDev",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/55040485128_eea10f0fcc_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55040485128/in/album-72177720331439767/",
+        "sequenceId": 78,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/55040485128_b664d203aa_o.jpg"
+      },
+      {
+        "title": "By: LockpickingDev",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/55039405437_52bb2a5f3b_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55039405437/in/album-72177720331439767/",
+        "sequenceId": 98,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/55039405437_0acfe74bde_o.jpg"
+      },
+      {
+        "title": "By: LockpickingDev",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/55040309126_37b3e2c875_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55040309126/in/album-72177720331439767/",
+        "sequenceId": 111,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/55040309126_983767aae8_o.jpg"
+      },
+      {
+        "title": "By: LockpickingDev",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/55039405682_b03cbef309_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55039405682/in/album-72177720331439767/",
+        "sequenceId": 120,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/55039405682_7bde2120ff_o.jpg"
+      }
+    ]
+  },
+  {
+    "id": "2026-057",
+    "year": 2026,
+    "potNumber": 0,
+    "title": "Unaccompanied Alpha",
+    "winnerCount": 1,
+    "displayName": "",
+    "description": "",
+    "descriptionContinued": "",
+    "potContents": "- Digs Alpha - #60",
+    "keywords": "",
+    "contributedBy": [
+      "RedWanderer"
+    ],
+    "tags": [],
+    "country": [
+      "USA"
+    ],
+    "shippingInfo": "International shipping included",
+    "splitShipping": "shippingSplit",
+    "splitShippingBoolean": false,
+    "shippingType": "Intl. shipping included",
+    "shipsToUS": "Yes",
+    "dateAdded": "20260112"
+  },
+  {
+    "id": "2026-058",
+    "year": 2026,
+    "potNumber": 0,
+    "title": "Chunky Master Locks",
+    "winnerCount": 1,
+    "displayName": "",
+    "description": "",
+    "descriptionContinued": "",
+    "potContents": "",
+    "keywords": "",
+    "contributedBy": [
+      "emergent_layer"
+    ],
+    "tags": [],
+    "country": [
+      "USA"
+    ],
+    "shippingInfo": "$10 towards international shipping",
+    "splitShipping": "shippingNotSplit",
+    "splitShippingBoolean": true,
+    "shippingType": "Split Intl. shipping",
+    "shipsToUS": "Yes",
+    "dateAdded": "20261113",
+    "media": [
+      {
+        "title": "By: emergent_layer",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/55040563524_d2c40e0126_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55040563524/in/album-72177720331439767/",
+        "sequenceId": 40,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/55040563524_e7b0e750c0_o.jpg"
+      }
+    ]
+  },
+  {
+    "id": "2026-059",
+    "year": 2026,
+    "potNumber": 0,
+    "title": "Australia's Finest",
+    "winnerCount": 1,
+    "displayName": "",
+    "description": "",
+    "descriptionContinued": "",
+    "potContents": "",
+    "keywords": "",
+    "contributedBy": [
+      "downundermonkey"
+    ],
+    "tags": [],
+    "country": [
+      "Australia"
+    ],
+    "shippingInfo": "",
+    "splitShipping": "shippingSplit",
+    "splitShippingBoolean": false,
+    "shippingType": "",
+    "shipsToUS": "",
+    "dateAdded": ""
   }
 ]
