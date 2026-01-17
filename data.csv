@@ -173,7 +173,7 @@ Green,"ABUS,ABUS","A90,C95","new pinning like C83, but 1-2 standard anti-drill s
 Green,ABUS,"Brady 71/40 LOTO (Lock Out Tag Out)",,Pin-tumbler,,,9da8ebe0
 Green,"ABUS,ABUS,ABUS","C73,C83,C90","old pinning: mostly standard keypins, 4 spools, 1 serrated pin",Pin-tumbler,,,95a9d73c
 Green,ABUS,D6,,Dimple,,,f97700ff
-Green,ABUS,"EC75 75/30",,Dimple,Unguttable,,2484ce70
+Green,ABUS,"EC 75/30",,Dimple,Unguttable,,2484ce70
 Green,"ABUS,ABUS","EC750,EC850","spool pin version, not 700/800",Dimple,,,cf5bd73b
 Green,ABUS,GDS,"with trees and tapered pins",Pin-tumbler,"Xmas tree drivers",,13b06cba
 Green,"ABUS,ABUS","Integral,Pfaffenhain Integral",,Pin-tumbler,,,f8acc274
@@ -316,12 +316,12 @@ Green,Yardeni,6,,Dimple,,,34532c45
 Green,Zarker,J45/J45S,,"Disc detainer","Rear tension","Can be front tensioned and counterrotated",4f6bcdb7
 Blue,Any,"HQ High Security Interactive clone","4 pins",Dimple,"Pin-in-pin,Interactive element",,c1d09460
 Blue,Any,"SFIC format lock",**,Pin-tumbler,,"** Blue if picked to one shearline. Check the SFIC filming requirements in the [Reddit belt ranking page](https://www.reddit.com/r/lockpicking/wiki/beltranking/#wiki_sfic_filming_requirements).",c6529d9c
-Blue,"ABUS,ABUS","75/50,75IB/50",,Dimple,Unguttable,,9ec8706c
 Blue,"ABUS,ABUS,ABUS","Bravus 1000,Bravus 2000,Bravus 3000",,Dimple,"Trap element","Requires 360° picking: these locks have traps that require some work to pick",ea0efaca
 Blue,"ABUS,ABUS,ABUS","C73,C83,C90","new pinning: security keypins + serrated and spooled t-pins",Pin-tumbler,,,85d93eb1
 Blue,ABUS,D10,,Dimple,,,f96de7cc
 Blue,"ABUS,ABUS,ABUS,ABUS,ABUS","E20,E30,E60,E70,NP (6-pin)",,Pin-tumbler,,,5c0d870b
 Blue,ABUS,E90,,Pin-tumbler,,,ab236116
+Blue,"ABUS,ABUS","EC 75/50,75IB/50",,Dimple,Unguttable,,9ec8706c
 Blue,"ABUS,ABUS","EC550,EC660",,Dimple,,,7130d7c3
 Blue,"ABUS,ABUS","EC750,EC850","T-spools and recessed pins version, not 700/800",Dimple,,,3515caae
 Blue,"ABUS,ABUS,ABUS","EC880,P12R,X12R",,Dimple,"Trap element","require 360° picking",d005e7b8

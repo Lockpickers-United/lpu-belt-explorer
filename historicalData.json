@@ -2563,7 +2563,7 @@
     "makeModels": [
       {
         "make": "ABUS",
-        "model": "EC75 75/30"
+        "model": "EC 75/30"
       }
     ],
     "lockingMechanisms": [
@@ -2646,7 +2646,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/54365786498_bac8e038e0_o.jpg"
       }
     ],
-    "name": "ABUS EC75 75/30",
+    "name": "ABUS EC 75/30",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "views": 4573,
     "lastUpdated": "2025-03-19T01:20:51.359Z"
@@ -9044,7 +9044,7 @@
     "makeModels": [
       {
         "make": "ABUS",
-        "model": "75/50"
+        "model": "EC 75/50"
       },
       {
         "make": "ABUS",
@@ -9137,7 +9137,7 @@
         "url": "http://lockwiki.com/index.php/ABUS_75IB"
       }
     ],
-    "name": "ABUS 75/50, 75IB/50",
+    "name": "ABUS EC 75/50, 75IB/50",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "views": 9152,
     "lastUpdated": "2025-03-19T15:44:57.288Z"
