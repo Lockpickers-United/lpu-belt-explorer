@@ -9138,7 +9138,7 @@
     "makeModels": [
       {
         "make": "ABUS",
-        "model": "EC75 75/30"
+        "model": "EC 75/30"
       }
     ],
     "lockingMechanisms": [
@@ -9229,7 +9229,7 @@
       }
     ],
     "views": 873,
-    "lastUpdated": "2025-12-02T23:39:17.933Z"
+    "lastUpdated": "2026-01-17T23:12:38.250Z"
   },
   {
     "id": "cf5bd73b",
@@ -17431,113 +17431,6 @@
     "lastUpdated": "2025-12-02T23:39:17.938Z"
   },
   {
-    "id": "9ec8706c",
-    "belt": "Blue",
-    "makeModels": [
-      {
-        "make": "ABUS",
-        "model": "75/50"
-      },
-      {
-        "make": "ABUS",
-        "model": "75IB/50"
-      }
-    ],
-    "lockingMechanisms": [
-      "Dimple"
-    ],
-    "features": [
-      "Unguttable"
-    ],
-    "dateAdded": "2023-02-21T23:16:05.000Z",
-    "media": [
-      {
-        "title": "By: mgsecure",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52983232050_67866c3451_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52983232050/in/album-72177720309135340/",
-        "sequenceId": 2652,
-        "dateAdded": "2025-12-02T23:39:17.886Z",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/52983232050_616ed034f5_o.jpg"
-      },
-      {
-        "title": "By: mgsecure",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52982255182_61b1f92007_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52982255182/in/album-72177720309135340/",
-        "sequenceId": 2653,
-        "dateAdded": "2025-12-02T23:39:17.886Z",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/52982255182_af60ba04cb_o.jpg"
-      },
-      {
-        "title": "By: mgsecure",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52982858426_4679d2888f_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52982858426/in/album-72177720309135340/",
-        "sequenceId": 2654,
-        "dateAdded": "2025-12-02T23:39:17.886Z",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/52982858426_51654b97fb_o.jpg"
-      },
-      {
-        "title": "By: mgsecure",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52982858606_9946c30d80_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52982858606/in/album-72177720309135340/",
-        "sequenceId": 2655,
-        "dateAdded": "2025-12-02T23:39:17.886Z",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/52982858606_bfc0ba3768_o.jpg"
-      },
-      {
-        "title": "By: LockPickingFisherman",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/54108322683_2e49b4fb2f_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54108322683/in/album-72177720309135340/",
-        "sequenceId": 2656,
-        "dateAdded": "2025-10-25T18:24:16.768Z",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/54108322683_fc8427c199_o.jpg",
-        "imageTitle": "Abus 75IB/50"
-      },
-      {
-        "title": "By: LockPickingFisherman",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/54108069031_d37eefcb25_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54108069031/in/album-72177720309135340/",
-        "sequenceId": 2657,
-        "dateAdded": "2025-10-25T18:24:16.768Z",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/54108069031_c9388c5968_o.jpg",
-        "imageTitle": "Abus 75IB/50"
-      },
-      {
-        "title": "By: LockPickingFisherman",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/54108323503_e8f56dc570_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54108323503/in/album-72177720309135340/",
-        "sequenceId": 2658,
-        "dateAdded": "2025-10-25T18:24:16.768Z",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/54108323503_2678379ac6_o.jpg",
-        "imageTitle": "Abus 75IB/50"
-      },
-      {
-        "title": "By: LockPickingFisherman",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/54108407724_b00c83dc9f_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54108407724/in/album-72177720309135340/",
-        "sequenceId": 2659,
-        "dateAdded": "2025-10-25T18:24:16.768Z",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/54108407724_43d12a783f_o.jpg",
-        "imageTitle": "Abus 75IB/50"
-      }
-    ],
-    "links": [
-      {
-        "title": "LockWiki",
-        "url": "http://lockwiki.com/index.php/ABUS_75IB"
-      }
-    ],
-    "views": 883,
-    "lastUpdated": "2025-12-02T23:39:17.938Z"
-  },
-  {
     "id": "ea0efaca",
     "belt": "Blue",
     "makeModels": [
@@ -17979,6 +17872,113 @@
     ],
     "dateAdded": "2025-12-28T18:08:44.766Z",
     "lastUpdated": "2025-12-28T18:08:45.107Z"
+  },
+  {
+    "id": "9ec8706c",
+    "belt": "Blue",
+    "makeModels": [
+      {
+        "make": "ABUS",
+        "model": "EC 75/50"
+      },
+      {
+        "make": "ABUS",
+        "model": "75IB/50"
+      }
+    ],
+    "lockingMechanisms": [
+      "Dimple"
+    ],
+    "features": [
+      "Unguttable"
+    ],
+    "dateAdded": "2023-02-21T23:16:05.000Z",
+    "media": [
+      {
+        "title": "By: mgsecure",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52983232050_67866c3451_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52983232050/in/album-72177720309135340/",
+        "sequenceId": 2652,
+        "dateAdded": "2025-12-02T23:39:17.886Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52983232050_616ed034f5_o.jpg"
+      },
+      {
+        "title": "By: mgsecure",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52982255182_61b1f92007_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52982255182/in/album-72177720309135340/",
+        "sequenceId": 2653,
+        "dateAdded": "2025-12-02T23:39:17.886Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52982255182_af60ba04cb_o.jpg"
+      },
+      {
+        "title": "By: mgsecure",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52982858426_4679d2888f_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52982858426/in/album-72177720309135340/",
+        "sequenceId": 2654,
+        "dateAdded": "2025-12-02T23:39:17.886Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52982858426_51654b97fb_o.jpg"
+      },
+      {
+        "title": "By: mgsecure",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52982858606_9946c30d80_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52982858606/in/album-72177720309135340/",
+        "sequenceId": 2655,
+        "dateAdded": "2025-12-02T23:39:17.886Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52982858606_bfc0ba3768_o.jpg"
+      },
+      {
+        "title": "By: LockPickingFisherman",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54108322683_2e49b4fb2f_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54108322683/in/album-72177720309135340/",
+        "sequenceId": 2656,
+        "dateAdded": "2025-10-25T18:24:16.768Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54108322683_fc8427c199_o.jpg",
+        "imageTitle": "Abus 75IB/50"
+      },
+      {
+        "title": "By: LockPickingFisherman",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54108069031_d37eefcb25_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54108069031/in/album-72177720309135340/",
+        "sequenceId": 2657,
+        "dateAdded": "2025-10-25T18:24:16.768Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54108069031_c9388c5968_o.jpg",
+        "imageTitle": "Abus 75IB/50"
+      },
+      {
+        "title": "By: LockPickingFisherman",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54108323503_e8f56dc570_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54108323503/in/album-72177720309135340/",
+        "sequenceId": 2658,
+        "dateAdded": "2025-10-25T18:24:16.768Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54108323503_2678379ac6_o.jpg",
+        "imageTitle": "Abus 75IB/50"
+      },
+      {
+        "title": "By: LockPickingFisherman",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54108407724_b00c83dc9f_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54108407724/in/album-72177720309135340/",
+        "sequenceId": 2659,
+        "dateAdded": "2025-10-25T18:24:16.768Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54108407724_43d12a783f_o.jpg",
+        "imageTitle": "Abus 75IB/50"
+      }
+    ],
+    "links": [
+      {
+        "title": "LockWiki",
+        "url": "http://lockwiki.com/index.php/ABUS_75IB"
+      }
+    ],
+    "views": 883,
+    "lastUpdated": "2026-01-17T23:12:38.252Z"
   },
   {
     "id": "7130d7c3",
