@@ -33,7 +33,7 @@
     "title": "American Store Credit",
     "winnerCount": 1,
     "displayName": "",
-    "description": "",
+    "description": "andrex wants everyone (in the US and EU) to have easy access to the fine wares available from a couple of the most beloved sellers in the community. The winner enjoys 60 euros of credit to Amvgaert's store!",
     "descriptionContinued": "",
     "potContents": "60 Euro gift certificate for purchase from [Amvgaert's lock shop](https://lpulocks.com/#/lockbazaar?sellerName=amvgaert)",
     "keywords": "",
@@ -60,7 +60,7 @@
     "title": "German Store Credit",
     "winnerCount": 1,
     "displayName": "",
-    "description": "",
+    "description": "andrex wants everyone (in the US and EU) to have easy access to the fine wares available from a couple of the most beloved sellers in the community. The winner enjoys 60 euros of credit to Decoder's store!",
     "descriptionContinued": "",
     "potContents": "60 Euro gift certificate for purchase from [Decoder's lock shop](https://lpulocks.com/#/lockbazaar?sellerName=decoder)",
     "keywords": "",
@@ -87,7 +87,7 @@
     "title": "The Jimys",
     "winnerCount": 1,
     "displayName": "",
-    "description": "",
+    "description": "Jimy picks are some of the most universally loved picks among the community, and for very good reason. This prize gives $50 credit to get some Jimy's for yourself.",
     "descriptionContinued": "",
     "potContents": "A $50 gift certificate to the [JimyLongs Lock Pick Store](https://jimylongs.com/products)",
     "keywords": "",
@@ -237,22 +237,31 @@
     ]
   },
   {
-    "id": "2026-026",
+    "id": "2026-025",
     "year": 2026,
     "potNumber": 7,
-    "title": "Honey Badger Knives -- the tanto",
+    "title": "TOOOL Set and more",
     "winnerCount": 1,
     "displayName": "",
-    "description": "",
+    "description": "A large collection of TOOL picksets and swag. This prize has 3 picksets, a nice leather case, a beautiful KiK padlock, and so much more. Big thanks to TOOOL for participating in the Rafl this year!",
     "descriptionContinued": "",
-    "potContents": "- Honey Badger Knives, large green Tanto\n- A bottle of super slick knife oil",
+    "potContents": "- TOOOL Necessary Nine v2 pickset\n- TOOOL Epic Expansion pickset\n- TOOOL Wicked Waves rake set\n- TOOOL leather zipper lockpick set case\n- TOOOL logo morale velcro patch\n- KiK-lock padlock, 3rd edition\n- Ilco UD keyway 6 pin kik cylinder\n- 2x handcuff shims (not pictured)\n- Stickers!\n\nFrom knowthebird:\n-\"TOOOL\" box pinning station",
     "keywords": "",
     "contributedBy": [
-      "Badger"
+      "TOOOL",
+      "knowthebird"
     ],
     "tags": [
+      "Swag",
+      "Cases",
+      "Pick sets",
+      "Picks (rakes)",
+      "Picks (hooks)",
+      "Locks (beginner/intermediate)",
+      "Artisan Piece",
       "Tools",
-      "Other"
+      "Materials",
+      "Pinning Trays"
     ],
     "country": [
       "USA"
@@ -262,31 +271,31 @@
     "splitShippingBoolean": false,
     "shippingType": "No Intl. shipping",
     "shipsToUS": "",
-    "dateAdded": "20251216",
+    "dateAdded": "20251212",
     "media": [
       {
-        "title": "By: Badger",
+        "title": "By: The Open Organisation of Lockpickers",
         "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/54998183448_4dd6ffe18f_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54998183448/in/album-72177720331042473/",
-        "sequenceId": 19,
-        "fullSizeUrl": "https://live.staticflickr.com/65535/54998183448_4446441d19_o.jpg"
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54993344115_f0195c3821_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54993344115/in/album-72177720331000337/",
+        "sequenceId": 18,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54993344115_0fe9f19051_o.jpg"
       },
       {
-        "title": "By: Badger",
+        "title": "By: Knowthebird",
         "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/54998272364_8df947622a_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54998272364/in/album-72177720331042473/",
-        "sequenceId": 66,
-        "fullSizeUrl": "https://live.staticflickr.com/65535/54998272364_f0a4841c9a_o.jpg"
+        "thumbnailUrl": "https://live.staticflickr.com/65535/55026043657_69baf92fff_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55026043657/in/album-72177720331295330/",
+        "sequenceId": 33,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/55026043657_ba9a65effe_o.jpg"
       },
       {
-        "title": "By: Badger",
+        "title": "By: Knowthebird",
         "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/54998183833_521a638dab_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54998183833/in/album-72177720331042473/",
-        "sequenceId": 90,
-        "fullSizeUrl": "https://live.staticflickr.com/65535/54998183833_0ce37b6001_o.jpg"
+        "thumbnailUrl": "https://live.staticflickr.com/65535/55027267435_3619f9f1be_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55027267435/in/album-72177720331295330/",
+        "sequenceId": 77,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/55027267435_299547ee92_o.jpg"
       }
     ]
   },
@@ -523,7 +532,7 @@
     "title": "Ratyoke 2026",
     "winnerCount": 1,
     "displayName": "",
-    "description": "",
+    "description": "Ratyoke is one of the most influential pick makers in the community, and has graciously provided another piece for the Rafl! One lucky winner will get a beautiful short hook with G-carta handle. Built to pick, but potentially too pretty to use.",
     "descriptionContinued": "",
     "potContents": "- 0.023\" short hook, 301 HY stainless, handle is G-carta which is an epoxy laminate, orange G10  handle liners\n\n*Worldwide USPS shipping, winner will need to pay for an alternative carrier",
     "keywords": "",
@@ -642,9 +651,63 @@
     ]
   },
   {
-    "id": "2026-002",
+    "id": "2026-026",
     "year": 2026,
     "potNumber": 14,
+    "title": "Honey Badger Knives -- the tanto",
+    "winnerCount": 1,
+    "displayName": "",
+    "description": "Honey Badger Knives is back again with a gorgeous tanto pocket knife alongside a bottle of their super slick knife oil. I've also been told that the applicator for the oil also fits down keyways, if you're into that.",
+    "descriptionContinued": "",
+    "potContents": "- Honey Badger Knives, large green Tanto\n- A bottle of super slick knife oil",
+    "keywords": "",
+    "contributedBy": [
+      "Badger"
+    ],
+    "tags": [
+      "Tools",
+      "Other"
+    ],
+    "country": [
+      "USA"
+    ],
+    "shippingInfo": "Domestic only (USA)",
+    "splitShipping": "shippingSplit",
+    "splitShippingBoolean": false,
+    "shippingType": "No Intl. shipping",
+    "shipsToUS": "",
+    "dateAdded": "20251216",
+    "media": [
+      {
+        "title": "By: Badger",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54998183448_4dd6ffe18f_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54998183448/in/album-72177720331042473/",
+        "sequenceId": 19,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54998183448_4446441d19_o.jpg"
+      },
+      {
+        "title": "By: Badger",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54998272364_8df947622a_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54998272364/in/album-72177720331042473/",
+        "sequenceId": 66,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54998272364_f0a4841c9a_o.jpg"
+      },
+      {
+        "title": "By: Badger",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54998183833_521a638dab_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54998183833/in/album-72177720331042473/",
+        "sequenceId": 90,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54998183833_0ce37b6001_o.jpg"
+      }
+    ]
+  },
+  {
+    "id": "2026-002",
+    "year": 2026,
+    "potNumber": 15,
     "title": "Little Pick Energy",
     "winnerCount": 1,
     "displayName": "",
@@ -731,11 +794,11 @@
   {
     "id": "2026-056",
     "year": 2026,
-    "potNumber": 15,
+    "potNumber": 16,
     "title": "The Picks and the Locks",
     "winnerCount": 1,
     "displayName": "",
-    "description": "",
+    "description": "You were casually admiring the purple heart handle of a nice custom pick when you noticed that something was looking at you from across the room. It was another pick. It slowly rolled up to you, staring at you all the while with its many eyes. Its tip got real close to your ear, and you heard it say in a soft metallic voice: \"I like lock\".",
     "descriptionContinued": "",
     "potContents": "- Purple heart wood lockpick\n- Googly eye lockpick\n- Abloy DD cutaway\n- [Patches](https://static.wikia.nocookie.net/eldenring/images/5/5a/ER_NPC_Patches_%28Murkwater_Cave%29_%281.1%29.png/revision/latest/scale-to-width-down/1000?cb=20230510180537)\n- \"I like lock\" magnet\n- Stickers",
     "keywords": "",
@@ -804,7 +867,7 @@
   {
     "id": "2026-033",
     "year": 2026,
-    "potNumber": 16,
+    "potNumber": 17,
     "title": "Polished Gems",
     "winnerCount": 1,
     "displayName": "",
@@ -867,7 +930,7 @@
   {
     "id": "2026-047",
     "year": 2026,
-    "potNumber": 17,
+    "potNumber": 18,
     "title": "Prototype PLA Protector",
     "winnerCount": 1,
     "displayName": "",
@@ -906,7 +969,7 @@
   {
     "id": "2026-044",
     "year": 2026,
-    "potNumber": 18,
+    "potNumber": 19,
     "title": "Giant PLA Protector",
     "winnerCount": 1,
     "displayName": "",
@@ -977,7 +1040,7 @@
   {
     "id": "2026-005",
     "year": 2026,
-    "potNumber": 19,
+    "potNumber": 20,
     "title": "Anchor Lås Pot",
     "winnerCount": 1,
     "displayName": "",
@@ -1016,7 +1079,7 @@
   {
     "id": "2026-007",
     "year": 2026,
-    "potNumber": 20,
+    "potNumber": 21,
     "title": "Sight-seeing Abloy",
     "winnerCount": 1,
     "displayName": "",
@@ -1055,7 +1118,7 @@
   {
     "id": "2026-008",
     "year": 2026,
-    "potNumber": 21,
+    "potNumber": 22,
     "title": "787 cutaway",
     "winnerCount": 1,
     "displayName": "",
@@ -1103,7 +1166,7 @@
   {
     "id": "2026-009",
     "year": 2026,
-    "potNumber": 22,
+    "potNumber": 23,
     "title": "Honey Pot",
     "winnerCount": 1,
     "displayName": "",
@@ -1140,7 +1203,7 @@
   {
     "id": "2026-011",
     "year": 2026,
-    "potNumber": 23,
+    "potNumber": 24,
     "title": "SasPes Pot",
     "winnerCount": 1,
     "displayName": "",
@@ -1182,7 +1245,7 @@
   {
     "id": "2026-017",
     "year": 2026,
-    "potNumber": 24,
+    "potNumber": 25,
     "title": "spoon's masculine scents",
     "winnerCount": 1,
     "displayName": "",
@@ -1221,7 +1284,7 @@
   {
     "id": "2026-038",
     "year": 2026,
-    "potNumber": 25,
+    "potNumber": 26,
     "title": "spoon's feminine sents",
     "winnerCount": 1,
     "displayName": "",
@@ -1260,7 +1323,7 @@
   {
     "id": "2026-018",
     "year": 2026,
-    "potNumber": 26,
+    "potNumber": 27,
     "title": "Pick the Rainbow",
     "winnerCount": 1,
     "displayName": "",
@@ -1377,7 +1440,7 @@
   {
     "id": "2026-010",
     "year": 2026,
-    "potNumber": 27,
+    "potNumber": 28,
     "title": "Emhart Emporium",
     "winnerCount": 1,
     "displayName": "",
@@ -1425,11 +1488,11 @@
   {
     "id": "2026-041",
     "year": 2026,
-    "potNumber": 28,
+    "potNumber": 29,
     "title": "BiLock Progressive",
     "winnerCount": 1,
     "displayName": "",
-    "description": "",
+    "description": "Get the full gamut of BiLock difficulties in a convenient padlock form factor.",
     "descriptionContinued": "",
     "potContents": "- BiLock in Abus 83AL/45 padlock\n- Extra pins for changing difficulty",
     "keywords": "",
@@ -1463,11 +1526,11 @@
   {
     "id": "2026-019",
     "year": 2026,
-    "potNumber": 29,
+    "potNumber": 30,
     "title": "BiLock 5-belt advanced progression kit",
     "winnerCount": 1,
     "displayName": "",
-    "description": "",
+    "description": "A BiLock QCC with literally every possible extra pin, so you can fully customize your BiLock experience.",
     "descriptionContinued": "",
     "potContents": "Kit contains:\n- [BiLock 570](/#/locks?id=ab1e901f) Oval cylinder \n- Quick Change Core (QCC) pinned - mastered to match key. \n- BiLock key (modified into QCC key) \n- 2x BiLock Pin #1 \n- 2x BiLock Pin #2 \n- 2x BiLock Pin #3 \n- 2x BiLock Pin #4 \n- 2x BiLock Pin #5 Master A \n- 2x BiLock Pin #6 Master B \n- 2x BiLock Pin #7 Master C \n- 2x BiLock Pin #8 Master D \n- 2x BiLock Pin #9 Master E \n- 2x BiLock Pin #10 Master F \n- 2x BiLock Pin #11 Master G \n- 2x BiLock Pin #12 Master H \n- 2x BiLock Pin #13 Master I \n- 2x BiLock Pin #14 Master J \n- 2x BiLock Pin #15 Master K \n- 12x spare springs \n- Spare cover plate \n- Labeled storage container \n- 2x shims for easy reassembly \n- Full instructions for QCC removal and set up for each belt",
     "keywords": "",
@@ -1525,11 +1588,11 @@
   {
     "id": "2026-059",
     "year": 2026,
-    "potNumber": 30,
+    "potNumber": 31,
     "title": "Australia's Finest",
     "winnerCount": 1,
     "displayName": "",
-    "description": "",
+    "description": "The title is not exaggerating--these are some of the finest Australian locks that money can buy, and some of them are rather hard to find. Winner will get an ALC Galaxy in a padlock body *with the code bar removal key*. Also included is a rare Lockwood Twin, as well as 3 varieties of BiLock, including an ASIO cam lock.",
     "descriptionContinued": "",
     "potContents": "- 1x ALC Galaxy in Abus 83 padlock with operation and code bar removal key (keys designed by Pinball)\n- 1x Lockwood Twin in Lockwood 334B45 padlock with one key.\n- 1x ALC Bilock First Generation with quick change core in Cam lock. Will come with operation and core removal key.\n- 1x ALC Bilock New Generation in Parasole padlock with 1 key.\n- 1x ALC Bilock ASIO Cam lock. ASIO bilocks have  staggered key bitting and false gates in the pins",
     "keywords": "",
@@ -1566,11 +1629,11 @@
   {
     "id": "2026-061",
     "year": 2026,
-    "potNumber": 31,
+    "potNumber": 32,
     "title": "The Lockwood Pot",
     "winnerCount": 1,
     "displayName": "",
-    "description": "",
+    "description": "10 Lockwood padlocks? In one prize? There's only one thing that it could possibly be, and it's the annual Lockwood Pot from HVLogic! This one features some models that are off the beaten path, with a few that aren't even in the lpubelts database!",
     "descriptionContinued": "",
     "potContents": "- 5x Lockwood 234 Padlocks \r\n- 2x Lockwood 225 Wafer Padlocks\r\n- 1x Lockwood 312 Padlock \r\n- 1x Lockwood 232 Padlock Brass Shackle \r\n- 1x Lockwood Handy Lock new in pack",
     "keywords": "",
@@ -1601,11 +1664,11 @@
   {
     "id": "2026-021",
     "year": 2026,
-    "potNumber": 32,
+    "potNumber": 33,
     "title": "Medeco X6",
     "winnerCount": 1,
     "displayName": "",
-    "description": "",
+    "description": "A treat for Medeco lovers who like to go a bit off the beaten path. This prize has 2 flagship models, including the Biaxial and M4. It also features 2 formats of X4, a Medeco SFIC, and something else rather interesting.",
     "descriptionContinued": "",
     "potContents": "- Medeco M4 LFIC w/ operating key\n- Medeco Biaxial mortise w/ key\n- Medeco B SFIC with operating key\n- Medeco X4 SFIC, 1 operating key (shared with mortise)\n- Medeco X4 Mortise, 1 operating key (shared with SFIC)\n- Medeco Dual Tech (Bicentric XT and X4), no keys",
     "keywords": "",
@@ -1655,11 +1718,11 @@
   {
     "id": "2026-030",
     "year": 2026,
-    "potNumber": 33,
+    "potNumber": 34,
     "title": "Medeco Haul",
     "winnerCount": 1,
     "displayName": "",
-    "description": "",
+    "description": "An impressive spread of every flagship Medeco dating back to even before the Medeco Original that we all know and love. ",
     "descriptionContinued": "",
     "potContents": "This pot was put together by Mugatu and OnlyPins. Contains:\n- Pre-1971 Medeco brass color pined and keyed\n- Medeco Original brass color pinned and keyed\n- Medeco Original Padlock pinned and keyed (provided graciously by Mugatu)\n- Medeco Biaxial Brass in color pinned and keyed\n- Medeco M3 Brass in color pinned and keyed (with Scruff McGruff key)\n- Medeco M4 silver in color pinned and keyed (provided graciously by a friendly Locksmith)",
     "keywords": "",
@@ -1710,13 +1773,52 @@
     ]
   },
   {
+    "id": "2026-013",
+    "year": 2026,
+    "potNumber": 35,
+    "title": "Leisure no 19",
+    "winnerCount": 1,
+    "displayName": "",
+    "description": "There is only one Purple belt Master Lock, and this is the one. They're not particularly easy to find, and if you want to find out why they're so difficult to pick, you'll have to win this prize!",
+    "descriptionContinued": "",
+    "potContents": "[Master Lock No.19](/#/locks?id=8f7f1830) w/ key and box",
+    "keywords": "",
+    "contributedBy": [
+      "Lockleisure"
+    ],
+    "tags": [
+      "Locks (padlocks)",
+      "Locks (beginner/intermediate)",
+      "Locks (vintage)"
+    ],
+    "country": [
+      "USA"
+    ],
+    "shippingInfo": "Domestic only (USA)",
+    "splitShipping": "shippingSplit",
+    "splitShippingBoolean": false,
+    "shippingType": "No Intl. shipping",
+    "shipsToUS": "Yes",
+    "dateAdded": "20251202",
+    "media": [
+      {
+        "title": "By: Lockleisure",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54993301539_a96475611d_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54993301539/in/album-72177720331000337/",
+        "sequenceId": 8,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54993301539_5d7b3c32c5_o.jpg"
+      }
+    ]
+  },
+  {
     "id": "2026-024",
     "year": 2026,
-    "potNumber": 34,
+    "potNumber": 36,
     "title": "Moki Pouch + Master No.19",
     "winnerCount": 1,
     "displayName": "",
-    "description": "",
+    "description": "If you think that this distinctly difficult Master Lock may be a bit much, this prize has a Moki pouch big enough to hold all the tools you may need to get the job done.",
     "descriptionContinued": "",
     "potContents": "- Moki Pouch\n- Vintage [Master Lock No.19](/#/locks?id=8f7f1830) with key",
     "keywords": "",
@@ -1796,52 +1898,13 @@
     ]
   },
   {
-    "id": "2026-013",
-    "year": 2026,
-    "potNumber": 35,
-    "title": "Leisure no 19",
-    "winnerCount": 1,
-    "displayName": "",
-    "description": "There is only one Purple belt Master Lock, and this is the one. They're not particularly easy to find, and if you want to find out why they're so difficult to pick, you'll have to win this prize!",
-    "descriptionContinued": "",
-    "potContents": "[Master Lock No.19](/#/locks?id=8f7f1830) w/ key and box",
-    "keywords": "",
-    "contributedBy": [
-      "Lockleisure"
-    ],
-    "tags": [
-      "Locks (padlocks)",
-      "Locks (beginner/intermediate)",
-      "Locks (vintage)"
-    ],
-    "country": [
-      "USA"
-    ],
-    "shippingInfo": "Domestic only (USA)",
-    "splitShipping": "shippingSplit",
-    "splitShippingBoolean": false,
-    "shippingType": "No Intl. shipping",
-    "shipsToUS": "Yes",
-    "dateAdded": "20251202",
-    "media": [
-      {
-        "title": "By: Lockleisure",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/54993301539_a96475611d_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54993301539/in/album-72177720331000337/",
-        "sequenceId": 8,
-        "fullSizeUrl": "https://live.staticflickr.com/65535/54993301539_5d7b3c32c5_o.jpg"
-      }
-    ]
-  },
-  {
     "id": "2026-022",
     "year": 2026,
-    "potNumber": 36,
+    "potNumber": 37,
     "title": "Hot Topic",
     "winnerCount": 1,
     "displayName": "",
-    "description": "",
+    "description": "An official ASSA Abloy golf shirt in size XL — clean, comfortable, and easy to wear. Great for lock meets, casual workdays, or just picking around the house.",
     "descriptionContinued": "",
     "potContents": "XL ASSA Abloy Golf shirt",
     "keywords": "",
@@ -1874,11 +1937,11 @@
   {
     "id": "2026-023",
     "year": 2026,
-    "potNumber": 37,
+    "potNumber": 38,
     "title": "Tour-caliber Tensioners",
     "winnerCount": 1,
     "displayName": "",
-    "description": "",
+    "description": "Why hit the links when you can hit the locks? This pot contains a tiny set of golf clubs in a tiny golf bag. The clubs happen to be sized just right to be very effective tensioners.",
     "descriptionContinued": "",
     "potContents": "Golf club tensioners complete with stand bag",
     "keywords": "",
@@ -1935,76 +1998,13 @@
     ]
   },
   {
-    "id": "2026-025",
-    "year": 2026,
-    "potNumber": 38,
-    "title": "TOOOL Set and more",
-    "winnerCount": 1,
-    "displayName": "",
-    "description": "",
-    "descriptionContinued": "",
-    "potContents": "- TOOOL Necessary Nine v2 pickset\n- TOOOL Epic Expansion pickset\n- TOOOL Wicked Waves rake set\n- TOOOL leather zipper lockpick set case\n- TOOOL logo morale velcro patch\n- KiK-lock padlock, 3rd edition\n- Ilco UD keyway 6 pin kik cylinder\n- 2x handcuff shims (not pictured)\n- Stickers!\n\nFrom knowthebird:\n-\"TOOOL\" box pinning station",
-    "keywords": "",
-    "contributedBy": [
-      "TOOOL",
-      "knowthebird"
-    ],
-    "tags": [
-      "Swag",
-      "Cases",
-      "Pick sets",
-      "Picks (rakes)",
-      "Picks (hooks)",
-      "Locks (beginner/intermediate)",
-      "Artisan Piece",
-      "Tools",
-      "Materials",
-      "Pinning Trays"
-    ],
-    "country": [
-      "USA"
-    ],
-    "shippingInfo": "Domestic only (USA)",
-    "splitShipping": "shippingSplit",
-    "splitShippingBoolean": false,
-    "shippingType": "No Intl. shipping",
-    "shipsToUS": "",
-    "dateAdded": "20251212",
-    "media": [
-      {
-        "title": "By: The Open Organisation of Lockpickers",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/54993344115_f0195c3821_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54993344115/in/album-72177720331000337/",
-        "sequenceId": 18,
-        "fullSizeUrl": "https://live.staticflickr.com/65535/54993344115_0fe9f19051_o.jpg"
-      },
-      {
-        "title": "By: Knowthebird",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/55026043657_69baf92fff_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55026043657/in/album-72177720331295330/",
-        "sequenceId": 33,
-        "fullSizeUrl": "https://live.staticflickr.com/65535/55026043657_ba9a65effe_o.jpg"
-      },
-      {
-        "title": "By: Knowthebird",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/55027267435_3619f9f1be_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55027267435/in/album-72177720331295330/",
-        "sequenceId": 77,
-        "fullSizeUrl": "https://live.staticflickr.com/65535/55027267435_299547ee92_o.jpg"
-      }
-    ]
-  },
-  {
     "id": "2026-028",
     "year": 2026,
     "potNumber": 39,
     "title": "Lightweight Locks",
     "winnerCount": 1,
     "displayName": "",
-    "description": "",
+    "description": "InfinitelyExplosive had a Desmo and an American 1305, but thought they were too heavy, so he removed some material.",
     "descriptionContinued": "",
     "potContents": "Two cutaways, 1 working key for each\n-1x 8-pin Assa Desmo camlock\n-1x American 1305",
     "keywords": "",
@@ -2068,7 +2068,7 @@
     "title": "Wild-Biliam Pot",
     "winnerCount": 1,
     "displayName": "",
-    "description": "",
+    "description": "Winner receives a tricky little beast. The Duo is an unassuming wafer lock with 14 wafers, enough to warrant Purple belt.",
     "descriptionContinued": "",
     "potContents": "1x Illinois Duo camlock w/ 2 keys",
     "keywords": "",
@@ -2176,7 +2176,7 @@
     "title": "Master of France",
     "winnerCount": 1,
     "displayName": "",
-    "description": "",
+    "description": "It starts with 4 unassuming padlocks, perfect for learning and practice. Then you're confronted with a heap of French cutaways--a unique treat.",
     "descriptionContinued": "",
     "potContents": "-Eschlenz 3D printed vice plus all the extras (followers, holders, etc) \n-Masterlock 140 \n-Masterlock 150 \n-Masterlock 410 \n-Paclock 90A Pro \n-Random cutaways (most no keys): Fichet 666, Fichet 484, unknown French PT, unknown French dimple, unknown French dimple with warding, Bricard PT with miserable warding",
     "keywords": "",
@@ -2207,7 +2207,7 @@
     "title": "Boxed Rarities",
     "winnerCount": 1,
     "displayName": "",
-    "description": "",
+    "description": "Two locks, both rather difficult to find, and at least one that's a particular pain to pick. Brand new in the boxes!",
     "descriptionContinued": "",
     "potContents": "- One ABUS TS5000 double cylinder with 6 keys (punctured) and security card - new in box. \n- One CES RE5 (+3P) double cylinder, special profile, with 4 keys, 1 special \"short key\" and security card - new in box.\n\n*Can be shipped to non-EU internationally as gift with DHL (including to the US, no duties), or via UPS (duties apply). Winner selects (and pays) shipping.*",
     "keywords": "",
@@ -2278,7 +2278,7 @@
     "title": "Sealed ABUS Nostalgia",
     "winnerCount": 1,
     "displayName": "",
-    "description": "",
+    "description": "It's a wonder how decoder even still has locks like this sealed in the box. Both of these locks are also a massive pain in the ass to pick, if you're ever brave enough to unseal them.",
     "descriptionContinued": "",
     "potContents": "- One sealed ABUS EC700 double cylinder with 3 keys.\n- One sealed ABUS XP1 double cylinder with 3 keys.\n\n*Can be shipped to non-EU internationally as gift with DHL (including to the US, no duties apply), or can be shipped with UPS (duties apply). Winner selects (and pays) shipping method.*",
     "keywords": "",
@@ -2317,9 +2317,9 @@
     "title": "Electromechanic Future",
     "winnerCount": 1,
     "displayName": "",
-    "description": "",
+    "description": "An electromechanical padlock that is not yet available outside this rafl. Decoder has requested the winner to not publicly resell this lock (within LPU this is fine). This lock is intended to end up with someone who is a lockpicker/collector/lock enthusiast. This prize is provided on a community trust basis, please take it seriously or more prizes like this cannot happen.",
     "descriptionContinued": "",
-    "potContents": "One Abloy PL342 Protec2 Cliq padlock - super weather proof edition with keyhole cap. One working key included (Note: This is likely an unprogrammed demo key, do not use this for anything security-related (duh)).\n\nAlso, I would ask the winner to not publicly resell this lock (within LPU this is fine). I don't want this lock to end up with someone who is not a lockpicker/collector/lock enthusiast. I'll be doing this on a community trust basis, please take it seriously or I will not be able to provide more goods like this.\n\n*Can be shipped to non-EU internationally as gift with DHL (including to the US, no duties apply), or can be shipped with UPS (duties apply). Winner selects (and pays) shipping method.*",
+    "potContents": "One Abloy PL342 Protec2 Cliq padlock - super weather proof edition with keyhole cap. One working key included (Note: This is likely an unprogrammed demo key, do not use this for anything security-related (duh)).\n\n*Can be shipped to non-EU internationally as gift with DHL (including to the US, no duties apply), or can be shipped with UPS (duties apply). Winner selects (and pays) shipping method.*",
     "keywords": "",
     "contributedBy": [
       "decoder"
@@ -2373,7 +2373,7 @@
     "title": "Box to Green (EU)",
     "winnerCount": 1,
     "displayName": "",
-    "description": "",
+    "description": "A box to green, but all the locks come from Europe.",
     "descriptionContinued": "",
     "potContents": "Contains padlocks up through green belt, including:\n- White belt: DX (30 mm)\n- Yellow belt: [Citadel CB30](/#/locks?id=4938772f)\n- Orange belt: [Burg Wächter Karat 217/30](/#/locks?id=8ee515bb)\n- Green belt: [Abus EC75/30](/#/locks?id=2484ce70)",
     "keywords": "",
@@ -2526,7 +2526,7 @@
     "title": "Pick & Play",
     "winnerCount": 1,
     "displayName": "",
-    "description": "",
+    "description": "A quirky collection of lock-inspired puzzles, games, models, and cards. Absolutely no actual locks or picks to be found in this prize.",
     "descriptionContinued": "",
     "potContents": "- Wooden City Safe Mechanical Model\n- ROKR Treasure Box Model\n- Spy Code Break Free Handcuff Game\n- Pick the Lock Card Game\n- Slickshot Lockpicker Magic Card\n- Pick Lock World of Warcraft Card\n- Assembled UGEARS Cypher model with secret treasure (no combination provided)",
     "keywords": "",
@@ -2690,7 +2690,7 @@
     "title": "Picks on the vine",
     "winnerCount": 1,
     "displayName": "",
-    "description": "",
+    "description": "These picks are ripe and ready to be...picked. This pot contains a vine loaded with hunson's self-designed picks, and enough sandpaper to make them as shiny as you'd like. Also features a wood pinning tray and a Miwa DS.",
     "descriptionContinued": "",
     "potContents": "1) Pinning tray, wood, 13x9.5 cm (freedom units may vary), for up to 7-pin locks and 12 discs\n2) MIWA DS, no key (blue belt)\n3) Two sets of self-designed picks (some profiles are very similar to Southord and other brands) plus four blank-picks for custom profiles\n4) 3 sheets of *nice* sandpaper (600, 1000, and 1500 grit) to get the picks as shiny as Mokis",
     "keywords": "",
@@ -2747,7 +2747,7 @@
     "title": "Knox in the Box",
     "winnerCount": 1,
     "displayName": "",
-    "description": "",
+    "description": "A Knox padlock with a Medeco m3 camlock core, specifically for use by an Arizona fire department, but we won't tell.",
     "descriptionContinued": "",
     "potContents": "NIB Knox padlock from Chandler, AZ. Abus body with Medeco m3 camlock.",
     "keywords": "",
@@ -2856,7 +2856,7 @@
     "title": "DD's are Magic",
     "winnerCount": 1,
     "displayName": "",
-    "description": "",
+    "description": "This pot has 2 of the more intimidating-looking disc detainer locks. If those aren't your bag, there's also a Robur mini-Twin, and even more DD locks!",
     "descriptionContinued": "",
     "potContents": "- 2 Abloy safe deposit locks\n- 1 Rosengrens 32a81\n- 1 Robur 2391 \n- 1 Robur disc detainer safe deposit lock",
     "keywords": "",
@@ -2903,7 +2903,7 @@
     "title": "The Duality of Locks",
     "winnerCount": 1,
     "displayName": "",
-    "description": "",
+    "description": "One key per lock is not good enough, and masterkeying is stupid.",
     "descriptionContinued": "",
     "potContents": "- Godrej Dual Access\n- Tri-Circle 266\n- Yale Bicentric mortise\n- Yale Bicentric dual custody SDB lock\n- Unnamed Russian dual custody padlock",
     "keywords": "",
@@ -2973,7 +2973,7 @@
     "title": "Unaccompanied Alpha",
     "winnerCount": 1,
     "displayName": "",
-    "description": "",
+    "description": "The Digs Alpha is a beautiful work of engineering from within the lockpicking community, and it will absolutely break everything you try to pick it with.",
     "descriptionContinued": "",
     "potContents": "- Digs Alpha - #60",
     "keywords": "",
@@ -3004,7 +3004,7 @@
     "winnerCount": 1,
     "displayName": "",
     "description": "Nice.",
-    "descriptionContinued": "",
+    "descriptionContinued": "f-eq-ma and Kewltune, through random chance, happen to have serial number 69 of the Digs Alpha and Bravo locks. I don't think you'll find this opportunity ever again.",
     "potContents": "- Digs Alpha - #069 \n- Digs Bravo - #069",
     "keywords": "",
     "contributedBy": [
