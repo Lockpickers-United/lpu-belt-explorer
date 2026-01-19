@@ -70,16 +70,20 @@ export default function StatusMenu({entry}) {
             >
 
                 <Stack direction='column' style={{minWidth: 100}}>
-                    <MenuItem style={{color: pending ? '#fff' : statusLabels['pending'].backgroundColor}} onClick={() => changeStatus('pending')} disabled={pending}>
+                    <MenuItem style={{color: pending ? '#fff' : statusLabels['pending'].backgroundColor, fontWeight: pending ? 700 : 400}}
+                              onClick={() => changeStatus('pending')} disabled={pending}>
                         Pending
                     </MenuItem>
-                    <MenuItem style={{color: approved ? '#fff' : statusLabels['approved'].backgroundColor}} onClick={() => changeStatus('approved')} disabled={approved}>
+                    <MenuItem style={{color: approved ? '#fff' : statusLabels['approved'].backgroundColor, fontWeight: approved ? 700 : 400}}
+                              onClick={() => changeStatus('approved')} disabled={approved}>
                         Approved
                     </MenuItem>
-                    <MenuItem style={{color: issues ? '#fff' : statusLabels['issues'].backgroundColor}} onClick={() => changeStatus('issues')} disabled={issues}>
+                    <MenuItem style={{color: issues ? '#fff' : statusLabels['issues'].backgroundColor, fontWeight: issues ? 700 : 400}}
+                              onClick={() => changeStatus('issues')} disabled={issues}>
                         Issues
                     </MenuItem>
-                    <MenuItem style={{color: rejected ? '#fff' : statusLabels['rejected'].backgroundColor}} onClick={() => changeStatus('rejected')} disabled={rejected}>
+                    <MenuItem style={{color: rejected ? '#fff' : statusLabels['rejected'].backgroundColor, fontWeight: rejected ? 700 : 400}}
+                              onClick={() => changeStatus('rejected')} disabled={rejected}>
                         Rejected
                     </MenuItem>
                 </Stack>
