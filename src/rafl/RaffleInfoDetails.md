@@ -31,7 +31,7 @@ The drawing will occur as normal with no changes.
 
 Anyone who wins a number of pots above the limit will need to choose which ones they would like to keep.
 
-All of the unkept pots will be placed back into circulation and redrawn in a second stream that will occur on Monday, February 2.
+All of the unkept pots will be placed back into circulation and redrawn in a second stream that will occur during the evening of Monday, February 16th.
 
 Anyone who goes above the pot limit during the secondary stream will have until the end of the stream to specify what they would like to put back into circulation, or the last pot(s) they won will be redrawn by default.
 

@@ -73,7 +73,7 @@ export default function RaffleIntroBar() {
                         <div style={{fontSize: '1rem', fontWeight: 700}}>
                             Entries will be accepted through February 14th,
                             and the primary prize drawing will happen via livestream at 11 a.m. PDT
-                            on Sunday, February 15th.
+                            on Monday, February 16th.
                         </div>
                     </div>
                 </div>
