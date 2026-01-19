@@ -1,1 +1,0 @@
-import{j as a,R as r}from"./index-BEDqBx41.js";import{l as o}from"./LPU-DltM2OBF.js";import{L as t}from"./LinearProgress-D3-u0ijZ.js";function e(){return a.jsxs(r.Fragment,{children:[a.jsx(t,{variant:"indeterminate",color:"secondary"}),a.jsx("img",{alt:"Loading",src:o,style:{marginLeft:"auto",marginRight:"auto",display:"block"}})]})}export{e as L};
