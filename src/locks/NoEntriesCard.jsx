@@ -22,7 +22,7 @@ function NoEntriesCard({label, isSearch}) {
     const isSearchTab = defTab === 'search'
     const message = isSearchTab && !isSearch && filterCount === 0
         ? 'No search or filter criteria selected.'
-        : <span>No matching {label} were found.<br/>Try adjusting filters, search, or tab.</span>
+        : <span>No matching {label.toLowerCase()} were found.<br/>Try adjusting filters, search, or tab.</span>
 
     const handleClick = useCallback(() => {
         setTimeout(() => {
