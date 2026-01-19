@@ -253,7 +253,7 @@
   {
     "id": "2026-020",
     "year": 2026,
-    "potNumber": 0,
+    "potNumber": 7,
     "title": "Abus Limited Edition Padlocks",
     "winnerCount": 1,
     "displayName": "",
@@ -266,7 +266,7 @@
     ],
     "tags": [
       "Locks (beginner/intermediate)",
-      "Collector items",
+      "Collectors Item",
       "Locks (padlocks)"
     ],
     "country": [
@@ -290,96 +290,63 @@
     ]
   },
   {
-    "id": "2026-002",
+    "id": "2026-026",
     "year": 2026,
-    "potNumber": 0,
-    "title": "Little Pick Energy",
+    "potNumber": 8,
+    "title": "Honey Badger Knives -- the tanto",
     "winnerCount": 1,
     "displayName": "",
-    "description": "Fun-loving weirdos, incorrigible min-maxers, folks who enjoy playing with puzzles, pushing boundaries, and picking the occasional lock: do you have Little Pick Energy? CollateralTech sure has! Instead of filming for Green Belt, CT has been up late laboring out of love and lunacy, trying to jam over two dozen locksport tools into a condom wrapper... ",
-    "descriptionContinued": "The result? A nifty fifty-fifty mixture of hooks and rakes with enough tools to cover most basic pin-tumbler locks and then some. The condom wrapper idea didn't pan out, but the finished package easily fits inside an American 1100 box. Put your RAFL tickets down to win some locks, some fun swag, and an updated copy of CT's original pint-sized passion project, the Stuffed Sparrow.",
-    "potContents": "- Sparrows Curved Tension Wrench Pouch\n- 3x Southern Specialties 2-pocket Vinyl Sleeves\n- Southern Specialties prototype KGB folding pickset (6 Bogota profiles)\n- Southern Specialties prototype KGB folding pickset (6 hook profiles)\n- Southern Specialties Double-sided Tension Tool (nests with SP-57)\n- Lock Picker's Bench Edition MultiPick SP-57 Tapered BOK wrench\n- Newhouse Lock and Key Pocket Rewind (0.025, 0.020)\n- Sparrows Rock Out Key (Octo Rake profile, inspired by DeadHammer)\n- 3x SouthOrd Pen Picks (Half-Diamond, Low Hook, Long Snake)\n- Sparrows Heavy Heavy bar (0.079/2mm)\n- Southern Specialties Z-bar Tension Wrench Set (0.030, 0.040, 0.050)\n- Southern Specialties TOK Wrench (with teeth, 0.035)\n- Southern Specialties 2500 Series Wrench Set (0.030, 0.040, 0.050, TOK and BOK)\n- Southern Specialties Titanium Quick Stick knife\n- Southern Specialties Titanium EZ Decoder\n- Southern Specialties Utility Wafer Jiggler\n- Sparrows Mantis Tubular Lock Wrench\n- Plastic shim for push-side bypass on internal doors",
+    "description": "",
+    "descriptionContinued": "",
+    "potContents": "- Honey Badger Knives, large green Tanto\n- A bottle of super slick knife oil",
     "keywords": "",
     "contributedBy": [
-      "CollateralTech"
+      "Badger"
     ],
     "tags": [
-      "Picks (hooks)",
-      "Picks (rakes)",
-      "Tensioners (TOK)",
-      "Tensioners (BOK)",
-      "Tensioners (tubular)",
-      "Tensioners (other)",
-      "Cases",
-      "Tools (decoding)",
-      "Tools (bypass)",
-      "Compact",
-      "Puzzle"
+      "Tools",
+      "Other"
     ],
     "country": [
       "USA"
     ],
-    "shippingInfo": "50% towards international shipping",
-    "splitShipping": "shippingNotSplit",
-    "splitShippingBoolean": true,
-    "shippingType": "Split Intl. shipping",
+    "shippingInfo": "Domestic only (USA)",
+    "splitShipping": "shippingSplit",
+    "splitShippingBoolean": false,
+    "shippingType": "No Intl. shipping",
     "shipsToUS": "",
-    "dateAdded": "20260111",
+    "dateAdded": "20251216",
     "media": [
       {
-        "title": "By: CollateralTech",
+        "title": "By: Badger",
         "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/54975333272_8ee7b66a2d_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54975333272/in/album-72177720330595608/",
-        "sequenceId": 2,
-        "fullSizeUrl": "https://live.staticflickr.com/65535/54975333272_ff82ddb566_o.jpg"
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54998183448_4dd6ffe18f_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54998183448/in/album-72177720331042473/",
+        "sequenceId": 20,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54998183448_4446441d19_o.jpg"
       },
       {
-        "title": "By: CollateralTech",
+        "title": "By: Badger",
         "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/54976521170_26a4c3ee46_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54976521170/in/album-72177720330595608/",
-        "sequenceId": 54,
-        "fullSizeUrl": "https://live.staticflickr.com/65535/54976521170_e4ceb9ee7e_o.jpg"
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54998272364_8df947622a_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54998272364/in/album-72177720331042473/",
+        "sequenceId": 63,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54998272364_f0a4841c9a_o.jpg"
       },
       {
-        "title": "By: CollateralTech",
+        "title": "By: Badger",
         "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/54976224271_6996d48c7d_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54976224271/in/album-72177720330595608/",
-        "sequenceId": 79,
-        "fullSizeUrl": "https://live.staticflickr.com/65535/54976224271_a72fdf9d59_o.jpg"
-      },
-      {
-        "title": "By: CollateralTech",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/54995928200_542434c6e1_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54995928200/in/album-72177720331042473/",
-        "sequenceId": 99,
-        "fullSizeUrl": "https://live.staticflickr.com/65535/54995928200_ecf95417f0_o.jpg"
-      },
-      {
-        "title": "By: CollateralTech",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/54995928370_808f06fd34_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54995928370/in/album-72177720331042473/",
-        "sequenceId": 112,
-        "fullSizeUrl": "https://live.staticflickr.com/65535/54995928370_49172016c7_o.jpg"
-      },
-      {
-        "title": "By: CollateralTech",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/54995806233_e8d69fbbc1_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54995806233/in/album-72177720331042473/",
-        "sequenceId": 121,
-        "fullSizeUrl": "https://live.staticflickr.com/65535/54995806233_b4eda373cf_o.jpg"
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54998183833_521a638dab_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54998183833/in/album-72177720331042473/",
+        "sequenceId": 86,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54998183833_0ce37b6001_o.jpg"
       }
     ]
   },
   {
     "id": "2026-051",
     "year": 2026,
-    "potNumber": 0,
+    "potNumber": 9,
     "title": "Fantasm Pick Case",
     "winnerCount": 1,
     "displayName": "",
@@ -433,7 +400,7 @@
   {
     "id": "2026-012",
     "year": 2026,
-    "potNumber": 0,
+    "potNumber": 10,
     "title": "Fully Custom Case",
     "winnerCount": 1,
     "displayName": "",
@@ -576,7 +543,7 @@
   {
     "id": "2026-054",
     "year": 2026,
-    "potNumber": 0,
+    "potNumber": 11,
     "title": "Custom Leather Case",
     "winnerCount": 1,
     "displayName": "",
@@ -605,7 +572,7 @@
   {
     "id": "2026-037",
     "year": 2026,
-    "potNumber": 0,
+    "potNumber": 12,
     "title": "Ratyoke 2026",
     "winnerCount": 1,
     "displayName": "",
@@ -643,7 +610,7 @@
   {
     "id": "2026-003",
     "year": 2026,
-    "potNumber": 0,
+    "potNumber": 13,
     "title": "The Paladin",
     "winnerCount": 1,
     "displayName": "",
@@ -692,7 +659,7 @@
   {
     "id": "2026-004",
     "year": 2026,
-    "potNumber": 0,
+    "potNumber": 14,
     "title": "Carbon fiber flag set",
     "winnerCount": 1,
     "displayName": "",
@@ -728,9 +695,342 @@
     ]
   },
   {
+    "id": "2026-002",
+    "year": 2026,
+    "potNumber": 15,
+    "title": "Little Pick Energy",
+    "winnerCount": 1,
+    "displayName": "",
+    "description": "Fun-loving weirdos, incorrigible min-maxers, folks who enjoy playing with puzzles, pushing boundaries, and picking the occasional lock: do you have Little Pick Energy? CollateralTech sure has! Instead of filming for Green Belt, CT has been up late laboring out of love and lunacy, trying to jam over two dozen locksport tools into a condom wrapper... ",
+    "descriptionContinued": "The result? A nifty fifty-fifty mixture of hooks and rakes with enough tools to cover most basic pin-tumbler locks and then some. The condom wrapper idea didn't pan out, but the finished package easily fits inside an American 1100 box. Put your RAFL tickets down to win some locks, some fun swag, and an updated copy of CT's original pint-sized passion project, the Stuffed Sparrow.",
+    "potContents": "- Sparrows Curved Tension Wrench Pouch\n- 3x Southern Specialties 2-pocket Vinyl Sleeves\n- Southern Specialties prototype KGB folding pickset (6 Bogota profiles)\n- Southern Specialties prototype KGB folding pickset (6 hook profiles)\n- Southern Specialties Double-sided Tension Tool (nests with SP-57)\n- Lock Picker's Bench Edition MultiPick SP-57 Tapered BOK wrench\n- Newhouse Lock and Key Pocket Rewind (0.025, 0.020)\n- Sparrows Rock Out Key (Octo Rake profile, inspired by DeadHammer)\n- 3x SouthOrd Pen Picks (Half-Diamond, Low Hook, Long Snake)\n- Sparrows Heavy Heavy bar (0.079/2mm)\n- Southern Specialties Z-bar Tension Wrench Set (0.030, 0.040, 0.050)\n- Southern Specialties TOK Wrench (with teeth, 0.035)\n- Southern Specialties 2500 Series Wrench Set (0.030, 0.040, 0.050, TOK and BOK)\n- Southern Specialties Titanium Quick Stick knife\n- Southern Specialties Titanium EZ Decoder\n- Southern Specialties Utility Wafer Jiggler\n- Sparrows Mantis Tubular Lock Wrench\n- Plastic shim for push-side bypass on internal doors",
+    "keywords": "",
+    "contributedBy": [
+      "CollateralTech"
+    ],
+    "tags": [
+      "Picks (hooks)",
+      "Picks (rakes)",
+      "Tensioners (TOK)",
+      "Tensioners (BOK)",
+      "Tensioners (tubular)",
+      "Tensioners (other)",
+      "Cases",
+      "Tools (decoding)",
+      "Tools (bypass)",
+      "Compact",
+      "Puzzle"
+    ],
+    "country": [
+      "USA"
+    ],
+    "shippingInfo": "50% towards international shipping",
+    "splitShipping": "shippingNotSplit",
+    "splitShippingBoolean": true,
+    "shippingType": "Split Intl. shipping",
+    "shipsToUS": "",
+    "dateAdded": "20260111",
+    "media": [
+      {
+        "title": "By: CollateralTech",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54975333272_8ee7b66a2d_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54975333272/in/album-72177720330595608/",
+        "sequenceId": 2,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54975333272_ff82ddb566_o.jpg"
+      },
+      {
+        "title": "By: CollateralTech",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54976521170_26a4c3ee46_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54976521170/in/album-72177720330595608/",
+        "sequenceId": 54,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54976521170_e4ceb9ee7e_o.jpg"
+      },
+      {
+        "title": "By: CollateralTech",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54976224271_6996d48c7d_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54976224271/in/album-72177720330595608/",
+        "sequenceId": 79,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54976224271_a72fdf9d59_o.jpg"
+      },
+      {
+        "title": "By: CollateralTech",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54995928200_542434c6e1_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54995928200/in/album-72177720331042473/",
+        "sequenceId": 99,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54995928200_ecf95417f0_o.jpg"
+      },
+      {
+        "title": "By: CollateralTech",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54995928370_808f06fd34_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54995928370/in/album-72177720331042473/",
+        "sequenceId": 112,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54995928370_49172016c7_o.jpg"
+      },
+      {
+        "title": "By: CollateralTech",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54995806233_e8d69fbbc1_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54995806233/in/album-72177720331042473/",
+        "sequenceId": 121,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54995806233_b4eda373cf_o.jpg"
+      }
+    ]
+  },
+  {
+    "id": "2026-056",
+    "year": 2026,
+    "potNumber": 16,
+    "title": "The Picks and the Locks",
+    "winnerCount": 1,
+    "displayName": "",
+    "description": "",
+    "descriptionContinued": "",
+    "potContents": "- Purple heart wood lockpick\n- Googly eye lockpick\n- Abloy DD cutaway\n- [Patches](https://static.wikia.nocookie.net/eldenring/images/5/5a/ER_NPC_Patches_%28Murkwater_Cave%29_%281.1%29.png/revision/latest/scale-to-width-down/1000?cb=20230510180537)\n- \"I like lock\" magnet\n- Stickers",
+    "keywords": "",
+    "contributedBy": [
+      "LockpickingDev"
+    ],
+    "tags": [
+      "Cutaways",
+      "Artisan Piece",
+      "Swag",
+      "Locks (DD)",
+      "Picks (hooks)"
+    ],
+    "country": [
+      "USA"
+    ],
+    "shippingInfo": "$15 towards international shipping",
+    "splitShipping": "shippingNotSplit",
+    "splitShippingBoolean": true,
+    "shippingType": "Split Intl. shipping",
+    "shipsToUS": "",
+    "dateAdded": "20260111",
+    "media": [
+      {
+        "title": "By: LockpickingDev",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/55040646295_c62fb3166f_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55040646295/in/album-72177720331439767/",
+        "sequenceId": 45,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/55040646295_eb13901dc4_o.jpg"
+      },
+      {
+        "title": "By: LockpickingDev",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/55040485128_eea10f0fcc_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55040485128/in/album-72177720331439767/",
+        "sequenceId": 78,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/55040485128_b664d203aa_o.jpg"
+      },
+      {
+        "title": "By: LockpickingDev",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/55039405437_52bb2a5f3b_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55039405437/in/album-72177720331439767/",
+        "sequenceId": 98,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/55039405437_0acfe74bde_o.jpg"
+      },
+      {
+        "title": "By: LockpickingDev",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/55040309126_37b3e2c875_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55040309126/in/album-72177720331439767/",
+        "sequenceId": 111,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/55040309126_983767aae8_o.jpg"
+      },
+      {
+        "title": "By: LockpickingDev",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/55039405682_b03cbef309_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55039405682/in/album-72177720331439767/",
+        "sequenceId": 120,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/55039405682_7bde2120ff_o.jpg"
+      }
+    ]
+  },
+  {
+    "id": "2026-033",
+    "year": 2026,
+    "potNumber": 17,
+    "title": "Polished Gems",
+    "winnerCount": 1,
+    "displayName": "",
+    "description": "Two immaculately polished gem picks with intricate wood handles.\nCheck them out in motion [here](https://www.youtube.com/watch?v=B9z-XO8cGCI)\nCheck out the polished picks picking a Polish lock [here](https://www.youtube.com/watch?v=-jjNqj1H4RE)",
+    "descriptionContinued": "Deep gem:\n- Bloodwood handle, 12.5mm diameter\n- Inlay rings: maple + makore, peltogyne + red gum, jatoba + mahogany, ebony + anigre\n- Inlay slot: paldao\n\n\nShort gem:\n- Bubinga handle, 11mm diameter\n- Inlay rings: ebony + anigre + birch, maple + mahogany + spanish cedar, peltogyne + red gum + beech\n- Inlay slot: angic",
+    "potContents": "- Custom deep gem with intricate wood handle\n- Custom shallow gem, also with an intricate wood handle\n- 1x Łucznik E8, so you can pick a Polish lock with your polished picks",
+    "keywords": "",
+    "contributedBy": [
+      "4550"
+    ],
+    "tags": [
+      "Artisan Piece",
+      "Picks (hooks)",
+      "Locks (beginner/intermediate)"
+    ],
+    "country": [
+      "USA"
+    ],
+    "shippingInfo": "International shipping included",
+    "splitShipping": "shippingSplit",
+    "splitShippingBoolean": false,
+    "shippingType": "Intl. shipping included",
+    "shipsToUS": "",
+    "dateAdded": "20251220",
+    "media": [
+      {
+        "title": "By: 4550",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/55010474050_93b82c6e9c_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55010474050/in/album-72177720331152221/",
+        "sequenceId": 24,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/55010474050_f363ddb041_o.jpg"
+      },
+      {
+        "title": "By: 4550",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/55034308303_2543dfd1fd_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55034308303/in/album-72177720331295330/",
+        "sequenceId": 35,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/55034308303_68105b079b_o.jpg"
+      },
+      {
+        "title": "By: 4550",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/55009283957_ece2e4f7e3_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55009283957/in/album-72177720331152221/",
+        "sequenceId": 66,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/55009283957_7a0846acc1_o.jpg"
+      },
+      {
+        "title": "By: 4550",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://i3.ytimg.com/vi/B9z-XO8cGCI/maxresdefault.jpg",
+        "fullUrl": "https://www.youtube.com/watch?v=B9z-XO8cGCI",
+        "sequenceId": 67,
+        "subtitleUrl": "https://www.youtube.com/watch?v=B9z-XO8cGCI"
+      }
+    ]
+  },
+  {
+    "id": "2026-047",
+    "year": 2026,
+    "potNumber": 18,
+    "title": "Prototype PLA Protector",
+    "winnerCount": 1,
+    "displayName": "",
+    "description": "Before there was the Giant PLA Protector, there was the Prototype PLA Protector. You know it's a prototype because it's pink.",
+    "descriptionContinued": "",
+    "potContents": "The original prototype, fully functional printed Kromer Protector (also it's pink)",
+    "keywords": "",
+    "contributedBy": [
+      "bask"
+    ],
+    "tags": [
+      "Artisan Piece",
+      "Cutaways",
+      "Locks?"
+    ],
+    "country": [
+      "USA"
+    ],
+    "shippingInfo": "International shipping included",
+    "splitShipping": "shippingSplit",
+    "splitShippingBoolean": false,
+    "shippingType": "Intl. shipping included",
+    "shipsToUS": "Yes",
+    "dateAdded": "20260105",
+    "media": [
+      {
+        "title": "By: bask",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/55026043487_6f4d9c574a_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55026043487/in/album-72177720331295330/",
+        "sequenceId": 94,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/55026043487_659e0f1b8f_o.jpg"
+      }
+    ]
+  },
+  {
+    "id": "2026-044",
+    "year": 2026,
+    "potNumber": 19,
+    "title": "Giant PLA Protector",
+    "winnerCount": 1,
+    "displayName": "",
+    "description": "A massive 3D printed Kromer protector--fully funcitonal, 1 of 1, no plans to make more!\nActual Kromer protector shown for scale only",
+    "descriptionContinued": "",
+    "potContents": "A giant 3D printed [fully-functioning Kromer Protector](https://youtube.com/shorts/dt6mV9QZLSo?si=USM25UoFd0y3W5n_)",
+    "keywords": "",
+    "contributedBy": [
+      "bask"
+    ],
+    "tags": [
+      "Artisan Piece",
+      "Cutaways",
+      "Locks?"
+    ],
+    "country": [
+      "USA"
+    ],
+    "shippingInfo": "International shipping included",
+    "splitShipping": "shippingSplit",
+    "splitShippingBoolean": false,
+    "shippingType": "Intl. shipping included",
+    "shipsToUS": "Yes",
+    "dateAdded": "20251231",
+    "media": [
+      {
+        "title": "By: bask",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/55026043122_aea2c72018_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55026043122/in/album-72177720331295330/",
+        "sequenceId": 33,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/55026043122_794a5cf90a_o.jpg"
+      },
+      {
+        "title": "By: bask",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/55027188779_b0734672d7_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55027188779/in/album-72177720331295330/",
+        "sequenceId": 70,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/55027188779_cc9a242a57_o.jpg"
+      },
+      {
+        "title": "By: bask",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/55026043257_4a85cb06f4_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55026043257/in/album-72177720331295330/",
+        "sequenceId": 73,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/55026043257_f83d0b9c5f_o.jpg"
+      },
+      {
+        "title": "By: bask",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/55027264705_fa8a7bd5fd_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55027264705/in/album-72177720331295330/",
+        "sequenceId": 91,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/55027264705_e85c8aeeaa_o.jpg"
+      },
+      {
+        "title": "By: bask",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/55027264910_44468c5220_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55027264910/in/album-72177720331295330/",
+        "sequenceId": 108,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/55027264910_2c0e8bbd2e_o.jpg"
+      }
+    ]
+  },
+  {
     "id": "2026-005",
     "year": 2026,
-    "potNumber": 0,
+    "potNumber": 20,
     "title": "Anchor Lås Pot",
     "winnerCount": 1,
     "displayName": "",
@@ -769,7 +1069,7 @@
   {
     "id": "2026-007",
     "year": 2026,
-    "potNumber": 0,
+    "potNumber": 21,
     "title": "Sight-seeing Abloy",
     "winnerCount": 1,
     "displayName": "",
@@ -808,7 +1108,7 @@
   {
     "id": "2026-008",
     "year": 2026,
-    "potNumber": 0,
+    "potNumber": 22,
     "title": "787 cutaway",
     "winnerCount": 1,
     "displayName": "",
@@ -856,7 +1156,7 @@
   {
     "id": "2026-009",
     "year": 2026,
-    "potNumber": 0,
+    "potNumber": 23,
     "title": "Honey Pot",
     "winnerCount": 1,
     "displayName": "",
@@ -891,39 +1191,9 @@
     ]
   },
   {
-    "id": "2026-010",
-    "year": 2026,
-    "potNumber": 0,
-    "title": "Emhart Emporium",
-    "winnerCount": 1,
-    "displayName": "",
-    "description": "Here at Granny's Emhart Emprium, we strive to provide you with the best quality lock on the market--with a twist! That's right, here you can find Emharts ranging in difficulty all the way from purple to black, so check it out!",
-    "descriptionContinued": "",
-    "potContents": "- Mini Emhart pin kit\n- Emhart blanks\n- Emhart Blockout function mortise cylinder w/ operating & blockout keys (contributed by @Try_Δngle)\n- NIB [Emhart](/#/locks?id=c266d57b) deadbolt w/ hardware (Black Belt)\n- Grubbed [Emhart](/#/locks?id=c4f942f0) rim cylinder (Red Belt)\n- [Emhart](/#/locks?id=71bce5b7) LFIC w/ operating & control keys (Purple Belt)",
-    "keywords": "",
-    "contributedBy": [
-      "Granny"
-    ],
-    "tags": [
-      "Materials",
-      "Locks (advanced)",
-      "Locks (rare)",
-      "Locks (IC)"
-    ],
-    "country": [
-      "Canada"
-    ],
-    "shippingInfo": "International shipping included",
-    "splitShipping": "shippingSplit",
-    "splitShippingBoolean": false,
-    "shippingType": "Intl. shipping included",
-    "shipsToUS": "Winner pays fees",
-    "dateAdded": "20251127"
-  },
-  {
     "id": "2026-011",
     "year": 2026,
-    "potNumber": 0,
+    "potNumber": 24,
     "title": "SasPes Pot",
     "winnerCount": 1,
     "displayName": "",
@@ -963,48 +1233,9 @@
     ]
   },
   {
-    "id": "2026-013",
-    "year": 2026,
-    "potNumber": 0,
-    "title": "Leisure no 19",
-    "winnerCount": 1,
-    "displayName": "",
-    "description": "There is only one Purple belt Master Lock, and this is the one. They're not particularly easy to find, and if you want to find out why they're so difficult to pick, you'll have to win this prize!",
-    "descriptionContinued": "",
-    "potContents": "[Master Lock No.19](/#/locks?id=8f7f1830) w/ key and box",
-    "keywords": "",
-    "contributedBy": [
-      "Lockleisure"
-    ],
-    "tags": [
-      "Locks (padlocks)",
-      "Locks (beginner/intermediate)",
-      "Locks (vintage)"
-    ],
-    "country": [
-      "USA"
-    ],
-    "shippingInfo": "Domestic only (USA)",
-    "splitShipping": "shippingSplit",
-    "splitShippingBoolean": false,
-    "shippingType": "No Intl. shipping",
-    "shipsToUS": "Yes",
-    "dateAdded": "20251202",
-    "media": [
-      {
-        "title": "By: Lockleisure",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/54993301539_a96475611d_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54993301539/in/album-72177720331000337/",
-        "sequenceId": 9,
-        "fullSizeUrl": "https://live.staticflickr.com/65535/54993301539_5d7b3c32c5_o.jpg"
-      }
-    ]
-  },
-  {
     "id": "2026-017",
     "year": 2026,
-    "potNumber": 0,
+    "potNumber": 25,
     "title": "spoon's masculine scents",
     "winnerCount": 1,
     "displayName": "",
@@ -1043,7 +1274,7 @@
   {
     "id": "2026-038",
     "year": 2026,
-    "potNumber": 0,
+    "potNumber": 26,
     "title": "spoon's feminine sents",
     "winnerCount": 1,
     "displayName": "",
@@ -1082,7 +1313,7 @@
   {
     "id": "2026-018",
     "year": 2026,
-    "potNumber": 0,
+    "potNumber": 27,
     "title": "Pick the Rainbow",
     "winnerCount": 1,
     "displayName": "",
@@ -1189,9 +1420,77 @@
     ]
   },
   {
+    "id": "2026-010",
+    "year": 2026,
+    "potNumber": 28,
+    "title": "Emhart Emporium",
+    "winnerCount": 1,
+    "displayName": "",
+    "description": "Here at Granny's Emhart Emprium, we strive to provide you with the best quality lock on the market--with a twist! That's right, here you can find Emharts ranging in difficulty all the way from purple to black, so check it out!",
+    "descriptionContinued": "",
+    "potContents": "- Mini Emhart pin kit\n- Emhart blanks\n- Emhart Blockout function mortise cylinder w/ operating & blockout keys (contributed by @Try_Δngle)\n- NIB [Emhart](/#/locks?id=c266d57b) deadbolt w/ hardware (Black Belt)\n- Grubbed [Emhart](/#/locks?id=c4f942f0) rim cylinder (Red Belt)\n- [Emhart](/#/locks?id=71bce5b7) LFIC w/ operating & control keys (Purple Belt)",
+    "keywords": "",
+    "contributedBy": [
+      "Granny"
+    ],
+    "tags": [
+      "Materials",
+      "Locks (advanced)",
+      "Locks (rare)",
+      "Locks (IC)"
+    ],
+    "country": [
+      "Canada"
+    ],
+    "shippingInfo": "International shipping included",
+    "splitShipping": "shippingSplit",
+    "splitShippingBoolean": false,
+    "shippingType": "Intl. shipping included",
+    "shipsToUS": "Winner pays fees",
+    "dateAdded": "20251127"
+  },
+  {
+    "id": "2026-041",
+    "year": 2026,
+    "potNumber": 29,
+    "title": "BiLock Progressive",
+    "winnerCount": 1,
+    "displayName": "",
+    "description": "",
+    "descriptionContinued": "",
+    "potContents": "- BiLock in Abus 83AL/45 padlock\n- Extra pins for changing difficulty",
+    "keywords": "",
+    "contributedBy": [
+      "bask"
+    ],
+    "tags": [
+      "Locks (advanced)",
+      "Materials"
+    ],
+    "country": [
+      "USA"
+    ],
+    "shippingInfo": "International shipping included",
+    "splitShipping": "shippingSplit",
+    "splitShippingBoolean": false,
+    "shippingType": "Intl. shipping included",
+    "shipsToUS": "",
+    "dateAdded": "20251226",
+    "media": [
+      {
+        "title": "By: bask",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/55010356578_78e2e81753_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55010356578/in/album-72177720331152221/",
+        "sequenceId": 29,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/55010356578_3b1257632a_o.jpg"
+      }
+    ]
+  },
+  {
     "id": "2026-019",
     "year": 2026,
-    "potNumber": 0,
+    "potNumber": 30,
     "title": "BiLock 5-belt advanced progression kit",
     "winnerCount": 1,
     "displayName": "",
@@ -1253,7 +1552,7 @@
   {
     "id": "2026-059",
     "year": 2026,
-    "potNumber": 0,
+    "potNumber": 31,
     "title": "Australia's Finest",
     "winnerCount": 1,
     "displayName": "",
@@ -1284,7 +1583,7 @@
   {
     "id": "2026-061",
     "year": 2026,
-    "potNumber": 0,
+    "potNumber": 32,
     "title": "The Lockwood Pot",
     "winnerCount": 1,
     "displayName": "",
@@ -1307,47 +1606,9 @@
     "dateAdded": "20260117"
   },
   {
-    "id": "2026-041",
-    "year": 2026,
-    "potNumber": 0,
-    "title": "BiLock Progressive",
-    "winnerCount": 1,
-    "displayName": "",
-    "description": "",
-    "descriptionContinued": "",
-    "potContents": "- BiLock in Abus 83AL/45 padlock\n- Extra pins for changing difficulty",
-    "keywords": "",
-    "contributedBy": [
-      "bask"
-    ],
-    "tags": [
-      "Locks (advanced)",
-      "Materials"
-    ],
-    "country": [
-      "USA"
-    ],
-    "shippingInfo": "International shipping included",
-    "splitShipping": "shippingSplit",
-    "splitShippingBoolean": false,
-    "shippingType": "Intl. shipping included",
-    "shipsToUS": "",
-    "dateAdded": "20251226",
-    "media": [
-      {
-        "title": "By: bask",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/55010356578_78e2e81753_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55010356578/in/album-72177720331152221/",
-        "sequenceId": 29,
-        "fullSizeUrl": "https://live.staticflickr.com/65535/55010356578_3b1257632a_o.jpg"
-      }
-    ]
-  },
-  {
     "id": "2026-021",
     "year": 2026,
-    "potNumber": 0,
+    "potNumber": 33,
     "title": "Medeco X6",
     "winnerCount": 1,
     "displayName": "",
@@ -1401,7 +1662,7 @@
   {
     "id": "2026-030",
     "year": 2026,
-    "potNumber": 0,
+    "potNumber": 34,
     "title": "Medeco Haul",
     "winnerCount": 1,
     "displayName": "",
@@ -1456,109 +1717,9 @@
     ]
   },
   {
-    "id": "2026-022",
-    "year": 2026,
-    "potNumber": 0,
-    "title": "Hot Topic",
-    "winnerCount": 1,
-    "displayName": "",
-    "description": "",
-    "descriptionContinued": "",
-    "potContents": "XL ASSA Abloy Golf shirt",
-    "keywords": "",
-    "contributedBy": [
-      "Wyte"
-    ],
-    "tags": [
-      "Swag"
-    ],
-    "country": [
-      "USA"
-    ],
-    "shippingInfo": "",
-    "splitShipping": "shippingSplit",
-    "splitShippingBoolean": false,
-    "shippingType": "",
-    "shipsToUS": "",
-    "dateAdded": "",
-    "media": [
-      {
-        "title": "By: Wyte",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/54993305374_6dd507bbf4_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54993305374/in/album-72177720331000337/",
-        "sequenceId": 16,
-        "fullSizeUrl": "https://live.staticflickr.com/65535/54993305374_e883a88564_o.jpg"
-      }
-    ]
-  },
-  {
-    "id": "2026-023",
-    "year": 2026,
-    "potNumber": 0,
-    "title": "Tour-caliber Tensioners",
-    "winnerCount": 1,
-    "displayName": "",
-    "description": "",
-    "descriptionContinued": "",
-    "potContents": "Golf club tensioners complete with stand bag",
-    "keywords": "",
-    "contributedBy": [
-      "Nightmare"
-    ],
-    "tags": [
-      "Tensioners (TOK)",
-      "Cases",
-      "Artisan Piece"
-    ],
-    "country": [
-      "USA"
-    ],
-    "shippingInfo": "Domestic only (USA)",
-    "splitShipping": "shippingSplit",
-    "splitShippingBoolean": false,
-    "shippingType": "No Intl. shipping",
-    "shipsToUS": "",
-    "dateAdded": "20250118",
-    "media": [
-      {
-        "title": "By: Nightmare",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/54980604100_89b04dc2fc_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54980604100/in/album-72177720330595608/",
-        "sequenceId": 17,
-        "fullSizeUrl": "https://live.staticflickr.com/65535/54980604100_a312b9f89f_o.jpg"
-      },
-      {
-        "title": "By: Nightmare",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/54980487773_78d467622b_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54980487773/in/album-72177720330595608/",
-        "sequenceId": 61,
-        "fullSizeUrl": "https://live.staticflickr.com/65535/54980487773_6eac30cdc6_o.jpg"
-      },
-      {
-        "title": "By: Nightmare",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/54980604615_72d8f4ff2b_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54980604615/in/album-72177720330595608/",
-        "sequenceId": 84,
-        "fullSizeUrl": "https://live.staticflickr.com/65535/54980604615_a9e8d7cec9_o.jpg"
-      },
-      {
-        "title": "By: Nightmare",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/54980307626_f076f9aca6_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54980307626/in/album-72177720330595608/",
-        "sequenceId": 103,
-        "fullSizeUrl": "https://live.staticflickr.com/65535/54980307626_31ab159839_o.jpg"
-      }
-    ]
-  },
-  {
     "id": "2026-024",
     "year": 2026,
-    "potNumber": 0,
+    "potNumber": 35,
     "title": "Moki Pouch + Master No.19",
     "winnerCount": 1,
     "displayName": "",
@@ -1642,9 +1803,148 @@
     ]
   },
   {
+    "id": "2026-013",
+    "year": 2026,
+    "potNumber": 36,
+    "title": "Leisure no 19",
+    "winnerCount": 1,
+    "displayName": "",
+    "description": "There is only one Purple belt Master Lock, and this is the one. They're not particularly easy to find, and if you want to find out why they're so difficult to pick, you'll have to win this prize!",
+    "descriptionContinued": "",
+    "potContents": "[Master Lock No.19](/#/locks?id=8f7f1830) w/ key and box",
+    "keywords": "",
+    "contributedBy": [
+      "Lockleisure"
+    ],
+    "tags": [
+      "Locks (padlocks)",
+      "Locks (beginner/intermediate)",
+      "Locks (vintage)"
+    ],
+    "country": [
+      "USA"
+    ],
+    "shippingInfo": "Domestic only (USA)",
+    "splitShipping": "shippingSplit",
+    "splitShippingBoolean": false,
+    "shippingType": "No Intl. shipping",
+    "shipsToUS": "Yes",
+    "dateAdded": "20251202",
+    "media": [
+      {
+        "title": "By: Lockleisure",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54993301539_a96475611d_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54993301539/in/album-72177720331000337/",
+        "sequenceId": 9,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54993301539_5d7b3c32c5_o.jpg"
+      }
+    ]
+  },
+  {
+    "id": "2026-022",
+    "year": 2026,
+    "potNumber": 37,
+    "title": "Hot Topic",
+    "winnerCount": 1,
+    "displayName": "",
+    "description": "",
+    "descriptionContinued": "",
+    "potContents": "XL ASSA Abloy Golf shirt",
+    "keywords": "",
+    "contributedBy": [
+      "Wyte"
+    ],
+    "tags": [
+      "Swag"
+    ],
+    "country": [
+      "USA"
+    ],
+    "shippingInfo": "",
+    "splitShipping": "shippingSplit",
+    "splitShippingBoolean": false,
+    "shippingType": "",
+    "shipsToUS": "",
+    "dateAdded": "",
+    "media": [
+      {
+        "title": "By: Wyte",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54993305374_6dd507bbf4_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54993305374/in/album-72177720331000337/",
+        "sequenceId": 16,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54993305374_e883a88564_o.jpg"
+      }
+    ]
+  },
+  {
+    "id": "2026-023",
+    "year": 2026,
+    "potNumber": 38,
+    "title": "Tour-caliber Tensioners",
+    "winnerCount": 1,
+    "displayName": "",
+    "description": "",
+    "descriptionContinued": "",
+    "potContents": "Golf club tensioners complete with stand bag",
+    "keywords": "",
+    "contributedBy": [
+      "Nightmare"
+    ],
+    "tags": [
+      "Tensioners (TOK)",
+      "Cases",
+      "Artisan Piece"
+    ],
+    "country": [
+      "USA"
+    ],
+    "shippingInfo": "Domestic only (USA)",
+    "splitShipping": "shippingSplit",
+    "splitShippingBoolean": false,
+    "shippingType": "No Intl. shipping",
+    "shipsToUS": "",
+    "dateAdded": "20250118",
+    "media": [
+      {
+        "title": "By: Nightmare",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54980604100_89b04dc2fc_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54980604100/in/album-72177720330595608/",
+        "sequenceId": 17,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54980604100_a312b9f89f_o.jpg"
+      },
+      {
+        "title": "By: Nightmare",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54980487773_78d467622b_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54980487773/in/album-72177720330595608/",
+        "sequenceId": 61,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54980487773_6eac30cdc6_o.jpg"
+      },
+      {
+        "title": "By: Nightmare",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54980604615_72d8f4ff2b_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54980604615/in/album-72177720330595608/",
+        "sequenceId": 84,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54980604615_a9e8d7cec9_o.jpg"
+      },
+      {
+        "title": "By: Nightmare",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54980307626_f076f9aca6_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54980307626/in/album-72177720330595608/",
+        "sequenceId": 103,
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54980307626_31ab159839_o.jpg"
+      }
+    ]
+  },
+  {
     "id": "2026-025",
     "year": 2026,
-    "potNumber": 0,
+    "potNumber": 39,
     "title": "TOOOL Set and more",
     "winnerCount": 1,
     "displayName": "",
@@ -1705,63 +2005,9 @@
     ]
   },
   {
-    "id": "2026-026",
-    "year": 2026,
-    "potNumber": 0,
-    "title": "Honey Badger Knives -- the tanto",
-    "winnerCount": 1,
-    "displayName": "",
-    "description": "",
-    "descriptionContinued": "",
-    "potContents": "- Honey Badger Knives, large green Tanto\n- A bottle of super slick knife oil",
-    "keywords": "",
-    "contributedBy": [
-      "Badger"
-    ],
-    "tags": [
-      "Tools",
-      "Other"
-    ],
-    "country": [
-      "USA"
-    ],
-    "shippingInfo": "Domestic only (USA)",
-    "splitShipping": "shippingSplit",
-    "splitShippingBoolean": false,
-    "shippingType": "No Intl. shipping",
-    "shipsToUS": "",
-    "dateAdded": "20251216",
-    "media": [
-      {
-        "title": "By: Badger",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/54998183448_4dd6ffe18f_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54998183448/in/album-72177720331042473/",
-        "sequenceId": 20,
-        "fullSizeUrl": "https://live.staticflickr.com/65535/54998183448_4446441d19_o.jpg"
-      },
-      {
-        "title": "By: Badger",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/54998272364_8df947622a_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54998272364/in/album-72177720331042473/",
-        "sequenceId": 63,
-        "fullSizeUrl": "https://live.staticflickr.com/65535/54998272364_f0a4841c9a_o.jpg"
-      },
-      {
-        "title": "By: Badger",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/54998183833_521a638dab_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54998183833/in/album-72177720331042473/",
-        "sequenceId": 86,
-        "fullSizeUrl": "https://live.staticflickr.com/65535/54998183833_0ce37b6001_o.jpg"
-      }
-    ]
-  },
-  {
     "id": "2026-028",
     "year": 2026,
-    "potNumber": 0,
+    "potNumber": 40,
     "title": "Lightweight Locks",
     "winnerCount": 1,
     "displayName": "",
@@ -1825,7 +2071,7 @@
   {
     "id": "2026-029",
     "year": 2026,
-    "potNumber": 0,
+    "potNumber": 41,
     "title": "Wild-Biliam Pot",
     "winnerCount": 1,
     "displayName": "",
@@ -1863,7 +2109,7 @@
   {
     "id": "2026-031",
     "year": 2026,
-    "potNumber": 0,
+    "potNumber": 42,
     "title": "Dirty Old Man",
     "winnerCount": 1,
     "displayName": "",
@@ -1933,7 +2179,7 @@
   {
     "id": "2026-032",
     "year": 2026,
-    "potNumber": 0,
+    "potNumber": 43,
     "title": "Master of France",
     "winnerCount": 1,
     "displayName": "",
@@ -1962,72 +2208,9 @@
     "dateAdded": "20251220"
   },
   {
-    "id": "2026-033",
-    "year": 2026,
-    "potNumber": 0,
-    "title": "Polished Gems",
-    "winnerCount": 1,
-    "displayName": "",
-    "description": "Two immaculately polished gem picks with intricate wood handles.\nCheck them out in motion [here](https://www.youtube.com/watch?v=B9z-XO8cGCI)\nCheck out the polished picks picking a Polish lock [here](https://www.youtube.com/watch?v=-jjNqj1H4RE)",
-    "descriptionContinued": "Deep gem:\n- Bloodwood handle, 12.5mm diameter\n- Inlay rings: maple + makore, peltogyne + red gum, jatoba + mahogany, ebony + anigre\n- Inlay slot: paldao\n\n\nShort gem:\n- Bubinga handle, 11mm diameter\n- Inlay rings: ebony + anigre + birch, maple + mahogany + spanish cedar, peltogyne + red gum + beech\n- Inlay slot: angic",
-    "potContents": "- Custom deep gem with intricate wood handle\n- Custom shallow gem, also with an intricate wood handle\n- 1x Łucznik E8, so you can pick a Polish lock with your polished picks",
-    "keywords": "",
-    "contributedBy": [
-      "4550"
-    ],
-    "tags": [
-      "Artisan Piece",
-      "Picks (hooks)",
-      "Locks (beginner/intermediate)"
-    ],
-    "country": [
-      "USA"
-    ],
-    "shippingInfo": "International shipping included",
-    "splitShipping": "shippingSplit",
-    "splitShippingBoolean": false,
-    "shippingType": "Intl. shipping included",
-    "shipsToUS": "",
-    "dateAdded": "20251220",
-    "media": [
-      {
-        "title": "By: 4550",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/55010474050_93b82c6e9c_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55010474050/in/album-72177720331152221/",
-        "sequenceId": 24,
-        "fullSizeUrl": "https://live.staticflickr.com/65535/55010474050_f363ddb041_o.jpg"
-      },
-      {
-        "title": "By: 4550",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/55034308303_2543dfd1fd_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55034308303/in/album-72177720331295330/",
-        "sequenceId": 35,
-        "fullSizeUrl": "https://live.staticflickr.com/65535/55034308303_68105b079b_o.jpg"
-      },
-      {
-        "title": "By: 4550",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/55009283957_ece2e4f7e3_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55009283957/in/album-72177720331152221/",
-        "sequenceId": 66,
-        "fullSizeUrl": "https://live.staticflickr.com/65535/55009283957_7a0846acc1_o.jpg"
-      },
-      {
-        "title": "By: 4550",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://i3.ytimg.com/vi/B9z-XO8cGCI/maxresdefault.jpg",
-        "fullUrl": "https://www.youtube.com/watch?v=B9z-XO8cGCI",
-        "sequenceId": 67,
-        "subtitleUrl": "https://www.youtube.com/watch?v=B9z-XO8cGCI"
-      }
-    ]
-  },
-  {
     "id": "2026-034",
     "year": 2026,
-    "potNumber": 0,
+    "potNumber": 44,
     "title": "Boxed Rarities",
     "winnerCount": 1,
     "displayName": "",
@@ -2098,7 +2281,7 @@
   {
     "id": "2026-035",
     "year": 2026,
-    "potNumber": 0,
+    "potNumber": 45,
     "title": "Sealed ABUS Nostalgia",
     "winnerCount": 1,
     "displayName": "",
@@ -2137,7 +2320,7 @@
   {
     "id": "2026-036",
     "year": 2026,
-    "potNumber": 0,
+    "potNumber": 46,
     "title": "Electromechanic Future",
     "winnerCount": 1,
     "displayName": "",
@@ -2193,7 +2376,7 @@
   {
     "id": "2026-040",
     "year": 2026,
-    "potNumber": 0,
+    "potNumber": 47,
     "title": "Box to Green (EU)",
     "winnerCount": 1,
     "displayName": "",
@@ -2222,7 +2405,7 @@
   {
     "id": "2026-043",
     "year": 2026,
-    "potNumber": 0,
+    "potNumber": 48,
     "title": "Box to Green (USA)",
     "winnerCount": 1,
     "displayName": "",
@@ -2260,7 +2443,7 @@
   {
     "id": "2026-058",
     "year": 2026,
-    "potNumber": 0,
+    "potNumber": 49,
     "title": "Chunky Master Locks",
     "winnerCount": 1,
     "displayName": "",
@@ -2298,13 +2481,13 @@
   {
     "id": "2026-014",
     "year": 2026,
-    "potNumber": 0,
+    "potNumber": 50,
     "title": "The Practice Lineup",
     "winnerCount": 1,
     "displayName": "",
     "description": "One of the best ways to learn and improve is to have a big bag of beginner and intermediate padlocks that you pick over and over again while you watch TV. If you're looking to live that kind of life, this prize is for you.",
     "descriptionContinued": "",
-    "potContents": "- 14 padlocks ranging from beginner to intermediate, most with keys\n- Cutaway Schlage practice KiK",
+    "potContents": "Top down, left to right\n- Ace 527\n- Abus 80TI/50 titalium\n- Master 570\n- American lock 1100\n- American lock 1100 with master lock 410 core\n- Chateau storage lock\n- Hercules (WB knockoff)\n- Masterlock #3\n- Masterlock 150\n- Masterlock 140\n- Masterlock 140 longer shackle\n- Masterlock 141\n- Masterlock shutter lock\n- Masterlock #3\n- Schalge kik cutaway",
     "keywords": "",
     "contributedBy": [
       "Lockleisure"
@@ -2334,125 +2517,15 @@
     ]
   },
   {
-    "id": "2026-047",
-    "year": 2026,
-    "potNumber": 0,
-    "title": "Prototype PLA Protector",
-    "winnerCount": 1,
-    "displayName": "",
-    "description": "Before there was the Giant PLA Protector, there was the Prototype PLA Protector. You know it's a prototype because it's pink.",
-    "descriptionContinued": "",
-    "potContents": "The original prototype, fully functional printed Kromer Protector (also it's pink)",
-    "keywords": "",
-    "contributedBy": [
-      "bask"
-    ],
-    "tags": [
-      "Artisan Piece",
-      "Cutaways",
-      "Locks?"
-    ],
-    "country": [
-      "USA"
-    ],
-    "shippingInfo": "International shipping included",
-    "splitShipping": "shippingSplit",
-    "splitShippingBoolean": false,
-    "shippingType": "Intl. shipping included",
-    "shipsToUS": "Yes",
-    "dateAdded": "20260105",
-    "media": [
-      {
-        "title": "By: bask",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/55026043487_6f4d9c574a_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55026043487/in/album-72177720331295330/",
-        "sequenceId": 94,
-        "fullSizeUrl": "https://live.staticflickr.com/65535/55026043487_659e0f1b8f_o.jpg"
-      }
-    ]
-  },
-  {
-    "id": "2026-044",
-    "year": 2026,
-    "potNumber": 0,
-    "title": "Giant PLA Protector",
-    "winnerCount": 1,
-    "displayName": "",
-    "description": "A massive 3D printed Kromer protector--fully funcitonal, 1 of 1, no plans to make more!\nActual Kromer protector shown for scale only",
-    "descriptionContinued": "",
-    "potContents": "A giant 3D printed [fully-functioning Kromer Protector](https://youtube.com/shorts/dt6mV9QZLSo?si=USM25UoFd0y3W5n_)",
-    "keywords": "",
-    "contributedBy": [
-      "bask"
-    ],
-    "tags": [
-      "Artisan Piece",
-      "Cutaways",
-      "Locks?"
-    ],
-    "country": [
-      "USA"
-    ],
-    "shippingInfo": "International shipping included",
-    "splitShipping": "shippingSplit",
-    "splitShippingBoolean": false,
-    "shippingType": "Intl. shipping included",
-    "shipsToUS": "Yes",
-    "dateAdded": "20251231",
-    "media": [
-      {
-        "title": "By: bask",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/55026043122_aea2c72018_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55026043122/in/album-72177720331295330/",
-        "sequenceId": 33,
-        "fullSizeUrl": "https://live.staticflickr.com/65535/55026043122_794a5cf90a_o.jpg"
-      },
-      {
-        "title": "By: bask",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/55027188779_b0734672d7_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55027188779/in/album-72177720331295330/",
-        "sequenceId": 70,
-        "fullSizeUrl": "https://live.staticflickr.com/65535/55027188779_cc9a242a57_o.jpg"
-      },
-      {
-        "title": "By: bask",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/55026043257_4a85cb06f4_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55026043257/in/album-72177720331295330/",
-        "sequenceId": 73,
-        "fullSizeUrl": "https://live.staticflickr.com/65535/55026043257_f83d0b9c5f_o.jpg"
-      },
-      {
-        "title": "By: bask",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/55027264705_fa8a7bd5fd_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55027264705/in/album-72177720331295330/",
-        "sequenceId": 91,
-        "fullSizeUrl": "https://live.staticflickr.com/65535/55027264705_e85c8aeeaa_o.jpg"
-      },
-      {
-        "title": "By: bask",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/55027264910_44468c5220_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55027264910/in/album-72177720331295330/",
-        "sequenceId": 108,
-        "fullSizeUrl": "https://live.staticflickr.com/65535/55027264910_2c0e8bbd2e_o.jpg"
-      }
-    ]
-  },
-  {
     "id": "2026-045",
     "year": 2026,
-    "potNumber": 0,
+    "potNumber": 51,
     "title": "Pick & Play",
     "winnerCount": 1,
     "displayName": "",
     "description": "",
     "descriptionContinued": "",
-    "potContents": "Wooden City Safe Mechanical Model,\r\nROKR Treasure Box Model,\r\nSpy Code Break Free Handcuff Game,\r\nPick the Lock Card Game,\r\nSlickshot Lockpicker Magic Card,\r\nPick Lock World of Warcraft Card,\r\nAssembled UGEARS Cypher model with secret treasure (no combination provided)",
+    "potContents": "- Wooden City Safe Mechanical Model\n- ROKR Treasure Box Model\n- Spy Code Break Free Handcuff Game\n- Pick the Lock Card Game\n- Slickshot Lockpicker Magic Card\n- Pick Lock World of Warcraft Card\n- Assembled UGEARS Cypher model with secret treasure (no combination provided)",
     "keywords": "",
     "contributedBy": [
       "Zak Attack"
@@ -2460,7 +2533,7 @@
     "tags": [
       "Toys",
       "Swag",
-      "Collectors Items",
+      "Collectors Item",
       "Puzzles"
     ],
     "country": [
@@ -2518,7 +2591,7 @@
   {
     "id": "2026-046",
     "year": 2026,
-    "potNumber": 0,
+    "potNumber": 52,
     "title": "LPU Logo Lightbox",
     "winnerCount": 1,
     "displayName": "",
@@ -2572,7 +2645,7 @@
   {
     "id": "2026-048",
     "year": 2026,
-    "potNumber": 0,
+    "potNumber": 53,
     "title": "A set of skill issue",
     "winnerCount": 1,
     "displayName": "",
@@ -2610,7 +2683,7 @@
   {
     "id": "2026-049",
     "year": 2026,
-    "potNumber": 0,
+    "potNumber": 54,
     "title": "Picks on the vine",
     "winnerCount": 1,
     "displayName": "",
@@ -2667,7 +2740,7 @@
   {
     "id": "2026-050",
     "year": 2026,
-    "potNumber": 0,
+    "potNumber": 55,
     "title": "Knox in the Box",
     "winnerCount": 1,
     "displayName": "",
@@ -2696,7 +2769,7 @@
   {
     "id": "2026-053",
     "year": 2026,
-    "potNumber": 0,
+    "potNumber": 56,
     "title": "Mounted",
     "winnerCount": 1,
     "displayName": "",
@@ -2732,82 +2805,9 @@
     ]
   },
   {
-    "id": "2026-056",
-    "year": 2026,
-    "potNumber": 0,
-    "title": "The Picks and the Locks",
-    "winnerCount": 1,
-    "displayName": "",
-    "description": "",
-    "descriptionContinued": "",
-    "potContents": "- Purple heart wood lockpick\n- Googly eye lockpick\n- Abloy DD cutaway\n- [Patches](https://static.wikia.nocookie.net/eldenring/images/5/5a/ER_NPC_Patches_%28Murkwater_Cave%29_%281.1%29.png/revision/latest/scale-to-width-down/1000?cb=20230510180537)\n- \"I like lock\" magnet\n- Stickers",
-    "keywords": "",
-    "contributedBy": [
-      "LockpickingDev"
-    ],
-    "tags": [
-      "Cutaways",
-      "Artisan Piece",
-      "Swag",
-      "Locks (DD)",
-      "Picks (hooks)"
-    ],
-    "country": [
-      "USA"
-    ],
-    "shippingInfo": "$15 towards international shipping",
-    "splitShipping": "shippingNotSplit",
-    "splitShippingBoolean": true,
-    "shippingType": "Split Intl. shipping",
-    "shipsToUS": "",
-    "dateAdded": "20260111",
-    "media": [
-      {
-        "title": "By: LockpickingDev",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/55040646295_c62fb3166f_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55040646295/in/album-72177720331439767/",
-        "sequenceId": 45,
-        "fullSizeUrl": "https://live.staticflickr.com/65535/55040646295_eb13901dc4_o.jpg"
-      },
-      {
-        "title": "By: LockpickingDev",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/55040485128_eea10f0fcc_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55040485128/in/album-72177720331439767/",
-        "sequenceId": 78,
-        "fullSizeUrl": "https://live.staticflickr.com/65535/55040485128_b664d203aa_o.jpg"
-      },
-      {
-        "title": "By: LockpickingDev",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/55039405437_52bb2a5f3b_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55039405437/in/album-72177720331439767/",
-        "sequenceId": 98,
-        "fullSizeUrl": "https://live.staticflickr.com/65535/55039405437_0acfe74bde_o.jpg"
-      },
-      {
-        "title": "By: LockpickingDev",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/55040309126_37b3e2c875_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55040309126/in/album-72177720331439767/",
-        "sequenceId": 111,
-        "fullSizeUrl": "https://live.staticflickr.com/65535/55040309126_983767aae8_o.jpg"
-      },
-      {
-        "title": "By: LockpickingDev",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/55039405682_b03cbef309_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55039405682/in/album-72177720331439767/",
-        "sequenceId": 120,
-        "fullSizeUrl": "https://live.staticflickr.com/65535/55039405682_7bde2120ff_o.jpg"
-      }
-    ]
-  },
-  {
     "id": "2026-060",
     "year": 2026,
-    "potNumber": 0,
+    "potNumber": 57,
     "title": "DD's are Magic",
     "winnerCount": 1,
     "displayName": "",
@@ -2836,7 +2836,7 @@
   {
     "id": "2026-062",
     "year": 2026,
-    "potNumber": 0,
+    "potNumber": 58,
     "title": "The Duality of Locks",
     "winnerCount": 1,
     "displayName": "",
@@ -2864,34 +2864,9 @@
     "dateAdded": "20260118"
   },
   {
-    "id": "2026-057",
-    "year": 2026,
-    "potNumber": 0,
-    "title": "Unaccompanied Alpha",
-    "winnerCount": 1,
-    "displayName": "",
-    "description": "",
-    "descriptionContinued": "",
-    "potContents": "- Digs Alpha - #60",
-    "keywords": "",
-    "contributedBy": [
-      "RedWanderer"
-    ],
-    "tags": [],
-    "country": [
-      "USA"
-    ],
-    "shippingInfo": "International shipping included",
-    "splitShipping": "shippingSplit",
-    "splitShippingBoolean": false,
-    "shippingType": "Intl. shipping included",
-    "shipsToUS": "Yes",
-    "dateAdded": "20260112"
-  },
-  {
     "id": "2026-055",
     "year": 2026,
-    "potNumber": 0,
+    "potNumber": 59,
     "title": "The Nameless Lock Project Prototype",
     "winnerCount": 1,
     "displayName": "",
@@ -2902,7 +2877,12 @@
     "contributedBy": [
       "Digs"
     ],
-    "tags": [],
+    "tags": [
+      "Collectors Item",
+      "Locks (advanced)",
+      "Artisan Piece",
+      "Locks?"
+    ],
     "country": [
       "USA"
     ],
@@ -2914,9 +2894,239 @@
     "dateAdded": "20260111"
   },
   {
+    "id": "2026-057",
+    "year": 2026,
+    "potNumber": 60,
+    "title": "Unaccompanied Alpha",
+    "winnerCount": 1,
+    "displayName": "",
+    "description": "",
+    "descriptionContinued": "",
+    "potContents": "- Digs Alpha - #60",
+    "keywords": "",
+    "contributedBy": [
+      "RedWanderer"
+    ],
+    "tags": [
+      "Collectors Item",
+      "Locks (advanced)",
+      "Artisan Piece",
+      "Locks?"
+    ],
+    "country": [
+      "USA"
+    ],
+    "shippingInfo": "International shipping included",
+    "splitShipping": "shippingSplit",
+    "splitShippingBoolean": false,
+    "shippingType": "Intl. shipping included",
+    "shipsToUS": "Yes",
+    "dateAdded": "20260112"
+  },
+  {
+    "id": "2026-063",
+    "year": 2026,
+    "potNumber": 61,
+    "title": "Literally nothing",
+    "winnerCount": 1,
+    "displayName": "",
+    "description": "The winner of this prize gets absolutely nothing. Their name will be on the winners list, but that's it.",
+    "descriptionContinued": "",
+    "potContents": "- Absolutely nothing",
+    "keywords": "",
+    "contributedBy": [
+      "Nobody"
+    ],
+    "tags": [],
+    "country": [
+      "Nowhere"
+    ],
+    "shippingInfo": "",
+    "splitShipping": "shippingSplit",
+    "splitShippingBoolean": false,
+    "shippingType": "",
+    "shipsToUS": "",
+    "dateAdded": ""
+  },
+  {
+    "id": "2026-064",
+    "year": 2026,
+    "potNumber": 62,
+    "title": "Nada",
+    "winnerCount": 1,
+    "displayName": "",
+    "description": "Seriously, you don't get anything for winning this pot. These prizes only exist to pad the list to a specific number",
+    "descriptionContinued": "",
+    "potContents": "- Zero things",
+    "keywords": "",
+    "contributedBy": [
+      "Nobody"
+    ],
+    "tags": [],
+    "country": [
+      "Nowhere"
+    ],
+    "shippingInfo": "",
+    "splitShipping": "shippingSplit",
+    "splitShippingBoolean": false,
+    "shippingType": "",
+    "shipsToUS": "",
+    "dateAdded": ""
+  },
+  {
+    "id": "2026-065",
+    "year": 2026,
+    "potNumber": 63,
+    "title": "Zilch",
+    "winnerCount": 1,
+    "displayName": "",
+    "description": "The real prize is down below. I won't stop you from wasting your tickets, though.",
+    "descriptionContinued": "",
+    "potContents": "- Why did you even click this?",
+    "keywords": "",
+    "contributedBy": [
+      "Nobody"
+    ],
+    "tags": [],
+    "country": [
+      "Nowhere"
+    ],
+    "shippingInfo": "",
+    "splitShipping": "shippingSplit",
+    "splitShippingBoolean": false,
+    "shippingType": "",
+    "shipsToUS": "",
+    "dateAdded": ""
+  },
+  {
+    "id": "2026-066",
+    "year": 2026,
+    "potNumber": 64,
+    "title": "Goose Egg",
+    "winnerCount": 1,
+    "displayName": "",
+    "description": "We aren't going to ship you an egg if you win this. It's just another way of saying that you get nothing.",
+    "descriptionContinued": "",
+    "potContents": "- Hey, hope you're having a good day. I promise that winning this won't make your day any better.",
+    "keywords": "",
+    "contributedBy": [
+      "Nobody"
+    ],
+    "tags": [],
+    "country": [
+      "Nowhere"
+    ],
+    "shippingInfo": "",
+    "splitShipping": "shippingSplit",
+    "splitShippingBoolean": false,
+    "shippingType": "",
+    "shipsToUS": "",
+    "dateAdded": ""
+  },
+  {
+    "id": "2026-067",
+    "year": 2026,
+    "potNumber": 65,
+    "title": "Something Fantastic",
+    "winnerCount": 1,
+    "displayName": "",
+    "description": "A prize that will actually change your life.",
+    "descriptionContinued": "",
+    "potContents": "- Sorry, I didn't mean to mislead you, this one still has nothing in it. I feel bad about that.",
+    "keywords": "",
+    "contributedBy": [
+      "Nobody"
+    ],
+    "tags": [],
+    "country": [
+      "Nowhere"
+    ],
+    "shippingInfo": "",
+    "splitShipping": "shippingSplit",
+    "splitShippingBoolean": false,
+    "shippingType": "",
+    "shipsToUS": "",
+    "dateAdded": ""
+  },
+  {
+    "id": "2026-068",
+    "year": 2026,
+    "potNumber": 66,
+    "title": "Miwa Chat",
+    "winnerCount": 1,
+    "displayName": "",
+    "description": "This is actually a prize. You'll get to have a video chat with a cat.",
+    "descriptionContinued": "",
+    "potContents": "- A 5-minute video call with Miwa, schedule permitting.",
+    "keywords": "",
+    "contributedBy": [
+      "Nobody"
+    ],
+    "tags": [],
+    "country": [
+      "Nowhere"
+    ],
+    "shippingInfo": "",
+    "splitShipping": "shippingSplit",
+    "splitShippingBoolean": false,
+    "shippingType": "",
+    "shipsToUS": "",
+    "dateAdded": ""
+  },
+  {
+    "id": "2026-069",
+    "year": 2026,
+    "potNumber": 67,
+    "title": "Nothing again",
+    "winnerCount": 1,
+    "displayName": "",
+    "description": "",
+    "descriptionContinued": "",
+    "potContents": "- Surprise! It's nothing again.",
+    "keywords": "",
+    "contributedBy": [
+      "Nobody"
+    ],
+    "tags": [],
+    "country": [
+      "Nowhere"
+    ],
+    "shippingInfo": "",
+    "splitShipping": "shippingSplit",
+    "splitShippingBoolean": false,
+    "shippingType": "",
+    "shipsToUS": "",
+    "dateAdded": ""
+  },
+  {
+    "id": "2026-070",
+    "year": 2026,
+    "potNumber": 68,
+    "title": "It's the one below this",
+    "winnerCount": 1,
+    "displayName": "",
+    "description": "This isn't what you're looking for. Almost there.",
+    "descriptionContinued": "",
+    "potContents": "- Just go to the prize below this, sheesh.",
+    "keywords": "",
+    "contributedBy": [
+      "Nobody"
+    ],
+    "tags": [],
+    "country": [
+      "Nowhere"
+    ],
+    "shippingInfo": "",
+    "splitShipping": "shippingSplit",
+    "splitShippingBoolean": false,
+    "shippingType": "",
+    "shipsToUS": "",
+    "dateAdded": ""
+  },
+  {
     "id": "2026-042",
     "year": 2026,
-    "potNumber": 0,
+    "potNumber": 69,
     "title": "Pot 69",
     "winnerCount": 1,
     "displayName": "",
@@ -2929,8 +3139,10 @@
       "f-eq-ma"
     ],
     "tags": [
-      "Collector Items",
-      "Locks (advanced)"
+      "Collectors Item",
+      "Locks (advanced)",
+      "Artisan Piece",
+      "Locks?"
     ],
     "country": [
       "USA"
