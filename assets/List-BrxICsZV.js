@@ -1,0 +1,1 @@
+import{Y as u,Z as s,$ as o,a0 as v}from"./index-ChrMpNIC.js";var e={},r;function n(){if(r)return e;r=1;var t=u();Object.defineProperty(e,"__esModule",{value:!0}),e.default=void 0;var a=t(s()),i=o();return e.default=(0,a.default)((0,i.jsx)("path",{d:"M3 13h2v-2H3zm0 4h2v-2H3zm0-8h2V7H3zm4 4h14v-2H7zm0 4h14v-2H7zM7 7v2h14V7z"}),"List"),e}var f=n();const d=v(f);export{d as L};
