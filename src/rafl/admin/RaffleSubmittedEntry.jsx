@@ -40,7 +40,6 @@ function RaffleSubmittedEntry({entry, expanded, onExpand, setEditEntryId}) {
 
     useEffect(() => {
         if (expanded && ref && !scrolled && !expandAll) {
-            console.log('entry', entry)
             const isMobile = window.innerWidth <= 600
             const offset = isMobile ? 70 : 74
             setScrolled(true)

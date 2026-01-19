@@ -66,7 +66,21 @@ export function RaffleAdminDBProvider({children}) {
     }, [authLoaded, isLoggedIn, raffleAdmin, user])
 
     const getSummary = useCallback((entries) => {
-        let summary = entries
+
+        let summary = {
+            charities: {},
+            pots: {},
+            entriesByDate: {},
+            totalEntries: 0,
+            totalDonations: 0,
+            totalTickets: 0,
+        }
+
+        const approvedEntryCount = entries.filter(entry => entry.status === 'approved').length
+
+        summary = approvedEntryCount === 0
+        ? summary
+        : entries
             .sort((a, b) => a.createdAt && b.createdAt ? dayjs(a.createdAt).valueOf() - dayjs(b.createdAt).valueOf() : 0)
             .reduce((acc, entry) => {
                 if (!entry || entry.status !== 'approved') return acc
@@ -108,7 +122,7 @@ export function RaffleAdminDBProvider({children}) {
             .map(([key]) => key)
 
         // delete identifying info from summary
-        summary.uniqueDonorCount = summary.uniqueDonors.length || 0
+        summary.uniqueDonorCount = summary.uniqueDonors?.length || 0
         delete summary.uniqueDonors
 
         Object.keys(summary.charities).map(charityId => {

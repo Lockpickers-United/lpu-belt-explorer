@@ -34,7 +34,7 @@ export default function StatusMenu({entry}) {
         }
         updateRaffleEntry(updatedEntry)
             .then(() => {
-                console.log('Entry status updated to', status)
+                //console.log('Entry status updated to', status)
             })
             .catch(error => {
                 console.error('Error updating entry status:', error)

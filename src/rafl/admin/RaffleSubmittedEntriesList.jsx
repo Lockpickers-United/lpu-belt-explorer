@@ -16,7 +16,7 @@ function RaffleSubmittedEntriesList({editEntryId, setEditEntryId}) {
     const [expanded, setExpanded] = useState(filters.id)
     const {visibleEntries, expandAll} = useContext(DataContext)
     const {summary} = useContext(RaffleContext)
-    console.log('summary', summary)
+    //console.log('summary', summary)
 
     usePageTitle('RAFL Admin - Submitted Entries')
 
