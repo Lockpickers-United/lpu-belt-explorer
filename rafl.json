@@ -716,7 +716,15 @@
     "potContents": "Locks:\r\n- 1x American Lock A1105\r\n- 1x ABUS 72/40\r\n\r\nSwag: \r\n- 1x CountyComm Ultimate Accessory Pouch\r\n- 2x Maratac glow-in-the-dark zipper fobs\r\n- 3x Southern Specialties 2 pocket sleeves (spares for the Stuffed Sparrow Kit)\r\n- 1x CountyComm 3x2” Glow-in-the-dark velcro patch\r\n- MYSTERY PICK SAMPLER\r\n- Assorted stickers\r\n\r\nStuffed Sparrow EDC kit:\r\n- 1x Sparrows Curved Tension Wrench Pouch\r\n- 1x Southern Specialties prototype folding pickset (6 Bogota profiles)\r\n- 1x Southern Specialties prototype folding pickset (6 hook profiles)\r\n- 1x Sparrows Heavy Heavy bar (0.079/2mm)\r\n- 1x Sparrows Rock Out Key (Octo Rake profile, inspired by DeadHammer)\r\n- 1x Newhouse Lock and Key Pocket Rewind (0.025, 0.020)\r\n- 3x Southern Specialties vinyl 2-pocket sleeves\r\n- 1x Southern Specialties double-sided tension tool (nests with SP-57)\r\n- 1x Southern Specialties Z-bar tension wrench set (0.030, 0.040, 0.050)\r\n- 1x Southern Specialties TOK wrench, with teeth (0.035)\r\n- 1x Southern Specialties 2500 series wrench set (0.030, 0.040, 0.050, TOK and BOK)\r\n- 1x Southern Specialties Titanium Quick Stick knife\r\n- 1x Southern Specialties Utility Wafer Jiggler\r\n- 1x Sparrows Mantis tubular lock wrench\r\n- 1x Lock Picker's Bench Edition MultiPick SP-57 Tapered BOK wrench\r\n- 1x shim material for push-side bypass on internal doors\r\n\nLeftovers: \r\n- 3x Sparrows curved TOK wrenches\r\n- 3x Sparrows straight TOK wrenches\r\n- 1x Sparrows Heavy Heavy Z-bar  (0.079/2mm)\r\n- 2x Sparrows Rockout Keys\r\n- 1x Southern Specialties 5 pocket sleeve",
     "keywords": "",
     "contributedBy": [
-      "CollateralTech"
+      "Locks:\n- 1x American Lock A1105\n- 1x ABUS 72/40\n- 1x Master Lock 140\r\n- 1x ACE 38mm Brass\r\n- 1x ACE 29mm Brass\n\nSwag: \n- 1x CountyComm Ultimate Accessory Pouch\n- 2x Maratac glow-in-the-dark zipper fobs\n- 3x Southern Specialties 2 pocket sleeves (spares for the Stuffed Sparrow Kit)\n- 1x CountyComm 3x2” Glow-in-the-dark velcro patch\n- MYSTERY PICK SAMPLER\n- Assorted stickers\n\nStuffed Sparrow EDC kit:\n- 1x Sparrows Curved Tension Wrench Pouch\n- 1x Southern Specialties prototype folding pickset (6 Bogota profiles)\n- 1x Southern Specialties prototype folding pickset (6 hook profiles)\n- 1x Sparrows Heavy Heavy bar (0.079/2mm)\n- 1x Sparrows Rock Out Key (Octo Rake profile",
+      "inspired by DeadHammer)\n- 1x Newhouse Lock and Key Pocket Rewind (0.025",
+      "0.020)\n- 3x Southern Specialties vinyl 2-pocket sleeves\n- 1x Southern Specialties double-sided tension tool (nests with SP-57)\n- 1x Southern Specialties Z-bar tension wrench set (0.030",
+      "0.040",
+      "0.050)\n- 1x Southern Specialties TOK wrench",
+      "with teeth (0.035)\n- 1x Southern Specialties 2500 series wrench set (0.030",
+      "0.040",
+      "0.050",
+      "TOK and BOK)\n- 1x Southern Specialties Titanium Quick Stick knife\n- 1x Southern Specialties Utility Wafer Jiggler\n- 1x Sparrows Mantis tubular lock wrench\n- 1x Lock Picker's Bench Edition MultiPick SP-57 Tapered BOK wrench\n- 1x shim material for push-side bypass on internal doors\n\nLeftovers: \n- 3x Sparrows curved TOK wrenches\n- 3x Sparrows straight TOK wrenches\n- 1x Sparrows Heavy Heavy Z-bar  (0.079/2mm)\n- 2x Sparrows Rockout Keys\n- 1x Southern Specialties 5 pocket sleeve"
     ],
     "tags": [
       "Picks (hooks)",
@@ -2176,9 +2184,9 @@
     "title": "Master of France",
     "winnerCount": 1,
     "displayName": "",
-    "description": "It starts with 4 unassuming padlocks, perfect for learning and practice. Then you're confronted with a heap of French cutaways--a unique treat.",
+    "description": "It starts with 4 unassuming padlocks, perfect for learning and practice. Then you're confronted with a heap of French locks--a unique treat.",
     "descriptionContinued": "",
-    "potContents": "-Eschlenz 3D printed vice plus all the extras (followers, holders, etc) \n-Masterlock 140 \n-Masterlock 150 \n-Masterlock 410 \n-Paclock 90A Pro \n-Random cutaways (most no keys): Fichet 666, Fichet 484, unknown French PT, unknown French dimple, unknown French dimple with warding, Bricard PT with miserable warding",
+    "potContents": "-Eschlenz 3D printed vice plus all the extras (followers, holders, etc) \n-Masterlock 140 \n-Masterlock 150 \n-Masterlock 410 \n-Paclock 90A Pro \n-Random cut locks (most no keys): Fichet 666, Fichet 484, unknown French PT, unknown French dimple, unknown French dimple with warding, Bricard PT with miserable warding",
     "keywords": "",
     "contributedBy": [
       "Powhoundgabe"
@@ -2186,7 +2194,6 @@
     "tags": [
       "Locks (French)",
       "Locks (beginner/intermediate)",
-      "Cutaways",
       "Tools",
       "Locks (padlocks)"
     ],
