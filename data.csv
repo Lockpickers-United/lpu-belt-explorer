@@ -650,7 +650,7 @@ Red,Abloy,"High Profile",,"Disc detainer","Rear tension,False gates,Profile disc
 Red,"ABUS,ABUS","EC700,EC800",,Dimple,,,b29a8b44
 Red,ABUS,Plus,"with butterfly discs","Disc detainer","Random mid tension,False gates,Butterfly discs",,b8350901
 Red,ALPHA,FB,"12 or more pins",Dimple,"High pin count",,4223eb26
-Red,"ASSA,Ruko","600,600","6 pin, with gin spools and matched countermilling",Pin-tumbler,"Gin spool drivers,Undercut milling",,29ab2852
+Red,"ASSA,Ruko","600,600","6 pin, with gin spools and matched countermilling",Pin-tumbler,"Gin spool drivers,Undercut milling","May include one chamber without milling",29ab2852
 Red,ASSA,700,"7 pin, with gin/tree pins and matching countermilling in ≥ 4 chambers, < 2 tree pins",Pin-tumbler,"Tree drivers,Gin spool drivers,Undercut milling,Tapered drivers",,e3bd3faf
 Red,"ASSA,Ruko","700,700","with gin drivers and matched sleeve",Pin-tumbler,,,ef4e0295
 Red,"ASSA,ASSA,TrioVing,Ruko","dp2400,dp10,System 10,DP2","6 pin 4 slider","Pin-tumbler,Sidepins","Barrel drivers,Serrated/threaded milling,Active sidebar,False gates,Sidepins",,75fb1e5c
