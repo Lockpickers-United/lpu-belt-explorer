@@ -30,6 +30,16 @@
     "disabled": false
   },
   {
+    "id": "ch_A2UA",
+    "name": "Aid to Ukraine",
+    "url": "https://aidtoukraine.nl/",
+    "tags": [],
+    "donations2024": 0,
+    "donations2025": 0,
+    "donationsPrevious": 0,
+    "disabled": false
+  },
+  {
     "id": "ch_Alame",
     "name": "Alameda Food Bank",
     "url": "https://www.alamedafoodbank.org",
@@ -465,6 +475,16 @@
     "donations2024": 0,
     "donations2025": 50,
     "donationsPrevious": 50,
+    "disabled": false
+  },
+  {
+    "id": "ch_GoodS",
+    "name": "Good Samaritan Center Food Pantry",
+    "url": "https://www.goodsamscortez.org/donate",
+    "tags": [],
+    "donations2024": 0,
+    "donations2025": 0,
+    "donationsPrevious": 0,
     "disabled": false
   },
   {
