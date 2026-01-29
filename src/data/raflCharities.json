@@ -80,6 +80,16 @@
     "disabled": false
   },
   {
+    "id": "c_AmLib",
+    "name": "American Library Association",
+    "url": "https://www.ala.org/",
+    "tags": [],
+    "donations2024": 0,
+    "donations2025": 0,
+    "donationsPrevious": 0,
+    "disabled": false
+  },
+  {
     "id": "ch_ASPCA",
     "name": "ASPCA",
     "url": "https://secure.aspca.org/donate/donate-t",
@@ -253,6 +263,16 @@
     "donations2024": 0,
     "donations2025": 255,
     "donationsPrevious": 255,
+    "disabled": false
+  },
+  {
+    "id": "ch_Cowic",
+    "name": "Cowiche Canyon Conservancy",
+    "url": "https://www.cowichecanyon.org/ourmission/",
+    "tags": [],
+    "donations2024": 0,
+    "donations2025": 0,
+    "donationsPrevious": 0,
     "disabled": false
   },
   {
@@ -762,6 +782,16 @@
     "disabled": false
   },
   {
+    "id": "ch_Outdo",
+    "name": "Outdoor Outreach",
+    "url": "https://www.outdooroutreach.org/",
+    "tags": [],
+    "donations2024": 0,
+    "donations2025": 0,
+    "donationsPrevious": 0,
+    "disabled": false
+  },
+  {
     "id": "ch_PainB",
     "name": "Pain BC",
     "url": "https://painbc.ca/donate",
@@ -821,6 +851,16 @@
     "donations2024": 50,
     "donations2025": 52,
     "donationsPrevious": 52,
+    "disabled": false
+  },
+  {
+    "id": "ch_Ritel",
+    "name": "Ritelife Services",
+    "url": "https://ritelifeservices.org/",
+    "tags": [],
+    "donations2024": 0,
+    "donations2025": 0,
+    "donationsPrevious": 0,
     "disabled": false
   },
   {
@@ -1051,6 +1091,16 @@
     "donations2024": 104,
     "donations2025": 515,
     "donationsPrevious": 515,
+    "disabled": false
+  },
+  {
+    "id": "ch_WashT",
+    "name": "Washington Trails Association",
+    "url": "https://wta.org/",
+    "tags": [],
+    "donations2024": 0,
+    "donations2025": 0,
+    "donationsPrevious": 0,
     "disabled": false
   },
   {
