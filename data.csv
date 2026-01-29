@@ -336,6 +336,7 @@ Blue,ABUS,XP1,,Pin-tumbler,,,34c0dfe4
 Blue,ALPHA,"Z cam lock",,Dimple,,,3ebbc1f4
 Blue,Ankerslot,Infinity,"without magnet",Pin-tumbler,,,d20fb493
 Blue,ASSA,500,"with barrel drivers and matched sleeve",Pin-tumbler,,,f8445741
+Blue,ASSA,500,"with barrel drivers, no countermilling",Pin-tumbler,,,b89d9e11
 Blue,"ASSA,ASSA","500,Flexcore/Flexcore Plus","5 pin with barrels and matched countermilling",Pin-tumbler,"Barrel drivers,Serrated/threaded milling",,d9e3829f
 Blue,ASSA,700,"7 pin with spools and no countermilling",Pin-tumbler,,,d08aa492
 Blue,ASSA,700,"7 pin with tapered drivers",Pin-tumbler,"Tapered drivers",,f1e92541

@@ -601,6 +601,7 @@ To qualify for a Blue Belt, you must also submit a project that demonstrates you
 - [ALPHA Z cam lock](https://lpubelts.com/#/locks?id=3ebbc1f4)
 - [Ankerslot Infinity](https://lpubelts.com/#/locks?id=d20fb493) (without magnet)
 - [ASSA 500](https://lpubelts.com/#/locks?id=f8445741) (with barrel drivers and matched sleeve)
+- [ASSA 500](https://lpubelts.com/#/locks?id=b89d9e11) (with barrel drivers, no countermilling)
 - [ASSA 500 / ASSA Flexcore/Flexcore Plus](https://lpubelts.com/#/locks?id=d9e3829f) (5 pin with barrels and matched countermilling)
 - [ASSA 700](https://lpubelts.com/#/locks?id=d08aa492) (7 pin with spools and no countermilling)
 - [ASSA 700](https://lpubelts.com/#/locks?id=f1e92541) (7 pin with tapered drivers)
