@@ -18999,6 +18999,22 @@
     "lastUpdated": "2025-12-02T23:39:17.938Z"
   },
   {
+    "id": "b89d9e11",
+    "belt": "Blue",
+    "makeModels": [
+      {
+        "make": "ASSA",
+        "model": "500"
+      }
+    ],
+    "version": "with barrel drivers, no countermilling",
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "dateAdded": "2026-01-29T04:43:25.089Z",
+    "lastUpdated": "2026-01-29T04:43:25.397Z"
+  },
+  {
     "id": "d9e3829f",
     "belt": "Blue",
     "makeModels": [

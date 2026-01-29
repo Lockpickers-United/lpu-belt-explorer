@@ -60827,5 +60827,21 @@
     ],
     "name": "ALPHA Frost",
     "dateAdded": "2025-12-28T18:08:44.772Z"
+  },
+  "b89d9e11": {
+    "id": "b89d9e11",
+    "belt": "Blue",
+    "makeModels": [
+      {
+        "make": "ASSA",
+        "model": "500"
+      }
+    ],
+    "version": "with barrel drivers, no countermilling",
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "name": "ASSA 500",
+    "dateAdded": "2026-01-29T04:43:25.089Z"
   }
 }
