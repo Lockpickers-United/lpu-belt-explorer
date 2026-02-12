@@ -76,6 +76,7 @@ function SearchBox({label, extraFilters = [], entryCount = 0, keepOpen}) {
 
     const [open, setOpen] = useState(false)
     const handleBlur = useCallback(() => setTimeout(() => setOpen(false), 0), [])
+    const handleFocus = useCallback(() => setOpen(true), [])
     const handleClick = useCallback(() => {
         setOpen(true)
         setTimeout(() => {
@@ -152,6 +153,7 @@ function SearchBox({label, extraFilters = [], entryCount = 0, keepOpen}) {
                 variant='standard'
                 color='secondary'
                 onChange={handleChange}
+                onFocus={handleFocus}
                 onBlur={handleBlur}
                 value={text}
                 style={{...style, ...focusStyle}}
