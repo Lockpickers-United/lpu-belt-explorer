@@ -110,7 +110,7 @@
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^5.2.0",
-    "firebase-admin": "^11.11.1",
+    "firebase-admin": "^13.6.1",
     "husky": "^9.1.7",
     "jsdom": "^25.0.1",
     "msw": "^2.6.6",
