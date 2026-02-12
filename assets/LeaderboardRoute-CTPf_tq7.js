@@ -1,0 +1,1 @@
+import{j as e,R as a,aa as r,h as t,T as s}from"./index-Dr0OGwon.js";import{u as o}from"./usePageTitle-Dg-_QB3p.js";function x(){return o("Leaderboard"),e.jsxs(a.Fragment,{children:[e.jsx(r,{}),e.jsx(t,{}),e.jsx(s,{feature:"leaderboard"})]})}export{x as default};
