@@ -1,1 +1,0 @@
-import{j as a,ab as t,as as o,ac as n,U as i}from"./index-DUr27NUl.js";function e(){const r={marginTop:16,maxWidth:350,marginLeft:"auto",marginRight:"auto",borderRadius:0};return a.jsxs(t,{style:r,children:[a.jsx(o,{title:"Profile Not Found!"}),a.jsx(n,{children:a.jsx(i,{variant:"h6",align:"center",children:"This profile was not found."})})]})}export{e as P};
