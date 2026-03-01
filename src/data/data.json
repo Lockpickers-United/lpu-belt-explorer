@@ -1300,6 +1300,9 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
+    "features": [
+      "Latest Changelog"
+    ],
     "notes": "Due to unbalanced pin stacks, drivers in max lift chambers will rest below shear. This risks spring damage if the driver is not picked.",
     "dateAdded": "2026-03-01T11:02:21.469Z",
     "lastUpdated": "2026-03-01T11:02:21.780Z"
@@ -18949,6 +18952,9 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
+    "features": [
+      "Latest Changelog"
+    ],
     "dateAdded": "2026-01-29T04:43:25.089Z",
     "lastUpdated": "2026-01-29T04:43:25.397Z"
   },
@@ -19626,6 +19632,9 @@
         "make": "CES",
         "model": "RE Plus"
       }
+    ],
+    "features": [
+      "Latest Changelog"
     ],
     "dateAdded": "2026-03-01T11:02:21.472Z",
     "lastUpdated": "2026-03-01T11:02:21.783Z"
@@ -53824,6 +53833,9 @@
     "lockingMechanisms": [
       "Slider"
     ],
+    "features": [
+      "Latest Changelog"
+    ],
     "notes": "Dual sidebar",
     "dateAdded": "2025-11-11T19:09:04.039Z",
     "views": 30,
@@ -56353,6 +56365,9 @@
     ],
     "lockingMechanisms": [
       "Pin-tumbler"
+    ],
+    "features": [
+      "Latest Changelog"
     ],
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
