@@ -1300,9 +1300,6 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "features": [
-      "Latest changelog"
-    ],
     "notes": "Due to unbalanced pin stacks, drivers in max lift chambers will rest below shear. This risks spring damage if the driver is not picked.",
     "dateAdded": "2026-03-01T11:02:21.469Z",
     "lastUpdated": "2026-03-01T11:02:21.780Z"
@@ -6802,9 +6799,6 @@
     "version": "4 or 5 pin",
     "lockingMechanisms": [
       "Pin-tumbler"
-    ],
-    "features": [
-      "Latest changelog"
     ],
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
@@ -13898,6 +13892,10 @@
       {
         "make": "GTV",
         "model": "APS"
+      },
+      {
+        "make": "EMR",
+        "model": "APS"
       }
     ],
     "lockingMechanisms": [
@@ -13970,7 +13968,7 @@
       }
     ],
     "views": 77,
-    "lastUpdated": "2025-12-02T23:39:17.935Z"
+    "lastUpdated": "2026-03-01T11:11:26.946Z"
   },
   {
     "id": "156734db",
@@ -19629,9 +19627,6 @@
         "model": "RE Plus"
       }
     ],
-    "features": [
-      "Latest changelog"
-    ],
     "dateAdded": "2026-03-01T11:02:21.472Z",
     "lastUpdated": "2026-03-01T11:02:21.783Z"
   },
@@ -20802,9 +20797,6 @@
     ],
     "lockingMechanisms": [
       "Pin-tumbler"
-    ],
-    "features": [
-      "Latest changelog"
     ],
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
@@ -30454,9 +30446,6 @@
     "lockingMechanisms": [
       "Dimple"
     ],
-    "features": [
-      "Latest changelog"
-    ],
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -36922,9 +36911,6 @@
     "version": "all versions, fully pinned",
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [
-      "Latest changelog"
     ],
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
@@ -46354,8 +46340,7 @@
     ],
     "features": [
       "Various formats",
-      "False gates",
-      "Latest changelog"
+      "False gates"
     ],
     "notes": "Usually 5 levers",
     "dateAdded": "2023-02-21T23:16:05.000Z",
@@ -53839,9 +53824,6 @@
     "lockingMechanisms": [
       "Slider"
     ],
-    "features": [
-      "Latest changelog"
-    ],
     "notes": "Dual sidebar",
     "dateAdded": "2025-11-11T19:09:04.039Z",
     "views": 30,
@@ -56372,9 +56354,6 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "features": [
-      "Latest changelog"
-    ],
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -56653,8 +56632,7 @@
       "Pin-tumbler"
     ],
     "features": [
-      "Removed",
-      "Latest changelog"
+      "Removed"
     ],
     "notes": "There is no evidence that this lock ever existed. All instances of ASSA 500 with gins observed so far were the sleeve version. Nobody has brought forth any evidence that a version with gin milling in the core actually exists or ever existed.",
     "dateAdded": "2023-02-21T23:16:05.000Z",
