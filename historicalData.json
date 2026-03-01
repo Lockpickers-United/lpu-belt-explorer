@@ -16490,6 +16490,9 @@
         "title": "Catalocks",
         "url": "https://www.catalocks.eu/ABUS/ABUS%20XP%201_52.html"
       }
+    ],
+    "features": [
+      "Latest Changelog"
     ]
   },
   "d20fb493": {
@@ -60554,7 +60557,10 @@
     ],
     "notes": "Dual sidebar",
     "name": "MIWA WR",
-    "dateAdded": "2025-11-11T19:09:04.039Z"
+    "dateAdded": "2025-11-11T19:09:04.039Z",
+    "features": [
+      "Latest Changelog"
+    ]
   },
   "ecb469c3": {
     "id": "ecb469c3",
@@ -60845,7 +60851,10 @@
       "Pin-tumbler"
     ],
     "name": "ASSA 500",
-    "dateAdded": "2026-01-29T04:43:25.089Z"
+    "dateAdded": "2026-01-29T04:43:25.089Z",
+    "features": [
+      "Latest Changelog"
+    ]
   },
   "2b5cc5d7": {
     "id": "2b5cc5d7",
@@ -60862,7 +60871,10 @@
     ],
     "notes": "Due to unbalanced pin stacks, drivers in max lift chambers will rest below shear. This risks spring damage if the driver is not picked.",
     "name": "ABUS 72/40",
-    "dateAdded": "2026-03-01T11:02:21.469Z"
+    "dateAdded": "2026-03-01T11:02:21.469Z",
+    "features": [
+      "Latest Changelog"
+    ]
   },
   "6e2cecfd": {
     "id": "6e2cecfd",
@@ -60874,6 +60886,9 @@
       }
     ],
     "name": "CES RE Plus",
-    "dateAdded": "2026-03-01T11:02:21.472Z"
+    "dateAdded": "2026-03-01T11:02:21.472Z",
+    "features": [
+      "Latest Changelog"
+    ]
   }
 }

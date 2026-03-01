@@ -21,7 +21,7 @@ Yellow,"ABUS,ABUS","45/30,45/35","4 pins",Pin-tumbler,Unguttable,,ecb469c3
 Yellow,ABUS,55/30,,Pin-tumbler,Unguttable,,c7d2eca1
 Yellow,ABUS,64Ti/30,"30mm or smaller (<5 pins)",Pin-tumbler,Unguttable,"Includes 64Ti/20, 64Ti/25, 64Ti/30",693abee0
 Yellow,ABUS,65/35,"35mm or smaller",Pin-tumbler,Unguttable,,1ce31c29
-Yellow,ABUS,72/40,"Unguttable 'Love Lock' edition",Pin-tumbler,,"Due to unbalanced pin stacks, drivers in max lift chambers will rest below shear. This risks spring damage if the driver is not picked.",2b5cc5d7
+Yellow,ABUS,72/40,"Unguttable 'Love Lock' edition",Pin-tumbler,"Latest Changelog","Due to unbalanced pin stacks, drivers in max lift chambers will rest below shear. This risks spring damage if the driver is not picked.",2b5cc5d7
 Yellow,ABUS,84/35,,Pin-tumbler,Unguttable,,805fc883
 Yellow,ABUS,85,"30mm or smaller (<5 pins)",Pin-tumbler,Unguttable,,7982c469
 Yellow,ABUS,"MyLock / T65AL",,Pin-tumbler,Unguttable,,423dbebe
@@ -336,7 +336,7 @@ Blue,"ABUS,ABUS","WavyLine Pro,Pfaffenhain WavyLine Pro","6 pins, 4 side pins + 
 Blue,ALPHA,"Z cam lock",,Dimple,,,3ebbc1f4
 Blue,Ankerslot,Infinity,"without magnet",Pin-tumbler,,,d20fb493
 Blue,ASSA,500,"with barrel drivers and matched sleeve",Pin-tumbler,,,f8445741
-Blue,ASSA,500,"with barrel drivers, no countermilling",Pin-tumbler,,,b89d9e11
+Blue,ASSA,500,"with barrel drivers, no countermilling",Pin-tumbler,"Latest Changelog",,b89d9e11
 Blue,"ASSA,ASSA","500,Flexcore/Flexcore Plus","5 pin with barrels and matched countermilling",Pin-tumbler,"Barrel drivers,Serrated/threaded milling",,d9e3829f
 Blue,ASSA,700,"7 pin with spools and no countermilling",Pin-tumbler,,,d08aa492
 Blue,ASSA,700,"7 pin with tapered drivers",Pin-tumbler,"Tapered drivers",,f1e92541
@@ -349,7 +349,7 @@ Blue,Bricard,"Serial S",,Dimple,,,61f33761
 Blue,"Burg Wächter",Diamant,,Pin-tumbler,Unguttable,,32fa52a6
 Blue,Cantol,"high-security line","10-pin dimple",Dimple,,,5647f11c
 Blue,CAVEO,TS007,"all standards","Dimple,Slider","Sprung sliders,Active sidebar","Seven pins with standard drivers, five slider sidebar",60964e9f
-Blue,CES,"RE Plus",,,,,6e2cecfd
+Blue,CES,"RE Plus",,,"Latest Changelog",,6e2cecfd
 Blue,Chubb,"114 (3g114)","5 lever, pre-2004",Lever,"Pin key,Curtain,False gates",,32c85438
 Blue,Chubb,"114e (3g114e)","5 lever, after 2004",Lever,"Pin key,Curtain,False gates",,0c946064
 Blue,Chubb,2m22,"6 lever",Lever,Mortise,,9d337b72
@@ -792,7 +792,7 @@ Red,Yanai,"R 2200M","<14 pins",Dimple,"High pin count",,5eac6a29
 "Black 3",MIWA,PR,"11 unmastered elements",Lever/sidebar,"Partial gut","upgrade of MIWA PS",91f40022
 "Black 1",MIWA,U9,"8 unmastered elements, barred False gates (old shallow False gates counts as Red Belt)",Lever/sidebar,"Active sidebar,False gates,Partial gut",,71c7270b
 "Black 2",MIWA,U9,"9 unmastered elements, barred False gates (old shallow False gates counts as BB1)",Lever/sidebar,"Active sidebar,False gates,Partial gut",,d1272b9f
-"Black 1",MIWA,WR,,Slider,,"Dual sidebar",ccdbffbf
+"Black 1",MIWA,WR,,Slider,"Latest Changelog","Dual sidebar",ccdbffbf
 "Black 1","Mottura,Mottura,Mottura,Mottura,Mottura","Champions C43,Champions C43 Plus,Champions C44,Champions C48,Champions C9P",,"Dimple,Other",Rotors,,ae7d3780
 "Black 1","Mul-T-Lock,Mul-T-Lock,Lockwood,IKON","MT5+,800,MT5,R10","not mastered","Dimple,Slider","Pin-in-pin,Interactive element,Active sidebar,Unsprung sliders,Undercut milling,False gates","IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",649eaebc
 "Black 5",NATO,Mersey,"10 lever",Lever,"Safe lock,Pin key,Double bitted",,4f2ed774
@@ -821,7 +821,7 @@ Unranked,Abloy,AVA,"flat & half-round key",Wafer,"Under Review ⚑",,9ae8b650
 Unranked,ABUS,34/55,,,"Under Review ⚑",,f72085d2
 Unranked,ABUS,E100,"5 pins",Pin-tumbler,"Under Review ⚑",,05d357bb
 Unranked,ABUS,"Vela 2000 Mx",,Dimple,"Under Review ⚑","2 spools, 2 ""barrels"", 1 special passive pin",b370e57b
-Unranked,ABUS,XP1,,Pin-tumbler,,,34c0dfe4
+Unranked,ABUS,XP1,,Pin-tumbler,"Latest Changelog",,34c0dfe4
 Unranked,,Angal,"5 serrated pin-in-pin ",Dimple,"Under Review ⚑",,fd93632b
 Unranked,Antoniolini,Mondial,"5 H-levers",Lever,"Pin key,Double bitted,Sliding levers",,f468ff5f
 Unranked,Arrow,"ChoICe HS SFIC",,"Pin-tumbler,Sidepins","Under Review ⚑,Sidepins,Active sidebar","6/7 pin SFIC with ASSA twin 6000 sidebar",c2db34fb
