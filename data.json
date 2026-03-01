@@ -1300,6 +1300,9 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
+    "features": [
+      "Latest changelog"
+    ],
     "notes": "Due to unbalanced pin stacks, drivers in max lift chambers will rest below shear. This risks spring damage if the driver is not picked.",
     "dateAdded": "2026-03-01T11:02:21.469Z",
     "lastUpdated": "2026-03-01T11:02:21.780Z"
@@ -4928,9 +4931,6 @@
     ],
     "lockingMechanisms": [
       "Pin-tumbler"
-    ],
-    "features": [
-      "Latest changelog"
     ],
     "dateAdded": "2025-08-15T19:23:33.234Z",
     "views": 103,
@@ -13903,6 +13903,9 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
+    "features": [
+      "Latest Changelog"
+    ],
     "dateAdded": "2025-01-09T16:22:30.000Z",
     "media": [
       {
@@ -16818,7 +16821,8 @@
       "Pin-tumbler"
     ],
     "features": [
-      "Active element"
+      "Active element",
+      "Latest Changelog"
     ],
     "dateAdded": "2025-02-16T07:00:27.000Z",
     "views": 13,
@@ -18452,6 +18456,9 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
+    "features": [
+      "Latest Changelog"
+    ],
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -18551,6 +18558,9 @@
     "version": "6 pins",
     "lockingMechanisms": [
       "Pin-tumbler"
+    ],
+    "features": [
+      "Latest Changelog"
     ],
     "notes": "requires Pfaffenhain barrel pin, otherwise green",
     "dateAdded": "2023-02-21T23:16:05.000Z",
@@ -19618,6 +19628,9 @@
         "make": "CES",
         "model": "RE Plus"
       }
+    ],
+    "features": [
+      "Latest changelog"
     ],
     "dateAdded": "2026-03-01T11:02:21.472Z",
     "lastUpdated": "2026-03-01T11:02:21.783Z"
@@ -20705,8 +20718,7 @@
       "Pin-tumbler"
     ],
     "features": [
-      "Magic DOM drivers",
-      "Latest changelog"
+      "Magic DOM drivers"
     ],
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
@@ -23630,6 +23642,9 @@
     "lockingMechanisms": [
       "Wafer"
     ],
+    "features": [
+      "Latest Changelog"
+    ],
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -24592,8 +24607,7 @@
       "Dimple"
     ],
     "features": [
-      "Interlocking pins",
-      "Latest changelog"
+      "Interlocking pins"
     ],
     "dateAdded": "2023-08-09T22:49:23.000Z",
     "media": [
@@ -26651,6 +26665,9 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
+    "features": [
+      "Latest Changelog"
+    ],
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -27822,8 +27839,7 @@
       "Dimple"
     ],
     "features": [
-      "High pin count",
-      "Latest changelog"
+      "High pin count"
     ],
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
@@ -33314,8 +33330,7 @@
       "Dimple"
     ],
     "features": [
-      "High pin count",
-      "Latest changelog"
+      "High pin count"
     ],
     "dateAdded": "2023-03-02T19:05:25.000Z",
     "media": [
@@ -34114,8 +34129,7 @@
       "Dimple"
     ],
     "features": [
-      "High pin count",
-      "Latest changelog"
+      "High pin count"
     ],
     "dateAdded": "2025-08-15T19:23:33.238Z",
     "views": 26,
@@ -43681,8 +43695,7 @@
     ],
     "features": [
       "Rotating fingerpins",
-      "Active sidebar",
-      "Latest changelog"
+      "Active sidebar"
     ],
     "dateAdded": "2025-03-18T02:44:04.000Z",
     "media": [
@@ -44724,8 +44737,7 @@
       }
     ],
     "features": [
-      "High pin count",
-      "Latest changelog"
+      "High pin count"
     ],
     "dateAdded": "2025-08-15T19:23:33.241Z",
     "views": 66,
@@ -46814,8 +46826,7 @@
       "Dimple"
     ],
     "features": [
-      "High pin count",
-      "Latest changelog"
+      "High pin count"
     ],
     "dateAdded": "2025-08-15T19:23:33.241Z",
     "views": 25,
@@ -53828,6 +53839,9 @@
     "lockingMechanisms": [
       "Slider"
     ],
+    "features": [
+      "Latest changelog"
+    ],
     "notes": "Dual sidebar",
     "dateAdded": "2025-11-11T19:09:04.039Z",
     "views": 30,
@@ -53863,8 +53877,7 @@
       "Other"
     ],
     "features": [
-      "Rotors",
-      "Latest changelog"
+      "Rotors"
     ],
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
@@ -55758,8 +55771,7 @@
       "Dimple"
     ],
     "features": [
-      "High pin count",
-      "Latest changelog"
+      "High pin count"
     ],
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
@@ -55817,8 +55829,7 @@
       "Dimple"
     ],
     "features": [
-      "High pin count",
-      "Latest changelog"
+      "High pin count"
     ],
     "dateAdded": "2025-08-15T19:23:33.243Z",
     "views": 2,
@@ -56360,6 +56371,9 @@
     ],
     "lockingMechanisms": [
       "Pin-tumbler"
+    ],
+    "features": [
+      "Latest changelog"
     ],
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [

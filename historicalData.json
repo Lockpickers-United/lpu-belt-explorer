@@ -16245,7 +16245,10 @@
     "name": "ABUS K14, KV14, KY14",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "views": 2965,
-    "lastUpdated": "2025-03-19T15:44:57.288Z"
+    "lastUpdated": "2025-03-19T15:44:57.288Z",
+    "features": [
+      "Latest Changelog"
+    ]
   },
   "4382d650": {
     "id": "4382d650",
@@ -16396,7 +16399,10 @@
       }
     ],
     "version": "6 pins",
-    "notes": "requires Pfaffenhain barrel pin, otherwise green"
+    "notes": "requires Pfaffenhain barrel pin, otherwise green",
+    "features": [
+      "Latest Changelog"
+    ]
   },
   "34c0dfe4": {
     "id": "34c0dfe4",
@@ -16488,6 +16494,9 @@
         "title": "Catalocks",
         "url": "https://www.catalocks.eu/ABUS/ABUS%20XP%201_52.html"
       }
+    ],
+    "features": [
+      "Latest changelog"
     ]
   },
   "d20fb493": {
@@ -17787,8 +17796,7 @@
       "Pin-tumbler"
     ],
     "features": [
-      "Magic DOM drivers",
-      "Latest changelog"
+      "Magic DOM drivers"
     ],
     "media": [
       {
@@ -22410,6 +22418,9 @@
         "title": "Catalocks",
         "url": "https://www.catalocks.eu/ABUS/ABUS%20TS%205000_53.html"
       }
+    ],
+    "features": [
+      "Latest Changelog"
     ]
   },
   "da8331ef": {
@@ -23770,8 +23781,7 @@
       "9b00fb5e"
     ],
     "features": [
-      "High pin count",
-      "Latest changelog"
+      "High pin count"
     ]
   },
   "98ba98ae": {
@@ -32356,6 +32366,9 @@
         "title": "Catalocks",
         "url": "https://www.catalocks.eu/MAGNUM/MAGNUM%202100%20MONT%20BLANC_188.html"
       }
+    ],
+    "features": [
+      "Latest Changelog"
     ]
   },
   "b8783269": {
@@ -37499,8 +37512,7 @@
     "name": "Mottura Champions C43, Champions C43 Plus, Champions C44, Champions C48, Champions C9P",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "features": [
-      "Rotors",
-      "Latest changelog"
+      "Rotors"
     ],
     "media": [
       {
@@ -45881,8 +45893,7 @@
     "name": "Yanai R 2200M",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "features": [
-      "High pin count",
-      "Latest changelog"
+      "High pin count"
     ],
     "media": [
       {
@@ -49845,8 +49856,7 @@
     "lastUpdated": "2025-03-18T23:29:31.286Z",
     "views": 130,
     "features": [
-      "High pin count",
-      "Latest changelog"
+      "High pin count"
     ],
     "lockingMechanisms": [
       "Dimple"
@@ -55197,8 +55207,7 @@
       "Dimple"
     ],
     "features": [
-      "Interlocking pins",
-      "Latest changelog"
+      "Interlocking pins"
     ],
     "media": [
       {
@@ -59120,7 +59129,10 @@
     ],
     "lastUpdated": "2025-01-09T16:22:28.779Z",
     "name": "GTV APS",
-    "dateAdded": "2025-01-09T16:22:30.000Z"
+    "dateAdded": "2025-01-09T16:22:30.000Z",
+    "features": [
+      "Latest Changelog"
+    ]
   },
   "156734db": {
     "id": "156734db",
@@ -59451,7 +59463,8 @@
       "Pin-tumbler"
     ],
     "features": [
-      "Active element"
+      "Active element",
+      "Latest Changelog"
     ],
     "lastUpdated": "2025-02-16T07:00:26.260Z",
     "name": "Wilka PR100 Series, TH6, SI6",
@@ -60005,8 +60018,7 @@
     ],
     "features": [
       "Rotating fingerpins",
-      "Active sidebar",
-      "Latest changelog"
+      "Active sidebar"
     ],
     "media": [
       {
@@ -60348,9 +60360,6 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "features": [
-      "Latest changelog"
-    ],
     "name": "ABUS 82/63",
     "dateAdded": "2025-08-15T19:23:33.234Z"
   },
@@ -60367,8 +60376,7 @@
       "Dimple"
     ],
     "features": [
-      "High pin count",
-      "Latest changelog"
+      "High pin count"
     ],
     "name": "Securystar Pro Star",
     "dateAdded": "2025-08-15T19:23:33.238Z"
@@ -60383,8 +60391,7 @@
       }
     ],
     "features": [
-      "High pin count",
-      "Latest changelog"
+      "High pin count"
     ],
     "name": "Mauer Crypto",
     "dateAdded": "2025-08-15T19:23:33.241Z"
@@ -60403,8 +60410,7 @@
       "Dimple"
     ],
     "features": [
-      "High pin count",
-      "Latest changelog"
+      "High pin count"
     ],
     "name": "Yanai R 2200M",
     "dateAdded": "2025-08-15T19:23:33.241Z"
@@ -60423,8 +60429,7 @@
       "Dimple"
     ],
     "features": [
-      "High pin count",
-      "Latest changelog"
+      "High pin count"
     ],
     "name": "Yanai R 2200M",
     "dateAdded": "2025-08-15T19:23:33.243Z"
@@ -60562,7 +60567,10 @@
     ],
     "notes": "Dual sidebar",
     "name": "MIWA WR",
-    "dateAdded": "2025-11-11T19:09:04.039Z"
+    "dateAdded": "2025-11-11T19:09:04.039Z",
+    "features": [
+      "Latest changelog"
+    ]
   },
   "ecb469c3": {
     "id": "ecb469c3",
@@ -60870,7 +60878,10 @@
     ],
     "notes": "Due to unbalanced pin stacks, drivers in max lift chambers will rest below shear. This risks spring damage if the driver is not picked.",
     "name": "ABUS 72/40",
-    "dateAdded": "2026-03-01T11:02:21.469Z"
+    "dateAdded": "2026-03-01T11:02:21.469Z",
+    "features": [
+      "Latest changelog"
+    ]
   },
   "6e2cecfd": {
     "id": "6e2cecfd",
@@ -60882,6 +60893,9 @@
       }
     ],
     "name": "CES RE Plus",
-    "dateAdded": "2026-03-01T11:02:21.472Z"
+    "dateAdded": "2026-03-01T11:02:21.472Z",
+    "features": [
+      "Latest changelog"
+    ]
   }
 }
