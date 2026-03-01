@@ -3,11 +3,11 @@
     "description": "Locks",
     "data": [
       {
-        "value": 815,
+        "value": 817,
         "label": "Ranked"
       },
       {
-        "value": 923,
+        "value": 925,
         "label": "All"
       },
       {
@@ -20,68 +20,68 @@
     {
       "belt": "White",
       "count": 19,
-      "value": 0.020585048754062838,
+      "value": 0.02054054054054054,
       "id": "White"
     },
     {
       "belt": "Yellow",
-      "count": 67,
-      "value": 0.07258938244853738,
+      "count": 68,
+      "value": 0.07351351351351351,
       "id": "Yellow"
     },
     {
       "belt": "Orange",
       "count": 81,
-      "value": 0.08775731310942579,
+      "value": 0.08756756756756756,
       "id": "Orange"
     },
     {
       "belt": "Green",
       "count": 149,
-      "value": 0.16143011917659805,
+      "value": 0.16108108108108107,
       "id": "Green"
     },
     {
       "belt": "Blue",
-      "count": 133,
-      "value": 0.14409534127843987,
+      "count": 134,
+      "value": 0.14486486486486486,
       "id": "Blue"
     },
     {
       "belt": "Purple",
       "count": 115,
-      "value": 0.12459371614301191,
+      "value": 0.12432432432432433,
       "id": "Purple"
     },
     {
       "belt": "Brown",
-      "count": 84,
-      "value": 0.09100758396533044,
+      "count": 83,
+      "value": 0.08972972972972973,
       "id": "Brown"
     },
     {
       "belt": "Red",
       "count": 72,
-      "value": 0.0780065005417118,
+      "value": 0.07783783783783783,
       "id": "Red"
     },
     {
       "belt": "Black",
-      "count": 95,
-      "value": 0.10292524377031419,
+      "count": 96,
+      "value": 0.10378378378378378,
       "id": "Black"
     },
     {
       "belt": "Unranked",
       "count": 108,
-      "value": 0.11700975081256772,
+      "value": 0.11675675675675676,
       "id": "Unranked"
     }
   ],
   "lockingMechanisms": [
     {
       "label": "Pin-tumbler",
-      "value": 368,
+      "value": 369,
       "id": "pin-tumbler"
     },
     {
@@ -161,7 +161,7 @@
     "Yellow": [
       {
         "label": "Pin-tumbler",
-        "value": 57,
+        "value": 58,
         "id": "pin-tumbler"
       },
       {
@@ -242,7 +242,7 @@
     "Blue": [
       {
         "label": "Pin-tumbler",
-        "value": 66,
+        "value": 65,
         "id": "pin-tumbler"
       },
       {
@@ -261,14 +261,14 @@
         "id": "lever"
       },
       {
+        "label": "Wafer",
+        "value": 4,
+        "id": "wafer"
+      },
+      {
         "label": "Disc detainer",
         "value": 3,
         "id": "disc-detainer"
-      },
-      {
-        "label": "Wafer",
-        "value": 3,
-        "id": "wafer"
       },
       {
         "label": "Other",
@@ -380,14 +380,14 @@
         "id": "lever"
       },
       {
-        "label": "Wafer",
-        "value": 3,
-        "id": "wafer"
-      },
-      {
         "label": "Magnet",
         "value": 2,
         "id": "magnet"
+      },
+      {
+        "label": "Wafer",
+        "value": 2,
+        "id": "wafer"
       },
       {
         "label": "Lever/sidebar",
@@ -475,7 +475,7 @@
       },
       {
         "label": "Slider",
-        "value": 10,
+        "value": 11,
         "id": "slider"
       },
       {
@@ -507,7 +507,7 @@
       },
       {
         "label": "Pin-tumbler",
-        "value": 21,
+        "value": 22,
         "id": "pin-tumbler"
       },
       {
@@ -539,11 +539,6 @@
         "label": "Magnet",
         "value": 1,
         "id": "magnet"
-      },
-      {
-        "label": "Slider",
-        "value": 1,
-        "id": "slider"
       }
     ]
   },
@@ -557,13 +552,13 @@
       },
       {
         "segment": "Ranked locks",
-        "count": 815,
-        "media": 761,
+        "count": 817,
+        "media": 760,
         "coverage": "93%"
       },
       {
         "segment": "All locks",
-        "count": 923,
+        "count": 925,
         "media": 846,
         "coverage": "91%"
       }
@@ -1758,6 +1753,6 @@
     ]
   },
   "metadata": {
-    "updatedDateTime": "2026-02-16 08:08"
+    "updatedDateTime": "2026-03-01 11:02"
   }
 }

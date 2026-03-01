@@ -8960,7 +8960,7 @@
       "Picking Risk"
     ],
     "notes": "Due to unbalanced pin stacks, drivers in max lift chambers will rest below shear. This risks spring damage if the driver is not picked.",
-    "version": "Guttable version. Unguttable version is not yet ranked."
+    "version": "Guttable version"
   },
   "e42853c7": {
     "id": "e42853c7",
@@ -16211,6 +16211,10 @@
     "makeModels": [
       {
         "make": "ABUS",
+        "model": "K14"
+      },
+      {
+        "make": "ABUS",
         "model": "KV14"
       },
       {
@@ -16238,7 +16242,7 @@
         "url": "https://www.catalocks.eu/ABUS/ABUS%20KV%2014_303.html"
       }
     ],
-    "name": "ABUS KV14, KY14",
+    "name": "ABUS K14, KV14, KY14",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "views": 2965,
     "lastUpdated": "2025-03-19T15:44:57.288Z"
@@ -16313,12 +16317,16 @@
       {
         "make": "ABUS",
         "model": "S6+"
+      },
+      {
+        "make": "ABUS",
+        "model": "Zolit"
       }
     ],
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "name": "ABUS Pfaffenhain 410, S6+",
+    "name": "ABUS Pfaffenhain 410, S6+, Zolit",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "views": 2895,
     "lastUpdated": "2025-03-19T15:44:57.288Z",
@@ -16392,7 +16400,7 @@
   },
   "34c0dfe4": {
     "id": "34c0dfe4",
-    "belt": "Blue",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "ABUS",
@@ -22325,13 +22333,17 @@
     "makeModels": [
       {
         "make": "ABUS",
+        "model": "XP1"
+      },
+      {
+        "make": "ABUS",
         "model": "TS5000"
       }
     ],
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "name": "ABUS TS5000",
+    "name": "ABUS XP1, TS5000",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "views": 4892,
     "lastUpdated": "2025-03-19T15:44:57.295Z",
@@ -32275,7 +32287,7 @@
   },
   "236027a0": {
     "id": "236027a0",
-    "belt": "Brown",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "Magnum",
@@ -59435,7 +59447,6 @@
         "model": "SI6"
       }
     ],
-    "version": "6 pin",
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
@@ -59625,7 +59636,7 @@
     "makeModels": [
       {
         "make": "ASSA",
-        "model": "Desmo RC"
+        "model": "Desmo RCX"
       }
     ],
     "version": "10 sliders, no mastered pins",
@@ -59655,7 +59666,7 @@
       }
     ],
     "lastUpdated": "2025-03-19T15:44:57.319Z",
-    "name": "ASSA Desmo RC",
+    "name": "ASSA Desmo RCX",
     "dateAdded": "2025-03-04T01:17:33.000Z",
     "lockingMechanisms": [
       "Slider"
@@ -60539,7 +60550,7 @@
   },
   "ccdbffbf": {
     "id": "ccdbffbf",
-    "belt": "Unranked",
+    "belt": "Black 1",
     "makeModels": [
       {
         "make": "MIWA",
@@ -60843,5 +60854,34 @@
     ],
     "name": "ASSA 500",
     "dateAdded": "2026-01-29T04:43:25.089Z"
+  },
+  "2b5cc5d7": {
+    "id": "2b5cc5d7",
+    "belt": "Yellow",
+    "makeModels": [
+      {
+        "make": "ABUS",
+        "model": "72/40"
+      }
+    ],
+    "version": "Unguttable 'Love Lock' edition",
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "notes": "Due to unbalanced pin stacks, drivers in max lift chambers will rest below shear. This risks spring damage if the driver is not picked.",
+    "name": "ABUS 72/40",
+    "dateAdded": "2026-03-01T11:02:21.469Z"
+  },
+  "6e2cecfd": {
+    "id": "6e2cecfd",
+    "belt": "Blue",
+    "makeModels": [
+      {
+        "make": "CES",
+        "model": "RE Plus"
+      }
+    ],
+    "name": "CES RE Plus",
+    "dateAdded": "2026-03-01T11:02:21.472Z"
   }
 }

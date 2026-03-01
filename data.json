@@ -1288,6 +1288,23 @@
     "lastUpdated": "2025-12-02T23:39:17.928Z"
   },
   {
+    "id": "2b5cc5d7",
+    "belt": "Yellow",
+    "makeModels": [
+      {
+        "make": "ABUS",
+        "model": "72/40"
+      }
+    ],
+    "version": "Unguttable 'Love Lock' edition",
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "notes": "Due to unbalanced pin stacks, drivers in max lift chambers will rest below shear. This risks spring damage if the driver is not picked.",
+    "dateAdded": "2026-03-01T11:02:21.469Z",
+    "lastUpdated": "2026-03-01T11:02:21.780Z"
+  },
+  {
     "id": "805fc883",
     "belt": "Yellow",
     "makeModels": [
@@ -8601,7 +8618,7 @@
         "model": "72/40"
       }
     ],
-    "version": "Guttable version. Unguttable version is not yet ranked.",
+    "version": "Guttable version",
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
@@ -16797,7 +16814,6 @@
         "model": "SI6"
       }
     ],
-    "version": "6 pin",
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
@@ -18422,6 +18438,10 @@
     "makeModels": [
       {
         "make": "ABUS",
+        "model": "K14"
+      },
+      {
+        "make": "ABUS",
         "model": "KV14"
       },
       {
@@ -18451,7 +18471,7 @@
       }
     ],
     "views": 376,
-    "lastUpdated": "2025-12-02T23:39:17.938Z"
+    "lastUpdated": "2026-03-01T11:02:21.782Z"
   },
   {
     "id": "4382d650",
@@ -18522,6 +18542,10 @@
       {
         "make": "ABUS",
         "model": "S6+"
+      },
+      {
+        "make": "ABUS",
+        "model": "Zolit"
       }
     ],
     "version": "6 pins",
@@ -18596,7 +18620,7 @@
       }
     ],
     "views": 428,
-    "lastUpdated": "2025-12-02T23:39:17.938Z"
+    "lastUpdated": "2026-03-01T11:02:21.782Z"
   },
   {
     "id": "294807f4",
@@ -18726,100 +18750,6 @@
       }
     ],
     "views": 300,
-    "lastUpdated": "2025-12-02T23:39:17.938Z"
-  },
-  {
-    "id": "34c0dfe4",
-    "belt": "Blue",
-    "makeModels": [
-      {
-        "make": "ABUS",
-        "model": "XP1"
-      }
-    ],
-    "lockingMechanisms": [
-      "Pin-tumbler"
-    ],
-    "dateAdded": "2023-02-21T23:16:05.000Z",
-    "media": [
-      {
-        "title": "By: LockPicker1969",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52760464128_e7c459fefb_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52760464128/in/album-72177720306870574/",
-        "sequenceId": 901,
-        "dateAdded": "2025-12-02T23:39:17.855Z",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/52760464128_19288306e9_o.jpg"
-      },
-      {
-        "title": "By: LockPicker1969",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52760464323_1b7dc97a41_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52760464323/in/album-72177720306870574/",
-        "sequenceId": 902,
-        "dateAdded": "2025-12-02T23:39:17.855Z",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/52760464323_883aaa2b3f_o.jpg"
-      },
-      {
-        "title": "By: LockPicker1969",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52759435632_dd05a13753_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52759435632/in/album-72177720306870574/",
-        "sequenceId": 903,
-        "dateAdded": "2025-12-02T23:39:17.855Z",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/52759435632_18b08aef47_o.jpg"
-      },
-      {
-        "title": "By: Schloßgespenst",
-        "subtitle": "KoksaWiki",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52801106868_cb3b7536e9_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52801106868/in/album-72177720306870574/",
-        "sequenceId": 904,
-        "dateAdded": "2025-12-02T23:39:17.855Z",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/52801106868_dd0a585ce5_o.jpg"
-      },
-      {
-        "title": "By: decoder",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52800667486_03ac0730bf_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52800667486/in/album-72177720306870574/",
-        "sequenceId": 905,
-        "dateAdded": "2025-12-02T23:39:17.855Z",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/52800667486_7cc507f96a_o.jpg",
-        "imageTitle": "ABUS XP1"
-      },
-      {
-        "title": "By: LockPickingFisherman",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/54363714068_46083f4075_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54363714068/in/album-72177720306870574/",
-        "sequenceId": 906,
-        "dateAdded": "2025-10-25T18:24:16.756Z",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/54363714068_8878016023_o.jpg",
-        "imageTitle": "ABUS XP1"
-      },
-      {
-        "title": "By: LockPickingFisherman",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/54363695894_88e6f74bd8_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54363695894/in/album-72177720306870574/",
-        "sequenceId": 907,
-        "dateAdded": "2025-10-25T18:24:16.756Z",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/54363695894_de404f3004_o.jpg",
-        "imageTitle": "ABUS XP1"
-      }
-    ],
-    "links": [
-      {
-        "title": "KoksaWiki",
-        "url": "https://wiki.koksa.org/Abus_XP1"
-      },
-      {
-        "title": "Catalocks",
-        "url": "https://www.catalocks.eu/ABUS/ABUS%20XP%201_52.html"
-      }
-    ],
-    "views": 597,
     "lastUpdated": "2025-12-02T23:39:17.938Z"
   },
   {
@@ -19679,6 +19609,18 @@
     ],
     "views": 329,
     "lastUpdated": "2025-12-02T23:39:17.939Z"
+  },
+  {
+    "id": "6e2cecfd",
+    "belt": "Blue",
+    "makeModels": [
+      {
+        "make": "CES",
+        "model": "RE Plus"
+      }
+    ],
+    "dateAdded": "2026-03-01T11:02:21.472Z",
+    "lastUpdated": "2026-03-01T11:02:21.783Z"
   },
   {
     "id": "32c85438",
@@ -23677,6 +23619,80 @@
     "lastUpdated": "2025-12-02T23:39:17.941Z"
   },
   {
+    "id": "236027a0",
+    "belt": "Blue",
+    "makeModels": [
+      {
+        "make": "Magnum",
+        "model": "Mont Blanc"
+      }
+    ],
+    "lockingMechanisms": [
+      "Wafer"
+    ],
+    "dateAdded": "2023-02-21T23:16:05.000Z",
+    "media": [
+      {
+        "title": "By: Luboš Čech",
+        "subtitle": "Catalocks",
+        "thumbnailUrl": "https://img.lpubelts.com/i/cl/cl-188_1_tn.jpg",
+        "fullUrl": "https://www.catalocks.eu/photos/188/1.jpg",
+        "sequenceId": 623,
+        "dateAdded": "2025-12-02T23:39:17.851Z",
+        "subtitleUrl": "https://www.catalocks.eu/MAGNUM/MAGNUM%202100%20MONT%20BLANC_188.html",
+        "fullSizeUrl": "https://www.catalocks.eu/photos/188/1.jpg"
+      },
+      {
+        "title": "By: Luboš Čech",
+        "subtitle": "Catalocks",
+        "thumbnailUrl": "https://img.lpubelts.com/i/cl/cl-188_2_tn.jpg",
+        "fullUrl": "https://www.catalocks.eu/photos/188/2.jpg",
+        "sequenceId": 624,
+        "dateAdded": "2025-12-02T23:39:17.851Z",
+        "subtitleUrl": "https://www.catalocks.eu/MAGNUM/MAGNUM%202100%20MONT%20BLANC_188.html",
+        "fullSizeUrl": "https://www.catalocks.eu/photos/188/2.jpg"
+      },
+      {
+        "title": "By: Luboš Čech",
+        "subtitle": "Catalocks",
+        "thumbnailUrl": "https://img.lpubelts.com/i/cl/cl-188_3_tn.jpg",
+        "fullUrl": "https://www.catalocks.eu/photos/188/3.jpg",
+        "sequenceId": 625,
+        "dateAdded": "2025-12-02T23:39:17.851Z",
+        "subtitleUrl": "https://www.catalocks.eu/MAGNUM/MAGNUM%202100%20MONT%20BLANC_188.html",
+        "fullSizeUrl": "https://www.catalocks.eu/photos/188/3.jpg"
+      },
+      {
+        "title": "By: Rodeo Lime",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54396144993_467a550839_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54396144993/in/album-72177720324504977/",
+        "sequenceId": 626,
+        "dateAdded": "2025-12-02T23:39:17.851Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54396144993_1fce6fcc46_o.jpg",
+        "imageTitle": "Magnum Mont Blanc"
+      },
+      {
+        "title": "By: Rodeo Lime",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54395025662_f178cd86fe_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54395025662/in/album-72177720324504977/",
+        "sequenceId": 627,
+        "dateAdded": "2025-12-02T23:39:17.851Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54395025662_3ff81375a4_o.jpg",
+        "imageTitle": "Magnum Mont Blanc"
+      }
+    ],
+    "links": [
+      {
+        "title": "Catalocks",
+        "url": "https://www.catalocks.eu/MAGNUM/MAGNUM%202100%20MONT%20BLANC_188.html"
+      }
+    ],
+    "views": 336,
+    "lastUpdated": "2026-03-01T11:02:21.783Z"
+  },
+  {
     "id": "2a02810c",
     "belt": "Blue",
     "makeModels": [
@@ -26625,6 +26641,10 @@
     "makeModels": [
       {
         "make": "ABUS",
+        "model": "XP1"
+      },
+      {
+        "make": "ABUS",
         "model": "TS5000"
       }
     ],
@@ -26697,7 +26717,7 @@
       }
     ],
     "views": 727,
-    "lastUpdated": "2025-12-02T23:39:17.943Z"
+    "lastUpdated": "2026-03-01T11:02:21.784Z"
   },
   {
     "id": "557b2f45",
@@ -36389,7 +36409,7 @@
     "makeModels": [
       {
         "make": "ASSA",
-        "model": "Desmo RC"
+        "model": "Desmo RCX"
       }
     ],
     "version": "10 sliders, no mastered pins",
@@ -36425,7 +36445,7 @@
       }
     ],
     "views": 59,
-    "lastUpdated": "2025-12-02T23:39:17.950Z"
+    "lastUpdated": "2026-03-01T11:02:21.789Z"
   },
   {
     "id": "fd7b514a",
@@ -39584,80 +39604,6 @@
       }
     ],
     "views": 310,
-    "lastUpdated": "2025-12-02T23:39:17.952Z"
-  },
-  {
-    "id": "236027a0",
-    "belt": "Brown",
-    "makeModels": [
-      {
-        "make": "Magnum",
-        "model": "Mont Blanc"
-      }
-    ],
-    "lockingMechanisms": [
-      "Wafer"
-    ],
-    "dateAdded": "2023-02-21T23:16:05.000Z",
-    "media": [
-      {
-        "title": "By: Luboš Čech",
-        "subtitle": "Catalocks",
-        "thumbnailUrl": "https://img.lpubelts.com/i/cl/cl-188_1_tn.jpg",
-        "fullUrl": "https://www.catalocks.eu/photos/188/1.jpg",
-        "sequenceId": 623,
-        "dateAdded": "2025-12-02T23:39:17.851Z",
-        "subtitleUrl": "https://www.catalocks.eu/MAGNUM/MAGNUM%202100%20MONT%20BLANC_188.html",
-        "fullSizeUrl": "https://www.catalocks.eu/photos/188/1.jpg"
-      },
-      {
-        "title": "By: Luboš Čech",
-        "subtitle": "Catalocks",
-        "thumbnailUrl": "https://img.lpubelts.com/i/cl/cl-188_2_tn.jpg",
-        "fullUrl": "https://www.catalocks.eu/photos/188/2.jpg",
-        "sequenceId": 624,
-        "dateAdded": "2025-12-02T23:39:17.851Z",
-        "subtitleUrl": "https://www.catalocks.eu/MAGNUM/MAGNUM%202100%20MONT%20BLANC_188.html",
-        "fullSizeUrl": "https://www.catalocks.eu/photos/188/2.jpg"
-      },
-      {
-        "title": "By: Luboš Čech",
-        "subtitle": "Catalocks",
-        "thumbnailUrl": "https://img.lpubelts.com/i/cl/cl-188_3_tn.jpg",
-        "fullUrl": "https://www.catalocks.eu/photos/188/3.jpg",
-        "sequenceId": 625,
-        "dateAdded": "2025-12-02T23:39:17.851Z",
-        "subtitleUrl": "https://www.catalocks.eu/MAGNUM/MAGNUM%202100%20MONT%20BLANC_188.html",
-        "fullSizeUrl": "https://www.catalocks.eu/photos/188/3.jpg"
-      },
-      {
-        "title": "By: Rodeo Lime",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/54396144993_467a550839_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54396144993/in/album-72177720324504977/",
-        "sequenceId": 626,
-        "dateAdded": "2025-12-02T23:39:17.851Z",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/54396144993_1fce6fcc46_o.jpg",
-        "imageTitle": "Magnum Mont Blanc"
-      },
-      {
-        "title": "By: Rodeo Lime",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/54395025662_f178cd86fe_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54395025662/in/album-72177720324504977/",
-        "sequenceId": 627,
-        "dateAdded": "2025-12-02T23:39:17.851Z",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/54395025662_3ff81375a4_o.jpg",
-        "imageTitle": "Magnum Mont Blanc"
-      }
-    ],
-    "links": [
-      {
-        "title": "Catalocks",
-        "url": "https://www.catalocks.eu/MAGNUM/MAGNUM%202100%20MONT%20BLANC_188.html"
-      }
-    ],
-    "views": 336,
     "lastUpdated": "2025-12-02T23:39:17.952Z"
   },
   {
@@ -53871,6 +53817,23 @@
     "lastUpdated": "2025-12-02T23:39:17.962Z"
   },
   {
+    "id": "ccdbffbf",
+    "belt": "Black 1",
+    "makeModels": [
+      {
+        "make": "MIWA",
+        "model": "WR"
+      }
+    ],
+    "lockingMechanisms": [
+      "Slider"
+    ],
+    "notes": "Dual sidebar",
+    "dateAdded": "2025-11-11T19:09:04.039Z",
+    "views": 30,
+    "lastUpdated": "2026-03-01T11:02:21.793Z"
+  },
+  {
     "id": "ae7d3780",
     "belt": "Black 1",
     "makeModels": [
@@ -56385,6 +56348,100 @@
     ],
     "views": 227,
     "lastUpdated": "2025-12-02T23:39:17.964Z"
+  },
+  {
+    "id": "34c0dfe4",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "ABUS",
+        "model": "XP1"
+      }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "dateAdded": "2023-02-21T23:16:05.000Z",
+    "media": [
+      {
+        "title": "By: LockPicker1969",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52760464128_e7c459fefb_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52760464128/in/album-72177720306870574/",
+        "sequenceId": 901,
+        "dateAdded": "2025-12-02T23:39:17.855Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52760464128_19288306e9_o.jpg"
+      },
+      {
+        "title": "By: LockPicker1969",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52760464323_1b7dc97a41_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52760464323/in/album-72177720306870574/",
+        "sequenceId": 902,
+        "dateAdded": "2025-12-02T23:39:17.855Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52760464323_883aaa2b3f_o.jpg"
+      },
+      {
+        "title": "By: LockPicker1969",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52759435632_dd05a13753_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52759435632/in/album-72177720306870574/",
+        "sequenceId": 903,
+        "dateAdded": "2025-12-02T23:39:17.855Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52759435632_18b08aef47_o.jpg"
+      },
+      {
+        "title": "By: Schloßgespenst",
+        "subtitle": "KoksaWiki",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52801106868_cb3b7536e9_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52801106868/in/album-72177720306870574/",
+        "sequenceId": 904,
+        "dateAdded": "2025-12-02T23:39:17.855Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52801106868_dd0a585ce5_o.jpg"
+      },
+      {
+        "title": "By: decoder",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52800667486_03ac0730bf_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52800667486/in/album-72177720306870574/",
+        "sequenceId": 905,
+        "dateAdded": "2025-12-02T23:39:17.855Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52800667486_7cc507f96a_o.jpg",
+        "imageTitle": "ABUS XP1"
+      },
+      {
+        "title": "By: LockPickingFisherman",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54363714068_46083f4075_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54363714068/in/album-72177720306870574/",
+        "sequenceId": 906,
+        "dateAdded": "2025-10-25T18:24:16.756Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54363714068_8878016023_o.jpg",
+        "imageTitle": "ABUS XP1"
+      },
+      {
+        "title": "By: LockPickingFisherman",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54363695894_88e6f74bd8_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54363695894/in/album-72177720306870574/",
+        "sequenceId": 907,
+        "dateAdded": "2025-10-25T18:24:16.756Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54363695894_de404f3004_o.jpg",
+        "imageTitle": "ABUS XP1"
+      }
+    ],
+    "links": [
+      {
+        "title": "KoksaWiki",
+        "url": "https://wiki.koksa.org/Abus_XP1"
+      },
+      {
+        "title": "Catalocks",
+        "url": "https://www.catalocks.eu/ABUS/ABUS%20XP%201_52.html"
+      }
+    ],
+    "views": 597,
+    "lastUpdated": "2026-03-01T11:02:21.794Z"
   },
   {
     "id": "fd93632b",
@@ -59465,23 +59522,6 @@
     ],
     "views": 264,
     "lastUpdated": "2025-12-02T23:39:17.966Z"
-  },
-  {
-    "id": "ccdbffbf",
-    "belt": "Unranked",
-    "makeModels": [
-      {
-        "make": "MIWA",
-        "model": "WR"
-      }
-    ],
-    "lockingMechanisms": [
-      "Slider"
-    ],
-    "notes": "Dual sidebar",
-    "dateAdded": "2025-11-11T19:09:04.039Z",
-    "views": 30,
-    "lastUpdated": "2025-11-11T19:09:04.369Z"
   },
   {
     "id": "e9d77a86",
