@@ -80,7 +80,7 @@
     "react-dom": "^18.2.0",
     "react-dropzone": "^14.3.8",
     "react-full-screen": "^1.1.1",
-    "react-hotkeys-hook": "^4.4.1",
+    "react-hotkeys-hook": "^5.2.4",
     "react-markdown": "^10.1.0",
     "react-router-dom": "^6.21.0",
     "react-simple-star-rating": "^5.1.7",
