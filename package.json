@@ -62,7 +62,7 @@
     "@pdf-lib/fontkit": "^1.1.1",
     "autosuggest-highlight": "^3.3.4",
     "axios": "^1.13.2",
-    "dayjs": "^1.11.13",
+    "dayjs": "^1.11.19",
     "dompurify": "^3.3.1",
     "dotenv": "^17.2.3",
     "fast-levenshtein": "^3.0.0",
