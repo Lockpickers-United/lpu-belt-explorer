@@ -64,7 +64,7 @@
     "axios": "^1.13.2",
     "dayjs": "^1.11.19",
     "dompurify": "^3.3.1",
-    "dotenv": "^17.2.3",
+    "dotenv": "^17.3.1",
     "fast-levenshtein": "^3.0.0",
     "firebase": "^11.7.1",
     "fuzzysort": "^3.1.0",
