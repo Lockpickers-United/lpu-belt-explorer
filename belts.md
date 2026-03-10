@@ -174,7 +174,6 @@ Both photos and videos of your picking accomplishment are accepted for this rank
 - [ABUS 72/40](https://lpubelts.com/#/locks?id=2b5cc5d7) (Unguttable &apos;Love Lock&apos; edition)
 - [ABUS 84/35](https://lpubelts.com/#/locks?id=805fc883)
 - [ABUS 85](https://lpubelts.com/#/locks?id=7982c469) (30mm or smaller (&lt;5 pins))
-- [ABUS MyLock / T65AL](https://lpubelts.com/#/locks?id=423dbebe)
 - [ABUS Nautic T84MB/40 / ABUS 84/35](https://lpubelts.com/#/locks?id=9d830052)
 - [ACE Laminated padlock](https://lpubelts.com/#/locks?id=abdf3acd) (40mm or larger, 4 pins)
 - [ALPHA 1000](https://lpubelts.com/#/locks?id=82ea52a4) (40mm up to 45mm (4pins / spools))

@@ -24,7 +24,6 @@ Yellow,ABUS,65/35,"35mm or smaller",Pin-tumbler,Unguttable,,1ce31c29
 Yellow,ABUS,72/40,"Unguttable 'Love Lock' edition",Pin-tumbler,"Latest Changelog","Due to unbalanced pin stacks, drivers in max lift chambers will rest below shear. This risks spring damage if the driver is not picked.",2b5cc5d7
 Yellow,ABUS,84/35,,Pin-tumbler,Unguttable,,805fc883
 Yellow,ABUS,85,"30mm or smaller (<5 pins)",Pin-tumbler,Unguttable,,7982c469
-Yellow,ABUS,"MyLock / T65AL",,Pin-tumbler,Unguttable,,423dbebe
 Yellow,"ABUS,ABUS","Nautic T84MB/40,84/35",,Pin-tumbler,,,9d830052
 Yellow,ACE,"Laminated padlock","40mm or larger, 4 pins",Pin-tumbler,Unguttable,,abdf3acd
 Yellow,ALPHA,1000,"40mm up to 45mm (4pins / spools)",Pin-tumbler,,,82ea52a4
@@ -820,8 +819,9 @@ Unranked,ABA,108418,5+,"Disc detainer","Under Review ⚑",,3b7643da
 Unranked,Abloy,AVA,"flat & half-round key",Wafer,"Under Review ⚑",,9ae8b650
 Unranked,ABUS,34/55,,,"Under Review ⚑",,f72085d2
 Unranked,ABUS,E100,"5 pins",Pin-tumbler,"Under Review ⚑",,05d357bb
+Unranked,ABUS,"MyLock / T65AL",,Pin-tumbler,Samelined,,423dbebe
 Unranked,ABUS,"Vela 2000 Mx",,Dimple,"Under Review ⚑","2 spools, 2 ""barrels"", 1 special passive pin",b370e57b
-Unranked,ABUS,XP1,,Pin-tumbler,"Latest Changelog",,34c0dfe4
+Unranked,ABUS,XP1,,Pin-tumbler,Samelined,,34c0dfe4
 Unranked,,Angal,"5 serrated pin-in-pin ",Dimple,"Under Review ⚑",,fd93632b
 Unranked,Antoniolini,Mondial,"5 H-levers",Lever,"Pin key,Double bitted,Sliding levers",,f468ff5f
 Unranked,Arrow,"ChoICe HS SFIC",,"Pin-tumbler,Sidepins","Under Review ⚑,Sidepins,Active sidebar","6/7 pin SFIC with ASSA twin 6000 sidebar",c2db34fb

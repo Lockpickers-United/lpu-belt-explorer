@@ -3,7 +3,7 @@
     "description": "Locks",
     "data": [
       {
-        "value": 817,
+        "value": 816,
         "label": "Ranked"
       },
       {
@@ -11,7 +11,7 @@
         "label": "All"
       },
       {
-        "value": 108,
+        "value": 109,
         "label": "Unranked"
       }
     ]
@@ -25,8 +25,8 @@
     },
     {
       "belt": "Yellow",
-      "count": 68,
-      "value": 0.07351351351351351,
+      "count": 67,
+      "value": 0.07243243243243243,
       "id": "Yellow"
     },
     {
@@ -73,8 +73,8 @@
     },
     {
       "belt": "Unranked",
-      "count": 108,
-      "value": 0.11675675675675676,
+      "count": 109,
+      "value": 0.11783783783783784,
       "id": "Unranked"
     }
   ],
@@ -161,7 +161,7 @@
     "Yellow": [
       {
         "label": "Pin-tumbler",
-        "value": 58,
+        "value": 57,
         "id": "pin-tumbler"
       },
       {
@@ -507,7 +507,7 @@
       },
       {
         "label": "Pin-tumbler",
-        "value": 22,
+        "value": 23,
         "id": "pin-tumbler"
       },
       {
@@ -552,14 +552,14 @@
       },
       {
         "segment": "Ranked locks",
-        "count": 817,
-        "media": 760,
+        "count": 816,
+        "media": 759,
         "coverage": "93%"
       },
       {
         "segment": "All locks",
         "count": 925,
-        "media": 846,
+        "media": 844,
         "coverage": "91%"
       }
     ],
@@ -1753,6 +1753,6 @@
     ]
   },
   "metadata": {
-    "updatedDateTime": "2026-03-01 11:16"
+    "updatedDateTime": "2026-03-10 22:22"
   }
 }

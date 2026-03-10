@@ -2652,7 +2652,7 @@
   },
   "423dbebe": {
     "id": "423dbebe",
-    "belt": "Yellow",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "ABUS",
@@ -2663,7 +2663,7 @@
       "Pin-tumbler"
     ],
     "features": [
-      "Unguttable"
+      "Samelined"
     ],
     "name": "ABUS MyLock / T65AL",
     "dateAdded": "2023-02-21T23:16:05.000Z",
@@ -16492,7 +16492,7 @@
       }
     ],
     "features": [
-      "Latest Changelog"
+      "Samelined"
     ]
   },
   "d20fb493": {
