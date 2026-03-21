@@ -6346,10 +6346,10 @@ react-simple-star-rating@^5.1.7:
   resolved "https://registry.npmjs.org/react-simple-star-rating/-/react-simple-star-rating-5.1.7.tgz"
   integrity sha512-NTFkW8W3uwvI82Fv7JW5i7gmDjEZKxJmj+Z9vn+BjYIXT6ILdnU9qnSUP2cWrWN/WAUlue81f9SgM4CQcenltQ==
 
-react-swipeable@^7.0.1:
-  version "7.0.1"
-  resolved "https://registry.npmjs.org/react-swipeable/-/react-swipeable-7.0.1.tgz"
-  integrity sha512-RKB17JdQzvECfnVj9yDZsiYn3vH0eyva/ZbrCZXZR0qp66PBRhtg4F9yJcJTWYT5Adadi+x4NoG53BxKHwIYLQ==
+react-swipeable@^7.0.2:
+  version "7.0.2"
+  resolved "https://registry.yarnpkg.com/react-swipeable/-/react-swipeable-7.0.2.tgz#ef8858096a47144ba7060675af1cd672e00ecc12"
+  integrity sha512-v1Qx1l+aC2fdxKa9aKJiaU/ZxmJ5o98RMoFwUqAAzVWUcxgfHFXDDruCKXhw6zIYXm6V64JiHgP9f6mlME5l8w==
 
 react-transition-group@^4.4.5:
   version "4.4.5"

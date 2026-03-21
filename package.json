@@ -84,7 +84,7 @@
     "react-markdown": "^10.1.0",
     "react-router-dom": "^6.21.0",
     "react-simple-star-rating": "^5.1.7",
-    "react-swipeable": "^7.0.1",
+    "react-swipeable": "^7.0.2",
     "react-virtualized-auto-sizer": "^2.0.3",
     "react-window": "^1.8.10",
     "rehype-external-links": "^3.0.0",
