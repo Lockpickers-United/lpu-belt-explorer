@@ -1,1 +1,0 @@
-import{aA as o}from"./index-DPjZ6Tl4.js";function i(t){return o(n(t))}function n(t){const e=/^localhost.*/.test(window.location.host)?"LOCAL":/^dev.*/.test(window.location.host)?"DEV":"LPU Belt Explorer";return t?`${e} - ${t}`:"LPU Belt Explorer"}export{i as u};
