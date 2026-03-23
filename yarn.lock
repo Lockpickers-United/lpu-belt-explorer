@@ -46,7 +46,7 @@
   resolved "https://registry.yarnpkg.com/@babel/compat-data/-/compat-data-7.29.0.tgz#00d03e8c0ac24dd9be942c5370990cbe1f17d88d"
   integrity sha512-T1NCJqT/j9+cn8fvkt7jtwbLBfLC/1y1c7NtCeXFRgzGTsafi68MRv8yzkYSapBnFA6L3U2VSc02ciDzoAJhJg==
 
-"@babel/core@^7.24.4", "@babel/core@^7.26.10":
+"@babel/core@^7.24.4", "@babel/core@^7.29.0":
   version "7.29.0"
   resolved "https://registry.yarnpkg.com/@babel/core/-/core-7.29.0.tgz#5286ad785df7f79d656e88ce86e650d16ca5f322"
   integrity sha512-CGOfOJqWjg2qW/Mb6zNsDm+u5vFQ8DxXfbM09z69p5Z6+mE1ikP2jUXw+j42Pf1XTYED2Rni5f95npYeuwMDQA==
@@ -153,16 +153,16 @@
   dependencies:
     "@babel/types" "^7.29.0"
 
-"@babel/plugin-transform-react-jsx-self@^7.25.9":
+"@babel/plugin-transform-react-jsx-self@^7.27.1":
   version "7.27.1"
-  resolved "https://registry.npmjs.org/@babel/plugin-transform-react-jsx-self/-/plugin-transform-react-jsx-self-7.27.1.tgz"
+  resolved "https://registry.yarnpkg.com/@babel/plugin-transform-react-jsx-self/-/plugin-transform-react-jsx-self-7.27.1.tgz#af678d8506acf52c577cac73ff7fe6615c85fc92"
   integrity sha512-6UzkCs+ejGdZ5mFFC/OCUrv028ab2fp1znZmCZjAOBKiBK2jXD1O+BPSfX8X2qjJ75fZBMSnQn3Rq2mrBJK2mw==
   dependencies:
     "@babel/helper-plugin-utils" "^7.27.1"
 
-"@babel/plugin-transform-react-jsx-source@^7.25.9":
+"@babel/plugin-transform-react-jsx-source@^7.27.1":
   version "7.27.1"
-  resolved "https://registry.npmjs.org/@babel/plugin-transform-react-jsx-source/-/plugin-transform-react-jsx-source-7.27.1.tgz"
+  resolved "https://registry.yarnpkg.com/@babel/plugin-transform-react-jsx-source/-/plugin-transform-react-jsx-source-7.27.1.tgz#dcfe2c24094bb757bf73960374e7c55e434f19f0"
   integrity sha512-zbwoTsBruTeKB9hSq73ha66iFeJHuaFkUbwvqElnygoNbj/jHRsSeokowZFN3CZ64IvEqcmmkVe89OPXc7ldAw==
   dependencies:
     "@babel/helper-plugin-utils" "^7.27.1"
@@ -1911,6 +1911,11 @@
   resolved "https://registry.npmjs.org/@remix-run/router/-/router-1.23.2.tgz"
   integrity sha512-Ic6m2U/rMjTkhERIa/0ZtXJP17QUi2CbWE7cqx4J58M8aA3QTfW+2UlQ4psvTX9IO1RfNVhK3pcpdjej7L+t2w==
 
+"@rolldown/pluginutils@1.0.0-rc.3":
+  version "1.0.0-rc.3"
+  resolved "https://registry.yarnpkg.com/@rolldown/pluginutils/-/pluginutils-1.0.0-rc.3.tgz#8a88cc92a0f741befc7bc109cb1a4c6b9408e1c5"
+  integrity sha512-eybk3TjzzzV97Dlj5c+XrBFW57eTNhzod66y9HrBlzJ6NsCrWCp/2kaPS3K9wJmurBC0Tdw4yPjXKZqlznim3Q==
+
 "@rollup/rollup-android-arm-eabi@4.59.0":
   version "4.59.0"
   resolved "https://registry.yarnpkg.com/@rollup/rollup-android-arm-eabi/-/rollup-android-arm-eabi-4.59.0.tgz#a6742c74c7d9d6d604ef8a48f99326b4ecda3d82"
@@ -2473,16 +2478,17 @@
   resolved "https://registry.npmjs.org/@ungap/structured-clone/-/structured-clone-1.2.0.tgz"
   integrity sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==
 
-"@vitejs/plugin-react@^4.4.1":
-  version "4.4.1"
-  resolved "https://registry.npmjs.org/@vitejs/plugin-react/-/plugin-react-4.4.1.tgz"
-  integrity sha512-IpEm5ZmeXAP/osiBXVVP5KjFMzbWOonMs0NaQQl+xYnUAcq4oHUBsF2+p4MgKWG4YMmFYJU8A6sxRPuowllm6w==
+"@vitejs/plugin-react@^5.2.0":
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/@vitejs/plugin-react/-/plugin-react-5.2.0.tgz#108bd0f566f288ce3566982df4eff137ded7b15f"
+  integrity sha512-YmKkfhOAi3wsB1PhJq5Scj3GXMn3WvtQ/JC0xoopuHoXSdmtdStOpFrYaT1kie2YgFBcIe64ROzMYRjCrYOdYw==
   dependencies:
-    "@babel/core" "^7.26.10"
-    "@babel/plugin-transform-react-jsx-self" "^7.25.9"
-    "@babel/plugin-transform-react-jsx-source" "^7.25.9"
+    "@babel/core" "^7.29.0"
+    "@babel/plugin-transform-react-jsx-self" "^7.27.1"
+    "@babel/plugin-transform-react-jsx-source" "^7.27.1"
+    "@rolldown/pluginutils" "1.0.0-rc.3"
     "@types/babel__core" "^7.20.5"
-    react-refresh "^0.17.0"
+    react-refresh "^0.18.0"
 
 "@vitest/expect@3.2.4":
   version "3.2.4"
@@ -6321,10 +6327,10 @@ react-markdown@^10.1.0:
     unist-util-visit "^5.0.0"
     vfile "^6.0.0"
 
-react-refresh@^0.17.0:
-  version "0.17.0"
-  resolved "https://registry.npmjs.org/react-refresh/-/react-refresh-0.17.0.tgz"
-  integrity sha512-z6F7K9bV85EfseRCp2bzrpyQ0Gkw1uLoCel9XBVWPg/TjRj94SkJzUTGfOa4bs7iJvBWtQG0Wq7wnI0syw3EBQ==
+react-refresh@^0.18.0:
+  version "0.18.0"
+  resolved "https://registry.yarnpkg.com/react-refresh/-/react-refresh-0.18.0.tgz#2dce97f4fe932a4d8142fa1630e475c1729c8062"
+  integrity sha512-QgT5//D3jfjJb6Gsjxv0Slpj23ip+HtOpnNgnb2S5zU3CB26G/IDPGoy4RJB42wzFE46DRsstbW6tKHoKbhAxw==
 
 react-router-dom@^6.21.0:
   version "6.30.3"
