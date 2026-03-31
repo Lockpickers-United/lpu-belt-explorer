@@ -109,6 +109,8 @@ Q: **Are there any more goals to work towards after achieving black belt?**
   
 - All lock picking must take place through "normally accessible" means. What this means is that lock tools should be inserted into the keyway, no manipulation should occur from angles that normally wouldn't be accessible were the lock installed. Examples include applying tension using a lock's cam, inserting or using tools from the rear of the lock, having extra lighting behind the lock, etc. Note, having your hands behind the lock is fine as this is often more comfortable or helps them not get in the way of the camera.
 
+- Using any manufactured tool that is marketed for a specific make or model of lock or keyway and overly assists with pick alignment and lift height will not count for green belt and beyond.
+
 - The list of locks is a living document. If you believe you have picked a lock that is equivalent to one of those
   listed in the requirements, [message the moderators](https://www.reddit.com/message/compose?to=%2Fr%2Flockpicking). We
   will research the lock and add it to the list.
@@ -131,12 +133,6 @@ Q: **Are there any more goals to work towards after achieving black belt?**
   must be typical for that type of lock. Custom pinned locks and challenge locks will only count as a white belt lock.
   Adding security pins to otherwise low ranking locks will not increase the ranking of a lock.
 
-- Kung Fu Panda Clause: In some extremely rare cases, a member's accomplishment will be noteworthy to the point that it
-  changes the state of the art with respect to lock picking. Generally this involves developing a highly complex tool, method and
-  technique that results in a "first time in history" opening of a lock that had long stood as pickproof. Since there
-  is usually no precedent for the work having been accomplished, these cases will be evaluated individually as they
-  arise by the moderation team, and the member ranked at the belt deemed appropriate.
-
 - Padlocks must have the shackle closed for it to count as a belt. Padlock cores must be in the originating bodies to
   count for a belt, removing the core does not count.
 
@@ -157,6 +153,13 @@ Q: **Are there any more goals to work towards after achieving black belt?**
     - It is recommended that you start by removing any master wafers which are not required for the key to function. If
       you cannot remove sufficient wafers this way, then you may be required to pick and gut the lock without a working
       key.
+
+- Kung Fu Panda Clause: In some extremely rare cases, a member's accomplishment will be noteworthy to the point that it
+  changes the state of the art with respect to lock picking. Generally this involves developing a highly complex tool, method and
+  technique that results in a "first time in history" opening of a lock that had long stood as pickproof. Since there
+  is usually no precedent for the work having been accomplished, these cases will be evaluated individually as they
+  arise by the moderation team, and the member ranked at the belt deemed appropriate.
+
 
 ----------
 
