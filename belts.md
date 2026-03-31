@@ -350,6 +350,7 @@ together again.
 **Picking Requirements**
 
 - SPP (single pin pick) one of the locks ranked as Green Belt. Raking is not allowed for Green Belt and above.
+- Using any manufactured tool that is marketed for a specific make or model of lock or keyway and overly assists with pick alignment and lift height will not count for green belt and beyond.
 
 **Non-Picking Requirements**
 
@@ -1267,38 +1268,33 @@ working on that lock to have time to get their accomplishment ranked at the old 
 
 Visit the #belt-changelog channel in the [Discord](https://discord.gg/lockpicking) for more information on all changes.
 
-### June - August 2025
+### January 2026
 
 
 **NEW ADDITIONS**
 
-- **IKON SK6** Sperrwelle (4 finger pins, non-chamfered sidebar) - RED. Has 3+ votes by our classification community.
-- **Mauer Crypto** - RED. Has 3+ votes by our classification community.
-- **Nagasawa KCY-7x** - PURPLE. Has 3+ votes by our classification community.
-- **Securystar Pro Star** - PURPLE. Has 3+ votes by our classification community.
-- **Omellow R3** - BLUE. Has 3+ votes by our classification community.
-- **ABUS 82/63** - ORANGE. This is the monoblock ABUS normal profile lock with only spools and a regular pin, similar to E50 in pinning. It is also not guttable.
+- **MIWA WR** - BLACK 1. The latest creation of miwa, excellent tolerances and the typical miwa picking experience of little feedback in the beginning, effective false gates and much more. Also has a weird picking angle coming from the shape of the sliders which adds an extra challenge. 4 positions available for the sliders to exist, rending the lock pretty tricky to tackle in any orientation.
+
+- **CES RE Plus** - BLUE. A precise 5 pin lock with a slightly better profile than the more open CES locks and two additional features: First, a large "pocket" in the core on position 2 that allows the spool there to tilt extremely far, requiring turning back manually to set. And second, a little spring loaded slider that works similarly to the one seen in Schlage Everest.
+
+- **ASSA 500** (barrels, but no countermilling) - BLUE. Very similar to ABUS GDS, only 5 pins instead of 6 but much higher precision compared to the ABUS clone.
+
+- **ABUS 72/40** unguttable "Love Lock" edition - YELLOW. Although the key suggests 6 pins like for normal 72/40, this lock has only 4 pins, and it isn't even security pins, it is regular aluminum drivers.
 
 **SAMELINES**
+- **ABUS XP1** - sameline with TS5000 on PURPLE. These locks are almost the same and the upper active pin(s) in TS5000 are usually not the difficult part about this lock. Zero-lifts can make the TS5000 harder but they are not guaranteed to be present either.
 
-- **CISA RS3** - sameline with ABUS EP10 / Bricard Chifral as this is the same lock.
-- **DOM PP1024** - sameline with DOM S. The term "PP1024" does not identify a lock model but a profile series for DOM S. Since many people confuse it for a model name and it often says "PP1024" on the key, having it listed by profile name under DOM S helps identifying.
-- **DOM RS Sirius** - sameline with DOM RS Sigma. This is basically the same lock with some copy protection pin added on the side.
-- **ISEO R50** - sameline with ISEO R7. This lock is no different than R7, except for a "bump" on the key interacting with one of the top row pins instead of having a flat profile (copy protection) - apart from that, they are exactly the same.
-- **ISEO F5** (4-pins) - sameline with ISEO F5 on orange as the one pin does not really change much and it's still too difficult for yellow.
-- **Burg Wächter 222 C30** (4-pin) - sameline with C40. The C30 has 1 pin less but they are too difficult for white with their profile, no matter if 4 or 5 pins.
-- **Mottura C9P / C43 Plus** - sameline with C43 as this is the same lock with same internals.
-- **WLN Detector** - sameline with Tann Detector (same lock).
+- **ABUS K14** - sameline with ABUS KV14 on BLUE. The difference here is just the profile and both profiles are more narrow and difficult (in contrast to e.g. W14).
 
-**SPLITS**
+- **ABUS Zolit** - sameline with ABUS S6+ on BLUE. The Zolit is the same as the regular 410 / S6+ but with a copy protection pin on the front (Intop) somewhat similar to what Vitess does. Doesn't change the picking difficulty and otherwise identical.
 
-- **Yanai R2200M** - <14 pins - RED. Splitting similar to Goal v18.
-- **Yanai R2200M** - 14-16 pins - BB1. Splitting similar to Goal v18.
-- **Yanai R2200M** - >= 17 pins - BB2 . Splitting similar to Goal v18.
+- **EMR (5 pin)** - sameline with GTV APS on GREEN. This is the same lock family and same pinning (also confirmed through profile analysis). EMR is an old German company that built lots of larger lock systems on GTV basis that are labeled "EMR" - usually very old.
 
-**REMOVALS**
+**DOWNGRADES**
+- **Magnum Mont Blanc** - BLUE. Community votes do not agree with the current brown rating and decided to move this lock to blue.
 
-- **ASSA 500** with gins and countermilling - there is no evidence that this lock ever existed. All instances of ASSA 500 with gins observed so far were the sleeve version. Nobody has brought forth any evidence that a version with gin milling in the core actually exists or ever existed.
+**OTHER CHANGES**
+- **Wilka PR100 / SI6 / TH6** - remove the "6 pin" requirement for GREEN. These exist as 5 or 6 pin versions - but they always have the active side pin as well. The regular Wilka cylinder is only green with 6 pins but since these have the extra side pin (that is not trivial to set), they would be too difficult for orange.
 
 ---
 
@@ -1413,6 +1409,8 @@ Q: **Are there any more goals to work towards after achieving black belt?**
   
 - All lock picking must take place through "normally accessible" means. What this means is that lock tools should be inserted into the keyway, no manipulation should occur from angles that normally wouldn't be accessible were the lock installed. Examples include applying tension using a lock's cam, inserting or using tools from the rear of the lock, having extra lighting behind the lock, etc. Note, having your hands behind the lock is fine as this is often more comfortable or helps them not get in the way of the camera.
 
+- Using any manufactured tool that is marketed for a specific make or model of lock or keyway and overly assists with pick alignment and lift height will not count for green belt and beyond.
+
 - The list of locks is a living document. If you believe you have picked a lock that is equivalent to one of those
   listed in the requirements, [message the moderators](https://www.reddit.com/message/compose?to=%2Fr%2Flockpicking). We
   will research the lock and add it to the list.
@@ -1435,12 +1433,6 @@ Q: **Are there any more goals to work towards after achieving black belt?**
   must be typical for that type of lock. Custom pinned locks and challenge locks will only count as a white belt lock.
   Adding security pins to otherwise low ranking locks will not increase the ranking of a lock.
 
-- Kung Fu Panda Clause: In some extremely rare cases, a member's accomplishment will be noteworthy to the point that it
-  changes the state of the art with respect to lock picking. Generally this involves developing a highly complex tool, method and
-  technique that results in a "first time in history" opening of a lock that had long stood as pickproof. Since there
-  is usually no precedent for the work having been accomplished, these cases will be evaluated individually as they
-  arise by the moderation team, and the member ranked at the belt deemed appropriate.
-
 - Padlocks must have the shackle closed for it to count as a belt. Padlock cores must be in the originating bodies to
   count for a belt, removing the core does not count.
 
@@ -1461,6 +1453,13 @@ Q: **Are there any more goals to work towards after achieving black belt?**
     - It is recommended that you start by removing any master wafers which are not required for the key to function. If
       you cannot remove sufficient wafers this way, then you may be required to pick and gut the lock without a working
       key.
+
+- Kung Fu Panda Clause: In some extremely rare cases, a member's accomplishment will be noteworthy to the point that it
+  changes the state of the art with respect to lock picking. Generally this involves developing a highly complex tool, method and
+  technique that results in a "first time in history" opening of a lock that had long stood as pickproof. Since there
+  is usually no precedent for the work having been accomplished, these cases will be evaluated individually as they
+  arise by the moderation team, and the member ranked at the belt deemed appropriate.
+
 
 ----------
 
