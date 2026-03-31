@@ -52,6 +52,7 @@ export default [
         title: 'RAFL pot contribution',
         icon: <NewReleasesIcon fontSize='small'/>,
         path: '/rafl/contribute',
+        hidden: raflState === 'hidden' || raflState === 'setup',
         beta: true
     },
     {
