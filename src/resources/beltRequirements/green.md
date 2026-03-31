@@ -7,7 +7,6 @@ together again.
 **Picking Requirements**
 
 - SPP (single pin pick) one of the locks ranked as Green Belt. Raking is not allowed for Green Belt and above.
-- Using any manufactured tool that is marketed for a specific make or model of lock or keyway and overly assists with pick alignment and lift height will not count for green belt and beyond.
 
 **Non-Picking Requirements**
 

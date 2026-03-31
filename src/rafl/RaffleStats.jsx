@@ -65,7 +65,7 @@ export default function RaffleStats() {
                     <span style={{fontSize: '0.8rem', marginTop: 0}}>{updateTime}</span>
                 </div>
 
-                <RaffleYOYLines summary={summary}/>
+                <RaffleYOYLines data={raflResponseDetails['detailedData']}/>
 
                 <div style={firstHeaderStyle}>Pots</div>
                 <RaffleStatsPotTable summary={summary} tableWidth={tableWidth} nameLength={nameLength}/>
