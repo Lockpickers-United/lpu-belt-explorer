@@ -25,6 +25,7 @@ import entryName from '../src/entries/entryName.js'
 import {saveLockStats} from './saveLockStats.js'
 
 const importRaflData = true
+console.log('starting import')
 
 // Helper to load and validate a file
 const importValidate = async (tab, schema) => {
