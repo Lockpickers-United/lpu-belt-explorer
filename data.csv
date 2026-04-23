@@ -68,7 +68,7 @@ Yellow,,Koala,,Pin-tumbler,,,7eaffc73
 Yellow,"Lockwood,Lockwood","312,412",,Pin-tumbler,Unguttable,,098cc99c
 Yellow,MAKO,227,,Pin-tumbler,Unguttable,,7c79137c
 Yellow,"Master Lock",130,,Pin-tumbler,Unguttable,,866660d6
-Yellow,"Master Lock,Master Lock","140,141",,Pin-tumbler,Unguttable,,2455f0ae
+Yellow,"Master Lock","140 Series","Ex: 140, 141, 142, etc.",Pin-tumbler,Unguttable,,2455f0ae
 Yellow,"Master Lock",930,,Pin-tumbler,,,759d0d0f
 Yellow,"Master Lock",DG,,Pin-tumbler,Unguttable,,df703850
 Yellow,"Master Lock",Magnum,,Pin-tumbler,Unguttable,,d5053e6d
@@ -813,7 +813,7 @@ Red,Yanai,"R 2200M","<14 pins",Dimple,"High pin count",,5eac6a29
 "Black 1",Winkhaus,X-Tra,"≥13 pins",Dimple,"High pin count",,d1a5cd90
 "Black 2",Yanai,"R 2200M",">= 17 pins",Dimple,"High pin count",,a8e79394
 "Black 1",Yanai,"R 2200M","14-16 pins",Dimple,"High pin count",,a974eb0c
-"Black 5","Yuema,Forte","750,Enigma",,Slider,"Reverse sidebar",,0b604114
+"Black 5","Yuema,Forte","750 series,Enigma",,Slider,"Reverse sidebar",,0b604114
 Unranked,"A.S.I. Inc.","Royal Guardian",,Dimple,"Under Review ⚑,Pin-in-pin,Trap element,Picking Risk","If trap elements are not dealt with, the lock will soft-brick, requiring a gut to fix.",6f837bb4
 Unranked,ABA,108418,5+,"Disc detainer","Under Review ⚑",,3b7643da
 Unranked,Abloy,AVA,"flat & half-round key",Wafer,"Under Review ⚑",,9ae8b650

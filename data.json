@@ -3435,13 +3435,10 @@
     "makeModels": [
       {
         "make": "Master Lock",
-        "model": "140"
-      },
-      {
-        "make": "Master Lock",
-        "model": "141"
+        "model": "140 Series"
       }
     ],
+    "version": "Ex: 140, 141, 142, etc.",
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
@@ -3571,7 +3568,7 @@
       }
     ],
     "views": 922,
-    "lastUpdated": "2025-12-02T23:39:17.930Z"
+    "lastUpdated": "2026-04-23T19:21:19.761Z"
   },
   {
     "id": "759d0d0f",
@@ -55902,7 +55899,7 @@
     "makeModels": [
       {
         "make": "Yuema",
-        "model": "750"
+        "model": "750 series"
       },
       {
         "make": "Forte",
@@ -55973,7 +55970,7 @@
       }
     ],
     "views": 655,
-    "lastUpdated": "2025-12-02T23:39:17.963Z"
+    "lastUpdated": "2026-04-23T19:21:19.772Z"
   },
   {
     "id": "6f837bb4",

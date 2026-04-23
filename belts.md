@@ -218,7 +218,7 @@ Both photos and videos of your picking accomplishment are accepted for this rank
 - [Lockwood 312 / Lockwood 412](https://lpubelts.com/#/locks?id=098cc99c)
 - [MAKO 227](https://lpubelts.com/#/locks?id=7c79137c)
 - [Master Lock 130](https://lpubelts.com/#/locks?id=866660d6)
-- [Master Lock 140 / Master Lock 141](https://lpubelts.com/#/locks?id=2455f0ae)
+- [Master Lock 140 Series](https://lpubelts.com/#/locks?id=2455f0ae) (Ex: 140, 141, 142, etc.)
 - [Master Lock 930](https://lpubelts.com/#/locks?id=759d0d0f)
 - [Master Lock DG](https://lpubelts.com/#/locks?id=df703850)
 - [Master Lock Magnum](https://lpubelts.com/#/locks?id=d5053e6d)
@@ -1243,7 +1243,7 @@ is required to gut.
 - [Winkhaus X-Tra](https://lpubelts.com/#/locks?id=d1a5cd90) (&ge;13 pins)
 - [Yanai R 2200M](https://lpubelts.com/#/locks?id=a8e79394) (&gt;= 17 pins)
 - [Yanai R 2200M](https://lpubelts.com/#/locks?id=a974eb0c) (14-16 pins)
-- [Yuema 750 / Forte Enigma](https://lpubelts.com/#/locks?id=0b604114)
+- [Yuema 750 series / Forte Enigma](https://lpubelts.com/#/locks?id=0b604114)
 
 ** Must be raked prior to picking to reset pin combination. Ideally assembled on video prior to picking.
 
