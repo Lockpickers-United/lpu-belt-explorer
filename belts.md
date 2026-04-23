@@ -1602,6 +1602,7 @@ Brown belt:
 - LockPickNic
 - RubberBanned
 - L0ckJocKey
+- Skull (purpleskull435)
 
 ### Corbin Master Ring
 While similar to SFIC in that they have 2 shear lines, the Corbin Master Ring can be gutted without special tools and thus videos do not need to follow the special SFIC filming requirements. A visual demonstration of both shear lines rotating should be included for a purple belt submission. An example of a purple belt Master Ring video can be [seen here](https://youtu.be/w2e8IgWUrX0?si=djLZgWkiEOAUliq9).
