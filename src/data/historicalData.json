@@ -4274,11 +4274,7 @@
     "makeModels": [
       {
         "make": "Master Lock",
-        "model": "140"
-      },
-      {
-        "make": "Master Lock",
-        "model": "141"
+        "model": "140 Series"
       }
     ],
     "lockingMechanisms": [
@@ -4407,11 +4403,12 @@
         "url": "http://lockwiki.com/index.php/Master_Lock_No_141"
       }
     ],
-    "name": "Master Lock 140, 141",
+    "name": "Master Lock 140 Series",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "views": 18434,
     "lastUpdated": "2025-03-19T01:20:51.355Z",
-    "modelNum": "140"
+    "modelNum": "140",
+    "version": "Ex: 140, 141, 142, etc."
   },
   "6af6f704": {
     "id": "6af6f704",
@@ -45929,7 +45926,7 @@
     "makeModels": [
       {
         "make": "Yuema",
-        "model": "750"
+        "model": "750 series"
       },
       {
         "make": "Forte",
@@ -45939,7 +45936,7 @@
     "lockingMechanisms": [
       "Slider"
     ],
-    "name": "Yuema 750 / Forte Enigma",
+    "name": "Yuema 750 series / Forte Enigma",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "features": [
       "Reverse sidebar"
