@@ -1334,17 +1334,6 @@
     prop-types "^15.8.1"
     react-transition-group "^4.4.5"
 
-"@nivo/annotations@0.96.0":
-  version "0.96.0"
-  resolved "https://registry.npmjs.org/@nivo/annotations/-/annotations-0.96.0.tgz"
-  integrity sha512-lZRUhJyKKK5NWGU5vjEz3I2sJFFHw8TX25BefC0dJiFTliLnJqN+kSRPTWjUDPjGUPCt7vIOhISWvppNtaZG7A==
-  dependencies:
-    "@nivo/colors" "0.96.0"
-    "@nivo/core" "0.96.0"
-    "@nivo/theming" "0.96.0"
-    "@react-spring/web" "9.4.5 || ^9.7.2"
-    lodash "^4.17.21"
-
 "@nivo/annotations@0.99.0":
   version "0.99.0"
   resolved "https://registry.npmjs.org/@nivo/annotations/-/annotations-0.99.0.tgz"
@@ -1369,21 +1358,6 @@
     "@react-spring/web" "9.4.5 || ^9.7.2"
     "@types/d3-shape" "^3.1.6"
     d3-shape "^3.2.0"
-
-"@nivo/axes@0.96.0":
-  version "0.96.0"
-  resolved "https://registry.npmjs.org/@nivo/axes/-/axes-0.96.0.tgz"
-  integrity sha512-/HojEQsnbADYguNciTzUAmcXpt6yk6hPHzjfqCSuzCajSofRODewx/tyJkiwpYjB/uO6XYQ54O2p9R2SJMhTTQ==
-  dependencies:
-    "@nivo/core" "0.96.0"
-    "@nivo/scales" "0.96.0"
-    "@nivo/text" "0.96.0"
-    "@nivo/theming" "0.96.0"
-    "@react-spring/web" "9.4.5 || ^9.7.2"
-    "@types/d3-format" "^1.4.1"
-    "@types/d3-time-format" "^2.3.1"
-    d3-format "^1.4.4"
-    d3-time-format "^3.0.0"
 
 "@nivo/axes@0.99.0":
   version "0.99.0"
@@ -1538,21 +1512,21 @@
     "@types/d3-scale" "^4.0.8"
     d3-scale "^4.0.2"
 
-"@nivo/line@^0.96.0":
-  version "0.96.0"
-  resolved "https://registry.npmjs.org/@nivo/line/-/line-0.96.0.tgz"
-  integrity sha512-h+hVTie+nn20Yqvar3gM35tB+4fyDiq5RbWM8rQJJTE48M5uWfsnEo4klw0fYbeOgHJzsheuyTd5ZrXG4wA/lA==
+"@nivo/line@^0.99.0":
+  version "0.99.0"
+  resolved "https://registry.yarnpkg.com/@nivo/line/-/line-0.99.0.tgz#40d5c5211316a0bcd2d43a2ead1d2ef2e996c28e"
+  integrity sha512-bAqTXSjpnpcGMs341qWFUi7hJTqQiNoSeJHsYPuPS3icuXPcp3WETQH+zRZACeEF79ZigeOWCW+dzODgne1y9w==
   dependencies:
-    "@nivo/annotations" "0.96.0"
-    "@nivo/axes" "0.96.0"
-    "@nivo/colors" "0.96.0"
-    "@nivo/core" "0.96.0"
-    "@nivo/legends" "0.96.0"
-    "@nivo/scales" "0.96.0"
-    "@nivo/theming" "0.96.0"
-    "@nivo/tooltip" "0.96.0"
-    "@nivo/voronoi" "0.96.0"
-    "@react-spring/web" "9.4.5 || ^9.7.2"
+    "@nivo/annotations" "0.99.0"
+    "@nivo/axes" "0.99.0"
+    "@nivo/colors" "0.99.0"
+    "@nivo/core" "0.99.0"
+    "@nivo/legends" "0.99.0"
+    "@nivo/scales" "0.99.0"
+    "@nivo/theming" "0.99.0"
+    "@nivo/tooltip" "0.99.0"
+    "@nivo/voronoi" "0.99.0"
+    "@react-spring/web" "9.4.5 || ^9.7.2 || ^10.0"
     "@types/d3-shape" "^3.1.6"
     d3-shape "^3.2.0"
 
@@ -1586,21 +1560,6 @@
     "@types/d3-shape" "^3.1.6"
     d3-sankey "^0.12.3"
     d3-shape "^3.2.0"
-    lodash "^4.17.21"
-
-"@nivo/scales@0.96.0":
-  version "0.96.0"
-  resolved "https://registry.npmjs.org/@nivo/scales/-/scales-0.96.0.tgz"
-  integrity sha512-X+d1U0AZOBqoX3h3w2fWvP3ang/7uvh+0iUlzWUsAPhooFwLCwRrgs1Emg2kUHi8D+VGjTjvWYpGBiCYEuvcyQ==
-  dependencies:
-    "@types/d3-interpolate" "^3.0.4"
-    "@types/d3-scale" "^4.0.8"
-    "@types/d3-time" "^1.1.1"
-    "@types/d3-time-format" "^3.0.0"
-    d3-interpolate "^3.0.1"
-    d3-scale "^4.0.2"
-    d3-time "^1.0.11"
-    d3-time-format "^3.0.0"
     lodash "^4.17.21"
 
 "@nivo/scales@0.99.0":
@@ -1668,14 +1627,14 @@
     "@nivo/theming" "0.99.0"
     "@react-spring/web" "9.4.5 || ^9.7.2 || ^10.0"
 
-"@nivo/voronoi@0.96.0":
-  version "0.96.0"
-  resolved "https://registry.npmjs.org/@nivo/voronoi/-/voronoi-0.96.0.tgz"
-  integrity sha512-BjVfuwpq+NiC8Q0LXT0K83u0FBVj89WPx+WsOTtm+M2VKrcDLYMKIVJelDwY+KSpSXWSdAaOaUkAYsfaDBl5SA==
+"@nivo/voronoi@0.99.0":
+  version "0.99.0"
+  resolved "https://registry.yarnpkg.com/@nivo/voronoi/-/voronoi-0.99.0.tgz#44030d825b39e3a83f4311570b2a78f61ab053b4"
+  integrity sha512-KfmMdidbYzhiUCki1FG4X4nHEFT4loK8G5bMBnmCl9U+S78W+gvkfrgD2Aoqp/Q9yKQvr3Y8UcZKSFZnn3HgjQ==
   dependencies:
-    "@nivo/core" "0.96.0"
-    "@nivo/theming" "0.96.0"
-    "@nivo/tooltip" "0.96.0"
+    "@nivo/core" "0.99.0"
+    "@nivo/theming" "0.99.0"
+    "@nivo/tooltip" "0.99.0"
     "@types/d3-delaunay" "^6.0.4"
     "@types/d3-scale" "^4.0.8"
     d3-delaunay "^6.0.4"
