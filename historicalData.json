@@ -23770,7 +23770,8 @@
       "9b00fb5e"
     ],
     "features": [
-      "High pin count"
+      "High pin count",
+      "Interactive element"
     ]
   },
   "98ba98ae": {
@@ -60887,5 +60888,20 @@
     "features": [
       "Latest Changelog"
     ]
+  },
+  "55d4676c": {
+    "id": "55d4676c",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Securemme",
+        "model": "K3"
+      }
+    ],
+    "lockingMechanisms": [
+      "Dimple"
+    ],
+    "name": "Securemme K3",
+    "dateAdded": "2026-04-28T18:31:50.042Z"
   }
 }

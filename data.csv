@@ -465,7 +465,7 @@ Purple,ASSA,Guideline,"6 pin with active side pins",Pin-tumbler,"Barrel drivers,
 Purple,"Australian Lock Co.",BiLock,"12 sliders, 7-8 mastered",Slider,"False gates,Sprung sliders,Active sidebar",,f70b9b33
 Purple,"Australian Lock Co.",BiLock,"8 sliders, 3-4 mastered",Slider,"False gates,Sprung sliders,Active sidebar",,1ca633a8
 Purple,"Avocet,ERA,Federal Lock,Thirard,Thirard","ABS,Professional Cylinder,U-systems (UCF/UCH/UCS/UUS)-3100,Federal S,Federal 2",,"Dimple,Magnet","Magnetic pins,Pin-in-pin,Trap element","Requires 360° picking: these locks have traps that require some work to pick",f3666121
-Purple,"Bricard,ABUS,CISA","Chifral,EP10,RS3","all versions, <15 pins",Dimple,"High pin count",,8f004bf0
+Purple,"Bricard,ABUS,CISA","Chifral,EP10,RS3","all versions, <15 pins",Dimple,"High pin count,Interactive element",,8f004bf0
 Purple,Bricard,Supersureté,,Wafer,,,98ba98ae
 Purple,"Burg Wächter","Gamma 700",,Pin-tumbler,Unguttable,,ed9fa926
 Purple,Capitol,"magnetic cam lock",,Magnet,,,85591581
@@ -894,6 +894,7 @@ Unranked,S&G,6870,"9 levers",Lever,"Under Review ⚑","Sargent & Greenleaf lever
 Unranked,S&G,6880,"9 levers",Lever,"Double bitted,False gates","Sargent & Greenleaf lever lock",62cbb01c
 Unranked,SAG,"5 pin tubular",,Pump/push,"Under Review ⚑",,e713e7e6
 Unranked,"Schlage,Keiden","Cor-Key,M40",,Magnet,"Under Review ⚑",,a72739bc
+Unranked,Securemme,K3,,Dimple,,,55d4676c
 Unranked,Segal,"Six Lever",,Lever,"Under Review ⚑",,452aaa17
 Unranked,SOL,2500,"10mm (2pins)",Pin-tumbler,"Under Review ⚑",,97baf67b
 Unranked,SOL,2500,"15mm up to 35mm (3pins)",Pin-tumbler,"Under Review ⚑",,0d0bf1a5
