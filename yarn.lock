@@ -4762,15 +4762,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dompurify@npm:^3.3.3":
-  version: 3.3.3
-  resolution: "dompurify@npm:3.3.3"
+"dompurify@npm:^3.4.0":
+  version: 3.4.2
+  resolution: "dompurify@npm:3.4.2"
   dependencies:
     "@types/trusted-types": "npm:^2.0.7"
   dependenciesMeta:
     "@types/trusted-types":
       optional: true
-  checksum: 10c0/097c14a21a3f6cb95beded9ecd255f7c3512c42767b048390c747b0fe35736f6a71e02320fc50a9ac2be645834b463e4760915d595d502a56452daf339d0ea9c
+  checksum: 10c0/23ab3ab079480a49e1426c4ee7279e393913fa7f2193c4142a5be54d4163dbdd969558675876c6b8bbcbf2ad5d1bc3e00bf902acf142fff12e50274a65ae95b3
   languageName: node
   linkType: hard
 
@@ -7192,7 +7192,7 @@ __metadata:
     axios: "npm:^1.13.2"
     csv-parse: "npm:^5.5.0"
     dayjs: "npm:^1.11.19"
-    dompurify: "npm:^3.3.3"
+    dompurify: "npm:^3.4.0"
     dotenv: "npm:^17.3.1"
     entities: "npm:^7.0.0"
     eslint: "npm:^8.49.0"

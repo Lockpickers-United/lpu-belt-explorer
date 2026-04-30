@@ -63,7 +63,7 @@
     "autosuggest-highlight": "^3.3.4",
     "axios": "^1.13.2",
     "dayjs": "^1.11.19",
-    "dompurify": "^3.3.3",
+    "dompurify": "^3.4.0",
     "dotenv": "^17.3.1",
     "fast-levenshtein": "^3.0.0",
     "firebase": "^11.7.1",
