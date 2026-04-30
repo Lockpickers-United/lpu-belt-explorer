@@ -32,7 +32,7 @@ export default function RecentChangesPage() {
     const [recentHours, setRecentHours] = useState(recentDays * 24)
     const recentText = recentHours === recentDays * 24 ? `${recentDays} days` : `${recentHours} hours`
 
-    let title
+    let title = ''
     switch (selected.label) {
         case 'Recently Added Photos':
             title = `Recently Added Images (${recentText})`
