@@ -9,6 +9,7 @@ on:
       - 'scripts/**'
       - 'index.html'
       - 'package.json'
+      - 'package-lock.json'
       - '.github/workflows/build.js.yml'
   workflow_run:
     workflows: [Import]
