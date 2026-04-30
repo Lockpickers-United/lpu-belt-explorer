@@ -15,7 +15,7 @@ import ChoiceButtonGroup from '../../util/ChoiceButtonGroup.jsx'
  * @prop {object[]} visibleEntries
  */
 
-function RecentChangesPage() {
+export default function RecentChangesPage() {
     const {adminRole} = useContext(DBContext)
 
     const options = useMemo(() => {
@@ -130,8 +130,6 @@ function RecentChangesPage() {
         </React.Fragment>
     )
 }
-
-export default RecentChangesPage
 
 function getNewImageEntries({entries, recentHours}) {
     return entries.reduce((acc, entry) => {
