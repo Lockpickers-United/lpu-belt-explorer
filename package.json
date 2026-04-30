@@ -11,8 +11,8 @@
   "scripts": {
     "dev": "vite",
     "build": "NODE_ENV=production vite build",
-    "build-dev": "NODE_ENV=production yarn lint && yarn versionFile && vite build --mode dev",
-    "build-dev-import": "NODE_ENV=production yarn versionFile && yarn run import && vite build --mode dev && yarn copyFiles",
+    "build-dev": "NODE_ENV=production npm run lint && npm run versionFile && vite build --mode dev",
+    "build-dev-import": "NODE_ENV=production npm run versionFile && npm run import && vite build --mode dev && npm run copyFiles",
     "preview": "vite preview",
     "lint": "eslint \"./src/**\" \"./scripts/**\"",
     "import": "node ./scripts/import.js",
@@ -31,8 +31,8 @@
     "min-version": "node ./scripts/minVersion.js",
     "copyData": "node ./scripts/copyData.js",
     "copyFiles": "node ./scripts/copyFiles.js",
-    "ci-pr": "yarn lint && yarn build",
-    "ci-build": "yarn versionFile && yarn generateSitemap && yarn generateSitemap-xml && yarn run build && yarn exportMd && yarn exportCsv && yarn exportHtml && yarn copyFiles",
+    "ci-pr": "npm run lint && npm run build",
+    "ci-build": "npm run versionFile && npm run generateSitemap && npm run generateSitemap-xml && npm run build && npm run exportMd && npm run exportCsv && npm run exportHtml && npm run copyFiles",
     "test": "vitest",
     "test:run": "vitest run",
     "test:ui": "vitest --ui",
@@ -119,6 +119,5 @@
     "uuid": "^14.0.0",
     "vite": "^6.4.1",
     "vitest": "^3.2.4"
-  },
-  "packageManager": "yarn@4.14.1"
+  }
 }

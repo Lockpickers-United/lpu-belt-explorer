@@ -21,13 +21,13 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 22
-          cache: 'yarn'
+          cache: 'npm'
 
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: npm ci
 
       - name: Import
-        run: yarn run import
+        run: npm run import
 
       # Commit all changed files back to the repository
       - uses: stefanzweifel/git-auto-commit-action@v4

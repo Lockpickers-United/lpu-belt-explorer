@@ -4,13 +4,13 @@
 set -e
 
 echo "Installing Husky..."
-yarn add husky --dev
+npm install husky --save-dev
 
 echo "Setting up Husky Git hooks..."
 npx husky init
 
 echo "Adding pre-push lint hook..."
-echo "yarn eslint \"./src/**\" \"./scripts/**\" --max-warnings=0" > .husky/_/pre-push
+echo "npm run lint -- --max-warnings=0" > .husky/_/pre-push
 
 echo "Ensuring .husky/_/husky.sh is included..."
 # Modify ignore rule so husky.sh is not excluded

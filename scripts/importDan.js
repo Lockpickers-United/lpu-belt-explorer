@@ -483,7 +483,7 @@ function isYouTubeLink(link) {
 /** 
  * Try out a single tab or process the full sheet. 
  * Provided DAN_SHEET_ID is set, run:
- *  yarn run import-dan
+ *  npm run import-dan
  * 
  * We cache the tabs so we can test without pounding google sheets
  * (1 http request per tab/target/picker)

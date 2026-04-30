@@ -27,47 +27,45 @@ An interactive web app for exploring the Lockpickers United belt ranking system.
 # Getting Started (Local Setup)
 
 * Install [node](https://nodejs.org/en) - v22 is needed
-* Install [yarn](https://www.npmjs.com/package/yarn) - it's used as a package manager
-    - `npm install -g yarn`
 * Clone [repo](https://github.com/Lockpickers-United/lpu-belt-explorer)
 
 
 ## Run locally
 * On initial setup and package.json changes
-    - Run `yarn install` inside the parent folder 'lpu-belt-explorer'
+    - Run `npm install` inside the parent folder 'lpu-belt-explorer'
 * To stand up locally
-    - Run `yarn dev`
+    - Run `npm run dev`
 
 ## Github Hooks
 * [Build-N-Deploy](/.github/workflows/build.js.yml)
     * Trigger: On Push to Main
-    * Action(s): Builds application with `yarn ci-build` then kicks off gh page action to deploy
+    * Action(s): Builds application with `npm run ci-build` then kicks off gh page action to deploy
 * [Import](/.github/workflows/import.js.yml)
     * Trigger: Workflow Dispatch
-    * Action(s): Runs `yarn import` which updates the data then auto commits back to repository
+    * Action(s): Runs `npm run import` which updates the data then auto commits back to repository
 * [PR](/.github/workflows/pr.js.yml)
     * Trigger: On Pull Request
-    * Action(s): Gets PR ready with `yarn ci-pr` which lints and builds application
+    * Action(s): Gets PR ready with `npm run ci-pr` which lints and builds application
 
 ## Build/Deploy
 Several commmands are linked together for this, here is the shortened version 
-* `yarn ci-build`
+* `npm run ci-build`
 
 ## Import/Export data
 
 For import, place a data.csv in the scripts folder and run:
 ```
-yarn import
+npm run import
 ```
 
 For export, run one of the following:
-* `yarn exportCsv`
-* `yarn exportMd`
-* `yarn exportHtml`
+* `npm run exportCsv`
+* `npm run exportMd`
+* `npm run exportHtml`
 
 There's also a Dan import
 ```
-yarn import-dan
+npm run import-dan
 ```
 
 # Links

@@ -33,14 +33,10 @@ jobs:
         with:
           node-version: 22
   
-      - name: Enable Corepack
-        run: corepack enable
-
       - name: Install dependencies
-        run: yarn install --immutable
-
+        run: npm ci
       - name: Build and Deploy
-        run: yarn ci-build
+        run: npm run ci-build
         env:
           VITE_FIREBASE_API_KEY: ${{ vars.VITE_FIREBASE_API_KEY }}
 

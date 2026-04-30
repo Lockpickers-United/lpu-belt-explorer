@@ -39,6 +39,7 @@ function InlineCollectionCharts({entries}) {
 
     return (
         <div style={{width: '100%', marginTop: '0px'}}>
+            <ScorecardBeltBar beltData={chartData}/>
         </div>
     )
 }
