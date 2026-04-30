@@ -137,11 +137,13 @@ function getNewImageEntries({entries, recentHours}) {
     return entries.reduce((acc, entry) => {
         const newMedia = entry?.media?.filter(m => dayjs(m.dateAdded).isAfter(dayjs().subtract(recentHours, 'hour')))
             .sort((a, b) => {
-                setDeepUnique(acc, ['newImageContributors'], a.title.replace('By: ', ''))
                 return dayjs(b.dateAdded).diff(dayjs(a.dateAdded))
             })
         if (newMedia?.length > 0) {
             setDeepPush(acc, ['newImageEntries'], {...entry, media: newMedia})
+            newMedia.forEach(media => {
+                setDeepUnique(acc, ['newImageContributors'], media.title.replace('By: ', ''))
+            })
         }
         return acc
     }, {})
