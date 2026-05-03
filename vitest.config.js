@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 
 import dotenv from 'dotenv'
 
-dotenv.config({ path: '.env.keys' })
+dotenv.config({ path: '.env.keysNew' })
 
 export default defineConfig({
   plugins: [react()],
