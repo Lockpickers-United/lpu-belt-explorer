@@ -11,7 +11,8 @@ const beltRegExps = [/white/i, /yellow/i, /orange/i, /green/i, /blue/i, /purple/
 function AuthRedditRoute() {
     const {getBookmarkForRedditUser, advanceBookmarkForRedditUser, oauthState} = useContext(DBContext)
     const {user} = useContext(AuthContext)
-    const {VITE_REDDIT_CLIENT_ID: clientId, VITE_REDDIT_CLIENT_SECRET: clientSecret} = import.meta.env
+    const clientId = import.meta.env.VITE_REDDIT_CLIENT_ID
+    const clientSecret = import.meta.env.VITE_REDDIT_CLIENT_SECRET_LOCAL || import.meta.env.VITE_REDDIT_CLIENT_SECRET
 
     const urlMatchCode = window.location.href.match(/\?state=([^&]+)&code=([^#]+)#/)
     let urlState = urlMatchCode ? urlMatchCode[1] : null

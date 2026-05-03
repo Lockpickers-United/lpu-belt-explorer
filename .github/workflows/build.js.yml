@@ -40,6 +40,8 @@ jobs:
         run: npm run ci-build
         env:
           VITE_FIREBASE_API_KEY: ${{ vars.VITE_FIREBASE_API_KEY }}
+          VITE_DISCORD_CLIENT_SECRET: ${{ vars.VITE_DISCORD_CLIENT_SECRET }}
+          VITE_REDDIT_CLIENT_SECRET: ${{ vars.VITE_REDDIT_CLIENT_SECRET }}
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
