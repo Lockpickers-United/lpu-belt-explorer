@@ -59951,7 +59951,11 @@
     ],
     "lastUpdated": "2025-03-19T15:44:57.320Z",
     "name": "Bowley 543",
-    "dateAdded": "2025-03-06T02:11:05.000Z"
+    "dateAdded": "2025-03-06T02:11:05.000Z",
+    "features": [
+      "Ancient Technology",
+      "Modern Technology"
+    ]
   },
   "2b948dc5": {
     "id": "2b948dc5",

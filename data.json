@@ -58347,6 +58347,10 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
+    "features": [
+      "Ancient Technology",
+      "Modern Technology"
+    ],
     "dateAdded": "2025-03-06T02:11:05.000Z",
     "media": [
       {
