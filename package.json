@@ -82,7 +82,7 @@
     "react-full-screen": "^1.1.1",
     "react-hotkeys-hook": "^5.2.4",
     "react-markdown": "^10.1.0",
-    "react-router-dom": "^6.21.0",
+    "react-router-dom": "^6.30.4",
     "react-simple-star-rating": "^5.1.7",
     "react-swipeable": "^7.0.2",
     "react-virtualized-auto-sizer": "^2.0.3",
