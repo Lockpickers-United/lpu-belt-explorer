@@ -40073,7 +40073,6 @@
       "Sidepins",
       "Active sidebar"
     ],
-    "notes": "upgrade of ASSA Twin v10",
     "media": [
       {
         "title": "By: Datagram",
@@ -52545,7 +52544,10 @@
     "lastUpdated": "2024-12-04T02:26:32.403Z",
     "name": "AXA Clinch",
     "dateAdded": "2023-08-03T13:21:21.000Z",
-    "views": 185
+    "views": 185,
+    "lockingMechanisms": [
+      "Disc detainer"
+    ]
   },
   "c640fe2c": {
     "id": "c640fe2c",
