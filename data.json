@@ -23396,10 +23396,11 @@
         "model": "KX3"
       }
     ],
-    "version": "exterior, <6 sliders",
+    "version": "exterior, <6 sliders/wafers",
     "lockingMechanisms": [
+      "Pin-tumbler",
       "Slider",
-      "Pin-tumbler"
+      "Wafer"
     ],
     "features": [
       "False gates",
@@ -23485,7 +23486,7 @@
     "relatedIds": [
       "898a7138"
     ],
-    "lastUpdated": "2025-12-02T23:39:17.941Z"
+    "lastUpdated": "2026-06-18T14:52:58.584Z"
   },
   {
     "id": "9811b260",
@@ -31472,10 +31473,11 @@
         "model": "KX3"
       }
     ],
-    "version": "exterior, ≥ 6 sliders",
+    "version": "exterior, ≥ 6 sliders/wafers",
     "lockingMechanisms": [
+      "Pin-tumbler",
       "Slider",
-      "Pin-tumbler"
+      "Wafer"
     ],
     "features": [
       "False gates",
@@ -31561,7 +31563,7 @@
     "relatedIds": [
       "40e50dd4"
     ],
-    "lastUpdated": "2025-12-02T23:39:17.946Z"
+    "lastUpdated": "2026-06-18T14:52:58.585Z"
   },
   {
     "id": "6f5e0d32",
@@ -33526,10 +33528,9 @@
     ],
     "lockingMechanisms": [
       "Dimple",
-      "Other"
+      "Rotors"
     ],
     "features": [
-      "Rotors",
       "Active sidebar"
     ],
     "dateAdded": "2023-12-04T21:01:33.000Z",
@@ -33683,7 +33684,7 @@
       }
     ],
     "views": 392,
-    "lastUpdated": "2025-12-02T23:39:17.947Z"
+    "lastUpdated": "2026-06-18T14:52:58.586Z"
   },
   {
     "id": "62520bea",
@@ -46721,10 +46722,11 @@
     ],
     "lockingMechanisms": [
       "Dimple",
-      "Trap Pins",
-      "Other"
+      "Rotors",
+      "Trap Pins"
     ],
     "features": [
+      "Active sidebar",
       "Picking Risk"
     ],
     "notes": "**** **Special Picking Requirement:** requires 360 for belting; Picking risk: Some versions may contain trap pins that will require gutting to fix. ",
@@ -46831,7 +46833,7 @@
       }
     ],
     "views": 502,
-    "lastUpdated": "2025-12-02T23:39:17.957Z"
+    "lastUpdated": "2026-06-18T14:52:58.589Z"
   },
   {
     "id": "9c5f4539",
@@ -55101,9 +55103,6 @@
     ],
     "lockingMechanisms": [
       "Dimple",
-      "Other"
-    ],
-    "features": [
       "Rotors"
     ],
     "dateAdded": "2023-02-21T23:16:05.000Z",
@@ -55155,7 +55154,7 @@
       }
     ],
     "views": 665,
-    "lastUpdated": "2025-12-02T23:39:17.962Z"
+    "lastUpdated": "2026-06-18T14:52:58.591Z"
   },
   {
     "id": "649eaebc",

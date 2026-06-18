@@ -19210,10 +19210,11 @@
         "model": "KX3"
       }
     ],
-    "version": "exterior, <6 sliders",
+    "version": "exterior, <6 sliders/wafers",
     "lockingMechanisms": [
+      "Pin-tumbler",
       "Slider",
-      "Pin-tumbler"
+      "Wafer"
     ],
     "features": [
       "False gates",
@@ -25734,10 +25735,11 @@
         "model": "KX3"
       }
     ],
-    "version": "exterior, ≥ 6 sliders",
+    "version": "exterior, ≥ 6 sliders/wafers",
     "lockingMechanisms": [
+      "Pin-tumbler",
       "Slider",
-      "Pin-tumbler"
+      "Wafer"
     ],
     "features": [
       "False gates",
@@ -37495,13 +37497,10 @@
     ],
     "lockingMechanisms": [
       "Dimple",
-      "Other"
+      "Rotors"
     ],
     "name": "Mottura Champions C43, Champions C43 Plus, Champions C44, Champions C48, Champions C9P",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "features": [
-      "Rotors"
-    ],
     "media": [
       {
         "title": "By: PeaceWeapon",
@@ -37567,8 +37566,8 @@
     ],
     "lockingMechanisms": [
       "Dimple",
-      "Trap Pins",
-      "Other"
+      "Rotors",
+      "Trap Pins"
     ],
     "name": "Mottura Champions C55, Champions CP6",
     "dateAdded": "2023-02-21T23:16:05.000Z",
@@ -37649,6 +37648,7 @@
       }
     ],
     "features": [
+      "Active sidebar",
       "Picking Risk"
     ],
     "notes": "**** **Special Picking Requirement:** requires 360 for belting; Picking risk: Some versions may contain trap pins that will require gutting to fix. "
@@ -56090,10 +56090,9 @@
     "dateAdded": "2023-12-04T21:01:33.000Z",
     "lockingMechanisms": [
       "Dimple",
-      "Other"
+      "Rotors"
     ],
     "features": [
-      "Rotors",
       "Active sidebar"
     ],
     "views": 463

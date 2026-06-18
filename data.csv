@@ -396,7 +396,7 @@ Blue,IKON,SK7,,Pin-tumbler,,"IKON AKA Zeiss IKON - more info on [Lockwiki](https
 Blue,IKON,Undercut,,"Pin-tumbler,Sidepins",,"IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",948f9068
 Blue,iNAHO,Tierkey,"3 row, short format",Dimple,,,9b94b1c0
 Blue,Kaba,8,"2 row and 3 row, <9 pins",Dimple,,,5c2f5101
-Blue,Kaken,KX3,"exterior, <6 sliders","Slider,Pin-tumbler","False gates,Active sidebar","Lots of variability on pinning, both in number of elements and type",40e50dd4
+Blue,Kaken,KX3,"exterior, <6 sliders/wafers","Pin-tumbler,Slider,Wafer","False gates,Active sidebar","Lots of variability on pinning, both in number of elements and type",40e50dd4
 Blue,"Kale Kilit","164 GNC","6 pin, standard profile",Pin-tumbler,,,9811b260
 Blue,"Kale Kilit","164 YGS SE",,Dimple,,,b01220ea
 Blue,Kenaurd,Dimple,"pin-in-pin, 5 pins",Dimple,Pin-in-pin,,54dc69e8
@@ -504,7 +504,7 @@ Purple,ISEO,Perfecta,****,Pump/push,,"**** **Special Picking Requirement:** requ
 Purple,"ISEO,ISEO","R50,R7",,Dimple,,,30aa78ef
 Purple,"Jixin,Jasafe","Z03,Z03",,"Pin-tumbler,Sidepins",,,92482cc9
 Purple,Kaba,8,"3 row, ≥ 9 pins",Dimple,"High pin count",,779d74f5
-Purple,Kaken,KX3,"exterior, ≥ 6 sliders","Slider,Pin-tumbler","False gates,Active sidebar","Lots of variability on pinning, both in number of elements and type",898a7138
+Purple,Kaken,KX3,"exterior, ≥ 6 sliders/wafers","Pin-tumbler,Slider,Wafer","False gates,Active sidebar","Lots of variability on pinning, both in number of elements and type",898a7138
 Purple,"Kale Kilit","164 BNE",,Dimple,,,6f5e0d32
 Purple,"Keso,Keso,Keso,Keso,Keso","10RS,1000,2000,2000S,4000S (Omega)","<13 pins",Dimple,"High pin count",,304f5471
 Purple,Kwikset,"Smartkey (Gen III)",,Slider,"Sprung sliders,Reverse sidebar",,06ddb074
@@ -528,7 +528,7 @@ Purple,"Medeco,Medeco,Medeco","Original,Biaxial,M3","≥ 5 pins ******","Sidebar
 Purple,Mindy,"Pagoda AF 16-50","flat key",Other,Unguttable,,06a28ac7
 Purple,MIWA,"Magnetic Camlock",,Magnet,"Magnetic sliders",,58f2eac0
 Purple,,MLock,,,,,278f2108
-Purple,Mottura,"3D Key",,"Dimple,Other","Rotors,Active sidebar",,0a2c7044
+Purple,Mottura,"3D Key",,"Dimple,Rotors","Active sidebar",,0a2c7044
 Purple,Mottura,"Champions C38",*******,"Dimple,Magnet","Magnetic pins","******* **Special Picking Requirement:** Must be picked with bible oriented down",62520bea
 Purple,Mottura,Viper,,"Dimple,Slider",,,8c76cc79
 Purple,"Mul-T-Lock,Mul-T-Lock","Classic Pro,400",,Dimple,Pin-in-pin,,fd2b533e
@@ -702,7 +702,7 @@ Red,MIWA,SR,,Wafer,"Active sidebar",,31cd85d7
 Red,"MIWA,MIWA","U9,UR","<8 unmastered levers, barred False gates (old shallow False gates counts as Brown Belt)",Lever/sidebar,"Active sidebar,False gates,Partial gut",,31431c49
 Red,MIWA/Anker,3800,,"Pin-tumbler,Magnet","Magnetic sliders",,cc8cfd45
 Red,Mottura,52,"7 lever",Lever,"Pin key,Sliding levers,Double bitted,False gates",,5e090448
-Red,"Mottura,Mottura","Champions C55,Champions CP6",,"Dimple,Trap Pins,Other","Picking Risk","**** **Special Picking Requirement:** requires 360 for belting; Picking risk: Some versions may contain trap pins that will require gutting to fix. ",3daff112
+Red,"Mottura,Mottura","Champions C55,Champions CP6",,"Dimple,Rotors,Trap Pins","Active sidebar,Picking Risk","**** **Special Picking Requirement:** requires 360 for belting; Picking risk: Some versions may contain trap pins that will require gutting to fix. ",3daff112
 Red,"Picard,Heracles","Vigie,Pericles","7 pins, euro profile",Pump/push,,,9c5f4539
 Red,Robur,"2391 Safe Deposit Lock","barrels ≥ 3 chambers with matched milling","Pin-tumbler,Sidepins","Barrel drivers,Serrated/threaded milling,Sidepins,Active sidebar",,9da7a5f2
 Red,Robur,"2391 Safe Deposit Lock","gins ≥ 3 chambers with matched milling","Pin-tumbler,Sidepins","Gin spool drivers,Undercut milling,Sidepins,Active sidebar",,112d0034
@@ -792,7 +792,7 @@ Red,Yanai,"R 2200M","<14 pins",Dimple,"High pin count",,5eac6a29
 "Black 1",MIWA,U9,"8 unmastered elements, barred False gates (old shallow False gates counts as Red Belt)",Lever/sidebar,"Active sidebar,False gates,Partial gut",,71c7270b
 "Black 2",MIWA,U9,"9 unmastered elements, barred False gates (old shallow False gates counts as BB1)",Lever/sidebar,"Active sidebar,False gates,Partial gut",,d1272b9f
 "Black 1",MIWA,WR,,Slider,"Latest Changelog","Dual sidebar",ccdbffbf
-"Black 1","Mottura,Mottura,Mottura,Mottura,Mottura","Champions C43,Champions C43 Plus,Champions C44,Champions C48,Champions C9P",,"Dimple,Other",Rotors,,ae7d3780
+"Black 1","Mottura,Mottura,Mottura,Mottura,Mottura","Champions C43,Champions C43 Plus,Champions C44,Champions C48,Champions C9P",,"Dimple,Rotors",,,ae7d3780
 "Black 1","Mul-T-Lock,Mul-T-Lock,Lockwood,IKON","MT5+,800,MT5,R10","not mastered","Dimple,Slider","Pin-in-pin,Interactive element,Active sidebar,Unsprung sliders,Undercut milling,False gates","IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",649eaebc
 "Black 5",NATO,Mersey,"10 lever",Lever,"Safe lock,Pin key,Double bitted",,4f2ed774
 "Black 5",NATO,Mersey,"14 lever",Lever,"Safe lock,Pin key,Double bitted",,f29a212f
