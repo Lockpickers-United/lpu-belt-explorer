@@ -553,14 +553,14 @@
       {
         "segment": "Ranked locks",
         "count": 816,
-        "media": 765,
+        "media": 766,
         "coverage": "93%"
       },
       {
         "segment": "All locks",
         "count": 926,
-        "media": 851,
-        "coverage": "91%"
+        "media": 852,
+        "coverage": "92%"
       }
     ],
     "uniqueImages": 4312,
@@ -1773,6 +1773,6 @@
     ]
   },
   "metadata": {
-    "updatedDateTime": "2026-06-18 14:53"
+    "updatedDateTime": "2026-06-18 19:40"
   }
 }
