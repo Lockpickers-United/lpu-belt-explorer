@@ -319,7 +319,7 @@ Blue,Any,"SFIC format lock",**,Pin-tumbler,,"** Blue if picked to one shearline.
 Blue,"ABUS,ABUS,ABUS","Bravus 1000,Bravus 2000,Bravus 3000",,Dimple,"Trap element","Requires 360° picking: these locks have traps that require some work to pick",ea0efaca
 Blue,"ABUS,ABUS,ABUS","C73,C83,C90","new pinning: security keypins + serrated and spooled t-pins",Pin-tumbler,,,85d93eb1
 Blue,ABUS,D10,,Dimple,,,f96de7cc
-Blue,"ABUS,ABUS,ABUS,ABUS,ABUS","E20,E30,E60,E70,NP (6-pin)",,Pin-tumbler,,,5c0d870b
+Blue,"ABUS,ABUS,ABUS,ABUS,ABUS","E20,E30,E60,E70,NP (6-pin)",,Pin-tumbler,,"Randomized pinning",5c0d870b
 Blue,ABUS,E90,,Pin-tumbler,,,ab236116
 Blue,"ABUS,ABUS","EC 75/50,75IB/50",,Dimple,Unguttable,,9ec8706c
 Blue,"ABUS,ABUS","EC550,EC660",,Dimple,,,7130d7c3
