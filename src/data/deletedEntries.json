@@ -879,6 +879,102 @@
     "dateDeleted": "2023-03-07T13:07:20.000Z"
   },
   {
+    "id": "34c0dfe4",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "ABUS",
+        "model": "XP1"
+      }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "name": "ABUS XP1",
+    "dateAdded": "2023-02-21T23:16:05.000Z",
+    "media": [
+      {
+        "title": "By: LockPicker1969",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52760464128_e7c459fefb_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52760464128/in/album-72177720306870574/",
+        "sequenceId": 841,
+        "dateAdded": "2025-03-06T16:00:00.000Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52760464128_19288306e9_o.jpg"
+      },
+      {
+        "title": "By: LockPicker1969",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52760464323_1b7dc97a41_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52760464323/in/album-72177720306870574/",
+        "sequenceId": 842,
+        "dateAdded": "2025-03-06T16:00:00.000Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52760464323_883aaa2b3f_o.jpg"
+      },
+      {
+        "title": "By: LockPicker1969",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52759435632_dd05a13753_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52759435632/in/album-72177720306870574/",
+        "sequenceId": 843,
+        "dateAdded": "2025-03-06T16:00:00.000Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52759435632_18b08aef47_o.jpg"
+      },
+      {
+        "title": "By: Schloßgespenst",
+        "subtitle": "KoksaWiki",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52801106868_cb3b7536e9_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52801106868/in/album-72177720306870574/",
+        "sequenceId": 844,
+        "dateAdded": "2025-03-06T16:00:00.000Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52801106868_dd0a585ce5_o.jpg"
+      },
+      {
+        "title": "photo by Decoder",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52800667486_03ac0730bf_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52800667486/in/album-72177720306870574/",
+        "sequenceId": 845,
+        "dateAdded": "2025-03-06T16:00:00.000Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52800667486_7cc507f96a_o.jpg"
+      },
+      {
+        "title": "By: LockPickingFisherman",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54363714068_46083f4075_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54363714068/in/album-72177720306870574/",
+        "sequenceId": 846,
+        "dateAdded": "2025-03-06T16:00:00.000Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54363714068_8878016023_o.jpg"
+      },
+      {
+        "title": "By: LockPickingFisherman",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54363695894_88e6f74bd8_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54363695894/in/album-72177720306870574/",
+        "sequenceId": 847,
+        "dateAdded": "2025-03-06T16:00:00.000Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54363695894_de404f3004_o.jpg"
+      }
+    ],
+    "views": 2825,
+    "lastUpdated": "2025-03-19T01:20:51.366Z",
+    "links": [
+      {
+        "title": "KoksaWiki",
+        "url": "https://wiki.koksa.org/Abus_XP1"
+      },
+      {
+        "title": "Catalocks",
+        "url": "https://www.catalocks.eu/ABUS/ABUS%20XP%201_52.html"
+      }
+    ],
+    "features": [
+      "Samelined"
+    ],
+    "dateDeleted": "2026-06-19T16:30:50.709Z"
+  },
+  {
     "id": "08a5799e",
     "belt": "Unranked",
     "makeModels": [
