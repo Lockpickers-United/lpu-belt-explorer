@@ -17,6 +17,7 @@ import EnhancedEncryptionIcon from '@mui/icons-material/EnhancedEncryption'
 import CampaignIcon from '@mui/icons-material/Campaign'
 import AssessmentIcon from '@mui/icons-material/Assessment'
 import TurnSharpRightIcon from '@mui/icons-material/TurnSharpRight'
+import LocalLibraryIcon from '@mui/icons-material/LocalLibrary'
 
 const {VITE_RAFL_STATE: raflState} = import.meta.env
 
@@ -83,6 +84,11 @@ export default [
         title: 'Glossary',
         icon: <MenuBookIcon fontSize='small'/>,
         path: '/glossary'
+    },
+    {
+        title: 'Beginner\'s Guide',
+        icon: <LocalLibraryIcon fontSize='small'/>,
+        path: '/guide'
     },
     {
         title: 'Dan System',
