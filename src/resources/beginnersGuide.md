@@ -177,7 +177,7 @@ From Red: Other options include 3d printed chuck vises, which are sold by [44 De
 
 There's a lot to learn over time, but the fundamentals of lock picking are relatively straightforward. Here are two classics that are great for those just starting out:
 
-* [MIT Guide to Lock Picking]('https://lpubelts.com/resources/MITGuideToLockPicking-updated.pdf')
+* [MIT Guide to Lock Picking](https://lpubelts.com/resources/MITGuideToLockPicking-updated.pdf)
 * [Lock Picking: Detail Overkill](https://www.dropbox.com/s/y39ix9u9qpqffct/Lockpicking%20Detail%20Overkill.pdf?dl=0) (tw: expletives)
 
 It’s also important to learn about the four fundamental pin states and the [jiggle test](https://www.youtube.com/watch?v=mK8TjuLDoMg).
