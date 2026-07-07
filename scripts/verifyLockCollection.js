@@ -8,23 +8,47 @@ const app = admin.initializeApp({
     databaseURL: 'https://lpu-belt-explorer.firebaseio.com'
 })
 
+const entries = JSON.parse(fs.readFileSync('../src/data/data.json', 'utf8'))
+
 ////////////////////////////////////////////////
 // change to (default) and true for production
 
 //const db = getFirestore(app, 'lpubelts-dev')
 const db = getFirestore(app)
-
 const WRITE_TO_DB = true
 
-// set to desired id mapping
-// { 'old ID': 'new ID' }
+const userId = 'S131zvhcryUvHckhdkVboIDRQnF3'
 
-const newIdFromOld = {
-    '34c0dfe4': 'dd1dd313',
-}
 ////////////////////////////////////////////////
 
+const ref = db.doc(`/lockcollections/${userId}`)
+const profile = await ref.get()
+//console.log(profile.data())
 
+//const collectionTypes = ['own', 'picked', 'recorded', 'recordedLocks', 'wishlist']
+const collectionTypes = ['own']
+
+const badIds = collectionTypes.reduce((acc, collection) => {
+
+    console.log(`user ${userId} collection ${collection} : ${profile.data()[collection].length}`)
+
+    profile.data()[collection].forEach(id => {
+
+        const entry = entries.find(e => e.id === id)
+
+        console.log(`${id} :`, entry.belt)
+
+        if (!entry) {
+            acc.push(id)
+            console.log(`user ${userId} collection ${collection} id ${id} not found`)
+        }
+    })
+
+    return acc
+},[])
+
+
+/*
 // update old => new projectIds in evidence collection 
 
 const evidDocs = await db.collection('evidence').where('projectId', 'in', Object.keys(newIdFromOld)).get()
@@ -76,3 +100,5 @@ for (let idx=0; idx < collectionTypes.length; idx++) {
         await collectBatch.commit()
     }
 }
+
+*/

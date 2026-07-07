@@ -86,8 +86,8 @@ function AuthRedditRoute() {
             } catch (_error) {
                 dataError = true
             }
-            if (200 === userResp.status) {
-                const data = await userResp.json()
+            if (200 === userResp?.status) {
+                const data = await userResp?.json()
                 username = data.name
             } else {
                 dataError = true
@@ -103,8 +103,8 @@ function AuthRedditRoute() {
             } catch (_error) {
                 dataError = true
             }
-            if (200 === flairResp.status) {
-                const data = await flairResp.json()
+            if (200 === flairResp?.status) {
+                const data = await flairResp?.json()
                 const flair = data.current.flair_text
                 if (flair) {
                     const danMatch = flair.match(/^Black Belt (\d+)th Dan/)
@@ -140,8 +140,8 @@ function AuthRedditRoute() {
                 } catch (_error) {
                     dataError = true
                 }
-                if (200 === messageResp.status) {
-                    const respObj = await messageResp.json()
+                if (200 === messageResp?.status) {
+                    const respObj = await messageResp?.json()
                     const data = respObj.data
 
                     if (data.children.length > 0) {

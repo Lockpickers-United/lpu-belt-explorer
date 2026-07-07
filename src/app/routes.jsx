@@ -556,6 +556,13 @@ export default [
         }
     },
     {
+        path: '/guide',
+        lazy: async () => {
+            const {default: BeginnersGuideRoute} = await import('../beginnersGuide/BeginnersGuideRoute.jsx')
+            return {element: <BeginnersGuideRoute/>}
+        }
+    },
+    {
         path: '/userinfo',
         lazy: async () => {
             const {default: UserInfoRoute} = await import('../userinfo/UserInfoRoute.jsx')
