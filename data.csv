@@ -334,7 +334,6 @@ Blue,"ABUS,ABUS,ABUS,ABUS,ABUS,ABUS","V14,XV14,Y14,Vitess 1000,Vitess 2000,Vites
 Blue,"ABUS,ABUS","WavyLine Pro,Pfaffenhain WavyLine Pro","6 pins, 4 side pins + profile check","Pin-tumbler,Sidepins",,"Must be picked 360°",c4130a64
 Blue,ALPHA,"Z cam lock",,Dimple,,,3ebbc1f4
 Blue,Ankerslot,Infinity,"without magnet",Pin-tumbler,,,d20fb493
-Blue,ASSA,500,"with barrel drivers and matched sleeve",Pin-tumbler,,,f8445741
 Blue,ASSA,500,"with barrel drivers, no countermilling",Pin-tumbler,"Latest Changelog",,b89d9e11
 Blue,"ASSA,ASSA","500,Flexcore/Flexcore Plus","5 pin with barrels and matched countermilling",Pin-tumbler,"Barrel drivers,Serrated/threaded milling",,d9e3829f
 Blue,ASSA,700,"7 pin with spools and no countermilling",Pin-tumbler,,,d08aa492
@@ -427,6 +426,7 @@ Blue,Opnus,XZ,,Dimple,"High pin count",,3af6c54b
 Blue,PACLOCK,"90A Pro",,Pin-tumbler,,,fb5a9eb7
 Blue,PACLOCK,PL410,,Pin-tumbler,Unguttable,,74c225d1
 Blue,Pisla,860,,"Disc detainer",Unguttable,,ca6f4eaf
+Blue,Ruko,500,"with barrel drivers and matched sleeve",Pin-tumbler,,,f8445741
 Blue,Ruko,R501,,Pin-tumbler,"Barrel drivers,Sleeved core",,6dc539dd
 Blue,Securit,S20##,,,,,0a12f032
 Blue,"Stanley,Ezcurra,Ezcurra,SEA","Vidmar SEA SL-10,SEA 23,SEA 3,Locking System (Original)",,Wafer,,,842165cc
@@ -461,7 +461,7 @@ Purple,"ASSA,Ruko","500,500","5 pin stacks, gin drivers and matching sleeve",Pin
 Purple,"ASSA,ASSA,Ruko","600,Max+ Restricted,600","Barrel spools and matching countermilling",Pin-tumbler,"Barrel drivers,Serrated/threaded milling",,45e3cde7
 Purple,ASSA,Desmo,"6 sliders",Slider,,,039a239f
 Purple,ASSA,Desmo,"8 sliders, 1-3 mastered",Slider,,,e2742f70
-Purple,ASSA,Guideline,"6 pin with active side pins",Pin-tumbler,"Barrel drivers,Serrated/threaded milling,Sidepins",,122b5621
+Purple,ASSA,Guideline,"6 pin with active side pins","Pin-tumbler,Sidepins","Barrel drivers,Serrated/threaded milling",,122b5621
 Purple,"Australian Lock Co.",BiLock,"12 sliders, 7-8 mastered",Slider,"False gates,Sprung sliders,Active sidebar",,f70b9b33
 Purple,"Australian Lock Co.",BiLock,"8 sliders, 3-4 mastered",Slider,"False gates,Sprung sliders,Active sidebar",,1ca633a8
 Purple,"Avocet,ERA,Federal Lock,Thirard,Thirard","ABS,Professional Cylinder,U-systems (UCF/UCH/UCS/UUS)-3100,Federal S,Federal 2",,"Dimple,Magnet","Magnetic pins,Pin-in-pin,Trap element","Requires 360° picking: these locks have traps that require some work to pick",f3666121
@@ -473,7 +473,7 @@ Purple,CAVEO,TS007,"with spools","Dimple,Slider",,"Seven pins with security driv
 Purple,CEI,"""Five Colors""",,"Dimple,Slider","Pin-in-pin,Sprung sliders,Active sidebar",,1f3a4b1d
 Purple,Chubb,Battleship,"6 lever, offset key",Lever,"Padlock,Pin key,Curtain,False gates",,1f3a8ff9
 Purple,Chubb,Biaxial,,"Pin-tumbler,Sidebar",,,d78ca1ba
-Purple,Clavis,"10 pin","dual row, all spools",Dimple,,,0e5adf31
+Purple,Clavis,S10,,Dimple,,,0e5adf31
 Purple,Codkey,Locksys,"<15 pins",Dimple,"High pin count",,8a0c4b07
 Purple,"CompX Chicago,Inceca","TuBAR,Plana",,"Other,Sidebar","Active sidebar",,8d4632d9
 Purple,"Corbin Russwin",Emhart,"4 pins **",Pin-tumbler,"Interlocking pins","** **Special Picking Requirement:** Must be raked prior to picking to reset pin combination. Ideally assembled on video prior to picking.",71bce5b7
