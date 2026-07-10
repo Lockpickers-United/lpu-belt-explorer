@@ -553,22 +553,22 @@
       {
         "segment": "Ranked locks",
         "count": 816,
-        "media": 770,
+        "media": 772,
         "coverage": "94%"
       },
       {
         "segment": "All locks",
         "count": 925,
-        "media": 856,
+        "media": 858,
         "coverage": "92%"
       }
     ],
-    "uniqueImages": 4364,
-    "contributors": 307,
+    "uniqueImages": 4413,
+    "contributors": 309,
     "topPhotographers": [
       {
         "contributor": "LockPickingFisherman",
-        "images": 490
+        "images": 503
       },
       {
         "contributor": "mgsecure",
@@ -592,7 +592,7 @@
       },
       {
         "contributor": "Sidepicks",
-        "images": 95
+        "images": 101
       },
       {
         "contributor": "Clefmentine",
@@ -679,8 +679,8 @@
         "images": 32
       },
       {
-        "contributor": "Hunson",
-        "images": 30
+        "contributor": "Dynamic",
+        "images": 31
       },
       {
         "contributor": "DEW",
@@ -699,7 +699,11 @@
         "images": 28
       },
       {
-        "contributor": "Dynamic",
+        "contributor": "Hunson",
+        "images": 27
+      },
+      {
+        "contributor": "DigPicks",
         "images": 24
       },
       {
@@ -725,10 +729,6 @@
       {
         "contributor": "Norlin",
         "images": 23
-      },
-      {
-        "contributor": "DigPicks",
-        "images": 22
       },
       {
         "contributor": "Mick Emhurt",
@@ -779,6 +779,10 @@
         "images": 15
       },
       {
+        "contributor": "Archwild",
+        "images": 14
+      },
+      {
         "contributor": "Cheesehead",
         "images": 14
       },
@@ -803,16 +807,16 @@
         "images": 13
       },
       {
+        "contributor": "Kaiser",
+        "images": 13
+      },
+      {
         "contributor": "Least",
         "images": 13
       },
       {
         "contributor": "MartinHewitt",
         "images": 13
-      },
-      {
-        "contributor": "Archwild",
-        "images": 12
       },
       {
         "contributor": "DifficultZebra",
@@ -824,6 +828,10 @@
       },
       {
         "contributor": "Moon-UA",
+        "images": 12
+      },
+      {
+        "contributor": "Plz7",
         "images": 12
       },
       {
@@ -848,10 +856,6 @@
       },
       {
         "contributor": "MrBlackMagic",
-        "images": 11
-      },
-      {
-        "contributor": "Plz7",
         "images": 11
       },
       {
@@ -888,6 +892,10 @@
       },
       {
         "contributor": "L0ckJockey",
+        "images": 10
+      },
+      {
+        "contributor": "MrOrange",
         "images": 10
       },
       {
@@ -979,19 +987,11 @@
         "images": 7
       },
       {
-        "contributor": "Kaiser",
-        "images": 7
-      },
-      {
         "contributor": "Law Lock Tools",
         "images": 7
       },
       {
         "contributor": "Moturist",
-        "images": 7
-      },
-      {
-        "contributor": "MrOrange",
         "images": 7
       },
       {
@@ -1012,6 +1012,10 @@
       },
       {
         "contributor": "2Fly17",
+        "images": 6
+      },
+      {
+        "contributor": "2nd_choice",
         "images": 6
       },
       {
@@ -1227,10 +1231,6 @@
         "images": 4
       },
       {
-        "contributor": "2nd_choice",
-        "images": 3
-      },
-      {
         "contributor": "AlmightyOx",
         "images": 3
       },
@@ -1323,6 +1323,10 @@
         "images": 3
       },
       {
+        "contributor": "Kiridashi",
+        "images": 3
+      },
+      {
         "contributor": "Lanciferous",
         "images": 3
       },
@@ -1351,11 +1355,19 @@
         "images": 3
       },
       {
+        "contributor": "Photo by hunson",
+        "images": 3
+      },
+      {
         "contributor": "Pickleslice",
         "images": 3
       },
       {
         "contributor": "Plazz7",
+        "images": 3
+      },
+      {
+        "contributor": "RudolfTheKnight",
         "images": 3
       },
       {
@@ -1448,10 +1460,6 @@
       },
       {
         "contributor": "Keyla Sentry",
-        "images": 2
-      },
-      {
-        "contributor": "Kiridashi",
         "images": 2
       },
       {
@@ -1560,6 +1568,14 @@
       },
       {
         "contributor": "two07",
+        "images": 2
+      },
+      {
+        "contributor": "White_Bear",
+        "images": 2
+      },
+      {
+        "contributor": "Zehkar",
         "images": 2
       },
       {
@@ -1739,10 +1755,6 @@
         "images": 1
       },
       {
-        "contributor": "RudolfTheKnight",
-        "images": 1
-      },
-      {
         "contributor": "SasPes",
         "images": 1
       },
@@ -1756,6 +1768,10 @@
       },
       {
         "contributor": "Semenawa",
+        "images": 1
+      },
+      {
+        "contributor": "sirEgghead",
         "images": 1
       },
       {
@@ -1779,15 +1795,7 @@
         "images": 1
       },
       {
-        "contributor": "White_Bear",
-        "images": 1
-      },
-      {
         "contributor": "Yohapii",
-        "images": 1
-      },
-      {
-        "contributor": "Zehkar",
         "images": 1
       },
       {
@@ -1797,6 +1805,6 @@
     ]
   },
   "metadata": {
-    "updatedDateTime": "2026-07-10 01:47"
+    "updatedDateTime": "2026-07-10 19:02"
   }
 }

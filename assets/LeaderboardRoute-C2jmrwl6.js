@@ -1,1 +1,0 @@
-import{j as e,R as a,aa as r,h as t,T as s}from"./index-DMoplxLi.js";import{u as o}from"./usePageTitle-C6y8HeO2.js";function x(){return o("Leaderboard"),e.jsxs(a.Fragment,{children:[e.jsx(r,{}),e.jsx(t,{}),e.jsx(s,{feature:"leaderboard"})]})}export{x as default};
