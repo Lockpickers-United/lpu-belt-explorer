@@ -23242,12 +23242,12 @@
     ],
     "version": "6 pin with active side pins",
     "lockingMechanisms": [
-      "Pin-tumbler"
+      "Pin-tumbler",
+      "Sidepins"
     ],
     "features": [
       "Barrel drivers",
-      "Serrated/threaded milling",
-      "Sidepins"
+      "Serrated/threaded milling"
     ],
     "name": "ASSA Guideline",
     "dateAdded": "2023-02-21T23:16:05.000Z",
@@ -47401,12 +47401,12 @@
     "belt": "Blue",
     "makeModels": [
       {
-        "make": "ASSA",
+        "make": "Ruko",
         "model": "500"
       }
     ],
     "version": "with barrel drivers and matched sleeve",
-    "name": "ASSA 500",
+    "name": "Ruko 500",
     "dateAdded": "2023-03-02T19:05:25.000Z",
     "lockingMechanisms": [
       "Pin-tumbler"
@@ -47906,11 +47906,10 @@
     "makeModels": [
       {
         "make": "Clavis",
-        "model": "10 pin"
+        "model": "S10"
       }
     ],
-    "version": "dual row, all spools",
-    "name": "Clavis 10 pin",
+    "name": "Clavis S10",
     "dateAdded": "2023-03-02T19:05:25.000Z",
     "lockingMechanisms": [
       "Dimple"
