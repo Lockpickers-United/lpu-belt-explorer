@@ -60909,5 +60909,21 @@
     ],
     "name": "Securemme K3",
     "dateAdded": "2026-04-28T18:31:50.042Z"
+  },
+  "1dd55e66": {
+    "id": "1dd55e66",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Lince",
+        "model": "C7"
+      }
+    ],
+    "lockingMechanisms": [
+      "Dimple"
+    ],
+    "notes": "High pin count",
+    "name": "Lince C7",
+    "dateAdded": "2026-07-10T23:34:13.476Z"
   }
 }
