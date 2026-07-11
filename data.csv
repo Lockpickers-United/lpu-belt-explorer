@@ -595,7 +595,7 @@ Brown,"DOM,STS","ix 10,IX","with shark fins",Dimple,"Shark fin keypins,Torpedo k
 Brown,DOM,"System D",,Pin-tumbler,"Torpedo keypins",,61247b32
 Brown,"Dorma,Dorma","DC500,DC5400",,Pin-tumbler,"Tree drivers,Gin spool drivers,Undercut milling,Tapered drivers",,87ee7a61
 Brown,Eagle,"""Supr-Security"" (with shutter)",,Wafer,,,33588917
-Brown,FAB,Dynamic,,"Slider,Pin-tumbler","Unsprung sliders",,e0255299
+Brown,FAB,Dynamic,,"Pin-tumbler,Wafer",,,e0255299
 Brown,"Federal Lock",11KDCF3110,,Pin-tumbler,,,e8150a27
 Brown,"Fichet,Fichet","450,484","with False gates, 4-6 mastered levers",Lever/sidebar,"False gates,Active sidebar",,58cbc037
 Brown,Fichet,666,,Slider,,,9c627ebd
@@ -624,7 +624,7 @@ Brown,Keso,8000Ω²,"< 13 pins",Dimple,"High pin count",,fe9889e2
 Brown,Laperche,Rols,,Pump/push,,,f5cc6ace
 Brown,"LIPS,LIPS","Keso (door cylinder),Octro","≥13 pins",Dimple,"High pin count",,514c7ec4
 Brown,"Lowe and Fletcher","3007 Safe lock","7 lever",Lever,"Safe lock,Pipe key,Double bitted",,8625f848
-Brown,"Mauer,Mauer,Mauer","NW4,NW5,NW6",,"Dimple,Slider","Unsprung sliders",,b8783269
+Brown,"Mauer,Mauer,Mauer","NW4,NW5,NW6",,"Dimple,Wafer",,,b8783269
 Brown,Mauer,"President (71111)","7 lever",Lever,"Safe lock,Pipe key,Double bitted",,b9b7ba7c
 Brown,Mauer,"Variator A (70091)","7 lever",Lever,"Safe lock,Pipe key,Double bitted",,620b6e5a
 Brown,"Medeco,Medeco","Biaxial Camlock,M3 Camlock","4 or more pins ***","Sidebar,Slider","Rotating gated keypins,False gates,Active sidebar","*** **Special Picking Requirement:** Must be raked prior to picking to reset pin combination",305473cf

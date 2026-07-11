@@ -30807,8 +30807,8 @@
       }
     ],
     "lockingMechanisms": [
-      "Slider",
-      "Pin-tumbler"
+      "Pin-tumbler",
+      "Wafer"
     ],
     "media": [
       {
@@ -30847,9 +30847,6 @@
     ],
     "name": "FAB Dynamic",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "features": [
-      "Unsprung sliders"
-    ],
     "views": 617,
     "lastUpdated": "2025-03-19T15:44:57.303Z"
   },
@@ -32382,7 +32379,7 @@
     ],
     "lockingMechanisms": [
       "Dimple",
-      "Slider"
+      "Wafer"
     ],
     "media": [
       {
@@ -32433,9 +32430,6 @@
     ],
     "name": "Mauer NW4, NW5, NW6",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "features": [
-      "Unsprung sliders"
-    ],
     "views": 690,
     "lastUpdated": "2025-03-19T15:44:57.304Z"
   },
