@@ -27,21 +27,26 @@ function LockImageGallery({entry}) {
 
     const initiallyOpen = isValidImage(openIndex, entry)
 
-    const sequencedMedia = entry.media
+    const filteredMedia = filters.photographers
+        ? entry.media.filter(({title}) => title.includes(filters.photographers))
+        : entry.media
+
+    const sequencedMedia = filteredMedia
         .sort((a, b) => {
             return a.sequenceId - b.sequenceId
         })
+
     const mediaLabels = [...new Set(sequencedMedia?.map(({label}) => label))].filter(x => x)
     const labeledMedia = mediaLabels.length > 0
         ? mediaLabels.map((label) => {
-            return {label: label, media: entry.media.filter(({label: l}) => l === label)}
+            return {label: label, media: filteredMedia.filter(({label: l}) => l === label)}
         })
-        : [{label: 'allMedia', media: entry.media}]
-    if (mediaLabels.length > 0 && entry.media.filter(media => !media.label).length > 0) {
-        labeledMedia.push({label: 'Other', media: entry.media.filter(media => !media.label)})
+        : [{label: 'allMedia', media: filteredMedia}]
+    if (mediaLabels.length > 0 && filteredMedia.filter(media => !media.label).length > 0) {
+        labeledMedia.push({label: 'Other', media: filteredMedia.filter(media => !media.label)})
     }
 
-    const sortedMedia = entry.media
+    const sortedMedia = filteredMedia
         .sort((a, b) => {
             return a.label?.localeCompare(b.label || '')
                 || a.sequenceId - b.sequenceId
