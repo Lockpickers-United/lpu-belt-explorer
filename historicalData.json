@@ -13034,7 +13034,10 @@
     "name": "Guett Dern",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "views": 295,
-    "lastUpdated": "2023-03-23T03:24:22.387Z"
+    "lastUpdated": "2023-03-23T03:24:22.387Z",
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ]
   },
   "b25e23fd": {
     "id": "b25e23fd",
@@ -18209,7 +18212,8 @@
       "Trap element"
     ],
     "views": 1468,
-    "lastUpdated": "2025-03-18T23:29:31.273Z"
+    "lastUpdated": "2025-03-18T23:29:31.273Z",
+    "notes": "Requires 360° picking: these locks have traps that require some work to pick"
   },
   "da54208c": {
     "id": "da54208c",
@@ -60750,7 +60754,7 @@
       }
     ],
     "lockingMechanisms": [
-      "Pin-tumbler"
+      "Dimple"
     ],
     "name": "FCV Dimple",
     "dateAdded": "2025-11-23T19:59:27.062Z"
