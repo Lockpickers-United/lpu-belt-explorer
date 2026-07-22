@@ -1,0 +1,1 @@
+import{pi as e,vi as t}from"./index-lG3ipNUw.js";var n=t(e()),r=n.createContext(void 0);function i(){return n.useContext(r)}export{r as n,i as t};

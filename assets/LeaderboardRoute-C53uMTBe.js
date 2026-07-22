@@ -1,0 +1,1 @@
+import{G as e,Zr as t,o as n,pi as r,vi as i,xt as a}from"./index-lG3ipNUw.js";import{t as o}from"./usePageTitle-BZk6IdVP.js";var s=i(r(),1),c=t();function l(){return o(`Leaderboard`),(0,c.jsxs)(s.Fragment,{children:[(0,c.jsx)(a,{}),(0,c.jsx)(e,{}),(0,c.jsx)(n,{feature:`leaderboard`})]})}export{l as default};

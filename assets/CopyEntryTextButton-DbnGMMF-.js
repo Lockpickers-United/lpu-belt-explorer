@@ -1,0 +1,2 @@
+import{K as e,Zr as t,di as n,pi as r,st as i,vi as a}from"./index-lG3ipNUw.js";import{t as o}from"./ContentCopy-CvSkMl6n.js";var s=a(r(),1),c=a(o(),1),l=t();function u({entry:t}){return(0,l.jsx)(i,{title:`Copy Make/Model Text`,arrow:!0,disableFocusListener:!0,children:(0,l.jsx)(e,{onClick:(0,s.useCallback)(async()=>{let e=t.makeModels.map(({make:e,model:t})=>e&&e!==t?`${e} ${t}`:t).join(`
+`);await navigator.clipboard.writeText(e),n(`Make/Model text copied to clipboard.`)},[t.makeModels]),children:(0,l.jsx)(c.default,{})})})}export{u as t};
