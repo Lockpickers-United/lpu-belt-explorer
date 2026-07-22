@@ -100,7 +100,7 @@
     "@testing-library/react": "^16.0.1",
     "@testing-library/user-event": "^14.5.2",
     "@types/react": "^18.2.21",
-    "@vitejs/plugin-react": "^6.0.2",
+    "@vitejs/plugin-react": "^4.4.1",
     "@vitest/ui": "4.1.8",
     "@wdio/allure-reporter": "^9.20.0",
     "allure-playwright": "^3.6.0",
@@ -117,7 +117,7 @@
     "node-fetch": "^3.3.2",
     "rollup-plugin-visualizer": "^5.14.0",
     "uuid": "^14.0.1",
-    "vite": "^8.0.16",
+    "vite": "^6.4.1",
     "vitest": "^4.1.8"
   },
   "overrides": {
