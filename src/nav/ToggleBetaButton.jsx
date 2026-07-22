@@ -1,6 +1,6 @@
 import Tooltip from '@mui/material/Tooltip'
 import React, {useCallback, useContext} from 'react'
-import {BugReportOutlined} from '@mui/icons-material'
+import BugReportOutlined from '@mui/icons-material/BugReportOutlined'
 import IconButton from '@mui/material/IconButton'
 import AppContext from '../app/AppContext'
 
