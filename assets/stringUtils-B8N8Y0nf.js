@@ -1,1 +1,0 @@
-function e(e){try{return new RegExp(e),!0}catch(e){if(e instanceof SyntaxError)return!1;throw e}}export{e as t};

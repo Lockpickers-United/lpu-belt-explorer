@@ -1,1 +1,0 @@
-import{Kn as e,Zr as t,mi as n,q as r}from"./index-lG3ipNUw.js";var i=n((n=>{var i=e();Object.defineProperty(n,`__esModule`,{value:!0}),n.default=void 0;var a=i(r()),o=t();n.default=(0,a.default)((0,o.jsx)(`path`,{d:`M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2m0 16H8V7h11z`}),`ContentCopy`)}));export{i as t};

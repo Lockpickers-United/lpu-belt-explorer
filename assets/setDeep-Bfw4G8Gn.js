@@ -1,1 +1,0 @@
-function e(t,n,r,i){if(n.length===1){t[n[0]]=i?i(t[n[0]],r):r;return}let a=n[0];t[a]||(t[a]={}),e(t[a],n.slice(1),r,i)}function t(t,n,r){e(t,n,r)}function n(t,n,r){e(t,n,r,(e,t)=>e?e+t:t)}function r(t,n,r){e(t,n,r,(e,t)=>e?[...e,t]:[t])}function i(t,n,r){e(t,n,r,(e,t)=>e?[...new Set([...e,t])]:[t])}export{i,n,r,t};
