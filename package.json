@@ -51,8 +51,8 @@
     "@emotion/styled": "^11.14.1",
     "@mui/icons-material": "^5.18.0",
     "@mui/material": "^5.15.4",
-    "@mui/styles": "^6.5.0",
-    "@mui/x-date-pickers": "^7.10.0",
+    "@mui/styles": "^5.18.0",
+    "@mui/x-date-pickers": "^6.20.2",
     "@nivo/bar": "^0.99.0",
     "@nivo/chord": "^0.99.0",
     "@nivo/core": "^0.99.0",
@@ -119,5 +119,8 @@
     "uuid": "^14.0.0",
     "vite": "^8.0.16",
     "vitest": "^4.1.8"
+  },
+  "overrides": {
+    "rolldown": "1.0.1"
   }
 }
