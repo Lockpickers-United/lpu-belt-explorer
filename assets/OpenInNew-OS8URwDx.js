@@ -1,0 +1,1 @@
+import{Kn as e,U as t,Zr as n,mi as r}from"./index-DNdmLTwU.js";var i=r((r=>{var i=e();Object.defineProperty(r,`__esModule`,{value:!0}),r.default=void 0;var a=i(t()),o=n();r.default=(0,a.default)((0,o.jsx)(`path`,{d:`M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3z`}),`OpenInNew`)}));export{i as t};

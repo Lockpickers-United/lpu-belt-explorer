@@ -1,1 +1,0 @@
-import{a as e}from"./chunk-Cyuzqnbw.js";import{At as t,Lt as n,Ot as r,jt as i,kt as a,yt as o}from"./DefaultPropsProvider-D_RySoZB.js";i(),a();var s=e(n()),c=o(),l=[`value`],u=s.createContext();function d(e){let{value:n}=e,i=r(e,l);return(0,c.jsx)(u.Provider,t({value:n??!0},i))}var f=()=>s.useContext(u)??!1;export{f as n,d as t};

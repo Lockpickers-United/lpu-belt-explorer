@@ -1,0 +1,1 @@
+import{Kn as e,U as t,Zr as n,mi as r}from"./index-DNdmLTwU.js";var i=r((r=>{var i=e();Object.defineProperty(r,`__esModule`,{value:!0}),r.default=void 0;var a=i(t()),o=n();r.default=(0,a.default)((0,o.jsx)(`path`,{d:`M15 8v8H5V8zm1-2H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4V7c0-.55-.45-1-1-1`}),`VideocamOutlined`)}));export{i as t};

@@ -1,0 +1,1 @@
+import{K as e,Zr as t,o as n,pi as r,s as i,vi as a,xt as o}from"./index-DNdmLTwU.js";import{t as s}from"./usePageTitle-CqhhOriZ.js";var c=a(r(),1),l=t();function u(){return s(`Scorecard Info`),(0,l.jsxs)(c.Fragment,{children:[(0,l.jsx)(i,{title:`Scorecard Info`}),(0,l.jsx)(o,{}),(0,l.jsx)(e,{}),(0,l.jsx)(n,{feature:`scorecard-info`})]})}export{u as default};
