@@ -1,0 +1,1 @@
+import{a as e}from"./chunk-Cyuzqnbw.js";import{Lt as t}from"./DefaultPropsProvider-D_RySoZB.js";var n=e(t()),r=n.createContext(void 0);function i(){return n.useContext(r)}export{r as n,i as t};

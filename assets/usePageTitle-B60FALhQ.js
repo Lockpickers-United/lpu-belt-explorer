@@ -1,0 +1,1 @@
+import{n as e}from"./dist-D09bsoBv.js";function t(t){return e(n(t))}function n(e){let t=/^localhost.*/.test(window.location.host)?`LOCAL`:/^dev.*/.test(window.location.host)?`DEV`:`LPU Belt Explorer`;return e?`${t} - ${e}`:`LPU Belt Explorer`}export{t};
