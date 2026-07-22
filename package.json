@@ -116,7 +116,7 @@
     "msw": "^2.6.6",
     "node-fetch": "^3.3.2",
     "rollup-plugin-visualizer": "^5.14.0",
-    "uuid": "^14.0.0",
+    "uuid": "^14.0.1",
     "vite": "^8.0.16",
     "vitest": "^4.1.8"
   },
