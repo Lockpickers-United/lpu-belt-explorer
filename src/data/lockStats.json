@@ -563,7 +563,7 @@
         "coverage": "92%"
       }
     ],
-    "uniqueImages": 4425,
+    "uniqueImages": 4424,
     "contributors": 309,
     "topPhotographers": [
       {
@@ -584,7 +584,7 @@
       },
       {
         "contributor": "Luboš Čech",
-        "images": 170
+        "images": 169
       },
       {
         "contributor": "Ben-on-reddit",
@@ -1805,6 +1805,6 @@
     ]
   },
   "metadata": {
-    "updatedDateTime": "2026-07-20 16:26"
+    "updatedDateTime": "2026-07-24 05:25"
   }
 }
