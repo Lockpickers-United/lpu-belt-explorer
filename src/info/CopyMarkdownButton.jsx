@@ -12,7 +12,7 @@ import ContentCopyIcon from '@mui/icons-material/ContentCopy'
 import download from '../util/download'
 import Button from '@mui/material/Button'
 
-function CopyMarkdownButton({content}) {
+function CopyMarkdownButton({content, filname = 'beltRequirements'}) {
     const [anchorEl, setAnchorEl] = useState(null)
     const open = Boolean(anchorEl)
     const handleOpen = useCallback(event => setAnchorEl(event.currentTarget), [])
@@ -22,14 +22,14 @@ function CopyMarkdownButton({content}) {
     const handleExportClipboard = useCallback(() => {
         handleClose()
         navigator.clipboard.writeText(content).then()
-        enqueueSnackbar('Belt Requirements markdown copied to clipboard.')
+        enqueueSnackbar('Markdown copied to clipboard.')
     }, [content, handleClose])
 
     const handleExportMarkdown = useCallback(() => {
         handleClose()
-        download('beltRequirements.md', content)
-        enqueueSnackbar('Belt Requirements markdown downloaded as beltRequirements.md')
-    }, [content, handleClose])
+        download(`${filname}.md`, content)
+        enqueueSnackbar(`Markdown downloaded as ${filname}.md`)
+    }, [content, filname, handleClose])
 
     return (
         <React.Fragment>

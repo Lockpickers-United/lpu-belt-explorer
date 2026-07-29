@@ -1,5 +1,3 @@
-# Beginner's Guide to Lockpicks and Friends
-
 ## Lockpicks
 
 **Manufacturers and Vendors**

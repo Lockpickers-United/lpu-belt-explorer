@@ -15,7 +15,7 @@ const entries = JSON.parse(fs.readFileSync('../src/data/data.json', 'utf8'))
 
 //const db = getFirestore(app, 'lpubelts-dev')
 const db = getFirestore(app)
-const WRITE_TO_DB = true
+const _WRITE_TO_DB = true
 
 const userId = 'S131zvhcryUvHckhdkVboIDRQnF3'
 
@@ -28,7 +28,7 @@ const profile = await ref.get()
 //const collectionTypes = ['own', 'picked', 'recorded', 'recordedLocks', 'wishlist']
 const collectionTypes = ['own']
 
-const badIds = collectionTypes.reduce((acc, collection) => {
+const _badIds = collectionTypes.reduce((acc, collection) => {
 
     console.log(`user ${userId} collection ${collection} : ${profile.data()[collection].length}`)
 
