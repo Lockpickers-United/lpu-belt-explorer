@@ -16242,10 +16242,7 @@
     "name": "ABUS K14, KV14, KY14",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "views": 2965,
-    "lastUpdated": "2025-03-19T15:44:57.288Z",
-    "features": [
-      "Latest Changelog"
-    ]
+    "lastUpdated": "2025-03-19T15:44:57.288Z"
   },
   "4382d650": {
     "id": "4382d650",
@@ -16396,10 +16393,7 @@
       }
     ],
     "version": "6 pins",
-    "notes": "requires Pfaffenhain barrel pin, otherwise green",
-    "features": [
-      "Latest Changelog"
-    ]
+    "notes": "requires Pfaffenhain barrel pin, otherwise green"
   },
   "34c0dfe4": {
     "id": "34c0dfe4",
@@ -22415,9 +22409,6 @@
         "title": "Catalocks",
         "url": "https://www.catalocks.eu/ABUS/ABUS%20TS%205000_53.html"
       }
-    ],
-    "features": [
-      "Latest Changelog"
     ]
   },
   "da8331ef": {
@@ -32359,9 +32350,6 @@
         "title": "Catalocks",
         "url": "https://www.catalocks.eu/MAGNUM/MAGNUM%202100%20MONT%20BLANC_188.html"
       }
-    ],
-    "features": [
-      "Latest Changelog"
     ]
   },
   "b8783269": {
@@ -47982,7 +47970,7 @@
   },
   "abe6074c": {
     "id": "abe6074c",
-    "belt": "Unranked",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "Ezcurra",
@@ -48033,7 +48021,7 @@
     ],
     "views": 170,
     "features": [
-      "Under Review ⚑"
+      "Latest Changelog"
     ]
   },
   "b5e210ec": {
@@ -48235,7 +48223,7 @@
   },
   "d6e6039e": {
     "id": "d6e6039e",
-    "belt": "Unranked",
+    "belt": "Black 3",
     "makeModels": [
       {
         "make": "Fichet-Bauche",
@@ -48247,11 +48235,12 @@
     "lastUpdated": "2023-08-10T00:09:36.305Z",
     "views": 210,
     "features": [
-      "Under Review ⚑"
+      "Latest Changelog"
     ],
     "lockingMechanisms": [
       "Pump/push"
-    ]
+    ],
+    "notes": "Special picking requirement, must be picked CW"
   },
   "3bd433d7": {
     "id": "3bd433d7",
@@ -49420,7 +49409,7 @@
   },
   "0684a655": {
     "id": "0684a655",
-    "belt": "Unranked",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "Medeco",
@@ -49464,8 +49453,9 @@
       }
     ],
     "features": [
-      "Under Review ⚑"
-    ]
+      "Latest Changelog"
+    ],
+    "version": "Non-SFIC"
   },
   "e6872b30": {
     "id": "e6872b30",
@@ -50664,13 +50654,14 @@
   },
   "fa9fb7e1": {
     "id": "fa9fb7e1",
-    "belt": "Unranked",
+    "belt": "Blue",
     "makeModels": [
       {
-        "model": "War-Lok"
+        "make": "War-Lock",
+        "model": "PLK-10"
       }
     ],
-    "name": "War-Lok",
+    "name": "War-Lock PLK-10",
     "dateAdded": "2023-03-02T19:05:25.000Z",
     "lastUpdated": "2025-03-19T15:44:57.325Z",
     "views": 187,
@@ -50704,7 +50695,7 @@
       }
     ],
     "features": [
-      "Under Review ⚑"
+      "Latest Changelog"
     ],
     "lockingMechanisms": [
       "Disc detainer"
@@ -51647,7 +51638,7 @@
   },
   "c6a14e93": {
     "id": "c6a14e93",
-    "belt": "Unranked",
+    "belt": "Black 3",
     "makeModels": [
       {
         "make": "CAWI",
@@ -51701,7 +51692,10 @@
     ],
     "views": 167,
     "features": [
-      "Under Review ⚑"
+      "Latest Changelog"
+    ],
+    "lockingMechanisms": [
+      "Wafer"
     ]
   },
   "204066fa": {
@@ -51850,23 +51844,23 @@
   },
   "ab9df828": {
     "id": "ab9df828",
-    "belt": "Unranked",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "Kawaha",
-        "model": "(any)"
+        "model": "Kawaha"
       },
       {
         "make": "Magmaus",
-        "model": "(any)"
+        "model": "Magmaus"
       }
     ],
     "lastUpdated": "2025-03-19T15:44:57.322Z",
-    "name": "Kawaha (any) / Magmaus (any)",
+    "name": "Kawaha Kawaha / Magmaus Magmaus",
     "dateAdded": "2023-05-05T09:34:27.000Z",
     "views": 411,
     "features": [
-      "Under Review ⚑"
+      "Latest Changelog"
     ],
     "media": [
       {
@@ -51896,6 +51890,9 @@
         "dateAdded": "2025-03-06T16:00:00.000Z",
         "fullSizeUrl": "https://live.staticflickr.com/65535/54259173294_6c709a775c_o.jpg"
       }
+    ],
+    "lockingMechanisms": [
+      "DD"
     ]
   },
   "110c872d": {
@@ -57257,7 +57254,7 @@
   },
   "6f837bb4": {
     "id": "6f837bb4",
-    "belt": "Unranked",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "A.S.I. Inc.",
@@ -57271,10 +57268,10 @@
       "Dimple"
     ],
     "features": [
-      "Under Review ⚑",
       "Pin-in-pin",
       "Trap element",
-      "Picking Risk"
+      "Picking Risk",
+      "Latest Changelog"
     ],
     "views": 279,
     "media": [
@@ -57578,7 +57575,7 @@
     "name": "Zeta Padlock",
     "dateAdded": "2023-12-28T18:48:59.000Z",
     "features": [
-      "Under Review ⚑"
+      "Latest Changelog"
     ],
     "views": 275,
     "media": [
@@ -57654,6 +57651,10 @@
         "dateAdded": "2025-03-06T16:00:00.000Z",
         "fullSizeUrl": "https://live.staticflickr.com/65535/53850965476_4494afbc93_o.jpg"
       }
+    ],
+    "version": "Models: ZR45, ZR55, ZU55",
+    "lockingMechanisms": [
+      "Dimple"
     ]
   },
   "ea6539c8": {
@@ -59121,10 +59122,7 @@
     ],
     "lastUpdated": "2025-01-09T16:22:28.779Z",
     "name": "GTV APS / EMR APS",
-    "dateAdded": "2025-01-09T16:22:30.000Z",
-    "features": [
-      "Latest Changelog"
-    ]
+    "dateAdded": "2025-01-09T16:22:30.000Z"
   },
   "156734db": {
     "id": "156734db",
@@ -59455,8 +59453,7 @@
       "Pin-tumbler"
     ],
     "features": [
-      "Active element",
-      "Latest Changelog"
+      "Active element"
     ],
     "lastUpdated": "2025-02-16T07:00:26.260Z",
     "name": "Wilka PR100 Series, TH6, SI6",
@@ -60468,7 +60465,7 @@
   },
   "58c676d3": {
     "id": "58c676d3",
-    "belt": "Unranked",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "Medeco",
@@ -60559,10 +60556,7 @@
     ],
     "notes": "Dual sidebar",
     "name": "MIWA WR",
-    "dateAdded": "2025-11-11T19:09:04.039Z",
-    "features": [
-      "Latest Changelog"
-    ]
+    "dateAdded": "2025-11-11T19:09:04.039Z"
   },
   "ecb469c3": {
     "id": "ecb469c3",
@@ -60853,10 +60847,7 @@
       "Pin-tumbler"
     ],
     "name": "ASSA 500",
-    "dateAdded": "2026-01-29T04:43:25.089Z",
-    "features": [
-      "Latest Changelog"
-    ]
+    "dateAdded": "2026-01-29T04:43:25.089Z"
   },
   "2b5cc5d7": {
     "id": "2b5cc5d7",
@@ -60873,10 +60864,7 @@
     ],
     "notes": "Due to unbalanced pin stacks, drivers in max lift chambers will rest below shear. This risks spring damage if the driver is not picked.",
     "name": "ABUS 72/40",
-    "dateAdded": "2026-03-01T11:02:21.469Z",
-    "features": [
-      "Latest Changelog"
-    ]
+    "dateAdded": "2026-03-01T11:02:21.469Z"
   },
   "6e2cecfd": {
     "id": "6e2cecfd",
@@ -60888,10 +60876,7 @@
       }
     ],
     "name": "CES RE Plus",
-    "dateAdded": "2026-03-01T11:02:21.472Z",
-    "features": [
-      "Latest Changelog"
-    ]
+    "dateAdded": "2026-03-01T11:02:21.472Z"
   },
   "55d4676c": {
     "id": "55d4676c",
@@ -60922,5 +60907,403 @@
     ],
     "name": "Lince C7",
     "dateAdded": "2026-07-10T23:34:13.476Z"
+  },
+  "7c2ce5b8": {
+    "id": "7c2ce5b8",
+    "belt": "Yellow",
+    "makeModels": [
+      {
+        "make": "Locinox",
+        "model": "Standard"
+      }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "features": [
+      "Latest Changelog"
+    ],
+    "name": "Locinox Standard",
+    "dateAdded": "2026-08-06T03:59:39.965Z"
+  },
+  "25590f71": {
+    "id": "25590f71",
+    "belt": "Yellow",
+    "makeModels": [
+      {
+        "make": "Phillips",
+        "model": "112 Padlock"
+      }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "features": [
+      "Latest Changelog"
+    ],
+    "name": "Phillips 112 Padlock",
+    "dateAdded": "2026-08-06T03:59:39.965Z"
+  },
+  "938cb7a6": {
+    "id": "938cb7a6",
+    "belt": "Yellow",
+    "makeModels": [
+      {
+        "make": "Takigen",
+        "model": "C-187-1"
+      }
+    ],
+    "lockingMechanisms": [
+      "Dimple"
+    ],
+    "features": [
+      "Latest Changelog"
+    ],
+    "name": "Takigen C-187-1",
+    "dateAdded": "2026-08-06T03:59:39.965Z"
+  },
+  "03296063": {
+    "id": "03296063",
+    "belt": "Orange",
+    "makeModels": [
+      {
+        "make": "Phillips",
+        "model": "113 Padlock"
+      }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "features": [
+      "Latest Changelog"
+    ],
+    "name": "Phillips 113 Padlock",
+    "dateAdded": "2026-08-06T03:59:39.966Z"
+  },
+  "96fe36b5": {
+    "id": "96fe36b5",
+    "belt": "Orange",
+    "makeModels": [
+      {
+        "make": "Reliabilt",
+        "model": "LOTO"
+      }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "features": [
+      "Latest Changelog"
+    ],
+    "name": "Reliabilt LOTO",
+    "dateAdded": "2026-08-06T03:59:39.966Z"
+  },
+  "0b603755": {
+    "id": "0b603755",
+    "belt": "Orange",
+    "makeModels": [
+      {
+        "make": "Wilka",
+        "model": "1400"
+      }
+    ],
+    "version": "5-pin short version",
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "features": [
+      "Latest Changelog"
+    ],
+    "name": "Wilka 1400",
+    "dateAdded": "2026-08-06T03:59:39.966Z"
+  },
+  "ae5590c3": {
+    "id": "ae5590c3",
+    "belt": "Green",
+    "makeModels": [
+      {
+        "make": "Bell",
+        "model": "Bike lock"
+      }
+    ],
+    "lockingMechanisms": [
+      "Disc-detainer"
+    ],
+    "features": [
+      "Latest Changelog"
+    ],
+    "name": "Bell Bike lock",
+    "dateAdded": "2026-08-06T03:59:39.966Z"
+  },
+  "ed71438c": {
+    "id": "ed71438c",
+    "belt": "Green",
+    "makeModels": [
+      {
+        "make": "Goal",
+        "model": "P"
+      }
+    ],
+    "version": "Old pinning",
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "features": [
+      "Latest Changelog"
+    ],
+    "notes": "6 pins with spool drivers and overmilling. This model does not have the plug centering bearing",
+    "name": "Goal P",
+    "dateAdded": "2026-08-06T03:59:39.967Z"
+  },
+  "04bd0770": {
+    "id": "04bd0770",
+    "belt": "Green",
+    "makeModels": [
+      {
+        "make": "GTV",
+        "model": "5 Pin"
+      }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "features": [
+      "Latest Changelog"
+    ],
+    "notes": "Old pinning",
+    "name": "GTV 5 Pin",
+    "dateAdded": "2026-08-06T03:59:39.967Z"
+  },
+  "d04696c1": {
+    "id": "d04696c1",
+    "belt": "Green",
+    "makeModels": [
+      {
+        "make": "Kenaurd",
+        "model": "Kenaurd"
+      }
+    ],
+    "version": "4 pin, with serrated drivers",
+    "lockingMechanisms": [
+      "Dimple"
+    ],
+    "features": [
+      "Pin-in-pin",
+      "Latest Changelog"
+    ],
+    "name": "Kenaurd Kenaurd",
+    "dateAdded": "2026-08-06T03:59:39.967Z"
+  },
+  "787e3de9": {
+    "id": "787e3de9",
+    "belt": "Green",
+    "makeModels": [
+      {
+        "make": "Phillips",
+        "model": "HD-730"
+      }
+    ],
+    "lockingMechanisms": [
+      "Dimple"
+    ],
+    "features": [
+      "Unguttable",
+      "Latest Changelog"
+    ],
+    "name": "Phillips HD-730",
+    "dateAdded": "2026-08-06T03:59:39.967Z"
+  },
+  "3351ec75": {
+    "id": "3351ec75",
+    "belt": "Green",
+    "makeModels": [
+      {
+        "make": "Reliabilt",
+        "model": "DD Padlock"
+      }
+    ],
+    "lockingMechanisms": [
+      "Disc-detainer"
+    ],
+    "features": [
+      "Latest Changelog"
+    ],
+    "name": "Reliabilt DD Padlock",
+    "dateAdded": "2026-08-06T03:59:39.967Z"
+  },
+  "ebcb29b9": {
+    "id": "ebcb29b9",
+    "belt": "Blue",
+    "makeModels": [
+      {
+        "make": "Ingersoll",
+        "model": "6 Lever Padlock"
+      }
+    ],
+    "lockingMechanisms": [
+      "Lever"
+    ],
+    "features": [
+      "Latest Changelog"
+    ],
+    "name": "Ingersoll 6 Lever Padlock",
+    "dateAdded": "2026-08-06T03:59:39.968Z"
+  },
+  "fe000caa": {
+    "id": "fe000caa",
+    "belt": "Blue",
+    "makeModels": [
+      {
+        "make": "Kenaurd",
+        "model": "Kenaurd"
+      }
+    ],
+    "version": "5 pin, with serrated drivers",
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "features": [
+      "Pin-in-pin",
+      "Latest Changelog"
+    ],
+    "name": "Kenaurd Kenaurd",
+    "dateAdded": "2026-08-06T03:59:39.968Z"
+  },
+  "37dc53bb": {
+    "id": "37dc53bb",
+    "belt": "Blue",
+    "makeModels": [
+      {
+        "make": "SEGA",
+        "model": "Cam lock"
+      }
+    ],
+    "lockingMechanisms": [
+      "Dimple"
+    ],
+    "features": [
+      "High pin count",
+      "Latest Changelog"
+    ],
+    "name": "SEGA Cam lock",
+    "dateAdded": "2026-08-06T03:59:39.969Z"
+  },
+  "1110ef61": {
+    "id": "1110ef61",
+    "belt": "Purple",
+    "makeModels": [
+      {
+        "make": "Mul-T-Lock",
+        "model": "Gamma"
+      }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "features": [
+      "Pin-in-pin",
+      "Latest Changelog"
+    ],
+    "name": "Mul-T-Lock Gamma",
+    "dateAdded": "2026-08-06T03:59:39.970Z"
+  },
+  "13a2aace": {
+    "id": "13a2aace",
+    "belt": "Brown",
+    "makeModels": [
+      {
+        "make": "MIWA",
+        "model": "VM88"
+      }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler",
+      "Magnet"
+    ],
+    "features": [
+      "Latest Changelog"
+    ],
+    "name": "MIWA VM88",
+    "dateAdded": "2026-08-06T03:59:39.972Z"
+  },
+  "6033c67a": {
+    "id": "6033c67a",
+    "belt": "Red",
+    "makeModels": [
+      {
+        "make": "ASSA",
+        "model": "Twin 6000"
+      }
+    ],
+    "version": "LFIC",
+    "lockingMechanisms": [
+      "Pin-tumbler",
+      "Sidebar"
+    ],
+    "features": [
+      "Latest Changelog"
+    ],
+    "notes": "Picked to either operating or control",
+    "name": "ASSA Twin 6000",
+    "dateAdded": "2026-08-06T03:59:39.972Z"
+  },
+  "f777a3f2": {
+    "id": "f777a3f2",
+    "belt": "Black 1",
+    "makeModels": [
+      {
+        "make": "ASSA",
+        "model": "Twin 6000"
+      }
+    ],
+    "version": "LFIC",
+    "lockingMechanisms": [
+      "Pin-tumbler",
+      "Sidebar"
+    ],
+    "features": [
+      "Latest Changelog"
+    ],
+    "notes": "** **Special Picking Requirement:** Must be picked to both operating and control in one take.",
+    "name": "ASSA Twin 6000",
+    "dateAdded": "2026-08-06T03:59:39.973Z"
+  },
+  "2181e10d": {
+    "id": "2181e10d",
+    "belt": "Black 5",
+    "makeModels": [
+      {
+        "make": "Chatwood",
+        "model": "Invincible"
+      }
+    ],
+    "version": "Single Bitted",
+    "lockingMechanisms": [
+      "Lever"
+    ],
+    "features": [
+      "Latest Changelog"
+    ],
+    "name": "Chatwood Invincible",
+    "dateAdded": "2026-08-06T03:59:39.973Z"
+  },
+  "051aa1ac": {
+    "id": "051aa1ac",
+    "belt": "Black 3",
+    "makeModels": [
+      {
+        "make": "GSK",
+        "model": "X24"
+      }
+    ],
+    "lockingMechanisms": [
+      "Dimple"
+    ],
+    "features": [
+      "High pin count",
+      "Latest Changelog"
+    ],
+    "name": "GSK X24",
+    "dateAdded": "2026-08-06T03:59:39.974Z"
   }
 }
