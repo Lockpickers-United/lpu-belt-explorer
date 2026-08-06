@@ -468,6 +468,7 @@ Blue,Yale,2100,,"Dimple,Sidebar,Slider","Sprung sliders","dimple, similar to Sup
 Blue,"Yale,Yale","500,B",,Pin-tumbler,Overmilling,"On the Yale B, a max lift (Yale 0) will cause the spooled driver to sit entirely within the plug, representing a possible spring risk.",779e7dcb
 Blue,Yale,"KM 1 star Superior",,Pin-tumbler,,"spooled key pins with 6 gege style drivers",c1e91978
 Blue,"Yale,Yale,Millenco","Superior,Platinum,Magnum","<7 pins","Dimple,Slider","Sprung sliders,Active sidebar",,30a4fef5
+Blue,Zeta,Padlock,"Models: ZR45, ZR55, ZU55",Dimple,"Latest Changelog",,5e3397a9
 Purple,Any,"SFIC format lock (unless otherwise specified)",**,Pin-tumbler,,"** **Special Picking Requirement:** Must be picked to both operating and control in one take. Check the SFIC filming requirements in the [Reddit belt ranking page](https://www.reddit.com/r/lockpicking/wiki/beltranking/#wiki_sfic_filming_requirements). Exempt from rule regarding minimum master wafers",c8259a23
 Purple,"A.S.I. Inc.","Royal Guardian",,Dimple,"Pin-in-pin,Trap element,Picking Risk,Latest Changelog","If trap elements are not dealt with, the lock will soft-brick, requiring a gut to fix.",6f837bb4
 Purple,ABA,109582,,Dimple,,,96fd610e
@@ -944,4 +945,3 @@ Unranked,Yardeni,10,,Dimple,"Under Review ⚑","9 pins, 2 spools more restricted
 Unranked,Yardeni,"Super XL",,Dimple,"Under Review ⚑","8 pin dimple with interactive element on the key",2b6dd267
 Unranked,Yardeni,XL,,Dimple,"Under Review ⚑","8 pin dimple with more restrictive keyway than 6 pin yardeni",a7ffa199
 Unranked,Zarker,J55/J55S,,"Disc detainer","Rear tension","Can be front tensioned and counterrotated",074db05e
-Unranked,Zeta,Padlock,"Models: ZR45, ZR55, ZU55",Dimple,"Latest Changelog",,5e3397a9

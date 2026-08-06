@@ -734,6 +734,7 @@ To qualify for a Blue Belt, you must also submit a project that demonstrates you
 - [Yale 500 / Yale B](https://lpubelts.com/#/locks?id=779e7dcb)
 - [Yale KM 1 star Superior](https://lpubelts.com/#/locks?id=c1e91978)
 - [Yale Superior / Yale Platinum / Millenco Magnum](https://lpubelts.com/#/locks?id=30a4fef5) (&lt;7 pins)
+- [Zeta Padlock](https://lpubelts.com/#/locks?id=5e3397a9) (Models: ZR45, ZR55, ZU55)
 
 ** Blue if picked to one shearline. Check the SFIC filming requirements in the [Reddit belt ranking page](https://www.reddit.com/r/lockpicking/wiki/beltranking/#wiki_sfic_filming_requirements).
 
