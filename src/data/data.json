@@ -28319,6 +28319,108 @@
     "lastUpdated": "2025-12-02T23:39:17.943Z"
   },
   {
+    "id": "5e3397a9",
+    "belt": "Blue",
+    "makeModels": [
+      {
+        "make": "Zeta",
+        "model": "Padlock"
+      }
+    ],
+    "version": "Models: ZR45, ZR55, ZU55",
+    "lockingMechanisms": [
+      "Dimple"
+    ],
+    "features": [
+      "Latest Changelog"
+    ],
+    "dateAdded": "2023-12-28T18:48:59.000Z",
+    "media": [
+      {
+        "title": "By: LockPickingFisherman",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53851227093_8e9d0be163_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53851227093/in/album-72177720318717575/",
+        "sequenceId": 1667,
+        "dateAdded": "2025-10-25T18:24:16.761Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53851227093_f2dc901533_o.jpg",
+        "imageTitle": "Zeta ZU55"
+      },
+      {
+        "title": "By: LockPickingFisherman",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53850964506_01c2338ce2_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53850964506/in/album-72177720318717575/",
+        "sequenceId": 1668,
+        "dateAdded": "2025-10-25T18:24:16.761Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53850964506_4a8f56cd50_o.jpg",
+        "imageTitle": "Zeta ZU55"
+      },
+      {
+        "title": "By: LockPickingFisherman",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53851227418_2b5133b679_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53851227418/in/album-72177720318717575/",
+        "sequenceId": 1669,
+        "dateAdded": "2025-10-25T18:24:16.761Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53851227418_5b1df1a677_o.jpg",
+        "imageTitle": "Zeta ZU55"
+      },
+      {
+        "title": "By: LockPickingFisherman",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53851329829_aedc4bcfc0_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53851329829/in/album-72177720318717575/",
+        "sequenceId": 1670,
+        "dateAdded": "2025-10-25T18:24:16.761Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53851329829_418dd89ef2_o.jpg",
+        "imageTitle": "Zeta ZU55"
+      },
+      {
+        "title": "By: LockPickingFisherman",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53851227723_0d3c3239f1_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53851227723/in/album-72177720318717575/",
+        "sequenceId": 1671,
+        "dateAdded": "2025-10-25T18:24:16.761Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53851227723_12792871ba_o.jpg",
+        "imageTitle": "Zeta ZU55"
+      },
+      {
+        "title": "By: LockPickingFisherman",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53851400745_7415426842_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53851400745/in/album-72177720318717575/",
+        "sequenceId": 1672,
+        "dateAdded": "2025-10-25T18:24:16.761Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53851400745_37766dd77e_o.jpg",
+        "imageTitle": "Zeta ZU55"
+      },
+      {
+        "title": "By: LockPickingFisherman",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53850072382_0aa05fbed9_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53850072382/in/album-72177720318717575/",
+        "sequenceId": 1673,
+        "dateAdded": "2025-10-25T18:24:16.761Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53850072382_9f99b05624_o.jpg",
+        "imageTitle": "Zeta ZU55"
+      },
+      {
+        "title": "By: LockPickingFisherman",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53850965476_a024e64138_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53850965476/in/album-72177720318717575/",
+        "sequenceId": 1674,
+        "dateAdded": "2025-10-25T18:24:16.761Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53850965476_4494afbc93_o.jpg",
+        "imageTitle": "Zeta ZU55"
+      }
+    ],
+    "views": 245,
+    "lastUpdated": "2026-08-06T04:04:58.740Z"
+  },
+  {
     "id": "c8259a23",
     "belt": "Purple",
     "makeModels": [
@@ -64544,107 +64646,5 @@
     ],
     "views": 1,
     "lastUpdated": "2025-12-02T23:39:17.969Z"
-  },
-  {
-    "id": "5e3397a9",
-    "belt": "Unranked",
-    "makeModels": [
-      {
-        "make": "Zeta",
-        "model": "Padlock"
-      }
-    ],
-    "version": "Models: ZR45, ZR55, ZU55",
-    "lockingMechanisms": [
-      "Dimple"
-    ],
-    "features": [
-      "Latest Changelog"
-    ],
-    "dateAdded": "2023-12-28T18:48:59.000Z",
-    "media": [
-      {
-        "title": "By: LockPickingFisherman",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/53851227093_8e9d0be163_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53851227093/in/album-72177720318717575/",
-        "sequenceId": 1667,
-        "dateAdded": "2025-10-25T18:24:16.761Z",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/53851227093_f2dc901533_o.jpg",
-        "imageTitle": "Zeta ZU55"
-      },
-      {
-        "title": "By: LockPickingFisherman",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/53850964506_01c2338ce2_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53850964506/in/album-72177720318717575/",
-        "sequenceId": 1668,
-        "dateAdded": "2025-10-25T18:24:16.761Z",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/53850964506_4a8f56cd50_o.jpg",
-        "imageTitle": "Zeta ZU55"
-      },
-      {
-        "title": "By: LockPickingFisherman",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/53851227418_2b5133b679_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53851227418/in/album-72177720318717575/",
-        "sequenceId": 1669,
-        "dateAdded": "2025-10-25T18:24:16.761Z",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/53851227418_5b1df1a677_o.jpg",
-        "imageTitle": "Zeta ZU55"
-      },
-      {
-        "title": "By: LockPickingFisherman",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/53851329829_aedc4bcfc0_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53851329829/in/album-72177720318717575/",
-        "sequenceId": 1670,
-        "dateAdded": "2025-10-25T18:24:16.761Z",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/53851329829_418dd89ef2_o.jpg",
-        "imageTitle": "Zeta ZU55"
-      },
-      {
-        "title": "By: LockPickingFisherman",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/53851227723_0d3c3239f1_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53851227723/in/album-72177720318717575/",
-        "sequenceId": 1671,
-        "dateAdded": "2025-10-25T18:24:16.761Z",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/53851227723_12792871ba_o.jpg",
-        "imageTitle": "Zeta ZU55"
-      },
-      {
-        "title": "By: LockPickingFisherman",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/53851400745_7415426842_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53851400745/in/album-72177720318717575/",
-        "sequenceId": 1672,
-        "dateAdded": "2025-10-25T18:24:16.761Z",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/53851400745_37766dd77e_o.jpg",
-        "imageTitle": "Zeta ZU55"
-      },
-      {
-        "title": "By: LockPickingFisherman",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/53850072382_0aa05fbed9_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53850072382/in/album-72177720318717575/",
-        "sequenceId": 1673,
-        "dateAdded": "2025-10-25T18:24:16.761Z",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/53850072382_9f99b05624_o.jpg",
-        "imageTitle": "Zeta ZU55"
-      },
-      {
-        "title": "By: LockPickingFisherman",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/53850965476_a024e64138_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53850965476/in/album-72177720318717575/",
-        "sequenceId": 1674,
-        "dateAdded": "2025-10-25T18:24:16.761Z",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/53850965476_4494afbc93_o.jpg",
-        "imageTitle": "Zeta ZU55"
-      }
-    ],
-    "views": 245,
-    "lastUpdated": "2026-08-06T03:59:40.352Z"
   }
 ]

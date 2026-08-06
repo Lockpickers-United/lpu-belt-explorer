@@ -3,7 +3,7 @@
     "description": "Locks",
     "data": [
       {
-        "value": 845,
+        "value": 846,
         "label": "Ranked"
       },
       {
@@ -11,7 +11,7 @@
         "label": "All"
       },
       {
-        "value": 102,
+        "value": 101,
         "label": "Unranked"
       }
     ]
@@ -43,8 +43,8 @@
     },
     {
       "belt": "Blue",
-      "count": 140,
-      "value": 0.14783526927138332,
+      "count": 141,
+      "value": 0.14889123548046462,
       "id": "Blue"
     },
     {
@@ -73,8 +73,8 @@
     },
     {
       "belt": "Unranked",
-      "count": 102,
-      "value": 0.10770855332629356,
+      "count": 101,
+      "value": 0.10665258711721225,
       "id": "Unranked"
     }
   ],
@@ -262,7 +262,7 @@
       },
       {
         "label": "Dimple",
-        "value": 36,
+        "value": 37,
         "id": "dimple"
       },
       {
@@ -532,7 +532,7 @@
       },
       {
         "label": "Dimple",
-        "value": 19,
+        "value": 18,
         "id": "dimple"
       },
       {
@@ -572,8 +572,8 @@
       },
       {
         "segment": "Ranked locks",
-        "count": 845,
-        "media": 779,
+        "count": 846,
+        "media": 780,
         "coverage": "92%"
       },
       {
@@ -1825,6 +1825,6 @@
     ]
   },
   "metadata": {
-    "updatedDateTime": "2026-08-06 03:59"
+    "updatedDateTime": "2026-08-06 04:05"
   }
 }
