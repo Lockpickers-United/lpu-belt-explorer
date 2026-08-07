@@ -14769,32 +14769,6 @@
     "lastUpdated": "2025-12-02T23:39:17.935Z"
   },
   {
-    "id": "3129ee7e",
-    "belt": "Green",
-    "makeModels": [
-      {
-        "make": "Gege",
-        "model": "AP 1000"
-      },
-      {
-        "make": "Alfa",
-        "model": "\"AP 1000\""
-      }
-    ],
-    "lockingMechanisms": [
-      "Pin-tumbler"
-    ],
-    "dateAdded": "2023-02-21T23:16:05.000Z",
-    "links": [
-      {
-        "title": "KoksaWiki",
-        "url": "https://wiki.koksa.org/GEGE_Normalprofil"
-      }
-    ],
-    "views": 542,
-    "lastUpdated": "2026-08-07T15:07:44.869Z"
-  },
-  {
     "id": "0e97c099",
     "belt": "Green",
     "makeModels": [
@@ -31838,7 +31812,7 @@
       },
       {
         "make": "GEGE",
-        "model": "AP3001"
+        "model": "AP3000"
       }
     ],
     "version": "6+ pins",
@@ -31849,7 +31823,7 @@
       "Latest Changelog"
     ],
     "dateAdded": "2026-08-07T15:07:44.520Z",
-    "lastUpdated": "2026-08-07T15:07:44.873Z"
+    "lastUpdated": "2026-08-07T15:13:05.169Z"
   },
   {
     "id": "4cd09b3b",

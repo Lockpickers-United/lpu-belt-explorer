@@ -13306,7 +13306,8 @@
         "title": "KoksaWiki",
         "url": "https://wiki.koksa.org/GEGE_Normalprofil"
       }
-    ]
+    ],
+    "dateDeleted": "2026-08-07T15:13:04.770Z"
   },
   "c81ca385": {
     "id": "c81ca385",
@@ -61478,7 +61479,7 @@
       },
       {
         "make": "GEGE",
-        "model": "AP3001"
+        "model": "AP3000"
       }
     ],
     "version": "6+ pins",
@@ -61488,7 +61489,7 @@
     "features": [
       "Latest Changelog"
     ],
-    "name": "GEGE AP1000, AP2000, AP3001",
+    "name": "GEGE AP1000, AP2000, AP3000",
     "dateAdded": "2026-08-07T15:07:44.520Z"
   }
 }
