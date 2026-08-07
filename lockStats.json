@@ -573,18 +573,18 @@
       {
         "segment": "Ranked locks",
         "count": 843,
-        "media": 787,
+        "media": 788,
         "coverage": "93%"
       },
       {
         "segment": "All locks",
         "count": 945,
-        "media": 867,
+        "media": 868,
         "coverage": "91%"
       }
     ],
-    "uniqueImages": 4465,
-    "contributors": 308,
+    "uniqueImages": 4488,
+    "contributors": 309,
     "topPhotographers": [
       {
         "contributor": "LockPickingFisherman",
@@ -596,7 +596,7 @@
       },
       {
         "contributor": "PeaceWeapon",
-        "images": 226
+        "images": 227
       },
       {
         "contributor": "Reinder Stegen",
@@ -667,15 +667,15 @@
         "images": 40
       },
       {
+        "contributor": "TheGreenishOne",
+        "images": 39
+      },
+      {
         "contributor": "NCR",
         "images": 38
       },
       {
         "contributor": "DoNotDuplicate",
-        "images": 36
-      },
-      {
-        "contributor": "TheGreenishOne",
         "images": 36
       },
       {
@@ -703,6 +703,10 @@
         "images": 30
       },
       {
+        "contributor": "DEW",
+        "images": 29
+      },
+      {
         "contributor": "Mugatu",
         "images": 29
       },
@@ -715,12 +719,8 @@
         "images": 28
       },
       {
-        "contributor": "DEW",
-        "images": 26
-      },
-      {
         "contributor": "Hunson",
-        "images": 25
+        "images": 27
       },
       {
         "contributor": "DigPicks",
@@ -755,6 +755,10 @@
         "images": 22
       },
       {
+        "contributor": "Dig",
+        "images": 21
+      },
+      {
         "contributor": "NoodleThumb",
         "images": 20
       },
@@ -779,11 +783,11 @@
         "images": 17
       },
       {
-        "contributor": "2nd_choice",
-        "images": 16
+        "contributor": "Christian",
+        "images": 17
       },
       {
-        "contributor": "Christian",
+        "contributor": "2nd_choice",
         "images": 16
       },
       {
@@ -792,7 +796,7 @@
       },
       {
         "contributor": "Jan-Willem Markus",
-        "images": 15
+        "images": 16
       },
       {
         "contributor": "LockSportsman",
@@ -829,10 +833,6 @@
       {
         "contributor": "TrapperLock",
         "images": 14
-      },
-      {
-        "contributor": "Dig",
-        "images": 13
       },
       {
         "contributor": "HVLogic",
@@ -1371,6 +1371,10 @@
         "images": 3
       },
       {
+        "contributor": "Pete Lane",
+        "images": 3
+      },
+      {
         "contributor": "Photo by hunson",
         "images": 3
       },
@@ -1488,6 +1492,10 @@
       },
       {
         "contributor": "Lockleisure",
+        "images": 2
+      },
+      {
+        "contributor": "MidnightPhilopicker",
         "images": 2
       },
       {
@@ -1743,10 +1751,6 @@
         "images": 1
       },
       {
-        "contributor": "Pete Lane",
-        "images": 1
-      },
-      {
         "contributor": "Photo by m.c.",
         "images": 1
       },
@@ -1821,6 +1825,6 @@
     ]
   },
   "metadata": {
-    "updatedDateTime": "2026-08-07 17:28"
+    "updatedDateTime": "2026-08-07 18:16"
   }
 }
