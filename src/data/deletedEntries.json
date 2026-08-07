@@ -590,6 +590,44 @@
     "dateDeleted": "2024-01-08T22:27:42.000Z"
   },
   {
+    "id": "bc1ed715",
+    "belt": "Orange",
+    "makeModels": [
+      {
+        "make": "ABUS",
+        "model": "Cisa"
+      }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "name": "ABUS Cisa",
+    "dateAdded": "2023-02-21T23:16:05.000Z",
+    "views": 2304,
+    "lastUpdated": "2025-03-19T15:44:57.279Z",
+    "media": [
+      {
+        "title": "By: Hunson",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52788857613_6830f5680a_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52788857613/in/album-72177720307193826/",
+        "sequenceId": 2838,
+        "dateAdded": "2025-03-06T16:00:00.000Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52788857613_939163c29e_o.jpg"
+      },
+      {
+        "title": "By: Hunson",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52787853247_f4a492b372_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52787853247/in/album-72177720307193826/",
+        "sequenceId": 2839,
+        "dateAdded": "2025-03-06T16:00:00.000Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52787853247_db4a41e55d_o.jpg"
+      }
+    ],
+    "dateDeleted": "2026-08-07T00:30:26.845Z"
+  },
+  {
     "id": "6758c30e",
     "belt": "Unranked",
     "makeModels": [
@@ -1213,6 +1251,48 @@
     "dateDeleted": "2024-11-01T22:26:30.000Z"
   },
   {
+    "id": "6dc539dd",
+    "belt": "Blue",
+    "makeModels": [
+      {
+        "make": "Ruko",
+        "model": "R501"
+      }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "media": [
+      {
+        "title": "By: Yagias",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://images.lpubelts.com/i/fl/52686582589_201de005ff.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52686582589/",
+        "sequenceId": 1685,
+        "dateAdded": "2025-03-06T16:00:00.000Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52686582589_ff44dc126f_o.jpg"
+      },
+      {
+        "title": "By: Yagias",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://images.lpubelts.com/i/fl/52686582569_17ca2b7367.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52686582569/",
+        "sequenceId": 1686,
+        "dateAdded": "2025-03-06T16:00:00.000Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52686582569_ebf0cf3a08_o.jpg"
+      }
+    ],
+    "name": "Ruko R501",
+    "dateAdded": "2023-02-21T23:16:05.000Z",
+    "features": [
+      "Barrel drivers",
+      "Sleeved core"
+    ],
+    "views": 1242,
+    "lastUpdated": "2025-03-19T15:44:57.293Z",
+    "dateDeleted": "2026-08-07T00:30:26.847Z"
+  },
+  {
     "id": "20adf729",
     "belt": "Unranked",
     "makeModels": [
@@ -1256,6 +1336,63 @@
       "Changelog"
     ],
     "dateDeleted": "2024-11-01T22:26:30.000Z"
+  },
+  {
+    "id": "d78ca1ba",
+    "belt": "Purple",
+    "makeModels": [
+      {
+        "make": "Chubb",
+        "model": "Biaxial"
+      }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler",
+      "Sidebar"
+    ],
+    "name": "Chubb Biaxial",
+    "dateAdded": "2023-02-21T23:16:05.000Z",
+    "media": [
+      {
+        "title": "By: MidnightPhilopicker",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52737319327_a9d09de834_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52737319327/in/album-72177720306613694/",
+        "sequenceId": 3234,
+        "dateAdded": "2025-03-06T16:00:00.000Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52737319327_8220f41a16_o.jpg"
+      },
+      {
+        "title": "By: MidnightPhilopicker",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52738325188_d229c76848_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52738325188/in/album-72177720306613694/",
+        "sequenceId": 3235,
+        "dateAdded": "2025-03-06T16:00:00.000Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52738325188_ceb55a3740_o.jpg"
+      },
+      {
+        "title": "By: Pete Lane",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52737319337_c981077532_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52737319337/in/album-72177720306613694/",
+        "sequenceId": 3236,
+        "dateAdded": "2025-03-06T16:00:00.000Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52737319337_f0f8712b4f_o.jpg"
+      },
+      {
+        "title": "By: Pete Lane",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52737842636_cf4b85b91c_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52737842636/in/album-72177720306613694/",
+        "sequenceId": 3237,
+        "dateAdded": "2025-03-06T16:00:00.000Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52737842636_a7ed109ae0_o.jpg"
+      }
+    ],
+    "views": 1302,
+    "lastUpdated": "2025-03-19T15:44:57.296Z",
+    "dateDeleted": "2026-08-07T00:30:26.847Z"
   },
   {
     "id": "4debdca1",
