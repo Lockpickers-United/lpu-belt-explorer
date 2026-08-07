@@ -411,7 +411,7 @@ Blue,Kaken,KX3,"exterior, <6 sliders/wafers","Pin-tumbler,Slider,Wafer","False g
 Blue,"Kale Kilit","164 GNC","6 pin, standard profile",Pin-tumbler,,,9811b260
 Blue,"Kale Kilit","164 YGS SE",,Dimple,,,b01220ea
 Blue,"Kawaha,Magmaus","Kawaha,Magmaus",,DD,"Latest Changelog",,ab9df828
-Blue,Kenaurd,Dimple,"pin-in-pin, 5 pins",Dimple,Pin-in-pin,,54dc69e8
+Blue,Kenaurd,Kenaurd,"pin-in-pin, 5 pins",Dimple,Pin-in-pin,,54dc69e8
 Blue,Kenaurd,Kenaurd,"5 pin, with serrated drivers",Pin-tumbler,"Pin-in-pin,Latest Changelog",,fe000caa
 Blue,Kryptonite,"Disk Detainer",,"Disc detainer","Random mid tension","Readily picked with front tension and counter-rotation",c8c0ee06
 Blue,Lince,C4,,Dimple,,,adc2d335

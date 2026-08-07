@@ -677,7 +677,7 @@ To qualify for a Blue Belt, you must also submit a project that demonstrates you
 - [Kale Kilit 164 GNC](https://lpubelts.com/#/locks?id=9811b260) (6 pin, standard profile)
 - [Kale Kilit 164 YGS SE](https://lpubelts.com/#/locks?id=b01220ea)
 - [Kawaha / Magmaus](https://lpubelts.com/#/locks?id=ab9df828)
-- [Kenaurd Dimple](https://lpubelts.com/#/locks?id=54dc69e8) (pin-in-pin, 5 pins)
+- [Kenaurd](https://lpubelts.com/#/locks?id=54dc69e8) (pin-in-pin, 5 pins)
 - [Kenaurd](https://lpubelts.com/#/locks?id=fe000caa) (5 pin, with serrated drivers)
 - [Kryptonite Disk Detainer](https://lpubelts.com/#/locks?id=c8c0ee06)
 - [Lince C4](https://lpubelts.com/#/locks?id=adc2d335)
