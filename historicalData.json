@@ -2563,13 +2563,18 @@
       {
         "make": "ABUS",
         "model": "EC 75/30"
+      },
+      {
+        "make": "ABUS",
+        "model": "34/55 Strada"
       }
     ],
     "lockingMechanisms": [
       "Dimple"
     ],
     "features": [
-      "Unguttable"
+      "Unguttable",
+      "Latest Changelog"
     ],
     "media": [
       {
@@ -2645,7 +2650,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/54365786498_bac8e038e0_o.jpg"
       }
     ],
-    "name": "ABUS EC 75/30",
+    "name": "ABUS EC 75/30, 34/55 Strada",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "views": 4573,
     "lastUpdated": "2025-03-19T01:20:51.359Z"
@@ -4228,13 +4233,18 @@
       {
         "make": "Master Lock",
         "model": "130"
+      },
+      {
+        "make": "Master Lock",
+        "model": "9130 EURD"
       }
     ],
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
     "features": [
-      "Unguttable"
+      "Unguttable",
+      "Latest Changelog"
     ],
     "media": [
       {
@@ -4262,7 +4272,7 @@
         "url": "http://lockwiki.com/index.php/Master_Lock_No_130"
       }
     ],
-    "name": "Master Lock 130",
+    "name": "Master Lock 130, 9130 EURD",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "views": 9857,
     "lastUpdated": "2025-03-19T15:44:57.278Z",
@@ -4275,13 +4285,18 @@
       {
         "make": "Master Lock",
         "model": "140 Series"
+      },
+      {
+        "make": "Master Lock",
+        "model": "9140 EURD"
       }
     ],
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
     "features": [
-      "Unguttable"
+      "Unguttable",
+      "Latest Changelog"
     ],
     "media": [
       {
@@ -4403,7 +4418,7 @@
         "url": "http://lockwiki.com/index.php/Master_Lock_No_141"
       }
     ],
-    "name": "Master Lock 140 Series",
+    "name": "Master Lock 140 Series, 9140 EURD",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "views": 18434,
     "lastUpdated": "2025-03-19T01:20:51.355Z",
@@ -5662,6 +5677,10 @@
       {
         "make": "ABUS",
         "model": "MyLock T65AL"
+      },
+      {
+        "make": "ABUS",
+        "model": "75AL45"
       }
     ],
     "version": "40mm or larger (≥5 pins)",
@@ -5669,7 +5688,8 @@
       "Pin-tumbler"
     ],
     "features": [
-      "Unguttable"
+      "Unguttable",
+      "Latest Changelog"
     ],
     "media": [
       {
@@ -5706,7 +5726,7 @@
         "url": "http://lockwiki.com/index.php/ABUS_64TI"
       }
     ],
-    "name": "ABUS 64Ti Titalium, MyLock T65AL",
+    "name": "ABUS 64Ti Titalium, MyLock T65AL, 75AL45",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "views": 6919,
     "lastUpdated": "2025-03-19T01:20:51.356Z",
@@ -6063,7 +6083,8 @@
         "dateAdded": "2025-03-06T16:00:00.000Z",
         "fullSizeUrl": "https://live.staticflickr.com/65535/52787853247_db4a41e55d_o.jpg"
       }
-    ]
+    ],
+    "dateDeleted": "2026-08-07T00:30:26.845Z"
   },
   "204d85a7": {
     "id": "204d85a7",
@@ -6924,12 +6945,16 @@
       {
         "make": "ISEO",
         "model": "F3"
+      },
+      {
+        "make": "Gera",
+        "model": "5900"
       }
     ],
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "name": "ISEO F3",
+    "name": "ISEO F3 / Gera 5900",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "views": 990,
     "lastUpdated": "2025-03-19T15:44:57.278Z",
@@ -6952,6 +6977,9 @@
         "dateAdded": "2025-03-06T16:00:00.000Z",
         "fullSizeUrl": "https://live.staticflickr.com/65535/53038641147_d091683ece_o.jpg"
       }
+    ],
+    "features": [
+      "Latest Changelog"
     ]
   },
   "140d2878": {
@@ -7271,7 +7299,7 @@
   },
   "92f98042": {
     "id": "92f98042",
-    "belt": "Blue",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "Gege",
@@ -7356,6 +7384,9 @@
         "title": "Catalocks",
         "url": "https://www.catalocks.eu/GEGE/GEGE%20ANS-2_574.html"
       }
+    ],
+    "features": [
+      "Latest Changelog"
     ]
   },
   "836c5ce3": {
@@ -7436,12 +7467,16 @@
       {
         "make": "ISEO",
         "model": "F5"
+      },
+      {
+        "make": "Gera",
+        "model": "5600 Pro"
       }
     ],
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "name": "ISEO F5",
+    "name": "ISEO F5 / Gera 5600 Pro",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -7492,7 +7527,10 @@
     ],
     "views": 1284,
     "lastUpdated": "2025-03-19T15:44:57.280Z",
-    "version": "4 or 5 pin"
+    "version": "4 or 5 pin",
+    "features": [
+      "Latest Changelog"
+    ]
   },
   "9bc8809e": {
     "id": "9bc8809e",
@@ -7581,13 +7619,18 @@
       {
         "make": "Master Lock",
         "model": "150"
+      },
+      {
+        "make": "Master Lock",
+        "model": "9150 EURD"
       }
     ],
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
     "features": [
-      "Unguttable"
+      "Unguttable",
+      "Latest Changelog"
     ],
     "media": [
       {
@@ -7642,7 +7685,7 @@
         "url": "http://lockwiki.com/index.php/Master_Lock_No_150"
       }
     ],
-    "name": "Master Lock 150",
+    "name": "Master Lock 150, 9150 EURD",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "views": 14647,
     "lastUpdated": "2025-03-19T15:44:57.280Z",
@@ -8887,6 +8930,10 @@
       {
         "make": "ABUS",
         "model": "72/40"
+      },
+      {
+        "make": "ABUS",
+        "model": "34CS55"
       }
     ],
     "lockingMechanisms": [
@@ -8945,12 +8992,13 @@
         "url": "http://lockwiki.com/index.php/ABUS_72"
       }
     ],
-    "name": "ABUS 72/40",
+    "name": "ABUS 72/40, 34CS55",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "views": 14901,
     "lastUpdated": "2025-03-19T15:44:57.281Z",
     "features": [
-      "Picking Risk"
+      "Picking Risk",
+      "Latest Changelog"
     ],
     "notes": "Due to unbalanced pin stacks, drivers in max lift chambers will rest below shear. This risks spring damage if the driver is not picked.",
     "version": "Guttable version"
@@ -14817,7 +14865,7 @@
   },
   "ea1d1d8c": {
     "id": "ea1d1d8c",
-    "belt": "Green",
+    "belt": "Orange",
     "makeModels": [
       {
         "make": "Schlage",
@@ -14892,7 +14940,10 @@
     "name": "Schlage Everest",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "views": 3398,
-    "lastUpdated": "2025-03-19T15:44:57.286Z"
+    "lastUpdated": "2025-03-19T15:44:57.286Z",
+    "features": [
+      "Latest Changelog"
+    ]
   },
   "44bdfa06": {
     "id": "44bdfa06",
@@ -15251,9 +15302,13 @@
       {
         "make": "Wilka",
         "model": "3VE"
+      },
+      {
+        "make": "Wilka",
+        "model": "2VS"
       }
     ],
-    "name": "Wilka 3VE",
+    "name": "Wilka 3VE, 2VS",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "lockingMechanisms": [
       "Dimple"
@@ -15324,6 +15379,9 @@
         "dateAdded": "2025-03-06T16:00:00.000Z",
         "fullSizeUrl": "https://live.staticflickr.com/65535/54259203763_8edc1c1347_o.jpg"
       }
+    ],
+    "features": [
+      "Latest Changelog"
     ]
   },
   "0a7b9888": {
@@ -17859,12 +17917,16 @@
       {
         "make": "DOM",
         "model": "S PP1024"
+      },
+      {
+        "make": "DOM",
+        "model": "RS5"
       }
     ],
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "name": "DOM S, S PP1024",
+    "name": "DOM S, S PP1024, RS5",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -17920,7 +17982,10 @@
       }
     ],
     "views": 797,
-    "lastUpdated": "2025-03-19T15:44:57.290Z"
+    "lastUpdated": "2025-03-19T15:44:57.290Z",
+    "features": [
+      "Latest Changelog"
+    ]
   },
   "4c544aa2": {
     "id": "4c544aa2",
@@ -20993,7 +21058,8 @@
       "Sleeved core"
     ],
     "views": 1242,
-    "lastUpdated": "2025-03-19T15:44:57.293Z"
+    "lastUpdated": "2025-03-19T15:44:57.293Z",
+    "dateDeleted": "2026-08-07T00:30:26.847Z"
   },
   "842165cc": {
     "id": "842165cc",
@@ -21187,9 +21253,13 @@
       {
         "make": "Takigen",
         "model": "10-pin"
+      },
+      {
+        "make": "Takigen",
+        "model": "C288"
       }
     ],
-    "name": "Takigen 10-pin",
+    "name": "Takigen 10-pin, C288",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "views": 457,
     "lastUpdated": "2025-03-19T15:44:57.293Z",
@@ -21217,7 +21287,8 @@
       }
     ],
     "features": [
-      "High pin count"
+      "High pin count",
+      "Latest Changelog"
     ]
   },
   "8b5b655e": {
@@ -24081,7 +24152,8 @@
       }
     ],
     "views": 1302,
-    "lastUpdated": "2025-03-19T15:44:57.296Z"
+    "lastUpdated": "2025-03-19T15:44:57.296Z",
+    "dateDeleted": "2026-08-07T00:30:26.847Z"
   },
   "8a0c4b07": {
     "id": "8a0c4b07",
@@ -27076,6 +27148,10 @@
       {
         "make": "Medeco",
         "model": "M3"
+      },
+      {
+        "make": "Chubb",
+        "model": "Biaxial"
       }
     ],
     "version": "≥ 5 pins ******",
@@ -27198,12 +27274,13 @@
         "url": "https://assahatlabs.mmdeveloper.tech/locks/medeco/"
       }
     ],
-    "name": "Medeco Original, Biaxial, M3",
+    "name": "Medeco Original, Biaxial, M3 / Chubb Biaxial",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "features": [
       "Rotating gated keypins",
       "False gates",
-      "Active sidebar"
+      "Active sidebar",
+      "Latest Changelog"
     ],
     "notes": "****** **Special Picking Requirement:** Prior to picking, operate the lock with the key or rake pins to reset rotational orientation.",
     "views": 4905,
@@ -34709,19 +34786,24 @@
       {
         "make": "Chubb",
         "model": "110 (3g110)"
+      },
+      {
+        "make": "Union",
+        "model": "110 (3g110)"
       }
     ],
     "version": "5 lever",
     "lockingMechanisms": [
       "Lever"
     ],
-    "name": "Chubb 110 (3g110)",
+    "name": "Chubb 110 (3g110) / Union 110 (3g110)",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "features": [
       "Mortise",
       "Pin key",
       "Curtain",
-      "False gates"
+      "False gates",
+      "Latest Changelog"
     ],
     "media": [
       {
@@ -38075,22 +38157,19 @@
     "makeModels": [
       {
         "make": "S&G",
-        "model": "4544"
-      },
-      {
-        "make": "S&G",
         "model": "4440 series"
       }
     ],
     "lockingMechanisms": [
       "Lever"
     ],
-    "name": "S&G 4544, 4440 series",
+    "name": "S&G 4440 series",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "features": [
       "Safe lock",
       "Flat steel key",
-      "False gates"
+      "False gates",
+      "Latest Changelog"
     ],
     "media": [
       {
@@ -42398,7 +42477,7 @@
       }
     ],
     "lockingMechanisms": [
-      "Wafer"
+      "Lever"
     ],
     "media": [
       {
@@ -60157,15 +60236,24 @@
       {
         "make": "Kaba",
         "model": "Titan"
+      },
+      {
+        "make": "Kaba",
+        "model": "Aura"
+      },
+      {
+        "make": "Kaba",
+        "model": "Titancombi"
       }
     ],
-    "name": "Kaba Titan",
+    "name": "Kaba Titan, Aura, Titancombi",
     "dateAdded": "2025-04-18T14:26:37.612Z",
     "lockingMechanisms": [
       "Dimple"
     ],
     "features": [
-      "High pin count"
+      "High pin count",
+      "Latest Changelog"
     ]
   },
   "2eeb9bee": {
@@ -60798,6 +60886,10 @@
       {
         "make": "Medeco",
         "model": "M3"
+      },
+      {
+        "make": "Chubb",
+        "model": "Biaxial"
       }
     ],
     "version": "≥ 6 pin with ≥ 4 key pins with false gates",
@@ -60808,10 +60900,11 @@
     "features": [
       "Rotating gated keypins",
       "False gates",
-      "Active sidebar"
+      "Active sidebar",
+      "Latest Changelog"
     ],
     "notes": "****** **Special Picking Requirement:** Prior to picking, operate the lock with the key or rake pins to reset rotational orientation.",
-    "name": "Medeco Original, Biaxial, M3",
+    "name": "Medeco Original, Biaxial, M3 / Chubb Biaxial",
     "dateAdded": "2025-12-28T18:08:44.771Z"
   },
   "c1026783": {
@@ -61198,7 +61291,7 @@
       }
     ],
     "lockingMechanisms": [
-      "Pin-tumbler"
+      "Dimple"
     ],
     "features": [
       "Pin-in-pin",
@@ -61305,5 +61398,41 @@
     ],
     "name": "GSK X24",
     "dateAdded": "2026-08-06T03:59:39.974Z"
+  },
+  "9f67db53": {
+    "id": "9f67db53",
+    "belt": "Yellow",
+    "makeModels": [
+      {
+        "make": "Classic",
+        "model": "Standard"
+      }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "features": [
+      "Latest Changelog"
+    ],
+    "name": "Classic Standard",
+    "dateAdded": "2026-08-07T00:30:26.833Z"
+  },
+  "288cfac6": {
+    "id": "288cfac6",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "S&G",
+        "model": "4500 Series"
+      }
+    ],
+    "lockingMechanisms": [
+      "Lever"
+    ],
+    "features": [
+      "Latest Changelog"
+    ],
+    "name": "S&G 4500 Series",
+    "dateAdded": "2026-08-07T00:30:26.843Z"
   }
 }

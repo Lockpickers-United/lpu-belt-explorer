@@ -3,15 +3,15 @@
     "description": "Locks",
     "data": [
       {
-        "value": 846,
+        "value": 844,
         "label": "Ranked"
       },
       {
-        "value": 947,
+        "value": 946,
         "label": "All"
       },
       {
-        "value": 101,
+        "value": 102,
         "label": "Unranked"
       }
     ]
@@ -20,83 +20,83 @@
     {
       "belt": "White",
       "count": 19,
-      "value": 0.02006335797254488,
+      "value": 0.0200845665961945,
       "id": "White"
     },
     {
       "belt": "Yellow",
-      "count": 70,
-      "value": 0.07391763463569166,
+      "count": 71,
+      "value": 0.07505285412262157,
       "id": "Yellow"
     },
     {
       "belt": "Orange",
       "count": 84,
-      "value": 0.08870116156282999,
+      "value": 0.08879492600422834,
       "id": "Orange"
     },
     {
       "belt": "Green",
-      "count": 157,
-      "value": 0.16578669482576558,
+      "count": 156,
+      "value": 0.1649048625792812,
       "id": "Green"
     },
     {
       "belt": "Blue",
-      "count": 141,
-      "value": 0.14889123548046462,
+      "count": 139,
+      "value": 0.14693446088794926,
       "id": "Blue"
     },
     {
       "belt": "Purple",
       "count": 117,
-      "value": 0.1235480464625132,
+      "value": 0.12367864693446089,
       "id": "Purple"
     },
     {
       "belt": "Brown",
       "count": 84,
-      "value": 0.08870116156282999,
+      "value": 0.08879492600422834,
       "id": "Brown"
     },
     {
       "belt": "Red",
       "count": 73,
-      "value": 0.07708553326293559,
+      "value": 0.07716701902748414,
       "id": "Red"
     },
     {
       "belt": "Black",
       "count": 101,
-      "value": 0.10665258711721225,
+      "value": 0.10676532769556026,
       "id": "Black"
     },
     {
       "belt": "Unranked",
-      "count": 101,
-      "value": 0.10665258711721225,
+      "count": 102,
+      "value": 0.10782241014799154,
       "id": "Unranked"
     }
   ],
   "lockingMechanisms": [
     {
       "label": "Pin-tumbler",
-      "value": 376,
+      "value": 374,
       "id": "pin-tumbler"
     },
     {
       "label": "Dimple",
-      "value": 216,
+      "value": 217,
       "id": "dimple"
     },
     {
       "label": "Multiple",
-      "value": 100,
+      "value": 99,
       "id": "multiple"
     },
     {
       "label": "Lever",
-      "value": 78,
+      "value": 80,
       "id": "lever"
     },
     {
@@ -115,14 +115,14 @@
       "id": "pump-push"
     },
     {
-      "label": "Wafer",
-      "value": 19,
-      "id": "wafer"
-    },
-    {
       "label": "Lever/sidebar",
       "value": 18,
       "id": "lever-sidebar"
+    },
+    {
+      "label": "Wafer",
+      "value": 18,
+      "id": "wafer"
     },
     {
       "label": "Magnet",
@@ -171,7 +171,7 @@
     "Yellow": [
       {
         "label": "Pin-tumbler",
-        "value": 59,
+        "value": 60,
         "id": "pin-tumbler"
       },
       {
@@ -220,7 +220,7 @@
     "Green": [
       {
         "label": "Pin-tumbler",
-        "value": 105,
+        "value": 104,
         "id": "pin-tumbler"
       },
       {
@@ -257,7 +257,7 @@
     "Blue": [
       {
         "label": "Pin-tumbler",
-        "value": 67,
+        "value": 65,
         "id": "pin-tumbler"
       },
       {
@@ -309,12 +309,12 @@
     "Purple": [
       {
         "label": "Dimple",
-        "value": 44,
+        "value": 45,
         "id": "dimple"
       },
       {
         "label": "Multiple",
-        "value": 28,
+        "value": 27,
         "id": "multiple"
       },
       {
@@ -500,18 +500,18 @@
       },
       {
         "label": "Lever",
-        "value": 8,
+        "value": 9,
         "id": "lever"
-      },
-      {
-        "label": "Wafer",
-        "value": 5,
-        "id": "wafer"
       },
       {
         "label": "Pin-tumbler",
         "value": 4,
         "id": "pin-tumbler"
+      },
+      {
+        "label": "Wafer",
+        "value": 4,
+        "id": "wafer"
       },
       {
         "label": "Pump/push",
@@ -522,7 +522,7 @@
     "Unranked": [
       {
         "label": "Lever",
-        "value": 24,
+        "value": 25,
         "id": "lever"
       },
       {
@@ -572,19 +572,19 @@
       },
       {
         "segment": "Ranked locks",
-        "count": 846,
-        "media": 780,
+        "count": 844,
+        "media": 777,
         "coverage": "92%"
       },
       {
         "segment": "All locks",
-        "count": 947,
-        "media": 859,
+        "count": 946,
+        "media": 856,
         "coverage": "90%"
       }
     ],
-    "uniqueImages": 4424,
-    "contributors": 309,
+    "uniqueImages": 4416,
+    "contributors": 308,
     "topPhotographers": [
       {
         "contributor": "LockPickingFisherman",
@@ -695,12 +695,12 @@
         "images": 33
       },
       {
-        "contributor": "Yagias",
-        "images": 32
-      },
-      {
         "contributor": "Dynamic",
         "images": 31
+      },
+      {
+        "contributor": "Yagias",
+        "images": 30
       },
       {
         "contributor": "DEW",
@@ -720,7 +720,7 @@
       },
       {
         "contributor": "Hunson",
-        "images": 27
+        "images": 25
       },
       {
         "contributor": "DigPicks",
@@ -1371,10 +1371,6 @@
         "images": 3
       },
       {
-        "contributor": "Pete Lane",
-        "images": 3
-      },
-      {
         "contributor": "Photo by hunson",
         "images": 3
       },
@@ -1492,10 +1488,6 @@
       },
       {
         "contributor": "Lockleisure",
-        "images": 2
-      },
-      {
-        "contributor": "MidnightPhilopicker",
         "images": 2
       },
       {
@@ -1751,6 +1743,10 @@
         "images": 1
       },
       {
+        "contributor": "Pete Lane",
+        "images": 1
+      },
+      {
         "contributor": "Photo by m.c.",
         "images": 1
       },
@@ -1825,6 +1821,6 @@
     ]
   },
   "metadata": {
-    "updatedDateTime": "2026-08-06 04:05"
+    "updatedDateTime": "2026-08-07 00:30"
   }
 }
