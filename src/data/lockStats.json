@@ -573,22 +573,22 @@
       {
         "segment": "Ranked locks",
         "count": 843,
-        "media": 774,
-        "coverage": "91%"
+        "media": 787,
+        "coverage": "93%"
       },
       {
         "segment": "All locks",
         "count": 945,
-        "media": 853,
-        "coverage": "90%"
+        "media": 867,
+        "coverage": "91%"
       }
     ],
-    "uniqueImages": 4402,
+    "uniqueImages": 4466,
     "contributors": 308,
     "topPhotographers": [
       {
         "contributor": "LockPickingFisherman",
-        "images": 506
+        "images": 517
       },
       {
         "contributor": "mgsecure",
@@ -612,7 +612,7 @@
       },
       {
         "contributor": "Sidepicks",
-        "images": 101
+        "images": 130
       },
       {
         "contributor": "Clefmentine",
@@ -639,16 +639,16 @@
         "images": 61
       },
       {
+        "contributor": "DQ",
+        "images": 60
+      },
+      {
         "contributor": "decoder",
         "images": 59
       },
       {
         "contributor": "Septclues",
         "images": 56
-      },
-      {
-        "contributor": "DQ",
-        "images": 54
       },
       {
         "contributor": "NiXXeD",
@@ -771,8 +771,16 @@
         "images": 18
       },
       {
+        "contributor": "MrOrange",
+        "images": 18
+      },
+      {
         "contributor": "Blackcatthirteen",
         "images": 17
+      },
+      {
+        "contributor": "2nd_choice",
+        "images": 16
       },
       {
         "contributor": "Christian",
@@ -919,10 +927,6 @@
         "images": 10
       },
       {
-        "contributor": "MrOrange",
-        "images": 10
-      },
-      {
         "contributor": "Retep Reyem",
         "images": 10
       },
@@ -1032,10 +1036,6 @@
       },
       {
         "contributor": "2Fly17",
-        "images": 6
-      },
-      {
-        "contributor": "2nd_choice",
         "images": 6
       },
       {
@@ -1821,6 +1821,6 @@
     ]
   },
   "metadata": {
-    "updatedDateTime": "2026-08-07 15:55"
+    "updatedDateTime": "2026-08-07 17:09"
   }
 }
