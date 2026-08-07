@@ -255,7 +255,6 @@ Green,FCV,Dimple,,Dimple,,,22fb67b4
 Green,"Federal Lock",5Y3110,,Pin-tumbler,,,13b55a25
 Green,"Federal Lock",6Y3110,,Pin-tumbler,,,e98b5ae7
 Green,FJM,Padlock,,"Disc detainer",,,639c4f0b
-Green,"Gege,Alfa","AP 1000,""AP 1000""",,Pin-tumbler,,,3129ee7e
 Green,Generic/Unknown,"4 Lever Curtained lock",,Lever,Curtain,,0e97c099
 Green,Generic/Unknown,"4 Lever Uncurtained lock",,Lever,Uncurtained,,d46ac711
 Green,Goal,P,"Old pinning",Pin-tumbler,"Latest Changelog","6 pins with spool drivers and overmilling. This model does not have the plug centering bearing",ed71438c
@@ -510,7 +509,7 @@ Purple,Elzett,X11,,Dimple,,,04a402d6
 Purple,"EVVA,EVVA,EVVA,EVVA","DPI,DPS,DPX,EPS","slider version",Slider,"Trap element,False gates,Active sidebar","Must have at least 4 sliders with false gates",8c2983b5
 Purple,Fichet,450,"no False gates",Lever/sidebar,,,93871dad
 Purple,Gege,ANS-2,,Pin-tumbler,"Latest Changelog",,92f98042
-Purple,"GEGE,GEGE,GEGE","AP1000,AP2000,AP3001","6+ pins",Pin-tumbler,"Latest Changelog",,8770b3d8
+Purple,"GEGE,GEGE,GEGE","AP1000,AP2000,AP3000","6+ pins",Pin-tumbler,"Latest Changelog",,8770b3d8
 Purple,"Gege,Alfa","pExtra,""pExtra""","6-7 pin",Pin-tumbler,Overmilling,,4cd09b3b
 Purple,Generic/Unknown,"6 or 7 Lever lock",,Lever,,,a6a225e5
 Purple,Godrej,Ultra,"14 pins in 3 rows",Dimple,,,3fbd7b3d

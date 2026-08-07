@@ -901,6 +901,63 @@
     "dateDeleted": "2025-01-12T17:46:14.000Z"
   },
   {
+    "id": "3129ee7e",
+    "belt": "Green",
+    "makeModels": [
+      {
+        "make": "Gege",
+        "model": "AP 1000"
+      },
+      {
+        "make": "Alfa",
+        "model": "\"AP 1000\""
+      }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "name": "Gege AP 1000 / Alfa \"AP 1000\"",
+    "dateAdded": "2023-02-21T23:16:05.000Z",
+    "views": 661,
+    "lastUpdated": "2025-03-19T01:20:51.362Z",
+    "media": [
+      {
+        "title": "By: PeaceWeapon",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52799953029_fea0f66b4b_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52799953029/in/album-72177720307269777/",
+        "sequenceId": 754,
+        "dateAdded": "2025-03-06T16:00:00.000Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52799953029_2bddb580d1_o.jpg"
+      },
+      {
+        "title": "By: Christian",
+        "subtitle": "KoksaWiki",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52795466434_e7803f2639_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52795466434/in/album-72177720307269777/",
+        "sequenceId": 755,
+        "dateAdded": "2025-03-06T16:00:00.000Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52795466434_6c4ebe3f80_o.jpg"
+      },
+      {
+        "title": "By: Jan-Willem Markus",
+        "subtitle": "CC BY-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52779577356_d67a2a5177_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52779577356/in/album-72177720307269777/",
+        "sequenceId": 756,
+        "dateAdded": "2025-03-06T16:00:00.000Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52779577356_073c3cbb7d_o.jpg"
+      }
+    ],
+    "links": [
+      {
+        "title": "KoksaWiki",
+        "url": "https://wiki.koksa.org/GEGE_Normalprofil"
+      }
+    ],
+    "dateDeleted": "2026-08-07T15:13:04.770Z"
+  },
+  {
     "id": "e702ca41",
     "belt": "green",
     "makeModels": [
