@@ -94,7 +94,7 @@ Orange,ABUS,"5/45 Silver Rock",,Pin-tumbler,,,0feafca7
 Orange,ABUS,"54TI/50 Titalium",,Pin-tumbler,Unguttable,,16e9d2ab
 Orange,ABUS,55/40,"40mm or larger",Pin-tumbler,Unguttable,,632f4069
 Orange,ABUS,60/50,,Pin-tumbler,Unguttable,,d7188e81
-Orange,"ABUS,ABUS,ABUS","64Ti Titalium,MyLock T65AL,75AL45","40mm or larger (≥5 pins)",Pin-tumbler,"Unguttable,Latest Changelog",,52f1e117
+Orange,"ABUS,ABUS,ABUS","64Ti Titalium,MyLock T65AL,70AL45","40mm or larger (≥5 pins)",Pin-tumbler,"Unguttable,Latest Changelog",,52f1e117
 Orange,ABUS,65/40,,Pin-tumbler,Unguttable,,a0e50505
 Orange,ABUS,82/63,,Pin-tumbler,,,f6ef12e5
 Orange,ABUS,83/40,,Pin-tumbler,,,3653f376
@@ -213,7 +213,7 @@ Green,BASI,"AS Pro",,Pin-tumbler,,,27f1aaae
 Green,"BASI,Titan","BM,i6",,Dimple,"DOM torpedos and drivers",,747c00fd
 Green,BASI,CX6,,Dimple,,,a6e954a6
 Green,BASI,V55,,Dimple,,,59f78114
-Green,Bell,"Bike lock",,Disc-detainer,"Latest Changelog",,ae5590c3
+Green,Bell,"Bike Lock",,Disc-detainer,"Latest Changelog",,ae5590c3
 Green,,"BiLock Clone",,Pin-tumbler,,,b099c88a
 Green,"BKS,BKS","51 (Livius),51-SL (Livius)",,Pin-tumbler,,"The BKS 51-SL is distinguished by a side mechanism",569dd487
 Green,BKS,88,,Pin-tumbler,,"Also known as BKS PZ 88",135ef1c0
@@ -443,7 +443,7 @@ Blue,PACLOCK,PL410,,Pin-tumbler,Unguttable,,74c225d1
 Blue,Pisla,860,,"Disc detainer",Unguttable,,ca6f4eaf
 Blue,Ruko,500,"with barrel drivers and matched sleeve",Pin-tumbler,,,f8445741
 Blue,Securit,S20##,,,,,0a12f032
-Blue,SEGA,"Cam lock",,Dimple,"High pin count,Latest Changelog",,37dc53bb
+Blue,SEGA,"Cam Lock",,Dimple,"High pin count,Latest Changelog",,37dc53bb
 Blue,"Stanley,Ezcurra,Ezcurra,SEA","Vidmar SEA SL-10,SEA 23,SEA 3,Locking System (Original)",,Wafer,,,842165cc
 Blue,"Takigen,Takigen","10-pin,C288",,Dimple,"High pin count,Latest Changelog",,b0d2e04c
 Blue,TESA,T60,,Dimple,"Tapered drivers",,8b5b655e

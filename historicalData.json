@@ -5680,7 +5680,7 @@
       },
       {
         "make": "ABUS",
-        "model": "75AL45"
+        "model": "70AL45"
       }
     ],
     "version": "40mm or larger (≥5 pins)",
@@ -5726,7 +5726,7 @@
         "url": "http://lockwiki.com/index.php/ABUS_64TI"
       }
     ],
-    "name": "ABUS 64Ti Titalium, MyLock T65AL, 75AL45",
+    "name": "ABUS 64Ti Titalium, MyLock T65AL, 70AL45",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "views": 6919,
     "lastUpdated": "2025-03-19T01:20:51.356Z",
@@ -61120,7 +61120,7 @@
     "makeModels": [
       {
         "make": "Bell",
-        "model": "Bike lock"
+        "model": "Bike Lock"
       }
     ],
     "lockingMechanisms": [
@@ -61129,7 +61129,7 @@
     "features": [
       "Latest Changelog"
     ],
-    "name": "Bell Bike lock",
+    "name": "Bell Bike Lock",
     "dateAdded": "2026-08-06T03:59:39.966Z"
   },
   "ed71438c": {
@@ -61272,7 +61272,7 @@
     "makeModels": [
       {
         "make": "SEGA",
-        "model": "Cam lock"
+        "model": "Cam Lock"
       }
     ],
     "lockingMechanisms": [
@@ -61282,7 +61282,7 @@
       "High pin count",
       "Latest Changelog"
     ],
-    "name": "SEGA Cam lock",
+    "name": "SEGA Cam Lock",
     "dateAdded": "2026-08-06T03:59:39.969Z"
   },
   "1110ef61": {
