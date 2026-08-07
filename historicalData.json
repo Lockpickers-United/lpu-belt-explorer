@@ -18898,7 +18898,8 @@
       }
     ],
     "views": 1053,
-    "lastUpdated": "2025-03-19T15:44:57.291Z"
+    "lastUpdated": "2025-03-19T15:44:57.291Z",
+    "dateDeleted": "2026-08-07T15:07:44.529Z"
   },
   "0037a89f": {
     "id": "0037a89f",
@@ -19016,7 +19017,8 @@
         "dateAdded": "2025-03-06T16:00:00.000Z",
         "fullSizeUrl": "https://live.staticflickr.com/65535/52873231486_ef4521e30d_o.jpg"
       }
-    ]
+    ],
+    "dateDeleted": "2026-08-07T15:07:44.529Z"
   },
   "aa7fc00e": {
     "id": "aa7fc00e",
@@ -61434,5 +61436,59 @@
     ],
     "name": "S&G 4500 Series",
     "dateAdded": "2026-08-07T00:30:26.843Z"
+  },
+  "2801996f": {
+    "id": "2801996f",
+    "belt": "Blue",
+    "makeModels": [
+      {
+        "make": "GEGE",
+        "model": "AP1000"
+      },
+      {
+        "make": "GEGE",
+        "model": "AP2000"
+      },
+      {
+        "make": "GEGE",
+        "model": "AP3000"
+      }
+    ],
+    "version": "5 pins",
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "features": [
+      "Latest Changelog"
+    ],
+    "name": "GEGE AP1000, AP2000, AP3000",
+    "dateAdded": "2026-08-07T15:07:44.518Z"
+  },
+  "8770b3d8": {
+    "id": "8770b3d8",
+    "belt": "Purple",
+    "makeModels": [
+      {
+        "make": "GEGE",
+        "model": "AP1000"
+      },
+      {
+        "make": "GEGE",
+        "model": "AP2000"
+      },
+      {
+        "make": "GEGE",
+        "model": "AP3001"
+      }
+    ],
+    "version": "6+ pins",
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "features": [
+      "Latest Changelog"
+    ],
+    "name": "GEGE AP1000, AP2000, AP3001",
+    "dateAdded": "2026-08-07T15:07:44.520Z"
   }
 }
