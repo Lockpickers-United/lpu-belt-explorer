@@ -101,7 +101,7 @@
     },
     {
       "label": "Disc detainer",
-      "value": 34,
+      "value": 36,
       "id": "disc-detainer"
     },
     {
@@ -140,14 +140,9 @@
       "id": "various"
     },
     {
-      "label": "Disc-detainer",
-      "value": 2,
-      "id": "disc-detainer"
-    },
-    {
-      "label": "DD",
+      "label": "Disc Detainer",
       "value": 1,
-      "id": "dd"
+      "id": "disc-detainer"
     }
   ],
   "lockingMechanismsByBelt": {
@@ -234,19 +229,14 @@
         "id": "lever"
       },
       {
+        "label": "Disc detainer",
+        "value": 7,
+        "id": "disc-detainer"
+      },
+      {
         "label": "Multiple",
         "value": 7,
         "id": "multiple"
-      },
-      {
-        "label": "Disc detainer",
-        "value": 5,
-        "id": "disc-detainer"
-      },
-      {
-        "label": "Disc-detainer",
-        "value": 2,
-        "id": "disc-detainer"
       },
       {
         "label": "Pump/push",
@@ -286,9 +276,9 @@
         "id": "wafer"
       },
       {
-        "label": "DD",
+        "label": "Disc Detainer",
         "value": 1,
-        "id": "dd"
+        "id": "disc-detainer"
       },
       {
         "label": "Other",
@@ -583,7 +573,7 @@
         "coverage": "91%"
       }
     ],
-    "uniqueImages": 4512,
+    "uniqueImages": 4527,
     "contributors": 309,
     "topPhotographers": [
       {
@@ -595,16 +585,16 @@
         "images": 333
       },
       {
+        "contributor": "Reinder Stegen",
+        "images": 230
+      },
+      {
         "contributor": "PeaceWeapon",
         "images": 227
       },
       {
-        "contributor": "Reinder Stegen",
-        "images": 220
-      },
-      {
         "contributor": "Luboš Čech",
-        "images": 166
+        "images": 165
       },
       {
         "contributor": "Ben-on-reddit",
@@ -624,7 +614,7 @@
       },
       {
         "contributor": "Dra9i",
-        "images": 67
+        "images": 70
       },
       {
         "contributor": "Yabende",
@@ -695,16 +685,16 @@
         "images": 33
       },
       {
+        "contributor": "Yagias",
+        "images": 33
+      },
+      {
         "contributor": "MrOrange",
         "images": 32
       },
       {
         "contributor": "Dynamic",
         "images": 31
-      },
-      {
-        "contributor": "Yagias",
-        "images": 30
       },
       {
         "contributor": "DEW",
@@ -1825,6 +1815,6 @@
     ]
   },
   "metadata": {
-    "updatedDateTime": "2026-08-08 12:27"
+    "updatedDateTime": "2026-08-08 17:37"
   }
 }

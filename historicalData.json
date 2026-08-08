@@ -3650,7 +3650,6 @@
     "name": "ERA Mortice",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "features": [
-      "Mortice",
       "Pin key",
       "False gates"
     ],
@@ -7470,13 +7469,13 @@
       },
       {
         "make": "Gera",
-        "model": "5600 Pro"
+        "model": "5600"
       }
     ],
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "name": "ISEO F5 / Gera 5600 Pro",
+    "name": "ISEO F5 / Gera 5600",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -51975,7 +51974,7 @@
       }
     ],
     "lockingMechanisms": [
-      "DD"
+      "Disc Detainer"
     ]
   },
   "110c872d": {
@@ -60530,10 +60529,7 @@
     ],
     "notes": "Includes training locks (no cutaways) and common brands such as: Defiant, Reliabilt, etc.",
     "name": "Generic/Unranked Lock Cylinder",
-    "dateAdded": "2025-09-29T17:16:37.420Z",
-    "features": [
-      "cylinder"
-    ]
+    "dateAdded": "2025-09-29T17:16:37.420Z"
   },
   "d3bdab01": {
     "id": "d3bdab01",
@@ -60550,10 +60546,7 @@
     ],
     "notes": "Includes training locks (no cutaways) and common brands such as: Defiant, Reliabilt, etc.",
     "name": "Generic/Unranked Lock Cylinder",
-    "dateAdded": "2025-09-29T17:16:37.420Z",
-    "features": [
-      "cylinder"
-    ]
+    "dateAdded": "2025-09-29T17:16:37.420Z"
   },
   "58c676d3": {
     "id": "58c676d3",
@@ -60628,8 +60621,7 @@
       "Pin-tumbler"
     ],
     "features": [
-      "Under Review ⚑",
-      "cylinder"
+      "Under Review ⚑"
     ],
     "name": "Reliabilt Deadbolt cylinder",
     "dateAdded": "2025-10-04T16:19:03.607Z"
@@ -61124,7 +61116,7 @@
       }
     ],
     "lockingMechanisms": [
-      "Disc-detainer"
+      "Disc detainer"
     ],
     "features": [
       "Latest Changelog"
@@ -61220,7 +61212,7 @@
       }
     ],
     "lockingMechanisms": [
-      "Disc-detainer"
+      "Disc detainer"
     ],
     "features": [
       "Latest Changelog"

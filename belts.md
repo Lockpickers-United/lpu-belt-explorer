@@ -306,7 +306,7 @@ Those security pins designed to keep you out are powerless against you. You're s
 - [GTV Padlock](https://lpubelts.com/#/locks?id=ed0e0d36)
 - [Heracles 5G](https://lpubelts.com/#/locks?id=3e5236c7)
 - [IKON DS](https://lpubelts.com/#/locks?id=2bdcb8c7)
-- [ISEO F5 / Gera 5600 Pro](https://lpubelts.com/#/locks?id=d261a3ba) (4 or 5 pin)
+- [ISEO F5 / Gera 5600](https://lpubelts.com/#/locks?id=d261a3ba) (4 or 5 pin)
 - [Kasp 160 series Diskus](https://lpubelts.com/#/locks?id=9bc8809e)
 - [LOB Standard](https://lpubelts.com/#/locks?id=4f0e4a4b)
 - [Lockwood 110/40](https://lpubelts.com/#/locks?id=a5a164ad)
