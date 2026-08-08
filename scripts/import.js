@@ -23,6 +23,7 @@ import fetch from 'node-fetch'
 import validate from './validate.js'
 import entryName from '../src/entries/entryName.js'
 import {saveLockStats} from './saveLockStats.js'
+import {setDeepUnique, setDeepPush} from '../src/util/setDeep.js'
 
 const importRaflData = true
 
@@ -148,6 +149,7 @@ const jsonData = mainData
 
 // Find any added or deleted entries
 const historicalData = JSON.parse(fs.readFileSync('./src/data/historicalData.json', 'utf8'))
+
 let changedEntries = 0
 jsonData.forEach(entry => {
     const name = entryName(entry, 'short').trim()
@@ -169,13 +171,14 @@ originalData.forEach(entry => {
     }
 })
 
+const deletedEntries = Object.values(historicalData).filter(entry => entry.dateDeleted) || []
+
 // Save historical data & deleted entries
 console.log('Writing historicalData.json')
 console.log(`${changedEntries} additions or deletions found`)
 fs.writeFileSync('./src/data/historicalData.json', JSON.stringify(historicalData, null, 2))
 
 console.log('Writing deletedEntries.json')
-const deletedEntries = Object.values(historicalData).filter(entry => entry.dateDeleted) || []
 fs.writeFileSync('./src/data/deletedEntries.json', JSON.stringify(deletedEntries, null, 2))
 
 // Add projects data
@@ -247,15 +250,46 @@ const previousMedia = originalData.reduce((acc, entry) => {
 }, [])
 
 // Add media data
+
+function buildMediaItem(item, index, dateAdded) {
+    const media = {
+        title: item.Title,
+        subtitle: item.Subtitle,
+        label: item.Label || undefined,
+        thumbnailUrl: item['Thumbnail URL'],
+        fullUrl: item['Full URL'],
+        sequenceId: index + 1,
+        dateAdded
+    }
+    if (item['Subtitle URL']) media.subtitleUrl = item['Subtitle URL']
+    if (item['Full Image Direct URL']) media.fullSizeUrl = item['Full Image Direct URL']
+    if (item['Image Title']) media.imageTitle = item['Image Title']
+
+    return media
+
+}
+
+let orphanedMedia = {ids: [], mediaItems: []}
+
 mediaData
     .sort((a, b) => {
         return a['Unique ID'].localeCompare(b['Unique ID'])
             || a['Sequence ID'] - b['Sequence ID']
     })
     .forEach((item, index) => {
-        const entry = jsonData.find(e => e.id === item['Unique ID'])
+        let entry = jsonData.find(e => e.id === item['Unique ID'])
+        const deletedEntry = deletedEntries.find(e => e.id === item['Unique ID'])
         const previousItem = previousMedia.find(m => m.fullUrl === item['Full URL'])
-        if (!entry) return console.log('Entry not found!', historicalData[item['Unique ID']].name, item)
+        if (!entry) {
+            if (!deletedEntry) {
+                return console.log('Media entry not found!', historicalData[item['Unique ID']].name, item)
+            }
+            console.log('Media for deleted entry found.', deletedEntry.name)
+            setDeepUnique(orphanedMedia, ['ids'], item['Unique ID'])
+            orphanedMedia.mediaItems.push(item)
+            return
+        }
+
         if (!entry.media) entry.media = []
         let dateAdded
         if (previousItem) {
@@ -263,21 +297,22 @@ mediaData
         } else {
             dateAdded = dayjs().toISOString()
         }
-
-        const media = {
-            title: item.Title,
-            subtitle: item.Subtitle,
-            label: item.Label || undefined,
-            thumbnailUrl: item['Thumbnail URL'],
-            fullUrl: item['Full URL'],
-            sequenceId: index + 1,
-            dateAdded
-        }
-        if (item['Subtitle URL']) media.subtitleUrl = item['Subtitle URL']
-        if (item['Full Image Direct URL']) media.fullSizeUrl = item['Full Image Direct URL']
-        if (item['Image Title']) media.imageTitle = item['Image Title']
-        entry.media.push(media)
+        const mediaItem = buildMediaItem(item, index, dateAdded)
+        setDeepPush(entry, ['media'], mediaItem)
     })
+
+const orphanedMediaEntries = orphanedMedia.ids.map((id) => deletedEntries.find(e => e.id === id))
+orphanedMedia.mediaItems.forEach((item, index) => {
+    let deletedEntry = orphanedMediaEntries.find(e => e.id === item.id)
+    if (!deletedEntry) return
+    if (!deletedEntry.media) deletedEntry.media = []
+    const mediaItem = buildMediaItem(item, index, item.dateAdded)
+    setDeepPush(deletedEntry, ['media'], mediaItem)
+})
+
+console.log('orphanedMediaEntries', orphanedMediaEntries)
+console.log('Writing orphanedMediaEntries.json...')
+fs.writeFileSync('./src/data/orphanedMediaEntries.json', JSON.stringify(orphanedMediaEntries, null, 2))
 
 // Add link data
 console.log('Processing link data...')
@@ -568,7 +603,7 @@ if (importRaflData) {
             donations2024: parseInt(datum['Donations 2024'].replace(/[^0-9]/, '')) || 0,
             donations2025: parseInt(datum['Donations 2025'].replace(/[^0-9]/, '')) || 0,
             donationsPrevious: parseInt(datum['Donations 2025'].replace(/[^0-9]/, '')) || 0,
-            disabled: datum['Disable'].length > 0,
+            disabled: datum['Disable'].length > 0
         })).filter(x => x)
 
     fs.writeFileSync('./src/data/raflCharities.json', JSON.stringify(raflCharities, null, 2))

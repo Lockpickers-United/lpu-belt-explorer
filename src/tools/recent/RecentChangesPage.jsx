@@ -9,6 +9,7 @@ import DBContext from '../../app/DBContext.jsx'
 import Link from '@mui/material/Link'
 import allEntries from '../../data/data.json'
 import deletedEntries from '../../data/deletedEntries.json'
+import orphanedMediaEntries from '../../data/orphanedMediaEntries.json'
 import ChoiceButtonGroup from '../../util/ChoiceButtonGroup.jsx'
 
 /**
@@ -19,11 +20,17 @@ export default function RecentChangesPage() {
     const {adminRole} = useContext(DBContext)
 
     const options = useMemo(() => {
-        return [
-            {label: 'Recently Added Photos'},
-            {label: 'Deleted Entries'}
-        ]
-    }, [])
+        return adminRole
+            ? [
+                {label: 'Recently Added Photos'},
+                {label: 'Deleted Entries'},
+                {label: 'Orphaned Media'}
+            ]
+            : [
+                {label: 'Recently Added Photos'},
+                {label: 'Deleted Entries'}
+            ]
+    }, [adminRole])
 
     const [selected, setSelected] = useState(options[0])
     const handleChange = useCallback(newValue => setSelected(newValue), [])
@@ -57,7 +64,9 @@ export default function RecentChangesPage() {
             return Math.floor(dayjs(b.dateDeleted).valueOf() / 3600) - Math.floor(dayjs(a.dateDeleted).valueOf() / 3600)
                 || a.name.localeCompare(b.name)
         })
-        : newImageEntries
+        : selected.label === 'Recently Added Photos'
+            ? newImageEntries
+            : orphanedMediaEntries
 
     const thanks = newImageContributors.length > 0
         ? ('Many thanks to @' + newImageContributors.join(' @') + '!\n')
@@ -116,8 +125,10 @@ export default function RecentChangesPage() {
                     fontSize: '1rem',
                     textAlign: 'center'
                 }}>
-                    Last <Link onClick={() => setHours(12)}
-                               style={{color: recentHours === 12 ? '#de9c12' : '#14a7c7'}}>12</Link> |&nbsp;
+                    Last <Link onClick={() => setHours(4)}
+                               style={{color: recentHours === 4 ? '#de9c12' : '#14a7c7'}}>4</Link> |&nbsp;
+                    <Link onClick={() => setHours(12)}
+                          style={{color: recentHours === 12 ? '#de9c12' : '#14a7c7'}}>12</Link> |&nbsp;
                     <Link onClick={() => setHours(24)}
                           style={{color: recentHours === 24 ? '#de9c12' : '#14a7c7'}}>24</Link> |&nbsp;
                     <Link onClick={() => setHours(48)}
