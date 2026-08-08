@@ -101,7 +101,7 @@
     },
     {
       "label": "Disc detainer",
-      "value": 36,
+      "value": 37,
       "id": "disc-detainer"
     },
     {
@@ -138,11 +138,6 @@
       "label": "Various",
       "value": 3,
       "id": "various"
-    },
-    {
-      "label": "Disc Detainer",
-      "value": 1,
-      "id": "disc-detainer"
     }
   ],
   "lockingMechanismsByBelt": {
@@ -267,18 +262,13 @@
       },
       {
         "label": "Disc detainer",
-        "value": 4,
+        "value": 5,
         "id": "disc-detainer"
       },
       {
         "label": "Wafer",
         "value": 4,
         "id": "wafer"
-      },
-      {
-        "label": "Disc Detainer",
-        "value": 1,
-        "id": "disc-detainer"
       },
       {
         "label": "Other",
@@ -1815,6 +1805,6 @@
     ]
   },
   "metadata": {
-    "updatedDateTime": "2026-08-08 17:47"
+    "updatedDateTime": "2026-08-08 19:01"
   }
 }

@@ -3202,7 +3202,7 @@
     "makeModels": [
       {
         "make": "ERA",
-        "model": "Mortice"
+        "model": "Mortise"
       }
     ],
     "version": "2 lever",
@@ -3211,7 +3211,8 @@
     ],
     "features": [
       "Pin key",
-      "False gates"
+      "False gates",
+      "Mortise"
     ],
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
@@ -3226,7 +3227,7 @@
       }
     ],
     "views": 315,
-    "lastUpdated": "2025-12-02T23:39:17.929Z"
+    "lastUpdated": "2026-08-08T19:01:05.162Z"
   },
   {
     "id": "71eea804",
@@ -25139,7 +25140,7 @@
       }
     ],
     "lockingMechanisms": [
-      "Disc Detainer"
+      "Disc detainer"
     ],
     "features": [
       "Latest Changelog"
@@ -25188,7 +25189,7 @@
       }
     ],
     "views": 317,
-    "lastUpdated": "2026-08-08T17:37:39.296Z"
+    "lastUpdated": "2026-08-08T19:01:05.165Z"
   },
   {
     "id": "54dc69e8",
@@ -50222,7 +50223,7 @@
         "thumbnailUrl": "https://live.staticflickr.com/65535/52948856422_9414da0891_w_d.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52948856422/in/album-72177720308811069/",
         "sequenceId": 1353,
-        "dateAdded": "2026-08-08T17:47:20.227Z",
+        "dateAdded": "2026-08-08T17:47:20.214Z",
         "fullSizeUrl": "https://live.staticflickr.com/65535/52948856422_74ff8b9dbb_o.jpg"
       },
       {
@@ -50231,7 +50232,7 @@
         "thumbnailUrl": "https://live.staticflickr.com/65535/52949455041_dc21611693_w_d.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52949455041/in/album-72177720308811069/",
         "sequenceId": 1354,
-        "dateAdded": "2026-08-08T17:47:20.227Z",
+        "dateAdded": "2026-08-08T17:47:20.215Z",
         "fullSizeUrl": "https://live.staticflickr.com/65535/52949455041_3639e23c75_o.jpg"
       }
     ],
@@ -59399,7 +59400,7 @@
         "thumbnailUrl": "https://live.staticflickr.com/65535/52948856422_9414da0891_w_d.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52948856422/in/album-72177720308811069/",
         "sequenceId": 1698,
-        "dateAdded": "2026-08-08T17:47:20.251Z",
+        "dateAdded": "2026-08-08T17:47:20.214Z",
         "fullSizeUrl": "https://live.staticflickr.com/65535/52948856422_74ff8b9dbb_o.jpg"
       },
       {
@@ -59408,7 +59409,7 @@
         "thumbnailUrl": "https://live.staticflickr.com/65535/52949455041_dc21611693_w_d.jpg",
         "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52949455041/in/album-72177720308811069/",
         "sequenceId": 1699,
-        "dateAdded": "2026-08-08T17:47:20.251Z",
+        "dateAdded": "2026-08-08T17:47:20.215Z",
         "fullSizeUrl": "https://live.staticflickr.com/65535/52949455041_3639e23c75_o.jpg"
       }
     ],

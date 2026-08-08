@@ -3640,18 +3640,19 @@
     "makeModels": [
       {
         "make": "ERA",
-        "model": "Mortice"
+        "model": "Mortise"
       }
     ],
     "version": "2 lever",
     "lockingMechanisms": [
       "Lever"
     ],
-    "name": "ERA Mortice",
+    "name": "ERA Mortise",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "features": [
       "Pin key",
-      "False gates"
+      "False gates",
+      "Mortise"
     ],
     "views": 1705,
     "lastUpdated": "2025-03-19T15:44:57.278Z",
@@ -51974,7 +51975,7 @@
       }
     ],
     "lockingMechanisms": [
-      "Disc Detainer"
+      "Disc detainer"
     ]
   },
   "110c872d": {
