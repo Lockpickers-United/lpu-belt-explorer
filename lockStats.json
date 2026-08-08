@@ -573,22 +573,22 @@
       {
         "segment": "Ranked locks",
         "count": 843,
-        "media": 788,
+        "media": 789,
         "coverage": "93%"
       },
       {
         "segment": "All locks",
         "count": 945,
-        "media": 868,
+        "media": 869,
         "coverage": "91%"
       }
     ],
-    "uniqueImages": 4488,
+    "uniqueImages": 4512,
     "contributors": 309,
     "topPhotographers": [
       {
         "contributor": "LockPickingFisherman",
-        "images": 516
+        "images": 527
       },
       {
         "contributor": "mgsecure",
@@ -604,7 +604,7 @@
       },
       {
         "contributor": "Luboš Čech",
-        "images": 169
+        "images": 166
       },
       {
         "contributor": "Ben-on-reddit",
@@ -695,6 +695,10 @@
         "images": 33
       },
       {
+        "contributor": "MrOrange",
+        "images": 32
+      },
+      {
         "contributor": "Dynamic",
         "images": 31
       },
@@ -755,10 +759,6 @@
         "images": 22
       },
       {
-        "contributor": "MrOrange",
-        "images": 22
-      },
-      {
         "contributor": "Dig",
         "images": 21
       },
@@ -785,6 +785,10 @@
       {
         "contributor": "Christian",
         "images": 17
+      },
+      {
+        "contributor": "2nd_choice",
+        "images": 16
       },
       {
         "contributor": "Crispix",
@@ -845,10 +849,6 @@
       {
         "contributor": "MartinHewitt",
         "images": 13
-      },
-      {
-        "contributor": "2nd_choice",
-        "images": 12
       },
       {
         "contributor": "DifficultZebra",
@@ -1131,6 +1131,10 @@
         "images": 5
       },
       {
+        "contributor": "RudolfTheKnight",
+        "images": 5
+      },
+      {
         "contributor": "Snow",
         "images": 5
       },
@@ -1384,10 +1388,6 @@
       },
       {
         "contributor": "Plazz7",
-        "images": 3
-      },
-      {
-        "contributor": "RudolfTheKnight",
         "images": 3
       },
       {
@@ -1825,6 +1825,6 @@
     ]
   },
   "metadata": {
-    "updatedDateTime": "2026-08-07 19:35"
+    "updatedDateTime": "2026-08-08 12:27"
   }
 }
