@@ -145,7 +145,6 @@ Both photos and videos of your picking accomplishment are accepted for this rank
 - [Master Lock #7](https://lpubelts.com/#/locks?id=4bbeeb48)
 - [Master Lock #8](https://lpubelts.com/#/locks?id=79adf554) (laminated brass)
 - [Timpson Special Brass Padlock](https://lpubelts.com/#/locks?id=36d4123c)
-- [Tri-Nine Brass Padlock](https://lpubelts.com/#/locks?id=2201a1b1)
 
 
 
