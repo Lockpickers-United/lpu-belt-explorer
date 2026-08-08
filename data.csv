@@ -52,7 +52,7 @@ Yellow,Defiant,"5-pin Deadbolt","interior pinning, 1 spool, 4 regular pins",Pin-
 Yellow,Dulimex,DX,,Pin-tumbler,,,a8d996c0
 Yellow,Eagle,37110,,Pin-tumbler,,,2f634d15
 Yellow,Egret,"5-pin Padlock",,Pin-tumbler,Unguttable,,75d883a0
-Yellow,ERA,Mortice,"2 lever",Lever,"Pin key,False gates",,c2306424
+Yellow,ERA,Mortise,"2 lever",Lever,"Pin key,False gates,Mortise",,c2306424
 Yellow,,Esco,,Pin-tumbler,,,71eea804
 Yellow,,Faithfull,,Pin-tumbler,,,1376f489
 Yellow,,FF,,Pin-tumbler,,,5e3f057f
@@ -410,7 +410,7 @@ Blue,Kaba,8,"2 row and 3 row, <9 pins",Dimple,,,5c2f5101
 Blue,Kaken,KX3,"exterior, <6 sliders/wafers","Pin-tumbler,Slider,Wafer","False gates,Active sidebar","Lots of variability on pinning, both in number of elements and type",40e50dd4
 Blue,"Kale Kilit","164 GNC","6 pin, standard profile",Pin-tumbler,,,9811b260
 Blue,"Kale Kilit","164 YGS SE",,Dimple,,,b01220ea
-Blue,"Kawaha,Magmaus","Kawaha,Magmaus",,"Disc Detainer","Latest Changelog",,ab9df828
+Blue,"Kawaha,Magmaus","Kawaha,Magmaus",,"Disc detainer","Latest Changelog",,ab9df828
 Blue,Kenaurd,Kenaurd,"pin-in-pin, 5 pins",Dimple,Pin-in-pin,,54dc69e8
 Blue,Kenaurd,Kenaurd,"5 pin, with serrated drivers",Pin-tumbler,"Pin-in-pin,Latest Changelog",,fe000caa
 Blue,Kryptonite,"Disk Detainer",,"Disc detainer","Random mid tension","Readily picked with front tension and counter-rotation",c8c0ee06

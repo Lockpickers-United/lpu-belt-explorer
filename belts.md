@@ -202,7 +202,7 @@ Both photos and videos of your picking accomplishment are accepted for this rank
 - [Dulimex DX](https://lpubelts.com/#/locks?id=a8d996c0)
 - [Eagle 37110](https://lpubelts.com/#/locks?id=2f634d15)
 - [Egret 5-pin Padlock](https://lpubelts.com/#/locks?id=75d883a0)
-- [ERA Mortice](https://lpubelts.com/#/locks?id=c2306424) (2 lever)
+- [ERA Mortise](https://lpubelts.com/#/locks?id=c2306424) (2 lever)
 - [Esco](https://lpubelts.com/#/locks?id=71eea804)
 - [Faithfull](https://lpubelts.com/#/locks?id=1376f489)
 - [FF](https://lpubelts.com/#/locks?id=5e3f057f)
