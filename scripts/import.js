@@ -305,7 +305,7 @@ const orphanedMediaEntries = orphanedMedia.ids.map((id) => deletedEntries.find(e
 orphanedMedia.mediaItems.forEach((item, index) => {
     let deletedEntry = orphanedMediaEntries.find(e => e.id === item.id)
     if (!deletedEntry) return
-    if (!deletedEntry.media) deletedEntry.media = []
+    deletedEntry.media = []
     const mediaItem = buildMediaItem(item, index, item.dateAdded)
     setDeepPush(deletedEntry, ['media'], mediaItem)
 })
