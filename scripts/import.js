@@ -310,7 +310,6 @@ orphanedMedia.mediaItems.forEach((item, index) => {
     setDeepPush(deletedEntry, ['media'], mediaItem)
 })
 
-console.log('orphanedMediaEntries', orphanedMediaEntries)
 console.log('Writing orphanedMediaEntries.json...')
 fs.writeFileSync('./src/data/orphanedMediaEntries.json', JSON.stringify(orphanedMediaEntries, null, 2))
 

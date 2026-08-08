@@ -33,7 +33,13 @@ export default function RecentChangesPage() {
     }, [adminRole])
 
     const [selected, setSelected] = useState(options[0])
-    const handleChange = useCallback(newValue => setSelected(newValue), [])
+    const handleChange = useCallback(newValue => {
+        setSelected(newValue)
+        setTimeout(() => {
+            window.scrollTo({top: 0, behavior: 'smooth'})
+        }, 100)
+
+    }, [])
 
     const recentDays = 14
     const [recentHours, setRecentHours] = useState(recentDays * 24)
@@ -46,6 +52,9 @@ export default function RecentChangesPage() {
             break
         case 'Deleted Entries':
             title = 'Deleted Entries'
+            break
+        case 'Orphaned Media':
+            title = 'Orphaned Media'
             break
         default:
     }
