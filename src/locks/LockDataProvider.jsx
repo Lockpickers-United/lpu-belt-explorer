@@ -49,8 +49,8 @@ export function DataProvider({children, allEntries, profile}) {
                         [entryName(entry, 'long')]
                             .concat([
                                 entry.searchKeywords,
-                                entry.notes
-                                //entry.version,
+                                entry.notes,
+                                entry.version,
                                 //entry.belt
                             ])
                             .join(',')

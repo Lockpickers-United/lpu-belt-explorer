@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect, useState} from 'react'
+import React, {useCallback, useContext, useEffect, useState} from 'react'
 import ImageList from '@mui/material/ImageList'
 import ImageListItem from '@mui/material/ImageListItem'
 import ImageListItemBar from '@mui/material/ImageListItemBar'
@@ -9,6 +9,7 @@ import LaunchIcon from '@mui/icons-material/Launch'
 import useWindowSize from '../util/useWindowSize'
 import ytIcon from '../resources/yt.png'
 import ImageViewer from './ImageViewer'
+import AppContext from '../app/AppContext.jsx'
 
 function ImageGallery(props) {
     const {
@@ -22,6 +23,8 @@ function ImageGallery(props) {
         onBackButton,
         shareParams
     } = props
+
+    const {admin} = useContext(AppContext)
 
     const {isMobile} = useWindowSize()
     const [open, setOpen] = useState(initiallyOpen)
@@ -41,6 +44,17 @@ function ImageGallery(props) {
         onCloseImage()
         setOpen(false)
     }, [onCloseImage])
+
+    const openInNewTab = (url) => {
+        const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
+        if (newWindow) newWindow.opener = null
+    }
+
+    //const subtitleText = subtitle
+    const mediaAnnotated = media.map(media => {
+        const imageId = media.fullUrl.match(/\/(\d{11})\//)
+        return {...media, imageId: imageId?.[1]}
+    })
 
     // Handle back button presses
     useEffect(() => {
@@ -69,7 +83,15 @@ function ImageGallery(props) {
                 />
             }
             <ImageList variant='masonry' cols={cols} sx={{marginTop: 2}}>
-                {media.map(({title, subtitle, thumbnailUrl, fullUrl, subtitleUrl, sequenceId}, index) =>
+                {mediaAnnotated.map(({
+                                         title,
+                                         subtitle,
+                                         thumbnailUrl,
+                                         fullUrl,
+                                         subtitleUrl,
+                                         sequenceId,
+                                         imageId
+                                     }, index) =>
                     <ImageListItem key={index} style={{marginBottom: 8}}>
                         <img
                             src={thumbnailUrl}
@@ -100,8 +122,9 @@ function ImageGallery(props) {
                             title={title}
                             subtitle={
                                 subtitle &&
-                                <a href={subtitleUrl || licenses[subtitle]} target='_blank' rel='noopener noreferrer'>
-                                    {subtitle}
+                                <a style={{cursor: 'pointer'}}
+                                   onClick={() => openInNewTab(admin ? fullUrl : (subtitleUrl || licenses[subtitle]))}>
+                                    {admin ? imageId : subtitle}
                                 </a>
                             }
                             actionIcon={
