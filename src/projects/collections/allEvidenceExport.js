@@ -172,13 +172,13 @@ export default async function getAllEvidence() {
     fullDb.metadata = {updatedDateTime: dayjs().format('YYYY-MM-DD HH:mm')}
 
     try {
-        await fs.writeFile(`${serverDir}/allProjects.json`, JSON.stringify(fullDb, null, 2))
+        await fs.writeFile(`${serverDir}/allProjects.json`, JSON.stringify(fullDb))
     } catch (err) {
         console.log(err)
     }
 
     try {
-        await fs.writeFile(`${serverDir}/pickStats.json`, JSON.stringify(pickStats, null, 2))
+        await fs.writeFile(`${serverDir}/pickStats.json`, JSON.stringify(pickStats))
     } catch (err) {
         console.log(err)
     }
@@ -252,13 +252,13 @@ export default async function getAllEvidence() {
 
 
     try {
-        await fs.writeFile(`${serverDir}/allScorecardEvidence.json`, JSON.stringify(allScorecardEvidence, null, 2))
+        await fs.writeFile(`${serverDir}/allScorecardEvidence.json`, JSON.stringify(allScorecardEvidence))
     } catch (err) {
         console.log(err)
     }
 
     try {
-        await fs.writeFile(`${serverDir}/allUnclaimedEvidence.json`, JSON.stringify(allUnclaimedEvidence, null, 2))
+        await fs.writeFile(`${serverDir}/allUnclaimedEvidence.json`, JSON.stringify(allUnclaimedEvidence))
     } catch (err) {
         console.log(err)
     }

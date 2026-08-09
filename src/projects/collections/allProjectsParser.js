@@ -26,7 +26,7 @@ console.log('allProjectsData', allProjectsData.length, allProjectsData)
 
 
 try {
-    await fs.writeFile(`${serverDir}/nonBBModified.json`, JSON.stringify(allProjectsData, null, 2))
+    await fs.writeFile(`${serverDir}/nonBBModified.json`, JSON.stringify(allProjectsData))
 } catch (err) {
     console.log(err)
 }

@@ -102,7 +102,7 @@ async function getAllData() {
     //console.log('evidence', fullDb.evidence.sort((a,b) => Math.floor(dayjs(a.date).valueOf() / 3600 * 24) - Math.floor(dayjs(b.date).valueOf() / 3600 * 24)))
 
     fullDb.metadata = {updatedDateTime: dayjs().format('YYYY-MM-DD HH:mm')}
-    await fs.writeFile(`${serverDir}/recentAwardsEvidence.json`, JSON.stringify(fullDb, null, 2), function (err) {
+    await fs.writeFile(`${serverDir}/recentAwardsEvidence.json`, JSON.stringify(fullDb), function (err) {
         if (err) {
             console.log(err)
         }
@@ -145,7 +145,7 @@ async function getAllData() {
     })
 
     allProjects.metadata = {updatedDateTime: dayjs().format('YYYY-MM-DD HH:mm')}
-    await fs.writeFile(`${serverDir}/allProjectsEvidence.json`, JSON.stringify(allProjects, null, 2), function (err) {
+    await fs.writeFile(`${serverDir}/allProjectsEvidence.json`, JSON.stringify(allProjects), function (err) {
         if (err) {
             console.log(err)
         }

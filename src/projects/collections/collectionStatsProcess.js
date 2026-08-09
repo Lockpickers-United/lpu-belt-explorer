@@ -75,7 +75,7 @@ export async function collectionStatsProcess() {
 
     //jsonIt('dailyStats', dailyStats)
 
-    await fs.writeFile(`${serverDir}/collectionStatsDaily.json`, JSON.stringify(dailyStats, null, 2), function (err) {
+    await fs.writeFile(`${serverDir}/collectionStatsDaily.json`, JSON.stringify(dailyStats), function (err) {
         if (err) {
             console.error('save collectionStatsDaily error:', err)
         }

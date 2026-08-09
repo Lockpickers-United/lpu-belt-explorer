@@ -155,7 +155,7 @@ setDeep(lockStats, ['photoStats', 'topPhotographers'], topPhotographers)
 // METADATA
 lockStats.metadata = {updatedDateTime: dayjs().format('YYYY-MM-DD HH:mm')}
 
-await fs.writeFile(`${serverDir}/lockStats.json`, JSON.stringify(lockStats, null, 2), function (err) {
+await fs.writeFile(`${serverDir}/lockStats.json`, JSON.stringify(lockStats), function (err) {
     if (err) {
         console.error('save lockStats error:', err)
     }

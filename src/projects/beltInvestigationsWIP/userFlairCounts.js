@@ -83,7 +83,7 @@ async function run() {
         const token = await getAccessToken()
         const { flairData, rawLines } = await fetchAllFlairs(token)
 
-        fs.writeFileSync('redditBeltsWIP.json', JSON.stringify(flairData, null, 2), 'utf-8')
+        fs.writeFileSync('redditBeltsWIP.json', JSON.stringify(flairData), 'utf-8')
         fs.writeFileSync('belts.txt', rawLines.join('\n'), 'utf-8')
 
         console.log(`Wrote ${flairData.length} flair entries.`)

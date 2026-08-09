@@ -788,7 +788,7 @@ function outputSiteFullJson() {
         updatedDateTime: dt.format(),
         timezone: dt.format('z')
     }
-    const json_text = JSON.stringify(siteStatsFull, null, 2)
+    const json_text = JSON.stringify(siteStatsFull)
     fs.writeFileSync(siteStatsFullJsonFile, json_text, 'utf8')
 }
 

@@ -60,7 +60,7 @@ export default async function exportCollection({collection, devDb=false}) {
         date: new Date().toISOString(),
         docCount: data.length
     }
-    const jsonString = JSON.stringify({metadata, data}, null, 2)
+    const jsonString = JSON.stringify({metadata, data})
 
     await fs.writeFile(`${backupDir}/${collection}.json`, jsonString, function (err) {
         if (err) {

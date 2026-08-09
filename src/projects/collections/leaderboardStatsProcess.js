@@ -74,7 +74,7 @@ async function saveLeaderboard() {
     const leaderboardData = {
         data: leaderboard, metadata: {updatedDateTime: dayjs().format('YYYY-MM-DD HH:mm')}
     }
-    await fs.writeFile(`${serverDir}/leaderboardData.json`, JSON.stringify(leaderboardData, null, 2), function (err) {
+    await fs.writeFile(`${serverDir}/leaderboardData.json`, JSON.stringify(leaderboardData), function (err) {
         if (err) {
             console.error('save leaderboardData error:', err)
         }

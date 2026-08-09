@@ -14,11 +14,11 @@ export default async function getRedditBelts(req, res) {
     const production = process.env.USER !== localUser
     const baseDir = production
         ? `/home/${prodUser}/explore-lpubelts-com-node`
-        : `/Users/${localUser}/Documents/GitHub/explore-lpubelts-com-node`
+        : `/Users/${localUser}/LOCAL/GitHubLocal/explore-lpubelts-com-node`
 
     const serverDir = production
         ? `/home/${prodUser}/explore.lpubelts.com/public/data`
-        : `/Users/${localUser}/Documents/LOCKPICK/LPU-Belt-Explorer/BeltCounts`
+        : `/Users/${localUser}/LOCAL/GitHubLocal/explore-lpubelts-com-node/src/projects/redditBelts/data`
 
 //console.log('baseDir', `${baseDir}/src/projects/redditBelts/fetch_reddit_flairs.py`)
 

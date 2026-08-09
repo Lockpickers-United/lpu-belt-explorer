@@ -55,4 +55,4 @@ const targetInfo = scorecardEvidence.reduce((acc, evidence) => {
 targetInfo.userCount = targetInfo.userIds.length
 targetInfo.userPercent = (targetInfo.userCount / scorecardData.userCount) * 100
 
-console.log(JSON.stringify(targetInfo, null, 2))
+//console.log(JSON.stringify(targetInfo, null, 2))

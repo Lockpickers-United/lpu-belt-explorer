@@ -158,7 +158,7 @@ export async function collectionAnalyzer({blackBeltOnly, date}) {
 async function analyzeCollection(date) {
     const allUsers = await collectionAnalyzer({blackBeltOnly: false, date})
 
-    await fs.writeFile(`${serverDir}/collectionStatsById.json`, JSON.stringify(allUsers.allSavesById, null, 2), function (err) {
+    await fs.writeFile(`${serverDir}/collectionStatsById.json`, JSON.stringify(allUsers.allSavesById), function (err) {
         if (err) {
             console.error('save collectionStatsById error:', err)
         }
@@ -171,13 +171,13 @@ async function analyzeCollection(date) {
     const collectionStatsCurrent = {metadata, allUsers, blackBeltOnly}
 
 
-    await fs.writeFile(`${dailyDir}/collectionStats_${date}.json`, JSON.stringify(collectionStatsCurrent, null, 2), function (err) {
+    await fs.writeFile(`${dailyDir}/collectionStats_${date}.json`, JSON.stringify(collectionStatsCurrent), function (err) {
         if (err) {
             console.error('save collectionStats for date error:', err)
         }
     })
 
-    await fs.writeFile(`${serverDir}/collectionStatsCurrent.json`, JSON.stringify(collectionStatsCurrent, null, 2), function (err) {
+    await fs.writeFile(`${serverDir}/collectionStatsCurrent.json`, JSON.stringify(collectionStatsCurrent), function (err) {
         if (err) {
             console.error('save collectionStatsCurrent error:', err)
         }

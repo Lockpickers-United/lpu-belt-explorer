@@ -55,7 +55,7 @@ async function getAllData() {
         setDeep(fullDb, ['__collections__', 'lockcollections', doc.id], doc.data())
     })
 
-    let jsonString = JSON.stringify(fullDb, null, 2)
+    let jsonString = JSON.stringify(fullDb)
 
     await fs.writeFile(`${backupDir}/backup.json`, jsonString, function (err) {
         if (err) {
@@ -84,7 +84,7 @@ async function getAllData() {
         docCount: data.length
     }
 
-    jsonString = JSON.stringify({metadata, data}, null, 2)
+    jsonString = JSON.stringify({metadata, data})
 
     await fs.writeFile(`${exportDir}/lockcollections.json`, jsonString, function (err) {
         if (err) {

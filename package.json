@@ -60,5 +60,6 @@
     "eslint-config-flat-gitignore": "^2.1.0",
     "supertest": "^7.0.0",
     "vitest": "^2.1.4"
-  }
+  },
+  "packageManager": "yarn@4.17.0"
 }

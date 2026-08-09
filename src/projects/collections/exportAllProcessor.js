@@ -106,7 +106,7 @@ export default async function processExportAll() {
     if (!production) console.log('scorecardStats', scorecardStats)
 
     try {
-        await fs.writeFile(`${serverDir}/scorecardStats.json`, JSON.stringify(scorecardStats, null, 2))
+        await fs.writeFile(`${serverDir}/scorecardStats.json`, JSON.stringify(scorecardStats))
     } catch (err) {
         console.log(err)
     }

@@ -380,7 +380,7 @@ Object.keys(temp).forEach(requestDateText => {
     let maxTimeStr = temp[requestDateText].maxTime.format('HHmm')
     let filename = `${requestDateText}_${minTimeStr}-${maxTimeStr}.json`
     let outputPath = path.join(dataDir, filename)
-    fs.writeFileSync(outputPath, JSON.stringify(stats[requestDateText], null, 2), 'utf8')
+    fs.writeFileSync(outputPath, JSON.stringify(stats[requestDateText]), 'utf8')
 })
 
 // RUNTIME INFO
