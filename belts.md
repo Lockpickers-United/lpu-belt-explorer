@@ -257,6 +257,7 @@ Those security pins designed to keep you out are powerless against you. You're s
 
 **Orange Belt Locks**
 
+- [ABUS 24/70 Diskus](https://lpubelts.com/#/locks?id=80667814) (normal pin-tumbler, not dimple)
 - [ABUS 41](https://lpubelts.com/#/locks?id=18ecc45b) (40mm or larger (5 pins))
 - [ABUS 45/40](https://lpubelts.com/#/locks?id=67b285d9) (brass body, 40mm or larger)
 - [ABUS 5/45 Silver Rock](https://lpubelts.com/#/locks?id=0feafca7)
@@ -270,7 +271,6 @@ Those security pins designed to keep you out are powerless against you. You're s
 - [ABUS 85](https://lpubelts.com/#/locks?id=683e4f33) (40mm or larger (&ge;5 pins))
 - [ABUS Buffo (Ecoline)](https://lpubelts.com/#/locks?id=d7479fd6)
 - [ABUS C51](https://lpubelts.com/#/locks?id=afd3e51d)
-- [ABUS Diskus](https://lpubelts.com/#/locks?id=80667814) (normal pin-tumbler, not dimple)
 - [ABUS E50 / Citadel N](https://lpubelts.com/#/locks?id=1dc9f802)
 - [ABUS Monobloc](https://lpubelts.com/#/locks?id=204d85a7)
 - [ABUS Ti12 Titalium](https://lpubelts.com/#/locks?id=1050a58c)

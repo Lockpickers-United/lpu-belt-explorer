@@ -87,6 +87,7 @@ Yellow,,Stabilit,,Pin-tumbler,,,9fd77c9a
 Yellow,Takigen,C-187-1,,Dimple,"Latest Changelog",,938cb7a6
 Yellow,Thirard,Eco,,Pin-tumbler,,,110675cf
 Yellow,,Wolfdog,,Pin-tumbler,Unguttable,,4b32e9dd
+Orange,ABUS,"24/70 Diskus","normal pin-tumbler, not dimple",Pin-tumbler,,,80667814
 Orange,ABUS,41,"40mm or larger (5 pins)",,,,18ecc45b
 Orange,ABUS,45/40,"brass body, 40mm or larger",Pin-tumbler,Unguttable,,67b285d9
 Orange,ABUS,"5/45 Silver Rock",,Pin-tumbler,,,0feafca7
@@ -100,7 +101,6 @@ Orange,ABUS,83/40,,Pin-tumbler,,,3653f376
 Orange,ABUS,85,"40mm or larger (≥5 pins)",Pin-tumbler,Unguttable,,683e4f33
 Orange,ABUS,"Buffo (Ecoline)",,Pin-tumbler,,,d7479fd6
 Orange,ABUS,C51,,Pin-tumbler,,,afd3e51d
-Orange,ABUS,Diskus,"normal pin-tumbler, not dimple",Pin-tumbler,,,80667814
 Orange,"ABUS,Citadel","E50,N",,Pin-tumbler,,,1dc9f802
 Orange,ABUS,Monobloc,,Pin-tumbler,,,204d85a7
 Orange,ABUS,"Ti12 Titalium",,Pin-tumbler,,,1050a58c
@@ -842,7 +842,7 @@ Red,Yanai,"R 2200M","<14 pins",Dimple,"High pin count",,5eac6a29
 "Black 5","Yuema,Forte","750 series,Enigma",,Slider,"Reverse sidebar",,0b604114
 Unranked,ABA,108418,5+,"Disc detainer","Under Review ⚑",,3b7643da
 Unranked,Abloy,AVA,"flat & half-round key",Wafer,"Under Review ⚑",,9ae8b650
-Unranked,ABUS,34/55,,,"Under Review ⚑",,f72085d2
+Unranked,ABUS,"34/55 Platinum",,Pin-tumbler,"Under Review ⚑","A.K.A 34CS/55",f72085d2
 Unranked,ABUS,E100,"5 pins",Pin-tumbler,"Under Review ⚑",,05d357bb
 Unranked,ABUS,"MyLock / T65AL",,Pin-tumbler,Samelined,,423dbebe
 Unranked,ABUS,"Vela 2000 Mx",,Dimple,"Under Review ⚑","2 spools, 2 ""barrels"", 1 special passive pin",b370e57b
