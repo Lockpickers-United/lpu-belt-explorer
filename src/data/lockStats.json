@@ -81,7 +81,7 @@
   "lockingMechanisms": [
     {
       "label": "Pin-tumbler",
-      "value": 372,
+      "value": 373,
       "id": "pin-tumbler"
     },
     {
@@ -507,7 +507,7 @@
       },
       {
         "label": "Pin-tumbler",
-        "value": 21,
+        "value": 22,
         "id": "pin-tumbler"
       },
       {
@@ -553,13 +553,13 @@
       {
         "segment": "Ranked locks",
         "count": 842,
-        "media": 789,
+        "media": 790,
         "coverage": "93%"
       },
       {
         "segment": "All locks",
         "count": 944,
-        "media": 870,
+        "media": 871,
         "coverage": "92%"
       }
     ],
@@ -1817,6 +1817,6 @@
     ]
   },
   "metadata": {
-    "updatedDateTime": "2026-08-09 16:00"
+    "updatedDateTime": "2026-08-09 21:04"
   }
 }

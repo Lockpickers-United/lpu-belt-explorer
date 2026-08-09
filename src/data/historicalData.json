@@ -880,7 +880,7 @@
     "makeModels": [
       {
         "make": "ABUS",
-        "model": "Diskus"
+        "model": "24/70 Diskus"
       }
     ],
     "version": "normal pin-tumbler, not dimple",
@@ -907,7 +907,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/52776044262_7609bf34c9_o.jpg"
       }
     ],
-    "name": "ABUS Diskus",
+    "name": "ABUS 24/70 Diskus",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "views": 2883,
     "lastUpdated": "2025-03-19T15:44:57.279Z"
@@ -56183,11 +56183,11 @@
     "makeModels": [
       {
         "make": "ABUS",
-        "model": "34/55"
+        "model": "34/55 Platinum"
       }
     ],
     "lastUpdated": "2025-03-19T15:44:57.319Z",
-    "name": "ABUS 34/55",
+    "name": "ABUS 34/55 Platinum",
     "dateAdded": "2023-12-28T18:48:59.000Z",
     "features": [
       "Under Review ⚑"
@@ -56239,7 +56239,11 @@
         "dateAdded": "2025-03-06T16:00:00.000Z",
         "fullSizeUrl": "https://live.staticflickr.com/65535/53203124997_8117b7a224_o.jpg"
       }
-    ]
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "notes": "A.K.A 34CS/55"
   },
   "13b06cba": {
     "id": "13b06cba",
