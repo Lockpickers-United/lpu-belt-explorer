@@ -60936,13 +60936,17 @@
       {
         "make": "ASSA",
         "model": "500"
+      },
+      {
+        "make": "Ruko",
+        "model": "500"
       }
     ],
     "version": "with barrel drivers, no countermilling",
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "name": "ASSA 500",
+    "name": "ASSA 500 / Ruko 500",
     "dateAdded": "2026-01-29T04:43:25.089Z"
   },
   "2b5cc5d7": {
