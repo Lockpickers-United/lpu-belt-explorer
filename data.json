@@ -10553,17 +10553,20 @@
     "dateAdded": "2025-01-12T17:30:05.000Z",
     "media": [
       {
-        "title": "By: Flickpick",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/55452548647_f6bd861763_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55452548647/in/album-72177720312676885/",
+        "title": "By: Luboš Čech",
+        "subtitle": "Catalocks",
+        "thumbnailUrl": "https://www.catalocks.eu/photos/19/tn_1.jpg",
+        "fullUrl": "https://www.catalocks.eu/photos/19/1.jpg",
         "sequenceId": 4484,
-        "dateAdded": "2026-08-10T01:32:59.230Z",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/55452548647_13e24653e9_o.jpg",
-        "imageTitle": "ABUS Pfaffenhain"
+        "dateAdded": "2025-12-02T23:39:17.878Z",
+        "subtitleUrl": "https://www.catalocks.eu/ABUS/ABUS%20INTEGRAL_19.html",
+        "fullSizeUrl": "https://www.catalocks.eu/photos/19/1.jpg"
       }
     ],
     "views": 100,
+    "relatedIds": [
+      "8606220a"
+    ],
     "lastUpdated": "2026-08-10T01:32:59.262Z"
   },
   {
@@ -20406,6 +20409,9 @@
       }
     ],
     "views": 325,
+    "relatedIds": [
+      "f8acc274"
+    ],
     "lastUpdated": "2025-12-02T23:39:17.938Z"
   },
   {
