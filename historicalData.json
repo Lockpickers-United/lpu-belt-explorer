@@ -17606,13 +17606,13 @@
     "makeModels": [
       {
         "make": "DOM",
-        "model": "IX 5KG"
+        "model": "ix 5KG"
       }
     ],
     "lockingMechanisms": [
       "Dimple"
     ],
-    "name": "DOM IX 5KG",
+    "name": "DOM ix 5KG",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "features": [
       "Interactive element"

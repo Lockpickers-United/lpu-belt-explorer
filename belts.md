@@ -636,7 +636,7 @@ To qualify for a Blue Belt, you must also submit a project that demonstrates you
 - [DeGuard interactive clone](https://lpubelts.com/#/locks?id=b91162e7) (4 pins)
 - [Dejo 7 pin](https://lpubelts.com/#/locks?id=59d8bfc1) (tapered spools, trees, no milling)
 - [DOM ix 5 HT](https://lpubelts.com/#/locks?id=a165bc09)
-- [DOM IX 5KG](https://lpubelts.com/#/locks?id=eec4bd4a)
+- [DOM ix 5KG](https://lpubelts.com/#/locks?id=eec4bd4a)
 - [DOM Plura](https://lpubelts.com/#/locks?id=96591a8f)
 - [DOM R Plus](https://lpubelts.com/#/locks?id=2e67118d)
 - [DOM RN](https://lpubelts.com/#/locks?id=81338028) (standard cylinder)
