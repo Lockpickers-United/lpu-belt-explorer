@@ -94,7 +94,7 @@ function ContentSubmit() {
             {loading &&
                 <LoadingDisplay/>
             }
-            
+
             {
                 response && response.error &&
                 <div style={{}}>

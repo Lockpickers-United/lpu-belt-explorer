@@ -577,6 +577,13 @@ export default [
         }
     },
     {
+        path: '/locky',
+        lazy: async () => {
+            const {default: LockyRoute} = await import('../locky/LockyRoute.jsx')
+            return {element: <LockyRoute/>}
+        }
+    },
+    {
         path: '*',
         loader: () => redirect('/locks')
     },
