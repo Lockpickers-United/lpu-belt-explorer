@@ -40,7 +40,7 @@ We employ industry-standard safety practices to shield stored data against unaut
 You hold complete control over your individual personal data.
 
 * **Access and Correction:** You can request a summary of stored details bound to your Discord account or view them at any time using the "Edit Profile" and "Scorecard" pages of our website.
-* **Deletion Requests:** You may request complete erasure of your data at any point. Simply click the "Delete All Data" link on the "Edit Profile" page. To request help with deletion, email us directly at **locky@lpubelts.com**.
+* **Deletion Requests:** You may request complete erasure of your data at any point. Simply click the "Delete All Data" link on the "Edit Profile" page. To request help with deletion, email us directly at **locky@lockpickersunited.com**.
 
 ### 7. Policy Revisions
 We reserve the right to modify this policy at our discretion. When modifications occur, we will post an update notification in our official support channel or update the "Last Updated" date at the top of this document.
@@ -49,4 +49,4 @@ We reserve the right to modify this policy at our discretion. When modifications
 For privacy concerns, data inquiries, or erasure requests, contact us via:
 
 * **Discord Support Server:** https://discord.com/invite/lockpicking (#belt-explorer-site)
-* **Email:** locky@lpubelts.com
+* **Email:** locky@lockpickersunited.com
