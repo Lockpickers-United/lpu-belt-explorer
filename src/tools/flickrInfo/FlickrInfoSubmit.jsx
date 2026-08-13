@@ -6,6 +6,7 @@ import {enqueueSnackbar} from 'notistack'
 import CopyMediaDataButton from './CopyMediaDataButton.jsx'
 import useWindowSize from '../../util/useWindowSize.jsx'
 import {nodeServerUrl} from '../../data/dataUrls'
+import LoadingDisplay from '../../misc/LoadingDisplay.jsx'
 
 function ContentSubmit() {
 
@@ -32,6 +33,7 @@ function ContentSubmit() {
             .catch(error => {
                 setUploadError(true)
                 console.error('error', error)
+                setLoading(false)
             })
         if (uploadError) {
             enqueueSnackbar('Something went wrong! Please try again later.')
@@ -41,7 +43,7 @@ function ContentSubmit() {
     const handleChangePhotoset = useCallback(event => {
         const {value} = event.target
         const matches = value.match(/(\d{17})/) || []
-        setPhotosetId(matches[0] || '' )
+        setPhotosetId(matches[0] || '')
     }, [])
 
     const errorStack = response?.error ? JSON.stringify(response?.error, null, 2) : undefined
@@ -74,7 +76,7 @@ function ContentSubmit() {
                         <span style={{
                             fontSize: '0.9rem',
                             fontWeight: 700
-                        }}>Enter Photoset ID (e.g. 72177720322353676)</span><br/>
+                        }}>Enter URL or Photoset ID (e.g. 72177720322353676)</span><br/>
                         <TextField type='text' name='photosetId' value={photosetId} style={{width: 300}}
                                    onChange={handleChangePhotoset} color='info' size='small'/>
                     </div>
@@ -89,6 +91,10 @@ function ContentSubmit() {
                 </div>
             </form>
 
+            {loading &&
+                <LoadingDisplay/>
+            }
+            
             {
                 response && response.error &&
                 <div style={{}}>
