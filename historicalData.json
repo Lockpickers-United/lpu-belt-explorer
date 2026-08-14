@@ -61502,13 +61502,13 @@
     "makeModels": [
       {
         "make": "Segal",
-        "model": "Pickproof"
+        "model": "PickProof"
       }
     ],
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "name": "Segal Pickproof",
+    "name": "Segal PickProof",
     "dateAdded": "2026-08-14T18:44:15.969Z"
   },
   "a2bccc4b": {
@@ -61740,5 +61740,20 @@
     ],
     "name": "Fichet 787 Exterior",
     "dateAdded": "2026-08-14T22:36:08.737Z"
+  },
+  "6c395573": {
+    "id": "6c395573",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Pinball",
+        "model": "PickProof"
+      }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "name": "Pinball PickProof",
+    "dateAdded": "2026-08-14T23:56:42.171Z"
   }
 }

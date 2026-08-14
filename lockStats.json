@@ -7,11 +7,11 @@
         "label": "Ranked"
       },
       {
-        "value": 956,
+        "value": 957,
         "label": "All"
       },
       {
-        "value": 114,
+        "value": 115,
         "label": "Unranked"
       }
     ]
@@ -20,68 +20,68 @@
     {
       "belt": "White",
       "count": 18,
-      "value": 0.01882845188284519,
+      "value": 0.018808777429467086,
       "id": "White"
     },
     {
       "belt": "Yellow",
       "count": 71,
-      "value": 0.07426778242677824,
+      "value": 0.0741901776384535,
       "id": "Yellow"
     },
     {
       "belt": "Orange",
       "count": 84,
-      "value": 0.08786610878661087,
+      "value": 0.0877742946708464,
       "id": "Orange"
     },
     {
       "belt": "Green",
       "count": 155,
-      "value": 0.16213389121338911,
+      "value": 0.1619644723092999,
       "id": "Green"
     },
     {
       "belt": "Blue",
       "count": 138,
-      "value": 0.14435146443514643,
+      "value": 0.14420062695924765,
       "id": "Blue"
     },
     {
       "belt": "Purple",
       "count": 118,
-      "value": 0.12343096234309624,
+      "value": 0.12330198537095088,
       "id": "Purple"
     },
     {
       "belt": "Brown",
       "count": 84,
-      "value": 0.08786610878661087,
+      "value": 0.0877742946708464,
       "id": "Brown"
     },
     {
       "belt": "Red",
       "count": 73,
-      "value": 0.07635983263598327,
+      "value": 0.07628004179728318,
       "id": "Red"
     },
     {
       "belt": "Black",
       "count": 101,
-      "value": 0.10564853556485355,
+      "value": 0.10553814002089865,
       "id": "Black"
     },
     {
       "belt": "Unranked",
-      "count": 114,
-      "value": 0.1192468619246862,
+      "count": 115,
+      "value": 0.12016718913270637,
       "id": "Unranked"
     }
   ],
   "lockingMechanisms": [
     {
       "label": "Pin-tumbler",
-      "value": 374,
+      "value": 375,
       "id": "pin-tumbler"
     },
     {
@@ -507,7 +507,7 @@
       },
       {
         "label": "Pin-tumbler",
-        "value": 23,
+        "value": 24,
         "id": "pin-tumbler"
       },
       {
@@ -558,12 +558,12 @@
       },
       {
         "segment": "All locks",
-        "count": 956,
-        "media": 877,
+        "count": 957,
+        "media": 878,
         "coverage": "91%"
       }
     ],
-    "uniqueImages": 4622,
+    "uniqueImages": 4628,
     "contributors": 313,
     "topPhotographers": [
       {
@@ -588,7 +588,7 @@
       },
       {
         "contributor": "Sidepicks",
-        "images": 140
+        "images": 146
       },
       {
         "contributor": "Ben-on-reddit",
@@ -1821,6 +1821,6 @@
     ]
   },
   "metadata": {
-    "updatedDateTime": "2026-08-14 23:45"
+    "updatedDateTime": "2026-08-14 23:56"
   }
 }
