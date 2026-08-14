@@ -61979,6 +61979,25 @@
     "lastUpdated": "2025-12-02T23:39:17.964Z"
   },
   {
+    "id": "a2bccc4b",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Bode Panzer",
+        "model": "Tangential"
+      }
+    ],
+    "lockingMechanisms": [
+      "Wafer"
+    ],
+    "features": [
+      "Safe lock",
+      "Pipe-key"
+    ],
+    "dateAdded": "2026-08-14T21:52:46.626Z",
+    "lastUpdated": "2026-08-14T21:52:46.952Z"
+  },
+  {
     "id": "4062aefb",
     "belt": "Unranked",
     "makeModels": [
@@ -62354,6 +62373,44 @@
     ],
     "views": 115,
     "lastUpdated": "2025-12-02T23:39:17.965Z"
+  },
+  {
+    "id": "0a3affa0",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Chatwood",
+        "model": "Impregnable"
+      }
+    ],
+    "lockingMechanisms": [
+      "Lever"
+    ],
+    "features": [
+      "Safe lock"
+    ],
+    "dateAdded": "2026-08-14T21:52:46.627Z",
+    "lastUpdated": "2026-08-14T21:52:46.952Z"
+  },
+  {
+    "id": "81af33e7",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Chatwood",
+        "model": "Invincible"
+      }
+    ],
+    "version": "Double bitted",
+    "lockingMechanisms": [
+      "Lever"
+    ],
+    "features": [
+      "Safe lock",
+      "Anti-pressure"
+    ],
+    "dateAdded": "2026-08-14T21:52:46.627Z",
+    "lastUpdated": "2026-08-14T21:52:46.952Z"
   },
   {
     "id": "267e47c4",
@@ -63347,6 +63404,46 @@
     "lastUpdated": "2025-12-02T23:39:17.965Z"
   },
   {
+    "id": "d0edf047",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Hobbs & Co.",
+        "model": "Protector 9 lever"
+      }
+    ],
+    "lockingMechanisms": [
+      "Lever"
+    ],
+    "features": [
+      "Safe lock",
+      "Anti-pressure",
+      "Barrel"
+    ],
+    "dateAdded": "2026-08-14T21:52:46.627Z",
+    "lastUpdated": "2026-08-14T21:52:46.953Z"
+  },
+  {
+    "id": "cc0581fe",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Hobbs & Co.",
+        "model": "Protector Violence Lock (Bullion-Protector) 18\" 9 lever"
+      }
+    ],
+    "lockingMechanisms": [
+      "Lever"
+    ],
+    "features": [
+      "Safe lock",
+      "Anti-pressure",
+      "Barrel"
+    ],
+    "dateAdded": "2026-08-14T21:52:46.627Z",
+    "lastUpdated": "2026-08-14T21:52:46.953Z"
+  },
+  {
     "id": "81c91d86",
     "belt": "Unranked",
     "makeModels": [
@@ -63867,6 +63964,25 @@
     "lastUpdated": "2026-07-10T23:34:13.786Z"
   },
   {
+    "id": "8845ca07",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Lips",
+        "model": "12 Lever"
+      }
+    ],
+    "lockingMechanisms": [
+      "Lever"
+    ],
+    "features": [
+      "Safe lock",
+      "Anti-pick"
+    ],
+    "dateAdded": "2026-08-14T21:52:46.627Z",
+    "lastUpdated": "2026-08-14T21:52:46.953Z"
+  },
+  {
     "id": "f74e0e97",
     "belt": "Unranked",
     "makeModels": [
@@ -64118,6 +64234,47 @@
     "dateAdded": "2023-12-28T18:48:59.000Z",
     "views": 105,
     "lastUpdated": "2025-10-25T18:24:16.788Z"
+  },
+  {
+    "id": "e432ca79",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Milners",
+        "model": "Single Stump 7 lever"
+      }
+    ],
+    "lockingMechanisms": [
+      "Lever"
+    ],
+    "features": [
+      "Safe lock",
+      "Anti-pick",
+      "Pipe-key",
+      "Barrel"
+    ],
+    "dateAdded": "2026-08-14T21:52:46.627Z",
+    "lastUpdated": "2026-08-14T21:52:46.953Z"
+  },
+  {
+    "id": "a9d7b986",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Milners",
+        "model": "Triple Stump"
+      }
+    ],
+    "lockingMechanisms": [
+      "Lever"
+    ],
+    "features": [
+      "Safe lock",
+      "Anti-pick",
+      "Barrel"
+    ],
+    "dateAdded": "2026-08-14T21:52:46.627Z",
+    "lastUpdated": "2026-08-14T21:52:46.954Z"
   },
   {
     "id": "e6872b30",
@@ -64408,6 +64565,21 @@
     "lastUpdated": "2026-08-07T17:09:23.741Z"
   },
   {
+    "id": "c6cd3574",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Opnus",
+        "model": "Tex"
+      }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "dateAdded": "2026-08-14T21:52:46.627Z",
+    "lastUpdated": "2026-08-14T21:52:46.954Z"
+  },
+  {
     "id": "2ac99741",
     "belt": "Unranked",
     "makeModels": [
@@ -64595,6 +64767,44 @@
     ],
     "views": 224,
     "lastUpdated": "2026-08-09T15:55:06.947Z"
+  },
+  {
+    "id": "fea0e2f1",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Ratner",
+        "model": "Single Stump"
+      }
+    ],
+    "lockingMechanisms": [
+      "Lever"
+    ],
+    "features": [
+      "Safe lock",
+      "Anti-pick"
+    ],
+    "dateAdded": "2026-08-14T21:52:46.628Z",
+    "lastUpdated": "2026-08-14T21:52:46.954Z"
+  },
+  {
+    "id": "5849c11e",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Ratner",
+        "model": "Wedge Bolt"
+      }
+    ],
+    "lockingMechanisms": [
+      "Lever"
+    ],
+    "features": [
+      "Safe lock",
+      "Anti-pick"
+    ],
+    "dateAdded": "2026-08-14T21:52:46.628Z",
+    "lastUpdated": "2026-08-14T21:52:46.954Z"
   },
   {
     "id": "9637ddde",

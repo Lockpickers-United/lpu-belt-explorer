@@ -853,12 +853,15 @@ Unranked,BHP,"Home Depot Brand 5 pin lock",,,"Under Review ⚑",,b68b677c
 Unranked,BKS,Belvius,,,"Under Review ⚑",,2a69b223
 Unranked,BKS,"Detect 3","with active sidebar","Pin-tumbler,Sidebar","Active sidebar",,29dab5b8
 Unranked,Boda,428/429,"8 levers",Lever,"Under Review ⚑",,08c823ed
+Unranked,"Bode Panzer",Tangential,,Wafer,"Safe lock,Pipe-key",,a2bccc4b
 Unranked,,Bond,,Pin-tumbler,"Under Review ⚑",,4062aefb
 Unranked,Bovii,LOTO,"dimple lock",Dimple,,,e35a3c91
 Unranked,Bowley,543,,Pin-tumbler,,,b1949215
 Unranked,Bowley,Rotasera,,,,,e35772c9
 Unranked,CATU,AL-230,"4 pins",Pin-tumbler,,"LOTO style, inside has Zenith 18 padlock",033ab190
 Unranked,CAWI,"Protector 7143",,,"Under Review ⚑",,5995db9e
+Unranked,Chatwood,Impregnable,,Lever,"Safe lock",,0a3affa0
+Unranked,Chatwood,Invincible,"Double bitted",Lever,"Safe lock,Anti-pressure",,81af33e7
 Unranked,Chubb,6k202,"7 lever with anti-pick",Lever,"Under Review ⚑",,267e47c4
 Unranked,Chubb,AVA,"rounded shaft key, 10 wafers",Wafer,"Under Review ⚑",,dbc6670b
 Unranked,Chubb,Detector,"curtained, 6 levers",Lever,"Curtain,Pin key,False gates",,c1c7e9d2
@@ -876,6 +879,8 @@ Unranked,Generic/Unranked,"Lock Cylinder","5 or more pins, 1 or more security pi
 Unranked,Gera,3500,,,"Under Review ⚑",,88085257
 Unranked,,Helason,"16-pin round key",Dimple,"Under Review ⚑",,93324d19
 Unranked,Heracles,y8,,,"Under Review ⚑","require 360° picking",352d0624
+Unranked,"Hobbs & Co.","Protector 9 lever",,Lever,"Safe lock,Anti-pressure,Barrel",,d0edf047
+Unranked,"Hobbs & Co.","Protector Violence Lock (Bullion-Protector) 18"" 9 lever",,Lever,"Safe lock,Anti-pressure,Barrel",,cc0581fe
 Unranked,Hobbs,"4 lever cabinet lock","uncurtained, no False gates",Lever,"Under Review ⚑,Cabinet lock,Uncurtained,Pipe key",,81c91d86
 Unranked,"Hong Dun","model tbd","security pinned dimple with sliders",,"Under Review ⚑",,4c90dcbd
 Unranked,Hori,1601,,Lever,,,476995cc
@@ -887,18 +892,24 @@ Unranked,Laperche,Diam,,Dimple,,,64662298
 Unranked,legallais,"Ancre 40 (632 002)",,Pin-tumbler,,,2eeb9bee
 Unranked,Lince,"C plus alarm",,,"Under Review ⚑",,8e11009a
 Unranked,Lince,C7,,Dimple,,,1dd55e66
+Unranked,Lips,"12 Lever",,Lever,"Safe lock,Anti-pick",,8845ca07
 Unranked,Marks,"high security SFIC",,Pin-tumbler,"Under Review ⚑",,f74e0e97
 Unranked,"Master Lock",160,,Pin-tumbler,"Under Review ⚑",,7b69a331
 Unranked,"Master Lock",2950EURD,,Dimple,"Under Review ⚑",,a6f31065
 Unranked,MCM,SS,,Dimple,"Under Review ⚑","Requires 360º",85f92137
+Unranked,Milners,"Single Stump 7 lever",,Lever,"Safe lock,Anti-pick,Pipe-key,Barrel",,e432ca79
+Unranked,Milners,"Triple Stump",,Lever,"Safe lock,Anti-pick,Barrel",,a9d7b986
 Unranked,Mindy,"AF 8-50 smiley dimple padlock",,Dimple,"Under Review ⚑",,e6872b30
 Unranked,MIWA,PX,,Pin-tumbler,,,fb472463
 Unranked,MIWA,"Star Orion","6 rows",Dimple,"High pin count",,4150776b
 Unranked,Mottura,"72 - Double bitted key","6 H-levers",Lever,"Sliding levers,Double bitted",,e9d77a86
 Unranked,,Ohshima,"3 row dimple",Dimple,"Under Review ⚑,High pin count",,ea4834c8
+Unranked,Opnus,Tex,,Pin-tumbler,,,c6cd3574
 Unranked,Picard,"CR Serrature","3 points pump lock",Pump/push,"Under Review ⚑",,2ac99741
 Unranked,Picard,VAK10,,Pump/push,,,ed0a9b08
 Unranked,Pollux,gm05,,Pump/push,"Under Review ⚑",,3ca24202
+Unranked,Ratner,"Single Stump",,Lever,"Safe lock,Anti-pick",,fea0e2f1
+Unranked,Ratner,"Wedge Bolt",,Lever,"Safe lock,Anti-pick",,5849c11e
 Unranked,"Rav Bariach",Dynamic,"with sliders",,"Under Review ⚑",,9637ddde
 Unranked,Reliabilt,"Deadbolt cylinder","5 pins, all standard",Pin-tumbler,"Under Review ⚑",,d87bb501
 Unranked,Ri-Key,"High Security (MTL clone)",,,"Under Review ⚑",,6cb514ea

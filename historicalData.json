@@ -61510,5 +61510,215 @@
     ],
     "name": "Segal Pickproof",
     "dateAdded": "2026-08-14T18:44:15.969Z"
+  },
+  "a2bccc4b": {
+    "id": "a2bccc4b",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Bode Panzer",
+        "model": "Tangential"
+      }
+    ],
+    "lockingMechanisms": [
+      "Wafer"
+    ],
+    "features": [
+      "Safe lock",
+      "Pipe-key"
+    ],
+    "name": "Bode Panzer Tangential",
+    "dateAdded": "2026-08-14T21:52:46.626Z"
+  },
+  "0a3affa0": {
+    "id": "0a3affa0",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Chatwood",
+        "model": "Impregnable"
+      }
+    ],
+    "lockingMechanisms": [
+      "Lever"
+    ],
+    "features": [
+      "Safe lock"
+    ],
+    "name": "Chatwood Impregnable",
+    "dateAdded": "2026-08-14T21:52:46.627Z"
+  },
+  "81af33e7": {
+    "id": "81af33e7",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Chatwood",
+        "model": "Invincible"
+      }
+    ],
+    "version": "Double bitted",
+    "lockingMechanisms": [
+      "Lever"
+    ],
+    "features": [
+      "Safe lock",
+      "Anti-pressure"
+    ],
+    "name": "Chatwood Invincible",
+    "dateAdded": "2026-08-14T21:52:46.627Z"
+  },
+  "d0edf047": {
+    "id": "d0edf047",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Hobbs & Co.",
+        "model": "Protector 9 lever"
+      }
+    ],
+    "lockingMechanisms": [
+      "Lever"
+    ],
+    "features": [
+      "Safe lock",
+      "Anti-pressure",
+      "Barrel"
+    ],
+    "name": "Hobbs & Co. Protector 9 lever",
+    "dateAdded": "2026-08-14T21:52:46.627Z"
+  },
+  "cc0581fe": {
+    "id": "cc0581fe",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Hobbs & Co.",
+        "model": "Protector Violence Lock (Bullion-Protector) 18\" 9 lever"
+      }
+    ],
+    "lockingMechanisms": [
+      "Lever"
+    ],
+    "features": [
+      "Safe lock",
+      "Anti-pressure",
+      "Barrel"
+    ],
+    "name": "Hobbs & Co. Protector Violence Lock (Bullion-Protector) 18\" 9 lever",
+    "dateAdded": "2026-08-14T21:52:46.627Z"
+  },
+  "8845ca07": {
+    "id": "8845ca07",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Lips",
+        "model": "12 Lever"
+      }
+    ],
+    "lockingMechanisms": [
+      "Lever"
+    ],
+    "features": [
+      "Safe lock",
+      "Anti-pick"
+    ],
+    "name": "Lips 12 Lever",
+    "dateAdded": "2026-08-14T21:52:46.627Z"
+  },
+  "e432ca79": {
+    "id": "e432ca79",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Milners",
+        "model": "Single Stump 7 lever"
+      }
+    ],
+    "lockingMechanisms": [
+      "Lever"
+    ],
+    "features": [
+      "Safe lock",
+      "Anti-pick",
+      "Pipe-key",
+      "Barrel"
+    ],
+    "name": "Milners Single Stump 7 lever",
+    "dateAdded": "2026-08-14T21:52:46.627Z"
+  },
+  "a9d7b986": {
+    "id": "a9d7b986",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Milners",
+        "model": "Triple Stump"
+      }
+    ],
+    "lockingMechanisms": [
+      "Lever"
+    ],
+    "features": [
+      "Safe lock",
+      "Anti-pick",
+      "Barrel"
+    ],
+    "name": "Milners Triple Stump",
+    "dateAdded": "2026-08-14T21:52:46.627Z"
+  },
+  "c6cd3574": {
+    "id": "c6cd3574",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Opnus",
+        "model": "Tex"
+      }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "name": "Opnus Tex",
+    "dateAdded": "2026-08-14T21:52:46.627Z"
+  },
+  "fea0e2f1": {
+    "id": "fea0e2f1",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Ratner",
+        "model": "Single Stump"
+      }
+    ],
+    "lockingMechanisms": [
+      "Lever"
+    ],
+    "features": [
+      "Safe lock",
+      "Anti-pick"
+    ],
+    "name": "Ratner Single Stump",
+    "dateAdded": "2026-08-14T21:52:46.628Z"
+  },
+  "5849c11e": {
+    "id": "5849c11e",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Ratner",
+        "model": "Wedge Bolt"
+      }
+    ],
+    "lockingMechanisms": [
+      "Lever"
+    ],
+    "features": [
+      "Safe lock",
+      "Anti-pick"
+    ],
+    "name": "Ratner Wedge Bolt",
+    "dateAdded": "2026-08-14T21:52:46.628Z"
   }
 }

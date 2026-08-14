@@ -7,11 +7,11 @@
         "label": "Ranked"
       },
       {
-        "value": 944,
+        "value": 955,
         "label": "All"
       },
       {
-        "value": 102,
+        "value": 113,
         "label": "Unranked"
       }
     ]
@@ -20,68 +20,68 @@
     {
       "belt": "White",
       "count": 18,
-      "value": 0.019067796610169493,
+      "value": 0.018848167539267015,
       "id": "White"
     },
     {
       "belt": "Yellow",
       "count": 71,
-      "value": 0.07521186440677965,
+      "value": 0.0743455497382199,
       "id": "Yellow"
     },
     {
       "belt": "Orange",
       "count": 84,
-      "value": 0.08898305084745763,
+      "value": 0.08795811518324607,
       "id": "Orange"
     },
     {
       "belt": "Green",
       "count": 155,
-      "value": 0.1641949152542373,
+      "value": 0.16230366492146597,
       "id": "Green"
     },
     {
       "belt": "Blue",
       "count": 138,
-      "value": 0.1461864406779661,
+      "value": 0.14450261780104712,
       "id": "Blue"
     },
     {
       "belt": "Purple",
       "count": 118,
-      "value": 0.125,
+      "value": 0.12356020942408377,
       "id": "Purple"
     },
     {
       "belt": "Brown",
       "count": 84,
-      "value": 0.08898305084745763,
+      "value": 0.08795811518324607,
       "id": "Brown"
     },
     {
       "belt": "Red",
       "count": 73,
-      "value": 0.07733050847457627,
+      "value": 0.07643979057591622,
       "id": "Red"
     },
     {
       "belt": "Black",
       "count": 101,
-      "value": 0.10699152542372882,
+      "value": 0.10575916230366492,
       "id": "Black"
     },
     {
       "belt": "Unranked",
-      "count": 102,
-      "value": 0.10805084745762712,
+      "count": 113,
+      "value": 0.11832460732984293,
       "id": "Unranked"
     }
   ],
   "lockingMechanisms": [
     {
       "label": "Pin-tumbler",
-      "value": 373,
+      "value": 374,
       "id": "pin-tumbler"
     },
     {
@@ -96,7 +96,7 @@
     },
     {
       "label": "Lever",
-      "value": 80,
+      "value": 89,
       "id": "lever"
     },
     {
@@ -115,14 +115,14 @@
       "id": "pump-push"
     },
     {
+      "label": "Wafer",
+      "value": 19,
+      "id": "wafer"
+    },
+    {
       "label": "Lever/sidebar",
       "value": 18,
       "id": "lever-sidebar"
-    },
-    {
-      "label": "Wafer",
-      "value": 18,
-      "id": "wafer"
     },
     {
       "label": "Magnet",
@@ -502,12 +502,12 @@
     "Unranked": [
       {
         "label": "Lever",
-        "value": 25,
+        "value": 34,
         "id": "lever"
       },
       {
         "label": "Pin-tumbler",
-        "value": 22,
+        "value": 23,
         "id": "pin-tumbler"
       },
       {
@@ -532,7 +532,7 @@
       },
       {
         "label": "Wafer",
-        "value": 2,
+        "value": 3,
         "id": "wafer"
       },
       {
@@ -558,9 +558,9 @@
       },
       {
         "segment": "All locks",
-        "count": 944,
+        "count": 955,
         "media": 876,
-        "coverage": "92%"
+        "coverage": "91%"
       }
     ],
     "uniqueImages": 4618,
@@ -1821,6 +1821,6 @@
     ]
   },
   "metadata": {
-    "updatedDateTime": "2026-08-14 18:44"
+    "updatedDateTime": "2026-08-14 21:52"
   }
 }
