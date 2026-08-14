@@ -62987,6 +62987,26 @@
     "lastUpdated": "2025-12-02T23:39:17.965Z"
   },
   {
+    "id": "955dbd20",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Fichet",
+        "model": "787 Exterior"
+      }
+    ],
+    "version": "With blocker",
+    "lockingMechanisms": [
+      "Lever"
+    ],
+    "features": [
+      "Active sidebar",
+      "Shutter"
+    ],
+    "dateAdded": "2026-08-14T22:36:08.737Z",
+    "lastUpdated": "2026-08-14T22:36:08.984Z"
+  },
+  {
     "id": "89207b78",
     "belt": "Unranked",
     "makeModels": [
@@ -63418,7 +63438,7 @@
     "features": [
       "Safe lock",
       "Anti-pressure",
-      "Barrel"
+      "Curtain"
     ],
     "dateAdded": "2026-08-14T21:52:46.627Z",
     "lastUpdated": "2026-08-14T21:52:46.953Z"
@@ -63438,7 +63458,7 @@
     "features": [
       "Safe lock",
       "Anti-pressure",
-      "Barrel"
+      "Curtain"
     ],
     "dateAdded": "2026-08-14T21:52:46.627Z",
     "lastUpdated": "2026-08-14T21:52:46.953Z"
@@ -64251,7 +64271,7 @@
       "Safe lock",
       "Anti-pick",
       "Pipe-key",
-      "Barrel"
+      "Curtain"
     ],
     "dateAdded": "2026-08-14T21:52:46.627Z",
     "lastUpdated": "2026-08-14T21:52:46.953Z"
@@ -64271,7 +64291,7 @@
     "features": [
       "Safe lock",
       "Anti-pick",
-      "Barrel"
+      "Curtain"
     ],
     "dateAdded": "2026-08-14T21:52:46.627Z",
     "lastUpdated": "2026-08-14T21:52:46.954Z"

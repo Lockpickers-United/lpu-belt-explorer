@@ -61583,7 +61583,7 @@
     "features": [
       "Safe lock",
       "Anti-pressure",
-      "Barrel"
+      "Curtain"
     ],
     "name": "Hobbs & Co. Protector 9 lever",
     "dateAdded": "2026-08-14T21:52:46.627Z"
@@ -61603,7 +61603,7 @@
     "features": [
       "Safe lock",
       "Anti-pressure",
-      "Barrel"
+      "Curtain"
     ],
     "name": "Hobbs & Co. Protector Violence Lock (Bullion-Protector) 18\" 9 lever",
     "dateAdded": "2026-08-14T21:52:46.627Z"
@@ -61643,7 +61643,7 @@
       "Safe lock",
       "Anti-pick",
       "Pipe-key",
-      "Barrel"
+      "Curtain"
     ],
     "name": "Milners Single Stump 7 lever",
     "dateAdded": "2026-08-14T21:52:46.627Z"
@@ -61663,7 +61663,7 @@
     "features": [
       "Safe lock",
       "Anti-pick",
-      "Barrel"
+      "Curtain"
     ],
     "name": "Milners Triple Stump",
     "dateAdded": "2026-08-14T21:52:46.627Z"
@@ -61720,5 +61720,25 @@
     ],
     "name": "Ratner Wedge Bolt",
     "dateAdded": "2026-08-14T21:52:46.628Z"
+  },
+  "955dbd20": {
+    "id": "955dbd20",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Fichet",
+        "model": "787 Exterior"
+      }
+    ],
+    "version": "With blocker",
+    "lockingMechanisms": [
+      "Lever"
+    ],
+    "features": [
+      "Active sidebar",
+      "Shutter"
+    ],
+    "name": "Fichet 787 Exterior",
+    "dateAdded": "2026-08-14T22:36:08.737Z"
   }
 }

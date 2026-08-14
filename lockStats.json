@@ -7,11 +7,11 @@
         "label": "Ranked"
       },
       {
-        "value": 955,
+        "value": 956,
         "label": "All"
       },
       {
-        "value": 113,
+        "value": 114,
         "label": "Unranked"
       }
     ]
@@ -20,61 +20,61 @@
     {
       "belt": "White",
       "count": 18,
-      "value": 0.018848167539267015,
+      "value": 0.01882845188284519,
       "id": "White"
     },
     {
       "belt": "Yellow",
       "count": 71,
-      "value": 0.0743455497382199,
+      "value": 0.07426778242677824,
       "id": "Yellow"
     },
     {
       "belt": "Orange",
       "count": 84,
-      "value": 0.08795811518324607,
+      "value": 0.08786610878661087,
       "id": "Orange"
     },
     {
       "belt": "Green",
       "count": 155,
-      "value": 0.16230366492146597,
+      "value": 0.16213389121338911,
       "id": "Green"
     },
     {
       "belt": "Blue",
       "count": 138,
-      "value": 0.14450261780104712,
+      "value": 0.14435146443514643,
       "id": "Blue"
     },
     {
       "belt": "Purple",
       "count": 118,
-      "value": 0.12356020942408377,
+      "value": 0.12343096234309624,
       "id": "Purple"
     },
     {
       "belt": "Brown",
       "count": 84,
-      "value": 0.08795811518324607,
+      "value": 0.08786610878661087,
       "id": "Brown"
     },
     {
       "belt": "Red",
       "count": 73,
-      "value": 0.07643979057591622,
+      "value": 0.07635983263598327,
       "id": "Red"
     },
     {
       "belt": "Black",
       "count": 101,
-      "value": 0.10575916230366492,
+      "value": 0.10564853556485355,
       "id": "Black"
     },
     {
       "belt": "Unranked",
-      "count": 113,
-      "value": 0.11832460732984293,
+      "count": 114,
+      "value": 0.1192468619246862,
       "id": "Unranked"
     }
   ],
@@ -96,7 +96,7 @@
     },
     {
       "label": "Lever",
-      "value": 89,
+      "value": 90,
       "id": "lever"
     },
     {
@@ -502,7 +502,7 @@
     "Unranked": [
       {
         "label": "Lever",
-        "value": 34,
+        "value": 35,
         "id": "lever"
       },
       {
@@ -558,7 +558,7 @@
       },
       {
         "segment": "All locks",
-        "count": 955,
+        "count": 956,
         "media": 876,
         "coverage": "91%"
       }
@@ -1821,6 +1821,6 @@
     ]
   },
   "metadata": {
-    "updatedDateTime": "2026-08-14 21:52"
+    "updatedDateTime": "2026-08-14 22:36"
   }
 }
