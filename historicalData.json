@@ -61495,5 +61495,20 @@
     ],
     "name": "GEGE AP1000, AP2000, AP3000",
     "dateAdded": "2026-08-07T15:07:44.520Z"
+  },
+  "cdfac03d": {
+    "id": "cdfac03d",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Segal",
+        "model": "Pickproof"
+      }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "name": "Segal Pickproof",
+    "dateAdded": "2026-08-14T18:44:15.969Z"
   }
 }

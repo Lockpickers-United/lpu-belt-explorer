@@ -65369,6 +65369,21 @@
     "lastUpdated": "2026-04-28T18:31:50.362Z"
   },
   {
+    "id": "cdfac03d",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Segal",
+        "model": "Pickproof"
+      }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "dateAdded": "2026-08-14T18:44:15.969Z",
+    "lastUpdated": "2026-08-14T18:44:16.266Z"
+  },
+  {
     "id": "452aaa17",
     "belt": "Unranked",
     "makeModels": [
