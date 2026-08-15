@@ -553,17 +553,17 @@
       {
         "segment": "Ranked locks",
         "count": 842,
-        "media": 795,
+        "media": 797,
         "coverage": "94%"
       },
       {
         "segment": "All locks",
         "count": 957,
-        "media": 878,
+        "media": 880,
         "coverage": "91%"
       }
     ],
-    "uniqueImages": 4628,
+    "uniqueImages": 4632,
     "contributors": 313,
     "topPhotographers": [
       {
@@ -588,7 +588,7 @@
       },
       {
         "contributor": "Sidepicks",
-        "images": 146
+        "images": 147
       },
       {
         "contributor": "Ben-on-reddit",
@@ -615,16 +615,16 @@
         "images": 66
       },
       {
+        "contributor": "DQ",
+        "images": 63
+      },
+      {
         "contributor": "Qikom",
         "images": 63
       },
       {
         "contributor": "myktylgaan",
         "images": 61
-      },
-      {
-        "contributor": "DQ",
-        "images": 60
       },
       {
         "contributor": "Septclues",
@@ -1821,6 +1821,6 @@
     ]
   },
   "metadata": {
-    "updatedDateTime": "2026-08-14 23:56"
+    "updatedDateTime": "2026-08-15 00:41"
   }
 }
