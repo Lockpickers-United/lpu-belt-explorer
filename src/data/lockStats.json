@@ -559,11 +559,11 @@
       {
         "segment": "All locks",
         "count": 958,
-        "media": 886,
+        "media": 887,
         "coverage": "92%"
       }
     ],
-    "uniqueImages": 4659,
+    "uniqueImages": 4670,
     "contributors": 314,
     "topPhotographers": [
       {
@@ -627,6 +627,10 @@
         "images": 61
       },
       {
+        "contributor": "tonysansan",
+        "images": 58
+      },
+      {
         "contributor": "Septclues",
         "images": 56
       },
@@ -640,10 +644,6 @@
       },
       {
         "contributor": "Erik Weisz",
-        "images": 52
-      },
-      {
-        "contributor": "tonysansan",
         "images": 52
       },
       {
@@ -1000,6 +1000,10 @@
       },
       {
         "contributor": "Craig 3.0",
+        "images": 7
+      },
+      {
+        "contributor": "Ferf",
         "images": 7
       },
       {
@@ -1455,10 +1459,6 @@
         "images": 2
       },
       {
-        "contributor": "Ferf",
-        "images": 2
-      },
-      {
         "contributor": "Granny",
         "images": 2
       },
@@ -1825,6 +1825,6 @@
     ]
   },
   "metadata": {
-    "updatedDateTime": "2026-08-15 06:29"
+    "updatedDateTime": "2026-08-15 21:14"
   }
 }
