@@ -64819,7 +64819,7 @@
     "makeModels": [
       {
         "make": "Pinball",
-        "model": "PickProof"
+        "model": "PickProof (Segal)"
       }
     ],
     "lockingMechanisms": [
@@ -64888,7 +64888,7 @@
         "imageTitle": "Pinball Pickproof"
       }
     ],
-    "lastUpdated": "2026-08-14T23:56:42.569Z"
+    "lastUpdated": "2026-08-15T00:50:42.579Z"
   },
   {
     "id": "3ca24202",
