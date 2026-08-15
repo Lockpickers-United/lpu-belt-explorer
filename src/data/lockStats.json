@@ -7,11 +7,11 @@
         "label": "Ranked"
       },
       {
-        "value": 957,
+        "value": 958,
         "label": "All"
       },
       {
-        "value": 115,
+        "value": 116,
         "label": "Unranked"
       }
     ]
@@ -20,68 +20,68 @@
     {
       "belt": "White",
       "count": 18,
-      "value": 0.018808777429467086,
+      "value": 0.018789144050104383,
       "id": "White"
     },
     {
       "belt": "Yellow",
       "count": 71,
-      "value": 0.0741901776384535,
+      "value": 0.07411273486430063,
       "id": "Yellow"
     },
     {
       "belt": "Orange",
       "count": 84,
-      "value": 0.0877742946708464,
+      "value": 0.08768267223382047,
       "id": "Orange"
     },
     {
       "belt": "Green",
       "count": 155,
-      "value": 0.1619644723092999,
+      "value": 0.1617954070981211,
       "id": "Green"
     },
     {
       "belt": "Blue",
       "count": 138,
-      "value": 0.14420062695924765,
+      "value": 0.1440501043841336,
       "id": "Blue"
     },
     {
       "belt": "Purple",
       "count": 118,
-      "value": 0.12330198537095088,
+      "value": 0.12317327766179541,
       "id": "Purple"
     },
     {
       "belt": "Brown",
       "count": 84,
-      "value": 0.0877742946708464,
+      "value": 0.08768267223382047,
       "id": "Brown"
     },
     {
       "belt": "Red",
       "count": 73,
-      "value": 0.07628004179728318,
+      "value": 0.07620041753653445,
       "id": "Red"
     },
     {
       "belt": "Black",
       "count": 101,
-      "value": 0.10553814002089865,
+      "value": 0.10542797494780794,
       "id": "Black"
     },
     {
       "belt": "Unranked",
-      "count": 115,
-      "value": 0.12016718913270637,
+      "count": 116,
+      "value": 0.12108559498956159,
       "id": "Unranked"
     }
   ],
   "lockingMechanisms": [
     {
       "label": "Pin-tumbler",
-      "value": 375,
+      "value": 376,
       "id": "pin-tumbler"
     },
     {
@@ -507,7 +507,7 @@
       },
       {
         "label": "Pin-tumbler",
-        "value": 24,
+        "value": 25,
         "id": "pin-tumbler"
       },
       {
@@ -553,22 +553,22 @@
       {
         "segment": "Ranked locks",
         "count": 842,
-        "media": 797,
-        "coverage": "94%"
+        "media": 800,
+        "coverage": "95%"
       },
       {
         "segment": "All locks",
-        "count": 957,
-        "media": 880,
-        "coverage": "91%"
+        "count": 958,
+        "media": 886,
+        "coverage": "92%"
       }
     ],
-    "uniqueImages": 4632,
-    "contributors": 313,
+    "uniqueImages": 4659,
+    "contributors": 314,
     "topPhotographers": [
       {
         "contributor": "LockPickingFisherman",
-        "images": 542
+        "images": 544
       },
       {
         "contributor": "mgsecure",
@@ -595,12 +595,12 @@
         "images": 138
       },
       {
-        "contributor": "decoder",
-        "images": 89
+        "contributor": "Clefmentine",
+        "images": 90
       },
       {
-        "contributor": "Clefmentine",
-        "images": 88
+        "contributor": "decoder",
+        "images": 89
       },
       {
         "contributor": "fabianoh130",
@@ -644,7 +644,7 @@
       },
       {
         "contributor": "tonysansan",
-        "images": 47
+        "images": 52
       },
       {
         "contributor": "Legendofthesamurai",
@@ -835,6 +835,10 @@
         "images": 12
       },
       {
+        "contributor": "Indigenouslockpicker",
+        "images": 12
+      },
+      {
         "contributor": "Kapton",
         "images": 12
       },
@@ -903,10 +907,6 @@
         "images": 10
       },
       {
-        "contributor": "Indigenouslockpicker",
-        "images": 10
-      },
-      {
         "contributor": "L0ckJockey",
         "images": 10
       },
@@ -919,11 +919,19 @@
         "images": 10
       },
       {
+        "contributor": "SafeAF_orElse",
+        "images": 10
+      },
+      {
         "contributor": "Skwiggledork",
         "images": 10
       },
       {
         "contributor": "Two06",
+        "images": 10
+      },
+      {
+        "contributor": "Wild-Billiam",
         "images": 10
       },
       {
@@ -1055,10 +1063,6 @@
         "images": 6
       },
       {
-        "contributor": "SafeAF_orElse",
-        "images": 6
-      },
-      {
         "contributor": "Tyler J. Thomas",
         "images": 6
       },
@@ -1068,10 +1072,6 @@
       },
       {
         "contributor": "Villain",
-        "images": 6
-      },
-      {
-        "contributor": "Wild-Billiam",
         "images": 6
       },
       {
@@ -1092,6 +1092,10 @@
       },
       {
         "contributor": "Guid",
+        "images": 5
+      },
+      {
+        "contributor": "iamjoo",
         "images": 5
       },
       {
@@ -1232,6 +1236,10 @@
       },
       {
         "contributor": "Thice",
+        "images": 4
+      },
+      {
+        "contributor": "Troyboy1263",
         "images": 4
       },
       {
@@ -1675,10 +1683,6 @@
         "images": 1
       },
       {
-        "contributor": "iamjoo",
-        "images": 1
-      },
-      {
         "contributor": "imaginary_unit",
         "images": 1
       },
@@ -1821,6 +1825,6 @@
     ]
   },
   "metadata": {
-    "updatedDateTime": "2026-08-15 00:50"
+    "updatedDateTime": "2026-08-15 06:29"
   }
 }

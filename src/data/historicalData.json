@@ -13495,7 +13495,7 @@
     "makeModels": [
       {
         "make": "Kenaurd",
-        "model": "Kenaurd"
+        "model": "Dimple Lock"
       }
     ],
     "version": "pin-in-pin, 4 pins",
@@ -13531,7 +13531,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/52983184965_0ce3cd6655_o.jpg"
       }
     ],
-    "name": "Kenaurd Kenaurd",
+    "name": "Kenaurd Dimple Lock",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "views": 836,
     "lastUpdated": "2025-03-19T15:44:57.285Z",
@@ -19408,7 +19408,7 @@
     "makeModels": [
       {
         "make": "Kenaurd",
-        "model": "Kenaurd"
+        "model": "Dimple Lock"
       }
     ],
     "version": "pin-in-pin, 5 pins",
@@ -19462,7 +19462,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/52691795463_b0821ec168_o.jpg"
       }
     ],
-    "name": "Kenaurd Kenaurd",
+    "name": "Kenaurd Dimple Lock",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "features": [
       "Pin-in-pin"
@@ -61180,7 +61180,7 @@
     "makeModels": [
       {
         "make": "Kenaurd",
-        "model": "Kenaurd"
+        "model": "Dimple Lock"
       }
     ],
     "version": "4 pin, with serrated drivers",
@@ -61191,7 +61191,7 @@
       "Pin-in-pin",
       "Latest Changelog"
     ],
-    "name": "Kenaurd Kenaurd",
+    "name": "Kenaurd Dimple Lock",
     "dateAdded": "2026-08-06T03:59:39.967Z"
   },
   "787e3de9": {
@@ -61255,7 +61255,7 @@
     "makeModels": [
       {
         "make": "Kenaurd",
-        "model": "Kenaurd"
+        "model": "Dimple Lock"
       }
     ],
     "version": "5 pin, with serrated drivers",
@@ -61266,7 +61266,7 @@
       "Pin-in-pin",
       "Latest Changelog"
     ],
-    "name": "Kenaurd Kenaurd",
+    "name": "Kenaurd Dimple Lock",
     "dateAdded": "2026-08-06T03:59:39.968Z"
   },
   "37dc53bb": {
@@ -61755,5 +61755,20 @@
     ],
     "name": "Pinball PickProof (Segal)",
     "dateAdded": "2026-08-14T23:56:42.171Z"
+  },
+  "199e2e7e": {
+    "id": "199e2e7e",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "MG",
+        "model": "Secure"
+      }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "name": "MG Secure",
+    "dateAdded": "2026-08-15T06:29:23.734Z"
   }
 }
