@@ -61747,13 +61747,13 @@
     "makeModels": [
       {
         "make": "Pinball",
-        "model": "PickProof"
+        "model": "PickProof (Segal)"
       }
     ],
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "name": "Pinball PickProof",
+    "name": "Pinball PickProof (Segal)",
     "dateAdded": "2026-08-14T23:56:42.171Z"
   }
 }
