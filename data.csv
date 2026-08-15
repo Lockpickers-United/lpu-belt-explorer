@@ -272,8 +272,8 @@ Green,Kaba,Micro,,Dimple,,,c81ca385
 Green,,"Kai Kai",,,,,14db6dbd
 Green,"Kale Kilit","164 CE",,Dimple,,,62f3dc5c
 Green,Kasp,14040,,Pin-tumbler,,,14ece36b
-Green,Kenaurd,Kenaurd,"pin-in-pin, 4 pins",Dimple,Pin-in-pin,,7ec79663
-Green,Kenaurd,Kenaurd,"4 pin, with serrated drivers",Dimple,"Pin-in-pin,Latest Changelog",,d04696c1
+Green,Kenaurd,"Dimple Lock","pin-in-pin, 4 pins",Dimple,Pin-in-pin,,7ec79663
+Green,Kenaurd,"Dimple Lock","4 pin, with serrated drivers",Dimple,"Pin-in-pin,Latest Changelog",,d04696c1
 Green,Kryptonite,"6-pin padlock",,Pin-tumbler,,,1c002521
 Green,Lockwood,120/40,,Pin-tumbler,Unguttable,,5f0834f5
 Green,Lockwood,234B45,,Pin-tumbler,,,3eced659
@@ -410,8 +410,8 @@ Blue,Kaken,KX3,"exterior, <6 sliders/wafers","Pin-tumbler,Slider,Wafer","False g
 Blue,"Kale Kilit","164 GNC","6 pin, standard profile",Pin-tumbler,,,9811b260
 Blue,"Kale Kilit","164 YGS SE",,Dimple,,,b01220ea
 Blue,"Kawaha,Magmaus","Kawaha,Magmaus",,"Disc detainer","Latest Changelog",,ab9df828
-Blue,Kenaurd,Kenaurd,"pin-in-pin, 5 pins",Dimple,Pin-in-pin,,54dc69e8
-Blue,Kenaurd,Kenaurd,"5 pin, with serrated drivers",Pin-tumbler,"Pin-in-pin,Latest Changelog",,fe000caa
+Blue,Kenaurd,"Dimple Lock","pin-in-pin, 5 pins",Dimple,Pin-in-pin,,54dc69e8
+Blue,Kenaurd,"Dimple Lock","5 pin, with serrated drivers",Pin-tumbler,"Pin-in-pin,Latest Changelog",,fe000caa
 Blue,Kryptonite,"Disk Detainer",,"Disc detainer","Random mid tension","Readily picked with front tension and counter-rotation",c8c0ee06
 Blue,Lince,C4,,Dimple,,,adc2d335
 Blue,"Lockwood,Lockwood,Lockwood,Lockwood,Lockwood","334B45,356S63,214A40,215A40,270S70","with spools",Pin-tumbler,,,331c9d36
@@ -898,6 +898,7 @@ Unranked,Marks,"high security SFIC",,Pin-tumbler,"Under Review ⚑",,f74e0e97
 Unranked,"Master Lock",160,,Pin-tumbler,"Under Review ⚑",,7b69a331
 Unranked,"Master Lock",2950EURD,,Dimple,"Under Review ⚑",,a6f31065
 Unranked,MCM,SS,,Dimple,"Under Review ⚑","Requires 360º",85f92137
+Unranked,MG,Secure,,Pin-tumbler,,,199e2e7e
 Unranked,Milners,"Single Stump 7 lever",,Lever,"Safe lock,Anti-pick,Pipe-key,Curtain",,e432ca79
 Unranked,Milners,"Triple Stump",,Lever,"Safe lock,Anti-pick,Curtain",,a9d7b986
 Unranked,Mindy,"AF 8-50 smiley dimple padlock",,Dimple,"Under Review ⚑",,e6872b30
