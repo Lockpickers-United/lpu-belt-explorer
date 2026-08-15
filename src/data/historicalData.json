@@ -13495,7 +13495,7 @@
     "makeModels": [
       {
         "make": "Kenaurd",
-        "model": "Kenaurd"
+        "model": "Dimple Lock"
       }
     ],
     "version": "pin-in-pin, 4 pins",
@@ -13531,7 +13531,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/52983184965_0ce3cd6655_o.jpg"
       }
     ],
-    "name": "Kenaurd Kenaurd",
+    "name": "Kenaurd Dimple Lock",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "views": 836,
     "lastUpdated": "2025-03-19T15:44:57.285Z",
@@ -19408,7 +19408,7 @@
     "makeModels": [
       {
         "make": "Kenaurd",
-        "model": "Kenaurd"
+        "model": "Dimple Lock"
       }
     ],
     "version": "pin-in-pin, 5 pins",
@@ -19462,7 +19462,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/52691795463_b0821ec168_o.jpg"
       }
     ],
-    "name": "Kenaurd Kenaurd",
+    "name": "Kenaurd Dimple Lock",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "features": [
       "Pin-in-pin"
@@ -61180,7 +61180,7 @@
     "makeModels": [
       {
         "make": "Kenaurd",
-        "model": "Kenaurd"
+        "model": "Dimple Lock"
       }
     ],
     "version": "4 pin, with serrated drivers",
@@ -61191,7 +61191,7 @@
       "Pin-in-pin",
       "Latest Changelog"
     ],
-    "name": "Kenaurd Kenaurd",
+    "name": "Kenaurd Dimple Lock",
     "dateAdded": "2026-08-06T03:59:39.967Z"
   },
   "787e3de9": {
@@ -61255,7 +61255,7 @@
     "makeModels": [
       {
         "make": "Kenaurd",
-        "model": "Kenaurd"
+        "model": "Dimple Lock"
       }
     ],
     "version": "5 pin, with serrated drivers",
@@ -61266,7 +61266,7 @@
       "Pin-in-pin",
       "Latest Changelog"
     ],
-    "name": "Kenaurd Kenaurd",
+    "name": "Kenaurd Dimple Lock",
     "dateAdded": "2026-08-06T03:59:39.968Z"
   },
   "37dc53bb": {
@@ -61495,5 +61495,280 @@
     ],
     "name": "GEGE AP1000, AP2000, AP3000",
     "dateAdded": "2026-08-07T15:07:44.520Z"
+  },
+  "cdfac03d": {
+    "id": "cdfac03d",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Segal",
+        "model": "PickProof"
+      }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "name": "Segal PickProof",
+    "dateAdded": "2026-08-14T18:44:15.969Z"
+  },
+  "a2bccc4b": {
+    "id": "a2bccc4b",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Bode Panzer",
+        "model": "Tangential"
+      }
+    ],
+    "lockingMechanisms": [
+      "Wafer"
+    ],
+    "features": [
+      "Safe lock",
+      "Pipe-key"
+    ],
+    "name": "Bode Panzer Tangential",
+    "dateAdded": "2026-08-14T21:52:46.626Z"
+  },
+  "0a3affa0": {
+    "id": "0a3affa0",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Chatwood",
+        "model": "Impregnable"
+      }
+    ],
+    "lockingMechanisms": [
+      "Lever"
+    ],
+    "features": [
+      "Safe lock"
+    ],
+    "name": "Chatwood Impregnable",
+    "dateAdded": "2026-08-14T21:52:46.627Z"
+  },
+  "81af33e7": {
+    "id": "81af33e7",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Chatwood",
+        "model": "Invincible"
+      }
+    ],
+    "version": "Double bitted",
+    "lockingMechanisms": [
+      "Lever"
+    ],
+    "features": [
+      "Safe lock",
+      "Anti-pressure"
+    ],
+    "name": "Chatwood Invincible",
+    "dateAdded": "2026-08-14T21:52:46.627Z"
+  },
+  "d0edf047": {
+    "id": "d0edf047",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Hobbs & Co.",
+        "model": "Protector 9 lever"
+      }
+    ],
+    "lockingMechanisms": [
+      "Lever"
+    ],
+    "features": [
+      "Safe lock",
+      "Anti-pressure",
+      "Curtain"
+    ],
+    "name": "Hobbs & Co. Protector 9 lever",
+    "dateAdded": "2026-08-14T21:52:46.627Z"
+  },
+  "cc0581fe": {
+    "id": "cc0581fe",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Hobbs & Co.",
+        "model": "Protector Violence Lock (Bullion-Protector) 18\" 9 lever"
+      }
+    ],
+    "lockingMechanisms": [
+      "Lever"
+    ],
+    "features": [
+      "Safe lock",
+      "Anti-pressure",
+      "Curtain"
+    ],
+    "name": "Hobbs & Co. Protector Violence Lock (Bullion-Protector) 18\" 9 lever",
+    "dateAdded": "2026-08-14T21:52:46.627Z"
+  },
+  "8845ca07": {
+    "id": "8845ca07",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Lips",
+        "model": "12 Lever"
+      }
+    ],
+    "lockingMechanisms": [
+      "Lever"
+    ],
+    "features": [
+      "Safe lock",
+      "Anti-pick"
+    ],
+    "name": "Lips 12 Lever",
+    "dateAdded": "2026-08-14T21:52:46.627Z"
+  },
+  "e432ca79": {
+    "id": "e432ca79",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Milners",
+        "model": "Single Stump 7 lever"
+      }
+    ],
+    "lockingMechanisms": [
+      "Lever"
+    ],
+    "features": [
+      "Safe lock",
+      "Anti-pick",
+      "Pipe-key",
+      "Curtain"
+    ],
+    "name": "Milners Single Stump 7 lever",
+    "dateAdded": "2026-08-14T21:52:46.627Z"
+  },
+  "a9d7b986": {
+    "id": "a9d7b986",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Milners",
+        "model": "Triple Stump"
+      }
+    ],
+    "lockingMechanisms": [
+      "Lever"
+    ],
+    "features": [
+      "Safe lock",
+      "Anti-pick",
+      "Curtain"
+    ],
+    "name": "Milners Triple Stump",
+    "dateAdded": "2026-08-14T21:52:46.627Z"
+  },
+  "c6cd3574": {
+    "id": "c6cd3574",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Opnus",
+        "model": "Tex"
+      }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "name": "Opnus Tex",
+    "dateAdded": "2026-08-14T21:52:46.627Z"
+  },
+  "fea0e2f1": {
+    "id": "fea0e2f1",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Ratner",
+        "model": "Single Stump"
+      }
+    ],
+    "lockingMechanisms": [
+      "Lever"
+    ],
+    "features": [
+      "Safe lock",
+      "Anti-pick"
+    ],
+    "name": "Ratner Single Stump",
+    "dateAdded": "2026-08-14T21:52:46.628Z"
+  },
+  "5849c11e": {
+    "id": "5849c11e",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Ratner",
+        "model": "Wedge Bolt"
+      }
+    ],
+    "lockingMechanisms": [
+      "Lever"
+    ],
+    "features": [
+      "Safe lock",
+      "Anti-pick"
+    ],
+    "name": "Ratner Wedge Bolt",
+    "dateAdded": "2026-08-14T21:52:46.628Z"
+  },
+  "955dbd20": {
+    "id": "955dbd20",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Fichet",
+        "model": "787 Exterior"
+      }
+    ],
+    "version": "With blocker",
+    "lockingMechanisms": [
+      "Lever"
+    ],
+    "features": [
+      "Active sidebar",
+      "Shutter"
+    ],
+    "name": "Fichet 787 Exterior",
+    "dateAdded": "2026-08-14T22:36:08.737Z"
+  },
+  "6c395573": {
+    "id": "6c395573",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Pinball",
+        "model": "PickProof (Segal)"
+      }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "name": "Pinball PickProof (Segal)",
+    "dateAdded": "2026-08-14T23:56:42.171Z"
+  },
+  "199e2e7e": {
+    "id": "199e2e7e",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "MG",
+        "model": "Secure"
+      }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "name": "MG Secure",
+    "dateAdded": "2026-08-15T06:29:23.734Z"
   }
 }
