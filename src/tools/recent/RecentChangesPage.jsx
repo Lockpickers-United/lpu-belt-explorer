@@ -22,8 +22,14 @@ export default function RecentChangesPage() {
     const {filters, setFilters} = useContext(FilterContext)
     console.log('filters', filters)
 
+    const recentDays = 14
+    const [recentHours, setRecentHours] = useState(filters.hours || recentDays * 24)
+    const recentText = recentHours === recentDays * 24 ? `${recentDays} days` : `${recentHours} hours`
+
+
     const handleChangeHours = useCallback((hours) => {
         setFilters({hours})
+        setRecentHours(hours)
     }, [setFilters])
 
 
@@ -48,10 +54,6 @@ export default function RecentChangesPage() {
         }, 100)
 
     }, [])
-
-    const recentDays = 14
-    const [recentHours, setRecentHours] = useState(filters.hours || recentDays * 24)
-    const recentText = recentHours === recentDays * 24 ? `${recentDays} days` : `${recentHours} hours`
 
     let title = ''
     switch (selected.label) {
