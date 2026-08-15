@@ -11,6 +11,7 @@ import allEntries from '../../data/data.json'
 import deletedEntries from '../../data/deletedEntries.json'
 import orphanedMediaEntries from '../../data/orphanedMediaEntries.json'
 import ChoiceButtonGroup from '../../util/ChoiceButtonGroup.jsx'
+import FilterContext from '../../context/FilterContext.jsx'
 
 /**
  * @prop {object[]} visibleEntries
@@ -18,6 +19,13 @@ import ChoiceButtonGroup from '../../util/ChoiceButtonGroup.jsx'
 
 export default function RecentChangesPage() {
     const {adminRole} = useContext(DBContext)
+    const {filters, setFilters} = useContext(FilterContext)
+    console.log('filters', filters)
+
+    const handleChangeHours = useCallback((hours) => {
+        setFilters({hours})
+    }, [setFilters])
+
 
     const options = useMemo(() => {
         return adminRole
@@ -42,7 +50,7 @@ export default function RecentChangesPage() {
     }, [])
 
     const recentDays = 14
-    const [recentHours, setRecentHours] = useState(recentDays * 24)
+    const [recentHours, setRecentHours] = useState(filters.hours || recentDays * 24)
     const recentText = recentHours === recentDays * 24 ? `${recentDays} days` : `${recentHours} hours`
 
     let title = ''
@@ -134,15 +142,15 @@ export default function RecentChangesPage() {
                     fontSize: '1rem',
                     textAlign: 'center'
                 }}>
-                    Last <Link onClick={() => setHours(4)}
+                    Last <Link onClick={() => handleChangeHours(4)}
                                style={{color: recentHours === 4 ? '#de9c12' : '#14a7c7'}}>4</Link> |&nbsp;
-                    <Link onClick={() => setHours(12)}
+                    <Link onClick={() => handleChangeHours(12)}
                           style={{color: recentHours === 12 ? '#de9c12' : '#14a7c7'}}>12</Link> |&nbsp;
-                    <Link onClick={() => setHours(24)}
+                    <Link onClick={() => handleChangeHours(24)}
                           style={{color: recentHours === 24 ? '#de9c12' : '#14a7c7'}}>24</Link> |&nbsp;
-                    <Link onClick={() => setHours(48)}
+                    <Link onClick={() => handleChangeHours(48)}
                           style={{color: recentHours === 48 ? '#de9c12' : '#14a7c7'}}>48</Link> |&nbsp;
-                    <Link onClick={() => setHours(recentDays * 24)}
+                    <Link onClick={() => handleChangeHours(recentDays * 24)}
                           style={{color: recentHours === recentDays * 24 ? '#de9c12' : '#14a7c7'}}>all</Link> hours<br/><br/>
                     <ExportThanksButton thanksText={thanksText}/>
                 </div>
