@@ -10,19 +10,19 @@ The belt ranking system is used both as a means of comparing the relative diffic
 
 Belt ranking classification is also used as a shorthand for lock difficulty, as each belt defines a list of locks of comparable complexity. Locks not on the list are frequently described by their "approximate" belt level.
 
-Today, there are nearly 800 locks ranked in the system.
+Today, there are nearly 1000 locks ranked in the system.
 
 ### The LPU Belt Explorer
 
-Launched in February 2023, the LPU Belt Explorer is an interactive tool that allows users to explore and learn about the locks within the system. It provides detailed information on a wide array of locks, supported by nearly 3,000 photos contributed by over 200 authors, covering approximately 95% of all ranked locks. This resource has become invaluable for both new and experienced members of the locksport community.
+Launched in February 2023, the LPU Belt Explorer is an interactive tool that allows users to explore and learn about the locks within the system. It provides detailed information on a wide array of locks, supported by nearly 5,000 photos contributed by over 300 authors, covering approximately 95% of all ranked locks. This resource has become invaluable for both new and experienced members of the locksport community.
 
 Key features and purposes of the LPU Belt Explorer include:
 
-**Comprehensive Database**: The Belt Explorer serves as a detailed repository of locks that are part of the LPU ranking system. This includes nearly 800 locks, each with specific characteristics and challenges associated with different belt levels.
+**Comprehensive Database**: The Belt Explorer serves as a detailed repository of locks that are part of the LPU ranking system, each with specific characteristics and challenges associated with different belt levels.
 
 **In-depth Information**: For each lock listed, the Belt Explorer provides detailed information. This includes aspects such as the lock's design, difficulty level, key features, photos, and select videos.
 
-**Extensive Visual Resources**: The tool boasts nearly 3,000 photographs, contributed by over 200 authors, which cover nearly 95% of all ranked locks. This visual aid enhances the learning experience, offering users a real-world view of various locks and their mechanisms.
+**Extensive Visual Resources**: The tool boasts nearly 5,000 photographs, contributed by over 300 authors, which cover approximately 95% of all ranked locks. This visual aid enhances the learning experience, offering users a real-world view of various locks and their mechanisms.
 
 **Educational and Collaborative**: By providing a centralized platform for detailed lock information, the Belt Explorer serves both educational and collaborative purposes. It helps members of the locksport community to better understand the locks they are working with and facilitates knowledge sharing.
 

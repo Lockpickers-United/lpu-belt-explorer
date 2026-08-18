@@ -1,57 +1,68 @@
 import fs from 'fs'
-import admin from 'firebase-admin'
+import {initializeApp, cert} from 'firebase-admin/app'
 import {getFirestore} from 'firebase-admin/firestore'
 
 const serviceAccount = JSON.parse(fs.readFileSync('../keys/lpu-belt-explorer-firebase-adminsdk.json'))
-const app = admin.initializeApp({
-    credential: admin.credential.cert(serviceAccount),
+const app = initializeApp({
+    credential: cert(serviceAccount),
     databaseURL: 'https://lpu-belt-explorer.firebaseio.com'
 })
 
 ////////////////////////////////////////////////
 // change to (default) and true for production
+// const db = getFirestore(app, 'lpubelts-dev')
 
-//const db = getFirestore(app, 'lpubelts-dev')
 const db = getFirestore(app)
 
-const WRITE_TO_DB = true
+const WRITE_TO_DB = false
 
 // set to desired id mapping
 // { 'old ID': 'new ID' }
 
 const newIdFromOld = {
-    '34c0dfe4': 'dd1dd313',
 }
+
+const idsToDelete = ['2201a1b1', '6dc539dd', 'd78ca1ba', 'bc1ed715', '8ad6939a', '0037a89f', '3129ee7e']
+
 ////////////////////////////////////////////////
+// update old => new projectIds and/or delete in evidence collection
 
+const targetIds = [...Object.keys(newIdFromOld), ...idsToDelete]
 
-// update old => new projectIds in evidence collection 
-
-const evidDocs = await db.collection('evidence').where('projectId', 'in', Object.keys(newIdFromOld)).get()
-let impactedUsers = []
-const evidBatch = db.batch()
-evidDocs.forEach(rec => {
-    const oldId = rec.data().projectId
-    const newId = newIdFromOld[oldId]
-    impactedUsers.push(rec.data().userId)
-    console.log(`user ${rec.data().userId} evidence ${rec.ref.id} projectId: ${oldId} => ${newId}`)
-    evidBatch.update(rec.ref, {projectId: newId})    
-})
-if (WRITE_TO_DB) {
-    await evidBatch.commit()
-}
+if (targetIds.length > 0) {
+    const evidDocs = await db.collection('evidence').where('projectId', 'in', targetIds).get()
+    let impactedUsers = []
+    const evidBatch = db.batch()
+    evidDocs.forEach(rec => {
+        const oldId = rec.data().projectId
+        if (idsToDelete.includes(oldId)) {
+            console.log(`user ${rec.data().userId} evidence ${rec.ref.id} projectId: ${oldId} being deleted`)
+            evidBatch.delete(rec.ref)
+        } else {
+            const newId = newIdFromOld[oldId]
+            impactedUsers.push(rec.data().userId)
+            console.log(`user ${rec.data().userId} evidence ${rec.ref.id} projectId: ${oldId} => ${newId}`)
+            evidBatch.update(rec.ref, {projectId: newId})
+        }
+    })
+    if (WRITE_TO_DB) {
+        await evidBatch.commit()
+    }
 
 // clear all impacted users from the query cache
 
-const cacheKeys = [...new Set(impactedUsers)].map(id => `activity: userId == ${id}`)
-const cacheBatch = db.batch()
-cacheKeys.forEach(key => {
-    const ref = db.collection('query-cache').doc(key)
-    console.log(`query-cache clear ${key}`)
-    cacheBatch.delete(ref)
-})
-if (WRITE_TO_DB) {
-    await cacheBatch.commit()
+    const cacheKeys = [...new Set(impactedUsers)].map(id => `activity: userId == ${id}`)
+    const cacheBatch = db.batch()
+    cacheKeys.forEach(key => {
+        const ref = db.collection('query-cache').doc(key)
+        console.log(`query-cache clear ${key}`)
+        cacheBatch.delete(ref)
+    })
+    if (WRITE_TO_DB) {
+        await cacheBatch.commit()
+    }
+} else {
+    console.log('no evidence changes to make')
 }
 
 // update old => new projectIds in the various collection arrays
@@ -62,17 +73,25 @@ if (WRITE_TO_DB) {
 // id changes, rather than collection types x id changes, which 
 // would quickly reach the maximum.
 
-const collectionTypes = ['own', 'picked', 'recorded', 'recordedLocks', 'wishlist']
-for (let idx=0; idx < collectionTypes.length; idx++) {
-    const type = collectionTypes[idx]  
-    const collectDocs = await db.collection('lockcollections').where(type, 'array-contains-any', Object.keys(newIdFromOld)).get()
-    const collectBatch = db.batch()
-    collectDocs.forEach(rec => {
-        const newCollection = rec.data()[type].map(id => newIdFromOld[id] ? newIdFromOld[id] : id)
-        console.log(`lockcollections ${rec.ref.id} ${type} updated`)
-        collectBatch.update(rec.ref, {[type]: newCollection})
-    })
-    if (WRITE_TO_DB) {
-        await collectBatch.commit()
+
+if (targetIds.length > 0) {
+
+    const collectionTypes = ['own', 'picked', 'recorded', 'recordedLocks', 'wishlist']
+    for (let idx = 0; idx < collectionTypes.length; idx++) {
+        const type = collectionTypes[idx]
+        const collectDocs = await db.collection('lockcollections').where(type, 'array-contains-any', targetIds).get()
+        const collectBatch = db.batch()
+        collectDocs.forEach(rec => {
+            const newCollection = rec.data()[type].map(id => newIdFromOld[id] ? newIdFromOld[id] : id)
+            const newCollectionSet = new Set(newCollection.filter(id => !idsToDelete.includes(id)))
+            console.log(`lockcollections ${rec.ref.id} ${type} updated`)
+            collectBatch.update(rec.ref, {[type]: [...newCollectionSet]})
+        })
+        if (WRITE_TO_DB) {
+            await collectBatch.commit()
+        }
     }
+
+} else {
+    console.log('no collection changes to make')
 }
