@@ -6,7 +6,7 @@ import dayjs from 'dayjs'
 import {beltSort, beltSortReverse} from '../data/belts'
 import removeAccents from 'remove-accents'
 import allEntries from '../data/data.json'
-import {getEntryFromId, getProjectEntryFromId, getAwardEntryFromId} from '../entries/entryutils'
+import {getEntryFromId, getProjectEntryFromId, getAwardEntryFromId, getDeletedEntryFromId} from '../entries/entryutils'
 import filterEntriesAdvanced from '../filters/filterEntriesAdvanced'
 
 export function ScorecardDataProvider({
@@ -94,7 +94,8 @@ export function ScorecardDataProvider({
         blackBeltScorecard,
         getEntryFromId,
         getProjectEntryFromId,
-        getAwardEntryFromId
+        getAwardEntryFromId,
+        getDeletedEntryFromId,
     }), [cardActivity, cardBBCount, cardDanPoints, cardEligibleDan, cardNextDanPoints, cardNextDanLocks, searchedEntries, visibleEntries, popularEntries, bbPopularEntries, cardUniqueLocks, cardMaxBelt, blackBeltUser, blackBeltScorecard])
 
     return (

@@ -34,16 +34,21 @@ function ScorecardRow({owner, activity, expanded, onExpand, merged}) {
 
     const navigate = useNavigate()
     const {setFilters} = useContext(FilterContext)
-    const {cardActivity, getEntryFromId, getProjectEntryFromId, getAwardEntryFromId} = useContext(ScorecardDataContext)
+    const {cardActivity, getEntryFromId, getProjectEntryFromId, getAwardEntryFromId, getDeletedEntryFromId} = useContext(ScorecardDataContext)
     const {admin} = useContext(AppContext)
     const {blackBeltScorecard} = useContext(DataContext)
 
     const entry = getEntryFromId(activity.matchId)
     const project = getProjectEntryFromId(activity.matchId)
     const award = getAwardEntryFromId(activity.matchId)
-    const entity = entry || project || award
+    const deletedEntry = getDeletedEntryFromId(activity.matchId)
+
+    const entity = entry || project || award || deletedEntry
 
     if (!entity) return
+
+    if (deletedEntry) activity.exceptionType = 'deleted'
+
 
     const [scrolled, setScrolled] = useState(false)
     const ref = useRef(null)
@@ -72,10 +77,10 @@ function ScorecardRow({owner, activity, expanded, onExpand, merged}) {
     let entryTitle = entity ? entryName(entity) : activity.evidenceNotes
     const evidenceNotes = activity.exceptionType && activity.evidenceNotes && (activity.evidenceNotes.toLowerCase() !== entryTitle.toLowerCase())
         ? activity.evidenceNotes : null
-    entryTitle = activity.exceptionType === 'nomatch' ? `[ ${activity.evidenceNotes} ]` : entryTitle
+    //entryTitle = activity.exceptionType === 'nomatch' ? `[ ${activity.evidenceNotes} ]` : entryTitle
     entryTitle = activity.exceptionType && owner && merged && !award ? entryTitle + ' *' : entryTitle
 
-    const rowOpacity = ['nomatch', 'duplicate', 'upgraded'].includes(activity.exceptionType) ? 0.5 : 1
+    const rowOpacity = ['nomatch', 'duplicate', 'upgraded', 'deleted'].includes(activity.exceptionType) ? 0.5 : 1
 
     const supersedingEntryId = activity.exceptionId
     const supersedingEntry = supersedingEntryId ? cardActivity.find(e => e.id === supersedingEntryId) : {}
@@ -88,15 +93,19 @@ function ScorecardRow({owner, activity, expanded, onExpand, merged}) {
         }}>{supersedingLockName}</Link>
         : supersedingProject?.name
 
+    const deletedDate = entity.dateDeleted ? dayjs(entity.dateDeleted).format('MM/DD/YYYY') : null
+
     let exceptionNote = activity.exceptionType === 'nomatch'
-        ? 'Could not be matched to a lock or project'
+        ? 'Could not be matched to a current lock or project.'
         : activity.exceptionType === 'badlink' && !award
             ? 'You must provide a valid link.'
             : activity.exceptionType === 'duplicate'
                 ? 'Duplicate of '
                 : activity.exceptionType === 'upgraded'
                     ? 'Upgraded to '
-                    : null
+                    : activity.exceptionType === 'deleted'
+                        ? 'Lock is no longer ranked. Deleted ' + deletedDate + '.'
+                        : null
 
     const navigateToEntry = useCallback((id) => {
         setFilters({id: id})
@@ -149,6 +158,7 @@ function ScorecardRow({owner, activity, expanded, onExpand, merged}) {
         backgroundColor: bgColor
     }
 
+    if(!owner && !admin && activity.exceptionType) return null
 
     return (
         <Accordion key={activity.id} expanded={expanded} onChange={handleChange} ref={ref}>

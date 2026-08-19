@@ -1,4 +1,5 @@
 import allEntries from '../data/data.json'
+import deletedEntries from '../data/deletedEntries.json'
 import allProjects from '../data/projects.json'
 import allAwards from '../data/awards.json'
 import nextUpgrades from '../data/upgrades.json'
@@ -13,6 +14,17 @@ export const allEntriesById = allEntries
 
 export function getEntryFromId(id) {
     return allEntriesById[id]
+}
+
+export const deletedEntriesById = deletedEntries
+    .reduce((group, term) => {
+        const {id} = term
+        group[id] = term
+        return group
+    }, {})
+
+export function getDeletedEntryFromId(id) {
+    return deletedEntriesById[id]
 }
 
 export function isLock(id) {

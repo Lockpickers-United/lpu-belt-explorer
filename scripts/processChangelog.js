@@ -22,7 +22,7 @@ const WRITE_TO_DB = false
 const newIdFromOld = {
 }
 
-const idsToDelete = ['2201a1b1', '6dc539dd', 'd78ca1ba', 'bc1ed715', '8ad6939a', '0037a89f', '3129ee7e']
+const idsToDelete = ['f2d41749']
 
 ////////////////////////////////////////////////
 // update old => new projectIds and/or delete in evidence collection
