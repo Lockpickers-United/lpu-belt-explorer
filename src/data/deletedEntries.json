@@ -1634,6 +1634,96 @@
     "dateDeleted": "2024-11-01T22:26:30.000Z"
   },
   {
+    "id": "f2d41749",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "ASSA",
+        "model": "500"
+      },
+      {
+        "make": "Ruko",
+        "model": "500"
+      }
+    ],
+    "version": "5 stacks of pins, gin drivers and matching countermilling",
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "features": [
+      "Removed"
+    ],
+    "media": [
+      {
+        "title": "By: Yagias",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://images.lpubelts.com/i/fl/52686550234_7647d88331.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52686550234/",
+        "sequenceId": 3666,
+        "dateAdded": "2025-03-06T16:00:00.000Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52686550234_e0107afefb_o.jpg"
+      },
+      {
+        "title": "By: Yagias",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://images.lpubelts.com/i/fl/52686549819_6b681bed40.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52686549819/",
+        "sequenceId": 3667,
+        "dateAdded": "2025-03-06T16:00:00.000Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52686549819_49dc69ca9e_o.jpg"
+      },
+      {
+        "title": "By: Yagias",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://images.lpubelts.com/i/fl/52685755032_9d8bdd92da.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52685755032/",
+        "sequenceId": 3668,
+        "dateAdded": "2025-03-06T16:00:00.000Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52685755032_c167f0e8d8_o.jpg"
+      },
+      {
+        "title": "By: m.c.",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52802198379_e610b2d557_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52802198379/in/album-72177720307339945/",
+        "sequenceId": 3669,
+        "dateAdded": "2025-03-06T16:00:00.000Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52802198379_98229d8117_o.jpg"
+      },
+      {
+        "title": "By: m.c.",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52801384142_f1d8a094d5_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52801384142/in/album-72177720307339945/",
+        "sequenceId": 3670,
+        "dateAdded": "2025-03-06T16:00:00.000Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52801384142_5c02af1277_o.jpg"
+      },
+      {
+        "title": "By: m.c.",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52801949016_3c0205e737_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52801949016/in/album-72177720307339945/",
+        "sequenceId": 3671,
+        "dateAdded": "2025-03-06T16:00:00.000Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52801949016_e85e419899_o.jpg"
+      }
+    ],
+    "name": "ASSA 500 / Ruko 500",
+    "dateAdded": "2023-02-21T23:16:05.000Z",
+    "views": 2603,
+    "lastUpdated": "2025-03-19T15:44:57.301Z",
+    "relatedIds": [
+      "e84582aa",
+      "0b82681f",
+      "f8445741",
+      "d9e3829f",
+      "ef221c67"
+    ],
+    "notes": "There is no evidence that this lock ever existed. All instances of ASSA 500 with gins observed so far were the sleeve version. Nobody has brought forth any evidence that a version with gin milling in the core actually exists or ever existed.",
+    "dateDeleted": "2026-08-19T15:19:24.426Z"
+  },
+  {
     "id": "d78ca1ba",
     "belt": "Purple",
     "makeModels": [
