@@ -10,6 +10,7 @@ import useWindowSize from '../util/useWindowSize'
 import ytIcon from '../resources/yt.png'
 import ImageViewer from './ImageViewer'
 import AppContext from '../app/AppContext.jsx'
+import {useLocalStorage} from 'usehooks-ts'
 
 function ImageGallery(props) {
     const {
@@ -25,6 +26,7 @@ function ImageGallery(props) {
     } = props
 
     const {admin} = useContext(AppContext)
+    const [flickrDirect, _setFlickrDirect] = useLocalStorage('flickrDirect', false)
 
     const {isMobile} = useWindowSize()
     const [open, setOpen] = useState(initiallyOpen)
@@ -35,10 +37,10 @@ function ImageGallery(props) {
         return window.open(url, '_blank', 'noopener,noreferrer')
     }, [])
 
-    const handleOpen = useCallback(sequenceId => () => {
-        onOpenImage(sequenceId)
-        setOpen(true)
-    }, [onOpenImage])
+    const handleOpen = useCallback((sequenceId, fullUrl) => () => {
+        onOpenImage(sequenceId, fullUrl)
+        !flickrDirect && setOpen(true)
+    }, [flickrDirect, onOpenImage])
 
     const handleClose = useCallback(() => {
         onCloseImage()
@@ -97,7 +99,7 @@ function ImageGallery(props) {
                             src={thumbnailUrl}
                             alt={title}
                             style={{paddingBottom: subtitle ? 60 : 48, cursor: 'pointer'}}
-                            onClick={handleOpen(sequenceId)}
+                            onClick={handleOpen(sequenceId, fullUrl)}
                             loading='lazy'
                         />
                         {

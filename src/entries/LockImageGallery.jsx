@@ -3,14 +3,25 @@ import React, {useCallback, useContext, useMemo} from 'react'
 import {useLocation} from 'react-router-dom'
 import FilterContext from '../context/FilterContext'
 import ImageGallery from '../misc/ImageGallery'
+import {useLocalStorage} from 'usehooks-ts'
+
+const openInNewTab = (url) => {
+    const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
+    if (newWindow) newWindow.opener = null
+}
 
 function LockImageGallery({entry}) {
     const location = useLocation()
     const {filters, addFilter, removeFilters} = useContext(FilterContext)
-
-    const handleOpenImage = useCallback(imageNum => {
-        addFilter('image', imageNum, true)
-    }, [addFilter])
+    const [flickrDirect, _setFlickrDirect] = useLocalStorage('flickrDirect', false)
+    
+    const handleOpenImage = useCallback((imageNum, fullUrl) => {
+        if (!flickrDirect) {
+            addFilter('image', imageNum, true)
+        } else {
+            openInNewTab(fullUrl)
+        }
+    }, [addFilter, flickrDirect])
 
     const handleCloseImage = useCallback(() => {
         removeFilters(['image'])
