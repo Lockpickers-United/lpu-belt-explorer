@@ -27,27 +27,22 @@ const idsToDelete = ['f2d41749']
 ////////////////////////////////////////////////
 // update old => new projectIds and/or delete in evidence collection
 
-const targetIds = [...Object.keys(newIdFromOld), ...idsToDelete]
 
-if (targetIds.length > 0) {
-    const evidDocs = await db.collection('evidence').where('projectId', 'in', targetIds).get()
+if (Object.keys(newIdFromOld).length > 0) {
+    const evidDocs = await db.collection('evidence').where('projectId', 'in', Object.keys(newIdFromOld)).get()
     let impactedUsers = []
     const evidBatch = db.batch()
     evidDocs.forEach(rec => {
         const oldId = rec.data().projectId
-        if (idsToDelete.includes(oldId)) {
-            console.log(`user ${rec.data().userId} evidence ${rec.ref.id} projectId: ${oldId} being deleted`)
-            evidBatch.delete(rec.ref)
-        } else {
-            const newId = newIdFromOld[oldId]
-            impactedUsers.push(rec.data().userId)
-            console.log(`user ${rec.data().userId} evidence ${rec.ref.id} projectId: ${oldId} => ${newId}`)
-            evidBatch.update(rec.ref, {projectId: newId})
-        }
+        const newId = newIdFromOld[oldId]
+        impactedUsers.push(rec.data().userId)
+        console.log(`user ${rec.data().userId} evidence ${rec.ref.id} projectId: ${oldId} => ${newId}`)
+        evidBatch.update(rec.ref, {projectId: newId})
     })
     if (WRITE_TO_DB) {
         await evidBatch.commit()
     }
+
 
 // clear all impacted users from the query cache
 
@@ -73,6 +68,7 @@ if (targetIds.length > 0) {
 // id changes, rather than collection types x id changes, which 
 // would quickly reach the maximum.
 
+const targetIds = [...Object.keys(newIdFromOld), ...idsToDelete]
 
 if (targetIds.length > 0) {
 
