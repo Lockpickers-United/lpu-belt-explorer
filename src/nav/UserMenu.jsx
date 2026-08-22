@@ -154,19 +154,19 @@ function UserMenu() {
                             <ListItemIcon>
                                 <LockIcon fontSize='small'/>
                             </ListItemIcon>
-                            <ListItemText>Own ({lockCollection.own?.length || 0})</ListItemText>
+                            <ListItemText>Own ({[...new Set(lockCollection.own || [])].length || 0})</ListItemText>
                         </MenuItem>
                         <MenuItem onClick={handleClick(`/profile/${user.uid}?name=${safeName}&collection=Picked`)}>
                             <ListItemIcon>
                                 <LockOpenOutlinedIcon fontSize='small'/>
                             </ListItemIcon>
-                            <ListItemText>Picked ({lockCollection.picked?.length || 0})</ListItemText>
+                            <ListItemText>Picked ({[...new Set(lockCollection.picked || [])].length || 0})</ListItemText>
                         </MenuItem>
                         <MenuItem onClick={handleClick(`/profile/${user.uid}?name=${safeName}&collection=Wishlist`)}>
                             <ListItemIcon>
                                 <SavingsOutlinedIcon fontSize='small'/>
                             </ListItemIcon>
-                            <ListItemText>Wishlist ({lockCollection.wishlist?.length || 0})</ListItemText>
+                            <ListItemText>Wishlist ({[...new Set(lockCollection.wishlist || [])].length || 0})</ListItemText>
                         </MenuItem>
 
                         <Divider/>
