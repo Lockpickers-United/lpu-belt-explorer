@@ -64,8 +64,6 @@ function LockImageGallery({entry}) {
         })
         .map((media, index) => ({...media, index}))
 
-    //console.log('sortedMedia', sortedMedia)
-
     return (
         <React.Fragment>
             {labeledMedia.map((group, index) =>

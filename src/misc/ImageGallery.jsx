@@ -37,8 +37,8 @@ function ImageGallery(props) {
         return window.open(url, '_blank', 'noopener,noreferrer')
     }, [])
 
-    const handleOpen = useCallback((sequenceId, fullUrl) => () => {
-        onOpenImage(sequenceId, fullUrl)
+    const handleOpen = useCallback((index, fullUrl) => () => {
+        onOpenImage(index, fullUrl)
         !flickrDirect && setOpen(true)
     }, [flickrDirect, onOpenImage])
 
@@ -99,7 +99,7 @@ function ImageGallery(props) {
                             src={thumbnailUrl}
                             alt={title}
                             style={{paddingBottom: subtitle ? 60 : 48, cursor: 'pointer'}}
-                            onClick={handleOpen(sequenceId, fullUrl)}
+                            onClick={handleOpen(index, fullUrl)}
                             loading='lazy'
                         />
                         {
