@@ -98,6 +98,7 @@ function LockImageGallery({entry}) {
     )
 }
 
-const isValidImage = (image, entry) => /\d+/.test(image) && image < (entry.media.length + 1)
+const isValidImage = (image, entry) => /\d+/.test(image)
+    && image > 0 && image <= (entry.media.length)
 
 export default LockImageGallery

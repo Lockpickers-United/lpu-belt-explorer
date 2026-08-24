@@ -38,7 +38,7 @@ function ImageGallery(props) {
     }, [])
 
     const handleOpen = useCallback((imageIndex, fullUrl) => () => {
-        console.log({imageIndex, fullUrl})
+        //console.log({imageIndex, fullUrl})
         onOpenImage(imageIndex, fullUrl)
         !flickrDirect && setOpen(true)
     }, [flickrDirect, onOpenImage])
@@ -92,7 +92,6 @@ function ImageGallery(props) {
                                          thumbnailUrl,
                                          fullUrl,
                                          subtitleUrl,
-                                         sequenceId,
                                          imageId
                                      }, index) =>
                     <ImageListItem key={index} style={{marginBottom: 8}}>

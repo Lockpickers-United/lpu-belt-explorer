@@ -44,14 +44,15 @@ function ImageViewer({media, openIndex, onOpenImage, onClose, shareParams = {}})
         distance: 0
     })
     const {isMobile} = useWindowSize()
-
     const currentMedia = media.find(m => m.imageIndex === openIndex)
     const currentMediaIndex = media.indexOf(currentMedia)
 
-    const {fullSizeUrl, thumbnailUrl, fullUrl, title, subtitle, subtitleUrl, label, imageIndex} = currentMedia || {}
+    const {fullSizeUrl, thumbnailUrl, fullUrl, title, subtitle, subtitleUrl, label} = currentMedia || {}
     const imageTitle = label ? `${label} - ${title}` : title
 
-    const handleLoaded = useCallback(() => setLoading(false), [])
+    const handleLoaded = useCallback(() => {
+        setLoading(false)
+    }, [])
     const handleClose = useCallback(() => {
         setOpen(false)
         setTimeout(() => onClose(), 200)
@@ -204,12 +205,7 @@ function ImageViewer({media, openIndex, onOpenImage, onClose, shareParams = {}})
         <Dialog
             open={open}
             onClose={handleClose}
-            slots={{transition: Transition}}
-            slotProps={{
-                transition: {
-                    unmountOnExit: true
-                }
-            }}
+            TransitionComponent={Transition}
             fullScreen
         >
             <AppBar sx={{position: 'relative'}}>
