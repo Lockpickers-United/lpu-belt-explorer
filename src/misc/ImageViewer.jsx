@@ -25,6 +25,7 @@ import ZoomOutIcon from '@mui/icons-material/ZoomOut'
 import YoutubeSearchedForIcon from '@mui/icons-material/YoutubeSearchedFor'
 import useWindowSize from '../util/useWindowSize'
 import Tooltip from '@mui/material/Tooltip'
+import useClickOrDrag from '../util/useClickOrDrag.jsx'
 
 function ImageViewer({media, openIndex, onOpenImage, onClose, shareParams = {}}) {
     const [open, setOpen] = useState(true)
@@ -48,6 +49,25 @@ function ImageViewer({media, openIndex, onOpenImage, onClose, shareParams = {}})
         setTimeout(() => onClose(), 200)
     }, [onClose])
 
+    const handlers = useClickOrDrag({
+        onClick: e => handleClick(e),
+        onDragStart: e => handleMoveStart(e),
+        onDragMove: e => handleMoveDuring(e),
+        onDragEnd: () => handleMoveEnd()
+    })
+
+    const getClickCoords = useCallback((e) => {
+        const rect = e.target.getBoundingClientRect()
+        const x = e.clientX - rect.left
+        const y = e.clientY - rect.top
+        const centerX = rect.width / 2
+        const centerY = rect.height / 2
+        const relativeX = x - centerX
+        const relativeY = y - centerY
+        return {relativeX, relativeY}
+    }, [])
+
+
     const handleZoomIn = useCallback(() => setZoom(zoom + zoomIncrement), [zoom])
     const handleZoomOut = useCallback(() => setZoom(Math.max(zoom - zoomIncrement, 1)), [zoom])
     const handleReset = useCallback(() => {
@@ -56,6 +76,19 @@ function ImageViewer({media, openIndex, onOpenImage, onClose, shareParams = {}})
         setLastXY({x: 0, y: 0})
         setZoom(1)
     }, [])
+
+    const handleClick = useCallback((e) => {
+        const {relativeX, relativeY} = getClickCoords(e)
+        if (e.shiftKey) {
+            handleZoomOut()
+        } else if (e.altKey) {
+            handleReset()
+        } else {
+            setLastXY({x: relativeX * -1, y: relativeY * -1})
+            setXY({x: relativeX * -1, y: relativeY * -1})
+            handleZoomIn()
+        }
+    }, [getClickCoords, handleReset, handleZoomIn, handleZoomOut])
 
     const handleNavigatePrevious = useCallback(() => {
         const nextIndex = currentMediaIndex === 0 ? media.length - 1 : currentMediaIndex - 1
@@ -118,7 +151,12 @@ function ImageViewer({media, openIndex, onOpenImage, onClose, shareParams = {}})
         <Dialog
             open={open}
             onClose={handleClose}
-            TransitionComponent={Transition}
+            slots={{transition: Transition}}
+            slotProps={{
+                transition: {
+                    unmountOnExit: true
+                }
+            }}
             fullScreen
         >
             <AppBar sx={{position: 'relative'}}>
@@ -201,19 +239,13 @@ function ImageViewer({media, openIndex, onOpenImage, onClose, shareParams = {}})
                         maxWidth: 'calc(100vw - 64px)',
                         maxHeight: 'calc(100vh - 160px)',
                         backgroundSize: 50,
-                        transformOrigin: 'center center'
+                        transformOrigin: 'center center',
+                        touchAction: 'none' // important: allows pointermove on touch
 
                     }}
                     onLoad={handleLoaded}
 
-                    onTouchStart={handleMoveStart}
-                    onMouseDown={handleMoveStart}
-                    onTouchMove={handleMoveDuring}
-                    onMouseMove={handleMoveDuring}
-                    onTouchEnd={handleMoveEnd}
-                    onMouseUp={handleMoveEnd}
-                    onMouseLeave={handleMoveEnd}
-
+                    {...handlers}
                     {...swipeHandlers}
 
                     title={title}

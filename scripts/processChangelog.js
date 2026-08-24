@@ -12,9 +12,9 @@ const app = initializeApp({
 // change to (default) and true for production
 // const db = getFirestore(app, 'lpubelts-dev')
 
-const db = getFirestore(app)
+const db = getFirestore(app, 'lpubelts-dev')
 
-const WRITE_TO_DB = false
+const WRITE_TO_DB = true
 
 // set to desired id mapping
 // { 'old ID': 'new ID' }
@@ -22,7 +22,7 @@ const WRITE_TO_DB = false
 const newIdFromOld = {
 }
 
-const idsToDelete = ['f2d41749']
+const idsToDelete = ['110c872d', '1798ca06', '406ac672', '42bebf45', '45c08407', '5bbe7375', 'd0632926', 'e9499182']
 
 ////////////////////////////////////////////////
 // update old => new projectIds and/or delete in evidence collection
