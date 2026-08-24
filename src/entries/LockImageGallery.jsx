@@ -62,6 +62,9 @@ function LockImageGallery({entry}) {
             return a.label?.localeCompare(b.label || '')
                 || a.sequenceId - b.sequenceId
         })
+        .map((media, index) => ({...media, index}))
+
+    //console.log('sortedMedia', sortedMedia)
 
     return (
         <React.Fragment>

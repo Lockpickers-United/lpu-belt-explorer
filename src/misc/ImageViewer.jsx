@@ -1,4 +1,4 @@
-import React, {useCallback, useState} from 'react'
+import React, {useCallback, useRef, useState} from 'react'
 import LinkIcon from '@mui/icons-material/Link'
 import {enqueueSnackbar} from 'notistack'
 import queryString from 'query-string'
@@ -35,6 +35,14 @@ function ImageViewer({media, openIndex, onOpenImage, onClose, shareParams = {}})
     const [{x, y}, setXY] = useState({x: 0, y: 0})
     const [zoom, setZoom] = useState(1)
     const [moving, setMoving] = useState(false)
+    const pinchStartRef = useRef({
+        zoom: 1,
+        x: 0,
+        y: 0,
+        relativeX: 0,
+        relativeY: 0,
+        distance: 0
+    })
     const {isMobile} = useWindowSize()
 
     const currentMedia = media.find(m => m.sequenceId === openIndex)
@@ -53,7 +61,10 @@ function ImageViewer({media, openIndex, onOpenImage, onClose, shareParams = {}})
         onClick: e => handleClick(e),
         onDragStart: e => handleMoveStart(e),
         onDragMove: e => handleMoveDuring(e),
-        onDragEnd: () => handleMoveEnd()
+        onDragEnd: () => handleMoveEnd(),
+        onPinchStart: (e, pinch) => handlePinchStart(e, pinch),
+        onPinchMove: (e, pinch) => handlePinchMove(e, pinch),
+        onPinchEnd: () => handlePinchEnd()
     })
 
     const getClickCoords = useCallback((e) => {
@@ -127,6 +138,44 @@ function ImageViewer({media, openIndex, onOpenImage, onClose, shareParams = {}})
         setMoving(false)
     }, [])
 
+    const handlePinchStart = useCallback((event, pinch) => {
+        const rect = event.currentTarget.getBoundingClientRect()
+
+        pinchStartRef.current = {
+            zoom,
+            x,
+            y,
+            relativeX: pinch.centerX - rect.left - (rect.width / 2) + x,
+            relativeY: pinch.centerY - rect.top - (rect.height / 2) + y,
+            distance: pinch.distance
+        }
+        setMoving(true)
+    }, [x, y, zoom])
+
+    const handlePinchMove = useCallback((_event, pinch) => {
+        const pinchStart = pinchStartRef.current
+
+        if (!pinchStart.distance) {
+            return
+        }
+
+        const nextZoom = Math.max(pinchStart.zoom * (pinch.distance / pinchStart.distance), 1)
+        const nextXY = nextZoom === 1
+            ? {x: 0, y: 0}
+            : {
+                x: pinchStart.relativeX + ((pinchStart.x - pinchStart.relativeX) * (nextZoom / pinchStart.zoom)),
+                y: pinchStart.relativeY + ((pinchStart.y - pinchStart.relativeY) * (nextZoom / pinchStart.zoom))
+            }
+
+        setZoom(nextZoom)
+        setLastXY(nextXY)
+        setXY(nextXY)
+    }, [])
+
+    const handlePinchEnd = useCallback(() => {
+        setMoving(false)
+    }, [])
+
     // Keyboard / swipe navigation
     useHotkeys('left', handleNavigatePrevious, {preventDefault: true})
     useHotkeys('right', handleNavigateNext, {preventDefault: true})
@@ -146,6 +195,10 @@ function ImageViewer({media, openIndex, onOpenImage, onClose, shareParams = {}})
         await navigator.clipboard.writeText(href)
         enqueueSnackbar('Link to entry copied to clipboard.')
     }, [openIndex, shareParams])
+
+    const interactionHandlers = isMobile
+        ? {...handlers}
+        : {...handlers, ...swipeHandlers}
 
     return (
         <Dialog
@@ -245,8 +298,7 @@ function ImageViewer({media, openIndex, onOpenImage, onClose, shareParams = {}})
                     }}
                     onLoad={handleLoaded}
 
-                    {...handlers}
-                    {...swipeHandlers}
+                    {...interactionHandlers}
 
                     title={title}
                     src={fullSizeUrl || thumbnailUrl}
