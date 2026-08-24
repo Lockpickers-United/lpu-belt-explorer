@@ -10,12 +10,15 @@ const openInNewTab = (url) => {
     if (newWindow) newWindow.opener = null
 }
 
+let sortedMedia = []
+
 function LockImageGallery({entry}) {
     const location = useLocation()
     const {filters, addFilter, removeFilters} = useContext(FilterContext)
     const [flickrDirect, _setFlickrDirect] = useLocalStorage('flickrDirect', false)
     
     const handleOpenImage = useCallback((imageNum, fullUrl) => {
+        //console.log('handleOpenImage', imageNum, fullUrl)
         if (!flickrDirect) {
             addFilter('image', imageNum, true)
         } else {
@@ -35,6 +38,8 @@ function LockImageGallery({entry}) {
     const openIndex = useMemo(() => {
         return filters.image ? +filters.image : -1
     }, [filters])
+
+    //console.log('openIndex', openIndex, isValidImage(openIndex, entry))
 
     const initiallyOpen = isValidImage(openIndex, entry)
 
@@ -57,12 +62,12 @@ function LockImageGallery({entry}) {
         labeledMedia.push({label: 'Other', media: filteredMedia.filter(media => !media.label)})
     }
 
-    const sortedMedia = filteredMedia
+    sortedMedia = filteredMedia
         .sort((a, b) => {
             return a.label?.localeCompare(b.label || '')
                 || a.sequenceId - b.sequenceId
         })
-        .map((media, index) => ({...media, index}))
+        .map((media, index) => ({...media, imageIndex: index+1}))
 
     return (
         <React.Fragment>
@@ -93,6 +98,6 @@ function LockImageGallery({entry}) {
     )
 }
 
-const isValidImage = (image, entry) => /\d+/.test(image) && !!entry.media.find(m => m.sequenceId === image)
+const isValidImage = (image) => /\d+/.test(image) && !!sortedMedia.find(m => m.imageIndex === image)
 
 export default LockImageGallery

@@ -45,10 +45,10 @@ function ImageViewer({media, openIndex, onOpenImage, onClose, shareParams = {}})
     })
     const {isMobile} = useWindowSize()
 
-    const currentMedia = media.find(m => m.index === openIndex)
+    const currentMedia = media.find(m => m.imageIndex === openIndex)
     const currentMediaIndex = media.indexOf(currentMedia)
 
-    const {fullSizeUrl, thumbnailUrl, fullUrl, title, subtitle, subtitleUrl, label} = currentMedia || {}
+    const {fullSizeUrl, thumbnailUrl, fullUrl, title, subtitle, subtitleUrl, label, imageIndex} = currentMedia || {}
     const imageTitle = label ? `${label} - ${title}` : title
 
     const handleLoaded = useCallback(() => setLoading(false), [])
@@ -103,13 +103,13 @@ function ImageViewer({media, openIndex, onOpenImage, onClose, shareParams = {}})
 
     const handleNavigatePrevious = useCallback(() => {
         const nextIndex = currentMediaIndex === 0 ? media.length - 1 : currentMediaIndex - 1
-        onOpenImage(media[nextIndex].index)
+        onOpenImage(media[nextIndex].imageIndex)
         handleReset()
         setLoading(true)
     }, [currentMediaIndex, media, onOpenImage, handleReset])
     const handleNavigateNext = useCallback(() => {
         const nextIndex = currentMediaIndex === media.length - 1 ? 0 : currentMediaIndex + 1
-        onOpenImage(media[nextIndex].index)
+        onOpenImage(media[nextIndex].imageIndex)
         handleReset()
         setLoading(true)
     }, [currentMediaIndex, media, onOpenImage, handleReset])
