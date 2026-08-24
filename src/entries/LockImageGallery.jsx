@@ -18,7 +18,7 @@ function LockImageGallery({entry}) {
     const [flickrDirect, _setFlickrDirect] = useLocalStorage('flickrDirect', false)
     
     const handleOpenImage = useCallback((imageNum, fullUrl) => {
-        console.log('handleOpenImage', imageNum, fullUrl)
+        //console.log('handleOpenImage', imageNum, fullUrl)
         if (!flickrDirect) {
             addFilter('image', imageNum, true)
         } else {
@@ -39,7 +39,7 @@ function LockImageGallery({entry}) {
         return filters.image ? +filters.image : -1
     }, [filters])
 
-    console.log('openIndex', openIndex, isValidImage(openIndex, entry))
+    //console.log('openIndex', openIndex, isValidImage(openIndex, entry))
 
     const initiallyOpen = isValidImage(openIndex, entry)
 
@@ -98,6 +98,6 @@ function LockImageGallery({entry}) {
     )
 }
 
-const isValidImage = (image) => /\d+/.test(image) && !!sortedMedia.find(m => m.imageIndex === image)
+const isValidImage = (image, entry) => /\d+/.test(image) && image < (entry.media.length + 1)
 
 export default LockImageGallery
