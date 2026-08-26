@@ -629,7 +629,7 @@ async function matchNewDiscordAwards(userId, existingAwardDocs) {
     if (querySnapshot.docs.length > 0) {
         let bookmark = null
         const newAwardsById = querySnapshot.docs.map(awDoc => {
-            const aw = awDoc.data()
+            const aw = awDoc.data() || {}
             const award = lookupAwardByBelt(aw.discordAwardName.match(/^(\w+) Belt/)?.[1], aw.discordAwardName.match(/^(\d+)/)?.[1], aw.discordAwardName)
             const newDoc = {
                 userId: userId,

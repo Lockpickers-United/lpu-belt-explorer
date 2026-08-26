@@ -43,17 +43,17 @@ function ContentParentRoute() {
                         <Nav title='Please Sign In'/>
 
                         <div style={{
-                    maxWidth: 700, padding: 0,
-                    marginLeft: 'auto', marginRight: 'auto', marginTop: 46, marginBottom: 46
-                }}>
-                    <div style={{textAlign: 'center', marginTop: 40}}>
-                        We&#39;re sorry, you must be signed in to submit content.
-                        <br/><br/>
-                        <Button style={{color: '#fff'}}>
-                            <SignInButton/>
-                        </Button>
-                    </div>
-                </div>
+                            maxWidth: 700, padding: 0,
+                            marginLeft: 'auto', marginRight: 'auto', marginTop: 46, marginBottom: 46
+                        }}>
+                            <div style={{textAlign: 'center', marginTop: 40}}>
+                                We&#39;re sorry, you must be signed in to submit content.
+                                <br/><br/>
+                                <Button style={{color: '#fff'}}>
+                                    <SignInButton/>
+                                </Button>
+                            </div>
+                        </div>
                     </DataProvider>
                 </FilterProvider>
             }

@@ -1,4 +1,4 @@
-import React, {useCallback, useContext, useState} from 'react'
+import React, {useCallback, useContext, useMemo, useState} from 'react'
 import dayjs from 'dayjs'
 import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField'
@@ -17,6 +17,7 @@ import Tracker from '../../app/Tracker.jsx'
 import DataContext from '../../locks/LockDataProvider.jsx'
 import {postData, cleanError} from '../../formUtils/postData.jsx'
 import {nodeServerUrl} from '../../data/dataUrls'
+import safelockEntries from '../../data/safelocks.json'
 
 /**
  * @prop photoCredit
@@ -37,9 +38,14 @@ function PhotoSubmit({profile, user}) {
 
     const [photoCredit, setPhotoCredit] = useState(profile?.photoCredit || profile?.displayName || '')
     const [reset, setReset] = useState(false)
-
     const dt = dayjs().format('YYYYMMDD-HHMMss')
-    const entry = allEntries.find(e => e.id === lockDetails?.lockId)
+
+    const safelocksMapped = safelockEntries.map(s => ({...s, belt: 'Safelock'}))
+    const combinedEntries = useMemo(() => [...allEntries, ...safelocksMapped], [allEntries, safelocksMapped])
+
+    const entry = combinedEntries.find(e => e.id === lockDetails?.lockId)
+
+    // ????????
     const uploadable = (!!lockDetails?.lockName && !!lockDetails?.lockId && !!photoCredit && files.length > 0)
 
     const prefix = `${lockDetails.lockName}_${lockDetails.lockId}_`.replace('/', '+')
@@ -98,8 +104,8 @@ function PhotoSubmit({profile, user}) {
 
     const handleChangeLock = useCallback(details => {
         setLockDetails(details)
-        setLock(allEntries.find(e => e.id === details.lockId))
-    }, [allEntries])
+        setLock(combinedEntries.find(e => e.id === details.lockId))
+    }, [combinedEntries])
 
     const savePhotoCredit = useCallback(photoCredit => {
         updateProfileField('photoCredit', photoCredit)
@@ -159,7 +165,7 @@ function PhotoSubmit({profile, user}) {
                 <div>
                     <div style={{fontSize: '1.5rem', fontWeight: 500, margin: '30px 0px 10px'}}>Select Lock</div>
                     <div style={{opacity: searchBoxOpacity}}>
-                        <LockEntrySearchBox handleChangeLock={handleChangeLock} allEntries={allEntries}
+                        <LockEntrySearchBox handleChangeLock={handleChangeLock} allEntries={combinedEntries}
                                             disabled={altLock} reset={reset}/>
                     </div>
 
@@ -177,8 +183,9 @@ function PhotoSubmit({profile, user}) {
 
                     <div style={{display: flexStyle}}>
                         <div style={{marginRight: 50, marginBottom:20, width: 350}}>
-                            <div style={{fontSize: '1.5rem', fontWeight: 500, marginBottom: 10}}>Files to
-                                Upload<br/>
+                            <div style={{fontSize: '1.5rem', fontWeight: 500, marginBottom: 10}}>
+                                Files to Upload
+                                <span style={{fontSize: '1.1rem', fontWeight: 400}}><br/>(Max 5 files, 15MB each, 60MB total)</span><br/>
                             </div>
                             {isMobile &&
                                 <div style={{fontSize: '0.9rem', marginBottom: 10, fontStyle: 'italic'}}>
@@ -229,7 +236,7 @@ function PhotoSubmit({profile, user}) {
                                 <span>
                                     <span style={{fontSize: '0.9rem'}}>Lock Name</span><br/>
                                         <div style={{display: 'flex'}}>
-                                            {lockDetails.lockId !== 'NOTINLIST' &&
+                                            {(entry?.belt !== 'Safelock' && lockDetails.lockId !== 'NOTINLIST') &&
                                                 <BeltIcon value={entry?.belt} style={{marginBottom: -10}}/>
                                             }
                                             <div style={{

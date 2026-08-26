@@ -22,12 +22,19 @@ function LockEntrySearchBox({handleChangeLock, allEntries, disabled, reset = fal
         })
             .reduce((acc, entry) => {
                 const versionText = entry.version ? ' - ' + entry.version : ''
-                entry.makeModels.map(lock => {
-                    const make = lock.make ? lock.make : lock.model
-                    const model = lock.make ? ` ${lock.model}` : ''
+                if (entry.makeModels) {
+                    entry.makeModels.map(lock => {
+                        const make = lock.make ? lock.make : lock.model
+                        const model = lock.make ? ` ${lock.model}` : ''
+                        const lockName = `${make}${model}${versionText}`
+                        acc.push({id: entry.id, lockName: lockName, make: make, model: model})
+                    })
+                } else {
+                    const make = entry.make ? entry.make : entry.model
+                    const model = entry.make ? ` ${entry.model}` : ''
                     const lockName = `${make}${model}${versionText}`
                     acc.push({id: entry.id, lockName: lockName, make: make, model: model})
-                })
+                }
                 return acc
             }, [])
             .filter(x => x)
@@ -40,14 +47,19 @@ function LockEntrySearchBox({handleChangeLock, allEntries, disabled, reset = fal
     const duplicateLocks = allLocks.filter((lock, index) => allLocks.findIndex(l => l.lockName === lock.lockName) !== index)
 
     const options = allLocks?.map(lock => {
-        lock.lockName = duplicateLocks.find(dupe => dupe.lockName === lock.lockName)
-            ? lock.lockName + ` (${allEntries.find(entry => entry.id === lock.id).belt})`
+        const belt = allEntries.find(entry => entry.id === lock.id)
+            ? allEntries.find(entry => entry.id === lock.id).belt
+            : 'Safelock'
+        lock.belt = belt
+        lock.lockName = ((duplicateLocks.find(dupe => dupe.lockName === lock.lockName) || belt === 'Safelock')
+            && !lock.lockName.match(/\(\w+\)/))
+            ? lock.lockName + ` (${belt})`
             : lock.lockName
         return lock
     })
         .map((lock) => {
             lockNames[lock.lockName] = `${lock.make}${lock.model}`
-            return {label: lock.lockName, id: lock.id, belt: allEntries.find(entry => entry.id === lock.id).belt}
+            return {label: lock.lockName, id: lock.id, belt: lock.belt}
         })
 
     const handleChange = useCallback((_event, value) => {
@@ -100,10 +112,12 @@ function LockEntrySearchBox({handleChangeLock, allEntries, disabled, reset = fal
                     const {key, ...optionProps} = props
                     return (
                         <div
-                            key={key}
+                            key={option.label + option.id}
                             {...optionProps}
-                            style={{...props.style, height: 34, padding: 0, overflow: 'elipsis', whiteSpace: 'nowrap',
-                            color: option.belt === 'Unranked' ? '#aaa' : '#fff', fontSize: '0.95rem'}}
+                            style={{
+                                ...props.style, height: 34, padding: 0, overflow: 'elipsis', whiteSpace: 'nowrap',
+                                color: option.belt === 'Unranked' ? '#aaa' : '#fff', fontSize: '0.95rem'
+                            }}
                         >
                             <BeltStripeMini value={option.belt} style={{marginRight: 10}}/>
 
