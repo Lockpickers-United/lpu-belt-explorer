@@ -61526,7 +61526,7 @@
     ],
     "features": [
       "Safe lock",
-      "Pipe-key"
+      "Pipe key"
     ],
     "name": "Bode Panzer Tangential",
     "dateAdded": "2026-08-14T21:52:46.626Z"
@@ -61643,7 +61643,7 @@
     "features": [
       "Safe lock",
       "Anti-pick",
-      "Pipe-key",
+      "Pipe key",
       "Curtain"
     ],
     "name": "Milners Single Stump 7 lever",
