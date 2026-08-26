@@ -88,10 +88,10 @@ function PhotoSubmit({profile, user}) {
         const timeoutDuration = 45000
         try {
             setResponse( await postData({user, url, formData, snackBars, timeoutDuration}) )
-            //console.log('Upload response:', response)
+            // console.log('Upload response:', response)
             savePhotoCredit(photoCredit)
         } catch (error) {
-            //console.log('Upload error:', error)
+            // console.log('Upload error:', error)
             setUploadError(cleanError(error))
             setLockDetails([])
             files.forEach(file => URL.revokeObjectURL(file.preview))
