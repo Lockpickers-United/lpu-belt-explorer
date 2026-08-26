@@ -53346,14 +53346,14 @@
     "makeModels": [
       {
         "make": "JPM",
-        "model": "Quartz UP"
+        "model": "Quarz‘up"
       }
     ],
     "features": [
       "Interactive element"
     ],
     "lastUpdated": "2024-03-29T21:45:41.251Z",
-    "name": "JPM Quartz UP",
+    "name": "JPM Quarz‘up",
     "dateAdded": "2023-08-03T13:21:21.000Z",
     "views": 199,
     "lockingMechanisms": [

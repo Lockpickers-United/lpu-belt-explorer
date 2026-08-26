@@ -975,7 +975,7 @@ keypins, and countermilling are the norm for you.
 - [iNAHO Tierkey](https://lpubelts.com/#/locks?id=9659ad59)
 - [Izis](https://lpubelts.com/#/locks?id=d64be6f7)
 - [JPM 405](https://lpubelts.com/#/locks?id=1ee01369)
-- [JPM Quartz UP](https://lpubelts.com/#/locks?id=5433316e)
+- [JPM Quarz&lsquo;up](https://lpubelts.com/#/locks?id=5433316e)
 - [Kaba 14](https://lpubelts.com/#/locks?id=f61461ed) (&lt;13 pins)
 - [Kaba Ace](https://lpubelts.com/#/locks?id=41b91a0e) (&lt;13 pins)
 - [Kaba Gemini](https://lpubelts.com/#/locks?id=e0191c45) (&lt;13 pins)
