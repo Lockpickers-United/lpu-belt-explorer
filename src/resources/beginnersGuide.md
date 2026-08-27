@@ -11,7 +11,7 @@ Popular vendors include the following (in alphabetical order):
 - [JimyLongs](https://jimylongs.com/)
 - [Law Lock Tools](https://www.lawlocktools.co.uk/)
 - [Moki](https://mok-workshop.de/en)
-- [Multipick](https://shop.multipick.com/en/lock-picking-lock-manipulation/multipick-elite-lockpicking-world)
+- [Multipick](https://multipick.com/opening-entry-tools/lock-picking-lock-manipulation/multipick-elite-lockpicking-world/)
 - [Peterson](https://www.thinkpeterson.com/)
 - [Sparrows](https://www.sparrowslockpicks.com/)
 - [SouthOrd](https://www.southord.com/)
