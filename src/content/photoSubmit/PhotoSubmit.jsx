@@ -45,7 +45,6 @@ function PhotoSubmit({profile, user}) {
 
     const entry = combinedEntries.find(e => e.id === lockDetails?.lockId)
 
-    // ????????
     const uploadable = (!!lockDetails?.lockName && !!lockDetails?.lockId && !!photoCredit && files.length > 0)
 
     const prefix = `${lockDetails.lockName}_${lockDetails.lockId}_`.replace('/', '+')

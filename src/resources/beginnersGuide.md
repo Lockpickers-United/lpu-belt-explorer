@@ -95,11 +95,11 @@ On top of this, LLT makes excellent [TOK tension tools](https://www.lawlocktools
 
 **Multipick \- Europe**
 
-From decoder: I’ve made several sets for Multipick, and some are specifically crafted for beginners. The choice which one to get depends on your budget and how sure you are that you want to stay in the hobby.
+From decoder: I’ve made several sets for Multipick, and some are specifically crafted for beginners. The choice of which one to get depends on your budget and how sure you are that you want to stay in the hobby.
 
 For people who are unsure about lockpicking and just want some basic decent tools, I recommend the [Elite Minimum Set](https://multipick.com/de/multipick-elite-minimum-pickset/), which has a very carefully selected set of picks to cover a large variety of locks.
 
-If you already know that you will pursue the hobby for longer, I recommend getting the [Elite Beginner Set](https://multipick.com/de/multipick-elite-minimum-pickset/), which has a few more picks and tensioners and comes with a large bag so you have the flexibility to fill up your set as you go, according to your personal preferences.
+If you already know that you will pursue the hobby for longer, I recommend getting the [Elite Beginner Set](https://multipick.com/elite-beginner-pick-set-13-pcs.-c.-palmer-0.6-mm/), which has a few more picks and tensioners and comes with a large bag so you have the flexibility to fill up your set as you go, according to your personal preferences.
 
 Later on, you might want to add 0.5mm (and possibly 0.4mm) picks as you progress. Picksets also don’t spontaneously combust if you mix manufacturers, I use a mixture of Multipick, Moki and handmade picks myself.
 
