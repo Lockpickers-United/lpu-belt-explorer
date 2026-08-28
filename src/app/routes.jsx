@@ -349,6 +349,22 @@ export default [
                 }
             }
         ]
+    }
+    ,{
+        path: '/beltRequests',
+        lazy: async () => {
+            const {default: BeltRequestsParentRoute} = await import('../beltRequests/BeltRequestsParentRoute.jsx')
+            return {element: <BeltRequestsParentRoute/>}
+        },
+        children: [
+            {
+                path: '/beltRequests',
+                lazy: async () => {
+                    const {default: BeltRequestSubmitRoute} = await import('../beltRequests/requestSubmit/BeltRequestSubmitRoute.jsx')
+                    return {element: <BeltRequestSubmitRoute/>}
+                }
+            },
+        ]
     },
     {
         path: '/rankingrequests',

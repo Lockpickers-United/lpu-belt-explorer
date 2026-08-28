@@ -137,6 +137,12 @@ export default [
         path: '/about'
     },
     {
+        title: 'Request Belt',
+        icon: <CameraAltIcon fontSize='small'/>,
+        path: '/beltRequests',
+        userClaims: ['admin', 'lpuAdmin'],
+    },
+    {
         title: 'Admin Tools',
         icon: <BuildIcon fontSize='small'/>,
         path: '/tools',

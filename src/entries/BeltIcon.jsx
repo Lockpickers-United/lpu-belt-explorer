@@ -2,6 +2,7 @@ import React from 'react'
 import belts from '../data/belts'
 
 function BeltIcon({value, style, related, disabled, containerStyle={}}) {
+    if (!value) return null
     const rank = parseInt(value.slice(-1)) > 1 ? parseInt(value.slice(-1)) : ''
     const {color, lineColor = '#010101'} = belts[value]
     if (value === 'Unranked') return null

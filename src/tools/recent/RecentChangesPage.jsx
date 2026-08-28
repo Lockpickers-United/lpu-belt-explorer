@@ -98,10 +98,6 @@ export default function RecentChangesPage() {
     const thanksText = [thanks, ...links].join('\n- ') +
         '\n\n' + 'See all recent additions at **https://lpubelts.com/#/recent**'
 
-    const setHours = useCallback((hours) => {
-        setRecentHours(hours)
-    }, [])
-
     return (
         <React.Fragment>
             <div style={{marginBottom: 20, marginTop: 1}}>
