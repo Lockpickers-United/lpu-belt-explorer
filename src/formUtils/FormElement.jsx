@@ -1,5 +1,5 @@
 import TextField from '@mui/material/TextField'
-import React, {useCallback, useState} from 'react'
+import React, {useCallback, useEffect, useMemo, useState} from 'react'
 import {alpha, Checkbox} from '@mui/material'
 import FormControl from '@mui/material/FormControl'
 import FormControlLabel from '@mui/material/FormControlLabel'
@@ -7,7 +7,6 @@ import RadioGroup from '@mui/material/RadioGroup'
 import Radio from '@mui/material/Radio'
 import RatingTable from '../misc/RatingTable.jsx'
 import {useTheme} from '@mui/material/styles'
-
 import Typography from '@mui/material/Typography'
 import SelectBox from './SelectBox.jsx'
 import LockEntrySearchBox from './LockEntrySearchBox.jsx'
@@ -45,8 +44,18 @@ export default function FormElement({
     const theme = useTheme()
     const settings = {...formDefaults, ...fieldSettings}
 
-    const isValid = (checkValid && form.form?.[fieldName]) ? checkValid(form.form[fieldName]) : true
-    console.log('isValid', fieldName, isValid)
+    const isValid = useMemo(() => (checkValid && form.form?.[fieldName])
+            ? checkValid(form.form[fieldName])
+            : true,
+        [checkValid, form.form, fieldName])
+
+    useEffect(() => {
+        if (form.invalid?.includes(fieldName) && isValid) {
+            form.validate(fieldName)
+        } else if (!form.invalid?.includes(fieldName) && !isValid) {
+            form.invalidate(fieldName)
+        }
+    }, [fieldName, isValid, form])
 
     const [showOtherField, setShowOtherField] = useState(false)
 

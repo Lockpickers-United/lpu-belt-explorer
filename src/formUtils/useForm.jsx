@@ -4,6 +4,7 @@ export default function useForm({baseForm, processChange, processSubmit, handleS
     const [form, setForm] = useState(baseForm)
     const [intialized, setInitialized] = useState(false)
     const [required, setRequired] = useState([])
+    const [invalid, setInvalid] = useState([])
     const [changed, setChanged] = useState(false)
     const [submitting, setSubmitting] = useState(false)
     const [submitted, setSubmitted] = useState(false)
@@ -13,6 +14,7 @@ export default function useForm({baseForm, processChange, processSubmit, handleS
         intialized
         && changed
         && (required.reduce((acc, field) => acc && form[field], true))
+        && !invalid.some(field => required.includes(field))
         && !submitting
 
     const initialize = useCallback((params) => {
@@ -21,8 +23,17 @@ export default function useForm({baseForm, processChange, processSubmit, handleS
     }, [])
 
     const require = useCallback((requiredFields) => {
-        setRequired(requiredFields)
+        setRequired(prev => [...new Set([...prev, ...requiredFields])])
     }, [])
+
+    const validate = useCallback((invalidField) => {
+        setInvalid(prev => prev.filter(field => field !== invalidField))
+    }, [])
+
+    const invalidate = useCallback((invalidField) => {
+        setInvalid(prev => [...new Set([...prev, invalidField])])
+    }, [])
+
 
     const update = useCallback((event) => {
 
@@ -80,6 +91,10 @@ export default function useForm({baseForm, processChange, processSubmit, handleS
         intialized,
         form,
         require,
+        required,
+        invalid,
+        validate,
+        invalidate,
         update,
         changed,
         canSave,

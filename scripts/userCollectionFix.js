@@ -82,7 +82,7 @@ async function removeDuplicates() {
     }
 }
 
-async function replaceProfile() {
+async function _replaceProfile() {
     const profile = await db.collection('lockcollections').doc(userId).get()
     if (profile.exists) {
         console.log('current profile:', profile.data())

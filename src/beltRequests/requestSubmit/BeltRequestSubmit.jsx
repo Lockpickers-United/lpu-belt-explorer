@@ -56,6 +56,7 @@ export default function BeltRequestSubmit() {
                 requiredFields: ['requestBelt', 'readRequirements', 'lock1', 'lock1evidence']
             })
         }
+        if(form.form?.requestBelt === 'Blue') form.require(['blueBeltProjectInfo'])
     }, [form])
 
     console.log('form', form)
@@ -171,6 +172,18 @@ export default function BeltRequestSubmit() {
                 ))}
 
                 <FormElement fieldType={'TextField'}
+                             fieldName={'blueBeltProjectInfo'}
+                             label={'Blue Belt Project Info (Required)'}
+                             multiline={true}
+                             rows={4}
+                             fieldSettings={{
+                                 descriptionStyle: {fontSize: '1.1rem', fontWeight: 500},
+                                 inputWidth: '100%'
+                             }}
+                             form={form}
+                             formDefaults={formDefaults}/>
+
+                <FormElement fieldType={'TextField'}
                              fieldName={'notes'}
                              description={'Any notes or other important information?'}
                              multiline={true}
@@ -181,6 +194,7 @@ export default function BeltRequestSubmit() {
                              }}
                              form={form}
                              formDefaults={formDefaults}/>
+
             </Collapse>
 
 

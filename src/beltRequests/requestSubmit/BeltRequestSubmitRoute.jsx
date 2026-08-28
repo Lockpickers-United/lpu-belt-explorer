@@ -13,7 +13,7 @@ export default function BeltRequestSubmitRoute() {
 
     const {profile, user} = useOutletContext()
 
-    usePageTitle('Contribute Photos')
+    usePageTitle('Request Belt')
 
     const extras = (
         <React.Fragment>{!isMobile && <div style={{flexGrow: 1, minWidth: '10px'}}/>}</React.Fragment>
