@@ -1,7 +1,6 @@
 import {pluralize} from '../../util/stringUtils'
 
 export default function handleRequestSubmit(form) {
-    console.log('HandleRequestSubmit', form)
     const clipboardText = form.requestPlatform.includes('Reddit')
         ? formatRedditRequest({form: form})
         : formatDiscordRequest({form: form})
@@ -13,10 +12,11 @@ export function formatDiscordRequest(form) {
         .filter(key => key.startsWith('entry'))
         .map(key => form.form[key])
     const {requestBelt, notes, blueBeltProjectInfo, sync, danRequestEvidence} = form.form
-    let syncMessage
-    if (sync) syncMessage = ` sync to ${sync.includes('u/') ? sync : 'u/' + sync}`
 
+    let syncMessage = ''
+    if (sync) syncMessage = ` sync to ${sync.includes('u/') ? sync : 'u/' + sync}`
     let message = `@LPUBeltBot request ${requestBelt.replace(' Belt', '')}${syncMessage}\n\n`
+
     if (requestBelt.includes('Belt')) {
         entries.forEach(entry => {
             const lpuLink = `https://lpubelts.com/#/locks?tab=search&search=${entry.matchId || entry.lockId}`
@@ -35,13 +35,11 @@ export function formatDiscordRequest(form) {
 }
 
 export function formatRedditRequest(form) {
-    console.log('formatReddit', form)
-
     const entries = Object.keys(form.form)
         .filter(key => key.startsWith('entry'))
         .map(key => form.form[key])
     const {requestBelt, notes, blueBeltProjectInfo, sync, danRequestEvidence} = form.form
-    const evidenceText = requestBelt.includes('Belt') ? ` using the ${pluralize('lock', entries.length)} below:` : '.'
+    const evidenceText = requestBelt.includes('Belt') ? ` using the ${pluralize('lock', entries?.length || 1)} below:` : '.'
 
     let message = `I'd like to request ${requestBelt}${evidenceText}\n\n`
     if (requestBelt.includes('Belt')) {
@@ -59,8 +57,6 @@ export function formatRedditRequest(form) {
     if (sync) message += `Please sync to my Discord username: ${sync}\n\n`
 
     message += 'Thank you!'
-
-    // https://lpubelts.com/#/locks?tab=search&search=109531f4
 
     return message
 }
