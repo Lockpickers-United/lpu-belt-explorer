@@ -1,11 +1,11 @@
+import validator from 'validator'
+
 export default function isValidUrl(string) {
-    let url
     try {
-        url = new URL(string)
+        return validator.isURL(string, {require_tld: false, require_protocol: true})
     } catch (_) {
         return false
     }
-    return url.protocol === 'http:' || url.protocol === 'https:'
 }
 
 

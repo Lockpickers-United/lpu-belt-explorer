@@ -1,17 +1,19 @@
-import React, {useCallback, useMemo, useState} from 'react'
+import React, {useCallback, useEffect, useMemo, useState} from 'react'
 import ScorecardEntrySearchBox from '../../formUtils/ScorecardEntrySearchBox.jsx'
 import BeltIcon from '../../entries/BeltIcon.jsx'
 import Typography from '@mui/material/Typography/index.d.ts'
 import ChoiceButtonGroupNew from '../../util/ChoiceButtonGroupNew.jsx'
 import CheckCircleIcon from '@mui/icons-material/CheckCircle'
 import ReportProblemIcon from '@mui/icons-material/ReportProblem'
-import {beltRoles, uniqueBelts} from '../../data/belts'
+import {beltRoles} from '../../data/belts'
 import isValidUrl from '../../util/isValidUrl'
 import LockEntrySearchBox from '../../formUtils/LockEntrySearchBox.jsx'
 import allEntries from '../../data/data.json'
 import TextField from '@mui/material/TextField'
+import useWindowSize from '../../util/useWindowSize.jsx'
 
 export default function BeltRequestEntrySelect({scorecardEntries, fieldName, form = {}, entryNumber}) {
+    const {isMobile} = useWindowSize()
 
     const [source, setSource] = useState('scorecard')
     const handleChangeSource = useCallback((option) => {
@@ -26,10 +28,9 @@ export default function BeltRequestEntrySelect({scorecardEntries, fieldName, for
         .filter(x => x), [form.form])
     const duplicateIds = existingIds.filter((id, index) => existingIds.findIndex(i => i === id) !== index)
 
-    const lockEntries = allEntries.filter((entry) => (beltIndex === -1 || beltRoles.indexOf(entry.belt + ' Belt') >= beltIndex))
+    const lockEntries = allEntries?.filter((entry) => (beltIndex === -1 || beltRoles.indexOf(entry.belt + ' Belt') >= beltIndex))
 
     const handleChangeEntry = useCallback((details) => {
-        console.log('handleChangeEntry', details)
         if (details?.lockName) {
             form.update({target: {name: fieldName, value: details}})
         } else {
@@ -38,7 +39,6 @@ export default function BeltRequestEntrySelect({scorecardEntries, fieldName, for
     }, [fieldName, form])
 
     const handleChangeLink = useCallback((event) => {
-        console.log(event.target.value)
         if (event.target.value.length) {
             form.update({target: {name: fieldName, value: {...form.form[fieldName], link: event.target.value}}})
         } else {
@@ -46,35 +46,48 @@ export default function BeltRequestEntrySelect({scorecardEntries, fieldName, for
         }
     }, [fieldName, form])
 
-    const checkValidLockBelt = useCallback(() => {
-        return uniqueBelts.indexOf(form.form?.[fieldName]?.belt) >= uniqueBelts.indexOf(form.form?.requestBelt)
-    }, [fieldName, form.form])
-
     const checkValidUrl = useCallback(value => {
         return isValidUrl(value)
     }, [])
 
     const isValid = useMemo(() => {
         return form.form?.[fieldName]
-            && checkValidLockBelt(form.form?.[fieldName])
             && checkValidUrl(form.form?.[fieldName]?.link)
             && !duplicateIds.includes(form.form?.[fieldName]?.id)
-    }, [checkValidLockBelt, form.form, fieldName, checkValidUrl, duplicateIds])
+    }, [form.form, fieldName, checkValidUrl, duplicateIds])
 
     const isNotValid = useMemo(() => {
         return (
             form.form?.[fieldName]?.link
-            && (!checkValidLockBelt(form.form?.[fieldName]) || !checkValidUrl(form.form?.[fieldName]?.link))
+            && !checkValidUrl(form.form?.[fieldName]?.link)
             || duplicateIds.includes(form.form?.[fieldName]?.id)
         )
-    }, [checkValidLockBelt, form.form, fieldName, checkValidUrl, duplicateIds])
+    }, [form.form, fieldName, checkValidUrl, duplicateIds])
+
+    const errorMessage = useMemo(() => {
+        if (isNotValid && duplicateIds.includes(form.form?.[fieldName]?.id)) {
+            return 'Duplicate lock'
+        } else if (isNotValid && !checkValidUrl(form.form?.[fieldName]?.link)) {
+            return 'A valid link is required'
+        }
+        return undefined
+    }, [checkValidUrl, duplicateIds, fieldName, form.form, isNotValid])
+
+    useEffect(() => {
+        if (form.invalid?.includes(fieldName) && isValid) {
+            form.validate(fieldName)
+        } else if (!form.invalid?.includes(fieldName) && !isValid) {
+            form.invalidate(fieldName)
+        }
+    }, [fieldName, isValid, form])
+
 
     const options = useMemo(() => {
         return [
-            {label: 'From Scorecard', value: 'scorecard'},
-            {label: 'Select Lock', value: 'selectLock'}
+            {label: isMobile ? 'Scorecard' : 'From Scorecard', value: 'scorecard'},
+            {label: isMobile ? 'Search' : 'Select Lock', value: 'selectLock'}
         ]
-    }, [])
+    }, [isMobile])
 
     return (
 
@@ -124,6 +137,10 @@ export default function BeltRequestEntrySelect({scorecardEntries, fieldName, for
                                            value={form.form[fieldName]?.link || ''}
                                            color={(form.form[fieldName]?.link && !checkValidUrl(form.form[fieldName].link)) ? 'error' : 'info'}/>
                             </div>
+                                <Typography sx={{color: '#e00', fontSize: '0.85rem', marginBottom: '2px'}}>
+                                    &nbsp; {errorMessage && errorMessage}
+                                </Typography>
+
 
                         </div>
                     }

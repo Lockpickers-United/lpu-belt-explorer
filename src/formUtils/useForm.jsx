@@ -9,6 +9,7 @@ export default function useForm({baseForm, processChange, processSubmit, handleS
     const [submitting, setSubmitting] = useState(false)
     const [submitted, setSubmitted] = useState(false)
     const [error, setError] = useState(undefined)
+    const [clearOnSumbit, setClearOnSubmit] = useState(true)
 
     const canSave =
         intialized
@@ -19,6 +20,7 @@ export default function useForm({baseForm, processChange, processSubmit, handleS
 
     const initialize = useCallback((params) => {
         setRequired(params.requiredFields)
+        setClearOnSubmit(params.clearOnSubmit)
         setInitialized(true)
     }, [])
 
@@ -58,6 +60,7 @@ export default function useForm({baseForm, processChange, processSubmit, handleS
         setSubmitted(false)
         setChanged(false)
         setRequired([])
+        setClearOnSubmit(true)
         setForm(baseForm)
         setTimeout(() => {
             window.scrollTo({
@@ -67,6 +70,17 @@ export default function useForm({baseForm, processChange, processSubmit, handleS
             })
         }, 100)
     }, [baseForm])
+
+    const clearSubmit = useCallback(() => {
+        setSubmitted(false)
+        setTimeout(() => {
+            window.scrollTo({
+                left: 0,
+                top: 0,
+                behavior: 'smooth'
+            })
+        }, 100)
+    }, [])
 
     const submitForm = useCallback(async (form) => {
         console.log('submitting', form)
@@ -102,6 +116,8 @@ export default function useForm({baseForm, processChange, processSubmit, handleS
         submit,
         submitting,
         submitted,
+        clearOnSumbit,
+        clearSubmit,
         reload,
         error
     }

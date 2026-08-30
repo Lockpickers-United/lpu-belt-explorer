@@ -12,6 +12,7 @@ import SelectBox from './SelectBox.jsx'
 import LockEntrySearchBox from './LockEntrySearchBox.jsx'
 import BeltIcon from '../entries/BeltIcon.jsx'
 import ReportProblemIcon from '@mui/icons-material/ReportProblem'
+import CheckCircleIcon from '@mui/icons-material/CheckCircle'
 
 const FORM_DEFAULTS = {
     margin: '0px 20px 32px 0px',
@@ -38,6 +39,8 @@ export default function FormElement({
                                         defaultValue,
                                         form = {},
                                         checkValid,
+                                        errorMessage,
+                                        after,
                                         formDefaults = FORM_DEFAULTS || {}
                                     }) {
 
@@ -47,6 +50,11 @@ export default function FormElement({
     const isValid = useMemo(() => (checkValid && form.form?.[fieldName])
             ? checkValid(form.form[fieldName])
             : true,
+        [checkValid, form.form, fieldName])
+
+    const isNotValid = useMemo(() => (checkValid && form.form?.[fieldName])
+            ? !checkValid(form.form[fieldName])
+            : false,
         [checkValid, form.form, fieldName])
 
     useEffect(() => {
@@ -115,7 +123,7 @@ export default function FormElement({
     return (
         <>
             {fieldType === 'SectionHeader' &&
-                <div style={{margin: '42px 0px 24px'}}>
+                <div style={{margin: '42px 0px 24px', ...settings.style}}>
                     <hr style={{margin: '0px 0px 4px', borderColor: '#ccc'}}/>
                     <Typography component='span' sx={settings.sectionHeaderStyle}>{label}</Typography>
                     <Typography component='span'
@@ -125,7 +133,7 @@ export default function FormElement({
             }
 
             {fieldType === 'TextField' &&
-                <div style={{margin: settings.margin}}>
+                <div style={{...settings.style, margin: settings.margin}}>
                     {label &&
                         <Typography sx={{...settings.labelStyle, marginBottom: '2px'}}>{label}</Typography>
                     }
@@ -144,18 +152,26 @@ export default function FormElement({
                                    value={form.form[fieldName] || ''}
                                    color={isValid ? settings.color : 'error'}/>
 
-                        {!isValid &&
-                            <div style={{marginLeft: 16}}>
-                                <ReportProblemIcon color='error'/>
+                        {checkValid &&
+                            <div style={{marginLeft: 12}}>
+                                {form.form?.[fieldName] &&
+                                    <>
+                                        {isNotValid && <ReportProblemIcon color='error'/>}
+                                        {isValid && <CheckCircleIcon color='success'/>}
+                                    </>
+                                }
                             </div>
                         }
                     </div>
-
+                    <Typography sx={{color: '#e00', fontSize: '0.85rem', marginBottom: '2px'}}>
+                        &nbsp; {errorMessage && errorMessage}
+                    </Typography>
+                    {after}
                 </div>
             }
 
             {fieldType === 'SelectBox' &&
-                <div style={{margin: settings.margin}}>
+                <div style={{...settings.style, margin: settings.margin}}>
                     {label &&
                         <Typography sx={{...settings.labelStyle, marginBottom: '2px'}}>{label}</Typography>
                     }
@@ -179,7 +195,7 @@ export default function FormElement({
             }
 
             {fieldType === 'RadioGroup' &&
-                <div style={{margin: settings.margin}}>
+                <div style={{margin: settings.margin, ...settings.style}}>
                     {label &&
                         <Typography sx={{...settings.labelStyle, marginBottom: '2px'}}>{label}</Typography>
                     }
@@ -196,20 +212,19 @@ export default function FormElement({
                             {options.map(option =>
                                 <FormControlLabel key={option} value={option} label={option} control={
                                     <Radio size={settings.inputSize}
-                                           slotProps={{
-                                               root: {style: {height: '36px', width: '36px', marginRight: '4px'}}
-                                           }}/>}
+                                           color={settings.color || 'success'}
+                                           sx={{height: '36px', width: '36px', marginRight: '4px'}}
+                                    />}
                                 />)
                             }
                             {otherOptionField &&
                                 <div style={{display: 'flex', height: 40}}>
                                     <FormControlLabel key='Other' value='Other' label='Other' control={
                                         <Radio size={settings.inputSize}
-                                               slotProps={{
-                                                   root: {style: {height: '36px', width: '36px', marginRight: '4px'}}
-                                               }}/>
-                                    }
-                                    />
+                                               color={settings.color || 'success'}
+                                               sx={{height: '36px', width: '36px', marginRight: '4px'}}
+                                        />
+                                    }/>
                                     {showOtherField &&
                                         <TextField type='text'
                                                    name={otherOptionField}
@@ -227,7 +242,7 @@ export default function FormElement({
             }
 
             {fieldType === 'SingleCheckbox' &&
-                <div style={{margin: settings.margin}}>
+                <div style={{...settings.style, margin: settings.margin}}>
                     {label &&
                         <Typography sx={{...settings.labelStyle, marginBottom: '2px'}}>{label}</Typography>
                     }
@@ -242,7 +257,7 @@ export default function FormElement({
                                           label={options}
                                           sx={{
                                               '.MuiFormControlLabel-label': {
-                                                  fontWeight: settings.fontWeight || 400
+                                                  fontWeight: settings.fontWeight || 400,
                                               }
                                           }} control={
                             <Checkbox size={settings.inputSize}
@@ -263,7 +278,7 @@ export default function FormElement({
             }
 
             {fieldType === 'Checkboxes' &&
-                <div style={{margin: settings.margin}}>
+                <div style={{...settings.style, margin: settings.margin}}>
                     {label &&
                         <Typography sx={{...settings.labelStyle, marginBottom: '2px'}}>{label}</Typography>
                     }
@@ -335,7 +350,7 @@ export default function FormElement({
 
 
             {fieldType === 'LockEntrySearchBox' &&
-                <div style={{margin: settings.margin}}>
+                <div style={{...settings.style, margin: settings.margin}}>
                     {label &&
                         <Typography sx={{marginBottom: '2px', ...settings.labelStyle}}>{label}</Typography>
                     }
@@ -348,7 +363,8 @@ export default function FormElement({
                                       style={{marginBottom: -10}}/>
                         </div>
                         <div style={{margin: '6px 12px 0px', width: '100%', maxWidth: settings.inputWidth}}>
-                            <LockEntrySearchBox handleChangeEntry={handleChangeEntry} allEntries={options} lockIndex={0}/>
+                            <LockEntrySearchBox handleChangeEntry={handleChangeEntry} allEntries={options}
+                                                lockIndex={0}/>
                         </div>
                         {!isValid &&
                             <ReportProblemIcon color='error'/>
@@ -359,7 +375,7 @@ export default function FormElement({
 
 
             {fieldType === 'StarRating' &&
-                <div style={{margin: settings.margin}}>
+                <div style={{...settings.style, margin: settings.margin}}>
                     {label &&
                         <Typography sx={{marginBottom: '2px', ...settings.labelStyle}}>{label}</Typography>
                     }

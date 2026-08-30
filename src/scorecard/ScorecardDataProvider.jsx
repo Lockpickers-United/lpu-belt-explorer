@@ -96,7 +96,8 @@ export function ScorecardDataProvider({
         getProjectEntryFromId,
         getAwardEntryFromId,
         getDeletedEntryFromId,
-    }), [cardActivity, cardBBCount, cardDanPoints, cardEligibleDan, cardNextDanPoints, cardNextDanLocks, searchedEntries, visibleEntries, popularEntries, bbPopularEntries, cardUniqueLocks, cardMaxBelt, blackBeltUser, blackBeltScorecard])
+        profile
+    }), [cardActivity, cardBBCount, cardDanPoints, cardEligibleDan, cardNextDanPoints, cardNextDanLocks, searchedEntries, visibleEntries, popularEntries, bbPopularEntries, cardUniqueLocks, cardMaxBelt, blackBeltUser, blackBeltScorecard, profile])
 
     return (
         <ScorecardDataContext.Provider value={value}>

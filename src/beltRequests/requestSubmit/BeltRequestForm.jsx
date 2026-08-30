@@ -12,33 +12,51 @@ import Typography from '@mui/material/Typography'
 import Paper from '@mui/material/Paper'
 import ScorecardDataContext from '../../scorecard/ScorecardDataProvider.jsx'
 import BeltRequestEntrySelect from './BeltRequestEntrySelect.jsx'
+import AuthContext from '../../app/AuthContext.jsx'
+import handleRequestSubmit from './HandleRequestSubmit.jsx'
+import isValidUrl from '../../util/isValidUrl'
 
 /**
  * @prop requestBelt
  * @prop readRequirements
+ * @prop requestPlatform
+ * @prop danRequestEvidence
  */
 
-export default function BeltRequestSubmit() {
+export default function BeltRequestForm() {
+    const {profile} = useContext(ScorecardDataContext)
+    const {user} = useContext(AuthContext)
+    const userId = user?.uid
     const {
         visibleEntries = []
         //cardMaxBelt
     } = useContext(ScorecardDataContext)
 
+
+    // TODO message is no matching scorecard entries (or none to begin with)
+
+
     let form
+    let entryFieldNames
 
     const processChange = useCallback((event) => {
         const {name, value} = event.target
         let events = [event]
         if (name === 'requestBelt') form.reload()
         if (name === 'requestBelt' && value.includes('Blue')) form.require(['blueBeltProjectInfo'])
-        if (name === 'requestBelt' && value.includes('Dan')) events.push({
-            target: {
-                name: 'readRequirements',
-                value: true
-            }
-        })
+        if (name === 'requestBelt' && value.includes('Dan')) {
+            events.push({target: {name: 'readRequirements', value: true}})
+            setTimeout(() => {
+                form.require(['danRequestEvidence'])
+            }, 100)
+        }
+        if (name === 'readRequirements') {
+            entryFieldNames.forEach((fieldName) => {
+                form.update({target: {name: fieldName, action: 'delete'}})
+            })
+        }
         return events
-    }, [form])
+    }, [entryFieldNames, form])
 
     const baseForm = useMemo(() => {
         return {}
@@ -46,9 +64,9 @@ export default function BeltRequestSubmit() {
 
     const processSubmit = useCallback((form) => {
         console.log('processSubmit called')
-
+        handleRequestSubmit(form)
         const newForm = {...form}
-        // pre process
+        // pre-process
         return newForm
     }, [])
 
@@ -62,7 +80,8 @@ export default function BeltRequestSubmit() {
     useEffect(() => {
         if (!form.intialized) {
             form.initialize({
-                requiredFields: ['requestBelt', 'readRequirements', 'entry1']
+                requiredFields: ['requestBelt', 'readRequirements', 'requestPlatform'],
+                clearOnSubmit: false
             })
         }
     }, [form])
@@ -88,9 +107,13 @@ export default function BeltRequestSubmit() {
     ), [visibleEntries, beltIndex])
 
     const allEntryFieldNames = useMemo(() => ['entry1', 'entry2', 'entry3', 'entry4', 'entry5', 'entry6'], [])
-    const entryFieldNames = useMemo(() => {
+    entryFieldNames = useMemo(() => {
         return allEntryFieldNames.slice(0, lockCount) || []
     }, [allEntryFieldNames, lockCount])
+
+    const checkValidUrl = useCallback(value => {
+        return isValidUrl(value)
+    }, [])
 
     useEffect(() => {
         if (!entryFieldNames.slice(0, 2).every(field => form.required?.includes(field))) {
@@ -101,7 +124,15 @@ export default function BeltRequestSubmit() {
         }
     }, [entryFieldNames, form])
 
-    const sectionCount = 3
+    const fillProfileLink = useCallback(() => {
+        const nameVar = profile.displayName ? `?name=${profile?.displayName}` : ''
+        const profileLink = `https://lpubelts.com/#/profile/${userId}/scorecard${nameVar}`
+        form.update({target: {name: 'danRequestEvidence', value: profileLink}})
+    }, [profile.displayName, userId, form])
+
+    const syncPlatform = useMemo(() => form.form.requestPlatform?.includes('Discord') ? 'Reddit' : 'Discord', [form.form.requestPlatform])
+
+    const sectionCount = 4
 
     return (
 
@@ -128,27 +159,30 @@ export default function BeltRequestSubmit() {
                          options={[2, sectionCount]}/>
 
             <Collapse in={!form.form.requestBelt}>
-                <div style={{display: 'flex', justifyContent: 'center', marginTop: 14, marginBottom: 6, color: '#999'}}>
+                <div style={{display: 'flex', justifyContent: 'center', marginTop: 14, color: '#999'}}>
                     Please select a belt to continue.
                 </div>
             </Collapse>
 
             <Collapse in={!!form.form.requestBelt}>
-                <RequestBeltRequirements belt={form.form.requestBelt?.replace(' Belt', '')}/>
-                <div style={{marginTop: 24}}/>
-                <FormElement fieldType={'SingleCheckbox'}
-                             fieldName={'readRequirements'}
-                             description={''}
-                             options={['I have read and completed all of the requirements for this belt.']}
-                             fieldSettings={{
-                                 descriptionStyle: {fontSize: '1.1rem', fontWeight: 500},
-                                 inputWidth: 20,
-                                 color: 'success',
-                                 fontWeight: 700,
-                                 margin: 0
-                             }}
-                             form={form}
-                             formDefaults={formDefaults}/>
+                <>
+                    <RequestBeltRequirements belt={form.form.requestBelt?.replace(' Belt', '')}/>
+                    {form.form.requestBelt?.includes('Belt') && <div style={{marginTop: 24}}/>}
+                    <FormElement fieldType={'SingleCheckbox'}
+                                 fieldName={'readRequirements'}
+                                 description={''}
+                                 options={['I have read and completed all of the requirements for this belt.']}
+                                 fieldSettings={{
+                                     descriptionStyle: {fontSize: '1.1rem', fontWeight: 500},
+                                     inputWidth: 20,
+                                     color: 'success',
+                                     fontWeight: 700,
+                                     style: {margin: 0},
+                                     margin: 0
+                                 }}
+                                 form={form}
+                                 formDefaults={formDefaults}/>
+                </>
             </Collapse>
 
             <FormElement fieldType={'SectionHeader'}
@@ -156,13 +190,21 @@ export default function BeltRequestSubmit() {
                          options={[3, sectionCount]}/>
 
             <Collapse in={!form.form.requestBelt || !form.form.readRequirements}>
-                <div style={{display: 'flex', justifyContent: 'center', marginTop: 14, marginBottom: 6, color: '#999'}}>
-                    {!form.form.requestBelt ? 'Please select a belt to continue.' : 'Please indicate that you have read the requirements above to continue.'}
-                </div>
+                <>
+                    {!form.form.requestBelt || !form.form.readRequirements &&
+                        <div style={{
+                            display: 'flex',
+                            justifyContent: 'center',
+                            marginTop: 14,
+                            color: '#999'
+                        }}>
+                            {!form.form.requestBelt ? 'Please select a belt to continue.' : 'Please indicate that you have read the requirements above to continue.'}
+                        </div>
+                    }
+                </>
             </Collapse>
 
             <Collapse in={!!form.form.requestBelt && !!form.form.readRequirements}>
-
                 {!!form.form.requestBelt && !!form.form.readRequirements &&
                     <>
                         {!form.form.requestBelt.includes('Dan') && entryFieldNames.map((entryFieldName, idx) => (
@@ -176,15 +218,31 @@ export default function BeltRequestSubmit() {
                         ))}
 
                         {form.form.requestBelt.includes('Dan') &&
-                            <FormElement fieldType={'TextField'}
-                                         fieldName={'danRequestEvidence'}
-                                         label={'Link to Dan Evidence'}
-                                         fieldSettings={{
-                                             descriptionStyle: {fontSize: '1.1rem', fontWeight: 500},
-                                             inputWidth: '100%'
-                                         }}
-                                         form={form}
-                                         formDefaults={formDefaults}/>
+                            <div style={{display: 'flex', flexDirection: 'row', gap: '12px', alignItems: 'center'}}>
+                                <div style={{flexGrow: 1, width: '100%'}}>
+                                    <FormElement fieldType={'TextField'}
+                                                 fieldName={'danRequestEvidence'}
+                                                 label={'Link to Dan Evidence'}
+                                                 fieldSettings={{
+                                                     descriptionStyle: {fontSize: '1.1rem', fontWeight: 500},
+                                                     inputWidth: '100%',
+                                                     style: {width: '100%'}
+                                                 }}
+                                                 fullWidth
+                                                 form={form}
+                                                 formDefaults={formDefaults}
+                                                 checkValid={checkValidUrl}
+                                                 color={(form.form.danRequestEvidence && !checkValidUrl(form.form.danRequestEvidence)) ? 'error' : 'info'}
+                                                 errorMessage={(form.form.danRequestEvidence && !checkValidUrl(form.form.danRequestEvidence)) ? 'A valid link is required' : undefined}
+                                                 after={
+                                                     <Button variant='contained' size='small' color='info'
+                                                             style={{marginTop: 2}} onClick={fillProfileLink}>
+                                                         Fill in profile link
+                                                     </Button>
+                                                 }
+                                    />
+                                </div>
+                            </div>
                         }
 
                         {form.form.requestBelt === 'Blue Belt' &&
@@ -196,7 +254,7 @@ export default function BeltRequestSubmit() {
                                          fieldSettings={{
                                              descriptionStyle: {fontSize: '1.1rem', fontWeight: 500},
                                              inputWidth: '100%',
-                                             margin: '24px 0 0'
+                                             margin: '24px 0 18px'
                                          }}
                                          form={form}
                                          formDefaults={formDefaults}/>
@@ -209,7 +267,8 @@ export default function BeltRequestSubmit() {
                                      rows={4}
                                      fieldSettings={{
                                          descriptionStyle: {fontSize: '1.1rem', fontWeight: 500},
-                                         inputWidth: '100%'
+                                         inputWidth: '100%',
+                                         margin: 0
                                      }}
                                      form={form}
                                      formDefaults={formDefaults}/>
@@ -219,12 +278,50 @@ export default function BeltRequestSubmit() {
             </Collapse>
 
 
+            <FormElement fieldType={'SectionHeader'}
+                         label={'Request Details'}
+                         options={[4, sectionCount]}/>
+
+            <Collapse in={!!form.form.requestBelt && !!form.form.readRequirements}>
+                {!!form.form.requestBelt && !!form.form.readRequirements &&
+
+                    <div style={{display: 'flex', flexWrap: 'wrap'}}>
+                        <FormElement fieldType={'RadioGroup'}
+                                     fieldName={'requestPlatform'}
+                                     description={'What platform would you like to use?'}
+                                     options={['Discord Post', 'Reddit Modmail']}
+                                     fieldSettings={{
+                                         descriptionStyle: {fontSize: '1.1rem', fontWeight: 500},
+                                         style: {marginRight: 54},
+                                         margin: '0 54px 0 0'
+                                     }}
+                                     form={form}
+                                     formDefaults={formDefaults}/>
+
+                        <Collapse in={!!form.form.requestPlatform}>
+                            {!!form.form.requestPlatform &&
+                                <FormElement fieldType={'TextField'}
+                                             fieldName={'sync'}
+                                             description={`Enter your ${syncPlatform} username to request sync:`}
+                                             fieldSettings={{
+                                                 descriptionStyle: {fontSize: '1.1rem', fontWeight: 500},
+                                                 inputWidth: 300,
+                                                 margin: 0
+                                             }}
+                                             form={form}
+                                             formDefaults={formDefaults}/>
+                            }
+                        </Collapse>
+                    </div>
+                }
+            </Collapse>
+
             <div style={{display: 'flex', justifyContent: 'center', marginTop: 24, marginBottom: 16}}>
                 <Button onClick={form.submit} variant='contained' color='info'
                         disabled={!form.canSave} style={{boxShadow: 'none'}}>
                     {form.updating
                         ? <LoadingDisplayWhiteSmall size={'small'}/>
-                        : 'SUBMIT'
+                        : 'Copy Request'
                     }
                 </Button>
             </div>
@@ -243,7 +340,7 @@ export default function BeltRequestSubmit() {
                         }}>Request Submitted!
                         </Typography>
                         <div style={{width: '100%', textAlign: 'center'}}>
-                            <Button onClick={form.reload} variant='contained' color='success'
+                            <Button onClick={form.clearSubmit} variant='contained' color='success'
                                     style={{marginLeft: 'auto', marginRight: 'auto'}}>
                                 OK
                             </Button>

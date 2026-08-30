@@ -2,7 +2,7 @@ import React, {useCallback, useContext} from 'react'
 import Nav from '../../nav/Nav.jsx'
 import useWindowSize from '../../util/useWindowSize.jsx'
 import usePageTitle from '../../util/usePageTitle.jsx'
-import BeltRequestSubmit from './BeltRequestSubmit.jsx'
+import BeltRequestForm from './BeltRequestForm.jsx'
 import {FilterProvider} from '../../context/FilterContext.jsx'
 import {ScorecardDataProvider} from '../../scorecard/ScorecardDataProvider.jsx'
 import AuthContext from '../../app/AuthContext.jsx'
@@ -115,7 +115,7 @@ export default function BeltRequestSubmitRoute() {
                         {loading && <LoadingDisplay/>}
 
                         {!loading && data && !error &&
-                            <BeltRequestSubmit profile={profile} user={user}/>
+                            <BeltRequestForm profile={profile} user={user}/>
                         }
 
                         {!loading && (!data || error) && <ScorecardProfileNotFound/>}

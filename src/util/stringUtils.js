@@ -1,3 +1,5 @@
+export const pluralize = (word, count) => (count === 1 || count === 1n) ? word : `${word}s`
+
 export function spaceJoin(str1, str2) {
     return str1 && str2 ? `${str1} ${str2}` : str1 || str2
 }
