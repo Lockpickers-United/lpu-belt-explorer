@@ -1,5 +1,4 @@
 import {pluralize} from '../../util/stringUtils'
-import {enqueueSnackbar} from 'notistack'
 
 export default function handleRequestSubmit(form) {
     console.log('HandleRequestSubmit', form)
@@ -7,7 +6,6 @@ export default function handleRequestSubmit(form) {
         ? formatRedditRequest({form: form})
         : formatDiscordRequest({form: form})
     navigator.clipboard.writeText(clipboardText).then()
-    enqueueSnackbar('Belt Request message copied to clipboard.')
 }
 
 export function formatDiscordRequest(form) {

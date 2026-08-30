@@ -337,7 +337,7 @@ export default function BeltRequestForm() {
                             fontWeight: 500,
                             marginBottom: '60px',
                             textAlign: 'center'
-                        }}>Request Submitted!
+                        }}>Request Copied to Clipboard
                         </Typography>
                         <div style={{width: '100%', textAlign: 'center'}}>
                             <Button onClick={form.clearSubmit} variant='contained' color='success'
