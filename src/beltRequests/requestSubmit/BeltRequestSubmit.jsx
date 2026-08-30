@@ -1,33 +1,42 @@
-import React, {useCallback, useEffect, useMemo} from 'react'
+import React, {useCallback, useContext, useEffect, useMemo} from 'react'
 import Button from '@mui/material/Button'
 import Collapse from '@mui/material/Collapse'
 import Dialog from '@mui/material/Dialog'
 import Tracker from '../../app/Tracker.jsx'
-import allEntries from '../../data/data.json'
 import useForm from '../../formUtils/useForm.jsx'
 import FormElement from '../../formUtils/FormElement.jsx'
-import {uniqueBelts} from '../../data/belts'
+import {beltRoles, danBeltsFull} from '../../data/belts'
 import LoadingDisplayWhiteSmall from '../../misc/LoadingDisplayWhiteSmall.jsx'
 import RequestBeltRequirements from './RequestBeltRequirements.jsx'
 import Typography from '@mui/material/Typography'
 import Paper from '@mui/material/Paper'
-import isValidUrl from '../../util/isValidUrl'
+import ScorecardDataContext from '../../scorecard/ScorecardDataProvider.jsx'
+import BeltRequestEntrySelect from './BeltRequestEntrySelect.jsx'
 
 /**
- * @prop photoCredit
+ * @prop requestBelt
+ * @prop readRequirements
  */
 
 export default function BeltRequestSubmit() {
+    const {
+        visibleEntries = []
+        //cardMaxBelt
+    } = useContext(ScorecardDataContext)
 
     let form
 
     const processChange = useCallback((event) => {
         const {name, value} = event.target
-        console.log('processChange called', name, value)
         let events = [event]
-        if (name === 'requestBelt') {
-            form.update({target: {name: 'readRequirements', action: 'delete'}})
-        }
+        if (name === 'requestBelt') form.reload()
+        if (name === 'requestBelt' && value.includes('Blue')) form.require(['blueBeltProjectInfo'])
+        if (name === 'requestBelt' && value.includes('Dan')) events.push({
+            target: {
+                name: 'readRequirements',
+                value: true
+            }
+        })
         return events
     }, [form])
 
@@ -53,35 +62,44 @@ export default function BeltRequestSubmit() {
     useEffect(() => {
         if (!form.intialized) {
             form.initialize({
-                requiredFields: ['requestBelt', 'readRequirements', 'lock1', 'lock1evidence']
+                requiredFields: ['requestBelt', 'readRequirements', 'entry1']
             })
         }
-        if(form.form?.requestBelt === 'Blue') form.require(['blueBeltProjectInfo'])
     }, [form])
 
     console.log('form', form)
 
-    const beltIndex = useMemo(() => uniqueBelts.indexOf(form.form?.requestBelt), [form])
+    const beltIndex = useMemo(() => beltRoles.indexOf(form.form.requestBelt), [form])
     const lockCount = useMemo(() => beltIndex <= 4
-        ? 1
-        : beltIndex <= 7
-            ? 2
-            : 6
-        ,[beltIndex])
+            ? 1
+            : beltIndex <= 7
+                ? 2
+                : beltIndex <= 8
+                    ? 6
+                    : 0
+        , [beltIndex])
 
-    const checkValidLockBelt = useCallback(lockDetails => {
-        return uniqueBelts.indexOf(lockDetails?.belt) >= uniqueBelts.indexOf(form.form?.requestBelt)
-    }, [form])
+    const scorecardEntries = useMemo(() => visibleEntries.filter(entry =>
+        (entry.type === 'Lock'
+            && !entry.exceptionType
+            && !!entry.belt
+            && (beltIndex === -1 || danBeltsFull.indexOf(entry.belt) >= beltIndex)
+        )
+    ), [visibleEntries, beltIndex])
 
-    const checkValidUrl = useCallback(value => {
-        return isValidUrl(value)
-    }, [])
+    const allEntryFieldNames = useMemo(() => ['entry1', 'entry2', 'entry3', 'entry4', 'entry5', 'entry6'], [])
+    const entryFieldNames = useMemo(() => {
+        return allEntryFieldNames.slice(0, lockCount) || []
+    }, [allEntryFieldNames, lockCount])
 
-    const allLockFieldNames = ['lock1', 'lock2', 'lock3', 'lock4', 'lock5', 'lock6']
-    const lockFieldNames = allLockFieldNames.slice(0, lockCount)
-    const allEvidenceFieldNames = ['lock1evidence', 'lock2evidence', 'lock3evidence',
-        'lock4evidence', 'lock5evidence', 'lock6evidence']
-    const evidenceFieldNames = allEvidenceFieldNames.slice(0, lockCount)
+    useEffect(() => {
+        if (!entryFieldNames.slice(0, 2).every(field => form.required?.includes(field))) {
+            form.require(entryFieldNames.slice(0, 2))
+        }
+        if (form.form.requestBelt?.includes('Blue') && !form.required?.includes('blueBeltProjectInfo')) {
+            form.require(['blueBeltProjectInfo'])
+        }
+    }, [entryFieldNames, form])
 
     const sectionCount = 3
 
@@ -92,6 +110,7 @@ export default function BeltRequestSubmit() {
             marginLeft: 'auto', marginRight: 'auto', marginTop: 16, marginBottom: 46, paddingLeft: 8
         }}>
 
+
             <FormElement fieldType={'SectionHeader'}
                          label={'Choose Belt'}
                          options={[1, sectionCount]}/>
@@ -99,7 +118,7 @@ export default function BeltRequestSubmit() {
             <FormElement fieldType={'SelectBox'}
                          fieldName={'requestBelt'}
                          description={'What belt are you requesting?'}
-                         options={uniqueBelts}
+                         options={beltRoles}
                          fieldSettings={{descriptionStyle: {fontSize: '1.1rem', fontWeight: 500}, inputWidth: 140}}
                          form={form}
                          formDefaults={formDefaults}/>
@@ -108,14 +127,14 @@ export default function BeltRequestSubmit() {
                          label={'Belt Requirements'}
                          options={[2, sectionCount]}/>
 
-            <Collapse in={!form.form?.requestBelt}>
+            <Collapse in={!form.form.requestBelt}>
                 <div style={{display: 'flex', justifyContent: 'center', marginTop: 14, marginBottom: 6, color: '#999'}}>
                     Please select a belt to continue.
                 </div>
             </Collapse>
 
-            <Collapse in={!!form.form?.requestBelt}>
-                <RequestBeltRequirements belt={form.form?.requestBelt}/>
+            <Collapse in={!!form.form.requestBelt}>
+                <RequestBeltRequirements belt={form.form.requestBelt?.replace(' Belt', '')}/>
                 <div style={{marginTop: 24}}/>
                 <FormElement fieldType={'SingleCheckbox'}
                              fieldName={'readRequirements'}
@@ -125,7 +144,8 @@ export default function BeltRequestSubmit() {
                                  descriptionStyle: {fontSize: '1.1rem', fontWeight: 500},
                                  inputWidth: 20,
                                  color: 'success',
-                                 fontWeight: 700
+                                 fontWeight: 700,
+                                 margin: 0
                              }}
                              form={form}
                              formDefaults={formDefaults}/>
@@ -135,66 +155,67 @@ export default function BeltRequestSubmit() {
                          label={'Evidence'}
                          options={[3, sectionCount]}/>
 
-            <Collapse in={!form.form?.requestBelt || !form.form?.readRequirements}>
+            <Collapse in={!form.form.requestBelt || !form.form.readRequirements}>
                 <div style={{display: 'flex', justifyContent: 'center', marginTop: 14, marginBottom: 6, color: '#999'}}>
-                    {!form.form?.requestBelt ? 'Please select a belt to continue.' : 'Please indicate that you have read the requirements above to continue.'}
+                    {!form.form.requestBelt ? 'Please select a belt to continue.' : 'Please indicate that you have read the requirements above to continue.'}
                 </div>
             </Collapse>
 
-            <Collapse in={!!form.form?.requestBelt && !!form.form?.readRequirements}>
+            <Collapse in={!!form.form.requestBelt && !!form.form.readRequirements}>
 
-                {lockFieldNames.map((lockFieldName, idx) => (
-                    <div key={idx} style={{marginBottom: 44}}>
+                {!!form.form.requestBelt && !!form.form.readRequirements &&
+                    <>
+                        {!form.form.requestBelt.includes('Dan') && entryFieldNames.map((entryFieldName, idx) => (
+                            <div key={idx} style={{margin: '12px 0 18px 0'}}>
+                                <BeltRequestEntrySelect scorecardEntries={scorecardEntries}
+                                                        fieldName={entryFieldName}
+                                                        form={form}
+                                                        entryNumber={idx + 1}/>
 
-                        <FormElement fieldType={'LockEntrySearchBox'}
-                                     fieldName={lockFieldName}
-                                     description={'Select lock #' + (idx + 1) + `${idx > 1 ? ' (optional)' : ''}`}
-                                     options={allEntries}
+                            </div>
+                        ))}
+
+                        {form.form.requestBelt.includes('Dan') &&
+                            <FormElement fieldType={'TextField'}
+                                         fieldName={'danRequestEvidence'}
+                                         label={'Link to Dan Evidence'}
+                                         fieldSettings={{
+                                             descriptionStyle: {fontSize: '1.1rem', fontWeight: 500},
+                                             inputWidth: '100%'
+                                         }}
+                                         form={form}
+                                         formDefaults={formDefaults}/>
+                        }
+
+                        {form.form.requestBelt === 'Blue Belt' &&
+                            <FormElement fieldType={'TextField'}
+                                         fieldName={'blueBeltProjectInfo'}
+                                         label={'Blue Belt Project Info (Required)'}
+                                         multiline={true}
+                                         rows={4}
+                                         fieldSettings={{
+                                             descriptionStyle: {fontSize: '1.1rem', fontWeight: 500},
+                                             inputWidth: '100%',
+                                             margin: '24px 0 0'
+                                         }}
+                                         form={form}
+                                         formDefaults={formDefaults}/>
+                        }
+
+                        <FormElement fieldType={'TextField'}
+                                     fieldName={'notes'}
+                                     description={'Any notes or required information?'}
+                                     multiline={true}
+                                     rows={4}
                                      fieldSettings={{
                                          descriptionStyle: {fontSize: '1.1rem', fontWeight: 500},
-                                         inputWidth: 600
-                                     }}
-                                     form={form}
-                                     formDefaults={formDefaults}
-                                     checkValid={checkValidLockBelt}/>
-                        <FormElement fieldType={'TextField'}
-                                     fieldName={evidenceFieldNames[idx]}
-                                     description={'Link to evidence'}
-                                     fieldSettings={{
-                                         descriptionStyle: {fontSize: '1.1rem', fontWeight: 400, color:'#ddd'},
-                                         margin: '0px 0px 16px 0px',
                                          inputWidth: '100%'
                                      }}
                                      form={form}
-                                     formDefaults={formDefaults}
-                                     checkValid={checkValidUrl}/>
-                    </div>
-                ))}
+                                     formDefaults={formDefaults}/>
 
-                <FormElement fieldType={'TextField'}
-                             fieldName={'blueBeltProjectInfo'}
-                             label={'Blue Belt Project Info (Required)'}
-                             multiline={true}
-                             rows={4}
-                             fieldSettings={{
-                                 descriptionStyle: {fontSize: '1.1rem', fontWeight: 500},
-                                 inputWidth: '100%'
-                             }}
-                             form={form}
-                             formDefaults={formDefaults}/>
-
-                <FormElement fieldType={'TextField'}
-                             fieldName={'notes'}
-                             description={'Any notes or other important information?'}
-                             multiline={true}
-                             rows={4}
-                             fieldSettings={{
-                                 descriptionStyle: {fontSize: '1.1rem', fontWeight: 500},
-                                 inputWidth: '100%'
-                             }}
-                             form={form}
-                             formDefaults={formDefaults}/>
-
+                    </>
+                }
             </Collapse>
 
 

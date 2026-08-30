@@ -38,7 +38,7 @@ export default function FormElement({
                                         defaultValue,
                                         form = {},
                                         checkValid,
-                                        formDefaults = FORM_DEFAULTS
+                                        formDefaults = FORM_DEFAULTS || {}
                                     }) {
 
     const theme = useTheme()
@@ -103,8 +103,8 @@ export default function FormElement({
         form.update({target: {name: dimension, value: rating}})
     }, [form])
 
-    const handleChangeLock = useCallback(details => {
-        console.log('handleChangeLock', details)
+    const handleChangeEntry = useCallback(details => {
+        console.log('handleChangeEntry', details)
         if (details.lockName) {
             form.update({target: {name: fieldName, value: details}})
         } else {
@@ -348,7 +348,7 @@ export default function FormElement({
                                       style={{marginBottom: -10}}/>
                         </div>
                         <div style={{margin: '6px 12px 0px', width: '100%', maxWidth: settings.inputWidth}}>
-                            <LockEntrySearchBox handleChangeLock={handleChangeLock} allEntries={options} lockIndex={0}/>
+                            <LockEntrySearchBox handleChangeEntry={handleChangeEntry} allEntries={options} lockIndex={0}/>
                         </div>
                         {!isValid &&
                             <ReportProblemIcon color='error'/>

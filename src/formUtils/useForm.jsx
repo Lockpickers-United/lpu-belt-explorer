@@ -57,6 +57,7 @@ export default function useForm({baseForm, processChange, processSubmit, handleS
         setInitialized(false)
         setSubmitted(false)
         setChanged(false)
+        setRequired([])
         setForm(baseForm)
         setTimeout(() => {
             window.scrollTo({
