@@ -24,11 +24,11 @@ export default function BeltRequestEntrySelect({scorecardEntries, fieldName, for
     const beltIndex = useMemo(() => beltRoles.indexOf(form.form.requestBelt), [form])
     const existingIds = useMemo(() => Object.keys(form.form)
         .filter(key => key.startsWith('entry'))
-        .map(key => form.form[key].id)
+        .map(key => form.form[key]?.id)
         .filter(x => x), [form.form])
     const duplicateIds = existingIds.filter((id, index) => existingIds.findIndex(i => i === id) !== index)
 
-    const lockEntries = allEntries?.filter((entry) => (beltIndex === -1 || beltRoles.indexOf(entry.belt + ' Belt') >= beltIndex))
+    const lockEntries = allEntries?.filter((entry) => (beltIndex === -1 || beltRoles.indexOf(entry.belt.replace(/ \d/, '') + ' Belt') >= beltIndex))
 
     const handleChangeEntry = useCallback((details) => {
         if (details?.lockName) {
@@ -130,7 +130,7 @@ export default function BeltRequestEntrySelect({scorecardEntries, fieldName, for
                                 Link to evidence
                                 <TextField type='text'
                                            name={fieldName}
-                                           style={{margin: '6px 0px 0px 0px'}}
+                                           style={{margin: '2px 0px 0px 0px'}}
                                            fullWidth
                                            size={'small'}
                                            onChange={handleChangeLink}

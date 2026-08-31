@@ -25,7 +25,7 @@ export default function useForm({baseForm, processChange, processSubmit, handleS
     }, [])
 
     const require = useCallback((requiredFields) => {
-        setRequired(prev => [...new Set([...prev, ...requiredFields])])
+        setRequired(prev => [...new Set([...prev, ...requiredFields])].sort())
     }, [])
 
     const validate = useCallback((invalidField) => {

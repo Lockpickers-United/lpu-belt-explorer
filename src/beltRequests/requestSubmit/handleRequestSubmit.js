@@ -11,6 +11,10 @@ export function formatDiscordRequest(form) {
     const entries = Object.keys(form.form)
         .filter(key => key.startsWith('entry'))
         .map(key => form.form[key])
+    const quests = Object.keys(form.form)
+        .filter(key => key.startsWith('quest'))
+        .map(key => form.form[key])
+
     const {requestBelt, notes, blueBeltProjectInfo, sync, danRequestEvidence} = form.form
 
     let syncMessage = ''
@@ -23,6 +27,13 @@ export function formatDiscordRequest(form) {
             message += `**${entry.lockName}** (${entry.belt}) - **<${entry.link}>**\n`
             message += `  *${lpuLink}*\n\n`
         })
+
+        if (quests.length) {
+            quests.forEach(quest => {
+                message += `Quest: **${quest.discipline}**\n`
+                message += `${quest.details}\n\n`
+            })
+        }
     } else if (requestBelt.includes('Dan')) {
         message += `Dan evidence link: ${danRequestEvidence}\n\n`
     }
@@ -38,6 +49,10 @@ export function formatRedditRequest(form) {
     const entries = Object.keys(form.form)
         .filter(key => key.startsWith('entry'))
         .map(key => form.form[key])
+    const quests = Object.keys(form.form)
+        .filter(key => key.startsWith('quest'))
+        .map(key => form.form[key])
+
     const {requestBelt, notes, blueBeltProjectInfo, sync, danRequestEvidence} = form.form
     const evidenceText = requestBelt.includes('Belt') ? ` using the ${pluralize('lock', entries?.length || 1)} below:` : '.'
 
@@ -49,6 +64,13 @@ export function formatRedditRequest(form) {
             message += `${entry.lockName} (${entry.belt}) - ${entry.link}\n`
             message += `${lpuLink}\n\n`
         }
+        if (quests.length) {
+            quests.forEach(quest => {
+                message += `Quest: ${quest.discipline}\n`
+                message += `${quest.details}\n\n`
+            })
+        }
+
     } else if (requestBelt.includes('Dan')) {
         message += `Dan evidence link: ${danRequestEvidence}\n\n`
     }

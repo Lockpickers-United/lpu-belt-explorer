@@ -1,4 +1,4 @@
-import React, {useCallback, useContext, useEffect, useMemo} from 'react'
+import React, {useCallback, useContext, useEffect, useMemo, useState} from 'react'
 import Button from '@mui/material/Button'
 import Collapse from '@mui/material/Collapse'
 import Dialog from '@mui/material/Dialog'
@@ -13,8 +13,9 @@ import Paper from '@mui/material/Paper'
 import ScorecardDataContext from '../../scorecard/ScorecardDataProvider.jsx'
 import BeltRequestEntrySelect from './BeltRequestEntrySelect.jsx'
 import AuthContext from '../../app/AuthContext.jsx'
-import handleRequestSubmit from './HandleRequestSubmit.jsx'
+import handleRequestSubmit from './handleRequestSubmit'
 import isValidUrl from '../../util/isValidUrl'
+import BeltRequestEpicQuest from './BeltRequestEpicQuest.jsx'
 
 /**
  * @prop requestBelt
@@ -38,14 +39,31 @@ export default function BeltRequestForm() {
 
     let form
     let entryFieldNames
+    let questFieldNames
+    const [lockCount, setLockCount] = useState(0)
+    const [questCount, setQuestCount] = useState(0)
 
     const processChange = useCallback((event) => {
         const {name, value} = event.target
-        let events = [event]
-        if (name === 'requestBelt') form.reload()
+        //const cleanValue = sanitizeValues(value, {profanityOK: false, urlsOK: true})
+        const cleanValue = (typeof value === 'string') ? value.trim() : value
+        let events = [{...event, target: {name, value: cleanValue}}]
+
+        if (name === 'requestBelt') {
+            form.reload()
+            setLockCount(beltRoles.indexOf(value) <= 4 ? 1 : 2)
+        }
         if (name === 'requestBelt' && value.includes('Blue')) form.require(['blueBeltProjectInfo'])
+        if (name === 'requestBelt' && value.includes('Black')) {
+            setQuestCount(2)
+            setTimeout(() => {
+                form.require(['blackBeltMentoringInfo'])
+            }, 100)
+        }
         if (name === 'requestBelt' && value.includes('Dan')) {
             events.push({target: {name: 'readRequirements', value: true}})
+            setLockCount(0)
+            setQuestCount(0)
             setTimeout(() => {
                 form.require(['danRequestEvidence'])
             }, 100)
@@ -89,14 +107,6 @@ export default function BeltRequestForm() {
     console.log('form', form)
 
     const beltIndex = useMemo(() => beltRoles.indexOf(form.form.requestBelt), [form])
-    const lockCount = useMemo(() => beltIndex <= 4
-            ? 1
-            : beltIndex <= 7
-                ? 2
-                : beltIndex <= 8
-                    ? 6
-                    : 0
-        , [beltIndex])
 
     const scorecardEntries = useMemo(() => visibleEntries.filter(entry =>
         (entry.type === 'Lock'
@@ -106,23 +116,39 @@ export default function BeltRequestForm() {
         )
     ), [visibleEntries, beltIndex])
 
+
     const allEntryFieldNames = useMemo(() => ['entry1', 'entry2', 'entry3', 'entry4', 'entry5', 'entry6'], [])
+    const allQuestFieldNames = useMemo(() => ['quest1', 'quest2'], [])
+
     entryFieldNames = useMemo(() => {
         return allEntryFieldNames.slice(0, lockCount) || []
     }, [allEntryFieldNames, lockCount])
+
+    questFieldNames = useMemo(() => {
+        return allQuestFieldNames.slice(0, questCount) || []
+    }, [allQuestFieldNames, questCount])
+
+    const handleReplaceQuest = useCallback(() => {
+        setLockCount(prev => prev + 2)
+        setQuestCount(prev => prev - 1)
+    }, [])
+
 
     const checkValidUrl = useCallback(value => {
         return isValidUrl(value)
     }, [])
 
     useEffect(() => {
-        if (!entryFieldNames.slice(0, 2).every(field => form.required?.includes(field))) {
-            form.require(entryFieldNames.slice(0, 2))
+        if (!entryFieldNames.every(field => form.required?.includes(field))) {
+            form.require(entryFieldNames)
+        }
+        if (!questFieldNames.every(quest => form.required?.includes(quest))) {
+            form.require(questFieldNames)
         }
         if (form.form.requestBelt?.includes('Blue') && !form.required?.includes('blueBeltProjectInfo')) {
             form.require(['blueBeltProjectInfo'])
         }
-    }, [entryFieldNames, form])
+    }, [entryFieldNames, form, questFieldNames])
 
     const fillProfileLink = useCallback(() => {
         const nameVar = profile.displayName ? `?name=${profile?.displayName}` : ''
@@ -205,6 +231,15 @@ export default function BeltRequestForm() {
             </Collapse>
 
             <Collapse in={!!form.form.requestBelt && !!form.form.readRequirements}>
+
+                {form.form.requestBelt === 'Black Belt' &&
+                    <div style={{fontSize: '1.1rem', fontWeight: 500, marginBottom:24}}>
+                        REMINDER: Black Belt request videos receive the highest possible level of scrutiny
+                        on every detail of the lock. Be sure to include clear evidence of all locking components,
+                        pins, and milling in your video.
+                    </div>
+                }
+
                 {!!form.form.requestBelt && !!form.form.readRequirements &&
                     <>
                         {!form.form.requestBelt.includes('Dan') && entryFieldNames.map((entryFieldName, idx) => (
@@ -216,6 +251,18 @@ export default function BeltRequestForm() {
 
                             </div>
                         ))}
+
+
+                        {questFieldNames.map((questFieldName, idx) => (
+                            <div key={idx} style={{margin: '12px 0 18px 0'}}>
+                                <BeltRequestEpicQuest handleReplaceQuest={handleReplaceQuest}
+                                                      fieldName={questFieldName}
+                                                      form={form}
+                                                      entryNumber={idx + 1}
+                                                      formDefaults={formDefaults}/>
+                            </div>
+                        ))}
+
 
                         {form.form.requestBelt.includes('Dan') &&
                             <div style={{display: 'flex', flexDirection: 'row', gap: '12px', alignItems: 'center'}}>
@@ -245,6 +292,7 @@ export default function BeltRequestForm() {
                             </div>
                         }
 
+
                         {form.form.requestBelt === 'Blue Belt' &&
                             <FormElement fieldType={'TextField'}
                                          fieldName={'blueBeltProjectInfo'}
@@ -260,9 +308,24 @@ export default function BeltRequestForm() {
                                          formDefaults={formDefaults}/>
                         }
 
+                        {form.form.requestBelt === 'Black Belt' &&
+                            <FormElement fieldType={'TextField'}
+                                         fieldName={'blackBeltMentoringInfo'}
+                                         label={'Describe your mentoring or similar community involvement (Required)'}
+                                         multiline={true}
+                                         rows={2}
+                                         fieldSettings={{
+                                             descriptionStyle: {fontSize: '1.1rem', fontWeight: 500},
+                                             inputWidth: '100%',
+                                             margin: '24px 0 18px'
+                                         }}
+                                         form={form}
+                                         formDefaults={formDefaults}/>
+                        }
+
                         <FormElement fieldType={'TextField'}
                                      fieldName={'notes'}
-                                     description={'Any notes or required information?'}
+                                     description={'Any notes or other required information?'}
                                      multiline={true}
                                      rows={4}
                                      fieldSettings={{

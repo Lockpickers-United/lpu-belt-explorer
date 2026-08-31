@@ -2,12 +2,12 @@ import React, {useCallback, useState} from 'react'
 import {FormControl, InputLabel, Select} from '@mui/material'
 import MenuItem from '@mui/material/MenuItem'
 
-export default function SelectBox({form, name, optionsList, label=null, variant='outlined', size='small', width=350, changeHandler, multiple=false, defaultValue, placeholder='Please Choose'}) {
+export default function SelectBox({form, name, optionsList, value, label=null, variant='outlined', size='small', width=350, changeHandler, multiple=false, defaultValue, placeholder='Please Choose'}) {
     const [open, setOpen] = useState(false)
     const handleClose = useCallback(() => setOpen(false), [])
     const handleOpen = useCallback(() => setOpen(true), [])
     const handleChange = useCallback(event => {
-        changeHandler(event)
+        changeHandler && changeHandler(event)
         !multiple && handleClose()
     }, [changeHandler, handleClose, multiple])
 
@@ -16,7 +16,7 @@ export default function SelectBox({form, name, optionsList, label=null, variant=
             {label && <InputLabel style={{color: '#bbb'}}>{label}</InputLabel>}
             <Select
                 id={`${name}Select`}
-                value={form[name] || defaultValue}
+                value={value || form[name] || defaultValue}
                 multiple={multiple}
                 name={name}
                 label={label}
