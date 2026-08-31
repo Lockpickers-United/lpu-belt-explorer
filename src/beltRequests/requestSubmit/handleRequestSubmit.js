@@ -30,7 +30,7 @@ export function formatDiscordRequest(form) {
 
         if (quests.length) {
             quests.forEach(quest => {
-                message += `Quest: **${quest.discipline}**\n`
+                message += `Quest: **${quest.discipline}** - **${quest.tier}**\n`
                 message += `${quest.details}\n\n`
             })
         }
@@ -66,7 +66,7 @@ export function formatRedditRequest(form) {
         }
         if (quests.length) {
             quests.forEach(quest => {
-                message += `Quest: ${quest.discipline}\n`
+                message += `Quest: ${quest.discipline} - ${quest.tier}\n`
                 message += `${quest.details}\n\n`
             })
         }

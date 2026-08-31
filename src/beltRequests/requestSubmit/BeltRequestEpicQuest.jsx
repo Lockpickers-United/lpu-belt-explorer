@@ -16,21 +16,16 @@ export default function BeltRequestEpicQuest({
                                                  entryNumber
                                              }) {
 
-    const handleChangeDiscipline = useCallback((event) => {
-        if (event.target.value.length) {
-            form.update({target: {name: fieldName, value: {...form.form[fieldName], discipline: event.target.value}}})
+    const handleChangeField = useCallback((event) => {
+        const {name, value} = event.target
+        if (value.length) {
+            form.update({target: {name: fieldName, value: {...form.form[fieldName], [name]: value}}})
         } else {
-            form.update({target: {name: fieldName, value: {...form.form[fieldName], discipline: undefined}}})
+            form.update({target: {name: fieldName, value: {...form.form[fieldName], [name]: undefined}}})
         }
     }, [fieldName, form])
 
-    const handleChangeDetails = useCallback((event) => {
-        if (event.target.value.length) {
-            form.update({target: {name: fieldName, value: {...form.form[fieldName], details: event.target.value}}})
-        } else {
-            form.update({target: {name: fieldName, value: {...form.form[fieldName], details: undefined}}})
-        }
-    }, [fieldName, form])
+    const tierList = ['Tier 1', 'Tier 2', 'Tier 3', 'Tier 4', 'Tier 5']
 
     return (
 
@@ -45,29 +40,48 @@ export default function BeltRequestEpicQuest({
                 </Button>
             </div>
 
-            <Typography sx={{marginBottom: '2px'}}>Discipline</Typography>
-            <SelectBox type='text'
-                       name={fieldName + 'discipline'}
-                       optionsList={disciplines}
-                       form={form.form}
-                       multiple={false}
-                       defaultValue={''}
-                       style={{margin: '6px 0px 0px 0px'}}
-                       width={320}
-                       size={'small'}
-                       changeHandler={handleChangeDiscipline}
-                       value={form.form[fieldName]?.discipline || ''}
-                       />
+            <div style={{display: 'flex', flexWrap: 'wrap'}}>
+                <div style={{marginRight: '16px'}}>
+                    <Typography sx={{marginBottom: '2px'}}>Discipline</Typography>
+                    <SelectBox type='text'
+                               name={'discipline'}
+                               optionsList={disciplines}
+                               form={form.form}
+                               multiple={false}
+                               defaultValue={''}
+                               style={{margin: '6px 0px 0px 0px'}}
+                               width={320}
+                               size={'small'}
+                               changeHandler={handleChangeField}
+                               value={form.form[fieldName]?.discipline || ''}
+                    />
+                </div>
+                <div>
+                    <Typography sx={{marginBottom: '2px'}}>Requested Tier</Typography>
+                    <SelectBox type='text'
+                               name={'tier'}
+                               optionsList={tierList}
+                               form={form.form}
+                               multiple={false}
+                               defaultValue={''}
+                               style={{margin: '6px 0px 0px 0px'}}
+                               width={140}
+                               size={'small'}
+                               changeHandler={handleChangeField}
+                               value={form.form[fieldName]?.tier || ''}
+                    />
 
+                </div>
+            </div>
             <Typography sx={{margin: '8px 0px 2px 0px'}}>Details</Typography>
             <TextField type='text'
-                       name={fieldName + 'details'}
+                       name={'details'}
                        style={{margin: '0px 0px 16px 0px'}}
                        fullWidth
                        multiline={true}
                        rows={5}
                        size={'small'}
-                       onChange={handleChangeDetails}
+                       onChange={handleChangeField}
                        value={form.form[fieldName]?.details || ''}
                        color={'info'}
             />
