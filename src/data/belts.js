@@ -143,16 +143,6 @@ export const beltRoles = [
     '18th Dan',
     '19th Dan',
     '20th Dan',
-    '21th Dan',
-    '22th Dan',
-    '23th Dan',
-    '24th Dan',
-    '25th Dan',
-    '26th Dan',
-    '27th Dan',
-    '28th Dan',
-    '29th Dan',
-    '30th Dan'
 ]
 
 export const beltSort = (a, b) => {

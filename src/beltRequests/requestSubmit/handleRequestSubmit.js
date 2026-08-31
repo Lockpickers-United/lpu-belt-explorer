@@ -15,7 +15,7 @@ export function formatDiscordRequest(form) {
         .filter(key => key.startsWith('quest'))
         .map(key => form.form[key])
 
-    const {requestBelt, notes, blueBeltProjectInfo, sync, danRequestEvidence} = form.form
+    const {requestBelt, notes, blueBeltProjectInfo, sync, danRequestEvidence, blackBeltMentoringInfo} = form.form
 
     let syncMessage = ''
     if (sync) syncMessage = ` sync to ${sync.includes('u/') ? sync : 'u/' + sync}`
@@ -37,8 +37,11 @@ export function formatDiscordRequest(form) {
     } else if (requestBelt.includes('Dan')) {
         message += `Dan evidence link: ${danRequestEvidence}\n\n`
     }
-    if (blueBeltProjectInfo) message += `Blue Belt Project Info:\n${blueBeltProjectInfo}\n\n`
-    if (notes) message += `Notes: ${notes}\n\n`
+
+    if (blueBeltProjectInfo) message += `**Blue Belt Project Info**: ${blueBeltProjectInfo}\n\n`
+    if (blackBeltMentoringInfo) message += `**Mentoring Info**: ${blackBeltMentoringInfo}\n\n`
+
+    if (notes) message += `**Notes**: ${notes}\n\n`
 
     message += 'Thank you!'
 
@@ -53,7 +56,7 @@ export function formatRedditRequest(form) {
         .filter(key => key.startsWith('quest'))
         .map(key => form.form[key])
 
-    const {requestBelt, notes, blueBeltProjectInfo, sync, danRequestEvidence} = form.form
+    const {requestBelt, notes, blueBeltProjectInfo, sync, danRequestEvidence, blackBeltMentoringInfo} = form.form
     const evidenceText = requestBelt.includes('Belt') ? ` using the ${pluralize('lock', entries?.length || 1)} below:` : '.'
 
     let message = `I'd like to request ${requestBelt}${evidenceText}\n\n`
@@ -74,8 +77,11 @@ export function formatRedditRequest(form) {
     } else if (requestBelt.includes('Dan')) {
         message += `Dan evidence link: ${danRequestEvidence}\n\n`
     }
-    if (notes) message += `Notes:\n${notes}\n\n`
+
     if (blueBeltProjectInfo) message += `Blue Belt Project Info:\n${blueBeltProjectInfo}\n\n`
+    if (blackBeltMentoringInfo) message += `Mentoring Info:\n${blackBeltMentoringInfo}\n\n`
+
+    if (notes) message += `Notes:\n${notes}\n\n`
     if (sync) message += `Please sync to my Discord username: ${sync}\n\n`
 
     message += 'Thank you!'

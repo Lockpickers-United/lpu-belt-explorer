@@ -46,8 +46,7 @@ export default function BeltRequestForm() {
     const processChange = useCallback((event) => {
         const {name, value} = event.target
         //const cleanValue = sanitizeValues(value, {profanityOK: false, urlsOK: true})
-        const cleanValue = (typeof value === 'string') ? value.trim() : value
-        let events = [{...event, target: {name, value: cleanValue}}]
+        let events = [event]
 
         if (name === 'requestBelt') {
             form.reload()

@@ -1,11 +1,10 @@
 Zen music plays when you enter the room. You wake up from dreams in which you are trying to figure out ways to pick the
-unpickable. You have mentored two or more pickers at the brown and red belt levels, and you have published the specs to
-at least one custom tool of your own design.
+unpickable.
 
 To earn a black belt, world-class picking is necessary but not sufficient. Mentoring others is necessary but not
 sufficient. You must deviate from your comfort zone and complete at least two epic quests of sufficient complexity and
 difficulty. Black Belt Pickers are extremely rare, and while this system was designed with a degree of levity, earning
-one is true honor and something to be very, very proud of.
+one is a true honor and something to be very, very proud of.
 
 You must video picking and gutting accomplishments in one continuous take, If there is a sidebar it must also be
 displayed to show nothing has been tampered with. There are no exceptions to the gutting requirement for videos of black

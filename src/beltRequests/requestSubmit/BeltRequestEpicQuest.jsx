@@ -25,7 +25,7 @@ export default function BeltRequestEpicQuest({
         }
     }, [fieldName, form])
 
-    const tierList = ['Tier 1', 'Tier 2', 'Tier 3', 'Tier 4', 'Tier 5']
+    const tierList = ['Tier 2', 'Tier 3', 'Tier 4', 'Tier 5']
 
     return (
 
