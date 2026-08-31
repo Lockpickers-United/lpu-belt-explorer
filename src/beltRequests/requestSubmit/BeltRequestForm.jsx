@@ -167,6 +167,12 @@ export default function BeltRequestForm() {
             marginLeft: 'auto', marginRight: 'auto', marginTop: 16, marginBottom: 46, paddingLeft: 8
         }}>
 
+            <div style={{fontSize: '1.1rem', fontWeight: 400, margin: '32px 0 0'}}>
+                This form makes it easy to compose your belt request to be clear and
+                easy for moderators to review. Simply select the belt you&#39;re requesting
+                and complete each of the steps that follow. Once you&#39;re done,
+                click the &#34;Copy Request&#34; button and paste into the platform of you prefer.
+            </div>
 
             <FormElement fieldType={'SectionHeader'}
                          label={'Choose Belt'}
