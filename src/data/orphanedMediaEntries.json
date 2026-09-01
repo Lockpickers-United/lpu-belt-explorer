@@ -1,1 +1,53 @@
-[]
+[
+  {
+    "id": "7b69a331",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Master Lock",
+        "model": "160"
+      }
+    ],
+    "name": "Master Lock 160",
+    "dateAdded": "2023-03-02T19:05:25.000Z",
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "views": 1347,
+    "lastUpdated": "2025-03-19T15:44:57.323Z",
+    "media": [
+      {
+        "title": "By: myktylgaan",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52882045844_5ce556ec85_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52882045844/in/album-72177720308136643/",
+        "sequenceId": 1888,
+        "dateAdded": "2025-03-06T16:00:00.000Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52882045844_0ba1821ba5_o.jpg"
+      },
+      {
+        "title": "By: myktylgaan",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52881887681_c0dd365d07_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52881887681/in/album-72177720308136643/",
+        "sequenceId": 1889,
+        "dateAdded": "2025-03-06T16:00:00.000Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52881887681_3503f6d086_o.jpg"
+      },
+      {
+        "title": "By: LockPickingFisherman",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53851336495_ff5141acb4_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53851336495/in/album-72177720318717442/",
+        "sequenceId": 1890,
+        "dateAdded": "2025-03-06T16:00:00.000Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53851336495_72a5480fa8_o.jpg"
+      }
+    ],
+    "features": [
+      "Under Review ⚑"
+    ],
+    "modelNum": "160",
+    "dateDeleted": "2026-09-01T00:58:56.492Z"
+  }
+]
