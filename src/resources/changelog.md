@@ -17,30 +17,48 @@ working on that lock to have time to get their accomplishment ranked at the old 
 
 Visit the #belt-changelog channel in the [Discord](https://discord.gg/lockpicking) for more information on all changes.
 
-### January 2026
-
+### August 2026
 
 **NEW ADDITIONS**
 
-- **MIWA WR** - BLACK 1. The latest creation of miwa, excellent tolerances and the typical miwa picking experience of little feedback in the beginning, effective false gates and much more. Also has a weird picking angle coming from the shape of the sliders which adds an extra challenge. 4 positions available for the sliders to exist, rending the lock pretty tricky to tackle in any orientation.
+**MTL MT5+** short KIK version (4 drivers, 4 sliders) - RED. This is an MT5+ minus a couple elements and should be handled as an upgrade for the black version.
 
-- **CES RE Plus** - BLUE. A precise 5 pin lock with a slightly better profile than the more open CES locks and two additional features: First, a large "pocket" in the core on position 2 that allows the spool there to tilt extremely far, requiring turning back manually to set. And second, a little spring loaded slider that works similarly to the one seen in Schlage Everest.
+**MTL 700** - BROWN. This is basically an MTL 400 with two magnetic elements which are not trivial. The magnetic elements are visible and would need to be covered if picking euro style with pins down.
 
-- **ASSA 500** (barrels, but no countermilling) - BLUE. Very similar to ABUS GDS, only 5 pins instead of 6 but much higher precision compared to the ABUS clone.
+**Magnum Pacific** - PURPLE. This lock has 6 top pins and 10 sprung sliders (5 each side). Both the version with standard drivers and the version spool drivers have been voted to purple.
 
-- **ABUS 72/40** unguttable "Love Lock" edition - YELLOW. Although the key suggests 6 pins like for normal 72/40, this lock has only 4 pins, and it isn't even security pins, it is regular aluminum drivers.
+**BASI T250** - PURPLE. A dimple lock with additional sliders, somewhat similar to M&C Color.
 
-**SAMELINES**
-- **ABUS XP1** - sameline with TS5000 on PURPLE. These locks are almost the same and the upper active pin(s) in TS5000 are usually not the difficult part about this lock. Zero-lifts can make the TS5000 harder but they are not guaranteed to be present either.
+**CES WD5** - PURPLE. Difficult keyway, easy to slip off from the small pins. Good tolerances, pins for sidebar snap easily back leading to ping pong. Needs good tension control to get sidebar pins to set.
 
-- **ABUS K14** - sameline with ABUS KV14 on BLUE. The difference here is just the profile and both profiles are more narrow and difficult (in contrast to e.g. W14).
+**CES RE Plus** (with cutout pocket) - PURPLE. One of the few locks that look and feel like someone built a challenge lock with their very deep cutout pocket that goes in a large false set that is difficult to get out of.
 
-- **ABUS Zolit** - sameline with ABUS S6+ on BLUE. The Zolit is the same as the regular 410 / S6+ but with a copy protection pin on the front (Intop) somewhat similar to what Vitess does. Doesn't change the picking difficulty and otherwise identical.
+**CES UDM+5** (with barrel drivers, requires 360° picking) - BLUE. Tricky pins and good tolerances - the 360° requirement requires engaging an undercut check pin as well.
 
-- **EMR (5 pin)** - sameline with GTV APS on GREEN. This is the same lock family and same pinning (also confirmed through profile analysis). EMR is an old German company that built lots of larger lock systems on GTV basis that are labeled "EMR" - usually very old.
+**OMEC Series 320** - BLUE. This is an 8-pin dimple lock with lots of security drivers and pins are very close to each other. Mainly only blue due to a lack of good tolerances.
 
-**DOWNGRADES**
-- **Magnum Mont Blanc** - BLUE. Community votes do not agree with the current brown rating and decided to move this lock to blue.
+**BKS Detect 3** (with active sidebar) - BLUE. The regular BKS 88 is already one of the most difficult green locks. This version adds a sidebar with 4 active levers to the mix that increases the difficulty enough to warrant blue.
 
-**OTHER CHANGES**
-- **Wilka PR100 / SI6 / TH6** - remove the "6 pin" requirement for GREEN. These exist as 5 or 6 pin versions - but they always have the active side pin as well. The regular Wilka cylinder is only green with 6 pins but since these have the extra side pin (that is not trivial to set), they would be too difficult for orange.
+**CES RHM5** - GREEN. This lock is very similar to CES WM but has an additional undercut.
+
+**CES PSM/PXM** (6 pins) - GREEN. Precise lock but pins are rather easy to access. The 5-pin version is orange, but the 6-pin version is good enough for green.
+
+**CES SP6** - GREEN. This is somewhat similar to the 6-pin PXM but with a different profile.
+
+**SAMELINING**
+
+**KESO 6000 FP2** - sameline with KESO 8000 on BROWN/RED. This is the same lock except without the interactive Omega element. It has the same new construction style as 8000 that makes this more precise (sleeve instead of bars) and in addition has three community votes.
+
+**Gera 3100** - sameline with Gera 3000 on BLUE. This is the same lock except 3100 has a copy protection notch at the key tip that makes copying the key harder on standard machines.
+
+**Wilka STR** - sameline with Wilka 1400 on GREEN. This is just separating out the STR profile from the generic Wilka 1400 entry to avoid confusion around where STR fits. Otherwise these are the same lock.
+
+**ABUS E100** - sameline with ABUS Ti12 on ORANGE, this is the same lock.
+
+**ABUS Ti14** - sameline with ABUS Ti12 on ORANGE, same lock except with emergency coupling.
+
+**Master Lock 160** - sameline with Master Lock 150 on ORANGE. Regular 5-pin, feels exactly like 150.
+
+**UPGRADES**
+
+**ABUS 83 Series** - move to GREEN to properly align with the old C83 rating. Also, the Schlage version sold in the US is not materially different.
