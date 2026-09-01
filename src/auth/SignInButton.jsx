@@ -30,7 +30,7 @@ function SignInButton({onClick, linkText}) {
                     {linkText}
                 </Link>
                 : <MenuItem onClick={handleClick}>
-                    <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center', width: 176}}>
+                    <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center', width: 210}}>
                         <ListItemIcon>
                             <LoginIcon fontSize='small'/>
                         </ListItemIcon>
