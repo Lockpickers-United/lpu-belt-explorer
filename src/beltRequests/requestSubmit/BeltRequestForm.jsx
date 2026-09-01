@@ -25,6 +25,8 @@ import BeltRequestEpicQuest from './BeltRequestEpicQuest.jsx'
  */
 
 export default function BeltRequestForm() {
+    const isDev = process.env.NODE_ENV === 'development'
+
     const {profile} = useContext(ScorecardDataContext)
     const {user} = useContext(AuthContext)
     const userId = user?.uid
@@ -32,6 +34,8 @@ export default function BeltRequestForm() {
         visibleEntries = []
         //cardMaxBelt
     } = useContext(ScorecardDataContext)
+
+    console.log({visibleEntries})
 
 
     // TODO message is no matching scorecard entries (or none to begin with)
@@ -51,29 +55,35 @@ export default function BeltRequestForm() {
         if (name === 'requestBelt') {
             form.reload()
             setLockCount(beltRoles.indexOf(value) <= 4 ? 1 : 2)
-        }
-        if (name === 'requestBelt' && value.includes('Blue')) form.require(['blueBeltProjectInfo'])
-        if (name === 'requestBelt' && value.includes('Black')) {
-            setQuestCount(2)
-            setTimeout(() => {
-                form.require(['blackBeltMentoringInfo'])
-            }, 100)
-        }
-        if (name === 'requestBelt' && value.includes('Dan')) {
-            events.push({target: {name: 'readRequirements', value: true}})
-            setLockCount(0)
-            setQuestCount(0)
-            setTimeout(() => {
-                form.require(['danRequestEvidence'])
-            }, 100)
+
+            if (value.includes('Blue')) form.require(['blueBeltProjectInfo'])
+
+            if (value.includes('Black')) {
+                setQuestCount(2)
+                setTimeout(() => {
+                    form.require(['blackBeltMentoringInfo'])
+                }, 100)
+            } else setQuestCount(0)
+
+            if (value.includes('Dan')) {
+                events.push({target: {name: 'readRequirements', value: true}})
+                setLockCount(0)
+                setQuestCount(0)
+                setTimeout(() => {
+                    form.require(['danRequestEvidence'])
+                }, 100)
+            }
         }
         if (name === 'readRequirements') {
             entryFieldNames.forEach((fieldName) => {
-                form.update({target: {name: fieldName, action: 'delete'}})
+                events.push({target: {name: fieldName, action: 'delete'}})
+            })
+            questFieldNames.forEach((fieldName) => {
+                events.push({target: {name: fieldName, action: 'delete'}})
             })
         }
         return events
-    }, [entryFieldNames, form])
+    }, [entryFieldNames, form, questFieldNames])
 
     const baseForm = useMemo(() => {
         return {}
@@ -103,7 +113,7 @@ export default function BeltRequestForm() {
         }
     }, [form])
 
-    //console.log('form', form)
+    isDev && console.log('form', form)
 
     const beltIndex = useMemo(() => beltRoles.indexOf(form.form.requestBelt), [form])
 
@@ -240,7 +250,7 @@ export default function BeltRequestForm() {
             <Collapse in={!!form.form.requestBelt && !!form.form.readRequirements}>
 
                 {form.form.requestBelt === 'Black Belt' &&
-                    <div style={{fontSize: '1.1rem', fontWeight: 500, marginBottom:24}}>
+                    <div style={{fontSize: '1.1rem', fontWeight: 500, marginBottom: 24}}>
                         REMINDER: Black Belt request videos receive the highest possible level of scrutiny
                         on every detail of the lock. Be sure to include clear evidence of all locking components,
                         pins, and milling in your video.

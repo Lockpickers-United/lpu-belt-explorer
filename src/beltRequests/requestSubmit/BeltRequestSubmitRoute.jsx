@@ -16,7 +16,6 @@ import {LocalizationProvider} from '@mui/x-date-pickers'
 import dayjs from 'dayjs'
 import {AdapterDayjs} from '@mui/x-date-pickers/AdapterDayjs/index.d.ts'
 import LoadingDisplay from '../../util/LoadingDisplay.jsx'
-import ScorecardProfileNotFound from '../../scorecard/ScorecardProfileNotFound.jsx'
 
 export default function BeltRequestSubmitRoute() {
     const {user} = useContext(AuthContext)
@@ -35,6 +34,7 @@ export default function BeltRequestSubmitRoute() {
     } = useContext(ScoringContext)
 
     const loadFn = useCallback(async () => {
+        if (!userId) return null
         try {
             const profile = await getProfile(userId)
 
@@ -89,10 +89,9 @@ export default function BeltRequestSubmitRoute() {
     const blackBeltScorecard = data?.profile?.blackBeltAwardedAt > 0
 
 
-    usePageTitle('Request Belt')
+    usePageTitle('Belt Request Form')
 
     const {isMobile} = useWindowSize()
-
 
     const extras = (
         <React.Fragment>{!isMobile && <div style={{flexGrow: 1, minWidth: '10px'}}/>}</React.Fragment>
@@ -110,15 +109,14 @@ export default function BeltRequestSubmitRoute() {
                 <ScorecardListProvider>
                     <LocalizationProvider adapterLocale={dayjs.locale()} dateAdapter={AdapterDayjs}>
 
-                        <Nav title='Belt Request' extras={extras}/>
+                        <Nav title='Belt Request Form' extras={extras}/>
 
                         {loading && <LoadingDisplay/>}
 
-                        {!loading && data && !error &&
+                        {!loading && !error &&
                             <BeltRequestForm profile={profile} user={user}/>
                         }
 
-                        {!loading && (!data || error) && <ScorecardProfileNotFound/>}
 
                     </LocalizationProvider>
                 </ScorecardListProvider>

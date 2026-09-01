@@ -1,7 +1,6 @@
-import React, {useCallback, useEffect, useMemo, useState} from 'react'
+import React, {useCallback, useContext, useEffect, useMemo, useState} from 'react'
 import ScorecardEntrySearchBox from '../../formUtils/ScorecardEntrySearchBox.jsx'
 import BeltIcon from '../../entries/BeltIcon.jsx'
-import Typography from '@mui/material/Typography/index.d.ts'
 import ChoiceButtonGroupNew from '../../util/ChoiceButtonGroupNew.jsx'
 import CheckCircleIcon from '@mui/icons-material/CheckCircle'
 import ReportProblemIcon from '@mui/icons-material/ReportProblem'
@@ -11,15 +10,31 @@ import LockEntrySearchBox from '../../formUtils/LockEntrySearchBox.jsx'
 import allEntries from '../../data/data.json'
 import TextField from '@mui/material/TextField'
 import useWindowSize from '../../util/useWindowSize.jsx'
+import Typography from '@mui/material/Typography'
+import Button from '@mui/material/Button/index.d.ts'
+import SignInButton from '../../auth/SignInButton.jsx'
+import AuthContext from '../../app/AuthContext.jsx'
 
-export default function BeltRequestEntrySelect({scorecardEntries, fieldName, form = {}, entryNumber}) {
+export default function BeltRequestEntrySelect({
+                                                   scorecardEntries,
+                                                   fieldName,
+                                                   form = {},
+                                                   entryNumber,
+                                               }) {
+    const {isLoggedIn} = useContext(AuthContext)
     const {isMobile} = useWindowSize()
 
-    const [source, setSource] = useState('scorecard')
+    const defaultEntryType = useMemo(() => isLoggedIn
+        ? 'scorecard'
+        : 'selectLock', [isLoggedIn])
+
+    const [source, setSource] = useState(defaultEntryType)
     const handleChangeSource = useCallback((option) => {
         setSource(option.value)
         form.update({target: {name: fieldName, action: 'delete'}})
     }, [fieldName, form])
+
+    console.log({source, defaultEntryType, scorecardEntries})
 
     const beltIndex = useMemo(() => beltRoles.indexOf(form.form.requestBelt), [form])
     const existingIds = useMemo(() => Object.keys(form.form)
@@ -83,11 +98,16 @@ export default function BeltRequestEntrySelect({scorecardEntries, fieldName, for
 
 
     const options = useMemo(() => {
-        return [
-            {label: isMobile ? 'Scorecard' : 'From Scorecard', value: 'scorecard'},
-            {label: isMobile ? 'Search' : 'Select Lock', value: 'selectLock'}
-        ]
-    }, [isMobile])
+        return defaultEntryType === 'scorecard'
+            ? [
+                {label: isMobile ? 'Scorecard' : 'From Scorecard', value: 'scorecard'},
+                {label: isMobile ? 'Search' : 'Select Lock', value: 'selectLock'}
+            ]
+            : [
+                {label: isMobile ? 'Search' : 'Select Lock', value: 'selectLock'},
+                {label: isMobile ? 'Scorecard' : 'From Scorecard', value: 'scorecard'}
+            ]
+    }, [isMobile, defaultEntryType])
 
     return (
 
@@ -112,8 +132,8 @@ export default function BeltRequestEntrySelect({scorecardEntries, fieldName, for
                 </div>
                 <div style={{width: '100%'}}>
 
-                    {source === 'scorecard'
-                        ? <>
+                    {source === 'scorecard' && scorecardEntries.length > 0 &&
+                        <>
                             <ScorecardEntrySearchBox handleChangeScorecardEntry={handleChangeEntry}
                                                      scorecardEntries={scorecardEntries}/>
                             <div style={{display: 'flex', alignItems: 'center', marginTop: 10, height: 32}}>
@@ -122,8 +142,41 @@ export default function BeltRequestEntrySelect({scorecardEntries, fieldName, for
                                 }
                             </div>
                         </>
+                    }
 
-                        : <div>
+                    {source === 'scorecard' && scorecardEntries.length === 0 &&
+                        <>
+                            {!isLoggedIn &&
+                                <div style={{textAlign: 'left', marginBottom: 8}}>
+                                    <>
+                                        Please sign in to access your Scorecard.<br/>
+                                        <Button style={{color: '#fff'}}>
+                                            <SignInButton/>
+                                        </Button>
+                                    </>
+                                </div>
+                        }
+
+                        {isLoggedIn &&
+                            <>
+                                <div>
+                                    Sorry, no matching Scorecard entries found.
+                                </div>
+                                <Typography sx={{color: '#e00', fontSize: '0.85rem', marginBottom: '2px'}}>
+                                    &nbsp;
+                                    {isMobile
+                                        ? 'Please choose "Search" to add a new lock.'
+                                        : 'Please choose "Select Lock" to add a new lock.'
+                                    }
+                                </Typography>
+                            </>
+                        }
+                        </>
+                    }
+
+                    {source === 'selectLock' &&
+
+                        <div>
                             <LockEntrySearchBox handleChangeLock={handleChangeEntry} allEntries={lockEntries}
                                                 lockIndex={0}/>
                             <div style={{marginTop: 10}}>
@@ -137,9 +190,9 @@ export default function BeltRequestEntrySelect({scorecardEntries, fieldName, for
                                            value={form.form[fieldName]?.link || ''}
                                            color={(form.form[fieldName]?.link && !checkValidUrl(form.form[fieldName].link)) ? 'error' : 'info'}/>
                             </div>
-                                <Typography sx={{color: '#e00', fontSize: '0.85rem', marginBottom: '2px'}}>
-                                    &nbsp; {errorMessage && errorMessage}
-                                </Typography>
+                            <Typography sx={{color: '#e00', fontSize: '0.85rem', marginBottom: '2px'}}>
+                                &nbsp; {errorMessage && errorMessage}
+                            </Typography>
 
 
                         </div>

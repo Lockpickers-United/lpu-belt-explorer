@@ -62,13 +62,7 @@ export default function useForm({baseForm, processChange, processSubmit, handleS
         setRequired([])
         setClearOnSubmit(true)
         setForm(baseForm)
-        setTimeout(() => {
-            window.scrollTo({
-                left: 0,
-                top: 0,
-                behavior: 'smooth'
-            })
-        }, 100)
+        //setTimeout(() => {window.scrollTo({left: 0, top: 0, behavior: 'smooth'})}, 100)
     }, [baseForm])
 
     const clearSubmit = useCallback(() => {

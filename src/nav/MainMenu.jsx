@@ -29,7 +29,11 @@ function MainMenu() {
         // Clear current focus to prevent weird issues on mobile
         document.activeElement.blur()
     }, [])
-    const closeDrawer = useCallback(() => setOpen(false), [])
+    const closeDrawer = useCallback(() => {
+        document.activeElement.blur()
+        document.body.focus()
+        setOpen(false)
+    }, [])
 
     return (
         <React.Fragment>

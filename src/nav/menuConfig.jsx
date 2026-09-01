@@ -18,6 +18,7 @@ import CampaignIcon from '@mui/icons-material/Campaign'
 import AssessmentIcon from '@mui/icons-material/Assessment'
 import TurnSharpRightIcon from '@mui/icons-material/TurnSharpRight'
 import LocalLibraryIcon from '@mui/icons-material/LocalLibrary'
+import SpeakerNotesIcon from '@mui/icons-material/SpeakerNotes'
 
 const {VITE_RAFL_STATE: raflState} = import.meta.env
 
@@ -37,6 +38,11 @@ export default [
         title: 'Belt Requirements',
         icon: <InfoOutlinedIcon fontSize='small'/>,
         path: '/info'
+    },
+    {
+        title: 'Belt Request Form',
+        icon: <SpeakerNotesIcon fontSize='small'/>,
+        path: '/beltRequests',
     },
     {
         title: 'Safe Locks',
@@ -135,12 +141,6 @@ export default [
         title: 'About LPU Belts',
         icon: <FeedIcon fontSize='small'/>,
         path: '/about'
-    },
-    {
-        title: 'Request Belt',
-        icon: <CameraAltIcon fontSize='small'/>,
-        path: '/beltRequests',
-        userClaims: ['admin', 'lpuAdmin'],
     },
     {
         title: 'Admin Tools',

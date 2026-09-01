@@ -9,7 +9,7 @@ function MainMenuItem({menuItem, onClose, child, childCount, childIndex}) {
     const navigate = useNavigate()
     const location = useLocation()
     const searchParams = queryString.parse(location.search)
-    const {children, title, params, path, icon} = menuItem
+    const {children, title, params, path, icon, admin, userClaims} = menuItem
 
     const isCurrentPath = location.pathname === path
     const isCurrentParams = Object.keys(params || [])
@@ -36,15 +36,23 @@ function MainMenuItem({menuItem, onClose, child, childCount, childIndex}) {
         }
     }, [children, navigate, onClose, params, path])
 
-    const color = isCurrentRoute ? '#18aa18' : null
+    const color = isCurrentRoute
+        ? '#18aa18'
+        : userClaims?.includes('admin') || admin
+            ? '#0483d9'
+            : null
+
+    const adminStyle = userClaims?.includes('admin') || admin
+        ? {fontStyle: 'italic'}
+        : {}
 
     const finalDiv = childIndex + 1 === childCount
         ? <div style={{height: 10}}/>
         : undefined
 
     const style = child
-        ? {padding: '5px 0px 9px 48px', margin: '0px 15px 1px 28px', color}
-        : {padding: '14px 30px 14px 24px',color}
+        ? {padding: '5px 0px 9px 48px', margin: '0px 15px 1px 28px', color, ...adminStyle}
+        : {padding: '14px 30px 14px 24px',color, ...adminStyle}
 
     const coloredIcon = icon
         ? React.cloneElement(icon, {style: {color}})

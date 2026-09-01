@@ -12,7 +12,7 @@ const app = initializeApp({
 // change to (default) and true for production
 // const db = getFirestore(app, 'lpubelts-dev')
 
-const db = getFirestore(app, 'lpubelts-dev')
+const db = getFirestore(app)
 
 const WRITE_TO_DB = true
 
@@ -20,9 +20,13 @@ const WRITE_TO_DB = true
 // { 'old ID': 'new ID' }
 
 const newIdFromOld = {
+    '7b69a331': 'efc01233',
+    '05d357bb': '1050a58c',
+    '6f1fcab5': 'e7f6d089',
+    '6eeb66b9': '6e2cecfd'
 }
 
-const idsToDelete = ['110c872d', '1798ca06', '406ac672', '42bebf45', '45c08407', '5bbe7375', 'd0632926', 'e9499182']
+const idsToDelete = []
 
 ////////////////////////////////////////////////
 // update old => new projectIds and/or delete in evidence collection
