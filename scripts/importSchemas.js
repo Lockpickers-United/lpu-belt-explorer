@@ -24,6 +24,7 @@ export const mainSchema = Joi.array().items(
         Version: Joi.string().allow(''),
         'Locking Mechanisms': Joi.string().allow(''),
         Features: Joi.string().allow(''),
+        'Latest Changelog': Joi.string().allow(''),
         Notes: Joi.string().allow(''),
         'Search Keywords': Joi.string().allow(''),
         'Model Num': Joi.number().allow(''),
@@ -130,7 +131,7 @@ export const projectSchema = Joi.array().items(
         Name: Joi.string().min(1),
         Tier: Joi.string().valid('T1', 'T2', 'T3', 'T4', 'T5', 'T10', 'T11', 'T12', 'T13'),
         'Unique ID': Joi.string().regex(/^[0-9a-f]{8}$/).allow(''),
-        'Allow Multiple': Joi.string().allow(''),
+        'Allow Multiple': Joi.string().allow('')
     }).unknown()
 )
 
@@ -158,7 +159,7 @@ export const platformBeltSchema = Joi.array().items(
     Joi.object({
         'Belt': Joi.string(),
         'Reddit': Joi.number(),
-        'Discord': Joi.number(),
+        'Discord': Joi.number()
     }).unknown()
 )
 

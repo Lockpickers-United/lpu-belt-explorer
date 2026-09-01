@@ -103,7 +103,7 @@ export default function BeltRequestForm() {
         }
     }, [form])
 
-    console.log('form', form)
+    //console.log('form', form)
 
     const beltIndex = useMemo(() => beltRoles.indexOf(form.form.requestBelt), [form])
 

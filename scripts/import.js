@@ -99,6 +99,8 @@ const jsonData = mainData
         const searchKeywords = datum['Search Keywords']
         const modelNum = datum['Model Num']
 
+        if (datum['Latest Changelog'].length) features.push('Latest Changelog')
+
         const value = {
             id,
             belt,
