@@ -357,7 +357,7 @@ Blue,ASSA,R502,,Pin-tumbler,,,1bee7a66
 Blue,BASI,K6-RT,,"Pin-tumbler,Sidepins","Active element",6-pin,ee04714f
 Blue,Baton,"6000 series","not Abloy keyway","Disc detainer",,,ae0d35bc
 Blue,Bison/HYT/Lays/Qlsy,"Chain Key Lock",,Pin-tumbler,,"Various brands",111062fc
-Blue,BKS,"Detect 3","With active sidebar","Pin-tumbler,Sidebar","Active sidebar",,29dab5b8
+Blue,BKS,"Detect 3","With active sidebar","Pin-tumbler,Sidebar","Active sidebar,Latest Changelog",,29dab5b8
 Blue,Bricard,Bloctout,,Wafer,,,307e1f03
 Blue,Bricard,"Serial S",,Dimple,,,61f33761
 Blue,"Burg Wächter",Diamant,,Pin-tumbler,Unguttable,,32fa52a6
@@ -487,7 +487,7 @@ Purple,ASSA,Guideline,"6 pin with active side pins","Pin-tumbler,Sidepins","Barr
 Purple,"Australian Lock Co.",BiLock,"12 sliders, 7-8 mastered",Slider,"False gates,Sprung sliders,Active sidebar",,f70b9b33
 Purple,"Australian Lock Co.",BiLock,"8 sliders, 3-4 mastered",Slider,"False gates,Sprung sliders,Active sidebar",,1ca633a8
 Purple,"Avocet,ERA,Federal Lock,Thirard,Thirard","ABS,Professional Cylinder,U-systems (UCF/UCH/UCS/UUS)-3100,Federal S,Federal 2",,"Dimple,Magnet","Magnetic pins,Pin-in-pin,Trap element","Requires 360° picking: these locks have traps that require some work to pick",f3666121
-Purple,"BASI,Titan,Picard,UCEM","T250,T250,VTX,T200",,"Dimple,Slider","Unsprung sliders",,e7f6d089
+Purple,"BASI,Titan,Picard,UCEM","T250,T250,VTX,T200",,"Dimple,Slider","Unsprung sliders,Latest Changelog",,e7f6d089
 Purple,"Bricard,ABUS,CISA","Chifral,EP10,RS3","all versions, <15 pins",Dimple,"High pin count,Interactive element",,8f004bf0
 Purple,Bricard,Supersureté,,Wafer,,,98ba98ae
 Purple,"Burg Wächter","Gamma 700",,Pin-tumbler,Unguttable,,ed9fa926
