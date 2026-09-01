@@ -559,7 +559,6 @@ Purple,,MLock,,,,,278f2108
 Purple,Mottura,"3D Key",,"Dimple,Rotors","Active sidebar",,0a2c7044
 Purple,Mottura,"Champions C38",*******,"Dimple,Magnet","Magnetic pins","******* **Special Picking Requirement:** Must be picked with bible oriented down",62520bea
 Purple,Mottura,Viper,,"Dimple,Slider",,,8c76cc79
-Purple,Mul-T-Lock,700,,Dimple,"Pin-in-pin,Magnetic pins,Latest Changelog",,fd5a5246
 Purple,"Mul-T-Lock,Mul-T-Lock","Classic Pro,400",,Dimple,Pin-in-pin,,fd2b533e
 Purple,"Mul-T-Lock,Mul-T-Lock","Classic,Interactive","4 pins, 4 serrated drivers",Dimple,"Pin-in-pin,Interactive element",,48323cde
 Purple,Mul-T-Lock,Gamma,,Dimple,Pin-in-pin,,1110ef61
@@ -664,6 +663,7 @@ Brown,"MG Serrature",HS,,Dimple,"High pin count",,540a14c0
 Brown,MIWA,EC,,Magnet,,,f257bf77
 Brown,"MIWA,Tostem","PS,DN","<7 unmastered wafers",Slider,,,2bf9f60e
 Brown,MIWA,VM88,,"Pin-tumbler,Magnet",,,13a2aace
+Brown,Mul-T-Lock,700,,Dimple,"Pin-in-pin,Magnetic pins,Latest Changelog",,fd5a5246
 Brown,"Mul-T-Lock,Mul-T-Lock","Classic,Interactive","5 pin stacks, 5 serrated drivers",Dimple,Pin-in-pin,,5c5701d7
 Brown,Pollux,7,,Pump/push,,,cc5bbb68
 Brown,Robur,"2391 Safe Deposit Lock","<3 barrels or gins with matched milling","Pin-tumbler,Sidepins",,,94ee12b7
