@@ -7,11 +7,11 @@
         "label": "Ranked"
       },
       {
-        "value": 967,
+        "value": 966,
         "label": "All"
       },
       {
-        "value": 113,
+        "value": 112,
         "label": "Unranked"
       }
     ]
@@ -20,61 +20,61 @@
     {
       "belt": "White",
       "count": 18,
-      "value": 0.01861427094105481,
+      "value": 0.018633540372670808,
       "id": "White"
     },
     {
       "belt": "Yellow",
       "count": 71,
-      "value": 0.0734229576008273,
+      "value": 0.07349896480331262,
       "id": "Yellow"
     },
     {
       "belt": "Orange",
       "count": 83,
-      "value": 0.08583247156153051,
+      "value": 0.08592132505175984,
       "id": "Orange"
     },
     {
       "belt": "Green",
       "count": 159,
-      "value": 0.16442605997931747,
+      "value": 0.16459627329192547,
       "id": "Green"
     },
     {
       "belt": "Blue",
       "count": 141,
-      "value": 0.14581178903826267,
+      "value": 0.14596273291925466,
       "id": "Blue"
     },
     {
       "belt": "Purple",
       "count": 122,
-      "value": 0.12616339193381593,
+      "value": 0.12629399585921325,
       "id": "Purple"
     },
     {
       "belt": "Brown",
       "count": 85,
-      "value": 0.08790072388831438,
+      "value": 0.08799171842650104,
       "id": "Brown"
     },
     {
       "belt": "Red",
       "count": 74,
-      "value": 0.07652533609100311,
+      "value": 0.07660455486542443,
       "id": "Red"
     },
     {
       "belt": "Black",
       "count": 101,
-      "value": 0.10444674250258532,
+      "value": 0.10455486542443064,
       "id": "Black"
     },
     {
       "belt": "Unranked",
-      "count": 113,
-      "value": 0.11685625646328852,
+      "count": 112,
+      "value": 0.11594202898550725,
       "id": "Unranked"
     }
   ],
@@ -247,7 +247,7 @@
       },
       {
         "label": "Multiple",
-        "value": 14,
+        "value": 15,
         "id": "multiple"
       },
       {
@@ -507,7 +507,7 @@
       },
       {
         "label": "Multiple",
-        "value": 4,
+        "value": 3,
         "id": "multiple"
       },
       {
@@ -533,12 +533,12 @@
       {
         "segment": "Ranked locks",
         "count": 854,
-        "media": 809,
+        "media": 810,
         "coverage": "94%"
       },
       {
         "segment": "All locks",
-        "count": 967,
+        "count": 966,
         "media": 900,
         "coverage": "93%"
       }
@@ -1809,6 +1809,6 @@
     ]
   },
   "metadata": {
-    "updatedDateTime": "2026-09-01 05:26"
+    "updatedDateTime": "2026-09-01 11:35"
   }
 }

@@ -3112,5 +3112,23 @@
     "name": "Defiant 5-pin",
     "dateAdded": "2025-11-23T19:59:27.061Z",
     "dateDeleted": "2025-11-23T22:12:45.322Z"
+  },
+  {
+    "id": "d11d1ba2",
+    "belt": "Blue",
+    "makeModels": [
+      {
+        "make": "BKS",
+        "model": "Detect 3"
+      }
+    ],
+    "version": "With active sidebar",
+    "features": [
+      "Active sidebar",
+      "Latest Changelog"
+    ],
+    "name": "BKS Detect 3",
+    "dateAdded": "2026-09-01T00:58:56.478Z",
+    "dateDeleted": "2026-09-01T11:35:52.077Z"
   }
 ]

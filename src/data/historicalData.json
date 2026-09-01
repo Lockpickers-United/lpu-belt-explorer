@@ -54950,7 +54950,7 @@
   },
   "29dab5b8": {
     "id": "29dab5b8",
-    "belt": "Unranked",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "BKS",
@@ -61792,7 +61792,8 @@
       "Latest Changelog"
     ],
     "name": "BKS Detect 3",
-    "dateAdded": "2026-09-01T00:58:56.478Z"
+    "dateAdded": "2026-09-01T00:58:56.478Z",
+    "dateDeleted": "2026-09-01T11:35:52.077Z"
   },
   "0dd5b1db": {
     "id": "0dd5b1db",
