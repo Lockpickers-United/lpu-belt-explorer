@@ -225,7 +225,7 @@ Green,"Burg Wächter",Karat,"40mm or larger, 5 pins",Pin-tumbler,Unguttable,,bd9
 Green,"Burg Wächter","Profi 116","40mm or larger, 5 pins",Pin-tumbler,Unguttable,,dd155241
 Green,CCL,"Sesamee 900 series",,Pin-tumbler,Overmilling,,1fbf6a7a
 Green,CES,PSM/PXM,"6 pins",Pin-tumbler,"Latest Changelog",,3d220fcb
-Green,CES,RHM5,,Pin-tumbler,"Latest Changelog",,4ab2c063
+Green,CES,RHM5,,Pin-tumbler,"Trap Element,Latest Changelog",,4ab2c063
 Green,CES,SP6,,Pin-tumbler,"Latest Changelog",,34a26fbd
 Green,CES,Standard,,Pin-tumbler,,"Also known as CES 810",826fc531
 Green,CES,"with dustcover",,Pin-tumbler,,,83ac6e00
@@ -357,14 +357,13 @@ Blue,ASSA,R502,,Pin-tumbler,,,1bee7a66
 Blue,BASI,K6-RT,,"Pin-tumbler,Sidepins","Active element",6-pin,ee04714f
 Blue,Baton,"6000 series","not Abloy keyway","Disc detainer",,,ae0d35bc
 Blue,Bison/HYT/Lays/Qlsy,"Chain Key Lock",,Pin-tumbler,,"Various brands",111062fc
-Blue,BKS,"Detect 3","with active sidebar","Pin-tumbler,Sidebar","Active sidebar",,29dab5b8
+Blue,BKS,"Detect 3","With active sidebar","Pin-tumbler,Sidebar","Active sidebar",,29dab5b8
 Blue,Bricard,Bloctout,,Wafer,,,307e1f03
 Blue,Bricard,"Serial S",,Dimple,,,61f33761
 Blue,"Burg Wächter",Diamant,,Pin-tumbler,Unguttable,,32fa52a6
 Blue,Cantol,"high-security line","10-pin dimple",Dimple,,,5647f11c
 Blue,CAVEO,TS007,"all standards","Dimple,Slider","Sprung sliders,Active sidebar","Seven pins with standard drivers, five slider sidebar",60964e9f
-Blue,CES,"RE Plus",,,,,6e2cecfd
-Blue,CES,UDM+5,"Barrel drivers",Pin-tumbler,"Latest Changelog","Must be picked 360°",41557482
+Blue,CES,UDM+5,"Barrel drivers",Pin-tumbler,"Trap Element,Latest Changelog","Must be picked 360°",41557482
 Blue,Chubb,"114 (3g114)","5 lever, pre-2004",Lever,"Pin key,Curtain,False gates",,32c85438
 Blue,Chubb,"114e (3g114e)","5 lever, after 2004",Lever,"Pin key,Curtain,False gates",,0c946064
 Blue,Chubb,2m22,"6 lever",Lever,Mortise,,9d337b72
@@ -488,15 +487,15 @@ Purple,ASSA,Guideline,"6 pin with active side pins","Pin-tumbler,Sidepins","Barr
 Purple,"Australian Lock Co.",BiLock,"12 sliders, 7-8 mastered",Slider,"False gates,Sprung sliders,Active sidebar",,f70b9b33
 Purple,"Australian Lock Co.",BiLock,"8 sliders, 3-4 mastered",Slider,"False gates,Sprung sliders,Active sidebar",,1ca633a8
 Purple,"Avocet,ERA,Federal Lock,Thirard,Thirard","ABS,Professional Cylinder,U-systems (UCF/UCH/UCS/UUS)-3100,Federal S,Federal 2",,"Dimple,Magnet","Magnetic pins,Pin-in-pin,Trap element","Requires 360° picking: these locks have traps that require some work to pick",f3666121
-Purple,BASI,T250,,Dimple,"Latest Changelog",,6f1fcab5
+Purple,"BASI,Titan,Picard,UCEM","T250,T250,VTX,T200",,"Dimple,Slider","Unsprung sliders",,e7f6d089
 Purple,"Bricard,ABUS,CISA","Chifral,EP10,RS3","all versions, <15 pins",Dimple,"High pin count,Interactive element",,8f004bf0
 Purple,Bricard,Supersureté,,Wafer,,,98ba98ae
 Purple,"Burg Wächter","Gamma 700",,Pin-tumbler,Unguttable,,ed9fa926
 Purple,Capitol,"magnetic cam lock",,Magnet,,,85591581
 Purple,CAVEO,TS007,"with spools","Dimple,Slider",,"Seven pins with security drivers, five slider sidebar",0813d39e
 Purple,CEI,"""Five Colors""",,"Dimple,Slider","Pin-in-pin,Sprung sliders,Active sidebar",,1f3a4b1d
-Purple,CES,"RE Plus","With cutout pocket",Pin-tumbler,"Latest Changelog",,6eeb66b9
-Purple,CES,WD5,,Pin-tumbler,"Latest Changelog",,7561da3b
+Purple,CES,"RE Plus","With cutout pocket",Pin-tumbler,,,6e2cecfd
+Purple,CES,WD5,,Pin-tumbler,"Active sidebar,Trap Element,Latest Changelog",,7561da3b
 Purple,Chubb,Battleship,"6 lever, offset key",Lever,"Padlock,Pin key,Curtain,False gates",,1f3a8ff9
 Purple,Clavis,S10,,Dimple,,,0e5adf31
 Purple,Codkey,Locksys,"<15 pins",Dimple,"High pin count",,8a0c4b07
@@ -548,7 +547,7 @@ Purple,"M&C,M&C,M&C,M&C,Vachette,Vachette","Color,Color Pro,Color+,Minos,V-DIS,V
 Purple,"M&C,M&C","Condor,Move",,"Dimple,Slider","Active sidebar,False gates",,be22f5f1
 Purple,M&C,Matrix,,"Slider,Pin-tumbler","False gates,Active sidebar",,9aedb834
 Purple,Magnum,Atlantic,,Dimple,,,c9fc823c
-Purple,Magnum,Pacific,,,"Latest Changelog",,2b235299
+Purple,Magnum,Pacific,"6 pins, 10 sliders","Pin-tumbler,Slider","Sprung Sliders,Active sidebar,Latest Changelog",,2b235299
 Purple,"Master Lock",#19,,Pin-tumbler,Unguttable,,8f7f1830
 Purple,Mauer,"Red Line GM",,Dimple,,,0a70d67f
 Purple,Medeco,"Original Camlock","≥ 5 pins ******","Slider,Sidebar","Rotating gated keypins,False gates,Active sidebar","****** **Special Picking Requirement:** Prior to picking, operate the lock with the key or rake pins to reset rotational orientation.",aeaa6a09
@@ -582,7 +581,6 @@ Purple,Securystar,"Pro Star",,Dimple,"High pin count",,2c906ebb
 Purple,Sepa,HDS,,Dimple,"High pin count",,e0a9caf4
 Purple,"TESA,TESA,Nemef,Yale,Azbe","T80,TX80,NF4,HS-K,HS-K",,Dimple,"Tapered drivers,Interactive element",,3f49ccc1
 Purple,TESA,TK100,,Dimple,"Tapered drivers,Interactive element",,9a9ae8df
-Purple,"Titan,Picard,UCEM","T250,VTX,T200",,"Dimple,Slider","Unsprung sliders",,e7f6d089
 Purple,U-Shin,"Showa X Key","12 pins",Dimple,,,8307d77f
 Purple,"US Star Tech","""Hi Security""",,Dimple,,,b35bf986
 Purple,Vachette,Axi'Home,,Dimple,,,416946bc

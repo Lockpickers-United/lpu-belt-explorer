@@ -355,6 +355,7 @@
       "Pin-tumbler"
     ],
     "features": [
+      "Trap Element",
       "Latest Changelog"
     ],
     "notes": "Must be picked 360°",
@@ -28385,6 +28386,10 @@
     "belt": "Purple",
     "makeModels": [
       {
+        "make": "BASI",
+        "model": "T250"
+      },
+      {
         "make": "Titan",
         "model": "T250"
       },
@@ -28397,7 +28402,7 @@
         "model": "T200"
       }
     ],
-    "name": "Titan T250 / Picard VTX / UCEM T200",
+    "name": "BASI T250 / Titan T250 / Picard VTX / UCEM T200",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "views": 644,
     "lastUpdated": "2025-03-19T15:44:57.300Z",
@@ -54957,7 +54962,7 @@
         "model": "Detect 3"
       }
     ],
-    "version": "with active sidebar",
+    "version": "With active sidebar",
     "lockingMechanisms": [
       "Pin-tumbler",
       "Sidebar"
@@ -60975,7 +60980,7 @@
   },
   "6e2cecfd": {
     "id": "6e2cecfd",
-    "belt": "Blue",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "CES",
@@ -60983,7 +60988,11 @@
       }
     ],
     "name": "CES RE Plus",
-    "dateAdded": "2026-03-01T11:02:21.472Z"
+    "dateAdded": "2026-03-01T11:02:21.472Z",
+    "version": "With cutout pocket",
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ]
   },
   "55d4676c": {
     "id": "55d4676c",
@@ -61754,6 +61763,7 @@
       "Pin-tumbler"
     ],
     "features": [
+      "Trap Element",
       "Latest Changelog"
     ],
     "name": "CES RHM5",
@@ -61829,7 +61839,8 @@
       "Latest Changelog"
     ],
     "name": "BASI T250",
-    "dateAdded": "2026-09-01T00:58:56.479Z"
+    "dateAdded": "2026-09-01T00:58:56.479Z",
+    "dateDeleted": "2026-09-01T11:52:06.295Z"
   },
   "6eeb66b9": {
     "id": "6eeb66b9",
@@ -61848,7 +61859,8 @@
       "Latest Changelog"
     ],
     "name": "CES RE Plus",
-    "dateAdded": "2026-09-01T00:58:56.480Z"
+    "dateAdded": "2026-09-01T00:58:56.480Z",
+    "dateDeleted": "2026-09-01T11:52:06.295Z"
   },
   "7561da3b": {
     "id": "7561da3b",
@@ -61863,6 +61875,8 @@
       "Pin-tumbler"
     ],
     "features": [
+      "Active sidebar",
+      "Trap Element",
       "Latest Changelog"
     ],
     "name": "CES WD5",
@@ -61878,10 +61892,17 @@
       }
     ],
     "features": [
+      "Sprung Sliders",
+      "Active sidebar",
       "Latest Changelog"
     ],
     "name": "Magnum Pacific",
-    "dateAdded": "2026-09-01T00:58:56.480Z"
+    "dateAdded": "2026-09-01T00:58:56.480Z",
+    "version": "6 pins, 10 sliders",
+    "lockingMechanisms": [
+      "Pin-tumbler",
+      "Slider"
+    ]
   },
   "fd5a5246": {
     "id": "fd5a5246",

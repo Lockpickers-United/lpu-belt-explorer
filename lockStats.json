@@ -3,11 +3,11 @@
     "description": "Locks",
     "data": [
       {
-        "value": 854,
+        "value": 852,
         "label": "Ranked"
       },
       {
-        "value": 966,
+        "value": 964,
         "label": "All"
       },
       {
@@ -20,61 +20,61 @@
     {
       "belt": "White",
       "count": 18,
-      "value": 0.018633540372670808,
+      "value": 0.01867219917012448,
       "id": "White"
     },
     {
       "belt": "Yellow",
       "count": 71,
-      "value": 0.07349896480331262,
+      "value": 0.07365145228215768,
       "id": "Yellow"
     },
     {
       "belt": "Orange",
       "count": 83,
-      "value": 0.08592132505175984,
+      "value": 0.08609958506224066,
       "id": "Orange"
     },
     {
       "belt": "Green",
       "count": 159,
-      "value": 0.16459627329192547,
+      "value": 0.16493775933609958,
       "id": "Green"
     },
     {
       "belt": "Blue",
-      "count": 141,
-      "value": 0.14596273291925466,
+      "count": 140,
+      "value": 0.14522821576763487,
       "id": "Blue"
     },
     {
       "belt": "Purple",
-      "count": 122,
-      "value": 0.12629399585921325,
+      "count": 121,
+      "value": 0.12551867219917012,
       "id": "Purple"
     },
     {
       "belt": "Brown",
       "count": 85,
-      "value": 0.08799171842650104,
+      "value": 0.08817427385892117,
       "id": "Brown"
     },
     {
       "belt": "Red",
       "count": 74,
-      "value": 0.07660455486542443,
+      "value": 0.07676348547717843,
       "id": "Red"
     },
     {
       "belt": "Black",
       "count": 101,
-      "value": 0.10455486542443064,
+      "value": 0.10477178423236515,
       "id": "Black"
     },
     {
       "belt": "Unranked",
       "count": 112,
-      "value": 0.11594202898550725,
+      "value": 0.11618257261410789,
       "id": "Unranked"
     }
   ],
@@ -86,12 +86,12 @@
     },
     {
       "label": "Dimple",
-      "value": 221,
+      "value": 220,
       "id": "dimple"
     },
     {
       "label": "Multiple",
-      "value": 99,
+      "value": 100,
       "id": "multiple"
     },
     {
@@ -279,12 +279,12 @@
     "Purple": [
       {
         "label": "Dimple",
-        "value": 46,
+        "value": 45,
         "id": "dimple"
       },
       {
         "label": "Multiple",
-        "value": 27,
+        "value": 28,
         "id": "multiple"
       },
       {
@@ -532,13 +532,13 @@
       },
       {
         "segment": "Ranked locks",
-        "count": 854,
+        "count": 852,
         "media": 810,
-        "coverage": "94%"
+        "coverage": "95%"
       },
       {
         "segment": "All locks",
-        "count": 966,
+        "count": 964,
         "media": 900,
         "coverage": "93%"
       }
@@ -1809,6 +1809,6 @@
     ]
   },
   "metadata": {
-    "updatedDateTime": "2026-09-01 11:35"
+    "updatedDateTime": "2026-09-01 11:52"
   }
 }

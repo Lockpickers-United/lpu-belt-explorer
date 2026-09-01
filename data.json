@@ -13860,6 +13860,7 @@
       "Pin-tumbler"
     ],
     "features": [
+      "Trap Element",
       "Latest Changelog"
     ],
     "dateAdded": "2026-09-01T00:58:56.477Z",
@@ -22140,7 +22141,7 @@
         "model": "Detect 3"
       }
     ],
-    "version": "with active sidebar",
+    "version": "With active sidebar",
     "lockingMechanisms": [
       "Pin-tumbler",
       "Sidebar"
@@ -22488,90 +22489,6 @@
     "lastUpdated": "2025-12-02T23:39:17.939Z"
   },
   {
-    "id": "6e2cecfd",
-    "belt": "Blue",
-    "makeModels": [
-      {
-        "make": "CES",
-        "model": "RE Plus"
-      }
-    ],
-    "dateAdded": "2026-03-01T11:02:21.472Z",
-    "media": [
-      {
-        "title": "By: decoder",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/55460191720_cc62102367_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55460191720/in/album-72177720335091660/",
-        "sequenceId": 2043,
-        "dateAdded": "2026-08-12T21:16:13.234Z",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/55460191720_d574686749_o.jpg",
-        "imageTitle": "CES RE Plus"
-      },
-      {
-        "title": "By: decoder",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/55458820562_172d3c99bb_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55458820562/in/album-72177720335091660/",
-        "sequenceId": 2044,
-        "dateAdded": "2026-08-12T21:16:13.234Z",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/55458820562_ac56dda807_o.jpg",
-        "imageTitle": "CES RE Plus"
-      },
-      {
-        "title": "By: decoder",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/55459973724_80f9dc1680_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55459973724/in/album-72177720335091660/",
-        "sequenceId": 2045,
-        "dateAdded": "2026-08-12T21:16:13.234Z",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/55459973724_a33c136622_o.jpg",
-        "imageTitle": "CES RE Plus"
-      },
-      {
-        "title": "By: decoder",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/55459909723_7d99cfbdbe_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55459909723/in/album-72177720335091660/",
-        "sequenceId": 2046,
-        "dateAdded": "2026-08-12T21:16:13.234Z",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/55459909723_3b766ccc31_o.jpg",
-        "imageTitle": "CES RE Plus"
-      },
-      {
-        "title": "By: decoder",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/55458821267_4feb3566de_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55458821267/in/album-72177720335091660/",
-        "sequenceId": 2047,
-        "dateAdded": "2026-08-12T21:16:13.234Z",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/55458821267_8bf07e8bb0_o.jpg",
-        "imageTitle": "CES RE Plus"
-      },
-      {
-        "title": "By: decoder",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/55460193200_3581512a02_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55460193200/in/album-72177720335091660/",
-        "sequenceId": 2048,
-        "dateAdded": "2026-08-12T21:16:13.234Z",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/55460193200_277cfd467a_o.jpg",
-        "imageTitle": "CES RE Plus"
-      },
-      {
-        "title": "By: decoder",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/55460193500_a848ec19e5_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55460193500/in/album-72177720335091660/",
-        "sequenceId": 2049,
-        "dateAdded": "2026-08-12T21:16:13.235Z",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/55460193500_d72af02c70_o.jpg",
-        "imageTitle": "CES RE Plus"
-      }
-    ],
-    "lastUpdated": "2026-08-12T21:16:13.423Z"
-  },
-  {
     "id": "41557482",
     "belt": "Blue",
     "makeModels": [
@@ -22585,6 +22502,7 @@
       "Pin-tumbler"
     ],
     "features": [
+      "Trap Element",
       "Latest Changelog"
     ],
     "notes": "Must be picked 360°",
@@ -31789,22 +31707,92 @@
     "lastUpdated": "2025-12-02T23:39:17.944Z"
   },
   {
-    "id": "6f1fcab5",
+    "id": "e7f6d089",
     "belt": "Purple",
     "makeModels": [
       {
         "make": "BASI",
         "model": "T250"
+      },
+      {
+        "make": "Titan",
+        "model": "T250"
+      },
+      {
+        "make": "Picard",
+        "model": "VTX"
+      },
+      {
+        "make": "UCEM",
+        "model": "T200"
       }
     ],
     "lockingMechanisms": [
-      "Dimple"
+      "Dimple",
+      "Slider"
     ],
     "features": [
-      "Latest Changelog"
+      "Unsprung sliders"
     ],
-    "dateAdded": "2026-09-01T00:58:56.479Z",
-    "lastUpdated": "2026-09-01T00:58:56.762Z"
+    "dateAdded": "2023-02-21T23:16:05.000Z",
+    "media": [
+      {
+        "title": "By: Norlin",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53178543604_b5cc0c235c_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53178543604/in/album-72177720311098246/",
+        "sequenceId": 4219,
+        "dateAdded": "2025-12-02T23:39:17.907Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53178543604_d332a2c860_o.jpg"
+      },
+      {
+        "title": "By: Clefmentine",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53070704168_69713788c3_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53070704168/in/album-72177720310011317/",
+        "sequenceId": 4220,
+        "dateAdded": "2025-12-02T23:39:17.907Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53070704168_07a7dc2566_o.jpg"
+      },
+      {
+        "title": "By: NiXXeD",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54108597155_591146d2d0_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54108597155/in/album-72177720321624916/",
+        "sequenceId": 4221,
+        "dateAdded": "2025-12-02T23:39:17.907Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54108597155_54a46484b0_o.jpg"
+      },
+      {
+        "title": "By: Clefmentine",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53070392144_1a0b8cf180_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53070392144/in/album-72177720310011317/",
+        "sequenceId": 4222,
+        "dateAdded": "2025-12-02T23:39:17.907Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53070392144_466ae9b038_o.jpg"
+      },
+      {
+        "title": "By: Clefmentine",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53069621062_c32141e91a_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53069621062/in/album-72177720310011317/",
+        "sequenceId": 4223,
+        "dateAdded": "2025-12-02T23:39:17.907Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53069621062_8cf2858ba8_o.jpg"
+      },
+      {
+        "title": "By: Clefmentine",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53070704703_1f3023a6a9_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53070704703/in/album-72177720310011317/",
+        "sequenceId": 4224,
+        "dateAdded": "2025-12-02T23:39:17.907Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53070704703_b174a50e24_o.jpg"
+      }
+    ],
+    "views": 452,
+    "lastUpdated": "2026-09-01T11:52:06.671Z"
   },
   {
     "id": "8f004bf0",
@@ -32253,7 +32241,7 @@
     "lastUpdated": "2025-12-02T23:39:17.944Z"
   },
   {
-    "id": "6eeb66b9",
+    "id": "6e2cecfd",
     "belt": "Purple",
     "makeModels": [
       {
@@ -32265,11 +32253,80 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "features": [
-      "Latest Changelog"
+    "dateAdded": "2026-03-01T11:02:21.472Z",
+    "media": [
+      {
+        "title": "By: decoder",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/55460191720_cc62102367_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55460191720/in/album-72177720335091660/",
+        "sequenceId": 2043,
+        "dateAdded": "2026-08-12T21:16:13.234Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/55460191720_d574686749_o.jpg",
+        "imageTitle": "CES RE Plus"
+      },
+      {
+        "title": "By: decoder",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/55458820562_172d3c99bb_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55458820562/in/album-72177720335091660/",
+        "sequenceId": 2044,
+        "dateAdded": "2026-08-12T21:16:13.234Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/55458820562_ac56dda807_o.jpg",
+        "imageTitle": "CES RE Plus"
+      },
+      {
+        "title": "By: decoder",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/55459973724_80f9dc1680_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55459973724/in/album-72177720335091660/",
+        "sequenceId": 2045,
+        "dateAdded": "2026-08-12T21:16:13.234Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/55459973724_a33c136622_o.jpg",
+        "imageTitle": "CES RE Plus"
+      },
+      {
+        "title": "By: decoder",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/55459909723_7d99cfbdbe_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55459909723/in/album-72177720335091660/",
+        "sequenceId": 2046,
+        "dateAdded": "2026-08-12T21:16:13.234Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/55459909723_3b766ccc31_o.jpg",
+        "imageTitle": "CES RE Plus"
+      },
+      {
+        "title": "By: decoder",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/55458821267_4feb3566de_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55458821267/in/album-72177720335091660/",
+        "sequenceId": 2047,
+        "dateAdded": "2026-08-12T21:16:13.234Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/55458821267_8bf07e8bb0_o.jpg",
+        "imageTitle": "CES RE Plus"
+      },
+      {
+        "title": "By: decoder",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/55460193200_3581512a02_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55460193200/in/album-72177720335091660/",
+        "sequenceId": 2048,
+        "dateAdded": "2026-08-12T21:16:13.234Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/55460193200_277cfd467a_o.jpg",
+        "imageTitle": "CES RE Plus"
+      },
+      {
+        "title": "By: decoder",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/55460193500_a848ec19e5_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55460193500/in/album-72177720335091660/",
+        "sequenceId": 2049,
+        "dateAdded": "2026-08-12T21:16:13.235Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/55460193500_d72af02c70_o.jpg",
+        "imageTitle": "CES RE Plus"
+      }
     ],
-    "dateAdded": "2026-09-01T00:58:56.480Z",
-    "lastUpdated": "2026-09-01T00:58:56.762Z"
+    "lastUpdated": "2026-09-01T11:52:06.671Z"
   },
   {
     "id": "7561da3b",
@@ -32284,6 +32341,8 @@
       "Pin-tumbler"
     ],
     "features": [
+      "Active sidebar",
+      "Trap Element",
       "Latest Changelog"
     ],
     "dateAdded": "2026-09-01T00:58:56.480Z",
@@ -36396,11 +36455,18 @@
         "model": "Pacific"
       }
     ],
+    "version": "6 pins, 10 sliders",
+    "lockingMechanisms": [
+      "Pin-tumbler",
+      "Slider"
+    ],
     "features": [
+      "Sprung Sliders",
+      "Active sidebar",
       "Latest Changelog"
     ],
     "dateAdded": "2026-09-01T00:58:56.480Z",
-    "lastUpdated": "2026-09-01T00:58:56.763Z"
+    "lastUpdated": "2026-09-01T11:52:06.672Z"
   },
   {
     "id": "8f7f1830",
@@ -38855,90 +38921,6 @@
       }
     ],
     "views": 645,
-    "lastUpdated": "2025-12-02T23:39:17.948Z"
-  },
-  {
-    "id": "e7f6d089",
-    "belt": "Purple",
-    "makeModels": [
-      {
-        "make": "Titan",
-        "model": "T250"
-      },
-      {
-        "make": "Picard",
-        "model": "VTX"
-      },
-      {
-        "make": "UCEM",
-        "model": "T200"
-      }
-    ],
-    "lockingMechanisms": [
-      "Dimple",
-      "Slider"
-    ],
-    "features": [
-      "Unsprung sliders"
-    ],
-    "dateAdded": "2023-02-21T23:16:05.000Z",
-    "media": [
-      {
-        "title": "By: Norlin",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/53178543604_b5cc0c235c_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53178543604/in/album-72177720311098246/",
-        "sequenceId": 4219,
-        "dateAdded": "2025-12-02T23:39:17.907Z",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/53178543604_d332a2c860_o.jpg"
-      },
-      {
-        "title": "By: Clefmentine",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/53070704168_69713788c3_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53070704168/in/album-72177720310011317/",
-        "sequenceId": 4220,
-        "dateAdded": "2025-12-02T23:39:17.907Z",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/53070704168_07a7dc2566_o.jpg"
-      },
-      {
-        "title": "By: NiXXeD",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/54108597155_591146d2d0_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54108597155/in/album-72177720321624916/",
-        "sequenceId": 4221,
-        "dateAdded": "2025-12-02T23:39:17.907Z",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/54108597155_54a46484b0_o.jpg"
-      },
-      {
-        "title": "By: Clefmentine",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/53070392144_1a0b8cf180_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53070392144/in/album-72177720310011317/",
-        "sequenceId": 4222,
-        "dateAdded": "2025-12-02T23:39:17.907Z",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/53070392144_466ae9b038_o.jpg"
-      },
-      {
-        "title": "By: Clefmentine",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/53069621062_c32141e91a_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53069621062/in/album-72177720310011317/",
-        "sequenceId": 4223,
-        "dateAdded": "2025-12-02T23:39:17.907Z",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/53069621062_8cf2858ba8_o.jpg"
-      },
-      {
-        "title": "By: Clefmentine",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/53070704703_1f3023a6a9_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53070704703/in/album-72177720310011317/",
-        "sequenceId": 4224,
-        "dateAdded": "2025-12-02T23:39:17.907Z",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/53070704703_b174a50e24_o.jpg"
-      }
-    ],
-    "views": 452,
     "lastUpdated": "2025-12-02T23:39:17.948Z"
   },
   {

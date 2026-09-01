@@ -3130,5 +3130,44 @@
     "name": "BKS Detect 3",
     "dateAdded": "2026-09-01T00:58:56.478Z",
     "dateDeleted": "2026-09-01T11:35:52.077Z"
+  },
+  {
+    "id": "6f1fcab5",
+    "belt": "Purple",
+    "makeModels": [
+      {
+        "make": "BASI",
+        "model": "T250"
+      }
+    ],
+    "lockingMechanisms": [
+      "Dimple"
+    ],
+    "features": [
+      "Latest Changelog"
+    ],
+    "name": "BASI T250",
+    "dateAdded": "2026-09-01T00:58:56.479Z",
+    "dateDeleted": "2026-09-01T11:52:06.295Z"
+  },
+  {
+    "id": "6eeb66b9",
+    "belt": "Purple",
+    "makeModels": [
+      {
+        "make": "CES",
+        "model": "RE Plus"
+      }
+    ],
+    "version": "With cutout pocket",
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "features": [
+      "Latest Changelog"
+    ],
+    "name": "CES RE Plus",
+    "dateAdded": "2026-09-01T00:58:56.480Z",
+    "dateDeleted": "2026-09-01T11:52:06.295Z"
   }
 ]
