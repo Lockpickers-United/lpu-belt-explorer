@@ -3,15 +3,15 @@
     "description": "Locks",
     "data": [
       {
-        "value": 842,
+        "value": 854,
         "label": "Ranked"
       },
       {
-        "value": 957,
+        "value": 967,
         "label": "All"
       },
       {
-        "value": 115,
+        "value": 113,
         "label": "Unranked"
       }
     ]
@@ -20,73 +20,73 @@
     {
       "belt": "White",
       "count": 18,
-      "value": 0.018808777429467086,
+      "value": 0.01861427094105481,
       "id": "White"
     },
     {
       "belt": "Yellow",
       "count": 71,
-      "value": 0.0741901776384535,
+      "value": 0.0734229576008273,
       "id": "Yellow"
     },
     {
       "belt": "Orange",
-      "count": 84,
-      "value": 0.0877742946708464,
+      "count": 83,
+      "value": 0.08583247156153051,
       "id": "Orange"
     },
     {
       "belt": "Green",
-      "count": 155,
-      "value": 0.1619644723092999,
+      "count": 159,
+      "value": 0.16442605997931747,
       "id": "Green"
     },
     {
       "belt": "Blue",
-      "count": 138,
-      "value": 0.14420062695924765,
+      "count": 141,
+      "value": 0.14581178903826267,
       "id": "Blue"
     },
     {
       "belt": "Purple",
-      "count": 118,
-      "value": 0.12330198537095088,
+      "count": 123,
+      "value": 0.12719751809720786,
       "id": "Purple"
     },
     {
       "belt": "Brown",
       "count": 84,
-      "value": 0.0877742946708464,
+      "value": 0.08686659772492245,
       "id": "Brown"
     },
     {
       "belt": "Red",
-      "count": 73,
-      "value": 0.07628004179728318,
+      "count": 74,
+      "value": 0.07652533609100311,
       "id": "Red"
     },
     {
       "belt": "Black",
       "count": 101,
-      "value": 0.10553814002089865,
+      "value": 0.10444674250258532,
       "id": "Black"
     },
     {
       "belt": "Unranked",
-      "count": 115,
-      "value": 0.12016718913270637,
+      "count": 113,
+      "value": 0.11685625646328852,
       "id": "Unranked"
     }
   ],
   "lockingMechanisms": [
     {
       "label": "Pin-tumbler",
-      "value": 375,
+      "value": 379,
       "id": "pin-tumbler"
     },
     {
       "label": "Dimple",
-      "value": 217,
+      "value": 221,
       "id": "dimple"
     },
     {
@@ -111,7 +111,7 @@
     },
     {
       "label": "Pump/push",
-      "value": 26,
+      "value": 30,
       "id": "pump-push"
     },
     {
@@ -128,11 +128,6 @@
       "label": "Magnet",
       "value": 8,
       "id": "magnet"
-    },
-    {
-      "label": "Other",
-      "value": 4,
-      "id": "other"
     },
     {
       "label": "Various",
@@ -178,7 +173,7 @@
     "Orange": [
       {
         "label": "Pin-tumbler",
-        "value": 74,
+        "value": 73,
         "id": "pin-tumbler"
       },
       {
@@ -210,7 +205,7 @@
     "Green": [
       {
         "label": "Pin-tumbler",
-        "value": 103,
+        "value": 107,
         "id": "pin-tumbler"
       },
       {
@@ -242,12 +237,12 @@
     "Blue": [
       {
         "label": "Pin-tumbler",
-        "value": 64,
+        "value": 65,
         "id": "pin-tumbler"
       },
       {
         "label": "Dimple",
-        "value": 37,
+        "value": 38,
         "id": "dimple"
       },
       {
@@ -271,13 +266,8 @@
         "id": "wafer"
       },
       {
-        "label": "Other",
-        "value": 1,
-        "id": "other"
-      },
-      {
         "label": "Pump/push",
-        "value": 1,
+        "value": 2,
         "id": "pump-push"
       },
       {
@@ -289,7 +279,7 @@
     "Purple": [
       {
         "label": "Dimple",
-        "value": 45,
+        "value": 47,
         "id": "dimple"
       },
       {
@@ -299,7 +289,7 @@
       },
       {
         "label": "Pin-tumbler",
-        "value": 16,
+        "value": 18,
         "id": "pin-tumbler"
       },
       {
@@ -313,14 +303,14 @@
         "id": "lever"
       },
       {
+        "label": "Pump/push",
+        "value": 5,
+        "id": "pump-push"
+      },
+      {
         "label": "Wafer",
         "value": 4,
         "id": "wafer"
-      },
-      {
-        "label": "Pump/push",
-        "value": 3,
-        "id": "pump-push"
       },
       {
         "label": "Lever/sidebar",
@@ -331,11 +321,6 @@
         "label": "Magnet",
         "value": 2,
         "id": "magnet"
-      },
-      {
-        "label": "Other",
-        "value": 2,
-        "id": "other"
       },
       {
         "label": "Disc detainer",
@@ -356,7 +341,7 @@
       },
       {
         "label": "Pump/push",
-        "value": 8,
+        "value": 9,
         "id": "pump-push"
       },
       {
@@ -393,17 +378,12 @@
         "label": "Lever/sidebar",
         "value": 1,
         "id": "lever-sidebar"
-      },
-      {
-        "label": "Other",
-        "value": 1,
-        "id": "other"
       }
     ],
     "Red": [
       {
         "label": "Dimple",
-        "value": 23,
+        "value": 24,
         "id": "dimple"
       },
       {
@@ -507,7 +487,7 @@
       },
       {
         "label": "Pin-tumbler",
-        "value": 24,
+        "value": 22,
         "id": "pin-tumbler"
       },
       {
@@ -552,15 +532,15 @@
       },
       {
         "segment": "Ranked locks",
-        "count": 842,
+        "count": 854,
         "media": 809,
-        "coverage": "96%"
+        "coverage": "94%"
       },
       {
         "segment": "All locks",
-        "count": 957,
-        "media": 902,
-        "coverage": "94%"
+        "count": 967,
+        "media": 900,
+        "coverage": "93%"
       }
     ],
     "uniqueImages": 4707,
@@ -1829,6 +1809,6 @@
     ]
   },
   "metadata": {
-    "updatedDateTime": "2026-08-26 13:50"
+    "updatedDateTime": "2026-09-01 00:59"
   }
 }
