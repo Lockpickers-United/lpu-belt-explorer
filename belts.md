@@ -623,7 +623,7 @@ To qualify for a Blue Belt, you must also submit a project that demonstrates you
 - [BASI K6-RT](https://lpubelts.com/#/locks?id=ee04714f)
 - [Baton 6000 series](https://lpubelts.com/#/locks?id=ae0d35bc) (not Abloy keyway)
 - [Bison/HYT/Lays/Qlsy Chain Key Lock](https://lpubelts.com/#/locks?id=111062fc)
-- [BKS Detect 3](https://lpubelts.com/#/locks?id=d11d1ba2) (With active sidebar)
+- [BKS Detect 3](https://lpubelts.com/#/locks?id=29dab5b8) (with active sidebar)
 - [Bricard Bloctout](https://lpubelts.com/#/locks?id=307e1f03)
 - [Bricard Serial S](https://lpubelts.com/#/locks?id=61f33761)
 - [Burg W&auml;chter Diamant](https://lpubelts.com/#/locks?id=32fa52a6)
