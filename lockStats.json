@@ -539,12 +539,12 @@
       {
         "segment": "All locks",
         "count": 964,
-        "media": 900,
+        "media": 899,
         "coverage": "93%"
       }
     ],
-    "uniqueImages": 4709,
-    "contributors": 315,
+    "uniqueImages": 4718,
+    "contributors": 316,
     "topPhotographers": [
       {
         "contributor": "LockPickingFisherman",
@@ -739,6 +739,10 @@
         "images": 19
       },
       {
+        "contributor": "Kaiser",
+        "images": 18
+      },
+      {
         "contributor": "Mick777Oz",
         "images": 18
       },
@@ -761,6 +765,10 @@
       {
         "contributor": "Jan-Willem Markus",
         "images": 16
+      },
+      {
+        "contributor": "Indigenouslockpicker",
+        "images": 15
       },
       {
         "contributor": "LockSportsman",
@@ -787,10 +795,6 @@
         "images": 14
       },
       {
-        "contributor": "Indigenouslockpicker",
-        "images": 14
-      },
-      {
         "contributor": "Moki",
         "images": 14
       },
@@ -804,10 +808,6 @@
       },
       {
         "contributor": "HVLogic",
-        "images": 13
-      },
-      {
-        "contributor": "Kaiser",
         "images": 13
       },
       {
@@ -1379,6 +1379,10 @@
         "images": 3
       },
       {
+        "contributor": "TGT",
+        "images": 3
+      },
+      {
         "contributor": "Themothman",
         "images": 3
       },
@@ -1809,6 +1813,6 @@
     ]
   },
   "metadata": {
-    "updatedDateTime": "2026-09-01 11:58"
+    "updatedDateTime": "2026-09-02 00:20"
   }
 }
