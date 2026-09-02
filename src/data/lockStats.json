@@ -533,18 +533,18 @@
       {
         "segment": "Ranked locks",
         "count": 852,
-        "media": 812,
-        "coverage": "95%"
+        "media": 818,
+        "coverage": "96%"
       },
       {
         "segment": "All locks",
         "count": 964,
-        "media": 901,
-        "coverage": "93%"
+        "media": 907,
+        "coverage": "94%"
       }
     ],
-    "uniqueImages": 4743,
-    "contributors": 317,
+    "uniqueImages": 4756,
+    "contributors": 318,
     "topPhotographers": [
       {
         "contributor": "LockPickingFisherman",
@@ -711,6 +711,10 @@
         "images": 23
       },
       {
+        "contributor": "Kaiser",
+        "images": 23
+      },
+      {
         "contributor": "Lock Manipulator",
         "images": 23
       },
@@ -737,10 +741,6 @@
       {
         "contributor": "Insomniaclockpicker",
         "images": 19
-      },
-      {
-        "contributor": "Kaiser",
-        "images": 18
       },
       {
         "contributor": "Mick777Oz",
@@ -956,6 +956,10 @@
       },
       {
         "contributor": "EdMcBane",
+        "images": 8
+      },
+      {
+        "contributor": "LockFumbler and Decoder",
         "images": 8
       },
       {
@@ -1817,6 +1821,6 @@
     ]
   },
   "metadata": {
-    "updatedDateTime": "2026-09-02 04:08"
+    "updatedDateTime": "2026-09-02 14:34"
   }
 }
