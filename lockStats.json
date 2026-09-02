@@ -533,18 +533,18 @@
       {
         "segment": "Ranked locks",
         "count": 852,
-        "media": 810,
+        "media": 812,
         "coverage": "95%"
       },
       {
         "segment": "All locks",
         "count": 964,
-        "media": 899,
+        "media": 901,
         "coverage": "93%"
       }
     ],
-    "uniqueImages": 4718,
-    "contributors": 316,
+    "uniqueImages": 4743,
+    "contributors": 317,
     "topPhotographers": [
       {
         "contributor": "LockPickingFisherman",
@@ -755,6 +755,10 @@
         "images": 17
       },
       {
+        "contributor": "TGT",
+        "images": 17
+      },
+      {
         "contributor": "2nd_choice",
         "images": 16
       },
@@ -939,6 +943,10 @@
         "images": 9
       },
       {
+        "contributor": "Troyboy1263",
+        "images": 9
+      },
+      {
         "contributor": "BlackMoone845",
         "images": 8
       },
@@ -956,6 +964,10 @@
       },
       {
         "contributor": "MelBrooksKA",
+        "images": 8
+      },
+      {
+        "contributor": "Nightmare",
         "images": 8
       },
       {
@@ -1063,6 +1075,10 @@
         "images": 6
       },
       {
+        "contributor": "Zehkar",
+        "images": 6
+      },
+      {
         "contributor": "awxpq9pf",
         "images": 5
       },
@@ -1112,10 +1128,6 @@
       },
       {
         "contributor": "Zack Attack",
-        "images": 5
-      },
-      {
-        "contributor": "Zehkar",
         "images": 5
       },
       {
@@ -1183,10 +1195,6 @@
         "images": 4
       },
       {
-        "contributor": "Nightmare",
-        "images": 4
-      },
-      {
         "contributor": "Puubaer",
         "images": 4
       },
@@ -1224,10 +1232,6 @@
       },
       {
         "contributor": "Thice",
-        "images": 4
-      },
-      {
-        "contributor": "Troyboy1263",
         "images": 4
       },
       {
@@ -1376,10 +1380,6 @@
       },
       {
         "contributor": "Sage",
-        "images": 3
-      },
-      {
-        "contributor": "TGT",
         "images": 3
       },
       {
@@ -1735,6 +1735,10 @@
         "images": 1
       },
       {
+        "contributor": "photo by Dra9i",
+        "images": 1
+      },
+      {
         "contributor": "Photo by m.c.",
         "images": 1
       },
@@ -1813,6 +1817,6 @@
     ]
   },
   "metadata": {
-    "updatedDateTime": "2026-09-02 00:20"
+    "updatedDateTime": "2026-09-02 03:20"
   }
 }

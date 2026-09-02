@@ -61144,7 +61144,7 @@
     "belt": "Green",
     "makeModels": [
       {
-        "make": "Goal",
+        "make": "GOAL",
         "model": "P"
       }
     ],
@@ -61153,7 +61153,7 @@
       "Pin-tumbler"
     ],
     "notes": "6 pins with spool drivers and overmilling. This model does not have the plug centering bearing",
-    "name": "Goal P",
+    "name": "GOAL P",
     "dateAdded": "2026-08-06T03:59:39.967Z"
   },
   "04bd0770": {
