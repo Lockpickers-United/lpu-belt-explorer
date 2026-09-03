@@ -104,9 +104,6 @@ const jsonData = mainData
         if (datum['Latest Changelog'].length) features.push('Latest Changelog')
 
         const collectionStats = collectionStatsData?.data?.locks?.find(item => item.id === datum['Unique ID'])
-
-        console.log('collectionStats', collectionStats)
-
         const popularityIndex = collectionStats ? collectionStats.ownCount : undefined
         const scorecardCount = collectionStats ? collectionStats.scorecardCount : undefined
 
