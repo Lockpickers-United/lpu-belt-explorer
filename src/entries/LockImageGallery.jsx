@@ -10,8 +10,6 @@ const openInNewTab = (url) => {
     if (newWindow) newWindow.opener = null
 }
 
-let sortedMedia = []
-
 function LockImageGallery({entry}) {
     const location = useLocation()
     const {filters, addFilter, removeFilters} = useContext(FilterContext)
@@ -51,23 +49,17 @@ function LockImageGallery({entry}) {
         .sort((a, b) => {
             return a.sequenceId - b.sequenceId
         })
+        .map((media, index) => ({...media, imageIndex: index+1}))
 
     const mediaLabels = [...new Set(sequencedMedia?.map(({label}) => label))].filter(x => x)
     const labeledMedia = mediaLabels.length > 0
         ? mediaLabels.map((label) => {
-            return {label: label, media: filteredMedia.filter(({label: l}) => l === label)}
+            return {label: label, media: sequencedMedia.filter(({label: l}) => l === label)}
         })
-        : [{label: 'allMedia', media: filteredMedia}]
-    if (mediaLabels.length > 0 && filteredMedia.filter(media => !media.label).length > 0) {
-        labeledMedia.push({label: 'Other', media: filteredMedia.filter(media => !media.label)})
+        : [{label: 'allMedia', media: sequencedMedia}]
+    if (mediaLabels.length > 0 && sequencedMedia.filter(media => !media.label).length > 0) {
+        labeledMedia.push({label: 'Other', media: sequencedMedia.filter(media => !media.label)})
     }
-
-    sortedMedia = filteredMedia
-        .sort((a, b) => {
-            return a.label?.localeCompare(b.label || '')
-                || a.sequenceId - b.sequenceId
-        })
-        .map((media, index) => ({...media, imageIndex: index+1}))
 
     return (
         <React.Fragment>
@@ -83,7 +75,7 @@ function LockImageGallery({entry}) {
                         }
                         <ImageGallery
                             media={group.media}
-                            allMedia={sortedMedia}
+                            allMedia={sequencedMedia}
                             openIndex={openIndex}
                             initiallyOpen={initiallyOpen && index === 0}
                             onOpenImage={handleOpenImage}

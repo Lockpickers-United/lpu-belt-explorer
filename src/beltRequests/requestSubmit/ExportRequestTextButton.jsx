@@ -9,7 +9,7 @@ import {enqueueSnackbar} from 'notistack'
 import React, {useCallback, useState} from 'react'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy'
 import Button from '@mui/material/Button'
-import {formatRedditRequest} from './handleRequestSubmit.js'
+import {formatRedditRequest} from './handleRequestSubmit'
 
 export default function ExportRequestTextButton({form, text=false}) {
     const [anchorEl, setAnchorEl] = useState(null)

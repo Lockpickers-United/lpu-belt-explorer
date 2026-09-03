@@ -17,7 +17,9 @@ function LockList() {
     const {lockCollection, adminRole} = useContext(DBContext)
     const {visibleBeltEntries = []} = useContext(DataContext)
     const {isLoggedIn, user, userClaims} = useContext(AuthContext)
-    const isAuthorized = isLoggedIn && user && (['lpuAdmin', 'admin'].some(claim => userClaims.includes(claim)) || adminRole)
+    const isAuthorized = isLoggedIn
+        && user
+        && (['lpuAdmin', 'admin'].some(claim => userClaims.includes(claim)) || adminRole)
 
     const activeSortFields = lockSortFields.filter(field => !field.admin || isAuthorized)
 

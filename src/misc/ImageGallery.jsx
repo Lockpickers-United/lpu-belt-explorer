@@ -92,14 +92,15 @@ function ImageGallery(props) {
                                          thumbnailUrl,
                                          fullUrl,
                                          subtitleUrl,
-                                         imageId
+                                         imageId,
+                                         imageIndex,
                                      }, index) =>
                     <ImageListItem key={index} style={{marginBottom: 8}}>
                         <img
                             src={thumbnailUrl}
                             alt={title}
                             style={{paddingBottom: subtitle ? 60 : 48, cursor: 'pointer'}}
-                            onClick={handleOpen(index+1, fullUrl)}
+                            onClick={handleOpen(imageIndex, fullUrl)}
                             loading='lazy'
                         />
                         {
