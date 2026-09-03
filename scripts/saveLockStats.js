@@ -149,7 +149,7 @@ export async function saveLockStats() {
     lockStats.metadata = {updatedDateTime: dayjs().format('YYYY-MM-DD HH:mm')}
 
 // WRITE TO FILE
-    await fs.writeFile('./src/data/lockStats.json', JSON.stringify(lockStats, null, 2), function (err) {
+    fs.writeFile('./src/data/lockStats.json', JSON.stringify(lockStats, null, 2), function (err) {
         if (err) {
             console.error('save lockStats.json error:', err)
             return (`save lockStats.json error: ${err}`)

@@ -10,16 +10,22 @@ import ViewFilterButtons from '../filters/ViewFilterButtons.jsx'
 import {lockSortFields} from '../data/sortFields'
 import DataContext from './LockDataProvider.jsx'
 import SearchDidYouMeanBar from '../filters/SearchDidYouMeanBar.jsx'
+import AuthContext from '../app/AuthContext.jsx'
+
 function LockList() {
     const {isMobile} = useWindowSize()
     const {lockCollection} = useContext(DBContext)
     const {visibleBeltEntries = []} = useContext(DataContext)
+    const {isLoggedIn, user, userClaims} = useContext(AuthContext)
+    const isAuthorized = isLoggedIn && user && (['lpuAdmin', 'admin'].some(claim => userClaims.includes(claim)) || adminRole)
+
+    const activeSortFields = lockSortFields.filter(field => !field.admin || isAuthorized)
 
     const extras = (
         <React.Fragment>
             <SearchBox label='Locks' extraFilters={[{key: 'tab', value: 'search'}]} keepOpen={false}
                        entryCount={visibleBeltEntries.length}/>
-            <ViewFilterButtons sortValues={lockSortFields} advancedEnabled={true}
+            <ViewFilterButtons sortValues={activeSortFields} advancedEnabled={true}
                                extraFilters={[{key: 'tab', value: 'search'}]}
                                compactMode={true} resetAll={true} expandAll={true}/>
             {!isMobile && <div style={{flexGrow: 1, minWidth: '10px'}}/>}

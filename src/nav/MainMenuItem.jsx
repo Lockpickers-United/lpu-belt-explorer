@@ -39,7 +39,7 @@ function MainMenuItem({menuItem, onClose, child, childCount, childIndex}) {
     const color = isCurrentRoute
         ? '#18aa18'
         : userClaims?.includes('admin') || admin
-            ? '#0483d9'
+            ? '#0484d4'
             : null
 
     const adminStyle = userClaims?.includes('admin') || admin

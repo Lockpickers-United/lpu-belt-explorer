@@ -6,7 +6,6 @@ import {
     mediaSchema,
     linkSchema,
     descriptionSchema,
-    viewSchema,
     groupSchema,
     glossarySchema,
     dialsSchema,
@@ -25,7 +24,7 @@ import entryName from '../src/entries/entryName.js'
 import {saveLockStats} from './saveLockStats.js'
 import {setDeepUnique, setDeepPush} from '../src/util/setDeep.js'
 
-const importRaflData = true
+const importRaflData = false
 
 // Helper to load and validate a file
 const importValidate = async (tab, schema) => {
@@ -57,12 +56,15 @@ const importValidate = async (tab, schema) => {
     return data
 }
 
+console.log('Fetching collection data...')
+const collectionStatsUrl = 'https://explore.lpubelts.com/services/api/v1/stats/collections/locks'
+const collectionStatsData = await (await fetch(collectionStatsUrl)).json()
+
 // Load all 3 data files (LOL)
 const mainData = await importValidate('App Data', mainSchema)
 const mediaData = await importValidate('Media', mediaSchema)
 const linkData = await importValidate('Links', linkSchema)
 const descriptionData = await importValidate('Descriptions', descriptionSchema)
-const viewData = await importValidate('Lock Views', viewSchema)
 const groupData = await importValidate('Groups', groupSchema)
 const glossaryData = await importValidate('Glossary', glossarySchema)
 const dialsData = await importValidate('Dials', dialsSchema)
@@ -101,6 +103,13 @@ const jsonData = mainData
 
         if (datum['Latest Changelog'].length) features.push('Latest Changelog')
 
+        const collectionStats = collectionStatsData?.data?.locks?.find(item => item.id === datum['Unique ID'])
+
+        console.log('collectionStats', collectionStats)
+
+        const popularityIndex = collectionStats ? collectionStats.ownCount : undefined
+        const scorecardCount = collectionStats ? collectionStats.scorecardCount : undefined
+
         const value = {
             id,
             belt,
@@ -110,7 +119,10 @@ const jsonData = mainData
             features,
             notes,
             searchKeywords,
-            modelNum
+            modelNum,
+            popularityIndex,
+            scorecardCount,
+            views: popularityIndex,
         }
 
         // Clean up empty values to reduce payload size
@@ -345,15 +357,6 @@ descriptionData
         const entry = jsonData.find(e => e.id === item['Unique ID'])
         if (!entry) return console.log('descriptionData Import; Entry not found:', item)
         entry.description = item['Description']
-    })
-
-// Add view data
-console.log('Processing view data...')
-viewData
-    .forEach(item => {
-        const entry = jsonData.find(e => e.id === item['Unique ID'])
-        if (!entry) return console.log('viewData Import; Entry not found:', item)
-        entry.views = +item['Count']
     })
 
 // Lock Group data

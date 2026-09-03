@@ -6,7 +6,6 @@ import dayjs from 'dayjs'
 import belts, {beltSort, beltSortReverse} from '../data/belts'
 import collectionOptions from '../data/collectionTypes'
 import removeAccents from 'remove-accents'
-import collectionStatsById from '../data/collectionStatsById.json'
 import useData from '../util/useData.jsx'
 import {lockbazzarEntryIds} from '../data/dataUrls'
 import filterEntriesAdvanced from '../filters/filterEntriesAdvanced'
@@ -79,7 +78,7 @@ export function DataProvider({children, allEntries, profile}) {
                         userNotes[entry.id] ? 'Has Personal Notes' : undefined
                     ].flat().filter(x => x),
                     collection: collectionOptions.locks.map.map(m => profile && profile[m.key] && profile[m.key].includes(entry.id) ? m.label : 'Not ' + m.label),
-                    collectionSaves: collectionStatsById[entry.id] || 0,
+                    collectionSaves: entry.popularityIndex || 0,
                     simpleBelt: entry.belt.replace(/\s\d/g, ''),
                     filterBelts: entry.belt.startsWith('Black') ? ['Black', entry.belt] : [entry.belt],
                     personalNotes: userNotes[entry.id],
@@ -183,13 +182,16 @@ export function DataProvider({children, allEntries, profile}) {
         return sort
             ? searched.sort((a, b) => {
                 if (sort === 'popularity') {
-                    return b.collectionSaves - a.collectionSaves
-                        || b.views - a.views
+                    return b.popularityIndex - a.popularityIndex
+                        || a.fuzzy.localeCompare(b.fuzzy)
+                } else if (sort === 'scorecardCount') {
+                    return b.scorecardCount - a.scorecardCount
                         || a.fuzzy.localeCompare(b.fuzzy)
                 } else if (sort === 'beltAscending') {
                     return beltSort(a.belt, b.belt)
                 } else if (sort === 'beltDescending') {
                     return beltSortReverse(a.belt, b.belt)
+                        || a.fuzzy.localeCompare(b.fuzzy)
                 } else if (sort === 'alphaAscending') {
                     return a.fuzzy.localeCompare(b.fuzzy)
                 } else if (sort === 'alphaDescending') {

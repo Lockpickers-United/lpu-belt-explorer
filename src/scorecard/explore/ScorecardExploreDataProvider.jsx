@@ -6,7 +6,6 @@ import dayjs from 'dayjs'
 import belts, {danBeltSort, danBeltSortReverse} from '../../data/belts'
 import collectionOptions from '../../data/collectionTypes'
 import removeAccents from 'remove-accents'
-import collectionStatsById from '../../data/collectionStatsById.json'
 import filterEntries from '../../filters/filterEntries'
 
 /**
@@ -55,7 +54,7 @@ export function DataProvider({children, allEntries, scorecardEntries, profile}) 
                         entry.belt !== 'Unranked' ? 'Is Ranked' : undefined
                     ].flat().filter(x => x),
                     collection: collectionOptions.locks.map.map(m => profile && profile[m.key] && profile[m.key].includes(entry.id) ? m.label : 'Not ' + m.label),
-                    collectionSaves: collectionStatsById[entry.id] || 0,
+                    collectionSaves: entry.popularityIndex || 0,
                     simpleBelt: entry.belt.replace(/\s\d/g, '')
                 }
             }).filter(x => x)

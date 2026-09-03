@@ -11,6 +11,7 @@ import ExpandAllButton from '../rafl/ExpandAllButton.jsx'
 import DBContext from '../app/DBContext.jsx'
 import useWindowSize from '../util/useWindowSize.jsx'
 import SortIcon from '@mui/icons-material/Sort'
+import AuthContext from '../app/AuthContext.jsx'
 
 function SortTextButton({sortValues, compactMode, expandAll}) {
     const [anchorEl, setAnchorEl] = useState(null)
@@ -20,6 +21,8 @@ function SortTextButton({sortValues, compactMode, expandAll}) {
     const {filters, addFilter} = useContext(FilterContext)
     const {sort} = filters
     const {adminRole} = useContext(DBContext)
+    const {isLoggedIn, user, userClaims} = useContext(AuthContext)
+    const isAuthorized = isLoggedIn && user && (['lpuAdmin', 'admin'].some(claim => userClaims.includes(claim)) || adminRole)
 
     const {compact, setCompact} = useContext(AppContext)
 
@@ -63,14 +66,19 @@ function SortTextButton({sortValues, compactMode, expandAll}) {
 
             >
                 <div style={{marginLeft: 5, padding: 5, fontWeight: 700}}>SORT BY</div>
-                {sortValues.map(({label, value}) =>
-                    <MenuItem
-                        key={label}
-                        onClick={handleClick(value)}
-                        selected={sort === value}
-                    >
-                        {label}
-                    </MenuItem>
+                {sortValues.map(({label, value, admin}) => {
+                    const adminStyle = isAuthorized && admin
+                        ? {fontStyle: 'italic', color: '#0484d4'}
+                        : {}
+                    return <MenuItem
+                            key={label}
+                            onClick={handleClick(value)}
+                            selected={sort === value}
+                            style={adminStyle}
+                        >
+                            {label}
+                        </MenuItem>
+                    }
                 )}
 
                 {compactMode &&
