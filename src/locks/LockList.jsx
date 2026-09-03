@@ -14,7 +14,7 @@ import AuthContext from '../app/AuthContext.jsx'
 
 function LockList() {
     const {isMobile} = useWindowSize()
-    const {lockCollection} = useContext(DBContext)
+    const {lockCollection, adminRole} = useContext(DBContext)
     const {visibleBeltEntries = []} = useContext(DataContext)
     const {isLoggedIn, user, userClaims} = useContext(AuthContext)
     const isAuthorized = isLoggedIn && user && (['lpuAdmin', 'admin'].some(claim => userClaims.includes(claim)) || adminRole)
