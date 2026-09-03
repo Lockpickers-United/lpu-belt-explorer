@@ -3,6 +3,7 @@ import {setDeep, setDeepAdd, setDeepMax, setDeepUnique} from '../../util/setDeep
 import {itemDetails} from '../../util/getItemDetails.js'
 import {localUser, prodUser} from '../../../keys/users.js'
 import dayjs from 'dayjs'
+import {jsonIt, jsonItArray} from '../../util/jsonIt.js'
 
 /**
  * @property blackBeltAwardedAt
@@ -21,12 +22,13 @@ const dailyDir = production
     : `/Users/${localUser}/Documents/LOCKPICK/LPU-Belt-Explorer/lpu-belt-explorer-analytics/Collections/collectionsDailyData`
 const serverDir = production
     ? `/home/${prodUser}/explore.lpubelts.com/public/data`
-    : `/Users/${localUser}/Documents/LOCKPICK/LPU-Belt-Explorer/lpu-belt-explorer-analytics/Collections`
+    : `/Users/${localUser}/LOCAL/GitHubLocal/explore-lpubelts-com-node/src/data`
 
 const listNames = [
     'own', 'picked', 'recorded', 'wishlist', 'recordedLocks',
     'safelocksOwn', 'safelocksCracked', 'safelocksWishlist',
-    'projects', 'raffleWatchlist', 'awards']
+    'projects', 'raffleWatchlist', 'awards'
+]
 
 const items = await itemDetails()
 
@@ -47,6 +49,8 @@ export async function collectionAnalyzer({blackBeltOnly, date}) {
         acc = acc ? acc : {}
         const profile = profiles[userId]
         setDeepAdd(acc, ['totalProfiles'], 1)
+
+        let counted = false
 
         if (blackBeltOnly) {
             setDeep(acc, ['blackBelts', userId], {
@@ -75,8 +79,16 @@ export async function collectionAnalyzer({blackBeltOnly, date}) {
                     setDeepAdd(acc, ['listStats', 'allLists', 'savesById', itemId], 1)
 
                     if (!blackBeltOnly) {
-                        setDeepAdd(acc, ['allSavesById', itemId], 1)
+                        setDeepAdd(acc, ['totalSavesById', itemId], 1)
+                        //counted = true
                     }
+                    if (!blackBeltOnly && listName === 'own') {
+                        setDeepAdd(acc, ['ownSavesById', itemId], 1)
+                    }
+                    if (!blackBeltOnly && listName === 'recordedLocks') {
+                        setDeepAdd(acc, ['scorecardSavesById', itemId], 1)
+                    }
+
                     if (items[itemId]) {
                         if (items[itemId].type === 'lock') {
                             setDeepAdd(acc, ['lockSaves'], 1)
@@ -107,7 +119,7 @@ export async function collectionAnalyzer({blackBeltOnly, date}) {
             const awardId = Object.keys(items).find(itemId => collectionStatsCurrent.maxAward[userId] === items[itemId].absRank)
             setDeepAdd(collectionStatsCurrent, ['maxAwardCounts', awardId], 1)
 
-            // Don't need in each 'current' file?
+            // Don't need this in each 'current' file?
             setDeep(collectionStatsCurrent, ['awardsDisplayNames', userId, 'maxAward'], items[awardId].absRank)
             setDeep(collectionStatsCurrent, ['awardsDisplayNames', userId, 'displayName'], profiles[userId].displayName)
         })
@@ -158,11 +170,49 @@ export async function collectionAnalyzer({blackBeltOnly, date}) {
 async function analyzeCollection(date) {
     const allUsers = await collectionAnalyzer({blackBeltOnly: false, date})
 
-    await fs.writeFile(`${serverDir}/collectionStatsById.json`, JSON.stringify(allUsers.allSavesById), function (err) {
+    const _ownSavesById = Object.entries(allUsers.ownSavesById)
+        .sort((a, b) => b[1] - a[1])
+        .map(([id, count]) => ({
+            id,
+            name: items[id]?.itemName,
+            count: allUsers.ownSavesById[id]
+        }))
+
+    const sortedSavesById = Object.entries(allUsers.totalSavesById)
+        .sort((a, b) => b[1] - a[1])
+        .map(([id, count]) => ({
+                id,
+                name: items[id]?.itemName,
+                totalSaves: count,
+                ownCount: allUsers.ownSavesById[id],
+                scorecardCount: allUsers.scorecardSavesById[id]
+            })
+        )
+
+    const exportData = {
+        'metadata': {
+            'updatedDateTime': dayjs().toISOString(),
+            'source': 'generated-summary'
+        },
+        'data': {
+            locks: sortedSavesById,
+        }
+    }
+
+    await fs.writeFile(`${serverDir}/collectionStatsByIdFull.json`, JSON.stringify(exportData, null, 2), function (err) {
+        if (err) {
+            console.error('save collectionStatsByIdFull error:', err)
+        }
+    })
+
+    await fs.writeFile(`${serverDir}/collectionStatsById.json`, JSON.stringify(allUsers.ownSavesById), function (err) {
         if (err) {
             console.error('save collectionStatsById error:', err)
         }
     })
+
+    delete allUsers.ownSavesById
+    delete allUsers.scorecardSavesById
     delete allUsers.allSavesById
 
 
@@ -185,7 +235,6 @@ async function analyzeCollection(date) {
 }
 
 // LEADERBOARD
-
 
 
 const backupFiles = (await fs.readdir(backupDir)).filter(file => file.includes('backup_'))

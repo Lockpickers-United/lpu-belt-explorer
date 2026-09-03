@@ -7,7 +7,7 @@ export async function lockDetails() {
     const lockData = await (await fetch('https://lpubelts.com/data.json')).json()
 
     let allSamelineNames = {}
-    const lockDetails = lockData.reduce((acc, item) => {
+    return lockData.reduce((acc, item) => {
 
         //TODO entries with no make, only model
         const lockName = entryName(item, 'short').replaceAll('"', '\'')
@@ -41,6 +41,7 @@ export async function lockDetails() {
             shortName: lockName,
             lockName: lockName,
             lockFullName: lockFullName,
+            itemName: lockName,
             fullBelt: ucfirst(item.belt),
             belt: ucfirst(belt),
             rank: rank,
@@ -58,13 +59,17 @@ export async function lockDetails() {
     //allSamelineNames.forEach((value, key) => lockDetails.allSamelineNames.set(key, value));
     // jsonIt('allSamelineNames', allSamelineNames)
 
-    return lockDetails
 }
 
 export async function potDetails() {
     const raflData = await (await fetch('https://lpubelts.com/rafl.json')).json()
     return raflData.reduce((acc, item) => {
-        acc[item.id] = {...item, shortName: item.title, potName: item.title, fullName: item.title, type: 'raflPot'}
+        acc[item.id] = {...item,
+            shortName: item.title,
+            potName: item.title,
+            fullName: item.title,
+            itemName: item.title,
+            type: 'raflPot'}
         return acc
     }, {})
 }
@@ -73,7 +78,7 @@ export async function safelockDetails() {
     const safelockData = await (await fetch('https://lpubelts.com/dials.json')).json()
     return safelockData.reduce((acc, item) => {
         const sep = item.make ? ' ' : ''
-        acc[item.id] = {...item, shortName: `${item.make}${sep}${item.model}`, type: 'safelock'}
+        acc[item.id] = {...item, shortName: `${item.make}${sep}${item.model}`, itemName: `${item.make}${sep}${item.model}`, type: 'safelock'}
         return acc
     }, {})
 }
@@ -86,6 +91,7 @@ export async function projectDetails() {
             fullName: item.name,
             shortName: item.name,
             projectName: item.name,
+            itemName: item.name,
             fullBelt: item.belt,
             rank: item.tier.charAt(item.tier.length - 1),
             type: 'project'
@@ -115,7 +121,7 @@ export async function glossaryDetails() {
     const glossaryData = await (await fetch('https://lpubelts.com/glossary.json')).json()
     return glossaryData.reduce((acc, item) => {
         allMedia.push(item.media)
-        acc[item.term] = {...item, shortName: item.term, type: 'glossary', media: item.media ? [item.media] : undefined}
+        acc[item.term] = {...item, shortName: item.term, itemName: item.term, type: 'glossary', media: item.media ? [item.media] : undefined}
         return acc
     }, {})
 }

@@ -1,0 +1,450 @@
+openapi: 3.1.0
+info:
+  title: LPU Belts API
+  version: 1.0.0
+  description: Versioned API for public collection stats and Firebase-backed user data.
+servers:
+  - url: http://localhost:8081/api/v1
+    description: Local development
+  - url: https://explore.lpubelts.com/api/v1
+    description: Production
+tags:
+  - name: Collection Stats
+    description: Public generated-summary collection statistics.
+  - name: Users
+    description: Firebase-backed user profile data.
+paths:
+  /stats/collections/locks:
+    get:
+      tags:
+        - Collection Stats
+      summary: Get aggregate lock collection stats
+      description: Returns aggregate lock save, ownership, and scorecard counts from a generated JSON summary.
+      operationId: getCollectionLockStats
+      security: []
+      responses:
+        '200':
+          description: Aggregate lock collection stats.
+          headers:
+            Cache-Control:
+              schema:
+                type: string
+              example: public, max-age=300
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LockStatsResponse'
+        '500':
+          $ref: '#/components/responses/Error'
+  /stats/collections/locks/own:
+    get:
+      tags:
+        - Collection Stats
+      summary: Get aggregate lock ownership counts
+      description: Returns only lock ID, name, and ownership count from the generated collection stats summary.
+      operationId: getCollectionLockOwnStats
+      security: []
+      responses:
+        '200':
+          description: Aggregate lock ownership counts.
+          headers:
+            Cache-Control:
+              schema:
+                type: string
+              example: public, max-age=300
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LockOwnStatsResponse'
+        '500':
+          $ref: '#/components/responses/Error'
+  /stats/collections/locks/scorecard:
+    get:
+      tags:
+        - Collection Stats
+      summary: Get aggregate lock scorecard counts
+      description: Returns only lock ID, name, and scorecard count from the generated collection stats summary.
+      operationId: getCollectionLockScorecardStats
+      security: []
+      responses:
+        '200':
+          description: Aggregate lock scorecard counts.
+          headers:
+            Cache-Control:
+              schema:
+                type: string
+              example: public, max-age=300
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LockScorecardStatsResponse'
+        '500':
+          $ref: '#/components/responses/Error'
+  /users/{id}/summary:
+    get:
+      tags:
+        - Users
+      summary: Get public user collection summary
+      description: Returns allowlisted public collection arrays for a Firebase user profile.
+      operationId: getUserSummary
+      security: []
+      parameters:
+        - $ref: '#/components/parameters/UserId'
+      responses:
+        '200':
+          description: Public user collection summary.
+          headers:
+            Cache-Control:
+              schema:
+                type: string
+              example: public, max-age=60
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserSummaryResponse'
+        '400':
+          $ref: '#/components/responses/Error'
+        '404':
+          $ref: '#/components/responses/Error'
+        '500':
+          $ref: '#/components/responses/Error'
+  /users/{id}/wishlist:
+    get:
+      tags:
+        - Users
+      summary: Get public user wishlist
+      description: Returns the public wishlist array for a Firebase user profile.
+      operationId: getUserWishlist
+      security: []
+      parameters:
+        - $ref: '#/components/parameters/UserId'
+      responses:
+        '200':
+          description: Public user wishlist.
+          headers:
+            Cache-Control:
+              schema:
+                type: string
+              example: public, max-age=60
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserWishlistResponse'
+        '400':
+          $ref: '#/components/responses/Error'
+        '404':
+          $ref: '#/components/responses/Error'
+        '500':
+          $ref: '#/components/responses/Error'
+  /users/{id}/profile:
+    get:
+      tags:
+        - Users
+      summary: Get authenticated user profile
+      description: Returns the Firebase user profile for the matching authenticated user, or for admin callers.
+      operationId: getUserProfile
+      security:
+        - firebaseBearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/UserId'
+      responses:
+        '200':
+          description: Authenticated user profile.
+          headers:
+            Cache-Control:
+              schema:
+                type: string
+              example: private, no-store
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserProfileResponse'
+        '400':
+          $ref: '#/components/responses/Error'
+        '401':
+          $ref: '#/components/responses/Error'
+        '403':
+          $ref: '#/components/responses/Error'
+        '404':
+          $ref: '#/components/responses/Error'
+        '500':
+          $ref: '#/components/responses/Error'
+components:
+  securitySchemes:
+    firebaseBearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: Firebase ID token
+  parameters:
+    UserId:
+      name: id
+      in: path
+      required: true
+      description: Firebase user ID.
+      schema:
+        type: string
+        minLength: 1
+        maxLength: 128
+      example: GGplAdctTfVDLVvYsfIADJmfp8f2
+  responses:
+    Error:
+      description: Error response.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+  schemas:
+    ApiMetadata:
+      type: object
+      additionalProperties: true
+      properties:
+        source:
+          type: string
+          enum:
+            - firebase
+            - generated-summary
+        updatedDateTime:
+          type: string
+          format: date-time
+        fetchedDateTime:
+          type: string
+          format: date-time
+    GeneratedSummaryMetadata:
+      allOf:
+        - $ref: '#/components/schemas/ApiMetadata'
+        - type: object
+          required:
+            - source
+            - updatedDateTime
+          properties:
+            source:
+              const: generated-summary
+            updatedDateTime:
+              type: string
+              format: date-time
+    FirebaseMetadata:
+      allOf:
+        - $ref: '#/components/schemas/ApiMetadata'
+        - type: object
+          required:
+            - source
+            - fetchedDateTime
+          properties:
+            source:
+              const: firebase
+            fetchedDateTime:
+              type: string
+              format: date-time
+    LockStatsResponse:
+      type: object
+      required:
+        - metadata
+        - data
+      properties:
+        metadata:
+          $ref: '#/components/schemas/GeneratedSummaryMetadata'
+        data:
+          type: object
+          required:
+            - locks
+          properties:
+            locks:
+              type: array
+              items:
+                $ref: '#/components/schemas/LockStats'
+    LockOwnStatsResponse:
+      type: object
+      required:
+        - metadata
+        - data
+      properties:
+        metadata:
+          $ref: '#/components/schemas/GeneratedSummaryMetadata'
+        data:
+          type: object
+          required:
+            - locks
+          properties:
+            locks:
+              type: array
+              items:
+                $ref: '#/components/schemas/LockOwnStats'
+    LockScorecardStatsResponse:
+      type: object
+      required:
+        - metadata
+        - data
+      properties:
+        metadata:
+          $ref: '#/components/schemas/GeneratedSummaryMetadata'
+        data:
+          type: object
+          required:
+            - locks
+          properties:
+            locks:
+              type: array
+              items:
+                $ref: '#/components/schemas/LockScorecardStats'
+    LockStats:
+      type: object
+      required:
+        - id
+        - name
+        - totalSaves
+        - ownCount
+        - scorecardCount
+      properties:
+        id:
+          type: string
+          example: 2455f0ae
+        name:
+          type: string
+          example: Master Lock 140 Series, 9140 EURD
+        totalSaves:
+          type: integer
+          minimum: 0
+          example: 4023
+        ownCount:
+          type: integer
+          minimum: 0
+          example: 1850
+        scorecardCount:
+          type: integer
+          minimum: 0
+          example: 246
+    LockOwnStats:
+      type: object
+      required:
+        - id
+        - name
+        - ownCount
+      properties:
+        id:
+          type: string
+          example: 2455f0ae
+        name:
+          type: string
+          example: Master Lock 140 Series, 9140 EURD
+        ownCount:
+          type: integer
+          minimum: 0
+          example: 1850
+    LockScorecardStats:
+      type: object
+      required:
+        - id
+        - name
+        - scorecardCount
+      properties:
+        id:
+          type: string
+          example: 2455f0ae
+        name:
+          type: string
+          example: Master Lock 140 Series, 9140 EURD
+        scorecardCount:
+          type: integer
+          minimum: 0
+          example: 246
+    UserSummaryResponse:
+      type: object
+      required:
+        - metadata
+        - data
+      properties:
+        metadata:
+          $ref: '#/components/schemas/FirebaseMetadata'
+        data:
+          type: object
+          required:
+            - userId
+            - collections
+          properties:
+            userId:
+              type: string
+              example: GGplAdctTfVDLVvYsfIADJmfp8f2
+            collections:
+              type: object
+              required:
+                - safelocksOwn
+                - scorecard
+                - own
+                - wishlist
+              properties:
+                safelocksOwn:
+                  $ref: '#/components/schemas/IdList'
+                scorecard:
+                  $ref: '#/components/schemas/IdList'
+                own:
+                  $ref: '#/components/schemas/IdList'
+                wishlist:
+                  $ref: '#/components/schemas/IdList'
+    UserWishlistResponse:
+      type: object
+      required:
+        - metadata
+        - data
+      properties:
+        metadata:
+          $ref: '#/components/schemas/FirebaseMetadata'
+        data:
+          type: object
+          required:
+            - userId
+            - wishlist
+          properties:
+            userId:
+              type: string
+              example: GGplAdctTfVDLVvYsfIADJmfp8f2
+            wishlist:
+              $ref: '#/components/schemas/IdList'
+    UserProfileResponse:
+      type: object
+      required:
+        - metadata
+        - data
+      properties:
+        metadata:
+          $ref: '#/components/schemas/FirebaseMetadata'
+        data:
+          type: object
+          required:
+            - userId
+            - profile
+          properties:
+            userId:
+              type: string
+              example: GGplAdctTfVDLVvYsfIADJmfp8f2
+            profile:
+              type: object
+              additionalProperties: true
+              description: Authenticated Firebase profile object. This should be narrowed to an explicit allowlist before broad external use.
+    IdList:
+      type: array
+      items:
+        type: string
+      example:
+        - ab1e901f
+        - 48cf387f
+    ErrorResponse:
+      type: object
+      required:
+        - error
+      properties:
+        error:
+          type: object
+          required:
+            - message
+          additionalProperties: true
+          properties:
+            message:
+              type: string
+            code:
+              type: string
+            requestId:
+              type: string
+            path:
+              type: string
+            method:
+              type: string
