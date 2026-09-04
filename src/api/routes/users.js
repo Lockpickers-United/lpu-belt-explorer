@@ -1,6 +1,7 @@
 import {Router} from 'express'
 import {z} from 'zod'
 import requireAuth from '../middleware/requireAuth.js'
+import {userProfileRateLimit} from '../middleware/rateLimit.js'
 
 const router = Router()
 
@@ -22,6 +23,8 @@ function parseUserId(req) {
 async function getUserProfileService() {
     return import('../services/userProfileService.js')
 }
+
+router.use(userProfileRateLimit)
 
 router.get('/:id', async (req, res) => {
     const userId = parseUserId(req)

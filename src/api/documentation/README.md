@@ -14,6 +14,10 @@ Reasons:
 
 Use this Markdown file as the readable overview and `openapi.yaml` as the machine-readable contract.
 
+Additional docs:
+
+- [Rate limiting](rate-limiting.md)
+
 ## Base URLs
 
 Local development:
@@ -255,6 +259,12 @@ Response shape:
 Sample:
 
 - `src/api/requirements/samples/users-userId-summary.json`
+
+### GET `/users/{id}`
+
+Alias for `GET /users/{id}/summary`.
+
+Access, source, cache behavior, and response shape are the same as `/users/{id}/summary`.
 
 ### GET `/users/{id}/wishlist`
 
