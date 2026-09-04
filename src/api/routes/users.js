@@ -23,6 +23,13 @@ async function getUserProfileService() {
     return import('../services/userProfileService.js')
 }
 
+router.get('/:id', async (req, res) => {
+    const userId = parseUserId(req)
+    const {getUserSummary} = await getUserProfileService()
+    res.set('Cache-Control', publicProfileCache)
+    res.json(await getUserSummary(userId))
+})
+
 router.get('/:id/summary', async (req, res) => {
     const userId = parseUserId(req)
     const {getUserSummary} = await getUserProfileService()

@@ -1,20 +1,16 @@
-import { Router } from 'express'
+import {Router} from 'express'
 import lazyMount from './util/lazyMount.js'
 import health from './testing/health.js'
 import ready from './testing/ready.js'
 import boom from './testing/boom.js'
 import echo from './testing/echoMessage.js'
+import normalizeRequestUrl from './util/normalizeRequestUrl.js'
+import api from './api/index.js'
 
-export function registerRoutes(app, { prefix = '/services' } = {}) {
-
+export function registerRoutes(app, {prefix = '/services'} = {}) {
     const r = Router()
 
-    r.use((req, _res, next) => {
-        if (typeof req.url === 'string' && req.url.includes('//')) {
-            req.url = req.url.replace(/\/{2,}/g, '/')
-        }
-        next()
-    })
+    r.use(normalizeRequestUrl)
 
     r.use(health)
     r.use(ready)
@@ -40,5 +36,5 @@ export function registerRoutes(app, { prefix = '/services' } = {}) {
     lazyMount(app, `${prefix}/process-firebase-log`, () => import('./projects/logFirebaseActivity/processFirebaseActivityLog.bundle.js'))
 
     lazyMount(app, `${prefix}/email-form`, () => import('./projects/emailFormContents/emailFormContents.bundle.js'))
-    lazyMount(app, `${prefix}/api`, () => import('./api/index.js'))
+    app.use([`${prefix}/api`, `/${prefix}/api`], api)
 }

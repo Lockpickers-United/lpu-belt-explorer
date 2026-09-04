@@ -3,9 +3,11 @@ import express from 'express'
 import request from 'supertest'
 import {beforeAll, describe, expect, it} from 'vitest'
 import {registerRoutes} from '../../routes.js'
+import normalizeRequestUrl from '../../util/normalizeRequestUrl.js'
 
 function createApiTestApp() {
     const app = express()
+    app.use(normalizeRequestUrl)
     app.use(express.json({limit: '200kb'}))
     registerRoutes(app, {prefix: ''})
     app.use((err, _req, res, _next) => {
@@ -38,6 +40,15 @@ describe('collection stats API', () => {
         expect(res.body.data.locks[0]).toEqual(collectionStats.data.locks[0])
         expect(res.body.data.locks[0]).toHaveProperty('scorecardCount')
         expect(res.body.data.locks[0]).not.toHaveProperty('scorcardCount')
+    })
+
+    it('GET //api/v1/stats/collections/locks handles DreamHost double-leading slash proxy paths', async () => {
+        const res = await request(app).get('//api/v1/stats/collections/locks')
+
+        expect(res.status).toBe(200)
+        expect(res.req.path).toBe('//api/v1/stats/collections/locks')
+        expect(res.body.metadata).toEqual(collectionStats.metadata)
+        expect(res.body.data.locks).toHaveLength(collectionStats.data.locks.length)
     })
 
     it('GET /api/v1/stats/collections/locks/own returns only own counts', async () => {

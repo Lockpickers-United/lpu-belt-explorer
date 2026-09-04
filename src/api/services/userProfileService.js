@@ -6,7 +6,8 @@ const summaryCollections = {
     safelocksOwn: 'safelocksOwn',
     scorecard: 'recordedLocks',
     own: 'own',
-    wishlist: 'wishlist'
+    wishlist: 'wishlist',
+    picked: 'picked',
 }
 
 async function getRawUserProfile(userId) {
@@ -37,6 +38,7 @@ function firebaseMetadata() {
 export async function getUserSummary(userId) {
     const profile = await getRawUserProfile(userId)
     const collections = {}
+    const {displayName} = profile
 
     Object.entries(summaryCollections).forEach(([responseName, profileName]) => {
         collections[responseName] = listValue(profile[profileName])
@@ -46,6 +48,7 @@ export async function getUserSummary(userId) {
         metadata: firebaseMetadata(),
         data: {
             userId,
+            displayName,
             collections
         }
     }

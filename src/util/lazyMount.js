@@ -1,6 +1,12 @@
 export default function lazyMount(app, basePath, loader) {
     let cached
-    app.use(basePath, async (req, res, next) => {
+
+    const mountPaths = [basePath]
+    if (typeof basePath === 'string' && basePath.startsWith('/') && !basePath.startsWith('//')) {
+        mountPaths.push(`/${basePath}`)
+    }
+
+    app.use(mountPaths, async (req, res, next) => {
         try {
             if (!cached) {
                 const mod = await loader()

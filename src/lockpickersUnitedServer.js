@@ -6,6 +6,7 @@ import {logger} from './logger/logger.js'
 import {httpLogger} from './logger/httpLogger.js'
 import {requestIdHeader} from './logger/requestId.js'
 import {registerRoutes} from './routes.js'
+import normalizeRequestUrl from './util/normalizeRequestUrl.js'
 
 const env = process.env.NODE_ENV || 'development'
 dotenv.config({path: [`.env.${process.env.NODE_ENV}`]})
@@ -16,8 +17,8 @@ app.disable('etag')
 app.disable('x-powered-by')
 app.use(helmet())
 app.use(express.json({limit: '200kb'}))
+app.use(normalizeRequestUrl)
 app.use((req, _res, next) => {
-    req.url = req.url.replace(/\/{2,}/g, '/')
     if (!isDev && req.body) req.body.prod = true
     next()
 })

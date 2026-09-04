@@ -6,6 +6,7 @@ import {logger} from './logger/logger.js'
 import {httpLogger} from './logger/httpLogger.js'
 import {requestIdHeader} from './logger/requestId.js'
 import {registerRoutes} from './routes.js'
+import normalizeRequestUrl from './util/normalizeRequestUrl.js'
 
 const env = process.env.NODE_ENV || 'development'
 dotenv.config({path: [`.env.${process.env.NODE_ENV}`]})
@@ -19,12 +20,7 @@ const _envText = isDev ? ' (DEV)' : ''
 // tail -n 200 -f /home/dh_m5s5pf/explore-lpubelts-com-node/logs/nodeserver.log
 
 const app = express()
-app.use((req, _res, next) => {
-    if (typeof req.url === 'string' && req.url.includes('//')) {
-        req.url = req.url.replace(/\/{2,}/g, '/')
-    }
-    next()
-})
+app.use(normalizeRequestUrl)
 
 app.disable('etag')
 app.disable('x-powered-by')
@@ -77,7 +73,9 @@ app.use((err, req, res, next) => {
     const payload = isDev
         ? { ...base, stack: typeof err?.stack === 'string' ? err.stack : undefined, details: err?.details }
         : base
-    try { logger.error({ err, status, ...base }, 'request error') } catch {}
+    try { logger.error({ err, status, ...base }, 'request error') } catch {
+        console.error('request error', err)
+    }
     res.status(status).json({ error: payload })
 })
 

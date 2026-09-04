@@ -6,8 +6,8 @@ info:
 servers:
   - url: http://localhost:8081/api/v1
     description: Local development
-  - url: https://explore.lpubelts.com/api/v1
-    description: Production
+  - url: https://explore.lpubelts.com/services/api/v1
+    description: Production through DreamHost services proxy
 tags:
   - name: Collection Stats
     description: Public generated-summary collection statistics.

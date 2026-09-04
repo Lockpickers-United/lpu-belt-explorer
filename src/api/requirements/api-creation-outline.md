@@ -2,7 +2,7 @@
 
 ## Recommendation
 
-Extend this repo, but keep the new API as a small, lazy-loaded module inside the existing Express server.
+Extend this repo, but keep the new API as a small, isolated module inside the existing Express server.
 
 `src/exploreLPUbeltsServer.js` is already an Express API process with CORS, Helmet, JSON limits, logging, request IDs, centralized errors, and route registration. `src/routes.js` already uses lazy route loading, which is good for production memory.
 
@@ -57,13 +57,13 @@ src/api/routes/locks.js
 src/api/routes/stats.js
 ```
 
-Then mount it lazily from `src/routes.js`:
+Then mount it from `src/routes.js`:
 
 ```js
-lazyMount(app, `${prefix}/api`, () => import('./api/index.js'))
+app.use([`${prefix}/api`, `/${prefix}/api`], api)
 ```
 
-This keeps the new API out of memory until it is actually used.
+The API module itself is intentionally lightweight. Firebase-backed user profile code still imports Firebase lazily only when a user endpoint needs it.
 
 ### 3. Centralize Firebase initialization
 
@@ -223,6 +223,6 @@ Remaining questions:
 
 ## Default Architecture
 
-Keep this repo and the existing PM2 process. Add a new lazy-mounted `/api` module, centralize Firebase access, serve generated summaries as lightweight cached read models, and avoid importing existing export scripts directly into request handlers.
+Keep this repo and the existing PM2 process. Add a small `/api` module, centralize Firebase access, serve generated summaries as lightweight cached read models, and avoid importing existing export scripts directly into request handlers.
 
 For version 1, make the API public read-only and favor pre-generated JSON summaries where freshness is not critical. Use live Firebase reads only for endpoints that need current data. Measure process memory before and after first API use to confirm that the new module does not materially increase the production footprint.

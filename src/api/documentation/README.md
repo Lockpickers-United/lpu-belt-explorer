@@ -25,10 +25,10 @@ http://localhost:8081/api/v1
 Production:
 
 ```txt
-https://explore.lpubelts.com/api/v1
+https://explore.lpubelts.com/services/api/v1
 ```
 
-If Apache or a proxy rewrites paths differently in production, update the production base URL before publishing the API externally.
+DreamHost proxies the public `/services/...` URL to the Node process. Internally, Node may receive paths like `//api/v1/...`; the server normalizes these before routing.
 
 ## Response Pattern
 
