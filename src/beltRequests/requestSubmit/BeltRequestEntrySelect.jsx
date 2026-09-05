@@ -33,9 +33,7 @@ export default function BeltRequestEntrySelect({
         setSource(option.value)
         form.update({target: {name: fieldName, action: 'delete'}})
     }, [fieldName, form])
-
-    console.log({source, defaultEntryType, scorecardEntries})
-
+    
     const beltIndex = useMemo(() => beltRoles.indexOf(form.form.requestBelt), [form])
     const existingIds = useMemo(() => Object.keys(form.form)
         .filter(key => key.startsWith('entry'))
@@ -147,7 +145,7 @@ export default function BeltRequestEntrySelect({
                     {source === 'scorecard' && scorecardEntries.length === 0 &&
                         <>
                             {!isLoggedIn &&
-                                <div style={{textAlign: 'left', marginBottom: 8}}>
+                                <div style={{textAlign: 'left', margin: '8px 0'}}>
                                     <>
                                         Please sign in to access your Scorecard.<br/>
                                         <Button style={{color: '#fff'}}>

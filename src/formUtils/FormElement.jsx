@@ -213,6 +213,7 @@ export default function FormElement({
                                 <FormControlLabel key={option} value={option} label={option} control={
                                     <Radio size={settings.inputSize}
                                            color={settings.color || 'success'}
+                                           onClick={() => handleRadioSelect({target: {name: fieldName, value: option}})}
                                            sx={{height: '36px', width: '36px', marginRight: '4px'}}
                                     />}
                                 />)

@@ -109,7 +109,7 @@ export default function BeltRequestSubmitRoute() {
                 <ScorecardListProvider>
                     <LocalizationProvider adapterLocale={dayjs.locale()} dateAdapter={AdapterDayjs}>
 
-                        <Nav title='Belt Request Form' extras={extras}/>
+                        <Nav title='Belt Request Composer' extras={extras}/>
 
                         {loading && <LoadingDisplay/>}
 

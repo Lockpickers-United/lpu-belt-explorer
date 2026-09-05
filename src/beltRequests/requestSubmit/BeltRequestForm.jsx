@@ -35,8 +35,6 @@ export default function BeltRequestForm() {
         //cardMaxBelt
     } = useContext(ScorecardDataContext)
 
-    console.log({visibleEntries})
-
 
     // TODO message is no matching scorecard entries (or none to begin with)
 
@@ -179,9 +177,9 @@ export default function BeltRequestForm() {
             <div style={{fontSize: '1.0rem', fontWeight: 400, margin: '32px 0 0'}}>
                 This form makes it easy to compose your belt request to be clear and
                 easy for moderators to review. Simply select the belt you&#39;re requesting
-                and complete each of the steps that follow. Once you&#39;re done,
-                click the &#34;Copy Request&#34; button and paste into the platform of you prefer. <strong>Please
-                note</strong>: incomplete requests &mdash; or those which do not meet the belt
+                and complete each of the steps that follow. <strong>Once you&#39;re done,
+                click the &#34;Copy Request&#34; button and paste it into the platform of you prefer</strong>. Please
+                note: incomplete requests &mdash; or those which do not meet the belt
                 requirements &mdash; may be rejected without review.
             </div>
 
@@ -373,7 +371,7 @@ export default function BeltRequestForm() {
                                      fieldSettings={{
                                          descriptionStyle: {fontSize: '1.1rem', fontWeight: 500},
                                          style: {marginRight: 54},
-                                         margin: '0 54px 0 0'
+                                         margin: '10px 54px 0 0'
                                      }}
                                      form={form}
                                      formDefaults={formDefaults}/>
@@ -382,11 +380,12 @@ export default function BeltRequestForm() {
                             {!!form.form.requestPlatform &&
                                 <FormElement fieldType={'TextField'}
                                              fieldName={'sync'}
-                                             description={`Enter your ${syncPlatform} username to request sync:`}
+                                             description={`If you'd like to be flagged on both platforms, enter your ${syncPlatform} username to sync:`}
                                              fieldSettings={{
                                                  descriptionStyle: {fontSize: '1.1rem', fontWeight: 500},
                                                  inputWidth: 300,
-                                                 margin: 0
+                                                 margin: '10px 0 0 0',
+                                                 style: {width: 360}
                                              }}
                                              form={form}
                                              formDefaults={formDefaults}/>

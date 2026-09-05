@@ -40,7 +40,7 @@ export default [
         path: '/info'
     },
     {
-        title: 'Belt Request Form',
+        title: 'Belt Request Composer',
         icon: <SpeakerNotesIcon fontSize='small'/>,
         path: '/beltRequests',
     },
