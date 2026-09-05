@@ -125,7 +125,7 @@ function ImageGallery(props) {
                             title={title}
                             subtitle={
                                 subtitle &&
-                                <a style={{cursor: 'pointer'}}
+                                <a style={(!admin && !beta) ? {cursor: 'pointer'} : {}}
                                    onClick={() => (!admin && !beta) && openInNewTab(admin ? fullUrl : (subtitleUrl || licenses[subtitle]))}>
                                     {(admin || beta) ? `${imageIndex} / ${imageId}` : subtitle}
                                 </a>
