@@ -33,7 +33,7 @@ export default function BeltRequestEntrySelect({
         setSource(option.value)
         form.update({target: {name: fieldName, action: 'delete'}})
     }, [fieldName, form])
-    
+
     const beltIndex = useMemo(() => beltRoles.indexOf(form.form.requestBelt), [form])
     const existingIds = useMemo(() => Object.keys(form.form)
         .filter(key => key.startsWith('entry'))
