@@ -21,27 +21,23 @@ const isDev = process.env.NODE_ENV !== 'production'
 const maxFileSizeMB = isDev ? 15 : 15
 const maxTotalFileSizeMB = 60
 
-
-// Ensure the upload directory exists
 if (!fs.existsSync(uploadDir)) {
     fs.mkdirSync(uploadDir)
 }
 let subdirs = ''
 let detailsJson = {}
 let uploadSubDir
+let logDetails = {}
 
 function handleError(res, message, error, status = 500) {
-    logger.error(`handleError: ${message}`)
+    logger.error({err: message}, 'handleError')
 
     if (uploadSubDir && fs.existsSync(uploadSubDir)) {
         try {
             fs.rmSync(uploadSubDir, {recursive: true, force: true})
-            logger.info('Upload directory removed after error:', uploadSubDir)
+            logger.warn(`Upload directory removed after error: ${uploadSubDir}`)
         } catch (err) {
-            try {
-                logger.error(`Error removing upload directory after error: ${err}`)
-            } catch {
-            }
+            logger.error({err}, 'Error removing upload directory after error')
         }
     }
 
@@ -89,13 +85,11 @@ export default async function uploadContent(req, res) {
             subdirs = originaFilenameParts.map((subdir) => {
                 return slugify(subdir)
             }).join('/').replace(/\s+/g, '-')
-
-            //logger.info('save location', `${subdirs}/${basename}`)
             return `${subdirs}/${basename}`
         }
     })
 
-    const {fields, files} = await parseForm(res, req, form, handleError, maxFileSizeMB, maxTotalFileSizeMB)
+    const {fields} = await parseForm(res, req, form, handleError, maxFileSizeMB, maxTotalFileSizeMB)
     for (const fieldName in fields) {
         if (!Array.isArray(fields[fieldName])) {
             fields[fieldName] = [fields[fieldName]]
@@ -109,15 +103,14 @@ export default async function uploadContent(req, res) {
     await runCommand(`exiftool -overwrite_original -iptc:Caption-Abstract='By: ${fields.photoCredit}' -Title='${fields.lockName}' -gps:all= -UserComment='${fields.lockId}' '${destination}'`)
 
     try {
-        await fs.writeFile(`${destination}/uploadData.json`, detailsJson, function (err) {
+        fs.writeFile(`${destination}/uploadData.json`, detailsJson, function (err) {
             if (err) {
-                logger.error('writeFile error', err)
+                logger.error({err}, 'writeFile error')
                 handleError(res, 'JSON write error', err, 500)
-                //res.status(500).send({status: 500, message: 'JSON write error'})
             }
         })
-    } catch (error) {
-        logger.error('writeFile error', error)
+    } catch (err) {
+        logger.error({err}, 'writeFile error')
         handleError(res, 'JSON write error', err, 500)
     }
 
@@ -134,7 +127,8 @@ export default async function uploadContent(req, res) {
     fieldsHtml += '</table>'
 
     output.on('close', async function () {
-        logger.info('Files zipped successfully: ' + archive.pointer() + ' total bytes')
+
+        logDetails.archiveStatus = 'Files zipped successfully: ' + archive.pointer() + ' total bytes'
         try {
             const email = await sendEmail({
                 emailConfig: 'content',
@@ -144,19 +138,19 @@ export default async function uploadContent(req, res) {
                 html: fieldsHtml,
                 attachments: {filename: `${subdirs}.zip`, path: destinationFile}
             })
-            logger.info('Message sent: %s', email.messageId)
-        } catch (error) {
+            logDetails.emailStatus = `Message sent: ${email.messageId}`
+        } catch (err) {
             const errorMsg = 'An error occurred sending email'
-            logger.error('An error occurred sending email', error)
-            handleError(res, errorMsg, error, 500)
+            logger.error({err}, 'An error occurred sending email')
+            handleError(res, errorMsg, err, 500)
             return
         }
 
         try {
             fs.rmSync(`${destination}/`, {recursive: true, force: true})
-            logger.info('Temp directory removed successfully')
-        } catch (error) {
-            logger.error('An error occurred deleteing temp directory', error.message)
+            logDetails.tempDirectory = 'removed successfully'
+        } catch (err) {
+            logger.error({err: err.message}, 'An error occurred deleteing temp directory')
         }
     })
 
@@ -165,32 +159,41 @@ export default async function uploadContent(req, res) {
     })
     archive.on('warning', function (err) {
         if (err.code === 'ENOENT') {
-            logger.warn('archiver warning', err)
+            logger.warn({err}, 'archiver warning')
             handleError(res, 'File compression warning', err, 500)
         } else {
             throw err
         }
     })
     archive.on('error', function (err) {
-        logger.error('archiver error', err)
+        logger.error({err}, 'archiver error')
         handleError(res, 'File compression error', err, 500)
     })
     archive.pipe(output)
     archive.directory(`${uploadDir}/${subdirs}/`, false)
     await archive.finalize()
 
+    logger.info({...logDetails}, 'Files uploaded successfully')
     res.status(200).send('Files uploaded successfully')
 
 }
 
-
 async function runCommand(command) {
     try {
         const {stdout, stderr} = await execAsync(command)
-        logger.info('runCommand stdout:', stdout.replace(/\n/g, ''), '      stderr:', stderr)
-        stderr && logger.info('runCommand stderr:', stderr)
-    } catch (error) {
-        logger.error('runCommand error:', error)
+        if (stderr.length) {
+            stderr.includes('Warning')
+                ? logger.warn({
+                    stdout: stdout.replace(/\n/g, ''),
+                    stderr
+                }, 'runCommand completed with errors')
+                : logger.error({
+                    stdout: stdout.replace(/\n/g, ''),
+                    stderr
+                }, 'runCommand completed with errors')
+        }
+    } catch (err) {
+        logger.error({err}, 'runCommand error')
     }
 }
 

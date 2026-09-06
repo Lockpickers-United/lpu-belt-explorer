@@ -73,6 +73,7 @@ function handleError(res, message, error, status = 500) {
             try {
                 logger.error(`Error removing upload directory after error: ${err}`)
             } catch {
+                console.error(`Error removing upload directory after error: ${err}`)
             }
         }
     }
@@ -124,7 +125,7 @@ export default async function requestLock(req, res) {
         filename(_name, _ext, part) {
             const {fullFilename, filepath, localsubdirs} = createFilename(part, serverPath, uploadDir)
             filepaths.push(filepath)
-            // Optionally, save uploadSubDir to a local variable (e.g. in closure) instead of global ??????
+            // Optionally, save uploadSubDir to a local variable (e.g., in closure) instead of global ??????
             // was: localUploadSubDir = uploadSubDir ????
             subdirs = localsubdirs
             return fullFilename

@@ -12,16 +12,11 @@ const app = initializeApp({
 
 // change to (default) and true for production
 // const db = getFirestore(app, 'lpubelts-dev')
-
 const db = getFirestore(app)
 
-const WRITE_TO_DB = false
-
-// Update these variables to read a user's data
 const userId = 'GGplAdctTfVDLVvYsfIADJmfp8f2'
-const data = {}
 
-async function getUserProfile({userId}) {
+async function getFirebaseData({userId}) {
     const profile = await db.collection('lockcollections').doc(userId).get()
     const response = {userId}
     if (profile.exists) {
@@ -34,6 +29,6 @@ async function getUserProfile({userId}) {
     return response
 }
 
-await getUserProfile({userId}).then((response) => {
+await getFirebaseData({userId}).then((response) => {
     jsonIt('response:', response)
 })

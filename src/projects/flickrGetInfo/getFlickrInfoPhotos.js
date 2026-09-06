@@ -398,19 +398,15 @@ console.log(csv)
 //write to file
 fs.writeFileSync('mediaInfo.csv', csv)
 
-mediaInfo.photos.forEach(photo => {
-    //console.log(`${photo.URL}\t${photo.thumbnailURL}\t${photo.originalURL}\t${photo.title}\t${photo.credit}`)
-})
-
 export default async function getFlickrInfoPhotos(photoUrls) {
 
     if (!photoUrls) return {error: 'No photos URLs specified'}
 
     try {
 
-        const mediaData = await Promise.all(photoUrls.map(async (photoUrl, index) => {
+        const mediaData = await Promise.all(photoUrls.map(async (photoUrl) => {
 
-            const { photoId, albumId } = extractFlickrIds(photoUrl)
+            const { photoId } = extractFlickrIds(photoUrl)
             const mediaInfo = {}
 
             const getInfo = await flickr('flickr.photos.getInfo', {

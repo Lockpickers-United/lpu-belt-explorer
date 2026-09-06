@@ -13,6 +13,7 @@ const reddit = new Snoowrap({
     refreshToken: refresh_token
 })
 
+const debugOnly = true
 
 // mod convo 2m8ufn
 
@@ -61,7 +62,7 @@ async function setFlairRaw(subredditName, username, templateid) {
     const body = new URLSearchParams({
         api_type: 'json',
         name: username,
-        flair_template_id: templateid,
+        flair_template_id: templateid
     })
 
     const res = await fetch(url, {
@@ -82,7 +83,6 @@ async function setFlairRaw(subredditName, username, templateid) {
 }
 
 
-
 ;(async () => {
 
     const subredditName = 'lockpicking' // example subreddit
@@ -97,7 +97,6 @@ async function setFlairRaw(subredditName, username, templateid) {
     console.log('Scopes granted:', reddit.scope)
 
 
-
     try {
         username = await getModmailUsername(conversationId)
     } catch (err) {
@@ -108,7 +107,7 @@ async function setFlairRaw(subredditName, username, templateid) {
     const {_text, _cssClass, id} = flairDetails[belt]
     await setFlairRaw('lockpicking', username, id)
 
-    return
+    if (debugOnly) return
 
     if (username) try {
         newFlair = await setFlair(subredditName, username, belt)

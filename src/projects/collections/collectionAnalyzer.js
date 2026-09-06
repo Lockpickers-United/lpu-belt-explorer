@@ -3,7 +3,6 @@ import {setDeep, setDeepAdd, setDeepMax, setDeepUnique} from '../../util/setDeep
 import {itemDetails} from '../../util/getItemDetails.js'
 import {localUser, prodUser} from '../../../keys/users.js'
 import dayjs from 'dayjs'
-import {jsonIt, jsonItArray} from '../../util/jsonIt.js'
 
 /**
  * @property blackBeltAwardedAt
@@ -22,6 +21,10 @@ const dailyDir = production
     : `/Users/${localUser}/Documents/LOCKPICK/LPU-Belt-Explorer/lpu-belt-explorer-analytics/Collections/collectionsDailyData`
 const serverDir = production
     ? `/home/${prodUser}/explore.lpubelts.com/public/data`
+    : `/Users/${localUser}/LOCAL/GitHubLocal/explore-lpubelts-com-node/src/data`
+
+const apiDir = production
+    ? `/home/${prodUser}/explore-lpubelts-com-node/src/data`
     : `/Users/${localUser}/LOCAL/GitHubLocal/explore-lpubelts-com-node/src/data`
 
 const listNames = [
@@ -49,8 +52,6 @@ export async function collectionAnalyzer({blackBeltOnly, date}) {
         acc = acc ? acc : {}
         const profile = profiles[userId]
         setDeepAdd(acc, ['totalProfiles'], 1)
-
-        let counted = false
 
         if (blackBeltOnly) {
             setDeep(acc, ['blackBelts', userId], {
@@ -80,7 +81,6 @@ export async function collectionAnalyzer({blackBeltOnly, date}) {
 
                     if (!blackBeltOnly) {
                         setDeepAdd(acc, ['totalSavesById', itemId], 1)
-                        //counted = true
                     }
                     if (!blackBeltOnly && listName === 'own') {
                         setDeepAdd(acc, ['ownSavesById', itemId], 1)
@@ -170,14 +170,6 @@ export async function collectionAnalyzer({blackBeltOnly, date}) {
 async function analyzeCollection(date) {
     const allUsers = await collectionAnalyzer({blackBeltOnly: false, date})
 
-    const _ownSavesById = Object.entries(allUsers.ownSavesById)
-        .sort((a, b) => b[1] - a[1])
-        .map(([id, count]) => ({
-            id,
-            name: items[id]?.itemName,
-            count: allUsers.ownSavesById[id]
-        }))
-
     const sortedSavesById = Object.entries(allUsers.totalSavesById)
         .sort((a, b) => b[1] - a[1])
         .map(([id, count]) => ({
@@ -199,15 +191,9 @@ async function analyzeCollection(date) {
         }
     }
 
-    await fs.writeFile(`${serverDir}/collectionStatsByIdFull.json`, JSON.stringify(exportData, null, 2), function (err) {
+    await fs.writeFile(`${apiDir}/collectionStatsByIdFull.json`, JSON.stringify(exportData), function (err) {
         if (err) {
             console.error('save collectionStatsByIdFull error:', err)
-        }
-    })
-
-    await fs.writeFile(`${serverDir}/collectionStatsById.json`, JSON.stringify(allUsers.ownSavesById), function (err) {
-        if (err) {
-            console.error('save collectionStatsById error:', err)
         }
     })
 

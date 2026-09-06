@@ -202,7 +202,7 @@ export const getCollectionStatsCurrent = (profiles, items, listNames, blackBeltO
     })
     if (collectionStatsCurrent?.listUserIds) delete collectionStatsCurrent.listUserIds
     if (collectionStatsCurrent?.listStats?.allLists?.userIds) delete collectionStatsCurrent.listStats.allLists.userIds
-    if (Object.keys(issues).length > 0) collectionStatsCurrent.issues = issues
+    //if (Object.keys(issues).length > 0) collectionStatsCurrent.issues = issues
 
     return collectionStatsCurrent
 

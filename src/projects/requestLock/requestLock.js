@@ -72,6 +72,7 @@ function handleError(res, message, error, status = 500) {
             try {
                 logger.error(`Error removing upload directory after error: ${err}`)
             } catch {
+                console.error(`Error removing upload directory after error: ${err}`)
             }
         }
     }
@@ -223,7 +224,7 @@ export default async function requestLock(req, res) {
         fieldsHtml += '</table>'
 
         try {
-            const email = await sendEmail({
+            await sendEmail({
                 emailConfig: 'content',
                 to: contentUploadRecipients,
                 subject: `Lock Request: ${lockName}`,
@@ -394,7 +395,8 @@ function createFilename(part, serverPath, uploadDir) {
 
 async function runCommand(command) {
     try {
-        const {stdout, stderr} = await execAsync(command)
+        await execAsync(command)
+        //const {stdout, stderr} = await execAsync(command)
         //console.log('runCommand stdout:', stdout.trim(), 'stderr:', stderr)
     } catch (error) {
         console.error('runCommand error:', error)
