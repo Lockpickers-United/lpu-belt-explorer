@@ -2,6 +2,12 @@ import {Router} from 'express'
 import {z} from 'zod'
 import requireAuth from '../middleware/requireAuth.js'
 import {userProfileRateLimit} from '../middleware/rateLimit.js'
+import {logger} from '../../logger/logger.js'
+
+const log = logger.child({
+    module: 'api.routes.users',
+})
+
 
 const router = Router()
 
@@ -11,6 +17,7 @@ const publicProfileCache = 'public, max-age=60'
 function parseUserId(req) {
     const parsed = userIdSchema.safeParse(req.params.id)
     if (!parsed.success) {
+        log.warn({uid: req.params.id}, 'Invalid user id')
         const err = new Error('Invalid user id')
         err.status = 400
         err.code = 'invalid_user_id'
@@ -50,6 +57,7 @@ router.get('/:id/wishlist', async (req, res) => {
 router.get('/:id/profile', requireAuth, async (req, res) => {
     const userId = parseUserId(req)
     if (req.user?.uid !== userId && req.user?.admin !== true) {
+        log.warn({userId, authUid: req.user?.uid}, 'user profile access denied')
         const err = new Error('Forbidden')
         err.status = 403
         err.code = 'forbidden'

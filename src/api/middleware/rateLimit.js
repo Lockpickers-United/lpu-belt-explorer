@@ -1,9 +1,15 @@
+import {logger} from '../../logger/logger.js'
+
 const defaultWindowMs = 60_000
 const defaultMax = 60
 const defaultMaxKeys = 10_000
 const defaultPenaltyMs = 10_000
 const defaultMaxPenaltyMs = 60_000
 const defaultMaxRetryAfterMs = 10 * 60_000
+
+const log = logger.child({
+    module: 'api.middleware.rateLimit'
+})
 
 function getClientIp(req) {
     if (req.ip) return req.ip
@@ -51,6 +57,7 @@ export function createRateLimit({
     maxRetryAfterMs = defaultMaxRetryAfterMs,
     maxKeys = defaultMaxKeys,
     name = 'rate-limit',
+    rateLimitLogger = log,
     keyGenerator = getClientIp,
     now = () => Date.now()
 } = {}) {
@@ -66,7 +73,8 @@ export function createRateLimit({
             nextCleanupAt = currentTime + windowMs
         }
 
-        const key = `${name}:${keyGenerator(req)}`
+        const clientKey = keyGenerator(req)
+        const key = `${name}:${clientKey}`
         const existing = hits.get(key)
         const entry = existing && existing.resetAt > currentTime
             ? existing
@@ -84,6 +92,7 @@ export function createRateLimit({
                 currentRetryAfterMs + nextPenaltyMs,
                 maxRetryAfterMs
             )
+            const maxDelayReached = retryAfterMs >= maxRetryAfterMs
 
             entry.resetAt = currentTime + retryAfterMs
             hits.set(key, entry)
@@ -108,6 +117,22 @@ export function createRateLimit({
                 penaltyCount: entry.penaltyCount,
                 retryAfterSeconds
             }
+
+            if (maxDelayReached && !entry.maxDelayLogged) {
+                entry.maxDelayLogged = true
+                rateLimitLogger.warn({
+                    limiter: name,
+                    clientKey,
+                    limit: max,
+                    windowMs,
+                    penaltyMs,
+                    maxPenaltyMs,
+                    maxRetryAfterMs,
+                    penaltyCount: entry.penaltyCount,
+                    retryAfterSeconds
+                }, 'rate limit max delay reached')
+            }
+
             return next(err)
         }
 

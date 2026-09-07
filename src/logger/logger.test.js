@@ -1,4 +1,5 @@
 import {describe, expect, it, vi} from 'vitest'
+import pino from 'pino'
 
 import {createLoggerWrapper} from './logger.js'
 
@@ -84,5 +85,32 @@ describe('logger wrapper', () => {
 
         expect(pinoMock.child).toHaveBeenCalledWith({module: 'test'}, undefined)
         expect(pinoMock.child.mock.results[0].value.info).toHaveBeenCalledWith('child message')
+    })
+
+    it('preserves child bindings in real pino output', () => {
+        const lines = []
+        const destination = {
+            write: (line) => lines.push(line)
+        }
+        const pinoLogger = pino({
+            base: null,
+            timestamp: false
+        }, destination)
+        const logger = createLoggerWrapper(pinoLogger)
+        const child = logger.child({
+            module: 'uploadContent',
+            route: '/upload'
+        })
+
+        child.info({lockId: 'lock-123'}, 'upload completed')
+
+        expect(lines).toHaveLength(1)
+        expect(JSON.parse(lines[0])).toEqual({
+            level: 30,
+            module: 'uploadContent',
+            route: '/upload',
+            lockId: 'lock-123',
+            msg: 'upload completed'
+        })
     })
 })

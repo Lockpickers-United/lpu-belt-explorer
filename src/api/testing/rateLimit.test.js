@@ -1,6 +1,6 @@
 import express from 'express'
 import request from 'supertest'
-import {describe, expect, it} from 'vitest'
+import {describe, expect, it, vi} from 'vitest'
 import {createRateLimit, userProfileRateLimitConfig} from '../middleware/rateLimit.js'
 
 function createRateLimitTestApp({
@@ -9,6 +9,7 @@ function createRateLimitTestApp({
     penaltyMs = 10_000,
     maxPenaltyMs = 60_000,
     maxRetryAfterMs = 10 * 60_000,
+    rateLimitLogger = {warn: () => {}},
     now = () => Date.now()
 } = {}) {
     const app = express()
@@ -19,6 +20,7 @@ function createRateLimitTestApp({
         penaltyMs,
         maxPenaltyMs,
         maxRetryAfterMs,
+        rateLimitLogger,
         name: 'test-rate-limit',
         now
     }))
@@ -128,6 +130,47 @@ describe('createRateLimit', () => {
         expect(second.headers['retry-after']).toBe('120')
         expect(third.status).toBe(429)
         expect(third.headers['retry-after']).toBe('120')
+    })
+
+    it('logs a warning once when the max retry delay is reached', async () => {
+        let currentTime = 1_000
+        const rateLimitLogger = {
+            warn: vi.fn()
+        }
+        const app = createRateLimitTestApp({
+            max: 1,
+            windowMs: 60_000,
+            penaltyMs: 60_000,
+            maxPenaltyMs: 60_000,
+            maxRetryAfterMs: 120_000,
+            rateLimitLogger,
+            now: () => currentTime
+        })
+
+        await request(app)
+            .get('/limited')
+            .set('X-Forwarded-For', '203.0.113.70')
+        const second = await request(app)
+            .get('/limited')
+            .set('X-Forwarded-For', '203.0.113.70')
+        const third = await request(app)
+            .get('/limited')
+            .set('X-Forwarded-For', '203.0.113.70')
+
+        expect(second.status).toBe(429)
+        expect(third.status).toBe(429)
+        expect(rateLimitLogger.warn).toHaveBeenCalledOnce()
+        expect(rateLimitLogger.warn).toHaveBeenCalledWith({
+            limiter: 'test-rate-limit',
+            clientKey: '203.0.113.70',
+            limit: 1,
+            windowMs: 60_000,
+            penaltyMs: 60_000,
+            maxPenaltyMs: 60_000,
+            maxRetryAfterMs: 120_000,
+            penaltyCount: 1,
+            retryAfterSeconds: 120
+        }, 'rate limit max delay reached')
     })
 
     it('tracks separate client IPs independently', async () => {

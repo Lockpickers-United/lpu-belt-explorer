@@ -1,4 +1,9 @@
 import {getFirestoreDb} from './firebaseAdmin.js'
+import {logger} from '../../logger/logger.js'
+
+const log = logger.child({
+    module: 'api.services.userProfileService'
+})
 
 const profileCollection = 'lockcollections'
 const profileCacheTtlMs = 60_000

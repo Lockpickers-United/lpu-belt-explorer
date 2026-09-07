@@ -1,23 +1,22 @@
 /**
  * @prop foobar
  */
+import {logger} from '../../logger/logger.js'
 
-import fs from 'fs'
-import {prodUser} from '../../../keys/users.js'
-import dayjs from 'dayjs'
-
-const logsDir = `/home/${prodUser}/local-logs`
+const log = logger.child({
+    module: 'logFirebaseActivity'
+})
 
 function handleError(res, message, error, status = 500) {
-    console.error(message, error)
+    error.length && log.error({err: error}, message)
     res.status(status).send({status, message})
 }
 
 export default async function handleFirebaseActivityPost(req, res) {
     // TODO fix??
-    const { activityData, prod } = req.body
+    const {activityData, prod} = req.body
     const mappedActivity = activityData.map((activityItem) => {
-        const { activity, activityCount, source, id, displayName } = activityItem
+        const {activity, activityCount, source, id, displayName} = activityItem
         return {
             activity,
             activityCount,
@@ -30,7 +29,7 @@ export default async function handleFirebaseActivityPost(req, res) {
     try {
         await logToFirebaseLog(mappedActivity, prod)
     } catch (err) {
-        console.error('Error logging activity', err)
+        log.error({err}, 'Error logging activity')
         return handleError(res, 'Error logging activity', null, 500)
     }
     return res.status(200).json('Activity Logged')
@@ -42,22 +41,15 @@ export async function logToFirebaseLog(messages) {
     }
 
     try {
-        await Promise.all(
-            messages?.map(async (message) => {
-                const { activity, activityCount, source, id, displayName, prod } = message
-                const envString = prod ? '' : ',dev'
-                const logMessage = `${dayjs().format('YYYY-MM-DD HH:mm:ss ZZ')},${[activity, activityCount, source, id, displayName].join(',')}${envString}\n`
-                try {
-                    await fs.promises.appendFile(`${logsDir}/firebase.log`, logMessage)
-                    return logMessage
-                } catch (err) {
-                    console.error('Error writing to log file:', err)
-                    return err
-                }
-            })
-        )
+        messages?.map(async (message) => {
+            const {activity, activityCount, source, id, displayName, prod} = message
+            const envString = prod ? 'prod' : 'dev'
+
+            log.info({activity, activityCount, source, id, displayName}, envString)
+        })
+
     } catch (err) {
-        console.log('Logging Error', err)
+        log.error({err}, 'General Logging Error')
     }
 
 }

@@ -39,7 +39,7 @@ export default async function processFirebaseActivityLog(_req, res) {
             return acc
         }, {})
 
-    console.log('logInfo', logInfo)
+    //console.log('logInfo', logInfo)
 
     return logInfo
 

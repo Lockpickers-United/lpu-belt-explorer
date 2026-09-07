@@ -5,8 +5,11 @@ import {sendEmail} from '../nodeMailer/nodeMailer.js'
 import {contentUploadRecipients, prodUser} from '../../../keys/users.js'
 import util from 'util'
 import {exec} from 'child_process'
-import {logger} from '../../logger/logger.js'
 import parseForm from '../../util/parseForm.js'
+import {logger} from '../../logger/logger.js'
+const log = logger.child({
+    module: 'uploadContent',
+})
 
 const execAsync = util.promisify(exec)
 
@@ -29,20 +32,21 @@ let detailsJson = {}
 let uploadSubDir
 let logDetails = {}
 
+
 function handleError(res, message, error, status = 500) {
-    logger.error({err: message}, 'handleError')
+    log.error({err: message}, 'handleError')
 
     if (uploadSubDir && fs.existsSync(uploadSubDir)) {
         try {
             fs.rmSync(uploadSubDir, {recursive: true, force: true})
-            logger.warn(`Upload directory removed after error: ${uploadSubDir}`)
+            log.warn(`Upload directory removed after error: ${uploadSubDir}`)
         } catch (err) {
-            logger.error({err}, 'Error removing upload directory after error')
+            log.error({err}, 'Error removing upload directory after error')
         }
     }
 
     if (res.headersSent) {
-        logger.warn('handleError called but headers already sent')
+        log.warn('handleError called but headers already sent')
         return
     }
 
@@ -105,12 +109,12 @@ export default async function uploadContent(req, res) {
     try {
         fs.writeFile(`${destination}/uploadData.json`, detailsJson, function (err) {
             if (err) {
-                logger.error({err}, 'writeFile error')
+                log.error({err}, 'writeFile error')
                 handleError(res, 'JSON write error', err, 500)
             }
         })
     } catch (err) {
-        logger.error({err}, 'writeFile error')
+        log.error({err}, 'writeFile error')
         handleError(res, 'JSON write error', err, 500)
     }
 
@@ -141,7 +145,7 @@ export default async function uploadContent(req, res) {
             logDetails.emailStatus = `Message sent: ${email.messageId}`
         } catch (err) {
             const errorMsg = 'An error occurred sending email'
-            logger.error({err}, 'An error occurred sending email')
+            log.error({err}, 'An error occurred sending email')
             handleError(res, errorMsg, err, 500)
             return
         }
@@ -150,30 +154,30 @@ export default async function uploadContent(req, res) {
             fs.rmSync(`${destination}/`, {recursive: true, force: true})
             logDetails.tempDirectory = 'removed successfully'
         } catch (err) {
-            logger.error({err: err.message}, 'An error occurred deleteing temp directory')
+            log.error({err: err.message}, 'An error occurred deleteing temp directory')
         }
     })
 
     output.on('end', function () {
-        logger.info('Data has been drained')
+        log.info('Data has been drained')
     })
     archive.on('warning', function (err) {
         if (err.code === 'ENOENT') {
-            logger.warn({err}, 'archiver warning')
+            log.warn({err}, 'archiver warning')
             handleError(res, 'File compression warning', err, 500)
         } else {
             throw err
         }
     })
     archive.on('error', function (err) {
-        logger.error({err}, 'archiver error')
+        log.error({err}, 'archiver error')
         handleError(res, 'File compression error', err, 500)
     })
     archive.pipe(output)
     archive.directory(`${uploadDir}/${subdirs}/`, false)
     await archive.finalize()
 
-    logger.info({...logDetails}, 'Files uploaded successfully')
+    log.info({...logDetails}, 'Files uploaded successfully')
     res.status(200).send('Files uploaded successfully')
 
 }
@@ -183,17 +187,17 @@ async function runCommand(command) {
         const {stdout, stderr} = await execAsync(command)
         if (stderr.length) {
             stderr.includes('Warning')
-                ? logger.warn({
+                ? log.warn({
                     stdout: stdout.replace(/\n/g, ''),
                     stderr
                 }, 'runCommand completed with errors')
-                : logger.error({
+                : log.error({
                     stdout: stdout.replace(/\n/g, ''),
                     stderr
                 }, 'runCommand completed with errors')
         }
     } catch (err) {
-        logger.error({err}, 'runCommand error')
+        log.error({err}, 'runCommand error')
     }
 }
 
