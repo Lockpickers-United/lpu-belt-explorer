@@ -1,35 +1,20 @@
-import React, {useContext, useCallback} from 'react'
-import useData from '../util/useData.jsx'
+import React, {useContext} from 'react'
 import Nav from '../nav/Nav.jsx'
 import Footer from '../nav/Footer.jsx'
 import Tracker from '../app/Tracker.jsx'
 import DBContext from '../app/DBContext.jsx'
-import AuthContext from '../app/AuthContext.jsx'
 import Award from './Award.jsx'
 import LoadingDisplay from '../misc/LoadingDisplay.jsx'
 import ProfileNotFound from '../profile/ProfileNotFound.jsx'
 import useWindowSize from '../util/useWindowSize.jsx'
+import usePageTitle from '../util/usePageTitle.jsx'
 
 function AwardRoute() {
-    const {user} = useContext(AuthContext)
-    const {getProfile} = useContext(DBContext)
+    const {dbLoaded, lockCollection} = useContext(DBContext)
     const {isMobile} = useWindowSize()
+    usePageTitle('Black Belt Certificate')
 
-    document.title = 'LPU Belt Explorer - Black Belt Certificate'
-
-    const userId = user?.uid
-    const loadFn = useCallback(async () => {
-        if (!userId) return null
-        try {
-            return await getProfile(userId)
-        } catch (ex) {
-            console.error('Error loading profile.', ex)
-            return null
-        }
-    }, [getProfile, userId])
-    const {data = {}, loading, error} = useData({loadFn})
-
-    const isBlackBelt = !!data?.blackBeltAwardedAt
+    const isBlackBelt = !!lockCollection.blackBeltAwardedAt
 
     const nav = (
         <React.Fragment>{!isMobile && <div style={{flexGrow: 1, minWidth: '10px'}}/>}</React.Fragment>
@@ -38,11 +23,11 @@ function AwardRoute() {
     return (
         <React.Fragment>
             <Nav title='Congratulations!' extras={nav}/>
-            {loading && <LoadingDisplay/>}
-            {!loading && data && !error && isBlackBelt &&
-                <Award profile={data}/>
+            {!dbLoaded && <LoadingDisplay/>}
+            {dbLoaded && isBlackBelt &&
+                <Award profile={lockCollection}/>
             }
-            {!loading && (!data || error || !isBlackBelt) && <ProfileNotFound/>}
+            {dbLoaded && !isBlackBelt && <ProfileNotFound/>}
             <Footer/>
             <Tracker feature='award'/>
         </React.Fragment>

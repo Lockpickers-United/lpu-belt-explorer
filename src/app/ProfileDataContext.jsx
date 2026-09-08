@@ -39,19 +39,11 @@ export function ProfileDataProvider({children, userId: providedUserId}) {
 
         async function loadProfileSummary() {
             if (!userId || isSelf) {
-                setSummaryState({
-                    loading: false,
-                    error: null,
-                    data: null
-                })
+                setSummaryState({loading: false, error: null, data: null})
                 return
             }
 
-            setSummaryState({
-                loading: true,
-                error: null,
-                data: null
-            })
+            setSummaryState({loading: true, error: null, data: null})
 
             try {
                 const profile = await fetchProfileSummary(userId)
@@ -69,12 +61,7 @@ export function ProfileDataProvider({children, userId: providedUserId}) {
                 })
             } catch (error) {
                 if (cancelled) return
-
-                setSummaryState({
-                    loading: false,
-                    error,
-                    data: null
-                })
+                setSummaryState({loading: false, error, data: null})
             }
         }
 

@@ -24,11 +24,11 @@ export default function UserInfoMain() {
     // const isAdmin = ['lpuAdmin', 'admin'].some(claim => userClaims.includes(claim))
 
     const {userId, data, loading, error, isFullProfile} = useContext(ProfileDataContext)
+    const profile = useMemo(() => data ? data.profile : {}, [data])
+
     const {filters = {}, addFilters} = useContext(FilterContext)
     const {uid, name} = filters
-
     const [uidInput, setUidInput] = useState(uid || user?.uid || '')
-    const profile = useMemo(() => data ? data.profile : {}, [data])
 
     //console.log('profile', {isFullProfile, data})
 

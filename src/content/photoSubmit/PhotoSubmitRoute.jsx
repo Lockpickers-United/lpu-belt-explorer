@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useContext, useMemo} from 'react'
 import Nav from '../../nav/Nav.jsx'
 import useWindowSize from '../../util/useWindowSize.jsx'
 import IntroCopy from '../../misc/IntroCopy.jsx'
@@ -8,13 +8,17 @@ import allEntries from '../../data/data.json'
 import {FilterProvider} from '../../context/FilterContext.jsx'
 import {DataProvider} from '../../locks/LockDataProvider.jsx'
 import {useOutletContext} from 'react-router-dom'
+import ProfileDataContext from '../../app/ProfileDataContext.jsx'
+import LoadingDisplay from '../../misc/LoadingDisplay.jsx'
 
 export default function PhotoSubmitRoute() {
-    const {isMobile} = useWindowSize()
-
-    const {profile, user} = useOutletContext()
-
     usePageTitle('Contribute Photos')
+
+    const {user} = useOutletContext()
+    const {data, loading} = useContext(ProfileDataContext)
+    const profile = useMemo(() => data ? data.profile : {}, [data])
+
+    const {isMobile} = useWindowSize()
 
     const extras = (
         <React.Fragment>{!isMobile && <div style={{flexGrow: 1, minWidth: '10px'}}/>}</React.Fragment>
@@ -31,7 +35,10 @@ export default function PhotoSubmitRoute() {
                     </div>
                 }
 
+                {loading && <LoadingDisplay/>}
+
                 <PhotoSubmit profile={profile} user={user}/>
+
             </DataProvider>
         </FilterProvider>
     )

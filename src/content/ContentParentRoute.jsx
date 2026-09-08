@@ -1,5 +1,4 @@
-import React, {useContext, useCallback} from 'react'
-import useData from '../util/useData.jsx'
+import React, {useContext} from 'react'
 import Footer from '../nav/Footer.jsx'
 import DBContext from '../app/DBContext.jsx'
 import AuthContext from '../app/AuthContext.jsx'
@@ -10,34 +9,23 @@ import {Outlet} from 'react-router-dom'
 import Nav from '../nav/Nav.jsx'
 import {FilterProvider} from '../context/FilterContext.jsx'
 import {DataProvider} from '../locks/LockDataProvider.jsx'
+import {ProfileDataProvider} from '../app/ProfileDataContext.jsx'
 
 function ContentParentRoute() {
     const {user} = useContext(AuthContext)
-    const {getProfile} = useContext(DBContext)
-
-    const userId = user ? user.uid : null
-    const loadFn = useCallback(async () => {
-        if (!userId) return null
-        try {
-            return await getProfile(userId)
-        } catch (ex) {
-            console.error('Error loading profile.', ex)
-            return null
-        }
-    }, [getProfile, userId])
-
-    const {data = {}, loading, error} = useData({loadFn})
-    const profile = data
+    const {dbLoaded} = useContext(DBContext)
 
     return (
         <React.Fragment>
-            {loading && <LoadingDisplay/>}
+            {!dbLoaded && <LoadingDisplay/>}
 
-            {!loading && data && !error &&
-                <Outlet context={{profile, user}}/>
+            {dbLoaded && user &&
+                <ProfileDataProvider>
+                    <Outlet context={{user}}/>
+                </ProfileDataProvider>
             }
 
-            {!loading && !data && !error && !user &&
+            {dbLoaded && !user &&
                 <FilterProvider>
                     <DataProvider allEntries={[]}>
                         <Nav title='Please Sign In'/>
