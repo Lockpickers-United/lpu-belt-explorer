@@ -5,7 +5,7 @@ import APIContext from './APIContext.jsx'
 import FilterContext from '../context/FilterContext.jsx'
 import ScoringContext from '../context/ScoringContext.jsx'
 
-const ProfileDataContext = createContext({})
+const ProfileContext = createContext({})
 
 const emptyScoreData = {
     scoredActivity: [],
@@ -18,7 +18,7 @@ const emptyScoreData = {
     maxBelt: undefined
 }
 
-export function ProfileDataProvider({children, userId: providedUserId}) {
+export function ProfileProvider({children, userId: providedUserId}) {
     const {user} = useContext(AuthContext)
     const {dbLoaded, lockCollection} = useContext(DBContext)
     const {fetchProfileSummary} = useContext(APIContext)
@@ -99,10 +99,10 @@ export function ProfileDataProvider({children, userId: providedUserId}) {
     }), [data, error, isSelf, loading, userId])
 
     return (
-        <ProfileDataContext.Provider value={value}>
+        <ProfileContext.Provider value={value}>
             {children}
-        </ProfileDataContext.Provider>
+        </ProfileContext.Provider>
     )
 }
 
-export default ProfileDataContext
+export default ProfileContext

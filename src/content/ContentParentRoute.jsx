@@ -9,7 +9,7 @@ import {Outlet} from 'react-router-dom'
 import Nav from '../nav/Nav.jsx'
 import {FilterProvider} from '../context/FilterContext.jsx'
 import {DataProvider} from '../locks/LockDataProvider.jsx'
-import {ProfileDataProvider} from '../app/ProfileDataContext.jsx'
+import {ProfileProvider} from '../app/ProfileContext.jsx'
 
 function ContentParentRoute() {
     const {user} = useContext(AuthContext)
@@ -20,9 +20,9 @@ function ContentParentRoute() {
             {!dbLoaded && <LoadingDisplay/>}
 
             {dbLoaded && user &&
-                <ProfileDataProvider>
+                <ProfileProvider>
                     <Outlet context={{user}}/>
-                </ProfileDataProvider>
+                </ProfileProvider>
             }
 
             {dbLoaded && !user &&

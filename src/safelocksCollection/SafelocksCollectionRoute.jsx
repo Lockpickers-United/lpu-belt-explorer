@@ -20,13 +20,13 @@ import collectionOptions from '../data/collectionTypes'
 import ProfileHeader from '../profile/ProfileHeader.jsx'
 import ExportButton from '../locks/ExportButton.jsx'
 import ViewFilterButtons from '../filters/ViewFilterButtons.jsx'
-import ProfileDataContext from '../app/ProfileDataContext.jsx'
+import ProfileContext from '../app/ProfileContext.jsx'
 
 function SafelocksCollectionRoute() {
     const {userId} = useParams()
     const {user} = useContext(AuthContext)
 
-    const {data, loading, error} = useContext(ProfileDataContext)
+    const {data, loading, error} = useContext(ProfileContext)
     const profile = useMemo(() => data ? data.profile : {}, [data])
 
     useEffect(() => {

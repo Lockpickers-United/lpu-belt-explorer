@@ -22,14 +22,14 @@ import ProfilePage from './ProfilePage'
 import AuthContext from '../app/AuthContext.jsx'
 import ExportButton from '../locks/ExportButton.jsx'
 import ViewFilterButtons from '../filters/ViewFilterButtons.jsx'
-import ProfileDataContext from '../app/ProfileDataContext.jsx'
+import ProfileContext from '../app/ProfileContext.jsx'
 import AppContext from '../app/AppContext.jsx'
 
 function ProfileRoute() {
     const {user} = useContext(AuthContext)
     const {userId} = useParams()
     const {getPickerActivity} = useContext(DBContext)
-    const {data, loading, error, isFullProfile} = useContext(ProfileDataContext)
+    const {data, loading, error, isFullProfile} = useContext(ProfileContext)
     const {admin} = useContext(AppContext)
 
     const profile = useMemo(() => data ? data.profile : {}, [data])

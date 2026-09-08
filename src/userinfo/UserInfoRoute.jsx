@@ -1,6 +1,6 @@
 import React, {useContext} from 'react'
 import UserInfoMain from './UserInfoMain.jsx'
-import {ProfileDataProvider} from '../app/ProfileDataContext.jsx'
+import {ProfileProvider} from '../app/ProfileContext.jsx'
 import {FilterProvider} from '../context/FilterContext.jsx'
 import AuthContext from '../app/AuthContext.jsx'
 import DBContext from '../app/DBContext.jsx'
@@ -21,9 +21,9 @@ function UserInfoRoute() {
                 <LoadingDisplay/>
             }
             {authLoaded && dbLoaded &&
-                <ProfileDataProvider>
+                <ProfileProvider>
                     <UserInfoMain/>
-                </ProfileDataProvider>
+                </ProfileProvider>
             }
 
         </FilterProvider>

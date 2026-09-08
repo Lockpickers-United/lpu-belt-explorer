@@ -20,7 +20,7 @@ import Tracker from '../app/Tracker.jsx'
 import useData from '../util/useData.jsx'
 import {allAwardsById} from '../entries/entryutils'
 import usePageTitle from '../util/usePageTitle.jsx'
-import ProfileDataContext from '../app/ProfileDataContext.jsx'
+import ProfileContext from '../app/ProfileContext.jsx'
 import AppContext from '../app/AppContext.jsx'
 
 function ScorecardRoute({mostPopular}) {
@@ -35,7 +35,7 @@ function ScorecardRoute({mostPopular}) {
         setTriggerState(!triggerState)
     }, [triggerState])
 
-    const {userId, data, loading, error} = useContext(ProfileDataContext)
+    const {userId, data, loading, error} = useContext(ProfileContext)
     const profile = useMemo(() => data ? data.profile : {}, [data])
 
     const {

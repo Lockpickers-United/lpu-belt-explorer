@@ -8,14 +8,14 @@ import allEntries from '../../data/data.json'
 import {FilterProvider} from '../../context/FilterContext.jsx'
 import {DataProvider} from '../../locks/LockDataProvider.jsx'
 import {useOutletContext} from 'react-router-dom'
-import ProfileDataContext from '../../app/ProfileDataContext.jsx'
+import ProfileContext from '../../app/ProfileContext.jsx'
 import LoadingDisplay from '../../misc/LoadingDisplay.jsx'
 
 export default function PhotoSubmitRoute() {
     usePageTitle('Contribute Photos')
 
     const {user} = useOutletContext()
-    const {data, loading} = useContext(ProfileDataContext)
+    const {data, loading} = useContext(ProfileContext)
     const profile = useMemo(() => data ? data.profile : {}, [data])
 
     const {isMobile} = useWindowSize()

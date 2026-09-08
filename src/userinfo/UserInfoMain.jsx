@@ -3,7 +3,7 @@ import {ScorecardDataProvider} from '../scorecard/ScorecardDataProvider.jsx'
 import {ScorecardListProvider} from '../scorecard/ScorecardListContext.jsx'
 import DBContext from '../app/DBContext.jsx'
 import AuthContext from '../app/AuthContext.jsx'
-import ProfileDataContext from '../app/ProfileDataContext.jsx'
+import ProfileContext from '../app/ProfileContext.jsx'
 import {LocalizationProvider} from '@mui/x-date-pickers'
 import {AdapterDayjs} from '@mui/x-date-pickers/AdapterDayjs'
 import {collectionsStatsCurrent} from '../data/dataUrls'
@@ -25,7 +25,7 @@ export default function UserInfoMain() {
     // TODO get full profile if admin (maybe always in ProfileDataContext?)
     // const isAdmin = ['lpuAdmin', 'admin'].some(claim => userClaims.includes(claim))
 
-    const {userId, data, loading, error, isFullProfile} = useContext(ProfileDataContext)
+    const {userId, data, loading, error, isFullProfile} = useContext(ProfileContext)
     const profile = useMemo(() => data ? data.profile : {}, [data])
 
     admin && console.log('profile', {isFullProfile, data})
