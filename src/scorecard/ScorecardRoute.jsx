@@ -38,6 +38,8 @@ function ScorecardRoute({mostPopular}) {
     const {userId, data, loading, error} = useContext(ProfileContext)
     const profile = useMemo(() => data ? data.profile : {}, [data])
 
+    admin && console.log('ScorecardRoute', {userId, data, loading, error})
+
     const {
         scoredActivity,
         bbCount,
@@ -67,35 +69,44 @@ function ScorecardRoute({mostPopular}) {
             triggerState
         }
         try {
-            const activity = await getPickerActivity(userId)
-            return calculateScoreForUser(activity)
+            if (user?.uid === userId) {
+                return {
+                    scoredActivity,
+                    bbCount,
+                    danPoints,
+                    eligibleDan,
+                    nextDanPoints,
+                    nextDanLocks,
+                    uniqueLocks
+                }
+            } else {
+                const activity = await getPickerActivity(userId)
+                return calculateScoreForUser(activity)
+            }
         } catch (ex) {
             console.error('Error loading profile and activity.', ex)
             return null
         }
-    }, [getPickerActivity, triggerState, userId])
+    }, [bbCount, danPoints, eligibleDan, getPickerActivity, nextDanLocks, nextDanPoints, scoredActivity, triggerState, uniqueLocks, user?.uid, userId])
 
     const scorecardData = useData({loadFn})
     const combinedProfile = useMemo(() => ({...profile, ...scorecardData.data}), [profile, scorecardData.data])
+    const blackBeltScorecard = !!combinedProfile?.blackBeltAwardedAt
 
     admin && console.log('combinedProfile', combinedProfile)
 
     const owner = user?.uid === userId
 
-    const blackBeltScorecard = !!combinedProfile?.blackBeltAwardedAt
+    const cardSourceData = scorecardData?.data || {}
 
-    const cardActivity = scoredActivity.length
-        ? scoredActivity
-        : scorecardData?.data?.scoredActivity || []
-    const cardBBCount = bbCount || scorecardData?.data?.bbCount || 0
-    const cardDanPoints = danPoints || scorecardData?.data?.danPoints || 0
-    const cardEligibleDan = eligibleDan || scorecardData?.data?.eligibleDan || 0
-    const cardNextDanPoints = nextDanPoints || scorecardData?.data?.nextDanPoints || 0
-    const cardNextDanLocks = nextDanLocks || scorecardData?.data?.nextDanLocks || 0
-    const cardUniqueLocks = uniqueLocks || scorecardData?.data?.uniqueLocks || 0
-    const beltAwardsData = scoredActivity.length
-        ? scoredActivity
-        : scorecardData?.data?.scoredActivity || []
+    const cardActivity = cardSourceData.scoredActivity || []
+    const cardBBCount = cardSourceData.bbCount || 0
+    const cardDanPoints = cardSourceData.danPoints || 0
+    const cardEligibleDan = cardSourceData.eligibleDan || 0
+    const cardNextDanPoints = cardSourceData.nextDanPoints || 0
+    const cardNextDanLocks = cardSourceData.nextDanLocks || 0
+    const cardUniqueLocks = cardSourceData.uniqueLocks || 0
+    const beltAwardsData = cardSourceData.scoredActivity || []
     const beltAwards = beltAwardsData
         ? beltAwardsData
             .filter(activity => activity.collectionDB === 'awards')
@@ -110,6 +121,8 @@ function ScorecardRoute({mostPopular}) {
     const popularLocks = collectionsStats.data ? collectionsStats.data.allUsers.listStats.recordedLocks.topItems : []
 
     const footerBefore = (<div style={{margin: '30px 0px'}}><ScorecardExportButton text={true} profile={profile}/></div>)
+
+    console.log('ScorecardRoute', {cardActivity})
 
     if (loading || error) {
         return null
