@@ -104,7 +104,7 @@
     "@vitest/ui": "4.1.8",
     "@wdio/allure-reporter": "^9.20.0",
     "allure-playwright": "^3.6.0",
-    "csv-parse": "^5.5.0",
+    "csv-parse": "^7.0.2",
     "entities": "^7.0.0",
     "eslint": "^8.49.0",
     "eslint-plugin-import": "^2.29.1",
