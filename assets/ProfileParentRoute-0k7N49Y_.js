@@ -1,1 +1,0 @@
-import{K as a,j as r,aa as e}from"./index-Bwu21KHD.js";import{P as s}from"./ProfileDataContext-CgYYANWv.js";function u(){const{userId:t}=a();return r.jsx(s,{userId:t,children:r.jsx(e,{})})}export{u as default};
