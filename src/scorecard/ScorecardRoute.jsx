@@ -1,4 +1,4 @@
-import React, {useContext, useCallback, useState} from 'react'
+import React, {useContext, useCallback, useState, useMemo, useEffect} from 'react'
 import {AdapterDayjs} from '@mui/x-date-pickers/AdapterDayjs'
 import {collectionsStatsCurrent} from '../data/dataUrls'
 import {FilterProvider} from '../context/FilterContext.jsx'
@@ -6,7 +6,6 @@ import {LocalizationProvider} from '@mui/x-date-pickers'
 import {ScorecardDataProvider} from './ScorecardDataProvider.jsx'
 import {scorecardFilterFields} from '../data/filterFields'
 import {ScorecardListProvider} from './ScorecardListContext.jsx'
-import {useParams} from 'react-router-dom'
 import AuthContext from '../app/AuthContext.jsx'
 import calculateScoreForUser from '../scorecard/scoring'
 import dayjs from 'dayjs'
@@ -21,21 +20,13 @@ import Tracker from '../app/Tracker.jsx'
 import useData from '../util/useData.jsx'
 import {allAwardsById} from '../entries/entryutils'
 import usePageTitle from '../util/usePageTitle.jsx'
+import ProfileDataContext from '../app/ProfileDataContext.jsx'
+import AppContext from '../app/AppContext.jsx'
 
 function ScorecardRoute({mostPopular}) {
-    const {userId} = useParams()
     const {user} = useContext(AuthContext)
-    const {getProfile, getPickerActivity} = useContext(DBContext)
-    const {
-        scoredActivity,
-        bbCount,
-        danPoints,
-        eligibleDan,
-        nextDanPoints,
-        nextDanLocks,
-        uniqueLocks,
-        maxBelt
-    } = useContext(ScoringContext)
+    const {admin} = useContext(AppContext)
+    const {getPickerActivity} = useContext(DBContext)
 
     usePageTitle('Scorecard')
 
@@ -43,6 +34,30 @@ function ScorecardRoute({mostPopular}) {
     const handleAdminAction = useCallback(() => {
         setTriggerState(!triggerState)
     }, [triggerState])
+
+    const {userId, data, loading, error} = useContext(ProfileDataContext)
+    const profile = useMemo(() => data ? data.profile : {}, [data])
+
+    const {
+        scoredActivity,
+        bbCount,
+        danPoints,
+        eligibleDan,
+        nextDanPoints,
+        nextDanLocks,
+        uniqueLocks
+    } = useContext(ScoringContext)
+
+    useEffect(() => {
+        if (profile) {
+            const ownerName = profile.displayName && !profile['privacyAnonymous']
+                ? profile?.displayName?.toLowerCase().endsWith('s')
+                    ? `${profile.displayName}'`
+                    : `${profile.displayName}'s`
+                : 'Anonymous'
+            document.title = `LPU Belt Explorer - ${ownerName} Scorecard`
+        }
+    }, [profile])
 
     const loadFn = useCallback(async () => {
         if (triggerState) {
@@ -52,59 +67,43 @@ function ScorecardRoute({mostPopular}) {
             triggerState
         }
         try {
-            const profile = await getProfile(userId)
-
-            if (profile) {
-                const ownerName = profile.displayName && !profile['privacyAnonymous']
-                    ? profile.displayName.toLowerCase().endsWith('s')
-                        ? `${profile.displayName}'`
-                        : `${profile.displayName}'s`
-                    : 'Anonymous'
-                document.title = `LPU Belt Explorer - ${ownerName} Scorecard`
-            }
-            if (user?.uid !== userId) {
-                const activity = await getPickerActivity(userId)
-                return {profile, ...calculateScoreForUser(activity)}
-            } else {
-                return {
-                    profile,
-                    scoredActivity,
-                    bbCount,
-                    danPoints,
-                    eligibleDan,
-                    nextDanPoints,
-                    nextDanLocks,
-                    uniqueLocks,
-                    maxBelt
-                }
-            }
+            const activity = await getPickerActivity(userId)
+            return calculateScoreForUser(activity)
         } catch (ex) {
             console.error('Error loading profile and activity.', ex)
             return null
         }
-    }, [triggerState, getProfile, userId, user, getPickerActivity, scoredActivity, bbCount, danPoints, eligibleDan, nextDanPoints, nextDanLocks, uniqueLocks, maxBelt])
-    const {data = {}, loading, error} = useData({loadFn})
+    }, [getPickerActivity, triggerState, userId])
+
+    const scorecardData = useData({loadFn})
+    const combinedProfile = useMemo(() => ({...profile, ...scorecardData.data}), [profile, scorecardData.data])
+
+    admin && console.log('combinedProfile', combinedProfile)
 
     const owner = user?.uid === userId
 
-    const profile = data ? data.profile : {}
-    const blackBeltScorecard = data?.profile?.blackBeltAwardedAt > 0
+    const blackBeltScorecard = !!combinedProfile?.blackBeltAwardedAt
 
-    const cardActivity = data ? data.scoredActivity : []
-    const cardBBCount = data ? data.bbCount : 0
-    const cardDanPoints = data ? data.danPoints : 0
-    const cardEligibleDan = data ? data.eligibleDan : 0
-    const cardNextDanPoints = data ? data.nextDanPoints : 0
-    const cardNextDanLocks = data ? data.nextDanLocks : 0
-    const cardUniqueLocks = data ? data.uniqueLocks : 0
-    const beltAwards = data
-        ? data.scoredActivity
+    const cardActivity = scoredActivity.length
+        ? scoredActivity
+        : scorecardData?.data?.scoredActivity || []
+    const cardBBCount = bbCount || scorecardData?.data?.bbCount || 0
+    const cardDanPoints = danPoints || scorecardData?.data?.danPoints || 0
+    const cardEligibleDan = eligibleDan || scorecardData?.data?.eligibleDan || 0
+    const cardNextDanPoints = nextDanPoints || scorecardData?.data?.nextDanPoints || 0
+    const cardNextDanLocks = nextDanLocks || scorecardData?.data?.nextDanLocks || 0
+    const cardUniqueLocks = uniqueLocks || scorecardData?.data?.uniqueLocks || 0
+    const beltAwardsData = scoredActivity.length
+        ? scoredActivity
+        : scorecardData?.data?.scoredActivity || []
+    const beltAwards = beltAwardsData
+        ? beltAwardsData
             .filter(activity => activity.collectionDB === 'awards')
             .map(activity => allAwardsById[activity.matchId])
             .filter(award => award['awardType'] === 'belt')
             .sort((a, b) => a.rank - b.rank)
         : []
-    const cardMaxBelt = data ? beltAwards[beltAwards.length - 1] : {}
+    const cardMaxBelt = beltAwardsData ? beltAwards[beltAwards.length - 1] : {}
 
     const collectionsStats = useData({url: collectionsStatsCurrent})
     const popularLocksBB = collectionsStats.data ? collectionsStats.data.blackBeltOnly.listStats.recordedLocks.topItems : []
@@ -124,14 +123,14 @@ function ScorecardRoute({mostPopular}) {
                                    cardNextDanLocks={cardNextDanLocks} cardUniqueLocks={cardUniqueLocks}
                                    cardMaxBelt={cardMaxBelt}
                                    popularLocks={popularLocks} popularLocksBB={popularLocksBB}
-                                   profile={profile} blackBeltScorecard={blackBeltScorecard}>
+                                   profile={combinedProfile} blackBeltScorecard={blackBeltScorecard}>
                 <ScorecardListProvider>
                     <LocalizationProvider adapterLocale={dayjs.locale()} dateAdapter={AdapterDayjs}>
 
                         {loading && <LoadingDisplay/>}
 
                         {!loading && data && !error &&
-                            <Scorecard owner={user && user?.uid === userId} profile={profile}
+                            <Scorecard owner={user && user?.uid === userId} profile={combinedProfile}
                                        adminAction={handleAdminAction} popular={mostPopular}/>}
 
                         {!loading && (!data || error) && <ScorecardProfileNotFound/>}

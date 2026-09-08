@@ -1,6 +1,5 @@
-import React, {useCallback, useContext, useMemo} from 'react'
+import React, {useContext, useEffect, useMemo} from 'react'
 import {useParams} from 'react-router-dom'
-import DBContext from '../app/DBContext'
 import AuthContext from '../app/AuthContext.jsx'
 import Tracker from '../app/Tracker'
 import {dialFilterFields} from '../data/filterFields'
@@ -11,7 +10,6 @@ import Footer from '../nav/Footer'
 import Nav from '../nav/Nav'
 import SearchBox from '../nav/SearchBox'
 import LoadingDisplay from '../util/LoadingDisplay'
-import useData from '../util/useData'
 import useWindowSize from '../util/useWindowSize'
 import NoProfileData from '../profile/NoProfileData'
 import ProfileNotFound from '../profile/ProfileNotFound'
@@ -22,38 +20,33 @@ import collectionOptions from '../data/collectionTypes'
 import ProfileHeader from '../profile/ProfileHeader.jsx'
 import ExportButton from '../locks/ExportButton.jsx'
 import ViewFilterButtons from '../filters/ViewFilterButtons.jsx'
+import ProfileDataContext from '../app/ProfileDataContext.jsx'
 
 function SafelocksCollectionRoute() {
     const {userId} = useParams()
     const {user} = useContext(AuthContext)
-    const {getProfile, lockCollection} = useContext(DBContext)
-    const {isMobile} = useWindowSize()
 
-    const loadFn = useCallback(async () => {
-        try {
-            const profile = user?.uid !== userId ? await getProfile(userId) : lockCollection
-            if (profile) {
-                const ownerName = profile.displayName
-                    ? profile.displayName.toLowerCase().endsWith('s')
-                        ? `${profile.displayName}'`
-                        : `${profile.displayName}'s`
-                    : 'Anonymous'
-                document.title = `LPU Belt Explorer - ${ownerName} Safe Locks`
-            }
-            return profile
-        } catch (ex) {
-            console.error('Error loading profile.', ex)
-            return null
+    const {data, loading, error} = useContext(ProfileDataContext)
+    const profile = useMemo(() => data ? data.profile : {}, [data])
+
+    useEffect(() => {
+        if (profile) {
+            const ownerName = profile.displayName && !profile['privacyAnonymous']
+                ? profile?.displayName?.toLowerCase().endsWith('s')
+                    ? `${profile.displayName}'`
+                    : `${profile.displayName}'s`
+                : 'Anonymous'
+            document.title = `LPU Belt Explorer - ${ownerName} Safe Locks`
         }
-    }, [getProfile, lockCollection, user, userId])
-
-    const {data = {}, loading, error} = useData({loadFn})
+    }, [profile])
 
     const entries = useMemo(() => {
         if (loading || !data) return []
-        const uniqueIds = new Set(collectionOptions.safelocks.getCollected(data))
+        const uniqueIds = new Set(collectionOptions.safelocks.getCollected(profile))
         return allEntries.filter(entry => uniqueIds.has(entry.id))
-    }, [data, loading])
+    }, [data, loading, profile])
+
+    const {isMobile} = useWindowSize()
 
     const nav = (
         <React.Fragment>
@@ -74,7 +67,7 @@ function SafelocksCollectionRoute() {
 
     return (
         <FilterProvider filterFields={dialFilterFields}>
-            <SafelocksDataProvider allEntries={entries} profile={data}>
+            <SafelocksDataProvider allEntries={entries} profile={profile}>
                 <LockListProvider>
                     <div style={{
                         maxWidth: 700, padding: 0, backgroundColor: '#000',
@@ -83,12 +76,12 @@ function SafelocksCollectionRoute() {
 
                         <Nav title={title} extras={nav}/>
 
-                        <ProfileHeader profile={data} page={'safelocks'} owner={user && user.uid === userId}/>
+                        <ProfileHeader profile={profile} page={'safelocks'} owner={user && user.uid === userId}/>
 
                         {loading && <LoadingDisplay/>}
 
                         {!loading && data && !error && entries.length > 0 &&
-                            <SafelocksCollectionPage profile={data}/>}
+                            <SafelocksCollectionPage profile={profile}/>}
                         {!loading && data && !error && entries.length === 0 &&
                             <NoProfileData collectionType={'safelocks'}/>}
                         {!loading && (!data || error) && <ProfileNotFound/>}

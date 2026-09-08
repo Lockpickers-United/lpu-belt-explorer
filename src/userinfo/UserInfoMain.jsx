@@ -15,10 +15,12 @@ import useData from '../util/useData.jsx'
 import {allAwardsById} from '../entries/entryutils'
 import {TextField, Button} from '@mui/material'
 import calculateScoreForUser from '../scorecard/scoring'
+import AppContext from '../app/AppContext.jsx'
 
 export default function UserInfoMain() {
     const {user, userClaims} = useContext(AuthContext)
     const {adminRole, getPickerActivity} = useContext(DBContext)
+    const {admin} = useContext(AppContext)
 
     // TODO get full profile if admin (maybe always in ProfileDataContext?)
     // const isAdmin = ['lpuAdmin', 'admin'].some(claim => userClaims.includes(claim))
@@ -26,11 +28,13 @@ export default function UserInfoMain() {
     const {userId, data, loading, error, isFullProfile} = useContext(ProfileDataContext)
     const profile = useMemo(() => data ? data.profile : {}, [data])
 
+    admin && console.log('profile', {isFullProfile, data})
+
+
     const {filters = {}, addFilters} = useContext(FilterContext)
     const {uid, name} = filters
     const [uidInput, setUidInput] = useState(uid || user?.uid || '')
 
-    //console.log('profile', {isFullProfile, data})
 
     useEffect(() => {
         setUidInput(userId || '')
@@ -83,7 +87,6 @@ export default function UserInfoMain() {
     const cardNextDanPoints = data?.nextDanPoints || scorecardData?.data?.nextDanPoints || 0
     const cardNextDanLocks = data?.nextDanLocks || scorecardData?.data?.nextDanLocks || 0
     const cardUniqueLocks = data?.uniqueLocks || scorecardData?.data?.uniqueLocks || 0
-
     const beltAwardsData = data?.scoredActivity.length
         ? data?.scoredActivity
         : scorecardData?.data?.scoredActivity || []

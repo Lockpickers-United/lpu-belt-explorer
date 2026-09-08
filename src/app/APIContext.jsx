@@ -3,6 +3,9 @@ import {apiServerUrl} from '../data/dataUrls'
 import profileDB2State from './profileDB2State'
 import AuthContext from './AuthContext.jsx'
 import {getData} from '../formUtils/getData.jsx'
+import dayjs from 'dayjs'
+import utc from 'dayjs/plugin/utc'
+dayjs.extend(utc)
 
 const APIContext = React.createContext({})
 
@@ -17,11 +20,13 @@ export function APIProvider({children}) {
                 snackBars: false,
                 timeoutDuration: 10000
             })
-            const {displayName, collections = {}} = response?.data || {}
+            const {displayName, collections = {}, blackBeltAwardedAt, danLevel} = response?.data || {}
             return profileDB2State({
                 ...collections,
                 recordedLocks: collections.scorecard || [],
-                displayName
+                displayName,
+                blackBeltAwardedAt,
+                danLevel
             })
         } catch (e) {
             console.error('fetchProfileSummary error', e)
