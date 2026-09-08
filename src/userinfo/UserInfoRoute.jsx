@@ -1,6 +1,5 @@
 import React, {useContext} from 'react'
 import UserInfoMain from './UserInfoMain.jsx'
-import {APIProvider} from '../app/APIContext.jsx'
 import {ProfileDataProvider} from '../app/ProfileDataContext.jsx'
 import {FilterProvider} from '../context/FilterContext.jsx'
 import AuthContext from '../app/AuthContext.jsx'
@@ -14,22 +13,20 @@ function UserInfoRoute() {
     const title = !authLoaded || !dbLoaded ? 'Loading...' : 'User Info'
 
     return (
-        <APIProvider>
-            <FilterProvider filterFields={[]}>
+        <FilterProvider filterFields={[]}>
 
-                <Nav title={title}/>
+            <Nav title={title}/>
 
-                {(!authLoaded || !dbLoaded) &&
-                    <LoadingDisplay/>
-                }
-                {authLoaded && dbLoaded &&
-                    <ProfileDataProvider>
-                        <UserInfoMain/>
-                    </ProfileDataProvider>
-                }
+            {(!authLoaded || !dbLoaded) &&
+                <LoadingDisplay/>
+            }
+            {authLoaded && dbLoaded &&
+                <ProfileDataProvider>
+                    <UserInfoMain/>
+                </ProfileDataProvider>
+            }
 
-            </FilterProvider>
-        </APIProvider>
+        </FilterProvider>
     )
 }
 

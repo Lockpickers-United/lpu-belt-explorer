@@ -208,96 +208,99 @@ export default [
             }
         ]
     },
+
     {
-        path: '/profile/edit',
+        path: '/profile',
         lazy: async () => {
-            const {default: EditProfileRoute} = await import('../profile/EditProfileRoute')
-            return {element: <EditProfileRoute/>}
-        }
-    },
-    {
-        path: '/profile/:userId',
-        lazy: async () => {
-            const {default: ProfileRoute} = await import('../profile/ProfileRoute')
-            return {element: <ProfileRoute/>}
-        }
-    },
-    {
-        path: '/profile/:userId/scorecard',
-        lazy: async () => {
-            const {default: ScorecardRoute} = await import('../scorecard/ScorecardRoute')
-            return {element: <ScorecardRoute/>}
-        }
-    },
-    {
-        path: '/profile/:userId/scorecard/popular',
-        lazy: async () => {
-            const {default: ScorecardRoute} = await import('../scorecard/ScorecardRoute')
-            return {element: <ScorecardRoute mostPopular={true}/>}
-        }
-    },
-    {
-        path: '/profile/:userId/scorecard/no-tracking',
-        lazy: async () => {
-            const {default: ScorecardNoTrackRoute} = await import('../scorecard/noTrack/ScorecardNoTrackRoute.jsx')
-            return {element: <ScorecardNoTrackRoute/>}
-        }
-    },
-    {
-        path: '/profile/scorecard/upgrades',
-        lazy: async () => {
-            const {default: UpgradesRoute} = await import('../scorecard/UpgradesRoute')
-            return {element: <UpgradesRoute/>}
-        }
-    },
-    {
-        path: '/profile/scorecard/howto',
-        lazy: async () => {
-            const {default: HowToRoute} = await import('../scorecard/HowToRoute')
-            return {element: <HowToRoute/>}
-        }
-    },
-    {
-        path: '/profile/:userId/safelocks',
-        lazy: async () => {
-            const {default: SafelocksCollectionRoute} = await import('../safelocksCollection/SafelocksCollectionRoute')
-            return {element: <SafelocksCollectionRoute/>}
-        }
-    },
-    {
-        path: '/profile/view',
-        lazy: async () => {
-            const {default: ViewProfileRoute} = await import('../profile/ViewProfileRoute')
-            return {element: <ViewProfileRoute/>}
-        }
-    },
-    {
-        path: '/profile/view/scorecard',
-        lazy: async () => {
-            const {default: ViewScorecardRoute} = await import('../scorecard/ViewScorecardRoute')
-            return {element: <ViewScorecardRoute/>}
-        }
-    },
-    {
-        path: '/profile/scorecard',
-        lazy: async () => {
-            const {default: ViewScorecardRoute} = await import('../scorecard/ViewScorecardRoute')
-            return {element: <ViewScorecardRoute/>}
-        }
-    },
-    {
-        path: '/profile/scorecard/popular',
-        lazy: async () => {
-            const {default: ViewScorecardRoute} = await import('../scorecard/ViewScorecardRoute')
-            return {element: <ViewScorecardRoute mostPopular={true}/>}
-        }
-    },
-    {
-        path: '/profile/scorecard/preview',
-        lazy: async () => {
-            const {default: PreviewImportRoute} = await import('../scorecard/preview/PreviewImportRoute')
-            return {element: <PreviewImportRoute/>}
-        }
+            const {default: ProfileParentRoute} = await import('../profile/ProfileParentRoute.jsx')
+            return {element: <ProfileParentRoute/>}
+        },
+        children: [
+            {
+                path: '/profile/edit',
+                lazy: async () => {
+                    const {default: EditProfileRoute} = await import('../profile/EditProfileRoute')
+                    return {element: <EditProfileRoute/>}
+                }
+            },
+            {
+                path: '/profile/:userId',
+                lazy: async () => {
+                    const {default: ProfileRoute} = await import('../profile/ProfileRoute')
+                    return {element: <ProfileRoute/>}
+                }
+            },
+            {
+                path: '/profile/:userId/scorecard',
+                lazy: async () => {
+                    const {default: ScorecardRoute} = await import('../scorecard/ScorecardRoute')
+                    return {element: <ScorecardRoute/>}
+                }
+            },
+            {
+                path: '/profile/:userId/scorecard/popular',
+                lazy: async () => {
+                    const {default: ScorecardRoute} = await import('../scorecard/ScorecardRoute')
+                    return {element: <ScorecardRoute mostPopular={true}/>}
+                }
+            },
+            {
+                path: '/profile/scorecard/upgrades',
+                lazy: async () => {
+                    const {default: UpgradesRoute} = await import('../scorecard/UpgradesRoute')
+                    return {element: <UpgradesRoute/>}
+                }
+            },
+            {
+                path: '/profile/scorecard/howto',
+                lazy: async () => {
+                    const {default: HowToRoute} = await import('../scorecard/HowToRoute')
+                    return {element: <HowToRoute/>}
+                }
+            },
+            {
+                path: '/profile/:userId/safelocks',
+                lazy: async () => {
+                    const {default: SafelocksCollectionRoute} = await import('../safelocksCollection/SafelocksCollectionRoute')
+                    return {element: <SafelocksCollectionRoute/>}
+                }
+            },
+            {
+                path: '/profile/view',
+                lazy: async () => {
+                    const {default: ViewProfileRoute} = await import('../profile/ViewProfileRoute')
+                    return {element: <ViewProfileRoute/>}
+                }
+            },
+            {
+                path: '/profile/view/scorecard',
+                lazy: async () => {
+                    const {default: ViewScorecardRoute} = await import('../scorecard/ViewScorecardRoute')
+                    return {element: <ViewScorecardRoute/>}
+                }
+            },
+            {
+                path: '/profile/scorecard',
+                lazy: async () => {
+                    const {default: ViewScorecardRoute} = await import('../scorecard/ViewScorecardRoute')
+                    return {element: <ViewScorecardRoute/>}
+                }
+            },
+            {
+                path: '/profile/scorecard/popular',
+                lazy: async () => {
+                    const {default: ViewScorecardRoute} = await import('../scorecard/ViewScorecardRoute')
+                    return {element: <ViewScorecardRoute mostPopular={true}/>}
+                }
+            },
+            {
+                path: '/profile/scorecard/preview',
+                lazy: async () => {
+                    const {default: PreviewImportRoute} = await import('../scorecard/preview/PreviewImportRoute')
+                    return {element: <PreviewImportRoute/>}
+                }
+            }
+        ]
     },
     {
         path: '/safelocks',
@@ -350,7 +353,7 @@ export default [
             }
         ]
     }
-    ,{
+    , {
         path: '/beltRequests',
         lazy: async () => {
             const {default: BeltRequestsParentRoute} = await import('../beltRequests/BeltRequestsParentRoute.jsx')
@@ -363,7 +366,7 @@ export default [
                     const {default: BeltRequestSubmitRoute} = await import('../beltRequests/requestSubmit/BeltRequestSubmitRoute.jsx')
                     return {element: <BeltRequestSubmitRoute/>}
                 }
-            },
+            }
         ]
     },
     {

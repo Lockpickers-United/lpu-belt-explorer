@@ -18,14 +18,14 @@ const emptyScoreData = {
     maxBelt: undefined
 }
 
-export function ProfileDataProvider({children}) {
+export function ProfileDataProvider({children, userId: providedUserId}) {
     const {user} = useContext(AuthContext)
     const {dbLoaded, lockCollection} = useContext(DBContext)
     const {fetchProfileSummary} = useContext(APIContext)
     const {filters = {}} = useContext(FilterContext)
     const scoringData = useContext(ScoringContext)
 
-    const userId = filters.uid || user?.uid || ''
+    const userId = providedUserId || filters.uid || user?.uid || ''
     const isSelf = Boolean(user?.uid && user.uid === userId)
 
     const [summaryState, setSummaryState] = useState({

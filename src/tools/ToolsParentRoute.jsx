@@ -1,39 +1,25 @@
-import React, {useCallback, useContext} from 'react'
+import React, {useContext} from 'react'
 import {Outlet, useNavigate} from 'react-router-dom'
 import AuthContext from '../app/AuthContext'
-import DBContext from '../app/DBContext'
 import LoadingDisplay from '../misc/LoadingDisplay.jsx'
 import Link from '@mui/material/Link'
 import Fade from '@mui/material/Fade'
-import useData from '../util/useData.jsx'
 
 function ToolsParentRoute() {
     const {authLoaded, isLoggedIn, user, userClaims} = useContext(AuthContext)
-    const {adminRole, getProfile} = useContext(DBContext)
     const navigate = useNavigate()
-    const userId = user ? user.uid : null
-    const loadFn = useCallback(async () => {
-        if (!userId) return null
-        try {
-            return await getProfile(userId)
-        } catch (ex) {
-            console.error('Error loading profile.', ex)
-            return null
-        }
-    }, [getProfile, userId])
-    const {data = {}, loading, error} = useData({loadFn}) // eslint-disable-line
-    const profile = data
-
-    const toolsUser = isLoggedIn && user && (['lpuAdmin', 'admin'].some(claim => userClaims.includes(claim)) || adminRole)
+    const toolsUser = isLoggedIn && user && ['lpuAdmin', 'admin'].some(claim => userClaims.includes(claim))
 
     return (
-        <React.Fragment>
+        <>
 
             {!authLoaded &&
                 <LoadingDisplay/>
             }
 
-            {authLoaded && toolsUser && <Outlet context={{profile, user}}/>}
+            {authLoaded && toolsUser &&
+                <Outlet/>
+            }
 
             {authLoaded && !toolsUser &&
                 <Fade in={true} timeout={1000}>
@@ -55,7 +41,7 @@ function ToolsParentRoute() {
                 </Fade>
             }
 
-        </React.Fragment>
+        </>
     )
 }
 

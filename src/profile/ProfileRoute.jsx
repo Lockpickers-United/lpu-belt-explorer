@@ -1,4 +1,4 @@
-import React, {useCallback, useContext, useMemo} from 'react'
+import React, {useCallback, useContext, useEffect, useMemo} from 'react'
 import {useParams} from 'react-router-dom'
 import DBContext from '../app/DBContext'
 import Tracker from '../app/Tracker'
@@ -22,55 +22,62 @@ import ProfilePage from './ProfilePage'
 import AuthContext from '../app/AuthContext.jsx'
 import ExportButton from '../locks/ExportButton.jsx'
 import ViewFilterButtons from '../filters/ViewFilterButtons.jsx'
+import ProfileDataContext from '../app/ProfileDataContext.jsx'
 
 function ProfileRoute() {
     const {user} = useContext(AuthContext)
     const {userId} = useParams()
-    const {getProfile, getPickerActivity} = useContext(DBContext)
-    const {isMobile} = useWindowSize()
+    const {getPickerActivity} = useContext(DBContext)
+    const {data, loading, error, isFullProfile} = useContext(ProfileDataContext)
 
+    const profile = useMemo(() => data ? data.profile : {}, [data])
+
+    console.log('ProfileRoute', {isFullProfile})
+
+    useEffect(() => {
+        if (profile) {
+            const ownerName = profile.displayName && !profile['privacyAnonymous']
+                ? profile?.displayName?.toLowerCase().endsWith('s')
+                    ? `${profile.displayName}'`
+                    : `${profile.displayName}'s`
+                : 'Anonymous'
+            document.title = `LPU Belt Explorer - ${ownerName} User Info`
+        }
+    }, [profile])
 
     const loadFn = useCallback(async () => {
         try {
-            const profile = await getProfile(userId)
-            if (profile) {
-                const ownerName = profile.displayName
-                    ? profile.displayName.toLowerCase().endsWith('s')
-                        ? `${profile.displayName}'`
-                        : `${profile.displayName}'s`
-                    : 'Anonymous'
-
-                document.title = `LPU Belt Explorer - ${ownerName} Profile`
-            }
-            const pickerActivity = await getPickerActivity(userId)
-
-            return {profile, pickerActivity}
+            return await getPickerActivity(userId)
         } catch (ex) {
-            console.error('Error loading profile.', ex)
+            console.error('Error loading pickerActivity.', ex)
             return null
         }
-    }, [getPickerActivity, getProfile, userId])
-    const {data = {}, loading, error} = useData({loadFn})
+    }, [getPickerActivity, userId])
 
-    const {profile, pickerActivity} = data || {}
+    const pickerActivity = useData({loadFn})
+
+    const isLoading = pickerActivity?.loading || loading
+    const isError = pickerActivity?.error || error
 
     const entries = useMemo(() => {
         if (loading || !profile) return []
         const uniqueIds = new Set(collectionOptions.locks.getCollected(profile))
         return allEntries.filter(entry => uniqueIds.has(entry.id))
     }, [profile, loading])
-    
+
+    const {isMobile} = useWindowSize()
+
     const nav = (
-        <React.Fragment>
+        <>
             <SearchBox label='Collection'/>
             <ViewFilterButtons sortValues={lockSortFields} advancedEnabled={true}
                                compactMode={false} resetAll={true} expandAll={false}/>
             {!isMobile && <div style={{flexGrow: 1, minWidth: '10px'}}/>}
             <ToggleCompactButton/>
-        </React.Fragment>
+        </>
     )
 
-    const title = loading ? 'Loading...' : 'Profile'
+    const title = isLoading ? 'Loading...' : 'Profile'
 
     const footerBefore = (
         <div style={{margin: '30px 0px'}}>
@@ -84,11 +91,11 @@ function ProfileRoute() {
                 <LockListProvider>
                     <Nav title={title} extras={nav}/>
 
-                    {loading && <LoadingDisplay/>}
+                    {isLoading && <LoadingDisplay/>}
 
-                    {!loading && profile && !error && <ProfilePage profile={profile} pickerActivity={pickerActivity} owner={user && user.uid === userId}/>}
-                    {!loading && profile && !error && entries.length === 0 && <NoProfileData/>}
-                    {!loading && (!profile || error) && <ProfileNotFound/>}
+                    {!isLoading && profile && !isError && <ProfilePage profile={profile} pickerActivity={pickerActivity?.data} owner={user && user.uid === userId}/>}
+                    {!isLoading && profile && !isError && entries.length === 0 && <NoProfileData/>}
+                    {!isLoading && (!profile || isError) && <ProfileNotFound/>}
 
                     <Footer before={footerBefore}/>
 

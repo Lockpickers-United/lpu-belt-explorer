@@ -9,6 +9,7 @@ import {DBProvider} from './DBContext'
 import {ScoringProvider} from '../context/ScoringContext.jsx'
 import initializeLocales from '../util/datetime'
 import {SystemMessageProvider} from '../systemMessage/SystemMessageContext.jsx'
+import {APIProvider} from './APIContext.jsx'
 
 initializeLocales()
 
@@ -40,13 +41,15 @@ function App() {
             <SnackbarProvider autoHideDuration={3000}>
                 <AuthProvider>
                     <DBProvider>
-                        <AppProvider>
-                            <SystemMessageProvider>
-                                <ScoringProvider>
-                                    <AppRoutes/>
-                                </ScoringProvider>
-                            </SystemMessageProvider>
-                        </AppProvider>
+                        <APIProvider>
+                            <AppProvider>
+                                <SystemMessageProvider>
+                                    <ScoringProvider>
+                                        <AppRoutes/>
+                                    </ScoringProvider>
+                                </SystemMessageProvider>
+                            </AppProvider>
+                        </APIProvider>
                     </DBProvider>
                 </AuthProvider>
             </SnackbarProvider>

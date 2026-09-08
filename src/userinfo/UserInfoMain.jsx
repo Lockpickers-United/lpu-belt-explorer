@@ -14,10 +14,15 @@ import LoadingDisplay from '../misc/LoadingDisplay.jsx'
 import useData from '../util/useData.jsx'
 import {allAwardsById} from '../entries/entryutils'
 import {TextField, Button} from '@mui/material'
+import calculateScoreForUser from '../scorecard/scoring'
 
 export default function UserInfoMain() {
     const {user, userClaims} = useContext(AuthContext)
-    const {adminRole} = useContext(DBContext)
+    const {adminRole, getPickerActivity} = useContext(DBContext)
+
+    // TODO get full profile if admin (maybe always in ProfileDataContext?)
+    // const isAdmin = ['lpuAdmin', 'admin'].some(claim => userClaims.includes(claim))
+
     const {userId, data, loading, error, isFullProfile} = useContext(ProfileDataContext)
     const {filters = {}, addFilters} = useContext(FilterContext)
     const {uid, name} = filters
@@ -25,7 +30,7 @@ export default function UserInfoMain() {
     const [uidInput, setUidInput] = useState(uid || user?.uid || '')
     const profile = useMemo(() => data ? data.profile : {}, [data])
 
-    console.log('profile', isFullProfile, data)
+    //console.log('profile', {isFullProfile, data})
 
     useEffect(() => {
         setUidInput(userId || '')
@@ -58,21 +63,38 @@ export default function UserInfoMain() {
         }
     }, [addFilters, name, profile])
 
-    const cardActivity = data ? data.scoredActivity : []
-    const cardBBCount = data ? data.bbCount : 0
-    const cardDanPoints = data ? data.danPoints : 0
-    const cardEligibleDan = data ? data.eligibleDan : 0
-    const cardNextDanPoints = data ? data.nextDanPoints : 0
-    const cardNextDanLocks = data ? data.nextDanLocks : 0
-    const cardUniqueLocks = data ? data.uniqueLocks : 0
-    const beltAwards = data
-        ? data.scoredActivity
+    const loadFn = useCallback(async () => {
+        try {
+            const activity = await getPickerActivity(userId)
+            return calculateScoreForUser(activity)
+        } catch (ex) {
+            console.error('Error loading profile and activity.', ex)
+            return null
+        }
+    }, [getPickerActivity, userId])
+    const scorecardData = useData({loadFn})
+
+    const cardActivity = data?.scoredActivity.length
+        ? data?.scoredActivity
+        : scorecardData?.data?.scoredActivity || []
+    const cardBBCount = data?.bbCount || scorecardData?.data?.bbCount || 0
+    const cardDanPoints = data?.danPoints || scorecardData?.data?.danPoints || 0
+    const cardEligibleDan = data?.eligibleDan || scorecardData?.data?.eligibleDan || 0
+    const cardNextDanPoints = data?.nextDanPoints || scorecardData?.data?.nextDanPoints || 0
+    const cardNextDanLocks = data?.nextDanLocks || scorecardData?.data?.nextDanLocks || 0
+    const cardUniqueLocks = data?.uniqueLocks || scorecardData?.data?.uniqueLocks || 0
+
+    const beltAwardsData = data?.scoredActivity.length
+        ? data?.scoredActivity
+        : scorecardData?.data?.scoredActivity || []
+    const beltAwards = beltAwardsData
+        ? beltAwardsData
             .filter(activity => activity.collectionDB === 'awards')
             .map(activity => allAwardsById[activity.matchId])
             .filter(award => award['awardType'] === 'belt')
             .sort((a, b) => a.rank - b.rank)
         : []
-    const cardMaxBelt = data ? beltAwards[beltAwards.length - 1] : {}
+    const cardMaxBelt = beltAwardsData ? beltAwards[beltAwards.length - 1] : {}
 
     const collectionsStats = useData({url: collectionsStatsCurrent})
     const popularLocksBB = collectionsStats.data ? collectionsStats.data.blackBeltOnly.listStats.recordedLocks.topItems : []

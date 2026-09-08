@@ -1,20 +1,18 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import Nav from '../../nav/Nav.jsx'
 import Footer from '../../nav/Footer.jsx'
 import Tracker from '../../app/Tracker.jsx'
 import FetchRedditBelts from './FetchRedditBelts.jsx'
 import usePageTitle from '../../util/usePageTitle.jsx'
-import {useOutletContext} from 'react-router-dom'
-import {
-    discordBeltCounts, redditBeltCounts,
-} from '../../data/dataUrls'
+import {discordBeltCounts, redditBeltCounts} from '../../data/dataUrls'
 import ErrorMessage from '../../misc/ErrorMessage.jsx'
 import LoadingDisplay from '../../util/LoadingDisplay.jsx'
 import useData from '../../util/useData.jsx'
+import AuthContext from '../../app/AuthContext.jsx'
 
 export default function FetchRedditBeltsRoute() {
     const {data, loading, error, errorMessage, refresh} = useData({urls})
-    const {profile, user} = useOutletContext()
+    const {user} = useContext(AuthContext)
 
     usePageTitle('Fetch Reddit Belt Data')
     const nav = (
@@ -30,7 +28,7 @@ export default function FetchRedditBeltsRoute() {
             {loading && <LoadingDisplay/>}
 
             {!loading && !error && !!data &&
-                <FetchRedditBelts data={data} profile={profile} user={user} refresh={refresh}/>
+                <FetchRedditBelts data={data} user={user} refresh={refresh}/>
             }
 
             <Footer/>
@@ -41,5 +39,5 @@ export default function FetchRedditBeltsRoute() {
 
 const urls = {
     discordBeltCounts,
-    redditBeltCounts,
+    redditBeltCounts
 }

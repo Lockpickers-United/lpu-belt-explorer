@@ -1,6 +1,5 @@
-import React, {useCallback, useState} from 'react'
+import React, {useCallback, useContext, useState} from 'react'
 import {postData, cleanError} from '../../formUtils/postData.jsx'
-import GetUserAndProfile from '../../auth/GetUserAndProfile.jsx'
 import CopyTextButton from './CopyTextButton.jsx'
 import PlatformBeltCountsTable from '../../stats/PlatformBeltCountsTable.jsx'
 import PlatformBeltCountsChart from '../../stats/PlatformBeltCountsChart.jsx'
@@ -12,10 +11,11 @@ import LoadingDisplay from '../../misc/LoadingDisplay.jsx'
 import Button from '@mui/material/Button'
 import useWindowSize from '../../util/useWindowSize'
 import {nodeServerUrl} from '../../data/dataUrls'
+import AuthContext from '../../app/AuthContext.jsx'
 
 const FetchRedditBelts = ({data, refresh}) => {
+    const {user} = useContext(AuthContext)
 
-    const {user} = GetUserAndProfile()
     const [uploading, setUploading] = useState(false)
     const [uploadError, setUploadError] = useState(undefined)
     const [response, setResponse] = useState(undefined)
