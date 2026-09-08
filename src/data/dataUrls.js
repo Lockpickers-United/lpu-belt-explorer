@@ -34,3 +34,4 @@ export const raflCollectionDetails = `${url}/raflCollectionDetails.json`
 
 const {VITE_DEV_FIRESTORE: devFirestore} = import.meta.env
 export const nodeServerUrl = devFirestore==='true' ? 'https://explore.lpubelts.com/servicesDev' : 'https://explore.lpubelts.com/services'
+export const apiServerUrl = 'https://explore.lpubelts.com/services'

@@ -31,8 +31,8 @@ import {
     blackBeltAwardId,
     getAwardEntryFromId
 } from '../entries/entryutils'
-import collectionOptions from '../data/collectionTypes'
 import isValidUrl from '../util/isValidUrl'
+import profileDB2State from './profileDB2State'
 
 /**
  * @typedef {object} award
@@ -596,21 +596,6 @@ function activity2DBRec(act) {
             rec.evidenceCreatedAt = Timestamp.fromDate(new Date(act.date))
         }
         return ['evidence', rec]
-    }
-}
-
-function profileDB2State(dbRec) {
-    if (dbRec) {
-        const additionalFields = Object.keys(collectionOptions).reduce((acc, type) => {
-            const anyKey = collectionOptions[type].map.find(c => c.entry === 'system:any')?.key
-            const valKeys = collectionOptions[type].map.filter(c => c.entry !== 'system:any')?.map(c => c.key)
-            if (anyKey) acc[anyKey] = [...new Set(valKeys.map(k => dbRec[k]).filter(k => k).flat())]
-            return acc
-        }, {})
-
-        return {...dbRec, ...additionalFields}
-    } else {
-        return dbRec
     }
 }
 

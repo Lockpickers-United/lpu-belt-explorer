@@ -8,7 +8,7 @@ const appendCacheBuster = (url, rand) => {
     return `${base}${sep}${rand}${hash ? '#' + hash : ''}`
 }
 
-export const getData = async ({user, url, formData, json, snackBars, timeoutDuration = 15000}) => {
+export const getData = async ({user, url, baseHeaders = {}, formData, json, snackBars, timeoutDuration = 15000}) => {
 
     const controller = new AbortController()
     const timeout = setTimeout(() => {
@@ -19,6 +19,7 @@ export const getData = async ({user, url, formData, json, snackBars, timeoutDura
     const idToken = user ? await user.getIdToken() : null
     const isJson = json !== undefined && formData === undefined
     const headers = {
+        ...baseHeaders,
         ...(idToken && {Authorization: `Bearer ${idToken}`})
         // No Content-Type for GET
     }

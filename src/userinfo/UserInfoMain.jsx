@@ -1,87 +1,46 @@
 import React, {useContext, useCallback, useEffect, useMemo, useState} from 'react'
+import {ScorecardDataProvider} from '../scorecard/ScorecardDataProvider.jsx'
+import {ScorecardListProvider} from '../scorecard/ScorecardListContext.jsx'
+import DBContext from '../app/DBContext.jsx'
+import AuthContext from '../app/AuthContext.jsx'
+import ProfileDataContext from '../app/ProfileDataContext.jsx'
+import {LocalizationProvider} from '@mui/x-date-pickers'
 import {AdapterDayjs} from '@mui/x-date-pickers/AdapterDayjs'
 import {collectionsStatsCurrent} from '../data/dataUrls'
 import FilterContext from '../context/FilterContext.jsx'
-import {LocalizationProvider} from '@mui/x-date-pickers'
-import {ScorecardDataProvider} from '../scorecard/ScorecardDataProvider.jsx'
-import {ScorecardListProvider} from '../scorecard/ScorecardListContext.jsx'
-import AuthContext from '../app/AuthContext.jsx'
-import calculateScoreForUser from '../scorecard/scoring'
 import dayjs from 'dayjs'
-import DBContext from '../app/DBContext.jsx'
 import Footer from '../nav/Footer.jsx'
 import LoadingDisplay from '../misc/LoadingDisplay.jsx'
-import ScoringContext from '../context/ScoringContext.jsx'
 import useData from '../util/useData.jsx'
 import {allAwardsById} from '../entries/entryutils'
 import {TextField, Button} from '@mui/material'
 
 export default function UserInfoMain() {
     const {user, userClaims} = useContext(AuthContext)
-    const {getProfile, getPickerActivity,adminRole} = useContext(DBContext)
+    const {adminRole} = useContext(DBContext)
+    const {userId, data, loading, error, isFullProfile} = useContext(ProfileDataContext)
     const {filters = {}, addFilters} = useContext(FilterContext)
     const {uid, name} = filters
 
-    const {
-        scoredActivity,
-        bbCount,
-        danPoints,
-        eligibleDan,
-        nextDanPoints,
-        nextDanLocks,
-        uniqueLocks,
-        maxBelt
-    } = useContext(ScoringContext)
-
-    const [userId, setUserId] = useState(user?.uid)
     const [uidInput, setUidInput] = useState(uid || user?.uid || '')
-
-    // keep local input and effective userId in sync with filter uid
-    useEffect(() => {
-        const effective = adminRole
-            ? uid || user?.uid || ''
-            : user?.uid || ''
-        setUidInput(effective)
-        if (effective !== userId) {
-            setUserId(effective)
-        }
-    }, [adminRole, uid, user, userId])
-
-    const loadFn = useCallback(async () => {
-        try {
-            const profile = await getProfile(userId)
-            if (profile) {
-                const ownerName = profile.displayName && !profile['privacyAnonymous']
-                    ? profile?.displayName?.toLowerCase().endsWith('s')
-                        ? `${profile.displayName}'`
-                        : `${profile.displayName}'s`
-                    : 'Anonymous'
-                document.title = `LPU Belt Explorer - ${ownerName} User Info`
-            }
-            if (user?.uid !== userId) {
-                const activity = await getPickerActivity(userId)
-                return {profile, ...calculateScoreForUser(activity)}
-            } else {
-                return {
-                    profile,
-                    scoredActivity,
-                    bbCount,
-                    danPoints,
-                    eligibleDan,
-                    nextDanPoints,
-                    nextDanLocks,
-                    uniqueLocks,
-                    maxBelt
-                }
-            }
-        } catch (ex) {
-            console.error('Error loading profile and activity.', ex)
-            return null
-        }
-    }, [getProfile, userId, user, getPickerActivity, scoredActivity, bbCount, danPoints, eligibleDan, nextDanPoints, nextDanLocks, uniqueLocks, maxBelt])
-
-    const {data = {}, loading, error} = useData({loadFn})
     const profile = useMemo(() => data ? data.profile : {}, [data])
+
+    console.log('profile', isFullProfile, data)
+
+    useEffect(() => {
+        setUidInput(userId || '')
+    }, [userId])
+
+    useEffect(() => {
+        if (profile) {
+            const ownerName = profile.displayName && !profile['privacyAnonymous']
+                ? profile?.displayName?.toLowerCase().endsWith('s')
+                    ? `${profile.displayName}'`
+                    : `${profile.displayName}'s`
+                : 'Anonymous'
+            document.title = `LPU Belt Explorer - ${ownerName} User Info`
+        }
+    }, [profile])
 
     useEffect(() => {
         if (user && !uid) {
@@ -131,7 +90,6 @@ export default function UserInfoMain() {
             {key: 'uid', value: next},
             {key: 'name', value: undefined}
         ], true)
-        setUserId(next)
     }, [uidInput, addFilters, user])
 
     const handleUidClear = useCallback(() => {
@@ -141,10 +99,9 @@ export default function UserInfoMain() {
             {key: 'uid', value: self},
             {key: 'name', value: undefined}
         ], true)
-        setUserId(self)
     }, [addFilters, user])
 
-    if (loading || error) {
+    if (loading) {
         return null
     }
 
@@ -196,6 +153,15 @@ export default function UserInfoMain() {
                                 <tbody>
                                 <tr style={{height: 10}}></tr>
                                 <tr>
+                                    <td style={varStyle}>source</td>
+                                    <td>{data?.source}</td>
+                                </tr>
+                                <tr>
+                                    <td style={varStyle}>Is Full Profile</td>
+                                    <td>{data?.isFullProfile ? 'Yes' : 'No'}</td>
+                                </tr>
+                                <tr style={{height: 10}}></tr>
+                                <tr>
                                     <td style={varStyle}>display name</td>
                                     <td>{profile?.displayName}</td>
                                 </tr>
@@ -209,7 +175,7 @@ export default function UserInfoMain() {
                                         <td>{userClaims.join(', ')}</td>
                                     </tr>
                                 }
-                                {profile?.admin &&
+                                {isFullProfile && profile?.admin &&
                                     <tr>
                                         <td style={varStyle}>profile.admin</td>
                                         <td>true</td>
@@ -220,10 +186,12 @@ export default function UserInfoMain() {
                                 <tr>
                                     <td style={headerStyle} colSpan={2}>SCORECARD</td>
                                 </tr>
-                                <tr>
-                                    <td style={varStyle}>blackBeltAwarded</td>
-                                    <td>{profile?.blackBeltAwardedAt ? 'true' : ''}</td>
-                                </tr>
+                                {isFullProfile &&
+                                    <tr>
+                                        <td style={varStyle}>blackBeltAwarded</td>
+                                        <td>{profile?.blackBeltAwardedAt ? 'true' : ''}</td>
+                                    </tr>
+                                }
                                 <tr>
                                     <td style={varStyle}>cardMaxBelt</td>
                                     <td>{cardMaxBelt?.name}</td>
@@ -252,22 +220,26 @@ export default function UserInfoMain() {
                                     <td style={varStyle}>cardUniqueLocks</td>
                                     <td>{cardUniqueLocks}</td>
                                 </tr>
-                                <tr>
-                                    <td style={varStyle}>projects</td>
-                                    <td>{profile?.projects?.length}</td>
-                                </tr>
-                                <tr>
-                                    <td style={varStyle}>tabClaimed</td>
-                                    <td>{profile?.tabClaimed}</td>
-                                </tr>
-                                <tr>
-                                    <td style={varStyle}>redditUsername</td>
-                                    <td>{profile?.redditUsername}</td>
-                                </tr>
-                                <tr>
-                                    <td style={varStyle}>discordUsername</td>
-                                    <td>{profile?.discordUsername}</td>
-                                </tr>
+                                {isFullProfile &&
+                                    <>
+                                        <tr>
+                                            <td style={varStyle}>projects</td>
+                                            <td>{profile?.projects?.length}</td>
+                                        </tr>
+                                        <tr>
+                                            <td style={varStyle}>tabClaimed</td>
+                                            <td>{profile?.tabClaimed}</td>
+                                        </tr>
+                                        <tr>
+                                            <td style={varStyle}>redditUsername</td>
+                                            <td>{profile?.redditUsername}</td>
+                                        </tr>
+                                        <tr>
+                                            <td style={varStyle}>discordUsername</td>
+                                            <td>{profile?.discordUsername}</td>
+                                        </tr>
+                                    </>
+                                }
 
                                 <tr style={{height: 10}}></tr>
                                 <tr>
@@ -309,7 +281,6 @@ export default function UserInfoMain() {
                                     <td style={varStyle}>safelocksWishlist</td>
                                     <td>{profile?.safelocksWishlist?.length}</td>
                                 </tr>
-
 
                                 </tbody>
                             </table>
