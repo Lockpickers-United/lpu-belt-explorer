@@ -39,22 +39,51 @@ initializeApp()
 
 const db = getFirestore()
 
-exports.trackLockcollectionChange = onDocumentWritten(
-    {
-      document: "lockcollections/{userId}",
-      region: "us-central1",
-    },
-    async (event) => {
-      const {userId} = event.params
-      const deleted = !event.data.after.exists
+/**
+ * Creates a Firestore document-write trigger that records changed document IDs.
+ *
+ * @param {string} sourceCollection Source collection to observe.
+ * @param {string} changeIndexCollection Collection storing change index docs.
+ * @return {CloudFunction} Firestore document-write trigger.
+ */
+function createChangeTracker(sourceCollection, changeIndexCollection) {
+  return onDocumentWritten(
+      {
+        document: `${sourceCollection}/{docId}`,
+        region: "us-central1",
+      },
+      async (event) => {
+        const {docId} = event.params
+        const deleted = !event.data.after.exists
 
-      await db.collection("lockcollectionsChangeIndex").doc(userId).set({
-        userId,
-        changedAt: FieldValue.serverTimestamp(),
-        deleted,
-        sourceCollection: "lockcollections",
-      }, {merge: true})
+        await db.collection(changeIndexCollection).doc(docId).set({
+          docId,
+          changedAt: FieldValue.serverTimestamp(),
+          deleted,
+          sourceCollection,
+        }, {merge: true})
 
-      logger.info("Indexed lockcollection change", {userId, deleted})
-    },
+        logger.info("Indexed Firestore document change", {
+          sourceCollection,
+          changeIndexCollection,
+          docId,
+          deleted,
+        })
+      },
+  )
+}
+
+exports.trackLockcollectionChange = createChangeTracker(
+    "lockcollections",
+    "lockcollectionsChangeIndex",
+)
+
+exports.trackAwardChange = createChangeTracker(
+    "awards",
+    "awardsChangeIndex",
+)
+
+exports.trackEvidenceChange = createChangeTracker(
+    "evidence",
+    "evidenceChangeIndex",
 )
