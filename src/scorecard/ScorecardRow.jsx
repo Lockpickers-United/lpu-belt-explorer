@@ -34,7 +34,13 @@ function ScorecardRow({owner, activity, expanded, onExpand, merged}) {
 
     const navigate = useNavigate()
     const {setFilters} = useContext(FilterContext)
-    const {cardActivity, getEntryFromId, getProjectEntryFromId, getAwardEntryFromId, getDeletedEntryFromId} = useContext(ScorecardDataContext)
+    const {
+        cardActivity,
+        getEntryFromId,
+        getProjectEntryFromId,
+        getAwardEntryFromId,
+        getDeletedEntryFromId
+    } = useContext(ScorecardDataContext)
     const {admin} = useContext(AppContext)
     const {blackBeltScorecard} = useContext(DataContext)
 
@@ -133,7 +139,7 @@ function ScorecardRow({owner, activity, expanded, onExpand, merged}) {
     }, [navigate])
 
     const cursorStyle = !expandable ? {cursor: 'default'} : {}
-    const expandIcon = expandable ? <ExpandMoreIcon/> : <div style={{width:24}}/>
+    const expandIcon = expandable ? <ExpandMoreIcon/> : <div style={{width: 24}}/>
 
     const {isMobile} = useWindowSize()
     const flexType = !isMobile ? 'flex' : 'block'
@@ -158,7 +164,7 @@ function ScorecardRow({owner, activity, expanded, onExpand, merged}) {
         backgroundColor: bgColor
     }
 
-    if(!owner && !admin && activity.exceptionType) return null
+    if (!owner && !admin && activity.exceptionType) return null
 
     return (
         <Accordion key={activity.id} expanded={expanded} onChange={handleChange} ref={ref}>
@@ -207,17 +213,20 @@ function ScorecardRow({owner, activity, expanded, onExpand, merged}) {
                         />
                     }
 
-                    {(exceptionNote || (activity.evidenceModifier && (blackBeltScorecard||admin))) &&
+                    {(exceptionNote || (activity.evidenceModifier && (blackBeltScorecard || admin))) &&
                         <div style={{
                             margin: '0px 0px 0px 6px',
                             fontWeight: 600,
                             fontSize: '.95rem'
                         }}>
-                            {activity.evidenceModifier && (blackBeltScorecard||admin) &&
-                                <span style={{marginTop:10}}>* {activity.evidenceModifier}</span>
+                            {activity.evidenceModifier && (blackBeltScorecard || admin) &&
+                                <span style={{marginTop: 10}}>* {activity.evidenceModifier}</span>
                             }
                             {exceptionNote &&
-                                <span style={{marginLeft:10, fontSize: '.9rem'}}>* {exceptionNote} {supersedingLink}</span>
+                                <span style={{
+                                    marginLeft: 10,
+                                    fontSize: '.9rem'
+                                }}>* {exceptionNote} {supersedingLink}</span>
                             }
                         </div>
                     }
@@ -261,15 +270,12 @@ function ScorecardRow({owner, activity, expanded, onExpand, merged}) {
                     </div>
                 </div>
 
-
             </AccordionSummary>
-            {owner && expanded &&
-                <React.Fragment>
-                    <AccordionDetails sx={{padding: '4px 16px 0px 26px'}}>
-                        <EvidenceForm activity={activity} handleUpdate={() => {
-                        }}/>
-                    </AccordionDetails>
-                </React.Fragment>
+            {(owner || admin) && expanded &&
+                <AccordionDetails sx={{padding: '4px 16px 0px 26px'}}>
+                    <EvidenceForm activity={activity} handleUpdate={() => {
+                    }}/>
+                </AccordionDetails>
             }
         </Accordion>
     )

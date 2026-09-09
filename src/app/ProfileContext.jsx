@@ -19,14 +19,15 @@ const emptyScoreData = {
 }
 
 export function ProfileProvider({children, userId: providedUserId}) {
-    const {user} = useContext(AuthContext)
-    const {dbLoaded, lockCollection} = useContext(DBContext)
+    const {isLoggedIn, user, userClaims = []} = useContext(AuthContext)
+    const {dbLoaded, lockCollection, getProfile} = useContext(DBContext)
     const {fetchProfileSummary} = useContext(APIContext)
     const {filters = {}} = useContext(FilterContext)
     const scoringData = useContext(ScoringContext)
 
     const userId = providedUserId || filters.uid || user?.uid || ''
     const isSelf = Boolean(user?.uid && user.uid === userId)
+    const adminUser = isLoggedIn && user && ['lpuAdmin', 'admin'].some(claim => userClaims.includes(claim))
 
     const [summaryState, setSummaryState] = useState({
         loading: false,
@@ -37,7 +38,7 @@ export function ProfileProvider({children, userId: providedUserId}) {
     useEffect(() => {
         let cancelled = false
 
-        async function loadProfileSummary() {
+        async function loadProfile() {
             if (!userId || isSelf) {
                 setSummaryState({loading: false, error: null, data: null})
                 return
@@ -46,15 +47,17 @@ export function ProfileProvider({children, userId: providedUserId}) {
             setSummaryState({loading: true, error: null, data: null})
 
             try {
-                const profile = await fetchProfileSummary(userId)
+                const profile = adminUser
+                    ? await getProfile(userId)
+                    : await fetchProfileSummary(userId)
                 if (cancelled) return
 
                 setSummaryState({
                     loading: false,
                     error: null,
                     data: {
-                        source: 'api-summary',
-                        isFullProfile: false,
+                        source: adminUser ? 'db-full-admin' : 'api-summary',
+                        isFullProfile: adminUser,
                         profile,
                         ...emptyScoreData
                     }
@@ -65,12 +68,12 @@ export function ProfileProvider({children, userId: providedUserId}) {
             }
         }
 
-        loadProfileSummary().then()
+        loadProfile().then()
 
         return () => {
             cancelled = true
         }
-    }, [fetchProfileSummary, isSelf, userId])
+    }, [adminUser, fetchProfileSummary, getProfile, isSelf, userId])
 
     const selfData = useMemo(() => {
         if (!userId || !isSelf || !dbLoaded) return null
@@ -91,12 +94,13 @@ export function ProfileProvider({children, userId: providedUserId}) {
     const value = useMemo(() => ({
         userId,
         isSelf,
+        adminUser,
         isFullProfile: data?.isFullProfile === true,
         source: data?.source,
         data,
         loading,
         error
-    }), [data, error, isSelf, loading, userId])
+    }), [adminUser, data, error, isSelf, loading, userId])
 
     return (
         <ProfileContext.Provider value={value}>
