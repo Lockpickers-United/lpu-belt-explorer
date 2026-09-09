@@ -1,11 +1,11 @@
-import React, {useCallback, useContext, useEffect, useRef, useState} from 'react'
+import React, {useCallback, useContext, useEffect, useMemo, useRef, useState} from 'react'
 import AuthContext from '../app/AuthContext.jsx'
-import DBContext from '../app/DBContext.jsx'
 import Button from '@mui/material/Button'
 import {enqueueSnackbar} from 'notistack'
 import dayjs from 'dayjs'
 import SignInButton from './SignInButton.jsx'
 import ScopedDialog from '../misc/ScopedDialog.jsx'
+import ProfileContext from '../app/ProfileContext.jsx'
 
 export default function SignInDetect({
                                          newSignIn = false,
@@ -16,25 +16,23 @@ export default function SignInDetect({
                                          containerRef = null
                                      }) {
     /*
-      Take an action when new sign in detacted:
+      Take an action when new sign-in detacted:
         <SignInDetect newSignIn={newSignIn} setNewSignIn={setNewSignIn} required={false} dialog={false} />
-      Display sign in dialog if user not signed in:
+      Display sign-in dialog if user not signed in:
         <SignInDetect required={true} dialog={false} linkText={'You must be signed in to enter the Raffle.'}/>
       Snackbar displayed unless dialog=true
     */
 
     const {authLoaded, isLoggedIn, user, initialUser, setInitialUser} = useContext(AuthContext)
-    const {getProfile} = useContext(DBContext)
+
     const [dialogOpen, setDialogOpen] = useState(false)
     const [displayName, setDisplayName] = useState(undefined)
-    const handleDisplayName = useCallback(async () => {
-        const profile = user?.uid ? await getProfile(user?.uid) : null
-        if (profile?.displayName) setDisplayName(profile.displayName)
-    }, [getProfile, user])
+    const {data} = useContext(ProfileContext)
+    const profile = useMemo(() => data ? data.profile : {}, [data])
 
     useEffect(() => {
-        handleDisplayName().then()
-    }, [handleDisplayName])
+        if (profile?.displayName) setDisplayName(profile.displayName)
+    }, [profile])
 
     const handleSignIn = useCallback(() => {
         setInitialUser('yes')

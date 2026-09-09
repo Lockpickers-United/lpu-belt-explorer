@@ -1,4 +1,4 @@
-import React, {useContext, useCallback, useState} from 'react'
+import React, {useContext, useCallback, useState, useMemo} from 'react'
 import {AdapterDayjs} from '@mui/x-date-pickers/AdapterDayjs'
 import {collectionsStatsCurrent} from '../data/dataUrls'
 import {FilterProvider} from '../context/FilterContext.jsx'
@@ -6,9 +6,7 @@ import {LocalizationProvider} from '@mui/x-date-pickers'
 import {ScorecardDataProvider} from './ScorecardDataProvider.jsx'
 import {scorecardFilterFields} from '../data/filterFields'
 import {ScorecardListProvider} from './ScorecardListContext.jsx'
-import AuthContext from '../app/AuthContext.jsx'
 import dayjs from 'dayjs'
-import DBContext from '../app/DBContext.jsx'
 import Footer from '../nav/Footer.jsx'
 import LoadingDisplay from '../misc/LoadingDisplay.jsx'
 import Nav from '../nav/Nav.jsx'
@@ -18,11 +16,10 @@ import useData from '../util/useData.jsx'
 import ImportPreviewDisplay from './ImportPreviewDisplay.jsx'
 import SystemMessage from '../systemMessage/SystemMessage.jsx'
 import SystemMessageContext from '../systemMessage/SystemMessageContext.jsx'
+import ProfileContext from '../app/ProfileContext.jsx'
+import {allAwardsById} from '../entries/entryutils'
 
 function ImportPreview({syncStatus, syncResult, service}) {
-    const {user} = useContext(AuthContext)
-    const {getProfile} = useContext(DBContext)
-    const {scoredActivity, bbCount, danPoints, eligibleDan, nextDanPoints, nextDanLocks} = useContext(ScoringContext)
     const {getMessageById} = useContext(SystemMessageContext)
 
     const [triggerState, setTriggerState] = useState(false)
@@ -30,31 +27,35 @@ function ImportPreview({syncStatus, syncResult, service}) {
         setTriggerState(!triggerState)
     }, [triggerState])
 
-    const loadFn = useCallback(async () => {
-        if (triggerState) {
-            // Terrible hack to reload data when an admin takes action to modify
-            // another user's scorecard. The dependency array will trigger eval,
-            // and this removes lint error without suppressing other dep problems.
-            triggerState
-        }
-        try {
-            const profile = user?.uid ? await getProfile(user?.uid) : {}
-            return {profile, scoredActivity, bbCount, danPoints, eligibleDan, nextDanPoints, nextDanLocks}
+    const {data, loading, error} = useContext(ProfileContext)
+    const profile = useMemo(() => data ? data.profile : {}, [data])
 
-        } catch (ex) {
-            console.error('Error loading profile and activity.', ex)
-            return null
-        }
-    }, [triggerState, getProfile, user, scoredActivity, bbCount, danPoints, eligibleDan, nextDanPoints, nextDanLocks])
-    const {data = {}, loading, error} = useData({loadFn})
+    const {
+        scoredActivity,
+        bbCount,
+        danPoints,
+        eligibleDan,
+        nextDanPoints,
+        nextDanLocks,
+        uniqueLocks
+    } = useContext(ScoringContext)
 
-    const profile = data ? data.profile : {}
-    const cardActivity = data ? data.scoredActivity : []
-    const cardBBCount = data ? data.bbCount : 0
-    const cardDanPoints = data ? data.danPoints : 0
-    const cardEligibleDan = data ? data.eligibleDan : 0
-    const cardNextDanPoints = data ? data.nextDanPoints : 0
-    const cardNextDanLocks = data ? data.nextDanLocks : 0
+    const cardActivity = scoredActivity || []
+    const cardBBCount = bbCount || 0
+    const cardDanPoints = danPoints || 0
+    const cardEligibleDan = eligibleDan || 0
+    const cardNextDanPoints = nextDanPoints || 0
+    const cardNextDanLocks = nextDanLocks || 0
+    const cardUniqueLocks = uniqueLocks || 0
+    const beltAwardsData = scoredActivity || []
+    const beltAwards = beltAwardsData
+        ? beltAwardsData
+            .filter(activity => activity.collectionDB === 'awards')
+            .map(activity => allAwardsById[activity.matchId])
+            .filter(award => award['awardType'] === 'belt')
+            .sort((a, b) => a.rank - b.rank)
+        : []
+    const cardMaxBelt = beltAwardsData ? beltAwards[beltAwards.length - 1] : {}
 
     const collectionsStats = useData({url: collectionsStatsCurrent})
     const popularLocksBB = collectionsStats.data ? collectionsStats.data.blackBeltOnly.listStats.recordedLocks.topItems : []
@@ -89,7 +90,10 @@ function ImportPreview({syncStatus, syncResult, service}) {
             <ScorecardDataProvider cardActivity={cardActivity} cardBBCount={cardBBCount}
                                    cardDanPoints={cardDanPoints}
                                    cardEligibleDan={cardEligibleDan} cardNextDanPoints={cardNextDanPoints}
-                                   cardNextDanLocks={cardNextDanLocks} popularLocks={popularLocks} popularLocksBB={popularLocksBB}>
+                                   cardNextDanLocks={cardNextDanLocks} cardUniqueLocks={cardUniqueLocks}
+                                   cardMaxBelt={cardMaxBelt}
+                                   popularLocks={popularLocks} popularLocksBB={popularLocksBB}
+                                   profile={profile}>
                 <ScorecardListProvider>
                     <LocalizationProvider adapterLocale={dayjs.locale()} dateAdapter={AdapterDayjs}>
 
@@ -100,8 +104,6 @@ function ImportPreview({syncStatus, syncResult, service}) {
                                 Please wait, this may take a minute or so.<br/><br/>
                             </div>
                         }
-
-
 
                         {syncStatus === 'debug_download' &&
                             <div style={{
@@ -123,7 +125,7 @@ function ImportPreview({syncStatus, syncResult, service}) {
                         }
 
                         {syncStatus === 'debug_download' &&
-                                <SystemMessage override={msg}/>
+                            <SystemMessage override={msg}/>
                         }
 
                         {syncStatus === 'token_expired' &&

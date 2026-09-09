@@ -1,4 +1,4 @@
-import React, {useCallback, useContext} from 'react'
+import React, {useCallback, useContext, useMemo} from 'react'
 import Nav from '../../nav/Nav.jsx'
 import useWindowSize from '../../util/useWindowSize.jsx'
 import usePageTitle from '../../util/usePageTitle.jsx'
@@ -16,12 +16,13 @@ import {LocalizationProvider} from '@mui/x-date-pickers'
 import dayjs from 'dayjs'
 import {AdapterDayjs} from '@mui/x-date-pickers/AdapterDayjs/index.d.ts'
 import LoadingDisplay from '../../util/LoadingDisplay.jsx'
+import ProfileContext from '../../app/ProfileContext.jsx'
 
 export default function BeltRequestSubmitRoute() {
-    const {user} = useContext(AuthContext)
-    const userId = user?.uid
 
-    const {getProfile, getPickerActivity} = useContext(DBContext)
+    const {data, loading, error} = useContext(ProfileContext)
+    const profile = useMemo(() => data ? data.profile : {}, [data])
+
     const {
         scoredActivity,
         bbCount,
@@ -30,66 +31,29 @@ export default function BeltRequestSubmitRoute() {
         nextDanPoints,
         nextDanLocks,
         uniqueLocks,
-        maxBelt
     } = useContext(ScoringContext)
 
-    const loadFn = useCallback(async () => {
-        if (!userId) return null
-        try {
-            const profile = await getProfile(userId)
-
-            if (profile) {
-                const ownerName = profile.displayName && !profile['privacyAnonymous']
-                    ? profile.displayName.toLowerCase().endsWith('s')
-                        ? `${profile.displayName}'`
-                        : `${profile.displayName}'s`
-                    : 'Anonymous'
-                document.title = `LPU Belt Explorer - ${ownerName} Scorecard`
-            }
-            if (user?.uid !== userId) {
-                const activity = await getPickerActivity(userId)
-                return {profile, ...calculateScoreForUser(activity)}
-            } else {
-                return {
-                    profile,
-                    scoredActivity,
-                    bbCount,
-                    danPoints,
-                    eligibleDan,
-                    nextDanPoints,
-                    nextDanLocks,
-                    uniqueLocks,
-                    maxBelt
-                }
-            }
-        } catch (ex) {
-            console.error('Error loading profile and activity.', ex)
-            return null
-        }
-    }, [getProfile, userId, user, getPickerActivity, scoredActivity, bbCount, danPoints, eligibleDan, nextDanPoints, nextDanLocks, uniqueLocks, maxBelt])
-    const {data = {}, loading, error} = useData({loadFn})
-
-    const profile = data ? data.profile : {}
-
-    const cardActivity = data ? data.scoredActivity : []
-    const cardBBCount = data ? data.bbCount : 0
-    const cardDanPoints = data ? data.danPoints : 0
-    const cardEligibleDan = data ? data.eligibleDan : 0
-    const cardNextDanPoints = data ? data.nextDanPoints : 0
-    const cardNextDanLocks = data ? data.nextDanLocks : 0
-    const cardUniqueLocks = data ? data.uniqueLocks : 0
-    const beltAwards = data
-        ? data.scoredActivity
+    const cardActivity = scoredActivity || []
+    const cardBBCount = bbCount || 0
+    const cardDanPoints = danPoints || 0
+    const cardEligibleDan = eligibleDan || 0
+    const cardNextDanPoints = nextDanPoints || 0
+    const cardNextDanLocks = nextDanLocks || 0
+    const cardUniqueLocks = uniqueLocks || 0
+    const beltAwardsData = scoredActivity || []
+    const beltAwards = beltAwardsData
+        ? beltAwardsData
             .filter(activity => activity.collectionDB === 'awards')
             .map(activity => allAwardsById[activity.matchId])
             .filter(award => award['awardType'] === 'belt')
             .sort((a, b) => a.rank - b.rank)
         : []
-    const cardMaxBelt = data ? beltAwards[beltAwards.length - 1] : {}
+    const cardMaxBelt = beltAwardsData ? beltAwards[beltAwards.length - 1] : {}
+
     const blackBeltScorecard = data?.profile?.blackBeltAwardedAt > 0
 
 
-    usePageTitle('Belt Request Form')
+    usePageTitle('Belt Request Composer')
 
     const {isMobile} = useWindowSize()
 
@@ -114,7 +78,7 @@ export default function BeltRequestSubmitRoute() {
                         {loading && <LoadingDisplay/>}
 
                         {!loading && !error &&
-                            <BeltRequestForm profile={profile} user={user}/>
+                            <BeltRequestForm/>
                         }
 
 

@@ -2,6 +2,7 @@ import React, {useState, useContext, useEffect, useRef} from 'react'
 import DBContext from '../app/DBContext'
 import {lookupAwardByBelt} from '../entries/entryutils'
 import ImportPreview from '../scorecard/ImportPreview.jsx'
+import {ProfileProvider} from '../app/ProfileContext.jsx'
 
 function AuthDiscordRoute() {
     const {setDiscordUserInfo, peekAtDiscordAwards} = useContext(DBContext)
@@ -103,9 +104,9 @@ function AuthDiscordRoute() {
     }, [credentials, setDiscordUserInfo, peekAtDiscordAwards])
 
     return (
-
+        <ProfileProvider>
             <ImportPreview syncStatus={syncStatus} syncResult={syncResult} service={'Discord'}/>
-
+        </ProfileProvider>
     )
 }
 

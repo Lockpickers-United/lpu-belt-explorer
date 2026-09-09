@@ -3,6 +3,7 @@ import {lookupAwardByBelt, awardGreaterThan} from '../entries/entryutils'
 import AuthContext from '../app/AuthContext'
 import DBContext from '../app/DBContext'
 import ImportPreview from '../scorecard/ImportPreview.jsx'
+import {ProfileProvider} from '../app/ProfileContext.jsx'
 
 const idealRegExp = /(white|yellow|orange|green|blue|purple|brown|red|black|(\d\d?)[th\s]*dan|dan[th\s]*(\d\d?))\s*(belt)?\s*(approved|granted)/i
 const positiveRegExp = /approved|granted|congrat/i
@@ -251,9 +252,10 @@ function AuthRedditRoute() {
     }, [credentials, advanceBookmarkForRedditUser, getBookmarkForRedditUser, clientId, clientSecret, debugDownload])
 
     return (
+        <ProfileProvider>
 
             <ImportPreview syncStatus={syncStatus} syncResult={syncResult} service={'Reddit'}/>
-
+        </ProfileProvider>
     )
 }
 
