@@ -5,8 +5,10 @@ import useWindowSize from '../../util/useWindowSize'
 const PageTrackingTable = ({data}) => {
     const {pageTracking} = data
 
-    const totals = Object.keys(pageTracking.data[13]).sort((a, b) => {
-        return pageTracking.data[13][b] - pageTracking.data[13][a]
+    console.log('pageTracking', pageTracking)
+
+    const totals = Object.keys(pageTracking.data[pageTracking.data.length-1]).sort((a, b) => {
+        return pageTracking.data[pageTracking.data.length-1][b] - pageTracking.data[pageTracking.data.length-1][a]
     }).filter(page => page !== 'total' && page !== 'date')
     totals.unshift('date')
     totals.push('total')

@@ -45,3 +45,5 @@ allure-results/*
 playwright-report/*
 tests-results/*
 /keys
+/.agents
+.agents

@@ -1,0 +1,8 @@
+{
+  "projects": {
+    "default": "lputest",
+    "prod": "lpu-belt-explorer"
+  },
+  "targets": {},
+  "etags": {}
+}
