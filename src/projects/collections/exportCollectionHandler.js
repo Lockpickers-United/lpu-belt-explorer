@@ -3,7 +3,7 @@ import {initializeApp, cert} from 'firebase-admin/app'
 import {getFirestore} from 'firebase-admin/firestore'
 
 import {localUser, prodUser} from '../../../keys/users.js'
-import {logToFirebaseLog} from '../logFirebaseActivity/logFirebaseActivity.js'
+import {logFirebaseActivity} from '../logFirebaseActivity/logFirebaseActivity.js'
 import postFirebaseActivity from '../../util/postFirebaseActivity.js'
 
 const production = process.env.USER !== localUser
@@ -44,7 +44,7 @@ export default async function exportCollection({collection, devDb=false}) {
 
     try {
         if (production) {
-            await logToFirebaseLog(messages)
+            await logFirebaseActivity(messages)
         } else {
             await postFirebaseActivity({activityData: messages})
         }

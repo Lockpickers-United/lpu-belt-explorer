@@ -1,14 +1,16 @@
 import {describe, expect, it} from 'vitest'
+import pinoHttp from 'pino-http'
 
 import {
     getHttpLogLevel,
+    getHttpResponseTimeMs,
     getRequestPathname,
     isApplicationRoutePath,
     shouldAutoLogRequest
 } from './httpLogger.js'
 
 const createReq = (method = 'GET', url = '/ready') => ({method, url})
-const createRes = (statusCode = 200) => ({statusCode})
+const createRes = (statusCode = 200, extra = {}) => ({statusCode, ...extra})
 
 describe('http logger log level selection', () => {
     it('silences successful OPTIONS requests in production', () => {
@@ -55,15 +57,40 @@ describe('http logger log level selection', () => {
         expect(level).toBe('error')
     })
 
-    it('logs normal successful requests in production', () => {
+    it('silences normal successful requests in production', () => {
         const level = getHttpLogLevel(
             createReq('POST'),
             createRes(200),
             undefined,
-            {production: true}
+            {production: true, responseTimeMs: 100}
         )
 
-        expect(level).toBe('info')
+        expect(level).toBe('silent')
+    })
+
+    it('logs slow successful requests in production', () => {
+        const level = getHttpLogLevel(
+            createReq('POST'),
+            createRes(200),
+            undefined,
+            {
+                production: true,
+                responseTimeMs: 1_200,
+                slowRequestThresholdMs: 1_000
+            }
+        )
+
+        expect(level).toBe('warn')
+    })
+
+    it('calculates response time from pino-http start time', () => {
+        const res = createRes(200)
+        const startTime = 10_000
+        const endTime = 11_250
+
+        res[pinoHttp.startTime] = startTime
+
+        expect(getHttpResponseTimeMs(res, () => endTime)).toBe(1_250)
     })
 
     it('normalizes request pathnames before route matching', () => {

@@ -5,7 +5,7 @@ import {setDeep} from '../../util/setDeep.js'
 
 import {localUser, prodUser} from '../../../keys/users.js'
 import dayjs from 'dayjs'
-import {logToFirebaseLog} from '../logFirebaseActivity/logFirebaseActivity.js'
+import {logFirebaseActivity} from '../logFirebaseActivity/logFirebaseActivity.js'
 
 const production = process.env.USER !== localUser
 
@@ -44,7 +44,7 @@ async function getAllData() {
         displayName: 'cronjob',
     }]
     try {
-        await logToFirebaseLog(messages)
+        await logFirebaseActivity(messages)
     } catch (err) {
         console.log('Logging Error', err)
     }

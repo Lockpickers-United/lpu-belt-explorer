@@ -6,7 +6,7 @@ import {localUser, prodUser} from '../../../keys/users.js'
 import dayjs from 'dayjs'
 import {projectDetails, lockDetails} from '../../util/getItemDetails.js'
 import entryName from '../../util/entryName.js'
-import {logToFirebaseLog} from '../logFirebaseActivity/logFirebaseActivity.js'
+import {logFirebaseActivity} from '../logFirebaseActivity/logFirebaseActivity.js'
 
 const production = process.env.USER !== localUser
 
@@ -40,21 +40,21 @@ export default async function getAllEvidence() {
     const scorecardEvidence = await dbProd.collection('evidence').get()
 
     const messages = [{
-        activity: 'READ',
-        activityCount: unclaimedEvidence.docs.length,
+        type: 'READ',
+        count: unclaimedEvidence.docs.length,
         source: 'allEvidenceExport - unclaimed-evidence',
         id: '',
         displayName: 'cronjob'
     }, {
-        activity: 'READ',
-        activityCount: scorecardEvidence.docs.length,
+        type: 'READ',
+        count: scorecardEvidence.docs.length,
         source: 'allEvidenceExport - scorecardEvidence',
         id: '',
         displayName: 'cronjob'
     }]
 
     try {
-        await logToFirebaseLog(messages)
+        await logFirebaseActivity(messages)
     } catch (err) {
         console.log('Logging Error', err)
     }

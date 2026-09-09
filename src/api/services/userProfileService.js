@@ -1,9 +1,4 @@
 import {getFirestoreDb} from './firebaseAdmin.js'
-import {logger} from '../../logger/logger.js'
-
-const log = logger.child({
-    module: 'api.services.userProfileService'
-})
 
 const profileCollection = 'lockcollections'
 const profileCacheTtlMs = 60_000
@@ -12,11 +7,15 @@ const maxProfileCacheEntries = 1_000
 const profileCache = new Map()
 
 const summaryCollections = {
-    safelocksOwn: 'safelocksOwn',
-    scorecard: 'recordedLocks',
     own: 'own',
-    wishlist: 'wishlist',
     picked: 'picked',
+    recorded: 'recorded',
+    wishlist: 'wishlist',
+    scorecard: 'recordedLocks',
+    recordedLocks: 'recordedLocks',
+    safelocksOwn: 'safelocksOwn',
+    safelocksCracked: 'safelocksCracked',
+    safelocksWishlist: 'safelocksWishlist',
 }
 
 function createUserProfileNotFoundError() {
@@ -94,12 +93,17 @@ export async function getUserSummary(userId) {
         collections[responseName] = listValue(profile[profileName])
     })
 
+    const blackBeltAwardedAt = profile.blackBeltAwardedAt ? {blackBeltAwardedAt: profile.blackBeltAwardedAt} : {}
+    const danLevel = profile.danLevel ? {danLevel: profile.danLevel} : {}
+
     return {
         metadata: firebaseMetadata(),
         data: {
             userId,
             displayName,
-            collections
+            collections,
+            ...blackBeltAwardedAt,
+            ...danLevel
         }
     }
 }

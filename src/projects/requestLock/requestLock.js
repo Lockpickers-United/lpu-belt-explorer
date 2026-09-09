@@ -14,7 +14,7 @@ import {exec} from 'child_process'
 import {spaceJoin} from '../../util/stringUtils.js'
 import dayjs from 'dayjs'
 import createThumbnails from '../../util/createThumbnails.js'
-import {logToFirebaseLog} from '../logFirebaseActivity/logFirebaseActivity.js'
+import {logFirebaseActivity} from '../logFirebaseActivity/logFirebaseActivity.js'
 import admin from 'firebase-admin'
 import {getFirestore} from 'firebase-admin/firestore'
 import serviceAccount from '../../../keys/service-account.json' with {type: 'json'}
@@ -204,7 +204,7 @@ export default async function requestLock(req, res) {
         const ref = db.collection('ranking-requests').doc(entry.id)
         try {
             await setRankingRequest(ref, entry, entry.id, entry.displayName)
-            await logToFirebaseLog([{
+            await logFirebaseActivity([{
                 activity: 'READ',
                 activityCount: 1,
                 source: 'request-create',
@@ -257,7 +257,7 @@ export async function updateRequest(req, res) {
     try {
         const ref = db.collection('ranking-requests').doc(entry.id)
         await setRankingRequest(ref, entry, entry.id, entry.displayName)
-        await logToFirebaseLog([{
+        await logFirebaseActivity([{
             activity: 'WRITE',
             activityCount: 1,
             source: 'request-update',
@@ -289,7 +289,7 @@ export async function updateVotes(req, res) {
     try {
         const rankingRequest = await fetchRankingRequest(ref, entryId)
         if (!rankingRequest) return handleError(res, 'No ranking request found', new Error('No ranking request found'), 404)
-        await logToFirebaseLog([{
+        await logFirebaseActivity([{
             activity: 'READ',
             activityCount: 1,
             source: 'request-upvote',
@@ -308,7 +308,7 @@ export async function updateVotes(req, res) {
         const updateData = {requestedBy: updatedVotes}
         try {
             await updateRankingRequest(ref, updateData, entryId)
-            await logToFirebaseLog([{
+            await logFirebaseActivity([{
                 activity: 'WRITE',
                 activityCount: 1,
                 source: 'request-upvote',

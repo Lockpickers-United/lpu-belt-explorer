@@ -1,10 +1,7 @@
-/**
- * @prop foobar
- */
 import {logger} from '../../logger/logger.js'
 
 const log = logger.child({
-    module: 'logFirebaseActivity'
+    module: 'firebase-activity'
 })
 
 function handleError(res, message, error, status = 500) {
@@ -16,10 +13,10 @@ export default async function handleFirebaseActivityPost(req, res) {
     // TODO fix??
     const {activityData, prod} = req.body
     const mappedActivity = activityData.map((activityItem) => {
-        const {activity, activityCount, source, id, displayName} = activityItem
+        const {type, count, activity, activityCount, source, id, displayName} = activityItem
         return {
-            activity,
-            activityCount,
+            type: type ||activity,
+            count: count || activityCount,
             source,
             id,
             displayName,
@@ -27,29 +24,27 @@ export default async function handleFirebaseActivityPost(req, res) {
         }
     })
     try {
-        await logToFirebaseLog(mappedActivity, prod)
+        await logFirebaseActivity(mappedActivity, prod)
     } catch (err) {
-        log.error({err}, 'Error logging activity')
+        log.error({err}, 'logFirebaseActivity Error')
         return handleError(res, 'Error logging activity', null, 500)
     }
     return res.status(200).json('Activity Logged')
 }
 
-export async function logToFirebaseLog(messages) {
+export async function logFirebaseActivity(messages) {
     if (!Array.isArray(messages)) {
         messages = [messages]
     }
 
     try {
         messages?.map(async (message) => {
-            const {activity, activityCount, source, id, displayName, prod} = message
-            const envString = prod ? 'prod' : 'dev'
-
-            log.info({activity, activityCount, source, id, displayName}, envString)
+            const {type, count, source, id, displayName, prod} = message
+            log.info({type, count, source, id, displayName, prod}, 'firebase accessed')
         })
 
     } catch (err) {
-        log.error({err}, 'General Logging Error')
+        log.error({err}, 'logFirebaseActivity Error')
     }
 
 }

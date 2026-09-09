@@ -4,6 +4,11 @@ import { pinoLogger } from './logger.js'
 import { randomUUID } from 'crypto'
 
 const isProduction = process.env.NODE_ENV === 'production' || process.env.pm_id !== undefined
+const configuredSlowRequestThresholdMs = Number(process.env.HTTP_LOG_SLOW_REQUEST_MS)
+const defaultSlowRequestThresholdMs = Number.isFinite(configuredSlowRequestThresholdMs)
+    && configuredSlowRequestThresholdMs >= 0
+    ? configuredSlowRequestThresholdMs
+    : 1_000
 
 const appMountPrefixes = ['', '/services', '/servicesDev']
 const appRoutePrefixes = [
@@ -31,7 +36,6 @@ export const loggedApplicationRoutePrefixes = appMountPrefixes.flatMap((mountPre
 const getIp = req => {
     const xff = req.headers['x-forwarded-for']
     if (typeof xff === 'string' && xff.length) {
-        // left-most is the original client
         return xff.split(',')[0].trim()
     }
     return req.socket?.remoteAddress || req.connection?.remoteAddress || req.ip
@@ -58,10 +62,27 @@ export const shouldAutoLogRequest = (req, {production = isProduction} = {}) => (
     !production || isApplicationRoutePath(getRequestPathname(req))
 )
 
-export const getHttpLogLevel = (req, res, err, {production = isProduction} = {}) => {
+export const getHttpResponseTimeMs = (res, now = () => Date.now()) => {
+    const startTime = res[pinoHttp.startTime]
+
+    return typeof startTime === 'number' ? now() - startTime : undefined
+}
+
+export const getHttpLogLevel = (
+    req,
+    res,
+    err,
+    {
+        production = isProduction,
+        responseTimeMs = getHttpResponseTimeMs(res),
+        slowRequestThresholdMs = defaultSlowRequestThresholdMs
+    } = {}
+) => {
     if (err || res.statusCode >= 500) return 'error'
     if (res.statusCode >= 400) return 'warn'
     if (production && req.method === 'OPTIONS') return 'silent'
+    if (production && responseTimeMs >= slowRequestThresholdMs) return 'warn'
+    if (production) return 'silent'
     return 'info'
 }
 

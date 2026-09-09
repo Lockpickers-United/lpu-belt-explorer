@@ -10,7 +10,7 @@ export default function parseForm(res, req, form, handleError, maxFileSizeMB, ma
             // Defensive description mapping to avoid throwing inside the error handler
             let description = 'Formidable form parse error'
             const code = err?.code
-            if (code != null) {
+            if (code !== null) {
                 const strCode = String(code)
                 if (strCode === '1016') {
                     description = 'File exceeds size limit' + (maxFileSizeMB ? ` of ${maxFileSizeMB} MB` : '')
@@ -24,8 +24,8 @@ export default function parseForm(res, req, form, handleError, maxFileSizeMB, ma
                     description = err.message
                 }
             }
-            try { err.message = `Form parse error: ${description}` } catch {}
-            try { handleError(res, description, err, status) } catch {}
+            try { err.message = `Form parse error: ${description}` } catch { /* log to console? */ }
+            try { handleError(res, description, err, status) } catch { /* log to console? */ }
             reject(err)
         })  // ensure the Promise settles
         form.parse(req, (err, fields, files) => {
@@ -66,7 +66,7 @@ export default function parseForm(res, req, form, handleError, maxFileSizeMB, ma
                         return list
                     }
                     const filesSummary = summarizeFiles(files)
-                    logger.info({
+                    logger.debug({
                         msg: 'multipart form parsed',
                         requestId: req.id,
                         method: req.method,
@@ -75,7 +75,7 @@ export default function parseForm(res, req, form, handleError, maxFileSizeMB, ma
                         files: filesSummary
                     })
                 }
-            } catch {}
+            } catch { /* log to console? */ }
 
             if (err) return reject(err)
             resolve({fields, files})

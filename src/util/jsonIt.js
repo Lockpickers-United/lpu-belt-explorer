@@ -12,7 +12,7 @@ export function jsonItArray(string, array) {
             console.log(`${element.join('||')}`)
         })
     } else {
-        console.log(JSON.stringify(object, null, 2))
+        console.log(JSON.stringify(array, null, 2))
     }
     console.log('--------')
 }

@@ -6,7 +6,7 @@ import {localUser, prodUser} from '../../../keys/users.js'
 import dayjs from 'dayjs'
 import {awardDetails, lockDetails, projectDetails, safelockDetails} from '../../util/getItemDetails.js'
 import entryName from '../../util/entryName.js'
-import {logToFirebaseLog} from '../logFirebaseActivity/logFirebaseActivity.js'
+import {logFirebaseActivity} from '../logFirebaseActivity/logFirebaseActivity.js'
 
 const production = process.env.USER !== localUser
 
@@ -57,7 +57,7 @@ async function getAllData() {
     }]
 
     try {
-        production && await logToFirebaseLog(messages)
+        production && await logFirebaseActivity(messages)
     } catch (err) {
         console.log('Logging Error', err)
     }
