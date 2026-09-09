@@ -1,0 +1,1 @@
+import{M as s,j as r,ab as t}from"./index-BmwT33b2.js";import{P as o}from"./ProfileContext-ByOJ-h_y.js";function u(){const{userId:e}=s();return r.jsx(o,{userId:e,children:r.jsx(t,{})})}export{u as default};
