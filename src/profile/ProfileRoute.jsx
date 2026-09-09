@@ -36,6 +36,8 @@ function ProfileRoute() {
 
     admin && console.log('ProfileRoute', {isFullProfile, data})
 
+    const owner = user?.uid === userId
+
     useEffect(() => {
         if (profile) {
             const ownerName = profile.displayName && !profile['privacyAnonymous']
@@ -101,7 +103,7 @@ function ProfileRoute() {
 
                     <Footer before={footerBefore}/>
 
-                    <Tracker feature='profile'/>
+                    <Tracker feature='profile' own={owner}/>
                 </LockListProvider>
             </DataProvider>
         </FilterProvider>
