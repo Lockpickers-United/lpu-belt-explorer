@@ -4,6 +4,7 @@
 import fs from 'fs'
 import path from 'path'
 import {exec} from 'child_process'
+import {setDeep, setDeepAdd} from '../../util/setDeep.js'
 
 // DAYJS SETUP
 import dayjs from 'dayjs'
@@ -131,37 +132,36 @@ for (const file of dataFiles) {
     if (!wip.weeks[firstDay]) {
         wip.weeks[firstDay] = {numDays: 0, visits: 0, visitors: 0, totalLockViews: 0}
     }
-    wip.totals.numDays++
-    wip.weeks[firstDay].numDays++
+    setDeepAdd(wip, ['totals', 'numDays'], 1)
+    setDeepAdd(wip, ['weeks', firstDay, 'numDays'], 1)
 
     // PRIMARY METRICS aggregation
-    wip.days[dateString].visits = dayData.visits
-    wip.weeks[firstDay].visits = (wip.weeks[firstDay].visits || 0) + dayData.visits
-    wip.totals.visits += dayData.visits
+    setDeep(wip, ['days', dateString, 'visits'], dayData.visits)
+    setDeepAdd(wip, ['weeks', firstDay, 'visits'], dayData.visits)
+    setDeepAdd(wip, ['totals', 'visits'], dayData.visits)
 
-    wip.days[dateString].visitors = dayData.visitors
-    wip.weeks[firstDay].visitors = (wip.weeks[firstDay].visitors || 0) + dayData.visitors
-    wip.totals.visitors += dayData.visitors
+    setDeep(wip, ['days', dateString, 'visitors'], dayData.visitors)
+    setDeepAdd(wip, ['weeks', firstDay, 'visitors'], dayData.visitors)
+    setDeepAdd(wip, ['totals', 'visitors'], dayData.visitors)
 
     // Process lockViewsById
     if (dayData.lockViewsById) {
 
         for (const key in dayData.lockViewsById) {
             const count = dayData.lockViewsById[key]
-            wip.lockViewsById[key] = (wip.lockViewsById[key] || 0) + count
-            lockViews[key] = (lockViews[key] || 0) + count
+            setDeepAdd(wip, ['lockViewsById', key], count)
+            setDeepAdd(lockViews, [key], count)
 
             // Use lockDetailsNew to get belt for the lock
             const lockBelt = (lockDetailsNew[key] && lockDetailsNew[key].belt)
                 ?  lockDetailsNew[key].belt
                 : 'Unranked'
 
-            wip.lockViewsByBelt = wip.lockViewsByBelt || {}
-            wip.lockViewsByBelt[lockBelt] = (wip.lockViewsByBelt[lockBelt] || 0) + count
+            setDeepAdd(wip, ['lockViewsByBelt', lockBelt], count)
 
-            wip.days[dateString].totalLockViews = (wip.days[dateString].totalLockViews || 0) + count
-            wip.weeks[firstDay].totalLockViews = (wip.weeks[firstDay].totalLockViews || 0) + count
-            wip.totals.totalLockViews += count
+            setDeepAdd(wip, ['days', dateString, 'totalLockViews'], count)
+            setDeepAdd(wip, ['weeks', firstDay, 'totalLockViews'], count)
+            setDeepAdd(wip, ['totals', 'totalLockViews'], count)
         }
     }
 
@@ -169,8 +169,8 @@ for (const file of dataFiles) {
     if (dayData.raflPotViewsById) {
         for (const key in dayData.raflPotViewsById) {
             const count = dayData.raflPotViewsById[key]
-            wip.raflPotViewsById[key] = (wip.raflPotViewsById[key] || 0) + count
-            wip.totals.totalPotViews += count
+            setDeepAdd(wip, ['raflPotViewsById', key], count)
+            setDeepAdd(wip, ['totals', 'totalPotViews'], count)
         }
     }
 
@@ -178,7 +178,7 @@ for (const file of dataFiles) {
     if (dayData.referrerPotViews) {
         for (const key in dayData.referrerPotViews) {
             const count = dayData.referrerPotViews[key]
-            wip.referrerPotViews[key] = (wip.referrerPotViews[key] || 0) + count
+            setDeepAdd(wip, ['referrerPotViews', key], count)
         }
     }
 
@@ -186,153 +186,140 @@ for (const file of dataFiles) {
     if (dayData.raflPotViewsByCountry) {
         for (const key in dayData.raflPotViewsByCountry) {
             const count = dayData.raflPotViewsByCountry[key]
-            wip.raflPotViewsByCountry[key] = (wip.raflPotViewsByCountry[key] || 0) + count
+            setDeepAdd(wip, ['raflPotViewsByCountry', key], count)
         }
     }
 
     // Process pageViews
     if (dayData.pageViews) {
-        wip.days[dateString].pageViews = wip.days[dateString].pageViews || {}
         for (const key in dayData.pageViews) {
-            wip.days[dateString].pageViews[key] = (wip.days[dateString].pageViews[key] || 0) + dayData.pageViews[key]
+            setDeepAdd(wip, ['days', dateString, 'pageViews', key], dayData.pageViews[key])
         }
     }
 
     // Process errorPages
     if (dayData.errorPages) {
-        wip.errorPages = wip.errorPages || {}
         for (const key in dayData.errorPages) {
-            wip.errorPages[key] = (wip.errorPages[key] || 0) + dayData.errorPages[key]
+            setDeepAdd(wip, ['errorPages', key], dayData.errorPages[key])
         }
     }
 
     // Process continents
     if (dayData.continents) {
-        wip.continents = wip.continents || {}
         for (const key in dayData.continents) {
-            wip.continents[key] = (wip.continents[key] || 0) + dayData.continents[key]
+            setDeepAdd(wip, ['continents', key], dayData.continents[key])
         }
     }
 
     // Process visitsByCountry and firstVisit
     if (dayData.visitsByCountry) {
-        wip.visitsByCountry = wip.visitsByCountry || {}
         for (const key in dayData.visitsByCountry) {
-            wip.visitsByCountry[key] = (wip.visitsByCountry[key] || 0) + dayData.visitsByCountry[key]
+            setDeepAdd(wip, ['visitsByCountry', key], dayData.visitsByCountry[key])
             // Set first visit if not set or if this date is earlier
             if (!wip.firstVisit[key] || requestDate.isBefore(dayjs(wip.firstVisit[key], 'YYYY-MM-DD'))) {
-                wip.firstVisit[key] = dateString
+                setDeep(wip, ['firstVisit', key], dateString)
             }
         }
     }
 
     // Process lockViewsByCountry
     if (dayData.lockViewsByCountry) {
-        wip.lockViewsByCountry = wip.lockViewsByCountry || {}
         for (const key in dayData.lockViewsByCountry) {
-            wip.lockViewsByCountry[key] = (wip.lockViewsByCountry[key] || 0) + dayData.lockViewsByCountry[key]
+            setDeepAdd(wip, ['lockViewsByCountry', key], dayData.lockViewsByCountry[key])
         }
     }
 
     // Process states
     if (dayData.states) {
-        wip.states = wip.states || {}
         for (const key in dayData.states) {
-            wip.states[key] = (wip.states[key] || 0) + dayData.states[key]
+            setDeepAdd(wip, ['states', key], dayData.states[key])
         }
     }
 
     // Process completedSearches
     if (dayData.completedSearches) {
-        wip.completedSearches = wip.completedSearches || {}
         for (const key in dayData.completedSearches) {
-            wip.completedSearches[key] = (wip.completedSearches[key] || 0) + dayData.completedSearches[key]
+            setDeepAdd(wip, ['completedSearches', key], dayData.completedSearches[key])
         }
     }
 
     // Process lockViewsBySearch
     if (dayData.lockViewsBySearch) {
-        wip.lockViewsBySearch = wip.lockViewsBySearch || {}
         for (const key in dayData.lockViewsBySearch) {
-            wip.lockViewsBySearch[key] = (wip.lockViewsBySearch[key] || 0) + dayData.lockViewsBySearch[key]
+            setDeepAdd(wip, ['lockViewsBySearch', key], dayData.lockViewsBySearch[key])
         }
     }
 
     // Process lockViewsByWidth
     if (dayData.lockViewsByWidth) {
-        wip.lockViewsByWidth = wip.lockViewsByWidth || {}
         for (const key in dayData.lockViewsByWidth) {
-            wip.lockViewsByWidth[key] = (wip.lockViewsByWidth[key] || 0) + dayData.lockViewsByWidth[key]
+            setDeepAdd(wip, ['lockViewsByWidth', key], dayData.lockViewsByWidth[key])
         }
     }
 
     // Process referrerWelcomeViews
     if (dayData.referrerWelcomeViews) {
-        wip.referrerWelcomeViews = wip.referrerWelcomeViews || {}
         for (const key in dayData.referrerWelcomeViews) {
-            wip.referrerWelcomeViews[key] = (wip.referrerWelcomeViews[key] || 0) + dayData.referrerWelcomeViews[key]
+            setDeepAdd(wip, ['referrerWelcomeViews', key], dayData.referrerWelcomeViews[key])
         }
     }
 
     // Process referrerLockViews
     if (dayData.referrerLockViews) {
-        wip.referrerLockViews = wip.referrerLockViews || {}
         for (const key in dayData.referrerLockViews) {
-            wip.referrerLockViews[key] = (wip.referrerLockViews[key] || 0) + dayData.referrerLockViews[key]
+            setDeepAdd(wip, ['referrerLockViews', key], dayData.referrerLockViews[key])
         }
     }
 
     // Process referrerViews
     if (dayData.referrerViews) {
-        wip.referrerViews = wip.referrerViews || {}
         for (const key in dayData.referrerViews) {
-            wip.referrerViews[key] = (wip.referrerViews[key] || 0) + dayData.referrerViews[key]
+            setDeepAdd(wip, ['referrerViews', key], dayData.referrerViews[key])
         }
     }
 
     // Process seoViewsById
     if (dayData.seoViewsById) {
-        wip.seoLockById = wip.seoLockById || {}
         for (const key in dayData.seoViewsById) {
-            wip.seoLockById[key] = (wip.seoLockById[key] || 0) + dayData.seoViewsById[key]
+            setDeepAdd(wip, ['seoLockById', key], dayData.seoViewsById[key])
         }
     }
 
     // Process browsers
     if (dayData.browsers) {
         for (const key in dayData.browsers) {
-            wip.browsers[key] = (wip.browsers[key] || 0) + dayData.browsers[key]
+            setDeepAdd(wip, ['browsers', key], dayData.browsers[key])
         }
     }
 
     // Process platforms
     if (dayData.platforms) {
         for (const key in dayData.platforms) {
-            wip.platforms[key] = (wip.platforms[key] || 0) + dayData.platforms[key]
+            setDeepAdd(wip, ['platforms', key], dayData.platforms[key])
         }
     }
 
     // Process crawlerAgentRequests
     if (dayData.crawlerAgentRequests) {
         for (const key in dayData.crawlerAgentRequests) {
-            wip.crawlerAgentRequests[key] = (wip.crawlerAgentRequests[key] || 0) + dayData.crawlerAgentRequests[key]
+            setDeepAdd(wip, ['crawlerAgentRequests', key], dayData.crawlerAgentRequests[key])
         }
     }
 
     // Process requestsByLocalHour and requestsByServerHour
     if (dayData.requestsByLocalHour) {
         for (const key in dayData.requestsByLocalHour) {
-            wip.requestsByLocalHour[key] = (wip.requestsByLocalHour[key] || 0) + dayData.requestsByLocalHour[key]
+            setDeepAdd(wip, ['requestsByLocalHour', key], dayData.requestsByLocalHour[key])
         }
     }
     if (dayData.requestsByServerHour) {
         for (const key in dayData.requestsByServerHour) {
-            wip.requestsByServerHour[key] = (wip.requestsByServerHour[key] || 0) + dayData.requestsByServerHour[key]
+            setDeepAdd(wip, ['requestsByServerHour', key], dayData.requestsByServerHour[key])
         }
     }
 
     // Aggregate total log entries
-    wip.totals.logEntries = (wip.totals.logEntries || 0) + (dayData.logEntries || 0)
+    setDeepAdd(wip, ['totals', 'logEntries'], dayData.logEntries || 0)
 }
 
 // For debugging, print lockViews aggregate as JSON
@@ -673,7 +660,7 @@ function pageTracking() {
         if (wip.days[date].pageViews) {
             for (const page in wip.days[date].pageViews) {
                 pagesDayData[page] = wip.days[date].pageViews[page] || 0
-                filteredTotals[page] = (filteredTotals[page] || 0) + (wip.days[date].pageViews[page] || 0)
+                setDeepAdd(filteredTotals, [page], wip.days[date].pageViews[page] || 0)
             }
         }
         dataArray.push(pagesDayData)
@@ -788,7 +775,7 @@ function outputSiteFullJson() {
         updatedDateTime: dt.format(),
         timezone: dt.format('z')
     }
-    const json_text = JSON.stringify(siteStatsFull)
+    const json_text = JSON.stringify(siteStatsFull,null,2)
     fs.writeFileSync(siteStatsFullJsonFile, json_text, 'utf8')
 }
 

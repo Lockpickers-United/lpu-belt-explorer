@@ -1,17 +1,20 @@
 #!/usr/bin/env node
-'use strict'
 
 // REQUIRED MODULES
-const fs = require('fs')
-const path = require('path')
-const url = require('url')
-const useragent = require('express-useragent')
+import fs from 'fs'
+import path from 'path'
+import {exec} from 'child_process'
+import {fileURLToPath, parse as parseUrl} from 'url'
+import useragent from 'express-useragent'
+import geoipLite from 'geoip-lite'
+import {setDeepAdd} from '../../util/setDeep.js'
 
 // DAYJS SETUP WITH PLUGINS
-const dayjs = require('dayjs')
-const customParseFormat = require('dayjs/plugin/customParseFormat')
-const utc = require('dayjs/plugin/utc')
-const timezone = require('dayjs/plugin/timezone')
+import dayjs from 'dayjs'
+import customParseFormat from 'dayjs/plugin/customParseFormat.js'
+import utc from 'dayjs/plugin/utc.js'
+import timezone from 'dayjs/plugin/timezone.js'
+
 dayjs.extend(customParseFormat)
 dayjs.extend(utc)
 dayjs.extend(timezone)
@@ -28,6 +31,8 @@ const endDate = today.subtract(1, 'day')
 // You can override endDate if needed
 
 // Determine if running locally by checking current directory (adjust as necessary)
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
 const workDir = __dirname
 const local = workDir.includes('nealbayless')
 
@@ -44,13 +49,11 @@ const dataDir = local
     ? '/Users/nealbayless/Documents/LOCKPICK/LPU-Belt-Explorer/Log-Analysis/dailyData/'
     : '/home/dh_m5s5pf/log-analysis/dailyData/'
 
-
-// For mapping countries to timezones, require a JS version of your country-timezones mapping.
-// Assume countryTZ is exported as a module (e.g. an object with country codes/names as keys and arrays as values).
-const countryTZ = require(path.join(componentsDir, 'lpu-country-timezones.json'))
+// For mapping countries to timezones, load the JSON mapping from the log-analysis components directory.
+const countryTZ = JSON.parse(fs.readFileSync(path.join(componentsDir, 'lpu-country-timezones.json'), 'utf8'))
 
 // Arrays for processing
-const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
+const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
 const ignoreFiles = ['.', '..', '.DS_Store', 'New Folder With Items']
 
 // GLOBAL VARIABLES
@@ -175,10 +178,10 @@ logFiles.forEach(logFileName => {
 
         // Initialize stats for this date if not already done
         if (!stats[requestDateText]) {
-            stats[requestDateText] = { logEntries: 0, date: requestDateText }
-            temp[requestDateText] = { ipAddresses: {} }
+            stats[requestDateText] = {date: requestDateText}
+            temp[requestDateText] = {ipAddresses: {}}
         }
-        stats[requestDateText].logEntries++
+        setDeepAdd(stats, [requestDateText, 'logEntries'], 1)
         // Update min and max times
         if (!temp[requestDateText].minTime || requestDateTimeFull.isBefore(temp[requestDateText].minTime))
             temp[requestDateText].minTime = requestDateTimeFull
@@ -188,14 +191,12 @@ logFiles.forEach(logFileName => {
         // Process crawler agents based on clientSoftware
         if (clientSoftware.match(/google/i) || clientSoftware.match(/ahrefs/i) || clientSoftware.match(/facebookexternalhit/i)) {
             const crawlerName = crawlerAgentNames[clientSoftware] || clientSoftware
-            stats[requestDateText].crawlerAgentRequests = stats[requestDateText].crawlerAgentRequests || {}
-            stats[requestDateText].crawlerAgentRequests[crawlerName] = (stats[requestDateText].crawlerAgentRequests[crawlerName] || 0) + 1
+            setDeepAdd(stats, [requestDateText, 'crawlerAgentRequests', crawlerName], 1)
             return
         }
         if (crawlerAgentNames[clientSoftware]) {
-            stats[requestDateText].crawlerAgentRequests = stats[requestDateText].crawlerAgentRequests || {}
             const name = crawlerAgentNames[clientSoftware]
-            stats[requestDateText].crawlerAgentRequests[name] = (stats[requestDateText].crawlerAgentRequests[name] || 0) + 1
+            setDeepAdd(stats, [requestDateText, 'crawlerAgentRequests', name], 1)
             return
         }
 
@@ -209,9 +210,9 @@ logFiles.forEach(logFileName => {
                 const idMatch = fileRequested.match(/id=([\w\d]+)/)
                 const uniqueID = idMatch ? idMatch[1] : ''
                 if (previousLockViewed[clientAddress] === uniqueID) {
-                    stats.duplicateLockViews = (stats.duplicateLockViews || 0) + 1
+                    setDeepAdd(stats, ['duplicateLockViews'], 1)
                     duplicateLockViews++
-                    duplicateLockViewsByDate[requestDateText] = (duplicateLockViewsByDate[requestDateText] || 0) + 1
+                    setDeepAdd(duplicateLockViewsByDate, [requestDateText], 1)
                     return
                 }
                 previousLockViewed[clientAddress] = uniqueID
@@ -219,9 +220,9 @@ logFiles.forEach(logFileName => {
         }
 
         // GEOLOOKUP using geoip-lite
-        const geo = require('geoip-lite').lookup(clientAddress)
+        const geo = geoipLite.lookup(clientAddress)
         // Increment IP counter
-        temp[requestDateText].ipAddresses[clientAddress] = (temp[requestDateText].ipAddresses[clientAddress] || 0) + 1
+        setDeepAdd(temp, [requestDateText, 'ipAddresses', clientAddress], 1)
 
         let requestCountry = geo ? geo.country : 'Unknown'
         let requestState = geo && geo.region ? geo.region : undefined
@@ -230,109 +231,95 @@ logFiles.forEach(logFileName => {
         if (requestCountry === 'VN') requestCountry = 'Vietnam'
         if (requestCountry === 'KR') requestCountry = 'Republic of Korea'
 
-        stats[requestDateText].continents = stats[requestDateText].continents || {}
         let requestContinent = (countryTZ[requestCountry] && countryTZ[requestCountry][1]) || 'Unknown'
-        stats[requestDateText].continents[requestContinent] = (stats[requestDateText].continents[requestContinent] || 0) + 1
+        setDeepAdd(stats, [requestDateText, 'continents', requestContinent], 1)
 
-        stats[requestDateText].countries = stats[requestDateText].countries || {}
-        stats[requestDateText].countries[requestCountry] = (stats[requestDateText].countries[requestCountry] || 0) + 1
+        setDeepAdd(stats, [requestDateText, 'countries', requestCountry], 1)
 
         if (requestState && requestCountry === 'US') {
-            stats[requestDateText].states = stats[requestDateText].states || {}
-            stats[requestDateText].states[requestState] = (stats[requestDateText].states[requestState] || 0) + 1
+            setDeepAdd(stats, [requestDateText, 'states', requestState], 1)
         }
 
         // PARSE BEACON REQUESTS
-        const parsedUrl = url.parse(fileRequested, true)
+        const parsedUrl = parseUrl(fileRequested, true)
         const query = parsedUrl.query
         const trkString = query.trk?.trim()
         const pageString = query.page?.trim()
         const screenWidthString = query.w?.trim()
         const refString = query.ref?.trim()
+        const ownerString = query.own?.trim()
         const searchTerm = query.search?.trim().toLowerCase()
         let cleanReferrerString = refString ? refString.replace(/(https:\/\/lpubelts\.com\/).*/, '$1').trim() : undefined
         if (cleanReferrerString) {
-            stats[requestDateText].referrerViews = stats[requestDateText].referrerViews || {}
-            stats[requestDateText].referrerViews[cleanReferrerString] = (stats[requestDateText].referrerViews[cleanReferrerString] || 0) + 1
+            setDeepAdd(stats, [requestDateText, 'referrerViews', cleanReferrerString], 1)
         }
 
         // Handle various endpoints based on fileRequested
         if (fileRequested.match(/\/i\/lpu\.gif/i)) {
-            stats[requestDateText].beacons = (stats[requestDateText].beacons || 0) + 1
+            setDeepAdd(stats, [requestDateText, 'beacons'], 1)
             if (trkString === 'dial') {
                 const idMatch = fileRequested.match(/id=([\w\d]+)/)
                 const uniqueID = idMatch ? idMatch[1] : ''
-                stats[requestDateText].lockViewsById = stats[requestDateText].lockViewsById || {}
-                stats[requestDateText].lockViewsById[uniqueID] = (stats[requestDateText].lockViewsById[uniqueID] || 0) + 1
-                stats[requestDateText].lockViewsByCountry = stats[requestDateText].lockViewsByCountry || {}
-                stats[requestDateText].lockViewsByCountry[requestCountry] = (stats[requestDateText].lockViewsByCountry[requestCountry] || 0) + 1
-                stats[requestDateText].lockViewsByWidth = stats[requestDateText].lockViewsByWidth || {}
-                stats[requestDateText].lockViewsByWidth[screenWidthString] = (stats[requestDateText].lockViewsByWidth[screenWidthString] || 0) + 1
+                setDeepAdd(stats, [requestDateText, 'lockViewsById', uniqueID], 1)
+                setDeepAdd(stats, [requestDateText, 'lockViewsByCountry', requestCountry], 1)
+                setDeepAdd(stats, [requestDateText, 'lockViewsByWidth', screenWidthString], 1)
             } else {
-                stats[requestDateText].pageViews = stats[requestDateText].pageViews || {}
-                stats[requestDateText].pageViews[trkString] = (stats[requestDateText].pageViews[trkString] || 0) + 1
-                stats[requestDateText].pageViews.total = (stats[requestDateText].pageViews.total || 0) + 1
+                if (['profile', 'scorecard'].includes(trkString)) {
+                    const owner = ownerString
+                        ? ownerString === 'true' ? 'Own' : 'Other'
+                        : ''
+                    setDeepAdd(stats, [requestDateText, 'pageViews', `${trkString}${owner}`], 1)
+                } else {
+                    setDeepAdd(stats, [requestDateText, 'pageViews', trkString], 1)
+                }
+                setDeepAdd(stats, [requestDateText, 'pageViews', 'total'], 1)
             }
             if (pageString) {
                 let cleanPage = pageString.replace(/https:\/\/lpubelts\.com\/\?.*#\/(\w+).*/, '$1')
                 if (trkString === 'error') {
-                    stats[requestDateText].errorPages = stats[requestDateText].errorPages || {}
-                    stats[requestDateText].errorPages[cleanPage] = (stats[requestDateText].errorPages[cleanPage] || 0) + 1
+                    setDeepAdd(stats, [requestDateText, 'errorPages', cleanPage], 1)
                 }
             }
         } else if (fileRequested.match(/\/i\/rafl\.gif\?id=\d{4}-\d{3}/i)) {
-            stats[requestDateText].beacons = (stats[requestDateText].beacons || 0) + 1
+            setDeepAdd(stats, [requestDateText, 'beacons'], 1)
             const idMatch = fileRequested.match(/id=(\d{4}-\d{3})/)
             const uniqueID = idMatch ? idMatch[1] : ''
-            stats[requestDateText].raflPotViewsById = stats[requestDateText].raflPotViewsById || {}
-            stats[requestDateText].raflPotViewsById[uniqueID] = (stats[requestDateText].raflPotViewsById[uniqueID] || 0) + 1
-            stats[requestDateText].raflPotViewsByCountry = stats[requestDateText].raflPotViewsByCountry || {}
-            stats[requestDateText].raflPotViewsByCountry[requestCountry] = (stats[requestDateText].raflPotViewsByCountry[requestCountry] || 0) + 1
+            setDeepAdd(stats, [requestDateText, 'raflPotViewsById', uniqueID], 1)
+            setDeepAdd(stats, [requestDateText, 'raflPotViewsByCountry', requestCountry], 1)
             if (cleanReferrerString) {
-                stats[requestDateText].referrerPotViews = stats[requestDateText].referrerPotViews || {}
-                stats[requestDateText].referrerPotViews[cleanReferrerString] = (stats[requestDateText].referrerPotViews[cleanReferrerString] || 0) + 1
+                setDeepAdd(stats, [requestDateText, 'referrerPotViews', cleanReferrerString], 1)
             }
-            stats[requestDateText].totalRaflPotViews = (stats[requestDateText].totalRaflPotViews || 0) + 1
+            setDeepAdd(stats, [requestDateText, 'totalRaflPotViews'], 1)
         } else if (fileRequested.match(/\/i\/lock\.png\?id=/i)) {
             const idMatch = fileRequested.match(/id=([\w\d]+)/)
             const uniqueID = idMatch ? idMatch[1] : ''
-            stats[requestDateText].seoViewsById = stats[requestDateText].seoViewsById || {}
-            stats[requestDateText].seoViewsById[uniqueID] = (stats[requestDateText].seoViewsById[uniqueID] || 0) + 1
+            setDeepAdd(stats, [requestDateText, 'seoViewsById', uniqueID], 1)
         } else if (fileRequested.match(/\/i\/clear\.gif/i)) {
-            stats[requestDateText].beacons = (stats[requestDateText].beacons || 0) + 1
+            setDeepAdd(stats, [requestDateText, 'beacons'], 1)
             const idMatch = fileRequested.match(/id=([\w\d]+)/)
             const uniqueID = idMatch ? idMatch[1] : ''
-            stats[requestDateText].lockViewsById = stats[requestDateText].lockViewsById || {}
-            stats[requestDateText].lockViewsById[uniqueID] = (stats[requestDateText].lockViewsById[uniqueID] || 0) + 1
-            stats[requestDateText].lockViewsByCountry = stats[requestDateText].lockViewsByCountry || {}
-            stats[requestDateText].lockViewsByCountry[requestCountry] = (stats[requestDateText].lockViewsByCountry[requestCountry] || 0) + 1
+            setDeepAdd(stats, [requestDateText, 'lockViewsById', uniqueID], 1)
+            setDeepAdd(stats, [requestDateText, 'lockViewsByCountry', requestCountry], 1)
             if (screenWidthString) {
-                stats[requestDateText].lockViewsByWidth = stats[requestDateText].lockViewsByWidth || {}
-                stats[requestDateText].lockViewsByWidth[screenWidthString] = (stats[requestDateText].lockViewsByWidth[screenWidthString] || 0) + 1
+                setDeepAdd(stats, [requestDateText, 'lockViewsByWidth', screenWidthString], 1)
             }
             if (searchTerm && requestDate.isAfter(dayjs('2025-10-30', 'YYYY-MM-DD'))) {
-                stats[requestDateText].lockViewsBySearch = stats[requestDateText].lockViewsBySearch || {}
-                stats[requestDateText].lockViewsBySearch[searchTerm] = (stats[requestDateText].lockViewsBySearch[searchTerm] || 0) + 1
+                setDeepAdd(stats, [requestDateText, 'lockViewsBySearch', searchTerm], 1)
             }
-            stats[requestDateText].lockViewsByIP = stats[requestDateText].lockViewsByIP || {}
-            stats[requestDateText].lockViewsByIP[clientAddress] = (stats[requestDateText].lockViewsByIP[clientAddress] || 0) + 1
+            setDeepAdd(stats, [requestDateText, 'lockViewsByIP', clientAddress], 1)
             if (cleanReferrerString) {
-                stats[requestDateText].referrerLockViews = stats[requestDateText].referrerLockViews || {}
-                stats[requestDateText].referrerLockViews[cleanReferrerString] = (stats[requestDateText].referrerLockViews[cleanReferrerString] || 0) + 1
+                setDeepAdd(stats, [requestDateText, 'referrerLockViews', cleanReferrerString], 1)
             }
         } else if (fileRequested.match(/\/i\/welcome\.gif/i)) {
-            stats[requestDateText].beacons = (stats[requestDateText].beacons || 0) + 1
-            stats[requestDateText].visits = (stats[requestDateText].visits || 0) + 1
-            stats[requestDateText].visitsByCountry = stats[requestDateText].visitsByCountry || {}
-            stats[requestDateText].visitsByCountry[requestCountry] = (stats[requestDateText].visitsByCountry[requestCountry] || 0) + 1
+            setDeepAdd(stats, [requestDateText, 'beacons'], 1)
+            setDeepAdd(stats, [requestDateText, 'visits'], 1)
+            setDeepAdd(stats, [requestDateText, 'visitsByCountry', requestCountry], 1)
             if (cleanReferrerString) {
-                stats[requestDateText].referrerWelcomeViews = stats[requestDateText].referrerWelcomeViews || {}
-                stats[requestDateText].referrerWelcomeViews[cleanReferrerString] = (stats[requestDateText].referrerWelcomeViews[cleanReferrerString] || 0) + 1
+                setDeepAdd(stats, [requestDateText, 'referrerWelcomeViews', cleanReferrerString], 1)
             }
         } else if (fileRequested.match(/\/i\/srch\.gif/i)) {
             if (searchTerm && requestDate.isAfter(dayjs('2025-10-30', 'YYYY-MM-DD'))) {
-                stats[requestDateText].completedSearches = stats[requestDateText].completedSearches || {}
-                stats[requestDateText].completedSearches[searchTerm] = (stats[requestDateText].completedSearches[searchTerm] || 0) + 1
+                setDeepAdd(stats, [requestDateText, 'completedSearches', searchTerm], 1)
             }
         }
 
@@ -340,10 +327,8 @@ logFiles.forEach(logFileName => {
         let uaResult = useragent.parse(clientSoftware)
         let uaPlatform = uaResult.os || 'Other'
         let uaBrowser = uaResult.browser || 'Other'
-        stats[requestDateText].platforms = stats[requestDateText].platforms || {}
-        stats[requestDateText].platforms[uaPlatform] = (stats[requestDateText].platforms[uaPlatform] || 0) + 1
-        stats[requestDateText].browsers = stats[requestDateText].browsers || {}
-        stats[requestDateText].browsers[uaBrowser] = (stats[requestDateText].browsers[uaBrowser] || 0) + 1
+        setDeepAdd(stats, [requestDateText, 'platforms', uaPlatform], 1)
+        setDeepAdd(stats, [requestDateText, 'browsers', uaBrowser], 1)
 
         // LOCAL REQUEST TIME ADJUSTMENT
         // Assume server time zone is America/New_York
@@ -359,10 +344,8 @@ logFiles.forEach(logFileName => {
             let adjustedDT = dt.add(hourOffset, 'hour')
             let localHour = adjustedDT.format('HH')
 
-            stats[requestDateText].requestsByLocalHour = stats[requestDateText].requestsByLocalHour || {}
-            stats[requestDateText].requestsByLocalHour[localHour] = (stats[requestDateText].requestsByLocalHour[localHour] || 0) + 1
-            stats[requestDateText].requestsByServerHour = stats[requestDateText].requestsByServerHour || {}
-            stats[requestDateText].requestsByServerHour[requestDateTimeFull.format('HH')] = (stats[requestDateText].requestsByServerHour[requestDateTimeFull.format('HH')] || 0) + 1
+            setDeepAdd(stats, [requestDateText, 'requestsByLocalHour', localHour], 1)
+            setDeepAdd(stats, [requestDateText, 'requestsByServerHour', requestDateTimeFull.format('HH')], 1)
         }
     }) // end for each line
 }) // end for each log file
@@ -380,17 +363,15 @@ Object.keys(temp).forEach(requestDateText => {
     let maxTimeStr = temp[requestDateText].maxTime.format('HHmm')
     let filename = `${requestDateText}_${minTimeStr}-${maxTimeStr}.json`
     let outputPath = path.join(dataDir, filename)
-    fs.writeFileSync(outputPath, JSON.stringify(stats[requestDateText]), 'utf8')
+    fs.writeFileSync(outputPath, JSON.stringify(stats[requestDateText], null, 2), 'utf8')
 })
 
 // RUNTIME INFO
-console.log(`Data Process Runtime: ${String(dayjs().diff(today, 'minute')).padStart(2, '0')}:${String(dayjs().diff(today, 'second')).padStart(2, '0')}.${String(dayjs().diff(today, 'millisecond')).substring(0,2)}`)
+console.log(`Data Process Runtime: ${String(dayjs().diff(today, 'minute')).padStart(2, '0')}:${String(dayjs().diff(today, 'second')).padStart(2, '0')}.${String(dayjs().diff(today, 'millisecond')).substring(0, 2)}`)
 console.log(`Processed ${logLines} log entries`)
-
 
 
 // Optionally, use a system command to announce completion (macOS only)
 if (local) {
-    const { exec } = require('child_process')
-    exec("say 'analysis complete'")
+    exec('say \'analysis complete\'')
 }

@@ -1,4 +1,5 @@
 import fs from 'node:fs/promises'
+import path from 'node:path'
 import {initializeApp, cert} from 'firebase-admin/app'
 import {Timestamp, getFirestore} from 'firebase-admin/firestore'
 import {setDeepPush} from '../../util/setDeep.js'
@@ -20,8 +21,7 @@ const config = {
     credential: cert(serviceAccount)
 }
 const firebaseApp = initializeApp(config)
-//const dbDev = getFirestore(firebaseApp, 'lpubelts-dev')
-const dbProd = getFirestore(firebaseApp)
+const db = getFirestore(firebaseApp)
 
 const serverDir = production
     ? `/home/${prodUser}/explore.lpubelts.com/public/data`
@@ -31,130 +31,447 @@ const backupDir = production
     ? `/home/${prodUser}/firebase`
     : `/Users/${localUser}/Documents/LOCKPICK/LPU-Belt-Explorer/lpu-belt-explorer-analytics/Collections/lpuBeltsBackups`
 
-const collectionData = JSON.parse(await fs.readFile(`${backupDir}/backup.json`, 'utf8'))['__collections__']['lockcollections']
-const unclaimedEvidence = JSON.parse(await fs.readFile(`${serverDir}/unclaimedEvidence.json`, 'utf8'))
+const exportDir = production
+    ? `/home/${prodUser}/collectionExports`
+    : `/Users/${localUser}/Documents/LOCKPICK/LPU-Belt-Explorer/collectionExports`
 
-async function getAllData() {
+const recentCutoff = dayjs().subtract(15, 'day')
+const lookbackMs = Number(process.env.COLLECTIONS_EXPORT_LOOKBACK_MS ?? 5 * 60 * 1000)
+const getAllChunkSize = 300
 
-    const startAwards = new Timestamp(Math.floor(dayjs().subtract(15, 'day').valueOf() / 1000), 0)
+const incrementalCollections = [
+    {
+        collection: 'awards',
+        changeIndexCollection: 'awardsChangeIndex',
+        exportFile: `${exportDir}/awards.json`,
+        stateFile: `${exportDir}/awards.exportState.json`
+    },
+    {
+        collection: 'evidence',
+        changeIndexCollection: 'evidenceChangeIndex',
+        exportFile: `${exportDir}/evidence.json`,
+        stateFile: `${exportDir}/evidence.exportState.json`
+    }
+]
 
-    const awards = await dbProd.collection('awards').where('awardCreatedAt', '>=', startAwards).get()
-    const allEvidence = await dbProd.collection('evidence').get()
-    //const unclaimedEvidence = await dbProd.collection('unclaimed-evidence').get()
+async function readJsonFile(filePath, fallback=null) {
+    try {
+        return JSON.parse(await fs.readFile(filePath, 'utf8'))
+    } catch (err) {
+        if (err.code === 'ENOENT') {
+            return fallback
+        }
+        throw err
+    }
+}
 
-    const messages = [{
-        activity: 'READ',
-        activityCount: awards.docs.length,
-        source: 'awardsEvidenceExport_awards',
-        id: '',
-        displayName: 'cronjob'
-    }, {
-        activity: 'READ',
-        activityCount: allEvidence.docs.length,
-        source: 'awardsEvidenceExport_evidence',
-        id: '',
-        displayName: 'cronjob'
-    }]
+async function ensureWriteDir(filePath) {
+    await fs.mkdir(path.dirname(filePath), {recursive: true})
+}
+
+async function writeJsonFileAtomic(filePath, data) {
+    await ensureWriteDir(filePath)
+    const tempFile = `${filePath}.tmp-${process.pid}-${Date.now()}`
+    await fs.writeFile(tempFile, JSON.stringify(data))
+    await fs.rename(tempFile, filePath)
+}
+
+function timestampFromState(value) {
+    if (!value) return null
+    if (Number.isInteger(value.seconds)) {
+        return new Timestamp(value.seconds, value.nanoseconds ?? 0)
+    }
+    if (value.iso) {
+        return Timestamp.fromDate(new Date(value.iso))
+    }
+    return null
+}
+
+function timestampForState(value) {
+    if (!value) return null
+    return {
+        seconds: value.seconds,
+        nanoseconds: value.nanoseconds,
+        iso: value.toDate().toISOString()
+    }
+}
+
+function maxTimestamp(a, b) {
+    if (!a) return b
+    if (!b) return a
+    if (b.seconds > a.seconds) return b
+    if (b.seconds === a.seconds && b.nanoseconds > a.nanoseconds) return b
+    return a
+}
+
+function compareTimestamps(a, b) {
+    if (!a && !b) return 0
+    if (!a) return -1
+    if (!b) return 1
+    if (a.seconds !== b.seconds) return a.seconds - b.seconds
+    return a.nanoseconds - b.nanoseconds
+}
+
+function timestampMinusLookback(value) {
+    if (!value) return Timestamp.fromMillis(0)
+    return Timestamp.fromMillis(Math.max(0, value.toMillis() - lookbackMs))
+}
+
+function changeKey(docId, changedAt) {
+    return `${docId}:${changedAt.seconds}:${changedAt.nanoseconds}`
+}
+
+function firestoreDateToDayjs(value) {
+    if (!value) return null
+    if (typeof value.toDate === 'function') {
+        return dayjs(value.toDate())
+    }
+    if (Number.isInteger(value._seconds)) {
+        return dayjs.unix(value._seconds)
+    }
+    if (Number.isInteger(value.seconds)) {
+        return dayjs.unix(value.seconds)
+    }
+    return dayjs(value)
+}
+
+function exportDataToDocMap(exportData) {
+    return new Map((exportData?.data ?? []).map(doc => [doc.docId, doc]))
+}
+
+function docMapToExportData(docMap) {
+    return [...docMap.values()].sort((a, b) => a.docId.localeCompare(b.docId))
+}
+
+async function getChangedDocIdsSince(collectionConfig, watermark, processedChangeKeys) {
+    const lowerBound = timestampMinusLookback(watermark)
+    const changes = await db
+        .collection(collectionConfig.changeIndexCollection)
+        .where('changedAt', '>', lowerBound)
+        .orderBy('changedAt')
+        .get()
+
+    const changedDocIds = new Set()
+    const observedChanges = []
+    let maxChangedAt = watermark
+
+    changes.docs.forEach(changeDoc => {
+        const change = changeDoc.data()
+        const changedAt = change.changedAt
+        if (!changedAt || typeof changedAt.toMillis !== 'function') return
+
+        const docId = change.docId ?? changeDoc.id
+        const key = changeKey(docId, changedAt)
+        observedChanges.push({docId, changedAt, key})
+
+        if (!processedChangeKeys.has(key) || compareTimestamps(changedAt, watermark) > 0) {
+            changedDocIds.add(docId)
+        }
+        maxChangedAt = maxTimestamp(maxChangedAt, changedAt)
+    })
+
+    const nextLowerBound = timestampMinusLookback(maxChangedAt)
+    const nextProcessedChangeKeys = observedChanges
+        .filter(change => compareTimestamps(change.changedAt, nextLowerBound) > 0)
+        .map(change => change.key)
+
+    return {
+        changedDocIds: [...changedDocIds],
+        changeIndexReadCount: changes.docs.length,
+        maxChangedAt,
+        processedChangeKeys: nextProcessedChangeKeys
+    }
+}
+
+async function fetchSourceDocs(collection, docIds) {
+    const docs = []
+    for (let idx = 0; idx < docIds.length; idx += getAllChunkSize) {
+        const chunk = docIds.slice(idx, idx + getAllChunkSize)
+        const refs = chunk.map(docId => db.collection(collection).doc(docId))
+        docs.push(...await db.getAll(...refs))
+    }
+    return docs
+}
+
+async function getExistingOrBootstrapData(collectionConfig) {
+    const previousExport = await readJsonFile(collectionConfig.exportFile)
+    if (Array.isArray(previousExport?.data)) {
+        return {
+            data: previousExport.data,
+            bootstrapped: false,
+            bootstrapReadCount: 0
+        }
+    }
+
+    const snapshot = await db.collection(collectionConfig.collection).get()
+    return {
+        data: snapshot.docs.map(doc => ({docId: doc.id, ...doc.data()})),
+        bootstrapped: true,
+        bootstrapReadCount: snapshot.docs.length
+    }
+}
+
+async function prepareIncrementalCollection(collectionConfig) {
+    const state = await readJsonFile(collectionConfig.stateFile, {})
+    const previousWatermark = timestampFromState(state.lastSuccessfulExportChangedAt)
+    const processedChangeKeys = new Set(state.processedChangeKeys ?? [])
+    const existing = await getExistingOrBootstrapData(collectionConfig)
+    const docMap = exportDataToDocMap(existing)
+    const changed = await getChangedDocIdsSince(collectionConfig, previousWatermark, processedChangeKeys)
+    const changedDocs = await fetchSourceDocs(collectionConfig.collection, changed.changedDocIds)
+    const deletedDocIds = []
+
+    changedDocs.forEach(doc => {
+        if (doc.exists) {
+            docMap.set(doc.id, {docId: doc.id, ...doc.data()})
+        } else {
+            docMap.delete(doc.id)
+            deletedDocIds.push(doc.id)
+        }
+    })
+
+    const data = docMapToExportData(docMap)
+    const metadata = {
+        collection: collectionConfig.collection,
+        date: new Date().toISOString(),
+        docCount: data.length,
+        incremental: true,
+        bootstrapped: existing.bootstrapped,
+        changedDocCount: changed.changedDocIds.length,
+        deletedDocCount: deletedDocIds.length,
+        changeIndexReadCount: changed.changeIndexReadCount,
+        sourceReadCount: existing.bootstrapReadCount + changedDocs.length,
+        previousWatermark: timestampForState(previousWatermark),
+        newWatermark: timestampForState(changed.maxChangedAt),
+        lookbackMs
+    }
+
+    const stateData = changed.maxChangedAt
+        ? {
+            collection: collectionConfig.collection,
+            changeIndexCollection: collectionConfig.changeIndexCollection,
+            lastSuccessfulExportChangedAt: timestampForState(changed.maxChangedAt),
+            lastExportedAt: metadata.date,
+            processedChangeKeys: changed.processedChangeKeys,
+            lastRun: metadata
+        }
+        : null
+
+    return {
+        ...collectionConfig,
+        data,
+        metadata,
+        stateData
+    }
+}
+
+async function logReadActivity(messages) {
+    console.log('Logging Read Activity', messages)
 
     try {
         production && await logFirebaseActivity(messages)
     } catch (err) {
         console.log('Logging Error', err)
     }
+}
 
-    const lockData = await lockDetails()
-    const safelockDdata = await safelockDetails()
-    const projectData = await projectDetails()
-    const awardData = await awardDetails()
+function displayNameForUser(collectionData, userId) {
+    return collectionData?.[userId]?.displayName
+        ? collectionData[userId].displayName
+        : 'no display name'
+}
 
-    const fullDb = new Map()
+function buildRecentAwardsEvidence({awards, evidence, collectionData, lockData, safelockData, projectData, awardData}) {
+    const fullDb = {}
 
-    awards.forEach((doc) => {
-        const award = awardData[doc.data().awardId]
-        const date = dayjs(doc.data().awardCreatedAt.toDate()).format('YYYY-MM-DD')
+    awards.forEach(doc => {
+        const {docId, ...docData} = doc
+        const awardCreatedAt = firestoreDateToDayjs(doc.awardCreatedAt)
+        if (!awardCreatedAt || awardCreatedAt.isBefore(recentCutoff)) return
+
+        const award = awardData[doc.awardId]
+        if (!award) return
+
         setDeepPush(fullDb, ['awards'], {
-            ...doc.data(),
-            id: doc.id,
+            ...docData,
+            id: docId,
             awardName: award.name,
-            displayName: collectionData[doc.data().userId]?.displayName ? collectionData[doc.data().userId].displayName : 'no display name',
-            date
+            displayName: displayNameForUser(collectionData, doc.userId),
+            date: awardCreatedAt.format('YYYY-MM-DD')
         })
     })
-    allEvidence.forEach((doc) => {
-        if (!doc.data().evidenceCreatedAt || dayjs(doc.data().evidenceCreatedAt.toDate()).isBefore(dayjs().subtract(15, 'day'))) return
-        const lock = lockData[doc.data().projectId]
-        const safelock = safelockDdata[doc.data().projectId]
-        const project = projectData[doc.data().projectId]
+
+    evidence.forEach(doc => {
+        const {docId, ...docData} = doc
+        const evidenceCreatedAt = firestoreDateToDayjs(doc.evidenceCreatedAt)
+        if (!evidenceCreatedAt || evidenceCreatedAt.isBefore(recentCutoff)) return
+
+        const lock = lockData[doc.projectId]
+        const safelock = safelockData[doc.projectId]
+        const project = projectData[doc.projectId]
         const entry = lock || safelock || project
         if (!entry) return
+
         const belt = entry?.belt || null
-        const date = dayjs(doc.data().evidenceCreatedAt.toDate()).format('MM/DD/YY')
         setDeepPush(fullDb, ['evidence'], {
-            ...doc.data(),
-            id: doc.id,
+            ...docData,
+            id: docId,
             evidenceName: entryName(entry, 'short'),
             belt,
-            displayName: collectionData[doc.data().userId]?.displayName ? collectionData[doc.data().userId].displayName : 'no display name',
-            date
+            displayName: displayNameForUser(collectionData, doc.userId),
+            date: evidenceCreatedAt.format('MM/DD/YY')
         })
     })
-
-    //console.log('evidence', fullDb.evidence.sort((a,b) => Math.floor(dayjs(a.date).valueOf() / 3600 * 24) - Math.floor(dayjs(b.date).valueOf() / 3600 * 24)))
 
     fullDb.metadata = {updatedDateTime: dayjs().format('YYYY-MM-DD HH:mm')}
-    await fs.writeFile(`${serverDir}/recentAwardsEvidence.json`, JSON.stringify(fullDb), function (err) {
-        if (err) {
-            console.log(err)
-        }
-    })
+    return fullDb
+}
 
+function buildAllProjectsEvidence({evidence, unclaimedEvidence, collectionData, projectData}) {
     const allProjects = {}
 
-    allEvidence.forEach((doc) => {
-        const project = projectData[doc.data().projectId]
+    evidence.forEach(doc => {
+        const {docId, ...docData} = doc
+        const project = projectData[doc.projectId]
         if (!project) return
-        const date = dayjs(doc.data().evidenceCreatedAt?.toDate()).format('YYYY-MM-DD')
+
+        const evidenceCreatedAt = firestoreDateToDayjs(doc.evidenceCreatedAt)
+        const date = evidenceCreatedAt
+            ? evidenceCreatedAt.format('YYYY-MM-DD')
+            : dayjs().format('YYYY-MM-DD')
         const discipline = project.name.match(/(.+),/)?.[1]
+
         setDeepPush(allProjects, ['evidence'], {
-            ...doc.data(),
-            id: doc.id,
+            ...docData,
+            id: docId,
             discipline,
             tier: project.tier,
-            displayName: collectionData[doc.data().userId]?.displayName ? collectionData[doc.data().userId].displayName : 'no display name',
-            tabClaimed: collectionData[doc.data().userId]?.tabClaimed,
+            displayName: displayNameForUser(collectionData, doc.userId),
+            tabClaimed: collectionData[doc.userId]?.tabClaimed,
             date
         })
     })
-    unclaimedEvidence.forEach(evidence => {
-        const project = projectData[evidence.projectId]
+
+    unclaimedEvidence.forEach(doc => {
+        const project = projectData[doc.projectId]
         if (!project) return
         if (allProjects.evidence?.find(
-            p => (p.projectId === evidence.projectId) && p.tabClaimed === evidence.tabName)
+            p => (p.projectId === doc.projectId) && p.tabClaimed === doc.tabName)
         ) return
 
-        const date = dayjs(evidence.evidenceCreatedAt).format('YYYY-MM-DD')
+        const date = dayjs(doc.evidenceCreatedAt).format('YYYY-MM-DD')
         const discipline = project.name.match(/(.+),/)?.[1]
         setDeepPush(allProjects, ['evidence'], {
-            ...evidence,
+            ...doc,
             unclaimed: true,
             discipline,
             tier: project.tier,
-            displayName: collectionData[evidence.userId]?.displayName ? collectionData[evidence.userId].displayName : undefined,
+            displayName: collectionData[doc.userId]?.displayName
+                ? collectionData[doc.userId].displayName
+                : undefined,
             date
         })
     })
 
     allProjects.metadata = {updatedDateTime: dayjs().format('YYYY-MM-DD HH:mm')}
-    await fs.writeFile(`${serverDir}/allProjectsEvidence.json`, JSON.stringify(allProjects), function (err) {
-        if (err) {
-            console.log(err)
-        }
+    return allProjects
+}
+
+async function writePreparedCollection(preparedCollection) {
+    await writeJsonFileAtomic(preparedCollection.exportFile, {
+        metadata: preparedCollection.metadata,
+        data: preparedCollection.data
+    })
+}
+
+async function writePreparedCollectionState(preparedCollection) {
+    if (preparedCollection.stateData) {
+        await writeJsonFileAtomic(preparedCollection.stateFile, preparedCollection.stateData)
+    }
+}
+
+async function getAllData() {
+    const [awardsSnapshot, evidenceSnapshot] = await Promise.all(
+        incrementalCollections.map(collectionConfig => prepareIncrementalCollection(collectionConfig))
+    )
+
+    const collectionData = JSON.parse(
+        await fs.readFile(`${backupDir}/backup.json`, 'utf8')
+    )['__collections__']['lockcollections']
+    const unclaimedEvidence = JSON.parse(await fs.readFile(`${serverDir}/unclaimedEvidence.json`, 'utf8'))
+
+    const [lockData, safelockData, projectData, awardData] = await Promise.all([
+        lockDetails(),
+        safelockDetails(),
+        projectDetails(),
+        awardDetails()
+    ])
+
+    const recentAwardsEvidence = buildRecentAwardsEvidence({
+        awards: awardsSnapshot.data,
+        evidence: evidenceSnapshot.data,
+        collectionData,
+        lockData,
+        safelockData,
+        projectData,
+        awardData
+    })
+    const allProjectsEvidence = buildAllProjectsEvidence({
+        evidence: evidenceSnapshot.data,
+        unclaimedEvidence,
+        collectionData,
+        projectData
     })
 
-    //console.log('allProjects', allProjects.evidence)
+    await Promise.all([
+        writePreparedCollection(awardsSnapshot),
+        writePreparedCollection(evidenceSnapshot),
+        writeJsonFileAtomic(`${serverDir}/recentAwardsEvidence.json`, recentAwardsEvidence),
+        writeJsonFileAtomic(`${serverDir}/allProjectsEvidence.json`, allProjectsEvidence)
+    ])
 
-    return fullDb
+    await Promise.all([
+        writePreparedCollectionState(awardsSnapshot),
+        writePreparedCollectionState(evidenceSnapshot)
+    ])
 
+    await logReadActivity([
+        {
+            activity: 'READ',
+            activityCount: awardsSnapshot.metadata.changeIndexReadCount,
+            source: 'awardsEvidenceExport_awardsChangeIndex',
+            id: '',
+            displayName: 'cronjob'
+        },
+        {
+            activity: 'READ',
+            activityCount: awardsSnapshot.metadata.sourceReadCount,
+            source: 'awardsEvidenceExport_awards',
+            id: '',
+            displayName: 'cronjob'
+        },
+        {
+            activity: 'READ',
+            activityCount: evidenceSnapshot.metadata.changeIndexReadCount,
+            source: 'awardsEvidenceExport_evidenceChangeIndex',
+            id: '',
+            displayName: 'cronjob'
+        },
+        {
+            activity: 'READ',
+            activityCount: evidenceSnapshot.metadata.sourceReadCount,
+            source: 'awardsEvidenceExport_evidence',
+            id: '',
+            displayName: 'cronjob'
+        }
+    ])
+
+    console.log('Incremental awards/evidence export complete', {
+        awards: awardsSnapshot.metadata,
+        evidence: evidenceSnapshot.metadata
+    })
+
+    return recentAwardsEvidence
 }
 
 await getAllData().then()
