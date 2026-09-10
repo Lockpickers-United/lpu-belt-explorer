@@ -30,24 +30,16 @@ function RankingRequestsParentRoute() {
                 q,
                 snapshot => {
                     const docsRead = snapshot.docs.length
+                    const type = totalReadCount.current === 0 ? 'READ' : 'REFRESH'
                     totalReadCount.current += docsRead
                     const activityData = [{
-                        type: 'READ',
+                        type,
                         count: docsRead,
                         source: 'request-subscription',
                         id: '',
                         displayName: lockCollection?.displayName,
+                        prod: !devFirestore
                     }]
-                    if (totalReadCount.current > docsRead) {
-                        activityData.push({
-                            type: 'REFRESH',
-                            count: 0,
-                            source: 'request-subscription',
-                            id: '',
-                            displayName: lockCollection?.displayName,
-                            prod: !devFirestore
-                        })
-                    }
 
                     postFirebaseActivity({activityData})
 
