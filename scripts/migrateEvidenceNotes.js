@@ -1,9 +1,14 @@
 import fs from 'fs'
 import {setDeep} from '../src/util/setDeep.js'
-
-
 import admin from 'firebase-admin'
 import {getFirestore} from 'firebase-admin/firestore'
+
+
+    ///////////////////////////////
+   //                           //
+  //  DATA NO LONGER UPDATED   //
+ //                           //
+// ////////////////////////////
 
 const serviceAccount = JSON.parse(fs.readFileSync('/Users/nealbayless/Documents/GitHub/keys/lpu-belt-explorer-firebase-adminsdk.json', 'utf8'))
 const app = admin.initializeApp({

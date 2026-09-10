@@ -32,16 +32,16 @@ function RankingRequestsParentRoute() {
                     const docsRead = snapshot.docs.length
                     totalReadCount.current += docsRead
                     const activityData = [{
-                        activity: 'READ',
-                        activityCount: docsRead,
+                        type: 'READ',
+                        count: docsRead,
                         source: 'request-subscription',
                         id: '',
                         displayName: lockCollection?.displayName,
                     }]
                     if (totalReadCount.current > docsRead) {
                         activityData.push({
-                            activity: 'REFRESH',
-                            activityCount: docsRead,
+                            type: 'REFRESH',
+                            count: docsRead,
                             source: 'request-subscription',
                             id: '',
                             displayName: lockCollection?.displayName,
