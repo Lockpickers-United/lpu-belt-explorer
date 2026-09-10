@@ -41,7 +41,7 @@ function RankingRequestsParentRoute() {
                     if (totalReadCount.current > docsRead) {
                         activityData.push({
                             type: 'REFRESH',
-                            count: docsRead,
+                            count: 0,
                             source: 'request-subscription',
                             id: '',
                             displayName: lockCollection?.displayName,
