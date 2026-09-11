@@ -8,7 +8,7 @@ import {exec} from 'child_process'
 import parseForm from '../../util/parseForm.js'
 import {logger} from '../../logger/logger.js'
 const log = logger.child({
-    module: 'uploadContent',
+    module: 'upload-content',
 })
 
 const execAsync = util.promisify(exec)
@@ -93,12 +93,14 @@ export default async function uploadContent(req, res) {
         }
     })
 
-    const {fields} = await parseForm(res, req, form, handleError, maxFileSizeMB, maxTotalFileSizeMB)
+    const {fields, files} = await parseForm(res, req, form, handleError, maxFileSizeMB, maxTotalFileSizeMB)
     for (const fieldName in fields) {
         if (!Array.isArray(fields[fieldName])) {
             fields[fieldName] = [fields[fieldName]]
         }
     }
+
+    if (Object.keys(files || []).length > 0) logDetails.count = Object.keys(files).length
 
     const destination = `${uploadDir}/${subdirs}`.replace(/\s+/g, '-')
     const destinationFile = `${destination}.zip`
@@ -177,7 +179,7 @@ export default async function uploadContent(req, res) {
     archive.directory(`${uploadDir}/${subdirs}/`, false)
     await archive.finalize()
 
-    log.info({...logDetails}, 'Files uploaded successfully')
+    log.info({type: 'photos', ...logDetails}, 'files uploaded successfully')
     res.status(200).send('Files uploaded successfully')
 
 }

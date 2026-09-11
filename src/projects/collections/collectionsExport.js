@@ -7,7 +7,11 @@ import {setDeep} from '../../util/setDeep.js'
 import {localUser, prodUser} from '../../../keys/users.js'
 import dayjs from 'dayjs'
 import {logFirebaseActivity} from '../logFirebaseActivity/logFirebaseActivity.js'
+import {pathToFileURL} from 'url'
+import postFirebaseActivity from '../../util/postFirebaseActivity.js'
 
+const isDirectRun = process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href
+const isCron = !!process.argv[2] && process.argv[2] === 'cron'
 const production = process.env.USER !== localUser
 
 const keysDir = production
@@ -37,7 +41,7 @@ const exportStateFile = `${exportDir}/${collectionName}.exportState.json`
 const lookbackMs = Number(process.env.COLLECTIONS_EXPORT_LOOKBACK_MS ?? 5 * 60 * 1000)
 const getAllChunkSize = 300
 
-async function readJsonFile(filePath, fallback=null) {
+async function readJsonFile(filePath, fallback = null) {
     try {
         return JSON.parse(await fs.readFile(filePath, 'utf8'))
     } catch (err) {
@@ -123,7 +127,8 @@ function exportDataToFullDb(data) {
 
 async function logReadActivity(messages) {
     try {
-        await logFirebaseActivity(messages)
+        if (isDirectRun || isCron) await postFirebaseActivity({activityData: messages})
+        else await logFirebaseActivity(messages)
     } catch (err) {
         console.log('Logging Error', err)
     }
@@ -260,22 +265,22 @@ async function getIncrementalData() {
 
     await logReadActivity([
         {
-            activity: 'READ',
-            activityCount: changed.changeIndexReadCount,
-            source: 'collectionsExportIncremental_lockcollectionsChangeIndex',
+            type: 'READ',
+            count: changed.changeIndexReadCount,
+            source: 'collectionsExport_lockcollectionsChangeIndex',
             id: '',
-            displayName: 'cronjob'
+            trigger: isCron ? 'cronjob' : 'manual'
         },
         {
-            activity: 'READ',
-            activityCount: existing.bootstrapReadCount + changedDocs.length,
-            source: 'collectionsExportIncremental_lockcollections',
+            type: 'READ',
+            count: existing.bootstrapReadCount + changedDocs.length,
+            source: 'collectionsExport_lockcollections',
             id: '',
-            displayName: 'cronjob'
+            trigger: isCron ? 'cronjob' : 'manual'
         }
     ])
 
-    console.log('Incremental collection export complete', metadata)
+    !isCron && console.log('Incremental collection export complete', metadata)
 
     return fullDb
 }

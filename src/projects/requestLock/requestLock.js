@@ -20,9 +20,16 @@ import {getFirestore} from 'firebase-admin/firestore'
 import serviceAccount from '../../../keys/service-account.json' with {type: 'json'}
 import {logger} from '../../logger/logger.js'
 import parseForm from '../../util/parseForm.js'
+import {pathToFileURL} from 'url'
+import postFirebaseActivity from '../../util/postFirebaseActivity.js'
+
+const isDirectRun = process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href
+const isCron = !!process.argv[2] && process.argv[2] === 'cron'
+const log = logger.child({
+    module: 'requestLock'
+})
 
 const {writeFile} = fs.promises
-
 const maxFileSizeMB = 10
 const maxTotalFileSizeMB = 50
 
@@ -62,15 +69,15 @@ if (!fs.existsSync(uploadDir)) {
 let uploadSubDir
 
 function handleError(res, message, error, status = 500) {
-    logger.error(`handleError: ${message}`)
+    log.error(`handleError: ${message}`)
 
     if (uploadSubDir && fs.existsSync(uploadSubDir)) {
         try {
             fs.rmSync(uploadSubDir, {recursive: true, force: true})
-            console.log('Upload directory removed after error:', uploadSubDir)
+            log.info('Upload directory removed after error:', uploadSubDir)
         } catch (err) {
             try {
-                logger.error(`Error removing upload directory after error: ${err}`)
+                log.error(`Error removing upload directory after error: ${err}`)
             } catch {
                 console.error(`Error removing upload directory after error: ${err}`)
             }
@@ -78,7 +85,7 @@ function handleError(res, message, error, status = 500) {
     }
 
     if (res.headersSent) {
-        console.warn('handleError called but headers already sent')
+        log.warn('handleError called but headers already sent')
         return
     }
 
@@ -117,6 +124,15 @@ export default async function requestLock(req, res) {
     const env = process.env.NODE_ENV || 'development'
     const prod = env === 'production'
     const db = getDb(prod)
+
+    async function logActivity(messages) {
+        try {
+            if (isDirectRun || isCron) await postFirebaseActivity({activityData: messages})
+            else await logFirebaseActivity(messages)
+        } catch (err) {
+            console.log('Logging Error', err)
+        }
+    }
 
     const form = formidable({
         uploadDir,
@@ -204,9 +220,9 @@ export default async function requestLock(req, res) {
         const ref = db.collection('ranking-requests').doc(entry.id)
         try {
             await setRankingRequest(ref, entry, entry.id, entry.displayName)
-            await logFirebaseActivity([{
-                activity: 'READ',
-                activityCount: 1,
+            await logActivity([{
+                type: 'READ',
+                count: 1,
                 source: 'request-create',
                 id: entry.id,
                 displayName: entry.displayName,
@@ -231,7 +247,6 @@ export default async function requestLock(req, res) {
                 text: `Lock Request: ${lockName}`,
                 html: fieldsHtml
             })
-            //console.log('Message sent: %s', email.messageId)
         } catch (error) {
             return handleError(res, 'Email send error', error)
         }
@@ -258,8 +273,8 @@ export async function updateRequest(req, res) {
         const ref = db.collection('ranking-requests').doc(entry.id)
         await setRankingRequest(ref, entry, entry.id, entry.displayName)
         await logFirebaseActivity([{
-            activity: 'WRITE',
-            activityCount: 1,
+            type: 'WRITE',
+            count: 1,
             source: 'request-update',
             id: entry.id,
             displayName: entry.displayName,
@@ -290,8 +305,8 @@ export async function updateVotes(req, res) {
         const rankingRequest = await fetchRankingRequest(ref, entryId)
         if (!rankingRequest) return handleError(res, 'No ranking request found', new Error('No ranking request found'), 404)
         await logFirebaseActivity([{
-            activity: 'READ',
-            activityCount: 1,
+            type: 'READ',
+            count: 1,
             source: 'request-upvote',
             id: entryId,
             displayName: displayName,
@@ -309,8 +324,8 @@ export async function updateVotes(req, res) {
         try {
             await updateRankingRequest(ref, updateData, entryId)
             await logFirebaseActivity([{
-                activity: 'WRITE',
-                activityCount: 1,
+                type: 'WRITE',
+                count: 1,
                 source: 'request-upvote',
                 id: entryId,
                 displayName: displayName,
@@ -322,7 +337,7 @@ export async function updateVotes(req, res) {
         }
 
     } catch (error) {
-        logger.error(`Error updating votes: ${error}`)
+        log.error(`Error updating votes: ${error}`)
         return handleError(res, 'Error updating votes', error)
     }
     return res.status(200).json(updatedVotes)
@@ -334,23 +349,22 @@ async function fetchRankingRequest(ref, entryId) {
     try {
         const docSnap = await ref.get(entryId)
         if (!docSnap) {
-            logger.warn(`No ranking request found for entry: ${entryId}`)
+            log.warn(`No ranking request found for entry: ${entryId}`)
             return null
         }
         return docSnap.data()
     } catch (error) {
-        logger.error(`Error getting document ${entryId}: ${error}`)
+        log.error(`Error getting document ${entryId}: ${error}`)
         return null
     }
 }
 
 async function setRankingRequest(ref, entry, entryId) {
     try {
-        //console.log('setRankingRequest', entry, entryId)
         await ref.set(entry)
         return entry
     } catch (error) {
-        logger.error(`Error setting document ${entryId}: ${error}`)
+        log.error(`Error setting document ${entryId}: ${error}`)
         throw error
     }
 }
@@ -360,7 +374,7 @@ async function updateRankingRequest(ref, data, entryId) {
         await ref.update(data)
         return data
     } catch (error) {
-        logger.error(`Error updating document ${entryId}: ${error}`)
+        log.error(`Error updating document ${entryId}: ${error}`)
         throw error
     }
 }

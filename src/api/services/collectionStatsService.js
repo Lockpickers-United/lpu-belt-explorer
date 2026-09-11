@@ -41,3 +41,13 @@ export async function getScorecardLockCollectionStats() {
     }))
     return withLocks(source, locks)
 }
+
+export async function getWishlistLockCollectionStats() {
+    const source = await getCollectionStats()
+    const locks = source.data.locks.map(lock => ({
+        id: lock.id,
+        name: lock.name,
+        wishlistCount: lock.wishlistCount
+    }))
+    return withLocks(source, locks)
+}

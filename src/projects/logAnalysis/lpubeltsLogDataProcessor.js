@@ -18,7 +18,7 @@ dayjs.extend(timezone)
 dayjs.extend(weekOfYear)
 
 // --- CONFIGURATION ---
-const daysToReport = 777
+const daysToReport = 77777
 const startDate = dayjs('2023-02-20')
 const today = dayjs()
 const endDate = today.subtract(1, 'day')

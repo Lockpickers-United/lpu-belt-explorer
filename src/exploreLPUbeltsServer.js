@@ -73,7 +73,9 @@ app.use((err, req, res, next) => {
     const payload = isDev
         ? { ...base, stack: typeof err?.stack === 'string' ? err.stack : undefined, details: err?.details }
         : base
-    try { logger.error({ err, status, ...base }, 'request error') } catch {
+    const cleanErr = {...err}
+    delete cleanErr.stack
+    try { logger.error({ err: cleanErr, status, ...base }, 'request error') } catch {
         console.error('request error', err)
     }
     res.status(status).json({ error: payload })

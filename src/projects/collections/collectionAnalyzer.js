@@ -85,6 +85,9 @@ export async function collectionAnalyzer({blackBeltOnly, date}) {
                     if (!blackBeltOnly && listName === 'own') {
                         setDeepAdd(acc, ['ownSavesById', itemId], 1)
                     }
+                    if (!blackBeltOnly && listName === 'wishlist') {
+                        setDeepAdd(acc, ['wishlistSavesById', itemId], 1)
+                    }
                     if (!blackBeltOnly && listName === 'recordedLocks') {
                         setDeepAdd(acc, ['scorecardSavesById', itemId], 1)
                     }
@@ -177,7 +180,8 @@ async function analyzeCollection(date) {
                 name: items[id]?.itemName,
                 totalSaves: count,
                 ownCount: allUsers.ownSavesById[id],
-                scorecardCount: allUsers.scorecardSavesById[id]
+                scorecardCount: allUsers.scorecardSavesById[id],
+                wishlistCount: allUsers.wishlistSavesById[id]
             })
         )
 

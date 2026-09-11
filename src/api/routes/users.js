@@ -35,37 +35,26 @@ async function getUserProfileService() {
 
 router.use(userProfileRateLimit)
 
-router.get('/:id', async (req, res) => {
-    const userId = parseUserId(req)
-    const {getUserSummary} = await getUserProfileService()
-    const summary = await getUserSummary(userId)
-    log.info({
-        requestId: req.id,
-        endpoint: 'GET /api/v1/users/:id',
-        userId,
-        displayName: summary.data.displayName,
-        ip: req.ip
-    }, 'user summary served')
+function getUserSummaryHandler(endpoint) {
+    return async (req, res) => {
+        const userId = parseUserId(req)
+        const {getUserSummary} = await getUserProfileService()
+        const summary = await getUserSummary(userId)
+        log.info({
+            requestId: req.id,
+            endpoint,
+            userId,
+            displayName: summary.data.displayName,
+            ip: req.ip
+        }, 'user summary served')
 
-    res.set('Cache-Control', publicProfileCache)
-    res.json(summary)
-})
+        res.set('Cache-Control', publicProfileCache)
+        res.json(summary)
+    }
+}
 
-router.get('/:id/summary', async (req, res) => {
-    const userId = parseUserId(req)
-    const {getUserSummary} = await getUserProfileService()
-    const summary = await getUserSummary(userId)
-    log.info({
-        requestId: req.id,
-        endpoint: 'GET /api/v1/users/:id/summary',
-        userId,
-        displayName: summary.data.displayName,
-        ip: req.ip
-    }, 'user summary served')
-
-    res.set('Cache-Control', publicProfileCache)
-    res.json(summary)
-})
+router.get('/:id', getUserSummaryHandler('GET /api/v1/users/:id'))
+router.get('/:id/summary', getUserSummaryHandler('GET /api/v1/users/:id/summary'))
 
 router.get('/:id/wishlist', async (req, res) => {
     const userId = parseUserId(req)

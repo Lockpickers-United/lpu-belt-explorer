@@ -7,13 +7,16 @@ import dayjs from 'dayjs'
 import {projectDetails, lockDetails} from '../../util/getItemDetails.js'
 import entryName from '../../util/entryName.js'
 import {logFirebaseActivity} from '../logFirebaseActivity/logFirebaseActivity.js'
+import {pathToFileURL} from 'url'
+import postFirebaseActivity from '../../util/postFirebaseActivity.js'
+
+const isDirectRun = process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href
+const isCron = !!process.argv[2] && process.argv[2] === 'cron'
 
 const production = process.env.USER !== localUser
-
 const keysDir = production
     ? `/home/${prodUser}/explore-lpubelts-com-node/keys`
     : `/Users/${localUser}/Documents/GitHub/explore-lpubelts-com-node/keys`
-
 const serviceAccount = JSON.parse(await fs.readFile(`${keysDir}/service-account.json`, 'utf8'))
 
 const config = {
@@ -54,7 +57,8 @@ export default async function getAllEvidence() {
     }]
 
     try {
-        await logFirebaseActivity(messages)
+        if (isDirectRun || isCron) await postFirebaseActivity({activityData: messages})
+        else await logFirebaseActivity(messages)
     } catch (err) {
         console.log('Logging Error', err)
     }

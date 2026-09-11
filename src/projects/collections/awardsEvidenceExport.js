@@ -8,13 +8,16 @@ import dayjs from 'dayjs'
 import {awardDetails, lockDetails, projectDetails, safelockDetails} from '../../util/getItemDetails.js'
 import entryName from '../../util/entryName.js'
 import {logFirebaseActivity} from '../logFirebaseActivity/logFirebaseActivity.js'
+import postFirebaseActivity from '../../util/postFirebaseActivity.js'
+import {pathToFileURL} from 'url'
+
+const isDirectRun = process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href
+const isCron = !!process.argv[2] && process.argv[2] === 'cron'
 
 const production = process.env.USER !== localUser
-
 const keysDir = production
     ? `/home/${prodUser}/explore-lpubelts-com-node/keys`
     : `/Users/${localUser}/Documents/GitHub/explore-lpubelts-com-node/keys`
-
 const serviceAccount = JSON.parse(await fs.readFile(`${keysDir}/service-account.json`, 'utf8'))
 
 const config = {
@@ -265,11 +268,10 @@ async function prepareIncrementalCollection(collectionConfig) {
     }
 }
 
-async function logReadActivity(messages) {
-    console.log('Logging Read Activity', messages)
-
+async function logActivity(messages) {
     try {
-        production && await logFirebaseActivity(messages)
+        if (isDirectRun || isCron) await postFirebaseActivity({activityData: messages})
+        else await logFirebaseActivity(messages)
     } catch (err) {
         console.log('Logging Error', err)
     }
@@ -435,38 +437,38 @@ async function getAllData() {
         writePreparedCollectionState(evidenceSnapshot)
     ])
 
-    await logReadActivity([
+    await logActivity([
         {
-            activity: 'READ',
-            activityCount: awardsSnapshot.metadata.changeIndexReadCount,
+            type: 'READ',
+            count: awardsSnapshot.metadata.changeIndexReadCount,
             source: 'awardsEvidenceExport_awardsChangeIndex',
             id: '',
-            displayName: 'cronjob'
+            trigger: isCron ? 'cronjob' : 'manual'
         },
         {
-            activity: 'READ',
-            activityCount: awardsSnapshot.metadata.sourceReadCount,
+            type: 'READ',
+            count: awardsSnapshot.metadata.sourceReadCount,
             source: 'awardsEvidenceExport_awards',
             id: '',
-            displayName: 'cronjob'
+            trigger: isCron ? 'cronjob' : 'manual'
         },
         {
-            activity: 'READ',
-            activityCount: evidenceSnapshot.metadata.changeIndexReadCount,
+            type: 'READ',
+            count: evidenceSnapshot.metadata.changeIndexReadCount,
             source: 'awardsEvidenceExport_evidenceChangeIndex',
             id: '',
-            displayName: 'cronjob'
+            trigger: isCron ? 'cronjob' : 'manual'
         },
         {
-            activity: 'READ',
-            activityCount: evidenceSnapshot.metadata.sourceReadCount,
+            type: 'READ',
+            count: evidenceSnapshot.metadata.sourceReadCount,
             source: 'awardsEvidenceExport_evidence',
             id: '',
-            displayName: 'cronjob'
+            trigger: isCron ? 'cronjob' : 'manual'
         }
     ])
 
-    console.log('Incremental awards/evidence export complete', {
+    !production && console.log('Incremental awards/evidence export complete', {
         awards: awardsSnapshot.metadata,
         evidence: evidenceSnapshot.metadata
     })

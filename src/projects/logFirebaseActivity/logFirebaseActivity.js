@@ -12,19 +12,28 @@ function handleError(res, message, error, status = 500) {
 export default async function handleFirebaseActivityPost(req, res) {
     // TODO fix??
     const {activityData, prod} = req.body
-    const mappedActivity = activityData.map((activityItem) => {
-        const {type, count, activity, activityCount, source, id, displayName} = activityItem
-        return {
-            type: type ||activity,
-            count: count || activityCount,
-            source,
-            id,
-            displayName,
-            prod
-        }
-    })
+    const messages = (!Array.isArray(activityData))
+        ? [activityData]
+        : activityData
+    const mappedMessages = messages
+        .filter((message) => message.count > 0 || message.type === 'REFRESH')
+        .map((message) => {
+            const {type, activity, activityCount} = message
+
+            if (activityCount) log.error('logFirebaseActivity.js : activityCount is present')
+
+            const mappedMessage = {
+                ...message,
+                type: type || activity,
+                prod
+            }
+            return Object.fromEntries(
+                Object.entries(mappedMessage)
+                    .filter(([_key, value]) => value !== null && value !== '' && true)
+            )
+        })
     try {
-        await logFirebaseActivity(mappedActivity, prod)
+        await logFirebaseActivity(mappedMessages, prod)
     } catch (err) {
         log.error({err}, 'logFirebaseActivity Error')
         return handleError(res, 'Error logging activity', null, 500)
@@ -33,14 +42,9 @@ export default async function handleFirebaseActivityPost(req, res) {
 }
 
 export async function logFirebaseActivity(messages) {
-    if (!Array.isArray(messages)) {
-        messages = [messages]
-    }
-
     try {
         messages?.map(async (message) => {
-            const {type, count, source, id, displayName, prod} = message
-            log.info({type, count, source, id, displayName, prod}, 'firebase accessed')
+            log.info(message, 'firebase accessed')
         })
 
     } catch (err) {

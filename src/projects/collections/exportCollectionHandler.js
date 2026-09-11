@@ -5,13 +5,15 @@ import {getFirestore} from 'firebase-admin/firestore'
 import {localUser, prodUser} from '../../../keys/users.js'
 import {logFirebaseActivity} from '../logFirebaseActivity/logFirebaseActivity.js'
 import postFirebaseActivity from '../../util/postFirebaseActivity.js'
+import {pathToFileURL} from 'url'
+
+const isDirectRun = process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href
+const isCron = !!process.argv[2] && process.argv[2] === 'cron'
 
 const production = process.env.USER !== localUser
-
 const keysDir = production
     ? `/home/${prodUser}/explore-lpubelts-com-node/keys`
     : `/Users/${localUser}/Documents/GitHub/explore-lpubelts-com-node/keys`
-
 const serviceAccount = JSON.parse(await fs.promises.readFile(`${keysDir}/service-account.json`, 'utf8'))
 
 const config = {
@@ -35,19 +37,16 @@ export default async function exportCollection({collection, devDb=false}) {
     const collectionData = await db.collection(collection).get()
 
     const messages = [{
-        activity: 'READ',
-        activityCount: collectionData.docs.length,
+        type: 'READ',
+        count: collectionData.docs.length,
         source: `collectionsExport_${collection}`,
         id: '',
         displayName: 'cronjob'
     }]
 
     try {
-        if (production) {
-            await logFirebaseActivity(messages)
-        } else {
-            await postFirebaseActivity({activityData: messages})
-        }
+        if (isDirectRun || isCron) await postFirebaseActivity({activityData: messages})
+        else await logFirebaseActivity(messages)
     } catch (err) {
         console.log('Logging Error', err)
     }
@@ -62,7 +61,7 @@ export default async function exportCollection({collection, devDb=false}) {
     }
     const jsonString = JSON.stringify({metadata, data})
 
-    await fs.writeFile(`${backupDir}/${collection}.json`, jsonString, function (err) {
+    fs.writeFile(`${backupDir}/${collection}.json`, jsonString, function (err) {
         if (err) {
             console.log(err)
         }
