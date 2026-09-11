@@ -13,7 +13,7 @@ import DataContext from '../context/DataContext.jsx'
 import {postData} from '../formUtils/postData.jsx'
 import {nodeServerUrl} from '../data/dataUrls'
 
-export default function AddVote({user, entry}) {
+export default function AddVote({user = {}, entry}) {
     const [isUpdating, setIsUpdating] = useState(false)
     const [upvote, setUpvote] = useState(false)
     const [form, setForm] = useState({})
