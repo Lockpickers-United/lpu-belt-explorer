@@ -21,8 +21,8 @@ export default function AddVote({user = {}, entry}) {
     const {profile} = useContext(DataContext)
     const {requestedBy = []} = entry
 
-    const isOwner = requestedBy.find(req => (req.userId === user.uid && req.owner)) || false
-    const hasVoted = requestedBy.find(req => req.userId === user.uid) || false
+    const isOwner = requestedBy.find(req => (req?.userId === user?.uid && req?.owner)) || false
+    const hasVoted = requestedBy.find(req => req?.userId === user?.uid) || false
 
     const voteCount = requestedBy.length > 1 ? requestedBy.length : ''
     const voteCountBorder = requestedBy.length > 1 ? '2px solid #444' : ''
