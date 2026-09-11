@@ -11,13 +11,15 @@ import dayjs from 'dayjs'
 import DBContext from '../app/DBContext.jsx'
 import {enqueueSnackbar} from 'notistack'
 import Button from '@mui/material/Button'
+import ProfileContext from '../app/ProfileContext.jsx'
 
 export function DBProviderRaffle({children}) {
 
     const globalContext = useContext(DBContext)
 
     const {authLoaded, isLoggedIn, user} = useContext(AuthContext)
-    const {profile} = useContext(DBContext)
+    const {data} = useContext(ProfileContext)
+    const profile = useMemo(() => data ? data.profile : {}, [data])
 
     const [dbError, setDbError] = useState(null)
     const [dbLoaded, setDbLoaded] = useState(false)

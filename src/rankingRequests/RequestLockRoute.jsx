@@ -1,4 +1,4 @@
-import React, {useContext} from 'react'
+import React, {useContext, useMemo} from 'react'
 import Nav from '../nav/Nav.jsx'
 import useWindowSize from '../util/useWindowSize.jsx'
 import usePageTitle from '../util/usePageTitle.jsx'
@@ -6,19 +6,18 @@ import {FilterProvider} from '../context/FilterContext.jsx'
 import {DataProvider} from './LockRequestsDataProvider.jsx'
 import {lockRequestFilterFields} from '../data/filterFields'
 import RequestLock from './RequestLock.jsx'
-import DBContext from '../app/DBContext.jsx'
 import allEntries from '../data/data.json'
-import {useOutletContext} from 'react-router-dom'
+import ProfileContext from '../app/ProfileContext.jsx'
+import ProfileLoader from '../auth/ProfileLoader.jsx'
 
 export default function RequestLockRoute() {
 
     usePageTitle('Request a Lock')
 
-    const {lockCollection} = useContext(DBContext)
     const {isMobile} = useWindowSize()
+    const {data, loading, error} = useContext(ProfileContext)
+    const profile = useMemo(() => data ? data.profile : {}, [data])
 
-    const rankingRequests = useOutletContext()
-    const combinedEntries = allEntries.concat(rankingRequests)
 
     const extras = (
         <React.Fragment>{!isMobile && <div style={{flexGrow: 1, minWidth: '10px'}}/>}</React.Fragment>
@@ -26,10 +25,15 @@ export default function RequestLockRoute() {
 
     return (
         <FilterProvider filterFields={lockRequestFilterFields}>
-            <DataProvider allEntries={combinedEntries} profile={lockCollection}>
+            <DataProvider allEntries={allEntries} profile={profile}>
 
                 <Nav title='Request a Lock' extras={extras}/>
-                <RequestLock/>
+
+                <ProfileLoader loading={loading} error={error} required={true} dialogText={'to request a lock'}/>
+
+                { !loading && !error &&
+                    <RequestLock profile={profile}/>
+                }
 
             </DataProvider>
         </FilterProvider>

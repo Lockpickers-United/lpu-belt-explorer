@@ -26,11 +26,11 @@ import SubNav from '../nav/SubNav.jsx'
  * @prop allMakes
  */
 
-function RequestLock() {
+function RequestLock({profile}) {
 
     const {allEntries} = useContext(DataContext)
     const {user} = useContext(AuthContext)
-    const {profile} = useContext(DataContext)
+
     const [files, setFiles] = useState([])
     const [response, setResponse] = useState(undefined)
     const [uploading, setUploading] = useState(false)

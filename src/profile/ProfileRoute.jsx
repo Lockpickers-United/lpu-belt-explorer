@@ -28,10 +28,9 @@ import AppContext from '../app/AppContext.jsx'
 function ProfileRoute() {
     const {user} = useContext(AuthContext)
     const {userId} = useParams()
+    const {admin} = useContext(AppContext)
     const {getPickerActivity} = useContext(DBContext)
     const {data, loading, error, isFullProfile} = useContext(ProfileContext)
-    const {admin} = useContext(AppContext)
-
     const profile = useMemo(() => data ? data.profile : {}, [data])
 
     admin && console.log('ProfileRoute', {isFullProfile, data})
