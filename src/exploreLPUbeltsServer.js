@@ -15,6 +15,8 @@ import {createEmailFormRuntime} from './projects/emailFormContents/emailFormCont
 import {emailFormConfigSummary} from './projects/emailFormContents/emailFormContentsConfig.js'
 import {createImportRaflDataRuntime} from './projects/importRaflData/importRaflDataRuntime.js'
 import {importRaflDataConfigSummary} from './projects/importRaflData/importRaflDataConfig.js'
+import {createRedditBeltsRuntime} from './projects/redditBelts/redditBeltsRuntime.js'
+import {redditBeltsConfigSummary} from './projects/redditBelts/redditBeltsConfig.js'
 
 const env = process.env.NODE_ENV || 'local'
 dotenv.config({path: [`.env.${env}`], quiet: true})
@@ -24,10 +26,12 @@ const requestLockRuntime = await createRequestLockRuntime({env: process.env})
 const uploadContentRuntime = await createUploadContentRuntime({env: process.env})
 const emailFormRuntime = await createEmailFormRuntime({env: process.env})
 const importRaflDataRuntime = await createImportRaflDataRuntime({env: process.env})
+const redditBeltsRuntime = await createRedditBeltsRuntime({env: process.env})
 logger.info(requestLockConfigSummary(requestLockRuntime.config), 'request-lock runtime configured')
 logger.info(uploadContentConfigSummary(uploadContentRuntime.config), 'upload-content runtime configured')
 logger.info(emailFormConfigSummary(emailFormRuntime.config), 'email-form runtime configured')
 logger.info(importRaflDataConfigSummary(importRaflDataRuntime.config), 'RAFL preview runtime configured')
+logger.info(redditBeltsConfigSummary(redditBeltsRuntime.config), 'Reddit belts runtime configured')
 
 // node /home/dh_m5s5pf/explore-lpubelts-com-node/src/exploreLPUbeltsServerDEV.js
 
@@ -65,7 +69,8 @@ registerRoutes(app, {
     requestLockHandlers: requestLockRuntime.handlers,
     uploadContentHandler: uploadContentRuntime.handler,
     emailFormHandler: emailFormRuntime.handler,
-    importRaflDataHandler: importRaflDataRuntime.handler
+    importRaflDataHandler: importRaflDataRuntime.handler,
+    getRedditBeltsHandler: redditBeltsRuntime.handler
 })
 
 // 404 handler (must be after routes)

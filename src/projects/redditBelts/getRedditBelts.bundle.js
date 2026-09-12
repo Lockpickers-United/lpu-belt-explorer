@@ -1,19 +1,28 @@
 import {Router} from 'express'
+import requireAuth from '../../api/middleware/requireAuth.js'
+import requireLpuAdmin from './requireLpuAdmin.js'
 
-const router = Router()
+export function createGetRedditBeltsRouter(getRedditBeltsHandler) {
+    const router = Router()
 
-router.get('/', (req, res) => {
-    req.log.info('getRedditBelts route hit')
-    res.json({ message: 'getRedditBelts endpoint', requestId: req.id })
-})
+    router.use(requireAuth, requireLpuAdmin)
 
-router.post('/', async (req, res, next) => {
-    try {
-        const {default: getRedditBelts} = await import('./getRedditBelts.js')
-        await getRedditBelts(req, res)
-    } catch (e) {
-        next(e)
-    }
-})
+    router.get('/', (req, res) => {
+        req.log.info('getRedditBelts route hit')
+        res.json({message: 'getRedditBelts endpoint', requestId: req.id})
+    })
 
-export default router
+    router.post('/', async (req, res, next) => {
+        try {
+            const handler = getRedditBeltsHandler
+                ?? (await import('./getRedditBelts.js')).default
+            await handler(req, res)
+        } catch (error) {
+            next(error)
+        }
+    })
+
+    return router
+}
+
+export default createGetRedditBeltsRouter()

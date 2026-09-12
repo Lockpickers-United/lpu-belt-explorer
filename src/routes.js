@@ -12,7 +12,8 @@ export function registerRoutes(app, {
     requestLockHandlers,
     uploadContentHandler,
     emailFormHandler,
-    importRaflDataHandler
+    importRaflDataHandler,
+    getRedditBeltsHandler
 } = {}) {
     const r = Router()
 
@@ -43,7 +44,10 @@ export function registerRoutes(app, {
         return {default: module.createRequestVoteRouter(requestLockHandlers)}
     })
 
-    lazyMount(app, `${prefix}/fetch-reddit-flairs`, () => import('./projects/redditBelts/getRedditBelts.bundle.js'))
+    lazyMount(app, `${prefix}/fetch-reddit-flairs`, async () => {
+        const module = await import('./projects/redditBelts/getRedditBelts.bundle.js')
+        return {default: module.createGetRedditBeltsRouter(getRedditBeltsHandler)}
+    })
     // FOR LOCKY JR  ??????
     lazyMount(app, `${prefix}/fetch-flairs`, () => import('./projects/fetchFlairs/fetchFlairs.bundle.js'))
 
