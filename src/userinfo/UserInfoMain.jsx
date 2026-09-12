@@ -25,7 +25,7 @@ export default function UserInfoMain() {
     const {userId, data, loading, error, isFullProfile} = useContext(ProfileContext)
     const profile = useMemo(() => data ? data.profile : {}, [data])
 
-    adminEnabled && console.log('adminEnabled log: profile', {isFullProfile, data})
+    adminEnabled && console.log('admin log: profile', {isFullProfile, data})
 
     const {filters = {}, addFilters} = useContext(FilterContext)
     const {uid, name} = filters
@@ -174,21 +174,21 @@ export default function UserInfoMain() {
                                 <tbody>
                                 <tr style={{height: 10}}></tr>
                                 <tr>
-                                    <td style={varStyle}>source</td>
-                                    <td>{data?.source}</td>
-                                </tr>
-                                <tr>
-                                    <td style={varStyle}>Is Full Profile</td>
-                                    <td>{data?.isFullProfile ? 'Yes' : 'No'}</td>
-                                </tr>
-                                <tr style={{height: 10}}></tr>
-                                <tr>
                                     <td style={varStyle}>display name</td>
                                     <td>{profile?.displayName}</td>
                                 </tr>
                                 <tr>
                                     <td style={varStyle}>user id</td>
                                     <td>{userId}</td>
+                                </tr>
+                                <tr style={{height: 10}}></tr>
+                                <tr>
+                                    <td style={varStyle}>source</td>
+                                    <td>{data?.source}</td>
+                                </tr>
+                                <tr>
+                                    <td style={varStyle}>Is Full Profile</td>
+                                    <td>{data?.isFullProfile ? 'Yes' : 'No'}</td>
                                 </tr>
                                 {user?.uid === userId &&
                                     <tr>

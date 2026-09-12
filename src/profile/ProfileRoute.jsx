@@ -33,7 +33,7 @@ function ProfileRoute() {
     const {data, loading, error, isFullProfile} = useContext(ProfileContext)
     const profile = useMemo(() => data ? data.profile : {}, [data])
 
-    adminEnabled && console.log('adminEnabled log: ProfileRoute', {isFullProfile, data})
+    adminEnabled && console.log('admin log: ProfileRoute', {isFullProfile, data})
 
     const owner = user?.uid === userId
 

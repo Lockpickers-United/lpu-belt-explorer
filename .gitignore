@@ -47,3 +47,4 @@ tests-results/*
 /keys
 /.agents
 .agents
+/internal-docs/
