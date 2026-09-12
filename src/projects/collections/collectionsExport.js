@@ -1,44 +1,14 @@
 import fs from 'node:fs/promises'
 import path from 'node:path'
-import {initializeApp, cert} from 'firebase-admin/app'
-import {getFirestore, Timestamp} from 'firebase-admin/firestore'
+import {Timestamp} from 'firebase-admin/firestore'
 import {setDeep} from '../../util/setDeep.js'
-
-import {localUser, prodUser} from '../../../keys/users.js'
 import dayjs from 'dayjs'
-import {logFirebaseActivity} from '../logFirebaseActivity/logFirebaseActivity.js'
-import {pathToFileURL} from 'url'
-import postFirebaseActivity from '../../util/postFirebaseActivity.js'
-
-const isDirectRun = process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href
-const isCron = !!process.argv[2] && process.argv[2] === 'cron'
-const production = process.env.USER !== localUser
-
-const keysDir = production
-    ? `/home/${prodUser}/explore-lpubelts-com-node/keys`
-    : `/Users/${localUser}/Documents/GitHub/explore-lpubelts-com-node/keys`
-
-const serviceAccount = JSON.parse(await fs.readFile(`${keysDir}/service-account.json`, 'utf8'))
-
-const config = {
-    credential: cert(serviceAccount)
-}
-const firebaseApp = initializeApp(config)
-const dbProd = getFirestore(firebaseApp)
-
-const backupDir = production
-    ? `/home/${prodUser}/firebase`
-    : `/Users/${localUser}/Documents/LOCKPICK/LPU-Belt-Explorer/lpu-belt-explorer-analytics/Collections/lpuBeltsBackups`
-
-const exportDir = production
-    ? `/home/${prodUser}/collectionExports`
-    : `/Users/${localUser}/Documents/LOCKPICK/LPU-Belt-Explorer/collectionExports`
+import isMain from '../../util/isMain.js'
+import {exportJobConfigSummary, loadExportJobConfig} from './exportJobConfig.js'
+import {getExportFirestore} from './exportFirebase.js'
 
 const collectionName = 'lockcollections'
 const changeIndexCollectionName = 'lockcollectionsChangeIndex'
-const exportFile = `${exportDir}/${collectionName}.json`
-const exportStateFile = `${exportDir}/${collectionName}.exportState.json`
-const lookbackMs = Number(process.env.COLLECTIONS_EXPORT_LOOKBACK_MS ?? 5 * 60 * 1000)
 const getAllChunkSize = 300
 
 async function readJsonFile(filePath, fallback = null) {
@@ -99,7 +69,7 @@ function compareTimestamps(a, b) {
     return a.nanoseconds - b.nanoseconds
 }
 
-function timestampMinusLookback(value) {
+function timestampMinusLookback(value, lookbackMs) {
     if (!value) return Timestamp.fromMillis(0)
     return Timestamp.fromMillis(Math.max(0, value.toMillis() - lookbackMs))
 }
@@ -125,18 +95,17 @@ function exportDataToFullDb(data) {
     return fullDb
 }
 
-async function logReadActivity(messages) {
+async function logReadActivity(messages, activityLogger) {
     try {
-        if (isDirectRun || isCron) await postFirebaseActivity({activityData: messages})
-        else await logFirebaseActivity(messages)
+        await activityLogger(messages)
     } catch (err) {
-        console.log('Logging Error', err)
+        console.error('Logging Error', err)
     }
 }
 
-async function getChangedUsersSince(watermark, processedChangeKeys) {
-    const lowerBound = timestampMinusLookback(watermark)
-    const changes = await dbProd
+async function getChangedUsersSince({db, watermark, processedChangeKeys, lookbackMs}) {
+    const lowerBound = timestampMinusLookback(watermark, lookbackMs)
+    const changes = await db
         .collection(changeIndexCollectionName)
         .where('changedAt', '>', lowerBound)
         .orderBy('changedAt')
@@ -151,7 +120,7 @@ async function getChangedUsersSince(watermark, processedChangeKeys) {
         const changedAt = change.changedAt
         if (!changedAt || typeof changedAt.toMillis !== 'function') return
 
-        const userId = change.userId ?? changeDoc.id
+        const userId = change.docId ?? change.userId ?? changeDoc.id
         const key = changeKey(userId, changedAt)
         observedChanges.push({userId, changedAt, key})
 
@@ -161,7 +130,7 @@ async function getChangedUsersSince(watermark, processedChangeKeys) {
         maxChangedAt = maxTimestamp(maxChangedAt, changedAt)
     })
 
-    const nextLowerBound = timestampMinusLookback(maxChangedAt)
+    const nextLowerBound = timestampMinusLookback(maxChangedAt, lookbackMs)
     const nextProcessedChangeKeys = observedChanges
         .filter(change => compareTimestamps(change.changedAt, nextLowerBound) > 0)
         .map(change => change.key)
@@ -174,17 +143,17 @@ async function getChangedUsersSince(watermark, processedChangeKeys) {
     }
 }
 
-async function fetchLockcollectionDocs(userIds) {
+async function fetchLockcollectionDocs(db, userIds) {
     const docs = []
     for (let idx = 0; idx < userIds.length; idx += getAllChunkSize) {
         const chunk = userIds.slice(idx, idx + getAllChunkSize)
-        const refs = chunk.map(userId => dbProd.collection(collectionName).doc(userId))
-        docs.push(...await dbProd.getAll(...refs))
+        const refs = chunk.map(userId => db.collection(collectionName).doc(userId))
+        docs.push(...await db.getAll(...refs))
     }
     return docs
 }
 
-async function getExistingOrBootstrapData() {
+async function getExistingOrBootstrapData({db, exportFile}) {
     const previousExport = await readJsonFile(exportFile)
     if (Array.isArray(previousExport?.data)) {
         return {
@@ -194,7 +163,7 @@ async function getExistingOrBootstrapData() {
         }
     }
 
-    const lockcollections = await dbProd.collection(collectionName).get()
+    const lockcollections = await db.collection(collectionName).get()
     return {
         data: lockcollections.docs.map(doc => ({docId: doc.id, ...doc.data()})),
         bootstrapped: true,
@@ -202,10 +171,10 @@ async function getExistingOrBootstrapData() {
     }
 }
 
-async function writeExportFiles(data, metadata) {
+async function writeExportFiles({data, metadata, backupDir, exportFile, runDate}) {
     const fullDb = exportDataToFullDb(data)
     const backupArchiveFile = `${backupDir}/archive/backup.json`
-    const backupDailyFile = `${backupDir}/archive/backup_${dayjs().format('YYYY-MM-DD')}.json`
+    const backupDailyFile = `${backupDir}/archive/backup_${dayjs(runDate).format('YYYY-MM-DD')}.json`
 
     await writeJsonFileAtomic(`${backupDir}/backup.json`, fullDb)
     await writeJsonFileAtomic(backupArchiveFile, fullDb)
@@ -215,14 +184,25 @@ async function writeExportFiles(data, metadata) {
     return fullDb
 }
 
-async function getIncrementalData() {
+export async function runCollectionsExport({
+    db,
+    backupDir,
+    exportDir,
+    lookbackMs,
+    trigger = 'manual',
+    activityLogger = async () => {},
+    now = () => new Date()
+}) {
+    const exportFile = `${exportDir}/${collectionName}.json`
+    const exportStateFile = `${exportDir}/${collectionName}.exportState.json`
+    const runDate = now()
     const state = await readJsonFile(exportStateFile, {})
     const previousWatermark = timestampFromState(state.lastSuccessfulExportChangedAt)
     const processedChangeKeys = new Set(state.processedChangeKeys ?? [])
-    const existing = await getExistingOrBootstrapData()
+    const existing = await getExistingOrBootstrapData({db, exportFile})
     const userMap = exportDataToUserMap(existing)
-    const changed = await getChangedUsersSince(previousWatermark, processedChangeKeys)
-    const changedDocs = await fetchLockcollectionDocs(changed.changedUserIds)
+    const changed = await getChangedUsersSince({db, watermark: previousWatermark, processedChangeKeys, lookbackMs})
+    const changedDocs = await fetchLockcollectionDocs(db, changed.changedUserIds)
     const deletedDocIds = []
 
     changedDocs.forEach(doc => {
@@ -237,7 +217,7 @@ async function getIncrementalData() {
     const data = userMapToExportData(userMap)
     const metadata = {
         collection: collectionName,
-        date: new Date().toISOString(),
+        date: runDate.toISOString(),
         docCount: data.length,
         incremental: true,
         bootstrapped: existing.bootstrapped,
@@ -250,7 +230,7 @@ async function getIncrementalData() {
         lookbackMs
     }
 
-    const fullDb = await writeExportFiles(data, metadata)
+    const fullDb = await writeExportFiles({data, metadata, backupDir, exportFile, runDate})
 
     if (changed.maxChangedAt) {
         await writeJsonFileAtomic(exportStateFile, {
@@ -269,20 +249,47 @@ async function getIncrementalData() {
             count: changed.changeIndexReadCount,
             source: 'collectionsExport_lockcollectionsChangeIndex',
             id: '',
-            trigger: isCron ? 'cronjob' : 'manual'
+            trigger
         },
         {
             type: 'READ',
             count: existing.bootstrapReadCount + changedDocs.length,
             source: 'collectionsExport_lockcollections',
             id: '',
-            trigger: isCron ? 'cronjob' : 'manual'
+            trigger
         }
-    ])
+    ], activityLogger)
 
-    !isCron && console.log('Incremental collection export complete', metadata)
+    if (trigger !== 'cronjob') console.log('Incremental collection export complete', metadata)
 
     return fullDb
 }
 
-await getIncrementalData().then()
+export async function collectionsExportMain({
+    env = process.env,
+    argv = process.argv,
+    writeOutput = console.log
+} = {}) {
+    const config = loadExportJobConfig({env})
+    const summary = exportJobConfigSummary(config)
+    if (argv.includes('--check-config')) {
+        writeOutput(JSON.stringify(summary, null, 2))
+        return summary
+    }
+
+    const db = await getExportFirestore(config)
+    const {default: postFirebaseActivity} = await import('../../util/postFirebaseActivity.js')
+    const trigger = argv.includes('cron') ? 'cronjob' : 'manual'
+    return runCollectionsExport({
+        db,
+        backupDir: config.backupDir,
+        exportDir: config.exportDir,
+        lookbackMs: config.lookbackMs,
+        trigger,
+        activityLogger: messages => postFirebaseActivity({activityData: messages})
+    })
+}
+
+if (isMain(import.meta.url)) {
+    await collectionsExportMain()
+}

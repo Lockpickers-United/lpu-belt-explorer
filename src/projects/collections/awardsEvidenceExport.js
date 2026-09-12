@@ -1,61 +1,32 @@
 import fs from 'node:fs/promises'
 import path from 'node:path'
-import {initializeApp, cert} from 'firebase-admin/app'
-import {Timestamp, getFirestore} from 'firebase-admin/firestore'
+import {Timestamp} from 'firebase-admin/firestore'
 import {setDeepPush} from '../../util/setDeep.js'
-import {localUser, prodUser} from '../../../keys/users.js'
 import dayjs from 'dayjs'
 import {awardDetails, lockDetails, projectDetails, safelockDetails} from '../../util/getItemDetails.js'
 import entryName from '../../util/entryName.js'
-import {logFirebaseActivity} from '../logFirebaseActivity/logFirebaseActivity.js'
-import postFirebaseActivity from '../../util/postFirebaseActivity.js'
-import {pathToFileURL} from 'url'
+import isMain from '../../util/isMain.js'
+import {exportJobConfigSummary, loadExportJobConfig} from './exportJobConfig.js'
+import {getExportFirestore} from './exportFirebase.js'
 
-const isDirectRun = process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href
-const isCron = !!process.argv[2] && process.argv[2] === 'cron'
-
-const production = process.env.USER !== localUser
-const keysDir = production
-    ? `/home/${prodUser}/explore-lpubelts-com-node/keys`
-    : `/Users/${localUser}/Documents/GitHub/explore-lpubelts-com-node/keys`
-const serviceAccount = JSON.parse(await fs.readFile(`${keysDir}/service-account.json`, 'utf8'))
-
-const config = {
-    credential: cert(serviceAccount)
-}
-const firebaseApp = initializeApp(config)
-const db = getFirestore(firebaseApp)
-
-const serverDir = production
-    ? `/home/${prodUser}/explore.lpubelts.com/public/data`
-    : `/Users/${localUser}/Documents/LOCKPICK/LPU-Belt-Explorer/lpu-belt-explorer-analytics/Collections`
-
-const backupDir = production
-    ? `/home/${prodUser}/firebase`
-    : `/Users/${localUser}/Documents/LOCKPICK/LPU-Belt-Explorer/lpu-belt-explorer-analytics/Collections/lpuBeltsBackups`
-
-const exportDir = production
-    ? `/home/${prodUser}/collectionExports`
-    : `/Users/${localUser}/Documents/LOCKPICK/LPU-Belt-Explorer/collectionExports`
-
-const recentCutoff = dayjs().subtract(15, 'day')
-const lookbackMs = Number(process.env.COLLECTIONS_EXPORT_LOOKBACK_MS ?? 5 * 60 * 1000)
 const getAllChunkSize = 300
 
-const incrementalCollections = [
-    {
-        collection: 'awards',
-        changeIndexCollection: 'awardsChangeIndex',
-        exportFile: `${exportDir}/awards.json`,
-        stateFile: `${exportDir}/awards.exportState.json`
-    },
-    {
-        collection: 'evidence',
-        changeIndexCollection: 'evidenceChangeIndex',
-        exportFile: `${exportDir}/evidence.json`,
-        stateFile: `${exportDir}/evidence.exportState.json`
-    }
-]
+function getIncrementalCollections(exportDir) {
+    return [
+        {
+            collection: 'awards',
+            changeIndexCollection: 'awardsChangeIndex',
+            exportFile: `${exportDir}/awards.json`,
+            stateFile: `${exportDir}/awards.exportState.json`
+        },
+        {
+            collection: 'evidence',
+            changeIndexCollection: 'evidenceChangeIndex',
+            exportFile: `${exportDir}/evidence.json`,
+            stateFile: `${exportDir}/evidence.exportState.json`
+        }
+    ]
+}
 
 async function readJsonFile(filePath, fallback=null) {
     try {
@@ -115,7 +86,7 @@ function compareTimestamps(a, b) {
     return a.nanoseconds - b.nanoseconds
 }
 
-function timestampMinusLookback(value) {
+function timestampMinusLookback(value, lookbackMs) {
     if (!value) return Timestamp.fromMillis(0)
     return Timestamp.fromMillis(Math.max(0, value.toMillis() - lookbackMs))
 }
@@ -146,8 +117,8 @@ function docMapToExportData(docMap) {
     return [...docMap.values()].sort((a, b) => a.docId.localeCompare(b.docId))
 }
 
-async function getChangedDocIdsSince(collectionConfig, watermark, processedChangeKeys) {
-    const lowerBound = timestampMinusLookback(watermark)
+async function getChangedDocIdsSince({db, collectionConfig, watermark, processedChangeKeys, lookbackMs}) {
+    const lowerBound = timestampMinusLookback(watermark, lookbackMs)
     const changes = await db
         .collection(collectionConfig.changeIndexCollection)
         .where('changedAt', '>', lowerBound)
@@ -173,7 +144,7 @@ async function getChangedDocIdsSince(collectionConfig, watermark, processedChang
         maxChangedAt = maxTimestamp(maxChangedAt, changedAt)
     })
 
-    const nextLowerBound = timestampMinusLookback(maxChangedAt)
+    const nextLowerBound = timestampMinusLookback(maxChangedAt, lookbackMs)
     const nextProcessedChangeKeys = observedChanges
         .filter(change => compareTimestamps(change.changedAt, nextLowerBound) > 0)
         .map(change => change.key)
@@ -186,7 +157,7 @@ async function getChangedDocIdsSince(collectionConfig, watermark, processedChang
     }
 }
 
-async function fetchSourceDocs(collection, docIds) {
+async function fetchSourceDocs(db, collection, docIds) {
     const docs = []
     for (let idx = 0; idx < docIds.length; idx += getAllChunkSize) {
         const chunk = docIds.slice(idx, idx + getAllChunkSize)
@@ -196,7 +167,7 @@ async function fetchSourceDocs(collection, docIds) {
     return docs
 }
 
-async function getExistingOrBootstrapData(collectionConfig) {
+async function getExistingOrBootstrapData(db, collectionConfig) {
     const previousExport = await readJsonFile(collectionConfig.exportFile)
     if (Array.isArray(previousExport?.data)) {
         return {
@@ -214,14 +185,20 @@ async function getExistingOrBootstrapData(collectionConfig) {
     }
 }
 
-async function prepareIncrementalCollection(collectionConfig) {
+async function prepareIncrementalCollection({db, collectionConfig, lookbackMs, runDate}) {
     const state = await readJsonFile(collectionConfig.stateFile, {})
     const previousWatermark = timestampFromState(state.lastSuccessfulExportChangedAt)
     const processedChangeKeys = new Set(state.processedChangeKeys ?? [])
-    const existing = await getExistingOrBootstrapData(collectionConfig)
+    const existing = await getExistingOrBootstrapData(db, collectionConfig)
     const docMap = exportDataToDocMap(existing)
-    const changed = await getChangedDocIdsSince(collectionConfig, previousWatermark, processedChangeKeys)
-    const changedDocs = await fetchSourceDocs(collectionConfig.collection, changed.changedDocIds)
+    const changed = await getChangedDocIdsSince({
+        db,
+        collectionConfig,
+        watermark: previousWatermark,
+        processedChangeKeys,
+        lookbackMs
+    })
+    const changedDocs = await fetchSourceDocs(db, collectionConfig.collection, changed.changedDocIds)
     const deletedDocIds = []
 
     changedDocs.forEach(doc => {
@@ -236,7 +213,7 @@ async function prepareIncrementalCollection(collectionConfig) {
     const data = docMapToExportData(docMap)
     const metadata = {
         collection: collectionConfig.collection,
-        date: new Date().toISOString(),
+        date: runDate.toISOString(),
         docCount: data.length,
         incremental: true,
         bootstrapped: existing.bootstrapped,
@@ -268,12 +245,11 @@ async function prepareIncrementalCollection(collectionConfig) {
     }
 }
 
-async function logActivity(messages) {
+async function logActivity(messages, activityLogger) {
     try {
-        if (isDirectRun || isCron) await postFirebaseActivity({activityData: messages})
-        else await logFirebaseActivity(messages)
+        await activityLogger(messages)
     } catch (err) {
-        console.log('Logging Error', err)
+        console.error('Logging Error', err)
     }
 }
 
@@ -283,7 +259,17 @@ function displayNameForUser(collectionData, userId) {
         : 'no display name'
 }
 
-function buildRecentAwardsEvidence({awards, evidence, collectionData, lockData, safelockData, projectData, awardData}) {
+function buildRecentAwardsEvidence({
+    awards,
+    evidence,
+    collectionData,
+    lockData,
+    safelockData,
+    projectData,
+    awardData,
+    recentCutoff,
+    runDate
+}) {
     const fullDb = {}
 
     awards.forEach(doc => {
@@ -325,11 +311,11 @@ function buildRecentAwardsEvidence({awards, evidence, collectionData, lockData, 
         })
     })
 
-    fullDb.metadata = {updatedDateTime: dayjs().format('YYYY-MM-DD HH:mm')}
+    fullDb.metadata = {updatedDateTime: dayjs(runDate).format('YYYY-MM-DD HH:mm')}
     return fullDb
 }
 
-function buildAllProjectsEvidence({evidence, unclaimedEvidence, collectionData, projectData}) {
+function buildAllProjectsEvidence({evidence, unclaimedEvidence, collectionData, projectData, runDate}) {
     const allProjects = {}
 
     evidence.forEach(doc => {
@@ -340,7 +326,7 @@ function buildAllProjectsEvidence({evidence, unclaimedEvidence, collectionData, 
         const evidenceCreatedAt = firestoreDateToDayjs(doc.evidenceCreatedAt)
         const date = evidenceCreatedAt
             ? evidenceCreatedAt.format('YYYY-MM-DD')
-            : dayjs().format('YYYY-MM-DD')
+            : dayjs(runDate).format('YYYY-MM-DD')
         const discipline = project.name.match(/(.+),/)?.[1]
 
         setDeepPush(allProjects, ['evidence'], {
@@ -375,7 +361,7 @@ function buildAllProjectsEvidence({evidence, unclaimedEvidence, collectionData, 
         })
     })
 
-    allProjects.metadata = {updatedDateTime: dayjs().format('YYYY-MM-DD HH:mm')}
+    allProjects.metadata = {updatedDateTime: dayjs(runDate).format('YYYY-MM-DD HH:mm')}
     return allProjects
 }
 
@@ -392,21 +378,39 @@ async function writePreparedCollectionState(preparedCollection) {
     }
 }
 
-async function getAllData() {
+export async function runAwardsEvidenceExport({
+    db,
+    publicDataDir,
+    backupDir,
+    exportDir,
+    lookbackMs,
+    trigger = 'manual',
+    activityLogger = async () => {},
+    itemDetailLoaders = {awardDetails, lockDetails, projectDetails, safelockDetails},
+    now = () => new Date()
+}) {
+    const runDate = now()
+    const recentCutoff = dayjs(runDate).subtract(15, 'day')
+    const incrementalCollections = getIncrementalCollections(exportDir)
     const [awardsSnapshot, evidenceSnapshot] = await Promise.all(
-        incrementalCollections.map(collectionConfig => prepareIncrementalCollection(collectionConfig))
+        incrementalCollections.map(collectionConfig => prepareIncrementalCollection({
+            db,
+            collectionConfig,
+            lookbackMs,
+            runDate
+        }))
     )
 
     const collectionData = JSON.parse(
         await fs.readFile(`${backupDir}/backup.json`, 'utf8')
     )['__collections__']['lockcollections']
-    const unclaimedEvidence = JSON.parse(await fs.readFile(`${serverDir}/unclaimedEvidence.json`, 'utf8'))
+    const unclaimedEvidence = JSON.parse(await fs.readFile(`${publicDataDir}/unclaimedEvidence.json`, 'utf8'))
 
     const [lockData, safelockData, projectData, awardData] = await Promise.all([
-        lockDetails(),
-        safelockDetails(),
-        projectDetails(),
-        awardDetails()
+        itemDetailLoaders.lockDetails(),
+        itemDetailLoaders.safelockDetails(),
+        itemDetailLoaders.projectDetails(),
+        itemDetailLoaders.awardDetails()
     ])
 
     const recentAwardsEvidence = buildRecentAwardsEvidence({
@@ -416,20 +420,23 @@ async function getAllData() {
         lockData,
         safelockData,
         projectData,
-        awardData
+        awardData,
+        recentCutoff,
+        runDate
     })
     const allProjectsEvidence = buildAllProjectsEvidence({
         evidence: evidenceSnapshot.data,
         unclaimedEvidence,
         collectionData,
-        projectData
+        projectData,
+        runDate
     })
 
     await Promise.all([
         writePreparedCollection(awardsSnapshot),
         writePreparedCollection(evidenceSnapshot),
-        writeJsonFileAtomic(`${serverDir}/recentAwardsEvidence.json`, recentAwardsEvidence),
-        writeJsonFileAtomic(`${serverDir}/allProjectsEvidence.json`, allProjectsEvidence)
+        writeJsonFileAtomic(`${publicDataDir}/recentAwardsEvidence.json`, recentAwardsEvidence),
+        writeJsonFileAtomic(`${publicDataDir}/allProjectsEvidence.json`, allProjectsEvidence)
     ])
 
     await Promise.all([
@@ -443,37 +450,67 @@ async function getAllData() {
             count: awardsSnapshot.metadata.changeIndexReadCount,
             source: 'awardsEvidenceExport_awardsChangeIndex',
             id: '',
-            trigger: isCron ? 'cronjob' : 'manual'
+            trigger
         },
         {
             type: 'READ',
             count: awardsSnapshot.metadata.sourceReadCount,
             source: 'awardsEvidenceExport_awards',
             id: '',
-            trigger: isCron ? 'cronjob' : 'manual'
+            trigger
         },
         {
             type: 'READ',
             count: evidenceSnapshot.metadata.changeIndexReadCount,
             source: 'awardsEvidenceExport_evidenceChangeIndex',
             id: '',
-            trigger: isCron ? 'cronjob' : 'manual'
+            trigger
         },
         {
             type: 'READ',
             count: evidenceSnapshot.metadata.sourceReadCount,
             source: 'awardsEvidenceExport_evidence',
             id: '',
-            trigger: isCron ? 'cronjob' : 'manual'
+            trigger
         }
-    ])
+    ], activityLogger)
 
-    !production && console.log('Incremental awards/evidence export complete', {
-        awards: awardsSnapshot.metadata,
-        evidence: evidenceSnapshot.metadata
-    })
+    if (trigger !== 'cronjob') {
+        console.log('Incremental awards/evidence export complete', {
+            awards: awardsSnapshot.metadata,
+            evidence: evidenceSnapshot.metadata
+        })
+    }
 
     return recentAwardsEvidence
 }
 
-await getAllData().then()
+export async function awardsEvidenceExportMain({
+    env = process.env,
+    argv = process.argv,
+    writeOutput = console.log
+} = {}) {
+    const config = loadExportJobConfig({env, requirePublicDataDir: true})
+    const summary = exportJobConfigSummary(config)
+    if (argv.includes('--check-config')) {
+        writeOutput(JSON.stringify(summary, null, 2))
+        return summary
+    }
+
+    const db = await getExportFirestore(config)
+    const {default: postFirebaseActivity} = await import('../../util/postFirebaseActivity.js')
+    const trigger = argv.includes('cron') ? 'cronjob' : 'manual'
+    return runAwardsEvidenceExport({
+        db,
+        publicDataDir: config.publicDataDir,
+        backupDir: config.backupDir,
+        exportDir: config.exportDir,
+        lookbackMs: config.lookbackMs,
+        trigger,
+        activityLogger: messages => postFirebaseActivity({activityData: messages})
+    })
+}
+
+if (isMain(import.meta.url)) {
+    await awardsEvidenceExportMain()
+}

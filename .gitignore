@@ -42,3 +42,6 @@ ecosystem.config.cjs
 /src/projects/redditBeltsWorking
 /src/projects/beltInvestigationsWIP/data
 /src/util/formidable/
+/internal-docs/
+.env.local
+.env.production

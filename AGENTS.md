@@ -146,6 +146,8 @@ The active incremental exporters are:
 - `src/projects/collections/collectionsExport.js`
 - `src/projects/collections/awardsEvidenceExport.js`
 
+Their explicit runtime configuration is defined by `src/projects/collections/exportJobConfig.js`, their lazy named Firebase clients are created by `src/projects/collections/exportFirebase.js`, and operational setup is documented in `src/projects/collections/README.md`.
+
 They depend on change-index documents written by Firebase Functions in `../lpu-belt-explorer/functions/index.js`:
 
 | Source collection | Change-index collection | Firebase Function |
@@ -166,7 +168,7 @@ Preserve these reliability properties unless a task intentionally redesigns the 
 - Generate all dependent output successfully before advancing the export-state file.
 - Keep activity read counts separated between change-index reads and source-document reads.
 
-State/raw files include `lockcollections.exportState.json`, `awards.exportState.json`, `evidence.exportState.json`, and their corresponding raw JSON exports. Derived outputs include `recentAwardsEvidence.json` and `allProjectsEvidence.json`. These jobs select credentials and output directories at module startup, so importing them can have environment-sensitive effects. Use `node --check` and lint for routine validation; do not execute or import them without live-data approval.
+State/raw files include `lockcollections.exportState.json`, `awards.exportState.json`, `evidence.exportState.json`, and their corresponding raw JSON exports. Derived outputs include `recentAwardsEvidence.json` and `allProjectsEvidence.json`. The active exporters are import-safe: importing them must not load credentials, initialize Firebase, contact services, or write files. Direct execution requires validated explicit configuration. Use `node --check`, lint, and mocked tests for routine validation; do not execute them against live data without approval.
 
 ## Data, generated files, and legacy code
 
