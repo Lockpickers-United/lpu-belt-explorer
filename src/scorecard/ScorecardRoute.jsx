@@ -25,7 +25,7 @@ import AppContext from '../app/AppContext.jsx'
 
 function ScorecardRoute({mostPopular}) {
     const {user} = useContext(AuthContext)
-    const {admin} = useContext(AppContext)
+    const {adminEnabled} = useContext(AppContext)
     const {getPickerActivity} = useContext(DBContext)
 
     usePageTitle('Scorecard')
@@ -38,7 +38,7 @@ function ScorecardRoute({mostPopular}) {
     const {userId, data, loading, error} = useContext(ProfileContext)
     const profile = useMemo(() => data ? data.profile : {}, [data])
 
-    admin && console.log('ScorecardRoute', {userId, data, loading, error})
+    adminEnabled && console.log('ScorecardRoute', {userId, data, loading, error})
 
     const {
         scoredActivity,
@@ -93,7 +93,7 @@ function ScorecardRoute({mostPopular}) {
     const combinedProfile = useMemo(() => ({...profile, ...scorecardData.data}), [profile, scorecardData.data])
     const blackBeltScorecard = !!combinedProfile?.blackBeltAwardedAt
 
-    admin && console.log('combinedProfile', combinedProfile)
+    adminEnabled && console.log('combinedProfile', combinedProfile)
 
     const owner = user?.uid === userId
 

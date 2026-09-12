@@ -20,12 +20,12 @@ import AppContext from '../app/AppContext.jsx'
 export default function UserInfoMain() {
     const {user, userClaims} = useContext(AuthContext)
     const {adminRole, getPickerActivity} = useContext(DBContext)
-    const {admin} = useContext(AppContext)
+    const {adminEnabled} = useContext(AppContext)
 
     const {userId, data, loading, error, isFullProfile} = useContext(ProfileContext)
     const profile = useMemo(() => data ? data.profile : {}, [data])
 
-    admin && console.log('admin log: profile', {isFullProfile, data})
+    adminEnabled && console.log('adminEnabled log: profile', {isFullProfile, data})
 
     const {filters = {}, addFilters} = useContext(FilterContext)
     const {uid, name} = filters

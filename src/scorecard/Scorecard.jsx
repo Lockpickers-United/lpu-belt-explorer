@@ -51,7 +51,7 @@ function Scorecard({owner, profile, adminAction, popular}) {
     const {expanded} = useContext(ScorecardListContext)
 
     const {createEvidenceForEntries, removePickerActivity, refreshPickerActivity} = useContext(DBContext)
-    const {admin} = useContext(AppContext)
+    const {adminEnabled} = useContext(AppContext)
 
     const [entryExpanded, setEntryExpanded] = useState(scorecardId || expanded)
     const [controlsExpanded, setControlsExpanded] = useState(false)
@@ -210,7 +210,7 @@ function Scorecard({owner, profile, adminAction, popular}) {
                                 placeItems: 'center',
                                 textAlign: 'center'
                             }}>
-                                {(owner || admin) &&
+                                {(owner || adminEnabled) &&
                                     <div style={{width: '100%', textAlign: 'left'}}>
 
                                         <Button variant='contained' size='small' color='secondary'
@@ -262,7 +262,7 @@ function Scorecard({owner, profile, adminAction, popular}) {
 
                             {loading && <LoadingDisplay/>}
 
-                            {admin && !loading &&
+                            {adminEnabled && !loading &&
                                 <div style={{backgroundColor: '#700', padding: 5, marginTop: 20}}>
                                     <div style={{display: 'flex'}}>
                                         <div style={{width: '10%', textAlign: 'center'}}>

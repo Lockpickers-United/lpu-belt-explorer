@@ -28,8 +28,10 @@ vi.mock('../app/AppContext.jsx', () => {
     const value = {
       beta: false,
       setBeta: vi.fn(),
-      admin: false,
-      setAdmin: vi.fn(),
+      adminEnabled: false,
+      setAdminEnabled: vi.fn(),
+      qaUserEnabled: false,
+      setQaUserEnabled: vi.fn(),
       version: '2024-01-01',
       updateRequired: false,
       updateAvailable: false,

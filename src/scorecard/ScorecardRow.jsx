@@ -41,7 +41,7 @@ function ScorecardRow({owner, activity, expanded, onExpand, merged}) {
         getAwardEntryFromId,
         getDeletedEntryFromId
     } = useContext(ScorecardDataContext)
-    const {admin} = useContext(AppContext)
+    const {adminEnabled} = useContext(AppContext)
     const {blackBeltScorecard} = useContext(DataContext)
 
     const entry = getEntryFromId(activity.matchId)
@@ -124,7 +124,7 @@ function ScorecardRow({owner, activity, expanded, onExpand, merged}) {
     const dateColor = activity.date ? '#fff' : '#aaa'
 
     const isAward = ['belt', 'dan', 'hof'].includes(activity['awardType'])
-    const expandable = (owner && !isAward) || admin
+    const expandable = (owner && !isAward) || adminEnabled
 
     const handleChange = useCallback((_, isExpanded) => {
         if (expandable) {
@@ -164,7 +164,7 @@ function ScorecardRow({owner, activity, expanded, onExpand, merged}) {
         backgroundColor: bgColor
     }
 
-    if (!owner && !admin && activity.exceptionType) return null
+    if (!owner && !adminEnabled && activity.exceptionType) return null
 
     return (
         <Accordion key={activity.id} expanded={expanded} onChange={handleChange} ref={ref}>
@@ -213,13 +213,13 @@ function ScorecardRow({owner, activity, expanded, onExpand, merged}) {
                         />
                     }
 
-                    {(exceptionNote || (activity.evidenceModifier && (blackBeltScorecard || admin))) &&
+                    {(exceptionNote || (activity.evidenceModifier && (blackBeltScorecard || adminEnabled))) &&
                         <div style={{
                             margin: '0px 0px 0px 6px',
                             fontWeight: 600,
                             fontSize: '.95rem'
                         }}>
-                            {activity.evidenceModifier && (blackBeltScorecard || admin) &&
+                            {activity.evidenceModifier && (blackBeltScorecard || adminEnabled) &&
                                 <span style={{marginTop: 10}}>* {activity.evidenceModifier}</span>
                             }
                             {exceptionNote &&
@@ -271,7 +271,7 @@ function ScorecardRow({owner, activity, expanded, onExpand, merged}) {
                 </div>
 
             </AccordionSummary>
-            {(owner || admin) && expanded &&
+            {(owner || adminEnabled) && expanded &&
                 <AccordionDetails sx={{padding: '4px 16px 0px 26px'}}>
                     <EvidenceForm activity={activity} handleUpdate={() => {
                     }}/>

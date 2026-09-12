@@ -22,7 +22,7 @@ import AppContext from '../../app/AppContext.jsx'
 
 function EvidenceReviewPage({data, updated}) {
     const {isMobile} = useWindowSize()
-    const {admin} = useContext(AppContext)
+    const {adminEnabled} = useContext(AppContext)
 
     const options = useMemo(() => {
         return [
@@ -232,7 +232,7 @@ function EvidenceReviewPage({data, updated}) {
                         </TableBody>
                     </Table>
                 </TableContainer>
-                {admin &&
+                {adminEnabled &&
                     <RefreshExportButton/>
                 }
             </div>

@@ -29,7 +29,7 @@ function UserMenu() {
     const navigate = useNavigate()
     const {isLoggedIn, user, logout} = useContext(AuthContext)
     const {adminRole, lockCollection, qaUserRole} = useContext(DBContext)
-    const {admin, setAdmin, qaUser, setQaUser} = useContext(AppContext)
+    const {adminEnabled, setAdminEnabled, qaUserEnabled, setQaUserEnabled} = useContext(AppContext)
     const [anchorEl, setAnchorEl] = useState(null)
     const open = Boolean(anchorEl)
     const handleOpen = useCallback(event => setAnchorEl(event.currentTarget), [])
@@ -48,12 +48,12 @@ function UserMenu() {
     }, [handleClose, navigate])
 
     const handleToggleAdmin = useCallback(() => {
-        setAdmin(!admin)
-    }, [admin, setAdmin])
+        setAdminEnabled(!adminEnabled)
+    }, [adminEnabled, setAdminEnabled])
 
     const handleToggleQaUser = useCallback(() => {
-        setQaUser(!qaUser)
-    }, [qaUser, setQaUser])
+        setQaUserEnabled(!qaUserEnabled)
+    }, [qaUserEnabled, setQaUserEnabled])
 
     const handleLogout = useCallback(() => {
         handleClose()
@@ -105,9 +105,9 @@ function UserMenu() {
                         {adminRole &&
                             <MenuItem onClick={handleToggleAdmin}>
                                 <ListItemIcon>
-                                    <AdminPanelSettingsIcon color={admin ? 'success' : 'default'}/>
+                                    <AdminPanelSettingsIcon color={adminEnabled ? 'success' : 'default'}/>
                                 </ListItemIcon>
-                                {admin ?
+                                {adminEnabled ?
                                     <ListItemText>Disable Admin</ListItemText>
                                     :
                                     <ListItemText>Enable Admin</ListItemText>
@@ -117,9 +117,9 @@ function UserMenu() {
                         {qaUserRole &&
                             <MenuItem onClick={handleToggleQaUser}>
                                 <ListItemIcon>
-                                    <BiotechIcon color={qaUser ? 'info' : 'default'}/>
+                                    <BiotechIcon color={qaUserEnabled ? 'info' : 'default'}/>
                                 </ListItemIcon>
-                                {qaUser
+                                {qaUserEnabled
                                     ? <ListItemText>Disable QA Role</ListItemText>
                                     : <ListItemText>Enable QA Role</ListItemText>
                                 }

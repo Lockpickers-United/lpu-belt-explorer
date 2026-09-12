@@ -3,10 +3,10 @@ import querystring from 'query-string'
 import AppContext from './AppContext'
 
 function Tracker({feature, ...extraParams}) {
-    const {admin} = useContext(AppContext) //eslint-disable-line
+    const {adminEnabled} = useContext(AppContext) //eslint-disable-line
 
     // disable for rafl testing/reporting
-    if (import.meta.env.DEV || admin) return null
+    if (import.meta.env.DEV || adminEnabled) return null
 
     const randomStuff = (Math.random()).toString(36).substring(2, 10)
     const file = files[feature] || 'lpu.gif'

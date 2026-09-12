@@ -30,7 +30,7 @@ import sanitizeValues from '../util/sanitizeValues'
 export default function EvidenceForm({activity, lockId, handleUpdate, addLock, addProject, addAward, source}) {
     const {userId} = useParams()
     const {user} = useContext(AuthContext)
-    const {admin} = useContext(AppContext)
+    const {adminEnabled} = useContext(AppContext)
     const {blackBeltUser} = useContext(DataContext)
 
     const {addPickerActivity, updatePickerActivity, removePickerActivity, userLockNotes, updateProfileField} = useContext(DBContext)
@@ -253,7 +253,7 @@ export default function EvidenceForm({activity, lockId, handleUpdate, addLock, a
                         disableFuture
                     />
 
-                    {(!awardMode && !addProject && (blackBeltUser || admin)) &&
+                    {(!awardMode && !addProject && (blackBeltUser || adminEnabled)) &&
                         <React.Fragment>
                             <TextField
                                 select

@@ -8,8 +8,8 @@ const AppContext = React.createContext({})
 export function AppProvider({children}) {
     const {adminRole, qaUserRole} = useContext(DBContext)
     const [beta, setBeta] = useLocalStorage('beta2024', false)
-    const [admin, setAdmin] = useLocalStorage('admin', adminRole && !!import.meta.env.DEV)
-    const [qaUser, setQaUser] = useLocalStorage('qaUser', qaUserRole && !!import.meta.env.DEV)
+    const [adminEnabled, setAdminEnabled] = useLocalStorage('adminEnabled', adminRole && !!import.meta.env.DEV)
+    const [qaUserEnabled, setQaUserEnabled] = useLocalStorage('qaUserEnabled', qaUserRole && !!import.meta.env.DEV)
 
     const [compact, setCompact] = useState(false)
 
@@ -17,21 +17,21 @@ export function AppProvider({children}) {
         setBeta(value)
     }, [setBeta])
 
-    const handleSetAdmin = useCallback(value => {
+    const handleSetAdminEnabled = useCallback(value => {
         if (adminRole) {
-            setAdmin(value)
+            setAdminEnabled(value)
         } else {
-            setAdmin(false)
+            setAdminEnabled(false)
         }
-    }, [setAdmin, adminRole])
+    }, [setAdminEnabled, adminRole])
 
-    const handleSetQaUser = useCallback(value => {
+    const handleSetQaUserEnabled = useCallback(value => {
         if (qaUserRole) {
-            setQaUser(value)
+            setQaUserEnabled(value)
         } else {
-            setQaUser(false)
+            setQaUserEnabled(false)
         }
-    }, [qaUserRole, setQaUser])
+    }, [qaUserRole, setQaUserEnabled])
 
     const [initial, setInitial] = useState()
     const [version, setVersion] = useState()
@@ -84,15 +84,15 @@ export function AppProvider({children}) {
     const value = useMemo(() => ({
         beta,
         setBeta: handleSetBeta,
-        admin,
-        setAdmin: handleSetAdmin,
-        qaUser,
-        setQaUser: handleSetQaUser,
+        adminEnabled,
+        setAdminEnabled: handleSetAdminEnabled,
+        qaUserEnabled,
+        setQaUserEnabled: handleSetQaUserEnabled,
         version: initial,
         updateRequired,
         updateAvailable,
         compact, setCompact,
-    }), [beta, handleSetBeta, admin, handleSetAdmin, qaUser, handleSetQaUser, initial, updateRequired, updateAvailable, compact])
+    }), [beta, handleSetBeta, adminEnabled, handleSetAdminEnabled, qaUserEnabled, handleSetQaUserEnabled, initial, updateRequired, updateAvailable, compact])
 
     return (
         <AppContext.Provider value={value}>

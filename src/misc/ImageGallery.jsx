@@ -25,7 +25,7 @@ function ImageGallery(props) {
         shareParams
     } = props
 
-    const {admin, beta} = useContext(AppContext)
+    const {adminEnabled, beta} = useContext(AppContext)
     const [flickrDirect, _setFlickrDirect] = useLocalStorage('flickrDirect', false)
 
     const {isMobile} = useWindowSize()
@@ -125,9 +125,9 @@ function ImageGallery(props) {
                             title={title}
                             subtitle={
                                 subtitle &&
-                                <a style={(!admin && !beta) ? {cursor: 'pointer'} : {}}
-                                   onClick={() => (!admin && !beta) && openInNewTab(admin ? fullUrl : (subtitleUrl || licenses[subtitle]))}>
-                                    {(admin || beta) ? `${imageIndex} / ${imageId}` : subtitle}
+                                <a style={(!adminEnabled && !beta) ? {cursor: 'pointer'} : {}}
+                                   onClick={() => (!adminEnabled && !beta) && openInNewTab(adminEnabled ? fullUrl : (subtitleUrl || licenses[subtitle]))}>
+                                    {(adminEnabled || beta) ? `${imageIndex} / ${imageId}` : subtitle}
                                 </a>
                             }
                             actionIcon={

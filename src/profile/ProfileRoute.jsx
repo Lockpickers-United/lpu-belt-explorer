@@ -28,12 +28,12 @@ import AppContext from '../app/AppContext.jsx'
 function ProfileRoute() {
     const {user} = useContext(AuthContext)
     const {userId} = useParams()
-    const {admin} = useContext(AppContext)
+    const {adminEnabled} = useContext(AppContext)
     const {getPickerActivity} = useContext(DBContext)
     const {data, loading, error, isFullProfile} = useContext(ProfileContext)
     const profile = useMemo(() => data ? data.profile : {}, [data])
 
-    admin && console.log('admin log: ProfileRoute', {isFullProfile, data})
+    adminEnabled && console.log('adminEnabled log: ProfileRoute', {isFullProfile, data})
 
     const owner = user?.uid === userId
 

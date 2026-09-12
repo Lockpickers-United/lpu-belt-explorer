@@ -11,7 +11,7 @@ import {useSearchParams} from 'react-router-dom'
 import AppContext from '../../app/AppContext.jsx'
 
 function PreviewScorecard({owner, profile, tab, setTab}) {
-    const {admin} = useContext(AppContext)
+    const {adminEnabled} = useContext(AppContext)
     const {isMobile} = useWindowSize()
     const headerDivStyle = isMobile ? 'block' : 'flex'
     const {visibleEntries = []} = useContext(ScorecardDataContext)
@@ -39,7 +39,7 @@ function PreviewScorecard({owner, profile, tab, setTab}) {
             maxWidth: 700, padding: 0, backgroundColor: '#222',
             marginLeft: 'auto', marginRight: 'auto', marginTop: 16
         }}>
-            {admin &&
+            {adminEnabled &&
                 <div style={{display: 'flex', padding: 20, marginBottom: 20, backgroundColor:'#800'}}>
                     <div style={{fontWeight: 700, fontSize: '1.5rem', marginRight: 20}}>ADMIN</div>
                     <div>
