@@ -1,5 +1,4 @@
 import axios from 'axios'
-import https from 'https'
 
 export const postData = async ({user, url, formData, json, timeoutDuration = 10000}) => {
 
@@ -23,10 +22,7 @@ export const postData = async ({user, url, formData, json, timeoutDuration = 100
             `${url}?${rand}`,
             data,
             {
-                headers, signal: controller.signal, // Link the abort controller
-                httpsAgent: new https.Agent({
-                    rejectUnauthorized: false
-                })
+                headers, signal: controller.signal // Link the abort controller
             }
         )
 

@@ -1,23 +1,28 @@
 import {Router} from 'express'
 
-const router = Router()
+export function createFirebaseActivityRouter(firebaseActivityHandler) {
+    const router = Router()
 
-router.get('/', (req, res) => {
-    req.log.info('logFirebaseActivity route hit')
-    res.json({ message: 'logFirebaseActivity endpoint', requestId: req.id })
-})
+    router.get('/', (req, res) => {
+        req.log.info('logFirebaseActivity route hit')
+        res.json({message: 'logFirebaseActivity endpoint', requestId: req.id})
+    })
 
-router.post('/', async (req, res, next) => {
-    try {
-        const {default: handleFirebaseActivityPost} = await import('./logFirebaseActivity.js')
-        await handleFirebaseActivityPost(req, res)
-    } catch (e) {
-        next(e)
-    }
-})
+    router.post('/', async (req, res, next) => {
+        try {
+            const handler = firebaseActivityHandler
+                ?? (await import('./logFirebaseActivity.js')).default
+            await handler(req, res, next)
+        } catch (error) {
+            next(error)
+        }
+    })
 
-export default router
+    return router
+}
+
+export default createFirebaseActivityRouter()
 
 
 // LARGEJSON ??
- // app.post('/log-activity', largeJson, async (req, res) => {})
+// app.post('/log-activity', largeJson, async (req, res) => {})

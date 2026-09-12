@@ -7,9 +7,11 @@ import {httpLogger} from './logger/httpLogger.js'
 import {requestIdHeader} from './logger/requestId.js'
 import {registerRoutes} from './routes.js'
 import normalizeRequestUrl from './util/normalizeRequestUrl.js'
+import {getTrustProxyConfig} from './api/middleware/trustProxy.js'
 
 const env = process.env.NODE_ENV || 'development'
 dotenv.config({path: [`.env.${process.env.NODE_ENV}`]})
+const trustProxy = getTrustProxyConfig(process.env)
 const isDev = env !== 'production'
 const _envText = isDev ? ' (DEV)' : ''
 
@@ -32,7 +34,7 @@ app.use((req, _res, next) => {
     }
     next()
 })
-app.set('trust proxy', true)
+app.set('trust proxy', trustProxy)
 app.use(httpLogger)
 app.use(requestIdHeader)
 
@@ -91,7 +93,7 @@ const port = apiPort
 const host = process.env.HOST || '0.0.0.0'
 
 const server = app.listen(port, host, () => {
-    logger.info({env, port, apiPrefix, host, corsOrigin}, 'api listening') // use pino, not console
+    logger.info({env, port, apiPrefix, host, corsOrigin, trustProxy}, 'api listening') // use pino, not console
     //console.log({env, port, apiPrefix, host, corsOrigin}, 'api listening')
 })
 server.on('error', (err) => {

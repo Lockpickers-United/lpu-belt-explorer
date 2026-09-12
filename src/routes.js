@@ -7,6 +7,10 @@ import echo from './testing/echoMessage.js'
 import normalizeRequestUrl from './util/normalizeRequestUrl.js'
 import api from './api/index.js'
 
+export function shouldEnableDiagnosticRoutes(environment = process.env.NODE_ENV) {
+    return environment !== 'production'
+}
+
 export function registerRoutes(app, {
     prefix = '/services',
     requestLockHandlers,
@@ -14,7 +18,9 @@ export function registerRoutes(app, {
     emailFormHandler,
     importRaflDataHandler,
     getRedditBeltsHandler,
-    getFlickrInfoHandler
+    getFlickrInfoHandler,
+    firebaseActivityHandler,
+    enableDiagnosticRoutes = shouldEnableDiagnosticRoutes()
 } = {}) {
     const r = Router()
 
@@ -22,8 +28,10 @@ export function registerRoutes(app, {
 
     r.use(health)
     r.use(ready)
-    r.use(echo)
-    r.use(boom)
+    if (enableDiagnosticRoutes) {
+        r.use(echo)
+        r.use(boom)
+    }
     app.use(prefix, r)
 
     // single slash path for lazy mount
@@ -61,7 +69,10 @@ export function registerRoutes(app, {
         return {default: module.createImportRaflDataRouter(importRaflDataHandler)}
     })
 
-    lazyMount(app, `${prefix}/log-activity`, () => import('./projects/logFirebaseActivity/logFirebaseActivity.bundle.js'))
+    lazyMount(app, `${prefix}/log-activity`, async () => {
+        const module = await import('./projects/logFirebaseActivity/logFirebaseActivity.bundle.js')
+        return {default: module.createFirebaseActivityRouter(firebaseActivityHandler)}
+    })
     lazyMount(app, `${prefix}/process-firebase-log`, () => import('./projects/logFirebaseActivity/processFirebaseActivityLog.bundle.js'))
 
     lazyMount(app, `${prefix}/email-form`, async () => {

@@ -19,9 +19,13 @@ import {createRedditBeltsRuntime} from './projects/redditBelts/redditBeltsRuntim
 import {redditBeltsConfigSummary} from './projects/redditBelts/redditBeltsConfig.js'
 import {createFlickrInfoRuntime} from './projects/flickrGetInfo/flickrInfoRuntime.js'
 import {flickrInfoConfigSummary} from './projects/flickrGetInfo/flickrInfoConfig.js'
+import {createFirebaseActivityRuntime} from './projects/logFirebaseActivity/firebaseActivityRuntime.js'
+import {firebaseActivityConfigSummary} from './projects/logFirebaseActivity/firebaseActivityConfig.js'
+import {getTrustProxyConfig} from './api/middleware/trustProxy.js'
 
 const env = process.env.NODE_ENV || 'local'
 dotenv.config({path: [`.env.${env}`], quiet: true})
+const trustProxy = getTrustProxyConfig(process.env)
 const isDev = env !== 'production'
 const _envText = isDev ? ' (DEV)' : ''
 const requestLockRuntime = await createRequestLockRuntime({env: process.env})
@@ -30,12 +34,14 @@ const emailFormRuntime = await createEmailFormRuntime({env: process.env})
 const importRaflDataRuntime = await createImportRaflDataRuntime({env: process.env})
 const redditBeltsRuntime = await createRedditBeltsRuntime({env: process.env})
 const flickrInfoRuntime = await createFlickrInfoRuntime({env: process.env})
+const firebaseActivityRuntime = await createFirebaseActivityRuntime({env: process.env})
 logger.info(requestLockConfigSummary(requestLockRuntime.config), 'request-lock runtime configured')
 logger.info(uploadContentConfigSummary(uploadContentRuntime.config), 'upload-content runtime configured')
 logger.info(emailFormConfigSummary(emailFormRuntime.config), 'email-form runtime configured')
 logger.info(importRaflDataConfigSummary(importRaflDataRuntime.config), 'RAFL preview runtime configured')
 logger.info(redditBeltsConfigSummary(redditBeltsRuntime.config), 'Reddit belts runtime configured')
 logger.info(flickrInfoConfigSummary(flickrInfoRuntime.config), 'Flickr-info runtime configured')
+logger.info(firebaseActivityConfigSummary(firebaseActivityRuntime.config), 'Firebase-activity runtime configured')
 
 // node /home/dh_m5s5pf/explore-lpubelts-com-node/src/exploreLPUbeltsServerDEV.js
 
@@ -54,7 +60,7 @@ app.use((req, _res, next) => {
     req.runtimeProduction = !isDev
     next()
 })
-app.set('trust proxy', true)
+app.set('trust proxy', trustProxy)
 app.use(httpLogger)
 app.use(requestIdHeader)
 
@@ -75,7 +81,9 @@ registerRoutes(app, {
     emailFormHandler: emailFormRuntime.handler,
     importRaflDataHandler: importRaflDataRuntime.handler,
     getRedditBeltsHandler: redditBeltsRuntime.handler,
-    getFlickrInfoHandler: flickrInfoRuntime.handler
+    getFlickrInfoHandler: flickrInfoRuntime.handler,
+    firebaseActivityHandler: firebaseActivityRuntime.handler,
+    enableDiagnosticRoutes: env !== 'production'
 })
 
 // 404 handler (must be after routes)
@@ -123,7 +131,7 @@ const port = apiPort
 const host = process.env.HOST || '0.0.0.0'
 
 const server = app.listen(port, host, () => {
-    logger.info({env, port, apiPrefix, host, corsOrigin}, 'SERVER STARTED')
+    logger.info({env, port, apiPrefix, host, corsOrigin, trustProxy}, 'SERVER STARTED')
 })
 server.on('error', (err) => {
     try { logger.error({ err }, 'server error') } catch { console.error('server error', err) }

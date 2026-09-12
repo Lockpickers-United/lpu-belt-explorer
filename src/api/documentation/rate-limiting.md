@@ -119,6 +119,10 @@ It is intentionally dependency-free and stores counters in process memory.
 
 The client key uses Express `req.ip` first. Because production is behind the DreamHost/Apache proxy, the server's `trust proxy` setting must stay aligned with the actual proxy setup or client IP detection may be inaccurate.
 
+`TRUST_PROXY` defaults to `loopback`, which is appropriate when Apache connects to Node over the same host's loopback interface. If Apache connects from another address, set `TRUST_PROXY` to a comma-separated allowlist of its exact IP addresses or CIDRs before restarting the server. The named ranges `loopback`, `linklocal`, and `uniquelocal` are also accepted. Set it to `false` when Node is not behind a proxy.
+
+Blanket trust (`true`, `*`, `all`, `0.0.0.0/0`, or `::/0`) and numeric hop counts are rejected at startup. This prevents a directly connected client from selecting its rate-limit identity with a forged `X-Forwarded-For` header.
+
 This is acceptable for the current DreamHost/PM2 deployment if there is only one active Node process. If the app later runs multiple PM2 cluster workers, multiple servers, or serverless instances, each process will have its own independent counters. At that point, use a shared backing store such as Redis or move rate limiting to the edge/proxy layer.
 
 ## Tuning Guidance
