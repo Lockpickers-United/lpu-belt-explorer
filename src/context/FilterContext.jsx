@@ -24,7 +24,7 @@ export function FilterProvider({children, filterFields = []}) {
         setSearchParams(newFilters, {replace: true})
     }, [setSearchParams])
 
-    const addFilters = useCallback((keyValues, replace) => {
+    const addFilters = useCallback((keyValues, replace, navigationOptions = {}) => {
         keyValues.forEach(({key, value}) => {
             if (!value && replace) {
                 searchParams.delete(key)
@@ -47,7 +47,7 @@ export function FilterProvider({children, filterFields = []}) {
                 searchParams.delete(key)
             }
         })
-        setSearchParams(searchParams, {replace: true})
+        setSearchParams(searchParams, {replace: true, ...navigationOptions})
     }, [searchParams, setSearchParams])
 
     const addFilter = useCallback((keyToAdd, valueToAdd, replace) => {
@@ -59,7 +59,7 @@ export function FilterProvider({children, filterFields = []}) {
         setSearchParams(searchParams, {replace: true})
     }, [searchParams, setSearchParams])
 
-    const removeFilter = useCallback((keyToDelete, valueToDelete) => {
+    const removeFilter = useCallback((keyToDelete, valueToDelete, navigationOptions = {}) => {
         const currentValue = searchParams.getAll(keyToDelete)
 
         searchParams.delete(keyToDelete)
@@ -67,7 +67,7 @@ export function FilterProvider({children, filterFields = []}) {
             const newValue = currentValue.filter(value => value !== valueToDelete)
             newValue.forEach(v => searchParams.append(keyToDelete, v))
         }
-        setSearchParams(searchParams, {replace: true})
+        setSearchParams(searchParams, {replace: true, ...navigationOptions})
     }, [searchParams, setSearchParams])
 
     // Local state to preserve partially defined advanced filter groups (not yet in URL)

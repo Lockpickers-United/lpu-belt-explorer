@@ -1,5 +1,5 @@
 import Badge from '@mui/material/Badge'
-import React, {useCallback, useContext, useEffect, useRef, useState} from 'react'
+import React, {useCallback, useContext, useEffect, useId, useRef, useState} from 'react'
 import Backdrop from '@mui/material/Backdrop'
 import InputAdornment from '@mui/material/InputAdornment'
 import TextField from '@mui/material/TextField'
@@ -7,17 +7,24 @@ import Tooltip from '@mui/material/Tooltip'
 import IconButton from '@mui/material/IconButton'
 import SearchIcon from '@mui/icons-material/Search'
 import ClearIcon from '@mui/icons-material/Clear'
-import {useSearchParams} from 'react-router-dom'
+import {useLocation, useSearchParams} from 'react-router-dom'
 import {useDebounceValue} from 'usehooks-ts'
 import FilterContext from '../context/FilterContext'
 import useWindowSize from '../util/useWindowSize'
 import {useHotkeys} from 'react-hotkeys-hook'
 import Tracker from '../app/Tracker'
 
+const searchUpdateStateKey = '__searchBoxUpdateId'
+
 function SearchBox({label, extraFilters = [], entryCount = 0, keepOpen}) {
     const [searchParams] = useSearchParams()
+    const location = useLocation()
     const {addFilters, removeFilter, isFiltered} = useContext(FilterContext)
     const [text, setText] = useState(searchParams.get('search') || '')
+    const textRef = useRef(text)
+    const pendingSearchUpdatesRef = useRef(new Set())
+    const searchBoxInstanceId = useId()
+    const searchUpdateSequenceRef = useRef(0)
     const {isMobile, width} = useWindowSize()
     const smallWidth = width <= 500
 
@@ -26,40 +33,54 @@ function SearchBox({label, extraFilters = [], entryCount = 0, keepOpen}) {
 
     const placeholder = (entryCount > 1) ? `Search ${entryCount ? entryCount.toString() + ' ' : ''}${label}` : 'Search'
 
-    const handleClear = useCallback(() => {
-        window.scrollTo({top: 0})
-        setText('')
-        removeFilter('search', '')
-        inputEl.current.focus()
-    }, [removeFilter])
-
     const handleChange = useCallback(event => {
-        const {value} = event.target
+        const value = event.target.value.replaceAll('\t', ' ')
+        textRef.current = value
         setText(value)
     }, [])
 
-    const [debounceText] = useDebounceValue(text.replaceAll('\t', ' '), 250)
-    useEffect(() => {
-        if (!!debounceText && debounceText !== searchParams.get('search')) {
-            if (debounceText) {
-                window.scrollTo({top: 0})
-                addFilters([
-                    {key: 'search', value: debounceText},
-                    {key: 'id', value: undefined},
-                    {key: 'name', value: undefined},
-                    ...extraFilters
-                ], true)
-            } else {
-                // TODO isn't this useless?
-                console.log('SearchBox: debounceText is empty')
-                addFilters([
-                    {key: 'search', value: debounceText}
-                ], true)
+    const queueSearchUpdate = useCallback(value => {
+        const currentValue = searchParams.get('search') || ''
+        if (value === currentValue && pendingSearchUpdatesRef.current.size === 0) return
+
+        const updateId = `${searchBoxInstanceId}-${++searchUpdateSequenceRef.current}`
+        pendingSearchUpdatesRef.current.add(updateId)
+        const currentState = location.state && typeof location.state === 'object' ? location.state : {}
+        const navigationOptions = {
+            state: {
+                ...currentState,
+                [searchUpdateStateKey]: updateId
             }
-        } else if (!debounceText) {
-            removeFilter('search', '')
         }
-    }, [debounceText]) // eslint-disable-line
+
+        if (value) {
+            window.scrollTo({top: 0})
+            addFilters([
+                {key: 'search', value},
+                {key: 'id', value: undefined},
+                {key: 'name', value: undefined},
+                ...extraFilters
+            ], true, navigationOptions)
+        } else {
+            removeFilter('search', '', navigationOptions)
+        }
+    }, [addFilters, extraFilters, location.state, removeFilter, searchBoxInstanceId, searchParams])
+
+    const handleClear = useCallback(() => {
+        window.scrollTo({top: 0})
+        textRef.current = ''
+        setText('')
+        queueSearchUpdate('')
+        inputEl.current.focus()
+    }, [queueSearchUpdate])
+
+    const [debounceText] = useDebounceValue(text, 250)
+    const lastHandledDebounceRef = useRef(debounceText)
+    useEffect(() => {
+        if (debounceText === lastHandledDebounceRef.current) return
+        lastHandledDebounceRef.current = debounceText
+        queueSearchUpdate(debounceText)
+    }, [debounceText, queueSearchUpdate])
 
     // 2 sec debounce specifically for tracking the final search term
     const [debounceTrack] = useDebounceValue(text.replaceAll('\t', ' ').trim(), 2000)
@@ -86,11 +107,19 @@ function SearchBox({label, extraFilters = [], entryCount = 0, keepOpen}) {
     }, [])
 
     useEffect(() => {
-        const newValue = searchParams.get('search')
-        if (newValue !== text) {
-            setText(newValue || '')
+        const searchUpdateId = location.state?.[searchUpdateStateKey]
+        if (pendingSearchUpdatesRef.current.has(searchUpdateId)) {
+            pendingSearchUpdatesRef.current.delete(searchUpdateId)
+            return
         }
-    }, [searchParams]) // eslint-disable-line
+
+        pendingSearchUpdatesRef.current.clear()
+        const newValue = searchParams.get('search') || ''
+        if (newValue !== textRef.current) {
+            textRef.current = newValue
+            setText(newValue)
+        }
+    }, [location.state, searchParams])
 
     const endAdornment = text ? (
         <InputAdornment position='end'>
