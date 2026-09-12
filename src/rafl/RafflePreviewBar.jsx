@@ -18,6 +18,7 @@ import {nodeServerUrl} from '../data/dataUrls'
 import {getData} from '../formUtils/getData.jsx'
 import {enqueueSnackbar} from 'notistack'
 import AppContext from '../app/AppContext.jsx'
+import AuthContext from '../app/AuthContext.jsx'
 import dayjs from 'dayjs'
 
 export default function RafflePreviewBar({refresh, page}) {
@@ -27,6 +28,7 @@ export default function RafflePreviewBar({refresh, page}) {
 
     const {preview, setPreview, raflPreviewVersion} = useContext(RaffleContext)
     const {version} = useContext(AppContext)
+    const {user} = useContext(AuthContext)
     const [searchParams, setSearchParams] = useSearchParams()
     const previewMode = searchParams.has('preview')
     const showPreview = preview || previewMode
@@ -37,7 +39,7 @@ export default function RafflePreviewBar({refresh, page}) {
         const url = `${nodeServerUrl}/refresh-preview`
         try {
             setRequestingPreview(true)
-            const results = await getData({url, snackBars: false, timeoutDuration: 30000})
+            const results = await getData({user, url, snackBars: false, timeoutDuration: 30000})
             enqueueSnackbar('Request successful', {variant: 'success'})
             setResponse(results)
         } catch (error) {
@@ -46,7 +48,7 @@ export default function RafflePreviewBar({refresh, page}) {
             setRequestingPreview(false)
         }
         await refresh()
-    }, [refresh])
+    }, [refresh, user])
 
     const containerRef = useRef(null)
 
