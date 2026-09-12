@@ -7,7 +7,11 @@ import echo from './testing/echoMessage.js'
 import normalizeRequestUrl from './util/normalizeRequestUrl.js'
 import api from './api/index.js'
 
-export function registerRoutes(app, {prefix = '/services'} = {}) {
+export function registerRoutes(app, {
+    prefix = '/services',
+    requestLockHandlers,
+    uploadContentHandler
+} = {}) {
     const r = Router()
 
     r.use(normalizeRequestUrl)
@@ -20,10 +24,22 @@ export function registerRoutes(app, {prefix = '/services'} = {}) {
 
     // single slash path for lazy mount
     lazyMount(app, `${prefix}/flickr-info`, () => import('./projects/flickrGetInfo/getFlickrInfo.bundle.js'))
-    lazyMount(app, `${prefix}/upload`, () => import('./projects/uploadContent/uploadContent.bundle.js'))
-    lazyMount(app, `${prefix}/request-lock`, () => import('./projects/requestLock/requestLock.bundle.js'))
-    lazyMount(app, `${prefix}/update-request`, () => import('./projects/requestLock/updateRequest.bundle.js'))
-    lazyMount(app, `${prefix}/request-vote`, () => import('./projects/requestLock/requestVote.bundle.js'))
+    lazyMount(app, `${prefix}/upload`, async () => {
+        const module = await import('./projects/uploadContent/uploadContent.bundle.js')
+        return {default: module.createUploadContentRouter(uploadContentHandler)}
+    })
+    lazyMount(app, `${prefix}/request-lock`, async () => {
+        const module = await import('./projects/requestLock/requestLock.bundle.js')
+        return {default: module.createRequestLockRouter(requestLockHandlers)}
+    })
+    lazyMount(app, `${prefix}/update-request`, async () => {
+        const module = await import('./projects/requestLock/updateRequest.bundle.js')
+        return {default: module.createUpdateRequestRouter(requestLockHandlers)}
+    })
+    lazyMount(app, `${prefix}/request-vote`, async () => {
+        const module = await import('./projects/requestLock/requestVote.bundle.js')
+        return {default: module.createRequestVoteRouter(requestLockHandlers)}
+    })
 
     lazyMount(app, `${prefix}/fetch-reddit-flairs`, () => import('./projects/redditBelts/getRedditBelts.bundle.js'))
     // FOR LOCKY JR  ??????

@@ -204,6 +204,7 @@ Never claim a lint, test, syntax check, security scan, server run, or live job s
 
 - Inspect `git status` before editing this repository and any sibling repository.
 - Existing modifications belong to the user. Preserve them and do not revert, overwrite, or reformat unrelated lines.
+- Stage newly created files with `git add` as part of the task unless there is a specific reason they should remain untracked, such as generated output, temporary files, ignored local configuration, or secret-bearing material. State the reason in the handoff when a created file is intentionally not staged.
 - Keep diffs scoped to the request and review them before handing off.
 - Do not use destructive Git or filesystem commands without a clear, explicit request.
 - Do not commit, push, deploy, restart services, or open a pull request unless asked.

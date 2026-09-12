@@ -7,11 +7,19 @@ import {httpLogger} from './logger/httpLogger.js'
 import {requestIdHeader} from './logger/requestId.js'
 import {registerRoutes} from './routes.js'
 import normalizeRequestUrl from './util/normalizeRequestUrl.js'
+import {createRequestLockRuntime} from './projects/requestLock/requestLockRuntime.js'
+import {requestLockConfigSummary} from './projects/requestLock/requestLockConfig.js'
+import {createUploadContentRuntime} from './projects/uploadContent/uploadContentRuntime.js'
+import {uploadContentConfigSummary} from './projects/uploadContent/uploadContentConfig.js'
 
 const env = process.env.NODE_ENV || 'local'
-dotenv.config({path: [`.env.${process.env.NODE_ENV}`]})
+dotenv.config({path: [`.env.${env}`], quiet: true})
 const isDev = env !== 'production'
 const _envText = isDev ? ' (DEV)' : ''
+const requestLockRuntime = await createRequestLockRuntime({env: process.env})
+const uploadContentRuntime = await createUploadContentRuntime({env: process.env})
+logger.info(requestLockConfigSummary(requestLockRuntime.config), 'request-lock runtime configured')
+logger.info(uploadContentConfigSummary(uploadContentRuntime.config), 'upload-content runtime configured')
 
 // node /home/dh_m5s5pf/explore-lpubelts-com-node/src/exploreLPUbeltsServerDEV.js
 
@@ -27,9 +35,7 @@ app.disable('x-powered-by')
 app.use(helmet())
 app.use(express.json({limit: '200kb'}))
 app.use((req, _res, next) => {
-    if (req.body && typeof req.body === 'object') {
-        req.body.prod = !isDev
-    }
+    req.runtimeProduction = !isDev
     next()
 })
 app.set('trust proxy', true)
@@ -46,7 +52,11 @@ const apiPrefix = isDev ? '' : ''
 
 // need to test for local or something if you want to run locally at '/api'
 
-registerRoutes(app, { prefix: apiPrefix })
+registerRoutes(app, {
+    prefix: apiPrefix,
+    requestLockHandlers: requestLockRuntime.handlers,
+    uploadContentHandler: uploadContentRuntime.handler
+})
 
 // 404 handler (must be after routes)
 app.use((req, res) => {

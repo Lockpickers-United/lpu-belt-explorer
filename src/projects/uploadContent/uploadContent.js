@@ -1,212 +1,258 @@
-import {formidable} from '../../util/formidable/src/index.js'
-import fs from 'fs'
+import fs from 'node:fs'
+import path from 'node:path'
+import util from 'node:util'
+import {execFile} from 'node:child_process'
 import archiver from 'archiver'
-import {sendEmail} from '../nodeMailer/nodeMailer.js'
-import {contentUploadRecipients, prodUser} from '../../../keys/users.js'
-import util from 'util'
-import {exec} from 'child_process'
+import {formidable} from '../../util/formidable/src/index.js'
 import parseForm from '../../util/parseForm.js'
 import {logger} from '../../logger/logger.js'
-const log = logger.child({
-    module: 'upload-content',
-})
 
-const execAsync = util.promisify(exec)
-
-/**
- * @prop photoCredit
- * @prop lockId
- */
-
-const uploadDir = `/home/${prodUser}/uploads`
-const isDev = process.env.NODE_ENV !== 'production'
-
-const maxFileSizeMB = isDev ? 15 : 15
+const log = logger.child({module: 'upload-content'})
+const execFileAsync = util.promisify(execFile)
+const maxFileSizeMB = 15
 const maxTotalFileSizeMB = 60
 
-if (!fs.existsSync(uploadDir)) {
-    fs.mkdirSync(uploadDir)
-}
-let subdirs = ''
-let detailsJson = {}
-let uploadSubDir
-let logDetails = {}
-
-
-function handleError(res, message, error, status = 500) {
-    log.error({err: message}, 'handleError')
-
-    if (uploadSubDir && fs.existsSync(uploadSubDir)) {
-        try {
-            fs.rmSync(uploadSubDir, {recursive: true, force: true})
-            log.warn(`Upload directory removed after error: ${uploadSubDir}`)
-        } catch (err) {
-            log.error({err}, 'Error removing upload directory after error')
-        }
-    }
-
-    if (res.headersSent) {
-        log.warn('handleError called but headers already sent')
-        return
-    }
-
-    const payload = {
-        error: {
-            message: typeof message === 'string' ? message : (error?.message || 'Error'),
-            code: error?.code,
-            type: error?.name,
-            details: error && typeof error === 'object' ? {
-                formidableCode: error.code,
-                errno: error.errno,
-                syscall: error.syscall
-            } : undefined,
-            stack: isDev && typeof error?.stack === 'string' ? error.stack : undefined
-        }
-    }
-
-    res.status(status).json(payload)
-    res.end()
+function firstValue(value) {
+    return Array.isArray(value) ? value[0] : value
 }
 
-export default async function uploadContent(req, res) {
-    const form = formidable({
-        uploadDir: uploadDir,
-        keepExtensions: true,
-        createDirsFromUploads: true,
-        maxFileSize: maxFileSizeMB * 1024 * 1024,
-        maxTotalFileSize: maxTotalFileSizeMB * 1024 * 1024,
-        filter: ({mimetype}) => mimetype && mimetype.includes('image'),
-        filename(_name, _ext, part) {
-            const {originalFilename} = part
-            if (!originalFilename) {
-                return 'invalid'
-            }
-            const originaFilenameParts = originalFilename.split('/')
-            const filename = originaFilenameParts.pop()
-            const filenameParts = filename.split('.')
-            const fileExt = filenameParts.pop()
-            const basename = slugify(filenameParts.join('.')) + '.' + slugify(fileExt)
-            subdirs = originaFilenameParts.map((subdir) => {
-                return slugify(subdir)
-            }).join('/').replace(/\s+/g, '-')
-            return `${subdirs}/${basename}`
-        }
-    })
-
-    const {fields, files} = await parseForm(res, req, form, handleError, maxFileSizeMB, maxTotalFileSizeMB)
+function normalizeFields(fields) {
     for (const fieldName in fields) {
-        if (!Array.isArray(fields[fieldName])) {
-            fields[fieldName] = [fields[fieldName]]
+        if (!Array.isArray(fields[fieldName])) fields[fieldName] = [fields[fieldName]]
+    }
+    return fields
+}
+
+function slugify(value) {
+    return String(value)
+        .replace(/^\s+|\s+$/g, '')
+        .replace(/[^a-zA-Z0-9\-_+ ]/g, '')
+        .replace(/\s+/g, '-')
+        .replace(/-+/g, '-')
+}
+
+function sanitizeHTML(value) {
+    return String(value).replace(/[&<>"']/g, character => ({
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        '\'': '&#39;'
+    })[character])
+}
+
+function createUploadFilename(part) {
+    const {originalFilename} = part
+    if (!originalFilename) {
+        const error = new Error('Uploaded file is missing a filename')
+        error.code = 'upload_content_invalid_filename'
+        throw error
+    }
+
+    const filenameParts = originalFilename.replaceAll('\\', '/').split('/').filter(Boolean)
+    const filename = filenameParts.pop()
+    const parsedFilename = path.parse(filename)
+    const basename = slugify(parsedFilename.name)
+    const extension = slugify(parsedFilename.ext.slice(1))
+    if (!basename || !extension) {
+        const error = new Error('Uploaded file must have a valid filename and extension')
+        error.code = 'upload_content_invalid_filename'
+        throw error
+    }
+
+    const subdirectories = filenameParts.map(slugify).filter(Boolean)
+    return [...subdirectories, `${basename}.${extension}`].join('/')
+}
+
+async function writeImageMetadata({caption, title, userComment, destination}) {
+    const {stdout = '', stderr = ''} = await execFileAsync('exiftool', [
+        '-overwrite_original',
+        '-r',
+        `-iptc:Caption-Abstract=${caption}`,
+        `-Title=${title}`,
+        '-gps:all=',
+        `-UserComment=${userComment}`,
+        destination
+    ])
+
+    if (stderr) {
+        const details = {stdout: stdout.replace(/\n/g, ''), stderr}
+        if (stderr.includes('Warning')) log.warn(details, 'ExifTool completed with warnings')
+        else {
+            const error = new Error('ExifTool reported an error')
+            error.details = details
+            throw error
         }
     }
+}
 
-    if (Object.keys(files || []).length > 0) logDetails.count = Object.keys(files).length
+function createZipArchive({sourceDir, destinationFile}) {
+    return new Promise((resolve, reject) => {
+        const output = fs.createWriteStream(destinationFile)
+        const archive = archiver('zip', {zlib: {level: 9}})
 
-    const destination = `${uploadDir}/${subdirs}`.replace(/\s+/g, '-')
-    const destinationFile = `${destination}.zip`
-    detailsJson = JSON.stringify(fields, null, 2)
+        output.once('close', () => resolve({bytes: archive.pointer()}))
+        output.once('error', reject)
+        archive.once('warning', reject)
+        archive.once('error', reject)
+        archive.pipe(output)
+        archive.directory(sourceDir, false)
+        Promise.resolve(archive.finalize()).catch(reject)
+    })
+}
 
-    await runCommand(`exiftool -overwrite_original -iptc:Caption-Abstract='By: ${fields.photoCredit}' -Title='${fields.lockName}' -gps:all= -UserComment='${fields.lockId}' '${destination}'`)
+function uploadedFileCount(files) {
+    return Object.values(files ?? {}).reduce((count, value) => {
+        return count + (Array.isArray(value) ? value.length : value ? 1 : 0)
+    }, 0)
+}
 
-    try {
-        fs.writeFile(`${destination}/uploadData.json`, detailsJson, function (err) {
-            if (err) {
-                log.error({err}, 'writeFile error')
-                handleError(res, 'JSON write error', err, 500)
-            }
-        })
-    } catch (err) {
-        log.error({err}, 'writeFile error')
-        handleError(res, 'JSON write error', err, 500)
+export function createUploadContentHandler({
+    uploadDir,
+    runtimeEnvironment = 'local',
+    emailSender,
+    emailRecipients,
+    formFactory = formidable,
+    parseFormData = parseForm,
+    imageMetadataWriter = writeImageMetadata,
+    archiveDirectory = createZipArchive
+}) {
+    if (!uploadDir || !path.isAbsolute(uploadDir)) {
+        throw new Error('Content uploadDir must be an absolute path')
     }
+    if (typeof emailSender !== 'function') throw new Error('Content emailSender is required')
 
-    const output = await fs.createWriteStream(destinationFile)
-    const archive = archiver('zip', {
-        zlib: {level: 9} // Sets the compression level.
-    })
-
-    const html = `<strong>Photos uploaded for ${fields.lockFullName} by ${fields.photoCredit}</strong><br/><br/>`
-    let fieldsHtml = html + '<table>'
-    Object.keys(fields).map((key) => {
-        fieldsHtml += `<tr><td>${key}</td><td>${fields[key]}</td></tr>`
-    })
-    fieldsHtml += '</table>'
-
-    output.on('close', async function () {
-
-        logDetails.archiveStatus = 'Files zipped successfully: ' + archive.pointer() + ' total bytes'
-        try {
-            const email = await sendEmail({
-                emailConfig: 'content',
-                to: contentUploadRecipients,
-                subject: `Photos uploaded for ${fields.lockFullName} by ${fields.photoCredit}`,
-                text: `Photos uploaded for ${fields.lockFullName} by ${fields.photoCredit} (text)`,
-                html: fieldsHtml,
-                attachments: {filename: `${subdirs}.zip`, path: destinationFile}
-            })
-            logDetails.emailStatus = `Message sent: ${email.messageId}`
-        } catch (err) {
-            const errorMsg = 'An error occurred sending email'
-            log.error({err}, 'An error occurred sending email')
-            handleError(res, errorMsg, err, 500)
+    function handleError(res, message, error, status = 500) {
+        if (res.headersSent) {
+            log.warn({err: error}, 'Upload-content error occurred after headers were sent')
             return
         }
 
+        log.error({err: error, status}, message)
+        const isDev = runtimeEnvironment !== 'production'
+        return res.status(status).json({
+            error: {
+                message: typeof message === 'string' ? message : (error?.message || 'Error'),
+                code: error?.code,
+                type: error?.name,
+                details: error && typeof error === 'object' ? {
+                    formidableCode: error.code,
+                    errno: error.errno,
+                    syscall: error.syscall
+                } : undefined,
+                stack: isDev && typeof error?.stack === 'string' ? error.stack : undefined
+            }
+        })
+    }
+
+    async function cleanup(workspaceDir, archiveFile) {
+        const cleanupResults = await Promise.allSettled([
+            workspaceDir
+                ? fs.promises.rm(workspaceDir, {recursive: true, force: true})
+                : Promise.resolve(),
+            archiveFile
+                ? fs.promises.rm(archiveFile, {force: true})
+                : Promise.resolve()
+        ])
+        cleanupResults.forEach(result => {
+            if (result.status === 'rejected') {
+                log.error({err: result.reason}, 'Unable to clean up upload workspace')
+            }
+        })
+    }
+
+    return async function uploadContent(req, res) {
+        let workspaceDir
+        let archiveFile
+        let failureMessage = 'Upload processing error'
+
         try {
-            fs.rmSync(`${destination}/`, {recursive: true, force: true})
-            logDetails.tempDirectory = 'removed successfully'
-        } catch (err) {
-            log.error({err: err.message}, 'An error occurred deleteing temp directory')
+            workspaceDir = await fs.promises.mkdtemp(path.join(uploadDir, 'content-upload-'))
+            archiveFile = `${workspaceDir}.zip`
+            const form = formFactory({
+                uploadDir: workspaceDir,
+                keepExtensions: true,
+                createDirsFromUploads: true,
+                maxFileSize: maxFileSizeMB * 1024 * 1024,
+                maxTotalFileSize: maxTotalFileSizeMB * 1024 * 1024,
+                filter: ({mimetype}) => mimetype && mimetype.includes('image'),
+                filename(_name, _ext, part) {
+                    return createUploadFilename(part)
+                }
+            })
+
+            failureMessage = 'Form Parse Error'
+            const {fields: rawFields, files} = await parseFormData(
+                res,
+                req,
+                form,
+                handleError,
+                maxFileSizeMB,
+                maxTotalFileSizeMB
+            )
+            const fields = normalizeFields(rawFields)
+            const photoCredit = firstValue(fields.photoCredit)
+            const lockName = firstValue(fields.lockName)
+            const lockFullName = firstValue(fields.lockFullName)
+            const lockId = firstValue(fields.lockId)
+            const attachmentBaseName = slugify(lockFullName || lockName || lockId || 'photos') || 'photos'
+            const attachmentName = `${attachmentBaseName}.zip`
+
+            failureMessage = 'Upload metadata write error'
+            await imageMetadataWriter({
+                caption: `By: ${photoCredit}`,
+                title: lockName,
+                userComment: lockId,
+                destination: workspaceDir
+            })
+            await fs.promises.writeFile(
+                path.join(workspaceDir, 'uploadData.json'),
+                JSON.stringify(fields, null, 2),
+                'utf8'
+            )
+
+            failureMessage = 'File compression error'
+            const archiveResult = await archiveDirectory({
+                sourceDir: workspaceDir,
+                destinationFile: archiveFile
+            })
+
+            const html = `<strong>Photos uploaded for ${sanitizeHTML(lockFullName)} by ${sanitizeHTML(photoCredit)}</strong><br/><br/>`
+            let fieldsHtml = html + '<table>'
+            Object.keys(fields).forEach(key => {
+                fieldsHtml += `<tr><td>${sanitizeHTML(key)}</td><td>${sanitizeHTML(fields[key])}</td></tr>`
+            })
+            fieldsHtml += '</table>'
+
+            failureMessage = 'An error occurred sending email'
+            const email = await emailSender({
+                emailConfig: 'content',
+                to: emailRecipients,
+                subject: `Photos uploaded for ${lockFullName} by ${photoCredit}`,
+                text: `Photos uploaded for ${lockFullName} by ${photoCredit} (text)`,
+                html: fieldsHtml,
+                attachments: {filename: attachmentName, path: archiveFile}
+            })
+
+            log.info({
+                type: 'photos',
+                count: uploadedFileCount(files),
+                archiveStatus: `Files zipped successfully: ${archiveResult.bytes} total bytes`,
+                emailStatus: `Message sent: ${email.messageId}`
+            }, 'files uploaded successfully')
+
+            await cleanup(workspaceDir, archiveFile)
+            return res.status(200).send('Files uploaded successfully')
+        } catch (error) {
+            await cleanup(workspaceDir, archiveFile)
+            if (res.headersSent) return
+            const status = typeof error?.httpCode === 'number' ? error.httpCode : 500
+            return handleError(res, failureMessage, error, status)
         }
-    })
-
-    output.on('end', function () {
-        log.info('Data has been drained')
-    })
-    archive.on('warning', function (err) {
-        if (err.code === 'ENOENT') {
-            log.warn({err}, 'archiver warning')
-            handleError(res, 'File compression warning', err, 500)
-        } else {
-            throw err
-        }
-    })
-    archive.on('error', function (err) {
-        log.error({err}, 'archiver error')
-        handleError(res, 'File compression error', err, 500)
-    })
-    archive.pipe(output)
-    archive.directory(`${uploadDir}/${subdirs}/`, false)
-    await archive.finalize()
-
-    log.info({type: 'photos', ...logDetails}, 'files uploaded successfully')
-    res.status(200).send('Files uploaded successfully')
-
-}
-
-async function runCommand(command) {
-    try {
-        const {stdout, stderr} = await execAsync(command)
-        if (stderr.length) {
-            stderr.includes('Warning')
-                ? log.warn({
-                    stdout: stdout.replace(/\n/g, ''),
-                    stderr
-                }, 'runCommand completed with errors')
-                : log.error({
-                    stdout: stdout.replace(/\n/g, ''),
-                    stderr
-                }, 'runCommand completed with errors')
-        }
-    } catch (err) {
-        log.error({err}, 'runCommand error')
     }
 }
 
-function slugify(str) {
-    str = str.replace(/^\s+|\s+$/g, '') // trim leading/trailing white space
-    str = str.replace(/[^a-zA-Z0-9\-_+ ]/g, '') // remove any non-alphanumeric characters
-        //.replace(/\s+/g, '-') // replace spaces with hyphens
-        .replace(/-+/g, '-') // remove consecutive hyphens
-    return str
+export default async function uploadContent(req, res) {
+    const {getDefaultUploadContentHandler} = await import('./uploadContentRuntime.js')
+    return (await getDefaultUploadContentHandler())(req, res)
 }
