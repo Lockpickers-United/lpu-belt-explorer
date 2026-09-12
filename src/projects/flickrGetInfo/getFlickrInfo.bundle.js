@@ -1,15 +1,19 @@
 import {Router} from 'express'
 
-const router = Router()
+export function createGetFlickrInfoRouter(getFlickrInfoHandler) {
+    const router = Router()
 
-router.get('/', async (req, res, next) => {
-    try {
-        const {default: getFlickrInfo} = await import('./getFlickrInfo.js')
-        const results = await getFlickrInfo(req.query.id)
-        res.send(results)
-    } catch (e) {
-        next(e)
-    }
-})
+    router.get('/', async (req, res, next) => {
+        try {
+            const handler = getFlickrInfoHandler
+                ?? (await import('./getFlickrInfo.js')).default
+            await handler(req, res, next)
+        } catch (error) {
+            next(error)
+        }
+    })
 
-export default router
+    return router
+}
+
+export default createGetFlickrInfoRouter()

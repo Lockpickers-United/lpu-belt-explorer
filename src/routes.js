@@ -13,7 +13,8 @@ export function registerRoutes(app, {
     uploadContentHandler,
     emailFormHandler,
     importRaflDataHandler,
-    getRedditBeltsHandler
+    getRedditBeltsHandler,
+    getFlickrInfoHandler
 } = {}) {
     const r = Router()
 
@@ -26,7 +27,10 @@ export function registerRoutes(app, {
     app.use(prefix, r)
 
     // single slash path for lazy mount
-    lazyMount(app, `${prefix}/flickr-info`, () => import('./projects/flickrGetInfo/getFlickrInfo.bundle.js'))
+    lazyMount(app, `${prefix}/flickr-info`, async () => {
+        const module = await import('./projects/flickrGetInfo/getFlickrInfo.bundle.js')
+        return {default: module.createGetFlickrInfoRouter(getFlickrInfoHandler)}
+    })
     lazyMount(app, `${prefix}/upload`, async () => {
         const module = await import('./projects/uploadContent/uploadContent.bundle.js')
         return {default: module.createUploadContentRouter(uploadContentHandler)}

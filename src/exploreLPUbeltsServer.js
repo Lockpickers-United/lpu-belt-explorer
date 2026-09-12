@@ -17,6 +17,8 @@ import {createImportRaflDataRuntime} from './projects/importRaflData/importRaflD
 import {importRaflDataConfigSummary} from './projects/importRaflData/importRaflDataConfig.js'
 import {createRedditBeltsRuntime} from './projects/redditBelts/redditBeltsRuntime.js'
 import {redditBeltsConfigSummary} from './projects/redditBelts/redditBeltsConfig.js'
+import {createFlickrInfoRuntime} from './projects/flickrGetInfo/flickrInfoRuntime.js'
+import {flickrInfoConfigSummary} from './projects/flickrGetInfo/flickrInfoConfig.js'
 
 const env = process.env.NODE_ENV || 'local'
 dotenv.config({path: [`.env.${env}`], quiet: true})
@@ -27,11 +29,13 @@ const uploadContentRuntime = await createUploadContentRuntime({env: process.env}
 const emailFormRuntime = await createEmailFormRuntime({env: process.env})
 const importRaflDataRuntime = await createImportRaflDataRuntime({env: process.env})
 const redditBeltsRuntime = await createRedditBeltsRuntime({env: process.env})
+const flickrInfoRuntime = await createFlickrInfoRuntime({env: process.env})
 logger.info(requestLockConfigSummary(requestLockRuntime.config), 'request-lock runtime configured')
 logger.info(uploadContentConfigSummary(uploadContentRuntime.config), 'upload-content runtime configured')
 logger.info(emailFormConfigSummary(emailFormRuntime.config), 'email-form runtime configured')
 logger.info(importRaflDataConfigSummary(importRaflDataRuntime.config), 'RAFL preview runtime configured')
 logger.info(redditBeltsConfigSummary(redditBeltsRuntime.config), 'Reddit belts runtime configured')
+logger.info(flickrInfoConfigSummary(flickrInfoRuntime.config), 'Flickr-info runtime configured')
 
 // node /home/dh_m5s5pf/explore-lpubelts-com-node/src/exploreLPUbeltsServerDEV.js
 
@@ -70,7 +74,8 @@ registerRoutes(app, {
     uploadContentHandler: uploadContentRuntime.handler,
     emailFormHandler: emailFormRuntime.handler,
     importRaflDataHandler: importRaflDataRuntime.handler,
-    getRedditBeltsHandler: redditBeltsRuntime.handler
+    getRedditBeltsHandler: redditBeltsRuntime.handler,
+    getFlickrInfoHandler: flickrInfoRuntime.handler
 })
 
 // 404 handler (must be after routes)
