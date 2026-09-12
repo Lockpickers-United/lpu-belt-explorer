@@ -52,7 +52,7 @@ export function DBProvider({children}) {
     const [systemMessages, setSystemMessages] = useState([])
 
     const dbLoaded = collectionDBLoaded && activityLoaded
-    const adminRole = isLoggedIn && lockCollection && lockCollection.admin
+    const adminRole = isLoggedIn && user && (['lpuAdmin', 'admin'].some(claim => userClaims.includes(claim)))
     const qaUserRole = isLoggedIn && user && (['qaUser', 'admin'].some(claim => userClaims.includes(claim)) || adminRole)
 
     const addToLockCollection = useCallback(async (key, entryId) => {

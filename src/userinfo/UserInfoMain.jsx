@@ -22,14 +22,10 @@ export default function UserInfoMain() {
     const {adminRole, getPickerActivity} = useContext(DBContext)
     const {admin} = useContext(AppContext)
 
-    // TODO get full profile if admin (maybe always in ProfileDataContext?)
-    // const isAdmin = ['lpuAdmin', 'admin'].some(claim => userClaims.includes(claim))
-
     const {userId, data, loading, error, isFullProfile} = useContext(ProfileContext)
     const profile = useMemo(() => data ? data.profile : {}, [data])
 
-    admin && console.log('profile', {isFullProfile, data})
-
+    admin && console.log('admin log: profile', {isFullProfile, data})
 
     const {filters = {}, addFilters} = useContext(FilterContext)
     const {uid, name} = filters

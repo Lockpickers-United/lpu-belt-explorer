@@ -1,5 +1,5 @@
 import React, {useCallback, useMemo, useContext, useEffect, useState} from 'react'
-import {useEffectOnce, useInterval, useLocalStorage} from 'usehooks-ts'
+import {useInterval, useLocalStorage} from 'usehooks-ts'
 import DBContext from './DBContext'
 import dayjs from 'dayjs'
 
@@ -12,15 +12,6 @@ export function AppProvider({children}) {
     const [qaUser, setQaUser] = useLocalStorage('qaUser', qaUserRole && !!import.meta.env.DEV)
 
     const [compact, setCompact] = useState(false)
-
-    useEffect(() => {
-        if (!adminRole && admin) {
-            //setAdmin(false)
-        }
-        if (!qaUserRole && qaUser) {
-            //setQaUser(false)
-        }
-    }, [adminRole, admin, setAdmin, qaUserRole, qaUser, setQaUser])
 
     const handleSetBeta = useCallback(value => {
         setBeta(value)
@@ -44,12 +35,13 @@ export function AppProvider({children}) {
 
     const [initial, setInitial] = useState()
     const [version, setVersion] = useState()
+    const [versionChecked, setVersionChecked] = useState(false)
     const [initalMinVersion, setInitialMinVersion] = useState()
     const [updateRequired, setUpdateRequired] = useState(false)
     const [error, setError] = useState(false)
     const updateAvailable = initial && version && initial !== version
 
-    const checkVersion = async first => {
+    const checkVersion = useCallback(async first => {
         try {
             const response = await fetch('/version.json', {cache: 'no-cache'})
             const {version: newVersion, minVersion} = (await response.json())
@@ -65,13 +57,17 @@ export function AppProvider({children}) {
             console.warn('Unable to check version.', e)
             setError(true)
         }
-    }
+    },[initalMinVersion, version])
 
     const multiplier = 60 // set to 1 for testing, 60 for production
 
-    useEffectOnce(() => {
-        checkVersion(true).then()
-    })
+    useEffect(() => {
+        if (!versionChecked) {
+            checkVersion(true).then()
+            setVersionChecked(true)
+        }
+    },[]) // eslint-disable-line
+
     useInterval(checkVersion, 10 * multiplier * 1000) // 10 * 60 * 1000 = 10 minutes
 
     if (!error
