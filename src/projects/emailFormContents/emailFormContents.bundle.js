@@ -1,19 +1,24 @@
 import {Router} from 'express'
 
-const router = Router()
+export function createEmailFormRouter(emailFormHandler) {
+    const router = Router()
 
-router.get('/', (req, res) => {
-    req.log.info('emailFormContents route hit')
-    res.json({ message: 'emailFormContents endpoint', requestId: req.id })
-})
+    router.get('/', (req, res) => {
+        req.log.info('Email Form route hit')
+        res.json({message: 'Email Form endpoint', requestId: req.id})
+    })
 
-router.post('/', async (req, res, next) => {
-    try {
-        const {default: emailFormContents} = await import('./emailFormContents.js')
-        await emailFormContents(req, res)
-    } catch (e) {
-        next(e)
-    }
-})
+    router.post('/', async (req, res, next) => {
+        try {
+            const handler = emailFormHandler
+                ?? (await import('./emailFormContents.js')).default
+            await handler(req, res)
+        } catch (error) {
+            next(error)
+        }
+    })
 
-export default router
+    return router
+}
+
+export default createEmailFormRouter()

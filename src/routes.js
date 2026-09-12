@@ -10,7 +10,9 @@ import api from './api/index.js'
 export function registerRoutes(app, {
     prefix = '/services',
     requestLockHandlers,
-    uploadContentHandler
+    uploadContentHandler,
+    emailFormHandler,
+    importRaflDataHandler
 } = {}) {
     const r = Router()
 
@@ -46,11 +48,17 @@ export function registerRoutes(app, {
     lazyMount(app, `${prefix}/fetch-flairs`, () => import('./projects/fetchFlairs/fetchFlairs.bundle.js'))
 
     //RAFL Data Import for preview mode
-    lazyMount(app, `${prefix}/refresh-preview`, () => import('./projects/importRaflData/importRaflData.bundle.js'))
+    lazyMount(app, `${prefix}/refresh-preview`, async () => {
+        const module = await import('./projects/importRaflData/importRaflData.bundle.js')
+        return {default: module.createImportRaflDataRouter(importRaflDataHandler)}
+    })
 
     lazyMount(app, `${prefix}/log-activity`, () => import('./projects/logFirebaseActivity/logFirebaseActivity.bundle.js'))
     lazyMount(app, `${prefix}/process-firebase-log`, () => import('./projects/logFirebaseActivity/processFirebaseActivityLog.bundle.js'))
 
-    lazyMount(app, `${prefix}/email-form`, () => import('./projects/emailFormContents/emailFormContents.bundle.js'))
+    lazyMount(app, `${prefix}/email-form`, async () => {
+        const module = await import('./projects/emailFormContents/emailFormContents.bundle.js')
+        return {default: module.createEmailFormRouter(emailFormHandler)}
+    })
     app.use([`${prefix}/api`, `/${prefix}/api`], api)
 }

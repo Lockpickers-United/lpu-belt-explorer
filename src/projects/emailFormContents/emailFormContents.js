@@ -1,97 +1,202 @@
-import {formidable} from '../../util/formidable/src/index.js'
-import {sendEmail} from '../nodeMailer/nodeMailer.js'
-import {raflEmailRecipients} from '../../../keys/users.js'
-import {logger} from '../../logger/logger.js'
-import parseForm from '../../util/parseForm.js'
 import dayjs from 'dayjs'
+import {formidable} from '../../util/formidable/src/index.js'
+import parseForm from '../../util/parseForm.js'
+import {logger} from '../../logger/logger.js'
 
-/**
- * @prop photoCredit
- */
+const log = logger.child({module: 'email-form'})
+const maxFields = 30
+const maxFieldsSize = 64 * 1024
+const maxFieldValues = 5
+const maxFieldValueLength = 5_000
+const maxSubjectLength = 200
+const validFieldName = /^[a-zA-Z0-9][a-zA-Z0-9 _-]{0,63}$/
 
-const isDev = process.env.NODE_ENV !== 'production'
-const dateTime = dayjs().format('YYYY-MM-DD HH:MM')
+function requestError(code, message, status = 400) {
+    const error = new Error(message)
+    error.code = code
+    error.status = status
+    return error
+}
 
-let detailsJson = {}
+function escapeHTML(value) {
+    return String(value).replace(/[&<>"']/g, character => ({
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        '\'': '&#39;'
+    })[character])
+}
 
-function handleError(res, message, error, status = 500) {
-    logger.error(`handleError: ${message}`)
+function uploadedFileCount(files) {
+    return Object.values(files ?? {}).reduce((count, value) => {
+        return count + (Array.isArray(value) ? value.length : value ? 1 : 0)
+    }, 0)
+}
 
-    if (res.headersSent) {
-        logger.warn('handleError called but headers already sent')
-        return
+function normalizeFields(rawFields) {
+    if (!rawFields || typeof rawFields !== 'object' || Array.isArray(rawFields)) {
+        throw requestError('email_form_invalid_fields', 'Form fields are required')
     }
 
-    const payload = {
-        error: {
-            message: typeof message === 'string' ? message : (error?.message || 'Error'),
-            code: error?.code,
-            type: error?.name,
-            details: error && typeof error === 'object' ? {
-                formidableCode: error.code,
-                errno: error.errno,
-                syscall: error.syscall
-            } : undefined,
-            stack: isDev && typeof error?.stack === 'string' ? error.stack : undefined
+    const entries = Object.entries(rawFields)
+    if (entries.length > maxFields) {
+        throw requestError('email_form_too_many_fields', `Form cannot contain more than ${maxFields} fields`)
+    }
+
+    const fields = {}
+    let totalLength = 0
+    entries.forEach(([fieldName, rawValue]) => {
+        if (!validFieldName.test(fieldName)) {
+            throw requestError('email_form_invalid_field_name', `Invalid form field name: ${fieldName}`)
+        }
+
+        const values = (Array.isArray(rawValue) ? rawValue : [rawValue])
+            .map(value => String(value ?? '').trim())
+        if (values.length > maxFieldValues) {
+            throw requestError(
+                'email_form_too_many_field_values',
+                `${fieldName} cannot contain more than ${maxFieldValues} values`
+            )
+        }
+        values.forEach(value => {
+            if (value.length > maxFieldValueLength) {
+                throw requestError(
+                    'email_form_field_too_long',
+                    `${fieldName} cannot exceed ${maxFieldValueLength} characters`
+                )
+            }
+            totalLength += value.length
+        })
+        fields[fieldName] = values
+    })
+
+    if (totalLength > maxFieldsSize) {
+        throw requestError('email_form_too_large', 'Form field data exceeds the allowed size')
+    }
+    return fields
+}
+
+function validateSubject(fields) {
+    const subjectValues = fields.subjectText
+    if (!subjectValues || subjectValues.length !== 1 || !subjectValues[0]) {
+        throw requestError('email_form_invalid_subject', 'subjectText is required')
+    }
+
+    const subject = subjectValues[0]
+    if (subject.length > maxSubjectLength || /[\r\n\0]/.test(subject)) {
+        throw requestError(
+            'email_form_invalid_subject',
+            `subjectText must be ${maxSubjectLength} characters or fewer and contain no line breaks`
+        )
+    }
+    return subject
+}
+
+function formatFieldValue(values) {
+    return values.filter(Boolean).join(', ')
+}
+
+function createEmailContent(fields, subject, submittedAt) {
+    const bodyFields = Object.keys(fields)
+        .sort()
+        .filter(fieldName => fieldName !== 'subjectText')
+    const rows = bodyFields.map(fieldName => {
+        const value = formatFieldValue(fields[fieldName])
+        return `<tr><td>${escapeHTML(fieldName)}</td><td>${escapeHTML(value)}</td></tr>`
+    }).join('')
+    const html = [
+        `<strong>${escapeHTML(subject)}</strong><br/><br/>`,
+        '<table>',
+        `<tr><td><strong>Submitted</strong></td><td>${escapeHTML(submittedAt)}</td></tr>`,
+        rows,
+        '</table>'
+    ].join('')
+    const textFields = bodyFields.map(fieldName => {
+        return `${fieldName}: ${formatFieldValue(fields[fieldName])}`
+    })
+    const text = [subject, `Submitted: ${submittedAt}`, ...textFields].join('\n')
+
+    return {html, text}
+}
+
+export function createEmailFormHandler({
+    runtimeEnvironment = 'local',
+    emailSender,
+    emailRecipients,
+    formFactory = formidable,
+    parseFormData = parseForm,
+    now = () => new Date()
+}) {
+    if (typeof emailSender !== 'function') throw new Error('Email-form emailSender is required')
+    if (!emailRecipients || (Array.isArray(emailRecipients) && emailRecipients.length === 0)) {
+        throw new Error('Email-form emailRecipients are required')
+    }
+
+    function handleError(res, message, error, status = 500) {
+        if (res.headersSent) {
+            log.warn({err: error}, 'Email-form error occurred after headers were sent')
+            return
+        }
+
+        log.error({err: error, status}, message)
+        const isDev = runtimeEnvironment !== 'production'
+        return res.status(status).json({
+            error: {
+                message: typeof message === 'string' ? message : (error?.message || 'Error'),
+                code: error?.code,
+                type: error?.name,
+                details: error && typeof error === 'object' ? {
+                    formidableCode: error.code,
+                    errno: error.errno,
+                    syscall: error.syscall
+                } : undefined,
+                stack: isDev && typeof error?.stack === 'string' ? error.stack : undefined
+            }
+        })
+    }
+
+    return async function emailFormContents(req, res) {
+        let failureMessage = 'Form Parse Error'
+
+        try {
+            const form = formFactory({
+                maxFields,
+                maxFieldsSize,
+                maxFiles: 0
+            })
+            const {fields: rawFields, files} = await parseFormData(res, req, form, handleError)
+            if (uploadedFileCount(files) > 0) {
+                throw requestError('email_form_files_not_allowed', 'File uploads are not allowed')
+            }
+
+            failureMessage = 'Invalid form submission'
+            const fields = normalizeFields(rawFields)
+            const subject = validateSubject(fields)
+            const submittedAt = dayjs(now()).format('YYYY-MM-DD HH:mm')
+            const {html, text} = createEmailContent(fields, subject, submittedAt)
+
+            failureMessage = 'An error occurred sending email'
+            const email = await emailSender({
+                emailConfig: 'content',
+                to: emailRecipients,
+                subject,
+                text,
+                html
+            })
+            log.info({requestId: req.id, messageId: email?.messageId}, 'email form sent')
+            return res.status(200).send('Files uploaded successfully')
+        } catch (error) {
+            if (res.headersSent) return
+            const status = typeof error?.status === 'number'
+                ? error.status
+                : (typeof error?.httpCode === 'number' ? error.httpCode : 500)
+            return handleError(res, failureMessage, error, status)
         }
     }
-
-    res.status(status).json(payload)
-    res.end()
 }
 
 export default async function emailFormContents(req, res) {
-    const form = formidable({})
-
-    const {fields, _files} = await parseForm(res, req, form, handleError)
-    for (const fieldName in fields) {
-        if (!Array.isArray(fields[fieldName])) {
-            fields[fieldName] = [fields[fieldName]]
-        }
-    }
-
-    detailsJson = JSON.stringify(fields, null, 2)
-
-    console.log('detailsJson', detailsJson)
-
-    const emailSubject = `${fields.subjectText}`
-
-    const html = `<strong>${fields.subjectText}</strong><br/><br/>`
-    let fieldsHtml = html + '<table>'
-    fieldsHtml += `<tr><td><strong>Submitted</strong></td><td>${dateTime}</td></tr>`
-
-    Object.keys(fields)
-        .sort()
-        .filter(f => f !== 'subjectText')
-        .map((key) => {
-            fieldsHtml += `<tr><td>${key}</td><td>${fields[key]}</td></tr>`
-        })
-    fieldsHtml += '</table>'
-
-    try {
-        const email = await sendEmail({
-            emailConfig: 'content',
-            to: raflEmailRecipients,
-            subject: `${emailSubject}`,
-            text: `${emailSubject} (text)`,
-            html: fieldsHtml
-        })
-        logger.info('Message sent: %s', email.messageId)
-    } catch (error) {
-        const errorMsg = 'An error occurred sending email'
-        logger.error('An error occurred sending email', error)
-        handleError(res, errorMsg, error, 500)
-        return
-    }
-
-    res.status(200).send('Files uploaded successfully')
-
-}
-
-function _slugify(str) {
-    str = str.replace(/^\s+|\s+$/g, '') // trim leading/trailing white space
-    str = str.replace(/[^a-zA-Z0-9\-_+ ]/g, '') // remove any non-alphanumeric characters
-        //.replace(/\s+/g, '-') // replace spaces with hyphens
-        .replace(/-+/g, '-') // remove consecutive hyphens
-    return str
+    const {getDefaultEmailFormHandler} = await import('./emailFormContentsRuntime.js')
+    return (await getDefaultEmailFormHandler())(req, res)
 }

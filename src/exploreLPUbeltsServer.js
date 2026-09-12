@@ -11,6 +11,10 @@ import {createRequestLockRuntime} from './projects/requestLock/requestLockRuntim
 import {requestLockConfigSummary} from './projects/requestLock/requestLockConfig.js'
 import {createUploadContentRuntime} from './projects/uploadContent/uploadContentRuntime.js'
 import {uploadContentConfigSummary} from './projects/uploadContent/uploadContentConfig.js'
+import {createEmailFormRuntime} from './projects/emailFormContents/emailFormContentsRuntime.js'
+import {emailFormConfigSummary} from './projects/emailFormContents/emailFormContentsConfig.js'
+import {createImportRaflDataRuntime} from './projects/importRaflData/importRaflDataRuntime.js'
+import {importRaflDataConfigSummary} from './projects/importRaflData/importRaflDataConfig.js'
 
 const env = process.env.NODE_ENV || 'local'
 dotenv.config({path: [`.env.${env}`], quiet: true})
@@ -18,8 +22,12 @@ const isDev = env !== 'production'
 const _envText = isDev ? ' (DEV)' : ''
 const requestLockRuntime = await createRequestLockRuntime({env: process.env})
 const uploadContentRuntime = await createUploadContentRuntime({env: process.env})
+const emailFormRuntime = await createEmailFormRuntime({env: process.env})
+const importRaflDataRuntime = await createImportRaflDataRuntime({env: process.env})
 logger.info(requestLockConfigSummary(requestLockRuntime.config), 'request-lock runtime configured')
 logger.info(uploadContentConfigSummary(uploadContentRuntime.config), 'upload-content runtime configured')
+logger.info(emailFormConfigSummary(emailFormRuntime.config), 'email-form runtime configured')
+logger.info(importRaflDataConfigSummary(importRaflDataRuntime.config), 'RAFL preview runtime configured')
 
 // node /home/dh_m5s5pf/explore-lpubelts-com-node/src/exploreLPUbeltsServerDEV.js
 
@@ -55,7 +63,9 @@ const apiPrefix = isDev ? '' : ''
 registerRoutes(app, {
     prefix: apiPrefix,
     requestLockHandlers: requestLockRuntime.handlers,
-    uploadContentHandler: uploadContentRuntime.handler
+    uploadContentHandler: uploadContentRuntime.handler,
+    emailFormHandler: emailFormRuntime.handler,
+    importRaflDataHandler: importRaflDataRuntime.handler
 })
 
 // 404 handler (must be after routes)
@@ -103,7 +113,7 @@ const port = apiPort
 const host = process.env.HOST || '0.0.0.0'
 
 const server = app.listen(port, host, () => {
-    logger.info({env, port, apiPrefix, host, corsOrigin}, 'server started')
+    logger.info({env, port, apiPrefix, host, corsOrigin}, 'SERVER STARTED')
 })
 server.on('error', (err) => {
     try { logger.error({ err }, 'server error') } catch { console.error('server error', err) }
