@@ -15,13 +15,13 @@ import {spaceJoin} from '../../util/stringUtils.js'
 import dayjs from 'dayjs'
 import createThumbnails from '../../util/createThumbnails.js'
 import {logFirebaseActivity} from '../logFirebaseActivity/logFirebaseActivity.js'
-import admin from 'firebase-admin'
 import {getFirestore} from 'firebase-admin/firestore'
-import serviceAccount from '../../../keys/service-account.json' with {type: 'json'}
+import {getAuth} from 'firebase-admin/auth'
 import {logger} from '../../logger/logger.js'
 import parseForm from '../../util/parseForm.js'
 import {pathToFileURL} from 'url'
 import postFirebaseActivity from '../../util/postFirebaseActivity.js'
+import {getFirebaseAdminApp} from '../../api/services/firebaseAdmin.js'
 
 const isDirectRun = process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href
 const isCron = !!process.argv[2] && process.argv[2] === 'cron'
@@ -33,10 +33,7 @@ const {writeFile} = fs.promises
 const maxFileSizeMB = 10
 const maxTotalFileSizeMB = 50
 
-const requestapp = admin.initializeApp({
-    credential: admin.credential.cert(serviceAccount),
-    databaseURL: 'https://lpu-belt-explorer.firebaseio.com'
-})
+const requestapp = getFirebaseAdminApp()
 
 let _dbProd
 let _dbDev
@@ -385,7 +382,7 @@ async function authenticateRequest(req) {
         throw new Error('Unauthorized')
     }
     const idToken = authHeader.split('Bearer ')[1]
-    const decodedToken = await admin.auth().verifyIdToken(idToken)
+    const decodedToken = await getAuth(requestapp).verifyIdToken(idToken)
     if (!decodedToken) {
         throw new Error('Insufficient permissions')
     }
