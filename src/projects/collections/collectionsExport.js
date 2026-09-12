@@ -3,9 +3,10 @@ import path from 'node:path'
 import {Timestamp} from 'firebase-admin/firestore'
 import {setDeep} from '../../util/setDeep.js'
 import dayjs from 'dayjs'
-import isMain from '../../util/isMain.js'
+import isDirectRun from '../../util/isDirectRun.js'
 import {exportJobConfigSummary, loadExportJobConfig} from './exportJobConfig.js'
 import {getExportFirestore} from './exportFirebase.js'
+import dotenv from 'dotenv'
 
 const collectionName = 'lockcollections'
 const changeIndexCollectionName = 'lockcollectionsChangeIndex'
@@ -270,6 +271,12 @@ export async function collectionsExportMain({
     argv = process.argv,
     writeOutput = console.log
 } = {}) {
+
+    const environment = process.env.NODE_ENV || 'local'
+    if (environment === 'local') {
+        dotenv.config({ path: path.resolve(process.cwd(), '.env.local'), quiet: true })
+    }
+
     const config = loadExportJobConfig({env})
     const summary = exportJobConfigSummary(config)
     if (argv.includes('--check-config')) {
@@ -290,6 +297,6 @@ export async function collectionsExportMain({
     })
 }
 
-if (isMain(import.meta.url)) {
+if (isDirectRun(import.meta.url)) {
     await collectionsExportMain()
 }

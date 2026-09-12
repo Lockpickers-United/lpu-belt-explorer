@@ -5,7 +5,7 @@ import {setDeepPush} from '../../util/setDeep.js'
 import dayjs from 'dayjs'
 import {awardDetails, lockDetails, projectDetails, safelockDetails} from '../../util/getItemDetails.js'
 import entryName from '../../util/entryName.js'
-import isMain from '../../util/isMain.js'
+import isDirectRun from '../../util/isDirectRun.js'
 import {exportJobConfigSummary, loadExportJobConfig} from './exportJobConfig.js'
 import {getExportFirestore} from './exportFirebase.js'
 
@@ -511,6 +511,6 @@ export async function awardsEvidenceExportMain({
     })
 }
 
-if (isMain(import.meta.url)) {
+if (isDirectRun(import.meta.url)) {
     await awardsEvidenceExportMain()
 }

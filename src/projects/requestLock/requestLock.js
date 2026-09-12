@@ -8,7 +8,7 @@
 import fs from 'fs'
 import {formidable} from '../../util/formidable/src/index.js'
 import {sendEmail} from '../nodeMailer/nodeMailer.js'
-import {contentUploadRecipients, prodUser} from '../../../keys/users.js'
+import {contentUploadRecipients} from '../../../keys/users.js'
 import util from 'util'
 import {exec} from 'child_process'
 import {spaceJoin} from '../../util/stringUtils.js'
@@ -19,11 +19,10 @@ import {getFirestore} from 'firebase-admin/firestore'
 import {getAuth} from 'firebase-admin/auth'
 import {logger} from '../../logger/logger.js'
 import parseForm from '../../util/parseForm.js'
-import {pathToFileURL} from 'url'
 import postFirebaseActivity from '../../util/postFirebaseActivity.js'
 import {getFirebaseAdminApp} from '../../api/services/firebaseAdmin.js'
+import isDirectRun from '../../util/isDirectRun.js'
 
-const isDirectRun = process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href
 const isCron = !!process.argv[2] && process.argv[2] === 'cron'
 const log = logger.child({
     module: 'requestLock'
@@ -56,7 +55,7 @@ function getDb(prod) {
 
 const execAsync = util.promisify(exec)
 
-const uploadDir = `/home/${prodUser}/explore.lpubelts.com/public/img/requestedLocks`
+const uploadDir = process.env.REQUESTED_LOCKS_UPLOAD_DIR
 const serverPath = 'https://explore.lpubelts.com/img/requestedLocks'
 
 if (!fs.existsSync(uploadDir)) {
@@ -124,7 +123,7 @@ export default async function requestLock(req, res) {
 
     async function logActivity(messages) {
         try {
-            if (isDirectRun || isCron) await postFirebaseActivity({activityData: messages})
+            if (isDirectRun(import.meta.url) || isCron) await postFirebaseActivity({activityData: messages})
             else await logFirebaseActivity(messages)
         } catch (err) {
             console.log('Logging Error', err)

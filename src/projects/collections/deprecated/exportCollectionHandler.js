@@ -2,9 +2,9 @@ import fs from 'node:fs'
 import {initializeApp, cert} from 'firebase-admin/app'
 import {getFirestore} from 'firebase-admin/firestore'
 
-import {localUser, prodUser} from '../../../keys/users.js'
-import {logFirebaseActivity} from '../logFirebaseActivity/logFirebaseActivity.js'
-import postFirebaseActivity from '../../util/postFirebaseActivity.js'
+import {localUser, prodUser} from '../../../../keys/users.js'
+import {logFirebaseActivity} from '../../logFirebaseActivity/logFirebaseActivity.js'
+import postFirebaseActivity from '../../../util/postFirebaseActivity.js'
 import {pathToFileURL} from 'url'
 
 const isDirectRun = process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href

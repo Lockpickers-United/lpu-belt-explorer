@@ -1,274 +1,214 @@
 import fs from 'node:fs/promises'
-import {initializeApp, cert} from 'firebase-admin/app'
-import {Timestamp, getFirestore} from 'firebase-admin/firestore'
+import path from 'node:path'
+import {Timestamp} from 'firebase-admin/firestore'
 import {setDeepAdd, setDeepPush} from '../../util/setDeep.js'
-import {localUser, prodUser} from '../../../keys/users.js'
 import dayjs from 'dayjs'
+import dotenv from 'dotenv'
 import {projectDetails, lockDetails} from '../../util/getItemDetails.js'
 import entryName from '../../util/entryName.js'
-import {logFirebaseActivity} from '../logFirebaseActivity/logFirebaseActivity.js'
-import {pathToFileURL} from 'url'
-import postFirebaseActivity from '../../util/postFirebaseActivity.js'
+import isDirectRun from '../../util/isDirectRun.js'
+import {exportJobConfigSummary, loadExportJobConfig} from './exportJobConfig.js'
+import {getExportFirestore} from './exportFirebase.js'
 
-const isDirectRun = process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href
-const isCron = !!process.argv[2] && process.argv[2] === 'cron'
-
-const production = process.env.USER !== localUser
-const keysDir = production
-    ? `/home/${prodUser}/explore-lpubelts-com-node/keys`
-    : `/Users/${localUser}/Documents/GitHub/explore-lpubelts-com-node/keys`
-const serviceAccount = JSON.parse(await fs.readFile(`${keysDir}/service-account.json`, 'utf8'))
-
-const config = {
-    credential: cert(serviceAccount)
+async function ensureWriteDir(filePath) {
+    await fs.mkdir(path.dirname(filePath), {recursive: true})
 }
-const firebaseApp = initializeApp(config)
-//const dbDev = getFirestore(firebaseApp, 'lpubelts-dev')
-const dbProd = getFirestore(firebaseApp)
 
-const serverDir = production
-    ? `/home/${prodUser}/explore.lpubelts.com/public/data`
-    : `/Users/${localUser}/Documents/LOCKPICK/LPU-Belt-Explorer/lpu-belt-explorer-analytics/Collections`
+async function writeJsonFileAtomic(filePath, data) {
+    await ensureWriteDir(filePath)
+    const tempFile = `${filePath}.tmp-${process.pid}-${Date.now()}`
+    await fs.writeFile(tempFile, JSON.stringify(data))
+    await fs.rename(tempFile, filePath)
+}
 
-export default async function getAllEvidence() {
+async function logReadActivity(messages, activityLogger) {
+    try {
+        await activityLogger(messages)
+    } catch (err) {
+        console.error('Logging Error', err)
+    }
+}
 
-    console.log('Running getAllEvidence()')
+function evidenceDate(value) {
+    if (!value) return '---'
+    return dayjs(value instanceof Timestamp ? value.toDate() : value).format('YYYY-MM-DD')
+}
 
-    const backupDir = production
-        ? `/home/${prodUser}/firebase`
-        : `/Users/${localUser}/Documents/LOCKPICK/LPU-Belt-Explorer/lpu-belt-explorer-analytics/Collections/lpuBeltsBackups`
+function evidenceDisplayName(evidence, collectionData) {
+    if (evidence.userId) return collectionData[evidence.userId]?.displayName ?? 'unknown'
+    return evidence.tabName ?? 'unknown'
+}
 
-    const collectionData = JSON.parse(await fs.readFile(`${backupDir}/backup.json`, 'utf8'))['__collections__']['lockcollections']
-    const unclaimedEvidence = await dbProd.collection('unclaimed-evidence').get()
-    const scorecardEvidence = await dbProd.collection('evidence').get()
+function evidenceDetails(doc, entry, collectionData) {
+    const evidence = doc.data()
+    return {
+        docId: doc.id,
+        ...evidence,
+        evidenceName: entryName(entry, 'short'),
+        displayName: evidenceDisplayName(evidence, collectionData),
+        belt: entry.belt || null,
+        blackBelt: !!collectionData[evidence.userId]?.blackBeltAwardedAt,
+        date: evidenceDate(evidence.evidenceCreatedAt)
+    }
+}
 
-    const messages = [{
+export async function runAllEvidenceExport({
+    db,
+    backupDir,
+    publicDataDir,
+    trigger = 'manual',
+    activityLogger = async () => {},
+    projectDetailsLoader = projectDetails,
+    lockDetailsLoader = lockDetails,
+    now = () => new Date()
+}) {
+    const collectionBackup = JSON.parse(await fs.readFile(`${backupDir}/backup.json`, 'utf8'))
+    const collectionData = collectionBackup['__collections__']['lockcollections']
+    const [unclaimedEvidence, scorecardEvidence] = await Promise.all([
+        db.collection('unclaimed-evidence').get(),
+        db.collection('evidence').get()
+    ])
+
+    await logReadActivity([{
         type: 'READ',
         count: unclaimedEvidence.docs.length,
         source: 'allEvidenceExport - unclaimed-evidence',
         id: '',
-        displayName: 'cronjob'
+        trigger
     }, {
         type: 'READ',
         count: scorecardEvidence.docs.length,
         source: 'allEvidenceExport - scorecardEvidence',
         id: '',
-        displayName: 'cronjob'
-    }]
-
-    try {
-        if (isDirectRun || isCron) await postFirebaseActivity({activityData: messages})
-        else await logFirebaseActivity(messages)
-    } catch (err) {
-        console.log('Logging Error', err)
-    }
+        trigger
+    }], activityLogger)
 
     const allEvidence = [...scorecardEvidence.docs, ...unclaimedEvidence.docs]
-    const projectData = await projectDetails()
-    const lockData = await lockDetails()
+    const [projectData, lockData] = await Promise.all([
+        projectDetailsLoader(),
+        lockDetailsLoader()
+    ])
 
-    const fullDb = new Map()
+    const fullDb = {}
     allEvidence.reduce((acc, doc) => {
-        acc = acc ? acc : {}
-        const entry = projectData[doc.data().projectId]
-        if (!entry) {
-            return acc
-        }
+        const evidence = doc.data()
+        const entry = projectData[evidence.projectId]
+        if (!entry) return acc
 
-        const displayName = doc.data().userId
-            ? collectionData[doc.data().userId].displayName
-            : doc.data().tabName
-                ? doc.data().tabName
-                : 'unknown'
-        const belt = entry.belt || null
-        const blackBelt = !!collectionData[doc.data().userId]?.blackBeltAwardedAt
-        const evidenceName = entryName(entry, 'short')
-        const date = doc.data().evidenceCreatedAt
-            ? doc.data().evidenceCreatedAt instanceof Timestamp
-                ? dayjs(doc.data().evidenceCreatedAt.toDate()).format('YYYY-MM-DD')
-                : dayjs(doc.data().evidenceCreatedAt).format('YYYY-MM-DD')
-            : '---'
-
-        const evInfo = [doc.data().projectId, date, doc.data().evidenceUrl].join('|')
-        if (acc[evInfo]) {
-            return acc
-        }
+        const details = evidenceDetails(doc, entry, collectionData)
+        const evInfo = [evidence.projectId, details.date, evidence.evidenceUrl].join('|')
+        if (acc[evInfo]) return acc
         acc[evInfo] = true
 
-        setDeepPush(fullDb, ['projects'], {
-            docId: doc.id,
-            ...doc.data(),
-            evidenceName,
-            displayName,
-            belt,
-            blackBelt,
-            date
-        })
+        setDeepPush(fullDb, ['projects'], details)
         return acc
     }, {})
 
     const pickStats = scorecardEvidence.docs.reduce((acc, doc) => {
-        acc = acc ? acc : {}
-        const project = projectData[doc.data().projectId]
-        const lock = lockData[doc.data().projectId]
+        const evidence = doc.data()
+        const project = projectData[evidence.projectId]
+        const lock = lockData[evidence.projectId]
         const entry = lock || project
+        if (!entry) return acc
 
-        if (!entry) {
-            return acc
+        const details = evidenceDetails(doc, entry, collectionData)
+        if (evidence.modifier) {
+            setDeepPush(fullDb, ['modifiers'], details)
         }
 
-        const displayName = doc.data().userId
-            ? collectionData[doc.data().userId]?.displayName
-            : doc.data().tabName
-                ? doc.data().tabName
-                : 'unknown'
-        const belt = entry.belt || null
-        const evidenceName = entryName(entry, 'short')
-        const blackBelt = !!collectionData[doc.data().userId]?.blackBeltAwardedAt
-        const date = doc.data().evidenceCreatedAt
-            ? doc.data().evidenceCreatedAt instanceof Timestamp
-                ? dayjs(doc.data().evidenceCreatedAt.toDate()).format('YYYY-MM-DD')
-                : dayjs(doc.data().evidenceCreatedAt).format('YYYY-MM-DD')
-            : '---'
-
-        if (doc.data().modifier) {
-            setDeepPush(fullDb, ['modifiers'], {
-                docId: doc.id,
-                ...doc.data(),
-                evidenceName,
-                displayName,
-                belt,
-                blackBelt,
-                date
-            })
-        }
-
-        if (lock && belt && lock.lockingMechanisms) {
+        if (lock && details.belt && lock.lockingMechanisms) {
             const lockingMechanism = lock.lockingMechanisms.length === 1
                 ? lock.lockingMechanisms[0]
                 : 'Multiple'
-            setDeepAdd(acc, ['byBeltByMechanism', belt, lockingMechanism], 1)
-            setDeepAdd(acc, ['byBelt', belt], 1)
+            setDeepAdd(acc, ['byBeltByMechanism', details.belt, lockingMechanism], 1)
+            setDeepAdd(acc, ['byBelt', details.belt], 1)
             setDeepAdd(acc, ['byMechanism', lockingMechanism], 1)
-            setDeepAdd(acc, ['byLock', doc.data().projectId], 1)
+            setDeepAdd(acc, ['byLock', evidence.projectId], 1)
         }
         return acc
     }, {})
 
-    pickStats.lockDetails = Object.keys(pickStats.byLock).map(id => {
-        const lock = lockData[id]
-        if (!lock) return
-        const name = entryName(lock, 'short')
-        const lockingMechanism = lock.lockingMechanisms.length === 1
-            ? lock.lockingMechanisms[0]
-            : 'Multiple'
+    pickStats.lockDetails = Object.keys(pickStats.byLock ?? {})
+        .map(id => {
+            const lock = lockData[id]
+            if (!lock) return null
+            const lockingMechanism = lock.lockingMechanisms.length === 1
+                ? lock.lockingMechanisms[0]
+                : 'Multiple'
 
-        return {
-            id,
-            name,
-            belt: lock.belt.replace(/ \d/, ''),
-            fullBelt: lock.belt,
-            lockingMechanism,
-            pickCount: pickStats.byLock[id]
-        }
-    }).sort((a, b) => b.pickCount - a.pickCount)
+            return {
+                id,
+                name: entryName(lock, 'short'),
+                belt: lock.belt.replace(/ \d/, ''),
+                fullBelt: lock.belt,
+                lockingMechanism,
+                pickCount: pickStats.byLock[id]
+            }
+        })
+        .filter(Boolean)
+        .sort((a, b) => b.pickCount - a.pickCount)
 
-    fullDb.metadata = {updatedDateTime: dayjs().format('YYYY-MM-DD HH:mm')}
+    fullDb.metadata = {updatedDateTime: dayjs(now()).format('YYYY-MM-DD HH:mm')}
 
-    try {
-        await fs.writeFile(`${serverDir}/allProjects.json`, JSON.stringify(fullDb))
-    } catch (err) {
-        console.log(err)
-    }
+    const allScorecardEvidence = scorecardEvidence.docs
+        .map(doc => {
+            const evidence = doc.data()
+            const entry = lockData[evidence.projectId] || projectData[evidence.projectId]
+            return entry ? evidenceDetails(doc, entry, collectionData) : null
+        })
+        .filter(Boolean)
 
-    try {
-        await fs.writeFile(`${serverDir}/pickStats.json`, JSON.stringify(pickStats))
-    } catch (err) {
-        console.log(err)
-    }
+    const allUnclaimedEvidence = unclaimedEvidence.docs
+        .map(doc => {
+            const evidence = doc.data()
+            const entry = lockData[evidence.projectId] || projectData[evidence.projectId]
+            return entry ? evidenceDetails(doc, entry, collectionData) : null
+        })
+        .filter(Boolean)
 
+    await Promise.all([
+        writeJsonFileAtomic(`${publicDataDir}/allProjects.json`, fullDb),
+        writeJsonFileAtomic(`${publicDataDir}/pickStats.json`, pickStats),
+        writeJsonFileAtomic(`${publicDataDir}/allScorecardEvidence.json`, allScorecardEvidence),
+        writeJsonFileAtomic(`${publicDataDir}/allUnclaimedEvidence.json`, allUnclaimedEvidence)
+    ])
 
-    const allScorecardEvidence = scorecardEvidence.docs.map(doc => {
-        const project = projectData[doc.data().projectId]
-        const lock = lockData[doc.data().projectId]
-        const entry = lock || project
-        if (!entry) {
-            return
-        }
-
-        const displayName = doc.data().userId
-            ? collectionData[doc.data().userId].displayName
-            : doc.data().tabName
-                ? doc.data().tabName
-                : 'unknown'
-        const belt = entry.belt || null
-        const blackBelt = !!collectionData[doc.data().userId]?.blackBeltAwardedAt
-        const evidenceName = entryName(entry, 'short')
-        const date = doc.data().evidenceCreatedAt
-            ? doc.data().evidenceCreatedAt instanceof Timestamp
-                ? dayjs(doc.data().evidenceCreatedAt.toDate()).format('YYYY-MM-DD')
-                : dayjs(doc.data().evidenceCreatedAt).format('YYYY-MM-DD')
-            : '---'
-
-        return {
-            docId: doc.id,
-            ...doc.data(),
-            evidenceName,
-            displayName,
-            belt,
-            blackBelt,
-            date
-        }
-    }).filter(x => x)
-
-    const allUnclaimedEvidence = unclaimedEvidence.docs.map(doc => {
-        const project = projectData[doc.data().projectId]
-        const lock = lockData[doc.data().projectId]
-        const entry = lock || project
-        if (!entry) {
-            return
-        }
-
-        const displayName = doc.data().userId
-            ? collectionData[doc.data().userId].displayName
-            : doc.data().tabName
-                ? doc.data().tabName
-                : 'unknown'
-        const belt = entry.belt || null
-        const blackBelt = !!collectionData[doc.data().userId]?.blackBeltAwardedAt
-        const evidenceName = entryName(entry, 'short')
-        const date = doc.data().evidenceCreatedAt
-            ? doc.data().evidenceCreatedAt instanceof Timestamp
-                ? dayjs(doc.data().evidenceCreatedAt.toDate()).format('YYYY-MM-DD')
-                : dayjs(doc.data().evidenceCreatedAt).format('YYYY-MM-DD')
-            : '---'
-
-        return {
-            docId: doc.id,
-            ...doc.data(),
-            evidenceName,
-            displayName,
-            belt,
-            blackBelt,
-            date
-        }
-    })
-
-
-    try {
-        await fs.writeFile(`${serverDir}/allScorecardEvidence.json`, JSON.stringify(allScorecardEvidence))
-    } catch (err) {
-        console.log(err)
-    }
-
-    try {
-        await fs.writeFile(`${serverDir}/allUnclaimedEvidence.json`, JSON.stringify(allUnclaimedEvidence))
-    } catch (err) {
-        console.log(err)
-    }
+    if (trigger !== 'cronjob') console.log('All evidence export complete')
 
     return fullDb
-
 }
 
-await getAllEvidence().then()
+export default runAllEvidenceExport
+
+export async function allEvidenceExportMain({
+    env = process.env,
+    argv = process.argv,
+    writeOutput = console.log
+} = {}) {
+    const environment = process.env.NODE_ENV || 'local'
+    if (environment === 'local') {
+        dotenv.config({path: path.resolve(process.cwd(), '.env.local'), quiet: true})
+    }
+
+    const config = loadExportJobConfig({env, requirePublicDataDir: true})
+    const summary = exportJobConfigSummary(config)
+    if (argv.includes('--check-config')) {
+        writeOutput(JSON.stringify(summary, null, 2))
+        return summary
+    }
+
+    const db = await getExportFirestore(config)
+    const {default: postFirebaseActivity} = await import('../../util/postFirebaseActivity.js')
+    const trigger = argv.includes('cron') ? 'cronjob' : 'manual'
+    return runAllEvidenceExport({
+        db,
+        backupDir: config.backupDir,
+        publicDataDir: config.publicDataDir,
+        trigger,
+        activityLogger: messages => postFirebaseActivity({activityData: messages})
+    })
+}
+
+if (isDirectRun(import.meta.url)) {
+    await allEvidenceExportMain()
+}

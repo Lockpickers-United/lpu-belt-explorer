@@ -2,7 +2,7 @@ import path from 'node:path'
 
 export const defaultFirestoreDatabaseId = '(default)'
 
-const validJobEnvironments = new Set(['development', 'production'])
+const validJobEnvironments = new Set(['local', 'development', 'production'])
 
 function configurationError(code, message) {
     const error = new Error(message)
@@ -48,7 +48,7 @@ export function loadExportJobConfig({env = process.env, requirePublicDataDir = f
     if (!validJobEnvironments.has(jobEnvironment)) {
         throw configurationError(
             'export_job_config_invalid_environment',
-            'LPU_JOB_ENV must be development or production'
+            'LPU_JOB_ENV must be local, development or production'
         )
     }
 

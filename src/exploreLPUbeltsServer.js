@@ -8,7 +8,7 @@ import {requestIdHeader} from './logger/requestId.js'
 import {registerRoutes} from './routes.js'
 import normalizeRequestUrl from './util/normalizeRequestUrl.js'
 
-const env = process.env.NODE_ENV || 'development'
+const env = process.env.NODE_ENV || 'local'
 dotenv.config({path: [`.env.${process.env.NODE_ENV}`]})
 const isDev = env !== 'production'
 const _envText = isDev ? ' (DEV)' : ''
@@ -93,7 +93,7 @@ const port = apiPort
 const host = process.env.HOST || '0.0.0.0'
 
 const server = app.listen(port, host, () => {
-    logger.info({env, port, apiPrefix, host, corsOrigin}, 'api listening')
+    logger.info({env, port, apiPrefix, host, corsOrigin}, 'server started')
 })
 server.on('error', (err) => {
     try { logger.error({ err }, 'server error') } catch { console.error('server error', err) }

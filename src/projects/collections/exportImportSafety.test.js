@@ -10,14 +10,16 @@ const testDir = path.dirname(fileURLToPath(import.meta.url))
 const repoRoot = path.resolve(testDir, '../../..')
 const exporterUrls = [
     new URL('./collectionsExport.js', import.meta.url).href,
-    new URL('./awardsEvidenceExport.js', import.meta.url).href
+    new URL('./awardsEvidenceExport.js', import.meta.url).href,
+    new URL('./allEvidenceExport.js', import.meta.url).href
 ]
 
 describe('active exporter imports', () => {
     it('does not use OS usernames for environment selection', async () => {
         const sources = await Promise.all([
             fs.readFile(new URL('./collectionsExport.js', import.meta.url), 'utf8'),
-            fs.readFile(new URL('./awardsEvidenceExport.js', import.meta.url), 'utf8')
+            fs.readFile(new URL('./awardsEvidenceExport.js', import.meta.url), 'utf8'),
+            fs.readFile(new URL('./allEvidenceExport.js', import.meta.url), 'utf8')
         ])
 
         sources.forEach(source => {

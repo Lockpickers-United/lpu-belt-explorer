@@ -1,4 +1,5 @@
 import {describe, expect, it, vi} from 'vitest'
+import {allEvidenceExportMain} from './allEvidenceExport.js'
 import {awardsEvidenceExportMain} from './awardsEvidenceExport.js'
 import {collectionsExportMain} from './collectionsExport.js'
 
@@ -15,7 +16,8 @@ const env = {
 describe('exporter --check-config mode', () => {
     it.each([
         ['collections', collectionsExportMain],
-        ['awards/evidence', awardsEvidenceExportMain]
+        ['awards/evidence', awardsEvidenceExportMain],
+        ['all evidence', allEvidenceExportMain]
     ])('validates and reports %s configuration without loading credentials', async (_name, main) => {
         const writeOutput = vi.fn()
 
