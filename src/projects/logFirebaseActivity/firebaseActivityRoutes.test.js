@@ -2,6 +2,7 @@ import express from 'express'
 import request from 'supertest'
 import {describe, expect, it, vi} from 'vitest'
 import {registerRoutes} from '../../routes.js'
+import {rateLimitPolicies} from '../../api/middleware/rateLimit.js'
 
 function createApp(firebaseActivityHandler) {
     const app = express()
@@ -26,6 +27,7 @@ describe('Firebase-activity route injection', () => {
             .send({activityData: {type: 'READ', count: 1, source: 'test'}})
 
         expect(response.status).toBe(200)
+        expect(response.headers['x-ratelimit-limit']).toBe(String(rateLimitPolicies.firebaseActivity.max))
         expect(response.body).toBe('Activity Logged')
         expect(firebaseActivityHandler).toHaveBeenCalledOnce()
     })

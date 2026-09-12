@@ -2,17 +2,30 @@
 
 ## Purpose
 
-The API uses lightweight in-memory rate limiting to reduce abuse risk on Firebase-backed endpoints.
+The server uses layered in-memory rate limiting to reduce abuse risk across public endpoints.
 
-The main concern is sequential reads against `/api/v1/users/*`. Each public user request can trigger a Firestore document read, so unrestricted enumeration of user IDs could create unnecessary database traffic and cost.
+Every request first passes through a generous baseline IP limit. Work-producing routes then use independent, stricter IP limits before database access, token verification, file processing, email delivery, logging, or external API calls. Independent counters prevent activity on one route from exhausting another route's allowance.
 
-## Current Limit
+`GET` and `HEAD` requests to `/health` and `/ready`, including supported proxy-prefixed forms, are exempt so operational monitoring remains reliable. CORS preflight requests are also exempt. Diagnostic routes remain covered by the baseline limiter when they are enabled.
 
-The `/api/v1/users/*` route group is limited by client IP:
+## Current Limits
 
-```txt
-60 requests per 60 seconds
-```
+| Layer or route | Limit per client IP |
+| --- | --- |
+| Server baseline | 300 requests per minute |
+| `/api/v1/users/*` | 60 requests per minute |
+| `/api/v1/stats/collections/*` | 120 requests per minute |
+| `POST /request-lock` | 10 requests per 10 minutes |
+| `POST /update-request` | 30 requests per minute |
+| `POST /request-vote` | 60 requests per minute |
+| `POST /upload` | 5 requests per 10 minutes |
+| `POST /email-form` | 5 requests per 10 minutes |
+| `GET /refresh-preview` | 3 requests per 10 minutes |
+| `/fetch-reddit-flairs` | 3 requests per 10 minutes |
+| `GET /flickr-info` | 20 requests per minute |
+| `POST /log-activity` | 120 requests per minute |
+
+Routes not listed separately, including the two read-only local-log routes, receive the baseline limit.
 
 After the limit is exceeded, rejected requests use a sliding backoff:
 
@@ -33,7 +46,7 @@ GET /api/v1/users/{id}/wishlist
 GET /api/v1/users/{id}/profile
 ```
 
-The limiter runs before Firebase reads and before Firebase token verification. That means it protects both public profile reads and repeated authenticated-profile token verification attempts.
+Route-specific limiters run before their protected work. The administrative import and Reddit refresh limiters run before Firebase token verification, protecting both authentication and the downstream jobs.
 
 ## Firebase User Profile Cache
 
@@ -109,11 +122,14 @@ Example with the current `/api/v1/users/*` settings:
 
 ## Implementation Notes
 
-The limiter is implemented in:
+The limiter and its source-controlled policies are implemented in:
 
 ```txt
 src/api/middleware/rateLimit.js
+src/api/middleware/rateLimitConfig.js
 ```
+
+Rate-limit values are intentionally not loaded from `.env` files. Updating a policy therefore requires a reviewed code change and normal deployment.
 
 It is intentionally dependency-free and stores counters in process memory.
 
@@ -127,14 +143,7 @@ This is acceptable for the current DreamHost/PM2 deployment if there is only one
 
 ## Tuning Guidance
 
-Initial limit:
-
-```txt
-60 requests / minute / IP
-30 second base backoff
-120 second maximum single penalty
-20 minute maximum Retry-After
-```
+The checked-in policy table is the operational source of truth. All route-specific policies currently use a 30-second base backoff, a 120-second maximum single penalty, and a 20-minute maximum `Retry-After`. The baseline uses a shorter 10-second base backoff.
 
 If abuse occurs, lower public user endpoints to:
 

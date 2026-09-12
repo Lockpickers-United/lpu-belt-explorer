@@ -2,6 +2,7 @@ import express from 'express'
 import request from 'supertest'
 import {beforeEach, describe, expect, it, vi} from 'vitest'
 import {registerRoutes} from '../../routes.js'
+import {rateLimitPolicies} from '../../api/middleware/rateLimit.js'
 
 const verifyFirebaseIdToken = vi.hoisted(() => vi.fn())
 
@@ -28,6 +29,7 @@ describe('RAFL preview route authorization', () => {
         const response = await request(createApp(importRaflDataHandler)).get('/refresh-preview')
 
         expect(response.status).toBe(401)
+        expect(response.headers['x-ratelimit-limit']).toBe(String(rateLimitPolicies.importRaflData.max))
         expect(response.body).toEqual({code: 'unauthorized'})
         expect(verifyFirebaseIdToken).not.toHaveBeenCalled()
         expect(importRaflDataHandler).not.toHaveBeenCalled()

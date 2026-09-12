@@ -2,6 +2,7 @@ import express from 'express'
 import request from 'supertest'
 import {describe, expect, it, vi} from 'vitest'
 import {registerRoutes} from '../../routes.js'
+import {rateLimitPolicies} from '../../api/middleware/rateLimit.js'
 
 describe('email-form route injection', () => {
     it('uses the injected handler for POST /email-form', async () => {
@@ -12,6 +13,7 @@ describe('email-form route injection', () => {
         const response = await request(app).post('/email-form')
 
         expect(response.status).toBe(204)
+        expect(response.headers['x-ratelimit-limit']).toBe(String(rateLimitPolicies.emailForm.max))
         expect(emailFormHandler).toHaveBeenCalledOnce()
     })
 })

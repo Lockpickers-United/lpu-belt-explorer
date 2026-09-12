@@ -4,6 +4,7 @@ import request from 'supertest'
 import {beforeAll, describe, expect, it} from 'vitest'
 import {registerRoutes} from '../../routes.js'
 import normalizeRequestUrl from '../../util/normalizeRequestUrl.js'
+import {rateLimitPolicies} from '../middleware/rateLimit.js'
 
 function createApiTestApp() {
     const app = express()
@@ -34,6 +35,7 @@ describe('collection stats API', () => {
         const res = await request(app).get('/api/v1/stats/collections/locks')
 
         expect(res.status).toBe(200)
+        expect(res.headers['x-ratelimit-limit']).toBe(String(rateLimitPolicies.collectionStats.max))
         expect(res.headers['cache-control']).toBe('public, max-age=300')
         expect(res.body.metadata).toEqual(collectionStats.metadata)
         expect(res.body.data.locks).toHaveLength(collectionStats.data.locks.length)
@@ -83,6 +85,7 @@ describe('user API auth guard', () => {
         const res = await request(app).get('/api/v1/users/example-user/profile')
 
         expect(res.status).toBe(401)
+        expect(res.headers['x-ratelimit-limit']).toBe(String(rateLimitPolicies.userProfiles.max))
         expect(res.body.error.code).toBe('unauthorized')
     })
 })

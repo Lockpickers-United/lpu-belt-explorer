@@ -22,6 +22,7 @@ import {flickrInfoConfigSummary} from './projects/flickrGetInfo/flickrInfoConfig
 import {createFirebaseActivityRuntime} from './projects/logFirebaseActivity/firebaseActivityRuntime.js'
 import {firebaseActivityConfigSummary} from './projects/logFirebaseActivity/firebaseActivityConfig.js'
 import {getTrustProxyConfig} from './api/middleware/trustProxy.js'
+import {createBaselineRateLimit} from './api/middleware/rateLimit.js'
 
 const env = process.env.NODE_ENV || 'local'
 dotenv.config({path: [`.env.${env}`], quiet: true})
@@ -68,6 +69,7 @@ const corsOrigin = process.env.CORS_ORIGIN
     ? process.env.CORS_ORIGIN.split(',').map(s => s.trim()).filter(Boolean)
     : true
 app.use(cors({origin: corsOrigin, credentials: true}))
+app.use(createBaselineRateLimit())
 
 const apiPort = isDev ? 8081 : 8080
 const apiPrefix = isDev ? '' : ''

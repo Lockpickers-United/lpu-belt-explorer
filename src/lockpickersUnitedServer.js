@@ -8,6 +8,7 @@ import {requestIdHeader} from './logger/requestId.js'
 import {registerRoutes} from './routes.js'
 import normalizeRequestUrl from './util/normalizeRequestUrl.js'
 import {getTrustProxyConfig} from './api/middleware/trustProxy.js'
+import {createBaselineRateLimit} from './api/middleware/rateLimit.js'
 
 const env = process.env.NODE_ENV || 'development'
 dotenv.config({path: [`.env.${process.env.NODE_ENV}`]})
@@ -32,6 +33,7 @@ const corsOrigin = process.env.CORS_ORIGIN
     ? process.env.CORS_ORIGIN.split(',').map(s => s.trim()).filter(Boolean)
     : true
 app.use(cors({origin: corsOrigin, credentials: true}))
+app.use(createBaselineRateLimit())
 
 const envText = isDev ? ' (DEV)' : ''
 const apiPort = isDev ? 4000 : 9082

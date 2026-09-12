@@ -34,6 +34,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/LockStatsResponse'
+        '429':
+          $ref: '#/components/responses/Error'
         '500':
           $ref: '#/components/responses/Error'
   /stats/collections/locks/own:
@@ -56,6 +58,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/LockOwnStatsResponse'
+        '429':
+          $ref: '#/components/responses/Error'
         '500':
           $ref: '#/components/responses/Error'
   /stats/collections/locks/scorecard:
@@ -78,6 +82,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/LockScorecardStatsResponse'
+        '429':
+          $ref: '#/components/responses/Error'
         '500':
           $ref: '#/components/responses/Error'
   /users/{id}/summary:

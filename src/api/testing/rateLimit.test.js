@@ -1,7 +1,13 @@
 import express from 'express'
 import request from 'supertest'
 import {describe, expect, it, vi} from 'vitest'
-import {createRateLimit, userProfileRateLimitConfig} from '../middleware/rateLimit.js'
+import {
+    createBaselineRateLimit,
+    createRateLimit,
+    rateLimitPolicies,
+    skipBaselineRateLimit,
+    userProfileRateLimitConfig
+} from '../middleware/rateLimit.js'
 
 function createRateLimitTestApp({
     max = 2,
@@ -228,5 +234,42 @@ describe('createRateLimit', () => {
         expect(blocked.body.error.details.penaltyMs).toBe(30_000)
         expect(blocked.body.error.details.maxPenaltyMs).toBe(120_000)
         expect(blocked.body.error.details.maxRetryAfterMs).toBe(20 * 60_000)
+    })
+
+    it('keeps source-controlled route policies separate', () => {
+        const policies = Object.values(rateLimitPolicies)
+        const names = policies.map(policy => policy.name)
+
+        expect(new Set(names).size).toBe(policies.length)
+        expect(rateLimitPolicies.baseline.max).toBe(300)
+        expect(rateLimitPolicies.uploadContent.max).toBeLessThan(rateLimitPolicies.userProfiles.max)
+        expect(rateLimitPolicies.importRaflData.max).toBeLessThan(rateLimitPolicies.flickrInfo.max)
+    })
+
+    it('skips preflight requests and operational probes at the baseline layer', () => {
+        expect(skipBaselineRateLimit({method: 'OPTIONS', path: '/anything'})).toBe(true)
+        expect(skipBaselineRateLimit({method: 'GET', path: '/health'})).toBe(true)
+        expect(skipBaselineRateLimit({method: 'HEAD', path: '/services/ready'})).toBe(true)
+        expect(skipBaselineRateLimit({method: 'POST', path: '/health'})).toBe(false)
+        expect(skipBaselineRateLimit({method: 'GET', path: '/api/v1/users/example'})).toBe(false)
+    })
+
+    it('does not count skipped probes against the baseline limit', async () => {
+        const app = express()
+        app.use(createBaselineRateLimit({
+            max: 1,
+            name: 'test-baseline',
+            rateLimitLogger: {warn: () => {}}
+        }))
+        app.get('/health', (_req, res) => res.json({ok: true}))
+        app.get('/work', (_req, res) => res.json({ok: true}))
+        app.use((err, _req, res, _next) => {
+            res.status(err.status || 500).json({code: err.code})
+        })
+
+        await request(app).get('/health').expect(200)
+        await request(app).get('/health').expect(200)
+        await request(app).get('/work').expect(200)
+        await request(app).get('/work').expect(429)
     })
 })

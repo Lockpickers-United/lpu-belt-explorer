@@ -6,10 +6,14 @@ import {
     getWishlistLockCollectionStats
 } from '../services/collectionStatsService.js'
 import {logger} from '../../logger/logger.js'
+import {createRateLimit, rateLimitPolicies} from '../middleware/rateLimit.js'
 
 const log = logger.child({module: 'api.routes.stats.collections'})
 
 const router = Router()
+const collectionStatsRateLimit = createRateLimit(rateLimitPolicies.collectionStats)
+
+router.use(collectionStatsRateLimit)
 
 const publicSummaryCache = 'public, max-age=300'
 

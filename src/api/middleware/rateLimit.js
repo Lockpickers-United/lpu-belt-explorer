@@ -1,4 +1,8 @@
 import {logger} from '../../logger/logger.js'
+import {
+    rateLimitPolicies,
+    userProfileRateLimitConfig
+} from './rateLimitConfig.js'
 
 const defaultWindowMs = 60_000
 const defaultMax = 60
@@ -59,12 +63,15 @@ export function createRateLimit({
     name = 'rate-limit',
     rateLimitLogger = log,
     keyGenerator = getClientIp,
+    skip = () => false,
     now = () => Date.now()
 } = {}) {
     const hits = new Map()
     let nextCleanupAt = 0
 
     return function rateLimit(req, res, next) {
+        if (skip(req)) return next()
+
         const currentTime = now()
 
         if (currentTime >= nextCleanupAt) {
@@ -149,13 +156,30 @@ export function createRateLimit({
     }
 }
 
-export const userProfileRateLimitConfig = {
-    windowMs: 60_000,
-    max: 60,
-    penaltyMs: 30_000,
-    maxPenaltyMs: 120_000,
-    maxRetryAfterMs: 20 * 60_000,
-    name: 'api-users'
+const operationalProbePaths = new Set([
+    '/health',
+    '/ready',
+    '/api/health',
+    '/api/ready',
+    '/services/health',
+    '/services/ready',
+    '/servicesDev/health',
+    '/servicesDev/ready'
+])
+
+export function skipBaselineRateLimit(req) {
+    if (req.method === 'OPTIONS') return true
+    if (!['GET', 'HEAD'].includes(req.method)) return false
+    return operationalProbePaths.has(req.path)
 }
 
+export function createBaselineRateLimit(overrides = {}) {
+    return createRateLimit({
+        ...rateLimitPolicies.baseline,
+        skip: skipBaselineRateLimit,
+        ...overrides
+    })
+}
+
+export {rateLimitPolicies, userProfileRateLimitConfig}
 export const userProfileRateLimit = createRateLimit(userProfileRateLimitConfig)

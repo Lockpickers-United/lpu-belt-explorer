@@ -2,6 +2,7 @@ import express from 'express'
 import request from 'supertest'
 import {describe, expect, it, vi} from 'vitest'
 import {registerRoutes} from '../../routes.js'
+import {rateLimitPolicies} from '../../api/middleware/rateLimit.js'
 
 function createApp(getFlickrInfoHandler) {
     const app = express()
@@ -24,6 +25,7 @@ describe('Flickr-info route injection', () => {
             .get('/flickr-info?id=72177720322353676')
 
         expect(response.status).toBe(200)
+        expect(response.headers['x-ratelimit-limit']).toBe(String(rateLimitPolicies.flickrInfo.max))
         expect(response.body.title).toBe('Injected album')
         expect(getFlickrInfoHandler).toHaveBeenCalledOnce()
     })
