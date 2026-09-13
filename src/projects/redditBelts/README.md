@@ -44,11 +44,19 @@ The browser client already sends the current Firebase user's ID token through th
 
 ## Command-line use
 
-The standalone runner uses the same explicit configuration:
+The standalone runner loads `.env.<NODE_ENV>` from the repository root before validating the same explicit configuration used by the server. The path is resolved from the runner module, so it does not depend on cron's working directory. Imports remain side-effect free; environment loading occurs only during direct execution.
 
 ```bash
-node src/projects/redditBelts/runGetRedditBelts.js --check-config
-node src/projects/redditBelts/runGetRedditBelts.js
+NODE_ENV=production node /absolute/path/to/explore-lpubelts-com-node/src/projects/redditBelts/runGetRedditBelts.js --check-config
+NODE_ENV=production node /absolute/path/to/explore-lpubelts-com-node/src/projects/redditBelts/runGetRedditBelts.js
 ```
+
+A cron entry should use absolute executable, script, and log paths. For example:
+
+```cron
+15 * * * * NODE_ENV=production /absolute/path/to/node /absolute/path/to/explore-lpubelts-com-node/src/projects/redditBelts/runGetRedditBelts.js >> /absolute/path/to/logs/reddit-belts-cron.log 2>&1
+```
+
+Replace the example paths with the production paths. `NODE_ENV=production` selects `.env.production`; that file must contain the enabled Reddit configuration shown above, including `LPU_JOB_ENV=production` and `ALLOW_PRODUCTION_JOB=true`.
 
 `--check-config` does not load credentials, run Python, contact Reddit, or write files. Running the refresh accesses Reddit and may publish production data, so it remains approval-gated.

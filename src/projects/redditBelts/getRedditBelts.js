@@ -99,7 +99,8 @@ export async function runRedditBeltsRefresh({
     maxOutputBytes = 10 * 1024 * 1024,
     executeFile = execFileAsync,
     fileSystem = fs,
-    jobLogger = log
+    jobLogger = log,
+    logInfo = true,
 }) {
     if (!scriptPath || !path.isAbsolute(scriptPath)) {
         throw refreshError('reddit_belts_script_invalid', 'Reddit flair script path must be absolute')
@@ -111,7 +112,7 @@ export async function runRedditBeltsRefresh({
         throw refreshError('reddit_belts_output_invalid', 'Reddit belt output directory must be absolute')
     }
 
-    jobLogger.info('fetching Reddit flair data')
+    logInfo && jobLogger.info('fetching Reddit flair data')
     let stdout
     try {
         const result = await executeFile(
@@ -134,7 +135,7 @@ export async function runRedditBeltsRefresh({
     const {beltCounts, redditUserFlairs} = transformRedditFlairs(flairs)
     await fileSystem.mkdir(outputDir, {recursive: true})
     await publishRedditFiles({outputDir, beltCounts, redditUserFlairs, fileSystem})
-    jobLogger.info({flairCount: flairs.length}, 'Reddit flair data published')
+    logInfo && jobLogger.info({flairCount: flairs.length}, 'Reddit flair data published')
 
     return {beltCounts, flairCount: flairs.length}
 }
