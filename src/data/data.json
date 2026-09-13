@@ -18719,7 +18719,6 @@
         "model": "100A"
       }
     ],
-    "version": "6-pin version of the 90A PRO",
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
