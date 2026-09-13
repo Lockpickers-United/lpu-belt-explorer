@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 
 import dotenv from 'dotenv'
 
-dotenv.config({ path: '.env.keysNew' })
+dotenv.config({ path: '.env.keysNew', quiet: true })
 
 export default defineConfig({
   plugins: [react()],
@@ -11,7 +11,17 @@ export default defineConfig({
     environment: 'jsdom',
     setupFiles: './src/test/setupTests.js',
     globals: true,
-    exclude: ['tests/e2e/**', 'node_modules/**', 'dist/**', 'server/**'],
+    include: [
+      'tests/vitest/**/*.{test,spec}.{js,jsx}',
+      'src/**/*.{test,spec}.{js,jsx}'
+    ],
+    exclude: [
+      'tests/e2e/**',
+      '**/node_modules/**',
+      '**/dist/**',
+      'functions/**',
+      'server/**'
+    ],
     coverage: {
       reporter: ['text', 'lcov'],
       thresholds: { lines: 70, functions: 70, branches: 60, statements: 70 }

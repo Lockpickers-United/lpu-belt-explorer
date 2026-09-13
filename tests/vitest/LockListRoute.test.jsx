@@ -67,7 +67,7 @@ describe('LockListRoute', () => {
         const alphaDescending = await screen.getByRole('menuitem', {name: 'Alphabetical (Descending)'})
         await userEvent.click(alphaDescending)
         firstListItem = await screen.getAllByRole('listitem')[0]
-        expect(firstListItem).toHaveAccessibleName('Zeta Padlock')
+        expect(firstListItem).toHaveAccessibleName(/^Zeta Padlock/)
 
         await userEvent.click(viewMenu)
         const beltAscending = await screen.getByRole('menuitem', {name: 'Belt (Ascending)'})

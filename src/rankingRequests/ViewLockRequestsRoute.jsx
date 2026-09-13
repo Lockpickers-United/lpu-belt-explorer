@@ -8,7 +8,7 @@ import {DataProvider} from './LockRequestsDataProvider.jsx'
 import {lockRequestFilterFields} from '../data/filterFields'
 import AuthContext from '../app/AuthContext.jsx'
 import {collection, onSnapshot, query, where} from 'firebase/firestore'
-import {db, devFirestore} from '../auth/firebase'
+import {db} from '../auth/firebase'
 import postFirebaseActivity from './postFirebaseActivity'
 import ProfileLoader from '../auth/ProfileLoader.jsx'
 import ProfileContext from '../app/ProfileContext.jsx'
@@ -43,8 +43,7 @@ export default function ViewLockRequestsRoute() {
                         count: docsRead,
                         source: 'request-subscription',
                         id: '',
-                        displayName: profile?.displayName,
-                        prod: !devFirestore
+                        displayName: profile?.displayName
                     }]
 
                     postFirebaseActivity({activityData})
