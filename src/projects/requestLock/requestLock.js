@@ -15,6 +15,7 @@ import dayjs from 'dayjs'
 import createThumbnails from '../../util/createThumbnails.js'
 import {logger} from '../../logger/logger.js'
 import parseForm from '../../util/parseForm.js'
+import sendToDiscord from '../sendToDiscord/sendToDiscord.js'
 
 const log = logger.child({module: 'requestLock'})
 const {writeFile} = fs.promises
@@ -116,21 +117,22 @@ function slugify(str) {
 }
 
 export function createRequestLockHandlers({
-    db,
-    auth,
-    uploadDir,
-    publicImageBaseUrl,
-    runtimeEnvironment = 'local',
-    productionData = false,
-    activityLogger = async () => {},
-    emailSender,
-    emailRecipients,
-    formFactory = formidable,
-    parseFormData = parseForm,
-    thumbnailCreator = createThumbnails,
-    imageMetadataWriter = writeImageMetadata,
-    now = () => new Date()
-}) {
+                                              db,
+                                              auth,
+                                              uploadDir,
+                                              publicImageBaseUrl,
+                                              runtimeEnvironment = 'local',
+                                              productionData = false,
+                                              activityLogger = async () => {
+                                              },
+                                              emailSender,
+                                              emailRecipients,
+                                              formFactory = formidable,
+                                              parseFormData = parseForm,
+                                              thumbnailCreator = createThumbnails,
+                                              imageMetadataWriter = writeImageMetadata,
+                                              now = () => new Date()
+                                          }) {
     if (!db || !auth) throw new Error('Request-lock Firebase dependencies are required')
     if (!uploadDir || !path.isAbsolute(uploadDir)) {
         throw new Error('Request-lock uploadDir must be an absolute path')
@@ -376,6 +378,26 @@ export function createRequestLockHandlers({
             }])
         } catch (error) {
             return handleError(res, 'Failed to set ranking request', error, 500, cleanupDirs)
+        }
+
+        const discordMessage = `Lock Ranking Request submitted: **${lockName}**`
+        const discordFields = {...fields}
+        discordFields.displayName = `${fields.displayName} (${fields.userBelt} Belt)`
+        const keysToDelete = ['id', 'make', 'model', 'droppedFileNames', 'requestStatus', 'displayName', 'userBelt']
+        keysToDelete.forEach(key => delete discordFields[key])
+
+        try {
+            await sendToDiscord({
+                username: 'Locky Jr.',
+                avatar: undefined,
+                title: discordMessage,
+                message: discordMessage,
+                embedFields: discordFields,
+                image: entry.media[0].thumbnailUrl,
+                link: `https://lpubelts.com/#/rankingrequests/view?id=${entry.id}`
+            })
+        } catch (error) {
+            log.error({error}, 'Failed to send to Discord')
         }
 
         const html = `<strong>Lock addition request for ${sanitizeHTML(lockName)} by ${sanitizeHTML(requesterName)}</strong><br/><br/>`
