@@ -35,6 +35,7 @@ The sibling repository `../explore-lpubelts-com-node` owns server-side exports a
 - Run PR-equivalent checks with `npm run ci-pr` (lint, frontend tests, then the isolated test-mode build).
 - Run all end-to-end tests with `npm run e2e`, or a focused test with `npx playwright test tests/e2e/example.spec.js`.
 - Lint Functions with `npm --prefix functions run lint`.
+- Run the Firestore change-tracker integration suite with `npm run test:functions:integration`; it starts isolated Functions and Firestore emulators for the `demo-lpubelts` project.
 
 Prefer focused checks while developing, followed by the smallest broader check justified by the change. Do not run `npm run ci-build` merely as a validation shortcut: it invokes generators and exporters in addition to building.
 
@@ -145,6 +146,8 @@ Each index document is keyed by the changed source document ID and records `docI
 - `src/projects/collections/collectionsExport.js`
 - `src/projects/collections/awardsEvidenceExport.js`
 
+`tests/firebase/changeTrackers.integration.js` verifies create, update, and delete behavior for every mapping. It fails closed unless the Firestore host is loopback and the project ID is exactly `demo-lpubelts`.
+
 Do not execute those exporters as a routine test; they read Firestore and update export artifacts. Static syntax/lint checks and targeted tests are safer unless execution is explicitly requested.
 
 For real-time Firestore UI subscriptions that post usage activity, preserve the established meaning: the initial snapshot is a `READ`, and later snapshots caused by subscription changes are `REFRESH`. Emit one activity record per snapshot unless the surrounding feature specifies otherwise.
@@ -166,7 +169,7 @@ The import/export/migration npm scripts are not interchangeable with validation 
 - Add or update Playwright coverage for important user journeys that require browser routing or interaction.
 - Do not weaken assertions, disable failing tests, or turn unhandled requests into warnings to make a change pass.
 
-Frontend tests load the committed `.env.test`, which contains synthetic values only. The test bootstrap rejects deployable Firebase project IDs, non-loopback emulator hosts, live data/API URLs, and any Firebase API key other than the test sentinel. Vitest tests mock `DBContext`; Firebase emulator integration belongs in the dedicated Firebase suite planned for a later testing phase. MSW rejects unhandled frontend HTTP requests. Playwright builds in test mode and blocks all non-loopback HTTP requests.
+Frontend tests load the committed `.env.test`, which contains synthetic values only. The test bootstrap rejects deployable Firebase project IDs, non-loopback emulator hosts, live data/API URLs, and any Firebase API key other than the test sentinel. Vitest tests mock `DBContext`; use the dedicated Firebase emulator suite for change-tracker integration. MSW rejects unhandled frontend HTTP requests. Playwright builds in test mode and blocks all non-loopback HTTP requests.
 
 Install the pinned Playwright Chromium binary once with `npx playwright install chromium` before the first local browser run. Playwright always creates a fresh test-mode build and starts its own preview server; do not substitute an existing development or production server.
 
@@ -174,7 +177,7 @@ Minimum handoff checks by change type:
 
 - Small frontend edit: targeted ESLint and the closest focused Vitest test.
 - Shared context, routing, or data-flow edit: targeted tests plus `npm run test:run`; run `npm run build` when module/build behavior could be affected.
-- Functions edit: `npm --prefix functions run lint` and any relevant Functions tests.
+- Functions edit: `npm --prefix functions run lint` and any relevant Functions tests; run `npm run test:functions:integration` when changing the Firestore change trackers or their schema.
 - Broad or release-facing edit: `npm run ci-pr`, plus relevant Playwright tests.
 
 If a check cannot be run because it requires credentials, network access, a live service, or production mutation, say so explicitly in the handoff.

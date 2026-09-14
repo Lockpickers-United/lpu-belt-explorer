@@ -38,6 +38,7 @@
     "test:run": "vitest run",
     "test:ci": "vitest run",
     "test:coverage": "vitest run --coverage",
+    "test:functions:integration": "npx --yes firebase-tools@15.30.0 emulators:exec --only functions,firestore --project demo-lpubelts \"node tests/firebase/changeTrackers.integration.js\"",
     "test:ui": "vitest --ui",
     "e2e": "playwright test",
     "e2e:ui": "playwright test --ui",
@@ -104,8 +105,8 @@
     "@testing-library/user-event": "^14.5.2",
     "@types/react": "^18.2.21",
     "@vitejs/plugin-react": "^4.4.1",
-    "@vitest/coverage-v8": "4.1.8",
-    "@vitest/ui": "4.1.8",
+    "@vitest/coverage-v8": "4.1.11",
+    "@vitest/ui": "4.1.11",
     "@wdio/allure-reporter": "^9.20.0",
     "allure-playwright": "^3.6.0",
     "csv-parse": "^5.5.0",
@@ -122,7 +123,7 @@
     "rollup-plugin-visualizer": "^5.14.0",
     "uuid": "^14.0.1",
     "vite": "^6.4.1",
-    "vitest": "^4.1.8"
+    "vitest": "4.1.11"
   },
   "overrides": {
     "rolldown": "1.0.1"
