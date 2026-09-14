@@ -4,6 +4,7 @@ import MenuItem from '@mui/material/MenuItem'
 
 export default function SelectBox({form, name, optionsList, value, label=null, variant='outlined', size='small', width=350, changeHandler, multiple=false, defaultValue, placeholder='Please Choose'}) {
     const [open, setOpen] = useState(false)
+    const labelId = `${name}Label`
     const handleClose = useCallback(() => setOpen(false), [])
     const handleOpen = useCallback(() => setOpen(true), [])
     const handleChange = useCallback(event => {
@@ -13,10 +14,11 @@ export default function SelectBox({form, name, optionsList, value, label=null, v
 
     return (
         <FormControl id={`${name}FormControl`} size={size} color='info' variant={variant} style={{marginBottom: 0, width: width || 'auto' }}>
-            {label && <InputLabel style={{color: '#bbb'}}>{label}</InputLabel>}
+            {label && <InputLabel id={labelId} style={{color: '#bbb'}}>{label}</InputLabel>}
             <Select
                 id={`${name}Select`}
-                value={value || form[name] || defaultValue}
+                labelId={label ? labelId : undefined}
+                value={value || form[name] || defaultValue || (multiple ? [] : '')}
                 multiple={multiple}
                 name={name}
                 label={label}

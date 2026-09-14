@@ -22,6 +22,7 @@ function SearchBox({label, extraFilters = [], entryCount = 0, keepOpen}) {
     const textRef = useRef(text)
     const urlSearchRef = useRef(searchParams.get('search') || '')
     const pendingSearchValueRef = useRef()
+    const localEditRef = useRef(false)
     const {isMobile, width} = useWindowSize()
     const smallWidth = width <= 500
 
@@ -32,17 +33,19 @@ function SearchBox({label, extraFilters = [], entryCount = 0, keepOpen}) {
 
     const handleChange = useCallback(event => {
         const value = event.target.value.replaceAll('\t', ' ')
+        localEditRef.current = true
         textRef.current = value
         setText(value)
     }, [])
 
     const [debounceText] = useDebounceValue(text, 250)
-    const debounceTextRef = useRef(debounceText)
-    debounceTextRef.current = debounceText
 
     const queueSearchUpdate = useCallback(value => {
         const currentValue = searchParams.get('search') || ''
-        if (value === currentValue && pendingSearchValueRef.current === undefined) return
+        if (value === currentValue && pendingSearchValueRef.current === undefined) {
+            localEditRef.current = false
+            return
+        }
 
         pendingSearchValueRef.current = value
 
@@ -61,6 +64,7 @@ function SearchBox({label, extraFilters = [], entryCount = 0, keepOpen}) {
 
     const handleClear = useCallback(() => {
         window.scrollTo({top: 0})
+        localEditRef.current = true
         textRef.current = ''
         setText('')
         queueSearchUpdate('')
@@ -71,6 +75,7 @@ function SearchBox({label, extraFilters = [], entryCount = 0, keepOpen}) {
     useEffect(() => {
         if (debounceText === lastHandledDebounceRef.current) return
         lastHandledDebounceRef.current = debounceText
+        if (!localEditRef.current) return
         queueSearchUpdate(debounceText)
     }, [debounceText, queueSearchUpdate])
 
@@ -91,9 +96,10 @@ function SearchBox({label, extraFilters = [], entryCount = 0, keepOpen}) {
     const handleFocus = useCallback(() => setOpen(true), [])
     const syncTextFromUrl = useCallback(() => {
         if (pendingSearchValueRef.current !== undefined) return
-        if (textRef.current !== debounceTextRef.current) return
+        if (localEditRef.current) return
         if (urlSearchRef.current === textRef.current) return
 
+        localEditRef.current = false
         textRef.current = urlSearchRef.current
         setText(urlSearchRef.current)
     }, [])
@@ -116,6 +122,9 @@ function SearchBox({label, extraFilters = [], entryCount = 0, keepOpen}) {
         if (pendingSearchValueRef.current !== undefined) {
             if (newValue === pendingSearchValueRef.current) {
                 pendingSearchValueRef.current = undefined
+                if (textRef.current === newValue) {
+                    localEditRef.current = false
+                }
             }
             return
         }

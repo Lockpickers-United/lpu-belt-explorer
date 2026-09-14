@@ -7,6 +7,7 @@ export default defineConfig({
     environment: 'jsdom',
     setupFiles: './src/test/setupTests.js',
     globals: true,
+    clearMocks: true,
     include: [
       'tests/vitest/**/*.{test,spec}.{js,jsx}',
       'src/**/*.{test,spec}.{js,jsx}'

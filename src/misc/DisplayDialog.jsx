@@ -13,6 +13,11 @@ export default function DisplayDialog({dialogContent, open, handleClose, width =
         e.preventDefault()
     }
 
+    const closeFromButton = (event) => {
+        event.stopPropagation()
+        handleClose()
+    }
+
     return (
         <Dialog open={open} onClose={handleClose}
                 sx={{
@@ -39,7 +44,8 @@ export default function DisplayDialog({dialogContent, open, handleClose, width =
                             marginRight: -10
                         }}>
                             <IconButton style={{padding: 0, color: '#eee', backgroundColor: '#333'}}
-                                        onClick={handleClose}>
+                                        aria-label='Close dialog'
+                                        onClick={closeFromButton}>
                                 <CancelIcon/>
                             </IconButton>
                         </div>

@@ -1,7 +1,7 @@
 import React, {useCallback, useMemo} from 'react'
 import {act, fireEvent, render, screen} from '@testing-library/react'
 import {afterEach, beforeEach, describe, expect, it, vi} from 'vitest'
-import {MemoryRouter, useLocation, useSearchParams} from 'react-router-dom'
+import {MemoryRouter, useLocation, useNavigate, useSearchParams} from 'react-router-dom'
 import FilterContext, {FilterProvider} from '../../src/context/FilterContext.jsx'
 import SearchBox from '../../src/nav/SearchBox.jsx'
 
@@ -53,6 +53,16 @@ function ExternalSearchButton() {
     return <button onClick={() => setSearchParams({search: 'external'})}>External search</button>
 }
 
+function HistoryButtons() {
+    const navigate = useNavigate()
+    return (
+        <React.Fragment>
+            <button onClick={() => navigate(-1)}>Back</button>
+            <button onClick={() => navigate(1)}>Forward</button>
+        </React.Fragment>
+    )
+}
+
 describe('SearchBox', () => {
     beforeEach(() => {
         vi.useFakeTimers()
@@ -66,7 +76,7 @@ describe('SearchBox', () => {
 
     it('does not replace newer input with a delayed URL update', async () => {
         render(
-            <MemoryRouter>
+            <MemoryRouter future={{v7_startTransition: true, v7_relativeSplatPath: true}}>
                 <DelayedFilterProvider>
                     <SearchBox label='Locks'/>
                     <LocationSearch/>
@@ -93,7 +103,7 @@ describe('SearchBox', () => {
 
     it('still accepts search text from external navigation', async () => {
         render(
-            <MemoryRouter>
+            <MemoryRouter future={{v7_startTransition: true, v7_relativeSplatPath: true}}>
                 <FilterProvider>
                     <SearchBox label='Locks'/>
                     <ExternalSearchButton/>
@@ -108,7 +118,7 @@ describe('SearchBox', () => {
 
     it('keeps a clear action when an older URL update is pending', async () => {
         render(
-            <MemoryRouter>
+            <MemoryRouter future={{v7_startTransition: true, v7_relativeSplatPath: true}}>
                 <DelayedFilterProvider>
                     <SearchBox label='Locks'/>
                     <LocationSearch/>
@@ -125,5 +135,56 @@ describe('SearchBox', () => {
 
         expect(input).toHaveValue('')
         expect(screen.getByTestId('location-search')).toBeEmptyDOMElement()
+    })
+
+    it('synchronizes search text during browser back and forward navigation', async () => {
+        render(
+            <MemoryRouter
+                initialEntries={['/?search=first']}
+                future={{v7_startTransition: true, v7_relativeSplatPath: true}}
+            >
+                <FilterProvider>
+                    <SearchBox label='Locks'/>
+                    <ExternalSearchButton/>
+                    <HistoryButtons/>
+                </FilterProvider>
+            </MemoryRouter>
+        )
+
+        const input = screen.getByRole('textbox')
+        expect(input).toHaveValue('first')
+
+        fireEvent.click(screen.getByRole('button', {name: 'External search'}))
+        expect(input).toHaveValue('external')
+
+        await act(async () => {
+            fireEvent.click(screen.getByRole('button', {name: 'Back'}))
+            await Promise.resolve()
+        })
+        expect(input).toHaveValue('first')
+
+        await act(async () => {
+            fireEvent.click(screen.getByRole('button', {name: 'Forward'}))
+            await Promise.resolve()
+        })
+        expect(input).toHaveValue('external')
+    })
+
+    it('cancels pending debounce work when unmounted', async () => {
+        const consoleError = vi.spyOn(console, 'error').mockImplementation(() => {})
+        const {unmount} = render(
+            <MemoryRouter future={{v7_startTransition: true, v7_relativeSplatPath: true}}>
+                <FilterProvider>
+                    <SearchBox label='Locks'/>
+                </FilterProvider>
+            </MemoryRouter>
+        )
+
+        fireEvent.change(screen.getByRole('textbox'), {target: {value: 'pending'}})
+        unmount()
+        await act(async () => vi.advanceTimersByTime(2500))
+
+        expect(consoleError).not.toHaveBeenCalled()
+        consoleError.mockRestore()
     })
 })

@@ -5,6 +5,15 @@ import { server } from './testServer'
 
 assertSafeTestEnvironment(import.meta.env)
 
+// jsdom intentionally leaves scrolling unimplemented. Components schedule
+// scrolls after navigation and expansion, so provide the browser API without
+// leaking delayed console errors into later tests.
+Object.defineProperty(window, 'scrollTo', {
+  configurable: true,
+  value: vi.fn(),
+  writable: true
+})
+
 // Mock AuthContext to avoid async state updates from Firebase during tests
 vi.mock('../app/AuthContext.jsx', () => {
   const React = require('react')

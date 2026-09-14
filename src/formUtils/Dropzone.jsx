@@ -130,7 +130,9 @@ export default function Dropzone({
 
                     const limited = deduped.slice(0, maxFiles)
                     handleDroppedFiles(limited, zoneId)
-                    setErrorMessage('')
+                    if (acceptedFiles.length > 0) {
+                        setErrorMessage('')
+                    }
                 } catch (err) {
                     console.error('onDrop processing error', err)
                     setErrorMessage('An error occurred while processing images.')

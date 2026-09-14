@@ -425,6 +425,12 @@ export function DBProvider({children}) {
 
     // System Messages Subscription
     useEffect(() => {
+        if (import.meta.env.MODE === 'test'
+            && import.meta.env.VITE_DISABLE_FIRESTORE_SUBSCRIPTIONS === 'true') {
+            setSystemMessages([])
+            return
+        }
+
         const q = query(collection(db, 'system-messages'), where('status', '==', 'active'))
         return onSnapshot(q, querySnapshot => {
             const messages = querySnapshot.docs.map(doc => {

@@ -17,7 +17,7 @@ export default defineConfig({
         serviceWorkers: 'block'
     },
     webServer: {
-        command: 'npm run build:test && npm run preview -- --host 127.0.0.1 --port 5173 --strictPort',
+        command: 'VITE_DISABLE_FIRESTORE_SUBSCRIPTIONS=true npm run build:test && npm run preview -- --host 127.0.0.1 --port 5173 --strictPort',
         url: 'http://127.0.0.1:5173',
         reuseExistingServer: false,
         timeout: 120_000

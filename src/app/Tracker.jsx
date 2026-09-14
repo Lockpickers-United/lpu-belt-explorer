@@ -6,7 +6,7 @@ function Tracker({feature, ...extraParams}) {
     const {adminEnabled} = useContext(AppContext) //eslint-disable-line
 
     // disable for rafl testing/reporting
-    if (import.meta.env.DEV || adminEnabled) return null
+    if (import.meta.env.DEV || import.meta.env.MODE === 'test' || adminEnabled) return null
 
     const randomStuff = (Math.random()).toString(36).substring(2, 10)
     const file = files[feature] || 'lpu.gif'
