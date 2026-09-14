@@ -153,6 +153,19 @@ export async function firebaseGetDocumentByPathTest(
     return response.data
 }
 
+export async function firebaseGetDocumentByPathNoAuth(
+    documentPath = defaultTestDocumentPath,
+) {
+    const url = buildFirestoreUrl(documentPath)
+    console.log('url', url)
+
+    const response = await axios.get(url)
+
+    jsonIt(response.data)
+
+    return response.data
+}
+
 export async function firebasePostBatchGetTest(
     documentPaths = defaultBatchDocumentPaths,
     auth
@@ -192,8 +205,12 @@ export async function firebaseAnonSignupTest() {
 
 export default async function runFirebaseApiAuthTest() {
 
-    await firebaseAnonSignupTest()
 
+
+    await firebaseGetDocumentByPathNoAuth(defaultTestDocumentPath)
+
+
+    //await firebaseAnonSignupTest()
     //const auth = await signInWithFirebaseIdpRest()
     //await firebaseGetDocumentByPathTest(defaultTestDocumentPath, auth)
     //await firebasePostBatchGetTest(defaultBatchDocumentPaths, auth)

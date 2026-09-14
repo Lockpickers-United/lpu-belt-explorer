@@ -71,7 +71,7 @@ const corsOrigin = process.env.CORS_ORIGIN
 app.use(cors({origin: corsOrigin, credentials: true}))
 app.use(createBaselineRateLimit())
 
-const apiPort = isDev ? 8081 : 8080
+const apiPort = process.env.API_PORT
 const apiPrefix = isDev ? '' : ''
 
 // need to test for local or something if you want to run locally at '/api'

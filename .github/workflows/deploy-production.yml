@@ -1,0 +1,253 @@
+name: Deploy production
+
+on:
+  workflow_dispatch:
+    inputs:
+      confirmation:
+        description: Confirm the production deployment
+        required: true
+        type: choice
+        options:
+          - deploy-production
+
+permissions:
+  contents: read
+
+concurrency:
+  group: production-deploy
+  cancel-in-progress: false
+
+jobs:
+  verify:
+    name: Test deployment commit
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Require the main branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ "$GITHUB_REF" != "refs/heads/main" ]]; then
+            echo "Production deployments must run from main." >&2
+            exit 1
+          fi
+
+      - name: Check out source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 22
+          package-manager-cache: false
+
+      - name: Install dependencies
+        shell: bash
+        run: |
+          set -euo pipefail
+          corepack enable
+          yarn install --immutable
+
+      - name: Run tests
+        run: yarn test --run
+
+      - name: Run lint
+        run: yarn lint
+
+  deploy:
+    name: Upload and activate release
+    needs: verify
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    environment:
+      name: production
+      url: ${{ vars.HEALTHCHECK_URL }}
+    env:
+      SFTP_HOST: ${{ vars.SFTP_HOST }}
+      SFTP_PORT: ${{ vars.SFTP_PORT }}
+      SFTP_USER: ${{ vars.SFTP_USER }}
+      DEPLOY_ROOT: ${{ vars.DEPLOY_ROOT }}
+      REMOTE_NODE_BIN: ${{ vars.REMOTE_NODE_BIN }}
+      PM2_APP_NAME: ${{ vars.PM2_APP_NAME }}
+      HEALTHCHECK_URL: ${{ vars.HEALTHCHECK_URL }}
+      SFTP_PRIVATE_KEY: ${{ secrets.SFTP_PRIVATE_KEY }}
+      SFTP_KNOWN_HOSTS: ${{ secrets.SFTP_KNOWN_HOSTS }}
+      RELEASE_ID: ${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}
+    steps:
+      - name: Check out verified source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Validate deployment configuration
+        shell: bash
+        run: |
+          set -euo pipefail
+          required=(
+            SFTP_HOST SFTP_PORT SFTP_USER DEPLOY_ROOT REMOTE_NODE_BIN
+            PM2_APP_NAME HEALTHCHECK_URL SFTP_PRIVATE_KEY SFTP_KNOWN_HOSTS
+          )
+          for variable in "${required[@]}"; do
+            if [[ -z "${!variable:-}" ]]; then
+              echo "Missing GitHub production environment value: $variable" >&2
+              exit 1
+            fi
+          done
+
+          [[ "$SFTP_HOST" =~ ^[a-zA-Z0-9._-]+$ ]] || exit 1
+          [[ "$SFTP_PORT" =~ ^[0-9]+$ ]] || exit 1
+          [[ "$SFTP_USER" =~ ^[a-zA-Z0-9._-]+$ ]] || exit 1
+          [[ "$PM2_APP_NAME" =~ ^[a-zA-Z0-9._-]+$ ]] || exit 1
+          [[ "$DEPLOY_ROOT" =~ ^/[a-zA-Z0-9._/-]+$ ]] || exit 1
+          [[ "$REMOTE_NODE_BIN" =~ ^/[a-zA-Z0-9._/-]+$ ]] || exit 1
+          [[ "$DEPLOY_ROOT" != "/" && "$DEPLOY_ROOT" != *".."* ]] || exit 1
+          [[ "$REMOTE_NODE_BIN" != "/" && "$REMOTE_NODE_BIN" != *".."* ]] || exit 1
+          [[ "$HEALTHCHECK_URL" =~ ^https://[a-zA-Z0-9._:-]+/[a-zA-Z0-9._/-]*$ ]] || exit 1
+
+      - name: Configure SSH host verification
+        shell: bash
+        run: |
+          set -euo pipefail
+          umask 077
+          install -d "$RUNNER_TEMP/deploy-ssh"
+          printf '%s\n' "$SFTP_PRIVATE_KEY" > "$RUNNER_TEMP/deploy-ssh/private_key"
+          printf '%s\n' "$SFTP_KNOWN_HOSTS" > "$RUNNER_TEMP/deploy-ssh/known_hosts"
+
+      - name: Package tracked files
+        shell: bash
+        run: |
+          set -euo pipefail
+          archive="$RUNNER_TEMP/$RELEASE_ID.tar.gz"
+          git archive --format=tar.gz --output="$archive" "$GITHUB_SHA"
+          sha256sum "$archive" | awk '{print $1}' > "$archive.sha256"
+
+      - name: Prepare remote upload directory
+        shell: bash
+        run: |
+          set -euo pipefail
+          ssh_options=(
+            -i "$RUNNER_TEMP/deploy-ssh/private_key"
+            -p "$SFTP_PORT"
+            -o BatchMode=yes
+            -o IdentitiesOnly=yes
+            -o StrictHostKeyChecking=yes
+            -o "UserKnownHostsFile=$RUNNER_TEMP/deploy-ssh/known_hosts"
+          )
+          ssh "${ssh_options[@]}" "$SFTP_USER@$SFTP_HOST" \
+            "mkdir -p '$DEPLOY_ROOT/incoming' '$DEPLOY_ROOT/releases'"
+
+      - name: Upload release over SFTP
+        shell: bash
+        run: |
+          set -euo pipefail
+          archive="$RUNNER_TEMP/$RELEASE_ID.tar.gz"
+          remote_archive="$DEPLOY_ROOT/incoming/$RELEASE_ID.tar.gz"
+          batch_file="$RUNNER_TEMP/sftp-batch"
+          printf 'put "%s" "%s"\n' "$archive" "$remote_archive" > "$batch_file"
+          printf 'put "%s" "%s"\n' "$archive.sha256" "$remote_archive.sha256" >> "$batch_file"
+
+          sftp \
+            -b "$batch_file" \
+            -i "$RUNNER_TEMP/deploy-ssh/private_key" \
+            -P "$SFTP_PORT" \
+            -o BatchMode=yes \
+            -o IdentitiesOnly=yes \
+            -o StrictHostKeyChecking=yes \
+            -o "UserKnownHostsFile=$RUNNER_TEMP/deploy-ssh/known_hosts" \
+            "$SFTP_USER@$SFTP_HOST"
+
+      - name: Activate release and reload PM2
+        shell: bash
+        run: |
+          set -euo pipefail
+          ssh_options=(
+            -i "$RUNNER_TEMP/deploy-ssh/private_key"
+            -p "$SFTP_PORT"
+            -o BatchMode=yes
+            -o IdentitiesOnly=yes
+            -o StrictHostKeyChecking=yes
+            -o "UserKnownHostsFile=$RUNNER_TEMP/deploy-ssh/known_hosts"
+          )
+
+          ssh "${ssh_options[@]}" "$SFTP_USER@$SFTP_HOST" \
+            bash -s -- \
+            "$DEPLOY_ROOT" "$RELEASE_ID" "$REMOTE_NODE_BIN" \
+            "$PM2_APP_NAME" "$HEALTHCHECK_URL" <<'REMOTE_SCRIPT'
+          set -euo pipefail
+
+          deploy_root=$1
+          release_id=$2
+          node_bin=$3
+          pm2_app_name=$4
+          healthcheck_url=$5
+
+          archive="$deploy_root/incoming/$release_id.tar.gz"
+          checksum="$archive.sha256"
+          release_dir="$deploy_root/releases/$release_id"
+          shared_env="$deploy_root/shared/.env.production"
+          current_link="$deploy_root/current"
+
+          [[ "$release_id" =~ ^[0-9a-f]{40}-[0-9]+-[0-9]+$ ]]
+          [[ -f "$archive" && -f "$checksum" ]]
+          [[ -f "$shared_env" ]]
+          [[ -L "$current_link" ]]
+          [[ ! -e "$release_dir" ]]
+
+          expected_checksum=$(tr -d '[:space:]' < "$checksum")
+          actual_checksum=$(sha256sum "$archive" | awk '{print $1}')
+          [[ "$actual_checksum" == "$expected_checksum" ]]
+
+          mkdir "$release_dir"
+          tar -xzf "$archive" -C "$release_dir"
+          ln -s "$shared_env" "$release_dir/.env.production"
+
+          export PATH="$node_bin:$PATH"
+          command -v node >/dev/null
+          command -v corepack >/dev/null
+          command -v pm2 >/dev/null
+          command -v curl >/dev/null
+          pm2 describe "$pm2_app_name" >/dev/null
+
+          cd "$release_dir"
+          corepack yarn install --immutable
+          node --check src/exploreLPUbeltsServer.js
+
+          previous_release=$(readlink "$current_link")
+
+          switch_current() {
+            target=$1
+            next_link="$deploy_root/.current-$release_id-next"
+            ln -s "$target" "$next_link"
+            mv -Tf "$next_link" "$current_link"
+          }
+
+          rollback() {
+            echo "Deployment failed; restoring $previous_release" >&2
+            switch_current "$previous_release"
+            pm2 reload "$pm2_app_name" || true
+          }
+
+          switch_current "$release_dir"
+          if ! pm2 reload "$pm2_app_name"; then
+            rollback
+            exit 1
+          fi
+
+          if ! curl \
+            --fail \
+            --silent \
+            --show-error \
+            --max-time 10 \
+            --retry 5 \
+            --retry-all-errors \
+            --retry-delay 2 \
+            "$healthcheck_url" >/dev/null; then
+            rollback
+            exit 1
+          fi
+
+          rm -f "$archive" "$checksum"
+          echo "Activated release $release_id"
+          REMOTE_SCRIPT
