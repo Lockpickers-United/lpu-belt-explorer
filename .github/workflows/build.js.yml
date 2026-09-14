@@ -10,6 +10,7 @@ on:
       - 'index.html'
       - 'package.json'
       - 'package-lock.json'
+      - '.nvmrc'
       - '.github/workflows/build.js.yml'
   workflow_run:
     workflows: [Import]
@@ -32,7 +33,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v7
         with:
-          node-version: 22
+          node-version-file: '.nvmrc'
   
       - name: Install dependencies
         run: npm ci

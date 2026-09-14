@@ -48,7 +48,7 @@
     "allure": "allure generate allure-results -o allure-report --clean; allure open allure-report"
   },
   "engines": {
-    "node": "22"
+    "node": ">=24.11.0 <25"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",

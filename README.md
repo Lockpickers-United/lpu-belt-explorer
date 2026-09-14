@@ -26,7 +26,7 @@ An interactive web app for exploring the Lockpickers United belt ranking system.
 
 # Getting Started (Local Setup)
 
-* Install [node](https://nodejs.org/en) - v22 is needed
+* Install [Node.js](https://nodejs.org/en) 24 LTS. The tested release is recorded in `.nvmrc`; with nvm, run `nvm install` and `nvm use`.
 * Clone [repo](https://github.com/Lockpickers-United/lpu-belt-explorer)
 
 

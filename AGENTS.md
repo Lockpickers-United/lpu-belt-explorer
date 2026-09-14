@@ -22,7 +22,7 @@ The sibling repository `../explore-lpubelts-com-node` owns server-side exports a
 
 ## Toolchain and commands
 
-- Use Node 22 (`.nvmrc` and both `package.json` files require it).
+- Use the Node 24 LTS release pinned in `.nvmrc`. The root `package.json` accepts supported Node 24 releases, while `functions/package.json` selects Firebase's Node 24 runtime.
 - Use npm. CI installs with `npm ci`, and `package-lock.json` is the dependency lockfile.
 - Start the app with `npm run dev`; Vite normally serves on port 3000.
 - Run the full frontend lint with `npm run lint`.
