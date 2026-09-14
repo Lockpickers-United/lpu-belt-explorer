@@ -8,15 +8,15 @@ import SearchBox from '../../src/nav/SearchBox.jsx'
 function DelayedFilterProvider({children, delay = 100}) {
     const [searchParams, setSearchParams] = useSearchParams()
 
-    const updateSearchParams = useCallback((update, navigationOptions) => {
+    const updateSearchParams = useCallback(update => {
         const nextSearchParams = new URLSearchParams(searchParams)
         update(nextSearchParams)
         setTimeout(() => {
-            setSearchParams(nextSearchParams, {replace: true, ...navigationOptions})
+            setSearchParams(nextSearchParams, {replace: true})
         }, delay)
     }, [delay, searchParams, setSearchParams])
 
-    const addFilters = useCallback((keyValues, replace, navigationOptions) => {
+    const addFilters = useCallback((keyValues, replace) => {
         updateSearchParams(nextSearchParams => {
             keyValues.forEach(({key, value}) => {
                 if (!value) {
@@ -27,11 +27,11 @@ function DelayedFilterProvider({children, delay = 100}) {
                     nextSearchParams.append(key, value)
                 }
             })
-        }, navigationOptions)
+        })
     }, [updateSearchParams])
 
-    const removeFilter = useCallback((key, _value, navigationOptions) => {
-        updateSearchParams(nextSearchParams => nextSearchParams.delete(key), navigationOptions)
+    const removeFilter = useCallback((key) => {
+        updateSearchParams(nextSearchParams => nextSearchParams.delete(key))
     }, [updateSearchParams])
 
     const value = useMemo(() => ({
@@ -75,6 +75,7 @@ describe('SearchBox', () => {
         )
 
         const input = screen.getByRole('textbox')
+        fireEvent.focus(input)
         fireEvent.change(input, {target: {value: 'Sch'}})
         await act(async () => vi.advanceTimersByTime(250))
 

@@ -1,5 +1,5 @@
 import Badge from '@mui/material/Badge'
-import React, {useCallback, useContext, useEffect, useId, useRef, useState} from 'react'
+import React, {useCallback, useContext, useEffect, useRef, useState} from 'react'
 import Backdrop from '@mui/material/Backdrop'
 import InputAdornment from '@mui/material/InputAdornment'
 import TextField from '@mui/material/TextField'
@@ -14,17 +14,14 @@ import useWindowSize from '../util/useWindowSize'
 import {useHotkeys} from 'react-hotkeys-hook'
 import Tracker from '../app/Tracker'
 
-const searchUpdateStateKey = '__searchBoxUpdateId'
-
 function SearchBox({label, extraFilters = [], entryCount = 0, keepOpen}) {
     const [searchParams] = useSearchParams()
     const location = useLocation()
     const {addFilters, removeFilter, isFiltered} = useContext(FilterContext)
     const [text, setText] = useState(searchParams.get('search') || '')
     const textRef = useRef(text)
-    const pendingSearchUpdatesRef = useRef(new Set())
-    const searchBoxInstanceId = useId()
-    const searchUpdateSequenceRef = useRef(0)
+    const urlSearchRef = useRef(searchParams.get('search') || '')
+    const pendingSearchValueRef = useRef()
     const {isMobile, width} = useWindowSize()
     const smallWidth = width <= 500
 
@@ -39,19 +36,15 @@ function SearchBox({label, extraFilters = [], entryCount = 0, keepOpen}) {
         setText(value)
     }, [])
 
+    const [debounceText] = useDebounceValue(text, 250)
+    const debounceTextRef = useRef(debounceText)
+    debounceTextRef.current = debounceText
+
     const queueSearchUpdate = useCallback(value => {
         const currentValue = searchParams.get('search') || ''
-        if (value === currentValue && pendingSearchUpdatesRef.current.size === 0) return
+        if (value === currentValue && pendingSearchValueRef.current === undefined) return
 
-        const updateId = `${searchBoxInstanceId}-${++searchUpdateSequenceRef.current}`
-        pendingSearchUpdatesRef.current.add(updateId)
-        const currentState = location.state && typeof location.state === 'object' ? location.state : {}
-        const navigationOptions = {
-            state: {
-                ...currentState,
-                [searchUpdateStateKey]: updateId
-            }
-        }
+        pendingSearchValueRef.current = value
 
         if (value) {
             window.scrollTo({top: 0})
@@ -60,11 +53,11 @@ function SearchBox({label, extraFilters = [], entryCount = 0, keepOpen}) {
                 {key: 'id', value: undefined},
                 {key: 'name', value: undefined},
                 ...extraFilters
-            ], true, navigationOptions)
+            ], true)
         } else {
-            removeFilter('search', '', navigationOptions)
+            removeFilter('search', '')
         }
-    }, [addFilters, extraFilters, location.state, removeFilter, searchBoxInstanceId, searchParams])
+    }, [addFilters, extraFilters, removeFilter, searchParams])
 
     const handleClear = useCallback(() => {
         window.scrollTo({top: 0})
@@ -74,7 +67,6 @@ function SearchBox({label, extraFilters = [], entryCount = 0, keepOpen}) {
         inputEl.current.focus()
     }, [queueSearchUpdate])
 
-    const [debounceText] = useDebounceValue(text, 250)
     const lastHandledDebounceRef = useRef(debounceText)
     useEffect(() => {
         if (debounceText === lastHandledDebounceRef.current) return
@@ -96,8 +88,19 @@ function SearchBox({label, extraFilters = [], entryCount = 0, keepOpen}) {
     }, [debounceTrack])
 
     const [open, setOpen] = useState(false)
-    const handleBlur = useCallback(() => setTimeout(() => setOpen(false), 0), [])
     const handleFocus = useCallback(() => setOpen(true), [])
+    const syncTextFromUrl = useCallback(() => {
+        if (pendingSearchValueRef.current !== undefined) return
+        if (textRef.current !== debounceTextRef.current) return
+        if (urlSearchRef.current === textRef.current) return
+
+        textRef.current = urlSearchRef.current
+        setText(urlSearchRef.current)
+    }, [])
+    const handleBlur = useCallback(() => setTimeout(() => {
+        setOpen(false)
+        syncTextFromUrl()
+    }, 0), [syncTextFromUrl])
     const handleClick = useCallback(() => {
         setOpen(true)
         setTimeout(() => {
@@ -107,19 +110,19 @@ function SearchBox({label, extraFilters = [], entryCount = 0, keepOpen}) {
     }, [])
 
     useEffect(() => {
-        const searchUpdateId = location.state?.[searchUpdateStateKey]
-        if (pendingSearchUpdatesRef.current.has(searchUpdateId)) {
-            pendingSearchUpdatesRef.current.delete(searchUpdateId)
+        const newValue = searchParams.get('search') || ''
+        urlSearchRef.current = newValue
+
+        if (pendingSearchValueRef.current !== undefined) {
+            if (newValue === pendingSearchValueRef.current) {
+                pendingSearchValueRef.current = undefined
+            }
             return
         }
 
-        pendingSearchUpdatesRef.current.clear()
-        const newValue = searchParams.get('search') || ''
-        if (newValue !== textRef.current) {
-            textRef.current = newValue
-            setText(newValue)
-        }
-    }, [location.state, searchParams])
+        if (document.activeElement === inputEl.current) return
+        syncTextFromUrl()
+    }, [location.key, searchParams, syncTextFromUrl])
 
     const endAdornment = text ? (
         <InputAdornment position='end'>
