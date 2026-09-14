@@ -1,0 +1,1 @@
+import{j as e,R as t,ab as r,k as s}from"./index-DYXAGpGP.js";import{P as o}from"./ProfileContext-C2gcvVIx.js";function n(){return e.jsxs(t.Fragment,{children:[e.jsx(o,{children:e.jsx(r,{})}),e.jsx(s,{})]})}export{n as default};

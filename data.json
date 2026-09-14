@@ -11,9 +11,9 @@
     "lockingMechanisms": [
       "Various"
     ],
-    "popularityIndex": 1454,
+    "popularityIndex": 1455,
     "scorecardCount": 106,
-    "views": 1454,
+    "views": 1455,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -146,9 +146,9 @@
     "lockingMechanisms": [
       "Various"
     ],
-    "popularityIndex": 542,
+    "popularityIndex": 543,
     "scorecardCount": 124,
-    "views": 542,
+    "views": 543,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -483,9 +483,9 @@
       "Unguttable"
     ],
     "modelNum": "1",
-    "popularityIndex": 573,
+    "popularityIndex": 574,
     "scorecardCount": 70,
-    "views": 573,
+    "views": 574,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -619,9 +619,9 @@
       "Unguttable"
     ],
     "modelNum": "3",
-    "popularityIndex": 1491,
+    "popularityIndex": 1492,
     "scorecardCount": 169,
-    "views": 1491,
+    "views": 1492,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -1261,9 +1261,9 @@
       "Unguttable"
     ],
     "modelNum": "55.3",
-    "popularityIndex": 395,
+    "popularityIndex": 396,
     "scorecardCount": 53,
-    "views": 395,
+    "views": 396,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -2721,9 +2721,9 @@
     "features": [
       "Unguttable"
     ],
-    "popularityIndex": 38,
+    "popularityIndex": 39,
     "scorecardCount": 9,
-    "views": 38,
+    "views": 39,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -4203,9 +4203,9 @@
       "Unguttable"
     ],
     "modelNum": "140",
-    "popularityIndex": 1864,
+    "popularityIndex": 1865,
     "scorecardCount": 249,
-    "views": 1864,
+    "views": 1865,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -5511,9 +5511,9 @@
       "Unguttable"
     ],
     "modelNum": "55.4",
-    "popularityIndex": 1065,
+    "popularityIndex": 1066,
     "scorecardCount": 148,
-    "views": 1065,
+    "views": 1066,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -8445,9 +8445,9 @@
       "Latest Changelog"
     ],
     "modelNum": "150",
-    "popularityIndex": 684,
+    "popularityIndex": 685,
     "scorecardCount": 89,
-    "views": 684,
+    "views": 685,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -10297,9 +10297,9 @@
       "Picking Risk"
     ],
     "notes": "Due to unbalanced pin stacks, drivers in max lift chambers will rest below shear. This risks spring damage if the driver is not picked.",
-    "popularityIndex": 1038,
-    "scorecardCount": 146,
-    "views": 1038,
+    "popularityIndex": 1039,
+    "scorecardCount": 147,
+    "views": 1039,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -11666,9 +11666,9 @@
       "Pin-tumbler"
     ],
     "notes": "5-pin version requires Pfaffenhain barrel pin, otherwise orange",
-    "popularityIndex": 4,
+    "popularityIndex": 5,
     "scorecardCount": 1,
-    "views": 4,
+    "views": 5,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -12199,9 +12199,9 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "popularityIndex": 1425,
+    "popularityIndex": 1427,
     "scorecardCount": 276,
-    "views": 1425,
+    "views": 1427,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -21297,9 +21297,9 @@
     "features": [
       "Unguttable"
     ],
-    "popularityIndex": 242,
-    "scorecardCount": 41,
-    "views": 242,
+    "popularityIndex": 243,
+    "scorecardCount": 42,
+    "views": 243,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -22747,9 +22747,9 @@
     "features": [
       "Tapered drivers"
     ],
-    "popularityIndex": 44,
+    "popularityIndex": 43,
     "scorecardCount": 14,
-    "views": 44,
+    "views": 43,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -27081,9 +27081,9 @@
     "lockingMechanisms": [
       "Disc detainer"
     ],
-    "popularityIndex": 21,
+    "popularityIndex": 20,
     "scorecardCount": 5,
-    "views": 21,
+    "views": 20,
     "dateAdded": "2023-05-05T09:34:27.000Z",
     "media": [
       {
@@ -27212,13 +27212,13 @@
     ],
     "version": "5 pin, with serrated drivers",
     "lockingMechanisms": [
-      "Pin-tumbler"
+      "Dimple"
     ],
     "features": [
       "Pin-in-pin"
     ],
     "popularityIndex": 4,
-    "scorecardCount": 1,
+    "scorecardCount": 2,
     "views": 4,
     "dateAdded": "2026-08-06T03:59:39.968Z",
     "media": [
@@ -27256,7 +27256,7 @@
     "relatedIds": [
       "d04696c1"
     ],
-    "lastUpdated": "2026-08-15T06:29:23.925Z"
+    "lastUpdated": "2026-09-14T18:20:21.354Z"
   },
   {
     "id": "c8c0ee06",
@@ -27867,9 +27867,9 @@
     "lockingMechanisms": [
       "Wafer"
     ],
-    "popularityIndex": 37,
+    "popularityIndex": 38,
     "scorecardCount": 20,
-    "views": 37,
+    "views": 38,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -32258,9 +32258,9 @@
     "lockingMechanisms": [
       "Slider"
     ],
-    "popularityIndex": 36,
+    "popularityIndex": 37,
     "scorecardCount": 5,
-    "views": 36,
+    "views": 37,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -35091,7 +35091,7 @@
       "Pin-tumbler"
     ],
     "popularityIndex": 22,
-    "scorecardCount": 3,
+    "scorecardCount": 4,
     "views": 22,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
@@ -36571,9 +36571,9 @@
       "Sprung sliders",
       "Reverse sidebar"
     ],
-    "popularityIndex": 164,
+    "popularityIndex": 166,
     "scorecardCount": 38,
-    "views": 164,
+    "views": 166,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -36853,9 +36853,9 @@
     "features": [
       "High pin count"
     ],
-    "popularityIndex": 34,
+    "popularityIndex": 35,
     "scorecardCount": 6,
-    "views": 34,
+    "views": 35,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -41148,9 +41148,9 @@
       "False gates"
     ],
     "notes": "Old models can be front tensioned",
-    "popularityIndex": 175,
+    "popularityIndex": 176,
     "scorecardCount": 31,
-    "views": 175,
+    "views": 176,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -41288,9 +41288,9 @@
       "Random mid tension",
       "False gates"
     ],
-    "popularityIndex": 84,
+    "popularityIndex": 83,
     "scorecardCount": 13,
-    "views": 84,
+    "views": 83,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -42812,9 +42812,9 @@
     "lockingMechanisms": [
       "Pump/push"
     ],
-    "popularityIndex": 26,
+    "popularityIndex": 27,
     "scorecardCount": 8,
-    "views": 26,
+    "views": 27,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -44507,9 +44507,9 @@
     "features": [
       "High pin count"
     ],
-    "popularityIndex": 23,
+    "popularityIndex": 24,
     "scorecardCount": 10,
-    "views": 23,
+    "views": 24,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -45926,9 +45926,9 @@
     "features": [
       "Interactive element"
     ],
-    "popularityIndex": 32,
-    "scorecardCount": 25,
-    "views": 32,
+    "popularityIndex": 33,
+    "scorecardCount": 26,
+    "views": 33,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -45995,7 +45995,8 @@
     "features": [
       "Safe lock",
       "Pipe key",
-      "Double bitted"
+      "Double bitted",
+      "Additional control lever"
     ],
     "popularityIndex": 23,
     "scorecardCount": 5,
@@ -46075,7 +46076,8 @@
     "features": [
       "Safe lock",
       "Pipe key",
-      "Double bitted"
+      "Double bitted",
+      "Additional control lever"
     ],
     "popularityIndex": 2,
     "views": 2,
@@ -46277,9 +46279,9 @@
       "Active sidebar"
     ],
     "notes": "****** **Special Picking Requirement:** Prior to picking, operate the lock with the key or rake pins to reset rotational orientation.",
-    "popularityIndex": 55,
-    "scorecardCount": 12,
-    "views": 55,
+    "popularityIndex": 56,
+    "scorecardCount": 13,
+    "views": 56,
     "dateAdded": "2025-12-28T18:08:44.771Z",
     "media": [
       {
@@ -47340,9 +47342,9 @@
     "lockingMechanisms": [
       "Pump/push"
     ],
-    "popularityIndex": 58,
-    "scorecardCount": 27,
-    "views": 58,
+    "popularityIndex": 59,
+    "scorecardCount": 28,
+    "views": 59,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -47843,9 +47845,9 @@
       "Profile discs"
     ],
     "notes": "Many keyway variations, warded spinners, rear profile spinner and profile discs",
-    "popularityIndex": 72,
+    "popularityIndex": 73,
     "scorecardCount": 14,
-    "views": 72,
+    "views": 73,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -48072,9 +48074,9 @@
       "False gates",
       "Butterfly discs"
     ],
-    "popularityIndex": 130,
+    "popularityIndex": 131,
     "scorecardCount": 40,
-    "views": 130,
+    "views": 131,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -50067,9 +50069,9 @@
     "lockingMechanisms": [
       "Pump/push"
     ],
-    "popularityIndex": 7,
-    "scorecardCount": 5,
-    "views": 7,
+    "popularityIndex": 8,
+    "scorecardCount": 6,
+    "views": 8,
     "dateAdded": "2023-03-02T19:05:25.000Z",
     "media": [
       {
@@ -51431,13 +51433,15 @@
         "model": "Novum"
       }
     ],
+    "version": "8 levers",
     "lockingMechanisms": [
       "Lever"
     ],
     "features": [
       "Pipe key",
       "Double bitted",
-      "False gates"
+      "False gates",
+      "Additional control lever"
     ],
     "popularityIndex": 11,
     "scorecardCount": 2,
@@ -51610,14 +51614,15 @@
         "model": "Praetor B (70079)"
       }
     ],
-    "version": "11 lever",
+    "version": "10 levers",
     "lockingMechanisms": [
       "Lever"
     ],
     "features": [
       "Safe lock",
       "Pipe key",
-      "Double bitted"
+      "Double bitted",
+      "Additional control lever"
     ],
     "popularityIndex": 2,
     "scorecardCount": 1,
@@ -54662,9 +54667,9 @@
       "Serrated/threaded milling",
       "Active sidebar"
     ],
-    "popularityIndex": 60,
+    "popularityIndex": 61,
     "scorecardCount": 19,
-    "views": 60,
+    "views": 61,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -56930,7 +56935,7 @@
       "High pin count"
     ],
     "popularityIndex": 17,
-    "scorecardCount": 17,
+    "scorecardCount": 18,
     "views": 17,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
@@ -57748,9 +57753,9 @@
       "False gates",
       "Active sidebar"
     ],
-    "popularityIndex": 55,
+    "popularityIndex": 56,
     "scorecardCount": 29,
-    "views": 55,
+    "views": 56,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -58851,7 +58856,7 @@
       "High pin count"
     ],
     "popularityIndex": 37,
-    "scorecardCount": 20,
+    "scorecardCount": 21,
     "views": 37,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
@@ -60647,9 +60652,9 @@
     "features": [
       "High pin count"
     ],
-    "popularityIndex": 20,
+    "popularityIndex": 21,
     "scorecardCount": 6,
-    "views": 20,
+    "views": 21,
     "dateAdded": "2025-04-18T14:26:37.612Z",
     "media": [
       {
@@ -61918,9 +61923,9 @@
     ],
     "notes": "IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",
     "searchKeywords": "multilock, mtl",
-    "popularityIndex": 101,
+    "popularityIndex": 102,
     "scorecardCount": 56,
-    "views": 101,
+    "views": 102,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -62463,9 +62468,9 @@
       "Curtain"
     ],
     "notes": "Curtain needs to be overcome. No means of correcting an overset known",
-    "popularityIndex": 39,
+    "popularityIndex": 40,
     "scorecardCount": 7,
-    "views": 39,
+    "views": 40,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -62631,9 +62636,9 @@
       "False gates"
     ],
     "notes": "Hard to navigate and manipulate and often poor feedback",
-    "popularityIndex": 48,
+    "popularityIndex": 49,
     "scorecardCount": 12,
-    "views": 48,
+    "views": 49,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -63160,9 +63165,9 @@
     "features": [
       "High pin count"
     ],
-    "popularityIndex": 18,
+    "popularityIndex": 19,
     "scorecardCount": 3,
-    "views": 18,
+    "views": 19,
     "dateAdded": "2023-09-02T16:13:00.000Z",
     "media": [
       {
@@ -63286,9 +63291,9 @@
     "features": [
       "High pin count"
     ],
-    "popularityIndex": 71,
+    "popularityIndex": 72,
     "scorecardCount": 38,
-    "views": 71,
+    "views": 72,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -69123,9 +69128,11 @@
       "Lever"
     ],
     "features": [
+      "Safe lock",
       "Pin key",
       "Double bitted",
-      "False gates"
+      "False gates",
+      "Additional control lever"
     ],
     "popularityIndex": 3,
     "views": 3,
@@ -69192,6 +69199,7 @@
       "Lever"
     ],
     "features": [
+      "Safe lock",
       "Pin key",
       "Double bitted"
     ],

@@ -415,7 +415,7 @@ Blue,"Kale Kilit","164 GNC","6 pin, standard profile",Pin-tumbler,,,9811b260
 Blue,"Kale Kilit","164 YGS SE",,Dimple,,,b01220ea
 Blue,"Kawaha,Magmaus","Kawaha,Magmaus",,"Disc detainer",,,ab9df828
 Blue,Kenaurd,"Dimple Lock","pin-in-pin, 5 pins",Dimple,Pin-in-pin,,54dc69e8
-Blue,Kenaurd,"Dimple Lock","5 pin, with serrated drivers",Pin-tumbler,Pin-in-pin,,fe000caa
+Blue,Kenaurd,"Dimple Lock","5 pin, with serrated drivers",Dimple,Pin-in-pin,,fe000caa
 Blue,Kryptonite,"Disk Detainer",,"Disc detainer","Random mid tension","Readily picked with front tension and counter-rotation",c8c0ee06
 Blue,Lince,C4,,Dimple,,,adc2d335
 Blue,"Lockwood,Lockwood,Lockwood,Lockwood,Lockwood","334B45,356S63,214A40,215A40,270S70","with spools",Pin-tumbler,,,331c9d36
@@ -652,8 +652,8 @@ Brown,Laperche,Rols,,Pump/push,,,f5cc6ace
 Brown,"LIPS,LIPS","Keso (door cylinder),Octro","≥13 pins",Dimple,"High pin count",,514c7ec4
 Brown,"Lowe and Fletcher","3007 Safe lock","7 lever",Lever,"Safe lock,Pipe key,Double bitted",,8625f848
 Brown,"Mauer,Mauer,Mauer","NW4,NW5,NW6",,"Dimple,Wafer","Interactive element",,b8783269
-Brown,Mauer,"President (71111)","7 lever",Lever,"Safe lock,Pipe key,Double bitted",,b9b7ba7c
-Brown,Mauer,"Variator A (70091)","7 lever",Lever,"Safe lock,Pipe key,Double bitted",,620b6e5a
+Brown,Mauer,"President (71111)","7 lever",Lever,"Safe lock,Pipe key,Double bitted,Additional control lever",,b9b7ba7c
+Brown,Mauer,"Variator A (70091)","7 lever",Lever,"Safe lock,Pipe key,Double bitted,Additional control lever",,620b6e5a
 Brown,"Medeco,Medeco","Biaxial Camlock,M3 Camlock","4 or more pins ***","Sidebar,Slider","Rotating gated keypins,False gates,Active sidebar","*** **Special Picking Requirement:** Must be raked prior to picking to reset pin combination",305473cf
 Brown,Medeco,Duracam,***,"Dimple,Slider,Sidebar","Rotating gated keypins,False gates,Active sidebar","*** **Special Picking Requirement:** Must be raked prior to picking to reset pin combination",848940e5
 Brown,"Medeco,Medeco,Medeco,Chubb","Original,Biaxial,M3,Biaxial","≥ 6 pin with ≥ 4 key pins with false gates","Sidebar,Pin-tumbler","Rotating gated keypins,False gates,Active sidebar","****** **Special Picking Requirement:** Prior to picking, operate the lock with the key or rake pins to reset rotational orientation.",05f9773b
@@ -719,10 +719,10 @@ Red,Kaba,"Gemini pluS","≥14 pins",Dimple,"High pin count",,c4484574
 Red,"Kaba,Kaba","Penta,Penta Cross","<15 pins",Dimple,"High pin count",,e3081fd3
 Red,Kaba,Star,"5+ directions, <16 pins",Dimple,"High pin count",,43deff29
 Red,"Keso,Keso","8000Ω²,6000 FP2",">= 13 pins",Dimple,"High pin count,Latest Changelog",,deb35ee7
-Red,Kromer,Novum,,Lever,"Pipe key,Double bitted,False gates",,281aa393
+Red,Kromer,Novum,"8 levers",Lever,"Pipe key,Double bitted,False gates,Additional control lever",,281aa393
 Red,,Maglok,,Magnet,,,2d1adbaf
 Red,Mauer,Crypto,,,"High pin count",,696d5f2c
-Red,Mauer,"Praetor B (70079)","11 lever",Lever,"Safe lock,Pipe key,Double bitted",,169b80e3
+Red,Mauer,"Praetor B (70079)","10 levers",Lever,"Safe lock,Pipe key,Double bitted,Additional control lever",,169b80e3
 Red,Medeco,M4,,"Pin-tumbler,Slider,Sidebar",,,00a2ff18
 Red,"MIWA,MIWA","E6,83EC",,Magnet,"Magnetic pins",,9094ca58
 Red,MIWA,LS7,,Slider,"Sprung sliders",,814c5368
@@ -941,8 +941,8 @@ Unranked,SOL,2500,"15mm up to 35mm (3pins)",Pin-tumbler,"Under Review ⚑",,0d0b
 Unranked,SOL,2500,"40mm up to 45mm (4pins / spools)",Pin-tumbler,"Under Review ⚑",,29d423c8
 Unranked,SOL,2500,"50mm up to 70mm (5pins / spools)",Pin-tumbler,"Under Review ⚑",,53365ed3
 Unranked,Squire,550,"4 brass levers padlock",Lever,"Pin key,Single bitted",,6d63be2d
-Unranked,STUV,4.19.94,"10 levers",Lever,"Pin key,Double bitted,False gates",,dc8dfd58
-Unranked,STUV,"4.19.97 IVOX",,Lever,"Pin key,Double bitted",,6b67b5e4
+Unranked,STUV,4.19.94,"10 levers",Lever,"Safe lock,Pin key,Double bitted,False gates,Additional control lever",,dc8dfd58
+Unranked,STUV,"4.19.97 IVOX",,Lever,"Safe lock,Pin key,Double bitted",,6b67b5e4
 Unranked,Takigen,T-999,"9 pins-standards in two opposing rows",,"Under Review ⚑",,a77899fe
 Unranked,"Takigen,Clover","Wavelock disc detainer,Wavelock disc detainer","9 discs","Disc detainer","Under Review ⚑",,174e20c0
 Unranked,Tann,"9 lever","9 levers",Lever,"Pin key,Single bitted,Swappable bitting,False gates",,624d7e96
