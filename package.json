@@ -41,7 +41,7 @@
     "googleapis": "^164.0.0",
     "helmet": "^8.1.0",
     "hexoid": "^2.0.0",
-    "joi": "^17.13.3",
+    "joi": "^18.2.8",
     "json-2-csv": "^5.5.10",
     "moment-timezone": "^0.6.0",
     "node-fetch": "^3.3.2",
