@@ -45,3 +45,4 @@ ecosystem.config.cjs
 /internal-docs/
 .env.local
 .env.production
+.env.development

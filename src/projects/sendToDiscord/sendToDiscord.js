@@ -25,7 +25,7 @@ export function buildEmbed({embedFields, image, link, message, username, avatar_
         content: message,
         embeds: [
             {
-                image: {
+                thumbnail: {
                     url: image
                 },
                 description: link
@@ -43,6 +43,11 @@ export default async function sendToDiscord({embedFields, image, link, message, 
     const log = logger.child({module: 'send-to-discord'})
     const env = process.env
     const isDev = env.NODE_ENV !== 'production'
+
+    if (!env.TEST_WEBHOOK_URL || !env.LPU_LOCKS_WEBHOOK_URL) {
+        log.warn('Missing webhook URL')
+        return
+    }
 
     const avatars = {
         lockyJr: 'https://explore.lpubelts.com/lockyJunior/locky-junior-avatar-512.jpg',
