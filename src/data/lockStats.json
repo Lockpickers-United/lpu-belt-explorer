@@ -81,12 +81,12 @@
   "lockingMechanisms": [
     {
       "label": "Pin-tumbler",
-      "value": 379,
+      "value": 378,
       "id": "pin-tumbler"
     },
     {
       "label": "Dimple",
-      "value": 220,
+      "value": 221,
       "id": "dimple"
     },
     {
@@ -237,12 +237,12 @@
     "Blue": [
       {
         "label": "Pin-tumbler",
-        "value": 65,
+        "value": 64,
         "id": "pin-tumbler"
       },
       {
         "label": "Dimple",
-        "value": 38,
+        "value": 39,
         "id": "dimple"
       },
       {
@@ -543,7 +543,7 @@
         "coverage": "94%"
       }
     ],
-    "uniqueImages": 4756,
+    "uniqueImages": 4757,
     "contributors": 318,
     "topPhotographers": [
       {
@@ -568,7 +568,7 @@
       },
       {
         "contributor": "Sidepicks",
-        "images": 147
+        "images": 148
       },
       {
         "contributor": "Ben-on-reddit",
@@ -1821,6 +1821,6 @@
     ]
   },
   "metadata": {
-    "updatedDateTime": "2026-09-13 07:06"
+    "updatedDateTime": "2026-09-14 18:20"
   }
 }

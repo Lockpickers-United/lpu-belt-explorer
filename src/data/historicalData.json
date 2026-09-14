@@ -252,9 +252,9 @@
     "features": [
       "High pin count"
     ],
-    "views": 71,
+    "views": 72,
     "lastUpdated": "2025-03-18T23:29:31.285Z",
-    "popularityIndex": 71,
+    "popularityIndex": 72,
     "scorecardCount": 38
   },
   "32244161": {
@@ -1360,12 +1360,12 @@
     ],
     "name": "Any lock with any tool",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 542,
+    "views": 543,
     "lastUpdated": "2025-03-19T15:44:57.276Z",
     "lockingMechanisms": [
       "Various"
     ],
-    "popularityIndex": 542,
+    "popularityIndex": 543,
     "scorecardCount": 124
   },
   "07034c0f": {
@@ -1420,9 +1420,9 @@
     ],
     "name": "Any Acrylic Padlock",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 1454,
+    "views": 1455,
     "lastUpdated": "2025-03-18T23:29:31.267Z",
-    "popularityIndex": 1454,
+    "popularityIndex": 1455,
     "scorecardCount": 106
   },
   "3ac43ea8": {
@@ -1702,10 +1702,10 @@
     ],
     "name": "Master Lock #1",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 573,
+    "views": 574,
     "lastUpdated": "2025-03-19T01:20:51.353Z",
     "modelNum": "1",
-    "popularityIndex": 573,
+    "popularityIndex": 574,
     "scorecardCount": 70
   },
   "38289b36": {
@@ -1921,10 +1921,10 @@
     ],
     "name": "Master Lock #3",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 1491,
+    "views": 1492,
     "lastUpdated": "2025-03-19T01:20:51.353Z",
     "modelNum": "3",
-    "popularityIndex": 1491,
+    "popularityIndex": 1492,
     "scorecardCount": 169
   },
   "dff62f52": {
@@ -2468,10 +2468,10 @@
     ],
     "name": "ABUS 55/30",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 395,
+    "views": 396,
     "lastUpdated": "2025-03-19T15:44:57.277Z",
     "modelNum": "55.3",
-    "popularityIndex": 395,
+    "popularityIndex": 396,
     "scorecardCount": 53
   },
   "693abee0": {
@@ -3406,12 +3406,12 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/52729477979_bda546d2b9_o.jpg"
       }
     ],
-    "views": 38,
+    "views": 39,
     "lastUpdated": "2025-03-19T15:44:57.278Z",
     "features": [
       "Unguttable"
     ],
-    "popularityIndex": 38,
+    "popularityIndex": 39,
     "scorecardCount": 9
   },
   "b517a7ef": {
@@ -4563,11 +4563,11 @@
     ],
     "name": "Master Lock 140 Series, 9140 EURD",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 1864,
+    "views": 1865,
     "lastUpdated": "2025-03-19T01:20:51.355Z",
     "modelNum": "140",
     "version": "Ex: 140, 141, 142, etc.",
-    "popularityIndex": 1864,
+    "popularityIndex": 1865,
     "scorecardCount": 249
   },
   "6af6f704": {
@@ -5791,10 +5791,10 @@
     ],
     "name": "ABUS 55/40",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 1065,
+    "views": 1066,
     "lastUpdated": "2025-03-19T01:20:51.356Z",
     "modelNum": "55.4",
-    "popularityIndex": 1065,
+    "popularityIndex": 1066,
     "scorecardCount": 148
   },
   "d7188e81": {
@@ -7618,7 +7618,7 @@
       }
     ],
     "popularityIndex": 22,
-    "scorecardCount": 3
+    "scorecardCount": 4
   },
   "836c5ce3": {
     "id": "836c5ce3",
@@ -7925,10 +7925,10 @@
     ],
     "name": "Master Lock 150, 160, 9150 EURD",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 684,
+    "views": 685,
     "lastUpdated": "2025-03-19T15:44:57.280Z",
     "modelNum": "150",
-    "popularityIndex": 684,
+    "popularityIndex": 685,
     "scorecardCount": 89
   },
   "9441e2cc": {
@@ -9263,15 +9263,15 @@
     ],
     "name": "ABUS 72/40, 34CS55 Platinum",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 1038,
+    "views": 1039,
     "lastUpdated": "2025-03-19T15:44:57.281Z",
     "features": [
       "Picking Risk"
     ],
     "notes": "Due to unbalanced pin stacks, drivers in max lift chambers will rest below shear. This risks spring damage if the driver is not picked.",
     "version": "Guttable version",
-    "popularityIndex": 1038,
-    "scorecardCount": 146
+    "popularityIndex": 1039,
+    "scorecardCount": 147
   },
   "e42853c7": {
     "id": "e42853c7",
@@ -9452,10 +9452,10 @@
     ],
     "name": "ABUS EC 75/50, 75IB/50",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 242,
+    "views": 243,
     "lastUpdated": "2025-03-19T15:44:57.288Z",
-    "popularityIndex": 242,
-    "scorecardCount": 41
+    "popularityIndex": 243,
+    "scorecardCount": 42
   },
   "47e7cf73": {
     "id": "47e7cf73",
@@ -10337,10 +10337,10 @@
     ],
     "name": "ABUS W14",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 4,
+    "views": 5,
     "lastUpdated": "2025-03-19T01:20:51.359Z",
     "notes": "5-pin version requires Pfaffenhain barrel pin, otherwise orange",
-    "popularityIndex": 4,
+    "popularityIndex": 5,
     "scorecardCount": 1
   },
   "c4130a64": {
@@ -10840,12 +10840,12 @@
     ],
     "name": "American Lock 1100 / A1100",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 1425,
+    "views": 1427,
     "lastUpdated": "2025-03-19T01:20:51.360Z",
     "relatedIds": [
       "1ae40987"
     ],
-    "popularityIndex": 1425,
+    "popularityIndex": 1427,
     "scorecardCount": 276
   },
   "b16ffe3f": {
@@ -17294,7 +17294,7 @@
     ],
     "name": "ASSA 700",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 44,
+    "views": 43,
     "lastUpdated": "2025-03-19T15:44:57.289Z",
     "relatedIds": [
       "d08aa492",
@@ -17302,7 +17302,7 @@
       "e3bd3faf",
       "f133510b"
     ],
-    "popularityIndex": 44,
+    "popularityIndex": 43,
     "scorecardCount": 14
   },
   "08a5799e": {
@@ -23836,13 +23836,13 @@
     ],
     "name": "ASSA Desmo",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 36,
+    "views": 37,
     "lastUpdated": "2025-03-22T15:43:55.669Z",
     "relatedIds": [
       "e2742f70",
       "1459e2c6"
     ],
-    "popularityIndex": 36,
+    "popularityIndex": 37,
     "scorecardCount": 5
   },
   "e2742f70": {
@@ -26808,13 +26808,13 @@
     ],
     "name": "Kwikset Smartkey (Gen III)",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 164,
+    "views": 166,
     "lastUpdated": "2025-03-18T23:29:31.276Z",
     "features": [
       "Sprung sliders",
       "Reverse sidebar"
     ],
-    "popularityIndex": 164,
+    "popularityIndex": 166,
     "scorecardCount": 38
   },
   "41f9efa2": {
@@ -27125,12 +27125,12 @@
     ],
     "name": "LIPS Keso (door cylinder), Octro",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 34,
+    "views": 35,
     "lastUpdated": "2025-03-19T15:44:57.298Z",
     "relatedIds": [
       "514c7ec4"
     ],
-    "popularityIndex": 34,
+    "popularityIndex": 35,
     "scorecardCount": 6
   },
   "434b5b25": {
@@ -29843,9 +29843,9 @@
       "False gates"
     ],
     "notes": "Old models can be front tensioned",
-    "views": 175,
+    "views": 176,
     "lastUpdated": "2025-03-19T15:44:57.301Z",
-    "popularityIndex": 175,
+    "popularityIndex": 176,
     "scorecardCount": 31
   },
   "b8350900": {
@@ -29910,12 +29910,12 @@
       "Random mid tension",
       "False gates"
     ],
-    "views": 84,
+    "views": 83,
     "lastUpdated": "2025-03-19T15:44:57.301Z",
     "relatedIds": [
       "b8350901"
     ],
-    "popularityIndex": 84,
+    "popularityIndex": 83,
     "scorecardCount": 13
   },
   "19fce24d": {
@@ -30846,7 +30846,7 @@
     ],
     "name": "Australian Lock Co. Galaxy",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 26,
+    "views": 27,
     "lastUpdated": "2025-03-19T01:20:51.380Z",
     "media": [
       {
@@ -30886,7 +30886,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/52820375639_ac5e52cdc6_o.jpg"
       }
     ],
-    "popularityIndex": 26,
+    "popularityIndex": 27,
     "scorecardCount": 8
   },
   "82ae66ad": {
@@ -32158,9 +32158,9 @@
     "features": [
       "High pin count"
     ],
-    "views": 23,
+    "views": 24,
     "lastUpdated": "2025-03-19T01:20:51.381Z",
-    "popularityIndex": 23,
+    "popularityIndex": 24,
     "scorecardCount": 10
   },
   "7194cc26": {
@@ -33240,7 +33240,7 @@
     "lockingMechanisms": [
       "Wafer"
     ],
-    "views": 37,
+    "views": 38,
     "lastUpdated": "2025-03-19T01:20:51.383Z",
     "media": [
       {
@@ -33298,7 +33298,7 @@
         "url": "https://www.catalocks.eu/MAGNUM/MAGNUM%202100%20MONT%20BLANC_188.html"
       }
     ],
-    "popularityIndex": 37,
+    "popularityIndex": 38,
     "scorecardCount": 20
   },
   "b8783269": {
@@ -33371,10 +33371,10 @@
     ],
     "name": "Mauer NW4, NW5, NW6",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 32,
+    "views": 33,
     "lastUpdated": "2025-03-19T15:44:57.304Z",
-    "popularityIndex": 32,
-    "scorecardCount": 25,
+    "popularityIndex": 33,
+    "scorecardCount": 26,
     "features": [
       "Interactive element"
     ]
@@ -33397,7 +33397,8 @@
     "features": [
       "Safe lock",
       "Pipe key",
-      "Double bitted"
+      "Double bitted",
+      "Additional control lever"
     ],
     "views": 23,
     "lastUpdated": "2025-03-19T15:44:57.305Z",
@@ -33478,7 +33479,8 @@
     "features": [
       "Safe lock",
       "Pipe key",
-      "Double bitted"
+      "Double bitted",
+      "Additional control lever"
     ],
     "views": 2,
     "lastUpdated": "2025-03-19T01:20:51.383Z",
@@ -34545,7 +34547,7 @@
     ],
     "name": "Van Lock",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 58,
+    "views": 59,
     "lastUpdated": "2025-03-19T01:20:51.384Z",
     "media": [
       {
@@ -34612,8 +34614,8 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/54108151086_7a3eb78562_o.jpg"
       }
     ],
-    "popularityIndex": 58,
-    "scorecardCount": 27
+    "popularityIndex": 59,
+    "scorecardCount": 28
   },
   "dd764207": {
     "id": "dd764207",
@@ -35049,9 +35051,9 @@
       "Profile discs"
     ],
     "notes": "Many keyway variations, warded spinners, rear profile spinner and profile discs",
-    "views": 72,
+    "views": 73,
     "lastUpdated": "2025-03-19T15:44:57.306Z",
-    "popularityIndex": 72,
+    "popularityIndex": 73,
     "scorecardCount": 14
   },
   "b29a8b44": {
@@ -35188,12 +35190,12 @@
       "False gates",
       "Butterfly discs"
     ],
-    "views": 130,
+    "views": 131,
     "lastUpdated": "2025-03-19T15:44:57.306Z",
     "relatedIds": [
       "b8350900"
     ],
-    "popularityIndex": 130,
+    "popularityIndex": 131,
     "scorecardCount": 40
   },
   "4223eb26": {
@@ -37974,7 +37976,7 @@
         "model": "Praetor B (70079)"
       }
     ],
-    "version": "11 lever",
+    "version": "10 levers",
     "lockingMechanisms": [
       "Lever"
     ],
@@ -37983,7 +37985,8 @@
     "features": [
       "Safe lock",
       "Pipe key",
-      "Double bitted"
+      "Double bitted",
+      "Additional control lever"
     ],
     "views": 2,
     "lastUpdated": "2024-01-15T21:27:04.408Z",
@@ -40571,9 +40574,9 @@
     ],
     "name": "ASSA dp4400, dp11 / TrioVing dp / Ruko Garant+",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 60,
+    "views": 61,
     "lastUpdated": "2025-03-19T15:44:57.311Z",
-    "popularityIndex": 60,
+    "popularityIndex": 61,
     "scorecardCount": 19
   },
   "104776ef": {
@@ -42153,7 +42156,7 @@
       "add0b067"
     ],
     "popularityIndex": 17,
-    "scorecardCount": 17
+    "scorecardCount": 18
   },
   "c266d57b": {
     "id": "c266d57b",
@@ -42974,13 +42977,13 @@
     ],
     "name": "EVVA ICS",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 55,
+    "views": 56,
     "lastUpdated": "2025-03-19T15:44:57.313Z",
     "relatedIds": [
       "6852489f",
       "db749615"
     ],
-    "popularityIndex": 55,
+    "popularityIndex": 56,
     "scorecardCount": 29
   },
   "5ab25363": {
@@ -43746,7 +43749,7 @@
       }
     ],
     "popularityIndex": 37,
-    "scorecardCount": 20
+    "scorecardCount": 21
   },
   "63b2e02b": {
     "id": "63b2e02b",
@@ -46030,11 +46033,11 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/54394139084_9bbc36ea8b_o.jpg"
       }
     ],
-    "views": 101,
+    "views": 102,
     "lastUpdated": "2025-03-19T01:20:51.395Z",
     "version": "not mastered",
     "searchKeywords": "multilock, mtl",
-    "popularityIndex": 101,
+    "popularityIndex": 102,
     "scorecardCount": 56
   },
   "4f2ed774": {
@@ -46336,7 +46339,7 @@
       "Curtain"
     ],
     "notes": "Curtain needs to be overcome. No means of correcting an overset known",
-    "views": 39,
+    "views": 40,
     "lastUpdated": "2025-03-19T01:20:51.396Z",
     "links": [
       {
@@ -46458,7 +46461,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/52932776509_1ce56a039b_o.jpg"
       }
     ],
-    "popularityIndex": 39,
+    "popularityIndex": 40,
     "scorecardCount": 7
   },
   "db63c882": {
@@ -46541,7 +46544,7 @@
       "False gates"
     ],
     "notes": "Hard to navigate and manipulate and often poor feedback",
-    "views": 48,
+    "views": 49,
     "lastUpdated": "2025-03-19T15:44:57.318Z",
     "links": [
       {
@@ -46553,7 +46556,7 @@
         "url": "https://youtu.be/XuHCrqNRHlI"
       }
     ],
-    "popularityIndex": 48,
+    "popularityIndex": 49,
     "scorecardCount": 12
   },
   "00cf7717": {
@@ -49686,12 +49689,12 @@
         "url": "https://www.catalocks.eu/FTH/FTH%20PACIFIC_1036.html"
       }
     ],
-    "views": 7,
+    "views": 8,
     "lockingMechanisms": [
       "Pump/push"
     ],
-    "popularityIndex": 7,
-    "scorecardCount": 5
+    "popularityIndex": 8,
+    "scorecardCount": 6
   },
   "b379e483": {
     "id": "b379e483",
@@ -50223,13 +50226,15 @@
     "features": [
       "Pipe key",
       "Double bitted",
-      "False gates"
+      "False gates",
+      "Additional control lever"
     ],
     "lockingMechanisms": [
       "Lever"
     ],
     "popularityIndex": 11,
-    "scorecardCount": 2
+    "scorecardCount": 2,
+    "version": "8 levers"
   },
   "c65959a3": {
     "id": "c65959a3",
@@ -53272,7 +53277,7 @@
     "lastUpdated": "2025-03-19T15:44:57.322Z",
     "name": "Kawaha Kawaha / Magmaus Magmaus",
     "dateAdded": "2023-05-05T09:34:27.000Z",
-    "views": 21,
+    "views": 20,
     "media": [
       {
         "title": "By: LockPickingFisherman",
@@ -53305,7 +53310,7 @@
     "lockingMechanisms": [
       "Disc detainer"
     ],
-    "popularityIndex": 21,
+    "popularityIndex": 20,
     "scorecardCount": 5
   },
   "110c872d": {
@@ -55996,9 +56001,11 @@
       "Lever"
     ],
     "features": [
+      "Safe lock",
       "Pin key",
       "Double bitted",
-      "False gates"
+      "False gates",
+      "Additional control lever"
     ],
     "media": [
       {
@@ -56066,6 +56073,7 @@
       "Lever"
     ],
     "features": [
+      "Safe lock",
       "Pin key",
       "Double bitted"
     ],
@@ -57290,12 +57298,12 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53163520936_c87306a480_o.jpg"
       }
     ],
-    "views": 18,
+    "views": 19,
     "relatedIds": [
       "40e99be0",
       "4db59eb3"
     ],
-    "popularityIndex": 18,
+    "popularityIndex": 19,
     "scorecardCount": 3
   },
   "1fbf6a7a": {
@@ -61860,9 +61868,9 @@
     "features": [
       "High pin count"
     ],
-    "popularityIndex": 20,
+    "popularityIndex": 21,
     "scorecardCount": 6,
-    "views": 20
+    "views": 21
   },
   "2eeb9bee": {
     "id": "2eeb9bee",
@@ -62590,9 +62598,9 @@
     "notes": "****** **Special Picking Requirement:** Prior to picking, operate the lock with the key or rake pins to reset rotational orientation.",
     "name": "Medeco Original, Biaxial, M3 / Chubb Biaxial",
     "dateAdded": "2025-12-28T18:08:44.771Z",
-    "popularityIndex": 55,
-    "scorecardCount": 12,
-    "views": 55
+    "popularityIndex": 56,
+    "scorecardCount": 13,
+    "views": 56
   },
   "c1026783": {
     "id": "c1026783",
@@ -62962,7 +62970,7 @@
     ],
     "version": "5 pin, with serrated drivers",
     "lockingMechanisms": [
-      "Pin-tumbler"
+      "Dimple"
     ],
     "features": [
       "Pin-in-pin"
@@ -62970,7 +62978,7 @@
     "name": "Kenaurd Dimple Lock",
     "dateAdded": "2026-08-06T03:59:39.968Z",
     "popularityIndex": 4,
-    "scorecardCount": 1,
+    "scorecardCount": 2,
     "views": 4
   },
   "37dc53bb": {
