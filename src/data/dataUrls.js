@@ -1,12 +1,15 @@
-const url = import.meta.env && import.meta.env.VITE_LOCAL_DATA === 'true'
-    ? 'http://localhost:3000/data'
+const environment = import.meta.env || {}
+const url = environment.VITE_DATA_BASE_URL || (environment.VITE_LOCAL_DATA === 'true'
+    ? '/data'
     : 'https://explore.lpubelts.com/data'
+)
 
-if (import.meta.env && import.meta.env.VITE_LOCAL_DATA === 'true') {
+if (environment.VITE_LOCAL_DATA === 'true') {
     console.info('Attention: App is using LOCAL DATA.')
 }
 
-export const lockbazzarEntryIds = 'https://data.lpulocks.com/lockbazaar/lockbazzarEntryIds.json'
+export const lockbazzarEntryIds = environment.VITE_LOCKBAZAAR_DATA_URL
+    || 'https://data.lpulocks.com/lockbazaar/lockbazzarEntryIds.json'
 
 export const collectionsStatsCurrent = `${url}/collectionStatsCurrent.json`
 export const collectionStatsDaily = `${url}/collectionStatsDaily.json`
@@ -32,6 +35,7 @@ export const raflPreviewVersion = `${url}/raflPreviewVersion.json`
 export const raflResponseDetails = `${url}/raflResponseDetails.json`
 export const raflCollectionDetails = `${url}/raflCollectionDetails.json`
 
-const {VITE_DEV_FIRESTORE: devFirestore} = import.meta.env
-export const nodeServerUrl = devFirestore==='true' ? 'https://explore.lpubelts.com/servicesDev' : 'https://explore.lpubelts.com/services'
-export const apiServerUrl = 'https://explore.lpubelts.com/services'
+const {VITE_DEV_FIRESTORE: devFirestore} = environment
+export const nodeServerUrl = environment.VITE_NODE_SERVER_URL
+    || (devFirestore==='true' ? 'https://explore.lpubelts.com/servicesDev' : 'https://explore.lpubelts.com/services')
+export const apiServerUrl = environment.VITE_API_SERVER_URL || 'https://explore.lpubelts.com/services'

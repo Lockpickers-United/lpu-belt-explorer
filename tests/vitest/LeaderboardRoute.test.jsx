@@ -1,10 +1,55 @@
 import React from 'react'
-import {expect, it, describe} from 'vitest'
+import {expect, it, describe, vi} from 'vitest'
 import {screen} from '@testing-library/react'
 import {renderWithRouter} from '../../src/test/render.jsx'
 import LeaderboardRoute from '../../src/leaderboard/LeaderboardRoute.jsx'
 import Leaderboard from '../../src/leaderboard/Leaderboard.jsx'
 import {Routes, Route} from 'react-router-dom'
+
+vi.mock('../../src/util/useData.jsx', () => ({
+    default: () => ({
+        data: {
+            leaderboardData: {
+                data: [
+                    {
+                        id: 'locks-user',
+                        displayName: 'Georgia Jim',
+                        locksCollection: 4,
+                        own: 2,
+                        picked: 1,
+                        wishlist: 1,
+                        recordedLocks: 1
+                    },
+                    {
+                        id: 'safelocks-user',
+                        displayName: 'DoNotDuplicate',
+                        safelocksCollection: 3,
+                        safelocksOwn: 1,
+                        safelocksCracked: 1,
+                        safelocksWishlist: 1
+                    },
+                    {
+                        id: 'black-belt-user',
+                        displayName: 'Sidepicks',
+                        danPoints: 12,
+                        danLevel: 1,
+                        blackBeltCount: 2,
+                        blackBeltAwardedAt: 1_700_000_000
+                    }
+                ],
+                metadata: {updatedDateTime: '2026-09-14T00:00:00.000Z'}
+            },
+            recentAwardsEvidence: {
+                awards: [],
+                evidence: [],
+                metadata: {updatedDateTime: '2026-09-14T00:00:00.000Z'}
+            }
+        },
+        loading: false,
+        error: false,
+        errorMessage: null
+    })
+}))
 
 describe('LeaderboardRoute', () => {
     it('renders Outlet child route (locks tab) under LeaderboardRoute', async () => {
@@ -66,4 +111,3 @@ describe('LeaderboardRoute', () => {
     })
 
 })
-

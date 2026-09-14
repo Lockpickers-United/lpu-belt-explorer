@@ -1,4 +1,4 @@
-import {test, expect} from '@playwright/test'
+import {test, expect} from './fixtures'
 
 test('user can view Safelocks Route', async ({page}) => {
     await page.goto('/#/safelocks')

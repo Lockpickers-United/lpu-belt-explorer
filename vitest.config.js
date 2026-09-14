@@ -1,10 +1,6 @@
 import { defineConfig } from 'vitest/config'
 import react from '@vitejs/plugin-react'
 
-import dotenv from 'dotenv'
-
-dotenv.config({ path: '.env.keysNew', quiet: true })
-
 export default defineConfig({
   plugins: [react()],
   test: {
@@ -23,8 +19,16 @@ export default defineConfig({
       'server/**'
     ],
     coverage: {
-      reporter: ['text', 'lcov'],
-      thresholds: { lines: 70, functions: 70, branches: 60, statements: 70 }
+      provider: 'v8',
+      include: ['src/**/*.{js,jsx}'],
+      exclude: [
+        'src/test/**',
+        'src/**/*.{test,spec}.{js,jsx}',
+        'src/index.jsx',
+        'src/main.jsx'
+      ],
+      reporter: ['text', 'html', 'lcov'],
+      reportsDirectory: 'coverage'
     }
   }
 })

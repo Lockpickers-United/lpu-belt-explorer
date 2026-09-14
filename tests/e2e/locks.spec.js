@@ -1,12 +1,12 @@
-import {test, expect} from '@playwright/test'
+import {test, expect} from './fixtures'
 
 test('user can view Locks Route', async ({page}) => {
-    await page.goto('/')
+    await page.goto('/#/locks')
     await expect(page.getByRole('listitem', {name: 'Any Acrylic Padlock'})).toBeVisible()
 })
 
 test('user can view lock entry details', async ({page}) => {
-    await page.goto('/locks')
+    await page.goto('/#/locks')
     await expect(page.getByRole('list', {name: 'Locks'})).toBeVisible()
     await expect(page.getByRole('listitem', {name: 'Any Acrylic Padlock'})).toBeVisible()
     const firstListItem = await page.getByRole('listitem', {name: 'Any Acrylic Padlock'})
@@ -18,7 +18,7 @@ test('user can view lock entry details', async ({page}) => {
 })
 
 test('user can filter lock list by locking mechanism', async ({page}) => {
-    await page.goto('/locks?tab=White')
+    await page.goto('/#/locks?tab=White')
     await expect(page.getByRole('listitem', {name: 'Generic/Unknown 1 or 2 Lever Cabinet lock'})).toBeVisible()
     const filterButton = await page.getByRole('button', {name: 'Filter'})
     await expect(filterButton).toBeVisible()

@@ -3,17 +3,20 @@ import react from '@vitejs/plugin-react'
 import {visualizer} from 'rollup-plugin-visualizer'
 import dotenv from 'dotenv'
 
-dotenv.config({ path: '.env.keysNew' })
-
 // https://vitejs.dev/config/
-export default defineConfig({
+export default defineConfig(({mode}) => {
+    if (mode !== 'test') {
+        dotenv.config({path: '.env.keysNew', quiet: true})
+    }
 
-    server: {
-        port: 3000
-    },
-    preview: {
-        port: 3000
-    },
-    plugins: [react(), visualizer()],
-    assetsInclude: ['**/*.md']
+    return {
+        server: {
+            port: 3000
+        },
+        preview: {
+            port: 3000
+        },
+        plugins: [react(), mode === 'test' ? null : visualizer()].filter(Boolean),
+        assetsInclude: ['**/*.md']
+    }
 })

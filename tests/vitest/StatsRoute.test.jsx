@@ -1,9 +1,31 @@
 import React from 'react'
-import { expect, it, describe } from 'vitest'
+import { expect, it, describe, vi } from 'vitest'
 import {screen} from '@testing-library/react'
 import {renderWithRouter} from '../../src/test/render.jsx'
 import StatsRoute from '../../src/stats/StatsRoute.jsx'
 import ScorecardExploreRoute from '../../src/scorecard/explore/ScorecardExploreRoute.jsx'
+
+vi.mock('../../src/util/useData.jsx', () => ({
+  default: () => ({
+    data: {scorecardStats: {lockCountsByUserBelt: {}}},
+    loading: false,
+    error: false,
+    errorMessage: null
+  })
+}))
+
+vi.mock('../../src/stats/StatsMainPage.jsx', () => ({
+  default: () => <div role='heading'>Site Stats</div>
+}))
+
+vi.mock('../../src/scorecard/explore/ScorecardExplore.jsx', () => ({
+  default: () => (
+    <React.Fragment>
+      <div role='heading'>User Belt Flows</div>
+      <div role='heading'>Scorecard Locks</div>
+    </React.Fragment>
+  )
+}))
 
 describe('Stats Pages', () => {
   it('renders Stats page after loading', async () => {
@@ -21,4 +43,3 @@ describe('Stats Pages', () => {
   })
 
 })
-

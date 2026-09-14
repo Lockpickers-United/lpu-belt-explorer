@@ -28,9 +28,11 @@ The sibling repository `../explore-lpubelts-com-node` owns server-side exports a
 - Run the full frontend lint with `npm run lint`.
 - Lint only touched frontend files during iteration with `npx eslint path/to/file.jsx ...`.
 - Run all unit tests once with `npm run test:run`.
+- Collect the current frontend coverage report with `npm run test:coverage`.
 - Run a focused unit test with `npx vitest run tests/vitest/SomeRoute.test.jsx`.
 - Run the production build with `npm run build`.
-- Run PR-equivalent checks with `npm run ci-pr` (lint, then build).
+- Run the isolated test-mode build with `npm run build:test`.
+- Run PR-equivalent checks with `npm run ci-pr` (lint, frontend tests, then the isolated test-mode build).
 - Run all end-to-end tests with `npm run e2e`, or a focused test with `npx playwright test tests/e2e/example.spec.js`.
 - Lint Functions with `npm --prefix functions run lint`.
 
@@ -163,6 +165,10 @@ The import/export/migration npm scripts are not interchangeable with validation 
 - Keep Firebase/auth behavior mocked in unit tests unless the test specifically targets an integration boundary.
 - Add or update Playwright coverage for important user journeys that require browser routing or interaction.
 - Do not weaken assertions, disable failing tests, or turn unhandled requests into warnings to make a change pass.
+
+Frontend tests load the committed `.env.test`, which contains synthetic values only. The test bootstrap rejects deployable Firebase project IDs, non-loopback emulator hosts, live data/API URLs, and any Firebase API key other than the test sentinel. Vitest tests mock `DBContext`; Firebase emulator integration belongs in the dedicated Firebase suite planned for a later testing phase. MSW rejects unhandled frontend HTTP requests. Playwright builds in test mode and blocks all non-loopback HTTP requests.
+
+Install the pinned Playwright Chromium binary once with `npx playwright install chromium` before the first local browser run. Playwright always creates a fresh test-mode build and starts its own preview server; do not substitute an existing development or production server.
 
 Minimum handoff checks by change type:
 

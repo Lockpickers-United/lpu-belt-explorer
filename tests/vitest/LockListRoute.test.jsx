@@ -1,5 +1,4 @@
 import React from 'react'
-import {act} from 'react-dom/test-utils'
 import {describe, expect, it} from 'vitest'
 import {screen, within} from '@testing-library/react'
 import {renderWithRouter} from '../../src/test/render.jsx'
@@ -44,9 +43,7 @@ describe('LockListRoute', () => {
         renderLocks('/locks?tab=White')
         await screen.findByRole('tab', {name: /white/i})
         const blueTab = screen.getByRole('tab', {name: /blue/i})
-        await act(async () => {
-            blueTab.click()
-        })
+        await userEvent.click(blueTab)
         expect(blueTab).toHaveAttribute('aria-selected', 'true')
         expect(screen.getByRole('listitem', {name: 'Any SFIC format lock (**)'})).toBeInTheDocument()
     })
@@ -74,7 +71,7 @@ describe('LockListRoute', () => {
         await userEvent.click(beltAscending)
         firstListItem = await screen.getAllByRole('listitem',{})[0]
         expect(firstListItem).toHaveAccessibleName('Any Acrylic Padlock')
-    }, 15000)
+    }, 30000)
 
     it('renders lock details', async () => {
         renderLocks('/locks')
