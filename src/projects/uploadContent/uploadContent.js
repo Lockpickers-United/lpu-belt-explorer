@@ -2,7 +2,7 @@ import fs from 'node:fs'
 import path from 'node:path'
 import util from 'node:util'
 import {execFile} from 'node:child_process'
-import archiver from 'archiver'
+import {ZipArchive} from 'archiver'
 import {formidable} from '../../util/formidable/src/index.js'
 import parseForm from '../../util/parseForm.js'
 import {logger} from '../../logger/logger.js'
@@ -89,7 +89,7 @@ async function writeImageMetadata({caption, title, userComment, destination}) {
 function createZipArchive({sourceDir, destinationFile}) {
     return new Promise((resolve, reject) => {
         const output = fs.createWriteStream(destinationFile)
-        const archive = archiver('zip', {zlib: {level: 9}})
+        const archive = new ZipArchive({zlib: {level: 9}})
 
         output.once('close', () => resolve({bytes: archive.pointer()}))
         output.once('error', reject)

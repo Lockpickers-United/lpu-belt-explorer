@@ -45,11 +45,12 @@ function createRateLimitTestApp({
     return app
 }
 
-function createUserProfileRateLimitTestApp() {
+function createUserProfileRateLimitTestApp({max = userProfileRateLimitConfig.max} = {}) {
     const app = express()
     app.set('trust proxy', true)
     app.use(createRateLimit({
         ...userProfileRateLimitConfig,
+        max,
         name: 'test-user-profile-rate-limit'
     }))
     app.get('/limited', (_req, res) => {
@@ -217,9 +218,9 @@ describe('createRateLimit', () => {
     })
 
     it('uses stricter backoff settings for user profile routes', async () => {
-        const app = createUserProfileRateLimitTestApp()
+        const app = createUserProfileRateLimitTestApp({max: 2})
 
-        for (let i = 0; i < 60; i += 1) {
+        for (let i = 0; i < 2; i += 1) {
             const allowed = await request(app)
                 .get('/limited')
                 .set('X-Forwarded-For', '203.0.113.50')
@@ -231,6 +232,7 @@ describe('createRateLimit', () => {
             .set('X-Forwarded-For', '203.0.113.50')
 
         expect(blocked.status).toBe(429)
+        expect(userProfileRateLimitConfig.max).toBe(60)
         expect(blocked.body.error.details.penaltyMs).toBe(30_000)
         expect(blocked.body.error.details.maxPenaltyMs).toBe(120_000)
         expect(blocked.body.error.details.maxRetryAfterMs).toBe(20 * 60_000)
