@@ -5,11 +5,11 @@ import usePageTitle from '../util/usePageTitle'
 import {LockListProvider} from './LockListContext'
 import {DataProvider} from './LockDataProvider'
 import {FilterProvider} from '../context/FilterContext'
-import allEntries from '../data/data.json'
+import defaultEntries from '../data/data.json'
 import LockList from './LockList.jsx'
 
 
-function LockListRoute() {
+function LockListRoute({allEntries = defaultEntries}) {
     const {lockCollection} = useContext(DBContext)
     usePageTitle('Locks')
 

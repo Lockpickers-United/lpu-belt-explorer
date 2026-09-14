@@ -3,7 +3,7 @@ import fuzzysort from 'fuzzysort'
 import DataContext from '../context/DataContext'
 import FilterContext from '../context/FilterContext'
 import dayjs from 'dayjs'
-import belts, {beltSort, beltSortReverse} from '../data/belts'
+import belts, {beltSort} from '../data/belts'
 import collectionOptions from '../data/collectionTypes'
 import removeAccents from 'remove-accents'
 import useData from '../util/useData.jsx'
@@ -12,6 +12,7 @@ import filterEntriesAdvanced from '../filters/filterEntriesAdvanced'
 import {setDeepUnique} from '../util/setDeep'
 import {isValidRegex} from '../util/stringUtils'
 import entryName from '../entries/entryName'
+import {getLockSortComparator} from './lockSortComparators'
 
 export function DataProvider({children, allEntries, profile}) {
 
@@ -180,32 +181,7 @@ export function DataProvider({children, allEntries, profile}) {
         const searched = searchEntriesForText([...filtered])
 
         return sort
-            ? searched.sort((a, b) => {
-                if (sort === 'popularity') {
-                    return b.popularityIndex - a.popularityIndex
-                        || a.fuzzy.localeCompare(b.fuzzy)
-                } else if (sort === 'scorecardCount') {
-                    return b.scorecardCount - a.scorecardCount
-                        || a.fuzzy.localeCompare(b.fuzzy)
-                } else if (sort === 'beltAscending') {
-                    return beltSort(a.belt, b.belt)
-                } else if (sort === 'beltDescending') {
-                    return beltSortReverse(a.belt, b.belt)
-                        || a.fuzzy.localeCompare(b.fuzzy)
-                } else if (sort === 'alphaAscending') {
-                    return a.fuzzy.localeCompare(b.fuzzy)
-                } else if (sort === 'alphaDescending') {
-                    return b.fuzzy.localeCompare(a.fuzzy)
-                } else if (sort === 'recentlyUpdated') {
-                    return Math.floor(dayjs(b.lastUpdated).valueOf() / 3600) - Math.floor(dayjs(a.lastUpdated).valueOf() / 3600)
-                        || beltSort(a.belt, b.belt)
-                        || a.fuzzy.localeCompare(b.fuzzy)
-                } else if (sort === 'dateAdded') {
-                    return Math.floor(dayjs(b.dateAdded).valueOf() / 3600 * 24) - Math.floor(dayjs(a.dateAdded).valueOf() / 3600 * 24)
-                        || beltSort(a.belt, b.belt)
-                        || a.fuzzy.localeCompare(b.fuzzy)
-                }
-            })
+            ? searched.sort(getLockSortComparator(sort))
             : searched
     }, [advancedFilterGroups, mappedEntries, searchEntriesForText, sort])
 
