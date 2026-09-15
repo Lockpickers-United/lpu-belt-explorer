@@ -125,7 +125,7 @@ export default function AddVote({user = {}, entry}) {
                 }
             </Tooltip>
 
-            <Dialog open={upvote} onClose={handleEditClose} componentsProps={{
+            <Dialog open={upvote} onClose={handleEditClose} slotProps={{
                 backdrop: {style: {backgroundColor: '#000', opacity: 0.7}},
             }}>
                 <div

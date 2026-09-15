@@ -268,7 +268,7 @@ function LockRequestEntry({entry, expanded, onExpand, requestMod}) {
                 }
             </Accordion>
 
-            <Dialog open={showEditRequest} onClose={handleEditClose} componentsProps={{
+            <Dialog open={showEditRequest} onClose={handleEditClose} slotProps={{
                 backdrop: {style: {backgroundColor: '#000', opacity: 0.7}}
             }}>
                 <div style={{backgroundColor: '#444', marginLeft: 'auto', marginRight: 'auto', padding: 30}}>
@@ -308,7 +308,7 @@ function LockRequestEntry({entry, expanded, onExpand, requestMod}) {
                 </div>
             </Dialog>
 
-            <Dialog open={showDeleteConfirm} onClose={handleClose} componentsProps={{
+            <Dialog open={showDeleteConfirm} onClose={handleClose} slotProps={{
                 backdrop: {style: {backgroundColor: '#000', opacity: 0.5}}
             }}>
                 <div style={{backgroundColor: '#444', marginLeft: 'auto', marginRight: 'auto', padding: 40}}>

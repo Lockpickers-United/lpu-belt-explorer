@@ -1,9 +1,10 @@
 import React from 'react'
 import {expect, it, describe, vi} from 'vitest'
 import {screen} from '@testing-library/react'
-import {renderWithRouter} from '../../src/test/render.jsx'
+import {renderWithProviders, renderWithRouter} from '../../src/test/render.jsx'
 import LeaderboardRoute from '../../src/leaderboard/LeaderboardRoute.jsx'
 import Leaderboard from '../../src/leaderboard/Leaderboard.jsx'
+import LeaderboardName from '../../src/leaderboard/LeaderboardName.jsx'
 import {Routes, Route} from 'react-router-dom'
 
 vi.mock('../../src/util/useData.jsx', () => ({
@@ -110,4 +111,34 @@ describe('LeaderboardRoute', () => {
         expect(await screen.findByRole('heading', {name: 'Recent Belts & Dans'})).toBeInTheDocument()
     })
 
+})
+
+describe('LeaderboardName', () => {
+    it('renders the current user with the existing profile link and highlight', () => {
+        renderWithProviders(
+            <LeaderboardName
+                leader={{id: 'locks-user', displayName: 'Georgia Jim'}}
+                isCurrentUser
+                tab='locks'
+                maxLength={25}
+            />
+        )
+
+        const link = screen.getByRole('link', {name: 'Georgia Jim'})
+        expect(link).toHaveAttribute('href', '/#/profile/locks-user?name=Georgia_Jim')
+        expect(link).toHaveStyle({color: '#4db013'})
+    })
+
+    it('keeps private leaderboard identities anonymous', () => {
+        renderWithProviders(
+            <LeaderboardName
+                leader={{id: 'private-user', displayName: 'Private User', privacyAnonymous: true}}
+                tab='locks'
+                maxLength={25}
+            />
+        )
+
+        expect(screen.getByText('Anonymous')).toBeInTheDocument()
+        expect(screen.queryByRole('link')).not.toBeInTheDocument()
+    })
 })

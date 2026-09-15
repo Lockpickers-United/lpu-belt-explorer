@@ -329,9 +329,7 @@ function RaffleEntryForm({editEntryId = undefined, setEditEntryId}) {
                                    placeholder='Add additional notes about this entry'
                                    variant='outlined'
                                    InputProps={{style: {fontSize: contentsFontSize}}}
-                                   slotProps={{
-                                       htmlInput: {maxLength: 1200}
-                                   }}
+                                   inputProps={{maxLength: 1200}}
                         />
                     </div>
                 }
@@ -394,7 +392,7 @@ function RaffleEntryForm({editEntryId = undefined, setEditEntryId}) {
 
             </Box>
 
-            <Dialog open={submitted} componentsProps={{
+            <Dialog open={submitted} slotProps={{
                 backdrop: {style: {backgroundColor: '#000', opacity: 0.9}}
             }}>
                 <div style={{width: 320, textAlign: 'center', padding: 30, fontSize: '1.1rem'}}>

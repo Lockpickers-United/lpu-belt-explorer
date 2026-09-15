@@ -67,7 +67,7 @@ function OpenLinkToLockbazaarButton({entry, buttonType = 'text', nameType}) {
                 </Button>
             }
 
-            <Dialog open={dialogOpen} onClose={toggleDialog} componentsProps={{
+            <Dialog open={dialogOpen} onClose={toggleDialog} slotProps={{
                 backdrop: {style: {backgroundColor: '#000', opacity: 0.6}}
             }}>
                 <div style={{textAlign: 'right', padding: 10}}>

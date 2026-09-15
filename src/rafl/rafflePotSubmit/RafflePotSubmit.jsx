@@ -290,7 +290,7 @@ export default function RafflePotSubmit({profile, user}) {
 
             </form>
 
-            <Dialog open={uploading} componentsProps={{
+            <Dialog open={uploading} slotProps={{
                 backdrop: {style: {backgroundColor: '#000', opacity: 0.7}}
             }}>
                 <div style={{width: 320, textAlign: 'center', padding: 30}}>
@@ -299,7 +299,7 @@ export default function RafflePotSubmit({profile, user}) {
             </Dialog>
 
 
-            <Dialog open={!!response && !uploadError} componentsProps={{
+            <Dialog open={!!response && !uploadError} slotProps={{
                 backdrop: {style: {backgroundColor: '#000', opacity: 0.7}}
             }}>
                 <div style={{display: 'flex'}}>
@@ -322,7 +322,7 @@ export default function RafflePotSubmit({profile, user}) {
             </Dialog>
 
 
-            <Dialog open={!!uploadError} componentsProps={{
+            <Dialog open={!!uploadError} slotProps={{
                 backdrop: {style: {backgroundColor: '#000', opacity: 0.7}}
             }}>
                 <div style={{display: 'flex'}}>

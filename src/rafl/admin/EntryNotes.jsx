@@ -82,9 +82,7 @@ export default function EntryNotes({entry, containerRef}) {
                            variant='outlined'
                            autoFocus
                            InputProps={{style: {fontSize: contentsFontSize}}}
-                           slotProps={{
-                               htmlInput: {maxLength: 1200}
-                           }}
+                           inputProps={{maxLength: 1200}}
                 />
                 <div style={{flexGrow: 1, textAlign: 'right', marginTop: 8}}>
                     <Button variant='text' size='small' onClick={handleNotesClose}>Cancel</Button>

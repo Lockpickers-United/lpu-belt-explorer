@@ -11,7 +11,7 @@ export default function RaffleNotLiveDialog() {
 
     return (
         <React.Fragment>
-            <Dialog open={(raflState === 'preview' || raflState === 'setup') && !raffleAdminRole} componentsProps={{
+            <Dialog open={(raflState === 'preview' || raflState === 'setup') && !raffleAdminRole} slotProps={{
                 backdrop: {style: {backgroundColor: '#000', opacity: 0.9}}
             }}>
                 <div style={{width: 320, textAlign: 'center', padding: 30}}>
@@ -28,7 +28,7 @@ export default function RaffleNotLiveDialog() {
                 </div>
             </Dialog>
 
-            <Dialog open={raflState === 'post' && !raffleAdminRole} componentsProps={{
+            <Dialog open={raflState === 'post' && !raffleAdminRole} slotProps={{
                 backdrop: {style: {backgroundColor: '#000', opacity: 0.9}}
             }}>
                 <div style={{width: 320, textAlign: 'center', padding: 30}}>
@@ -41,7 +41,7 @@ export default function RaffleNotLiveDialog() {
                 </div>
             </Dialog>
 
-            <Dialog open={raflState === 'hidden' && !raffleAdminRole} componentsProps={{
+            <Dialog open={raflState === 'hidden' && !raffleAdminRole} slotProps={{
                 backdrop: {style: {backgroundColor: '#000', opacity: 0.9}}
             }}>
                 <div style={{width: 320, textAlign: 'center', padding: 30}}>

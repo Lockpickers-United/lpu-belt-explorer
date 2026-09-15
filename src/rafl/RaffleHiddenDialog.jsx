@@ -7,7 +7,7 @@ export default function RaffleHiddenDialog() {
     const {raffleAdminRole, raflState} = useContext(RaffleContext)
 
     return (
-        <Dialog open={raflState === 'hidden' && !raffleAdminRole} componentsProps={{
+        <Dialog open={raflState === 'hidden' && !raffleAdminRole} slotProps={{
             backdrop: {style: {backgroundColor: '#000', opacity: 0.9}}
         }}>
             <div style={{width: 320, textAlign: 'center', padding: 30}}>

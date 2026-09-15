@@ -297,15 +297,11 @@ export default function FormElement({
                                                   checked: e.target.checked
                                               }
                                           })}
-                                          slotProps={{
-                                              root: {
-                                                  style: {
-                                                      height: '36px',
-                                                      width: '36px',
-                                                      marginRight: '4px',
-                                                      color: theme.palette.info
-                                                  }
-                                              }
+                                          sx={{
+                                              height: '36px',
+                                              width: '36px',
+                                              marginRight: '4px',
+                                              color: theme.palette.info
                                           }}
                                           color='success'/>
                             }
@@ -322,10 +318,10 @@ export default function FormElement({
                                                       checked: e.target.checked
                                                   }
                                               })}
-                                              slotProps={{
-                                                  root: {style: {height: '36px', width: '36px', marginRight: '4px'}}
-                                              }}
                                               sx={{
+                                                  height: '36px',
+                                                  width: '36px',
+                                                  marginRight: '4px',
                                                   color: theme.palette.info,
                                                   '&.Mui-checked': {
                                                       color: theme.palette.info

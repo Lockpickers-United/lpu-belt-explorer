@@ -149,12 +149,6 @@ export default function ScopedDialog({
                         bgcolor: dark ? 'rgba(0,0,0,0.7)' : 'rgba(0,0,0,0.5)',
                         backdropFilter: dark ? 'blur(0.75px)' : 'none'
                     }
-                },
-                paper: {
-                    sx: {
-                        backgroundColor: '#666',
-                        padding: '8px',
-                    }
                 }
             }}
             //onEntered={() => paperFocusRef.current?.focus?.({ preventScroll: true })}

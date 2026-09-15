@@ -18,7 +18,7 @@ export default function RaffleSetupDialog() {
 
     return (
         <Dialog open={showDialog}
-                componentsProps={{
+                slotProps={{
                     backdrop: {style: {backgroundColor: '#000', opacity: 1}}
                 }}
                 sx={{
