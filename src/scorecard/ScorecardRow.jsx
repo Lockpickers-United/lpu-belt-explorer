@@ -169,7 +169,7 @@ function ScorecardRow({owner, activity, expanded, onExpand, merged}) {
     return (
         <Accordion key={activity.id} expanded={expanded} onChange={handleChange} ref={ref}
                    slots={{heading: 'div'}}>
-            <AccordionSummary component='div' expandIcon={expandIcon} style={{...style, ...cursorStyle}}>
+            <AccordionSummary component='div' nativeButton={false} expandIcon={expandIcon} style={{...style, ...cursorStyle}}>
                 <BeltStripe value={entity ? entity.belt : ''}/>
                 <div style={{
                     margin: '8px 0px 0px 8px',

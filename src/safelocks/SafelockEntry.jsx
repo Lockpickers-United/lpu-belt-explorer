@@ -64,7 +64,7 @@ function SafelockEntry({entry, expanded, onExpand}) {
     return (
         <Accordion expanded={expanded} onChange={handleChange} style={style} ref={ref} slots={{heading: 'div'}}
                    role='listitem' aria-label={make && make !== model ? `${make} ${model}` : model}>
-            <AccordionSummary component='div' expandIcon={<ExpandMoreIcon/>} sx={{
+            <AccordionSummary component='div' nativeButton={false} expandIcon={<ExpandMoreIcon/>} sx={{
                 '.MuiAccordionSummary-content': {
                     alignItems: 'center'
                 }

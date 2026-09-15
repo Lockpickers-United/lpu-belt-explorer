@@ -68,8 +68,9 @@ function RaflPotSearchBox({handleChangeLock, allEntries=[], disabled, reset = fa
                         color='info'
                         inputRef={inputEl}
                         slotProps={{
+                            ...params.slotProps,
                             input: {
-                                ...params.InputProps,
+                                ...params.slotProps.input,
                                 startAdornment: (
                                     <InputAdornment position='start'>
                                         <SearchIcon/>

@@ -3,7 +3,7 @@ import React, {useCallback, useContext, useState} from 'react'
 import Divider from '@mui/material/Divider'
 import IconButton from '@mui/material/IconButton'
 import MenuIcon from '@mui/icons-material/Menu'
-import MenuItem from '@mui/material/MenuItem'
+import ListItemButton from '@mui/material/ListItemButton'
 import Stack from '@mui/material/Stack'
 import SwipeableDrawer from '@mui/material/SwipeableDrawer'
 import Tooltip from '@mui/material/Tooltip'
@@ -58,7 +58,7 @@ function MainMenu() {
                 onClose={closeDrawer}
             >
                 <Stack direction='column' style={{minWidth: 250}}>
-                    <MenuItem onClick={closeDrawer} style={{
+                    <ListItemButton onClick={closeDrawer} style={{
                         padding: '12px 0px 6px 10px',
                         margin: '0px',
                         backgroundColor: '#292929',
@@ -67,7 +67,7 @@ function MainMenu() {
                         <ListItemIcon style={{margin: '2px 0px 8px 10px'}}>
                             <img alt='LPU' src={lpuHeaderSmall} width={210}/>
                         </ListItemIcon>
-                    </MenuItem>
+                    </ListItemButton>
 
                     {menuConfig
                         .filter(menuItem => beta || !menuItem.beta)

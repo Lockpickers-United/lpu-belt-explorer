@@ -1,6 +1,6 @@
 import ListItemIcon from '@mui/material/ListItemIcon'
 import ListItemText from '@mui/material/ListItemText'
-import MenuItem from '@mui/material/MenuItem'
+import ListItemButton from '@mui/material/ListItemButton'
 import queryString from 'query-string'
 import React, {useCallback} from 'react'
 import {useLocation, useNavigate} from 'react-router-dom'
@@ -62,14 +62,14 @@ function MainMenuItem({menuItem, onClose, child, childCount, childIndex}) {
 
     return (
         <React.Fragment>
-            <MenuItem style={style} onClick={handleClick} dense={child} >
+            <ListItemButton style={style} onClick={handleClick} dense={child}>
                 {coloredIcon &&
                     <ListItemIcon style={{height:20}}>
                         {coloredIcon}
                     </ListItemIcon>
                 }
                 <ListItemText>{title}</ListItemText>
-            </MenuItem>
+            </ListItemButton>
             {finalDiv}
 
             {children && children.map((childItem, childIndex) =>

@@ -100,7 +100,7 @@ function Entry({entry, expanded, onExpand, scorecardId}) {
 
     return (
         <Accordion expanded={expanded} onChange={handleChange} style={style} ref={ref} slots={{heading: 'div'}}>
-            <AccordionSummary component='div' expandIcon={<ExpandMoreIcon/>} sx={{
+            <AccordionSummary component='div' nativeButton={false} expandIcon={<ExpandMoreIcon/>} sx={{
                 '.MuiAccordionSummary-content': {
                     alignItems: 'center'
                 }

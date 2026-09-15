@@ -69,8 +69,9 @@ function GlossarySearchBox() {
                         color='secondary'
                         inputRef={inputEl}
                         slotProps={{
+                            ...params.slotProps,
                             input: {
-                                ...params.InputProps,
+                                ...params.slotProps.input,
                                 startAdornment: (
                                     <InputAdornment position='start'>
                                         <SearchIcon/>

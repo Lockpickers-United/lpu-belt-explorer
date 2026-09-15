@@ -196,7 +196,7 @@ function Scorecard({owner, profile, adminAction, popular}) {
                     </React.Fragment>
                 }
                 <Accordion expanded={controlsExpanded} disableGutters={true} slots={{heading: 'div'}}>
-                    <AccordionSummary component='div' style={{
+                    <AccordionSummary component='div' nativeButton={false} style={{
                         paddingLeft: buttonsMargin,
                         paddingRight: buttonsMargin,
                         placeItems: 'center',

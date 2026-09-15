@@ -99,7 +99,7 @@ function LeaderboardCompare({blackBeltData, compare, setCompare}) {
         <React.Fragment>
             <Accordion expanded={open} disableGutters={true} slots={{heading: 'div'}}
                        style={{marginBottom: 20, backgroundColor: bgcolor}}>
-                <AccordionSummary component='div' style={{
+                <AccordionSummary component='div' nativeButton={false} style={{
                     placeItems: 'center',
                     textAlign: 'center',
                     width: '100%',

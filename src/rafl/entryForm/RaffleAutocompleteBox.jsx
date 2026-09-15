@@ -93,8 +93,9 @@ function RaffleAutocompleteBox({allItems, setItemDetails, getOptionTitle, search
                         style={errorStyle}
                         inputRef={inputEl}
                         slotProps={{
+                            ...params.slotProps,
                             input: {
-                                ...params.InputProps,
+                                ...params.slotProps.input,
                                 startAdornment: (
                                     <InputAdornment position='start'>
                                         <SearchIcon/>

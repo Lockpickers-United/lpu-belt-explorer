@@ -1,6 +1,6 @@
 import React, {useState, useCallback} from 'react'
 import IconButton from '@mui/material/IconButton'
-import HelpOutlineIcon from '@mui/icons-material/HelpOutline'
+import HelpOutlineIcon from '@mui/icons-material/HelpOutlined'
 import HighlightOffIcon from '@mui/icons-material/HighlightOff'
 import Drawer from '@mui/material/Drawer'
 import ReactMarkdown from 'react-markdown'

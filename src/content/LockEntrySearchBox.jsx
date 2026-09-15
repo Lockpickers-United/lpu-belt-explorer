@@ -97,8 +97,9 @@ function LockEntrySearchBox({handleChangeLock, allEntries, disabled, reset = fal
                         color='info'
                         inputRef={inputEl}
                         slotProps={{
+                            ...params.slotProps,
                             input: {
-                                ...params.InputProps,
+                                ...params.slotProps.input,
                                 startAdornment: (
                                     <InputAdornment position='start'>
                                         <SearchIcon/>

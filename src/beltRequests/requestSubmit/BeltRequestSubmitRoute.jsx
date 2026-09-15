@@ -10,7 +10,7 @@ import {allAwardsById} from '../../entries/entryutils'
 import {ScorecardListProvider} from '../../scorecard/ScorecardListContext.jsx'
 import {LocalizationProvider} from '@mui/x-date-pickers'
 import dayjs from 'dayjs'
-import {AdapterDayjs} from '@mui/x-date-pickers/AdapterDayjs/index.d.ts'
+import {AdapterDayjs} from '@mui/x-date-pickers/AdapterDayjs'
 import LoadingDisplay from '../../util/LoadingDisplay.jsx'
 import ProfileContext from '../../app/ProfileContext.jsx'
 

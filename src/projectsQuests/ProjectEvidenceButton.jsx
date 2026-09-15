@@ -5,7 +5,7 @@ import DiscordIcon from '../resources/DiscordIcon.jsx'
 import PhotoCameraIcon from '@mui/icons-material/PhotoCamera'
 import SubjectIcon from '@mui/icons-material/Subject'
 import Tooltip from '@mui/material/Tooltip'
-import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline'
+import ErrorOutlineIcon from '@mui/icons-material/ErrorOutlined'
 import isValidUrl from '../util/isValidUrl'
 
 export default function ProjectEvidenceButton({evidenceUrl, handleChange = ()=>{}}) {
@@ -54,5 +54,4 @@ export default function ProjectEvidenceButton({evidenceUrl, handleChange = ()=>{
         </React.Fragment>
     )
 }
-
 

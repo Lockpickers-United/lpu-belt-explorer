@@ -5,7 +5,7 @@ import DiscordIcon from '../resources/DiscordIcon.jsx'
 import PhotoCameraIcon from '@mui/icons-material/PhotoCamera'
 import SubjectIcon from '@mui/icons-material/Subject'
 import Tooltip from '@mui/material/Tooltip'
-import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline'
+import ErrorOutlineIcon from '@mui/icons-material/ErrorOutlined'
 import {isAward} from '../entries/entryutils'
 
 export default function ScorecardEvidenceButton({activity, exceptionType, handleChange, owner}) {
@@ -56,5 +56,4 @@ export default function ScorecardEvidenceButton({activity, exceptionType, handle
         </React.Fragment>
     )
 }
-
 

@@ -5,7 +5,7 @@ import ReactMarkdown from 'react-markdown'
 import rehypeExternalLinks from 'rehype-external-links'
 import beginnersGuideMd from '../resources/beginnersGuide.md?raw'
 import beginnersGuideRedditIntroMd from '../resources/beginnersGuideRedditIntro.md?raw'
-import CardHeader from '@mui/material/CardHeader/index.d.ts'
+import CardHeader from '@mui/material/CardHeader'
 import CopyMarkdownButton from '../info/CopyMarkdownButton.jsx'
 import DBContext from '../app/DBContext.jsx'
 

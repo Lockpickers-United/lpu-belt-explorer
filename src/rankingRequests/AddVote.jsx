@@ -1,6 +1,6 @@
 import React, {useCallback, useContext, useState} from 'react'
 import AddCircleIcon from '@mui/icons-material/AddCircle'
-import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline'
+import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutlined'
 import Tooltip from '@mui/material/Tooltip'
 import LoadingDisplayWhite from '../misc/LoadingDisplayWhite.jsx'
 import {enqueueSnackbar} from 'notistack'

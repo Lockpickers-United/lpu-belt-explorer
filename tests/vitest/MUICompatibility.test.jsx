@@ -1,11 +1,15 @@
 import React, {useState} from 'react'
-import {fireEvent, screen, waitFor} from '@testing-library/react'
+import {screen, waitFor, within} from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import {afterEach, beforeEach, describe, expect, it, vi} from 'vitest'
 import Accordion from '@mui/material/Accordion'
 import AccordionDetails from '@mui/material/AccordionDetails'
 import AccordionSummary from '@mui/material/AccordionSummary'
 import Button from '@mui/material/Button'
+import Menu from '@mui/material/Menu'
+import MenuItem from '@mui/material/MenuItem'
+import Tab from '@mui/material/Tab'
+import Tabs from '@mui/material/Tabs'
 import Tooltip from '@mui/material/Tooltip'
 import AutoCompleteBox from '../../src/formUtils/AutoCompleteBox.jsx'
 import Dropzone from '../../src/formUtils/Dropzone.jsx'
@@ -72,6 +76,43 @@ function AccordionHarness() {
     )
 }
 
+function MenuHarness() {
+    const [anchorEl, setAnchorEl] = useState(null)
+    const [selection, setSelection] = useState('none')
+    const select = value => () => {
+        setSelection(value)
+        setAnchorEl(null)
+    }
+    return (
+        <React.Fragment>
+            <Button onClick={event => setAnchorEl(event.currentTarget)}>Open actions</Button>
+            <Menu
+                anchorEl={anchorEl}
+                open={Boolean(anchorEl)}
+                onClose={() => setAnchorEl(null)}
+                slotProps={{list: {'aria-label': 'Actions'}}}
+            >
+                <MenuItem onClick={select('Alpha')}>Alpha</MenuItem>
+                <MenuItem onClick={select('Beta')}>Beta</MenuItem>
+            </Menu>
+            <output aria-label='Selected action'>{selection}</output>
+        </React.Fragment>
+    )
+}
+
+function TabsHarness() {
+    const [value, setValue] = useState('alpha')
+    return (
+        <React.Fragment>
+            <Tabs value={value} onChange={(_event, nextValue) => setValue(nextValue)} aria-label='Sections'>
+                <Tab label='Alpha' value='alpha'/>
+                <Tab label='Beta' value='beta'/>
+            </Tabs>
+            <output aria-label='Selected tab'>{value}</output>
+        </React.Fragment>
+    )
+}
+
 describe('Material UI compatibility contracts', () => {
     beforeEach(() => {
         vi.stubGlobal('URL', {
@@ -125,7 +166,53 @@ describe('Material UI compatibility contracts', () => {
         expect(screen.queryByRole('listbox')).not.toBeInTheDocument()
     })
 
-    it('supports the MUI 6 Accordion heading and keyboard interaction', async () => {
+    it('uses roving focus for Menu keyboard navigation', async () => {
+        const user = userEvent.setup()
+        renderWithProviders(<MenuHarness/>)
+
+        await user.click(screen.getByRole('button', {name: 'Open actions'}))
+        const menu = await screen.findByRole('menu', {name: 'Actions'})
+        const [alpha, beta] = within(menu).getAllByRole('menuitem')
+        expect(alpha).toHaveFocus()
+        expect(alpha).toHaveAttribute('tabindex', '0')
+
+        await user.keyboard('{ArrowDown}')
+        expect(alpha).toHaveAttribute('tabindex', '-1')
+        expect(beta).toHaveAttribute('tabindex', '0')
+        expect(beta).toHaveFocus()
+        await user.keyboard('{Enter}')
+        expect(screen.getByRole('status', {name: 'Selected action'})).toHaveTextContent('Beta')
+    })
+
+    it('uses roving focus and keyboard selection for Tabs', async () => {
+        const user = userEvent.setup()
+        renderWithProviders(<TabsHarness/>)
+
+        const alpha = screen.getByRole('tab', {name: 'Alpha'})
+        const beta = screen.getByRole('tab', {name: 'Beta'})
+        alpha.focus()
+        await user.keyboard('{ArrowRight}')
+        expect(alpha).toHaveAttribute('tabindex', '-1')
+        expect(beta).toHaveAttribute('tabindex', '0')
+        expect(beta).toHaveFocus()
+        await user.keyboard(' ')
+        expect(beta).toHaveAttribute('aria-selected', 'true')
+        expect(screen.getByRole('status', {name: 'Selected tab'})).toHaveTextContent('beta')
+    })
+
+    it('activates a Button from Enter and Space', async () => {
+        const user = userEvent.setup()
+        const handleClick = vi.fn()
+        renderWithProviders(<Button onClick={handleClick}>Activate</Button>)
+
+        const button = screen.getByRole('button', {name: 'Activate'})
+        button.focus()
+        await user.keyboard('{Enter}')
+        await user.keyboard(' ')
+        expect(handleClick).toHaveBeenCalledTimes(2)
+    })
+
+    it('supports the Accordion heading and keyboard interaction', async () => {
         const user = userEvent.setup()
         renderWithProviders(<AccordionHarness/>)
 
@@ -243,10 +330,19 @@ describe('Material UI compatibility contracts', () => {
             }
         )
 
-        const dateInput = screen.getByRole('textbox', {name: 'Date'})
-        expect(dateInput).toHaveValue('01/15/2024')
+        const dateField = screen.getByRole('group', {name: 'Date'})
+        const month = screen.getByRole('spinbutton', {name: 'Month'})
+        const day = screen.getByRole('spinbutton', {name: 'Day'})
+        const year = screen.getByRole('spinbutton', {name: 'Year'})
+        expect(month).toHaveAttribute('aria-valuenow', '1')
+        expect(day).toHaveAttribute('aria-valuenow', '15')
+        expect(year).toHaveAttribute('aria-valuenow', '2024')
 
-        fireEvent.change(dateInput, {target: {value: '02/20/2024'}})
+        await user.click(dateField)
+        await user.clear(month)
+        await user.type(month, '02')
+        await user.clear(day)
+        await user.type(day, '20')
         await user.click(screen.getByRole('button', {name: 'Save'}))
 
         await waitFor(() => expect(updatePickerActivity).toHaveBeenCalledOnce())

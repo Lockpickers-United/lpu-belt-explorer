@@ -63,7 +63,7 @@ function SystemMessageRow({message, expanded, onExpand, setControlsExpanded}) {
 
     return (
         <Accordion expanded={expanded} onChange={handleChange} style={style} ref={ref} slots={{heading: 'div'}}>
-            <AccordionSummary component='div' expandIcon={<ExpandMoreIcon/>}>
+            <AccordionSummary component='div' nativeButton={false} expandIcon={<ExpandMoreIcon/>}>
                 <div style={{display: 'block', width: 680, opacity: rowOpactity}} key={temp.id}>
                     <div style={{margin: '2px 0px 2px 4px', width: '100%', display: 'flex', placeItems: 'center'}}>
                         <div style={{

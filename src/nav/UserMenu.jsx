@@ -202,7 +202,7 @@ function UserMenu() {
                         </MenuItem>
                         <Divider/>
 
-                        <SignInButton onClick={handleClose}/>
+                        <SignInButton onClick={handleClose} menuItem/>
                     </div>
                 }
             </Menu>

@@ -11,7 +11,7 @@ import allEntries from '../../data/data.json'
 import TextField from '@mui/material/TextField'
 import useWindowSize from '../../util/useWindowSize.jsx'
 import Typography from '@mui/material/Typography'
-import Button from '@mui/material/Button/index.d.ts'
+import Button from '@mui/material/Button'
 import SignInButton from '../../auth/SignInButton.jsx'
 import AuthContext from '../../app/AuthContext.jsx'
 

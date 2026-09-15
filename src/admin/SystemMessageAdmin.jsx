@@ -143,7 +143,7 @@ function SystemMessageAdmin() {
             </div>
             <Accordion expanded={controlsExpanded} disableGutters={false} slots={{heading: 'div'}}
                        style={{width: 760, marginLeft: 'auto', marginRight: 'auto'}}>
-                <AccordionSummary component='div'>
+                <AccordionSummary component='div' nativeButton={false}>
                     <div>
                         <Button variant='outlined' color='secondary' size='small'
                                 style={{lineHeight: '1rem'}}
