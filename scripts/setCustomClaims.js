@@ -83,7 +83,7 @@ async function getCustomClaimsForUsers() {
     process.exit(0)
 }
 
-updateCustomClaimsForUsers().then(() => {
+await updateCustomClaimsForUsers().then(() => {
     getCustomClaimsForUsers().then()
 })
 

@@ -18,7 +18,7 @@ import calculateScoreForUser from '../scorecard/scoring'
 import AppContext from '../app/AppContext.jsx'
 
 export default function UserInfoMain() {
-    const {user, userClaims} = useContext(AuthContext)
+    const {user, userClaims, getUserClaims} = useContext(AuthContext)
     const {adminRole, getPickerActivity} = useContext(DBContext)
     const {adminEnabled} = useContext(AppContext)
 
@@ -31,6 +31,8 @@ export default function UserInfoMain() {
     const {uid, name} = filters
     const [uidInput, setUidInput] = useState(uid || user?.uid || '')
 
+    const selectedUserClaims = useMemo(() => userClaims.admin && getUserClaims(user),
+        [userClaims, getUserClaims, user])
 
     useEffect(() => {
         setUidInput(userId || '')
@@ -190,13 +192,13 @@ export default function UserInfoMain() {
                                     <td style={varStyle}>Is Full Profile</td>
                                     <td>{data?.isFullProfile ? 'Yes' : 'No'}</td>
                                 </tr>
-                                {(user?.uid === userId || adminRole) &&
+                                {(user?.uid === userId) &&
                                     <tr>
                                         <td style={varStyle}>user claims</td>
-                                        <td>{userClaims.join(', ')}</td>
+                                        <td>{selectedUserClaims?.join(', ')}</td>
                                     </tr>
                                 }
-                                {isFullProfile && adminRole &&
+                                {isFullProfile &&
                                     <tr>
                                         <td style={varStyle}>profile.admin</td>
                                         <td>true</td>
