@@ -1,1 +1,0 @@
-import{O as s,j as r,a8 as t}from"./index-mh7Yva2Z.js";import{P as o}from"./ProfileContext-DdYDLwbP.js";function u(){const{userId:e}=s();return r.jsx(o,{userId:e,children:r.jsx(t,{})})}export{u as default};

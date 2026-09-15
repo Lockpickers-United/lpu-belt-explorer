@@ -1,1 +1,0 @@
-import{j as s,aV as r,aW as t}from"./index-mh7Yva2Z.js";function n({diameter:e=40}){return s.jsx("div",{style:{display:"flex",placeItems:"center",width:e,height:e},children:s.jsx(r,{variant:"indeterminate",disableShrink:!0,sx:{color:i=>(i.palette.mode==="light","#fff"),animationDuration:"550ms",[`& .${t.circle}`]:{strokeLinecap:"round"}},size:19,thickness:5})})}export{n as L};
