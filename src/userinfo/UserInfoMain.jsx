@@ -190,13 +190,13 @@ export default function UserInfoMain() {
                                     <td style={varStyle}>Is Full Profile</td>
                                     <td>{data?.isFullProfile ? 'Yes' : 'No'}</td>
                                 </tr>
-                                {user?.uid === userId &&
+                                {(user?.uid === userId || adminRole) &&
                                     <tr>
                                         <td style={varStyle}>user claims</td>
                                         <td>{userClaims.join(', ')}</td>
                                     </tr>
                                 }
-                                {isFullProfile && profile?.admin &&
+                                {isFullProfile && adminRole &&
                                     <tr>
                                         <td style={varStyle}>profile.admin</td>
                                         <td>true</td>
