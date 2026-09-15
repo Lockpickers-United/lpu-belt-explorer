@@ -43,7 +43,7 @@ Prefer focused checks while developing, followed by the smallest broader check j
 
 ### Frontend and scripts
 
-Follow `.eslintrc.cjs` and the style of the file being edited:
+Follow `eslint.config.js` and the style of the file being edited:
 
 - Use JavaScript only. Do not introduce TypeScript or a type-checking toolchain unless the user explicitly requests that migration.
 - ES modules and functional React components.
@@ -60,10 +60,10 @@ There is no repository-wide autoformatter. Preserve nearby formatting when a fil
 
 ### Firebase Functions
 
-`functions/` is a separate CommonJS package with its own Google ESLint configuration. Its conventions differ from the frontend:
+`functions/` is a separate CommonJS package with its own flat ESLint configuration and Google-style conventions. Its conventions differ from the frontend:
 
 - Use `require()` and `exports`.
-- Use double quotes and semicolons as required by `functions/.eslintrc.js`.
+- Use double quotes and semicolons as required by `functions/eslint.config.js`.
 - Use two-space indentation and the existing Firebase Functions v2 APIs.
 - Run the Functions lint from its package after every change.
 
