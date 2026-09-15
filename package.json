@@ -15,6 +15,7 @@
     "build-dev": "NODE_ENV=production npm run lint && npm run versionFile && vite build --mode dev",
     "build-dev-import": "NODE_ENV=production npm run versionFile && npm run import && vite build --mode dev && npm run copyFiles",
     "preview": "vite preview",
+    "prepare": "husky",
     "lint": "eslint \"./src/**\" \"./scripts/**\"",
     "import": "node ./scripts/import.js",
     "import-dan": "node ./scripts/importDan.js",
