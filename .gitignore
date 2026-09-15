@@ -45,7 +45,10 @@ playwright-report/*
 tests-results/*
 /coverage/
 /keys
-/.agents
-.agents
+/.agents/*
+!/.agents/references/
+!/.agents/references/**
 /internal-docs/
-/.claude
+/.claude/*
+!/.claude/settings.json
+/.claude/settings.local.json

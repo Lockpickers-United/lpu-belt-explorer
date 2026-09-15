@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "permissions": {
+    "allow": [
+      "Bash(git status *)",
+      "Bash(git diff *)",
+      "Bash(git log *)",
+      "Bash(npm run lint)",
+      "Bash(npm run test:*)",
+      "Bash(npm run build)",
+      "Bash(npm run build:test)",
+      "Bash(npm run ci-pr)",
+      "Bash(npm run e2e)",
+      "Bash(npm --prefix functions run lint)",
+      "Bash(npx eslint *)",
+      "Bash(npx vitest *)",
+      "Bash(npx playwright test *)"
+    ],
+    "ask": [
+      "Bash(firebase deploy *)",
+      "Bash(firebase use prod *)",
+      "Bash(npx firebase-tools * deploy *)",
+      "Bash(npm run ci-build *)",
+      "Bash(npm run import*)",
+      "Bash(npm run migrate-*)",
+      "Bash(npm publish *)",
+      "Bash(git push *)"
+    ],
+    "deny": [
+      "Read(**/.env.local)",
+      "Read(**/.env.production)",
+      "Read(**/keys/**)",
+      "Read(**/*service-account*.json)",
+      "Read(**/serviceAccount*.json)"
+    ],
+    "additionalDirectories": [
+      "../explore-lpubelts-com-node"
+    ],
+    "defaultMode": "default",
+    "disableBypassPermissionsMode": "disable"
+  }
+}
