@@ -106,8 +106,8 @@
     "@testing-library/user-event": "^14.5.2",
     "@types/react": "^18.2.21",
     "@vitejs/plugin-react": "^4.4.1",
-    "@vitest/coverage-v8": "4.1.11",
-    "@vitest/ui": "4.1.11",
+    "@vitest/coverage-v8": "5.0.0",
+    "@vitest/ui": "5.0.0",
     "@wdio/allure-reporter": "^9.20.0",
     "allure-playwright": "^3.6.0",
     "csv-parse": "^5.5.0",
@@ -125,9 +125,17 @@
     "rollup-plugin-visualizer": "^5.14.0",
     "uuid": "^14.0.1",
     "vite": "^6.4.1",
-    "vitest": "4.1.11"
+    "vitest": "5.0.0"
   },
   "overrides": {
     "rolldown": "1.0.1"
+  },
+  "allowScripts": {
+    "esbuild@0.25.12": true,
+    "protobufjs": false,
+    "unrs-resolver@1.12.2": true,
+    "fsevents@2.3.3": true,
+    "@firebase/util": false,
+    "msw": false
   }
 }
