@@ -84,7 +84,10 @@ function ProfileRoute() {
 
     const footerBefore = (
         <div style={{margin: '30px 0px'}}>
-            <ExportButton text={true}/>
+            {(owner || adminEnabled)
+                ? <ExportButton text={true}/>
+                : null
+            }
         </div>
     )
 
@@ -96,7 +99,9 @@ function ProfileRoute() {
 
                     {isLoading && <LoadingDisplay/>}
 
-                    {!isLoading && profile && !isError && <ProfilePage profile={profile} pickerActivity={pickerActivity?.data} owner={user && user.uid === userId}/>}
+                    {!isLoading && profile && !isError &&
+                        <ProfilePage profile={profile} pickerActivity={pickerActivity?.data}
+                                     owner={user && user.uid === userId}/>}
                     {!isLoading && profile && !isError && entries.length === 0 && <NoProfileData/>}
                     {!isLoading && (!profile || isError) && <ProfileNotFound/>}
 

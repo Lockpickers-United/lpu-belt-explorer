@@ -38,7 +38,7 @@ function ScorecardRoute({mostPopular}) {
     const {userId, data, loading, error} = useContext(ProfileContext)
     const profile = useMemo(() => data ? data.profile : {}, [data])
 
-    adminEnabled && console.log('ScorecardRoute', {userId, data, loading, error})
+    adminEnabled && console.log('admin log: corecardRoute', {userId, data, loading, error})
 
     const {
         scoredActivity,
