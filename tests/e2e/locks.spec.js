@@ -32,3 +32,18 @@ test('user can filter lock list by locking mechanism', async ({page}) => {
     await expect(page.getByRole('listitem', {name: /ABUS/i})).toBeVisible()
     await expect(page.getByRole('listitem', {name: 'Generic/Unknown 1 or 2 Lever Cabinet lock'})).not.toBeAttached()
 })
+
+test('lock browsing controls remain usable at a mobile viewport', async ({page}) => {
+    await page.setViewportSize({width: 390, height: 844})
+    await page.goto('/#/locks?tab=White')
+
+    await expect(page.getByRole('list', {name: 'Locks'})).toBeVisible()
+    await expect(page.getByRole('listitem', {name: 'Any Acrylic Padlock'})).toBeVisible()
+
+    const filterButton = page.getByRole('button', {name: 'Filter'})
+    await expect(filterButton).toBeVisible()
+    await filterButton.click()
+    await expect(page.getByRole('combobox', {name: 'Locking Mechanism'})).toBeVisible()
+    await page.getByRole('button', {name: 'CLOSE'}).click()
+    await expect(page.getByRole('combobox', {name: 'Locking Mechanism'})).not.toBeVisible()
+})

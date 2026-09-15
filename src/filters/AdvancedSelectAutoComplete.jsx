@@ -122,13 +122,15 @@ export default function AdvancedSelectAutoComplete({
                             aria-label={`${label}-field`}
                             id={`${label}-field`}
                             inputRef={inputEl}
-                            InputProps={{
-                                ...params.InputProps,
-                                startAdornment: (
-                                    <InputAdornment position='start'>
-                                        <SearchIcon/>
-                                    </InputAdornment>
-                                )
+                            slotProps={{
+                                input: {
+                                    ...params.InputProps,
+                                    startAdornment: (
+                                        <InputAdornment position='start'>
+                                            <SearchIcon/>
+                                        </InputAdornment>
+                                    )
+                                }
                             }}
                         />
                     }

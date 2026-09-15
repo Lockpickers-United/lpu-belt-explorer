@@ -180,17 +180,6 @@ function SearchBox({label, extraFilters = [], entryCount = 0, keepOpen}) {
             </Tooltip>}
             {(open || !isMobile || keepOpen || isFiltered) && <TextField
                 placeholder={!smallWidth ? placeholder : label}
-                InputProps={{
-                    inputProps: {
-                        ref: inputEl
-                    },
-                    startAdornment: (
-                        <InputAdornment position='start'>
-                            <SearchIcon color={iconColor}/>
-                        </InputAdornment>
-                    ),
-                    endAdornment
-                }}
                 variant='standard'
                 color='secondary'
                 onChange={handleChange}
@@ -199,6 +188,19 @@ function SearchBox({label, extraFilters = [], entryCount = 0, keepOpen}) {
                 value={text}
                 style={{...style, ...focusStyle}}
                 fullWidth
+                slotProps={{
+                    input: {
+                        inputProps: {
+                            ref: inputEl
+                        },
+                        startAdornment: (
+                            <InputAdornment position='start'>
+                                <SearchIcon color={iconColor}/>
+                            </InputAdornment>
+                        ),
+                        endAdornment
+                    }
+                }}
             />}
             <Backdrop
                 invisible

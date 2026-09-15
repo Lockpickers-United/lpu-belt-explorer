@@ -95,9 +95,11 @@ function FilterByField({label, fieldName, onFilter, sort}) {
                         onOpen={handleOpen}
                         onBlur={handleClose}
                         MenuProps={{
-                            PaperProps: {
-                                style: {
-                                    maxHeight: ITEM_HEIGHT * 8 + ITEM_PADDING_TOP
+                            slotProps: {
+                                paper: {
+                                    style: {
+                                        maxHeight: ITEM_HEIGHT * 8 + ITEM_PADDING_TOP
+                                    }
                                 }
                             }
                         }}

@@ -74,16 +74,24 @@ export default function EntryNotes({entry, containerRef}) {
                         {inputValue.length || 0}/1200
                     </div>
                 </div>
-                <TextField type='text' name='notes' multiline fullWidth rows={3}
-                           value={inputValue} onChange={handleChange}
-                           id='notes'
-                           color='info' style={{}}
-                           placeholder='Add additional notes about this entry'
-                           variant='outlined'
-                           autoFocus
-                           InputProps={{style: {fontSize: contentsFontSize}}}
-                           inputProps={{maxLength: 1200}}
-                />
+                <TextField
+                    type='text'
+                    name='notes'
+                    multiline
+                    fullWidth
+                    rows={3}
+                    value={inputValue}
+                    onChange={handleChange}
+                    id='notes'
+                    color='info'
+                    style={{}}
+                    placeholder='Add additional notes about this entry'
+                    variant='outlined'
+                    autoFocus
+                    slotProps={{
+                        input: {style: {fontSize: contentsFontSize}},
+                        htmlInput: {maxLength: 1200}
+                    }} />
                 <div style={{flexGrow: 1, textAlign: 'right', marginTop: 8}}>
                     <Button variant='text' size='small' onClick={handleNotesClose}>Cancel</Button>
                     <Button variant='text' size='small' onClick={saveNotes} color='success'>Save</Button>

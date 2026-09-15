@@ -35,12 +35,13 @@ function RecentMediaEntry({entry}) {
                     <BeltStripe value={entry.belt}/>
                     <ListItemText
                         primary={entryName(entry)}
-                        primaryTypographyProps={{fontWeight: 500, fontSize: '1.1rem'}}
                         secondary={entry.version}
-                        secondaryTypographyProps={{fontSize: '1rem'}}
                         style={{padding: '0px 0px 0px 10px', cursor: 'pointer'}}
                         onClick={handleClick}
-                    />
+                        slotProps={{
+                            primary: {fontWeight: 500, fontSize: '1.1rem'},
+                            secondary: {fontSize: '1rem'}
+                        }} />
                     {entry.dateDeleted &&
                         <div style={{marginRight:20}}>
                             <FieldValue name='Date Deleted' value={dayjs(entry.dateDeleted).format('YYYY-MM-DD')}/>

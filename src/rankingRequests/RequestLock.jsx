@@ -249,8 +249,8 @@ function RequestLock({profile}) {
                                 <div style={{marginTop: 8}}>
                                     <Checkbox onChange={handleAltBrandToggle} id='altBrand' name='altBrand'
                                               checked={form.altBrand || false} color='info' size='small'
-                                              inputProps={{
-                                                  tabIndex: -1
+                                              slotProps={{
+                                                  input: {tabIndex: -1}
                                               }}/>
                                     <Link onClick={handleAltBrandToggle} style={{color: '#fff'}}>
                                         Submit a lock for a new brand.

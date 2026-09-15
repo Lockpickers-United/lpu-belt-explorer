@@ -171,7 +171,7 @@ function AdvancedFilterDrawerButton({entryType='Lock'}) {
 
                         <FilterScopeToggle style={{margin: '0px 0px 8px 8px'}}/>
 
-                        <Box margin={1}>
+                        <Box sx={{margin: 1}}>
                             <motion.div layout style={{minWidth: 250}}>
                                 {filterList
                                     .filter(field => {

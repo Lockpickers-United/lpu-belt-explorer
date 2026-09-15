@@ -23,9 +23,11 @@ function CompactEntries({entries}) {
 
                         <ListItemText
                             primary={entryName(entry)}
-                            primaryTypographyProps={{fontWeight: 500}}
                             secondary={entry.version}
                             style={{padding: '0px 0px 0px 10px'}}
+                            slotProps={{
+                                primary: {fontWeight: 500}
+                            }}
                         />
                         <CollectionButton id={entry.id} dense exposed/>
                     </ListItem>

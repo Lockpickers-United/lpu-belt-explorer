@@ -19,11 +19,12 @@ function PopularEntry({entry, owner}) {
 
             <ListItemText
                 primary={entryName(entry)}
-                primaryTypographyProps={{fontWeight: 500}}
                 secondary={entry.version}
-                secondaryTypographyProps={{color:rowColor}}
                 style={{padding: '0px 0px 0px 10px'}}
-            />
+                slotProps={{
+                    primary: {fontWeight: 500},
+                    secondary: {color:rowColor}
+                }} />
 
             <ViewLockButton entry={entry} color={rowColor}/>
             <EvidenceButton id={entry.id} owner={owner}/>

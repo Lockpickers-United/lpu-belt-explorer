@@ -9,14 +9,9 @@ export default function RaffleDrawingEntries() {
     const {lockCollection} = useContext(AuthContext)
     const {visiblePotEntries} = useContext(DataContext)
 
-    console.log('RaffleDrawingEntries visiblePotEntries', visiblePotEntries)
-
     const drawPots = useMemo(() => {
         return visiblePotEntries?.filter(pot => pot.entrants?.length > 0)
     },[visiblePotEntries])
-
-    console.log('RaffleDrawingEntries drawPots', drawPots)
-
 
     return (
         <RaffleEntries profile={lockCollection} allPots={drawPots} drawing={true}/>

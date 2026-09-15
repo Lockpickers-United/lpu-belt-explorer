@@ -29,8 +29,10 @@ function HotkeyInfoButton() {
             <Dialog
                 open={open}
                 onClose={handleClose}
-                TransitionComponent={Transition}
                 scroll='body'
+                slots={{
+                    transition: Transition
+                }}
             >
                 <AppBar sx={{position: 'relative'}}>
                     <Toolbar>

@@ -167,8 +167,9 @@ function ScorecardRow({owner, activity, expanded, onExpand, merged}) {
     if (!owner && !adminEnabled && activity.exceptionType) return null
 
     return (
-        <Accordion key={activity.id} expanded={expanded} onChange={handleChange} ref={ref}>
-            <AccordionSummary expandIcon={expandIcon} style={{...style, ...cursorStyle}}>
+        <Accordion key={activity.id} expanded={expanded} onChange={handleChange} ref={ref}
+                   slots={{heading: 'div'}}>
+            <AccordionSummary component='div' expandIcon={expandIcon} style={{...style, ...cursorStyle}}>
                 <BeltStripe value={entity ? entity.belt : ''}/>
                 <div style={{
                     margin: '8px 0px 0px 8px',
@@ -207,7 +208,7 @@ function ScorecardRow({owner, activity, expanded, onExpand, merged}) {
                     {!!entity && !!entity?.version &&
                         <FieldValue
                             name='Version'
-                            value={<Typography
+                            value={<Typography component='span'
                                 style={{fontSize: '0.95rem', lineHeight: 1.25}}>{entity?.version}</Typography>}
                             textStyle={entity?.belt === 'Unranked' ? {color: '#aaa'} : {}}
                         />

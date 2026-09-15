@@ -103,8 +103,10 @@ function Slideshow({onClose}) {
         <Dialog
             open={open}
             onClose={handleClose}
-            TransitionComponent={Transition}
             fullScreen
+            slots={{
+                transition: Transition
+            }}
         >
             <AppBar sx={{position: 'relative'}}>
                 <Toolbar>
@@ -230,7 +232,8 @@ function Slideshow({onClose}) {
                     </IconButton>
                 </Tooltip>
             </DialogActions>
-        </Dialog>)
+        </Dialog>
+    )
 }
 
 const styles = {

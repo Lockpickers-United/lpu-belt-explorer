@@ -118,7 +118,6 @@ export default function RafflePotSubmit({profile, user}) {
 
 
     return (
-
         <div style={{
             maxWidth: 800, padding: 0,
             marginLeft: 'auto', marginRight: 'auto', marginTop: 16, marginBottom: 46, paddingLeft: 8
@@ -129,7 +128,6 @@ export default function RafflePotSubmit({profile, user}) {
                 &nbsp;<Link onClick={()=>navigate('/rafl/photos')} sx={linkSx}>Photos</Link> |
                 &nbsp;<Link onClick={()=>navigate('/rafl/potpreview')} sx={linkSx}>Preview</Link>
             </div>
-
 
             <form action={null} encType='multipart/form-data' method='post'
                   onSubmit={handleSubmit}>
@@ -192,7 +190,9 @@ export default function RafflePotSubmit({profile, user}) {
                                 fullWidth
                                 select
                                 color='info'
-                                SelectProps={{native: true}}
+                                slotProps={{
+                                    select: {native: true}
+                                }}
                             >
                                 <option aria-label="None" value="" />
                                 {Array.from({length: 20}, (_, i) => i + 1).map(n => (
@@ -222,7 +222,9 @@ export default function RafflePotSubmit({profile, user}) {
                         fullWidth
                         select
                         color='info'
-                        SelectProps={{native: true}}
+                        slotProps={{
+                            select: {native: true}
+                        }}
                     >
                         <option aria-label="None" value="" />
                         <option value="Digital prize">Digital prize</option>
@@ -251,7 +253,9 @@ export default function RafflePotSubmit({profile, user}) {
                         fullWidth
                         select
                         color='info'
-                        SelectProps={{native: true}}
+                        slotProps={{
+                            select: {native: true}
+                        }}
                     >
                         <option aria-label="None" value="" />
                         <option value="Yes">Yes</option>
@@ -298,7 +302,6 @@ export default function RafflePotSubmit({profile, user}) {
                 </div>
             </Dialog>
 
-
             <Dialog open={!!response && !uploadError} slotProps={{
                 backdrop: {style: {backgroundColor: '#000', opacity: 0.7}}
             }}>
@@ -320,7 +323,6 @@ export default function RafflePotSubmit({profile, user}) {
                     </div>
                 </div>
             </Dialog>
-
 
             <Dialog open={!!uploadError} slotProps={{
                 backdrop: {style: {backgroundColor: '#000', opacity: 0.7}}

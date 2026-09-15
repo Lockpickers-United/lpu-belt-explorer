@@ -120,7 +120,7 @@ function RaffleSubmittedEntry({entry, expanded, onExpand, setEditEntryId}) {
                     <div style={{display: 'flex', alignItems: 'center', justifyContent: 'flex-end'}}>
                         <FieldValue
                             name='Submitted'
-                            value={<Typography
+                            value={<Typography component='span'
                                 style={{
                                     fontSize: '0.95rem',
                                     lineHeight: 1.25
@@ -130,7 +130,7 @@ function RaffleSubmittedEntry({entry, expanded, onExpand, setEditEntryId}) {
                         {sort === 'updatedAt' &&
                             <FieldValue
                                 name='Updated'
-                                value={<Typography
+                                value={<Typography component='span'
                                     style={{
                                         fontSize: '0.95rem',
                                         lineHeight: 1.25
@@ -141,7 +141,7 @@ function RaffleSubmittedEntry({entry, expanded, onExpand, setEditEntryId}) {
                         }
                         <FieldValue
                             name='Donations'
-                            value={<Typography
+                            value={<Typography component='span'
                                 style={{
                                     fontSize: '0.95rem',
                                     lineHeight: 1.25

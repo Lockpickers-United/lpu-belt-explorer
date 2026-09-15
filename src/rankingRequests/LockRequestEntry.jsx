@@ -194,11 +194,12 @@ function LockRequestEntry({entry, expanded, onExpand, requestMod}) {
                         <div style={{display: flexStyle, width: '100%', alignItems: 'center', opacity: opacity}}>
                             <ListItemText
                                 primary={entryName(entry)}
-                                primaryTypographyProps={{fontWeight: 500, fontSize: '1.1rem'}}
                                 secondary={entry.lockingMechanisms.join(', ')}
-                                secondaryTypographyProps={{fontSize: '0.9rem'}}
                                 style={{padding: '0px 0px 0px 10px'}}
-                            />
+                                slotProps={{
+                                    primary: {fontWeight: 500, fontSize: '1.1rem'},
+                                    secondary: {fontSize: '0.9rem'}
+                                }} />
                             <div style={{
                                 display: 'flex',
                                 alignItems: 'center',

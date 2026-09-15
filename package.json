@@ -53,9 +53,9 @@
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
-    "@mui/icons-material": "^5.18.0",
-    "@mui/material": "^5.15.4",
-    "@mui/x-date-pickers": "^6.20.2",
+    "@mui/icons-material": "^6.5.0",
+    "@mui/material": "^6.5.0",
+    "@mui/x-date-pickers": "^7.29.4",
     "@nivo/bar": "^0.99.0",
     "@nivo/chord": "^0.99.0",
     "@nivo/core": "^0.99.0",
@@ -84,6 +84,7 @@
     "react-dropzone": "^14.3.8",
     "react-full-screen": "^1.1.1",
     "react-hotkeys-hook": "^5.2.4",
+    "react-is": "^18.3.1",
     "react-markdown": "^10.1.0",
     "react-router-dom": "^6.30.4",
     "react-simple-star-rating": "^5.1.7",
@@ -127,7 +128,8 @@
     "vitest": "5.0.0"
   },
   "overrides": {
-    "rolldown": "1.0.1"
+    "rolldown": "1.0.1",
+    "react-is": "$react-is"
   },
   "allowScripts": {
     "esbuild@0.25.12": true,

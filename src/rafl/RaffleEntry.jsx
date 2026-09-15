@@ -82,8 +82,13 @@ function RaffleEntry({entry, expanded, onExpand, drawing}) {
     }
 
     return (
-        <Accordion expanded={expanded} onChange={handleChange} style={style} ref={ref}>
-            <AccordionSummary expandIcon={<ExpandMoreIcon/>} style={{marginBottom: 10}}>
+        <Accordion expanded={expanded} onChange={handleChange} style={style} ref={ref} slots={{heading: 'div'}}>
+            <AccordionSummary component='div' expandIcon={<ExpandMoreIcon/>} sx={{
+                '.MuiAccordionSummary-content': {
+                    alignItems: 'center'
+                }
+            }} style={{marginBottom: 10}}>
+
                 <div style={{width: '100%', marginBottom: 0}}>
                     <div style={{display: 'flex', alignItems: 'center', flexGrow: 1}}>
                         <div style={{display: 'block', marginBottom: 0, flexGrow: 1}}>
@@ -207,7 +212,7 @@ function RaffleEntry({entry, expanded, onExpand, drawing}) {
                         }
 
                         <div style={{display: flexStyle}}>
-                            <Stack direction='row' alignItems='flex-start' style={{}}>
+                            <Stack direction='row' style={{}} sx={{alignItems: 'flex-start'}}>
                                 {!!entry.tags?.length &&
                                     <FieldValue name='Tags' value={
                                         <Stack direction='row' spacing={0} sx={{flexWrap: 'wrap'}}>
@@ -252,7 +257,10 @@ function RaffleEntry({entry, expanded, onExpand, drawing}) {
                                 {entry.shipsToUS && entry.shipsToUS !== 'Yes' &&
                                     <FieldValue name='US Shipping Details'
                                                 headerStyle={{marginBottom: 4}}
-                                                textStyle={{color: usShipColor[entry.shipsToUS], fontWeight: entry.shipsToUS === 'No' ? 500 : 400}}
+                                                textStyle={{
+                                                    color: usShipColor[entry.shipsToUS],
+                                                    fontWeight: entry.shipsToUS === 'No' ? 500 : 400
+                                                }}
                                                 value={usShipText[entry.shipsToUS]}/>
                                 }
                             </div>

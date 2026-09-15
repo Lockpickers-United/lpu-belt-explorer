@@ -60,8 +60,8 @@ function SortTextButton({sortValues, compactMode, expandAll}) {
                 open={open}
                 onClose={handleClose}
 
-                MenuListProps={{
-                    'aria-label': 'View and Sort Options'
+                slotProps={{
+                    list: {'aria-label': 'View and Sort Options'}
                 }}
 
             >

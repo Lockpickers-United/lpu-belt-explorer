@@ -144,7 +144,7 @@ function FilterTextButton({onFiltersChanged}) {
                         </div>
                     }
 
-                    <Box margin={1}>
+                    <Box sx={{margin: 1}}>
                         <Stack direction='column' style={{minWidth: 250}}>
                             {filterFields
                                 .filter(field => {
@@ -180,4 +180,3 @@ function FilterTextButton({onFiltersChanged}) {
 }
 
 export default FilterTextButton
-

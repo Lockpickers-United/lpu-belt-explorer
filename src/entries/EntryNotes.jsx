@@ -109,7 +109,9 @@ export default function EntryNotes({entry}) {
                                placeholder='Add your own private notes about this lock, visible only to you.'
                                variant='outlined'
                                autoFocus
-                               inputProps={{maxLength: 1200, style: {fontSize: contentsFontSize}}}
+                               slotProps={{
+                                   htmlInput: {maxLength: 1200, style: {fontSize: contentsFontSize}}
+                               }}
                     />
                     <div style={{display: 'flex', marginTop: 5}}>
                         <RatingTable ratingDimensions={ratingDimensions} onRatingChange={handleRatingChange}

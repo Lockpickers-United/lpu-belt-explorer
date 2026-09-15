@@ -160,11 +160,13 @@ function EditProfilePage() {
                                 value={displayName || ''}
                                 onChange={handleChange}
                                 onFocus={handleFocus}
-                                inputProps={{
-                                    maxLength: 32
-                                }}
                                 size='small'
                                 style={{width: 220}}
+                                slotProps={{
+                                    htmlInput: {
+                                        maxLength: 32
+                                    }
+                                }}
 
                             />
                             <Button variant='outlined'
@@ -226,13 +228,15 @@ function EditProfilePage() {
                                         variant='outlined'
                                         label='Discord Username'
                                         value={lockCollection?.discordUsername || ''}
-                                        inputProps={{
-                                            maxLength: 32,
-                                            readOnly: true
-                                        }}
                                         size='small'
                                         style={{width: 200}}
                                         color='warning'
+                                        slotProps={{
+                                            htmlInput: {
+                                                maxLength: 32,
+                                                readOnly: true
+                                            }
+                                        }}
                                     />
                                     <Button variant='outlined'
                                             color='warning'
@@ -264,14 +268,16 @@ function EditProfilePage() {
                                         variant='outlined'
                                         label='Reddit Username'
                                         value={lockCollection?.redditUsername || ''}
-                                        inputProps={{
-                                            maxLength: 32,
-                                            readOnly: true
-                                        }}
                                         size='small'
                                         style={{width: 200}}
                                         color='warning'
                                         readOnly
+                                        slotProps={{
+                                            htmlInput: {
+                                                maxLength: 32,
+                                                readOnly: true
+                                            }
+                                        }}
                                     />
                                     <Button variant='outlined'
                                             color='warning'

@@ -92,13 +92,15 @@ function RaffleAutocompleteBox({allItems, setItemDetails, getOptionTitle, search
                         color='info'
                         style={errorStyle}
                         inputRef={inputEl}
-                        InputProps={{
-                            ...params.InputProps,
-                            startAdornment: (
-                                <InputAdornment position='start'>
-                                    <SearchIcon/>
-                                </InputAdornment>
-                            )
+                        slotProps={{
+                            input: {
+                                ...params.InputProps,
+                                startAdornment: (
+                                    <InputAdornment position='start'>
+                                        <SearchIcon/>
+                                    </InputAdornment>
+                                )
+                            }
                         }}
                     />
                 }

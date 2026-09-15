@@ -28,7 +28,8 @@ function BeltRequirements({belt}) {
         <Accordion expanded={expanded === 'beltreqs'} onChange={handleExpand} style={style}>
             <AccordionSummary expandIcon={<ExpandMoreIcon/>}>
                 <BeltStripe value={belt}/>
-                <Typography variant='h6' style={{margin: '0px 0px 0px 12px'}}>{belt} Belt Requirements</Typography>
+                <Typography component='span' variant='h6'
+                            style={{margin: '0px 0px 0px 12px'}}>{belt} Belt Requirements</Typography>
             </AccordionSummary>
             <AccordionDetails style={{margin: '0px 0px 0px 12px'}}>
                 <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[[rehypeExternalLinks, {

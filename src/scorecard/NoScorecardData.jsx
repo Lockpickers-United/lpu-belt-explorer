@@ -50,7 +50,7 @@ function NoProfileData({collectionType}) {
     }, [navigate, collectionType])
 
     return (
-        <Box alignContent='center'>
+        <Box sx={{alignContent: 'center'}}>
             <Card style={style}>
                 <CardContent>
                     <Typography variant='h6' align='center'>

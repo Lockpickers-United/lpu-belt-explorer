@@ -205,8 +205,10 @@ function ImageViewer({media, openIndex, onOpenImage, onClose, shareParams = {}})
         <Dialog
             open={open}
             onClose={handleClose}
-            TransitionComponent={Transition}
             fullScreen
+            slots={{
+                transition: Transition
+            }}
         >
             <AppBar sx={{position: 'relative'}}>
                 <Toolbar>
@@ -378,7 +380,8 @@ function ImageViewer({media, openIndex, onOpenImage, onClose, shareParams = {}})
                     </Tooltip>
                 }
             </DialogActions>
-        </Dialog>)
+        </Dialog>
+    )
 }
 
 const getCurrentPosition = event => {

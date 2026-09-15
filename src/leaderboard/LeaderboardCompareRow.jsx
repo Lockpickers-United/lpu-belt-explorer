@@ -40,11 +40,12 @@ function LeaderboardCompareRow({entry, data}) {
 
                 <ListItemText
                     primary={entryName(entry)}
-                    primaryTypographyProps={{fontWeight: 500, textAlign: 'center', fontSize: '1.03rem'}}
                     secondary={entry.version}
-                    secondaryTypographyProps={{color: '#999', textAlign: 'center'}}
                     style={{padding: '0px 0px 0px 10px'}}
-                />
+                    slotProps={{
+                        primary: {fontWeight: 500, textAlign: 'center', fontSize: '1.03rem'},
+                        secondary: {color: '#999', textAlign: 'center'}
+                    }} />
             </ListItem>
             <div style={{width: 40, display: 'flex', alignItems: 'center'}}>
                 {picked2 &&

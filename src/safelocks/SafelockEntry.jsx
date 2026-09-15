@@ -62,14 +62,24 @@ function SafelockEntry({entry, expanded, onExpand}) {
         : 'flex'
 
     return (
-        <Accordion expanded={expanded} onChange={handleChange} style={style} ref={ref}>
-            <AccordionSummary expandIcon={<ExpandMoreIcon/>}>
+        <Accordion expanded={expanded} onChange={handleChange} style={style} ref={ref} slots={{heading: 'div'}}
+                   role='listitem' aria-label={make && make !== model ? `${make} ${model}` : model}>
+            <AccordionSummary component='div' expandIcon={<ExpandMoreIcon/>} sx={{
+                '.MuiAccordionSummary-content': {
+                    alignItems: 'center'
+                }
+            }} style={{}}>
                 <BeltStripe value={entry.tier}/>
                 <div style={{margin: '12px 0px 8px 8px', width: '60%', flexShrink: 0, flexDirection: 'column'}}>
                     <FieldValue
                         value={
-                            <Typography
-                                style={{fontWeight: 500, fontSize: '1.07rem', lineHeight: 1.25, marginBottom: '4px'}}>
+                            <Typography component='span'
+                                        style={{
+                                            fontWeight: 500,
+                                            fontSize: '1.07rem',
+                                            lineHeight: 1.25,
+                                            marginBottom: '4px'
+                                        }}>
                                 {make && make !== model ? `${make} ${model}` : model}
                             </Typography>
                         }
@@ -98,7 +108,7 @@ function SafelockEntry({entry, expanded, onExpand}) {
                 <React.Fragment>
                     <AccordionDetails sx={{padding: '8px 16px 0px 16px'}}>
                         <div style={{display: infoFlexStyle}}>
-                            <Stack direction='row' alignItems='flex-start' style={{flexGrow: 1}}>
+                            <Stack direction='row' style={{flexGrow: 1}} sx={{alignItems: 'flex-start'}}>
                                 {entry.tier &&
                                     <FieldValue
                                         name={questLabel}

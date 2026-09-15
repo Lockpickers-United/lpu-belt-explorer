@@ -63,11 +63,13 @@ function UpgradeEntry({upgradeTree = [], baseId, expanded, onExpand}) {
                         <BeltStripe value={entry.belt}/>
                         <ListItemText
                             primary={entryName(entry)}
-                            primaryTypographyProps={{fontWeight: 500}}
                             secondary={entry.version}
                             style={{padding: '0px 0px 0px 10px'}}
                             sx={linkSx}
                             onClick={handleClick(entry)}
+                            slotProps={{
+                                primary: {fontWeight: 500}
+                            }}
                         />
                         <ListItemIcon style={{minWidth: 20, marginLeft: 16}}>
                             <IconButton onClick={handleClick(entry)}>
@@ -79,7 +81,6 @@ function UpgradeEntry({upgradeTree = [], baseId, expanded, onExpand}) {
             )}
             <div style={{...style, borderTop: '1px solid #666', height: 20}}/>
         </div>
-
     )
 }
 

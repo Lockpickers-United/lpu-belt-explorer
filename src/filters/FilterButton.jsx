@@ -68,7 +68,7 @@ function FilterButton({onFiltersChanged, extraFilters = [], text}) {
                 <Toolbar variant='dense' onClick={closeDrawer}>
                     <Typography variant='h6'>Filters</Typography>
                 </Toolbar>
-                <Box margin={1}>
+                <Box sx={{margin: 1}}>
                     <Stack direction='column' style={{minWidth: 250}}>
                         {filterFields
                             .filter(field => {

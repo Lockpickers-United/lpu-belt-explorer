@@ -320,17 +320,23 @@ function RaffleEntryForm({editEntryId = undefined, setEditEntryId}) {
                                 {formData?.notes?.length || 0}/1200
                             </div>
                         </div>
-                        <TextField type='text' multiline fullWidth rows={2}
-                                   name='notes'
-                                   value={formData.notes || ''}
-                                   onChange={handleChange}
-                                   id='notes'
-                                   color='info' style={{}}
-                                   placeholder='Add additional notes about this entry'
-                                   variant='outlined'
-                                   InputProps={{style: {fontSize: contentsFontSize}}}
-                                   inputProps={{maxLength: 1200}}
-                        />
+                        <TextField
+                            type='text'
+                            multiline
+                            fullWidth
+                            rows={2}
+                            name='notes'
+                            value={formData.notes || ''}
+                            onChange={handleChange}
+                            id='notes'
+                            color='info'
+                            style={{}}
+                            placeholder='Add additional notes about this entry'
+                            variant='outlined'
+                            slotProps={{
+                                input: {style: {fontSize: contentsFontSize}},
+                                htmlInput: {maxLength: 1200}
+                            }} />
                     </div>
                 }
 

@@ -99,8 +99,8 @@ function Entry({entry, expanded, onExpand, scorecardId}) {
     }, [navigate, scorecardId, userId])
 
     return (
-        <Accordion expanded={expanded} onChange={handleChange} style={style} ref={ref}>
-            <AccordionSummary expandIcon={<ExpandMoreIcon/>} sx={{
+        <Accordion expanded={expanded} onChange={handleChange} style={style} ref={ref} slots={{heading: 'div'}}>
+            <AccordionSummary component='div' expandIcon={<ExpandMoreIcon/>} sx={{
                 '.MuiAccordionSummary-content': {
                     alignItems: 'center'
                 }
@@ -117,7 +117,7 @@ function Entry({entry, expanded, onExpand, scorecardId}) {
                         !!entry.version &&
                         <FieldValue
                             name='Version'
-                            value={<Typography
+                            value={<Typography component='span'
                                 style={{fontSize: '0.95rem', lineHeight: 1.25}}>{entry.version}</Typography>}
                             textStyle={entry.belt === 'Unranked' ? {color: '#aaa'} : {}}
                         />

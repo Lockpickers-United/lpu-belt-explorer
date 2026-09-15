@@ -44,7 +44,7 @@ function RecordingControls({lockId, dense}) {
             {recordings.map((rec, index) => {
                 return (
                     <div key={rec.id}>
-                        <Stack direction='row' alignItems='center'>
+                        <Stack direction='row' sx={{alignItems: 'center'}}>
                             {index === 0 &&
                                 <React.Fragment>
                                     {dense &&
@@ -131,7 +131,7 @@ function RecordingControls({lockId, dense}) {
                         </div>
                     }
                     {!dense &&
-                        <Stack direction='row' alignItems='center' onClick={() => setEditRecId(0)}>
+                        <Stack direction='row' sx={{alignItems: 'center'}} onClick={() => setEditRecId(0)}>
                             <FormGroup>
                                 <FormControlLabel
                                     key={'scorecard'}

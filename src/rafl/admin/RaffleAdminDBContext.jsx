@@ -53,7 +53,6 @@ export function RaffleAdminDBProvider({children}) {
             setallRaffleEntries(entries)
             setEntriesLoaded(true)
             setDbLoaded(true)
-            console.log('DB, subscribedEntries, entry count:', entries.length)
         }, error => {
             console.error('Error listening to DB:', error)
             setDbError(true)

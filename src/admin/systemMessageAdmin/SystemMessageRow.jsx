@@ -62,8 +62,8 @@ function SystemMessageRow({message, expanded, onExpand, setControlsExpanded}) {
             : 1
 
     return (
-        <Accordion expanded={expanded} onChange={handleChange} style={style} ref={ref}>
-            <AccordionSummary expandIcon={<ExpandMoreIcon/>}>
+        <Accordion expanded={expanded} onChange={handleChange} style={style} ref={ref} slots={{heading: 'div'}}>
+            <AccordionSummary component='div' expandIcon={<ExpandMoreIcon/>}>
                 <div style={{display: 'block', width: 680, opacity: rowOpactity}} key={temp.id}>
                     <div style={{margin: '2px 0px 2px 4px', width: '100%', display: 'flex', placeItems: 'center'}}>
                         <div style={{
@@ -132,7 +132,7 @@ function SystemMessageRow({message, expanded, onExpand, setControlsExpanded}) {
                             {temp.status === 'archived' &&
                                 <SystemMessage override={temp}/>
                             }
-                            <Stack direction='row' alignItems='flex-start' style={{flexGrow: 1}}>
+                            <Stack direction='row' style={{flexGrow: 1}} sx={{alignItems: 'flex-start'}}>
 
                                 <SystemMessageForm message={message} temp={temp} setTemp={setTemp} updated={updated}
                                                    setUpdated={setUpdated} setControlsExpanded={setControlsExpanded}/>

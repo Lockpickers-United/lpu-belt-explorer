@@ -97,11 +97,15 @@ function EntrySimple({entry, expanded, onExpand}) {
 
     const textColor = entry.belt === 'Unranked' ? '#aaa' : '#fff'
     const versionColor = entry.belt === 'Unranked' ? '#aaa' : '#ccc'
-    const linkSx = {color: '#aaa', textDecoration: 'none', cursor: 'pointer', '&:hover': {
+    const linkSx = {
+        color: '#aaa', textDecoration: 'none', cursor: 'pointer', '&:hover': {
             color: '#fff'
-        }}
+        }
+    }
     const relatedHeader = upgradeBaseId
-        ? <div style={{marginBottom:2}}>Other Versions | <Link sx={linkSx} onClick={() => navigate(`/profile/scorecard/upgrades?id=${upgradeBaseId}`)}>View Upgrades</Link></div>
+        ? <div style={{marginBottom: 2}}>Other Versions | <Link sx={linkSx}
+                                                                onClick={() => navigate(`/profile/scorecard/upgrades?id=${upgradeBaseId}`)}>View
+            Upgrades</Link></div>
         : <>Other Versions Only</>
 
     const {isMobile} = useWindowSize()
@@ -110,15 +114,22 @@ function EntrySimple({entry, expanded, onExpand}) {
     // TODO - don't bring in FilterChip, just render here. Fix add filter for new style.
 
     return (
-        <Accordion expanded={expanded} onChange={handleChange} style={style} ref={ref} role='listitem' aria-label={lockName}>
-            <AccordionSummary expandIcon={<ExpandMoreIcon/>}>
+        <Accordion expanded={expanded} onChange={handleChange} style={style} ref={ref} slots={{heading: 'div'}}
+                   role='listitem' aria-label={lockName}>
+            <AccordionSummary component='div' expandIcon={<ExpandMoreIcon/>} sx={{
+                '.MuiAccordionSummary-content': {
+                    alignItems: 'center'
+                }
+            }} style={{}}>
+
                 <BeltStripe value={entry.belt}/>
-                <div style={{margin: '6px 0px 8px 12px', width: makeModelWidth, flexShrink: 0, flexDirection: 'column'}}>
+                <div
+                    style={{margin: '6px 0px 8px 12px', width: makeModelWidth, flexShrink: 0, flexDirection: 'column'}}>
                     <div style={{
-                        color: textColor,
+                        color: textColor
                     }}>{makeModels}</div>
 
-                    { !!entry.version &&
+                    {!!entry.version &&
                         <div style={{marginTop: 5}}>
                             <div style={{
                                 color: versionColor,
@@ -132,30 +143,30 @@ function EntrySimple({entry, expanded, onExpand}) {
                 </div>
                 {entry.lockingMechanisms?.length > 0 &&
                     <div style={{margin: '8px 0px 0px 0px', width: '40%', flexShrink: 0, flexDirection: 'row'}}>
-                            {entry.lockingMechanisms?.sort().map((lockingMechanism, index) =>
-                                <Box
-                                    key={index}
-                                    style={{
-                                        display: 'inline-block',
-                                        color: '#fff',
-                                        fontSize: '0.85rem',
-                                        border: '1px solid #666',
-                                        borderRadius: 16,
-                                        padding: '2px 10px',
-                                        cursor: 'pointer',
-                                        marginRight: 4,
-                                        marginBottom: 4
-                                    }}
-                                    sx={{
-                                        '&:hover': {
-                                            backgroundColor: '#333'
-                                        }
-                                    }}
-                                    onClick={(event) => handleAddFilter(event, 'lockingMechanisms', lockingMechanism)}
-                                >
-                                    {String(lockingMechanism)}
-                                </Box>
-                            )}
+                        {entry.lockingMechanisms?.sort().map((lockingMechanism, index) =>
+                            <Box
+                                key={index}
+                                style={{
+                                    display: 'inline-block',
+                                    color: '#fff',
+                                    fontSize: '0.85rem',
+                                    border: '1px solid #666',
+                                    borderRadius: 16,
+                                    padding: '2px 10px',
+                                    cursor: 'pointer',
+                                    marginRight: 4,
+                                    marginBottom: 4
+                                }}
+                                sx={{
+                                    '&:hover': {
+                                        backgroundColor: '#333'
+                                    }
+                                }}
+                                onClick={(event) => handleAddFilter(event, 'lockingMechanisms', lockingMechanism)}
+                            >
+                                {String(lockingMechanism)}
+                            </Box>
+                        )}
                     </div>
                 }
             </AccordionSummary>

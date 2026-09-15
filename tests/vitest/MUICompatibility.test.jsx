@@ -2,6 +2,11 @@ import React, {useState} from 'react'
 import {fireEvent, screen, waitFor} from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import {afterEach, beforeEach, describe, expect, it, vi} from 'vitest'
+import Accordion from '@mui/material/Accordion'
+import AccordionDetails from '@mui/material/AccordionDetails'
+import AccordionSummary from '@mui/material/AccordionSummary'
+import Button from '@mui/material/Button'
+import Tooltip from '@mui/material/Tooltip'
 import AutoCompleteBox from '../../src/formUtils/AutoCompleteBox.jsx'
 import Dropzone from '../../src/formUtils/Dropzone.jsx'
 import SelectBox from '../../src/formUtils/SelectBox.jsx'
@@ -57,6 +62,16 @@ function SelectHarness() {
     )
 }
 
+function AccordionHarness() {
+    const [expanded, setExpanded] = useState(false)
+    return (
+        <Accordion expanded={expanded} onChange={(_event, nextExpanded) => setExpanded(nextExpanded)}>
+            <AccordionSummary>Compatibility section</AccordionSummary>
+            <AccordionDetails>Compatibility details</AccordionDetails>
+        </Accordion>
+    )
+}
+
 describe('Material UI compatibility contracts', () => {
     beforeEach(() => {
         vi.stubGlobal('URL', {
@@ -108,6 +123,40 @@ describe('Material UI compatibility contracts', () => {
 
         expect(screen.getByRole('status', {name: 'Selected value'})).toHaveTextContent('Beta')
         expect(screen.queryByRole('listbox')).not.toBeInTheDocument()
+    })
+
+    it('supports the MUI 6 Accordion heading and keyboard interaction', async () => {
+        const user = userEvent.setup()
+        renderWithProviders(<AccordionHarness/>)
+
+        const heading = screen.getByRole('heading', {level: 3})
+        const summary = screen.getByRole('button', {name: 'Compatibility section'})
+        expect(heading).toContainElement(summary)
+        expect(summary).toHaveAttribute('aria-expanded', 'false')
+
+        summary.focus()
+        await user.keyboard('{Enter}')
+        expect(summary).toHaveAttribute('aria-expanded', 'true')
+        expect(screen.getByText('Compatibility details')).toBeVisible()
+
+        await user.keyboard(' ')
+        expect(summary).toHaveAttribute('aria-expanded', 'false')
+    })
+
+    it('supports tooltip display and dismissal', async () => {
+        const user = userEvent.setup()
+        renderWithProviders(
+            <Tooltip title='Compatibility help'>
+                <Button>Help</Button>
+            </Tooltip>
+        )
+
+        const button = screen.getByRole('button', {name: 'Compatibility help'})
+        await user.hover(button)
+        expect(await screen.findByRole('tooltip')).toHaveTextContent('Compatibility help')
+
+        await user.unhover(button)
+        await waitFor(() => expect(screen.queryByRole('tooltip')).not.toBeInTheDocument())
     })
 
     it('supports Autocomplete typing, keyboard selection, clearing, and no-match actions', async () => {

@@ -56,13 +56,15 @@ function AutoCompleteBox({name, changeHandler, options, style, disabled = false,
                         variant='outlined'
                         color='info'
                         inputRef={inputEl}
-                        InputProps={{
-                            ...params.InputProps,
-                            startAdornment: (
-                                <InputAdornment position='start'>
-                                    <SearchIcon/>
-                                </InputAdornment>
-                            )
+                        slotProps={{
+                            input: {
+                                ...params.InputProps,
+                                startAdornment: (
+                                    <InputAdornment position='start'>
+                                        <SearchIcon/>
+                                    </InputAdornment>
+                                )
+                            }
                         }}
                     />
                 }
