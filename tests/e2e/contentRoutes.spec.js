@@ -1,8 +1,22 @@
 import {test, expect} from './fixtures'
 
-test('user can view Info page', async ({page}) => {
-    await page.goto('/#/info')
+test('hash routes preserve search and browser history across refreshes', async ({page}) => {
+    await page.goto('/#/info?source=router-upgrade')
     await expect(page.getByRole('heading', {name: 'Earn Lockpicking Karate Flair'})).toBeVisible()
+
+    await page.goto('/#/projects')
+    await expect(page.getByRole('heading', {name: 'Tier levels'})).toBeVisible()
+
+    await page.goBack()
+    await expect(page).toHaveURL(/\/#\/info\?source=router-upgrade$/)
+    await expect(page.getByRole('heading', {name: 'Earn Lockpicking Karate Flair'})).toBeVisible()
+
+    await page.reload()
+    await expect(page).toHaveURL(/\/#\/info\?source=router-upgrade$/)
+    await expect(page.getByRole('heading', {name: 'Earn Lockpicking Karate Flair'})).toBeVisible()
+
+    await page.goForward()
+    await expect(page.getByRole('heading', {name: 'Tier levels'})).toBeVisible()
 })
 
 test('user can view Projects page', async ({page}) => {

@@ -1,6 +1,6 @@
 import React from 'react'
 import {screen, waitFor} from '@testing-library/react'
-import {createMemoryRouter, Outlet, RouterProvider} from 'react-router-dom'
+import {createMemoryRouter, matchRoutes, Outlet, RouterProvider} from 'react-router-dom'
 import {afterEach, describe, expect, it, vi} from 'vitest'
 import AdminRoute from '../../src/admin/AdminRoute.jsx'
 import routes from '../../src/app/routes.jsx'
@@ -20,7 +20,7 @@ const compatibilityRoutes = routes.map(route => {
 const renderRouter = (initialEntry, routeConfig = compatibilityRoutes, providerOptions) => {
     const router = createMemoryRouter(routeConfig, {initialEntries: [initialEntry]})
     renderWithProviders(
-        <RouterProvider router={router} future={{v7_startTransition: true}}/>,
+        <RouterProvider router={router}/>,
         providerOptions
     )
     return router
@@ -45,6 +45,17 @@ describe('route compatibility contracts', () => {
             expect(screen.getByRole('heading', {name: 'Earn Lockpicking Karate Flair'})).toBeInTheDocument()
         })
         expect(router.state.location.search).toBe('?source=compatibility')
+        expect(router.state.navigation.state).toBe('idle')
+    })
+
+    it.each([
+        ['/leaderboard/locks', ['/leaderboard', '/leaderboard/locks']],
+        ['/profile/test-user/scorecard/popular', ['/profile', '/profile/:userId/scorecard/popular']],
+        ['/rafl/admin/drawing', ['/rafl', '/rafl/admin', '/rafl/admin/drawing']]
+    ])('matches nested absolute route %s', (pathname, expectedPaths) => {
+        const matches = matchRoutes(routes, pathname)
+
+        expect(matches.map(match => match.route.path)).toEqual(expectedPaths)
     })
 
     it('renders the configured route error boundary', async () => {
@@ -73,7 +84,7 @@ describe('route compatibility contracts', () => {
             children: [{index: true, element: <div>Administrative content</div>}]
         }], {initialEntries: ['/admin']})
 
-        renderWithProviders(<RouterProvider router={router} future={{v7_startTransition: true}}/>, {
+        renderWithProviders(<RouterProvider router={router}/>, {
             auth: {authLoaded: true},
             db: {adminRole}
         })

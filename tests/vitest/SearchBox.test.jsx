@@ -76,7 +76,7 @@ describe('SearchBox', () => {
 
     it('does not replace newer input with a delayed URL update', async () => {
         render(
-            <MemoryRouter future={{v7_startTransition: true, v7_relativeSplatPath: true}}>
+            <MemoryRouter>
                 <DelayedFilterProvider>
                     <SearchBox label='Locks'/>
                     <LocationSearch/>
@@ -103,7 +103,7 @@ describe('SearchBox', () => {
 
     it('still accepts search text from external navigation', async () => {
         render(
-            <MemoryRouter future={{v7_startTransition: true, v7_relativeSplatPath: true}}>
+            <MemoryRouter>
                 <FilterProvider>
                     <SearchBox label='Locks'/>
                     <ExternalSearchButton/>
@@ -118,7 +118,7 @@ describe('SearchBox', () => {
 
     it('keeps a clear action when an older URL update is pending', async () => {
         render(
-            <MemoryRouter future={{v7_startTransition: true, v7_relativeSplatPath: true}}>
+            <MemoryRouter>
                 <DelayedFilterProvider>
                     <SearchBox label='Locks'/>
                     <LocationSearch/>
@@ -141,7 +141,6 @@ describe('SearchBox', () => {
         render(
             <MemoryRouter
                 initialEntries={['/?search=first']}
-                future={{v7_startTransition: true, v7_relativeSplatPath: true}}
             >
                 <FilterProvider>
                     <SearchBox label='Locks'/>
@@ -173,7 +172,7 @@ describe('SearchBox', () => {
     it('cancels pending debounce work when unmounted', async () => {
         const consoleError = vi.spyOn(console, 'error').mockImplementation(() => {})
         const {unmount} = render(
-            <MemoryRouter future={{v7_startTransition: true, v7_relativeSplatPath: true}}>
+            <MemoryRouter>
                 <FilterProvider>
                     <SearchBox label='Locks'/>
                 </FilterProvider>

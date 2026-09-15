@@ -93,13 +93,12 @@ export const renderWithRouter = (ui, {
         if (useHash) {
             // keep HashRouter semantics if you prefer
             window.location.hash = route.startsWith('#') ? route : `#${route}`
-            return <HashRouter future={{v7_startTransition: true, v7_relativeSplatPath: true}}>{children}</HashRouter>
+            return <HashRouter>{children}</HashRouter>
         }
         // MemoryRouter is ideal for tests (fast, fully in-memory)
         return (
             <MemoryRouter
                 initialEntries={initialEntries ?? [route]}
-                future={{v7_startTransition: true, v7_relativeSplatPath: true}}
             >
                 {children}
             </MemoryRouter>

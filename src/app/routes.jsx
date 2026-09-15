@@ -1,5 +1,6 @@
 import React from 'react'
 import {redirect} from 'react-router-dom'
+import LoadingDisplay from '../util/LoadingDisplay'
 import ErrorBoundary from './ErrorBoundary'
 
 export default [
@@ -612,5 +613,8 @@ export default [
         loader:
             () => redirect('/locks')
     }
-].map(route => ({...route, errorElement: <ErrorBoundary/>}))
-
+].map(route => ({
+    ...route,
+    errorElement: <ErrorBoundary/>,
+    hydrateFallbackElement: <LoadingDisplay/>
+}))

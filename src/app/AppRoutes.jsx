@@ -5,12 +5,7 @@ import routes from './routes'
 function AppRoutes() {
     const router = createHashRouter(routes)
 
-    return <RouterProvider
-        router={router}
-        future={{
-            v7_startTransition: true
-        }}
-    />
+    return <RouterProvider router={router}/>
 }
 
 export default AppRoutes
