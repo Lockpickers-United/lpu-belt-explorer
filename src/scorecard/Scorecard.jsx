@@ -185,7 +185,7 @@ function Scorecard({owner, profile, adminAction, popular}) {
                                 }
                             </div>
                             : <div style={{display: headerDivStyle, padding: '0px 8px 0px 16px'}}>
-                                {profile?.blackBeltAwardedAt > 0 &&
+                                {profile.danLevel >= 0 &&
                                     <ScorecardDanStats profile={profile} owner={owner}/>
                                 }
                                 <div style={{marginRight: 0, width: '95%'}}>
