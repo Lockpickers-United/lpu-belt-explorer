@@ -27,7 +27,7 @@ export function ProfileProvider({children, userId: providedUserId}) {
 
     const userId = providedUserId || filters.uid || user?.uid || ''
     const isSelf = Boolean(user?.uid && user.uid === userId)
-    const adminUser = isLoggedIn && user && ['lpuAdmin', 'admin'].some(claim => userClaims.includes(claim))
+    const adminUser = isLoggedIn && user && ['admin'].some(claim => userClaims.includes(claim))
 
     const [summaryState, setSummaryState] = useState({
         loading: false,

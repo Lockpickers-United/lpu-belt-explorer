@@ -25,6 +25,7 @@ export default function UserInfoMain() {
     const {userId, data, loading, error, isFullProfile} = useContext(ProfileContext)
     const profile = useMemo(() => data ? data.profile : {}, [data])
 
+    console.log('userinfo', {userId, data, loading, error, isFullProfile})
     adminEnabled && console.log('admin log: profile', {isFullProfile, data})
 
     const {filters = {}, addFilters} = useContext(FilterContext)

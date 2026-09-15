@@ -80,7 +80,7 @@ describe('ProfileContext', () => {
         expect(getProfile).not.toHaveBeenCalled()
     })
 
-    it.each(['admin', 'lpuAdmin'])('returns a full DB profile for the %s claim even when local admin mode is disabled', async claim => {
+    it.each(['admin'])('returns a full DB profile for the %s claim even when local admin mode is disabled', async claim => {
         const getProfile = vi.fn().mockResolvedValue({displayName: 'Full profile', privateNote: 'authorized'})
         const fetchProfileSummary = vi.fn()
 
