@@ -109,7 +109,7 @@ function EntrySimple({entry, expanded, onExpand}) {
         : <>Other Versions Only</>
 
     const {isMobile} = useWindowSize()
-    const makeModelWidth = isMobile ? '55%' : '60%'
+    const makeModelWidth = isMobile ? '55%' : '65%'
 
     // TODO - don't bring in FilterChip, just render here. Fix add filter for new style.
 
@@ -142,7 +142,7 @@ function EntrySimple({entry, expanded, onExpand}) {
                     }
                 </div>
                 {entry.lockingMechanisms?.length > 0 &&
-                    <div style={{margin: '8px 0px 0px 0px', width: '40%', flexShrink: 0, flexDirection: 'row'}}>
+                    <div style={{margin: '0px 0px 0px 0px', width: '40%', flexShrink: 0, flexDirection: 'row'}}>
                         {entry.lockingMechanisms?.sort().map((lockingMechanism, index) =>
                             <Box
                                 key={index}

@@ -51,8 +51,8 @@ function MainMenuItem({menuItem, onClose, child, childCount, childIndex}) {
         : undefined
 
     const style = child
-        ? {padding: '5px 0px 9px 48px', margin: '0px 15px 1px 28px', color, ...adminStyle}
-        : {padding: '14px 30px 14px 24px',color, ...adminStyle}
+        ? {padding: '2px 0px 6px 36px', margin: '0px 15px 1px 28px', color, ...adminStyle}
+        : {padding: '10px 30px 10px 20px',color, ...adminStyle}
 
     const coloredIcon = icon
         ? React.cloneElement(icon, {style: {color}})
