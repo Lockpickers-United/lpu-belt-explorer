@@ -30,5 +30,9 @@ jobs:
         run: npm run import
 
       # Commit all changed files back to the repository
-      - uses: stefanzweifel/git-auto-commit-action@v7
-          
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v7
+        with:
+          commit_message: "Automated commit after import"
+          commit_options: '--no-verify'
+
