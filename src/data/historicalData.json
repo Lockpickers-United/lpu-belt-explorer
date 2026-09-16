@@ -22918,7 +22918,7 @@
     ],
     "name": "ABUS Bravus 4000",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 6,
+    "views": 7,
     "lastUpdated": "2025-03-19T15:44:57.295Z",
     "media": [
       {
@@ -22971,8 +22971,8 @@
       "Trap element"
     ],
     "notes": "Requires 360° picking: these locks have traps that require some work to pick",
-    "popularityIndex": 6,
-    "scorecardCount": 3
+    "popularityIndex": 7,
+    "scorecardCount": 4
   },
   "20adf729": {
     "id": "20adf729",
@@ -37804,7 +37804,7 @@
       "e0191c45"
     ],
     "popularityIndex": 15,
-    "scorecardCount": 10
+    "scorecardCount": 11
   },
   "c4484574": {
     "id": "c4484574",
@@ -50164,13 +50164,13 @@
     "lockingMechanisms": [
       "Dimple"
     ],
-    "views": 2,
+    "views": 3,
     "lastUpdated": "2023-08-10T00:09:36.306Z",
     "features": [
       "Under Review ⚑"
     ],
     "notes": "High pin count",
-    "popularityIndex": 2
+    "popularityIndex": 3
   },
   "281aa393": {
     "id": "281aa393",
