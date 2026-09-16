@@ -1,0 +1,1 @@
+import{a as e}from"./rolldown-runtime-B0Z9INg1.js";import{ct as t}from"./utils-CNr2bmyy.js";var n=e(t(),1),r=n.createContext(void 0);function i(){return n.useContext(r)}function a({props:e,states:t}){let i=n.useContext(r),a={};return t.forEach(t=>{let n=e[t];a[t]=n===void 0&&i?i[t]:n}),[a,i]}export{a as n,r,i as t};

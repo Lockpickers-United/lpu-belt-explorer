@@ -1,0 +1,1 @@
+import{a as e}from"./rolldown-runtime-B0Z9INg1.js";import{ct as t}from"./utils-CNr2bmyy.js";var n=e(t(),1);function r(e,t){return n.isValidElement(e)&&t.indexOf(e.type.muiName??e.type?._payload?.value?.muiName)!==-1}var i=r;export{i as t};
