@@ -17,13 +17,13 @@ function LeaderboardRow({index, leader, highlighted, scrollableRef, columns, tab
 
     useEffect(() => {
         if (highlighted && ref && !scrolled) {
-            setTimeout(() => {
-                setScrolled(true)
-                scrollableRef.current.scrollTo({
-                    top: ref.current.offsetTop - 75,
-                    behavior: 'smooth'
-                })
-            }, 0)
+            scrollableRef.current.scrollTo({
+                top: ref.current.offsetTop - 75,
+                behavior: 'smooth'
+            })
+            setScrolled(true)
+        } else if (!highlighted && scrolled) {
+            setScrolled(false)
         }
     }, [highlighted, scrollableRef, scrolled])
 
@@ -39,10 +39,10 @@ function LeaderboardRow({index, leader, highlighted, scrollableRef, columns, tab
             }}
         >
             <LeaderboardCell isCurrentUser={isCurrentUser} value={index + 1}/>
-            <LeaderboardCell isCurrentUser={isCurrentUser} value={
-                <LeaderboardName isCurrentUser={isCurrentUser} leader={leader} tab={tab}
-                />
-            } align='left'/>
+            <LeaderboardCell isCurrentUser={isCurrentUser}
+                             value={
+                                 <LeaderboardName isCurrentUser={isCurrentUser} leader={leader} tab={tab}/>
+                             } align='left'/>
 
             {columns.map((column, index) => {
                 const value = column.field === 'blackBeltAwardedAt'

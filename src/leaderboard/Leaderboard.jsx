@@ -140,7 +140,7 @@ function Leaderboard({tab}) {
     const title = loading ? 'Loading...' : 'Leaderboard'
     const safelocksText = isMobile ? 'Safes' : 'Safe Locks'
 
-    const tableHeight = tab === 'blackBelts' ? '100%' : '78vh'
+    const tableHeight = tab === 'blackBelts' ? '88vh' : '88vh'
 
     if (loading) {
         return <LoadingDisplay/>
