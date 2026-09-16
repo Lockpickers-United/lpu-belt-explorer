@@ -91,6 +91,7 @@ function Leaderboard({tab}) {
         const allData = data ?
             data?.leaderboardData.data
                 .filter(leader => !leader['privacyNoLeaderboard'])
+                .filter(leader => leader.displayName !== 'no display name')
                 .filter(leader => leader[tabData[tab]['defaultSort']] > 0)
             : []
         return tab === 'blackBelts'
