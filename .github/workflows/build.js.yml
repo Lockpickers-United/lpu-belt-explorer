@@ -37,8 +37,9 @@ jobs:
   
       - name: Install dependencies
         run: npm ci
-      - name: Run tests
-        run: npm run test:ci
+# disbabled, runs pre-commit
+#      - name: Run tests
+#        run: npm run test:ci
       - name: Build and Deploy
         run: npm run ci-build
         env:

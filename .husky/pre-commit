@@ -1,4 +1,4 @@
-if [ -s "$HOME/.nvm/nvm.sh" ]; then
+if [ "${CI:-}" != "true" ] && [ -s "$HOME/.nvm/nvm.sh" ]; then
     unset npm_config_prefix
     . "$HOME/.nvm/nvm.sh"
     nvm use --silent
