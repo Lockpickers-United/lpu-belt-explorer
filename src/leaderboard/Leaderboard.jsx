@@ -91,13 +91,13 @@ function Leaderboard({tab}) {
         const allData = data ?
             data?.leaderboardData.data
                 .filter(leader => !leader['privacyNoLeaderboard'])
-                .filter(leader => leader.displayName !== 'no display name')
+                .filter(leader => leader.displayName !== 'no display name' || leader.id === user?.uid)
                 .filter(leader => leader[tabData[tab]['defaultSort']] > 0)
             : []
         return tab === 'blackBelts'
             ? allData.filter(leader => leader['blackBeltAwardedAt'] > 0)
             : allData
-    }, [data, tab, tabData])
+    }, [data, tab, tabData, user])
 
     const blackBeltData = useMemo(() => {
         return data?.leaderboardData.data
