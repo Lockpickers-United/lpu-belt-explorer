@@ -39,8 +39,8 @@ function RecentMediaEntry({entry}) {
                         style={{padding: '0px 0px 0px 10px', cursor: 'pointer'}}
                         onClick={handleClick}
                         slotProps={{
-                            primary: {fontWeight: 500, fontSize: '1.1rem'},
-                            secondary: {fontSize: '1rem'}
+                            primary: {sx: {fontWeight: 500, fontSize: '1.1rem'}},
+                            secondary: {sx: {fontSize: '1rem'}}
                         }} />
                     {entry.dateDeleted &&
                         <div style={{marginRight:20}}>

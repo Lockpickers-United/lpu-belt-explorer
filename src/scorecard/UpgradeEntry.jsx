@@ -68,7 +68,7 @@ function UpgradeEntry({upgradeTree = [], baseId, expanded, onExpand}) {
                             sx={linkSx}
                             onClick={handleClick(entry)}
                             slotProps={{
-                                primary: {fontWeight: 500}
+                                primary: {sx: {fontWeight: 500}}
                             }}
                         />
                         <ListItemIcon style={{minWidth: 20, marginLeft: 16}}>

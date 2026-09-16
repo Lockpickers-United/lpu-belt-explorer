@@ -22,8 +22,8 @@ function PopularEntry({entry, owner}) {
                 secondary={entry.version}
                 style={{padding: '0px 0px 0px 10px'}}
                 slotProps={{
-                    primary: {fontWeight: 500},
-                    secondary: {color:rowColor}
+                    primary: {sx: {fontWeight: 500}},
+                    secondary: {sx: {color:rowColor}}
                 }} />
 
             <ViewLockButton entry={entry} color={rowColor}/>
