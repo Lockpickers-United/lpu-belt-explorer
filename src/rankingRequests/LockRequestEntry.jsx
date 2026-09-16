@@ -97,14 +97,14 @@ function LockRequestEntry({entry, expanded, onExpand, requestMod}) {
 
     const handleUpdate = useCallback(async (entry) => {
         const url = `${nodeServerUrl}/update-request`
-        const json= JSON.stringify({ entry })
+        const json = JSON.stringify({entry})
 
         try {
             await postData({user, url, json, snackBars: false})
         } catch (error) {
             console.error('Error updating vote:', error)
             let errorMessage = error.response?.data?.message || error.message
-            enqueueSnackbar(`Error updating request: ${errorMessage}`, { variant: 'error', autoHideDuration: 3000 })
+            enqueueSnackbar(`Error updating request: ${errorMessage}`, {variant: 'error', autoHideDuration: 3000})
         } finally {
             handleEditClose()
         }
@@ -186,9 +186,12 @@ function LockRequestEntry({entry, expanded, onExpand, requestMod}) {
 
     return (
         <React.Fragment>
-            <Accordion expanded={expanded} onChange={handleChange} style={style} ref={ref}>
-                <AccordionSummary expandIcon={<ExpandMoreIcon/>}
-                                  style={{cursor: 'pointer'}}>
+            <Accordion expanded={expanded} onChange={handleChange} style={style} ref={ref} slots={{heading: 'div'}}>
+                <AccordionSummary component='div' nativeButton={false} expandIcon={<ExpandMoreIcon/>} sx={{
+                    '.MuiAccordionSummary-content': {
+                        alignItems: 'center'
+                    }
+                }} style={{cursor: 'pointer'}}>
                     <BeltStripe value={entry.belt}/>
                     <div style={{display: flexStyle, width: '100%', alignItems: 'center', opacity: opacity}}>
                         <div style={{display: flexStyle, width: '100%', alignItems: 'center', opacity: opacity}}>
@@ -197,9 +200,9 @@ function LockRequestEntry({entry, expanded, onExpand, requestMod}) {
                                 secondary={entry.lockingMechanisms.join(', ')}
                                 style={{padding: '0px 0px 0px 10px'}}
                                 slotProps={{
-                                    primary: {fontWeight: 500, fontSize: '1.1rem'},
-                                    secondary: {fontSize: '0.9rem'}
-                                }} />
+                                    primary: {sx: {fontWeight: 500, fontSize: '1.1rem'}},
+                                    secondary: {sx: {fontSize: '0.9rem'}}
+                                }}/>
                             <div style={{
                                 display: 'flex',
                                 alignItems: 'center',
@@ -227,7 +230,7 @@ function LockRequestEntry({entry, expanded, onExpand, requestMod}) {
                             }
                         </div>
 
-                        <div style={{display: flexStyle, width: '100%', marginTop:15}}>
+                        <div style={{display: flexStyle, width: '100%', marginTop: 15}}>
                             <FieldValue name='Requested By' value={userName + userBelt}
                                         style={{marginRight: 30}}
                                         headerStyle={{color: '#aaa', fontSize: '0.9rem'}}/>

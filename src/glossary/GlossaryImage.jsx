@@ -8,24 +8,30 @@ function GlossaryImage({entry, highlighted}) {
     const {width} = useWindowSize()
     const smallWidth = width < 500
     const photoWidth = !smallWidth ? 150 : 110
+
+    const sequencedMedia = [entry.media]
+        .sort((a, b) => {
+            return a.sequenceId - b.sequenceId
+        })
+        .map((media, index) => ({...media, imageIndex: index+1}))
+
     const {
         term,
         media: {
             thumbnailUrl,
-            sequenceId
         } = {}
     } = entry
 
     const [open, setOpen] = useState(() => {
-        return searchParams.get('image') === sequenceId && highlighted
+        return searchParams.get('image') === '1' && highlighted
     })
 
     const handleClick = useCallback(() => {
         setOpen(true)
-        searchParams.set('image', sequenceId)
+        searchParams.set('image', '1')
         searchParams.set('term', term)
         setSearchParams(searchParams)
-    }, [searchParams, sequenceId, setSearchParams, term])
+    }, [searchParams, setSearchParams, term])
 
     const handleClose = useCallback(() => {
         setOpen(false)
@@ -49,8 +55,8 @@ function GlossaryImage({entry, highlighted}) {
             </div>
 
             {open && <ImageViewer
-                media={[entry.media]}
-                openIndex={sequenceId}
+                media={sequencedMedia}
+                openIndex={1}
                 onClose={handleClose}
                 shareParams={{term: entry.term}}
             />}

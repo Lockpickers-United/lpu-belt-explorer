@@ -43,8 +43,8 @@ function LeaderboardCompareRow({entry, data}) {
                     secondary={entry.version}
                     style={{padding: '0px 0px 0px 10px'}}
                     slotProps={{
-                        primary: {fontWeight: 500, textAlign: 'center', fontSize: '1.03rem'},
-                        secondary: {color: '#999', textAlign: 'center'}
+                        primary: {sx: {fontWeight: 500, textAlign: 'center', fontSize: '1.03rem'}},
+                        secondary: {sx: {color: '#999', textAlign: 'center'}}
                     }} />
             </ListItem>
             <div style={{width: 40, display: 'flex', alignItems: 'center'}}>

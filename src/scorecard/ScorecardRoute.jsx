@@ -38,7 +38,7 @@ function ScorecardRoute({mostPopular}) {
     const {userId, data, loading, error} = useContext(ProfileContext)
     const profile = useMemo(() => data ? data.profile : {}, [data])
 
-    adminEnabled && console.log('admin log: corecardRoute', {userId, data, loading, error})
+    adminEnabled && console.log('admin log: scorecardRoute', {userId, data, loading, error})
 
     const {
         scoredActivity,
@@ -93,7 +93,7 @@ function ScorecardRoute({mostPopular}) {
     const combinedProfile = useMemo(() => ({...profile, ...scorecardData.data}), [profile, scorecardData.data])
     const blackBeltScorecard = !!combinedProfile?.blackBeltAwardedAt
 
-    adminEnabled && console.log('combinedProfile', combinedProfile)
+    adminEnabled && console.log('admin log: combinedProfile', combinedProfile)
 
     const owner = user?.uid === userId
 

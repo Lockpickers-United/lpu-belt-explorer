@@ -6,6 +6,12 @@ function RaffleImageGallery({entry}) {
     const [searchParams, setSearchParams] = useSearchParams()
     const image = searchParams.get('image')
 
+    const sequencedMedia = entry.media
+        .sort((a, b) => {
+            return a.sequenceId - b.sequenceId
+        })
+        .map((media, index) => ({...media, imageIndex: index+1}))
+
     const handleOpenImage = useCallback(index => {
         searchParams.set('image', index + 1)
         setSearchParams(searchParams)
@@ -27,7 +33,7 @@ function RaffleImageGallery({entry}) {
 
     return (
         <ImageGallery
-            media={entry.media}
+            media={sequencedMedia}
             openIndex={openIndex}
             initiallyOpen={initiallyOpen}
             onOpenImage={handleOpenImage}
