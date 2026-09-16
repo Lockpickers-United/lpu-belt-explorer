@@ -103,6 +103,7 @@ Orange,ABUS,C51,,Pin-tumbler,,,afd3e51d
 Orange,"ABUS,ABUS,ABUS","E100,Ti12 Titalium,Ti14 Titalium",,Pin-tumbler,"Latest Changelog",,1050a58c
 Orange,"ABUS,Citadel","E50,N",,Pin-tumbler,,,1dc9f802
 Orange,ABUS,Monobloc,,Pin-tumbler,,,204d85a7
+Orange,ABUS,"Pfaffenhain 310","5 pins",Pin-tumbler,,"without Pfaffenhain barrel pin",096ded99
 Orange,ACE,Tubular,,Pump/push,,,bf8970de
 Orange,ALPHA,1000,"50mm 60mm (5pins / spools)",Pin-tumbler,,,bac43ba7
 Orange,"ASSA,ASSA","H5,H7",camlock,Pin-tumbler,,,e10b4a20

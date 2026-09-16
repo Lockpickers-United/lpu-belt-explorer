@@ -11,9 +11,9 @@
     "lockingMechanisms": [
       "Various"
     ],
-    "popularityIndex": 1455,
+    "popularityIndex": 1458,
     "scorecardCount": 106,
-    "views": 1455,
+    "views": 1458,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -108,9 +108,9 @@
     "lockingMechanisms": [
       "Various"
     ],
-    "popularityIndex": 467,
+    "popularityIndex": 468,
     "scorecardCount": 33,
-    "views": 467,
+    "views": 468,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -147,7 +147,7 @@
       "Various"
     ],
     "popularityIndex": 543,
-    "scorecardCount": 124,
+    "scorecardCount": 125,
     "views": 543,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
@@ -483,9 +483,9 @@
       "Unguttable"
     ],
     "modelNum": "1",
-    "popularityIndex": 574,
-    "scorecardCount": 70,
-    "views": 574,
+    "popularityIndex": 575,
+    "scorecardCount": 71,
+    "views": 575,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -619,9 +619,9 @@
       "Unguttable"
     ],
     "modelNum": "3",
-    "popularityIndex": 1492,
-    "scorecardCount": 169,
-    "views": 1492,
+    "popularityIndex": 1494,
+    "scorecardCount": 170,
+    "views": 1494,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -989,9 +989,9 @@
       "Unguttable"
     ],
     "modelNum": "7",
-    "popularityIndex": 188,
+    "popularityIndex": 189,
     "scorecardCount": 13,
-    "views": 188,
+    "views": 189,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -1959,8 +1959,8 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "popularityIndex": 3,
-    "views": 3,
+    "popularityIndex": 4,
+    "views": 4,
     "dateAdded": "2025-11-23T19:59:27.060Z",
     "media": [
       {
@@ -2138,9 +2138,9 @@
     "features": [
       "Unguttable"
     ],
-    "popularityIndex": 291,
-    "scorecardCount": 37,
-    "views": 291,
+    "popularityIndex": 292,
+    "scorecardCount": 38,
+    "views": 292,
     "dateAdded": "2024-08-28T15:54:46.000Z",
     "media": [
       {
@@ -4029,9 +4029,9 @@
     "features": [
       "Unguttable"
     ],
-    "popularityIndex": 4,
+    "popularityIndex": 5,
     "scorecardCount": 1,
-    "views": 4,
+    "views": 5,
     "dateAdded": "2025-06-10T16:49:06.284Z",
     "media": [
       {
@@ -4149,9 +4149,9 @@
       "Unguttable"
     ],
     "modelNum": "130",
-    "popularityIndex": 235,
+    "popularityIndex": 237,
     "scorecardCount": 29,
-    "views": 235,
+    "views": 237,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -4203,9 +4203,9 @@
       "Unguttable"
     ],
     "modelNum": "140",
-    "popularityIndex": 1865,
-    "scorecardCount": 249,
-    "views": 1865,
+    "popularityIndex": 1868,
+    "scorecardCount": 251,
+    "views": 1868,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -5266,9 +5266,9 @@
       }
     ],
     "version": "40mm or larger (5 pins)",
-    "popularityIndex": 53,
+    "popularityIndex": 54,
     "scorecardCount": 11,
-    "views": 53,
+    "views": 54,
     "dateAdded": "2023-08-03T13:21:21.000Z",
     "media": [
       {
@@ -5511,9 +5511,9 @@
       "Unguttable"
     ],
     "modelNum": "55.4",
-    "popularityIndex": 1066,
-    "scorecardCount": 148,
-    "views": 1066,
+    "popularityIndex": 1067,
+    "scorecardCount": 150,
+    "views": 1067,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -5659,9 +5659,9 @@
       "Unguttable"
     ],
     "modelNum": "64",
-    "popularityIndex": 534,
+    "popularityIndex": 535,
     "scorecardCount": 50,
-    "views": 534,
+    "views": 535,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -6367,6 +6367,26 @@
     "lastUpdated": "2026-07-10T01:46:57.721Z"
   },
   {
+    "id": "096ded99",
+    "belt": "Orange",
+    "makeModels": [
+      {
+        "make": "ABUS",
+        "model": "Pfaffenhain 310"
+      }
+    ],
+    "version": "5 pins",
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "notes": "without Pfaffenhain barrel pin",
+    "dateAdded": "2026-09-16T15:48:19.421Z",
+    "relatedIds": [
+      "f488f48e"
+    ],
+    "lastUpdated": "2026-09-16T15:48:19.838Z"
+  },
+  {
     "id": "bf8970de",
     "belt": "Orange",
     "makeModels": [
@@ -6378,9 +6398,9 @@
     "lockingMechanisms": [
       "Pump/push"
     ],
-    "popularityIndex": 34,
+    "popularityIndex": 35,
     "scorecardCount": 6,
-    "views": 34,
+    "views": 35,
     "dateAdded": "2024-08-28T15:54:46.000Z",
     "media": [
       {
@@ -7110,9 +7130,9 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "popularityIndex": 23,
+    "popularityIndex": 24,
     "scorecardCount": 6,
-    "views": 23,
+    "views": 24,
     "dateAdded": "2023-08-03T13:21:21.000Z",
     "media": [
       {
@@ -7227,9 +7247,9 @@
     "features": [
       "Unguttable"
     ],
-    "popularityIndex": 57,
+    "popularityIndex": 58,
     "scorecardCount": 10,
-    "views": 57,
+    "views": 58,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -7268,9 +7288,9 @@
     "features": [
       "Unguttable"
     ],
-    "popularityIndex": 13,
+    "popularityIndex": 14,
     "scorecardCount": 2,
-    "views": 13,
+    "views": 14,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -7409,9 +7429,9 @@
       "Pin-tumbler"
     ],
     "notes": "Pinning does not meet the requirements for either Green or Blue Belt versions",
-    "popularityIndex": 17,
+    "popularityIndex": 18,
     "scorecardCount": 5,
-    "views": 17,
+    "views": 18,
     "dateAdded": "2025-03-11T17:41:41.000Z",
     "media": [
       {
@@ -7504,8 +7524,8 @@
       "Curtain",
       "False gates"
     ],
-    "popularityIndex": 2,
-    "views": 2,
+    "popularityIndex": 3,
+    "views": 3,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -8445,9 +8465,9 @@
       "Latest Changelog"
     ],
     "modelNum": "150",
-    "popularityIndex": 685,
+    "popularityIndex": 686,
     "scorecardCount": 89,
-    "views": 685,
+    "views": 686,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -8721,9 +8741,9 @@
     ],
     "notes": "Due to unbalanced stacks, drivers may rest below shear, risking damage to the springs if that chamber is not picked.",
     "modelNum": "570",
-    "popularityIndex": 684,
+    "popularityIndex": 687,
     "scorecardCount": 111,
-    "views": 684,
+    "views": 687,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -8923,9 +8943,9 @@
     "features": [
       "Under Review ⚑"
     ],
-    "popularityIndex": 39,
+    "popularityIndex": 40,
     "scorecardCount": 10,
-    "views": 39,
+    "views": 40,
     "dateAdded": "2023-03-02T19:05:25.000Z",
     "media": [
       {
@@ -9033,9 +9053,9 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "popularityIndex": 2,
+    "popularityIndex": 3,
     "scorecardCount": 1,
-    "views": 2,
+    "views": 3,
     "dateAdded": "2026-08-06T03:59:39.966Z",
     "lastUpdated": "2026-08-06T03:59:40.336Z"
   },
@@ -10033,9 +10053,9 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "popularityIndex": 100,
+    "popularityIndex": 101,
     "scorecardCount": 13,
-    "views": 100,
+    "views": 101,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -10297,9 +10317,9 @@
       "Picking Risk"
     ],
     "notes": "Due to unbalanced pin stacks, drivers in max lift chambers will rest below shear. This risks spring damage if the driver is not picked.",
-    "popularityIndex": 1039,
+    "popularityIndex": 1040,
     "scorecardCount": 147,
-    "views": 1039,
+    "views": 1040,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -10513,9 +10533,9 @@
     "features": [
       "Unguttable"
     ],
-    "popularityIndex": 57,
+    "popularityIndex": 56,
     "scorecardCount": 16,
-    "views": 57,
+    "views": 56,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -10599,9 +10619,9 @@
     "features": [
       "Unguttable"
     ],
-    "popularityIndex": 420,
+    "popularityIndex": 421,
     "scorecardCount": 55,
-    "views": 420,
+    "views": 421,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -11553,6 +11573,9 @@
         "url": "https://www.catalocks.eu/ABUS/ABUS%20STANDARD_311.html"
       }
     ],
+    "relatedIds": [
+      "096ded99"
+    ],
     "lastUpdated": "2025-12-02T23:39:17.933Z"
   },
   {
@@ -12199,9 +12222,9 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "popularityIndex": 1427,
-    "scorecardCount": 276,
-    "views": 1427,
+    "popularityIndex": 1428,
+    "scorecardCount": 277,
+    "views": 1428,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -12539,9 +12562,9 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "popularityIndex": 155,
-    "scorecardCount": 21,
-    "views": 155,
+    "popularityIndex": 156,
+    "scorecardCount": 22,
+    "views": 156,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -12641,9 +12664,9 @@
     "lockingMechanisms": [
       "Disc detainer"
     ],
-    "popularityIndex": 97,
+    "popularityIndex": 98,
     "scorecardCount": 17,
-    "views": 97,
+    "views": 98,
     "dateAdded": "2023-03-02T19:05:25.000Z",
     "media": [
       {
@@ -14772,9 +14795,9 @@
     "features": [
       "Unguttable"
     ],
-    "popularityIndex": 90,
+    "popularityIndex": 92,
     "scorecardCount": 8,
-    "views": 90,
+    "views": 92,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -15347,9 +15370,9 @@
     "lockingMechanisms": [
       "Dimple"
     ],
-    "popularityIndex": 11,
+    "popularityIndex": 12,
     "scorecardCount": 1,
-    "views": 11,
+    "views": 12,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -18840,9 +18863,9 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "popularityIndex": 231,
+    "popularityIndex": 232,
     "scorecardCount": 28,
-    "views": 231,
+    "views": 232,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -18936,9 +18959,9 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "popularityIndex": 21,
+    "popularityIndex": 22,
     "scorecardCount": 8,
-    "views": 21,
+    "views": 22,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -19095,9 +19118,9 @@
     "lockingMechanisms": [
       "Disc detainer"
     ],
-    "popularityIndex": 2,
+    "popularityIndex": 3,
     "scorecardCount": 1,
-    "views": 2,
+    "views": 3,
     "dateAdded": "2026-08-06T03:59:39.967Z",
     "media": [
       {
@@ -21865,9 +21888,9 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "popularityIndex": 11,
+    "popularityIndex": 12,
     "scorecardCount": 3,
-    "views": 11,
+    "views": 12,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -22522,9 +22545,9 @@
       "Barrel drivers",
       "Serrated/threaded milling"
     ],
-    "popularityIndex": 52,
+    "popularityIndex": 53,
     "scorecardCount": 15,
-    "views": 52,
+    "views": 53,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -26190,9 +26213,9 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "popularityIndex": 136,
+    "popularityIndex": 137,
     "scorecardCount": 67,
-    "views": 136,
+    "views": 137,
     "dateAdded": "2023-02-27T16:29:21.000Z",
     "media": [
       {
@@ -27217,9 +27240,9 @@
     "features": [
       "Pin-in-pin"
     ],
-    "popularityIndex": 4,
+    "popularityIndex": 5,
     "scorecardCount": 2,
-    "views": 4,
+    "views": 5,
     "dateAdded": "2026-08-06T03:59:39.968Z",
     "media": [
       {
@@ -28025,9 +28048,9 @@
       "Dimple"
     ],
     "notes": "6 pin dimple, 3 spools and 3 T pins, good tolerances",
-    "popularityIndex": 7,
+    "popularityIndex": 8,
     "scorecardCount": 5,
-    "views": 7,
+    "views": 8,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -28529,9 +28552,9 @@
     "features": [
       "Partial gut"
     ],
-    "popularityIndex": 112,
-    "scorecardCount": 54,
-    "views": 112,
+    "popularityIndex": 113,
+    "scorecardCount": 55,
+    "views": 113,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -29212,9 +29235,9 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "popularityIndex": 802,
-    "scorecardCount": 226,
-    "views": 802,
+    "popularityIndex": 804,
+    "scorecardCount": 228,
+    "views": 804,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -30261,9 +30284,9 @@
     "features": [
       "High pin count"
     ],
-    "popularityIndex": 20,
+    "popularityIndex": 21,
     "scorecardCount": 18,
-    "views": 20,
+    "views": 21,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -32156,7 +32179,7 @@
       "Serrated/threaded milling"
     ],
     "popularityIndex": 216,
-    "scorecardCount": 79,
+    "scorecardCount": 80,
     "views": 216,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
@@ -33110,9 +33133,9 @@
     "lockingMechanisms": [
       "Wafer"
     ],
-    "popularityIndex": 23,
+    "popularityIndex": 24,
     "scorecardCount": 14,
-    "views": 23,
+    "views": 24,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -33618,7 +33641,7 @@
       "False gates"
     ],
     "popularityIndex": 24,
-    "scorecardCount": 12,
+    "scorecardCount": 13,
     "views": 24,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
@@ -35267,7 +35290,7 @@
       "Overmilling"
     ],
     "popularityIndex": 75,
-    "scorecardCount": 39,
+    "scorecardCount": 40,
     "views": 75,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
@@ -37877,9 +37900,9 @@
       "Unguttable"
     ],
     "modelNum": "19",
-    "popularityIndex": 65,
+    "popularityIndex": 67,
     "scorecardCount": 13,
-    "views": 65,
+    "views": 67,
     "dateAdded": "2023-03-02T19:05:25.000Z",
     "media": [
       {
@@ -38950,9 +38973,9 @@
     "features": [
       "Pin-in-pin"
     ],
-    "popularityIndex": 5,
+    "popularityIndex": 6,
     "scorecardCount": 5,
-    "views": 5,
+    "views": 6,
     "dateAdded": "2026-08-06T03:59:39.970Z",
     "media": [
       {
@@ -41935,9 +41958,9 @@
     "features": [
       "High pin count"
     ],
-    "popularityIndex": 24,
-    "scorecardCount": 18,
-    "views": 24,
+    "popularityIndex": 25,
+    "scorecardCount": 19,
+    "views": 25,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -43789,7 +43812,7 @@
       "Wafer"
     ],
     "popularityIndex": 14,
-    "scorecardCount": 4,
+    "scorecardCount": 5,
     "views": 14,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
@@ -44259,7 +44282,7 @@
       "High pin count"
     ],
     "popularityIndex": 14,
-    "scorecardCount": 13,
+    "scorecardCount": 14,
     "views": 14,
     "dateAdded": "2023-02-27T16:29:21.000Z",
     "media": [
@@ -44580,9 +44603,9 @@
       "Torpedo keypins",
       "High pin count"
     ],
-    "popularityIndex": 160,
+    "popularityIndex": 161,
     "scorecardCount": 92,
-    "views": 160,
+    "views": 161,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -45761,7 +45784,7 @@
       "High pin count"
     ],
     "popularityIndex": 36,
-    "scorecardCount": 16,
+    "scorecardCount": 17,
     "views": 36,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
@@ -46933,9 +46956,9 @@
     "features": [
       "Rotating fingerpins"
     ],
-    "popularityIndex": 132,
+    "popularityIndex": 133,
     "scorecardCount": 45,
-    "views": 132,
+    "views": 133,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -48074,9 +48097,9 @@
       "False gates",
       "Butterfly discs"
     ],
-    "popularityIndex": 131,
-    "scorecardCount": 40,
-    "views": 131,
+    "popularityIndex": 132,
+    "scorecardCount": 41,
+    "views": 132,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -50145,9 +50168,9 @@
       "Torpedo keypins",
       "High pin count"
     ],
-    "popularityIndex": 31,
-    "scorecardCount": 3,
-    "views": 31,
+    "popularityIndex": 32,
+    "scorecardCount": 4,
+    "views": 32,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -58117,9 +58140,9 @@
       "False gates",
       "Active sidebar"
     ],
-    "popularityIndex": 27,
+    "popularityIndex": 28,
     "scorecardCount": 16,
-    "views": 27,
+    "views": 28,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -58931,9 +58954,9 @@
       "High pin count",
       "Torpedo keypins"
     ],
-    "popularityIndex": 73,
-    "scorecardCount": 19,
-    "views": 73,
+    "popularityIndex": 74,
+    "scorecardCount": 20,
+    "views": 74,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -61518,9 +61541,9 @@
       "False gates",
       "Partial gut"
     ],
-    "popularityIndex": 78,
+    "popularityIndex": 79,
     "scorecardCount": 3,
-    "views": 78,
+    "views": 79,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -63291,9 +63314,9 @@
     "features": [
       "High pin count"
     ],
-    "popularityIndex": 72,
-    "scorecardCount": 38,
-    "views": 72,
+    "popularityIndex": 73,
+    "scorecardCount": 40,
+    "views": 73,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -64854,9 +64877,9 @@
     "lockingMechanisms": [
       "Dimple"
     ],
-    "popularityIndex": 26,
+    "popularityIndex": 27,
     "scorecardCount": 7,
-    "views": 26,
+    "views": 27,
     "dateAdded": "2025-03-06T02:11:05.000Z",
     "media": [
       {
@@ -68697,9 +68720,9 @@
     "features": [
       "Under Review ⚑"
     ],
-    "popularityIndex": 1,
+    "popularityIndex": 2,
     "scorecardCount": 1,
-    "views": 1,
+    "views": 2,
     "dateAdded": "2023-12-28T18:48:59.000Z",
     "media": [
       {

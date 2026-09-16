@@ -106,6 +106,7 @@ https://lpubelts.com/locks/afd3e51d.html?name=ABUS_C51
 https://lpubelts.com/locks/1050a58c.html?name=ABUS_E100
 https://lpubelts.com/locks/1dc9f802.html?name=ABUS_E50
 https://lpubelts.com/locks/204d85a7.html?name=ABUS_Monobloc
+https://lpubelts.com/locks/096ded99.html?name=ABUS_Pfaffenhain_310
 https://lpubelts.com/locks/bf8970de.html?name=ACE_Tubular
 https://lpubelts.com/locks/bac43ba7.html?name=ALPHA_1000
 https://lpubelts.com/locks/e10b4a20.html?name=ASSA_H5

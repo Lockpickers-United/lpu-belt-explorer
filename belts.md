@@ -273,6 +273,7 @@ Those security pins designed to keep you out are powerless against you. You're s
 - [ABUS E100 / ABUS Ti12 Titalium / ABUS Ti14 Titalium](https://lpubelts.com/#/locks?id=1050a58c)
 - [ABUS E50 / Citadel N](https://lpubelts.com/#/locks?id=1dc9f802)
 - [ABUS Monobloc](https://lpubelts.com/#/locks?id=204d85a7)
+- [ABUS Pfaffenhain 310](https://lpubelts.com/#/locks?id=096ded99) (5 pins)
 - [ACE Tubular](https://lpubelts.com/#/locks?id=bf8970de)
 - [ALPHA 1000](https://lpubelts.com/#/locks?id=bac43ba7) (50mm 60mm (5pins / spools))
 - [ASSA H5 / ASSA H7](https://lpubelts.com/#/locks?id=e10b4a20) (camlock)
