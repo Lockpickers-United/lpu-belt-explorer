@@ -20,6 +20,7 @@ on:
 
 jobs:
   deploy:
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
     name: Build-N-Deploy
     environment: github-pages
     permissions:
