@@ -107,12 +107,12 @@
     "@testing-library/react": "^16.0.1",
     "@testing-library/user-event": "^14.5.2",
     "@types/react": "^19.3.0",
-    "@vitejs/plugin-react": "^4.4.1",
+    "@vitejs/plugin-react": "^6.1.1",
     "@vitest/coverage-v8": "5.0.0",
     "@vitest/ui": "5.0.0",
     "@wdio/allure-reporter": "^9.20.0",
     "allure-playwright": "^3.6.0",
-    "csv-parse": "^5.5.0",
+    "csv-parse": "^7.0.2",
     "entities": "^7.0.0",
     "eslint": "^10.10.0",
     "eslint-import-resolver-node": "^0.4.0",
@@ -124,17 +124,18 @@
     "jsdom": "^25.0.1",
     "msw": "^2.6.6",
     "node-fetch": "^3.3.2",
-    "rollup-plugin-visualizer": "^5.14.0",
+    "rollup-plugin-visualizer": "^7.1.1",
     "uuid": "^14.0.1",
-    "vite": "^6.4.1",
+    "vite": "^8.3.0",
     "vitest": "5.0.0"
   },
   "overrides": {
-    "rolldown": "1.0.1",
-    "react-is": "$react-is"
+    "react-is": "$react-is",
+    "gaxios": {
+      "uuid": "^11.1.1"
+    }
   },
   "allowScripts": {
-    "esbuild@0.25.12": true,
     "protobufjs": false,
     "unrs-resolver@1.12.2": true,
     "fsevents@2.3.3": true,
