@@ -4,7 +4,7 @@ import Typography from '@mui/material/Typography'
 import Divider from '@mui/material/Divider'
 import ScorecardDataContext from './ScorecardDataProvider'
 import HighlightOffIcon from '@mui/icons-material/HighlightOff'
-import HelpOutlineIcon from '@mui/icons-material/HelpOutlined'
+import HelpOutlineOutlinedIcon from '@mui/icons-material/HelpOutlineOutlined'
 import entryName from '../entries/entryName'
 import Link from '@mui/material/Link'
 import FilterContext from '../context/FilterContext.jsx'
@@ -35,15 +35,21 @@ function ScoringExceptions() {
         const supersedingLock = supersedingEntry ? getEntryFromId(supersedingEntry.matchId) : {}
         const supersedingProject = supersedingEntry ? getProjectEntryFromId(supersedingEntry.matchId) : {}
         const supersedingLockName = supersedingLock ? entryName(supersedingLock, 'short') : ''
-        const matchLock = act.matchId ? getEntryFromId(act.matchId) : null
-        const matchLockName = matchLock ? entryName(matchLock, 'short') : ''
+        const matchLock = getEntryFromId(act.matchId) || getProjectEntryFromId(act.matchId) || {}
+        const matchLockName = Object.keys(matchLock).length ? entryName(matchLock, 'short') : 'unknown entry'
         const supersedingLink = supersedingLock
             ? <Link style={{color: '#6dbbff', textDecoration: 'none'}} onClick={() => {
-                navigateToEntry(supersedingEntryId)
+                navigateToEntry(act)
             }}>{supersedingLockName}</Link>
             : supersedingProject?.name
+        const entryLink = act.id
+            ? <Link style={{color: '#6dbbff', textDecoration: 'none'}} onClick={() => {
+                navigateToEntry(act.id)
+            }}>{matchLockName || 'unknown'}</Link>
+            : supersedingProject?.name
 
-        return {...act, supersedingEntryId: supersedingEntryId, supersedingLockName: supersedingLockName, matchLockName:matchLockName, supersedingLink}
+
+        return {...act, supersedingEntryId, supersedingLockName, matchLockName, entryLink, supersedingLink}
     })
 
     const unmatchedAct = annotatedActivity.filter(act => 'nomatch' === act.exceptionType)
@@ -56,7 +62,7 @@ function ScoringExceptions() {
         return (
             <React.Fragment>
                 <IconButton onClick={handleOverlayOpen} style={{marginRight:0}}>
-                    <HelpOutlineIcon fontSize='small'/>
+                    <HelpOutlineOutlinedIcon fontSize='small'/>
                 </IconButton>
                 <Drawer
                     sx={{color: '#fff', textAlign: 'left', height: 700, zIndex: (theme) => theme.zIndex.drawer + 1}}
@@ -94,9 +100,7 @@ function ScoringExceptions() {
                                 <ul style={{padding: 0, marginLeft: 20}}>
                                     {unmatchedAct.map((act, index) =>
                                         <li key={index} style={{marginBottom: 4}}>
-                                            <Link style={{color: '#99c2e5', textDecoration: 'none'}} onClick={() => {
-                                                navigateToEntry(act.id)
-                                            }}>{act.evidenceNotes}</Link>
+                                            {act.entryLink || 'unknown entry'}
                                         </li>
                                     )}
                                 </ul>
@@ -114,9 +118,7 @@ function ScoringExceptions() {
                                 <ul style={{padding: 0, marginLeft: 20}}>
                                     {badlinkAct.map((act, index) =>
                                         <li key={index} style={{marginBottom: 4}}>
-                                            <Link style={{color: '#99c2e5', textDecoration: 'none'}} onClick={() => {
-                                                navigateToEntry(act.id)
-                                            }}>{act.matchLockName}</Link>
+                                            {act.entryLink}
                                         </li>
                                     )}
                                 </ul>
@@ -129,13 +131,12 @@ function ScoringExceptions() {
                                     style={{
                                         fontWeight: 500, fontSize: '1.0rem', lineHeight: '1.25rem', margin: '0px'
                                     }}>
-                                    Duplicated by another entry
+                                    Duplicated by another entry:
                                 </Typography>
                                 <ul style={{padding: 0, marginLeft: 20}}>
                                     {samelinedAct.map((act, index) =>
                                         <li key={index} style={{marginBottom: 4}}>
-                                            {act.evidenceNotes} is a duplicate
-                                            of {act.supersedingLink}
+                                            {act.entryLink || 'unknown entry'}
                                         </li>
                                     )}
                                 </ul>
@@ -153,7 +154,7 @@ function ScoringExceptions() {
                                 <ul style={{padding: 0, marginLeft: 20}}>
                                     {supersededAct.map((act, index) =>
                                         <li key={index} style={{marginBottom: 4}}>
-                                            {act.evidenceNotes} is upgraded by {act.supersedingLink}
+                                            {act.entryLink}
                                         </li>
                                     )}
                                 </ul>

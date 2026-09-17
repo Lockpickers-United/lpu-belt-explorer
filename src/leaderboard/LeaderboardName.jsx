@@ -13,7 +13,6 @@ const LeaderLink = styled('a')({
 function LeaderboardName({leader, isCurrentUser, tab, maxLength}) {
     const {lockCollection} = useContext(DBContext)
 
-    console.log('leader', leader)
     const style = isCurrentUser ? {color: '#4db013'} : {}
 
     const name = isCurrentUser && leader.displayName === 'no display name' && lockCollection?.displayName

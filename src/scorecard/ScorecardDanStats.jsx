@@ -7,11 +7,12 @@ import {enqueueSnackbar} from 'notistack'
 import AuthContext from '../app/AuthContext.jsx'
 import {getAwardEntryFromId} from '../entries/entryutils'
 import Dans from '../data/dans.json'
+import AppContext from '../app/AppContext.jsx'
 
 export default function ScorecardDanStats({profile, owner}) {
     const {userId} = useParams()
     const {user} = useContext(AuthContext)
-
+    const {adminEnabled} = useContext(AppContext)
     const safeName = profile?.displayName?.replace(/\s/g, '_')
     const navigate = useNavigate()
     const openUpgrades = useCallback(() => {
@@ -39,13 +40,9 @@ export default function ScorecardDanStats({profile, owner}) {
 
     const nextDan = Dans.find(dan => dan.level === displayDan + 1)
 
-    const danPreText = cardEligibleDan <= currentDanLevel
-        ? ''
-        : 'Eligible for '
-
-    const danPostText = cardEligibleDan <= currentDanLevel
-        ? 'DAN'
-        : 'DAN'
+    const danPreText = cardEligibleDan >= currentDanLevel
+        ? 'Eligible for '
+        : ''
 
     const copyRequest = useCallback(async () => {
         const link = `@LPUBeltBot request ${addOrdinal(cardEligibleDan)} Dan https://lpubelts.com/#/profile/${userId || user?.uid}/scorecard?name=${safeName}`
@@ -61,15 +58,15 @@ export default function ScorecardDanStats({profile, owner}) {
             <div style={{
                 textAlign: 'right', padding: '10px 0px 18px 0px', flexGrow: 1
             }}>
-                {profile?.blackBeltAwardedAt > 0
+                {profile?.blackBeltAwardedAt
                     ? <div style={{fontWeight: 700, marginBottom: 6}}>
                         {danPreText} <span
                         style={{
                             fontSize: '1.8rem',
                             lineHeight: '1rem'
-                        }}>{addOrdinal(displayDan)}</span> {danPostText}
+                        }}>{addOrdinal(displayDan)}</span> DAN
                     </div>
-                    : <div style={{fontWeight: 700, marginBottom: 6, marginTop:8}}>
+                    : <div style={{fontWeight: 700, marginBottom: 6, marginTop: 8}}>
                                 <span
                                     style={{
                                         fontSize: '1.8rem',
@@ -110,9 +107,11 @@ export default function ScorecardDanStats({profile, owner}) {
                     </div>
                 }
 
-                    </div>
+            </div>
             <div style={{textAlign: 'right', minWidth: 20}}>
-                <ScoringExceptions/>
+                {(owner || adminEnabled) &&
+                    <ScoringExceptions/>
+                }
             </div>
         </div>
     )

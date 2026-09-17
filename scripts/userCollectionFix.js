@@ -24,7 +24,9 @@ const db = getFirestore(app)
 const WRITE_TO_DB = false
 
 // Update userIds to find & remove duplicate IDs
-const userIds = ['Dmd9rZ7qWORduI0Vbsv9F3URevt1']
+const userIds = [
+    'L4ETwEY8XGR3SMf7fN1rOM1VzHo2'
+]
 await removeDuplicates()
 
 // Update these variables to restore a user's data
@@ -49,7 +51,6 @@ async function removeDuplicates() {
 
         const profileData = profile.data()
         console.log('-displayName', profileData.displayName)
-        console.log('current profile:', profileData)
 
         const collectionTypes = ['own', 'picked', 'wishlist', 'safelocksOwn', 'safelocksCracked', 'safelocksWishlist', 'projects', 'raffleWatchlist', 'awards']
 
