@@ -28,9 +28,7 @@ import Tooltip from '@mui/material/Tooltip'
 import useClickOrDrag from '../util/useClickOrDrag.jsx'
 
 function ImageViewer({media, openIndex, onOpenImage, onClose, shareParams = {}}) {
-
-    console.log('ImageViewer', media, openIndex)
-
+    
     const [open, setOpen] = useState(true)
     const [loading, setLoading] = useState(true)
     const [{x: initX, y: initY}, setInitXY] = useState({x: 0, y: 0})
