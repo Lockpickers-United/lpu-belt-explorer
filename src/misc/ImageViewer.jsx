@@ -28,7 +28,7 @@ import Tooltip from '@mui/material/Tooltip'
 import useClickOrDrag from '../util/useClickOrDrag.jsx'
 
 function ImageViewer({media, openIndex, onOpenImage, onClose, shareParams = {}}) {
-    
+
     const [open, setOpen] = useState(true)
     const [loading, setLoading] = useState(true)
     const [{x: initX, y: initY}, setInitXY] = useState({x: 0, y: 0})
@@ -49,6 +49,17 @@ function ImageViewer({media, openIndex, onOpenImage, onClose, shareParams = {}})
     const currentMediaIndex = media.indexOf(currentMedia)
 
     const {fullSizeUrl, thumbnailUrl, fullUrl, title, subtitle, subtitleUrl, label} = currentMedia || {}
+
+    // https://www.flickr.com/photos/lpubeltapp/52722285589/in/album-72177720306421774/
+    // https://live.staticflickr.com/65535/52722285589_13cc80700a_o.png
+    // http://explore.lpubelts.com/media/flickr/lpubeltapp/72177720335421651/55504421025.png
+
+    const ext = fullSizeUrl?.match(/\.(\w+)$/) ? fullSizeUrl.match(/\.(\w+)$/)[0] : '.jpg'
+    const re = /https:\/\/www\.(\w*)\.com\/photos\/(\w*)\/(\d{11})\/in\/album-(\d{17})/
+    const [_url, domain, username, imageId, albumId, ..._other] = fullUrl.match(re) || []
+    const exploreUrl = `https://explore.lpubelts.com/media/${domain}/${username}/${albumId}/${imageId}${ext}`
+    //console.log({exploreUrl})
+
     const imageTitle = label ? `${label} - ${title}` : title
 
     const handleLoaded = useCallback(() => {
@@ -79,7 +90,6 @@ function ImageViewer({media, openIndex, onOpenImage, onClose, shareParams = {}})
         const relativeY = y - centerY
         return {relativeX, relativeY}
     }, [])
-
 
     const handleZoomIn = useCallback(() => setZoom(zoom + zoomIncrement), [zoom])
     const handleZoomOut = useCallback(() => setZoom(Math.max(zoom - zoomIncrement, 1)), [zoom])
@@ -282,27 +292,29 @@ function ImageViewer({media, openIndex, onOpenImage, onClose, shareParams = {}})
                 height: '100%',
                 overflow: 'hidden'
             }}>
-                <img
-                    draggable={false}
-                    style={{
-                        transform: `translate3d(${x}px, ${y}px, 0px) scale(${zoom})`,
-                        cursor: zoom > 1 ? 'grab' : 'unset',
-                        transition: moving ? 'none' : 'all 0.1s',
-                        maxWidth: 'calc(100vw - 64px)',
-                        maxHeight: 'calc(100vh - 160px)',
-                        backgroundSize: 50,
-                        transformOrigin: 'center center',
-                        touchAction: 'none' // important: allows pointermove on touch
+                <div>
+                    <img
+                        draggable={false}
+                        style={{
+                            transform: `translate3d(${x}px, ${y}px, 0px) scale(${zoom})`,
+                            cursor: zoom > 1 ? 'grab' : 'unset',
+                            transition: moving ? 'none' : 'all 0.1s',
+                            maxWidth: 'calc(100vw - 64px)',
+                            maxHeight: 'calc(100vh - 160px)',
+                            backgroundSize: 50,
+                            transformOrigin: 'center center',
+                            touchAction: 'none' // important: allows pointermove on touch
 
-                    }}
-                    onLoad={handleLoaded}
+                        }}
+                        onLoad={handleLoaded}
 
-                    {...interactionHandlers}
+                        {...interactionHandlers}
 
-                    title={title}
-                    src={fullSizeUrl || thumbnailUrl}
-                    alt={title}
-                />
+                        title={title}
+                        src={fullSizeUrl || thumbnailUrl}
+                        alt={title}
+                    />
+                </div>
             </DialogContent>
             <DialogActions
                 sx={{
