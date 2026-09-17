@@ -32,7 +32,7 @@ export default function ProfileHeader({profile = {}, page, owner, mostPopular}) 
             ? `${profile.displayName}'`
             : `${profile.displayName}'s`
         : owner && !profile['privacyAnonymous']
-            ? 'No Name'
+            ? 'My Anonymous'
             : 'Anonymous'
 
     const title = userId

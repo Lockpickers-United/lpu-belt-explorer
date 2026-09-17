@@ -8,6 +8,7 @@ const app = initializeApp({
     databaseURL: 'https://lpu-belt-explorer.firebaseio.com'
 })
 
+
 ////////////////////////////////////////////////////
 //
 // For changelog migrations, see processChangelog.js
@@ -23,11 +24,11 @@ const db = getFirestore(app)
 const WRITE_TO_DB = false
 
 // Update userIds to find & remove duplicate IDs
-const userIds = ['1dlgPlIKx1dmCO3SH8axvWDbqZB2']
+const userIds = ['Dmd9rZ7qWORduI0Vbsv9F3URevt1']
 await removeDuplicates()
 
 // Update these variables to restore a user's data
-const userId = 'GGplAdctTfVDLVvYsfIADJmfp8f2'
+const userId = '1dlgPlIKx1dmCO3SH8axvWDbqZB2'
 const data = {}
 // await replaceProfile()
 
@@ -47,9 +48,10 @@ async function removeDuplicates() {
         }
 
         const profileData = profile.data()
+        console.log('-displayName', profileData.displayName)
         console.log('current profile:', profileData)
 
-        const collectionTypes = ['own', 'picked', 'wishlist']
+        const collectionTypes = ['own', 'picked', 'wishlist', 'safelocksOwn', 'safelocksCracked', 'safelocksWishlist', 'projects', 'raffleWatchlist', 'awards']
 
         for (const type of collectionTypes) {
             const currentList = profileData[type]
@@ -64,10 +66,10 @@ async function removeDuplicates() {
                 console.log(`    duplicate ids found in ${type}:`, duplicateIds)
                 console.log('    current count', currentList.length)
                 const deduplicatedList = [...new Set(currentList)]
-                console.log('    depupe count', deduplicatedList.length)
+                console.log('    dedupe count', deduplicatedList.length)
                 batch.set(docRef, {[type]: deduplicatedList}, {merge: true})
                 hasUpdates = true
-                console.log('    duplicates removed for:', userId, type)
+                if (WRITE_TO_DB) console.log('    duplicates removed for:', userId, type)
             }
         }
     }

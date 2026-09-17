@@ -61,7 +61,7 @@ export default function ScorecardDanStats({profile, owner}) {
             <div style={{
                 textAlign: 'right', padding: '10px 0px 18px 0px', flexGrow: 1
             }}>
-                {cardEligibleDan > 0
+                {profile?.blackBeltAwardedAt > 0
                     ? <div style={{fontWeight: 700, marginBottom: 6}}>
                         {danPreText} <span
                         style={{

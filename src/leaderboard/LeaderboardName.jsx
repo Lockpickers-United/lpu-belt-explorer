@@ -1,5 +1,6 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import {styled} from '@mui/material/styles'
+import DBContext from '../app/DBContext.jsx'
 
 const LeaderLink = styled('a')({
     textDecoration: 'none',
@@ -10,15 +11,21 @@ const LeaderLink = styled('a')({
 })
 
 function LeaderboardName({leader, isCurrentUser, tab, maxLength}) {
+    const {lockCollection} = useContext(DBContext)
 
+    console.log('leader', leader)
     const style = isCurrentUser ? {color: '#4db013'} : {}
 
-    const leaderName = leader.displayName && leader.displayName.length > maxLength
-        ? leader.displayName = leader.displayName.slice(0, maxLength) + '...'
+    const name = isCurrentUser && leader.displayName === 'no display name' && lockCollection?.displayName
+        ? lockCollection?.displayName
         : leader.displayName
 
-    if (leader.displayName && !leader.privacyAnonymous) {
-        const safeName = leader.displayName.replace(/\s/g, '_')
+    const leaderName = name && name.length > maxLength
+        ? name.slice(0, maxLength) + '...'
+        : name
+
+    if (!leader.privacyAnonymous) {
+        const safeName = leaderName.replace(/\s/g, '_')
         const id = leader.id || leader.userId
         const href = tab === 'blackBelts'
             ? `/#/profile/${id}/scorecard?name=${safeName}`
@@ -26,7 +33,9 @@ function LeaderboardName({leader, isCurrentUser, tab, maxLength}) {
                 ? `/#/profile/${id}/safelocks?name=${safeName}`
                 : `/#/profile/${id}?name=${safeName}`
 
-        return <LeaderLink style={style} href={href}>{leaderName}</LeaderLink>
+        return <LeaderLink style={style} href={href}>
+            {leaderName === 'no display name' ? 'Anonymous' : leaderName}
+        </LeaderLink>
     } else {
         return 'Anonymous'
     }
