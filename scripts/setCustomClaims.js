@@ -3,7 +3,7 @@ import {initializeApp, cert} from 'firebase-admin/app'
 import {getFirestore} from 'firebase-admin/firestore'
 import { getAuth } from 'firebase-admin/auth'
 
-const serviceAccount = JSON.parse(fs.readFileSync('../keys/lpu-belt-explorer-firebase-adminsdk.json'))
+const serviceAccount = JSON.parse(fs.readFileSync('../keys/lpu-belt-explorer-firebase-adminsdk.json').toString())
 const app = initializeApp({
     credential: cert(serviceAccount),
     databaseURL: 'https://lpu-belt-explorer.firebaseio.com'
@@ -14,7 +14,7 @@ const app = initializeApp({
 
 const db = getFirestore(app)
 
-const WRITE_TO_DB = true
+const WRITE_TO_DB = false
 
 // Custom claims to set
 const _allClaims = {

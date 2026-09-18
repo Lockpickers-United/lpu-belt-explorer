@@ -12,20 +12,23 @@ const openInNewTab = (url) => {
 
 function LockImageGallery({entry}) {
     const location = useLocation()
-    const {filters, addFilter, removeFilters} = useContext(FilterContext)
+    const {filters, removeFilters, addFilters} = useContext(FilterContext)
     const [flickrDirect, _setFlickrDirect] = useLocalStorage('flickrDirect', false)
     
     const handleOpenImage = useCallback((imageNum, fullUrl) => {
         //console.log('handleOpenImage', imageNum, fullUrl)
         if (!flickrDirect) {
-            addFilter('image', imageNum, true)
+            addFilters([
+                {key: 'image', value: imageNum},
+                {key: 'id', value: entry?.id},
+            ], true)
         } else {
             openInNewTab(fullUrl)
         }
-    }, [addFilter, flickrDirect])
+    }, [addFilters, entry?.id, flickrDirect])
 
     const handleCloseImage = useCallback(() => {
-        removeFilters(['image'])
+        removeFilters(['image', 'id'])
     }, [removeFilters])
 
     const handleBackButton = useCallback(() => {

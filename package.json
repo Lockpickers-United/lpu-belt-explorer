@@ -10,6 +10,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "dev:host": "vite --host",
     "build": "NODE_ENV=production vite build",
     "build:test": "vite build --mode test",
     "build-dev": "NODE_ENV=production npm run lint && npm run versionFile && vite build --mode dev",
