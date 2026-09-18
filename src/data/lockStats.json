@@ -7,11 +7,11 @@
         "label": "Ranked"
       },
       {
-        "value": 965,
+        "value": 966,
         "label": "All"
       },
       {
-        "value": 112,
+        "value": 113,
         "label": "Unranked"
       }
     ]
@@ -20,61 +20,61 @@
     {
       "belt": "White",
       "count": 18,
-      "value": 0.01865284974093264,
+      "value": 0.018633540372670808,
       "id": "White"
     },
     {
       "belt": "Yellow",
       "count": 71,
-      "value": 0.07357512953367876,
+      "value": 0.07349896480331262,
       "id": "Yellow"
     },
     {
       "belt": "Orange",
       "count": 84,
-      "value": 0.08704663212435233,
+      "value": 0.08695652173913043,
       "id": "Orange"
     },
     {
       "belt": "Green",
       "count": 159,
-      "value": 0.16476683937823836,
+      "value": 0.16459627329192547,
       "id": "Green"
     },
     {
       "belt": "Blue",
       "count": 140,
-      "value": 0.14507772020725387,
+      "value": 0.14492753623188406,
       "id": "Blue"
     },
     {
       "belt": "Purple",
       "count": 121,
-      "value": 0.12538860103626942,
+      "value": 0.12525879917184266,
       "id": "Purple"
     },
     {
       "belt": "Brown",
       "count": 85,
-      "value": 0.08808290155440414,
+      "value": 0.08799171842650104,
       "id": "Brown"
     },
     {
       "belt": "Red",
       "count": 74,
-      "value": 0.0766839378238342,
+      "value": 0.07660455486542443,
       "id": "Red"
     },
     {
       "belt": "Black",
       "count": 101,
-      "value": 0.10466321243523316,
+      "value": 0.10455486542443064,
       "id": "Black"
     },
     {
       "belt": "Unranked",
-      "count": 112,
-      "value": 0.11606217616580311,
+      "count": 113,
+      "value": 0.11697722567287784,
       "id": "Unranked"
     }
   ],
@@ -533,22 +533,22 @@
       {
         "segment": "Ranked locks",
         "count": 853,
-        "media": 819,
+        "media": 826,
         "coverage": "96%"
       },
       {
         "segment": "All locks",
-        "count": 965,
-        "media": 908,
+        "count": 966,
+        "media": 916,
         "coverage": "94%"
       }
     ],
-    "uniqueImages": 4757,
-    "contributors": 318,
+    "uniqueImages": 4801,
+    "contributors": 320,
     "topPhotographers": [
       {
         "contributor": "LockPickingFisherman",
-        "images": 549
+        "images": 558
       },
       {
         "contributor": "mgsecure",
@@ -564,11 +564,11 @@
       },
       {
         "contributor": "Luboš Čech",
-        "images": 163
+        "images": 155
       },
       {
         "contributor": "Sidepicks",
-        "images": 148
+        "images": 150
       },
       {
         "contributor": "Ben-on-reddit",
@@ -599,16 +599,16 @@
         "images": 63
       },
       {
+        "contributor": "Erik Weisz",
+        "images": 63
+      },
+      {
         "contributor": "Qikom",
         "images": 63
       },
       {
         "contributor": "myktylgaan",
         "images": 61
-      },
-      {
-        "contributor": "Erik Weisz",
-        "images": 58
       },
       {
         "contributor": "tonysansan",
@@ -627,6 +627,10 @@
         "images": 53
       },
       {
+        "contributor": "MrOrange",
+        "images": 49
+      },
+      {
         "contributor": "Legendofthesamurai",
         "images": 40
       },
@@ -643,8 +647,8 @@
         "images": 36
       },
       {
-        "contributor": "MrOrange",
-        "images": 36
+        "contributor": "Yagias",
+        "images": 35
       },
       {
         "contributor": "Datagram",
@@ -660,10 +664,6 @@
       },
       {
         "contributor": "OpHiDiAn",
-        "images": 33
-      },
-      {
-        "contributor": "Yagias",
         "images": 33
       },
       {
@@ -739,6 +739,10 @@
         "images": 19
       },
       {
+        "contributor": "Indigenouslockpicker",
+        "images": 19
+      },
+      {
         "contributor": "Insomniaclockpicker",
         "images": 19
       },
@@ -769,10 +773,6 @@
       {
         "contributor": "Jan-Willem Markus",
         "images": 16
-      },
-      {
-        "contributor": "Indigenouslockpicker",
-        "images": 15
       },
       {
         "contributor": "LockSportsman",
@@ -852,6 +852,10 @@
       },
       {
         "contributor": "Ed McBane",
+        "images": 11
+      },
+      {
+        "contributor": "jadedargyle333",
         "images": 11
       },
       {
@@ -983,6 +987,10 @@
         "images": 8
       },
       {
+        "contributor": "Zehkar",
+        "images": 8
+      },
+      {
         "contributor": "Atti182",
         "images": 7
       },
@@ -1076,10 +1084,6 @@
       },
       {
         "contributor": "Xarragon",
-        "images": 6
-      },
-      {
-        "contributor": "Zehkar",
         "images": 6
       },
       {
@@ -1204,6 +1208,10 @@
       },
       {
         "contributor": "Qikom, available in qikom.free.fr",
+        "images": 4
+      },
+      {
+        "contributor": "Rabbipicker87",
         "images": 4
       },
       {
@@ -1821,6 +1829,6 @@
     ]
   },
   "metadata": {
-    "updatedDateTime": "2026-09-16 19:49"
+    "updatedDateTime": "2026-09-18 17:33"
   }
 }

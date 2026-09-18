@@ -442,9 +442,9 @@
     ],
     "name": "ISEO R6",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 50,
+    "views": 51,
     "lastUpdated": "2025-03-19T01:20:51.363Z",
-    "popularityIndex": 50,
+    "popularityIndex": 51,
     "scorecardCount": 6
   },
   "55053299": {
@@ -577,9 +577,9 @@
     ],
     "name": "ASSA Twin Exclusive, Twin 6000",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 129,
+    "views": 130,
     "lastUpdated": "2025-03-19T01:20:51.391Z",
-    "popularityIndex": 129,
+    "popularityIndex": 130,
     "scorecardCount": 60
   },
   "55511995": {
@@ -1360,13 +1360,13 @@
     ],
     "name": "Any lock with any tool",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 543,
+    "views": 544,
     "lastUpdated": "2025-03-19T15:44:57.276Z",
     "lockingMechanisms": [
       "Various"
     ],
-    "popularityIndex": 543,
-    "scorecardCount": 125
+    "popularityIndex": 544,
+    "scorecardCount": 121
   },
   "07034c0f": {
     "id": "07034c0f",
@@ -1420,10 +1420,10 @@
     ],
     "name": "Any Acrylic Padlock",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 1458,
+    "views": 1460,
     "lastUpdated": "2025-03-18T23:29:31.267Z",
-    "popularityIndex": 1458,
-    "scorecardCount": 106
+    "popularityIndex": 1460,
+    "scorecardCount": 105
   },
   "3ac43ea8": {
     "id": "3ac43ea8",
@@ -1498,12 +1498,12 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/52754853512_9a50b57915_o.jpg"
       }
     ],
-    "views": 468,
+    "views": 470,
     "lastUpdated": "2025-03-19T15:44:57.276Z",
     "lockingMechanisms": [
       "Various"
     ],
-    "popularityIndex": 468,
+    "popularityIndex": 470,
     "scorecardCount": 33
   },
   "5dc117cd": {
@@ -1648,7 +1648,7 @@
     "views": 189,
     "lastUpdated": "2025-03-19T15:44:57.277Z",
     "popularityIndex": 189,
-    "scorecardCount": 23
+    "scorecardCount": 22
   },
   "5a91e6a5": {
     "id": "5a91e6a5",
@@ -1706,7 +1706,7 @@
     "lastUpdated": "2025-03-19T01:20:51.353Z",
     "modelNum": "1",
     "popularityIndex": 575,
-    "scorecardCount": 71
+    "scorecardCount": 70
   },
   "38289b36": {
     "id": "38289b36",
@@ -1921,10 +1921,10 @@
     ],
     "name": "Master Lock #3",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 1494,
+    "views": 1495,
     "lastUpdated": "2025-03-19T01:20:51.353Z",
     "modelNum": "3",
-    "popularityIndex": 1494,
+    "popularityIndex": 1495,
     "scorecardCount": 170
   },
   "dff62f52": {
@@ -2468,10 +2468,10 @@
     ],
     "name": "ABUS 55/30",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 396,
+    "views": 397,
     "lastUpdated": "2025-03-19T15:44:57.277Z",
     "modelNum": "55.3",
-    "popularityIndex": 396,
+    "popularityIndex": 397,
     "scorecardCount": 53
   },
   "693abee0": {
@@ -2981,13 +2981,13 @@
     ],
     "name": "American Lock 5200",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 106,
+    "views": 107,
     "lastUpdated": "2025-03-19T15:44:57.277Z",
     "notes": "The bumpstop model of the American Lock 5200 can be distinguished by the rounded shape of the bow of its key, compared to the angular shape of the non-bumpstop.",
     "relatedIds": [
       "81fbd528"
     ],
-    "popularityIndex": 106,
+    "popularityIndex": 107,
     "scorecardCount": 8
   },
   "a1581afe": {
@@ -3188,10 +3188,10 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53881168221_698c6e5fcb_o.jpg"
       }
     ],
-    "views": 623,
+    "views": 624,
     "lastUpdated": "2025-03-19T01:20:51.354Z",
-    "popularityIndex": 623,
-    "scorecardCount": 93
+    "popularityIndex": 624,
+    "scorecardCount": 90
   },
   "50fbf666": {
     "id": "50fbf666",
@@ -4563,12 +4563,12 @@
     ],
     "name": "Master Lock 140 Series, 9140 EURD",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 1868,
+    "views": 1870,
     "lastUpdated": "2025-03-19T01:20:51.355Z",
     "modelNum": "140",
     "version": "Ex: 140, 141, 142, etc.",
-    "popularityIndex": 1868,
-    "scorecardCount": 251
+    "popularityIndex": 1870,
+    "scorecardCount": 250
   },
   "6af6f704": {
     "id": "6af6f704",
@@ -5791,11 +5791,11 @@
     ],
     "name": "ABUS 55/40",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 1067,
+    "views": 1069,
     "lastUpdated": "2025-03-19T01:20:51.356Z",
     "modelNum": "55.4",
-    "popularityIndex": 1067,
-    "scorecardCount": 150
+    "popularityIndex": 1069,
+    "scorecardCount": 149
   },
   "d7188e81": {
     "id": "d7188e81",
@@ -5905,7 +5905,7 @@
     "lastUpdated": "2025-03-19T01:20:51.356Z",
     "modelNum": "64",
     "popularityIndex": 535,
-    "scorecardCount": 50
+    "scorecardCount": 45
   },
   "a0e50505": {
     "id": "a0e50505",
@@ -6017,13 +6017,13 @@
     ],
     "name": "ABUS 83/40",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 206,
+    "views": 207,
     "lastUpdated": "2025-03-19T01:20:51.356Z",
     "modelNum": "83.4",
     "features": [
       "Latest Changelog"
     ],
-    "popularityIndex": 206,
+    "popularityIndex": 207,
     "scorecardCount": 32
   },
   "683e4f33": {
@@ -6369,7 +6369,7 @@
       "Latest Changelog"
     ],
     "popularityIndex": 23,
-    "scorecardCount": 5
+    "scorecardCount": 4
   },
   "aa15b066": {
     "id": "aa15b066",
@@ -6579,7 +6579,7 @@
     ],
     "version": "Pin-Tumbler only, 40mm or larger, Weatherproof or not",
     "popularityIndex": 350,
-    "scorecardCount": 61
+    "scorecardCount": 60
   },
   "171f76e9": {
     "id": "171f76e9",
@@ -6648,7 +6648,7 @@
     "views": 123,
     "lastUpdated": "2025-03-18T23:29:31.269Z",
     "popularityIndex": 123,
-    "scorecardCount": 23
+    "scorecardCount": 22
   },
   "1a8afeac": {
     "id": "1a8afeac",
@@ -6933,7 +6933,7 @@
     ],
     "name": "Cocraft 6-Pin Padlock",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 12,
+    "views": 11,
     "lastUpdated": "2025-03-19T01:20:51.357Z",
     "media": [
       {
@@ -6946,7 +6946,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53063505545_56d62e35e8_o.jpg"
       }
     ],
-    "popularityIndex": 12,
+    "popularityIndex": 11,
     "scorecardCount": 1
   },
   "99057c44": {
@@ -7929,7 +7929,7 @@
     "lastUpdated": "2025-03-19T15:44:57.280Z",
     "modelNum": "150",
     "popularityIndex": 686,
-    "scorecardCount": 89
+    "scorecardCount": 88
   },
   "9441e2cc": {
     "id": "9441e2cc",
@@ -8171,11 +8171,11 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/52977757532_f253bac324_o.jpg"
       }
     ],
-    "views": 687,
+    "views": 688,
     "lastUpdated": "2025-03-19T15:44:57.280Z",
     "notes": "Due to unbalanced stacks, drivers may rest below shear, risking damage to the springs if that chamber is not picked.",
     "modelNum": "570",
-    "popularityIndex": 687,
+    "popularityIndex": 688,
     "scorecardCount": 111
   },
   "9f832458": {
@@ -8210,7 +8210,7 @@
     ],
     "name": "Sargent Mortise",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 70,
+    "views": 71,
     "lastUpdated": "2025-03-19T01:20:51.364Z",
     "media": [
       {
@@ -8244,7 +8244,7 @@
     "relatedIds": [
       "8f3f18d8"
     ],
-    "popularityIndex": 70,
+    "popularityIndex": 71,
     "scorecardCount": 13
   },
   "74f65a9c": {
@@ -9263,14 +9263,14 @@
     ],
     "name": "ABUS 72/40, 34CS55 Platinum",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 1040,
+    "views": 1041,
     "lastUpdated": "2025-03-19T15:44:57.281Z",
     "features": [
       "Picking Risk"
     ],
     "notes": "Due to unbalanced pin stacks, drivers in max lift chambers will rest below shear. This risks spring damage if the driver is not picked.",
     "version": "Guttable version",
-    "popularityIndex": 1040,
+    "popularityIndex": 1041,
     "scorecardCount": 147
   },
   "e42853c7": {
@@ -9614,9 +9614,9 @@
     ],
     "name": "ABUS 80TI Titalium",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 421,
+    "views": 422,
     "lastUpdated": "2025-03-19T15:44:57.281Z",
-    "popularityIndex": 421,
+    "popularityIndex": 422,
     "scorecardCount": 55
   },
   "9da8ebe0": {
@@ -9671,9 +9671,9 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/52829305062_3d45ae978e_o.jpg"
       }
     ],
-    "views": 158,
+    "views": 159,
     "lastUpdated": "2025-03-19T15:44:57.281Z",
-    "popularityIndex": 158,
+    "popularityIndex": 159,
     "scorecardCount": 23
   },
   "6b2e5290": {
@@ -10840,13 +10840,13 @@
     ],
     "name": "American Lock 1100 / A1100",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 1428,
+    "views": 1430,
     "lastUpdated": "2025-03-19T01:20:51.360Z",
     "relatedIds": [
       "1ae40987"
     ],
-    "popularityIndex": 1428,
-    "scorecardCount": 277
+    "popularityIndex": 1430,
+    "scorecardCount": 274
   },
   "b16ffe3f": {
     "id": "b16ffe3f",
@@ -10945,13 +10945,13 @@
     ],
     "name": "American Lock 5200",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 259,
+    "views": 260,
     "lastUpdated": "2025-03-19T15:44:57.282Z",
     "notes": "The standard, non-bumpstop model of the American Lock 5200 can be distinguished by the angular shape of the bow of its key, compared to the rounded shape of the bumpstop keybow.",
     "relatedIds": [
       "a0d1bf97"
     ],
-    "popularityIndex": 259,
+    "popularityIndex": 260,
     "scorecardCount": 34
   },
   "b3af5e62": {
@@ -11037,7 +11037,7 @@
     ],
     "name": "American Lock S1100",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 156,
+    "views": 157,
     "lastUpdated": "2025-03-19T01:20:51.360Z",
     "media": [
       {
@@ -11114,7 +11114,7 @@
       }
     ],
     "description": "Six-pin lock that combines the familiar aluminum body of the American 1100 series with the core normally found in the Master Lock #410 LOTO.",
-    "popularityIndex": 156,
+    "popularityIndex": 157,
     "scorecardCount": 22
   },
   "e84582aa": {
@@ -11169,7 +11169,7 @@
       "f2d41749"
     ],
     "popularityIndex": 39,
-    "scorecardCount": 8
+    "scorecardCount": 7
   },
   "0b82681f": {
     "id": "0b82681f",
@@ -12107,11 +12107,11 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/52729225631_5092b67dcd_o.jpg"
       }
     ],
-    "views": 81,
+    "views": 78,
     "lastUpdated": "2025-03-19T15:44:57.283Z",
     "version": "40mm or larger, 5 pins",
-    "popularityIndex": 81,
-    "scorecardCount": 13
+    "popularityIndex": 78,
+    "scorecardCount": 12
   },
   "83ac6e00": {
     "id": "83ac6e00",
@@ -13368,7 +13368,7 @@
     ],
     "name": "FAB 200RS",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 12,
+    "views": 13,
     "lastUpdated": "2025-03-19T15:44:57.284Z",
     "media": [
       {
@@ -13402,8 +13402,8 @@
         "url": "https://www.catalocks.eu/FAB/FAB%20200RS_177.html"
       }
     ],
-    "popularityIndex": 12,
-    "scorecardCount": 1
+    "popularityIndex": 13,
+    "scorecardCount": 2
   },
   "13b55a25": {
     "id": "13b55a25",
@@ -14341,10 +14341,10 @@
     ],
     "name": "Master Lock 410 LOTO (Lockout Tagout)",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 867,
+    "views": 868,
     "lastUpdated": "2025-03-19T15:44:57.286Z",
     "modelNum": "410",
-    "popularityIndex": 867,
+    "popularityIndex": 868,
     "scorecardCount": 103
   },
   "366d5f50": {
@@ -15180,10 +15180,10 @@
     ],
     "name": "PACLOCK 90A",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 232,
+    "views": 233,
     "lastUpdated": "2025-03-19T15:44:57.286Z",
-    "popularityIndex": 232,
-    "scorecardCount": 28
+    "popularityIndex": 233,
+    "scorecardCount": 27
   },
   "31d68cd1": {
     "id": "31d68cd1",
@@ -15712,7 +15712,7 @@
     ],
     "name": "Wilka 3600",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 13,
+    "views": 14,
     "lastUpdated": "2025-03-19T15:44:57.287Z",
     "media": [
       {
@@ -15749,7 +15749,7 @@
         "url": "https://wiki.koksa.org/Wilka_W_3600"
       }
     ],
-    "popularityIndex": 13
+    "popularityIndex": 14
   },
   "9b275fcc": {
     "id": "9b275fcc",
@@ -16389,7 +16389,7 @@
     ],
     "name": "ABUS Bravus 1000, Bravus 2000, Bravus 3000",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 31,
+    "views": 30,
     "lastUpdated": "2025-03-19T15:44:57.288Z",
     "media": [
       {
@@ -16496,7 +16496,7 @@
       "Trap element"
     ],
     "notes": "Requires 360° picking: these locks have traps that require some work to pick",
-    "popularityIndex": 31,
+    "popularityIndex": 30,
     "scorecardCount": 7
   },
   "f96de7cc": {
@@ -17105,7 +17105,7 @@
     ],
     "name": "ASSA 500, Flexcore/Flexcore Plus",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 53,
+    "views": 54,
     "lastUpdated": "2025-03-19T15:44:57.289Z",
     "media": [
       {
@@ -17177,7 +17177,7 @@
       "ef221c67",
       "f2d41749"
     ],
-    "popularityIndex": 53,
+    "popularityIndex": 54,
     "scorecardCount": 15
   },
   "d08aa492": {
@@ -20015,9 +20015,9 @@
     "features": [
       "Pin-in-pin"
     ],
-    "views": 96,
+    "views": 95,
     "lastUpdated": "2025-03-19T01:20:51.369Z",
-    "popularityIndex": 96,
+    "popularityIndex": 95,
     "scorecardCount": 34
   },
   "c8c0ee06": {
@@ -20347,7 +20347,7 @@
       "ae023398"
     ],
     "popularityIndex": 241,
-    "scorecardCount": 99
+    "scorecardCount": 97
   },
   "36d61da4": {
     "id": "36d61da4",
@@ -21478,10 +21478,10 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53880309782_17ae6b095d_o.jpg"
       }
     ],
-    "views": 804,
+    "views": 807,
     "lastUpdated": "2025-03-19T15:44:57.293Z",
-    "popularityIndex": 804,
-    "scorecardCount": 228
+    "popularityIndex": 807,
+    "scorecardCount": 225
   },
   "74c225d1": {
     "id": "74c225d1",
@@ -22189,7 +22189,7 @@
     "views": 21,
     "lastUpdated": "2025-03-21T17:03:30.597Z",
     "popularityIndex": 21,
-    "scorecardCount": 18
+    "scorecardCount": 19
   },
   "2c9d12fc": {
     "id": "2c9d12fc",
@@ -23037,7 +23037,7 @@
     ],
     "name": "ABUS XP1, TS5000",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 61,
+    "views": 60,
     "lastUpdated": "2025-03-19T15:44:57.295Z",
     "media": [
       {
@@ -23103,8 +23103,8 @@
         "url": "https://www.catalocks.eu/ABUS/ABUS%20TS%205000_53.html"
       }
     ],
-    "popularityIndex": 61,
-    "scorecardCount": 26
+    "popularityIndex": 60,
+    "scorecardCount": 23
   },
   "da8331ef": {
     "id": "da8331ef",
@@ -23147,7 +23147,7 @@
     "features": [
       "Interactive element"
     ],
-    "views": 64,
+    "views": 65,
     "lastUpdated": "2025-03-19T15:44:57.301Z",
     "media": [
       {
@@ -23220,7 +23220,7 @@
         "url": "https://wiki.koksa.org/Abus_XP2S"
       }
     ],
-    "popularityIndex": 64,
+    "popularityIndex": 65,
     "scorecardCount": 23
   },
   "557b2f45": {
@@ -23754,9 +23754,9 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/52760772520_c4e0aed26d_o.jpg"
       }
     ],
-    "views": 216,
+    "views": 217,
     "lastUpdated": "2025-03-19T01:20:51.373Z",
-    "popularityIndex": 216,
+    "popularityIndex": 217,
     "scorecardCount": 80
   },
   "039a239f": {
@@ -24636,7 +24636,7 @@
       }
     ],
     "popularityIndex": 30,
-    "scorecardCount": 15
+    "scorecardCount": 16
   },
   "1f3a4b1d": {
     "id": "1f3a4b1d",
@@ -25868,13 +25868,13 @@
     ],
     "name": "DeGuard Interactive clone / HQ High Security interactive clone",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 109,
+    "views": 110,
     "lastUpdated": "2025-03-19T15:44:57.296Z",
     "features": [
       "Pin-in-pin",
       "Interactive element"
     ],
-    "popularityIndex": 109,
+    "popularityIndex": 110,
     "scorecardCount": 58
   },
   "3b848976": {
@@ -26757,7 +26757,7 @@
     ],
     "version": "<13 pins",
     "popularityIndex": 57,
-    "scorecardCount": 14
+    "scorecardCount": 15
   },
   "06ddb074": {
     "id": "06ddb074",
@@ -27390,7 +27390,7 @@
       "f1857cef"
     ],
     "popularityIndex": 60,
-    "scorecardCount": 44
+    "scorecardCount": 45
   },
   "883fb3cd": {
     "id": "883fb3cd",
@@ -27555,7 +27555,7 @@
       }
     ],
     "popularityIndex": 37,
-    "scorecardCount": 26
+    "scorecardCount": 25
   },
   "be22f5f1": {
     "id": "be22f5f1",
@@ -27621,7 +27621,7 @@
       }
     ],
     "popularityIndex": 43,
-    "scorecardCount": 24
+    "scorecardCount": 23
   },
   "9aedb834": {
     "id": "9aedb834",
@@ -28018,7 +28018,7 @@
     "views": 319,
     "lastUpdated": "2025-03-19T15:44:57.299Z",
     "popularityIndex": 319,
-    "scorecardCount": 92
+    "scorecardCount": 89
   },
   "58f2eac0": {
     "id": "58f2eac0",
@@ -28320,11 +28320,11 @@
       "Pin-in-pin",
       "Interactive element"
     ],
-    "views": 253,
+    "views": 242,
     "lastUpdated": "2025-03-21T17:03:30.599Z",
     "searchKeywords": "multilock, mtl",
-    "popularityIndex": 253,
-    "scorecardCount": 132
+    "popularityIndex": 242,
+    "scorecardCount": 122
   },
   "16906a6c": {
     "id": "16906a6c",
@@ -28536,7 +28536,7 @@
     "views": 84,
     "lastUpdated": "2025-03-19T15:44:57.299Z",
     "popularityIndex": 84,
-    "scorecardCount": 41
+    "scorecardCount": 40
   },
   "4debdca1": {
     "id": "4debdca1",
@@ -29061,10 +29061,10 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53167747727_b47a8de853_o.jpg"
       }
     ],
-    "views": 86,
+    "views": 82,
     "lastUpdated": "2025-03-19T01:20:51.378Z",
-    "popularityIndex": 86,
-    "scorecardCount": 40
+    "popularityIndex": 82,
+    "scorecardCount": 35
   },
   "9a9ae8df": {
     "id": "9a9ae8df",
@@ -29843,9 +29843,9 @@
       "False gates"
     ],
     "notes": "Old models can be front tensioned",
-    "views": 176,
+    "views": 177,
     "lastUpdated": "2025-03-19T15:44:57.301Z",
-    "popularityIndex": 176,
+    "popularityIndex": 177,
     "scorecardCount": 31
   },
   "b8350900": {
@@ -30642,9 +30642,9 @@
     ],
     "name": "ASSA Twin Combi, 1800, 4800",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 51,
+    "views": 52,
     "lastUpdated": "2025-03-19T15:44:57.302Z",
-    "popularityIndex": 51,
+    "popularityIndex": 52,
     "scorecardCount": 14
   },
   "0b1a28ce": {
@@ -31543,7 +31543,7 @@
     "views": 76,
     "lastUpdated": "2025-03-19T15:44:57.302Z",
     "popularityIndex": 76,
-    "scorecardCount": 27
+    "scorecardCount": 26
   },
   "61247b32": {
     "id": "61247b32",
@@ -32266,7 +32266,7 @@
     "views": 161,
     "lastUpdated": "2025-03-19T15:44:57.303Z",
     "popularityIndex": 161,
-    "scorecardCount": 92
+    "scorecardCount": 91
   },
   "a1233156": {
     "id": "a1233156",
@@ -32335,7 +32335,7 @@
     "views": 180,
     "lastUpdated": "2025-03-19T15:44:57.303Z",
     "popularityIndex": 180,
-    "scorecardCount": 92
+    "scorecardCount": 91
   },
   "f38cafca": {
     "id": "f38cafca",
@@ -32458,7 +32458,7 @@
       "9b94b1c0"
     ],
     "popularityIndex": 41,
-    "scorecardCount": 27
+    "scorecardCount": 28
   },
   "d64be6f7": {
     "id": "d64be6f7",
@@ -32675,7 +32675,7 @@
     "features": [
       "High pin count"
     ],
-    "views": 9,
+    "views": 10,
     "lastUpdated": "2025-03-19T15:44:57.304Z",
     "media": [
       {
@@ -32709,8 +32709,8 @@
     "relatedIds": [
       "aa4c402d"
     ],
-    "popularityIndex": 9,
-    "scorecardCount": 2
+    "popularityIndex": 10,
+    "scorecardCount": 3
   },
   "41b91a0e": {
     "id": "41b91a0e",
@@ -34198,7 +34198,7 @@
       "112d0034"
     ],
     "popularityIndex": 52,
-    "scorecardCount": 24
+    "scorecardCount": 23
   },
   "ea1afad0": {
     "id": "ea1afad0",
@@ -35051,9 +35051,9 @@
       "Profile discs"
     ],
     "notes": "Many keyway variations, warded spinners, rear profile spinner and profile discs",
-    "views": 73,
+    "views": 75,
     "lastUpdated": "2025-03-19T15:44:57.306Z",
-    "popularityIndex": 73,
+    "popularityIndex": 75,
     "scorecardCount": 14
   },
   "b29a8b44": {
@@ -35245,12 +35245,12 @@
     "features": [
       "High pin count"
     ],
-    "views": 53,
+    "views": 51,
     "lastUpdated": "2025-03-19T01:20:51.385Z",
     "relatedIds": [
       "054731a5"
     ],
-    "popularityIndex": 53,
+    "popularityIndex": 51,
     "scorecardCount": 25
   },
   "29ab2852": {
@@ -37375,7 +37375,7 @@
     "features": [
       "High pin count"
     ],
-    "views": 22,
+    "views": 21,
     "lastUpdated": "2025-03-19T15:44:57.308Z",
     "media": [
       {
@@ -37409,7 +37409,7 @@
     "relatedIds": [
       "f61461ed"
     ],
-    "popularityIndex": 22,
+    "popularityIndex": 21,
     "scorecardCount": 5
   },
   "eed91da5": {
@@ -37580,7 +37580,7 @@
     "features": [
       "High pin count"
     ],
-    "views": 37,
+    "views": 38,
     "lastUpdated": "2025-03-19T01:20:51.387Z",
     "media": [
       {
@@ -37614,7 +37614,7 @@
     "relatedIds": [
       "41b91a0e"
     ],
-    "popularityIndex": 37,
+    "popularityIndex": 38,
     "scorecardCount": 14
   },
   "0770580d": {
@@ -38497,9 +38497,9 @@
         "subtitleUrl": "https://www.youtube.com/watch?v=8QjTX3m0M2E"
       }
     ],
-    "views": 62,
+    "views": 63,
     "lastUpdated": "2025-03-19T01:20:51.388Z",
-    "popularityIndex": 62,
+    "popularityIndex": 63,
     "scorecardCount": 5
   },
   "5e090448": {
@@ -38721,7 +38721,7 @@
     ],
     "notes": "**** **Special Picking Requirement:** requires 360 for belting; Picking risk: Some versions may contain trap pins that will require gutting to fix. ",
     "popularityIndex": 26,
-    "scorecardCount": 15
+    "scorecardCount": 16
   },
   "9c5f4539": {
     "id": "9c5f4539",
@@ -40069,7 +40069,7 @@
     "views": 49,
     "lastUpdated": "2025-03-18T23:29:31.281Z",
     "popularityIndex": 49,
-    "scorecardCount": 6
+    "scorecardCount": 5
   },
   "fc627b17": {
     "id": "fc627b17",
@@ -40336,7 +40336,7 @@
       "False gates"
     ],
     "notes": "Often can be front tensioned",
-    "views": 85,
+    "views": 86,
     "lastUpdated": "2025-03-19T01:20:51.390Z",
     "media": [
       {
@@ -40377,7 +40377,7 @@
         "url": "https://youtu.be/XuHCrqNRHlI"
       }
     ],
-    "popularityIndex": 85,
+    "popularityIndex": 86,
     "scorecardCount": 20
   },
   "f133510b": {
@@ -41166,7 +41166,7 @@
     "views": 99,
     "lastUpdated": "2025-03-19T01:20:51.391Z",
     "popularityIndex": 99,
-    "scorecardCount": 66
+    "scorecardCount": 64
   },
   "c8694f3a": {
     "id": "c8694f3a",
@@ -44111,7 +44111,7 @@
       "937eb7a8"
     ],
     "popularityIndex": 110,
-    "scorecardCount": 62
+    "scorecardCount": 61
   },
   "e8c7dd5b": {
     "id": "e8c7dd5b",
@@ -45297,7 +45297,7 @@
       "9982c0eb"
     ],
     "popularityIndex": 35,
-    "scorecardCount": 37
+    "scorecardCount": 38
   },
   "a2bd7f1e": {
     "id": "a2bd7f1e",
@@ -45728,12 +45728,12 @@
         "subtitleUrl": "https://www.youtube.com/watch?v=8QjTX3m0M2E"
       }
     ],
-    "views": 79,
+    "views": 80,
     "lastUpdated": "2025-03-19T15:44:57.317Z",
     "relatedIds": [
       "d1272b9f"
     ],
-    "popularityIndex": 79,
+    "popularityIndex": 80,
     "scorecardCount": 3
   },
   "d1272b9f": {
@@ -45827,7 +45827,7 @@
       "71c7270b"
     ],
     "popularityIndex": 124,
-    "scorecardCount": 47
+    "scorecardCount": 45
   },
   "649eaebc": {
     "id": "649eaebc",
@@ -47162,10 +47162,10 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/52722028111_49481a3527_o.png"
       }
     ],
-    "views": 28,
+    "views": 29,
     "lastUpdated": "2025-03-19T15:44:57.319Z",
     "version": ">= 17 pins",
-    "popularityIndex": 28,
+    "popularityIndex": 29,
     "scorecardCount": 17
   },
   "0b604114": {
@@ -47593,9 +47593,9 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/52934650458_01403c8f99_o.jpg"
       }
     ],
-    "views": 46,
+    "views": 45,
     "lastUpdated": "2025-03-19T15:44:57.311Z",
-    "popularityIndex": 46,
+    "popularityIndex": 45,
     "scorecardCount": 20
   },
   "3b7643da": {
@@ -48018,7 +48018,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/52742482268_9871c415f4_o.jpg"
       }
     ],
-    "views": 28,
+    "views": 29,
     "lastUpdated": "2025-03-19T15:44:57.311Z",
     "links": [
       {
@@ -48030,7 +48030,7 @@
         "url": "https://youtu.be/XuHCrqNRHlI"
       }
     ],
-    "popularityIndex": 28,
+    "popularityIndex": 29,
     "scorecardCount": 1
   },
   "0feafca7": {
@@ -49406,9 +49406,9 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/52837133025_3017777db1_o.png"
       }
     ],
-    "views": 6,
-    "popularityIndex": 6,
-    "scorecardCount": 1
+    "views": 7,
+    "popularityIndex": 7,
+    "scorecardCount": 2
   },
   "10ab07eb": {
     "id": "10ab07eb",
@@ -51256,7 +51256,7 @@
     "notes": "Similar to UX but 3 rows of pins",
     "name": "Opnus TZ",
     "dateAdded": "2023-03-02T19:05:25.000Z",
-    "views": 27,
+    "views": 28,
     "lastUpdated": "2025-03-19T15:44:57.300Z",
     "media": [
       {
@@ -51302,7 +51302,7 @@
     "lockingMechanisms": [
       "Dimple"
     ],
-    "popularityIndex": 27,
+    "popularityIndex": 28,
     "scorecardCount": 19
   },
   "3af6c54b": {
@@ -53961,7 +53961,7 @@
     "views": 54,
     "version": "40mm or larger (5 pins)",
     "popularityIndex": 54,
-    "scorecardCount": 11
+    "scorecardCount": 10
   },
   "e2fd1519": {
     "id": "e2fd1519",
@@ -59478,7 +59478,7 @@
       "Magic DOM drivers",
       "Bottlenose keypins"
     ],
-    "views": 15,
+    "views": 14,
     "media": [
       {
         "title": "By: T02",
@@ -59589,7 +59589,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53956897360_75cfc8687e_o.jpg"
       }
     ],
-    "popularityIndex": 15,
+    "popularityIndex": 14,
     "scorecardCount": 7
   },
   "37951bc4": {
@@ -62082,9 +62082,9 @@
     ],
     "name": "ABUS 82/63",
     "dateAdded": "2025-08-15T19:23:33.234Z",
-    "popularityIndex": 19,
+    "popularityIndex": 20,
     "scorecardCount": 2,
-    "views": 19
+    "views": 20
   },
   "2c906ebb": {
     "id": "2c906ebb",
@@ -62122,7 +62122,7 @@
     "name": "Mauer Crypto",
     "dateAdded": "2025-08-15T19:23:33.241Z",
     "popularityIndex": 3,
-    "scorecardCount": 4,
+    "scorecardCount": 3,
     "views": 3
   },
   "5eac6a29": {
@@ -62183,7 +62183,7 @@
     "name": "Generic/Unranked Lock Cylinder",
     "dateAdded": "2025-09-29T17:16:37.420Z",
     "popularityIndex": 9,
-    "scorecardCount": 5,
+    "scorecardCount": 3,
     "views": 9
   },
   "d3bdab01": {
@@ -62252,7 +62252,7 @@
     "name": "Defiant 5-pin Deadbolt",
     "dateAdded": "2025-10-04T16:19:03.606Z",
     "popularityIndex": 18,
-    "scorecardCount": 4,
+    "scorecardCount": 3,
     "views": 18
   },
   "5f600c8e": {
@@ -62465,9 +62465,9 @@
     ],
     "name": "Burg Wächter Profi 116",
     "dateAdded": "2025-11-23T19:59:27.061Z",
-    "popularityIndex": 13,
+    "popularityIndex": 12,
     "scorecardCount": 4,
-    "views": 13
+    "views": 12
   },
   "1f409df0": {
     "id": "1f409df0",
@@ -63736,5 +63736,17 @@
     "notes": "without Pfaffenhain barrel pin",
     "name": "ABUS Pfaffenhain 310",
     "dateAdded": "2026-09-16T15:48:19.421Z"
+  },
+  "1b6eea7f": {
+    "id": "1b6eea7f",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Tokoz",
+        "model": "Alpha"
+      }
+    ],
+    "name": "Tokoz Alpha",
+    "dateAdded": "2026-09-18T17:33:33.219Z"
   }
 }
