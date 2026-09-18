@@ -5,6 +5,13 @@ import {localUser, prodUser} from '../../../keys/users.js'
 import dayjs from 'dayjs'
 import backup from './backup.json' with {type: 'json'}
 
+
+
+////
+// NOTE: backup.json is pulled from current directory
+////
+
+
 /**
  * @property blackBeltAwardedAt
  * @property userIds
@@ -91,6 +98,9 @@ export async function collectionAnalyzer({blackBeltOnly, userId}) {
 await collectionAnalyzer({}).then(issues => console.log(JSON.stringify(Object.keys(issues), null, 2)))
 
 process.exit(0)
+
+
+
 
 
 export const getCollectionStatsCurrent = (profiles, items, listNames, blackBeltOnly) => {

@@ -72,7 +72,8 @@ export async function collectionAnalyzer({blackBeltOnly, date}) {
                 setDeep(acc, ['listStats', 'allLists', 'userCount'], acc.listStats.allLists.userIds.length)
                 setDeepMax(acc, ['listStats', 'allLists', 'maxSaves'], profile[listName].length)
 
-                profile[listName].forEach(itemId => {
+                const uniqueItems = new Set(profile[listName])
+                uniqueItems.forEach(itemId => {
                     setDeepAdd(acc, ['totalSaves'], 1)
                     setDeepAdd(acc, ['listStats', listName, 'totalSaves'], 1)
                     setDeepAdd(acc, ['listStats', listName, 'savesById', itemId], 1)

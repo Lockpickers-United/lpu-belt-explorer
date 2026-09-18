@@ -66,22 +66,31 @@ function createUploadFilename(part) {
 
 async function writeImageMetadata({caption, title, userComment, destination}) {
     const {stdout = '', stderr = ''} = await execFileAsync('exiftool', [
-        '-overwrite_original',
         '-r',
+        '-all=',
+        '-tagsFromFile',
+        '@',
+        '-all:all',
+        '-unsafe',
+        '-icc_profile',
+        '-overwrite_original',
         `-iptc:Caption-Abstract=${caption}`,
         `-Title=${title}`,
-        '-gps:all=',
         `-UserComment=${userComment}`,
+        '-gps:all=',
         destination
     ])
 
-    if (stderr) {
+    if (stderr && !stderr.includes('ICC_Profile deleted')) {
         const details = {stdout: stdout.replace(/\n/g, ''), stderr}
-        if (stderr.includes('Warning')) log.warn(details, 'ExifTool completed with warnings')
+        if (stderr.includes('Warning')) {
+            log.warn(details, 'ExifTool completed with warnings')
+        }
         else {
             const error = new Error('ExifTool reported an error')
             error.details = details
-            throw error
+            log.error({error}, 'ExifTool error')
+            //throw error
         }
     }
 }
@@ -108,15 +117,15 @@ function uploadedFileCount(files) {
 }
 
 export function createUploadContentHandler({
-    uploadDir,
-    runtimeEnvironment = 'local',
-    emailSender,
-    emailRecipients,
-    formFactory = formidable,
-    parseFormData = parseForm,
-    imageMetadataWriter = writeImageMetadata,
-    archiveDirectory = createZipArchive
-}) {
+                                               uploadDir,
+                                               runtimeEnvironment = 'local',
+                                               emailSender,
+                                               emailRecipients,
+                                               formFactory = formidable,
+                                               parseFormData = parseForm,
+                                               imageMetadataWriter = writeImageMetadata,
+                                               archiveDirectory = createZipArchive
+                                           }) {
     if (!uploadDir || !path.isAbsolute(uploadDir)) {
         throw new Error('Content uploadDir must be an absolute path')
     }
@@ -145,14 +154,14 @@ export function createUploadContentHandler({
         })
     }
 
-    async function cleanup(workspaceDir, archiveFile) {
+    async function cleanup(workspaceDir, _archiveFile) {
         const cleanupResults = await Promise.allSettled([
             workspaceDir
                 ? fs.promises.rm(workspaceDir, {recursive: true, force: true})
                 : Promise.resolve(),
-            archiveFile
-                ? fs.promises.rm(archiveFile, {force: true})
-                : Promise.resolve()
+            //archiveFile
+            //    ? fs.promises.rm(archiveFile, {force: true})
+            //    : Promise.resolve()
         ])
         cleanupResults.forEach(result => {
             if (result.status === 'rejected') {
@@ -198,13 +207,17 @@ export function createUploadContentHandler({
             const attachmentBaseName = slugify(lockFullName || lockName || lockId || 'photos') || 'photos'
             const attachmentName = `${attachmentBaseName}.zip`
 
-            failureMessage = 'Upload metadata write error'
-            await imageMetadataWriter({
-                caption: `By: ${photoCredit}`,
-                title: lockName,
-                userComment: lockId,
-                destination: workspaceDir
-            })
+            try {
+                await imageMetadataWriter({
+                    caption: `By: ${photoCredit}`,
+                    title: lockName,
+                    userComment: lockId,
+                    destination: workspaceDir
+                })
+            } catch (err) {
+                failureMessage = 'Upload metadata write error'
+                log.error({err}, failureMessage)
+            }
             await fs.promises.writeFile(
                 path.join(workspaceDir, 'uploadData.json'),
                 JSON.stringify(fields, null, 2),

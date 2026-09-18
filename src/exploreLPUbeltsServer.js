@@ -36,13 +36,6 @@ const importRaflDataRuntime = await createImportRaflDataRuntime({env: process.en
 const redditBeltsRuntime = await createRedditBeltsRuntime({env: process.env})
 const flickrInfoRuntime = await createFlickrInfoRuntime({env: process.env})
 const firebaseActivityRuntime = await createFirebaseActivityRuntime({env: process.env})
-logger.info(requestLockConfigSummary(requestLockRuntime.config), 'request-lock runtime configured')
-logger.info(uploadContentConfigSummary(uploadContentRuntime.config), 'upload-content runtime configured')
-logger.info(emailFormConfigSummary(emailFormRuntime.config), 'email-form runtime configured')
-logger.info(importRaflDataConfigSummary(importRaflDataRuntime.config), 'RAFL preview runtime configured')
-logger.info(redditBeltsConfigSummary(redditBeltsRuntime.config), 'Reddit belts runtime configured')
-logger.info(flickrInfoConfigSummary(flickrInfoRuntime.config), 'Flickr-info runtime configured')
-logger.info(firebaseActivityConfigSummary(firebaseActivityRuntime.config), 'Firebase-activity runtime configured')
 
 // node /home/dh_m5s5pf/explore-lpubelts-com-node/src/exploreLPUbeltsServerDEV.js
 
@@ -138,3 +131,10 @@ const server = app.listen(port, host, () => {
 server.on('error', (err) => {
     try { logger.error({ err }, 'server error') } catch { console.error('server error', err) }
 })
+logger.info(requestLockConfigSummary(requestLockRuntime.config), 'request-lock runtime configured')
+logger.info(uploadContentConfigSummary(uploadContentRuntime.config), 'upload-content runtime configured')
+logger.info(emailFormConfigSummary(emailFormRuntime.config), 'email-form runtime configured')
+logger.info(importRaflDataConfigSummary(importRaflDataRuntime.config), 'RAFL preview runtime configured')
+logger.info(redditBeltsConfigSummary(redditBeltsRuntime.config), 'Reddit belts runtime configured')
+logger.info(flickrInfoConfigSummary(flickrInfoRuntime.config), 'Flickr-info runtime configured')
+logger.info(firebaseActivityConfigSummary(firebaseActivityRuntime.config), 'Firebase-activity runtime configured')

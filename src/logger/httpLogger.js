@@ -1,12 +1,12 @@
 // httpLogger.js
 import pinoHttp from 'pino-http'
-import { pinoLogger } from './logger.js'
-import { randomUUID } from 'crypto'
+import {pinoLogger} from './logger.js'
+import {randomUUID} from 'crypto'
 
 const isProduction = process.env.NODE_ENV === 'production' || process.env.pm_id !== undefined
 const configuredSlowRequestThresholdMs = Number(process.env.HTTP_LOG_SLOW_REQUEST_MS)
 const defaultSlowRequestThresholdMs = Number.isFinite(configuredSlowRequestThresholdMs)
-    && configuredSlowRequestThresholdMs >= 0
+&& configuredSlowRequestThresholdMs >= 0
     ? configuredSlowRequestThresholdMs
     : 1_000
 
@@ -86,15 +86,38 @@ export const getHttpLogLevel = (
     return 'info'
 }
 
+export const getResponseRate = (
+    res,
+    {
+        production = isProduction,
+        responseTimeMs = getHttpResponseTimeMs(res),
+        slowRequestThresholdMs = defaultSlowRequestThresholdMs
+    } = {}
+) => {
+    if (production && responseTimeMs >= slowRequestThresholdMs) return {responseRate: 'slow'}
+    return {}
+}
+
+export const addResponseRate = (res, logData, options = {}) => ({
+    ...logData,
+    ...getResponseRate(res, {...options, responseTimeMs: logData.responseTime})
+})
+
 export const httpLogger = pinoHttp({
     logger: pinoLogger,
     autoLogging: {
         ignore: (req) => !shouldAutoLogRequest(req)
     },
     genReqId: (req, _res) => req.headers['x-request-id'] || randomUUID(),
-    redact: { paths: ['req.headers.authorization', 'req.body.password', 'req.body.token'], censor: '[redacted]' },
+    redact: {paths: ['req.headers.authorization', 'req.body.password', 'req.body.token'], censor: '[redacted]'},
     customLogLevel(req, res, err) {
         return getHttpLogLevel(req, res, err)
+    },
+    customSuccessObject(_req, res, logData) {
+        return addResponseRate(res, logData)
+    },
+    customErrorObject(_req, res, _err, logData) {
+        return addResponseRate(res, logData)
     },
     serializers: {
         req(req) {
@@ -106,7 +129,7 @@ export const httpLogger = pinoHttp({
             }
         },
         res(res) {
-            return { statusCode: res.statusCode }
+            return {statusCode: res.statusCode}
         }
     },
     customErrorMessage(_req, res, err) {

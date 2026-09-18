@@ -2,6 +2,7 @@ import {describe, expect, it} from 'vitest'
 import pinoHttp from 'pino-http'
 
 import {
+    addResponseRate,
     getHttpLogLevel,
     getHttpResponseTimeMs,
     getRequestPathname,
@@ -81,6 +82,31 @@ describe('http logger log level selection', () => {
         )
 
         expect(level).toBe('warn')
+    })
+
+    it('adds a top-level response rate to slow response log data', () => {
+        const logData = addResponseRate(createRes(200), {
+            res: createRes(200),
+            responseTime: 1_200
+        }, {production: true})
+
+        expect(logData).toEqual({
+            res: {statusCode: 200},
+            responseTime: 1_200,
+            responseRate: 'slow'
+        })
+    })
+
+    it('does not add a response rate to normal response log data', () => {
+        const logData = addResponseRate(createRes(200), {
+            res: createRes(200),
+            responseTime: 100
+        }, {production: true})
+
+        expect(logData).toEqual({
+            res: {statusCode: 200},
+            responseTime: 100
+        })
     })
 
     it('calculates response time from pino-http start time', () => {

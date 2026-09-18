@@ -47,7 +47,7 @@ async function getPhotoMedia({flickr, photo, photosetId, sequence}) {
     }
 
     const photoPage = requiredContent(photoInfo.urls?.url?.[0]?._content, 'the photo page URL')
-    const thumbnail = sizes.find(size => size.label === 'Small 400')
+    const thumbnail = sizes.find(size => size.label === 'Small 400') || sizes.find(size => size.label === 'Small')
     const original = sizes.find(size => size.label === 'Original')
 
     return {
