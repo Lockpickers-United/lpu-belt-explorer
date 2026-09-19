@@ -1360,12 +1360,12 @@
     ],
     "name": "Any lock with any tool",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 544,
+    "views": 545,
     "lastUpdated": "2025-03-19T15:44:57.276Z",
     "lockingMechanisms": [
       "Various"
     ],
-    "popularityIndex": 544,
+    "popularityIndex": 545,
     "scorecardCount": 121
   },
   "07034c0f": {
@@ -1420,10 +1420,10 @@
     ],
     "name": "Any Acrylic Padlock",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 1460,
+    "views": 1461,
     "lastUpdated": "2025-03-18T23:29:31.267Z",
-    "popularityIndex": 1460,
-    "scorecardCount": 105
+    "popularityIndex": 1461,
+    "scorecardCount": 106
   },
   "3ac43ea8": {
     "id": "3ac43ea8",
@@ -3309,13 +3309,13 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53881171826_bd67648fb6_o.jpg"
       }
     ],
-    "views": 101,
+    "views": 102,
     "lastUpdated": "2025-03-19T01:20:51.355Z",
     "features": [
       "Unguttable"
     ],
-    "popularityIndex": 101,
-    "scorecardCount": 17
+    "popularityIndex": 102,
+    "scorecardCount": 18
   },
   "6ca3420d": {
     "id": "6ca3420d",
@@ -4831,10 +4831,10 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/54108366688_cdeac847da_o.jpg"
       }
     ],
-    "views": 451,
+    "views": 452,
     "lastUpdated": "2025-03-19T15:44:57.278Z",
-    "popularityIndex": 451,
-    "scorecardCount": 56
+    "popularityIndex": 452,
+    "scorecardCount": 57
   },
   "2936bb00": {
     "id": "2936bb00",
@@ -6645,9 +6645,9 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/54363711159_6c3c7fb46e_o.jpg"
       }
     ],
-    "views": 123,
+    "views": 124,
     "lastUpdated": "2025-03-18T23:29:31.269Z",
-    "popularityIndex": 123,
+    "popularityIndex": 124,
     "scorecardCount": 22
   },
   "1a8afeac": {
@@ -10146,7 +10146,7 @@
     ],
     "name": "ABUS Pfaffenhain 310, S5+",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 36,
+    "views": 35,
     "lastUpdated": "2025-03-19T15:44:57.282Z",
     "media": [
       {
@@ -10196,7 +10196,7 @@
     ],
     "notes": "requires Pfaffenhain barrel pin, otherwise orange",
     "version": "5 pins",
-    "popularityIndex": 36,
+    "popularityIndex": 35,
     "scorecardCount": 4
   },
   "bc6837f8": {
@@ -10619,7 +10619,7 @@
       }
     ],
     "popularityIndex": 50,
-    "scorecardCount": 3
+    "scorecardCount": 4
   },
   "1dafd552": {
     "id": "1dafd552",
@@ -10840,12 +10840,12 @@
     ],
     "name": "American Lock 1100 / A1100",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 1430,
+    "views": 1431,
     "lastUpdated": "2025-03-19T01:20:51.360Z",
     "relatedIds": [
       "1ae40987"
     ],
-    "popularityIndex": 1430,
+    "popularityIndex": 1431,
     "scorecardCount": 274
   },
   "b16ffe3f": {
@@ -11974,12 +11974,12 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/52727688196_6100d757ae_o.jpg"
       }
     ],
-    "views": 128,
+    "views": 129,
     "lastUpdated": "2025-03-19T01:20:51.366Z",
     "features": [
       "Unguttable"
     ],
-    "popularityIndex": 128,
+    "popularityIndex": 129,
     "scorecardCount": 22
   },
   "bd9dc1e4": {
@@ -14341,10 +14341,10 @@
     ],
     "name": "Master Lock 410 LOTO (Lockout Tagout)",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 868,
+    "views": 869,
     "lastUpdated": "2025-03-19T15:44:57.286Z",
     "modelNum": "410",
-    "popularityIndex": 868,
+    "popularityIndex": 869,
     "scorecardCount": 103
   },
   "366d5f50": {
@@ -15749,7 +15749,8 @@
         "url": "https://wiki.koksa.org/Wilka_W_3600"
       }
     ],
-    "popularityIndex": 14
+    "popularityIndex": 14,
+    "scorecardCount": 1
   },
   "9b275fcc": {
     "id": "9b275fcc",
@@ -19128,9 +19129,9 @@
     ],
     "name": "FAB 3* Profi, 4* Profi",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 9,
+    "views": 10,
     "lastUpdated": "2025-03-19T15:44:57.291Z",
-    "popularityIndex": 9,
+    "popularityIndex": 10,
     "scorecardCount": 7
   },
   "275d33c9": {
@@ -19267,7 +19268,7 @@
       "Pin-tumbler",
       "Sidepins"
     ],
-    "views": 24,
+    "views": 23,
     "lastUpdated": "2025-03-18T23:29:31.274Z",
     "media": [
       {
@@ -19327,7 +19328,7 @@
         "url": "https://www.catalocks.eu/ZEISS-IKON/ZEISS-IKON%20SK%206%20VECTOR_857.html"
       }
     ],
-    "popularityIndex": 24,
+    "popularityIndex": 23,
     "scorecardCount": 8
   },
   "1c38e176": {
@@ -21497,7 +21498,7 @@
     ],
     "name": "PACLOCK PL410",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 110,
+    "views": 111,
     "lastUpdated": "2025-03-19T15:44:57.293Z",
     "media": [
       {
@@ -21522,7 +21523,7 @@
     "features": [
       "Unguttable"
     ],
-    "popularityIndex": 110,
+    "popularityIndex": 111,
     "scorecardCount": 30
   },
   "ca6f4eaf": {
@@ -21796,7 +21797,7 @@
     ],
     "name": "Securemme K22, K2",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 17,
+    "views": 18,
     "lastUpdated": "2025-03-19T15:44:57.300Z",
     "media": [
       {
@@ -21827,7 +21828,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53081193737_94809bd2d6_o.jpg"
       }
     ],
-    "popularityIndex": 17,
+    "popularityIndex": 18,
     "scorecardCount": 11
   },
   "0a12f032": {
@@ -22189,7 +22190,7 @@
     "views": 21,
     "lastUpdated": "2025-03-21T17:03:30.597Z",
     "popularityIndex": 21,
-    "scorecardCount": 19
+    "scorecardCount": 20
   },
   "2c9d12fc": {
     "id": "2c9d12fc",
@@ -23641,7 +23642,7 @@
     ],
     "name": "ASSA 500 / Ruko 500",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 82,
+    "views": 83,
     "lastUpdated": "2025-03-19T15:44:57.295Z",
     "relatedIds": [
       "e84582aa",
@@ -23650,7 +23651,7 @@
       "d9e3829f",
       "f2d41749"
     ],
-    "popularityIndex": 82,
+    "popularityIndex": 83,
     "scorecardCount": 35
   },
   "45e3cde7": {
@@ -25979,9 +25980,9 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/52734113020_7c480fd340_o.jpg"
       }
     ],
-    "views": 9,
+    "views": 8,
     "lastUpdated": "2025-03-19T01:20:51.375Z",
-    "popularityIndex": 9,
+    "popularityIndex": 8,
     "scorecardCount": 5
   },
   "07bc680a": {
@@ -26677,9 +26678,9 @@
     ],
     "name": "Kale Kilit 164 BNE",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 23,
+    "views": 24,
     "lastUpdated": "2025-03-19T15:44:57.298Z",
-    "popularityIndex": 23,
+    "popularityIndex": 24,
     "scorecardCount": 12
   },
   "304f5471": {
@@ -28320,10 +28321,10 @@
       "Pin-in-pin",
       "Interactive element"
     ],
-    "views": 242,
+    "views": 243,
     "lastUpdated": "2025-03-21T17:03:30.599Z",
     "searchKeywords": "multilock, mtl",
-    "popularityIndex": 242,
+    "popularityIndex": 243,
     "scorecardCount": 122
   },
   "16906a6c": {
@@ -29321,9 +29322,9 @@
     ],
     "name": "CompX Chicago TuBAR / Inceca Plana",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 33,
+    "views": 34,
     "lastUpdated": "2025-03-19T15:44:57.296Z",
-    "popularityIndex": 33,
+    "popularityIndex": 34,
     "scorecardCount": 18
   },
   "b35bf986": {
@@ -31964,9 +31965,9 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53333026575_ef56711acc_o.jpg"
       }
     ],
-    "views": 18,
+    "views": 19,
     "lastUpdated": "2025-03-19T15:44:57.303Z",
-    "popularityIndex": 18,
+    "popularityIndex": 19,
     "scorecardCount": 10
   },
   "86e86a1d": {
@@ -32332,9 +32333,9 @@
     ],
     "name": "GOAL P",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 180,
+    "views": 181,
     "lastUpdated": "2025-03-19T15:44:57.303Z",
-    "popularityIndex": 180,
+    "popularityIndex": 181,
     "scorecardCount": 91
   },
   "f38cafca": {
@@ -32398,7 +32399,7 @@
     ],
     "name": "IKON tk5 sperwellenprofil",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 28,
+    "views": 27,
     "lastUpdated": "2025-03-19T15:44:57.303Z",
     "relatedIds": [
       "34d27803"
@@ -32406,7 +32407,7 @@
     "features": [
       "Rotating fingerpins"
     ],
-    "popularityIndex": 28,
+    "popularityIndex": 27,
     "scorecardCount": 15
   },
   "9659ad59": {
@@ -34099,9 +34100,9 @@
     ],
     "name": "Pollux 7",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 21,
+    "views": 22,
     "lastUpdated": "2025-03-19T15:44:57.305Z",
-    "popularityIndex": 21,
+    "popularityIndex": 22,
     "scorecardCount": 13
   },
   "94ee12b7": {
@@ -38807,7 +38808,7 @@
     ],
     "name": "Robur 2391 Safe Deposit Lock",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 80,
+    "views": 81,
     "lastUpdated": "2025-03-19T15:44:57.309Z",
     "media": [
       {
@@ -38842,7 +38843,7 @@
       "94ee12b7",
       "112d0034"
     ],
-    "popularityIndex": 80,
+    "popularityIndex": 81,
     "scorecardCount": 40
   },
   "112d0034": {
@@ -38909,7 +38910,7 @@
       "9da7a5f2"
     ],
     "popularityIndex": 69,
-    "scorecardCount": 41
+    "scorecardCount": 42
   },
   "4a7db3c6": {
     "id": "4a7db3c6",
@@ -40336,7 +40337,7 @@
       "False gates"
     ],
     "notes": "Often can be front tensioned",
-    "views": 86,
+    "views": 87,
     "lastUpdated": "2025-03-19T01:20:51.390Z",
     "media": [
       {
@@ -40377,7 +40378,7 @@
         "url": "https://youtu.be/XuHCrqNRHlI"
       }
     ],
-    "popularityIndex": 86,
+    "popularityIndex": 87,
     "scorecardCount": 20
   },
   "f133510b": {
@@ -40458,7 +40459,7 @@
     ],
     "name": "ASSA 700",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 203,
+    "views": 204,
     "lastUpdated": "2025-03-19T15:44:57.311Z",
     "relatedIds": [
       "d08aa492",
@@ -40466,7 +40467,7 @@
       "ef4e0295",
       "e3bd3faf"
     ],
-    "popularityIndex": 203,
+    "popularityIndex": 204,
     "scorecardCount": 94
   },
   "6e59ba12": {
@@ -40705,9 +40706,9 @@
     ],
     "name": "ASSA Twin 6000",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 157,
+    "views": 158,
     "lastUpdated": "2025-03-18T23:29:31.283Z",
-    "popularityIndex": 157,
+    "popularityIndex": 158,
     "scorecardCount": 78
   },
   "7168d463": {
@@ -41234,9 +41235,9 @@
     ],
     "name": "ASSA Twin v10",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 43,
+    "views": 44,
     "lastUpdated": "2025-03-19T15:44:57.311Z",
-    "popularityIndex": 43,
+    "popularityIndex": 44,
     "scorecardCount": 22
   },
   "e3058619": {
@@ -41692,7 +41693,7 @@
       "3af2407a"
     ],
     "popularityIndex": 24,
-    "scorecardCount": 9
+    "scorecardCount": 10
   },
   "78336fc0": {
     "id": "78336fc0",
@@ -47265,7 +47266,7 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "views": 137,
+    "views": 138,
     "lastUpdated": "2025-03-19T15:44:57.291Z",
     "media": [
       {
@@ -47311,7 +47312,7 @@
         "url": "https://www.lockwiki.com/index.php/GOAL_S"
       }
     ],
-    "popularityIndex": 137,
+    "popularityIndex": 138,
     "scorecardCount": 67
   },
   "bc6f6e7c": {
@@ -48768,7 +48769,7 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "views": 35,
+    "views": 36,
     "lastUpdated": "2025-03-19T15:44:57.306Z",
     "media": [
       {
@@ -48814,7 +48815,7 @@
       "e3bd3faf",
       "f133510b"
     ],
-    "popularityIndex": 35,
+    "popularityIndex": 36,
     "scorecardCount": 11
   },
   "ee04714f": {
@@ -49340,8 +49341,8 @@
         "url": "https://www.catalocks.eu/EZCURRA/EZCURRA%20%20DS%2015_189.html"
       }
     ],
-    "views": 14,
-    "popularityIndex": 14,
+    "views": 15,
+    "popularityIndex": 15,
     "scorecardCount": 3
   },
   "b5e210ec": {
@@ -50606,7 +50607,7 @@
     "lockingMechanisms": [
       "Dimple"
     ],
-    "views": 37,
+    "views": 38,
     "lastUpdated": "2025-03-19T01:20:51.358Z",
     "media": [
       {
@@ -50638,7 +50639,7 @@
       }
     ],
     "modelNum": "1145",
-    "popularityIndex": 37,
+    "popularityIndex": 38,
     "scorecardCount": 8
   },
   "01c9e8d1": {
@@ -51113,13 +51114,13 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/52737839316_611185833a_o.jpg"
       }
     ],
-    "views": 25,
+    "views": 26,
     "lastUpdated": "2025-03-19T15:44:57.299Z",
     "features": [
       "Pin-in-pin"
     ],
     "searchKeywords": "multilock, mtl",
-    "popularityIndex": 25,
+    "popularityIndex": 26,
     "scorecardCount": 15
   },
   "1798ca06": {
@@ -51578,13 +51579,13 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/54260474188_fc32d5ab77_o.jpg"
       }
     ],
-    "views": 19,
+    "views": 20,
     "lastUpdated": "2025-03-19T01:20:51.380Z",
     "features": [
       "Sprung sliders",
       "Reverse sidebar"
     ],
-    "popularityIndex": 19,
+    "popularityIndex": 20,
     "scorecardCount": 11
   },
   "97baf67b": {
@@ -53994,7 +53995,7 @@
     "lastUpdated": "2025-03-19T15:44:57.307Z",
     "name": "Bramah bp17",
     "dateAdded": "2023-08-03T13:21:21.000Z",
-    "views": 7,
+    "views": 8,
     "media": [
       {
         "title": "By: HVlogic",
@@ -54036,7 +54037,7 @@
     "lockingMechanisms": [
       "Pump/push"
     ],
-    "popularityIndex": 7,
+    "popularityIndex": 8,
     "scorecardCount": 4
   },
   "5995db9e": {
@@ -55135,7 +55136,7 @@
     "lockingMechanisms": [
       "Disc detainer"
     ],
-    "views": 73,
+    "views": 74,
     "media": [
       {
         "title": "By: Crispix",
@@ -55165,7 +55166,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53455850473_b070591797_o.jpg"
       }
     ],
-    "popularityIndex": 73,
+    "popularityIndex": 74,
     "scorecardCount": 6
   },
   "c1c7e9d2": {
@@ -59123,7 +59124,7 @@
     "lastUpdated": "2025-03-19T01:20:51.406Z",
     "name": "Zeta Padlock",
     "dateAdded": "2023-12-28T18:48:59.000Z",
-    "views": 11,
+    "views": 12,
     "media": [
       {
         "title": "By: LockPickingFisherman",
@@ -59202,7 +59203,7 @@
     "lockingMechanisms": [
       "Dimple"
     ],
-    "popularityIndex": 11,
+    "popularityIndex": 12,
     "scorecardCount": 6
   },
   "ea6539c8": {
@@ -61767,9 +61768,9 @@
     "lastUpdated": "2025-03-19T23:23:08.540Z",
     "name": "IKON SK6 Sperrwelleprofil",
     "dateAdded": "2025-03-18T02:44:04.000Z",
-    "popularityIndex": 10,
+    "popularityIndex": 9,
     "scorecardCount": 7,
-    "views": 10
+    "views": 9
   },
   "95e779e0": {
     "id": "95e779e0",
@@ -61869,7 +61870,7 @@
       "High pin count"
     ],
     "popularityIndex": 21,
-    "scorecardCount": 6,
+    "scorecardCount": 7,
     "views": 21
   },
   "2eeb9bee": {
@@ -62465,9 +62466,9 @@
     ],
     "name": "Burg Wächter Profi 116",
     "dateAdded": "2025-11-23T19:59:27.061Z",
-    "popularityIndex": 12,
+    "popularityIndex": 13,
     "scorecardCount": 4,
-    "views": 12
+    "views": 13
   },
   "1f409df0": {
     "id": "1f409df0",
