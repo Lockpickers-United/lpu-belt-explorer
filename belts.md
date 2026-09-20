@@ -961,7 +961,7 @@ keypins, and countermilling are the norm for you.
 - [Cavers Cavith](https://lpubelts.com/#/locks?id=de47d600)
 - [Clavis T-20](https://lpubelts.com/#/locks?id=f51e2ff2) (&lt;15 pins)
 - [Codkey Locksys](https://lpubelts.com/#/locks?id=bc03135a) (&ge;15 pins)
-- [Diamond K3 / Gerda Exxo / Securemme Evo K64](https://lpubelts.com/#/locks?id=4403a73f)
+- [Diamond K3 / Gerda Exxo / Securemme EVO K64](https://lpubelts.com/#/locks?id=4403a73f)
 - [DOM ix 10 kg / STS IX bola / BASI K10](https://lpubelts.com/#/locks?id=dd6a3683)
 - [DOM ix 10 / STS IX](https://lpubelts.com/#/locks?id=e39885f3) (with shark fins)
 - [DOM System D](https://lpubelts.com/#/locks?id=61247b32)
