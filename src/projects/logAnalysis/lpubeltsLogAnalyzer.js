@@ -367,8 +367,8 @@ Object.keys(temp).forEach(requestDateText => {
 })
 
 // RUNTIME INFO
-console.log(`Data Process Runtime: ${String(dayjs().diff(today, 'minute')).padStart(2, '0')}:${String(dayjs().diff(today, 'second')).padStart(2, '0')}.${String(dayjs().diff(today, 'millisecond')).substring(0, 2)}`)
-console.log(`Processed ${logLines} log entries`)
+//console.log(`Data Process Runtime: ${String(dayjs().diff(today, 'minute')).padStart(2, '0')}:${String(dayjs().diff(today, 'second')).padStart(2, '0')}.${String(dayjs().diff(today, 'millisecond')).substring(0, 2)}`)
+//console.log(`Processed ${logLines} log entries`)
 
 
 // Optionally, use a system command to announce completion (macOS only)

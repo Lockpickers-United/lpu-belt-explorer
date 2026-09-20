@@ -154,14 +154,14 @@ export function createUploadContentHandler({
         })
     }
 
-    async function cleanup(workspaceDir, _archiveFile) {
+    async function cleanup(workspaceDir, archiveFile) {
         const cleanupResults = await Promise.allSettled([
             workspaceDir
                 ? fs.promises.rm(workspaceDir, {recursive: true, force: true})
                 : Promise.resolve(),
-            //archiveFile
-            //    ? fs.promises.rm(archiveFile, {force: true})
-            //    : Promise.resolve()
+            archiveFile
+                ? fs.promises.rm(archiveFile, {force: true})
+                : Promise.resolve()
         ])
         cleanupResults.forEach(result => {
             if (result.status === 'rejected') {
