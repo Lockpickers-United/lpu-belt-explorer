@@ -12363,9 +12363,9 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "popularityIndex": 1431,
+    "popularityIndex": 1430,
     "scorecardCount": 274,
-    "views": 1431,
+    "views": 1430,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -25715,9 +25715,9 @@
       "Trap element"
     ],
     "notes": "Requires 360° picking: these locks have traps that require some work to pick",
-    "popularityIndex": 57,
+    "popularityIndex": 58,
     "scorecardCount": 25,
-    "views": 57,
+    "views": 58,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -29854,9 +29854,9 @@
     "features": [
       "High pin count"
     ],
-    "popularityIndex": 5,
+    "popularityIndex": 6,
     "scorecardCount": 3,
-    "views": 5,
+    "views": 6,
     "dateAdded": "2026-08-06T03:59:39.969Z",
     "media": [
       {
@@ -69244,14 +69244,14 @@
     "makeModels": [
       {
         "make": "Securemme",
-        "model": "EVO K3 (K3.3)"
+        "model": "K3"
       }
     ],
     "lockingMechanisms": [
       "Dimple"
     ],
     "dateAdded": "2026-04-28T18:31:50.042Z",
-    "lastUpdated": "2026-09-20T15:56:31.020Z"
+    "lastUpdated": "2026-09-20T19:50:54.932Z"
   },
   {
     "id": "cdfac03d",

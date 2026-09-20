@@ -10840,12 +10840,12 @@
     ],
     "name": "American Lock 1100 / A1100",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 1431,
+    "views": 1430,
     "lastUpdated": "2025-03-19T01:20:51.360Z",
     "relatedIds": [
       "1ae40987"
     ],
-    "popularityIndex": 1431,
+    "popularityIndex": 1430,
     "scorecardCount": 274
   },
   "b16ffe3f": {
@@ -18800,10 +18800,10 @@
     "features": [
       "Trap element"
     ],
-    "views": 57,
+    "views": 58,
     "lastUpdated": "2025-03-18T23:29:31.273Z",
     "notes": "Requires 360° picking: these locks have traps that require some work to pick",
-    "popularityIndex": 57,
+    "popularityIndex": 58,
     "scorecardCount": 25
   },
   "da54208c": {
@@ -62697,13 +62697,13 @@
     "makeModels": [
       {
         "make": "Securemme",
-        "model": "EVO K3 (K3.3)"
+        "model": "K3"
       }
     ],
     "lockingMechanisms": [
       "Dimple"
     ],
-    "name": "Securemme EVO K3 (K3.3)",
+    "name": "Securemme K3",
     "dateAdded": "2026-04-28T18:31:50.042Z"
   },
   "1dd55e66": {
@@ -63003,9 +63003,9 @@
     ],
     "name": "SEGA Cam Lock",
     "dateAdded": "2026-08-06T03:59:39.969Z",
-    "popularityIndex": 5,
+    "popularityIndex": 6,
     "scorecardCount": 3,
-    "views": 5
+    "views": 6
   },
   "1110ef61": {
     "id": "1110ef61",
