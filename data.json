@@ -11,9 +11,9 @@
     "lockingMechanisms": [
       "Various"
     ],
-    "popularityIndex": 1461,
+    "popularityIndex": 1463,
     "scorecardCount": 106,
-    "views": 1461,
+    "views": 1463,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -483,9 +483,9 @@
       "Unguttable"
     ],
     "modelNum": "1",
-    "popularityIndex": 575,
+    "popularityIndex": 576,
     "scorecardCount": 70,
-    "views": 575,
+    "views": 576,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -7056,7 +7056,7 @@
       "Unguttable"
     ],
     "popularityIndex": 13,
-    "scorecardCount": 4,
+    "scorecardCount": 5,
     "views": 13,
     "dateAdded": "2025-11-23T19:59:27.061Z",
     "media": [
@@ -8805,9 +8805,9 @@
     ],
     "notes": "Due to unbalanced stacks, drivers may rest below shear, risking damage to the springs if that chamber is not picked.",
     "modelNum": "570",
-    "popularityIndex": 688,
+    "popularityIndex": 689,
     "scorecardCount": 111,
-    "views": 688,
+    "views": 689,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -20035,6 +20035,10 @@
       {
         "make": "Wilka",
         "model": "1400"
+      },
+      {
+        "make": "Wilka",
+        "model": "STR"
       }
     ],
     "version": "6 pin",
@@ -20107,7 +20111,7 @@
         "url": "https://wiki.koksa.org/Wilka_Standard-Profilzylinder"
       }
     ],
-    "lastUpdated": "2025-12-02T23:39:17.937Z"
+    "lastUpdated": "2026-09-20T15:56:31.008Z"
   },
   {
     "id": "736386f4",
@@ -35906,7 +35910,7 @@
       "Sidebar"
     ],
     "popularityIndex": 6,
-    "scorecardCount": 4,
+    "scorecardCount": 5,
     "views": 6,
     "dateAdded": "2023-03-02T19:05:25.000Z",
     "media": [
@@ -36019,9 +36023,9 @@
       "Active sidebar"
     ],
     "notes": "IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",
-    "popularityIndex": 8,
+    "popularityIndex": 9,
     "scorecardCount": 5,
-    "views": 8,
+    "views": 9,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -40390,11 +40394,11 @@
     "makeModels": [
       {
         "make": "Securemme",
-        "model": "K22"
+        "model": "EVO K22"
       },
       {
         "make": "Securemme",
-        "model": "K2"
+        "model": "EVO K2"
       }
     ],
     "lockingMechanisms": [
@@ -40443,7 +40447,7 @@
         "imageTitle": "Securemme K2"
       }
     ],
-    "lastUpdated": "2025-12-02T23:39:17.948Z"
+    "lastUpdated": "2026-09-20T15:56:31.012Z"
   },
   {
     "id": "479f1d73",
@@ -40451,7 +40455,7 @@
     "makeModels": [
       {
         "make": "Securemme",
-        "model": "K5"
+        "model": "EVO K5"
       }
     ],
     "lockingMechanisms": [
@@ -40481,7 +40485,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53178422404_30cb29014f_o.jpg"
       }
     ],
-    "lastUpdated": "2025-12-02T23:39:17.948Z"
+    "lastUpdated": "2026-09-20T15:56:31.012Z"
   },
   {
     "id": "2c906ebb",
@@ -44063,7 +44067,7 @@
       "Torpedo keypins"
     ],
     "popularityIndex": 33,
-    "scorecardCount": 21,
+    "scorecardCount": 22,
     "views": 33,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
@@ -61881,7 +61885,7 @@
     ],
     "notes": "upgrade of MIWA PS",
     "popularityIndex": 46,
-    "scorecardCount": 17,
+    "scorecardCount": 18,
     "views": 46,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
@@ -69240,14 +69244,14 @@
     "makeModels": [
       {
         "make": "Securemme",
-        "model": "K3"
+        "model": "EVO K3 (K3.3)"
       }
     ],
     "lockingMechanisms": [
       "Dimple"
     ],
     "dateAdded": "2026-04-28T18:31:50.042Z",
-    "lastUpdated": "2026-04-28T18:31:50.362Z"
+    "lastUpdated": "2026-09-20T15:56:31.020Z"
   },
   {
     "id": "cdfac03d",
