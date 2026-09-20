@@ -21793,13 +21793,13 @@
       },
       {
         "make": "Securemme",
-        "model": "EVO K2"
+        "model": "K2"
       }
     ],
     "lockingMechanisms": [
       "Dimple"
     ],
-    "name": "Securemme EVO K22, EVO K2",
+    "name": "Securemme EVO K22, K2",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "views": 18,
     "lastUpdated": "2025-03-19T15:44:57.300Z",
@@ -26337,13 +26337,13 @@
     "makeModels": [
       {
         "make": "Securemme",
-        "model": "EVO K5"
+        "model": "K5"
       }
     ],
     "lockingMechanisms": [
       "Dimple"
     ],
-    "name": "Securemme EVO K5",
+    "name": "Securemme K5",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "views": 1,
     "lastUpdated": "2025-03-19T01:20:51.378Z",
