@@ -1,9 +1,19 @@
-import React, {useContext, useMemo} from 'react'
+import React, {useCallback, useContext, useMemo} from 'react'
 import searchEntriesForText from '../filters/searchEntriesForText'
 import entryName from '../entries/entryName'
 import DataContext from '../context/DataContext.jsx'
+import {useNavigate} from 'react-router-dom'
+import Link from '@mui/material/Link'
 
 export default function SearchedLockEntries({entry, requestMod}) {
+
+    const navigate = useNavigate()
+
+    const handleClick = useCallback((e, path) => {
+        e.stopPropagation()
+        e.preventDefault()
+        navigate(path)
+    }, [navigate])
 
     if (!requestMod) return null
     //if (entry.requestStatus === 'Ranked') return null
@@ -15,11 +25,14 @@ export default function SearchedLockEntries({entry, requestMod}) {
 
     if (!searchedEntries.length) return null
 
-    const lockLinks = searchedEntries.map(entry => {
-        const name = entryName(entry)
+    const lockLinks = searchedEntries.map(lock => {
+        const name = entryName(lock)
         const safeName = name.replace(/[\s/]/g, '_').replace(/\W/g, '')
-        const link = `https://lpubelts.com/#/locks?tab=search&search=${entry.id}&id=${entry.id}&name=${safeName}`
-        return <div key={entry.id}>• <a href={link}>{name} || {entry.belt}</a></div>
+        const link = `/locks?tab=search&search=${lock.id}&id=${lock.id}&name=${safeName}`
+        return <div key={lock.id}>• <Link
+            onClick={(e) => handleClick(e, link)}
+            style={{textDecoration: 'none', color: (entry.requestStatus === 'Ranked') ? '#aaa' : '#ddf'}}>
+            {name} || {lock.belt}</Link></div>
     })
 
     return <div style={{
@@ -35,6 +48,5 @@ export default function SearchedLockEntries({entry, requestMod}) {
             link
         )}
     </div>
-
-
+    
 }
