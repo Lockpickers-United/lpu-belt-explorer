@@ -110,7 +110,7 @@
     "@types/react": "^19.3.0",
     "@vitejs/plugin-react": "^6.1.1",
     "@vitest/coverage-v8": "5.0.0",
-    "@vitest/ui": "5.0.0",
+    "@vitest/ui": "5.0.1",
     "@wdio/allure-reporter": "^9.20.0",
     "allure-playwright": "^3.6.0",
     "csv-parse": "^7.0.2",
