@@ -76,6 +76,7 @@
     "fuzzysort": "^3.1.0",
     "heic2any": "^0.0.4",
     "joi": "^17.13.4",
+    "json-2-csv": "^5.6.0",
     "motion": "^12.23.24",
     "notistack": "^3.0.2",
     "obscenity": "^0.4.5",

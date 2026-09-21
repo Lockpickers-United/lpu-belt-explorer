@@ -52,7 +52,7 @@ Example Case Making Projects:
 - **Tier 2** - Portfolio of 5 well constructed CLs of high level craftsmanship including minimum 2 locks with unusual security features*. Artistic merit can help elevate a standard mid level CL to high level craftsmanship.
 - **Tier 3** - Portfolio of at least 10 well constructed CLs featuring minimum of 5 locks with unusual security features*. Thematic sets, high quality artistic merit, or an attempt at technical innovation can help elevate a mid-level quality CL to high level craftsmanship.
 - **Tier 4** - Relevant contribution to the pool of advanced high quality CLs (at least 20 CLs, many of which with advanced or unusual security features). Verifiable technical innovation in pin making or locking mechanisms. Significant contribution with mentoring the production and distribution of high quality challenge locks.
-- **Tier 5** - Significant portfolio of advanced challenge locks (at least 40 CLs, many of which with advanced or unusual security features). Recognized community wide as an expert challenge lock maker, innovator, mentor, promoter and distributor.
+- **Tier 5** - Significant portfolio of advanced challenge locks (at least 40 CLs, many with advanced or unusual security features). Recognized community wide as an expert challenge lock maker, innovator, mentor, promoter and distributor.
 
 *Unusual security features may include: pin-in-pin, rattlesnake-style pins, articulated pins, secondary locking mechanisms, addition of magnets, combined core modifications, sleeve making, split core, upper chamber work, among others.
 

@@ -1,4 +1,4 @@
-import React, {useCallback, useContext, useMemo, useState} from 'react'
+import React, {useCallback, useMemo, useState} from 'react'
 import Table from '@mui/material/Table'
 import TableBody from '@mui/material/TableBody'
 import TableContainer from '@mui/material/TableContainer'
@@ -12,8 +12,8 @@ import belts, {beltSortReverse} from '../../data/belts'
 import {useSearchParams} from 'react-router-dom'
 import Link from '@mui/material/Link'
 import ChoiceButtonGroup from '../../util/ChoiceButtonGroup.jsx'
-import RefreshExportButton from './RefreshExportButton'
-import AppContext from '../../app/AppContext.jsx'
+import ExportButtonGeneric from '../../misc/ExportButtonGeneric.jsx'
+import openInNewTab from '../../util/openInNewTab'
 
 /**
  * @property evidenceName
@@ -22,32 +22,29 @@ import AppContext from '../../app/AppContext.jsx'
 
 function EvidenceReviewPage({data, updated}) {
     const {isMobile} = useWindowSize()
-    const {adminEnabled} = useContext(AppContext)
 
     const options = useMemo(() => {
         return [
             {label: 'Modified Picks'},
             {label: 'Scorecard Projects'},
-            {label: 'All Projects'},
+            {label: 'All Projects'}
         ]
     }, [])
     const [selected, setSelected] = useState(options[0])
     const handleChange = useCallback(newValue => setSelected(newValue), [])
 
-    let filteredEvidence
-    switch (selected.label) {
-        case 'Scorecard Projects':
-            filteredEvidence = data.projects.filter(evidence => !evidence.tabName)
-            break
-        case 'All Projects':
-            filteredEvidence = data.projects
-            break
-        case 'Modified Picks':
-            filteredEvidence = data.modifiers
-            break
-        default:
-            filteredEvidence = data.modifiers.filter(evidence => evidence.blackBelt)
-    }
+    const filteredEvidence = useMemo(() => {
+        switch (selected.label) {
+            case 'Scorecard Projects':
+                return data.projects.filter(evidence => !evidence.tabName)
+            case 'All Projects':
+                return data.projects
+            case 'Modified Picks':
+                return data.modifiers
+            default:
+                return data.modifiers.filter(evidence => evidence.blackBelt)
+        }
+    }, [data.modifiers, data.projects, selected.label])
 
     const evName = selected.label.includes('Modified') ? 'Lock' : 'Project'
     const evType = selected.label.includes('Modified') ? 'Belt' : 'Tier'
@@ -119,10 +116,38 @@ function EvidenceReviewPage({data, updated}) {
                 : '#b00'
     }, [])
 
-    const openInNewTab = useCallback((url) => {
-        const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
-        if (newWindow) newWindow.opener = null
-    }, [])
+    const exportData = useMemo(() => {
+        const csvHeaders = selected.label === 'Modified Picks'
+            ? [
+                {displayName: 'Name'},
+                {evidenceName: 'Lock'},
+                {belt: 'Belt'},
+                {modifier: 'Modifier'},
+                {date: 'Date'}
+            ]
+            : [
+                {displayName: 'Name'},
+                {evidenceName: 'Project'},
+                {date: 'Date'}
+            ]
+        // can be different, uses `csvHeaders` if not set
+        const clipboardHeaders = csvHeaders
+
+        function clipboardFormat(row, columns) {
+            const line = columns?.map((col) => Object.keys(col).map(field => row[field])).join(' | ')
+            return `* ${line}`
+        }
+        return {
+            filename: 'lpubeltsEvidence',
+            data: sortedEvidence,
+            csvHeaders,
+            clipboardHeaders,
+            clipboardFormat,
+            formats: ['clipboard', 'csv', 'json'],
+            textButton: true
+        }
+    }, [selected.label, sortedEvidence])
+
 
     return (
         <React.Fragment>
@@ -232,9 +257,11 @@ function EvidenceReviewPage({data, updated}) {
                         </TableBody>
                     </Table>
                 </TableContainer>
-                {adminEnabled &&
-                    <RefreshExportButton/>
-                }
+
+                <div style={{width: '100%', textAlign: 'center', marginTop: 20}}>
+                    <ExportButtonGeneric exportData={exportData}/>
+                </div>
+
             </div>
         </React.Fragment>
     )
