@@ -252,9 +252,9 @@
     "features": [
       "High pin count"
     ],
-    "views": 73,
+    "views": 74,
     "lastUpdated": "2025-03-18T23:29:31.285Z",
-    "popularityIndex": 73,
+    "popularityIndex": 74,
     "scorecardCount": 40
   },
   "32244161": {
@@ -1420,9 +1420,9 @@
     ],
     "name": "Any Acrylic Padlock",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 1463,
+    "views": 1466,
     "lastUpdated": "2025-03-18T23:29:31.267Z",
-    "popularityIndex": 1463,
+    "popularityIndex": 1466,
     "scorecardCount": 106
   },
   "3ac43ea8": {
@@ -1442,7 +1442,7 @@
     ],
     "name": "Any China Padlock (granite look)",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 146,
+    "views": 147,
     "lastUpdated": "2025-03-19T01:20:51.353Z",
     "media": [
       {
@@ -1464,7 +1464,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/22583273553_dd1e473bd3_o.jpg"
       }
     ],
-    "popularityIndex": 146,
+    "popularityIndex": 147,
     "scorecardCount": 18
   },
   "901b35b2": {
@@ -1498,12 +1498,12 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/52754853512_9a50b57915_o.jpg"
       }
     ],
-    "views": 470,
+    "views": 471,
     "lastUpdated": "2025-03-19T15:44:57.276Z",
     "lockingMechanisms": [
       "Various"
     ],
-    "popularityIndex": 470,
+    "popularityIndex": 471,
     "scorecardCount": 33
   },
   "5dc117cd": {
@@ -1921,10 +1921,10 @@
     ],
     "name": "Master Lock #3",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 1495,
+    "views": 1497,
     "lastUpdated": "2025-03-19T01:20:51.353Z",
     "modelNum": "3",
-    "popularityIndex": 1495,
+    "popularityIndex": 1497,
     "scorecardCount": 170
   },
   "dff62f52": {
@@ -2665,6 +2665,10 @@
       {
         "make": "ABUS",
         "model": "34/55 Strada"
+      },
+      {
+        "make": "ABUS",
+        "model": "75IB/30"
       }
     ],
     "lockingMechanisms": [
@@ -2747,11 +2751,11 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/54365786498_bac8e038e0_o.jpg"
       }
     ],
-    "name": "ABUS EC 75/30, 34/55 Strada",
+    "name": "ABUS EC 75/30, 34/55 Strada, 75IB/30",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 210,
+    "views": 211,
     "lastUpdated": "2025-03-19T01:20:51.359Z",
-    "popularityIndex": 210,
+    "popularityIndex": 211,
     "scorecardCount": 24
   },
   "423dbebe": {
@@ -4563,11 +4567,11 @@
     ],
     "name": "Master Lock 140 Series, 9140 EURD",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 1870,
+    "views": 1873,
     "lastUpdated": "2025-03-19T01:20:51.355Z",
     "modelNum": "140",
     "version": "Ex: 140, 141, 142, etc.",
-    "popularityIndex": 1870,
+    "popularityIndex": 1873,
     "scorecardCount": 250
   },
   "6af6f704": {
@@ -5542,9 +5546,9 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53065495096_76b7c1578c_o.jpg"
       }
     ],
-    "views": 35,
+    "views": 36,
     "lastUpdated": "2025-03-19T15:44:57.281Z",
-    "popularityIndex": 35,
+    "popularityIndex": 36,
     "scorecardCount": 8
   },
   "4b32e9dd": {
@@ -5791,10 +5795,10 @@
     ],
     "name": "ABUS 55/40",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 1069,
+    "views": 1070,
     "lastUpdated": "2025-03-19T01:20:51.356Z",
     "modelNum": "55.4",
-    "popularityIndex": 1069,
+    "popularityIndex": 1070,
     "scorecardCount": 149
   },
   "d7188e81": {
@@ -6519,7 +6523,7 @@
     ],
     "name": "Brinks Laminated Padlock",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 350,
+    "views": 351,
     "lastUpdated": "2025-03-19T15:44:57.277Z",
     "media": [
       {
@@ -6578,7 +6582,7 @@
       }
     ],
     "version": "Pin-Tumbler only, 40mm or larger, Weatherproof or not",
-    "popularityIndex": 350,
+    "popularityIndex": 351,
     "scorecardCount": 60
   },
   "171f76e9": {
@@ -6645,9 +6649,9 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/54363711159_6c3c7fb46e_o.jpg"
       }
     ],
-    "views": 124,
+    "views": 125,
     "lastUpdated": "2025-03-18T23:29:31.269Z",
-    "popularityIndex": 124,
+    "popularityIndex": 125,
     "scorecardCount": 22
   },
   "1a8afeac": {
@@ -7468,7 +7472,7 @@
     ],
     "name": "Garrison 40mm Brass Padlock",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 22,
+    "views": 23,
     "lastUpdated": "2025-03-19T01:20:51.357Z",
     "media": [
       {
@@ -7526,7 +7530,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/54259092180_e37770bb1f_o.jpg"
       }
     ],
-    "popularityIndex": 22,
+    "popularityIndex": 23,
     "scorecardCount": 3
   },
   "92f98042": {
@@ -7760,7 +7764,7 @@
     "lastUpdated": "2025-03-19T15:44:57.280Z",
     "version": "4 or 5 pin",
     "popularityIndex": 74,
-    "scorecardCount": 9
+    "scorecardCount": 10
   },
   "9bc8809e": {
     "id": "9bc8809e",
@@ -7925,10 +7929,10 @@
     ],
     "name": "Master Lock 150, 160, 9150 EURD",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 686,
+    "views": 687,
     "lastUpdated": "2025-03-19T15:44:57.280Z",
     "modelNum": "150",
-    "popularityIndex": 686,
+    "popularityIndex": 687,
     "scorecardCount": 88
   },
   "9441e2cc": {
@@ -8877,7 +8881,7 @@
     ],
     "name": "Yale Mortise",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 101,
+    "views": 103,
     "lastUpdated": "2025-03-19T15:44:57.281Z",
     "media": [
       {
@@ -8917,7 +8921,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/52847703116_257c9c1d30_o.jpg"
       }
     ],
-    "popularityIndex": 101,
+    "popularityIndex": 103,
     "scorecardCount": 13
   },
   "98a2ba2d": {
@@ -9263,14 +9267,14 @@
     ],
     "name": "ABUS 72/40, 34CS55 Platinum",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 1041,
+    "views": 1042,
     "lastUpdated": "2025-03-19T15:44:57.281Z",
     "features": [
       "Picking Risk"
     ],
     "notes": "Due to unbalanced pin stacks, drivers in max lift chambers will rest below shear. This risks spring damage if the driver is not picked.",
     "version": "Guttable version",
-    "popularityIndex": 1041,
+    "popularityIndex": 1042,
     "scorecardCount": 147
   },
   "e42853c7": {
@@ -9846,12 +9850,12 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/52709026203_31fa336a8a_o.jpg"
       }
     ],
-    "views": 133,
+    "views": 134,
     "lastUpdated": "2025-03-19T15:44:57.288Z",
     "relatedIds": [
       "95a9d73c"
     ],
-    "popularityIndex": 133,
+    "popularityIndex": 134,
     "scorecardCount": 32
   },
   "f97700ff": {
@@ -10840,12 +10844,12 @@
     ],
     "name": "American Lock 1100 / A1100",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 1430,
+    "views": 1431,
     "lastUpdated": "2025-03-19T01:20:51.360Z",
     "relatedIds": [
       "1ae40987"
     ],
-    "popularityIndex": 1430,
+    "popularityIndex": 1431,
     "scorecardCount": 274
   },
   "b16ffe3f": {
@@ -13885,9 +13889,9 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53384460105_34b3583939_o.jpg"
       }
     ],
-    "views": 83,
+    "views": 84,
     "lastUpdated": "2025-03-18T23:29:31.271Z",
-    "popularityIndex": 83,
+    "popularityIndex": 84,
     "scorecardCount": 13
   },
   "7ec79663": {
@@ -16624,7 +16628,7 @@
     ],
     "name": "ABUS E20, E30, E60, E70, NP (6-pin)",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 113,
+    "views": 114,
     "lastUpdated": "2025-03-19T01:20:51.365Z",
     "media": [
       {
@@ -16684,7 +16688,7 @@
       }
     ],
     "notes": "Randomized pinning",
-    "popularityIndex": 113,
+    "popularityIndex": 114,
     "scorecardCount": 20
   },
   "3515caae": {
@@ -17480,7 +17484,7 @@
     ],
     "name": "Burg Wächter Gamma 700",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 80,
+    "views": 81,
     "lastUpdated": "2025-03-19T15:44:57.289Z",
     "media": [
       {
@@ -17514,7 +17518,7 @@
     "features": [
       "Unguttable"
     ],
-    "popularityIndex": 80,
+    "popularityIndex": 81,
     "scorecardCount": 32
   },
   "5647f11c": {
@@ -19075,9 +19079,9 @@
     ],
     "name": "FAB 2000",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 4,
+    "views": 5,
     "lastUpdated": "2025-03-19T15:44:57.291Z",
-    "popularityIndex": 4,
+    "popularityIndex": 5,
     "scorecardCount": 3
   },
   "aee424c0": {
@@ -19730,7 +19734,7 @@
     ],
     "name": "Kaba 8",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 47,
+    "views": 48,
     "lastUpdated": "2025-03-19T01:20:51.369Z",
     "media": [
       {
@@ -19818,7 +19822,7 @@
     "relatedIds": [
       "779d74f5"
     ],
-    "popularityIndex": 47,
+    "popularityIndex": 48,
     "scorecardCount": 15
   },
   "40e50dd4": {
@@ -20761,9 +20765,9 @@
     ],
     "name": "Medeco Biaxial",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 71,
+    "views": 72,
     "lastUpdated": "2025-03-19T01:20:51.370Z",
-    "popularityIndex": 71,
+    "popularityIndex": 72,
     "scorecardCount": 9
   },
   "69d4ef86": {
@@ -21483,9 +21487,9 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53880309782_17ae6b095d_o.jpg"
       }
     ],
-    "views": 807,
+    "views": 809,
     "lastUpdated": "2025-03-19T15:44:57.293Z",
-    "popularityIndex": 807,
+    "popularityIndex": 809,
     "scorecardCount": 225
   },
   "74c225d1": {
@@ -21502,7 +21506,7 @@
     ],
     "name": "PACLOCK PL410",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 111,
+    "views": 112,
     "lastUpdated": "2025-03-19T15:44:57.293Z",
     "media": [
       {
@@ -21527,7 +21531,7 @@
     "features": [
       "Unguttable"
     ],
-    "popularityIndex": 111,
+    "popularityIndex": 112,
     "scorecardCount": 30
   },
   "ca6f4eaf": {
@@ -21911,7 +21915,7 @@
     "features": [
       "Tapered drivers"
     ],
-    "views": 60,
+    "views": 61,
     "lastUpdated": "2025-03-19T15:44:57.293Z",
     "media": [
       {
@@ -21960,7 +21964,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/52755344952_7dacd4921f_o.jpg"
       }
     ],
-    "popularityIndex": 60,
+    "popularityIndex": 61,
     "scorecardCount": 20
   },
   "35330d19": {
@@ -23042,7 +23046,7 @@
     ],
     "name": "ABUS XP1, TS5000",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 60,
+    "views": 61,
     "lastUpdated": "2025-03-19T15:44:57.295Z",
     "media": [
       {
@@ -23108,7 +23112,7 @@
         "url": "https://www.catalocks.eu/ABUS/ABUS%20TS%205000_53.html"
       }
     ],
-    "popularityIndex": 60,
+    "popularityIndex": 61,
     "scorecardCount": 23
   },
   "da8331ef": {
@@ -25493,7 +25497,7 @@
     "lockingMechanisms": [
       "Dimple"
     ],
-    "views": 9,
+    "views": 10,
     "lastUpdated": "2025-03-18T23:29:31.276Z",
     "media": [
       {
@@ -25539,7 +25543,7 @@
         "url": "https://wiki.koksa.org/Elzett_961_X-11"
       }
     ],
-    "popularityIndex": 9,
+    "popularityIndex": 10,
     "scorecardCount": 8
   },
   "8c2983b5": {
@@ -26345,7 +26349,7 @@
     ],
     "name": "Securemme K5",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 1,
+    "views": 2,
     "lastUpdated": "2025-03-19T01:20:51.378Z",
     "media": [
       {
@@ -26367,7 +26371,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53178422404_30cb29014f_o.jpg"
       }
     ],
-    "popularityIndex": 1,
+    "popularityIndex": 2,
     "scorecardCount": 4
   },
   "4cd09b3b": {
@@ -28403,7 +28407,7 @@
     ],
     "name": "Mul-T-Lock Omega Plus",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 3,
+    "views": 4,
     "lastUpdated": "2025-03-19T15:44:57.299Z",
     "media": [
       {
@@ -28417,7 +28421,7 @@
       }
     ],
     "searchKeywords": "multilock, mtl",
-    "popularityIndex": 3,
+    "popularityIndex": 4,
     "scorecardCount": 4
   },
   "3efc97ad": {
@@ -29066,9 +29070,9 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53167747727_b47a8de853_o.jpg"
       }
     ],
-    "views": 82,
+    "views": 83,
     "lastUpdated": "2025-03-19T01:20:51.378Z",
-    "popularityIndex": 82,
+    "popularityIndex": 83,
     "scorecardCount": 35
   },
   "9a9ae8df": {
@@ -31754,9 +31758,9 @@
     ],
     "name": "FAB Dynamic",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 14,
+    "views": 15,
     "lastUpdated": "2025-03-19T15:44:57.303Z",
-    "popularityIndex": 14,
+    "popularityIndex": 15,
     "scorecardCount": 12
   },
   "e8150a27": {
@@ -32428,7 +32432,7 @@
     ],
     "name": "iNAHO Tierkey",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 41,
+    "views": 42,
     "lastUpdated": "2025-03-19T15:44:57.303Z",
     "media": [
       {
@@ -32462,7 +32466,7 @@
     "relatedIds": [
       "9b94b1c0"
     ],
-    "popularityIndex": 41,
+    "popularityIndex": 42,
     "scorecardCount": 28
   },
   "d64be6f7": {
@@ -33648,9 +33652,9 @@
     "name": "Medeco Duracam",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "version": "***",
-    "views": 61,
+    "views": 62,
     "lastUpdated": "2025-03-19T15:44:57.305Z",
-    "popularityIndex": 61,
+    "popularityIndex": 62,
     "scorecardCount": 22
   },
   "540a14c0": {
@@ -33744,9 +33748,9 @@
     ],
     "name": "MIWA EC",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 17,
+    "views": 18,
     "lastUpdated": "2025-03-19T15:44:57.305Z",
-    "popularityIndex": 17,
+    "popularityIndex": 18,
     "scorecardCount": 2
   },
   "2bf9f60e": {
@@ -34786,9 +34790,9 @@
     ],
     "name": "WEST 916, 955",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 112,
+    "views": 113,
     "lastUpdated": "2025-03-18T23:29:31.279Z",
-    "popularityIndex": 112,
+    "popularityIndex": 113,
     "scorecardCount": 57
   },
   "9d865bcd": {
@@ -35673,7 +35677,7 @@
     ],
     "name": "BKS Janus",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 44,
+    "views": 45,
     "lastUpdated": "2025-03-19T01:20:51.385Z",
     "media": [
       {
@@ -35715,7 +35719,7 @@
     "relatedIds": [
       "f09ce6b3"
     ],
-    "popularityIndex": 44,
+    "popularityIndex": 45,
     "scorecardCount": 20
   },
   "ab1cdc56": {
@@ -36087,10 +36091,10 @@
     ],
     "name": "DOM ix Saturn / INN Key Smart",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 62,
+    "views": 63,
     "lastUpdated": "2025-03-19T01:20:51.386Z",
-    "popularityIndex": 62,
-    "scorecardCount": 44
+    "popularityIndex": 63,
+    "scorecardCount": 45
   },
   "4993a918": {
     "id": "4993a918",
@@ -36168,9 +36172,9 @@
     ],
     "name": "DOM RS 8 / Dorma RS 8",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 72,
+    "views": 73,
     "lastUpdated": "2025-03-19T01:20:51.386Z",
-    "popularityIndex": 72,
+    "popularityIndex": 73,
     "scorecardCount": 38
   },
   "ff0be785": {
@@ -37559,12 +37563,12 @@
     "features": [
       "High pin count"
     ],
-    "views": 47,
+    "views": 48,
     "lastUpdated": "2025-03-19T15:44:57.308Z",
     "relatedIds": [
       "8f99236e"
     ],
-    "popularityIndex": 47,
+    "popularityIndex": 48,
     "scorecardCount": 6
   },
   "434bdf9d": {
@@ -39361,12 +39365,12 @@
     ],
     "name": "Schlage Everest 29 SL Primus XP",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 32,
+    "views": 33,
     "lastUpdated": "2025-03-19T15:44:57.310Z",
     "features": [
       "Rotating fingerpins"
     ],
-    "popularityIndex": 32,
+    "popularityIndex": 33,
     "scorecardCount": 12
   },
   "80b0044b": {
@@ -47270,7 +47274,7 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "views": 138,
+    "views": 139,
     "lastUpdated": "2025-03-19T15:44:57.291Z",
     "media": [
       {
@@ -47316,8 +47320,8 @@
         "url": "https://www.lockwiki.com/index.php/GOAL_S"
       }
     ],
-    "popularityIndex": 138,
-    "scorecardCount": 67
+    "popularityIndex": 139,
+    "scorecardCount": 68
   },
   "bc6f6e7c": {
     "id": "bc6f6e7c",
@@ -53424,14 +53428,14 @@
     "lastUpdated": "2023-08-10T00:09:36.310Z",
     "name": "Schlage Cor-Key / Keiden M40",
     "dateAdded": "2023-05-05T09:46:31.000Z",
-    "views": 3,
+    "views": 4,
     "features": [
       "Under Review ⚑"
     ],
     "lockingMechanisms": [
       "Magnet"
     ],
-    "popularityIndex": 3
+    "popularityIndex": 4
   },
   "c1e91978": {
     "id": "c1e91978",
@@ -59226,7 +59230,7 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "views": 36,
+    "views": 37,
     "features": [
       "Unguttable"
     ],
@@ -59286,7 +59290,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/54365415769_47bd962145_o.jpg"
       }
     ],
-    "popularityIndex": 36,
+    "popularityIndex": 37,
     "scorecardCount": 5
   },
   "3df9c95f": {
@@ -63722,8 +63726,8 @@
     "name": "Mul-T-Lock MT5+ Short KIK",
     "dateAdded": "2026-09-01T00:58:56.482Z",
     "scorecardCount": 2,
-    "popularityIndex": 1,
-    "views": 1
+    "popularityIndex": 2,
+    "views": 2
   },
   "096ded99": {
     "id": "096ded99",
@@ -63752,6 +63756,28 @@
       }
     ],
     "name": "Tokoz Alpha",
-    "dateAdded": "2026-09-18T17:33:33.219Z"
+    "dateAdded": "2026-09-18T17:33:33.219Z",
+    "lockingMechanisms": [
+      "Wafer"
+    ]
+  },
+  "c34bd7b2": {
+    "id": "c34bd7b2",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "ABUS",
+        "model": "54TI/40 Titalium"
+      },
+      {
+        "make": "ABUS",
+        "model": "726TI/40 Titalium"
+      }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "name": "ABUS 54TI/40 Titalium, 726TI/40 Titalium",
+    "dateAdded": "2026-09-21T22:00:34.417Z"
   }
 }
