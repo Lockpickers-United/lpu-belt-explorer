@@ -93,7 +93,7 @@
     "react-simple-star-rating": "^5.1.7",
     "react-swipeable": "^7.0.2",
     "react-virtualized-auto-sizer": "^2.0.3",
-    "react-window": "^1.8.10",
+    "react-window": "^2.3.1",
     "rehype-external-links": "^3.0.0",
     "remark-gfm": "^4.0.1",
     "remove-accents": "^0.5.0",
