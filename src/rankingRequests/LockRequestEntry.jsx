@@ -26,6 +26,7 @@ import CopyEntryTextButton from '../entries/CopyEntryTextButton.jsx'
 import {postData} from '../formUtils/postData.jsx'
 import {enqueueSnackbar} from 'notistack'
 import {nodeServerUrl} from '../data/dataUrls'
+import SearchedLockEntries from './SearchedLockEntries.jsx'
 
 /**
  * @typedef {object} entry
@@ -189,34 +190,38 @@ function LockRequestEntry({entry, expanded, onExpand, requestMod}) {
             <Accordion expanded={expanded} onChange={handleChange} style={style} ref={ref} slots={{heading: 'div'}}>
                 <AccordionSummary component='div' nativeButton={false} expandIcon={<ExpandMoreIcon/>} sx={{
                     '.MuiAccordionSummary-content': {
+                        flexDirection: 'column',
                         alignItems: 'center'
                     }
                 }} style={{cursor: 'pointer'}}>
-                    <BeltStripe value={entry.belt}/>
-                    <div style={{display: flexStyle, width: '100%', alignItems: 'center', opacity: opacity}}>
+                    <div style={{display: 'flex', flexDirection: 'row', width: '100%', alignItems: 'flex-start'}}>
+                        <BeltStripe value={entry.belt}/>
                         <div style={{display: flexStyle, width: '100%', alignItems: 'center', opacity: opacity}}>
-                            <ListItemText
-                                primary={entryName(entry)}
-                                secondary={entry.lockingMechanisms.join(', ')}
-                                style={{padding: '0px 0px 0px 10px'}}
-                                slotProps={{
-                                    primary: {sx: {fontWeight: 500, fontSize: '1.1rem'}},
-                                    secondary: {sx: {fontSize: '0.9rem'}}
-                                }}/>
-                            <div style={{
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'right',
-                                marginRight: 10
-                            }}>
-                                {entry.requestStatus !== 'Submitted' &&
-                                    <span>{entry.requestStatus}{rankedBelt}</span>
-                                }
+                            <div style={{display: flexStyle, width: '100%', alignItems: 'center', opacity: opacity}}>
+                                <ListItemText
+                                    primary={entryName(entry)}
+                                    secondary={entry.lockingMechanisms.join(', ')}
+                                    style={{padding: '0px 0px 0px 10px'}}
+                                    slotProps={{
+                                        primary: {sx: {fontWeight: 500, fontSize: '1.1rem'}},
+                                        secondary: {sx: {fontSize: '0.9rem'}}
+                                    }}/>
+                                <div style={{
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'right',
+                                    marginRight: 10
+                                }}>
+                                    {entry.requestStatus !== 'Submitted' &&
+                                        <span>{entry.requestStatus}{rankedBelt}</span>
+                                    }
+                                </div>
                             </div>
                         </div>
+                        <AddVote user={user} entry={entry}/>
+                        <EditRequestButton handleClick={handleEditRequest} requestMod={requestMod}/>
                     </div>
-                    <AddVote user={user} entry={entry}/>
-                    <EditRequestButton handleClick={handleEditRequest} requestMod={requestMod}/>
+                    <SearchedLockEntries entry={entry} requestMod={requestMod}/>
                 </AccordionSummary>
                 {
                     expanded &&

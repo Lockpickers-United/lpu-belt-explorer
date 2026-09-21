@@ -18,6 +18,7 @@ import DataContext from '../../locks/LockDataProvider.jsx'
 import {postData, cleanError} from '../../formUtils/postData.jsx'
 import {nodeServerUrl} from '../../data/dataUrls'
 import safelockEntries from '../../data/safelocks.json'
+import Link from '@mui/material/Link'
 
 /**
  * @prop photoCredit
@@ -86,7 +87,7 @@ function PhotoSubmit({profile, user}) {
         const snackBars = true
         const timeoutDuration = 45000
         try {
-            setResponse( await postData({user, url, formData, snackBars, timeoutDuration}) )
+            setResponse(await postData({user, url, formData, snackBars, timeoutDuration}))
             // console.log('Upload response:', response)
             savePhotoCredit(photoCredit)
         } catch (error) {
@@ -170,8 +171,10 @@ function PhotoSubmit({profile, user}) {
 
                     <div style={{marginTop: 8}}>
                         <Checkbox onChange={handleAltLockToggle} color='info' size='small' id='notInList'
-                                  checked={altLock}/> Submit
-                        photos for a lock not on the site.
+                                  checked={altLock}/>
+                        <Link onClick={handleAltLockToggle} color='#fff' style={{textDecoration: 'none'}}>
+                            Submit photos for a lock not on the site.
+                        </Link>
                     </div>
                     <Collapse in={altLock} style={{marginTop: 10}}>
                         <span style={{fontSize: '0.9rem'}}>Lock Name</span><br/>
@@ -181,10 +184,10 @@ function PhotoSubmit({profile, user}) {
                     <br/><br/>
 
                     <div style={{display: flexStyle}}>
-                        <div style={{marginRight: 50, marginBottom:20, width: 350}}>
+                        <div style={{marginRight: 50, marginBottom: 20, width: 350}}>
                             <div style={{fontSize: '1.5rem', fontWeight: 500, marginBottom: 10}}>
                                 Files to Upload
-                                <span style={{fontSize: '1.1rem', fontWeight: 400}}><br/>(Max 5 files, 15MB each, 60MB total)</span><br/>
+                                <span style={{fontSize: '1.1rem', fontWeight: 400}}><br/>(Max: 5 files, 15MB each, 60MB total)</span><br/>
                             </div>
                             {isMobile &&
                                 <div style={{fontSize: '0.9rem', marginBottom: 10, fontStyle: 'italic'}}>
@@ -311,7 +314,7 @@ function PhotoSubmit({profile, user}) {
                             Please try again later.<br/>
                         </div>
                         <div style={{fontSize: '0.95rem', fontWeight: 400, marginBottom: 20, textAlign: 'center'}}>
-                             {uploadError?.message}<br/>
+                            {uploadError?.message}<br/>
                             (Error code {uploadError?.status})
                         </div>
                         <div style={{width: '100%', textAlign: 'center'}}>

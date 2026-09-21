@@ -6,6 +6,8 @@ import removeAccents from 'remove-accents'
 import {statusSort} from './rankingRequestData'
 import filterEntriesAdvanced from '../filters/filterEntriesAdvanced'
 import SearchEntries from '../filters/SearchEntries.jsx'
+import allLockEntries from '../data/data.json'
+import entryName from '../entries/entryName'
 
 /**
  * @typedef {object} entry
@@ -20,6 +22,24 @@ export function DataProvider({children, allEntries=[], profile}) {
     const {search, id, tab, name, sort, image, expandAll, ..._filters} = allFilters
 
     const [searchCutoff, setSearchCutoff] = useState(0.30)
+
+    const lockEntries = useMemo(() => {
+        return allLockEntries.map(entry => {
+            return {
+                ...entry,
+                fuzzy: removeAccents(
+                    [entryName(entry, 'long')]
+                        .concat([
+                            entry.searchKeywords,
+                            entry.notes,
+                            entry.version,
+                            //entry.belt
+                        ])
+                        .join(',')
+                ),
+            }
+        })
+    }, [])
 
     const mappedEntries = useMemo(() => {
         return allEntries
@@ -97,12 +117,13 @@ export function DataProvider({children, allEntries=[], profile}) {
             allEntries,
             searchedEntries,
             visibleEntries,
+            lockEntries,
             getEntryFromId,
             expandAll,
             profile,
             searchCutoff, setSearchCutoff
         }
-    }, [allEntries, searchedEntries, visibleEntries, getEntryFromId, expandAll, profile, searchCutoff])
+    }, [allEntries, searchedEntries, visibleEntries, lockEntries, getEntryFromId, expandAll, profile, searchCutoff])
 
     return (
         <DataContext.Provider value={value}>
