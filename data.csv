@@ -180,7 +180,7 @@ Green,"ABUS,ABUS","A90,C95","new pinning like C83, but 1-2 standard anti-drill s
 Green,ABUS,"Brady 71/40 LOTO (Lock Out Tag Out)",,Pin-tumbler,,,9da8ebe0
 Green,"ABUS,ABUS,ABUS","C73,C83,C90","old pinning: mostly standard keypins, 4 spools, 1 serrated pin",Pin-tumbler,,,95a9d73c
 Green,ABUS,D6,,Dimple,,,f97700ff
-Green,"ABUS,ABUS","EC 75/30,34/55 Strada",,Dimple,Unguttable,,2484ce70
+Green,"ABUS,ABUS,ABUS","EC 75/30,34/55 Strada,75IB/30",,Dimple,Unguttable,,2484ce70
 Green,"ABUS,ABUS","EC750,EC850","spool pin version, not 700/800",Dimple,,,cf5bd73b
 Green,ABUS,GDS,"with trees and tapered pins",Pin-tumbler,"Xmas tree drivers",,13b06cba
 Green,"ABUS,ABUS","Integral,Pfaffenhain Integral",,Pin-tumbler,,,f8acc274
@@ -854,6 +854,7 @@ Red,Yanai,"R 2200M","<14 pins",Dimple,"High pin count",,5eac6a29
 Unranked,ABA,108418,5+,"Disc detainer","Under Review ⚑",,3b7643da
 Unranked,Abloy,AVA,"flat & half-round key",Wafer,"Under Review ⚑",,9ae8b650
 Unranked,ABUS,"34/55 Platinum",,Pin-tumbler,"Under Review ⚑","A.K.A 34CS/55",f72085d2
+Unranked,"ABUS,ABUS","54TI/40 Titalium,726TI/40 Titalium",,Pin-tumbler,,,c34bd7b2
 Unranked,ABUS,"Vela 2000 Mx",,Dimple,"Under Review ⚑","2 spools, 2 ""barrels"", 1 special passive pin",b370e57b
 Unranked,,Angal,"5 serrated pin-in-pin ",Dimple,"Under Review ⚑",,fd93632b
 Unranked,Antoniolini,Mondial,"5 H-levers",Lever,"Pin key,Double bitted,Sliding levers",,f468ff5f
@@ -949,7 +950,7 @@ Unranked,"Takigen,Clover","Wavelock disc detainer,Wavelock disc detainer","9 dis
 Unranked,Tann,"9 lever","9 levers",Lever,"Pin key,Single bitted,Swappable bitting,False gates",,624d7e96
 Unranked,Tann,Vardeskydd,"8? levers",Lever,"Pipe key,Double bitted,False gates,Sliding levers",,a2074b7f
 Unranked,Thirard,Axira,,Pump/push,,,db3b4b1c
-Unranked,Tokoz,Alpha,,,,,1b6eea7f
+Unranked,Tokoz,Alpha,,Wafer,,,1b6eea7f
 Unranked,Trelock,"SUPER Padlock",,,"Under Review ⚑",,9a99a0a7
 Unranked,,U-Change,,Pin-tumbler,,,9d35efa9
 Unranked,"Union,Union","2134,2234","5 lever",Lever,"Under Review ⚑,Curtain","(simliar to the blue belt StrongBOLT 2100)",8dc5dbb4
