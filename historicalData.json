@@ -577,9 +577,9 @@
     ],
     "name": "ASSA Twin Exclusive, Twin 6000",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 130,
+    "views": 131,
     "lastUpdated": "2025-03-19T01:20:51.391Z",
-    "popularityIndex": 130,
+    "popularityIndex": 131,
     "scorecardCount": 60
   },
   "55511995": {
@@ -1921,10 +1921,10 @@
     ],
     "name": "Master Lock #3",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 1497,
+    "views": 1498,
     "lastUpdated": "2025-03-19T01:20:51.353Z",
     "modelNum": "3",
-    "popularityIndex": 1497,
+    "popularityIndex": 1498,
     "scorecardCount": 170
   },
   "dff62f52": {
@@ -2664,11 +2664,11 @@
       },
       {
         "make": "ABUS",
-        "model": "34/55 Strada"
+        "model": "75IB/30"
       },
       {
         "make": "ABUS",
-        "model": "75IB/30"
+        "model": "34/55 Strada"
       }
     ],
     "lockingMechanisms": [
@@ -2751,7 +2751,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/54365786498_bac8e038e0_o.jpg"
       }
     ],
-    "name": "ABUS EC 75/30, 34/55 Strada, 75IB/30",
+    "name": "ABUS EC 75/30, 75IB/30, 34/55 Strada",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "views": 211,
     "lastUpdated": "2025-03-19T01:20:51.359Z",
@@ -4757,9 +4757,9 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/54108355188_e4c3c92c3e_o.jpg"
       }
     ],
-    "views": 69,
+    "views": 70,
     "lastUpdated": "2025-03-19T15:44:57.278Z",
-    "popularityIndex": 69,
+    "popularityIndex": 70,
     "scorecardCount": 10
   },
   "d5053e6d": {
@@ -5905,10 +5905,10 @@
     ],
     "name": "ABUS 64Ti Titalium, MyLock T65AL, 70AL45",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 535,
+    "views": 536,
     "lastUpdated": "2025-03-19T01:20:51.356Z",
     "modelNum": "64",
-    "popularityIndex": 535,
+    "popularityIndex": 536,
     "scorecardCount": 45
   },
   "a0e50505": {
@@ -8175,11 +8175,11 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/52977757532_f253bac324_o.jpg"
       }
     ],
-    "views": 689,
+    "views": 690,
     "lastUpdated": "2025-03-19T15:44:57.280Z",
     "notes": "Due to unbalanced stacks, drivers may rest below shear, risking damage to the springs if that chamber is not picked.",
     "modelNum": "570",
-    "popularityIndex": 689,
+    "popularityIndex": 690,
     "scorecardCount": 111
   },
   "9f832458": {
@@ -10844,12 +10844,12 @@
     ],
     "name": "American Lock 1100 / A1100",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 1431,
+    "views": 1432,
     "lastUpdated": "2025-03-19T01:20:51.360Z",
     "relatedIds": [
       "1ae40987"
     ],
-    "popularityIndex": 1431,
+    "popularityIndex": 1432,
     "scorecardCount": 274
   },
   "b16ffe3f": {
@@ -14345,10 +14345,10 @@
     ],
     "name": "Master Lock 410 LOTO (Lockout Tagout)",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 869,
+    "views": 870,
     "lastUpdated": "2025-03-19T15:44:57.286Z",
     "modelNum": "410",
-    "popularityIndex": 869,
+    "popularityIndex": 870,
     "scorecardCount": 103
   },
   "366d5f50": {
@@ -14548,7 +14548,7 @@
     ],
     "name": "Master Lock Pro Series",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 195,
+    "views": 196,
     "lastUpdated": "2025-03-19T01:20:51.363Z",
     "media": [
       {
@@ -14579,7 +14579,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/54259186294_d58dcd0c54_o.jpg"
       }
     ],
-    "popularityIndex": 195,
+    "popularityIndex": 196,
     "scorecardCount": 24
   },
   "efbc853f": {
@@ -15184,9 +15184,9 @@
     ],
     "name": "PACLOCK 90A",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 233,
+    "views": 234,
     "lastUpdated": "2025-03-19T15:44:57.286Z",
-    "popularityIndex": 233,
+    "popularityIndex": 234,
     "scorecardCount": 27
   },
   "31d68cd1": {
@@ -16186,7 +16186,7 @@
       "Rear tension"
     ],
     "notes": "Can be front tensioned and counterrotated",
-    "views": 163,
+    "views": 164,
     "lastUpdated": "2025-03-19T01:20:51.365Z",
     "links": [
       {
@@ -16198,7 +16198,7 @@
         "url": "https://youtu.be/XuHCrqNRHlI"
       }
     ],
-    "popularityIndex": 163,
+    "popularityIndex": 164,
     "scorecardCount": 25
   },
   "c1d09460": {
@@ -21487,9 +21487,9 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53880309782_17ae6b095d_o.jpg"
       }
     ],
-    "views": 809,
+    "views": 810,
     "lastUpdated": "2025-03-19T15:44:57.293Z",
-    "popularityIndex": 809,
+    "popularityIndex": 810,
     "scorecardCount": 225
   },
   "74c225d1": {
@@ -63702,9 +63702,9 @@
     "searchKeywords": "multilock, mtl",
     "name": "Mul-T-Lock 700",
     "dateAdded": "2026-09-01T00:58:56.480Z",
-    "popularityIndex": 4,
+    "popularityIndex": 5,
     "scorecardCount": 2,
-    "views": 4
+    "views": 5
   },
   "fa0b5d10": {
     "id": "fa0b5d10",

@@ -180,7 +180,7 @@ Green,"ABUS,ABUS","A90,C95","new pinning like C83, but 1-2 standard anti-drill s
 Green,ABUS,"Brady 71/40 LOTO (Lock Out Tag Out)",,Pin-tumbler,,,9da8ebe0
 Green,"ABUS,ABUS,ABUS","C73,C83,C90","old pinning: mostly standard keypins, 4 spools, 1 serrated pin",Pin-tumbler,,,95a9d73c
 Green,ABUS,D6,,Dimple,,,f97700ff
-Green,"ABUS,ABUS,ABUS","EC 75/30,34/55 Strada,75IB/30",,Dimple,Unguttable,,2484ce70
+Green,"ABUS,ABUS,ABUS","EC 75/30,75IB/30,34/55 Strada",,Dimple,Unguttable,,2484ce70
 Green,"ABUS,ABUS","EC750,EC850","spool pin version, not 700/800",Dimple,,,cf5bd73b
 Green,ABUS,GDS,"with trees and tapered pins",Pin-tumbler,"Xmas tree drivers",,13b06cba
 Green,"ABUS,ABUS","Integral,Pfaffenhain Integral",,Pin-tumbler,,,f8acc274
