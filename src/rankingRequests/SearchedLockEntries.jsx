@@ -48,5 +48,5 @@ export default function SearchedLockEntries({entry, requestMod}) {
             link
         )}
     </div>
-    
+
 }
