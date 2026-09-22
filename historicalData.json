@@ -62193,7 +62193,10 @@
     "dateAdded": "2025-09-29T17:16:37.420Z",
     "popularityIndex": 9,
     "scorecardCount": 3,
-    "views": 9
+    "views": 9,
+    "features": [
+      "Cylinder"
+    ]
   },
   "d3bdab01": {
     "id": "d3bdab01",
@@ -62213,7 +62216,10 @@
     "dateAdded": "2025-09-29T17:16:37.420Z",
     "popularityIndex": 5,
     "scorecardCount": 1,
-    "views": 5
+    "views": 5,
+    "features": [
+      "Cylinder"
+    ]
   },
   "58c676d3": {
     "id": "58c676d3",
@@ -62297,7 +62303,8 @@
       "Pin-tumbler"
     ],
     "features": [
-      "Under Review ⚑"
+      "Under Review ⚑",
+      "Cylinder"
     ],
     "name": "Reliabilt Deadbolt cylinder",
     "dateAdded": "2025-10-04T16:19:03.607Z",
