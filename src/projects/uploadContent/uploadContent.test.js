@@ -33,17 +33,18 @@ function createResponse() {
 
 async function parsedUpload(_res, _req, form) {
     const relativeFilename = form.filename('', '', {
-        originalFilename: '../../Example Lock/photo one.jpg'
+        originalFilename: '../../Any_Cutaway_Lock_901b35b2_mg/Any_Cutaway_Lock_901b35b2_lock_mg.jpg'
     })
     const uploadedFile = path.join(form.uploadDir, relativeFilename)
     await fs.mkdir(path.dirname(uploadedFile), {recursive: true})
     await fs.writeFile(uploadedFile, 'image')
     return {
         fields: {
-            lockId: ['lock-1'],
-            lockName: ['Example Lock'],
-            lockFullName: ['Example Lock Full Name'],
-            photoCredit: ['Picker One']
+            lockId: ['901b35b2'],
+            lockName: ['Any Cutaway Lock'],
+            lockFullName: ['Any Cutaway Lock'],
+            photoCredit: ['mg'],
+            uploadsDir: ['Any_Cutaway_Lock_901b35b2_mg']
         },
         files: {photos: [{filepath: uploadedFile}]}
     }
@@ -55,10 +56,12 @@ afterEach(async () => {
 })
 
 describe('createUploadContentHandler', () => {
-    it('awaits metadata, archive, email, and cleanup before returning success', async () => {
+    it('creates a flat archive named for the upload directory', async () => {
         const uploadDir = await createUploadRoot()
         const imageMetadataWriter = vi.fn().mockResolvedValue(undefined)
-        const archiveDirectory = vi.fn(async ({destinationFile}) => {
+        let archiveEntries
+        const archiveDirectory = vi.fn(async ({sourceDir, destinationFile}) => {
+            archiveEntries = await fs.readdir(sourceDir)
             await fs.writeFile(destinationFile, 'zip')
             return {bytes: 3}
         })
@@ -80,13 +83,17 @@ describe('createUploadContentHandler', () => {
         await handler({}, res)
 
         expect(imageMetadataWriter).toHaveBeenCalledWith(expect.objectContaining({
-            caption: 'By: Picker One',
-            title: 'Example Lock',
-            userComment: 'lock-1'
+            caption: 'By: mg',
+            title: 'Any Cutaway Lock',
+            userComment: '901b35b2'
         }))
         expect(archiveDirectory).toHaveBeenCalledOnce()
+        expect(archiveEntries.sort()).toEqual([
+            'Any_Cutaway_Lock_901b35b2_lock_mg.jpg',
+            'uploadData.json'
+        ])
         expect(emailSender).toHaveBeenCalledWith(expect.objectContaining({
-            attachments: expect.objectContaining({filename: 'Example-Lock-Full-Name.zip'})
+            attachments: expect.objectContaining({filename: 'Any_Cutaway_Lock_901b35b2_mg.zip'})
         }))
         expect(res.statusCode).toBe(200)
         expect(res.body).toBe('Files uploaded successfully')

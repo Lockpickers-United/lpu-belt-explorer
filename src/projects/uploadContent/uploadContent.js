@@ -59,9 +59,7 @@ function createUploadFilename(part) {
         error.code = 'upload_content_invalid_filename'
         throw error
     }
-
-    const subdirectories = filenameParts.map(slugify).filter(Boolean)
-    return [...subdirectories, `${basename}.${extension}`].join('/')
+    return `${basename}.${extension}`
 }
 
 async function writeImageMetadata({caption, title, userComment, destination}) {
@@ -204,7 +202,8 @@ export function createUploadContentHandler({
             const lockName = firstValue(fields.lockName)
             const lockFullName = firstValue(fields.lockFullName)
             const lockId = firstValue(fields.lockId)
-            const attachmentBaseName = slugify(lockFullName || lockName || lockId || 'photos') || 'photos'
+            const uploadsDir = firstValue(fields.uploadsDir)
+            const attachmentBaseName = slugify(uploadsDir || lockFullName || lockName || lockId || 'photos') || 'photos'
             const attachmentName = `${attachmentBaseName}.zip`
 
             try {

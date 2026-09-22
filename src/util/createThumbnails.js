@@ -9,6 +9,7 @@ export default async function createThumbnails({inputFile, width = 400}) {
     try {
         // Resize and save all sizes in parallel
             return await sharp(inputFile)
+                .keepGainMap()
                 .resize({width: width, withoutEnlargement: true})
                 .toFile(outputFile)
                 .then(info => (outputFile)) // eslint-disable-line no-unused-vars
