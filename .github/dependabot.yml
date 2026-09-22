@@ -1,6 +1,62 @@
-  version: 2
-  updates:
-    - package-ecosystem: 'npm'
-      directory: '/'
-      schedule:
-        interval: 'weekly'
+version: 2
+updates:
+  - package-ecosystem: 'npm'
+    directory: '/'
+    schedule:
+      interval: 'weekly'
+
+    groups:
+      react:
+        applies-to: 'version-updates'
+        patterns:
+          - 'react'
+          - 'react-dom'
+          - 'react-is'
+          - '@types/react'
+          - '@types/react-dom'
+
+      mui:
+        applies-to: 'version-updates'
+        patterns:
+          - '@mui/*'
+
+      nivo:
+        applies-to: 'version-updates'
+        patterns:
+          - '@nivo/*'
+
+      vite:
+        applies-to: 'version-updates'
+        patterns:
+          - 'vite'
+          - '@vitejs/*'
+
+      vitest:
+        applies-to: 'version-updates'
+        patterns:
+          - 'vitest'
+          - '@vitest/*'
+
+      eslint:
+        applies-to: 'version-updates'
+        patterns:
+          - 'eslint'
+          - '@eslint/*'
+          - 'eslint-*'
+
+      development-non-major:
+        applies-to: 'version-updates'
+        patterns:
+          - '*'
+        dependency-type: 'development'
+        update-types:
+          - 'minor'
+          - 'patch'
+
+      production-patches:
+        applies-to: 'version-updates'
+        patterns:
+          - '*'
+        dependency-type: 'production'
+        update-types:
+          - 'patch'
