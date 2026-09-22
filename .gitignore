@@ -48,7 +48,10 @@ tests-results/*
 /.agents/*
 !/.agents/references/
 !/.agents/references/**
-/internal-docs/
+!/.agents/skills/
+/.agents/skills/*
+!/.agents/skills/dependency-upgrade/
+!/.agents/skills/dependency-upgrade/**
 /.claude/*
 !/.claude/settings.json
 /.claude/settings.local.json
