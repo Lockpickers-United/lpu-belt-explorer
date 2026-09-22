@@ -66698,6 +66698,9 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
+    "features": [
+      "Cylinder"
+    ],
     "notes": "Includes training locks (no cutaways) and common brands such as: Defiant, Reliabilt, etc.",
     "popularityIndex": 9,
     "scorecardCount": 3,
@@ -66729,6 +66732,9 @@
     "version": "5 or more pins, 1 or more security pins",
     "lockingMechanisms": [
       "Pin-tumbler"
+    ],
+    "features": [
+      "Cylinder"
     ],
     "notes": "Includes training locks (no cutaways) and common brands such as: Defiant, Reliabilt, etc.",
     "popularityIndex": 5,
@@ -68619,7 +68625,8 @@
       "Pin-tumbler"
     ],
     "features": [
-      "Under Review ⚑"
+      "Under Review ⚑",
+      "Cylinder"
     ],
     "popularityIndex": 5,
     "scorecardCount": 1,
