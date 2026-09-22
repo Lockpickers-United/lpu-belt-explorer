@@ -39,7 +39,7 @@ function PhotoSubmit({profile, user}) {
 
     const [photoCredit, setPhotoCredit] = useState(profile?.photoCredit || profile?.displayName || '')
     const [reset, setReset] = useState(false)
-    const dt = dayjs().format('YYYYMMDD-HHMMss')
+    const dt = dayjs().format()
 
     const safelocksMapped = safelockEntries.map(s => ({...s, belt: 'Safelock'}))
     const combinedEntries = useMemo(() => [...allEntries, ...safelocksMapped], [allEntries, safelocksMapped])
@@ -48,8 +48,14 @@ function PhotoSubmit({profile, user}) {
 
     const uploadable = (!!lockDetails?.lockName && !!lockDetails?.lockId && !!photoCredit && files.length > 0)
 
-    const prefix = `${lockDetails.lockName}_${lockDetails.lockId}_`.replace('/', '+')
-    const suffix = `${photoCredit}`.replace('/', '+')
+    const prefix = `${lockDetails.lockName}_${lockDetails.lockId}`
+        .replace('/', '+')
+        .replace(/[\s/]/g, '_')
+        .replace(/\W/g, '')
+    const suffix = photoCredit
+        .replace('/', '+')
+        .replace(/[\s/]/g, '_')
+        .replace(/\W/g, '')
 
     const droppedFileNames = files.map(file => {
         return file.name
@@ -65,7 +71,7 @@ function PhotoSubmit({profile, user}) {
         event.preventDefault()
         setUploading(true)
 
-        const uploadsDir = `${dt}_${prefix}_${suffix}`
+        const uploadsDir = `${prefix}_${suffix}`
 
         const formData = new FormData()
         files.forEach((file) => {
@@ -82,16 +88,15 @@ function PhotoSubmit({profile, user}) {
         formData.append('displayName', profile?.displayName)
         formData.append('uploadsDir', uploadsDir)
         formData.append('notes', notes)
+        formData.append('dateTime', dt)
 
         const url = `${nodeServerUrl}/upload`
         const snackBars = true
         const timeoutDuration = 45000
         try {
             setResponse(await postData({user, url, formData, snackBars, timeoutDuration}))
-            // console.log('Upload response:', response)
             savePhotoCredit(photoCredit)
         } catch (error) {
-            // console.log('Upload error:', error)
             setUploadError(cleanError(error))
             setLockDetails([])
             files.forEach(file => URL.revokeObjectURL(file.preview))
@@ -99,7 +104,6 @@ function PhotoSubmit({profile, user}) {
         } finally {
             setUploading(false)
         }
-
     }
 
     const handleChangeLock = useCallback(details => {
