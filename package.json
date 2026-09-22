@@ -111,8 +111,8 @@
     "@testing-library/user-event": "^14.5.2",
     "@types/react": "^19.3.0",
     "@vitejs/plugin-react": "^6.1.1",
-    "@vitest/coverage-v8": "5.0.0",
-    "@vitest/ui": "5.0.0",
+    "@vitest/coverage-v8": "5.0.1",
+    "@vitest/ui": "5.0.1",
     "@wdio/allure-reporter": "^9.20.0",
     "allure-playwright": "^3.6.0",
     "csv-parse": "^7.0.2",
@@ -130,7 +130,7 @@
     "rollup-plugin-visualizer": "^7.1.1",
     "uuid": "^14.0.1",
     "vite": "^8.3.0",
-    "vitest": "5.0.0"
+    "vitest": "5.0.1"
   },
   "overrides": {
     "react-is": "$react-is",
