@@ -87,8 +87,8 @@ function PhotoSubmit({profile, user}) {
         formData.append('photoCredit', photoCredit)
         formData.append('displayName', profile?.displayName)
         formData.append('uploadsDir', uploadsDir)
-        formData.append('notes', notes)
         formData.append('dateTime', dt)
+        formData.append('notes', notes)
 
         const url = `${nodeServerUrl}/upload`
         const snackBars = true

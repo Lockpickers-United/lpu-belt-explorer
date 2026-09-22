@@ -103,8 +103,6 @@ If you already know that you will pursue the hobby for longer, I recommend getti
 
 Later on, you might want to add 0.5mm (and possibly 0.4mm) picks as you progress. Picksets also don’t spontaneously combust if you mix manufacturers, I use a mixture of Multipick, Moki and handmade picks myself.
 
-If you are in Europe, you can purchase all Multipick tools/sets through me at the same price but combine it with beginner locks, if you need any.
-
 **Peterson \- US**
 
 From Iona: Peterson is best purchased as a group of individual picks, since their sets can be a bit bloated. In general, one should purchase the hook 1 in [0.025”](https://www.thinkpeterson.com/hook-1-plastic-gov-steel/) and [0.018”](https://www.thinkpeterson.com/hook-1-euro-slender-0-018/) for a short hook, then the hook [4](https://www.thinkpeterson.com/hook-4-euro-slender-0-018/) and [7](https://www.thinkpeterson.com/hook-7-euro-slender-0-018/) in 0.018” for medium and deep hooks. A further [hook 7 in 0.025”](https://www.thinkpeterson.com/hook-7-plastic-gov-steel/) for beginners can be useful for durability.
