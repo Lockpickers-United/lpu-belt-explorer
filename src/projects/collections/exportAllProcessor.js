@@ -4,15 +4,9 @@ import {setDeepAdd} from '../../util/setDeep.js'
 import {itemDetails} from '../../util/getItemDetails.js'
 import {uniqueBelts} from '../../util/belts.js'
 import isDirectRun from '../../util/isDirectRun.js'
+import {writeJsonFileAtomic} from '../../util/writeJsonFileAtomic.js'
 import {loadCollectionEnvironment} from './collectionEnvironment.js'
 import {exportJobConfigSummary, loadExportJobConfig} from './exportJobConfig.js'
-
-async function writeJsonFileAtomic(filePath, data) {
-    await fs.mkdir(path.dirname(filePath), {recursive: true})
-    const tempFile = `${filePath}.tmp-${process.pid}-${Date.now()}`
-    await fs.writeFile(tempFile, JSON.stringify(data, null, 2))
-    await fs.rename(tempFile, filePath)
-}
 
 function validateExportData(exportDocument, filePath, exportName) {
     if (!Array.isArray(exportDocument?.data)) {
@@ -155,7 +149,7 @@ export async function runExportAllProcessor({
         runDate: now()
     })
     const outputFile = path.join(publicDataDir, 'scorecardStats.json')
-    await writeJsonFileAtomic(outputFile, scorecardStats)
+    await writeJsonFileAtomic(outputFile, scorecardStats, {spaces: 2})
 
     return Object.freeze({outputFile, scorecardStats})
 }

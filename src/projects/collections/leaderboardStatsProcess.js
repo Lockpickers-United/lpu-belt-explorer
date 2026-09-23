@@ -4,6 +4,7 @@ import dayjs from 'dayjs'
 import {setDeep, setDeepAdd} from '../../util/setDeep.js'
 import {itemDetails} from '../../util/getItemDetails.js'
 import isDirectRun from '../../util/isDirectRun.js'
+import {writeJsonFileAtomic} from '../../util/writeJsonFileAtomic.js'
 import {loadCollectionEnvironment} from './collectionEnvironment.js'
 import {exportJobConfigSummary, loadExportJobConfig} from './exportJobConfig.js'
 
@@ -12,13 +13,6 @@ const listNames = [
     'safelocksOwn', 'safelocksCracked', 'safelocksWishlist',
     'projects', 'raffleWatchlist', 'awards'
 ]
-
-async function writeJsonFileAtomic(filePath, data) {
-    await fs.mkdir(path.dirname(filePath), {recursive: true})
-    const tempFile = `${filePath}.tmp-${process.pid}-${Date.now()}`
-    await fs.writeFile(tempFile, JSON.stringify(data))
-    await fs.rename(tempFile, filePath)
-}
 
 function addBeltCount(userStats, items, itemId) {
     const fullBelt = items[itemId]?.fullBelt

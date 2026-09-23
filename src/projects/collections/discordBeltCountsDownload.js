@@ -1,7 +1,7 @@
-import fs from 'node:fs/promises'
 import path from 'node:path'
 import fetch from 'node-fetch'
 import isDirectRun from '../../util/isDirectRun.js'
+import {writeJsonFileAtomic} from '../../util/writeJsonFileAtomic.js'
 import {loadCollectionEnvironment} from './collectionEnvironment.js'
 import {exportJobConfigSummary, loadExportJobConfig} from './exportJobConfig.js'
 
@@ -64,13 +64,6 @@ export function loadDiscordBeltCountsConfig(env = process.env) {
     })
 }
 
-async function writeJsonFileAtomic(filePath, data) {
-    await fs.mkdir(path.dirname(filePath), {recursive: true})
-    const tempFile = `${filePath}.tmp-${process.pid}-${Date.now()}`
-    await fs.writeFile(tempFile, JSON.stringify(data, null, 2))
-    await fs.rename(tempFile, filePath)
-}
-
 function validateDiscordBeltCounts(data) {
     if (!data || typeof data !== 'object' || Array.isArray(data)
         || Object.values(data).some(count => !Number.isFinite(count) || count < 0)) {
@@ -110,7 +103,7 @@ export async function runDiscordBeltCountsDownload({
     }
     const discordBeltCounts = validateDiscordBeltCounts(parsed)
     const outputFile = path.join(publicDataDir, 'discordBeltCounts.json')
-    await writeJsonFileAtomic(outputFile, discordBeltCounts)
+    await writeJsonFileAtomic(outputFile, discordBeltCounts, {spaces: 2})
 
     return Object.freeze({outputFile, discordBeltCounts})
 }

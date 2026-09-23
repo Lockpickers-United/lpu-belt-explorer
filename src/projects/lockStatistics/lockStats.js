@@ -1,21 +1,14 @@
-import fs from 'node:fs/promises'
 import path from 'node:path'
 import dayjs from 'dayjs'
 import {setDeep, setDeepAdd} from '../../util/setDeep.js'
 import {itemDetails} from '../../util/getItemDetails.js'
 import {loadCatalogArray} from '../../util/catalogData.js'
 import isDirectRun from '../../util/isDirectRun.js'
+import {writeJsonFileAtomic} from '../../util/writeJsonFileAtomic.js'
 import {loadCollectionEnvironment} from '../collections/collectionEnvironment.js'
 import {exportJobConfigSummary, loadExportJobConfig} from '../collections/exportJobConfig.js'
 
 const topN = 250
-
-async function writeJsonFileAtomic(filePath, data) {
-    await fs.mkdir(path.dirname(filePath), {recursive: true})
-    const tempFile = `${filePath}.tmp-${process.pid}-${Date.now()}`
-    await fs.writeFile(tempFile, JSON.stringify(data))
-    await fs.rename(tempFile, filePath)
-}
 
 export async function loadLockData(options) {
     return loadCatalogArray('data.json', options)

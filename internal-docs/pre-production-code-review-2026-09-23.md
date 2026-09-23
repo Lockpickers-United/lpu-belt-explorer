@@ -168,13 +168,11 @@ Use only the `lpubelts-dev` database and development output roots unless a separ
 
 Before production, record the exact tested commit SHA and generated-data configuration. Confirm the GitHub workflow deploys that commit, the health response reports that SHA, cron runs exist for only one backend, and a manual rollback has been rehearsed without touching production data.
 
-## Decisions to confirm
+## Decisions confirmed after review
 
-These answers affect the implementation but do not prevent the review from identifying the blockers:
-
-1. Should `/api/v1/stats/collections/*` always serve the latest cron-generated data from `shared/generated-data`, or is a release-pinned snapshot intentional?
-2. Should the combined collection runner refresh Reddit and public catalog data every time, or should those be independently scheduled optional inputs?
-3. Are the new root `public/` assets intended for DreamHost to serve separately from Express, or were they copied from the frontend deployment?
+1. `/api/v1/stats/collections/*` should always serve the latest cron-generated data from `shared/generated-data`; a release-pinned snapshot is not the intended production contract.
+2. Reddit, Discord, and public catalog refreshes remain part of the combined collection runner. Their existing enable flags control whether the combined run refreshes each external input or consumes its reviewed local snapshot; they are not independently scheduled jobs at this time.
+3. The root `public/` assets belong in this repository and will be served separately by DreamHost. Express is not expected to serve them.
 
 ## Verification performed for this review
 

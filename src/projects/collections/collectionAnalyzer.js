@@ -4,6 +4,7 @@ import dayjs from 'dayjs'
 import {setDeep, setDeepAdd, setDeepMax, setDeepUnique} from '../../util/setDeep.js'
 import {itemDetails} from '../../util/getItemDetails.js'
 import isDirectRun from '../../util/isDirectRun.js'
+import {writeJsonFileAtomic} from '../../util/writeJsonFileAtomic.js'
 import {loadCollectionEnvironment} from './collectionEnvironment.js'
 import {exportJobConfigSummary, loadExportJobConfig} from './exportJobConfig.js'
 
@@ -14,17 +15,6 @@ const listNames = [
 ]
 const backupFilePattern = /^backup_(\d{4}-\d{2}-\d{2})\.json$/
 const statsFilePattern = /^collectionStats_(\d{4}-\d{2}-\d{2})\.json$/
-
-async function ensureWriteDir(filePath) {
-    await fs.mkdir(path.dirname(filePath), {recursive: true})
-}
-
-async function writeJsonFileAtomic(filePath, data) {
-    await ensureWriteDir(filePath)
-    const tempFile = `${filePath}.tmp-${process.pid}-${Date.now()}`
-    await fs.writeFile(tempFile, JSON.stringify(data))
-    await fs.rename(tempFile, filePath)
-}
 
 async function readDirIfExists(directory) {
     try {

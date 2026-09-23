@@ -2,15 +2,9 @@ import fs from 'node:fs/promises'
 import path from 'node:path'
 import {setDeep, setDeepAdd, setDeepMax} from '../../util/setDeep.js'
 import isDirectRun from '../../util/isDirectRun.js'
+import {writeJsonFileAtomic} from '../../util/writeJsonFileAtomic.js'
 import {loadCollectionEnvironment} from './collectionEnvironment.js'
 import {exportJobConfigSummary, loadExportJobConfig} from './exportJobConfig.js'
-
-async function writeJsonFileAtomic(filePath, data) {
-    await fs.mkdir(path.dirname(filePath), {recursive: true})
-    const tempFile = `${filePath}.tmp-${process.pid}-${Date.now()}`
-    await fs.writeFile(tempFile, JSON.stringify(data, null, 2))
-    await fs.rename(tempFile, filePath)
-}
 
 export function buildRaflCollectionDetails(profiles) {
     const raffleWatchlists = Object.values(profiles)
@@ -50,7 +44,7 @@ export async function runRaflCollectionUtils({backupDir, publicDataDir}) {
 
     const raflCollectionDetails = buildRaflCollectionDetails(profiles)
     const outputFile = path.join(publicDataDir, 'raflCollectionDetails.json')
-    await writeJsonFileAtomic(outputFile, raflCollectionDetails)
+    await writeJsonFileAtomic(outputFile, raflCollectionDetails, {spaces: 2})
 
     return Object.freeze({
         watchlistUserCount: raflCollectionDetails.raffleWatchlistUsers,

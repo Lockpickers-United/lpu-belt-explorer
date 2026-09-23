@@ -1,18 +1,12 @@
 import fs from 'node:fs/promises'
 import path from 'node:path'
 import isDirectRun from '../../util/isDirectRun.js'
+import {writeJsonFileAtomic} from '../../util/writeJsonFileAtomic.js'
 import {loadCollectionEnvironment} from './collectionEnvironment.js'
 import {exportJobConfigSummary, loadExportJobConfig} from './exportJobConfig.js'
 
 const cohorts = ['allUsers', 'blackBeltOnly']
 const statsFilePattern = /^collectionStats_(\d{4}-\d{2}-\d{2})\.json$/
-
-async function writeJsonFileAtomic(filePath, data) {
-    await fs.mkdir(path.dirname(filePath), {recursive: true})
-    const tempFile = `${filePath}.tmp-${process.pid}-${Date.now()}`
-    await fs.writeFile(tempFile, JSON.stringify(data))
-    await fs.rename(tempFile, filePath)
-}
 
 async function readDailyStats(dailyDir) {
     const datedFiles = (await fs.readdir(dailyDir))

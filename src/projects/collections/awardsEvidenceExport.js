@@ -1,11 +1,11 @@
 import fs from 'node:fs/promises'
-import path from 'node:path'
 import {Timestamp} from 'firebase-admin/firestore'
 import {setDeepPush} from '../../util/setDeep.js'
 import dayjs from 'dayjs'
 import {awardDetails, lockDetails, projectDetails, safelockDetails} from '../../util/getItemDetails.js'
 import entryName from '../../util/entryName.js'
 import isDirectRun from '../../util/isDirectRun.js'
+import {writeJsonFileAtomic} from '../../util/writeJsonFileAtomic.js'
 import {exportJobConfigSummary, loadExportJobConfig} from './exportJobConfig.js'
 import {getExportFirestore} from './exportFirebase.js'
 import {loadCollectionEnvironment} from './collectionEnvironment.js'
@@ -38,17 +38,6 @@ async function readJsonFile(filePath, fallback=null) {
         }
         throw err
     }
-}
-
-async function ensureWriteDir(filePath) {
-    await fs.mkdir(path.dirname(filePath), {recursive: true})
-}
-
-async function writeJsonFileAtomic(filePath, data) {
-    await ensureWriteDir(filePath)
-    const tempFile = `${filePath}.tmp-${process.pid}-${Date.now()}`
-    await fs.writeFile(tempFile, JSON.stringify(data))
-    await fs.rename(tempFile, filePath)
 }
 
 function timestampFromState(value) {

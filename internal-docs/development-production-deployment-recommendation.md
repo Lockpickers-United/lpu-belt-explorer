@@ -78,6 +78,19 @@ The development `current` and `shared` directories and the production `shared` d
 
 Credentials, logs, uploads, and generated data must use absolute paths under the applicable `shared` directory. WebStorm must never upload them. Production releases link `shared/.env.production`; development's mutable checkout links `shared/.env.development`.
 
+`COLLECTION_API_DIR` must point to the applicable environment's
+`shared/generated-data` directory. The collection analyzer publishes
+`collectionStatsByIdFull.json` there, and `/api/v1/stats/collections/*` reads that
+same file on each request. Production must not fall back to the copy in a release,
+so bootstrap the shared file before starting the API and preserve it across
+deployments and rollbacks.
+
+The tracked root `public/` directory is intentional. DreamHost serves those HTML,
+icon, manifest, and robots assets separately from Express; the API application
+does not mount them as static middleware. Keep the selected DreamHost document
+root aligned with the deployed `public/` directory and verify the static site and
+API proxy independently after a release.
+
 The tracked PM2 definitions are `ecosystem.dev.json` and `ecosystem.prod.json`.
 They use the corresponding `current` directory and `src/lpubeltsApiServer.js`.
 JSON is intentional: PM2 treated the former `ecosystem.config.dev.cjs` filename
@@ -167,6 +180,12 @@ The mutable development directory can accumulate stale or uncommitted files, so 
 6. Deploy that `main` commit through the production workflow.
 
 Periodically compare or refresh the development directory from a clean local checkout of `main`. This prevents old files on the server from making a development test pass differently from the production commit.
+
+The combined collection command remains the only scheduled collection pipeline.
+Catalog, Reddit, and Discord refreshes run inside that command when their explicit
+enable flags are true; when a refresh is disabled, preflight validates the
+corresponding local snapshot before any export starts. Do not create independent
+schedules for those refreshes at this time.
 
 ## Development Firebase configuration
 

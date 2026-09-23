@@ -1,25 +1,14 @@
 import fs from 'node:fs/promises'
-import path from 'node:path'
 import {Timestamp} from 'firebase-admin/firestore'
 import {setDeepAdd, setDeepPush} from '../../util/setDeep.js'
 import dayjs from 'dayjs'
 import {projectDetails, lockDetails} from '../../util/getItemDetails.js'
 import entryName from '../../util/entryName.js'
 import isDirectRun from '../../util/isDirectRun.js'
+import {writeJsonFileAtomic} from '../../util/writeJsonFileAtomic.js'
 import {exportJobConfigSummary, loadExportJobConfig} from './exportJobConfig.js'
 import {getExportFirestore} from './exportFirebase.js'
 import {loadCollectionEnvironment} from './collectionEnvironment.js'
-
-async function ensureWriteDir(filePath) {
-    await fs.mkdir(path.dirname(filePath), {recursive: true})
-}
-
-async function writeJsonFileAtomic(filePath, data) {
-    await ensureWriteDir(filePath)
-    const tempFile = `${filePath}.tmp-${process.pid}-${Date.now()}`
-    await fs.writeFile(tempFile, JSON.stringify(data))
-    await fs.rename(tempFile, filePath)
-}
 
 async function logReadActivity(messages, activityLogger) {
     try {
