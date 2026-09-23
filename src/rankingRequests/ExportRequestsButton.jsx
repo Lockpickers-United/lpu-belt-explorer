@@ -31,7 +31,9 @@ function ExportRequestsButton({text, entries}) {
         lockingMechanism: datum.lockingMechanisms[0],
         requestedBy: datum.requestedBy[0].discordUsername,
         name: entryName(datum),
-        dateRequested: datum.dateRequested
+        dateRequested: datum.dateRequested,
+        belt: datum.belt,
+        requestStatus: datum.requestStatus,
     }))
 
     const handleExportJson = useCallback(() => {
@@ -57,7 +59,12 @@ function ExportRequestsButton({text, entries}) {
         const clipboardText = data.map(datum => {
             const safeName = datum.name.replace(/[\s/]/g, '_').replace(/\W/g, '')
             const mech = mechanisms[datum.lockingMechanism] ? `\t${mechanisms[datum.lockingMechanism]}` : ''
-            return `${datum.name}\t\thttps://lpubelts.com/#/rankingrequests/view?id=${datum.id}&name=${safeName}${mech}`
+            const requestStatus = datum.requestStatus && datum.belt
+                ? `\t${datum.requestStatus} (${datum.belt})`
+                : datum.requestStatus && datum.requestStatus !== 'Submitted'
+                    ? `\t${datum.requestStatus}`
+                    : '\t'
+            return `${datum.name}${requestStatus}\thttps://lpubelts.com/#/rankingrequests/view?id=${datum.id}&name=${safeName}${mech}`
         }).join('\n')
 
         handleClose()
