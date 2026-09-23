@@ -4,13 +4,14 @@ Read this reference for Firestore change trackers, their emulator tests, or incr
 
 `functions/index.js` maintains these mappings:
 
-| Source collection | Change-index collection | Exported Function |
-| --- | --- | --- |
-| `lockcollections` | `lockcollectionsChangeIndex` | `trackLockcollectionChange` |
-| `awards` | `awardsChangeIndex` | `trackAwardChange` |
-| `evidence` | `evidenceChangeIndex` | `trackEvidenceChange` |
+| Source collection | Change-index collection | Default database function | `lpubelts-dev` function |
+| --- | --- | --- | --- |
+| `lockcollections` | `lockcollectionsChangeIndex` | `trackLockcollectionChange` | `trackDevLockcollectionChange` |
+| `awards` | `awardsChangeIndex` | `trackAwardChange` | `trackDevAwardChange` |
+| `evidence` | `evidenceChangeIndex` | `trackEvidenceChange` | `trackDevEvidenceChange` |
 
 Each index document is keyed by the changed source document ID and records `docId`, `changedAt`, `deleted`, and `sourceCollection`.
+Each function writes its index document to the same database that triggered it.
 
 The sibling exporters consume this schema. Coordinate changes to fields, collection names, timestamps, deletion semantics, or identifiers with:
 

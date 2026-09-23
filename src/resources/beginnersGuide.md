@@ -15,7 +15,7 @@ Popular vendors include the following (in alphabetical order):
 - [Peterson](https://www.thinkpeterson.com/)
 - [Sparrows](https://www.sparrowslockpicks.com/)
 - [SouthOrd](https://www.southord.com/)
-- [Southern Specialties](https://lockpicktools.com/).
+- [Southern Specialties](https://lockpicktools.com/)
 
 (Starter kit approaches from some of these brands are below)
 

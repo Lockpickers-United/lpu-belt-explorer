@@ -37,21 +37,29 @@ const {onDocumentWritten} = require("firebase-functions/v2/firestore");
 
 initializeApp();
 
-const db = getFirestore();
-
 /**
  * Creates a Firestore document-write trigger that records changed document IDs.
  *
  * @param {string} sourceCollection Source collection to observe.
  * @param {string} changeIndexCollection Collection storing change index docs.
+ * @param {string} [databaseId] Firestore database to observe and update.
  * @return {CloudFunction} Firestore document-write trigger.
  */
-function createChangeTracker(sourceCollection, changeIndexCollection) {
+function createChangeTracker(
+    sourceCollection,
+    changeIndexCollection,
+    databaseId,
+) {
+  const db = databaseId ? getFirestore(databaseId) : getFirestore();
+  const triggerOptions = {
+    document: `${sourceCollection}/{docId}`,
+    region: "us-central1",
+  };
+
+  if (databaseId) triggerOptions.database = databaseId;
+
   return onDocumentWritten(
-      {
-        document: `${sourceCollection}/{docId}`,
-        region: "us-central1",
-      },
+      triggerOptions,
       async (event) => {
         const {docId} = event.params;
         const deleted = !event.data.after.exists;
@@ -86,4 +94,24 @@ exports.trackAwardChange = createChangeTracker(
 exports.trackEvidenceChange = createChangeTracker(
     "evidence",
     "evidenceChangeIndex",
+);
+
+const devDatabaseId = "lpubelts-dev";
+
+exports.trackDevLockcollectionChange = createChangeTracker(
+    "lockcollections",
+    "lockcollectionsChangeIndex",
+    devDatabaseId,
+);
+
+exports.trackDevAwardChange = createChangeTracker(
+    "awards",
+    "awardsChangeIndex",
+    devDatabaseId,
+);
+
+exports.trackDevEvidenceChange = createChangeTracker(
+    "evidence",
+    "evidenceChangeIndex",
+    devDatabaseId,
 );
