@@ -6,7 +6,7 @@ import dayjs from 'dayjs'
 import isDirectRun from '../../util/isDirectRun.js'
 import {exportJobConfigSummary, loadExportJobConfig} from './exportJobConfig.js'
 import {getExportFirestore} from './exportFirebase.js'
-import dotenv from 'dotenv'
+import {loadCollectionEnvironment} from './collectionEnvironment.js'
 
 const collectionName = 'lockcollections'
 const changeIndexCollectionName = 'lockcollectionsChangeIndex'
@@ -282,13 +282,10 @@ export async function runCollectionsExport({
 export async function collectionsExportMain({
     env = process.env,
     argv = process.argv,
-    writeOutput = console.log
+    writeOutput = console.log,
+    loadEnvironment
 } = {}) {
-
-    const environment = process.env.NODE_ENV || 'local'
-    if (environment === 'local') {
-        dotenv.config({ path: path.resolve(process.cwd(), '.env.local'), quiet: true })
-    }
+    loadCollectionEnvironment({env, loadEnvironment})
 
     const config = loadExportJobConfig({env})
     const summary = exportJobConfigSummary(config)

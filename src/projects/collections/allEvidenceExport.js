@@ -3,12 +3,12 @@ import path from 'node:path'
 import {Timestamp} from 'firebase-admin/firestore'
 import {setDeepAdd, setDeepPush} from '../../util/setDeep.js'
 import dayjs from 'dayjs'
-import dotenv from 'dotenv'
 import {projectDetails, lockDetails} from '../../util/getItemDetails.js'
 import entryName from '../../util/entryName.js'
 import isDirectRun from '../../util/isDirectRun.js'
 import {exportJobConfigSummary, loadExportJobConfig} from './exportJobConfig.js'
 import {getExportFirestore} from './exportFirebase.js'
+import {loadCollectionEnvironment} from './collectionEnvironment.js'
 
 async function ensureWriteDir(filePath) {
     await fs.mkdir(path.dirname(filePath), {recursive: true})
@@ -183,12 +183,10 @@ export default runAllEvidenceExport
 export async function allEvidenceExportMain({
     env = process.env,
     argv = process.argv,
-    writeOutput = console.log
+    writeOutput = console.log,
+    loadEnvironment
 } = {}) {
-    const environment = process.env.NODE_ENV || 'local'
-    if (environment === 'local') {
-        dotenv.config({path: path.resolve(process.cwd(), '.env.local'), quiet: true})
-    }
+    loadCollectionEnvironment({env, loadEnvironment})
 
     const config = loadExportJobConfig({env, requirePublicDataDir: true})
     const summary = exportJobConfigSummary(config)

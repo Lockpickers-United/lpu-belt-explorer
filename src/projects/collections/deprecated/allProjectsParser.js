@@ -1,4 +1,4 @@
-import {localUser, prodUser} from '../../../keys/users.js'
+import {localUser, prodUser} from '../../../../keys/users.js'
 import fs from 'node:fs/promises'
 
 const production = process.env.USER !== localUser

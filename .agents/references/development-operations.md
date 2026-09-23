@@ -10,7 +10,7 @@ WebStorm uploads changed files over SFTP into:
 
 Exclude `.env*`, credentials, `node_modules`, logs, uploads, and generated runtime data from automatic uploads. Install dependencies on the server when `package.json` or `yarn.lock` changes.
 
-The server loads `.env.development` relative to its working directory. Link that path to the protected shared file once during setup:
+The server validates `NODE_ENV` as `local`, `development`, or `production` and loads the matching file from the repository root. Link that path to the protected shared file once during setup:
 
 ```sh
 ln -s ../shared/.env.development /home/lpubelts_api/apps/api-server-dev/current/.env.development

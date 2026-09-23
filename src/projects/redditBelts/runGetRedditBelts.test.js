@@ -32,6 +32,7 @@ describe('standalone Reddit belt runner environment', () => {
         expect(loadEnvironment).toHaveBeenCalledWith({
             path: path.join('/srv/lpu/explore-lpubelts-com-node', '.env.production'),
             processEnv: env,
+            override: false,
             quiet: true
         })
         expect(result).toEqual({
@@ -64,10 +65,10 @@ describe('standalone Reddit belt runner environment', () => {
         expect(writeOutput).toHaveBeenCalledOnce()
     })
 
-    it('rejects unsafe NODE_ENV values before resolving a file', () => {
+    it('rejects unsupported NODE_ENV values before resolving a file', () => {
         expect(() => loadRedditBeltsEnvironment({
             env: {NODE_ENV: '../../production'},
             loadEnvironment: vi.fn()
-        })).toThrowError(expect.objectContaining({code: 'reddit_belts_invalid_node_env'}))
+        })).toThrowError(expect.objectContaining({code: 'runtime_environment_invalid'}))
     })
 })

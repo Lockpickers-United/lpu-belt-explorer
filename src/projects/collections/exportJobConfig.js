@@ -32,6 +32,11 @@ function requiredAbsolutePath(env, name) {
     return path.normalize(value)
 }
 
+function optionalAbsolutePath(env, name, required) {
+    if (required || env[name]) return requiredAbsolutePath(env, name)
+    return null
+}
+
 function getLookbackMs(env) {
     const value = Number(env.COLLECTIONS_EXPORT_LOOKBACK_MS ?? 5 * 60 * 1000)
     if (!Number.isFinite(value) || value < 0) {
@@ -43,7 +48,12 @@ function getLookbackMs(env) {
     return value
 }
 
-export function loadExportJobConfig({env = process.env, requirePublicDataDir = false} = {}) {
+export function loadExportJobConfig({
+    env = process.env,
+    requirePublicDataDir = false,
+    requireDailyDir = false,
+    requireApiDir = false
+} = {}) {
     const jobEnvironment = requiredValue(env, 'LPU_JOB_ENV')
     if (!validJobEnvironments.has(jobEnvironment)) {
         throw configurationError(
@@ -72,11 +82,13 @@ export function loadExportJobConfig({env = process.env, requirePublicDataDir = f
         serviceAccountPath: requiredAbsolutePath(env, 'FIREBASE_SERVICE_ACCOUNT_PATH'),
         exportDir: requiredAbsolutePath(env, 'COLLECTION_EXPORT_DIR'),
         backupDir: requiredAbsolutePath(env, 'COLLECTION_BACKUP_DIR'),
-        publicDataDir: requirePublicDataDir
-            ? requiredAbsolutePath(env, 'COLLECTION_PUBLIC_DATA_DIR')
-            : env.COLLECTION_PUBLIC_DATA_DIR
-                ? requiredAbsolutePath(env, 'COLLECTION_PUBLIC_DATA_DIR')
-                : null,
+        publicDataDir: optionalAbsolutePath(
+            env,
+            'COLLECTION_PUBLIC_DATA_DIR',
+            requirePublicDataDir
+        ),
+        dailyDir: optionalAbsolutePath(env, 'COLLECTION_DAILY_DIR', requireDailyDir),
+        apiDir: optionalAbsolutePath(env, 'COLLECTION_API_DIR', requireApiDir),
         lookbackMs: getLookbackMs(env),
         productionAccessEnabled
     }
@@ -93,6 +105,8 @@ export function exportJobConfigSummary(config) {
         exportDir: config.exportDir,
         backupDir: config.backupDir,
         publicDataDir: config.publicDataDir,
+        dailyDir: config.dailyDir,
+        apiDir: config.apiDir,
         lookbackMs: config.lookbackMs,
         productionAccessEnabled: config.productionAccessEnabled
     }

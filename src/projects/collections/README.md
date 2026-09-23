@@ -9,7 +9,7 @@ Both modules are safe to import. Firebase credentials and clients are loaded onl
 
 ## Required configuration
 
-Both jobs require these environment variables:
+The collection command-line jobs load `.env.<NODE_ENV>` from this directory. `NODE_ENV` supports `local`, `development`, and `production`, and defaults to `local`. Both incremental jobs require these environment variables:
 
 | Variable | Purpose |
 | --- | --- |
@@ -21,6 +21,14 @@ Both jobs require these environment variables:
 | `COLLECTION_BACKUP_DIR` | Absolute directory containing collection backups |
 | `COLLECTIONS_EXPORT_LOOKBACK_MS` | Optional non-negative lookback; defaults to `300000` |
 
+`collectionAnalyzer.js` additionally requires:
+
+| Variable | Purpose |
+| --- | --- |
+| `COLLECTION_DAILY_DIR` | Absolute directory for dated collection-statistics files |
+| `COLLECTION_API_DIR` | Absolute directory receiving `collectionStatsByIdFull.json` |
+| `COLLECTION_PUBLIC_DATA_DIR` | Absolute directory receiving `collectionStatsCurrent.json` |
+
 `awardsEvidenceExport.js` additionally requires:
 
 | Variable | Purpose |
@@ -29,15 +37,16 @@ Both jobs require these environment variables:
 
 `ALLOW_PRODUCTION_JOB=true` is required when `LPU_JOB_ENV=production` or when `FIRESTORE_DATABASE_ID=(default)`. This technical guard does not replace the required human approval before any live-data or production run.
 
-The exporters do not infer configuration from `USER`, `LOGNAME`, or the current working directory. They do not automatically load a dotenv file; use Node's explicit `--env-file` option or provide the variables through the invoking shell, process manager, or cron entry.
+The exporters do not infer configuration from `USER`, `LOGNAME`, or the current working directory. Shell variables take precedence over values loaded from the selected file.
 
 ## Validate configuration safely
 
-Either exporter supports `--check-config`:
+The exporters and analyzer support `--check-config`:
 
 ```bash
-node --env-file=.env.local src/projects/collections/collectionsExport.js --check-config
-node --env-file=.env.local src/projects/collections/awardsEvidenceExport.js --check-config
+NODE_ENV=local node src/projects/collections/collectionsExport.js --check-config
+NODE_ENV=local node src/projects/collections/awardsEvidenceExport.js --check-config
+NODE_ENV=local node src/projects/collections/collectionAnalyzer.js --check-config
 ```
 
 This validates and prints the selected project, database, and paths. It does not read the service-account file, initialize Firebase, contact Firestore, create directories, or write outputs.
@@ -60,37 +69,47 @@ node src/projects/collections/awardsEvidenceExport.js --check-config
 The existing positional `cron` argument remains supported:
 
 ```bash
-node --env-file=.env.production src/projects/collections/collectionsExport.js cron
-node --env-file=.env.production src/projects/collections/awardsEvidenceExport.js cron
+NODE_ENV=production node src/projects/collections/collectionsExport.js cron
+NODE_ENV=production node src/projects/collections/awardsEvidenceExport.js cron
 ```
 
 Before the next scheduled run, each cron entry must be updated to provide the required explicit environment variables. Do not run these commands manually or update production cron configuration without approval.
 
-## Create a full incremental baseline
+## Collection analysis
 
-Pass `--full` to ignore any existing raw lockcollections export and rebuild it from the complete Firestore collection:
+The analyzer reads dated `backup_YYYY-MM-DD.json` files from the `archive` directory under `COLLECTION_BACKUP_DIR`. It processes missing dates in ascending order and always reprocesses today's backup, ensuring the newest processed date supplies the current API and public-data outputs.
 
 ```bash
-node --env-file=src/projects/collections/.env.development src/projects/collections/collectionsExport.js --full
+NODE_ENV=development node src/projects/collections/collectionAnalyzer.js cron
 ```
 
-The full run records a baseline watermark when it starts, reconciles change-index entries from the configured lookback window, and atomically writes each raw export, backup, and incremental state file in the normal order. Later runs can omit `--full` and update that baseline incrementally. This reads the complete live collection and writes configured output files, so it requires the normal approval for live-data jobs.
+## Create full incremental baselines
+
+Pass `--full` to ignore existing raw exports and rebuild them from complete Firestore collections:
+
+```bash
+NODE_ENV=development node src/projects/collections/collectionsExport.js --full
+NODE_ENV=development node src/projects/collections/awardsEvidenceExport.js --full
+```
+
+Each full run records a baseline watermark when it starts, reconciles change-index entries from the configured lookback window, and writes its raw exports plus applicable backups or derived outputs before advancing incremental state. Each file is written atomically. Later runs can omit `--full` and update those baselines incrementally. Full runs read the applicable live collections and write configured output files, so they require the normal approval for live-data jobs.
 
 ## Combined export and analysis runner
 
 The repository-level runner loads the collections configuration that matches the required `NODE_ENV`, then runs the collection exports and dependent analysis jobs in order. It stops at the first failed job.
 
 ```bash
-NODE_ENV=development node /home/lpubelts_api/apps/api-server-dev/current/scripts/collectionExportAnalysis.js
+NODE_ENV=development node /home/lpubelts_api/apps/api-server-dev/current/scripts/runCollectionExportAnalysis.js
 ```
 
 Supported environments are `local`, `development`, and `production`, corresponding to `.env.local`, `.env.development`, and `.env.production` in this directory. The runner performs live-data and output-writing work, so inspect the selected configuration and obtain the required approval before executing it.
 
 ## Development API
 
-Tests and other modules can call the exporters with injected dependencies:
+Tests and other modules can call the jobs with injected dependencies:
 
 - `runCollectionsExport(options)`
 - `runAwardsEvidenceExport(options)`
+- `runCollectionAnalysis(options)`
 
-Provide a Firestore-compatible `db`, explicit directories, a lookback value, and an `activityLogger`. The awards/evidence exporter also accepts item-detail loaders and both exporters accept a deterministic `now` function for testing.
+Provide the exporters with a Firestore-compatible `db`, explicit directories, a lookback value, and an `activityLogger`. The awards/evidence exporter also accepts item-detail loaders. The analyzer accepts its four configured directories and an item-detail loader. All three jobs accept a deterministic `now` function for testing.

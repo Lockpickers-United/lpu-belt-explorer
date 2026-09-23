@@ -1,7 +1,7 @@
 import express from 'express'
 import cors from 'cors'
 import helmet from 'helmet'
-import dotenv from 'dotenv'
+import {fileURLToPath} from 'node:url'
 import {logger} from './logger/logger.js'
 import {httpLogger} from './logger/httpLogger.js'
 import {requestIdHeader} from './logger/requestId.js'
@@ -23,9 +23,10 @@ import {createFirebaseActivityRuntime} from './projects/logFirebaseActivity/fire
 import {firebaseActivityConfigSummary} from './projects/logFirebaseActivity/firebaseActivityConfig.js'
 import {getTrustProxyConfig} from './api/middleware/trustProxy.js'
 import {createBaselineRateLimit} from './api/middleware/rateLimit.js'
+import {loadRuntimeEnvironment} from './util/runtimeEnvironment.js'
 
-const env = process.env.NODE_ENV || 'local'
-dotenv.config({path: [`.env.${env}`], quiet: true})
+const projectRoot = fileURLToPath(new URL('../', import.meta.url))
+const {environment: env} = loadRuntimeEnvironment({env: process.env, envDir: projectRoot})
 const trustProxy = getTrustProxyConfig(process.env)
 const isDev = env !== 'production'
 const _envText = isDev ? ' (DEV)' : ''

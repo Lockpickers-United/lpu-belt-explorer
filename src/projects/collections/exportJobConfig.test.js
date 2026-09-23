@@ -12,7 +12,9 @@ const developmentEnv = {
     FIREBASE_SERVICE_ACCOUNT_PATH: '/tmp/lpu/service-account.json',
     COLLECTION_EXPORT_DIR: '/tmp/lpu/exports',
     COLLECTION_BACKUP_DIR: '/tmp/lpu/backups',
-    COLLECTION_PUBLIC_DATA_DIR: '/tmp/lpu/public-data'
+    COLLECTION_PUBLIC_DATA_DIR: '/tmp/lpu/public-data',
+    COLLECTION_DAILY_DIR: '/tmp/lpu/daily',
+    COLLECTION_API_DIR: '/tmp/lpu/api-data'
 }
 
 describe('loadExportJobConfig', () => {
@@ -34,6 +36,8 @@ describe('loadExportJobConfig', () => {
             exportDir: '/tmp/lpu/exports',
             backupDir: '/tmp/lpu/backups',
             publicDataDir: '/tmp/lpu/public-data',
+            dailyDir: '/tmp/lpu/daily',
+            apiDir: '/tmp/lpu/api-data',
             lookbackMs: 300_000,
             productionAccessEnabled: false
         })
@@ -94,6 +98,22 @@ describe('loadExportJobConfig', () => {
 
         expect(loadExportJobConfig({env}).publicDataDir).toBeNull()
         expect(() => loadExportJobConfig({env, requirePublicDataDir: true}))
+            .toThrowError(expect.objectContaining({code: 'export_job_config_missing'}))
+    })
+
+    it('requires analyzer output directories only for jobs that use them', () => {
+        const {
+            COLLECTION_DAILY_DIR: _dailyDir,
+            COLLECTION_API_DIR: _apiDir,
+            ...env
+        } = developmentEnv
+
+        const config = loadExportJobConfig({env})
+        expect(config.dailyDir).toBeNull()
+        expect(config.apiDir).toBeNull()
+        expect(() => loadExportJobConfig({env, requireDailyDir: true}))
+            .toThrowError(expect.objectContaining({code: 'export_job_config_missing'}))
+        expect(() => loadExportJobConfig({env, requireApiDir: true}))
             .toThrowError(expect.objectContaining({code: 'export_job_config_missing'}))
     })
 })
