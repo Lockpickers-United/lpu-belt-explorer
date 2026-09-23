@@ -3,6 +3,10 @@ import {allEvidenceExportMain} from './allEvidenceExport.js'
 import {awardsEvidenceExportMain} from './awardsEvidenceExport.js'
 import {collectionsExportMain} from './collectionsExport.js'
 import {collectionAnalyzerMain} from './collectionAnalyzer.js'
+import {collectionStatsProcessMain} from './collectionStatsProcess.js'
+import {exportAllProcessorMain} from './exportAllProcessor.js'
+import {leaderboardStatsProcessMain} from './leaderboardStatsProcess.js'
+import {raflCollectionUtilsMain} from './raflCollectionUtils.js'
 
 const env = {
     NODE_ENV: 'development',
@@ -22,7 +26,11 @@ describe('exporter --check-config mode', () => {
         ['collections', collectionsExportMain],
         ['awards/evidence', awardsEvidenceExportMain],
         ['all evidence', allEvidenceExportMain],
-        ['collection analyzer', collectionAnalyzerMain]
+        ['collection analyzer', collectionAnalyzerMain],
+        ['collection stats processor', collectionStatsProcessMain],
+        ['export-all processor', exportAllProcessorMain],
+        ['leaderboard stats processor', leaderboardStatsProcessMain],
+        ['RAFL collection processor', raflCollectionUtilsMain]
     ])('validates and reports %s configuration without loading credentials', async (_name, main) => {
         const writeOutput = vi.fn()
         const loadEnvironment = vi.fn().mockReturnValue({parsed: {}})

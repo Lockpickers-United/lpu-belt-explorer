@@ -12,7 +12,11 @@ const exporterUrls = [
     new URL('./collectionsExport.js', import.meta.url).href,
     new URL('./awardsEvidenceExport.js', import.meta.url).href,
     new URL('./allEvidenceExport.js', import.meta.url).href,
-    new URL('./collectionAnalyzer.js', import.meta.url).href
+    new URL('./collectionAnalyzer.js', import.meta.url).href,
+    new URL('./collectionStatsProcess.js', import.meta.url).href,
+    new URL('./exportAllProcessor.js', import.meta.url).href,
+    new URL('./leaderboardStatsProcess.js', import.meta.url).href,
+    new URL('./raflCollectionUtils.js', import.meta.url).href
 ]
 
 describe('active exporter imports', () => {
@@ -21,7 +25,11 @@ describe('active exporter imports', () => {
             fs.readFile(new URL('./collectionsExport.js', import.meta.url), 'utf8'),
             fs.readFile(new URL('./awardsEvidenceExport.js', import.meta.url), 'utf8'),
             fs.readFile(new URL('./allEvidenceExport.js', import.meta.url), 'utf8'),
-            fs.readFile(new URL('./collectionAnalyzer.js', import.meta.url), 'utf8')
+            fs.readFile(new URL('./collectionAnalyzer.js', import.meta.url), 'utf8'),
+            fs.readFile(new URL('./collectionStatsProcess.js', import.meta.url), 'utf8'),
+            fs.readFile(new URL('./exportAllProcessor.js', import.meta.url), 'utf8'),
+            fs.readFile(new URL('./leaderboardStatsProcess.js', import.meta.url), 'utf8'),
+            fs.readFile(new URL('./raflCollectionUtils.js', import.meta.url), 'utf8')
         ])
 
         sources.forEach(source => {

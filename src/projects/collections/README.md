@@ -29,6 +29,19 @@ The collection command-line jobs load `.env.<NODE_ENV>` from this directory. `NO
 | `COLLECTION_API_DIR` | Absolute directory receiving `collectionStatsByIdFull.json` |
 | `COLLECTION_PUBLIC_DATA_DIR` | Absolute directory receiving `collectionStatsCurrent.json` |
 
+`collectionStatsProcess.js` requires `COLLECTION_DAILY_DIR` for its dated inputs and
+`COLLECTION_PUBLIC_DATA_DIR` for `collectionStatsDaily.json`.
+
+`leaderboardStatsProcess.js` reads `COLLECTION_BACKUP_DIR/backup.json` and writes
+`leaderboardData.json` to `COLLECTION_PUBLIC_DATA_DIR`.
+
+`raflCollectionUtils.js` reads `COLLECTION_BACKUP_DIR/backup.json` and writes
+`raflCollectionDetails.json` to `COLLECTION_PUBLIC_DATA_DIR`.
+
+`exportAllProcessor.js` reads `lockcollections.json` and `awards.json` from
+`COLLECTION_EXPORT_DIR`, then writes `scorecardStats.json` to
+`COLLECTION_PUBLIC_DATA_DIR` using the platform belt-count files already in that directory.
+
 `awardsEvidenceExport.js` additionally requires:
 
 | Variable | Purpose |
@@ -41,12 +54,16 @@ The exporters do not infer configuration from `USER`, `LOGNAME`, or the current 
 
 ## Validate configuration safely
 
-The exporters and analyzer support `--check-config`:
+The exporters, analyzer, and statistics processors support `--check-config`:
 
 ```bash
 NODE_ENV=local node src/projects/collections/collectionsExport.js --check-config
 NODE_ENV=local node src/projects/collections/awardsEvidenceExport.js --check-config
 NODE_ENV=local node src/projects/collections/collectionAnalyzer.js --check-config
+NODE_ENV=local node src/projects/collections/collectionStatsProcess.js --check-config
+NODE_ENV=local node src/projects/collections/leaderboardStatsProcess.js --check-config
+NODE_ENV=local node src/projects/collections/raflCollectionUtils.js --check-config
+NODE_ENV=local node src/projects/collections/exportAllProcessor.js --check-config
 ```
 
 This validates and prints the selected project, database, and paths. It does not read the service-account file, initialize Firebase, contact Firestore, create directories, or write outputs.
@@ -75,12 +92,24 @@ NODE_ENV=production node src/projects/collections/awardsEvidenceExport.js cron
 
 Before the next scheduled run, each cron entry must be updated to provide the required explicit environment variables. Do not run these commands manually or update production cron configuration without approval.
 
-## Collection analysis
+## Collection analysis and daily statistics
 
 The analyzer reads dated `backup_YYYY-MM-DD.json` files from the `archive` directory under `COLLECTION_BACKUP_DIR`. It processes missing dates in ascending order and always reprocesses today's backup, ensuring the newest processed date supplies the current API and public-data outputs.
 
+The stats processor reads the analyzer's dated files from `COLLECTION_DAILY_DIR`, calculates the chronological daily changes, and writes `collectionStatsDaily.json` to `COLLECTION_PUBLIC_DATA_DIR`.
+
+The leaderboard processor reads the current collection backup and writes `leaderboardData.json` to `COLLECTION_PUBLIC_DATA_DIR`.
+
+The RAFL collection processor aggregates user watchlists from the current collection backup and writes `raflCollectionDetails.json` to `COLLECTION_PUBLIC_DATA_DIR`.
+
+The export-all processor combines the current collection and awards exports with item details and platform belt counts, then writes `scorecardStats.json` to `COLLECTION_PUBLIC_DATA_DIR`.
+
 ```bash
 NODE_ENV=development node src/projects/collections/collectionAnalyzer.js cron
+NODE_ENV=development node src/projects/collections/collectionStatsProcess.js cron
+NODE_ENV=development node src/projects/collections/leaderboardStatsProcess.js cron
+NODE_ENV=development node src/projects/collections/raflCollectionUtils.js cron
+NODE_ENV=development node src/projects/collections/exportAllProcessor.js cron
 ```
 
 ## Create full incremental baselines
@@ -111,5 +140,9 @@ Tests and other modules can call the jobs with injected dependencies:
 - `runCollectionsExport(options)`
 - `runAwardsEvidenceExport(options)`
 - `runCollectionAnalysis(options)`
+- `runCollectionStatsProcess(options)`
+- `runLeaderboardStatsProcess(options)`
+- `runRaflCollectionUtils(options)`
+- `runExportAllProcessor(options)`
 
-Provide the exporters with a Firestore-compatible `db`, explicit directories, a lookback value, and an `activityLogger`. The awards/evidence exporter also accepts item-detail loaders. The analyzer accepts its four configured directories and an item-detail loader. All three jobs accept a deterministic `now` function for testing.
+Provide the exporters with a Firestore-compatible `db`, explicit directories, a lookback value, and an `activityLogger`. The awards/evidence exporter also accepts item-detail loaders. The analyzer and processors accept their configured directories directly; the analyzer, leaderboard processor, and export-all processor accept an item-detail loader. Jobs that publish timestamps also accept a deterministic `now` function for testing.
