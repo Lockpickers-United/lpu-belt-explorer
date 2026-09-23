@@ -51,15 +51,19 @@ Before the first workflow run, the production server must have:
 - a protected `shared/.env.production`
 - one complete initial release under `releases/<release-id>`
 - `current` as a symlink to that specific initial release
-- a production PM2 declaration using `src/lpubeltsApiServer.js`
-- an existing PM2 application whose name matches `PM2_APP_NAME`
+- the tracked `ecosystem.prod.json` declaration using `src/lpubeltsApiServer.js`
+- an existing `lpubelts-api-server-prod-next` PM2 application, matching `PM2_APP_NAME`
 - DreamHost proxying `api.lpubelts.com` to the application's internal port
 - `shared/generated-data/collectionStatsByIdFull.json`, readable by the PM2 account
 - `COLLECTION_API_DIR` pointing to that shared generated-data directory
 
 The workflow deliberately checks that `current` is already a symlink and that the PM2 process exists. Bootstrap is a separate, reviewable operation. Use a JSON PM2 ecosystem declaration for the new production process, following the proven development pattern.
 
-While the old backend remains live, give the new process a distinct name such as `lpubelts-api-server-prod-next`. The final name can be retained after cutover; consistency between the PM2 declaration and `PM2_APP_NAME` matters more than renaming it.
+The new process uses the distinct name `lpubelts-api-server-prod-next`. Retain
+that name after cutover so the PM2 declaration, `PM2_APP_NAME`, rollback, and
+monitoring commands remain consistent. Bootstrap it with the sanitized-environment
+command documented in `.github/DEPLOYMENT.md` and inspect `pm2 env <pm_id>` for
+unintended inherited values before saving the process list.
 
 ## Retention and rollback
 
@@ -72,7 +76,9 @@ The automated rollback covers failures during deployment activation and the read
 3. reload the configured PM2 process,
 4. verify the readiness endpoint and a representative API request.
 
-A brief restart interruption is acceptable; PM2 cluster mode is not currently required.
+A brief restart interruption is acceptable; PM2 cluster mode is not currently
+required. The application drains for up to 10 seconds on shutdown or a fatal
+process error, and the PM2 definition allows 12 seconds before forced termination.
 
 ## Parallel rollout and frontend cutover
 

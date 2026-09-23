@@ -78,11 +78,19 @@ The development `current` and `shared` directories and the production `shared` d
 
 Credentials, logs, uploads, and generated data must use absolute paths under the applicable `shared` directory. WebStorm must never upload them. Production releases link `shared/.env.production`; development's mutable checkout links `shared/.env.development`.
 
-The tracked development PM2 definition is `ecosystem.dev.json`; it uses `/home/lpubelts_api/apps/api-server-dev/current` and `src/lpubeltsApiServer.js`. JSON is intentional: PM2 treated the former `ecosystem.config.dev.cjs` filename as an application script instead of an ecosystem definition, while a `.config.js` CommonJS definition conflicts with this repository's ES-module package type. The current local production PM2 file still points at the old checkout and former entry-point name; leave it unchanged while it represents the existing backend. Create the parallel new production definition as JSON using the production root above and `src/lpubeltsApiServer.js`.
+The tracked PM2 definitions are `ecosystem.dev.json` and `ecosystem.prod.json`.
+They use the corresponding `current` directory and `src/lpubeltsApiServer.js`.
+JSON is intentional: PM2 treated the former `ecosystem.config.dev.cjs` filename
+as an application script instead of an ecosystem definition, while a
+`.config.js` CommonJS definition conflicts with this repository's ES-module
+package type.
 
-The repository rename has been applied to `package.json`, `AGENTS.md`, `.github/DEPLOYMENT.md`, the production workflow's syntax check, and `ecosystem.dev.json`. Before deployment, update the separate server-side definition for the new production PM2 process. A stale entry-point path will cause the syntax check or PM2 start to fail.
-
-The checked-in development PM2 file uses `lpubelts-api-server-dev`. A parallel new production process must use a name distinct from the current production process, such as `lpubelts-api-server-prod-next`, until the old process is retired. Configure the production GitHub environment's `PM2_APP_NAME` with that distinct name.
+The development process is `lpubelts-api-server-dev`. The parallel production
+process is `lpubelts-api-server-prod-next`; keep that name after cutover so the
+tracked definition, GitHub `PM2_APP_NAME`, rollback commands, monitoring, and
+retirement procedure stay aligned. The production workflow rejects a different
+name. `ecosystem.prod.json` is the reviewed bootstrap definition for the new
+process and does not describe or alter the existing backend.
 
 ## Development workflow
 
@@ -206,7 +214,7 @@ Complete and use that design as follows:
 3. Keep the manual `deploy-production` confirmation input.
 4. Configure yourself as the required reviewer if the repository plan supports environment reviewers. Because you are currently the only reviewer, allow initiator self-review; otherwise no production deployment could proceed.
 5. Set `DEPLOY_ROOT` to `/home/lpubelts_api/apps/api-server-prod`.
-6. Change the production PM2 process to run `current/src/lpubeltsApiServer.js` with `cwd` set to `current`.
+6. Bootstrap `lpubelts-api-server-prod-next` from the tracked `ecosystem.prod.json`; it runs `current/src/lpubeltsApiServer.js` with `cwd` set to `current`.
 7. Keep fork mode with one instance. The accepted brief restart interruption means cluster mode is unnecessary.
 8. Retain three successful releases: the current release and two rollback candidates.
 
@@ -223,7 +231,7 @@ For an urgent release rollback on the new production deployment:
 
 1. Resolve the current symlink and identify one of the two retained rollback releases.
 2. Atomically point `current` to that release.
-3. Restart only the new production PM2 process identified by the GitHub environment's `PM2_APP_NAME`.
+3. Restart only `lpubelts-api-server-prod-next`, which is also the GitHub environment's `PM2_APP_NAME`.
 4. Verify the production readiness URL and a low-impact user flow.
 
 Do not automatically roll back `.env.production`, credentials, Firebase data, uploads, or export-state files. Those need separate, situation-specific procedures.
@@ -243,7 +251,7 @@ Use this sequence:
 5. Point a local or non-production frontend build at `api.lpubelts.com` and complete end-to-end testing. Add only the exact test frontend origin to `CORS_ORIGIN` if needed, then remove it when testing is complete.
 6. Confirm that scheduled jobs, imports, email, uploads, and other side effects will not run twice while both backends exist. Keep each production cron job assigned to only one deployment.
 7. Deploy the frontend change that selects `https://api.lpubelts.com` as its production API base URL.
-8. Monitor readiness, errors, PM2 restarts, and representative user flows after the frontend cutover.
+8. Monitor readiness, fatal-error exits, PM2 restarts for `lpubelts-api-server-prod-next`, and representative user flows after the frontend cutover.
 9. Keep the old backend runnable for at least one normal operating cycle, preferably one week. Extend this period if infrequent scheduled jobs have not yet run through the new path.
 10. After the observation period, disable the old process but retain its files and configuration for a further short recovery period. Remove it only through a separately reviewed cleanup.
 
@@ -257,6 +265,21 @@ After creating or changing either process:
 2. Run `pm2 save` so the process list can be restored.
 3. On this Managed VPS, where `sudo` may not be available, configure a reviewed DreamHost `@reboot` cron entry that sets the correct Node/PM2 `PATH` and runs `pm2 resurrect` for `lpubelts_api`.
 4. Test process restoration during a planned server restart. `pm2 save` by itself does not start PM2 after reboot.
+
+For the first production start, use the exact sanitized-environment command in
+`.github/DEPLOYMENT.md`, then inspect `pm2 env <pm_id>`. The environment loader
+does not override variables already inherited by PM2, so the initial process
+must not retain stale API or job configuration. The tracked production definition
+allows PM2 12 seconds to stop the process; the application marks readiness false,
+stops accepting connections, and allows a 10-second drain. Fatal process and
+listener errors use the same drain and then exit nonzero so PM2 can restart the
+process.
+
+The collection analyzer writes historical daily files independently from current
+publication. After a backfill, it publishes API and public current data from the
+newest available backup. Lock photo coverage counts only media entries with an
+image URL, and the top-250 segment first selects locks by views before counting
+their image coverage.
 
 Keep both applications on the same Node 24 patch release, Yarn 4.18.0, and reviewed PM2 version. Test runtime upgrades in development first. Configure log rotation and monitor disk use, especially because each retained production release has its own `node_modules` tree.
 
@@ -277,7 +300,7 @@ Weekly, review PM2 status, logs, restart counts, disk use, and failed workflows.
 
 1. Verify ownership and permissions on `/home/lpubelts_api/apps/api-server-dev` and `/home/lpubelts_api/apps/api-server-prod`.
 2. Complete the production root with `incoming`, `releases`, an initial release, and a `current` symlink; add the stable subdirectories required beneath both `shared` directories.
-3. Update the workflow and both PM2 definitions to use `src/lpubeltsApiServer.js` and the new deployment roots.
+3. Validate the workflow and tracked PM2 definitions use `src/lpubeltsApiServer.js`, the new deployment roots, and `lpubelts-api-server-prod-next`.
 4. Configure `.env.development` for port `10081` and `lpubelts-dev`; verify all live-effect features are disabled or use development targets.
 5. Configure DreamHost proxies and SSL for both hostnames and ports.
 6. Point the development PM2 process at the mutable development `current` directory.

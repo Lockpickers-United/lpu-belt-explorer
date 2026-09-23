@@ -181,9 +181,6 @@ export async function collectionAnalyzer({blackBeltOnly, date, backupDir, items}
 async function analyzeCollectionDate({
     date,
     backupDir,
-    dailyDir,
-    apiDir,
-    publicDataDir,
     items,
     runDate
 }) {
@@ -228,21 +225,6 @@ async function analyzeCollectionDate({
         blackBeltOnly
     }
 
-    await Promise.all([
-        writeJsonFileAtomic(
-            path.join(apiDir, 'collectionStatsByIdFull.json'),
-            collectionStatsById
-        ),
-        writeJsonFileAtomic(
-            path.join(dailyDir, `collectionStats_${date}.json`),
-            collectionStatsCurrent
-        ),
-        writeJsonFileAtomic(
-            path.join(publicDataDir, 'collectionStatsCurrent.json'),
-            collectionStatsCurrent
-        )
-    ])
-
     return {collectionStatsById, collectionStatsCurrent}
 }
 
@@ -267,33 +249,55 @@ export async function runCollectionAnalysis({
         readDirIfExists(dailyDir)
     ])
     const backupDates = datesFromFiles(backupFiles, backupFilePattern)
+        .sort()
     const statsDates = new Set(datesFromFiles(statsFiles, statsFilePattern))
     const today = dayjs(runDate).format('YYYY-MM-DD')
     const datesToProcess = backupDates
         .filter(date => !statsDates.has(date) || date === today)
-        .sort()
 
     if (datesToProcess.length === 0) {
         return Object.freeze({processedDates: [], latestDate: null})
     }
 
     const items = await itemDetailsLoader()
+    const analysisByDate = new Map()
 
     for (const date of datesToProcess) {
-        await analyzeCollectionDate({
+        const analysis = await analyzeCollectionDate({
             date,
             backupDir,
-            dailyDir,
-            apiDir,
-            publicDataDir,
             items,
             runDate
         })
+        analysisByDate.set(date, analysis)
+        await writeJsonFileAtomic(
+            path.join(dailyDir, `collectionStats_${date}.json`),
+            analysis.collectionStatsCurrent
+        )
     }
+
+    const latestDate = backupDates.at(-1)
+    const latestAnalysis = analysisByDate.get(latestDate)
+        ?? await analyzeCollectionDate({
+            date: latestDate,
+            backupDir,
+            items,
+            runDate
+        })
+    await Promise.all([
+        writeJsonFileAtomic(
+            path.join(apiDir, 'collectionStatsByIdFull.json'),
+            latestAnalysis.collectionStatsById
+        ),
+        writeJsonFileAtomic(
+            path.join(publicDataDir, 'collectionStatsCurrent.json'),
+            latestAnalysis.collectionStatsCurrent
+        )
+    ])
 
     return Object.freeze({
         processedDates: datesToProcess,
-        latestDate: datesToProcess.at(-1) ?? null
+        latestDate
     })
 }
 

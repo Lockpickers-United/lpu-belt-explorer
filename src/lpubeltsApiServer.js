@@ -26,6 +26,7 @@ import {loadRuntimeEnvironment} from './util/runtimeEnvironment.js'
 import {loadServerRuntimeConfig} from './config/serverRuntimeConfig.js'
 import {loadReleaseMetadata} from './util/releaseMetadata.js'
 import {createReadinessController} from './util/readiness.js'
+import {installProcessLifecycleHandlers} from './util/processLifecycle.js'
 import {getFirebaseAdminApp} from './api/services/firebaseAdmin.js'
 
 const projectRoot = fileURLToPath(new URL('../', import.meta.url))
@@ -131,35 +132,11 @@ app.use((err, req, res, next) => {
     res.status(status).json({ error: payload })
 })
 
-// Prevent process from exiting on unhandled errors; log them instead
-process.on('unhandledRejection', (reason) => {
-    try { logger.error({ reason }, 'unhandledRejection') } catch { console.error('unhandledRejection', reason) }
-})
-process.on('uncaughtException', (err) => {
-    try { logger.error({ err }, 'uncaughtException') } catch { console.error('uncaughtException', err) }
-})
-
 const server = app.listen(port, host, () => {
     readiness.markReady()
     logger.info({env, port, apiPrefix, host, corsOrigin, trustProxy}, 'SERVER STARTED')
 })
-server.on('error', (err) => {
-    readiness.markNotReady('server_error')
-    try { logger.error({ err }, 'server error') } catch { console.error('server error', err) }
-})
-for (const signal of ['SIGTERM', 'SIGINT']) {
-    process.once(signal, () => {
-        readiness.markNotReady('shutting_down')
-        server.close(error => {
-            if (error) {
-                try { logger.error({err: error}, 'server shutdown error') } catch {
-                    console.error('server shutdown error', error)
-                }
-                process.exitCode = 1
-            }
-        })
-    })
-}
+installProcessLifecycleHandlers({server, readiness, logger})
 logger.info(requestLockConfigSummary(requestLockRuntime.config), 'request-lock runtime configured')
 logger.info(uploadContentConfigSummary(uploadContentRuntime.config), 'upload-content runtime configured')
 logger.info(emailFormConfigSummary(emailFormRuntime.config), 'email-form runtime configured')

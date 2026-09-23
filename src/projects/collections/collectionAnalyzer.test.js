@@ -159,4 +159,69 @@ describe('runCollectionAnalysis', () => {
         expect(result).toEqual({processedDates: [], latestDate: null})
         expect(itemDetailsLoader).not.toHaveBeenCalled()
     })
+
+    it('backfills an older date but publishes from the newest backup', async () => {
+        const root = await fs.mkdtemp(path.join(os.tmpdir(), 'lpu-collection-analysis-'))
+        tempDirs.push(root)
+        const backupDir = path.join(root, 'backups')
+        const dailyDir = path.join(root, 'daily')
+        const apiDir = path.join(root, 'api-data')
+        const publicDataDir = path.join(root, 'public-data')
+        await writeBackup(backupDir, '2026-09-10', {
+            'user-1': {own: ['lock-1']}
+        })
+        await writeBackup(backupDir, '2026-09-12', {
+            'user-1': {own: ['lock-1']},
+            'user-2': {wishlist: ['lock-1']}
+        })
+        await fs.mkdir(dailyDir, {recursive: true})
+        await fs.writeFile(
+            path.join(dailyDir, 'collectionStats_2026-09-12.json'),
+            JSON.stringify({preserved: true})
+        )
+
+        const result = await runCollectionAnalysis({
+            backupDir,
+            dailyDir,
+            apiDir,
+            publicDataDir,
+            itemDetailsLoader: vi.fn().mockResolvedValue({
+                'lock-1': {
+                    type: 'lock',
+                    belt: 'White',
+                    shortName: 'Test Lock',
+                    itemName: 'Test Lock'
+                }
+            }),
+            now: () => new Date('2026-09-13T12:00:00.000Z')
+        })
+
+        expect(result).toEqual({
+            processedDates: ['2026-09-10'],
+            latestDate: '2026-09-12'
+        })
+        const historicalStats = JSON.parse(await fs.readFile(
+            path.join(dailyDir, 'collectionStats_2026-09-10.json'),
+            'utf8'
+        ))
+        expect(historicalStats.allUsers.totalProfiles).toBe(1)
+        expect(JSON.parse(await fs.readFile(
+            path.join(dailyDir, 'collectionStats_2026-09-12.json'),
+            'utf8'
+        ))).toEqual({preserved: true})
+
+        const currentStats = JSON.parse(await fs.readFile(
+            path.join(publicDataDir, 'collectionStatsCurrent.json'),
+            'utf8'
+        ))
+        expect(currentStats.allUsers.totalProfiles).toBe(2)
+        const apiStats = JSON.parse(await fs.readFile(
+            path.join(apiDir, 'collectionStatsByIdFull.json'),
+            'utf8'
+        ))
+        expect(apiStats.data.locks).toEqual([expect.objectContaining({
+            id: 'lock-1',
+            totalSaves: 2
+        })])
+    })
 })

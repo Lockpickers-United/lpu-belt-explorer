@@ -100,6 +100,10 @@ jobs:
           [[ "$SFTP_PORT" =~ ^[0-9]+$ ]] || exit 1
           [[ "$SFTP_USER" =~ ^[a-zA-Z0-9._-]+$ ]] || exit 1
           [[ "$PM2_APP_NAME" =~ ^[a-zA-Z0-9._-]+$ ]] || exit 1
+          [[ "$PM2_APP_NAME" == "lpubelts-api-server-prod-next" ]] || {
+            echo "PM2_APP_NAME must match ecosystem.prod.json." >&2
+            exit 1
+          }
           [[ "$DEPLOY_ROOT" =~ ^/[a-zA-Z0-9._/-]+$ ]] || exit 1
           [[ "$REMOTE_NODE_BIN" =~ ^/[a-zA-Z0-9._/-]+$ ]] || exit 1
           [[ "$DEPLOY_ROOT" != "/" && "$DEPLOY_ROOT" != *".."* ]] || exit 1

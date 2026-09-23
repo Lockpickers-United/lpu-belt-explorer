@@ -72,6 +72,9 @@ Do not reorganize the repository into a shared application directory. Sharing so
 
 ## Cutover
 
-Build and test the new production deployment alongside the existing backend. Use a distinct PM2 process name, such as `lpubelts-api-server-prod-next`, while both processes exist. Once the new hostname is healthy and verified, change the frontend API base URL to `https://api.lpubelts.com`.
+Build and test the new production deployment alongside the existing backend. Use
+the tracked `lpubelts-api-server-prod-next` PM2 process name while both processes
+exist and retain it after cutover. Once the new hostname is healthy and verified,
+change the frontend API base URL to `https://api.lpubelts.com`.
 
 Keep the old backend available through at least one normal operating cycle, preferably a week, before retirement. Confirm that running both versions does not duplicate cron jobs, exports, emails, or other scheduled side effects.

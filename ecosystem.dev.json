@@ -8,6 +8,7 @@
       "instances": 1,
       "exec_mode": "fork",
       "min_uptime": "10s",
+      "kill_timeout": 12000,
       "merge_logs": true,
       "out_file": "/home/lpubelts_api/apps/api-server-dev/shared/logs/lpubeltsApiServer-out.log",
       "error_file": "/home/lpubelts_api/apps/api-server-dev/shared/logs/lpubeltsApiServer-error.log",

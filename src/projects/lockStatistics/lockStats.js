@@ -25,15 +25,24 @@ function mechanismId(mechanism) {
     return mechanism.replaceAll(/[ |/]/g, '-').toLowerCase()
 }
 
+function hasValidImage(entry) {
+    return Array.isArray(entry.media) && entry.media.some(media =>
+        typeof media?.fullSizeUrl === 'string' && media.fullSizeUrl.trim().length > 0
+    )
+}
+
 function buildImageContributorStats(allEntries) {
     const imageContributors = Object.values(allEntries).reduce((acc, entry) => {
         if (!Array.isArray(entry.media)) return acc
         entry.media.forEach(media => {
-            if (!media.fullSizeUrl) return
+            if (typeof media?.fullSizeUrl !== 'string' || !media.fullSizeUrl.trim()) return
+            const contributor = typeof media.title === 'string'
+                ? media.title.replace('By: ', '').trim()
+                : undefined
             setDeep(
                 acc,
                 [media.fullSizeUrl],
-                media.title?.replace('By: ', '').trim()
+                contributor
             )
         })
         return acc
@@ -45,7 +54,7 @@ function buildImageContributorStats(allEntries) {
 
     return {
         uniqueImages: Object.keys(imageContributors).length,
-        contributors: new Set(Object.values(imageContributors)).size,
+        contributors: Object.keys(contributorCounts).length,
         topPhotographers: Object.entries(contributorCounts)
             .map(([contributor, images]) => ({contributor, images}))
             .sort((a, b) => b.images - a.images
@@ -110,20 +119,19 @@ export function buildLockStats({lockData, allEntries, runDate}) {
     delete lockStats.locksByMechanismByBelt
 
     const photoCounts = lockData.reduce((acc, lock) => {
-        if (lock.media) {
+        if (hasValidImage(lock)) {
             setDeepAdd(acc, ['All locks'], 1)
             if (lock.belt !== 'Unranked') setDeepAdd(acc, ['Ranked locks'], 1)
         }
         return acc
     }, {})
-    lockData
-        .filter(lock => lock.views)
+    const topLocks = lockData
+        .filter(lock => Number.isFinite(lock.views) && lock.views > 0)
         .sort((a, b) => b.views - a.views)
         .slice(0, topN)
-        .forEach(() => setDeepAdd(photoCounts, [`Top ${topN} locks`], 1))
 
     const rankedLocks = segmentCounts.Ranked ?? 0
-    const topLockMedia = photoCounts[`Top ${topN} locks`] ?? 0
+    const topLockMedia = topLocks.filter(hasValidImage).length
     const rankedLockMedia = photoCounts['Ranked locks'] ?? 0
     const allLockMedia = photoCounts['All locks'] ?? 0
     const contributorStats = buildImageContributorStats(allEntries)
