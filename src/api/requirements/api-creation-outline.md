@@ -4,7 +4,7 @@
 
 Extend this repo, but keep the new API as a small, isolated module inside the existing Express server.
 
-`src/exploreLPUbeltsServer.js` is already an Express API process with CORS, Helmet, JSON limits, logging, request IDs, centralized errors, and route registration. `src/routes.js` already uses lazy route loading, which is good for production memory.
+`../../lpubeltsApiServer.js` is already an Express API process with CORS, Helmet, JSON limits, logging, request IDs, centralized errors, and route registration. `src/routes.js` already uses lazy route loading, which is good for production memory.
 
 Starting a second Node service would usually cost more memory because it would require another Node runtime, another Express app, another Firebase client, another logging stack, and related infrastructure. If production memory is tight, one process with lazy routes is usually better than two processes.
 

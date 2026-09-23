@@ -1,0 +1,18 @@
+{
+  "apps": [
+    {
+      "name": "lpubelts-api-server-dev",
+      "cwd": "/home/lpubelts_api/apps/api-server-dev/current",
+      "script": "/home/lpubelts_api/apps/api-server-dev/current/src/lpubeltsApiServer.js",
+      "node_args": "",
+      "instances": 1,
+      "exec_mode": "fork",
+      "merge_logs": true,
+      "out_file": "/home/lpubelts_api/apps/api-server-dev/shared/logs/lpubeltsApiServer-out.log",
+      "error_file": "/home/lpubelts_api/apps/api-server-dev/shared/logs/lpubeltsApiServer-error.log",
+      "env": {
+        "NODE_ENV": "development"
+      }
+    }
+  ]
+}

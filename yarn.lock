@@ -3473,59 +3473,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"explorelpubeltsserver@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "explorelpubeltsserver@workspace:."
-  dependencies:
-    "@devvit/public-api": "npm:^0.14.3"
-    "@eslint/compat": "npm:^2.1.1"
-    "@eslint/eslintrc": "npm:^3.3.7"
-    "@eslint/js": "npm:9.39.5"
-    "@google-cloud/local-auth": "npm:^3.0.1"
-    archiver: "npm:^8.0.0"
-    axios: "npm:^1.20.0"
-    basic-ftp: "npm:^6.2.1"
-    cors: "npm:^2.8.6"
-    csv-parse: "npm:^7.0.2"
-    dayjs: "npm:^1.11.23"
-    dotenv: "npm:^17.4.2"
-    eslint: "npm:9.39.5"
-    eslint-config-flat-gitignore: "npm:^2.4.0"
-    eslint-plugin-import: "npm:^2.32.0"
-    eslint-plugin-react: "npm:^7.37.5"
-    eslint-plugin-react-hooks: "npm:^7.1.1"
-    express: "npm:^5.2.1"
-    express-useragent: "npm:^2.2.3"
-    firebase: "npm:^12.19.0"
-    firebase-admin: "npm:^14.4.0"
-    flickr-sdk: "npm:^7.1.0"
-    formidable: "npm:^3.5.4"
-    fuse.js: "npm:^7.5.0"
-    geoip-lite: "npm:2.0.3"
-    globals: "npm:^17.12.0"
-    googleapis: "npm:^180.0.0"
-    helmet: "npm:^8.3.0"
-    hexoid: "npm:^2.0.0"
-    joi: "npm:^18.2.9"
-    json-2-csv: "npm:^5.6.0"
-    moment-timezone: "npm:^0.6.3"
-    node-fetch: "npm:^3.3.2"
-    node-fetch-cookies: "npm:^2.1.1"
-    nodemailer: "npm:^10.0.9"
-    pino: "npm:^10.3.1"
-    pino-http: "npm:^11.0.0"
-    pino-pretty: "npm:^13.1.3"
-    sharp: "npm:^0.35.4"
-    snoowrap: "npm:^1.23.0"
-    ssl-root-cas: "npm:^1.3.1"
-    supertest: "npm:^7.2.2"
-    validator: "npm:^13.15.35"
-    vite: "npm:^8.3.0"
-    vitest: "npm:^5.0.0"
-    zod: "npm:^4.6.5"
-  languageName: unknown
-  linkType: soft
-
 "exponential-backoff@npm:^3.1.1":
   version: 3.1.3
   resolution: "exponential-backoff@npm:3.1.3"
@@ -5493,6 +5440,59 @@ __metadata:
   checksum: 10c0/655d110220983c1a4b9c0c679a2e8016d4b67f6e9c7b5435ff5979ecdb20d0813f4dec0a08674fcbdd4846a3f07edbb50a36811fd37930b94aaa0d9daceb017e
   languageName: node
   linkType: hard
+
+"lpubeltsapiserver@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "lpubeltsapiserver@workspace:."
+  dependencies:
+    "@devvit/public-api": "npm:^0.14.3"
+    "@eslint/compat": "npm:^2.1.1"
+    "@eslint/eslintrc": "npm:^3.3.7"
+    "@eslint/js": "npm:9.39.5"
+    "@google-cloud/local-auth": "npm:^3.0.1"
+    archiver: "npm:^8.0.0"
+    axios: "npm:^1.20.0"
+    basic-ftp: "npm:^6.2.1"
+    cors: "npm:^2.8.6"
+    csv-parse: "npm:^7.0.2"
+    dayjs: "npm:^1.11.23"
+    dotenv: "npm:^17.4.2"
+    eslint: "npm:9.39.5"
+    eslint-config-flat-gitignore: "npm:^2.4.0"
+    eslint-plugin-import: "npm:^2.32.0"
+    eslint-plugin-react: "npm:^7.37.5"
+    eslint-plugin-react-hooks: "npm:^7.1.1"
+    express: "npm:^5.2.1"
+    express-useragent: "npm:^2.2.3"
+    firebase: "npm:^12.19.0"
+    firebase-admin: "npm:^14.4.0"
+    flickr-sdk: "npm:^7.1.0"
+    formidable: "npm:^3.5.4"
+    fuse.js: "npm:^7.5.0"
+    geoip-lite: "npm:2.0.3"
+    globals: "npm:^17.12.0"
+    googleapis: "npm:^180.0.0"
+    helmet: "npm:^8.3.0"
+    hexoid: "npm:^2.0.0"
+    joi: "npm:^18.2.9"
+    json-2-csv: "npm:^5.6.0"
+    moment-timezone: "npm:^0.6.3"
+    node-fetch: "npm:^3.3.2"
+    node-fetch-cookies: "npm:^2.1.1"
+    nodemailer: "npm:^10.0.9"
+    pino: "npm:^10.3.1"
+    pino-http: "npm:^11.0.0"
+    pino-pretty: "npm:^13.1.3"
+    sharp: "npm:^0.35.4"
+    snoowrap: "npm:^1.23.0"
+    ssl-root-cas: "npm:^1.3.1"
+    supertest: "npm:^7.2.2"
+    validator: "npm:^13.15.35"
+    vite: "npm:^8.3.0"
+    vitest: "npm:^5.0.0"
+    zod: "npm:^4.6.5"
+  languageName: unknown
+  linkType: soft
 
 "lru-cache@npm:^10.2.0":
   version: 10.4.3

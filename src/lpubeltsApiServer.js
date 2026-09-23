@@ -37,11 +37,12 @@ const redditBeltsRuntime = await createRedditBeltsRuntime({env: process.env})
 const flickrInfoRuntime = await createFlickrInfoRuntime({env: process.env})
 const firebaseActivityRuntime = await createFirebaseActivityRuntime({env: process.env})
 
-// node /home/dh_m5s5pf/explore-lpubelts-com-node/src/exploreLPUbeltsServerDEV.js
+// node /home/lpubelts_api/apps/api-server-dev/current/src/lpubeltsApiServer.js
+// NODE_ENV=development node /home/lpubelts_api/apps/api-server-dev/current/src/lpubeltsApiServer.js
 
-// NODE_ENV=production node /home/dh_m5s5pf/explore-lpubelts-com-node/src/exploreLPUbeltsServer.js
+// NODE_ENV=production node /home/lpubelts_api/apps/api-server-prod/current/src/lpubeltsApiServer.js
 // NODE_ENV=production pm2 restart 1 --update-env
-// tail -n 200 -f /home/dh_m5s5pf/explore-lpubelts-com-node/logs/nodeserver.log
+// tail -n 200 -f /home/lpubelts_api/apps/api-server-prod/shared/logs/lpubeltsApiServer-out.log
 
 const app = express()
 app.use(normalizeRequestUrl)

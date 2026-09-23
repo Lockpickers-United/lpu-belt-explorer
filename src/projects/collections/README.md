@@ -66,6 +66,26 @@ node --env-file=.env.production src/projects/collections/awardsEvidenceExport.js
 
 Before the next scheduled run, each cron entry must be updated to provide the required explicit environment variables. Do not run these commands manually or update production cron configuration without approval.
 
+## Create a full incremental baseline
+
+Pass `--full` to ignore any existing raw lockcollections export and rebuild it from the complete Firestore collection:
+
+```bash
+node --env-file=src/projects/collections/.env.development src/projects/collections/collectionsExport.js --full
+```
+
+The full run records a baseline watermark when it starts, reconciles change-index entries from the configured lookback window, and atomically writes each raw export, backup, and incremental state file in the normal order. Later runs can omit `--full` and update that baseline incrementally. This reads the complete live collection and writes configured output files, so it requires the normal approval for live-data jobs.
+
+## Combined export and analysis runner
+
+The repository-level runner loads the collections configuration that matches the required `NODE_ENV`, then runs the collection exports and dependent analysis jobs in order. It stops at the first failed job.
+
+```bash
+NODE_ENV=development node /home/lpubelts_api/apps/api-server-dev/current/scripts/collectionExportAnalysis.js
+```
+
+Supported environments are `local`, `development`, and `production`, corresponding to `.env.local`, `.env.development`, and `.env.production` in this directory. The runner performs live-data and output-writing work, so inspect the selected configuration and obtain the required approval before executing it.
+
 ## Development API
 
 Tests and other modules can call the exporters with injected dependencies:

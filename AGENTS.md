@@ -8,7 +8,7 @@ This file applies to the entire `explore-lpubelts-com-node` repository. It is gu
 
 The main areas are:
 
-- `src/exploreLPUbeltsServer.js`: primary server entry point named by `package.json` and used by the production PM2 configuration.
+- `src/lpubeltsApiServer.js`: primary server entry point named by `package.json` and used by the production PM2 configuration.
 - `src/routes.js`: legacy/service route registration and lazy-loaded route bundles.
 - `src/api/`: versioned `/api/v1` routes, middleware, services, tests, documentation, and response examples.
 - `src/logger/`: shared Pino application and HTTP logging.
@@ -20,10 +20,21 @@ The main areas are:
 
 The sibling repository `../lpu-belt-explorer` owns the React frontend and Firebase Cloud Functions. Agents are authorized to edit that sibling automatically when an in-scope change spans both repositories; no separate permission is needed for those code edits. Inspect its working tree and applicable `AGENTS.md` first, preserve unrelated changes, and validate each repository according to its own conventions.
 
+## Agent references
+
+Load the applicable operational reference before changing deployment or runtime configuration:
+
+- `.agents/references/deployment-topology.md`
+- `.agents/references/development-operations.md`
+- `.agents/references/production-releases.md`
+- `.agents/references/firebase-runtime-targets.md`
+
+The index at `.agents/references/README.md` describes their scope. Update the relevant reference when deployment topology, PM2 operation, release handling, or Firebase environment selection changes.
+
 ## Runtime and package management
 
 - Use JavaScript only. Do not introduce TypeScript or a type-checking toolchain unless the user explicitly requests that migration.
-- The root package is ES-module based (`"type": "module"`). Use `import`/`export` and explicit local file extensions. Configuration files that are intentionally `.cjs`, such as the PM2 configuration, remain CommonJS.
+- The root package is ES-module based (`"type": "module"`). Use `import`/`export` and explicit local file extensions. Configuration files that are intentionally `.cjs` remain CommonJS. Use JSON for PM2 process declarations in this repository; see `.agents/references/development-operations.md`.
 - Use Node 24 or newer; modern ESM, top-level `await`, and global web APIs are assumed. `package.json` enforces this minimum, and the production deployment workflow uses Node 24.
 - Use Yarn. `package.json` declares Yarn 4.18.0, `.yarnrc.yml` uses the `node-modules` linker, and `yarn.lock` is authoritative.
 - This is not declared as a Yarn workspace. Directories with their own `package.json`/lockfile are separate package boundaries; follow the nearest package configuration when working in one.
@@ -74,7 +85,7 @@ Prefer shared helpers from `src/util/`, API services, and established route wrap
 
 The primary request flow is:
 
-1. `src/exploreLPUbeltsServer.js` configures security, body parsing, proxy trust, request logging, request IDs, CORS, and centralized errors.
+1. `src/lpubeltsApiServer.js` configures security, body parsing, proxy trust, request logging, request IDs, CORS, and centralized errors.
 2. `registerRoutes()` in `src/routes.js` mounts health/testing routes, lazy-loaded service bundles, and the versioned API.
 3. `src/api/index.js` mounts `/api/v1` resource routers.
 4. API route modules validate HTTP input and delegate data work to `src/api/services/`.

@@ -49,25 +49,25 @@ Security note: Secrets are committed for convenience in this repo snapshot. If y
     - serverDir resolves to
         - Prod: `/home/${prodUser}/explore.lpubelts.com/public/data`
         - Local: `/Users/${localUser}/Documents/LOCKPICK/LPU-Belt-Explorer/BeltCounts`
-- Main server (src/exploreLPUbeltsServer.js) determines keys path based on whether process.env.USER === prodUser.
+- Main server (src/lpubeltsApiServer.js) determines keys path based on whether process.env.USER === prodUser.
 - If your local OS account name differs from keys/users.js localUser, either:
     - export USER=nealbayless temporarily (affects behavior broadly), or
     - adjust localUser in keys/users.js for your machine, or
     - modify the specific script to accept overrides via env (recommended for long-term, e.g., LOCAL_USER or explicit DATA_DIR).
 
 #### 5) Running the HTTP(S) server locally
-- Server entry: src/exploreLPUbeltsServer.js.
+- Server entry: src/lpubeltsApiServer.js.
 - It binds both HTTP and HTTPS servers. Ports are set with prod=true currently; change prod=false for a cleaner dev experience if needed. Otherwise update port mapping as desired.
 - Requirements:
     - keys/server.key and keys/server.crt files must exist and be readable.
     - Ensure process.env.USER is not prodUser (dh_m5s5pf) to use the local keys path resolution.
 - Run:
 ```
-node src/exploreLPUbeltsServer.js
+node src/lpubeltsApiServer.js
 ```
 - PM2 (prod example from file comments):
 ```
-pm2 start /home/dh_m5s5pf/explore-lpubelts-com-node/exploreLPUbeltsServer.js --watch
+pm2 start /home/dh_m5s5pf/explore-lpubelts-com-node/lpubeltsApiServer.js --watch
 ```
 
 #### 6) Running one-off project scripts
@@ -183,7 +183,7 @@ yarn test
 
 Notes:
 - These tests are side-effect free and do not require network, credentials, or filesystem.
-- If you later add integration tests for the server, refactor src/exploreLPUbeltsServer.js to export the Express app without creating servers when NODE_ENV === 'test'. For example:
+- If you later add integration tests for the server, refactor src/lpubeltsApiServer.js to export the Express app without creating servers when NODE_ENV === 'test'. For example:
 ```
 // exploreLPUbeltsApp.js
 export function createApp() { /* configure and return express() */ }
@@ -226,7 +226,7 @@ test('GET /flickr-info requires id', async () => {
 - Run: `yarn lint`.
 
 #### HTTP server endpoints
-- Provided endpoints in src/exploreLPUbeltsServer.js:
+- Provided endpoints in src/lpubeltsApiServer.js:
     - GET /flickr-info?id=...
     - POST /upload
     - POST /request-lock
@@ -271,7 +271,7 @@ test('GET /flickr-info requires id', async () => {
 ### Quickstart checklist
 1) Node 20+, Yarn installed.
 2) yarn install
-3) Place TLS certs in keys/ (or set prod=false and adjust ports/behavior in src/exploreLPUbeltsServer.js for dev).
+3) Place TLS certs in keys/ (or set prod=false and adjust ports/behavior in src/lpubeltsApiServer.js for dev).
 4) Verify keys/users.js matches your local USER or adjust as needed.
 5) Add tests with Vitest as above, run yarn test.
 6) Lint before commits: yarn lint.

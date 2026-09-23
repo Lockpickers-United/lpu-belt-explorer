@@ -44,7 +44,7 @@ DEPLOY_ROOT/
 
 ```text
 cwd:    DEPLOY_ROOT/current
-script: DEPLOY_ROOT/current/src/exploreLPUbeltsServer.js
+script: DEPLOY_ROOT/current/src/lpubeltsApiServer.js
 ```
 
 Production cron entries should likewise run scripts beneath `DEPLOY_ROOT/current`. Keep `.env.production`, credentials, logs, generated data, and writable upload/output directories under stable shared or external paths. The workflow links `shared/.env.production` into each release and never uploads an environment file.

@@ -1,8 +1,8 @@
 {
-  "name": "explorelpubeltsserver",
+  "name": "lpubeltsapiserver",
   "version": "1.0.0",
   "description": "",
-  "main": "src/exploreLPUbeltsServer.js",
+  "main": "src/lpubeltsApiServer.js",
   "type": "module",
   "scripts": {
     "test": "vitest",

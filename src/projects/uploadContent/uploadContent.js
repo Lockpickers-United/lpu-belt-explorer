@@ -216,6 +216,7 @@ export function createUploadContentHandler({
             } catch (err) {
                 failureMessage = 'Upload metadata write error'
                 log.error({err}, failureMessage)
+                throw err
             }
             await fs.promises.writeFile(
                 path.join(workspaceDir, 'uploadData.json'),

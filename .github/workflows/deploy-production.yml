@@ -212,7 +212,7 @@ jobs:
 
           cd "$release_dir"
           corepack yarn install --immutable
-          node --check src/exploreLPUbeltsServer.js
+          node --check src/lpubeltsApiServer.js
 
           previous_release=$(readlink "$current_link")
 

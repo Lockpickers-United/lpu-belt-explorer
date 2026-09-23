@@ -154,13 +154,15 @@ async function fetchLockcollectionDocs(db, userIds) {
     return docs
 }
 
-async function getExistingOrBootstrapData({db, exportFile}) {
-    const previousExport = await readJsonFile(exportFile)
-    if (Array.isArray(previousExport?.data)) {
-        return {
-            data: previousExport.data,
-            bootstrapped: false,
-            bootstrapReadCount: 0
+async function getExistingOrBootstrapData({db, exportFile, fullExport}) {
+    if (!fullExport) {
+        const previousExport = await readJsonFile(exportFile)
+        if (Array.isArray(previousExport?.data)) {
+            return {
+                data: previousExport.data,
+                bootstrapped: false,
+                bootstrapReadCount: 0
+            }
         }
     }
 
@@ -192,17 +194,24 @@ export async function runCollectionsExport({
     lookbackMs,
     trigger = 'manual',
     activityLogger = async () => {},
-    now = () => new Date()
+    now = () => new Date(),
+    fullExport = false
 }) {
     const exportFile = `${exportDir}/${collectionName}.json`
     const exportStateFile = `${exportDir}/${collectionName}.exportState.json`
     const runDate = now()
     const state = await readJsonFile(exportStateFile, {})
     const previousWatermark = timestampFromState(state.lastSuccessfulExportChangedAt)
+    const queryWatermark = fullExport ? Timestamp.fromDate(runDate) : previousWatermark
     const processedChangeKeys = new Set(state.processedChangeKeys ?? [])
-    const existing = await getExistingOrBootstrapData({db, exportFile})
+    const existing = await getExistingOrBootstrapData({db, exportFile, fullExport})
     const userMap = exportDataToUserMap(existing)
-    const changed = await getChangedUsersSince({db, watermark: previousWatermark, processedChangeKeys, lookbackMs})
+    const changed = await getChangedUsersSince({
+        db,
+        watermark: queryWatermark,
+        processedChangeKeys,
+        lookbackMs
+    })
     const changedDocs = await fetchLockcollectionDocs(db, changed.changedUserIds)
     const deletedDocIds = []
 
@@ -220,13 +229,15 @@ export async function runCollectionsExport({
         collection: collectionName,
         date: runDate.toISOString(),
         docCount: data.length,
-        incremental: true,
+        incremental: !fullExport,
+        fullExport,
         bootstrapped: existing.bootstrapped,
         changedDocCount: changed.changedUserIds.length,
         deletedDocCount: deletedDocIds.length,
         changeIndexReadCount: changed.changeIndexReadCount,
         lockcollectionReadCount: existing.bootstrapReadCount + changedDocs.length,
         previousWatermark: timestampForState(previousWatermark),
+        queryWatermark: timestampForState(queryWatermark),
         newWatermark: timestampForState(changed.maxChangedAt),
         lookbackMs
     }
@@ -261,7 +272,9 @@ export async function runCollectionsExport({
         }
     ], activityLogger)
 
-    if (trigger !== 'cronjob') console.log('Incremental collection export complete', metadata)
+    if (trigger !== 'cronjob') {
+        console.log(fullExport ? 'Full collection baseline export complete' : 'Incremental collection export complete', metadata)
+    }
 
     return fullDb
 }
@@ -287,12 +300,14 @@ export async function collectionsExportMain({
     const db = await getExportFirestore(config)
     const {default: postFirebaseActivity} = await import('../../util/postFirebaseActivity.js')
     const trigger = argv.includes('cron') ? 'cronjob' : 'manual'
+    const fullExport = argv.includes('--full')
     return runCollectionsExport({
         db,
         backupDir: config.backupDir,
         exportDir: config.exportDir,
         lookbackMs: config.lookbackMs,
         trigger,
+        fullExport,
         activityLogger: messages => postFirebaseActivity({activityData: messages})
     })
 }
