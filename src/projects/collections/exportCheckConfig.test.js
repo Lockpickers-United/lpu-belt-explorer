@@ -7,6 +7,8 @@ import {collectionStatsProcessMain} from './collectionStatsProcess.js'
 import {exportAllProcessorMain} from './exportAllProcessor.js'
 import {leaderboardStatsProcessMain} from './leaderboardStatsProcess.js'
 import {raflCollectionUtilsMain} from './raflCollectionUtils.js'
+import {discordBeltCountsDownloadMain} from './discordBeltCountsDownload.js'
+import {lockStatsMain} from '../lockStatistics/lockStats.js'
 
 const env = {
     NODE_ENV: 'development',
@@ -30,7 +32,9 @@ describe('exporter --check-config mode', () => {
         ['collection stats processor', collectionStatsProcessMain],
         ['export-all processor', exportAllProcessorMain],
         ['leaderboard stats processor', leaderboardStatsProcessMain],
-        ['RAFL collection processor', raflCollectionUtilsMain]
+        ['RAFL collection processor', raflCollectionUtilsMain],
+        ['Discord belt counts downloader', discordBeltCountsDownloadMain],
+        ['lock statistics processor', lockStatsMain]
     ])('validates and reports %s configuration without loading credentials', async (_name, main) => {
         const writeOutput = vi.fn()
         const loadEnvironment = vi.fn().mockReturnValue({parsed: {}})
@@ -52,7 +56,7 @@ describe('exporter --check-config mode', () => {
         })
         expect(writeOutput).toHaveBeenCalledOnce()
         expect(loadEnvironment).toHaveBeenCalledWith(expect.objectContaining({
-            path: expect.stringMatching(/src\/projects\/collections\/\.env\.development$/),
+            path: expect.stringMatching(/explore-lpubelts-com-node\/\.env\.development$/),
             override: false,
             quiet: true
         }))

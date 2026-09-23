@@ -59,6 +59,8 @@ The `shared` directory is for state that must survive release changes and must n
 - uploads
 - generated data and export state that are intentionally persistent
 
+Each environment has one protected `.env.<environment>` file linked at the repository root. It contains server and command-line job settings, including `COLLECTION_*`; do not create component-specific environment files inside `src/projects`.
+
 Do not reorganize the repository into a shared application directory. Sharing source files, manifests, or dependencies between releases defeats immutable deployment and can make the previous release unusable after an update.
 
 ## Cutover

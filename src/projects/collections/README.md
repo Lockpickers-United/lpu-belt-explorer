@@ -9,7 +9,7 @@ Both modules are safe to import. Firebase credentials and clients are loaded onl
 
 ## Required configuration
 
-The collection command-line jobs load `.env.<NODE_ENV>` from this directory. `NODE_ENV` supports `local`, `development`, and `production`, and defaults to `local`. Both incremental jobs require these environment variables:
+The collection command-line jobs load `.env.<NODE_ENV>` from the repository root. `NODE_ENV` supports `local`, `development`, and `production`, and defaults to `local`. The root environment file is shared with the API server and other command-line jobs; collection settings remain namespaced with `COLLECTION_`. Both incremental jobs require these environment variables:
 
 | Variable | Purpose |
 | --- | --- |
@@ -42,6 +42,13 @@ The collection command-line jobs load `.env.<NODE_ENV>` from this directory. `NO
 `COLLECTION_EXPORT_DIR`, then writes `scorecardStats.json` to
 `COLLECTION_PUBLIC_DATA_DIR` using the platform belt-count files already in that directory.
 
+`discordBeltCountsDownload.js` downloads
+`http://explore.lpubelts.com/data/discordBeltCounts.json` and atomically writes
+`discordBeltCounts.json` to `COLLECTION_PUBLIC_DATA_DIR`.
+
+`../lockStatistics/lockStats.js` loads the public lock catalog and writes
+`lockStats.json` to `COLLECTION_PUBLIC_DATA_DIR`.
+
 `awardsEvidenceExport.js` additionally requires:
 
 | Variable | Purpose |
@@ -63,7 +70,9 @@ NODE_ENV=local node src/projects/collections/collectionAnalyzer.js --check-confi
 NODE_ENV=local node src/projects/collections/collectionStatsProcess.js --check-config
 NODE_ENV=local node src/projects/collections/leaderboardStatsProcess.js --check-config
 NODE_ENV=local node src/projects/collections/raflCollectionUtils.js --check-config
+NODE_ENV=local node src/projects/collections/discordBeltCountsDownload.js --check-config
 NODE_ENV=local node src/projects/collections/exportAllProcessor.js --check-config
+NODE_ENV=local node src/projects/lockStatistics/lockStats.js --check-config
 ```
 
 This validates and prints the selected project, database, and paths. It does not read the service-account file, initialize Firebase, contact Firestore, create directories, or write outputs.
@@ -102,14 +111,21 @@ The leaderboard processor reads the current collection backup and writes `leader
 
 The RAFL collection processor aggregates user watchlists from the current collection backup and writes `raflCollectionDetails.json` to `COLLECTION_PUBLIC_DATA_DIR`.
 
+The Discord belt-count downloader refreshes `discordBeltCounts.json` in `COLLECTION_PUBLIC_DATA_DIR` from the public belt-count endpoint. The combined runner executes it before the export-all processor consumes that file.
+
 The export-all processor combines the current collection and awards exports with item details and platform belt counts, then writes `scorecardStats.json` to `COLLECTION_PUBLIC_DATA_DIR`.
+When the combined runner refreshes Reddit belt data, `REDDIT_BELTS_OUTPUT_DIR` must resolve to the same directory as `COLLECTION_PUBLIC_DATA_DIR` so this processor reads the newly published counts.
+
+The lock statistics processor loads the public lock catalog and item details, calculates lock, mechanism, photo-coverage, and contributor statistics, and writes `lockStats.json` to `COLLECTION_PUBLIC_DATA_DIR`.
 
 ```bash
 NODE_ENV=development node src/projects/collections/collectionAnalyzer.js cron
 NODE_ENV=development node src/projects/collections/collectionStatsProcess.js cron
 NODE_ENV=development node src/projects/collections/leaderboardStatsProcess.js cron
 NODE_ENV=development node src/projects/collections/raflCollectionUtils.js cron
+NODE_ENV=development node src/projects/collections/discordBeltCountsDownload.js cron
 NODE_ENV=development node src/projects/collections/exportAllProcessor.js cron
+NODE_ENV=development node src/projects/lockStatistics/lockStats.js cron
 ```
 
 ## Create full incremental baselines
@@ -128,10 +144,10 @@ Each full run records a baseline watermark when it starts, reconciles change-ind
 The repository-level runner loads the collections configuration that matches the required `NODE_ENV`, then runs the collection exports and dependent analysis jobs in order. It stops at the first failed job.
 
 ```bash
-NODE_ENV=development node /home/lpubelts_api/apps/api-server-dev/current/scripts/runCollectionExportAnalysis.js
+NODE_ENV=development node /home/lpubelts_api/apps/api-server-dev/current/scripts/runCollectionExportAnalysis.js cron
 ```
 
-Supported environments are `local`, `development`, and `production`, corresponding to `.env.local`, `.env.development`, and `.env.production` in this directory. The runner performs live-data and output-writing work, so inspect the selected configuration and obtain the required approval before executing it.
+The `cron` argument is passed to every child job and suppresses routine progress and completion output. Omit it during a manual console run to retain that output. Supported environments are `local`, `development`, and `production`, corresponding to `.env.local`, `.env.development`, and `.env.production` in the repository root. The runner performs live-data and output-writing work, so inspect the selected configuration and obtain the required approval before executing it.
 
 ## Development API
 
@@ -143,6 +159,8 @@ Tests and other modules can call the jobs with injected dependencies:
 - `runCollectionStatsProcess(options)`
 - `runLeaderboardStatsProcess(options)`
 - `runRaflCollectionUtils(options)`
+- `runDiscordBeltCountsDownload(options)`
 - `runExportAllProcessor(options)`
+- `runLockStats(options)`
 
-Provide the exporters with a Firestore-compatible `db`, explicit directories, a lookback value, and an `activityLogger`. The awards/evidence exporter also accepts item-detail loaders. The analyzer and processors accept their configured directories directly; the analyzer, leaderboard processor, and export-all processor accept an item-detail loader. Jobs that publish timestamps also accept a deterministic `now` function for testing.
+Provide the exporters with a Firestore-compatible `db`, explicit directories, a lookback value, and an `activityLogger`. The awards/evidence exporter also accepts item-detail loaders. The analyzer and processors accept their configured directories directly; the analyzer, leaderboard, export-all, and lock-statistics processors accept item-detail loaders. Lock statistics also accepts a lock-data loader. Jobs that publish timestamps accept a deterministic `now` function for testing.

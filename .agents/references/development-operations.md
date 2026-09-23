@@ -10,13 +10,15 @@ WebStorm uploads changed files over SFTP into:
 
 Exclude `.env*`, credentials, `node_modules`, logs, uploads, and generated runtime data from automatic uploads. Install dependencies on the server when `package.json` or `yarn.lock` changes.
 
-The server validates `NODE_ENV` as `local`, `development`, or `production` and loads the matching file from the repository root. Link that path to the protected shared file once during setup:
+The server and command-line jobs validate `NODE_ENV` as `local`, `development`, or `production` and load the matching file from the repository root. This single file contains the API, integration, and `COLLECTION_*` job settings. Link that path to the protected shared file once during setup:
 
 ```sh
 ln -s ../shared/.env.development /home/lpubelts_api/apps/api-server-dev/current/.env.development
 ```
 
 Confirm that the destination does not already exist before creating the link. WebStorm must exclude the link path as well as `.env*` so an upload cannot replace it.
+
+Do not create additional environment files under `src/projects`. Standalone jobs and the combined collection runner use the same protected root file, while their config modules validate only the variables each job needs.
 
 Use a manual PM2 restart after an upload:
 

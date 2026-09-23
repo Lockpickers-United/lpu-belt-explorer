@@ -1,162 +1,223 @@
-import {localUser, prodUser} from '../../../keys/users.js'
+import fs from 'node:fs/promises'
+import path from 'node:path'
 import dayjs from 'dayjs'
 import fetch from 'node-fetch'
 import {setDeep, setDeepAdd} from '../../util/setDeep.js'
 import {itemDetails} from '../../util/getItemDetails.js'
-import fs from 'node:fs/promises'
+import isDirectRun from '../../util/isDirectRun.js'
+import {loadCollectionEnvironment} from '../collections/collectionEnvironment.js'
+import {exportJobConfigSummary, loadExportJobConfig} from '../collections/exportJobConfig.js'
 
-const production = process.env.USER !== localUser
-const serverDir = production
-    ? `/home/${prodUser}/explore.lpubelts.com/public/data`
-    : `/Users/${localUser}/Documents/LOCKPICK/LPU-Belt-Explorer/lpu-belt-explorer-analytics/Collections`
+const lockDataUrl = 'https://lpubelts.com/data.json'
+const topN = 250
 
-const lockData = await (await fetch('https://lpubelts.com/data.json')).json()
+async function writeJsonFileAtomic(filePath, data) {
+    await fs.mkdir(path.dirname(filePath), {recursive: true})
+    const tempFile = `${filePath}.tmp-${process.pid}-${Date.now()}`
+    await fs.writeFile(tempFile, JSON.stringify(data))
+    await fs.rename(tempFile, filePath)
+}
 
-const lockStats = lockData
-    .reduce((acc, lock) => {
-        if (lock.belt === 'Unranked') {
-            setDeepAdd(acc, ['lockBySegmentCounts', 'Unranked'], 1)
-        } else {
-            setDeepAdd(acc, ['lockBySegmentCounts', 'Ranked'], 1)
-        }
+export async function loadLockData(fetchImpl = fetch) {
+    const response = await fetchImpl(lockDataUrl)
+    if (!response.ok) {
+        throw new Error(`Unable to load lock data: HTTP ${response.status}`)
+    }
+    return response.json()
+}
+
+function mechanismId(mechanism) {
+    return mechanism.replaceAll(/[ |/]/g, '-').toLowerCase()
+}
+
+function buildImageContributorStats(allEntries) {
+    const imageContributors = Object.values(allEntries).reduce((acc, entry) => {
+        if (!Array.isArray(entry.media)) return acc
+        entry.media.forEach(media => {
+            if (!media.fullSizeUrl) return
+            setDeep(
+                acc,
+                [media.fullSizeUrl],
+                media.title?.replace('By: ', '').trim()
+            )
+        })
+        return acc
+    }, {})
+    const contributorCounts = Object.values(imageContributors).reduce((acc, contributor) => {
+        if (contributor) setDeepAdd(acc, [contributor], 1)
+        return acc
+    }, {})
+
+    return {
+        uniqueImages: Object.keys(imageContributors).length,
+        contributors: new Set(Object.values(imageContributors)).size,
+        topPhotographers: Object.entries(contributorCounts)
+            .map(([contributor, images]) => ({contributor, images}))
+            .sort((a, b) => b.images - a.images
+                || a.contributor.localeCompare(b.contributor))
+    }
+}
+
+export function buildLockStats({lockData, allEntries, runDate}) {
+    const lockStats = lockData.reduce((acc, lock) => {
+        const segment = lock.belt === 'Unranked' ? 'Unranked' : 'Ranked'
+        const belt = lock.belt.replace(/ \d/, '')
+        setDeepAdd(acc, ['lockBySegmentCounts', segment], 1)
         setDeepAdd(acc, ['lockBySegmentCounts', 'All'], 1)
-        setDeepAdd(acc, ['locksByBeltCounts', lock.belt.replace(/ \d/, '')], 1)
+        setDeepAdd(acc, ['locksByBeltCounts', belt], 1)
 
         if (lock.lockingMechanisms) {
             const lockingMechanism = lock.lockingMechanisms.length === 1
                 ? lock.lockingMechanisms[0]
                 : 'Multiple'
-
             setDeepAdd(acc, ['locksByMechanism', lockingMechanism], 1)
-            setDeepAdd(acc, ['locksByMechanismByBelt', lock.belt.replace(/ \d/, ''),lockingMechanism], 1)
+            setDeepAdd(acc, ['locksByMechanismByBelt', belt, lockingMechanism], 1)
         }
-        
         return acc
     }, {})
 
-const lockCounts = Object.keys(lockStats.lockBySegmentCounts).map(segment => {
-    return {
-        value: lockStats.lockBySegmentCounts[segment],
-        label: segment
+    const segmentCounts = lockStats.lockBySegmentCounts ?? {}
+    const totalLocks = segmentCounts.All ?? 0
+    lockStats.lockCounts = {
+        description: 'Locks',
+        data: Object.entries(segmentCounts).map(([label, value]) => ({value, label}))
     }
-})
-setDeep(lockStats, ['lockCounts', 'description'], 'Locks')
-setDeep(lockStats, ['lockCounts', 'data'], lockCounts)
+    lockStats.locksByBelt = Object.entries(lockStats.locksByBeltCounts ?? {})
+        .map(([belt, count]) => ({
+            belt,
+            count,
+            value: totalLocks > 0 ? count / totalLocks : 0,
+            id: belt
+        }))
+    delete lockStats.locksByBeltCounts
 
-lockStats.locksByBelt = Object.keys(lockStats.locksByBeltCounts).map(belt => {
-    return {
-        belt,
-        count: lockStats.locksByBeltCounts[belt],
-        value: lockStats.locksByBeltCounts[belt] / lockStats.lockBySegmentCounts.All,
-        id: belt
-    }
-})
-delete lockStats.locksByBeltCounts
-
-lockStats.lockingMechanisms = Object.keys(lockStats.locksByMechanism).map(mechanism => {
-    const id = mechanism.replaceAll(/[ |/]/g, '-').toLowerCase()
-    return {
-        label: mechanism,
-        value: lockStats.locksByMechanism[mechanism],
-        id
-    }
-}).sort((a, b) => b.value - a.value || a.label.localeCompare(b.label))
-delete lockStats.locksByMechanism
-
-lockStats.lockingMechanismsByBelt = Object.keys(lockStats.locksByMechanismByBelt).reduce((acc, belt) => {
-    acc[belt] = Object.keys(lockStats.locksByMechanismByBelt[belt]).map(mechanism => {
-        const id = mechanism.replaceAll(/[ |/]/g, '-').toLowerCase()
-        return {
+    lockStats.lockingMechanisms = Object.entries(lockStats.locksByMechanism ?? {})
+        .map(([mechanism, value]) => ({
             label: mechanism,
-            value: lockStats.locksByMechanismByBelt[belt][mechanism],
-            id
-        }
-    }).sort((a, b) => b.value - a.value || a.label.localeCompare(b.label))
-    return acc
-}, {})
-delete lockStats.locksByMechanismByBelt
+            value,
+            id: mechanismId(mechanism)
+        }))
+        .sort((a, b) => b.value - a.value || a.label.localeCompare(b.label))
+    delete lockStats.locksByMechanism
 
+    lockStats.lockingMechanismsByBelt = Object.entries(
+        lockStats.locksByMechanismByBelt ?? {}
+    ).reduce((acc, [belt, mechanisms]) => {
+        acc[belt] = Object.entries(mechanisms)
+            .map(([mechanism, value]) => ({
+                label: mechanism,
+                value,
+                id: mechanismId(mechanism)
+            }))
+            .sort((a, b) => b.value - a.value || a.label.localeCompare(b.label))
+        return acc
+    }, {})
+    delete lockStats.locksByMechanismByBelt
 
-
-// PHOTO STATS
-const topN = 250
-
-const photoCounts = lockData
-    .reduce((acc, lock) => {
+    const photoCounts = lockData.reduce((acc, lock) => {
         if (lock.media) {
             setDeepAdd(acc, ['All locks'], 1)
-            if (lock.belt !== 'Unranked') {
-                setDeepAdd(acc, ['Ranked locks'], 1)
-            }
+            if (lock.belt !== 'Unranked') setDeepAdd(acc, ['Ranked locks'], 1)
         }
         return acc
     }, {})
+    lockData
+        .filter(lock => lock.views)
+        .sort((a, b) => b.views - a.views)
+        .slice(0, topN)
+        .forEach(() => setDeepAdd(photoCounts, [`Top ${topN} locks`], 1))
 
-lockData
-    .filter((lock => lock.views))
-    .sort((a, b) => b.views - a.views)
-    .slice(0, topN)
-    .forEach(() => {
-        setDeepAdd(photoCounts, [`Top ${topN} locks`], 1)
+    const rankedLocks = segmentCounts.Ranked ?? 0
+    const topLockMedia = photoCounts[`Top ${topN} locks`] ?? 0
+    const rankedLockMedia = photoCounts['Ranked locks'] ?? 0
+    const allLockMedia = photoCounts['All locks'] ?? 0
+    const contributorStats = buildImageContributorStats(allEntries)
+    lockStats.photoStats = {
+        photoSegments: [
+            {
+                segment: `Top ${topN} locks`,
+                count: topN,
+                media: topLockMedia,
+                coverage: `${Math.floor((topLockMedia / topN) * 100)}%`
+            },
+            {
+                segment: 'Ranked locks',
+                count: rankedLocks,
+                media: rankedLockMedia,
+                coverage: `${rankedLocks > 0
+                    ? Math.floor((rankedLockMedia / rankedLocks) * 100)
+                    : 0}%`
+            },
+            {
+                segment: 'All locks',
+                count: totalLocks,
+                media: allLockMedia,
+                coverage: `${totalLocks > 0
+                    ? Math.floor((allLockMedia / totalLocks) * 100)
+                    : 0}%`
+            }
+        ],
+        ...contributorStats
+    }
+    delete lockStats.lockBySegmentCounts
+    lockStats.metadata = {updatedDateTime: dayjs(runDate).format('YYYY-MM-DD HH:mm')}
+
+    return lockStats
+}
+
+export async function runLockStats({
+    publicDataDir,
+    lockDataLoader = loadLockData,
+    itemDetailsLoader = itemDetails,
+    now = () => new Date()
+}) {
+    const lockData = await lockDataLoader()
+    if (!Array.isArray(lockData)) throw new Error('Invalid lock data')
+
+    const allEntries = await itemDetailsLoader()
+    if (!allEntries || typeof allEntries !== 'object' || Array.isArray(allEntries)) {
+        throw new Error('Invalid item details')
+    }
+
+    const lockStats = buildLockStats({lockData, allEntries, runDate: now()})
+    const outputFile = path.join(publicDataDir, 'lockStats.json')
+    await writeJsonFileAtomic(outputFile, lockStats)
+
+    return Object.freeze({lockCount: lockData.length, outputFile, lockStats})
+}
+
+export async function lockStatsMain({
+    env = process.env,
+    argv = process.argv,
+    writeOutput = console.log,
+    loadEnvironment,
+    lockDataLoader = loadLockData,
+    itemDetailsLoader = itemDetails,
+    now = () => new Date()
+} = {}) {
+    loadCollectionEnvironment({env, loadEnvironment})
+    const config = loadExportJobConfig({env, requirePublicDataDir: true})
+    const summary = exportJobConfigSummary(config)
+    if (argv.includes('--check-config')) {
+        writeOutput(JSON.stringify(summary, null, 2))
+        return summary
+    }
+
+    const result = await runLockStats({
+        publicDataDir: config.publicDataDir,
+        lockDataLoader,
+        itemDetailsLoader,
+        now
     })
-
-const photoSegments = [
-    {
-        segment: `Top ${topN} locks`,
-        count: topN,
-        media: photoCounts[`Top ${topN} locks`],
-        coverage: Math.floor((photoCounts[`Top ${topN} locks`] / topN) * 100) + '%'
-    },
-    {
-        segment: 'Ranked locks',
-        count: lockStats.lockBySegmentCounts.Ranked,
-        media: photoCounts['Ranked locks'],
-        coverage: Math.floor((photoCounts['Ranked locks'] / lockStats.lockBySegmentCounts.Ranked) * 100) + '%'
-    },
-    {
-        segment: 'All locks',
-        count: lockStats.lockBySegmentCounts.All,
-        media: photoCounts['All locks'],
-        coverage: Math.floor((photoCounts['All locks'] / lockStats.lockBySegmentCounts.All) * 100) + '%'
-    }
-]
-setDeep(lockStats, ['photoStats', 'photoSegments'], photoSegments)
-delete lockStats.lockBySegmentCounts
-
-
-// IMAGE CONTRIBUTORS
-const allEntries = await itemDetails()
-const imageContributors = Object.keys(allEntries)
-    .reduce((acc, entryId) => {
-        if (!allEntries[entryId].media) return acc
-        allEntries[entryId].media.map(media => {
-            setDeep(acc, [media.fullSizeUrl], media.title?.replace('By: ', '').trim())
+    if (!argv.includes('cron')) {
+        writeOutput('Lock statistics processing complete', {
+            lockCount: result.lockCount,
+            outputFile: result.outputFile
         })
-        return acc
-    }, {})
-
-const contributorCounts = Object.keys(imageContributors).reduce((acc, imageUrl) => {
-    const contributor = imageContributors[imageUrl]
-    if (contributor) {
-        setDeepAdd(acc, [contributor], 1)
     }
-    setDeepAdd(lockStats, ['photoStats', 'uniqueImages'], 1)
-    setDeep(lockStats, ['photoStats', 'contributors'], new Set(Object.values(imageContributors)).size)
-    return acc
-}, {})
+    return result
+}
 
-const topPhotographers = Object.keys(contributorCounts).map(contributor => {
-    return {contributor: contributor, images: contributorCounts[contributor]}
-}).sort((a, b) => b.images - a.images || a.contributor.localeCompare(b.contributor))
-
-setDeep(lockStats, ['photoStats', 'topPhotographers'], topPhotographers)
-
-
-// METADATA
-lockStats.metadata = {updatedDateTime: dayjs().format('YYYY-MM-DD HH:mm')}
-
-await fs.writeFile(`${serverDir}/lockStats.json`, JSON.stringify(lockStats), function (err) {
-    if (err) {
-        console.error('save lockStats error:', err)
-    }
-})
+if (isDirectRun(import.meta.url)) {
+    await lockStatsMain()
+}

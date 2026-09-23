@@ -13,7 +13,9 @@ dist
 dist-ssr
 keys
 
-scripts/
+scripts/*
+!scripts/runCollectionExportAnalysis.js
+!scripts/runCollectionExportAnalysis.test.js
 scripts/*.csv
 scripts/*.json
 scripts/*.md
