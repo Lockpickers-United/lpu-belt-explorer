@@ -115,7 +115,9 @@ describe('runLockStats', () => {
 
 describe('loadLockData', () => {
     it('reports upstream HTTP failures', async () => {
-        await expect(loadLockData(vi.fn().mockResolvedValue({ok: false, status: 503})))
-            .rejects.toThrow('Unable to load lock data: HTTP 503')
+        await expect(loadLockData({
+            env: {LPU_CATALOG_SOURCE: 'remote'},
+            fetchImpl: vi.fn().mockResolvedValue({ok: false, status: 503})
+        })).rejects.toThrow('Unable to download data.json: HTTP 503')
     })
 })

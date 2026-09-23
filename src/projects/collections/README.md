@@ -26,7 +26,7 @@ The collection command-line jobs load `.env.<NODE_ENV>` from the repository root
 | Variable | Purpose |
 | --- | --- |
 | `COLLECTION_DAILY_DIR` | Absolute directory for dated collection-statistics files |
-| `COLLECTION_API_DIR` | Absolute directory receiving `collectionStatsByIdFull.json` |
+| `COLLECTION_API_DIR` | Absolute shared generated-data directory receiving `collectionStatsByIdFull.json`; the API reads the same file |
 | `COLLECTION_PUBLIC_DATA_DIR` | Absolute directory receiving `collectionStatsCurrent.json` |
 
 `collectionStatsProcess.js` requires `COLLECTION_DAILY_DIR` for its dated inputs and
@@ -42,12 +42,25 @@ The collection command-line jobs load `.env.<NODE_ENV>` from the repository root
 `COLLECTION_EXPORT_DIR`, then writes `scorecardStats.json` to
 `COLLECTION_PUBLIC_DATA_DIR` using the platform belt-count files already in that directory.
 
-`discordBeltCountsDownload.js` downloads
-`http://explore.lpubelts.com/data/discordBeltCounts.json` and atomically writes
-`discordBeltCounts.json` to `COLLECTION_PUBLIC_DATA_DIR`.
+`discordBeltCountsDownload.js` optionally downloads the configured HTTPS belt-count
+URL and atomically writes `discordBeltCounts.json` to `COLLECTION_PUBLIC_DATA_DIR`.
+Set `DISCORD_BELT_COUNTS_REFRESH_ENABLED=true` to enable that refresh. The download
+has configurable timeout and response-size limits.
 
-`../lockStatistics/lockStats.js` loads the public lock catalog and writes
+`../lockStatistics/lockStats.js` loads the configured catalog and writes
 `lockStats.json` to `COLLECTION_PUBLIC_DATA_DIR`.
+
+Catalog consumers require `LPU_CATALOG_SOURCE=filesystem` or `remote`. Filesystem
+mode uses reviewed snapshots from the absolute `LPU_CATALOG_DIR` and is the normal
+development setting. Remote mode uses the HTTPS `LPU_CATALOG_BASE_URL` and applies
+`LPU_CATALOG_TIMEOUT_MS` and `LPU_CATALOG_MAX_BYTES` limits.
+
+`catalogSnapshotDownload.js` fetches every catalog over bounded HTTPS, validates
+all responses before publishing any of them, and atomically replaces the files in
+`LPU_CATALOG_DIR`. Set `LPU_CATALOG_REFRESH_ENABLED=true` to add it as the first
+combined-runner job. Keep `LPU_CATALOG_SOURCE=filesystem` so later jobs consume the
+fresh snapshots. The development directory is
+`/home/lpubelts_api/apps/api-server-dev/shared/snapshots`.
 
 `awardsEvidenceExport.js` additionally requires:
 
@@ -70,6 +83,7 @@ NODE_ENV=local node src/projects/collections/collectionAnalyzer.js --check-confi
 NODE_ENV=local node src/projects/collections/collectionStatsProcess.js --check-config
 NODE_ENV=local node src/projects/collections/leaderboardStatsProcess.js --check-config
 NODE_ENV=local node src/projects/collections/raflCollectionUtils.js --check-config
+NODE_ENV=local node src/projects/collections/catalogSnapshotDownload.js --check-config
 NODE_ENV=local node src/projects/collections/discordBeltCountsDownload.js --check-config
 NODE_ENV=local node src/projects/collections/exportAllProcessor.js --check-config
 NODE_ENV=local node src/projects/lockStatistics/lockStats.js --check-config
@@ -111,18 +125,23 @@ The leaderboard processor reads the current collection backup and writes `leader
 
 The RAFL collection processor aggregates user watchlists from the current collection backup and writes `raflCollectionDetails.json` to `COLLECTION_PUBLIC_DATA_DIR`.
 
-The Discord belt-count downloader refreshes `discordBeltCounts.json` in `COLLECTION_PUBLIC_DATA_DIR` from the public belt-count endpoint. The combined runner executes it before the export-all processor consumes that file.
+The Discord belt-count downloader refreshes `discordBeltCounts.json` only when
+`DISCORD_BELT_COUNTS_REFRESH_ENABLED=true`. Otherwise the combined runner validates
+and uses the reviewed file already in `COLLECTION_PUBLIC_DATA_DIR`.
 
 The export-all processor combines the current collection and awards exports with item details and platform belt counts, then writes `scorecardStats.json` to `COLLECTION_PUBLIC_DATA_DIR`.
 When the combined runner refreshes Reddit belt data, `REDDIT_BELTS_OUTPUT_DIR` must resolve to the same directory as `COLLECTION_PUBLIC_DATA_DIR` so this processor reads the newly published counts.
 
-The lock statistics processor loads the public lock catalog and item details, calculates lock, mechanism, photo-coverage, and contributor statistics, and writes `lockStats.json` to `COLLECTION_PUBLIC_DATA_DIR`.
+The lock statistics processor loads the configured catalog snapshots or bounded
+remote data, calculates lock, mechanism, photo-coverage, and contributor statistics,
+and writes `lockStats.json` to `COLLECTION_PUBLIC_DATA_DIR`.
 
 ```bash
 NODE_ENV=development node src/projects/collections/collectionAnalyzer.js cron
 NODE_ENV=development node src/projects/collections/collectionStatsProcess.js cron
 NODE_ENV=development node src/projects/collections/leaderboardStatsProcess.js cron
 NODE_ENV=development node src/projects/collections/raflCollectionUtils.js cron
+NODE_ENV=development node src/projects/collections/catalogSnapshotDownload.js cron
 NODE_ENV=development node src/projects/collections/discordBeltCountsDownload.js cron
 NODE_ENV=development node src/projects/collections/exportAllProcessor.js cron
 NODE_ENV=development node src/projects/lockStatistics/lockStats.js cron
@@ -141,11 +160,14 @@ Each full run records a baseline watermark when it starts, reconciles change-ind
 
 ## Combined export and analysis runner
 
-The repository-level runner loads the collections configuration that matches the required `NODE_ENV`, then runs the collection exports and dependent analysis jobs in order. It stops at the first failed job.
+The repository-level runner loads the collections configuration that matches the required `NODE_ENV`, validates catalog and seed inputs before any child job writes output, then runs the collection exports and dependent analysis jobs in order. When catalog refresh is enabled, the downloader runs first and performs the catalog validation; otherwise preflight validates the existing snapshots. It holds `.collection-export-analysis.lock` beneath `COLLECTION_EXPORT_DIR` for the child-job phase and rejects an overlapping run. The lock is removed after success or failure. If the process is killed before cleanup, inspect the recorded `owner.json` before manually removing the stale lock. The runner stops at the first failed job. Catalog, Reddit, and Discord refreshes are included only when their respective enable flags are `true`; disabled platform refreshes use the validated belt-count snapshots in `COLLECTION_PUBLIC_DATA_DIR`.
 
 ```bash
 NODE_ENV=development node /home/lpubelts_api/apps/api-server-dev/current/scripts/runCollectionExportAnalysis.js cron
 ```
+
+Use `--check-config` to print the selected paths, catalog source, integration flags,
+and child jobs without reading inputs or starting jobs.
 
 The `cron` argument is passed to every child job and suppresses routine progress and completion output. Omit it during a manual console run to retain that output. Supported environments are `local`, `development`, and `production`, corresponding to `.env.local`, `.env.development`, and `.env.production` in the repository root. The runner performs live-data and output-writing work, so inspect the selected configuration and obtain the required approval before executing it.
 
@@ -159,6 +181,7 @@ Tests and other modules can call the jobs with injected dependencies:
 - `runCollectionStatsProcess(options)`
 - `runLeaderboardStatsProcess(options)`
 - `runRaflCollectionUtils(options)`
+- `runCatalogSnapshotDownload(options)`
 - `runDiscordBeltCountsDownload(options)`
 - `runExportAllProcessor(options)`
 - `runLockStats(options)`

@@ -1,10 +1,10 @@
-import fetch from 'node-fetch'
 import entryName from './entryName.js'
+import {loadCatalogArray} from './catalogData.js'
 
 let allMedia = []
 
-export async function lockDetails() {
-    const lockData = await (await fetch('https://lpubelts.com/data.json')).json()
+export async function lockDetails(options) {
+    const lockData = await loadCatalogArray('data.json', options)
 
     let allSamelineNames = {}
     return lockData.reduce((acc, item) => {
@@ -61,8 +61,8 @@ export async function lockDetails() {
 
 }
 
-export async function potDetails() {
-    const raflData = await (await fetch('https://lpubelts.com/rafl.json')).json()
+export async function potDetails(options) {
+    const raflData = await loadCatalogArray('rafl.json', options)
     return raflData.reduce((acc, item) => {
         acc[item.id] = {...item,
             shortName: item.title,
@@ -74,8 +74,8 @@ export async function potDetails() {
     }, {})
 }
 
-export async function safelockDetails() {
-    const safelockData = await (await fetch('https://lpubelts.com/dials.json')).json()
+export async function safelockDetails(options) {
+    const safelockData = await loadCatalogArray('dials.json', options)
     return safelockData.reduce((acc, item) => {
         const sep = item.make ? ' ' : ''
         acc[item.id] = {...item, shortName: `${item.make}${sep}${item.model}`, itemName: `${item.make}${sep}${item.model}`, type: 'safelock'}
@@ -83,8 +83,8 @@ export async function safelockDetails() {
     }, {})
 }
 
-export async function projectDetails() {
-    const projectData = await (await fetch('https://lpubelts.com/projects.json')).json()
+export async function projectDetails(options) {
+    const projectData = await loadCatalogArray('projects.json', options)
     return projectData.reduce((acc, item) => {
         acc[item.id] = {
             ...item,
@@ -100,8 +100,8 @@ export async function projectDetails() {
     }, {})
 }
 
-export async function awardDetails() {
-    const awardData = await (await fetch('https://lpubelts.com/awards.json')).json()
+export async function awardDetails(options) {
+    const awardData = await loadCatalogArray('awards.json', options)
     return awardData.reduce((acc, item, index) => {
         acc[item.id] = {
             ...item,
@@ -117,8 +117,8 @@ export async function awardDetails() {
     }, {})
 }
 
-export async function glossaryDetails() {
-    const glossaryData = await (await fetch('https://lpubelts.com/glossary.json')).json()
+export async function glossaryDetails(options) {
+    const glossaryData = await loadCatalogArray('glossary.json', options)
     return glossaryData.reduce((acc, item) => {
         allMedia.push(item.media)
         acc[item.term] = {...item, shortName: item.term, itemName: item.term, type: 'glossary', media: item.media ? [item.media] : undefined}
@@ -126,13 +126,13 @@ export async function glossaryDetails() {
     }, {})
 }
 
-export async function itemDetails() {
+export async function itemDetails(options) {
     return {
-        ...await lockDetails(),
-        ...await safelockDetails(),
-        ...await projectDetails(),
-        ...await awardDetails(),
-        ...await glossaryDetails()
+        ...await lockDetails(options),
+        ...await safelockDetails(options),
+        ...await projectDetails(options),
+        ...await awardDetails(options),
+        ...await glossaryDetails(options)
     }
 }
 

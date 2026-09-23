@@ -21,13 +21,31 @@ import {createFlickrInfoRuntime} from './projects/flickrGetInfo/flickrInfoRuntim
 import {flickrInfoConfigSummary} from './projects/flickrGetInfo/flickrInfoConfig.js'
 import {createFirebaseActivityRuntime} from './projects/logFirebaseActivity/firebaseActivityRuntime.js'
 import {firebaseActivityConfigSummary} from './projects/logFirebaseActivity/firebaseActivityConfig.js'
-import {getTrustProxyConfig} from './api/middleware/trustProxy.js'
 import {createBaselineRateLimit} from './api/middleware/rateLimit.js'
 import {loadRuntimeEnvironment} from './util/runtimeEnvironment.js'
+import {loadServerRuntimeConfig} from './config/serverRuntimeConfig.js'
+import {loadReleaseMetadata} from './util/releaseMetadata.js'
+import {createReadinessController} from './util/readiness.js'
+import {getFirebaseAdminApp} from './api/services/firebaseAdmin.js'
 
 const projectRoot = fileURLToPath(new URL('../', import.meta.url))
-const {environment: env} = loadRuntimeEnvironment({env: process.env, envDir: projectRoot})
-const trustProxy = getTrustProxyConfig(process.env)
+loadRuntimeEnvironment({env: process.env, envDir: projectRoot})
+const serverConfig = loadServerRuntimeConfig(process.env)
+const {
+    environment: env,
+    trustProxy,
+    corsOrigin,
+    port,
+    host,
+    collectionStatsPath
+} = serverConfig
+const releaseMetadata = loadReleaseMetadata({env: process.env, projectRoot})
+getFirebaseAdminApp()
+const readiness = createReadinessController({
+    releaseMetadata,
+    environment: env,
+    requiredFiles: [collectionStatsPath]
+})
 const isDev = env !== 'production'
 const _envText = isDev ? ' (DEV)' : ''
 const requestLockRuntime = await createRequestLockRuntime({env: process.env})
@@ -60,13 +78,9 @@ app.set('trust proxy', trustProxy)
 app.use(httpLogger)
 app.use(requestIdHeader)
 
-const corsOrigin = process.env.CORS_ORIGIN
-    ? process.env.CORS_ORIGIN.split(',').map(s => s.trim()).filter(Boolean)
-    : true
 app.use(cors({origin: corsOrigin, credentials: true}))
 app.use(createBaselineRateLimit())
 
-const apiPort = process.env.API_PORT
 const apiPrefix = isDev ? '' : ''
 
 // need to test for local or something if you want to run locally at '/api'
@@ -80,6 +94,7 @@ registerRoutes(app, {
     getRedditBeltsHandler: redditBeltsRuntime.handler,
     getFlickrInfoHandler: flickrInfoRuntime.handler,
     firebaseActivityHandler: firebaseActivityRuntime.handler,
+    readinessHandler: readiness.handler,
     enableDiagnosticRoutes: env !== 'production'
 })
 
@@ -124,15 +139,27 @@ process.on('uncaughtException', (err) => {
     try { logger.error({ err }, 'uncaughtException') } catch { console.error('uncaughtException', err) }
 })
 
-const port = apiPort
-const host = process.env.HOST || '0.0.0.0'
-
 const server = app.listen(port, host, () => {
+    readiness.markReady()
     logger.info({env, port, apiPrefix, host, corsOrigin, trustProxy}, 'SERVER STARTED')
 })
 server.on('error', (err) => {
+    readiness.markNotReady('server_error')
     try { logger.error({ err }, 'server error') } catch { console.error('server error', err) }
 })
+for (const signal of ['SIGTERM', 'SIGINT']) {
+    process.once(signal, () => {
+        readiness.markNotReady('shutting_down')
+        server.close(error => {
+            if (error) {
+                try { logger.error({err: error}, 'server shutdown error') } catch {
+                    console.error('server shutdown error', error)
+                }
+                process.exitCode = 1
+            }
+        })
+    })
+}
 logger.info(requestLockConfigSummary(requestLockRuntime.config), 'request-lock runtime configured')
 logger.info(uploadContentConfigSummary(uploadContentRuntime.config), 'upload-content runtime configured')
 logger.info(emailFormConfigSummary(emailFormRuntime.config), 'email-form runtime configured')

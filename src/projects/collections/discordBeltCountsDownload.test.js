@@ -25,12 +25,16 @@ describe('runDiscordBeltCountsDownload', () => {
         const discordBeltCounts = {'Blue Belt': 9, Total: 20}
         const fetchImpl = vi.fn().mockResolvedValue({
             ok: true,
-            json: vi.fn().mockResolvedValue(discordBeltCounts)
+            headers: {get: vi.fn()},
+            text: vi.fn().mockResolvedValue(JSON.stringify(discordBeltCounts))
         })
 
         const result = await runDiscordBeltCountsDownload({publicDataDir, fetchImpl})
 
-        expect(fetchImpl).toHaveBeenCalledWith(discordBeltCountsUrl)
+        expect(fetchImpl).toHaveBeenCalledWith(discordBeltCountsUrl, {
+            signal: expect.any(AbortSignal),
+            size: 1024 * 1024
+        })
         expect(result).toEqual({
             outputFile: path.join(publicDataDir, 'discordBeltCounts.json'),
             discordBeltCounts
@@ -57,7 +61,8 @@ describe('runDiscordBeltCountsDownload', () => {
         const publicDataDir = await createPublicDataDir()
         const fetchImpl = vi.fn().mockResolvedValue({
             ok: true,
-            json: vi.fn().mockResolvedValue([])
+            headers: {get: vi.fn()},
+            text: vi.fn().mockResolvedValue('[]')
         })
 
         await expect(runDiscordBeltCountsDownload({publicDataDir, fetchImpl}))

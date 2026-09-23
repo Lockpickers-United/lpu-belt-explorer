@@ -20,6 +20,11 @@ Confirm that the destination does not already exist before creating the link. We
 
 Do not create additional environment files under `src/projects`. Standalone jobs and the combined collection runner use the same protected root file, while their config modules validate only the variables each job needs.
 
+Development catalog snapshots live at
+`/home/lpubelts_api/apps/api-server-dev/shared/snapshots`. Configure that absolute
+path as `LPU_CATALOG_DIR`; the optional catalog refresh job writes there before
+the combined runner's export jobs begin.
+
 Use a manual PM2 restart after an upload:
 
 ```sh
@@ -91,7 +96,7 @@ If direct execution works but PM2 does not:
 1. Confirm the process is named `lpubelts-api-server-dev`.
 2. Confirm `pm2 describe lpubelts-api-server-dev` shows `NODE_ENV=development` and the expected script and working directory.
 3. Inspect the configured shared log files and `pm2 logs`.
-4. Confirm port `10081` is listening and request `/ready` over loopback.
+4. Confirm port `10081` is listening and request `/ready` over loopback. Verify the returned environment and release identity and confirm `ready` is true.
 5. Delete any stale `ecosystem.config.dev` process before starting the JSON declaration.
 
 ## Optional local development

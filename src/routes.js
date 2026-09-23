@@ -1,7 +1,7 @@
 import {Router} from 'express'
 import lazyMount from './util/lazyMount.js'
 import health from './testing/health.js'
-import ready from './testing/ready.js'
+import ready, {createReadyRouter} from './testing/ready.js'
 import boom from './testing/boom.js'
 import echo from './testing/echoMessage.js'
 import normalizeRequestUrl from './util/normalizeRequestUrl.js'
@@ -20,6 +20,7 @@ export function registerRoutes(app, {
     getRedditBeltsHandler,
     getFlickrInfoHandler,
     firebaseActivityHandler,
+    readinessHandler,
     enableDiagnosticRoutes = shouldEnableDiagnosticRoutes()
 } = {}) {
     const r = Router()
@@ -27,7 +28,7 @@ export function registerRoutes(app, {
     r.use(normalizeRequestUrl)
 
     r.use(health)
-    r.use(ready)
+    r.use(readinessHandler ? createReadyRouter(readinessHandler) : ready)
     if (enableDiagnosticRoutes) {
         r.use(echo)
         r.use(boom)

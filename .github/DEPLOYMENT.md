@@ -49,18 +49,23 @@ script: DEPLOY_ROOT/current/src/lpubeltsApiServer.js
 
 Production cron entries should likewise run scripts beneath `DEPLOY_ROOT/current`. Keep `.env.production`, credentials, logs, generated data, and writable upload/output directories under stable shared or external paths. The workflow links `shared/.env.production` into each release and never uploads an environment file.
 
+Set `COLLECTION_API_DIR` to an absolute shared generated-data directory and seed
+`collectionStatsByIdFull.json` there before the first start. The PM2 account must
+be able to read it. The API validates its Firebase service-account configuration
+at startup and does not report ready until startup finishes.
+
 Before enabling the workflow, manually verify that:
 
 1. The deployment key can use both SFTP and a restricted SSH shell.
 2. The deployment account owns `incoming`, `releases`, and the `current` symlink.
 3. `REMOTE_NODE_BIN` supplies the production Node version, Corepack, and PM2.
 4. `pm2 describe PM2_APP_NAME` succeeds for that account.
-5. The readiness URL reaches the production process.
+5. The readiness URL reaches the production process and returns the release ID created by the workflow.
 
 ## Deployment and rollback
 
 Run **Actions → Deploy production → Run workflow** from `main`. The workflow requires the explicit `deploy-production` selection and serializes deployments so two releases cannot activate concurrently.
 
-The remote activation verifies the uploaded archive checksum, installs dependencies with `yarn install --immutable`, checks server syntax, switches `current`, reloads PM2, and calls the readiness endpoint. If PM2 reload or the readiness check fails, `current` is restored to its previous target and PM2 is reloaded again.
+The remote activation verifies the uploaded archive checksum, installs dependencies with `yarn install --immutable`, writes `.release.json`, checks server syntax, switches `current`, reloads PM2, and calls the readiness endpoint. The response must be ready and identify the exact release just activated. It then performs a bounded request to the public collection-statistics endpoint. If PM2 reload or either check fails, `current` is restored to its previous target and PM2 is reloaded again.
 
 Old releases are intentionally retained for manual rollback and are not deleted by the workflow. Periodically remove reviewed, obsolete release directories after confirming they are not the current or desired rollback target.

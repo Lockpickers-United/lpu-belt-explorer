@@ -1,14 +1,13 @@
 import fs from 'node:fs/promises'
 import path from 'node:path'
 import dayjs from 'dayjs'
-import fetch from 'node-fetch'
 import {setDeep, setDeepAdd} from '../../util/setDeep.js'
 import {itemDetails} from '../../util/getItemDetails.js'
+import {loadCatalogArray} from '../../util/catalogData.js'
 import isDirectRun from '../../util/isDirectRun.js'
 import {loadCollectionEnvironment} from '../collections/collectionEnvironment.js'
 import {exportJobConfigSummary, loadExportJobConfig} from '../collections/exportJobConfig.js'
 
-const lockDataUrl = 'https://lpubelts.com/data.json'
 const topN = 250
 
 async function writeJsonFileAtomic(filePath, data) {
@@ -18,12 +17,8 @@ async function writeJsonFileAtomic(filePath, data) {
     await fs.rename(tempFile, filePath)
 }
 
-export async function loadLockData(fetchImpl = fetch) {
-    const response = await fetchImpl(lockDataUrl)
-    if (!response.ok) {
-        throw new Error(`Unable to load lock data: HTTP ${response.status}`)
-    }
-    return response.json()
+export async function loadLockData(options) {
+    return loadCatalogArray('data.json', options)
 }
 
 function mechanismId(mechanism) {

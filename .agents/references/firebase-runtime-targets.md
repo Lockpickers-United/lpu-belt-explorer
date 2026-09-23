@@ -14,6 +14,10 @@ Development and production use the same Firebase project with separate Firestore
 | `FIRESTORE_DATABASE_ID` | `lpubelts-dev` | the configured production database ID |
 | `ALLOW_PRODUCTION_JOB` | `false` | `true` only where production access is intended and approved |
 
+The API server requires `NODE_ENV` and `LPU_JOB_ENV` to match. It validates the
+configured service-account file and initializes the selected Firebase Admin app
+before it begins reporting ready.
+
 Each environment also requires:
 
 - `FIREBASE_PROJECT_ID`

@@ -1,8 +1,11 @@
 import fs from 'node:fs/promises'
 import os from 'node:os'
 import path from 'node:path'
+import express from 'express'
+import request from 'supertest'
 import {afterEach, describe, expect, it, vi} from 'vitest'
 import {runCollectionAnalysis} from './collectionAnalyzer.js'
+import {registerRoutes} from '../../routes.js'
 
 const tempDirs = []
 
@@ -16,6 +19,7 @@ async function writeBackup(backupDir, date, lockcollections) {
 }
 
 afterEach(async () => {
+    vi.unstubAllEnvs()
     await Promise.all(tempDirs.splice(0).map(dir => fs.rm(dir, {recursive: true, force: true})))
 })
 
@@ -27,6 +31,10 @@ describe('runCollectionAnalysis', () => {
         const dailyDir = path.join(root, 'daily')
         const apiDir = path.join(root, 'api-data')
         const publicDataDir = path.join(root, 'public-data')
+        vi.stubEnv('NODE_ENV', 'development')
+        vi.stubEnv('COLLECTION_API_DIR', apiDir)
+        const app = express()
+        registerRoutes(app, {prefix: ''})
 
         await writeBackup(backupDir, '2026-09-10', {
             'user-1': {
@@ -95,6 +103,23 @@ describe('runCollectionAnalysis', () => {
                 }]
             }
         })
+
+        const firstApiResponse = await request(app).get('/api/v1/stats/collections/locks')
+        expect(firstApiResponse.status).toBe(200)
+        expect(firstApiResponse.body).toEqual(apiStats)
+
+        const refreshedStats = {
+            ...apiStats,
+            metadata: {...apiStats.metadata, updatedDateTime: '2026-09-12T13:00:00.000Z'},
+            data: {locks: [{...apiStats.data.locks[0], ownCount: 7000}]}
+        }
+        await fs.writeFile(
+            path.join(apiDir, 'collectionStatsByIdFull.json'),
+            JSON.stringify(refreshedStats)
+        )
+        const refreshedApiResponse = await request(app).get('/api/v1/stats/collections/locks')
+        expect(refreshedApiResponse.status).toBe(200)
+        expect(refreshedApiResponse.body).toEqual(refreshedStats)
 
         const currentStats = JSON.parse(await fs.readFile(
             path.join(publicDataDir, 'collectionStatsCurrent.json'),

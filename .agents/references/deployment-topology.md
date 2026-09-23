@@ -36,6 +36,8 @@ Production uses immutable releases:
 │   └── <release-id>/        # one complete application release
 └── shared/
     ├── .env.production      # server-only environment values
+    ├── generated-data/      # persistent collection API output
+    ├── snapshots/           # persistent downloaded catalog inputs
     └── logs/                # persistent process logs, if configured
 ```
 
@@ -58,6 +60,11 @@ The `shared` directory is for state that must survive release changes and must n
 - logs
 - uploads
 - generated data and export state that are intentionally persistent
+
+`COLLECTION_API_DIR` must point to the environment's shared generated-data directory.
+Both `collectionAnalyzer.js` and the API use
+`collectionStatsByIdFull.json` at that path; production never silently uses the
+checked-in fixture.
 
 Each environment has one protected `.env.<environment>` file linked at the repository root. It contains server and command-line job settings, including `COLLECTION_*`; do not create component-specific environment files inside `src/projects`.
 

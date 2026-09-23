@@ -18,10 +18,10 @@ The workflow:
 6. uploads them over SFTP to `incoming`.
 7. connects over SSH and verifies the checksum.
 8. expands a new immutable release.
-9. links the shared production environment file.
+9. links the shared production environment file and writes the release identity.
 10. installs the locked dependencies and checks `src/lpubeltsApiServer.js` syntax.
 11. atomically switches `current` to the new release.
-12. reloads the named PM2 application and runs the HTTPS readiness check.
+12. reloads the named PM2 application, requires the HTTPS readiness response to identify the exact activated release, and smoke-tests the public collection-statistics endpoint.
 13. switches `current` back to the previous target and reloads PM2 if the readiness check fails.
 
 ## GitHub configuration
@@ -54,6 +54,8 @@ Before the first workflow run, the production server must have:
 - a production PM2 declaration using `src/lpubeltsApiServer.js`
 - an existing PM2 application whose name matches `PM2_APP_NAME`
 - DreamHost proxying `api.lpubelts.com` to the application's internal port
+- `shared/generated-data/collectionStatsByIdFull.json`, readable by the PM2 account
+- `COLLECTION_API_DIR` pointing to that shared generated-data directory
 
 The workflow deliberately checks that `current` is already a symlink and that the PM2 process exists. Bootstrap is a separate, reviewable operation. Use a JSON PM2 ecosystem declaration for the new production process, following the proven development pattern.
 
@@ -63,7 +65,7 @@ While the old backend remains live, give the new process a distinct name such as
 
 Retain three production releases: the active release and two rollback candidates. The current workflow does not prune old releases, so cleanup remains a separate maintenance action after verifying the active target. Never remove the target of `current` or either rollback candidate.
 
-The automated rollback covers failures during deployment activation and the readiness check. For a later manual rollback:
+The automated rollback covers failures during deployment activation and the readiness check. Readiness remains unavailable during startup and shutdown, verifies that the configured collection-statistics file is readable, and reports the release ID written by the workflow. For a later manual rollback:
 
 1. identify a known-good release,
 2. switch `current` atomically to that exact release,

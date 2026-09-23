@@ -202,6 +202,9 @@ jobs:
           mkdir "$release_dir"
           tar -xzf "$archive" -C "$release_dir"
           ln -s "$shared_env" "$release_dir/.env.production"
+          git_sha=${release_id%%-*}
+          printf '{"releaseId":"%s","gitSha":"%s"}\n' \
+            "$release_id" "$git_sha" > "$release_dir/.release.json"
 
           export PATH="$node_bin:$PATH"
           command -v node >/dev/null
@@ -235,7 +238,8 @@ jobs:
             exit 1
           fi
 
-          if ! curl \
+          health_response=''
+          if ! health_response=$(curl \
             --fail \
             --silent \
             --show-error \
@@ -243,7 +247,31 @@ jobs:
             --retry 5 \
             --retry-all-errors \
             --retry-delay 2 \
-            "$healthcheck_url" >/dev/null; then
+            "$healthcheck_url"); then
+            rollback
+            exit 1
+          fi
+
+          if ! node -e '
+            const payload = JSON.parse(process.argv[2])
+            if (payload.ready !== true || payload.releaseId !== process.argv[1]) process.exit(1)
+          ' "$release_id" "$health_response"; then
+            echo "Readiness response did not identify release $release_id" >&2
+            rollback
+            exit 1
+          fi
+
+          public_smoke_url="${healthcheck_url%/ready}/api/v1/stats/collections/locks"
+          if ! curl \
+            --fail \
+            --silent \
+            --show-error \
+            --max-time 10 \
+            --retry 2 \
+            --retry-all-errors \
+            --retry-delay 2 \
+            "$public_smoke_url" >/dev/null; then
+            echo "Public collection-statistics smoke check failed" >&2
             rollback
             exit 1
           fi
