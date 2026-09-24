@@ -30,7 +30,7 @@
     "flickr-sdk": "^7.1.0",
     "formidable": "^3.5.4",
     "geoip-lite": "2.0.3",
-    "googleapis": "^181.0.0",
+    "googleapis": "^182.0.0",
     "helmet": "^8.3.0",
     "joi": "^18.2.9",
     "json-2-csv": "^5.6.0",

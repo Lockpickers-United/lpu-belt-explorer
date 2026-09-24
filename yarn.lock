@@ -2950,13 +2950,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"googleapis@npm:^181.0.0":
-  version: 181.0.0
-  resolution: "googleapis@npm:181.0.0"
+"googleapis@npm:^182.0.0":
+  version: 182.0.0
+  resolution: "googleapis@npm:182.0.0"
   dependencies:
     google-auth-library: "npm:^11.0.0"
     googleapis-common: "npm:^9.0.0"
-  checksum: 10c0/23291265ab67e7c0901cdfab3f2c55e55016b078a358b606a41f6b0ac227a8d6c97c61476583057259a148c97353348f64f0be321192aaa96217e6ba1190ddfa
+  checksum: 10c0/f321aa0707d80c1d59dcaaace8b37e20e2f320dcf40808ad3c2a2eca7fb0dd5460fc2dc0bf8dea274c875673e69f261239ff4c17aed03c8d1fdd4b4efcc05de3
   languageName: node
   linkType: hard
 
@@ -3661,7 +3661,7 @@ __metadata:
     formidable: "npm:^3.5.4"
     geoip-lite: "npm:2.0.3"
     globals: "npm:^17.12.0"
-    googleapis: "npm:^181.0.0"
+    googleapis: "npm:^182.0.0"
     helmet: "npm:^8.3.0"
     joi: "npm:^18.2.9"
     json-2-csv: "npm:^5.6.0"

@@ -1,10 +1,10 @@
 # Dependency Upgrade Plan
 
-Status: active; Phases 0 through 7 and the deferred Reddit WIP dependency checkpoint implemented on 2026-09-23, with final tree validation and production runtime verification pending
+Status: repository dependency work and final automated validation complete on 2026-09-24; approval-gated development rollout and production runtime verification remain pending
 
 Planning snapshot: 2026-09-23
 
-Scope: root Node.js package only; completed work covers the reproducible runtime baseline, unused dependency removal, the Formidable migration, low-risk current-line updates, the ESLint 10 migration, the dotenv 18 runtime-loading checkpoint, Firebase Admin 14.5 audit remediation, Google APIs 181, and removal of the deprecated Snoowrap/request dependency tree without changing deployment state or live data
+Scope: root Node.js package only; completed work covers the reproducible runtime baseline, unused dependency removal, the Formidable migration, low-risk current-line updates, the ESLint 10 migration, the dotenv 18 runtime-loading checkpoint, Firebase Admin 14.5 audit remediation, Google APIs 182, removal of the deprecated Snoowrap/request dependency tree, and final definition-of-done verification without changing deployment state or live data
 
 ## Executive recommendation
 
@@ -85,7 +85,7 @@ Phase 6 adds one current resolution scoped to `gaxios@6.7.1/uuid`. Phase 7 confi
 | `firebase-admin` | 14.4.0 | 14.5.0 | Keep modular Admin imports and named-database behavior; run all Firebase target, auth, profile, and exporter mocks. |
 | `formidable` | 3.5.4 | Retain 3.5.4 and make it the actual multipart implementation | Runtime code currently imports a vendored older copy instead. Migrate only after real multipart tests establish limits, filenames, malformed-body behavior, cleanup, and error codes. |
 | `globals` | 17.12.0 | Retain; move to `devDependencies` | Lint-only package. |
-| `googleapis` | 180.0.0 | 181.0.0 | Major generated-client release. Test Forms and Sheets client construction plus request shapes without making live calls. Node 24 exceeds its Node 22 minimum. |
+| `googleapis` | 180.0.0 | 182.0.0; Phase 7 first established the contracts on 181.0.0 | Major generated-client releases. Test Forms and Sheets client construction plus request shapes without making live calls. Node 24 exceeds the Node 22 minimum. |
 | `hexoid` | 2.0.0 | Remove after Formidable migration | It is used only by the vendored Formidable copy; current Formidable uses CUID2. |
 | `moment-timezone` | 0.6.3 | Remove; 0.6.4 only if a hidden consumer is identified | No repository call site was found. The application uses Day.js timezone plugins. |
 | `nodemailer` | 10.0.9 | 10.0.10 | Patch release. Verify transporter construction and the injected mail-send contract; no live email. |
@@ -313,7 +313,7 @@ Exit criteria:
 
 ### Phase 7: Upgrade Google APIs 180 to 181
 
-Implementation status: complete on 2026-09-23. Google APIs 181 retains Google APIs Common 9.0.4 and Google Auth 11.1.0, the resolved tree remains at 706 locators, and the existing scoped Gaxios 6/UUID 11 resolution is still required.
+Implementation status: complete on 2026-09-23. Phase 7 moved to Google APIs 181 while establishing the credential-free contracts. Final definition-of-done verification then moved to the newly published Google APIs 182. Both releases retain Google APIs Common 9.0.4 and Google Auth 11.1.0, and the existing scoped Gaxios 6/UUID 11 resolution is still required.
 
 1. Upgrade only `googleapis` and its lockfile branch.
 2. Confirm `@google-cloud/local-auth` remains compatible and no duplicate incompatible Google Auth runtime is introduced.
@@ -329,6 +329,12 @@ Exit criteria:
 - [x] The final Google dependency tree has no avoidable duplicate major or vulnerable transitive package.
 
 ### Phase 8: Final tree validation and development rollout
+
+Implementation status: final repository validation complete on 2026-09-24. A
+fresh registry comparison found Google APIs 182.0.0 had been published after
+Phase 7, so the manifest and lockfile were updated before repeating the clean
+install and integrated validation. Development and production rollout checks
+remain separate approval-gated work.
 
 From a clean Node 24.21.0 environment:
 
@@ -399,9 +405,9 @@ Do not combine the Formidable, ESLint, dotenv, Firebase, and Google API migratio
 
 ## Definition of done
 
-- [ ] Every direct package is current, removed, or explicitly retained with an owner and compatibility reason.
-- [ ] Node is pinned to the current Node 24 LTS patch for local/CI use and constrained below Node 25 for compatibility with Vitest 5.
-- [ ] Yarn remains on current stable 4.18.0 and immutable installs reproduce the lockfile.
+- [x] Every direct package is current, removed, or explicitly retained with an owner and compatibility reason.
+- [x] Node is pinned to the current Node 24 LTS patch for local/CI use and constrained below Node 25 for compatibility with Vitest 5.
+- [x] Yarn remains on current stable 4.18.0 and immutable installs reproduce the lockfile.
 - [x] No deprecated Snoowrap/request tree or high/critical advisory remains.
 - [x] The Firebase web SDK, unused tooling packages, and stale resolutions are gone.
 - [x] The application uses supported Formidable rather than an undocumented vendored older copy.
@@ -409,15 +415,16 @@ Do not combine the Formidable, ESLint, dotenv, Firebase, and Google API migratio
 - [x] dotenv, Nodemailer, Supertest, and Vitest pass their focused contracts.
 - [x] Firebase Admin passes its focused contracts.
 - [x] Google APIs pass their focused contracts.
-- [ ] `yarn explain peer-requirements` has no actionable failure and `yarn dedupe --check` is clean.
-- [ ] Audit output has no actionable vulnerability for which a compatible supported upgrade exists; any upstream-only deprecation is documented with its dependency path.
-- [ ] Full lint and all tests pass under the pinned Node version with no unexplained warning.
-- [ ] No production deployment, PM2 restart, or live-data/live-service job occurs without explicit approval.
+- [x] `yarn explain peer-requirements` has no actionable failure and `yarn dedupe --check` is clean.
+- [x] Audit output has no actionable vulnerability for which a compatible supported upgrade exists; any upstream-only deprecation is documented with its dependency path.
+- [x] Full lint and all tests pass under the pinned Node version with no unexplained warning.
+- [x] No production deployment, PM2 restart, or live-data/live-service job occurs without explicit approval.
 
 ## Primary references
 
 - [Sibling dependency upgrade plan](../../lpu-belt-explorer/internal-docs/major-dependency-upgrade-plan.md)
 - [Sibling dependency upgrade implementation report](../../lpu-belt-explorer/internal-docs/major-dependency-upgrade-implementation-report.md)
+- [Definition-of-done verification plan](dependency-upgrade-definition-of-done-verification-plan.md)
 - [Node.js 24.21.0 archive](https://nodejs.org/en/download/archive/v24.21.0)
 - [ESLint 10 migration guide](https://eslint.org/docs/latest/use/migrate-to-10.0.0)
 - [ESLint flat-config migration guide](https://eslint.org/docs/latest/use/configure/migration-guide)

@@ -381,3 +381,173 @@ After code review and separate approval for the development deployment and integ
 5. Inspect the configured PM2 logs for structured JSON, request IDs, expected status codes, and the absence of bearer tokens, private profiles, OAuth material, environment values, credential paths, and dotenv configuration messages. If email delivery needs integration coverage, use the configured development mail sink.
 
 The development upload, dependency install, PM2 restart, authenticated Firebase call, multipart side effects, Flickr request, RAFL preview, and mail-sink send were not performed because each needs separate explicit approval under `AGENTS.md`. Production deployment remains a later, separately approved operation. The protected production Node/Yarn version check and production-release Sharp/GeoIP probes also remain outstanding before production activation.
+
+## Final definition-of-done verification
+
+Verification completed: 2026-09-24
+
+### Final delta
+
+- Queried the npm registry's stable `latest` tag for all 27 runtime and 7
+  development dependencies on 2026-09-23. Thirty-three already matched. Google
+  APIs 182.0.0 had been published after Phase 7, so `googleapis` was upgraded
+  from 181.0.0 to 182.0.0 and its lockfile locator was regenerated.
+- Rechecked the official Node latest-v24 archive and Yarn release list. Node
+  24.21.0 remains the current Node 24 patch and Yarn 4.18.0 remains the current
+  stable Yarn 4 release.
+- Confirmed Google APIs 182 retains the Node >=22 engine, Google APIs Common 9,
+  and Google Auth 11 dependency contracts used by 181. The resolved tree remains
+  at 580 locators and no new Google Auth major or audit path was introduced.
+- Repeated the direct-package ownership review. Every direct runtime package has
+  a source or configuration consumer, every development package has a lint/test
+  owner, and all 34 direct versions now match their stable registry `latest`
+  tags.
+- Created an isolated tracked-files copy, supplied the final manifest and
+  lockfile, and ran an immutable install under Node 24.21.0 and Yarn 4.18.0. The
+  before/after SHA-256 hashes of both files were identical and no npm lockfile
+  was created.
+- Re-ran peer, deduplication, audit, lint, runtime-contract, focused Google, and
+  full application checks. No production deployment, PM2 start/restart,
+  credential read, Firebase/Google/Flickr/Reddit/SMTP/FTP request, or live-data
+  job occurred.
+
+### Direct-package disposition
+
+Registry versions below are stable `latest` tags observed on 2026-09-23. The
+owner column names the source boundary responsible for retaining each direct
+package.
+
+| Package | Declared/current latest | Owner and reason |
+| --- | --- | --- |
+| `@google-cloud/local-auth` | 3.0.1 | RAFL Google OAuth bootstrap and cached-token authorization |
+| `archiver` | 8.0.0 | Upload archive creation |
+| `axios` | 1.20.0 | Maintained HTTP integration utilities |
+| `basic-ftp` | 6.2.1 | Server-log FTP fetch utility |
+| `cors` | 2.8.6 | Express CORS middleware |
+| `csv-parse` | 7.0.2 | Collection and integration data processors |
+| `dayjs` | 1.11.23 | Date/time and timezone processing |
+| `dotenv` | 18.0.3 | Explicit runtime environment-file loading |
+| `express` | 5.2.1 | API server, routers, and service bundles |
+| `express-useragent` | 2.2.3 | Request/log user-agent analysis |
+| `firebase-admin` | 14.5.0 | Authenticated profiles, named Firestore access, and exporters |
+| `flickr-sdk` | 7.1.0 | Flickr information integration |
+| `formidable` | 3.5.4 | Shared multipart parsing boundary |
+| `geoip-lite` | 2.0.3 | Request/log geolocation analysis |
+| `googleapis` | 182.0.0 | RAFL Forms v1 and Sheets v4 clients |
+| `helmet` | 8.3.0 | Express security headers |
+| `joi` | 18.2.9 | Legacy/project input validation |
+| `json-2-csv` | 5.6.0 | Data export processors |
+| `node-fetch` | 3.3.2 | Maintained HTTP integrations and compatibility utilities |
+| `node-fetch-cookies` | 2.1.1 | RAFL authenticated web-session utilities |
+| `nodemailer` | 10.0.10 | Email-form and upload mail delivery |
+| `pino` | 10.3.1 | Shared structured application logging |
+| `pino-http` | 11.0.0 | Structured HTTP request logging |
+| `pino-pretty` | 13.1.3 | Local readable log transport |
+| `sharp` | 0.35.4 | Image conversion and thumbnail generation |
+| `validator` | 13.15.35 | Existing string and form validation |
+| `zod` | 4.6.5 | API and integration schemas |
+| `@eslint/js` | 10.0.1 | ESLint recommended rule definitions |
+| `eslint` | 10.11.0 | Repository lint runner |
+| `eslint-plugin-import-x` | 4.17.1 | ESM import rules and resolver |
+| `globals` | 17.12.0 | Node/browser globals for flat ESLint configuration |
+| `supertest` | 7.3.0 | Express route and middleware contracts |
+| `vite` | 8.3.0 | Intentionally direct peer required by Vitest 5 |
+| `vitest` | 5.0.1 | Unit, service, and route test runner |
+
+### Final validation
+
+All authoritative checks used Node 24.21.0 and Yarn 4.18.0.
+
+| Check | Result |
+| --- | --- |
+| Runtime versions | Node v24.21.0 and Yarn 4.18.0; `.nvmrc`, `engines.node`, `packageManager`, CI setup, and the remote pre-activation check remain aligned |
+| Registry comparison | 34 of 34 direct packages match stable `latest` after upgrading Google APIs to 182.0.0 |
+| Google APIs focused contracts | Passed: 1 file and 5 tests; Forms, Sheets, local-auth compatibility, cached-token reuse, and synthetic token persistence remain unchanged |
+| Clean immutable install | Passed in an isolated tracked-files copy; final `package.json` and `yarn.lock` hashes were unchanged by installation and no npm lockfile was created |
+| Runtime-contract test | Passed: 1 file and 1 test |
+| Resolved tree | 580 locators |
+| Peer requirements | All requests satisfied; absent optional peers are reported as satisfied |
+| Deduplication | No package can be deduplicated with the highest strategy |
+| Audit | Zero critical, zero high, two moderate upstream deprecations, and zero low findings |
+| Lint | Passed with 0 errors and 0 warnings |
+| Full tests | Passed: 74 files and 336 tests |
+| Diff hygiene | `git diff --check` passed before documentation updates; the final staged diff is checked again at handoff |
+
+The isolated restricted full-suite attempt passed 59 files and 252 tests. It
+failed 14 Supertest-dependent files because the sandbox could not open loopback
+listeners, and `exportCheckConfig.test.js` failed its ten cases because the
+arbitrary temporary directory did not end in the repository name expected by
+that path assertion. Repeating the exact complete mocked suite from the real
+repository path with local loopback permission passed all 74 files and 336
+tests. These environment failures did not involve Google APIs or an application
+behavior regression.
+
+The refreshed audit still exits with status 1 for two deprecation notices:
+
+1. `firebase-admin@14.5.0` -> `@google-cloud/firestore@9.1.0` ->
+   `@google-cloud/firestore-api@0.2.0` -> `google-gax@5.0.8` ->
+   `rimraf@5.0.10` -> `glob@10.5.0`.
+2. Firebase and Google request clients -> `node-fetch@3.3.2` ->
+   `fetch-blob@3.2.0` -> `node-domexception@1.0.0`.
+
+Firebase Admin 14.5.0 and Node Fetch 3.3.2 are current. Firestore 9.2.0 still
+declares Firestore API `^0.2.0`, which cannot select the current 0.6 line that
+uses Google GAX 6. Rimraf 6 and current Glob are outside Google GAX 5's declared
+Rimraf 5 range. Node Fetch's current 3.3.2 release still declares Fetch Blob
+`^3.1.4`, and even Fetch Blob 4 retains Node DOMException. No compatible
+supported update removes either path; broad overrides would cross the upstream
+owners' ranges and remain intentionally absent.
+
+### Commands run
+
+```sh
+node --version
+corepack yarn --version
+corepack yarn up googleapis@^182.0.0
+corepack yarn vitest run src/projects/raflFormUtilities/googleApis.test.js
+corepack yarn security:scan
+corepack yarn why -R glob
+corepack yarn why -R node-domexception
+corepack yarn install --immutable
+corepack yarn explain peer-requirements
+corepack yarn dedupe --check
+corepack yarn vitest run src/config/nodeRuntimeContract.test.js
+corepack yarn lint
+corepack yarn test --run
+corepack yarn info --recursive --name-only
+```
+
+The registry comparison used a read-only Node 24 script to read all dependency
+and development-dependency names from `package.json` and fetch each package's
+registry `dist-tags.latest` value. Audit reports were written to ignored files
+under `logs/`.
+
+### Remaining manual rollout checks
+
+The repository definition of done is complete. The following operational checks
+remain before production rollout and require the separate approvals described
+in `AGENTS.md`:
+
+1. Deploy the reviewed files to the development checkout, confirm its protected
+   `.env.development` link was not replaced, select Node 24.21.0, and run
+   `corepack yarn install --immutable`.
+2. On the DreamHost architecture, run the server syntax check and the one-pixel
+   Sharp conversion and non-sensitive GeoIP lookup before restarting the
+   development PM2 process.
+3. Restart only `lpubelts-api-server-dev`; verify `/ready` identifies the
+   development environment and expected release, then verify the public
+   collection-statistics endpoint.
+4. With development credentials and non-sensitive inputs, verify owner profile
+   access, denied cross-user access, boolean-admin access, private cache headers,
+   accepted and rejected upload/email-form/request-lock flows, Flickr info, and
+   an RAFL preview using the external cached token. Use the development mail sink
+   only if delivery verification is desired.
+5. Inspect PM2 logs for structured request IDs and expected statuses, and verify
+   that they contain no bearer tokens, private profiles, OAuth material,
+   environment values, credential paths, or dotenv configuration messages.
+6. Before the first production deployment, use the documented read-only host
+   check to confirm protected `REMOTE_NODE_BIN` supplies Node v24.21.0 and
+   Corepack selects Yarn 4.18.0. The production release's immutable install must
+   repeat the Sharp and GeoIP probes before activation.
+7. Production deployment, PM2 reload, public smoke tests, and frontend cutover
+   remain separate explicit-approval operations.
