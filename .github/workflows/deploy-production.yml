@@ -40,7 +40,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
-          node-version: 24
+          node-version-file: .nvmrc
           package-manager-cache: false
 
       - name: Install dependencies
@@ -218,6 +218,12 @@ jobs:
           pm2 describe "$pm2_app_name" >/dev/null
 
           cd "$release_dir"
+          required_node_version=$(tr -d '[:space:]' < .nvmrc)
+          actual_node_version=$(node --version)
+          if [[ "$actual_node_version" != "v$required_node_version" ]]; then
+            echo "REMOTE_NODE_BIN provides $actual_node_version; expected v$required_node_version" >&2
+            exit 1
+          fi
           corepack yarn install --immutable
           node --check src/lpubeltsApiServer.js
 

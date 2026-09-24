@@ -72,11 +72,22 @@ Configured PM2 logs are:
 
 ## Dependency changes
 
-When a development upload changes dependency declarations, run the repository's pinned Yarn version on the server before restarting:
+Before Phase 1 begins and whenever `.nvmrc` changes, verify that the development server's protected Node binary directory provides the exact pinned version:
 
 ```sh
 cd /home/lpubelts_api/apps/api-server-dev/current
-yarn install --immutable
+export PATH="/absolute/path/from/the/server/REMOTE_NODE_BIN:$PATH"
+test "$(node --version)" = "v$(tr -d '[:space:]' < .nvmrc)"
+corepack yarn --version
+```
+
+Use the development host's actual protected binary directory in place of the placeholder. Do not infer it from a developer workstation or a legacy script path.
+
+When a development upload changes dependency declarations, run the repository's pinned Node and Yarn versions on the server before restarting:
+
+```sh
+cd /home/lpubelts_api/apps/api-server-dev/current
+corepack yarn install --immutable
 pm2 restart lpubelts-api-server-dev
 curl --fail http://127.0.0.1:10081/ready
 ```

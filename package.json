@@ -13,7 +13,7 @@
   "author": "mgsecure",
   "license": "MIT",
   "engines": {
-    "node": ">=24.0.0"
+    "node": ">=24.11.0 <25"
   },
   "dependencies": {
     "@devvit/public-api": "^0.14.3",

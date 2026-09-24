@@ -11,7 +11,7 @@ Production deploys, PM2 starts or restarts, and live-data jobs require explicit 
 The workflow:
 
 1. Checks out the exact requested commit.
-2. uses Node 24 and the pinned Yarn version.
+2. uses the Node patch pinned in `.nvmrc` and the pinned Yarn version.
 3. installs dependencies with the immutable lockfile.
 4. runs tests and lint.
 5. creates a Git archive and checksum.
@@ -42,6 +42,8 @@ It needs these secrets:
 - `SFTP_KNOWN_HOSTS`
 
 Expected values include `DEPLOY_ROOT=/home/lpubelts_api/apps/api-server-prod` and `HEALTHCHECK_URL=https://api.lpubelts.com/ready`. Do not put secret values in repository files or agent references.
+
+Before the first dependency-upgrade deployment and whenever `.nvmrc` changes, verify on the production host that `REMOTE_NODE_BIN` provides the exact `.nvmrc` version. The deployment workflow repeats this check before installing dependencies and exits before changing the `current` release if the versions differ.
 
 ## Bootstrap requirements
 

@@ -1,10 +1,10 @@
 # Dependency Upgrade Plan
 
-Status: proposed for review
+Status: active; Phase 0 implemented on 2026-09-23, with production runtime verification pending
 
 Planning snapshot: 2026-09-23
 
-Scope: root Node.js package only; no dependency, lockfile, deployment, or live-data change has been made
+Scope: root Node.js package only; Phase 0 changes runtime declarations and documentation but does not change dependencies, the lockfile, deployment state, or live data
 
 ## Executive recommendation
 
@@ -29,12 +29,12 @@ The registry and installed tree were inspected on 2026-09-23. Versions below are
 | --- | --- |
 | Direct dependencies | 42 runtime + 4 development = 46 |
 | Resolved package locators | 802 |
-| Declared Node range | `>=24.0.0` |
+| Pre-Phase 0 declared Node range | `>=24.0.0` |
 | Default agent shell | Node 23.11.0, which is outside the project contract and unsupported by ESLint 10 |
-| Verified runtime | Node 24.15.0 and Yarn 4.18.0 |
+| Verified baseline runtime | Node 24.21.0 and Yarn 4.18.0 |
 | Latest Node 24 LTS snapshot | 24.21.0 |
 | Yarn | 4.18.0, already current |
-| Tests | 68 files and 301 tests pass under Node 24.15.0 |
+| Pre-Phase 0 tests | 68 files and 301 tests pass under Node 24.21.0 |
 | Lint | 0 errors and 2 existing warnings; it also prints an unnecessary React detection warning |
 | Peer requirements | Four unsatisfied requests are inside the unused Firebase web SDK compatibility tree |
 | Lockfile deduplication | One eligible duplicate: `@types/node` 22.15.17 can resolve to 24.9.1 |
@@ -157,6 +157,8 @@ If the three WIP Snoowrap scripts are still required, write tests around their o
 
 ### Phase 0: Record a reproducible baseline
 
+Implementation status: complete for repository changes and local validation. The development host is confirmed on Node 24.21.0 and Yarn 4.18.0. Before Phase 1 begins, perform the documented read-only version check against the protected production `REMOTE_NODE_BIN` directory; repository access does not expose that host-specific value.
+
 1. Start from a clean worktree and create `internal-docs/dependency-upgrade-implementation-report.md` for actual results.
 2. Add `.nvmrc` with Node 24.21.0, narrow `engines.node` to `>=24.11.0 <25`, and make CI consume `.nvmrc` rather than a floating major where practical.
 3. Keep Yarn at 4.18.0. Use Corepack and `yarn install --immutable`; do not create an npm lockfile.
@@ -180,10 +182,10 @@ yarn test --run
 
 Exit criteria:
 
-- [ ] Local, CI, development server, and production runtime declarations agree on Node 24.
-- [ ] The test baseline remains 68 files and 301 tests unless intentional tests were added.
-- [ ] Every existing lint warning and audit path is recorded before changes begin.
-- [ ] No install uses `--force`, ignores peer requirements, or edits `yarn.lock` manually.
+- [x] Local, CI, development server, and production runtime declarations agree on Node 24.21.0; the development binary is confirmed and the installed production binary remains a manual pre-Phase 1 check.
+- [x] The baseline remains 68 files and 301 tests; Phase 0 intentionally adds one runtime-contract test.
+- [x] Every existing lint warning and audit path is recorded before dependency changes begin.
+- [x] No install uses `--force`, ignores peer requirements, or edits `yarn.lock` manually.
 
 ### Phase 1: Remove dead and unsupported dependency branches
 

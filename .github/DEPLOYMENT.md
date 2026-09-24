@@ -21,7 +21,7 @@ Add these environment variables:
 | `SFTP_PORT` | Usually `22`. |
 | `SFTP_USER` | Least-privileged deployment account. |
 | `DEPLOY_ROOT` | `/home/lpubelts_api/apps/api-server-prod`. |
-| `REMOTE_NODE_BIN` | Absolute directory containing `node`, `corepack`, and `pm2`. |
+| `REMOTE_NODE_BIN` | Absolute directory containing `node`, `corepack`, and `pm2`; `node --version` must match `.nvmrc`. |
 | `PM2_APP_NAME` | `lpubelts-api-server-prod-next`. The workflow rejects another name. |
 | `HEALTHCHECK_URL` | `https://api.lpubelts.com/ready`. |
 
@@ -77,7 +77,7 @@ Before enabling the workflow, manually verify that:
 
 1. The deployment key can use both SFTP and a restricted SSH shell.
 2. The deployment account owns `incoming`, `releases`, and the `current` symlink.
-3. `REMOTE_NODE_BIN` supplies the production Node version, Corepack, and PM2.
+3. `REMOTE_NODE_BIN` supplies the exact Node version in `.nvmrc`, Corepack, and PM2. Verify it without restarting the process: `export PATH="$REMOTE_NODE_BIN:$PATH"; test "$(node --version)" = "v$(tr -d '[:space:]' < .nvmrc)"`. Then run `corepack yarn --version` and confirm it reports 4.18.0.
 4. `pm2 describe lpubelts-api-server-prod-next` succeeds for that account and its environment contains only intentional inherited values.
 5. The readiness URL reaches the production process and returns the release ID created by the workflow.
 
@@ -85,7 +85,7 @@ Before enabling the workflow, manually verify that:
 
 Run **Actions → Deploy production → Run workflow** from `main`. The workflow requires the explicit `deploy-production` selection and serializes deployments so two releases cannot activate concurrently.
 
-The remote activation verifies the uploaded archive checksum, installs dependencies with `yarn install --immutable`, writes `.release.json`, checks server syntax, switches `current`, reloads PM2, and calls the readiness endpoint. The response must be ready and identify the exact release just activated. It then performs a bounded request to the public collection-statistics endpoint. If PM2 reload or either check fails, `current` is restored to its previous target and PM2 is reloaded again.
+The remote activation verifies the uploaded archive checksum and the Node version from `.nvmrc`, installs dependencies with `yarn install --immutable`, writes `.release.json`, checks server syntax, switches `current`, reloads PM2, and calls the readiness endpoint. The response must be ready and identify the exact release just activated. It then performs a bounded request to the public collection-statistics endpoint. If PM2 reload or either check fails, `current` is restored to its previous target and PM2 is reloaded again.
 
 For a later manual rollback, atomically repoint `current` to a reviewed retained
 release, run `pm2 reload lpubelts-api-server-prod-next`, and verify

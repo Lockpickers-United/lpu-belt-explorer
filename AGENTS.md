@@ -35,7 +35,7 @@ The index at `.agents/references/README.md` describes their scope. Update the re
 
 - Use JavaScript only. Do not introduce TypeScript or a type-checking toolchain unless the user explicitly requests that migration.
 - The root package is ES-module based (`"type": "module"`). Use `import`/`export` and explicit local file extensions. Configuration files that are intentionally `.cjs` remain CommonJS. Use JSON for PM2 process declarations in this repository; see `.agents/references/development-operations.md`.
-- Use Node 24 or newer; modern ESM, top-level `await`, and global web APIs are assumed. `package.json` enforces this minimum, and the production deployment workflow uses Node 24.
+- Use the Node 24.21.0 release pinned in `.nvmrc`. `package.json` accepts supported Node releases from 24.11.0 up to, but not including, Node 25; local and CI validation should use the pinned patch. Modern ESM, top-level `await`, and global web APIs are assumed.
 - Use Yarn. `package.json` declares Yarn 4.18.0, `.yarnrc.yml` uses the `node-modules` linker, and `yarn.lock` is authoritative.
 - This is not declared as a Yarn workspace. Directories with their own `package.json`/lockfile are separate package boundaries; follow the nearest package configuration when working in one.
 
