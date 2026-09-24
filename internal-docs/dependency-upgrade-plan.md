@@ -1,10 +1,10 @@
 # Dependency Upgrade Plan
 
-Status: active; Phases 0 through 4 implemented on 2026-09-23, with the Reddit WIP dependency decision and production runtime verification pending
+Status: active; Phases 0 through 5 implemented on 2026-09-23, with the Reddit WIP dependency decision and production runtime verification pending
 
 Planning snapshot: 2026-09-23
 
-Scope: root Node.js package only; completed work covers the reproducible runtime baseline, unused dependency removal, the Formidable migration, low-risk current-line updates, and the ESLint 10 migration without changing deployment state or live data
+Scope: root Node.js package only; completed work covers the reproducible runtime baseline, unused dependency removal, the Formidable migration, low-risk current-line updates, the ESLint 10 migration, and the dotenv 18 runtime-loading checkpoint without changing deployment state or live data
 
 ## Executive recommendation
 
@@ -269,6 +269,8 @@ Exit criteria:
 
 ### Phase 5: Upgrade dotenv 17 to 18
 
+Implementation status: complete on 2026-09-23. Dotenv 18.0.3 retains the repository's ESM default import and explicit `config({path, processEnv, override, quiet})` contract. Real temporary-file tests cover all environment selections and parsing/precedence behavior without emitting configuration output.
+
 1. Upgrade only dotenv and regenerate the lockfile.
 2. Run the real-file environment tests under Node 24.
 3. Verify that the repository uses the supported explicit API rather than removed preload behavior: it imports dotenv and calls `config()` with an explicit environment file.
@@ -278,9 +280,9 @@ Exit criteria:
 
 Exit criteria:
 
-- [ ] Local/development/production file selection and precedence are unchanged.
-- [ ] Missing/invalid configuration retains stable error codes.
-- [ ] No environment values or paths are logged unexpectedly.
+- [x] Local/development/production file selection and precedence are unchanged.
+- [x] Missing/invalid configuration retains stable error codes.
+- [x] No environment values or paths are logged unexpectedly.
 
 ### Phase 6: Upgrade Firebase Admin and remediate its transitive audit path
 
@@ -390,7 +392,8 @@ Do not combine the Formidable, ESLint, dotenv, Firebase, and Google API migratio
 - [ ] The Firebase web SDK, unused tooling packages, and stale resolutions are gone.
 - [x] The application uses supported Formidable rather than an undocumented vendored older copy.
 - [x] ESLint 10 runs without compatibility or peer overrides.
-- [ ] dotenv, Firebase Admin, Google APIs, Nodemailer, Supertest, and Vitest pass their focused contracts.
+- [x] dotenv, Nodemailer, Supertest, and Vitest pass their focused contracts.
+- [ ] Firebase Admin and Google APIs pass their focused contracts.
 - [ ] `yarn explain peer-requirements` has no actionable failure and `yarn dedupe --check` is clean.
 - [ ] Audit output has no actionable vulnerability for which a compatible supported upgrade exists; any upstream-only deprecation is documented with its dependency path.
 - [ ] Full lint and all tests pass under the pinned Node version with no unexplained warning.

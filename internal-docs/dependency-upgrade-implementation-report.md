@@ -209,3 +209,35 @@ The restricted sandbox run passed 58 files and failed 14 files because Supertest
 No application-level manual test is required for this lint-only phase. Before relying on editor diagnostics, confirm the IDE ESLint integration uses Node 24 and the repository's flat config; an older embedded Node 23 runtime cannot run ESLint 10. The Phase 0 read-only production Node/Yarn version check remains a deployment prerequisite.
 
 No server, PM2 process, deployment, live-data job, email, or other live integration was started as part of Phase 4.
+
+## Phase 5: Upgrade dotenv 17 to 18
+
+### Phase delta
+
+- Upgraded only dotenv from 17.4.2 to 18.0.3 and regenerated its `yarn.lock` entry. The direct-package and 708-locator resolved-tree counts are unchanged.
+- Confirmed that dotenv 18 retains the ESM default export used by `runtimeEnvironment.js` and supports the existing explicit `config({path, processEnv, override, quiet})` call. No runtime source change or preload migration was required, and no tracked file uses removed dotenv internal subpaths.
+- Expanded `runtimeEnvironment.test.js` from six to ten tests using real temporary `.env.local`, `.env.development`, and `.env.production` files. The added coverage verifies exact file selection, quoted hashes, inline comments, escaped and literal multiline values, a supplied `processEnv`, shell-value precedence, explicit override behavior, preservation of the originally selected `NODE_ENV`, quiet loading, and real missing-file errors.
+- Kept the stable application error codes `runtime_environment_invalid` and `runtime_environment_file_unavailable`. Quiet-mode assertions confirm that successful and missing-file loads do not print environment values or file paths.
+
+### Validation
+
+All validation used Node 24.21.0 and Yarn 4.18.0.
+
+| Check | Result |
+| --- | --- |
+| Focused runtime/server configuration | Passed: 3 files and 35 tests |
+| Configuration and import safety | Passed: 21 files and 99 tests |
+| Full tests | Passed: 72 files and 323 tests |
+| Lint | Passed with 0 errors and 0 warnings |
+| Syntax checks | Passed for `runtimeEnvironment.js` and its expanded test |
+| Mutable and immutable install | Passed; only dotenv changed in the manifest and lockfile, and the final pair reproduces cleanly |
+| ESM/API and preload scan | Default import exposes `config`; no `dotenv/config`, legacy preload option, or internal dotenv subpath is used |
+| Peer requirements and deduplication | No actionable unsatisfied peer requirement and no package eligible for highest-strategy deduplication |
+| Audit | Unchanged at two high and ten moderate entries; none is on the dotenv branch |
+| Resolved tree | Unchanged at 708 locators |
+
+The restricted sandbox run passed 58 files and failed 14 files because Supertest could not open loopback listeners. The first loopback-enabled full run had one transient route-test timeout; that 14-test file passed immediately in isolation, and a repeated complete mocked suite passed all 72 files and 323 tests. No test contacted Firebase, Reddit, Flickr, Google, SMTP, FTP, or another live service.
+
+Before production rollout, manually start the local and development service through the normal separately approved process and confirm each selects only `.env.local` or `.env.development`, respectively. Check console/PM2 output for the absence of dotenv's injected-environment message and environment-file paths. The production `.env.production` selection is covered by real-file tests; verifying it in a deployed process belongs to the separately approved development/production rollout checks.
+
+No server, PM2 process, deployment, live-data job, email, or other live integration was started as part of Phase 5.
