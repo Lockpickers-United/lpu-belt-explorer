@@ -543,8 +543,8 @@
         "coverage": "94%"
       }
     ],
-    "uniqueImages": 4817,
-    "contributors": 321,
+    "uniqueImages": 4816,
+    "contributors": 320,
     "topPhotographers": [
       {
         "contributor": "LockPickingFisherman",
@@ -1611,10 +1611,6 @@
         "images": 1
       },
       {
-        "contributor": "Bai_McD",
-        "images": 1
-      },
-      {
         "contributor": "CastleLock",
         "images": 1
       },
@@ -1833,6 +1829,6 @@
     ]
   },
   "metadata": {
-    "updatedDateTime": "2026-09-22 04:43"
+    "updatedDateTime": "2026-09-24 18:02"
   }
 }
