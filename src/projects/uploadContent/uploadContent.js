@@ -3,7 +3,7 @@ import path from 'node:path'
 import util from 'node:util'
 import {execFile} from 'node:child_process'
 import {ZipArchive} from 'archiver'
-import {formidable} from '../../util/formidable/src/index.js'
+import {formidable} from 'formidable'
 import parseForm from '../../util/parseForm.js'
 import {logger} from '../../logger/logger.js'
 

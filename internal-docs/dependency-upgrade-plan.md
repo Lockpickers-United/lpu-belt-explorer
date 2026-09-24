@@ -1,10 +1,10 @@
 # Dependency Upgrade Plan
 
-Status: active; Phases 0 and 1 implemented on 2026-09-23, with the Reddit WIP dependency decision and production runtime verification pending
+Status: active; Phases 0, 1, and 2 implemented on 2026-09-23, with the Reddit WIP dependency decision and production runtime verification pending
 
 Planning snapshot: 2026-09-23
 
-Scope: root Node.js package only; Phase 1 removes confirmed unused dependencies and their stale resolutions without changing runtime code, deployment state, or live data
+Scope: root Node.js package only; completed work covers the reproducible runtime baseline, unused dependency removal, and the Formidable migration without changing deployment state or live data
 
 ## Executive recommendation
 
@@ -157,7 +157,7 @@ If the three WIP Snoowrap scripts are still required, write tests around their o
 
 ### Phase 0: Record a reproducible baseline
 
-Implementation status: complete for repository changes and local validation. The development host is confirmed on Node 24.21.0 and Yarn 4.18.0. Before Phase 1 begins, perform the documented read-only version check against the protected production `REMOTE_NODE_BIN` directory; repository access does not expose that host-specific value.
+Implementation status: complete for repository changes and local validation. The development host is confirmed on Node 24.21.0 and Yarn 4.18.0. Before any production deployment, perform the documented read-only version check against the protected production `REMOTE_NODE_BIN` directory; repository access does not expose that host-specific value.
 
 1. Start from a clean worktree and create `internal-docs/dependency-upgrade-implementation-report.md` for actual results.
 2. Add `.nvmrc` with Node 24.21.0, narrow `engines.node` to `>=24.11.0 <25`, and make CI consume `.nvmrc` rather than a floating major where practical.
@@ -215,19 +215,21 @@ This checkpoint remains future work by explicit request and should be completed 
 
 ### Phase 2: Replace the vendored Formidable implementation
 
+Implementation status: complete on 2026-09-23. The same 16 multipart contract tests passed against the vendored parser and Formidable 3.5.4. The shared parser wrapper now closes the rejected-file cleanup race exposed by `maxFiles: 0`.
+
 1. Add the real multipart contract coverage described above while the vendored parser is still active.
-2. Audit the vendored diff against Formidable 3.5.4. The visible difference includes the old `hexoid` ID generator versus current Formidable's CUID2 implementation, plus older parser code; do not treat it as formatting-only.
-3. Change active imports in upload, email-form, and request-lock handlers from `src/util/formidable/src/index.js` to the package export.
+2. Audit the vendored diff against Formidable 3.5.4. The completed comparison found matching application-facing parser contracts and a material default-name generator change from `hexoid` to CUID2.
+3. Change imports in upload, email-form, request-lock, and the tracked Reddit WIP upload utility from `src/util/formidable/src/index.js` to the package export.
 4. Preserve endpoint-specific size limits, keep the existing centralized error mapping, and verify temporary-file lifecycle behavior.
 5. Remove the vendored parser and `hexoid` only after the old/new contract comparison passes.
 6. Confirm Formidable remains direct because application code now imports it. Do not rely on Supertest's transitive copy.
 
 Exit criteria:
 
-- [ ] Real multipart requests pass through every active endpoint.
-- [ ] Malformed and oversized requests retain stable status/code responses.
-- [ ] No vendored Formidable code or `hexoid` dependency remains.
-- [ ] No unexpected upload file remains after tests.
+- [x] Real multipart requests pass through every active endpoint.
+- [x] Malformed and oversized requests retain stable status/code responses.
+- [x] No vendored Formidable code or `hexoid` dependency remains.
+- [x] No unexpected upload file remains after tests.
 
 ### Phase 3: Apply low-risk current-line updates
 
@@ -347,7 +349,7 @@ After code review, deploy to the development environment through its normal uplo
 | Firebase Admin | Firebase target/auth/profile/export mocks, import safety, audit | Development database auth/profile read only after separate approval |
 | Google APIs | Mocked Forms/Sheets/auth tests, import safety, audit | Development RAFL preview only after separate live-service approval |
 | Nodemailer | Injected transport/send tests | Development mail sink only after separate approval |
-| Vitest/Supertest | All 68+ files and 301+ tests | None beyond normal development smoke tests |
+| Vitest/Supertest | All 71+ files and 318+ tests | None beyond normal development smoke tests |
 
 At every checkpoint:
 
@@ -382,7 +384,7 @@ Do not combine the Formidable, ESLint, dotenv, Firebase, and Google API migratio
 - [ ] Yarn remains on current stable 4.18.0 and immutable installs reproduce the lockfile.
 - [ ] No deprecated Snoowrap/request tree or high/critical advisory remains.
 - [ ] The Firebase web SDK, unused tooling packages, and stale resolutions are gone.
-- [ ] The application uses supported Formidable rather than an undocumented vendored older copy.
+- [x] The application uses supported Formidable rather than an undocumented vendored older copy.
 - [ ] ESLint 10 runs without compatibility or peer overrides.
 - [ ] dotenv, Firebase Admin, Google APIs, Nodemailer, Supertest, and Vitest pass their focused contracts.
 - [ ] `yarn explain peer-requirements` has no actionable failure and `yarn dedupe --check` is clean.

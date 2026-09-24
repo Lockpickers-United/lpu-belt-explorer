@@ -1,7 +1,7 @@
 import fs from 'fs'
 import {localUser, prodUser} from '../../../keys/users.js'
 import {beltSort} from '../../util/belts.js'
-import formidable from '../../util/formidable/src/index.js'
+import formidable from 'formidable'
 import authenticateRequest from '../../util/authenticateRequest.js'
 
 

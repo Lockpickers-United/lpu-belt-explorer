@@ -101,3 +101,38 @@ The initial restricted test run passed 56 files and failed 13 files because Supe
 No Phase 1-specific manual application check is needed because all removed packages had no runtime consumer. Before any deployment, the Phase 0 read-only production Node/Yarn version check remains outstanding; it is a deployment prerequisite rather than a dependency-removal behavior check.
 
 No server, PM2 process, production deployment, collection job, or live integration was started as part of Phase 1.
+
+## Phase 2: Replace the vendored Formidable implementation
+
+### Phase delta
+
+- Added 16 real multipart contract tests and ran the same tests before and after the parser replacement. They cover valid requests through upload, email-form, and request-lock handlers; repeated field/file shapes; filename/path handling; field-count, field-size, file-count, individual-file-size, and total-file-size limits; missing/malformed boundaries; interrupted streams; stable error status/code mapping; and temporary-file cleanup.
+- Replaced the vendored imports in the three maintained multipart handlers and the tracked Reddit WIP upload utility with the direct `formidable` 3.5.4 package export.
+- Removed the 19-file `src/util/formidable/` copy and the direct `hexoid` dependency. Formidable remains direct in the manifest, while its supported CUID2 dependency now owns default temporary filename generation.
+- Regenerated `yarn.lock`, reducing the root manifest from 41 to 40 direct packages and the resolved tree from 739 to 738 locators.
+- Updated `parseForm.js` to defer rejected-file cleanup until Formidable has registered the current file. This closes the `maxFiles: 0` ordering race that otherwise left an empty temporary file, while retaining the existing HTTP status and numeric error code.
+
+The vendored/source comparison found the same parser defaults, numeric error constants, request parsing, limit enforcement, and file lifecycle structure used by the application. The material implementation difference was the vendored `hexoid` default-name generator versus Formidable 3.5.4's CUID2 generator. All active upload handlers supply explicit filename callbacks or reject files, so this generator change does not alter their accepted output filenames. The before/after contract results were identical after the shared cleanup fix.
+
+### Validation
+
+All validation used Node 24.21.0 and Yarn 4.18.0.
+
+| Check | Result |
+| --- | --- |
+| Before/after multipart comparison | Passed twice: 2 files and 16 tests against the vendored parser, then Formidable 3.5.4 |
+| Focused handler/import suites | Passed: 11 files and 35 tests |
+| Full tests | Passed: 71 files and 318 tests |
+| Lint | Passed with the two recorded source warnings and React detection warning owned by Phase 4 |
+| Syntax checks | Passed for `parseForm.js`, the multipart endpoint test, and the migrated Reddit WIP upload utility |
+| Mutable and immutable install | Passed; final manifest and lockfile reproduce cleanly |
+| Dependency ownership | Direct Formidable 3.5.4 retained; `hexoid` absent; CUID2 remains only under Formidable |
+| Peer requirements and deduplication | No actionable unsatisfied peer requirement and no package eligible for highest-strategy deduplication |
+| Audit | Two high and eleven moderate entries remain unchanged; none is on the Formidable branch |
+| Static scan | No vendored Formidable import, source file, or `hexoid` dependency remains |
+
+The restricted sandbox could not open Supertest loopback listeners (`listen EPERM`), as in the earlier phases. The focused and full mocked suites passed when local loopback sockets were available. Tests used temporary files and injected Firebase, email, archive, thumbnail, metadata, activity-log, and Discord boundaries; no live service was contacted.
+
+Before production rollout, manually exercise the three multipart flows in the development environment with non-sensitive data: submit two small images through upload and inspect the emailed archive, submit a valid email form plus rejected attachment/oversize cases, and submit one authenticated request-lock image and inspect its stored media URLs/files. Confirm rejected uploads and upload workspaces leave no unexpected temporary files. These checks require the normal separately approved development deployment and integration access.
+
+No server, PM2 process, deployment, live-data job, email, Discord webhook, Firebase call, or other live integration was started as part of Phase 2.
