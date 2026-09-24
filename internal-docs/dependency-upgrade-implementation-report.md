@@ -336,3 +336,48 @@ All validation used Node 24.21.0 and Yarn 4.18.0.
 The two remaining audit entries are the already documented upstream-only Glob 10.5.0 path under Firebase Firestore and node-domexception 1.0.0 path under Google request clients. No compatible supported direct update removes either path.
 
 No checkpoint-specific manual application test is required because the removed files were retired WIP utilities with no remaining route or runtime consumer. No server, PM2 process, deployment, credential read, Reddit request, live-data job, or other live integration was started.
+
+## Phase 8: Final tree validation and development rollout notes
+
+### Phase delta
+
+- Final lockfile review found one prerelease transitive package: `eslint-import-resolver-node` 0.4.0 selected `resolve` 2.0.0-next.7. The flat ESLint configuration now uses Import X 4.17.1's supported built-in `createNodeResolver()` through `import-x/resolver-next`, and the redundant direct resolver package was removed.
+- Regenerated `yarn.lock`, removing the prerelease Resolve branch and its otherwise unused supporting packages. The final manifest contains 27 runtime and 7 development dependencies, and the resolved tree decreased from 660 to 580 locators.
+- Repeated the direct-package ownership scan. Every runtime package has a tracked import or configuration consumer, every lint/test package is under `devDependencies`, and direct Vite 8.3.0 remains intentionally retained as Vitest 5.0.1's peer. No npm lockfile, external prerelease locator, stale resolution, or avoidable duplicate in the reviewed Firebase Admin, Vite/Vitest, or ESLint families remains.
+- Retained the single package-scoped `gaxios@npm:6.7.1/uuid` resolution. Supported local-auth and Cloud Storage branches still require Gaxios 6.7.1, which resolves UUID 11.1.1; Google Auth 9.15.1, 10.5.0, and 11.1.0 remain separated by incompatible upstream ranges.
+- No new unit test was needed. Loading the changed flat configuration and resolving the complete lint target exercises the new resolver boundary, while the full application suite verifies that the dependency-tree cleanup does not change runtime behavior.
+
+### Validation
+
+All authoritative validation used Node 24.21.0 and Yarn 4.18.0. The default agent shell remains Node 23.11.0, so each final command explicitly selected the pinned Node binary before invoking Corepack.
+
+| Check | Result |
+| --- | --- |
+| Immutable install | Passed with the final manifest and lockfile |
+| Resolved tree | 580 locators; no external prerelease version remains |
+| Direct-package and lockfile review | 27 runtime and 7 development dependencies; all imported, configured, or intentionally retained; no npm lockfile |
+| Peer requirements | All requests satisfied; optional absent peers are reported as satisfied |
+| Deduplication | No package can be deduplicated with the highest strategy |
+| Audit | Zero high or critical findings; two moderate upstream deprecations remain for Glob 10.5.0 and node-domexception 1.0.0 |
+| Dependency families | One Firebase Admin, Vite, Vitest, ESLint, and `@eslint/js` version; the three required Google Auth majors remain owned by incompatible upstream ranges |
+| Scoped resolution | Gaxios 6.7.1 resolves only UUID 11.1.1; no other UUID locator remains |
+| Lint | Passed with 0 errors and 0 warnings |
+| Tests | Passed: 74 files and 336 tests |
+| Syntax checks | Passed for the server entry point, flat ESLint config, and all standalone scripts changed during the upgrade phases |
+| Local native-package probes | Sharp 0.35.4/libvips 8.18.6 generated a PNG and GeoIP 2.0.3 completed a lookup on Darwin ARM64 |
+
+The first restricted full-suite run passed 60 files and failed 14 files because Supertest could not open loopback listeners. The same complete mocked suite passed all 74 files and 336 tests with local loopback access. No test contacted Firebase, Reddit, Flickr, Google, SMTP, FTP, or another live service, and no live credential was read.
+
+The final audit still exits with status 1 for the two documented deprecation entries. Glob 10.5.0 remains under Firebase Admin -> Firestore -> Firestore API -> Google GAX 5 -> Rimraf 5, and node-domexception 1.0.0 remains under Firebase's Google request clients -> Node Fetch 3 -> Fetch Blob 3. No compatible supported direct update removes either path.
+
+### Development rollout checklist
+
+After code review and separate approval for the development deployment and integrations:
+
+1. Upload the reviewed files to `/home/lpubelts_api/apps/api-server-dev/current`, confirm the protected environment-file link was not replaced, select the protected Node 24.21.0 binary, and run `corepack yarn install --immutable`.
+2. Before restart, run `node --check src/lpubeltsApiServer.js`. On the DreamHost architecture, import Sharp and GeoIP and perform the same one-pixel image conversion and non-sensitive IP lookup used locally. Development and production share the same VPS architecture, but the production release's own immutable install must repeat these probes before production activation.
+3. Restart `lpubelts-api-server-dev`, then confirm `/ready` returns `ready: true`, identifies `development` and the expected release, and the public `/api/v1/stats/collections/locks` response is available.
+4. With development credentials and non-sensitive data, verify owner profile access, denied cross-user access, boolean-admin access, `private, no-store`, valid and rejected upload/email-form/request-lock multipart requests, Flickr info, and an RAFL preview that reuses the external cached token.
+5. Inspect the configured PM2 logs for structured JSON, request IDs, expected status codes, and the absence of bearer tokens, private profiles, OAuth material, environment values, credential paths, and dotenv configuration messages. If email delivery needs integration coverage, use the configured development mail sink.
+
+The development upload, dependency install, PM2 restart, authenticated Firebase call, multipart side effects, Flickr request, RAFL preview, and mail-sink send were not performed because each needs separate explicit approval under `AGENTS.md`. Production deployment remains a later, separately approved operation. The protected production Node/Yarn version check and production-release Sharp/GeoIP probes also remain outstanding before production activation.

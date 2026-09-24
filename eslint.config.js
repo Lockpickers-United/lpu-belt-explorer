@@ -3,7 +3,7 @@ import {fileURLToPath} from 'node:url'
 
 import js from '@eslint/js'
 import globals from 'globals'
-import importPlugin from 'eslint-plugin-import-x'
+import importPlugin, {createNodeResolver} from 'eslint-plugin-import-x'
 
 const gitignorePath = fileURLToPath(new URL('.gitignore', import.meta.url))
 
@@ -21,11 +21,11 @@ export default defineConfig([
     includeIgnoreFile(gitignorePath),
     {
         settings: {
-            'import-x/resolver': {
-                node: {
+            'import-x/resolver-next': [
+                createNodeResolver({
                     extensions: ['.js', '.jsx', '.json']
-                }
-            }
+                })
+            ]
         },
 
         languageOptions: {
