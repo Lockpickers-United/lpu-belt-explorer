@@ -169,3 +169,43 @@ All validation used Node 24.21.0 and Yarn 4.18.0.
 No Phase 3-specific manual check is required. The only behavior outside automated coverage is delivery through the configured development SMTP service; an optional development mail-sink send can verify SMTP authentication and TLS after deployment and requires the normal separate approval for a live email integration.
 
 No server, PM2 process, deployment, live-data job, email, or other live integration was started as part of Phase 3.
+
+## Phase 4: Migrate ESLint 9 to ESLint 10
+
+### Phase delta
+
+- Rewrote `eslint.config.js` as native flat config under ESLint 9.39.5, preserving the 202-file lint scope, Node/browser globals, import extension policy, project ignores, and existing warning severities without `FlatCompat` or compatibility rule wrappers.
+- Upgraded ESLint to 10.11.0 and `@eslint/js` to 10.0.1, replaced `eslint-plugin-import` 2.32.0 with `eslint-plugin-import-x` 4.17.1, and declared `eslint-import-resolver-node` 0.4.0 directly.
+- Removed `@eslint/compat`, `@eslint/eslintrc`, `eslint-plugin-react`, and `eslint-plugin-react-hooks`. ESLint, `@eslint/js`, Globals, Import X, and the resolver now live under `devDependencies`.
+- Removed the explicit `@humanfs/node` resolution. ESLint 10 still selects `@humanfs/node` 0.16.8 through its supported range without an override.
+- Resolved the two recorded baseline warnings in `lpubeltsLogAnalyzer.js` by giving the Express Useragent default import an unambiguous local name and removing the unused log-line counter.
+- Kept ESLint 10's new `no-unassigned-vars`, `no-useless-assignment`, and `preserve-caught-error` recommended rules enabled. `no-useless-assignment` identified one unnecessary empty-object initializer in `lpubeltsLogDataProcessor.js`, which was removed without changing its parse-error control flow.
+- Resolved two Import X diagnostics by using Nodemailer's verified named `createTransport` export in the application module and its existing inert transport contract test.
+- Regenerated and deduplicated `yarn.lock`, reducing direct packages from 40 to 37 and resolved locators from 738 to 708. The temporary `@types/estree` duplicate introduced during installation was consolidated to 1.0.9.
+
+No new unit test was needed. The existing Nodemailer contract executes the changed package import and transport construction, while ESLint and `node --check` directly validate the static log-analyzer cleanup. The log analyzers were not executed because they read configured host log/data paths.
+
+### Validation
+
+All validation used Node 24.21.0 and Yarn 4.18.0.
+
+| Check | Result |
+| --- | --- |
+| ESLint 9 native-flat-config checkpoint | Passed over 202 files with the same two source warnings as baseline and no React detection warning |
+| Official ESLint v9-to-v10 codemod | Dry run completed; 1,797 files were unchanged and zero files would be modified |
+| ESLint 10 lint | Passed over the same 202 files with 0 errors and 0 warnings |
+| Migration API/static search | No `eslint-env`, custom rule, RuleTester, legacy Linter API, or removed CLI-flag use requires migration |
+| Focused Nodemailer contract | Passed: 1 file and 1 test using the real inert JSON transport |
+| Full tests | Passed: 72 files and 319 tests |
+| Syntax checks | Passed for the flat config and all four changed source/test modules |
+| Mutable and immutable install | Passed; final manifest and lockfile reproduce cleanly |
+| Peer requirements and deduplication | No actionable unsatisfied peer requirement and no package eligible for highest-strategy deduplication |
+| Removed-package checks | Compatibility adapters, the old import plugin, and both React plugins are absent; the HumanFS resolution is gone |
+| Audit | Reduced from two high and eleven moderate entries to two high and ten moderate entries; the unsupported ESLint 9 entry is gone |
+| Diff hygiene | `git diff --check` passed |
+
+The restricted sandbox run passed 58 files and failed 14 files because Supertest could not open loopback listeners. Repeating the same mocked suite with local loopback access passed all 72 files and 319 tests. No test contacted Firebase, Reddit, Flickr, Google, SMTP, FTP, or another live service.
+
+No application-level manual test is required for this lint-only phase. Before relying on editor diagnostics, confirm the IDE ESLint integration uses Node 24 and the repository's flat config; an older embedded Node 23 runtime cannot run ESLint 10. The Phase 0 read-only production Node/Yarn version check remains a deployment prerequisite.
+
+No server, PM2 process, deployment, live-data job, email, or other live integration was started as part of Phase 4.

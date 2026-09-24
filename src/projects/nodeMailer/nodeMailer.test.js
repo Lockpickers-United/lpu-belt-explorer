@@ -1,9 +1,9 @@
 import {describe, expect, it} from 'vitest'
-import nodemailer from 'nodemailer'
+import {createTransport} from 'nodemailer'
 
 describe('nodemailer transport contract', () => {
     it('constructs an inert transport and sends the application message shape', async () => {
-        const transporter = nodemailer.createTransport({jsonTransport: true})
+        const transporter = createTransport({jsonTransport: true})
 
         const result = await transporter.sendMail({
             from: 'LPU Belts <sender@example.test>',

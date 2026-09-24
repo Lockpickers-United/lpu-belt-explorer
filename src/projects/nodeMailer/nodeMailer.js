@@ -1,4 +1,4 @@
-import nodemailer from 'nodemailer'
+import {createTransport} from 'nodemailer'
 import {emailConfigs} from '../../../keys/users.js'
 
 // async_await is not allowed in global scope, must use a wrapper
@@ -6,7 +6,7 @@ export async function sendEmail(content) {
 
     //console.log('content', content)
 
-    const transporter = nodemailer.createTransport({
+    const transporter = createTransport({
         host: 'smtp.dreamhost.com',
         port: 587,
         secure: false, // true for port 465, false for other ports

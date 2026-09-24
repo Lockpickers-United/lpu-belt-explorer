@@ -1,10 +1,10 @@
 # Dependency Upgrade Plan
 
-Status: active; Phases 0 through 3 implemented on 2026-09-23, with the Reddit WIP dependency decision and production runtime verification pending
+Status: active; Phases 0 through 4 implemented on 2026-09-23, with the Reddit WIP dependency decision and production runtime verification pending
 
 Planning snapshot: 2026-09-23
 
-Scope: root Node.js package only; completed work covers the reproducible runtime baseline, unused dependency removal, the Formidable migration, and low-risk current-line updates without changing deployment state or live data
+Scope: root Node.js package only; completed work covers the reproducible runtime baseline, unused dependency removal, the Formidable migration, low-risk current-line updates, and the ESLint 10 migration without changing deployment state or live data
 
 ## Executive recommendation
 
@@ -47,7 +47,7 @@ The initial in-sandbox Supertest run could not open loopback listeners. The same
 | Source | Findings | Planned resolution |
 | --- | --- | --- |
 | `snoowrap` -> `request` / `request-promise` / old `ws` | 2 high and 7 moderate findings are wholly on this branch; the UUID finding also has another path | Replace or retire the three WIP Snoowrap scripts, then remove `snoowrap` |
-| ESLint 9.39.5 | 1 moderate unsupported-version entry | Complete the ESLint 10 migration |
+| ESLint 9.39.5 | 1 moderate unsupported-version entry | Resolved in Phase 4 by ESLint 10.11.0 |
 | `gaxios` 6.7.1 -> UUID 9.0.1 | Part of 1 moderate UUID advisory | Prefer an upstream fix; otherwise use one narrowly scoped, tested resolution to UUID 11.1.1 |
 | Latest Firebase Admin optional Firestore/Storage tree | `glob` 10.5.0 and `node-domexception` 1.0.0 deprecation entries | Recheck after Firebase Admin 14.5.0; document as upstream-only exceptions if no compatible supported path exists |
 
@@ -58,7 +58,7 @@ The existing four `resolutions` are also signs of dependency branches that can b
 | Resolution | Current owner | Expected action |
 | --- | --- | --- |
 | `@grpc/grpc-js@~1.9.0` -> 1.9.16 | Unused Firebase web SDK | Remove with `firebase`, then prove it is no longer needed |
-| `@humanfs/node@^0.16.6` -> 0.16.8 | ESLint 9 | Remove after ESLint 10 |
+| `@humanfs/node@^0.16.6` -> 0.16.8 | ESLint 9 | Removed in Phase 4; ESLint 10 still selects 0.16.8 without a resolution |
 | `form-data@~2.3.2` -> 2.5.6 | Deprecated `request` tree from Snoowrap | Remove with `snoowrap` |
 | `protobufjs@7.6.3` -> 7.6.6 | Exact Devvit dependency; Firebase Admin also accepts a current range | Remove with Devvit and confirm Firebase Admin resolves safely without it |
 
@@ -246,6 +246,8 @@ Run the closest focused tests after each package, then full lint and tests once 
 
 ### Phase 4: Migrate ESLint 9 to ESLint 10
 
+Implementation status: complete on 2026-09-23. ESLint 10.11.0 and Import X 4.17.1 lint the same 202-file scope with zero diagnostics. All three newly recommended ESLint 10 rules remain enabled, the unsupported ESLint audit entry is gone, and the explicit HumanFS resolution was removed.
+
 The sibling project already completed this migration and provides a proven model in `../../lpu-belt-explorer/internal-docs/major-dependency-upgrade-implementation-report.md`. This server repository is simpler because it has no React or JSX source.
 
 1. At an ESLint 9 checkpoint, rewrite `eslint.config.js` as native flat config using `@eslint/js` recommended rules and explicit project rules.
@@ -260,10 +262,10 @@ The sibling project already completed this migration and provides a proven model
 
 Exit criteria:
 
-- [ ] ESLint 10 loads the config natively with no compatibility adapter or peer override.
-- [ ] The same intended files are linted before and after migration.
-- [ ] Lint has no unexplained new diagnostic and no React-package warning.
-- [ ] The ESLint 9 audit entry and `@humanfs/node` resolution are gone.
+- [x] ESLint 10 loads the config natively with no compatibility adapter or peer override.
+- [x] The same intended files are linted before and after migration.
+- [x] Lint has no unexplained new diagnostic and no React-package warning.
+- [x] The ESLint 9 audit entry and `@humanfs/node` resolution are gone.
 
 ### Phase 5: Upgrade dotenv 17 to 18
 
@@ -387,7 +389,7 @@ Do not combine the Formidable, ESLint, dotenv, Firebase, and Google API migratio
 - [ ] No deprecated Snoowrap/request tree or high/critical advisory remains.
 - [ ] The Firebase web SDK, unused tooling packages, and stale resolutions are gone.
 - [x] The application uses supported Formidable rather than an undocumented vendored older copy.
-- [ ] ESLint 10 runs without compatibility or peer overrides.
+- [x] ESLint 10 runs without compatibility or peer overrides.
 - [ ] dotenv, Firebase Admin, Google APIs, Nodemailer, Supertest, and Vitest pass their focused contracts.
 - [ ] `yarn explain peer-requirements` has no actionable failure and `yarn dedupe --check` is clean.
 - [ ] Audit output has no actionable vulnerability for which a compatible supported upgrade exists; any upstream-only deprecation is documented with its dependency path.

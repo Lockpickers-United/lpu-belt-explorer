@@ -113,7 +113,7 @@ for (const file of dataFiles) {
     if (today.diff(requestDate, 'day') > daysToReport) continue
 
     const filePath = path.join(dataPath, file)
-    let dayData = {}
+    let dayData
     try {
         const content = fs.readFileSync(filePath, 'utf8')
         dayData = JSON.parse(content)

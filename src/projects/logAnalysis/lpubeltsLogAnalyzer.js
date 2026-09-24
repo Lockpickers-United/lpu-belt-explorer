@@ -5,7 +5,7 @@ import fs from 'fs'
 import path from 'path'
 import {exec} from 'child_process'
 import {fileURLToPath, parse as parseUrl} from 'url'
-import useragent from 'express-useragent'
+import expressUseragent from 'express-useragent'
 import geoipLite from 'geoip-lite'
 import {setDeepAdd} from '../../util/setDeep.js'
 
@@ -57,7 +57,6 @@ const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', '
 const ignoreFiles = ['.', '..', '.DS_Store', 'New Folder With Items']
 
 // GLOBAL VARIABLES
-let logLines = 0
 let stats = {}  // Will be keyed by requestDate (YYYY-MM-DD)
 let temp = {}   // Temporary storage for min/max times and IP addresses
 let duplicateLockViews = 0 // eslint-disable-line
@@ -113,7 +112,6 @@ logFiles.forEach(logFileName => {
 
     lines.forEach(line => {
         if (!line.trim()) return
-        logLines++
         // Collapse multiple spaces into one
         line = line.replace(/\s+/g, ' ')
 
@@ -324,7 +322,7 @@ logFiles.forEach(logFileName => {
         }
 
         // USER AGENT PROCESSING
-        let uaResult = useragent.parse(clientSoftware)
+        let uaResult = expressUseragent.parse(clientSoftware)
         let uaPlatform = uaResult.os || 'Other'
         let uaBrowser = uaResult.browser || 'Other'
         setDeepAdd(stats, [requestDateText, 'platforms', uaPlatform], 1)
@@ -368,7 +366,6 @@ Object.keys(temp).forEach(requestDateText => {
 
 // RUNTIME INFO
 //console.log(`Data Process Runtime: ${String(dayjs().diff(today, 'minute')).padStart(2, '0')}:${String(dayjs().diff(today, 'second')).padStart(2, '0')}.${String(dayjs().diff(today, 'millisecond')).substring(0, 2)}`)
-//console.log(`Processed ${logLines} log entries`)
 
 
 // Optionally, use a system command to announce completion (macOS only)
