@@ -17,6 +17,8 @@ keys
 scripts/*
 !scripts/runCollectionExportAnalysis.js
 !scripts/runCollectionExportAnalysis.test.js
+!scripts/runFetchAnalyzeLogs.js
+!scripts/runFetchAnalyzeLogs.test.js
 scripts/*.csv
 scripts/*.json
 scripts/*.md

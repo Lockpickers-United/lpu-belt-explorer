@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "vitest",
-    "lint": "eslint \"./src/**\" \"./scripts/runCollectionExportAnalysis.js\" \"./scripts/runCollectionExportAnalysis.test.js\"",
+    "lint": "eslint \"./src/**\" \"./scripts/runCollectionExportAnalysis.js\" \"./scripts/runCollectionExportAnalysis.test.js\" \"./scripts/runFetchAnalyzeLogs.js\" \"./scripts/runFetchAnalyzeLogs.test.js\"",
     "security:scan": "node scripts/security-scan.js"
   },
   "keywords": [],

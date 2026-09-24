@@ -159,7 +159,10 @@ export async function runAllEvidenceExport({
         writeJsonFileAtomic(`${publicDataDir}/allProjects.json`, fullDb),
         writeJsonFileAtomic(`${publicDataDir}/pickStats.json`, pickStats),
         writeJsonFileAtomic(`${publicDataDir}/allScorecardEvidence.json`, allScorecardEvidence),
+
+        // not in use?
         writeJsonFileAtomic(`${publicDataDir}/allUnclaimedEvidence.json`, allUnclaimedEvidence)
+
     ])
 
     if (trigger !== 'cronjob') console.log('All evidence export complete')

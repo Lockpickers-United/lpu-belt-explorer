@@ -10,7 +10,7 @@ WebStorm uploads changed files over SFTP into:
 
 Exclude `.env*`, credentials, `node_modules`, logs, uploads, and generated runtime data from automatic uploads. Install dependencies on the server when `package.json` or `yarn.lock` changes.
 
-The server and command-line jobs validate `NODE_ENV` as `local`, `development`, or `production` and load the matching file from the repository root. This single file contains the API, integration, and `COLLECTION_*` job settings. Link that path to the protected shared file once during setup:
+The server and command-line jobs validate `NODE_ENV` as `local`, `development`, or `production` and load the matching file from the repository root. This single file contains the API, integration, `COLLECTION_*`, and `LOG_ANALYSIS_*` job settings. Link that path to the protected shared file once during setup:
 
 ```sh
 ln -s ../shared/.env.development /home/lpubelts_api/apps/api-server-dev/current/.env.development
@@ -19,6 +19,13 @@ ln -s ../shared/.env.development /home/lpubelts_api/apps/api-server-dev/current/
 Confirm that the destination does not already exist before creating the link. WebStorm must exclude the link path as well as `.env*` so an upload cannot replace it.
 
 Do not create additional environment files under `src/projects`. Standalone jobs and the combined collection runner use the same protected root file, while their config modules validate only the variables each job needs.
+
+The combined web-log job is `scripts/runFetchAnalyzeLogs.js`. It uses the pinned
+Node executable through `process.execPath`, then runs the FTP fetch, daily
+analyzer, and aggregate processor in order. Set
+`LOG_ANALYSIS_FTP_ENABLED=true` only where the job is authorized to contact the
+configured FTP host. `--check-config` validates and prints the effective paths
+and non-secret FTP settings without contacting FTP or catalog services.
 
 Development catalog snapshots live at
 `/home/lpubelts_api/apps/api-server-dev/shared/snapshots`. Configure that absolute
