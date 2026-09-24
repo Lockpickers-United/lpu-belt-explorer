@@ -1,7 +1,8 @@
 import fs from 'node:fs/promises'
+import {fileURLToPath} from 'node:url'
 import express from 'express'
 import request from 'supertest'
-import {beforeAll, beforeEach, describe, expect, it, vi} from 'vitest'
+import {afterAll, beforeAll, beforeEach, describe, expect, it, vi} from 'vitest'
 import {registerRoutes} from '../../routes.js'
 import normalizeRequestUrl from '../../util/normalizeRequestUrl.js'
 import {rateLimitPolicies} from '../middleware/rateLimit.js'
@@ -37,10 +38,19 @@ function createApiTestApp() {
 
 let app
 let collectionStats
+const collectionStatsFixtureDir = fileURLToPath(new URL('../../data/', import.meta.url))
+const collectionStatsFixturePath = fileURLToPath(
+    new URL('../../data/collectionStatsByIdFull.json', import.meta.url)
+)
 
 beforeAll(async () => {
+    vi.stubEnv('COLLECTION_API_DIR', collectionStatsFixtureDir)
     app = createApiTestApp()
-    collectionStats = JSON.parse(await fs.readFile('src/data/collectionStatsByIdFull.json', 'utf8'))
+    collectionStats = JSON.parse(await fs.readFile(collectionStatsFixturePath, 'utf8'))
+})
+
+afterAll(() => {
+    vi.unstubAllEnvs()
 })
 
 describe('collection stats API', () => {

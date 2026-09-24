@@ -1,3 +1,4 @@
+import {fileURLToPath} from 'node:url'
 import {describe, expect, it, vi} from 'vitest'
 import {allEvidenceExportMain} from './allEvidenceExport.js'
 import {awardsEvidenceExportMain} from './awardsEvidenceExport.js'
@@ -9,6 +10,10 @@ import {leaderboardStatsProcessMain} from './leaderboardStatsProcess.js'
 import {raflCollectionUtilsMain} from './raflCollectionUtils.js'
 import {discordBeltCountsDownloadMain} from './discordBeltCountsDownload.js'
 import {lockStatsMain} from '../lockStatistics/lockStats.js'
+
+const developmentEnvironmentPath = fileURLToPath(
+    new URL('../../../.env.development', import.meta.url)
+)
 
 const env = {
     NODE_ENV: 'development',
@@ -56,7 +61,7 @@ describe('exporter --check-config mode', () => {
         })
         expect(writeOutput).toHaveBeenCalledOnce()
         expect(loadEnvironment).toHaveBeenCalledWith(expect.objectContaining({
-            path: expect.stringMatching(/explore-lpubelts-com-node\/\.env\.development$/),
+            path: developmentEnvironmentPath,
             override: false,
             quiet: true
         }))
