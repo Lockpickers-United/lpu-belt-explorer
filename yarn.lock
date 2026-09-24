@@ -3371,13 +3371,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"googleapis@npm:^180.0.0":
-  version: 180.0.0
-  resolution: "googleapis@npm:180.0.0"
+"googleapis@npm:^181.0.0":
+  version: 181.0.0
+  resolution: "googleapis@npm:181.0.0"
   dependencies:
     google-auth-library: "npm:^11.0.0"
     googleapis-common: "npm:^9.0.0"
-  checksum: 10c0/27fcdc952a55fdb29b487e0f7b4e29320ddee6065eec63c53abeaa005ceb68456e888aab8a8a7705eae374cac3a6860505a46c90a1a822b28d806d3e6f3e35d2
+  checksum: 10c0/23291265ab67e7c0901cdfab3f2c55e55016b078a358b606a41f6b0ac227a8d6c97c61476583057259a148c97353348f64f0be321192aaa96217e6ba1190ddfa
   languageName: node
   linkType: hard
 
@@ -4435,7 +4435,7 @@ __metadata:
     fuse.js: "npm:^7.5.0"
     geoip-lite: "npm:2.0.3"
     globals: "npm:^17.12.0"
-    googleapis: "npm:^180.0.0"
+    googleapis: "npm:^181.0.0"
     helmet: "npm:^8.3.0"
     joi: "npm:^18.2.9"
     json-2-csv: "npm:^5.6.0"

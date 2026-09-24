@@ -275,3 +275,35 @@ The latest supported Firebase tree retains two upstream deprecation findings tha
 Before production rollout, perform a separately approved development smoke check against the configured named development database: verify a valid owner token can read its full profile, another non-admin token is denied, and an actual boolean admin claim can read another profile. Confirm the responses retain `private, no-store` and that logs contain no bearer token or private profile. A bounded development exporter run can additionally validate service-account and named-database integration, but it reads live Firebase and writes output, so it requires separate explicit approval under the repository rules.
 
 No server, PM2 process, deployment, credential read, Firebase request, exporter, live-data job, or other live integration was started as part of Phase 6.
+
+## Phase 7: Upgrade Google APIs 180 to 181
+
+### Phase delta
+
+- Upgraded only `googleapis` from 180.0.0 to 181.0.0 and regenerated its lockfile entry. Google APIs 181 keeps the existing `googleapis-common` 9.0.4 and Google Auth 11.1.0 dependency ranges, so the resolved tree remains at 706 locators.
+- Extracted the active RAFL utility's cached-token authorization flow into the import-safe `googleAuthorization.js` helper. The runtime contract remains cached token first, interactive local authentication only on a cache miss, and an external `authorized_user` token written for later runs. File paths remain supplied by the caller, reads explicitly use UTF-8, and cache misses no longer print filesystem paths.
+- Added five credential-free Google integration contract tests. They verify Forms v1 get/batch-update requests, the Sheets v4 values request, compatibility with the Google Auth 9.15.1 client supplied by `@google-cloud/local-auth` 3.0.1, cached-token reuse without reading the OAuth client file, and first-time token persistence using temporary synthetic files.
+- Confirmed the existing Google Auth 9.15.1, 10.5.0, and 11.1.0 locators are required by incompatible upstream ranges from local-auth/Storage, Google GAX 5, and current Firebase/Google clients, respectively. Google APIs 181 introduces no new Google Auth major or duplicate.
+- Retained the package-scoped `gaxios@6.7.1/uuid` resolution because Gaxios 6.7.1 remains required by supported local-auth and Firebase Storage branches. It resolves only UUID 11.1.1; UUID 3.4.0 remains isolated to the deferred Snoowrap/request branch.
+
+### Validation
+
+All validation used Node 24.21.0 and Yarn 4.18.0.
+
+| Check | Result |
+| --- | --- |
+| Focused Google APIs and authorization contracts | Passed: 1 file and 5 tests |
+| Full tests | Passed: 74 files and 336 tests |
+| Lint | Passed with 0 errors and 0 warnings |
+| Syntax checks | Passed for `googleAuthorization.js`, `googleApis.test.js`, and the updated `raflFormUtils.js` |
+| Mutable and immutable install | Passed; only Google APIs changed in the manifest/lockfile dependency tree, and the final pair reproduces cleanly |
+| Peer requirements and deduplication | No actionable unsatisfied peer requirement and no package eligible for highest-strategy deduplication |
+| Google dependency paths | Google APIs 181.0.0 uses Google APIs Common 9.0.4 and Google Auth 11.1.0; local-auth 3.0.1 remains on its compatible Google Auth 9.15.1 branch |
+| Audit | Unchanged at two high and ten moderate entries; no finding is on the Google APIs 181 branch |
+| Resolved tree | Unchanged at 706 locators |
+
+The restricted full-suite run passed 60 files and failed 14 files because Supertest could not open loopback listeners. The same complete mocked suite passed all 74 files and 336 tests when local loopback sockets were available. No test contacted Google, Firebase, Reddit, Flickr, SMTP, FTP, or another live service, and no real OAuth credential or token file was read.
+
+Before production rollout, perform a separately approved development RAFL preview against non-sensitive development Forms and Sheets data. Confirm the existing external cached token is reused, Forms items/responses and the `Review!A:ZZ` sheet load successfully, and logs contain no OAuth secret, token, or credential path. An isolated development authorization refresh can additionally verify browser authentication and token persistence, but it contacts live Google services and must use non-production credentials under the repository's normal approval rules.
+
+No server, PM2 process, deployment, credential read, Google request, live-data job, or other live integration was started as part of Phase 7.

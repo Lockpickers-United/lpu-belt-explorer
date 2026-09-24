@@ -1,10 +1,10 @@
 # Dependency Upgrade Plan
 
-Status: active; Phases 0 through 6 implemented on 2026-09-23, with the Reddit WIP dependency decision and production runtime verification pending
+Status: active; Phases 0 through 7 implemented on 2026-09-23, with the Reddit WIP dependency decision and production runtime verification pending
 
 Planning snapshot: 2026-09-23
 
-Scope: root Node.js package only; completed work covers the reproducible runtime baseline, unused dependency removal, the Formidable migration, low-risk current-line updates, the ESLint 10 migration, the dotenv 18 runtime-loading checkpoint, and Firebase Admin 14.5 audit remediation without changing deployment state or live data
+Scope: root Node.js package only; completed work covers the reproducible runtime baseline, unused dependency removal, the Formidable migration, low-risk current-line updates, the ESLint 10 migration, the dotenv 18 runtime-loading checkpoint, Firebase Admin 14.5 audit remediation, and Google APIs 181 without changing deployment state or live data
 
 ## Executive recommendation
 
@@ -64,7 +64,7 @@ The baseline four `resolutions` were also signs of dependency branches that coul
 
 Do not carry these resolutions forward automatically. Remove them one at a time with their owning branch, regenerate the lockfile, rerun the audit, and use `yarn why` to prove whether anything still needs them.
 
-Phase 6 adds one current resolution scoped to `gaxios@6.7.1/uuid`. Retain it while the supported Firebase Storage tree still contains Gaxios 6.7.1, and remove it in Phase 7 or final validation only if `yarn why gaxios uuid` proves that the affected branch is gone.
+Phase 6 adds one current resolution scoped to `gaxios@6.7.1/uuid`. Phase 7 confirmed that Gaxios 6.7.1 remains required by supported Firebase Storage and local-auth branches, so retain the resolution until final validation proves that branch is gone.
 
 ## Direct dependency disposition
 
@@ -306,6 +306,8 @@ Exit criteria:
 
 ### Phase 7: Upgrade Google APIs 180 to 181
 
+Implementation status: complete on 2026-09-23. Google APIs 181 retains Google APIs Common 9.0.4 and Google Auth 11.1.0, the resolved tree remains at 706 locators, and the existing scoped Gaxios 6/UUID 11 resolution is still required.
+
 1. Upgrade only `googleapis` and its lockfile branch.
 2. Confirm `@google-cloud/local-auth` remains compatible and no duplicate incompatible Google Auth runtime is introduced.
 3. Run mocked Forms v1 and Sheets v4 construction/request-shape tests.
@@ -315,9 +317,9 @@ Exit criteria:
 
 Exit criteria:
 
-- [ ] Forms and Sheets client contracts are unchanged under mocks.
-- [ ] OAuth configuration stays external and no secret is logged.
-- [ ] The final Google dependency tree has no avoidable duplicate major or vulnerable transitive package.
+- [x] Forms and Sheets client contracts are unchanged under mocks.
+- [x] OAuth configuration stays external and no secret is logged.
+- [x] The final Google dependency tree has no avoidable duplicate major or vulnerable transitive package.
 
 ### Phase 8: Final tree validation and development rollout
 
@@ -344,6 +346,7 @@ Review the final manifest and lockfile for:
 - no prerelease dependency unless separately approved;
 - no stale resolution;
 - only one intended major for Firebase Admin, Google Auth, Vite/Vitest, and ESLint families where their ranges can converge;
+- the remaining Google Auth 9.15.1, 10.5.0, and 11.1.0 majors are still required by their upstream ranges, and Gaxios 6.7.1 still resolves UUID 11.1.1;
 - native-package install results for Sharp and GeoIP on the development and production host architecture.
 
 After code review, deploy to the development environment through its normal upload/install/restart procedure and perform bounded manual checks for readiness, public collection stats, authenticated profile access, upload/email-form/request-lock parsing, Flickr info, RAFL preview, and structured logging. Development PM2 restart and any integration call still require the approval rules in `AGENTS.md`. Production deployment is a later, separately approved operation.
@@ -359,7 +362,7 @@ After code review, deploy to the development environment through its normal uplo
 | Firebase Admin | Firebase target/auth/profile/export mocks, import safety, audit | Development database auth/profile read only after separate approval |
 | Google APIs | Mocked Forms/Sheets/auth tests, import safety, audit | Development RAFL preview only after separate live-service approval |
 | Nodemailer | Injected transport/send tests | Development mail sink only after separate approval |
-| Vitest/Supertest | All 72+ files and 319+ tests | None beyond normal development smoke tests |
+| Vitest/Supertest | All 74+ files and 336+ tests | None beyond normal development smoke tests |
 
 At every checkpoint:
 
@@ -398,7 +401,7 @@ Do not combine the Formidable, ESLint, dotenv, Firebase, and Google API migratio
 - [x] ESLint 10 runs without compatibility or peer overrides.
 - [x] dotenv, Nodemailer, Supertest, and Vitest pass their focused contracts.
 - [x] Firebase Admin passes its focused contracts.
-- [ ] Google APIs pass their focused contracts.
+- [x] Google APIs pass their focused contracts.
 - [ ] `yarn explain peer-requirements` has no actionable failure and `yarn dedupe --check` is clean.
 - [ ] Audit output has no actionable vulnerability for which a compatible supported upgrade exists; any upstream-only deprecation is documented with its dependency path.
 - [ ] Full lint and all tests pass under the pinned Node version with no unexplained warning.
