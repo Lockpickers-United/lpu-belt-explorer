@@ -241,3 +241,37 @@ The restricted sandbox run passed 58 files and failed 14 files because Supertest
 Before production rollout, manually start the local and development service through the normal separately approved process and confirm each selects only `.env.local` or `.env.development`, respectively. Check console/PM2 output for the absence of dotenv's injected-environment message and environment-file paths. The production `.env.production` selection is covered by real-file tests; verifying it in a deployed process belongs to the separately approved development/production rollout checks.
 
 No server, PM2 process, deployment, live-data job, email, or other live integration was started as part of Phase 5.
+
+## Phase 6: Upgrade Firebase Admin and remediate its transitive audit path
+
+### Phase delta
+
+- Upgraded Firebase Admin from 14.4.0 to 14.5.0. Its core Google Auth dependency moved from 10.9.1 to 11.1.0, and highest-strategy deduplication consolidated the compatible Google Auth 11.0.2 locator into 11.1.0.
+- Updated Firebase Admin's compatible optional Cloud Storage branch from 8.1.0 to the current 8.2.0. Storage 8.2.0 still depends on Gaxios 6.7.1 and Google Auth 9.15.1, and Gaxios 6.7.1 remains the latest release in that major with a declared UUID 9 range.
+- Added the Yarn resolution `gaxios@npm:6.7.1/uuid: npm:11.1.1`. Inspection confirmed that Gaxios 6 uses only UUID's CommonJS `v4()` API, which UUID 11.1.1 retains. The resolution does not affect UUID 3.4.0 under the separately deferred Snoowrap/request branch.
+- Added `firebaseAdminDependencies.test.js` to load the real modular `firebase-admin/app`, `/auth`, and `/firestore` exports without initializing an app, construct a Firestore `Timestamp`, load Gaxios 6 with its resolved UUID 11 dependency, generate and validate a version-4 UUID, and construct a Gaxios client without credentials or network access.
+- Expanded the profile API contract with verified-token failure, non-owner denial, strict boolean admin-claim enforcement, owner access, admin access, and `private, no-store` cache assertions. Existing target tests continue to verify lazy initialization, credential/project validation, app caching, explicit named-database selection, and the guarded default database.
+- Regenerated and deduplicated `yarn.lock`, reducing the resolved tree from 708 to 706 locators. No runtime application source changed.
+
+### Validation
+
+All validation used Node 24.21.0 and Yarn 4.18.0.
+
+| Check | Result |
+| --- | --- |
+| Pre-upgrade Firebase/profile/exporter checkpoint | Passed: 8 files and 24 tests |
+| Final API, Firebase, exporter, and import-safety group | Passed: 22 files and 95 tests |
+| Full tests | Passed: 73 files and 331 tests |
+| Lint | Passed with 0 errors and 0 warnings |
+| Syntax checks | Passed for both added/expanded test modules |
+| Mutable and immutable install | Passed; final manifest, resolution, and lockfile reproduce cleanly |
+| Peer requirements and deduplication | No actionable unsatisfied peer requirement and no package eligible for highest-strategy deduplication |
+| Firebase/Google dependency paths | Firebase Admin 14.5.0, Storage 8.2.0, and compatible consumers use Google Auth 11.1.0; Gaxios 6.7.1 resolves only UUID 11.1.1 |
+| Audit | Two high and ten moderate entries remain; the Gaxios/UUID 9 path is gone, and the UUID finding now comes only from UUID 3.4.0 under deferred Snoowrap/request |
+| Resolved tree | Reduced from 708 to 706 locators |
+
+The latest supported Firebase tree retains two upstream deprecation findings that cannot be removed with a compatible update. Glob 10.5.0 is selected through Firebase Admin -> Firestore 9.1.0 -> Firestore API 0.2.0 -> Google GAX 5.0.8 -> Rimraf 5.0.10. Node-domexception 1.0.0 is selected through Firebase's Firestore/Storage Google request clients -> Node Fetch 3.3.2 -> Fetch Blob 3.2.0. Forcing newer Glob, Rimraf, Fetch Blob, or Node-domexception majors would cross their owners' supported ranges, so the plan continues to monitor upstream rather than adding broad overrides.
+
+Before production rollout, perform a separately approved development smoke check against the configured named development database: verify a valid owner token can read its full profile, another non-admin token is denied, and an actual boolean admin claim can read another profile. Confirm the responses retain `private, no-store` and that logs contain no bearer token or private profile. A bounded development exporter run can additionally validate service-account and named-database integration, but it reads live Firebase and writes output, so it requires separate explicit approval under the repository rules.
+
+No server, PM2 process, deployment, credential read, Firebase request, exporter, live-data job, or other live integration was started as part of Phase 6.

@@ -1,10 +1,10 @@
 # Dependency Upgrade Plan
 
-Status: active; Phases 0 through 5 implemented on 2026-09-23, with the Reddit WIP dependency decision and production runtime verification pending
+Status: active; Phases 0 through 6 implemented on 2026-09-23, with the Reddit WIP dependency decision and production runtime verification pending
 
 Planning snapshot: 2026-09-23
 
-Scope: root Node.js package only; completed work covers the reproducible runtime baseline, unused dependency removal, the Formidable migration, low-risk current-line updates, the ESLint 10 migration, and the dotenv 18 runtime-loading checkpoint without changing deployment state or live data
+Scope: root Node.js package only; completed work covers the reproducible runtime baseline, unused dependency removal, the Formidable migration, low-risk current-line updates, the ESLint 10 migration, the dotenv 18 runtime-loading checkpoint, and Firebase Admin 14.5 audit remediation without changing deployment state or live data
 
 ## Executive recommendation
 
@@ -48,12 +48,12 @@ The initial in-sandbox Supertest run could not open loopback listeners. The same
 | --- | --- | --- |
 | `snoowrap` -> `request` / `request-promise` / old `ws` | 2 high and 7 moderate findings are wholly on this branch; the UUID finding also has another path | Replace or retire the three WIP Snoowrap scripts, then remove `snoowrap` |
 | ESLint 9.39.5 | 1 moderate unsupported-version entry | Resolved in Phase 4 by ESLint 10.11.0 |
-| `gaxios` 6.7.1 -> UUID 9.0.1 | Part of 1 moderate UUID advisory | Prefer an upstream fix; otherwise use one narrowly scoped, tested resolution to UUID 11.1.1 |
-| Latest Firebase Admin optional Firestore/Storage tree | `glob` 10.5.0 and `node-domexception` 1.0.0 deprecation entries | Recheck after Firebase Admin 14.5.0; document as upstream-only exceptions if no compatible supported path exists |
+| `gaxios` 6.7.1 -> UUID 9.0.1 | Resolved in Phase 6 | The latest compatible Storage/Gaxios 6 line still declared UUID 9, so a tested `gaxios@6.7.1/uuid` resolution supplies UUID 11.1.1 without changing the Snoowrap/request UUID branch |
+| Latest Firebase Admin optional Firestore/Storage tree | `glob` 10.5.0 and `node-domexception` 1.0.0 deprecation entries | Confirmed in Phase 6 as upstream-only paths with no compatible supported replacement; monitor upstream |
 
 The two high findings are both old `ws` releases below 5.2.5 pulled in only by deprecated `snoowrap`. That branch also contains deprecated `request`, `request-promise`, `har-validator`, old `tough-cookie`, old UUID, and two `qs` advisories. It should be removed rather than patched through broad transitive overrides.
 
-The existing four `resolutions` are also signs of dependency branches that can be eliminated:
+The baseline four `resolutions` were also signs of dependency branches that could be eliminated:
 
 | Resolution | Current owner | Expected action |
 | --- | --- | --- |
@@ -63,6 +63,8 @@ The existing four `resolutions` are also signs of dependency branches that can b
 | `protobufjs@7.6.3` -> 7.6.6 | Exact Devvit dependency; Firebase Admin also accepts a current range | Remove with Devvit and confirm Firebase Admin resolves safely without it |
 
 Do not carry these resolutions forward automatically. Remove them one at a time with their owning branch, regenerate the lockfile, rerun the audit, and use `yarn why` to prove whether anything still needs them.
+
+Phase 6 adds one current resolution scoped to `gaxios@6.7.1/uuid`. Retain it while the supported Firebase Storage tree still contains Gaxios 6.7.1, and remove it in Phase 7 or final validation only if `yarn why gaxios uuid` proves that the affected branch is gone.
 
 ## Direct dependency disposition
 
@@ -286,6 +288,8 @@ Exit criteria:
 
 ### Phase 6: Upgrade Firebase Admin and remediate its transitive audit path
 
+Implementation status: complete on 2026-09-23. Firebase Admin 14.5.0 uses its current compatible optional dependencies, including Storage 8.2.0. A package-scoped resolution supplies UUID 11.1.1 only to Gaxios 6.7.1; modular Firebase imports, authentication boundaries, profiles, named databases, exporters, and import safety pass mocked tests.
+
 1. Upgrade `firebase-admin` 14.4.0 -> 14.5.0 without changing the Firebase web SDK, because that package should already be removed.
 2. Confirm modular `firebase-admin/app`, `/auth`, and `/firestore` imports and named-database access.
 3. Run the API/service and exporter mock suites, including import-safety checks.
@@ -295,10 +299,10 @@ Exit criteria:
 
 Exit criteria:
 
-- [ ] Firebase initialization, token verification, profiles, named database selection, and exporters pass mocked tests.
-- [ ] No import reads credentials, contacts Firebase, or writes export state.
-- [ ] The UUID advisory is removed or has a documented upstream block with no unsafe broad override.
-- [ ] Remaining audit output contains no actionable vulnerability with a compatible supported fix.
+- [x] Firebase initialization, token verification, profiles, named database selection, and exporters pass mocked tests.
+- [x] No import reads credentials, contacts Firebase, or writes export state.
+- [x] The Gaxios UUID advisory path is removed with a tested package-scoped resolution; the remaining UUID 3 path belongs only to the separately deferred Snoowrap/request branch.
+- [x] Remaining Firebase audit output contains no actionable vulnerability with a compatible supported fix.
 
 ### Phase 7: Upgrade Google APIs 180 to 181
 
@@ -306,7 +310,7 @@ Exit criteria:
 2. Confirm `@google-cloud/local-auth` remains compatible and no duplicate incompatible Google Auth runtime is introduced.
 3. Run mocked Forms v1 and Sheets v4 construction/request-shape tests.
 4. Verify token/cache path behavior without reading real OAuth credentials.
-5. Use `yarn why googleapis-common google-auth-library gaxios` to review deduplication and confirm the upgrade does not reintroduce the remediated UUID path.
+5. Use `yarn why googleapis-common google-auth-library gaxios uuid` to review deduplication and confirm the upgrade does not reintroduce the remediated UUID path. Retain the package-scoped Gaxios resolution unless the upgraded tree no longer contains Gaxios 6.7.1.
 6. Do not run the RAFL utilities against live Google Forms or Sheets during implementation.
 
 Exit criteria:
@@ -393,7 +397,8 @@ Do not combine the Formidable, ESLint, dotenv, Firebase, and Google API migratio
 - [x] The application uses supported Formidable rather than an undocumented vendored older copy.
 - [x] ESLint 10 runs without compatibility or peer overrides.
 - [x] dotenv, Nodemailer, Supertest, and Vitest pass their focused contracts.
-- [ ] Firebase Admin and Google APIs pass their focused contracts.
+- [x] Firebase Admin passes its focused contracts.
+- [ ] Google APIs pass their focused contracts.
 - [ ] `yarn explain peer-requirements` has no actionable failure and `yarn dedupe --check` is clean.
 - [ ] Audit output has no actionable vulnerability for which a compatible supported upgrade exists; any upstream-only deprecation is documented with its dependency path.
 - [ ] Full lint and all tests pass under the pinned Node version with no unexplained warning.
