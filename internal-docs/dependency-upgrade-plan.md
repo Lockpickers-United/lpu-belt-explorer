@@ -1,10 +1,10 @@
 # Dependency Upgrade Plan
 
-Status: active; Phases 0 through 7 implemented on 2026-09-23, with the Reddit WIP dependency decision and production runtime verification pending
+Status: active; Phases 0 through 7 and the deferred Reddit WIP dependency checkpoint implemented on 2026-09-23, with final tree validation and production runtime verification pending
 
 Planning snapshot: 2026-09-23
 
-Scope: root Node.js package only; completed work covers the reproducible runtime baseline, unused dependency removal, the Formidable migration, low-risk current-line updates, the ESLint 10 migration, the dotenv 18 runtime-loading checkpoint, Firebase Admin 14.5 audit remediation, and Google APIs 181 without changing deployment state or live data
+Scope: root Node.js package only; completed work covers the reproducible runtime baseline, unused dependency removal, the Formidable migration, low-risk current-line updates, the ESLint 10 migration, the dotenv 18 runtime-loading checkpoint, Firebase Admin 14.5 audit remediation, Google APIs 181, and removal of the deprecated Snoowrap/request dependency tree without changing deployment state or live data
 
 ## Executive recommendation
 
@@ -46,7 +46,7 @@ The initial in-sandbox Supertest run could not open loopback listeners. The same
 
 | Source | Findings | Planned resolution |
 | --- | --- | --- |
-| `snoowrap` -> `request` / `request-promise` / old `ws` | 2 high and 7 moderate findings are wholly on this branch; the UUID finding also has another path | Replace or retire the three WIP Snoowrap scripts, then remove `snoowrap` |
+| `snoowrap` -> `request` / `request-promise` / old `ws` | Resolved in the deferred Reddit WIP checkpoint | The four WIP consumers were retired, then `snoowrap`, `fuse.js`, and the obsolete Form-data resolution were removed together |
 | ESLint 9.39.5 | 1 moderate unsupported-version entry | Resolved in Phase 4 by ESLint 10.11.0 |
 | `gaxios` 6.7.1 -> UUID 9.0.1 | Resolved in Phase 6 | The latest compatible Storage/Gaxios 6 line still declared UUID 9, so a tested `gaxios@6.7.1/uuid` resolution supplies UUID 11.1.1 without changing the Snoowrap/request UUID branch |
 | Latest Firebase Admin optional Firestore/Storage tree | `glob` 10.5.0 and `node-domexception` 1.0.0 deprecation entries | Confirmed in Phase 6 as upstream-only paths with no compatible supported replacement; monitor upstream |
@@ -59,7 +59,7 @@ The baseline four `resolutions` were also signs of dependency branches that coul
 | --- | --- | --- |
 | `@grpc/grpc-js@~1.9.0` -> 1.9.16 | Unused Firebase web SDK | Remove with `firebase`, then prove it is no longer needed |
 | `@humanfs/node@^0.16.6` -> 0.16.8 | ESLint 9 | Removed in Phase 4; ESLint 10 still selects 0.16.8 without a resolution |
-| `form-data@~2.3.2` -> 2.5.6 | Deprecated `request` tree from Snoowrap | Remove with `snoowrap` |
+| `form-data@~2.3.2` -> 2.5.6 | Deprecated `request` tree from Snoowrap | Removed with `snoowrap` in the deferred Reddit WIP checkpoint |
 | `protobufjs@7.6.3` -> 7.6.6 | Exact Devvit dependency; Firebase Admin also accepts a current range | Remove with Devvit and confirm Firebase Admin resolves safely without it |
 
 Do not carry these resolutions forward automatically. Remove them one at a time with their owning branch, regenerate the lockfile, rerun the audit, and use `yarn why` to prove whether anything still needs them.
@@ -107,11 +107,11 @@ Retain these unless a phase-specific source audit shows that the dependency is u
 | Media/files | `archiver` 8.0.0, `sharp` 0.35.4 |
 | Integrations | `basic-ftp` 6.2.1, `flickr-sdk` 7.1.0, `node-fetch-cookies` 2.1.1 |
 | Logging | `pino` 10.3.1, `pino-http` 11.0.0, `pino-pretty` 13.1.3 |
-| Analysis | `express-useragent` 2.2.3, `fuse.js` 7.5.0, `geoip-lite` 2.0.3 |
+| Analysis | `express-useragent` 2.2.3, `geoip-lite` 2.0.3 |
 | Fetch/runtime | `node-fetch` 3.3.2 |
 | Test/build | `vite` 8.3.0 |
 
-`fuse.js` is used only in a WIP investigation script. Decide whether that script remains runnable when deciding the Snoowrap WIP scripts; remove Fuse as well if the whole investigation set is archived. `basic-ftp` is used by a CommonJS log-fetch utility, and `node-fetch-cookies` is used by the RAFL utilities, so neither should be removed as an assumed Node 24 cleanup.
+`fuse.js` and its sole WIP consumer were removed with the retired Snoowrap utilities. `basic-ftp` is used by a CommonJS log-fetch utility, and `node-fetch-cookies` is used by the RAFL utilities, so neither should be removed as an assumed Node 24 cleanup.
 
 Do not downgrade `@eslint/compat`, `geoip-lite`, or Vitest based on stale or historical `latest` values from a single `npm outdated` display. Direct registry metadata confirms 2.1.1, 2.0.3, and 5.0.1 respectively as the current stable releases.
 
@@ -207,13 +207,20 @@ Exit criteria:
 
 ### Deferred Reddit WIP dependency checkpoint
 
-This checkpoint remains future work by explicit request and should be completed before final tree validation:
+Implementation status: complete on 2026-09-23. The four WIP consumers were retired in commit `59387a3`; no tracked runnable file imports Snoowrap or Fuse, and removing their dependency branch reduced the resolved tree from 706 to 660 locators.
 
 1. Keep the current WIP Reddit scripts, `snoowrap`, and `fuse.js` runnable until their ownership and required behavior are decided.
 2. If the scripts are required, capture their observable request/response behavior under mocks and migrate them to a maintained client or the existing authenticated-fetch pattern. If they are historical, retire the scripts.
 3. Remove `snoowrap` and its `form-data@~2.3.2` resolution together only after no tracked runnable script imports it.
 4. Reconsider `fuse.js` only as part of that same WIP ownership decision.
 5. Re-run the audit and confirm that the two high `ws` findings and the Snoowrap/request moderate findings disappear.
+
+Exit criteria:
+
+- [x] No tracked runnable file imports `snoowrap` or `fuse.js`.
+- [x] `snoowrap`, `fuse.js`, and the Snoowrap-owned Form-data resolution are absent from the manifest and lockfile.
+- [x] The old Request, Request Promise, WebSocket 3, UUID 3, and related deprecated branches are absent from the resolved tree.
+- [x] The audit has no high-severity finding and retains only the two documented upstream deprecations.
 
 ### Phase 2: Replace the vendored Formidable implementation
 
@@ -395,8 +402,8 @@ Do not combine the Formidable, ESLint, dotenv, Firebase, and Google API migratio
 - [ ] Every direct package is current, removed, or explicitly retained with an owner and compatibility reason.
 - [ ] Node is pinned to the current Node 24 LTS patch for local/CI use and constrained below Node 25 for compatibility with Vitest 5.
 - [ ] Yarn remains on current stable 4.18.0 and immutable installs reproduce the lockfile.
-- [ ] No deprecated Snoowrap/request tree or high/critical advisory remains.
-- [ ] The Firebase web SDK, unused tooling packages, and stale resolutions are gone.
+- [x] No deprecated Snoowrap/request tree or high/critical advisory remains.
+- [x] The Firebase web SDK, unused tooling packages, and stale resolutions are gone.
 - [x] The application uses supported Formidable rather than an undocumented vendored older copy.
 - [x] ESLint 10 runs without compatibility or peer overrides.
 - [x] dotenv, Nodemailer, Supertest, and Vitest pass their focused contracts.

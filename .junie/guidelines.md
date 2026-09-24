@@ -72,12 +72,7 @@ pm2 start /home/dh_m5s5pf/explore-lpubelts-com-node/lpubeltsApiServer.js --watch
 
 #### 6) Running one-off project scripts
 - Scripts live under src/projects/* and rely on local file data, users.js, and keys.
-- Example (WIP flair fixer; requires Reddit OAuth):
-```
-node src/projects/beltInvestigationsWIP/processSyncMessagesForFlairFix.js
-```
-- Requires: keys/reddit-keys.js exports; valid token scopes (modflair for flair changes), snoowrap client initialization; network access.
-- Data dependencies: src/projects/beltInvestigationsWIP/data/syncMessagesForFlairFix.json
+- Inspect a script's inputs, outputs, environment selection, and external calls before running it. Live-service and live-data scripts require explicit approval under `AGENTS.md`.
 
 ---
 
@@ -239,14 +234,8 @@ test('GET /flickr-info requires id', async () => {
 - The server uses CORS and JSON body parsing globally; events are logged via a simple EventEmitter with dayjs timestamps.
 
 #### Reddit utilities
-- Snoowrap is used for OAuth; ensure access token scopes cover required operations:
-    - Reading modmail and user flairs: read, modcontributors, modflair, modmail, etc., depending on operation.
-    - processSyncMessagesForFlairFix.js:
-        - Reads user flair, conditionally sets flair via direct POST to /api/selectflair with snoowrap access token.
-        - Skips any flair containing "Dan" to avoid overwriting dan flairs.
-        - Dependencies: flairDetails map, syncMessagesForFlairFix.json, uniqueBelts from src/util/belts.js, and keys/reddit-keys.js.
-- Token troubleshooting:
-    - src/projects/beltInvestigationsWIP/checkTokenScope.js and src/projects/setRedditFlair/redditTestsSNOO.js can help verify token scope and behavior. Use these in a dev environment only.
+- The active Reddit belt refresh is under `src/projects/redditBelts/` and uses its explicit runtime configuration and OAuth HTTP flow. See that directory's README before running it.
+- The old Snoowrap-based WIP utilities have been retired.
 
 #### File system and data paths
 - Many scripts write/read to serverDir based on env/user detection. Ensure the target directories exist:

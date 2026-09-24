@@ -307,3 +307,32 @@ The restricted full-suite run passed 60 files and failed 14 files because Supert
 Before production rollout, perform a separately approved development RAFL preview against non-sensitive development Forms and Sheets data. Confirm the existing external cached token is reused, Forms items/responses and the `Review!A:ZZ` sheet load successfully, and logs contain no OAuth secret, token, or credential path. An isolated development authorization refresh can additionally verify browser authentication and token persistence, but it contacts live Google services and must use non-production credentials under the repository's normal approval rules.
 
 No server, PM2 process, deployment, credential read, Google request, live-data job, or other live integration was started as part of Phase 7.
+
+## Deferred Reddit WIP dependency checkpoint
+
+### Phase delta
+
+- Verified that commit `59387a3` retired the four WIP files that contained every repository import of `snoowrap` and `fuse.js`. A follow-up static import scan found no remaining JavaScript consumer of either package.
+- Removed direct `snoowrap` 1.23.0 and `fuse.js` 7.5.0 dependencies, along with the Snoowrap/request-owned `form-data@~2.3.2` resolution. Regenerating `yarn.lock` removed 46 locators, reducing the resolved tree from 706 to 660.
+- Confirmed that Snoowrap, Fuse, Request, Request Promise, WebSocket 3, UUID 3, and the deprecated supporting branch are absent from the final dependency tree. The remaining Form-data 4.0.6 is the current branch used by Axios and Superagent, and UUID resolves only to 11.1.1 through the intentional Gaxios 6 compatibility resolution.
+- Removed stale operational guidance that referenced the deleted WIP scripts and Snoowrap. The active Reddit belt refresh under `src/projects/redditBelts/` remains unchanged.
+- No replacement unit test was added because the deleted scripts were the only behavior owned by these dependencies. Static consumer checks, dependency-tree inspection, the audit, and the unchanged full suite cover this removal.
+
+### Validation
+
+All validation used Node 24.21.0 and Yarn 4.18.0.
+
+| Check | Result |
+| --- | --- |
+| Static imports and dependency paths | No Snoowrap or Fuse consumer; `yarn why` returns no path for Snoowrap, Fuse, Request, Request Promise, or WebSocket |
+| Full tests | Passed: 74 files and 336 tests |
+| Lint | Passed with 0 errors and 0 warnings |
+| Mutable and immutable install | Passed; manifest and lockfile reproduce without the retired dependency branch |
+| Peer requirements and deduplication | No actionable unsatisfied peer requirement and no package eligible for highest-strategy deduplication |
+| Audit | Reduced from two high and ten moderate entries to zero high and two moderate upstream deprecations |
+| Security report generator | Produced ignored JSONL and Markdown reports under `logs/`; its expected exit code was 1 because the two deprecation findings remain |
+| Resolved tree | Reduced from 706 to 660 locators |
+
+The two remaining audit entries are the already documented upstream-only Glob 10.5.0 path under Firebase Firestore and node-domexception 1.0.0 path under Google request clients. No compatible supported direct update removes either path.
+
+No checkpoint-specific manual application test is required because the removed files were retired WIP utilities with no remaining route or runtime consumer. No server, PM2 process, deployment, credential read, Reddit request, live-data job, or other live integration was started.
