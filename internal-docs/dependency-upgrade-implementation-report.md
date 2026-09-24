@@ -136,3 +136,36 @@ The restricted sandbox could not open Supertest loopback listeners (`listen EPER
 Before production rollout, manually exercise the three multipart flows in the development environment with non-sensitive data: submit two small images through upload and inspect the emailed archive, submit a valid email form plus rejected attachment/oversize cases, and submit one authenticated request-lock image and inspect its stored media URLs/files. Confirm rejected uploads and upload workspaces leave no unexpected temporary files. These checks require the normal separately approved development deployment and integration access.
 
 No server, PM2 process, deployment, live-data job, email, Discord webhook, Firebase call, or other live integration was started as part of Phase 2.
+
+## Phase 3: Apply low-risk current-line updates
+
+### Phase delta
+
+- Updated Nodemailer from 10.0.9 to 10.0.10, Supertest from 7.2.2 to 7.3.0, and Vitest from 5.0.0 to exact 5.0.1. Direct Vite remains at 8.3.0.
+- Added a credential-free Nodemailer contract test that constructs the real JSON transport and sends the same message fields used by the application, including an attachment, without opening a network connection.
+- Regenerated `yarn.lock`. The resolved tree remains at 738 locators; the only changed resolutions are Nodemailer, Supertest, Vitest, and Vitest's matching Mocker and Spy packages.
+- Ran highest-strategy deduplication; Yarn reported no eligible package and made no additional lockfile change.
+- Rechecked registry metadata for every package that Phase 3 designated to remain unchanged. Each still matches its stable `latest` version, so no package outside the phase list changed.
+
+No application implementation changed. Existing injected email-sender tests continue to cover application behavior, while the new inert transport test reaches the real Nodemailer package boundary.
+
+### Validation
+
+All validation used Node 24.21.0 and Yarn 4.18.0.
+
+| Check | Result |
+| --- | --- |
+| Nodemailer before/after contract | Passed against both 10.0.9 and 10.0.10; the final focused group passed 4 files and 12 tests |
+| Supertest route compatibility | Passed every suite that imports Supertest: 14 files and 85 tests |
+| Vitest runner compatibility | Vitest reports 5.0.1 under Node 24.21.0; focused mocks, fake timers, logging, process, environment, and transport coverage passed 6 files and 33 tests |
+| Full tests | Passed: 72 files and 319 tests |
+| Lint | Passed with the two recorded source warnings and React detection warning owned by Phase 4 |
+| Mutable and immutable install | Passed; final manifest and lockfile reproduce cleanly |
+| Peer requirements and deduplication | No actionable unsatisfied peer requirement and no package eligible for highest-strategy deduplication |
+| Resolved tree | Unchanged at 738 locators |
+| Audit | Unchanged at two high and eleven moderate entries; all remain on the already documented deferred Snoowrap, ESLint, and Firebase/Google paths |
+| Syntax and diff hygiene | `node --check` passed for the new test and `git diff --check` passed |
+
+No Phase 3-specific manual check is required. The only behavior outside automated coverage is delivery through the configured development SMTP service; an optional development mail-sink send can verify SMTP authentication and TLS after deployment and requires the normal separate approval for a live email integration.
+
+No server, PM2 process, deployment, live-data job, email, or other live integration was started as part of Phase 3.

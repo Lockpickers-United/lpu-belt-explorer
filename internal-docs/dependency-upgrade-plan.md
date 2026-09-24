@@ -1,10 +1,10 @@
 # Dependency Upgrade Plan
 
-Status: active; Phases 0, 1, and 2 implemented on 2026-09-23, with the Reddit WIP dependency decision and production runtime verification pending
+Status: active; Phases 0 through 3 implemented on 2026-09-23, with the Reddit WIP dependency decision and production runtime verification pending
 
 Planning snapshot: 2026-09-23
 
-Scope: root Node.js package only; completed work covers the reproducible runtime baseline, unused dependency removal, and the Formidable migration without changing deployment state or live data
+Scope: root Node.js package only; completed work covers the reproducible runtime baseline, unused dependency removal, the Formidable migration, and low-risk current-line updates without changing deployment state or live data
 
 ## Executive recommendation
 
@@ -233,6 +233,8 @@ Exit criteria:
 
 ### Phase 3: Apply low-risk current-line updates
 
+Implementation status: complete on 2026-09-23. Nodemailer 10.0.10, Supertest 7.3.0, and exact Vitest 5.0.1 are installed; direct Vite remains 8.3.0. The highest-strategy deduplication pass found no eligible package, and the required registry recheck found no newer stable release among the packages designated to remain unchanged in this phase.
+
 Update one small group at a time:
 
 1. `nodemailer` 10.0.9 -> 10.0.10.
@@ -349,7 +351,7 @@ After code review, deploy to the development environment through its normal uplo
 | Firebase Admin | Firebase target/auth/profile/export mocks, import safety, audit | Development database auth/profile read only after separate approval |
 | Google APIs | Mocked Forms/Sheets/auth tests, import safety, audit | Development RAFL preview only after separate live-service approval |
 | Nodemailer | Injected transport/send tests | Development mail sink only after separate approval |
-| Vitest/Supertest | All 71+ files and 318+ tests | None beyond normal development smoke tests |
+| Vitest/Supertest | All 72+ files and 319+ tests | None beyond normal development smoke tests |
 
 At every checkpoint:
 
