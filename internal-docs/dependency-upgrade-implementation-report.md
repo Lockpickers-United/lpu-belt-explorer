@@ -66,3 +66,38 @@ The development host was manually confirmed to use `/home/lpubelts_api/.nvm/vers
 The protected production `REMOTE_NODE_BIN` value is not stored in the repository and remains to be checked before Phase 1 or a production deployment. Use the read-only command documented in `.github/DEPLOYMENT.md` to confirm that it reports Node v24.21.0 and Corepack selects Yarn 4.18.0. This check does not require a PM2 restart, deployment, dependency install, or live-service call.
 
 No server, PM2 process, production deployment, collection job, or live integration was started as part of Phase 0. The user confirmed that nothing has been deployed to production.
+
+## Phase 1: Remove dead and unsupported dependency branches
+
+### Phase delta
+
+- Removed the unused direct dependencies `@devvit/public-api`, `firebase`, `moment-timezone`, `ssl-root-cas`, and `eslint-config-flat-gitignore` after a repository-wide source and configuration reference scan found no consumer.
+- Removed the Firebase-web-owned `@grpc/grpc-js@~1.9.0` resolution and the Devvit-owned `protobufjs@7.6.3` resolution. The remaining Firebase Admin and Google dependency paths resolve supported current versions without either override.
+- Regenerated `yarn.lock`, reducing the root manifest from 46 to 41 direct packages and the resolved tree from 802 to 739 locators.
+- Cleared all four unsatisfied Firebase web SDK peer requirements. `yarn explain peer-requirements` now reports no actionable unsatisfied requirement, and `yarn dedupe --check` reports no candidate.
+- Retained the WIP Reddit scripts, `snoowrap`, `fuse.js`, and the Snoowrap-owned `form-data@~2.3.2` resolution as explicitly requested. The audit therefore remains at two high and eleven moderate entries; the two high findings and seven of the moderate paths remain wholly owned by the deferred Snoowrap/request branch.
+
+No runtime source changed, so no new unit test was needed. The existing import-safety and full application suites cover the supported Firebase Admin and service paths, while static scans and `yarn why` directly verify these dependency removals.
+
+### Validation
+
+All validation used Node 24.21.0 and Yarn 4.18.0.
+
+| Check | Result |
+| --- | --- |
+| Repository-wide removed-package import/reference scan | Passed; no runnable source or configuration consumer remains |
+| Mutable then immutable install | Passed; final manifest and lockfile reproduce cleanly |
+| Removed-package `yarn why` checks | Passed; none remains in the resolved tree |
+| Remaining resolution ownership | Passed; Form-data remains under Snoowrap/request and HumanFS remains under ESLint 9 |
+| Peer requirements | Passed; previous four unsatisfied Firebase web SDK requests are gone |
+| Deduplication | Passed; no package can be deduplicated with the highest strategy |
+| Audit | Two high and eleven moderate entries remain, unchanged because the requested Snoowrap deferral preserves every current advisory path |
+| Lint | Passed with the two recorded source warnings and React detection warning owned by Phase 4 |
+| Tests | 69 files and 302 tests passed |
+| Diff hygiene | `git diff --check` passed |
+
+The initial restricted test run passed 56 files and failed 13 files because Supertest could not open loopback listeners (`listen EPERM`). Repeating the same mocked suite with local loopback access passed all 69 files and 302 tests. No test contacted Firebase, Reddit, Flickr, Google, SMTP, FTP, or another live service.
+
+No Phase 1-specific manual application check is needed because all removed packages had no runtime consumer. Before any deployment, the Phase 0 read-only production Node/Yarn version check remains outstanding; it is a deployment prerequisite rather than a dependency-removal behavior check.
+
+No server, PM2 process, production deployment, collection job, or live integration was started as part of Phase 1.

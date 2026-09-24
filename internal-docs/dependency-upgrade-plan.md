@@ -1,17 +1,17 @@
 # Dependency Upgrade Plan
 
-Status: active; Phase 0 implemented on 2026-09-23, with production runtime verification pending
+Status: active; Phases 0 and 1 implemented on 2026-09-23, with the Reddit WIP dependency decision and production runtime verification pending
 
 Planning snapshot: 2026-09-23
 
-Scope: root Node.js package only; Phase 0 changes runtime declarations and documentation but does not change dependencies, the lockfile, deployment state, or live data
+Scope: root Node.js package only; Phase 1 removes confirmed unused dependencies and their stale resolutions without changing runtime code, deployment state, or live data
 
 ## Executive recommendation
 
 The repository is already close to current: 24 of its 46 direct packages match the current stable registry release, and the September 14 upgrade moved most runtime libraries to their newest major. The remaining work should not be implemented as another bulk `package.json` and lockfile rewrite. The safest route is a sequence of small checkpoints:
 
 1. Pin and verify the Node 24 LTS toolchain used for every checkpoint.
-2. Remove unused packages and resolve the deprecated `snoowrap` tree before routine version bumps.
+2. Remove confirmed unused packages, then resolve the separately deferred deprecated `snoowrap` tree before final validation.
 3. Replace the vendored Formidable copy with the current declared package after adding multipart contract tests.
 4. Apply low-risk patch/minor updates.
 5. Migrate the lint stack from ESLint 9 to ESLint 10 without peer overrides.
@@ -189,19 +189,29 @@ Exit criteria:
 
 ### Phase 1: Remove dead and unsupported dependency branches
 
+Implementation status: complete on 2026-09-23 for the requested scope. The WIP Reddit scripts, `snoowrap`, `fuse.js`, and the Snoowrap-owned Form-data resolution were explicitly retained for a later checkpoint.
+
 1. Remove `@devvit/public-api`, `firebase`, `moment-timezone`, `ssl-root-cas`, and `eslint-config-flat-gitignore` after repeating repository-wide static and dynamic import searches.
-2. Decide the WIP Reddit script disposition. Prefer migrating required behavior and removing `snoowrap`; otherwise retire the scripts and dependency together.
-3. Reconsider `fuse.js` in the same WIP ownership decision.
-4. Remove each no-longer-needed resolution with its owner and use `yarn why` to verify the result.
-5. Run `yarn install`, review every `package.json` and `yarn.lock` change, then run `yarn install --immutable` from the final manifest/lock pair.
-6. Confirm that all four Firebase web SDK peer failures and both high audit findings disappear.
+2. Remove the Firebase-web-owned `@grpc/grpc-js` resolution and the Devvit-owned `protobufjs` resolution; use `yarn why` to confirm the remaining supported dependency paths resolve without them.
+3. Run `yarn install`, review every `package.json` and `yarn.lock` change, then run `yarn install --immutable` from the final manifest/lock pair.
+4. Confirm that all four Firebase web SDK peer failures disappear. The audit is expected to retain two high and eleven moderate findings until the explicitly deferred Snoowrap work and later ESLint/Firebase checkpoints are complete.
 
 Exit criteria:
 
-- [ ] No tracked runnable file imports a removed package.
-- [ ] `yarn explain peer-requirements` has no actionable unsatisfied requirement.
-- [ ] The audit has no high or critical finding.
-- [ ] Tests, lint, and import-safety suites pass without loading credentials or contacting services.
+- [x] No tracked runnable file imports a removed package.
+- [x] `yarn explain peer-requirements` has no actionable unsatisfied requirement.
+- [x] The Firebase web SDK compatibility branch and its four unsatisfied peer requirements are gone.
+- [x] Tests, lint, and import-safety suites pass without loading credentials or contacting services.
+
+### Deferred Reddit WIP dependency checkpoint
+
+This checkpoint remains future work by explicit request and should be completed before final tree validation:
+
+1. Keep the current WIP Reddit scripts, `snoowrap`, and `fuse.js` runnable until their ownership and required behavior are decided.
+2. If the scripts are required, capture their observable request/response behavior under mocks and migrate them to a maintained client or the existing authenticated-fetch pattern. If they are historical, retire the scripts.
+3. Remove `snoowrap` and its `form-data@~2.3.2` resolution together only after no tracked runnable script imports it.
+4. Reconsider `fuse.js` only as part of that same WIP ownership decision.
+5. Re-run the audit and confirm that the two high `ws` findings and the Snoowrap/request moderate findings disappear.
 
 ### Phase 2: Replace the vendored Formidable implementation
 
@@ -226,8 +236,7 @@ Update one small group at a time:
 1. `nodemailer` 10.0.9 -> 10.0.10.
 2. `supertest` 7.2.2 -> 7.3.0.
 3. `vitest` 5.0.0 -> exact 5.0.1 while retaining direct Vite 8.3.0.
-4. If Devvit or Moment survived Phase 1 because a consumer was found, update them to 0.14.5 or 0.6.4 respectively and document that consumer.
-5. Run `yarn dedupe --strategy highest`, review the lock diff, and verify the reported `@types/node` deduplication does not affect runtime behavior.
+4. Run `yarn dedupe --strategy highest`, review the lock diff, and verify any reported deduplication does not affect runtime behavior. The Phase 1 removals already eliminated the previous `@types/node` deduplication candidate.
 
 Run the closest focused tests after each package, then full lint and tests once at the end of the phase. Keep `pino`, Express, Sharp, and the other already-current packages unchanged unless a newer stable release appears when implementation begins.
 
@@ -331,7 +340,7 @@ After code review, deploy to the development environment through its normal uplo
 
 | Change | Required automated checks | Manual development check before production |
 | --- | --- | --- |
-| Dependency removal/resolutions | `yarn why`, peer requirements, audit, full tests | Confirm affected optional/WIP command ownership |
+| Dependency removal/resolutions | Static import scan, `yarn why`, peer requirements, audit, immutable install, full tests | None for confirmed dead packages; handle WIP ownership in the deferred Reddit checkpoint |
 | Formidable | New real multipart tests, upload/email/request-lock suites, full tests | Representative valid and rejected uploads with non-sensitive files |
 | ESLint 10 | Old/new file-list comparison, codemod dry run, full lint, full tests | IDE uses Node 24 and the same flat config |
 | dotenv 18 | Real temp-file tests, runtime/server config suites, import safety | Local and development startup load only the intended file |
@@ -354,14 +363,15 @@ At every checkpoint:
 Recommended review units:
 
 1. Node 24.21/Yarn baseline and implementation report.
-2. Unused packages, WIP Reddit decision, and stale resolutions.
+2. Unused packages and stale resolutions.
 3. Multipart tests and vendored Formidable replacement.
 4. Nodemailer, Supertest, Vitest, and lockfile deduplication.
 5. ESLint 10 native flat-config migration.
 6. dotenv 18.
 7. Firebase Admin 14.5 and scoped audit remediation.
 8. Google APIs 181.
-9. Final integrated validation and development rollout notes.
+9. Deferred Reddit WIP decision and Snoowrap cleanup.
+10. Final integrated validation and development rollout notes.
 
 Do not combine the Formidable, ESLint, dotenv, Firebase, and Google API migrations into one lockfile commit. Keeping these checkpoints separate makes failures bisectable and lets a runtime migration be reverted without losing unrelated security cleanup.
 
