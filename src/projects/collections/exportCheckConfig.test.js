@@ -1,6 +1,6 @@
 import {fileURLToPath} from 'node:url'
 import {describe, expect, it, vi} from 'vitest'
-import {allEvidenceExportMain} from './allEvidenceExport.js'
+import {allEvidenceExportMain} from './awardsEvidenceProcess.js'
 import {awardsEvidenceExportMain} from './awardsEvidenceExport.js'
 import {collectionsExportMain} from './collectionsExport.js'
 import {collectionAnalyzerMain} from './collectionAnalyzer.js'

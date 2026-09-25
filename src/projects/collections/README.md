@@ -7,6 +7,13 @@ The active exporters are:
 
 Both modules are safe to import. Firebase credentials and clients are loaded only when their command-line entry point runs after configuration validation.
 
+`awardsEvidenceProcess.js` is a local processor that runs after the incremental exports.
+It reads `COLLECTION_EXPORT_DIR/evidence.json`, `COLLECTION_BACKUP_DIR/backup.json`,
+and the checked-in `src/data/allUnclaimedEvidence.json`, then writes
+`allProjects.json` and `pickStats.json` to `COLLECTION_PUBLIC_DATA_DIR`. It does not
+read Firestore and no longer writes the archived `allScorecardEvidence.json` or
+`allUnclaimedEvidence.json` outputs.
+
 ## Required configuration
 
 The collection command-line jobs load `.env.<NODE_ENV>` from the repository root. `NODE_ENV` supports `local`, `development`, and `production`, and defaults to `local`. The root environment file is shared with the API server and other command-line jobs; collection settings remain namespaced with `COLLECTION_`. Both incremental jobs require these environment variables:
@@ -66,7 +73,16 @@ fresh snapshots. The development directory is
 
 | Variable | Purpose |
 | --- | --- |
-| `COLLECTION_PUBLIC_DATA_DIR` | Absolute directory containing `unclaimedEvidence.json` and receiving derived outputs |
+| `COLLECTION_PUBLIC_DATA_DIR` | Absolute directory receiving derived outputs |
+
+The awards/evidence exporter reads unclaimed evidence from the checked-in
+`src/data/allUnclaimedEvidence.json`. That source includes both lock and project
+evidence and identifies records with `docId`; the exporter selects project records
+for `allProjectsEvidence.json` and emits the established `id` field in that output.
+
+`awardsEvidenceProcess.js` uses `COLLECTION_EXPORT_DIR`, `COLLECTION_BACKUP_DIR`, and
+`COLLECTION_PUBLIC_DATA_DIR` for its local inputs and outputs. Its unclaimed-evidence
+input is the same checked-in `src/data/allUnclaimedEvidence.json` file.
 
 `ALLOW_PRODUCTION_JOB=true` is required when `LPU_JOB_ENV=production` or when `FIRESTORE_DATABASE_ID=(default)`. This technical guard does not replace the required human approval before any live-data or production run.
 
@@ -79,6 +95,7 @@ The exporters, analyzer, and statistics processors support `--check-config`:
 ```bash
 NODE_ENV=local node src/projects/collections/collectionsExport.js --check-config
 NODE_ENV=local node src/projects/collections/awardsEvidenceExport.js --check-config
+NODE_ENV=local node src/projects/collections/awardsEvidenceProcess.js --check-config
 NODE_ENV=local node src/projects/collections/collectionAnalyzer.js --check-config
 NODE_ENV=local node src/projects/collections/collectionStatsProcess.js --check-config
 NODE_ENV=local node src/projects/collections/leaderboardStatsProcess.js --check-config
@@ -119,6 +136,10 @@ Before the next scheduled run, each cron entry must be updated to provide the re
 
 The analyzer reads dated `backup_YYYY-MM-DD.json` files from the `archive` directory under `COLLECTION_BACKUP_DIR`. It processes missing dates in ascending order and always reprocesses today's backup, ensuring the newest processed date supplies the current API and public-data outputs.
 
+The all-evidence processor reads the incremental evidence export and checked-in
+unclaimed-evidence snapshot to regenerate `allProjects.json` and `pickStats.json`
+without any additional database reads.
+
 The stats processor reads the analyzer's dated files from `COLLECTION_DAILY_DIR`, calculates the chronological daily changes, and writes `collectionStatsDaily.json` to `COLLECTION_PUBLIC_DATA_DIR`.
 
 The leaderboard processor reads the current collection backup and writes `leaderboardData.json` to `COLLECTION_PUBLIC_DATA_DIR`.
@@ -138,6 +159,7 @@ and writes `lockStats.json` to `COLLECTION_PUBLIC_DATA_DIR`.
 
 ```bash
 NODE_ENV=development node src/projects/collections/collectionAnalyzer.js cron
+NODE_ENV=development node src/projects/collections/awardsEvidenceProcess.js cron
 NODE_ENV=development node src/projects/collections/collectionStatsProcess.js cron
 NODE_ENV=development node src/projects/collections/leaderboardStatsProcess.js cron
 NODE_ENV=development node src/projects/collections/raflCollectionUtils.js cron
@@ -177,6 +199,7 @@ Tests and other modules can call the jobs with injected dependencies:
 
 - `runCollectionsExport(options)`
 - `runAwardsEvidenceExport(options)`
+- `runAllEvidenceExport(options)`
 - `runCollectionAnalysis(options)`
 - `runCollectionStatsProcess(options)`
 - `runLeaderboardStatsProcess(options)`
@@ -186,4 +209,4 @@ Tests and other modules can call the jobs with injected dependencies:
 - `runExportAllProcessor(options)`
 - `runLockStats(options)`
 
-Provide the exporters with a Firestore-compatible `db`, explicit directories, a lookback value, and an `activityLogger`. The awards/evidence exporter also accepts item-detail loaders. The analyzer and processors accept their configured directories directly; the analyzer, leaderboard, export-all, and lock-statistics processors accept item-detail loaders. Lock statistics also accepts a lock-data loader. Jobs that publish timestamps accept a deterministic `now` function for testing.
+Provide the incremental exporters with a Firestore-compatible `db`, explicit directories, a lookback value, and an `activityLogger`. The awards/evidence exporter also accepts item-detail loaders. The all-evidence processor accepts its export, backup, and public-data directories and item-detail loaders; it does not accept or create a database client. The analyzer and other processors accept their configured directories directly; the analyzer, leaderboard, export-all, and lock-statistics processors accept item-detail loaders. Lock statistics also accepts a lock-data loader. Jobs that publish timestamps accept a deterministic `now` function for testing.

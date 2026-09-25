@@ -115,7 +115,6 @@ describe('collection export and analysis runner', () => {
         await Promise.all([
             ...['data.json', 'rafl.json', 'dials.json', 'projects.json', 'awards.json', 'glossary.json']
                 .map(filename => fs.writeFile(path.join(catalogDir, filename), '[{"id":"fixture"}]')),
-            fs.writeFile(path.join(publicDataDir, 'unclaimedEvidence.json'), '[]'),
             fs.writeFile(path.join(publicDataDir, 'redditBeltCounts.json'), '{"Total":1}'),
             fs.writeFile(path.join(publicDataDir, 'discordBeltCounts.json'), '{"Total":1}')
         ])
@@ -157,7 +156,6 @@ describe('collection export and analysis runner', () => {
         const publicDataDir = path.join(root, 'public')
         await fs.mkdir(publicDataDir)
         await Promise.all([
-            fs.writeFile(path.join(publicDataDir, 'unclaimedEvidence.json'), '[]'),
             fs.writeFile(path.join(publicDataDir, 'redditBeltCounts.json'), '{"Total":1}'),
             fs.writeFile(path.join(publicDataDir, 'discordBeltCounts.json'), '{"Total":1}')
         ])

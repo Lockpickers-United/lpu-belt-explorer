@@ -1,5 +1,4 @@
 import fs from 'node:fs/promises'
-import {Timestamp} from 'firebase-admin/firestore'
 import {setDeepAdd, setDeepPush} from '../../util/setDeep.js'
 import dayjs from 'dayjs'
 import {projectDetails, lockDetails} from '../../util/getItemDetails.js'
@@ -7,20 +6,16 @@ import entryName from '../../util/entryName.js'
 import isDirectRun from '../../util/isDirectRun.js'
 import {writeJsonFileAtomic} from '../../util/writeJsonFileAtomic.js'
 import {exportJobConfigSummary, loadExportJobConfig} from './exportJobConfig.js'
-import {getExportFirestore} from './exportFirebase.js'
 import {loadCollectionEnvironment} from './collectionEnvironment.js'
 
-async function logReadActivity(messages, activityLogger) {
-    try {
-        await activityLogger(messages)
-    } catch (err) {
-        console.error('Logging Error', err)
-    }
-}
+const allUnclaimedEvidenceFile = new URL('../../data/allUnclaimedEvidence.json', import.meta.url)
 
 function evidenceDate(value) {
     if (!value) return '---'
-    return dayjs(value instanceof Timestamp ? value.toDate() : value).format('YYYY-MM-DD')
+    if (typeof value.toDate === 'function') return dayjs(value.toDate()).format('YYYY-MM-DD')
+    if (Number.isInteger(value._seconds)) return dayjs.unix(value._seconds).format('YYYY-MM-DD')
+    if (Number.isInteger(value.seconds)) return dayjs.unix(value.seconds).format('YYYY-MM-DD')
+    return dayjs(value).format('YYYY-MM-DD')
 }
 
 function evidenceDisplayName(evidence, collectionData) {
@@ -28,10 +23,8 @@ function evidenceDisplayName(evidence, collectionData) {
     return evidence.tabName ?? 'unknown'
 }
 
-function evidenceDetails(doc, entry, collectionData) {
-    const evidence = doc.data()
+function evidenceDetails(evidence, entry, collectionData) {
     return {
-        docId: doc.id,
         ...evidence,
         evidenceName: entryName(entry, 'short'),
         displayName: evidenceDisplayName(evidence, collectionData),
@@ -42,49 +35,37 @@ function evidenceDetails(doc, entry, collectionData) {
 }
 
 export async function runAllEvidenceExport({
-    db,
     backupDir,
+    exportDir,
     publicDataDir,
     trigger = 'manual',
-    activityLogger = async () => {},
     projectDetailsLoader = projectDetails,
     lockDetailsLoader = lockDetails,
+    unclaimedEvidenceFile = allUnclaimedEvidenceFile,
     now = () => new Date()
 }) {
-    const collectionBackup = JSON.parse(await fs.readFile(`${backupDir}/backup.json`, 'utf8'))
-    const collectionData = collectionBackup['__collections__']['lockcollections']
-    const [unclaimedEvidence, scorecardEvidence] = await Promise.all([
-        db.collection('unclaimed-evidence').get(),
-        db.collection('evidence').get()
+    const [collectionBackup, evidenceExport, unclaimedEvidence] = await Promise.all([
+        fs.readFile(`${backupDir}/backup.json`, 'utf8').then(JSON.parse),
+        fs.readFile(`${exportDir}/evidence.json`, 'utf8').then(JSON.parse),
+        fs.readFile(unclaimedEvidenceFile, 'utf8').then(JSON.parse)
     ])
+    const collectionData = collectionBackup['__collections__']['lockcollections']
+    const scorecardEvidence = evidenceExport.data
+    if (!Array.isArray(scorecardEvidence)) throw new Error('Invalid evidence export data')
+    if (!Array.isArray(unclaimedEvidence)) throw new Error('Invalid unclaimed evidence data')
 
-    await logReadActivity([{
-        type: 'READ',
-        count: unclaimedEvidence.docs.length,
-        source: 'allEvidenceExport - unclaimed-evidence',
-        id: '',
-        trigger
-    }, {
-        type: 'READ',
-        count: scorecardEvidence.docs.length,
-        source: 'allEvidenceExport - scorecardEvidence',
-        id: '',
-        trigger
-    }], activityLogger)
-
-    const allEvidence = [...scorecardEvidence.docs, ...unclaimedEvidence.docs]
+    const allEvidence = [...scorecardEvidence, ...unclaimedEvidence]
     const [projectData, lockData] = await Promise.all([
         projectDetailsLoader(),
         lockDetailsLoader()
     ])
 
     const fullDb = {}
-    allEvidence.reduce((acc, doc) => {
-        const evidence = doc.data()
+    allEvidence.reduce((acc, evidence) => {
         const entry = projectData[evidence.projectId]
         if (!entry) return acc
 
-        const details = evidenceDetails(doc, entry, collectionData)
+        const details = evidenceDetails(evidence, entry, collectionData)
         const evInfo = [evidence.projectId, details.date, evidence.evidenceUrl].join('|')
         if (acc[evInfo]) return acc
         acc[evInfo] = true
@@ -93,14 +74,13 @@ export async function runAllEvidenceExport({
         return acc
     }, {})
 
-    const pickStats = scorecardEvidence.docs.reduce((acc, doc) => {
-        const evidence = doc.data()
+    const pickStats = scorecardEvidence.reduce((acc, evidence) => {
         const project = projectData[evidence.projectId]
         const lock = lockData[evidence.projectId]
         const entry = lock || project
         if (!entry) return acc
 
-        const details = evidenceDetails(doc, entry, collectionData)
+        const details = evidenceDetails(evidence, entry, collectionData)
         if (evidence.modifier) {
             setDeepPush(fullDb, ['modifiers'], details)
         }
@@ -139,30 +119,9 @@ export async function runAllEvidenceExport({
 
     fullDb.metadata = {updatedDateTime: dayjs(now()).format('YYYY-MM-DD HH:mm')}
 
-    const allScorecardEvidence = scorecardEvidence.docs
-        .map(doc => {
-            const evidence = doc.data()
-            const entry = lockData[evidence.projectId] || projectData[evidence.projectId]
-            return entry ? evidenceDetails(doc, entry, collectionData) : null
-        })
-        .filter(Boolean)
-
-    const allUnclaimedEvidence = unclaimedEvidence.docs
-        .map(doc => {
-            const evidence = doc.data()
-            const entry = lockData[evidence.projectId] || projectData[evidence.projectId]
-            return entry ? evidenceDetails(doc, entry, collectionData) : null
-        })
-        .filter(Boolean)
-
     await Promise.all([
         writeJsonFileAtomic(`${publicDataDir}/allProjects.json`, fullDb),
-        writeJsonFileAtomic(`${publicDataDir}/pickStats.json`, pickStats),
-        writeJsonFileAtomic(`${publicDataDir}/allScorecardEvidence.json`, allScorecardEvidence),
-
-        // not in use?
-        writeJsonFileAtomic(`${publicDataDir}/allUnclaimedEvidence.json`, allUnclaimedEvidence)
-
+        writeJsonFileAtomic(`${publicDataDir}/pickStats.json`, pickStats)
     ])
 
     if (trigger !== 'cronjob') console.log('All evidence export complete')
@@ -187,15 +146,12 @@ export async function allEvidenceExportMain({
         return summary
     }
 
-    const db = await getExportFirestore(config)
-    const {default: postFirebaseActivity} = await import('../../util/postFirebaseActivity.js')
     const trigger = argv.includes('cron') ? 'cronjob' : 'manual'
     return runAllEvidenceExport({
-        db,
         backupDir: config.backupDir,
+        exportDir: config.exportDir,
         publicDataDir: config.publicDataDir,
-        trigger,
-        activityLogger: messages => postFirebaseActivity({activityData: messages})
+        trigger
     })
 }
 

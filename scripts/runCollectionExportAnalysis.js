@@ -22,6 +22,7 @@ const scriptDir = path.dirname(fileURLToPath(import.meta.url))
 const projectRoot = path.resolve(scriptDir, '..')
 const collectionsDir = path.resolve(projectRoot, 'src/projects/collections')
 const pipelineLockName = '.collection-export-analysis.lock'
+const allUnclaimedEvidenceFile = path.resolve(projectRoot, 'src/data/allUnclaimedEvidence.json')
 
 export const jobs = [
     {
@@ -30,6 +31,7 @@ export const jobs = [
     },
     {script: path.resolve(collectionsDir, 'collectionsExport.js')},
     {script: path.resolve(collectionsDir, 'awardsEvidenceExport.js')},
+    {script: path.resolve(collectionsDir, 'awardsEvidenceProcess.js')},
     {script: path.resolve(collectionsDir, 'collectionAnalyzer.js')},
     {script: path.resolve(collectionsDir, 'collectionStatsProcess.js')},
     {script: path.resolve(collectionsDir, 'leaderboardStatsProcess.js')},
@@ -100,11 +102,6 @@ export async function preflightCollectionPipeline(env) {
         && Object.keys(value).length > 0
         && Object.values(value).every(count => Number.isFinite(count) && count >= 0)
     const requiredInputs = [
-        {
-            filename: 'unclaimedEvidence.json',
-            validator: Array.isArray,
-            label: 'unclaimed evidence'
-        },
         ...(!redditConfig.enabled ? [{
             filename: 'redditBeltCounts.json',
             validator: objectWithCounts,
@@ -116,11 +113,14 @@ export async function preflightCollectionPipeline(env) {
             label: 'Discord belt counts'
         }] : [])
     ]
-    await Promise.all(requiredInputs.map(input => readAndValidateJson(
-        path.join(exportConfig.publicDataDir, input.filename),
-        input.validator,
-        input.label
-    )))
+    await Promise.all([
+        readAndValidateJson(allUnclaimedEvidenceFile, Array.isArray, 'unclaimed evidence'),
+        ...requiredInputs.map(input => readAndValidateJson(
+            path.join(exportConfig.publicDataDir, input.filename),
+            input.validator,
+            input.label
+        ))
+    ])
 
     return Object.freeze({
         exportConfig,

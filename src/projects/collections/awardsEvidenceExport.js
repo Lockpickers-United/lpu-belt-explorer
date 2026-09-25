@@ -11,6 +11,7 @@ import {getExportFirestore} from './exportFirebase.js'
 import {loadCollectionEnvironment} from './collectionEnvironment.js'
 
 const getAllChunkSize = 300
+const allUnclaimedEvidenceFile = new URL('../../data/allUnclaimedEvidence.json', import.meta.url)
 
 function getCollectionConfigs(exportDir) {
     return [
@@ -342,6 +343,7 @@ function buildAllProjectsEvidence({evidence, unclaimedEvidence, collectionData, 
     })
 
     unclaimedEvidence.forEach(doc => {
+        const {docId, ...docData} = doc
         const project = projectData[doc.projectId]
         if (!project) return
         if (allProjects.evidence?.find(
@@ -351,13 +353,12 @@ function buildAllProjectsEvidence({evidence, unclaimedEvidence, collectionData, 
         const date = dayjs(doc.evidenceCreatedAt).format('YYYY-MM-DD')
         const discipline = project.name.match(/(.+),/)?.[1]
         setDeepPush(allProjects, ['evidence'], {
-            ...doc,
+            ...docData,
+            id: docId,
             unclaimed: true,
             discipline,
             tier: project.tier,
-            displayName: collectionData[doc.userId]?.displayName
-                ? collectionData[doc.userId].displayName
-                : undefined,
+            displayName: doc.displayName ?? collectionData[doc.userId]?.displayName,
             date
         })
     })
@@ -388,6 +389,7 @@ export async function runAwardsEvidenceExport({
     trigger = 'manual',
     activityLogger = async () => {},
     itemDetailLoaders = {awardDetails, lockDetails, projectDetails, safelockDetails},
+    unclaimedEvidenceFile = allUnclaimedEvidenceFile,
     now = () => new Date(),
     fullExport = false
 }) {
@@ -407,7 +409,7 @@ export async function runAwardsEvidenceExport({
     const collectionData = JSON.parse(
         await fs.readFile(`${backupDir}/backup.json`, 'utf8')
     )['__collections__']['lockcollections']
-    const unclaimedEvidence = JSON.parse(await fs.readFile(`${publicDataDir}/unclaimedEvidence.json`, 'utf8'))
+    const unclaimedEvidence = JSON.parse(await fs.readFile(unclaimedEvidenceFile, 'utf8'))
 
     const [lockData, safelockData, projectData, awardData] = await Promise.all([
         itemDetailLoaders.lockDetails(),

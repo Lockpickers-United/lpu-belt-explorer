@@ -14,6 +14,7 @@ async function makeTempDirs() {
     const exportDir = path.join(root, 'exports')
     const backupDir = path.join(root, 'backups')
     const publicDataDir = path.join(root, 'public-data')
+    const unclaimedEvidenceFile = path.join(root, 'allUnclaimedEvidence.json')
     await Promise.all([
         fs.mkdir(exportDir, {recursive: true}),
         fs.mkdir(backupDir, {recursive: true}),
@@ -25,9 +26,9 @@ async function makeTempDirs() {
         fs.writeFile(path.join(backupDir, 'backup.json'), JSON.stringify({
             __collections__: {lockcollections: {}}
         })),
-        fs.writeFile(path.join(publicDataDir, 'unclaimedEvidence.json'), '[]')
+        fs.writeFile(unclaimedEvidenceFile, '[]')
     ])
-    return {root, exportDir, backupDir, publicDataDir}
+    return {root, exportDir, backupDir, publicDataDir, unclaimedEvidenceFile}
 }
 
 function createIncrementalDb({changes = {}, sourceDocs = {}} = {}) {
@@ -87,7 +88,7 @@ afterEach(async () => {
 
 describe('runAwardsEvidenceExport', () => {
     it('regenerates derived outputs without full source reads when there are no changes', async () => {
-        const {exportDir, backupDir, publicDataDir} = await makeTempDirs()
+        const {exportDir, backupDir, publicDataDir, unclaimedEvidenceFile} = await makeTempDirs()
         const {db, getAll, sourceGet} = createIncrementalDb()
         const activityLogger = vi.fn().mockResolvedValue(undefined)
 
@@ -101,6 +102,7 @@ describe('runAwardsEvidenceExport', () => {
             trigger: 'cronjob',
             activityLogger,
             itemDetailLoaders: emptyItemDetailLoaders,
+            unclaimedEvidenceFile,
             now: () => runDate
         })
 
@@ -126,8 +128,63 @@ describe('runAwardsEvidenceExport', () => {
         ])
     })
 
+    it('maps project records from allUnclaimedEvidence to the established output shape', async () => {
+        const {exportDir, backupDir, publicDataDir, unclaimedEvidenceFile} = await makeTempDirs()
+        await fs.writeFile(unclaimedEvidenceFile, JSON.stringify([
+            {
+                docId: 'unclaimed-project-evidence',
+                projectId: 'project-1',
+                tabName: 'Picker',
+                displayName: 'Picker Display Name',
+                evidenceCreatedAt: '2026-09-10T12:00:00.000Z'
+            },
+            {
+                docId: 'unclaimed-lock-evidence',
+                projectId: 'lock-1',
+                tabName: 'Picker',
+                displayName: 'Picker Display Name',
+                evidenceCreatedAt: '2026-09-10T12:00:00.000Z'
+            }
+        ]))
+        const {db} = createIncrementalDb()
+
+        await runAwardsEvidenceExport({
+            db,
+            publicDataDir,
+            backupDir,
+            exportDir,
+            lookbackMs: 300_000,
+            trigger: 'cronjob',
+            itemDetailLoaders: {
+                ...emptyItemDetailLoaders,
+                projectDetails: vi.fn().mockResolvedValue({
+                    'project-1': {name: 'Pin Tumblers, Novice', tier: 1}
+                })
+            },
+            unclaimedEvidenceFile,
+            now: () => new Date('2026-09-11T15:30:00.000Z')
+        })
+
+        const allProjects = JSON.parse(await fs.readFile(
+            path.join(publicDataDir, 'allProjectsEvidence.json'),
+            'utf8'
+        ))
+        expect(allProjects.evidence).toEqual([{
+            id: 'unclaimed-project-evidence',
+            projectId: 'project-1',
+            tabName: 'Picker',
+            displayName: 'Picker Display Name',
+            evidenceCreatedAt: '2026-09-10T12:00:00.000Z',
+            unclaimed: true,
+            discipline: 'Pin Tumblers',
+            tier: 1,
+            date: '2026-09-10'
+        }])
+        expect(allProjects.evidence[0]).not.toHaveProperty('docId')
+    })
+
     it('does not advance state when a dependent output cannot be written', async () => {
-        const {exportDir, backupDir, publicDataDir} = await makeTempDirs()
+        const {exportDir, backupDir, publicDataDir, unclaimedEvidenceFile} = await makeTempDirs()
         await fs.mkdir(path.join(publicDataDir, 'allProjectsEvidence.json'))
 
         const changedAt = Timestamp.fromDate(new Date('2026-09-10T12:00:00.000Z'))
@@ -156,6 +213,7 @@ describe('runAwardsEvidenceExport', () => {
             trigger: 'cronjob',
             activityLogger,
             itemDetailLoaders: emptyItemDetailLoaders,
+            unclaimedEvidenceFile,
             now: () => new Date('2026-09-11T15:30:00.000Z')
         })).rejects.toThrow()
 
@@ -165,7 +223,7 @@ describe('runAwardsEvidenceExport', () => {
     })
 
     it('creates full baselines for awards and evidence with fresh watermarks', async () => {
-        const {exportDir, backupDir, publicDataDir} = await makeTempDirs()
+        const {exportDir, backupDir, publicDataDir, unclaimedEvidenceFile} = await makeTempDirs()
         await Promise.all([
             fs.writeFile(path.join(exportDir, 'awards.json'), JSON.stringify({
                 metadata: {},
@@ -241,6 +299,7 @@ describe('runAwardsEvidenceExport', () => {
             trigger: 'cronjob',
             activityLogger,
             itemDetailLoaders: emptyItemDetailLoaders,
+            unclaimedEvidenceFile,
             now: () => runDate,
             fullExport: true
         })
