@@ -15,8 +15,6 @@ export default function ViewLockRequests({requestMod}) {
     const {filters} = useContext(FilterContext)
     const [entryExpanded, setEntryExpanded] = useState(filters.id)
 
-    //console.log('ViewLockRequests render:', visibleEntries)
-
     const options = useMemo(() => {
         return [
             {label: 'Request a Lock', page: '/rankingrequests/submit'},

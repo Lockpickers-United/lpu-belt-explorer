@@ -1,8 +1,7 @@
 const environment = import.meta.env || {}
-const url = environment.VITE_DATA_BASE_URL || (environment.VITE_LOCAL_DATA === 'true'
+const url = environment.VITE_LOCAL_DATA === 'true'
     ? '/data'
-    : 'https://explore.lpubelts.com/data'
-)
+    : environment.VITE_DATA_SERVER_URL || 'https://explore.lpubelts.com/data'
 
 if (environment.VITE_LOCAL_DATA === 'true') {
     console.info('Attention: App is using LOCAL DATA.')
@@ -22,9 +21,10 @@ export const scorecardStats = `${url}/scorecardStats.json`
 export const discordBeltCounts = `${url}/discordBeltCounts.json`
 export const redditBeltCounts = `${url}/redditBeltCounts.json`
 
-export const brandDistribution = `${url}/statsBrandDistribution.json`
-export const popularAreas = `${url}/statsPopularAreas.json`
-export const redditGrowth = `${url}/statsRedditGrowth.json`
+export const brandDistribution = `${url}/static/statsBrandDistribution.json`
+export const popularAreas = `${url}/static/statsPopularAreas.json`
+export const redditGrowth = `${url}/static/statsRedditGrowth.json`
+
 export const siteFullNew = `${url}/statsSiteFullNew.json`
 
 export const unclaimedEvidence = `${url}/unclaimedEvidence.json`

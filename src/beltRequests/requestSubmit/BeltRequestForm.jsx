@@ -251,7 +251,7 @@ export default function BeltRequestForm() {
                     <div style={{fontSize: '1.1rem', fontWeight: 500, marginBottom: 24}}>
                         REMINDER: Black Belt request videos receive the highest possible level of scrutiny
                         on every detail of the lock. Be sure to include clear evidence of all locking components,
-                        pins, and milling in your video.
+                        including pins, milling, sidebars, etc. in your video.
                     </div>
                 }
 
