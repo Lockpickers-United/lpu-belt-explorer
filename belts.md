@@ -1150,6 +1150,9 @@ is required to gut.
 **Picking Requirements**
 
 - SPP (single pin pick) and gut **two** different locks ranked as Black Belt (locks have to be from separate entries in the list).
+- **Please note:** Black Belt request videos receive the highest possible level of scrutiny
+    on every detail of the lock. Be sure to include clear evidence of all locking components,
+    including pins, milling, sidebars, etc. in your video.
 
 **Non-Picking Requirements**
 
@@ -1163,8 +1166,7 @@ is required to gut.
 
 **Evidence Format**
 
-- Pick and gut in a continuous video take without cuts, keeping the lock and components in frame. Your video should include a clear close-up of the pins from the lock. 
-- **Please note:** Black Belt request videos receive the highest possible level of scrutiny on every detail of the lock. Be sure to include clear evidence of all locking components, pins, and milling in your video.
+- Pick and gut in a continuous video take without cuts, keeping the lock and components in frame. Your video should include a clear close-up of the pins, milling, sidebars, and other locking components from the lock. 
 - Videos must be in horizontal aspect ratio due to the detailed review that Black Belt evidence recieves. Videos shot vertically will be rejected without review.
 
 **Epic Quest Options** (all subject to approval):
