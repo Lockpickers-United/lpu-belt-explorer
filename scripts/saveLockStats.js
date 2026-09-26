@@ -2,6 +2,7 @@ import dayjs from 'dayjs'
 import {setDeep, setDeepAdd} from '../src/util/setDeep.js'
 import fs from 'fs'
 import {itemDetails} from './getEntityDetails.js'
+import {uniqueBelts} from '../src/data/belts.js'
 
 /**
  * @prop lockBySegmentCounts
@@ -10,6 +11,52 @@ import {itemDetails} from './getEntityDetails.js'
 export async function saveLockStats() {
 
     const lockData = JSON.parse(fs.readFileSync('./src/data/data.json', 'utf8'))
+
+    const lockBrandStats = lockData
+        .reduce((acc, lock) => {
+            const lockingMechanism = lock.lockingMechanisms?.length ?
+                lock.lockingMechanisms.length === 1
+                    ? lock.lockingMechanisms[0]
+                    : 'Multiple'
+                : 'unknown'
+            const belt = lock.belt.replace(/ \d/, '')
+            lock.makeModels?.forEach(makeModel => {
+                const brand = makeModel.make || makeModel.model
+                setDeepAdd(acc, ['locksByBelt', brand, belt], 1)
+                setDeepAdd(acc, ['lockCount', brand], 1)
+                setDeepAdd(acc, ['locksByMechanism', brand, lockingMechanism], 1)
+            })
+            return acc
+        }, {})
+
+    const brandBeltsAll = Object.entries(lockBrandStats.locksByBelt).reduce((acc, [brand, beltCounts]) => {
+        const data = uniqueBelts.map(belt => {
+            return {
+                label: belt,
+                id: belt,
+                count: beltCounts[belt] || 0,
+                value: beltCounts[belt] ? +(beltCounts[belt] / lockBrandStats.lockCount[brand]).toFixed(3) : 0
+            }
+        })
+        return {...acc, [brand]: data}
+    }, {})
+
+    const brandMechanismAll = Object.entries(lockBrandStats.locksByMechanism).reduce((acc, [brand, mechanismCounts]) => {
+        const data = Object.entries(mechanismCounts).map(([mech, count]) => {
+            return {
+                label: mech,
+                id: mech,
+                count: count || 0,
+                value: count ? +(count / lockBrandStats.lockCount[brand]).toFixed(3) : 0
+            }
+        })
+        return {...acc, [brand]: data}
+    }, {})
+
+    const allBrands = Object.keys(lockBrandStats.lockCount).sort()
+    const brandData = allBrands.reduce((acc, brand) => {
+        return {...acc, [brand]: {belts: brandBeltsAll[brand], mechanisms: brandMechanismAll[brand]}}
+    }, {})
 
     const lockStats = lockData
         .reduce((acc, lock) => {
@@ -25,8 +72,8 @@ export async function saveLockStats() {
                 const lockingMechanism = lock.lockingMechanisms.length === 1
                     ? lock.lockingMechanisms[0]
                     : 'Multiple'
-                    setDeepAdd(acc, ['locksByMechanism', lockingMechanism], 1)
-                    setDeepAdd(acc, ['locksByMechanismByBelt', lock.belt.replace(/ \d/, ''),lockingMechanism], 1)
+                setDeepAdd(acc, ['locksByMechanism', lockingMechanism], 1)
+                setDeepAdd(acc, ['locksByMechanismByBelt', lock.belt.replace(/ \d/, ''), lockingMechanism], 1)
             }
             return acc
         }, {})
@@ -145,8 +192,10 @@ export async function saveLockStats() {
 
     setDeep(lockStats, ['photoStats', 'topPhotographers'], topPhotographers)
 
+    lockStats.brandData = brandData
+
 // METADATA
-    lockStats.metadata = {updatedDateTime: dayjs().format('YYYY-MM-DD HH:mm')}
+    lockStats.metadata = {source: 'import-data', updatedDateTime: dayjs().format('YYYY-MM-DD HH:mm')}
 
 // WRITE TO FILE
     fs.writeFile('./src/data/lockStats.json', JSON.stringify(lockStats, null, 2), function (err) {

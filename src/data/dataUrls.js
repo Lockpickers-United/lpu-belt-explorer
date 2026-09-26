@@ -21,13 +21,12 @@ export const scorecardStats = `${url}/scorecardStats.json`
 export const discordBeltCounts = `${url}/discordBeltCounts.json`
 export const redditBeltCounts = `${url}/redditBeltCounts.json`
 
-export const brandDistribution = `${url}/static/statsBrandDistribution.json`
 export const popularAreas = `${url}/static/statsPopularAreas.json`
 export const redditGrowth = `${url}/static/statsRedditGrowth.json`
 
 export const siteFullNew = `${url}/statsSiteFullNew.json`
 
-export const unclaimedEvidence = `${url}/unclaimedEvidence.json`
+export const unclaimedEvidence = `${url}/deprecated/unclaimedEvidence.json`
 
 export const raflSiteStats = `${url}/statsSiteFullNew.json`
 export const raflPreviewPots = `${url}/raflPreviewPots.json`

@@ -34,7 +34,7 @@ export default function ScorecardExplore({data}) {
 
 
             <div style={headerStyle} role='heading'>Scorecard Locks</div>
-            <ScorecardLocks data={data}/>
+            <ScorecardLocks/>
 
         </div>
     )

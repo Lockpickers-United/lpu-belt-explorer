@@ -2,13 +2,12 @@ import React from 'react'
 import Tracker from '../app/Tracker'
 import Footer from '../nav/Footer'
 import Nav from '../nav/Nav'
-import LoadingDisplay from '../util/LoadingDisplay'
+import LoadingDisplay from '../misc/LoadingDisplay'
 import useData from '../util/useData'
 import usePageTitle from '../util/usePageTitle'
 import StatsMainPage from './StatsMainPage'
 import lockStats from '../data/lockStats.json'
 import {
-    brandDistribution,
     collectionsStatsCurrent,
     popularAreas,
     redditGrowth,
@@ -33,7 +32,7 @@ function StatsRoute() {
             {loading && <LoadingDisplay/>}
 
             {!loading && !error && !!data &&
-                <StatsMainPage data={{...data, lockStats}}/>
+                <StatsMainPage data={{...data, lockStats}} />
             }
 
             <Footer/>
@@ -44,7 +43,6 @@ function StatsRoute() {
 }
 
 const urls = {
-    brandDistribution,
     collectionsStatsCurrent,
     popularAreas,
     redditGrowth,

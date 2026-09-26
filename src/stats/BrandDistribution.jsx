@@ -6,33 +6,41 @@ import useWindowSize from '../util/useWindowSize'
 import BrandBeltBar from './BrandBeltBar'
 import BrandMechanismPie from './BrandMechanismPie'
 
-function BrandDistribution({data}) {
-    const {brandBelts, brandMechanisms} = data.brandDistribution
+export default function BrandDistribution({data}) {
 
-    const brandNameBeltList = brandBelts.map((brand) => brand.brandName)
-    const [brandIndex, setBrandIndex] = useState(2)
-    const [brandName, setBrandName] = useState(brandBelts[brandIndex].brandName)
+    const {brandData} = data
 
-    const brandNameMechList = brandMechanisms.map((brand) => brand.brandName)
-    const [brandMechIndex, setBrandMechIndex] = useState(2)
+    const selectValues = [{name: 'Top Brands', key: 'Top Brands'}]
+    topBrands.forEach((brand) => {
+        if (brandData[brand]) selectValues.push({name: brand, key: brand + '__top'})
+    })
+    selectValues.push({name: 'divider', key: 'divider'})
+    selectValues.push({name: 'All Brands', key: 'All Brands'})
+    Object.keys(brandData).forEach((brand) => {
+        selectValues.push({name: brand, key: brand})
+    })
 
-    const beltData = brandBelts[brandIndex].data
-    const mechanismData = brandMechanisms[brandMechIndex].data
+    const [brandKey, setBrandKey] = useState(topBrands[0]+'__top')
+    const [brandName, setBrandName] = useState(topBrands[0])
+
+    const beltData = brandData[brandName]?.belts
+    const mechanismData = brandData[brandName]?.mechanisms
 
     const [open, setOpen] = useState(false)
     const handleClose = useCallback(() => setOpen(false), [])
     const handleOpen = useCallback(() => setOpen(true), [])
 
     const handleChange = useCallback(event => {
-        setBrandIndex(brandNameBeltList.findIndex(x => x === event.target.value))
-        setBrandMechIndex(brandNameMechList.findIndex(x => x === event.target.value))
-        setBrandName(event.target.value)
+        setBrandKey(event.target.value)
+        const brand = event.target.value.trim().replace('__top', '')
+        setBrandName(brand)
         handleClose()
-
-        // TODO: deselect to restore display of 'Brand' header and border?
-        document.getElementById('brandPulldown').classList.remove('active')
-        document.getElementById('brandSelect').classList.remove('active')
-    }, [brandNameBeltList, brandNameMechList, handleClose])
+        setTimeout(() => {
+            if (document.activeElement instanceof HTMLElement) {
+                document.activeElement.blur()
+            }
+        }, 0)
+    }, [handleClose])
 
     const {width} = useWindowSize()
     const mobileSmall = width <= 360
@@ -56,44 +64,48 @@ function BrandDistribution({data}) {
 
     const barDivHeight = mobileSmall ? 200
         : smallWindow ? 210
-            :  180
+            : 180
 
     const pieDivHeight = mobileSmall ? 120
         : mobileMedium ? 120
-            :  mobileLarge ? 170
+            : mobileLarge ? 170
                 : smallWindow ? 180
                     : 160
 
     return (
         <React.Fragment>
             <div style={{marginTop: 24, textAlign: 'center'}}>
-                <FormControl id='brandPulldown'  size='small' style={{marginBottom: buttonMargin, minWidth: 200, textAlign: 'left'}}>
+                <FormControl id='brandPulldown' size='small'
+                             style={{marginBottom: buttonMargin, minWidth: 200, textAlign: 'left'}}>
                     <InputLabel>Brand</InputLabel>
                     <Select
                         id='brandSelect'
-                        value={brandName}
+                        variant='outlined'
+                        value={brandKey}
                         label='Brand'
                         open={open}
                         onClose={handleClose}
                         onOpen={handleOpen}
-                        onChange={handleChange}
-                        style={{fontWeight:700, color:'#eee'}}
+                        onChange={(e) => {
+                            handleChange(e)
+                        }}
+                        style={{fontWeight: 700, color: '#eee'}}
                     >
-                        {brandNameBeltList.map((brand, index) =>
-                            brand === 'Top Brands' && <MenuItem disabled key={index} value={brand}>{brand}</MenuItem>
-                            || brand === 'All Brands' && <MenuItem disabled key={index} value={brand}>{brand}</MenuItem>
-                            || brand === 'divider' && <Divider key={index}/>
-                            || <MenuItem key={index} value={brand}>{brand}</MenuItem>
+                        {selectValues.map(({name, key}) =>
+                            name === 'Top Brands' && <MenuItem disabled key={key} value={key}>{name}</MenuItem>
+                            || name === 'All Brands' && <MenuItem disabled key={key} value={key}>{name}</MenuItem>
+                            || name === 'divider' && <Divider key={key}/>
+                            || <MenuItem key={key} value={key}>{name}</MenuItem>
                         )}
                     </Select>
                 </FormControl>
             </div>
             <div style={{textAlign: 'center'}}>
                 <div style={combinedDivStyle}>
-                    <div style={{width:barDivWidth, verticalAlign:'top', height:barDivHeight}}>
+                    <div style={{width: barDivWidth, verticalAlign: 'top', height: barDivHeight}}>
                         <BrandBeltBar beltData={beltData} brandName={brandName}/>
                     </div>
-                    <div style={{width:pieDivWidth, height:pieDivHeight}}>
+                    <div style={{width: pieDivWidth, height: pieDivHeight}}>
                         <BrandMechanismPie beltData={mechanismData} brandName={brandName}/>
                     </div>
                 </div>
@@ -102,4 +114,34 @@ function BrandDistribution({data}) {
     )
 }
 
-export default BrandDistribution
+const topBrands = [
+    'ABUS',
+    'ALPHA',
+    'ASSA',
+    'Australian Lock Co.',
+    'BASI',
+    'BKS',
+    'Burg Wächter',
+    'CES',
+    'Chubb',
+    'DOM',
+    'EVVA',
+    'Fichet',
+    'GOAL',
+    'IKON',
+    'Kaba',
+    'Keso',
+    'Lockwood',
+    'M&C',
+    'Master Lock',
+    'Mauer',
+    'Medeco',
+    'MIWA',
+    'Mottura',
+    'Mul-T-Lock',
+    'Ruko',
+    'Vachette',
+    'Wilka',
+    'Winkhaus',
+    'Yale'
+]

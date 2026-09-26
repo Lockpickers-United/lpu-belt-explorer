@@ -5,7 +5,6 @@ import Nav from '../../nav/Nav'
 import LoadingDisplay from '../../util/LoadingDisplay'
 import useData from '../../util/useData'
 import usePageTitle from '../../util/usePageTitle'
-import lockStats from '../../data/lockStats.json'
 import ErrorMessage from '../../misc/ErrorMessage.jsx'
 import ScorecardExplore from './ScorecardExplore.jsx'
 import {scorecardExploreFilterFields} from '../../data/filterFields'
@@ -14,15 +13,9 @@ import {DataProvider} from './ScorecardExploreDataProvider.jsx'
 import {FilterProvider} from '../../context/FilterContext.jsx'
 import DBContext from '../../app/DBContext.jsx'
 import {
-    brandDistribution,
-    collectionsStatsCurrent,
-    popularAreas,
-    redditGrowth,
-    siteFullNew,
-    pickStatsData,
     scorecardStats,
     discordBeltCounts,
-    redditBeltCounts,
+    redditBeltCounts
 } from '../../data/dataUrls'
 
 /**
@@ -45,8 +38,10 @@ export default function ScorecardExploreRoute() {
 
             {!loading && !error && !!data &&
                 <FilterProvider filterFields={scorecardExploreFilterFields}>
-                    <DataProvider allEntries={allEntries} scorecardEntries={data.scorecardStats.lockCountsByUserBelt} profile={lockCollection}>
-                        <ScorecardExplore data={{...data, lockStats}}/>
+                    <DataProvider allEntries={allEntries}
+                                  scorecardEntries={data.scorecardStats.lockCountsByUserBelt}
+                                  profile={lockCollection}>
+                        <ScorecardExplore data={{...data}}/>
                     </DataProvider>
                 </FilterProvider>
             }
@@ -59,12 +54,6 @@ export default function ScorecardExploreRoute() {
 }
 
 const urls = {
-    brandDistribution,
-    collectionsStatsCurrent,
-    popularAreas,
-    redditGrowth,
-    siteFullNew,
-    pickStatsData,
     scorecardStats,
     discordBeltCounts,
     redditBeltCounts

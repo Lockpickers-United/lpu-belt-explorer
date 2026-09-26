@@ -15,7 +15,7 @@ import LockingMechanismsByBelt from './LockingMechanismsByBelt.jsx'
 import PlatformBeltCountsChart from './PlatformBeltCountsChart.jsx'
 import PlatformBeltCountsTable from './PlatformBeltCountsTable.jsx'
 
-function StatsMainPage({data}) {
+function StatsMainPage({data, loading, error}) {
 
     const {lockCollection} = useContext(DBContext)
 
@@ -51,7 +51,7 @@ function StatsMainPage({data}) {
             <BeltDistribution data={data}/>
 
             <div style={headerStyle} role='heading'>Brand Lock Distribution</div>
-            <BrandDistribution data={data}/>
+            <BrandDistribution data={data.lockStats}/>
 
             <div style={headerStyle} role='heading'>Locking Mechanisms By Belt</div>
             <LockingMechanismsByBelt data={data}/>

@@ -1,6 +1,5 @@
 import React, {useCallback, useMemo} from 'react'
 import {
-    brandDistribution,
     collectionsStatsCurrent,
     popularAreas, redditGrowth, siteFullNew, collectionStatsDaily
 } from '../data/dataUrls'
@@ -116,7 +115,6 @@ export function ReportsProvider({children}) {
 }
 
 const urls = {
-    brandDistribution,
     collectionsStatsCurrent,
     collectionStatsDaily,
     popularAreas,
