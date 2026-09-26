@@ -127,6 +127,9 @@ export async function runFetchAnalyzeLogs({
     }
     if (argv.includes('--check-config')) {
         writeOutput(JSON.stringify(summary, null, 2))
+        for (const job of jobs) {
+            await runJobFn(job, childEnv, ['--check-config'])
+        }
         return summary
     }
 

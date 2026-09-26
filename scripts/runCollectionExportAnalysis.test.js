@@ -93,6 +93,48 @@ describe('collection export and analysis runner', () => {
         expect(writeOutput).not.toHaveBeenCalled()
     })
 
+    it('checks its configuration and every component configuration', async () => {
+        const root = await fs.mkdtemp(path.join(os.tmpdir(), 'collection-runner-config-'))
+        temporaryDirectories.push(root)
+        const runJobFn = vi.fn().mockResolvedValue(undefined)
+        const preflightFn = vi.fn()
+        const acquireLockFn = vi.fn()
+
+        const summary = await runCollectionExportAnalysis({
+            env: {
+                NODE_ENV: 'development',
+                LPU_JOB_ENV: 'development',
+                FIREBASE_PROJECT_ID: 'test-project',
+                FIRESTORE_DATABASE_ID: 'test-database',
+                FIREBASE_SERVICE_ACCOUNT_PATH: path.join(root, 'service-account.json'),
+                COLLECTION_EXPORT_DIR: path.join(root, 'exports'),
+                COLLECTION_BACKUP_DIR: path.join(root, 'backups'),
+                COLLECTION_PUBLIC_DATA_DIR: path.join(root, 'public'),
+                COLLECTION_DAILY_DIR: path.join(root, 'daily'),
+                COLLECTION_API_DIR: path.join(root, 'api'),
+                LPU_CATALOG_SOURCE: 'filesystem',
+                LPU_CATALOG_DIR: path.join(root, 'catalog'),
+                LPU_CATALOG_REFRESH_ENABLED: 'false',
+                REDDIT_BELTS_ENABLED: 'false',
+                DISCORD_BELT_COUNTS_REFRESH_ENABLED: 'false'
+            },
+            argv: ['node', 'runCollectionExportAnalysis.js', '--check-config'],
+            loadEnvironment: vi.fn().mockReturnValue({parsed: {}}),
+            runJobFn,
+            preflightFn,
+            acquireLockFn,
+            writeOutput: vi.fn()
+        })
+
+        expect(summary.jobs).toHaveLength(selectJobs({}).length)
+        expect(runJobFn.mock.calls.map(call => call[0])).toEqual(jobs)
+        runJobFn.mock.calls.forEach(call => {
+            expect(call[2]).toEqual(['--check-config'])
+        })
+        expect(preflightFn).not.toHaveBeenCalled()
+        expect(acquireLockFn).not.toHaveBeenCalled()
+    })
+
     it('includes external refresh jobs only when explicitly enabled', () => {
         const selected = selectJobs({
             LPU_CATALOG_REFRESH_ENABLED: 'true',

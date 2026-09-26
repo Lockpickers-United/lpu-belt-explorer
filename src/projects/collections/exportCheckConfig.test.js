@@ -9,7 +9,7 @@ import {exportAllProcessorMain} from './exportAllProcessor.js'
 import {leaderboardStatsProcessMain} from './leaderboardStatsProcess.js'
 import {raflCollectionUtilsMain} from './raflCollectionUtils.js'
 import {discordBeltCountsDownloadMain} from './discordBeltCountsDownload.js'
-import {lockStatsMain} from '../lockStatistics/lockStats.js'
+import {lockStatsMain} from '../_deprecated/lockStatistics/lockStats.js'
 
 const developmentEnvironmentPath = fileURLToPath(
     new URL('../../../.env.development', import.meta.url)

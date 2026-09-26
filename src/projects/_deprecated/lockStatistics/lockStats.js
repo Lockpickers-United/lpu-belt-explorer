@@ -1,12 +1,13 @@
 import path from 'node:path'
 import dayjs from 'dayjs'
-import {setDeep, setDeepAdd} from '../../util/setDeep.js'
-import {itemDetails} from '../../util/getItemDetails.js'
-import {loadCatalogArray} from '../../util/catalogData.js'
-import isDirectRun from '../../util/isDirectRun.js'
-import {writeJsonFileAtomic} from '../../util/writeJsonFileAtomic.js'
-import {loadCollectionEnvironment} from '../collections/collectionEnvironment.js'
-import {exportJobConfigSummary, loadExportJobConfig} from '../collections/exportJobConfig.js'
+import {setDeep, setDeepAdd} from '../../../util/setDeep.js'
+import {itemDetails} from '../../../util/getItemDetails.js'
+import {loadCatalogArray} from '../../../util/catalogData.js'
+import isDirectRun from '../../../util/isDirectRun.js'
+import {writeJsonFileAtomic} from '../../../util/writeJsonFileAtomic.js'
+import {loadCollectionEnvironment} from '../../collections/collectionEnvironment.js'
+import {exportJobConfigSummary, loadExportJobConfig} from '../../collections/exportJobConfig.js'
+import {uniqueBelts} from '../../../util/belts.js'
 
 const topN = 250
 
@@ -161,12 +162,65 @@ export function buildLockStats({lockData, allEntries, runDate}) {
     return lockStats
 }
 
+export function buildBrandDistribution({lockData, runDate}) {
+    const lockStats = lockData
+        .reduce((acc, lock) => {
+            const lockingMechanism = lock.lockingMechanisms?.length ?
+                lock.lockingMechanisms.length === 1
+                    ? lock.lockingMechanisms[0]
+                    : 'Multiple'
+                : 'unknown'
+            const belt = lock.belt.replace(/ \d/, '')
+            lock.makeModels?.forEach(makeModel => {
+                const brand = makeModel.make || makeModel.model
+                setDeepAdd(acc, ['locksByBelt', brand, belt], 1)
+                setDeepAdd(acc, ['lockCount', brand], 1)
+                setDeepAdd(acc, ['locksByMechanism', brand, lockingMechanism], 1)
+            })
+            return acc
+        }, {})
+
+    const brandBeltsAll = Object.entries(lockStats.locksByBelt).reduce((acc, [brand, beltCounts]) => {
+        const data = uniqueBelts.map(belt => {
+            return {
+                label: belt,
+                id: belt,
+                count: beltCounts[belt] || 0,
+                value: beltCounts[belt] ? +(beltCounts[belt] / lockStats.lockCount[brand]).toFixed(3) : 0
+            }
+        })
+        return {...acc, [brand]: data}
+    }, {})
+
+    const brandMechanismAll = Object.entries(lockStats.locksByMechanism).reduce((acc, [brand, mechanismCounts]) => {
+        const data = Object.entries(mechanismCounts).map(([mech, count]) => {
+            return {
+                label: mech,
+                id: mech,
+                count: count || 0,
+                value: count ? +(count / lockStats.lockCount[brand]).toFixed(3) : 0
+            }
+        })
+        return {...acc, [brand]: data}
+    }, {})
+
+    const allBrands = Object.keys(lockStats.lockCount).sort()
+    const brandData = allBrands.reduce((acc, brand) => {
+        return {...acc, [brand]: {belts: brandBeltsAll[brand], mechanisms: brandMechanismAll[brand]}}
+    }, {})
+
+    return {
+        metadata: {source: 'data.json', updatedDateTime: runDate},
+        brandData
+    }
+}
+
 export async function runLockStats({
-    publicDataDir,
-    lockDataLoader = loadLockData,
-    itemDetailsLoader = itemDetails,
-    now = () => new Date()
-}) {
+                                       publicDataDir,
+                                       lockDataLoader = loadLockData,
+                                       itemDetailsLoader = itemDetails,
+                                       now = () => new Date()
+                                   }) {
     const lockData = await lockDataLoader()
     if (!Array.isArray(lockData)) throw new Error('Invalid lock data')
 
@@ -179,18 +233,27 @@ export async function runLockStats({
     const outputFile = path.join(publicDataDir, 'lockStats.json')
     await writeJsonFileAtomic(outputFile, lockStats)
 
-    return Object.freeze({lockCount: lockData.length, outputFile, lockStats})
+    const brandDistribution = buildBrandDistribution({lockData, runDate: now()})
+    const brandFile = path.join(publicDataDir, 'lockBrandStats.json')
+    await writeJsonFileAtomic(brandFile, brandDistribution)
+
+    return Object.freeze({
+        lockCount: lockData.length,
+        outputFile,
+        lockStats,
+        brandFile,
+    })
 }
 
 export async function lockStatsMain({
-    env = process.env,
-    argv = process.argv,
-    writeOutput = console.log,
-    loadEnvironment,
-    lockDataLoader = loadLockData,
-    itemDetailsLoader = itemDetails,
-    now = () => new Date()
-} = {}) {
+                                        env = process.env,
+                                        argv = process.argv,
+                                        writeOutput = console.log,
+                                        loadEnvironment,
+                                        lockDataLoader = loadLockData,
+                                        itemDetailsLoader = itemDetails,
+                                        now = () => new Date()
+                                    } = {}) {
     loadCollectionEnvironment({env, loadEnvironment})
     const config = loadExportJobConfig({env, requirePublicDataDir: true})
     const summary = exportJobConfigSummary(config)
@@ -208,7 +271,8 @@ export async function lockStatsMain({
     if (!argv.includes('cron')) {
         writeOutput('Lock statistics processing complete', {
             lockCount: result.lockCount,
-            outputFile: result.outputFile
+            outputFile: result.outputFile,
+            brandFile: result.brandFile
         })
     }
     return result

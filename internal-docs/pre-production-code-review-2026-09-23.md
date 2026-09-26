@@ -46,7 +46,7 @@ This should be resolved before development results are used as evidence that the
 The same combined run contacts production-facing public endpoints even in development:
 
 - [`getItemDetails.js`](../src/util/getItemDetails.js#L6) fetches five `lpubelts.com` JSON resources without timeouts, HTTP-status checks, response-size bounds, or schema validation.
-- [`lockStats.js`](../src/projects/lockStatistics/lockStats.js#L21) performs another unbounded fetch.
+- [`lockStats.js`](../src/projects/_deprecated/lockStatistics/lockStats.js#L21) performs another unbounded fetch.
 - [`discordBeltCountsDownload.js`](../src/projects/collections/discordBeltCountsDownload.js#L8) uses plain HTTP and has no timeout.
 
 This means a normal development pipeline either fails because the risky integration is disabled or requires live external access to finish. An upstream connection that never completes can also hold a cron run indefinitely.
@@ -109,7 +109,7 @@ Recommended change:
 
 ### Correct lock photo-coverage statistics
 
-[`lockStats.js`](../src/projects/lockStatistics/lockStats.js#L117) treats an empty `media` array as photo coverage and counts every viewed lock in the top-250 media total, whether or not it has media. The new test currently expects that behavior. Contributor totals can also include one `undefined` contributor while the photographer list excludes it.
+[`lockStats.js`](../src/projects/_deprecated/lockStatistics/lockStats.js#L117) treats an empty `media` array as photo coverage and counts every viewed lock in the top-250 media total, whether or not it has media. The new test currently expects that behavior. Contributor totals can also include one `undefined` contributor while the photographer list excludes it.
 
 Count media only when the array contains at least one valid image, select the top locks by views before counting media coverage, and derive contributor totals from the same filtered contributor set. Update the test to exercise a viewed lock without media and an image without attribution.
 

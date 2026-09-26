@@ -35,7 +35,6 @@ export const jobs = [
     {script: path.resolve(collectionsDir, 'collectionAnalyzer.js')},
     {script: path.resolve(collectionsDir, 'collectionStatsProcess.js')},
     {script: path.resolve(collectionsDir, 'leaderboardStatsProcess.js')},
-    {script: path.resolve(projectRoot, 'src/projects/lockStatistics/lockStats.js')},
     {script: path.resolve(collectionsDir, 'raflCollectionUtils.js')},
     {
         script: path.resolve(projectRoot, 'src/projects/redditBelts/runGetRedditBelts.js'),
@@ -232,6 +231,9 @@ export async function runCollectionExportAnalysis({
             jobs: selectedJobs.map(job => path.relative(projectRoot, job.script))
         }
         writeOutput(JSON.stringify(summary, null, 2))
+        for (const job of jobs) {
+            await runJobFn(job, childEnv, ['--check-config'])
+        }
         return summary
     }
     const preflight = await preflightFn(childEnv)

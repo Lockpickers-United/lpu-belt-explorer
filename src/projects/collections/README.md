@@ -54,7 +54,7 @@ URL and atomically writes `discordBeltCounts.json` to `COLLECTION_PUBLIC_DATA_DI
 Set `DISCORD_BELT_COUNTS_REFRESH_ENABLED=true` to enable that refresh. The download
 has configurable timeout and response-size limits.
 
-`../lockStatistics/lockStats.js` loads the configured catalog and writes
+(**deprecated**) `../_deprecated/lockStatistics` loads the configured catalog and writes
 `lockStats.json` to `COLLECTION_PUBLIC_DATA_DIR`.
 
 Catalog consumers require `LPU_CATALOG_SOURCE=filesystem` or `remote`. Filesystem
@@ -189,7 +189,8 @@ NODE_ENV=development node /home/lpubelts_api/apps/api-server-dev/current/scripts
 ```
 
 Use `--check-config` to print the selected paths, catalog source, integration flags,
-and child jobs without reading inputs or starting jobs.
+and child jobs, then run every component script in its own configuration-check mode.
+This does not read pipeline inputs or perform the jobs' normal work.
 
 The `cron` argument is passed to every child job and suppresses routine progress and completion output. Omit it during a manual console run to retain that output. Supported environments are `local`, `development`, and `production`, corresponding to `.env.local`, `.env.development`, and `.env.production` in the repository root. The runner performs live-data and output-writing work, so inspect the selected configuration and obtain the required approval before executing it.
 

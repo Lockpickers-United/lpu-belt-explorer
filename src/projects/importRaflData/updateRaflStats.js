@@ -1,30 +1,60 @@
-import {raflUtils} from '../raflFormUtilities/raflFormUtils.js'
 import fs from 'node:fs/promises'
+import path from 'node:path'
 import dayjs from 'dayjs'
 import {localUser, prodUser, responseRecipients} from '../../../keys/users.js'
 import validator from 'validator'
 import {sendEmail} from '../nodeMailer/nodeMailer.js'
+import isDirectRun from '../../util/isDirectRun.js'
+import {loadRuntimeEnvironment} from '../../util/runtimeEnvironment.js'
 
-export async function updateRaflStats() {
+const projectRoot = path.resolve(import.meta.dirname, '../../..')
 
-    const production = process.env.USER !== localUser
+export function loadUpdateRaflStatsConfig(env = process.env) {
+    const production = env.USER !== localUser
+    const keysDir = production
+        ? `/home/${prodUser}/explore-lpubelts-com-node/keys`
+        : `/Users/${localUser}/Documents/GitHub/explore-lpubelts-com-node/keys`
     const tempDir = production
-        ? `/home/${prodUser}/rafl-stats-temp/`
+        ? `/home/${prodUser}/rafl-stats-temp`
         : `/Users/${localUser}/Documents/LOCKPICK/LPU-Belt-Explorer/RAFL`
+
+    return Object.freeze({
+        environment: env.NODE_ENV || 'local',
+        production,
+        credentialsPath: path.join(keysDir, 'credentials.json'),
+        tokenPath: path.join(keysDir, 'token-forms.json'),
+        tempDir
+    })
+}
+
+export function updateRaflStatsConfigSummary(config) {
+    return {...config}
+}
+
+async function loadRaflUtils() {
+    return (await import('../raflFormUtilities/raflFormUtils.js')).raflUtils
+}
+
+export async function updateRaflStats({
+    tempDir = loadUpdateRaflStatsConfig().tempDir,
+    raflUtilsFn
+} = {}) {
+
+    const runRaflUtility = raflUtilsFn || await loadRaflUtils()
 
     try {
 
         // UPDATE STATS FOR SITE
-        await raflUtils('processSheetsResponses').then()
+        await runRaflUtility('processSheetsResponses').then()
 
         // GET RAFL DATA
-        const raflData = await raflUtils('getRaflData').then()
+        const raflData = await runRaflUtility('getRaflData').then()
 
         // COMPARE TO PREVIOUS
         const previousResponses = JSON.parse(await fs.readFile(`${tempDir}/sheetsResponses.json`, 'utf8'))
         const previousLast = dayjs(previousResponses[previousResponses.length - 1]['Date'])
 
-        const allResponses = await raflUtils('getSheetsResponses')
+        const allResponses = await runRaflUtility('getSheetsResponses')
         const currentResponses = allResponses.filter(res => res['Good to go'] !== 'TEST')
         const totalDonations = currentResponses.reduce((acc, res) => {
             acc = acc + parseInt(res['Donation'])
@@ -125,4 +155,24 @@ export async function updateRaflStats() {
     }
 }
 
-await updateRaflStats()
+export async function updateRaflStatsMain({
+    env = process.env,
+    argv = process.argv,
+    loadEnvironment,
+    writeOutput = console.log,
+    updateStatsFn = updateRaflStats
+} = {}) {
+    loadRuntimeEnvironment({env, envDir: projectRoot, loadEnvironment})
+    const config = loadUpdateRaflStatsConfig(env)
+    const summary = updateRaflStatsConfigSummary(config)
+    if (argv.includes('--check-config')) {
+        writeOutput(JSON.stringify(summary, null, 2))
+        return summary
+    }
+
+    return updateStatsFn({tempDir: config.tempDir})
+}
+
+if (isDirectRun(import.meta.url)) {
+    await updateRaflStatsMain()
+}

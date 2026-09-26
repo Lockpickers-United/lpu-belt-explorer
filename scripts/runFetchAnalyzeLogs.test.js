@@ -101,6 +101,31 @@ describe('log fetch and analysis runner', () => {
         expect(releaseLock).toHaveBeenCalledTimes(2)
     })
 
+    it('checks its configuration and every component configuration', async () => {
+        const root = await temporaryDirectory('log-runner-config-')
+        const runJobFn = vi.fn().mockResolvedValue(undefined)
+        const preflightFn = vi.fn()
+        const acquireLockFn = vi.fn()
+
+        const summary = await runFetchAnalyzeLogs({
+            env: pipelineEnv(root),
+            argv: ['node', 'runFetchAnalyzeLogs.js', '--check-config'],
+            loadEnvironment: vi.fn().mockReturnValue({parsed: {}}),
+            runJobFn,
+            preflightFn,
+            acquireLockFn,
+            writeOutput: vi.fn()
+        })
+
+        expect(summary.jobs).toHaveLength(jobs.length)
+        expect(runJobFn.mock.calls.map(call => call[0])).toEqual(jobs)
+        runJobFn.mock.calls.forEach(call => {
+            expect(call[2]).toEqual(['--check-config'])
+        })
+        expect(preflightFn).not.toHaveBeenCalled()
+        expect(acquireLockFn).not.toHaveBeenCalled()
+    })
+
     it('redacts FTP credentials from configuration summaries', async () => {
         const root = await temporaryDirectory('log-config-')
         const config = loadLogAnalysisConfig(pipelineEnv(root))
