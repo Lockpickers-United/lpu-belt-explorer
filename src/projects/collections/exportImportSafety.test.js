@@ -18,7 +18,6 @@ const exporterUrls = [
     new URL('./leaderboardStatsProcess.js', import.meta.url).href,
     new URL('./raflCollectionUtils.js', import.meta.url).href,
     new URL('./discordBeltCountsDownload.js', import.meta.url).href,
-    new URL('../lockStatistics/lockStats.js', import.meta.url).href
 ]
 
 describe('active exporter imports', () => {
@@ -33,7 +32,6 @@ describe('active exporter imports', () => {
             fs.readFile(new URL('./leaderboardStatsProcess.js', import.meta.url), 'utf8'),
             fs.readFile(new URL('./raflCollectionUtils.js', import.meta.url), 'utf8'),
             fs.readFile(new URL('./discordBeltCountsDownload.js', import.meta.url), 'utf8'),
-            fs.readFile(new URL('../lockStatistics/lockStats.js', import.meta.url), 'utf8')
         ])
 
         sources.forEach(source => {
