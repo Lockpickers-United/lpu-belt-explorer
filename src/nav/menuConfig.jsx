@@ -19,6 +19,7 @@ import AssessmentIcon from '@mui/icons-material/Assessment'
 import TurnSharpRightIcon from '@mui/icons-material/TurnSharpRight'
 import LocalLibraryIcon from '@mui/icons-material/LocalLibrary'
 import SpeakerNotesIcon from '@mui/icons-material/SpeakerNotes'
+import MonitorHeartIcon from '@mui/icons-material/MonitorHeart'
 
 const {VITE_RAFL_STATE: raflState} = import.meta.env
 
@@ -141,6 +142,12 @@ export default [
         title: 'About LPU Belts',
         icon: <FeedIcon fontSize='small'/>,
         path: '/about'
+    },
+    {
+        title: 'Server Status',
+        icon: <MonitorHeartIcon fontSize='small'/>,
+        path: '/tools/serverinfo',
+        userClaims: ['admin', 'lpuAdmin'],
     },
     {
         title: 'Admin Tools',

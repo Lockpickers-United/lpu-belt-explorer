@@ -3,7 +3,7 @@ import CircularProgress from '@mui/material/CircularProgress'
 import Box from '@mui/material/Box'
 import {circularProgressClasses} from '@mui/material'
 
-function LoadingDisplaySmall() {
+function LoadingDisplaySmall({style={}}) {
     return (
         <React.Fragment>
             <div style={{
@@ -14,7 +14,8 @@ function LoadingDisplaySmall() {
                 width: 32,
                 marginTop:8,
                 marginRight:'auto',
-                marginLeft:'auto'
+                marginLeft:'auto',
+                ...style
             }}>
                 <div style={{
                     marginRight: 'auto',

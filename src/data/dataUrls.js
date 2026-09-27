@@ -31,8 +31,18 @@ export const unclaimedEvidence = `${url}/deprecated/unclaimedEvidence.json`
 export const raflSiteStats = `${url}/statsSiteFullNew.json`
 export const raflPreviewPots = `${url}/raflPreviewPots.json`
 export const raflPreviewVersion = `${url}/raflPreviewVersion.json`
-export const raflResponseDetails = `${url}/raflResponseDetails.json`
+export const raflResponseDetails = `${url}/deprecated/raflResponseDetails.json`
 export const raflCollectionDetails = `${url}/raflCollectionDetails.json`
+
+export const dataServer = url
+
+export const urls = {
+    collectionsStatsCurrent, collectionStatsDaily, leaderboardData, recentAwardsEvidence, allProjectsEvidence,
+    pickStatsData, scorecardStats, discordBeltCounts, redditBeltCounts,
+    siteFullNew, unclaimedEvidence,
+    raflSiteStats, raflPreviewPots, raflPreviewVersion, raflResponseDetails, raflCollectionDetails,
+
+}
 
 const {VITE_DEV_FIRESTORE: devFirestore} = environment
 export const nodeServerUrl = environment.VITE_NODE_SERVER_URL

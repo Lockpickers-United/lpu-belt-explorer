@@ -1,8 +1,9 @@
 import Button from '@mui/material/Button'
 import {enqueueSnackbar} from 'notistack'
 import React, {useCallback, useEffect, useMemo, useState} from 'react'
+import {getData} from '../formUtils/getData.jsx'
 
-function useData({url, urls, loadFn, text}) {
+export default function useGetRequest({user, url, urls, snackBars=false, enabled=true}) {
     const [loading, setLoading] = useState(true)
     const [data, setData] = useState(null)
     const [dataError, setDataError] = useState(null)
@@ -11,24 +12,20 @@ function useData({url, urls, loadFn, text}) {
     const [status, setStatus] = useState('idle')
 
     const loadData = useCallback(async () => {
-        try {
+        if (enabled) try {
             setLoading(true)
             setStatus('loading')
 
             let value
             if (url) {
-                const response = await fetch(url, {cache: 'no-store'})
-                value = !text ? await response.json() : await response.text()
+                value = await getData({user, url, snackBars})
             } else if (urls) {
                 value = {}
                 const promises = Object.keys(urls)
                     .map(async key => {
-                        const response = await fetch(urls[key], {cache: 'no-store'})
-                        value[key] = !text ? await response.json() : await response.text()
+                        value[key] = await getData({url: urls[key], snackBars})
                     })
                 await Promise.all(promises)
-            } else if (loadFn) {
-                value = await loadFn()
             }
 
             setData(value)
@@ -39,7 +36,7 @@ function useData({url, urls, loadFn, text}) {
 
         } catch (ex) {
             console.error('Error loading data.', ex)
-            enqueueSnackbar('Error loading data. Please reload the page.', {
+            if (snackBars) enqueueSnackbar('Error loading data. Please reload the page.', {
                 autoHideDuration: null,
                 action: <Button color='secondary' onClick={() => window.location.reload()}>Refresh</Button>
             })
@@ -48,7 +45,7 @@ function useData({url, urls, loadFn, text}) {
             setErrorMessage(ex.message)
             setStatus('error')
         }
-    }, [url, urls, loadFn, text])
+    }, [enabled, url, urls, user, snackBars])
 
     useEffect(() => {
         loadData().then()
@@ -64,5 +61,3 @@ function useData({url, urls, loadFn, text}) {
         refresh: loadData
     }), [loading, data, dataError, error, errorMessage, status, loadData])
 }
-
-export default useData

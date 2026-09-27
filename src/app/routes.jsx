@@ -1,6 +1,6 @@
 import React from 'react'
 import {redirect} from 'react-router-dom'
-import LoadingDisplay from '../util/LoadingDisplay'
+import LoadingDisplay from '../misc/LoadingDisplay'
 import ErrorBoundary from './ErrorBoundary'
 
 export default [
@@ -536,6 +536,12 @@ export default [
                 lazy: async () => {
                     const {default: FetchRedditBeltsRoute} = await import('../tools/fetchRedditBelts/FetchRedditBeltsRoute.jsx')
                     return {element: <FetchRedditBeltsRoute/>}
+                }
+            }, {
+                path: '/tools/serverinfo',
+                lazy: async () => {
+                    const {default: ServertestRoute} = await import('../tools/serverTest/ServertestRoute.jsx')
+                    return {element: <ServertestRoute/>}
                 }
             }
         ]
