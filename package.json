@@ -7,7 +7,11 @@
   "scripts": {
     "test": "vitest",
     "lint": "eslint \"./src/**\" \"./scripts/runCollectionExportAnalysis.js\" \"./scripts/runCollectionExportAnalysis.test.js\" \"./scripts/runFetchAnalyzeLogs.js\" \"./scripts/runFetchAnalyzeLogs.test.js\"",
-    "security:scan": "node scripts/security-scan.js"
+    "security:scan": "node scripts/security-scan.js",
+    "collections:dev": "NODE_ENV=development node ./scripts/runCollectionExportAnalysis.js",
+    "collections:prod": "NODE_ENV=production node ./scripts/runCollectionExportAnalysis.js",
+    "sitelogs:dev": "NODE_ENV=development node ./scripts/runFetchAnalyzeLogs.js",
+    "sitelogs:prod": "NODE_ENV=production node ./scripts/runFetchAnalyzeLogs.js"
   },
   "keywords": [],
   "author": "mgsecure",

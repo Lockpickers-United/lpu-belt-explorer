@@ -226,7 +226,7 @@ export async function runLogAnalyzer({
             }
 
             // PARSE BEACON REQUESTS
-            const parsedUrl = parseUrl(fileRequested, true)
+            const parsedUrl = URL.parse(fileRequested)
             const query = parsedUrl.query
             const trkString = query.trk?.trim()
             const pageString = query.page?.trim()

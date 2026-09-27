@@ -761,7 +761,7 @@ export async function runLogDataProcessor({
             updatedDateTime: dt.format(),
             timezone: dt.format('z')
         }
-        await writeJsonFileAtomic(siteStatsFullJsonFile, siteStatsFull, {spaces: 2})
+        await writeJsonFileAtomic(siteStatsFullJsonFile, siteStatsFull)
     }
 
     // --- EXECUTE REPORT BUILDING FUNCTIONS ---
