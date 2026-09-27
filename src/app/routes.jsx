@@ -540,7 +540,7 @@ export default [
             }, {
                 path: '/tools/serverinfo',
                 lazy: async () => {
-                    const {default: ServertestRoute} = await import('../tools/serverTest/ServertestRoute.jsx')
+                    const {default: ServertestRoute} = await import('../tools/serverTest/ServerTestRoute.jsx')
                     return {element: <ServertestRoute/>}
                 }
             }
