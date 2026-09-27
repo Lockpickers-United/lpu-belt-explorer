@@ -30,6 +30,7 @@ import {installProcessLifecycleHandlers} from './util/processLifecycle.js'
 import {getFirebaseAdminApp} from './api/services/firebaseAdmin.js'
 
 const projectRoot = fileURLToPath(new URL('../', import.meta.url))
+const publicRoot = fileURLToPath(new URL('../public/', import.meta.url))
 loadRuntimeEnvironment({env: process.env, envDir: projectRoot})
 const serverConfig = loadServerRuntimeConfig(process.env)
 const {
@@ -80,6 +81,11 @@ app.use(httpLogger)
 app.use(requestIdHeader)
 
 app.use(cors({origin: corsOrigin, credentials: true}))
+app.use(express.static(publicRoot, {
+    dotfiles: 'ignore',
+    fallthrough: true,
+    index: 'index.html'
+}))
 app.use(createBaselineRateLimit())
 
 const apiPrefix = isDev ? '' : ''
