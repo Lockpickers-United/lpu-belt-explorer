@@ -1,44 +1,31 @@
 import fs from 'node:fs/promises'
+import path from 'node:path'
+import dayjs from 'dayjs'
 import {setDeep, setDeepAdd, setDeepMax, setDeepUnique} from '../../util/setDeep.js'
 import {itemDetails} from '../../util/getItemDetails.js'
-import {localUser, prodUser} from '../../../keys/users.js'
-import dayjs from 'dayjs'
-
-/**
- * @property blackBeltAwardedAt
- * @property userIds
- * @property listUserIds
- * @property allLists
- */
-
-const production = process.env.USER !== localUser
-
-const backupDir = production
-    ? `/home/${prodUser}/firebase/archive`
-    : `/Users/${localUser}/Documents/LOCKPICK/LPU-Belt-Explorer/lpu-belt-explorer-analytics/Collections/lpuBeltsBackups`
-const dailyDir = production
-    ? `/home/${prodUser}/firebase/collectionsDailyData`
-    : `/Users/${localUser}/Documents/LOCKPICK/LPU-Belt-Explorer/lpu-belt-explorer-analytics/Collections/collectionsDailyData`
-const serverDir = production
-    ? `/home/${prodUser}/explore.lpubelts.com/public/data`
-    : `/Users/${localUser}/LOCAL/GitHubLocal/explore-lpubelts-com-node/src/data`
-
-const apiDir = production
-    ? `/home/${prodUser}/explore-lpubelts-com-node/src/data`
-    : `/Users/${localUser}/LOCAL/GitHubLocal/explore-lpubelts-com-node/src/data`
+import isDirectRun from '../../util/isDirectRun.js'
+import {writeJsonFileAtomic} from '../../util/writeJsonFileAtomic.js'
+import {loadCollectionEnvironment} from './collectionEnvironment.js'
+import {exportJobConfigSummary, loadExportJobConfig} from './exportJobConfig.js'
 
 const listNames = [
     'own', 'picked', 'recorded', 'wishlist', 'recordedLocks',
     'safelocksOwn', 'safelocksCracked', 'safelocksWishlist',
     'projects', 'raffleWatchlist', 'awards'
 ]
+const backupFilePattern = /^backup_(\d{4}-\d{2}-\d{2})\.json$/
+const statsFilePattern = /^collectionStats_(\d{4}-\d{2}-\d{2})\.json$/
 
-const items = await itemDetails()
+async function readDirIfExists(directory) {
+    try {
+        return await fs.readdir(directory)
+    } catch (err) {
+        if (err.code === 'ENOENT') return []
+        throw err
+    }
+}
 
-export async function collectionAnalyzer({blackBeltOnly, date}) {
-
-    const collectionData = JSON.parse(await fs.readFile(`${backupDir}/backup_${date}.json`, 'utf8'))['__collections__']['lockcollections']
-
+function analyzeProfiles({collectionData, items, blackBeltOnly}) {
     const profiles = blackBeltOnly
         ? Object.keys(collectionData)
             .filter(key => collectionData[key].blackBeltAwardedAt)
@@ -49,7 +36,6 @@ export async function collectionAnalyzer({blackBeltOnly, date}) {
         : collectionData
 
     const collectionStatsCurrent = Object.keys(profiles).reduce((acc, userId) => {
-        acc = acc ? acc : {}
         const profile = profiles[userId]
         setDeepAdd(acc, ['totalProfiles'], 1)
 
@@ -80,9 +66,7 @@ export async function collectionAnalyzer({blackBeltOnly, date}) {
                     setDeepAdd(acc, ['listStats', 'allLists', 'totalSaves'], 1)
                     setDeepAdd(acc, ['listStats', 'allLists', 'savesById', itemId], 1)
 
-                    if (!blackBeltOnly) {
-                        setDeepAdd(acc, ['totalSavesById', itemId], 1)
-                    }
+                    if (!blackBeltOnly) setDeepAdd(acc, ['totalSavesById', itemId], 1)
                     if (!blackBeltOnly && listName === 'own') {
                         setDeepAdd(acc, ['ownSavesById', itemId], 1)
                     }
@@ -93,152 +77,253 @@ export async function collectionAnalyzer({blackBeltOnly, date}) {
                         setDeepAdd(acc, ['scorecardSavesById', itemId], 1)
                     }
 
-                    if (items[itemId]) {
-                        if (items[itemId].type === 'lock') {
-                            setDeepAdd(acc, ['lockSaves'], 1)
-                            setDeepAdd(acc, ['savesByBelt', items[itemId].belt, 'count'], 1)
-                            setDeepAdd(acc, ['listSavesByBelt', listName, items[itemId].belt], 1)
-                        } else if (items[itemId].type === 'award') {
-                            setDeepAdd(acc, ['awardCounts', itemId], 1)
-                            setDeepMax(acc, ['maxAward', userId], items[itemId].absRank)
-                            setDeepAdd(acc, ['importSummary', 'totalAwards'], 1)
-                        }
+                    if (items[itemId]?.type === 'lock') {
+                        setDeepAdd(acc, ['lockSaves'], 1)
+                        setDeepAdd(acc, ['savesByBelt', items[itemId].belt, 'count'], 1)
+                        setDeepAdd(acc, ['listSavesByBelt', listName, items[itemId].belt], 1)
+                    } else if (items[itemId]?.type === 'award') {
+                        setDeepAdd(acc, ['awardCounts', itemId], 1)
+                        setDeepMax(acc, ['maxAward', userId], items[itemId].absRank)
+                        setDeepAdd(acc, ['importSummary', 'totalAwards'], 1)
                     }
                 })
             }
         })
 
-        // AWARDS & IMPORT
-
-        if (profile.discordUsername || profile.redditUsername) setDeepAdd(acc, ['importSummary', 'importUsers'], 1)
+        if (profile.discordUsername || profile.redditUsername) {
+            setDeepAdd(acc, ['importSummary', 'importUsers'], 1)
+        }
         if (profile.awards?.length > 0) setDeepAdd(acc, ['importSummary', 'awardUsers'], 1)
-
-        // PROJECTS ????
 
         return acc
     }, {})
 
     if (collectionStatsCurrent.maxAward) {
         Object.keys(collectionStatsCurrent.maxAward).forEach(userId => {
-            const awardId = Object.keys(items).find(itemId => collectionStatsCurrent.maxAward[userId] === items[itemId].absRank)
+            const awardId = Object.keys(items)
+                .find(itemId => collectionStatsCurrent.maxAward[userId] === items[itemId].absRank)
+            if (!awardId) return
             setDeepAdd(collectionStatsCurrent, ['maxAwardCounts', awardId], 1)
-
-            // Don't need this in each 'current' file?
-            setDeep(collectionStatsCurrent, ['awardsDisplayNames', userId, 'maxAward'], items[awardId].absRank)
-            setDeep(collectionStatsCurrent, ['awardsDisplayNames', userId, 'displayName'], profiles[userId].displayName)
+            setDeep(
+                collectionStatsCurrent,
+                ['awardsDisplayNames', userId, 'maxAward'],
+                items[awardId].absRank
+            )
+            setDeep(
+                collectionStatsCurrent,
+                ['awardsDisplayNames', userId, 'displayName'],
+                profiles[userId].displayName
+            )
         })
         delete collectionStatsCurrent.maxAward
     }
 
     if (collectionStatsCurrent.savesByBelt) {
         Object.keys(collectionStatsCurrent.savesByBelt).forEach(belt => {
-            setDeep(collectionStatsCurrent, ['savesByBelt', belt, 'value'],
-                collectionStatsCurrent.savesByBelt[belt].count / collectionStatsCurrent.lockSaves)
+            setDeep(
+                collectionStatsCurrent,
+                ['savesByBelt', belt, 'value'],
+                collectionStatsCurrent.savesByBelt[belt].count / collectionStatsCurrent.lockSaves
+            )
         })
     }
 
     const allListNames = [...listNames, 'allLists']
     allListNames.forEach(listName => {
-        if (collectionStatsCurrent.listStats && collectionStatsCurrent.listStats[listName]) {
-            collectionStatsCurrent.listStats[listName].averageSaves =
-                collectionStatsCurrent.listStats[listName].totalSaves / collectionStatsCurrent.listStats[listName].userCount
-            const savesById = collectionStatsCurrent.listStats[listName].savesById
+        const listStats = collectionStatsCurrent.listStats?.[listName]
+        if (!listStats) return
 
-
-            //console.log(listName, savesById)
-            //setDeep(collectionStatsCurrent, ['savesById', listName], savesById)
-
-
-            const topItems = Object.keys(savesById)
-                .sort((a, b) => {
-                    return savesById[b] - savesById[a] ||
-                        items[a]?.shortName.localeCompare(items[b]?.shortName)
-                })
-                .map((itemId, index) => {
-                    return {id: itemId, saveCount: savesById[itemId], name: items[itemId]?.shortName, rank: index + 1}
-                })
-            collectionStatsCurrent.listStats[listName]['topItems'] = listName === 'recordedLocks'
-                ? topItems.slice(0, 300)
-                : topItems.slice(0, 25)
-
-            delete collectionStatsCurrent.listStats[listName].savesById
-        }
+        listStats.averageSaves = listStats.totalSaves / listStats.userCount
+        const savesById = listStats.savesById
+        const topItems = Object.keys(savesById)
+            .sort((a, b) => savesById[b] - savesById[a]
+                || (items[a]?.shortName ?? '').localeCompare(items[b]?.shortName ?? ''))
+            .map((itemId, index) => ({
+                id: itemId,
+                saveCount: savesById[itemId],
+                name: items[itemId]?.shortName,
+                rank: index + 1
+            }))
+        listStats.topItems = listName === 'recordedLocks'
+            ? topItems.slice(0, 300)
+            : topItems.slice(0, 25)
+        delete listStats.savesById
     })
-    if (collectionStatsCurrent?.listUserIds) delete collectionStatsCurrent.listUserIds
-    if (collectionStatsCurrent?.listStats?.allLists?.userIds) delete collectionStatsCurrent.listStats.allLists.userIds
 
-    return collectionStatsCurrent
-
-}
-
-async function analyzeCollection(date) {
-    const allUsers = await collectionAnalyzer({blackBeltOnly: false, date})
-
-    const sortedSavesById = Object.entries(allUsers.totalSavesById)
-        .sort((a, b) => b[1] - a[1])
-        .map(([id, count]) => ({
-                id,
-                name: items[id]?.itemName,
-                totalSaves: count,
-                ownCount: allUsers.ownSavesById[id],
-                scorecardCount: allUsers.scorecardSavesById[id],
-                wishlistCount: allUsers.wishlistSavesById[id]
-            })
-        )
-
-    const exportData = {
-        'metadata': {
-            'updatedDateTime': dayjs().toISOString(),
-            'source': 'generated-summary'
-        },
-        'data': {
-            locks: sortedSavesById,
-        }
+    if (collectionStatsCurrent.listUserIds) delete collectionStatsCurrent.listUserIds
+    if (collectionStatsCurrent.listStats?.allLists?.userIds) {
+        delete collectionStatsCurrent.listStats.allLists.userIds
     }
 
-    await fs.writeFile(`${apiDir}/collectionStatsByIdFull.json`, JSON.stringify(exportData), function (err) {
-        if (err) {
-            console.error('save collectionStatsByIdFull error:', err)
-        }
+    return collectionStatsCurrent
+}
+
+export async function collectionAnalyzer({blackBeltOnly, date, backupDir, items}) {
+    const backupFile = path.join(backupDir, 'archive', `backup_${date}.json`)
+    const backup = JSON.parse(await fs.readFile(backupFile, 'utf8'))
+    const collectionData = backup?.__collections__?.lockcollections
+    if (!collectionData || typeof collectionData !== 'object') {
+        throw new Error(`Invalid lockcollections backup: ${backupFile}`)
+    }
+    return analyzeProfiles({collectionData, items, blackBeltOnly})
+}
+
+async function analyzeCollectionDate({
+    date,
+    backupDir,
+    items,
+    runDate
+}) {
+    const allUsers = await collectionAnalyzer({
+        blackBeltOnly: false,
+        date,
+        backupDir,
+        items
     })
+    const sortedSavesById = Object.entries(allUsers.totalSavesById ?? {})
+        .sort((a, b) => b[1] - a[1])
+        .map(([id, count]) => ({
+            id,
+            name: items[id]?.itemName,
+            totalSaves: count,
+            ownCount: allUsers.ownSavesById?.[id],
+            scorecardCount: allUsers.scorecardSavesById?.[id],
+            wishlistCount: allUsers.wishlistSavesById?.[id]
+        }))
+
+    const collectionStatsById = {
+        metadata: {
+            updatedDateTime: runDate.toISOString(),
+            source: 'generated-summary'
+        },
+        data: {locks: sortedSavesById}
+    }
 
     delete allUsers.ownSavesById
     delete allUsers.scorecardSavesById
     delete allUsers.allSavesById
 
-
-    const blackBeltOnly = await collectionAnalyzer({blackBeltOnly: true, date})
-    const metadata = {updatedDateTime: new Date().toISOString()}
-    const collectionStatsCurrent = {metadata, allUsers, blackBeltOnly}
-
-
-    await fs.writeFile(`${dailyDir}/collectionStats_${date}.json`, JSON.stringify(collectionStatsCurrent), function (err) {
-        if (err) {
-            console.error('save collectionStats for date error:', err)
-        }
+    const blackBeltOnly = await collectionAnalyzer({
+        blackBeltOnly: true,
+        date,
+        backupDir,
+        items
     })
+    const collectionStatsCurrent = {
+        metadata: {updatedDateTime: runDate.toISOString()},
+        allUsers,
+        blackBeltOnly
+    }
 
-    await fs.writeFile(`${serverDir}/collectionStatsCurrent.json`, JSON.stringify(collectionStatsCurrent), function (err) {
-        if (err) {
-            console.error('save collectionStatsCurrent error:', err)
-        }
+    return {collectionStatsById, collectionStatsCurrent}
+}
+
+function datesFromFiles(files, pattern) {
+    return files
+        .map(file => file.match(pattern)?.[1])
+        .filter(Boolean)
+}
+
+export async function runCollectionAnalysis({
+    backupDir,
+    dailyDir,
+    apiDir,
+    publicDataDir,
+    itemDetailsLoader = itemDetails,
+    now = () => new Date()
+}) {
+    const runDate = now()
+    const archiveDir = path.join(backupDir, 'archive')
+    const [backupFiles, statsFiles] = await Promise.all([
+        fs.readdir(archiveDir),
+        readDirIfExists(dailyDir)
+    ])
+    const backupDates = datesFromFiles(backupFiles, backupFilePattern)
+        .sort()
+    const statsDates = new Set(datesFromFiles(statsFiles, statsFilePattern))
+    const today = dayjs(runDate).format('YYYY-MM-DD')
+    const datesToProcess = backupDates
+        .filter(date => !statsDates.has(date) || date === today)
+
+    if (datesToProcess.length === 0) {
+        return Object.freeze({processedDates: [], latestDate: null})
+    }
+
+    const items = await itemDetailsLoader()
+    const analysisByDate = new Map()
+
+    for (const date of datesToProcess) {
+        const analysis = await analyzeCollectionDate({
+            date,
+            backupDir,
+            items,
+            runDate
+        })
+        analysisByDate.set(date, analysis)
+        await writeJsonFileAtomic(
+            path.join(dailyDir, `collectionStats_${date}.json`),
+            analysis.collectionStatsCurrent
+        )
+    }
+
+    const latestDate = backupDates.at(-1)
+    const latestAnalysis = analysisByDate.get(latestDate)
+        ?? await analyzeCollectionDate({
+            date: latestDate,
+            backupDir,
+            items,
+            runDate
+        })
+    await Promise.all([
+        writeJsonFileAtomic(
+            path.join(apiDir, 'collectionStatsByIdFull.json'),
+            latestAnalysis.collectionStatsById
+        ),
+        writeJsonFileAtomic(
+            path.join(publicDataDir, 'collectionStatsCurrent.json'),
+            latestAnalysis.collectionStatsCurrent
+        )
+    ])
+
+    return Object.freeze({
+        processedDates: datesToProcess,
+        latestDate
     })
 }
 
-// LEADERBOARD
+export async function collectionAnalyzerMain({
+    env = process.env,
+    argv = process.argv,
+    writeOutput = console.log,
+    loadEnvironment,
+    itemDetailsLoader = itemDetails,
+    now = () => new Date()
+} = {}) {
+    loadCollectionEnvironment({env, loadEnvironment})
+    const config = loadExportJobConfig({
+        env,
+        requirePublicDataDir: true,
+        requireDailyDir: true,
+        requireApiDir: true
+    })
+    const summary = exportJobConfigSummary(config)
+    if (argv.includes('--check-config')) {
+        writeOutput(JSON.stringify(summary, null, 2))
+        return summary
+    }
 
+    const result = await runCollectionAnalysis({
+        backupDir: config.backupDir,
+        dailyDir: config.dailyDir,
+        apiDir: config.apiDir,
+        publicDataDir: config.publicDataDir,
+        itemDetailsLoader,
+        now
+    })
+    if (!argv.includes('cron')) writeOutput('Collection analysis complete', result)
+    return result
+}
 
-const backupFiles = (await fs.readdir(backupDir)).filter(file => file.includes('backup_'))
-const statsFiles = (await fs.readdir(dailyDir)).filter(file => file.includes('collectionStats'))
-
-const backupDates = backupFiles.map(file => file.replace('backup_', '').replace('.json', ''))
-const statsDates = statsFiles.map(file => file.replace('collectionStats_', '').replace('.json', ''))
-
-const today = dayjs().format('YYYY-MM-DD')
-const notProcessed = backupDates.filter(item => !statsDates.includes(item) || item === today)
-
-//console.log('notProcessed', notProcessed)
-notProcessed.forEach(date => {
-    analyzeCollection(date).then()
-})
-
+if (isDirectRun(import.meta.url)) {
+    await collectionAnalyzerMain()
+}

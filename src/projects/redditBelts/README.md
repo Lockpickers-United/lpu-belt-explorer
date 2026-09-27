@@ -27,6 +27,8 @@ ALLOW_PRODUCTION_JOB=true
 
 `ALLOW_PRODUCTION_JOB=true` is required only when `LPU_JOB_ENV=production`. The Python executable, timeout, and output limit are optional. The timeout must be between 1,000 and 300,000 milliseconds; the output limit must be between 1 KiB and 50 MiB.
 
+When this refresh runs in the combined collection pipeline, set `REDDIT_BELTS_OUTPUT_DIR` to the same directory as `COLLECTION_PUBLIC_DATA_DIR`. The downstream export-all processor reads `redditBeltCounts.json` from that shared public-data directory.
+
 If `REDDIT_BELTS_ENABLED` is absent or `false`, the server still starts and authorized `POST /fetch-reddit-flairs` requests return `503` with the code `reddit_belts_disabled`. Invalid or incomplete enabled configuration fails server startup.
 
 ## Safety properties

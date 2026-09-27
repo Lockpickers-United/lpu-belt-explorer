@@ -4,6 +4,17 @@ import {logger} from '../logger/logger.js'
 export default function parseForm(res, req, form, handleError, maxFileSizeMB, maxTotalFileSizeMB) {
     return new Promise((resolve, reject) => {
         form.once('error', err => {
+            // Formidable emits maxFiles before it adds the current file to openedFiles.
+            // Defer cleanup so that file is included and no rejected upload is left behind.
+            queueMicrotask(() => {
+                form.openedFiles?.forEach(file => {
+                    try {
+                        file.destroy()
+                    } catch (cleanupError) {
+                        logger.warn({err: cleanupError}, 'Unable to clean up rejected multipart file')
+                    }
+                })
+            })
             const status = typeof err?.httpCode === 'number'
                 ? err.httpCode
                 : 400

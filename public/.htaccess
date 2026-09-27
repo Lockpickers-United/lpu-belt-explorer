@@ -1,0 +1,18 @@
+Options -Indexes
+
+AddType application/json .json
+
+Header always set X-Content-Type-Options "nosniff"
+Header always set Referrer-Policy "no-referrer"
+Header always set X-XSS-Protection "0"
+
+<FilesMatch "\.json$">
+    Header always set Access-Control-Allow-Origin "*"
+    Header always set Cache-Control "public, max-age=300, stale-while-revalidate=60"
+</FilesMatch>
+
+<IfModule mod_deflate.c>
+    <FilesMatch "\.json$">
+        SetOutputFilter DEFLATE
+    </FilesMatch>
+</IfModule>

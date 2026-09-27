@@ -1,109 +1,13 @@
-import {defineConfig, globalIgnores} from 'eslint/config'
-
-import globals from 'globals'
-import react from 'eslint-plugin-react'
-import reactHooks from 'eslint-plugin-react-hooks'
-import _import from 'eslint-plugin-import'
-
-import {fileURLToPath} from 'url'
-import {dirname} from 'path'
-
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = dirname(__filename)
-
-import {
-    fixupPluginRules,
-    fixupConfigRules,
-    includeIgnoreFile
-} from '@eslint/compat'
+import {defineConfig, globalIgnores, includeIgnoreFile} from 'eslint/config'
+import {fileURLToPath} from 'node:url'
 
 import js from '@eslint/js'
-
-import {FlatCompat} from '@eslint/eslintrc'
-
-const compat = new FlatCompat({
-    baseDirectory: __dirname,
-    recommendedConfig: js.configs.recommended,
-    allConfig: js.configs.all
-})
+import globals from 'globals'
+import importPlugin, {createNodeResolver} from 'eslint-plugin-import-x'
 
 const gitignorePath = fileURLToPath(new URL('.gitignore', import.meta.url))
 
-export default defineConfig([{
-
-    settings: {
-        'import/resolver': {
-            node: {
-                extensions: ['.js', '.jsx', '.json']
-            }
-        },
-        'react': {
-            'version': 'detect'
-        }
-    },
-
-    languageOptions: {
-        globals: {
-            ...globals.browser,
-            ...globals.node
-        },
-
-        ecmaVersion: 'latest',
-        sourceType: 'module',
-
-        parserOptions: {
-            ecmaFeatures: ['jsx']
-        }
-    },
-
-    plugins: {
-        react: fixupPluginRules(react),
-        'react-hooks': fixupPluginRules(reactHooks),
-        import: fixupPluginRules(_import)
-    },
-
-    extends: fixupConfigRules(compat.extends(
-        'eslint:recommended',
-        'plugin:react/recommended',
-        'plugin:import/recommended'
-    )),
-
-    rules: {
-        'react/prop-types': 'off',
-
-        'no-unused-vars': ['warn', {
-            'ignoreRestSiblings': true,
-            'args': 'all',
-            'argsIgnorePattern': '^_',
-            'varsIgnorePattern': '^_',
-            'destructuredArrayIgnorePattern': '^_',
-            'caughtErrors': 'all',
-            'caughtErrorsIgnorePattern': '^_'
-        }],
-
-        'react-hooks/exhaustive-deps': 'warn',
-
-        'quotes': ['warn', 'single', {
-            'avoidEscape': true
-        }],
-
-        'eqeqeq': ['warn', 'always'],
-        'semi': ['warn', 'never'],
-
-        'import/extensions': [
-            'warn',
-            'ignorePackages',
-            {
-                js: 'always',
-                jsx: 'always',
-                json: 'always'
-            }
-        ],
-
-        'import/no-unresolved': 'off',
-        'import/namespace': 'off'
-    }
-},
+export default defineConfig([
     globalIgnores([
         '**/*.md',
         '**/*.png',
@@ -116,7 +20,60 @@ export default defineConfig([{
     ]),
     includeIgnoreFile(gitignorePath),
     {
-        // your overrides
-         //files: ["/src/projects/beltInvestigationsWIP/*"]
-    },
+        settings: {
+            'import-x/resolver-next': [
+                createNodeResolver({
+                    extensions: ['.js', '.jsx', '.json']
+                })
+            ]
+        },
+
+        languageOptions: {
+            globals: {
+                ...globals.browser,
+                ...globals.node
+            },
+            ecmaVersion: 'latest',
+            sourceType: 'module'
+        },
+
+        plugins: {
+            'import-x': importPlugin
+        },
+
+        rules: {
+            ...js.configs.recommended.rules,
+            ...importPlugin.configs.recommended.rules,
+
+            'no-unused-vars': ['warn', {
+                ignoreRestSiblings: true,
+                args: 'all',
+                argsIgnorePattern: '^_',
+                varsIgnorePattern: '^_',
+                destructuredArrayIgnorePattern: '^_',
+                caughtErrors: 'all',
+                caughtErrorsIgnorePattern: '^_'
+            }],
+
+            quotes: ['warn', 'single', {
+                avoidEscape: true
+            }],
+
+            eqeqeq: ['warn', 'always'],
+            semi: ['warn', 'never'],
+
+            'import-x/extensions': [
+                'warn',
+                'ignorePackages',
+                {
+                    js: 'always',
+                    jsx: 'always',
+                    json: 'always'
+                }
+            ],
+
+            'import-x/no-unresolved': 'off',
+            'import-x/namespace': 'off'
+        }
+    }
 ])

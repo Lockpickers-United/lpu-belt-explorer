@@ -1,5 +1,5 @@
 import dayjs from 'dayjs'
-import {formidable} from '../../util/formidable/src/index.js'
+import {formidable} from 'formidable'
 import parseForm from '../../util/parseForm.js'
 import {logger} from '../../logger/logger.js'
 

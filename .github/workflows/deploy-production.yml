@@ -40,7 +40,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
-          node-version: 24
+          node-version-file: .nvmrc
           package-manager-cache: false
 
       - name: Install dependencies
@@ -100,6 +100,10 @@ jobs:
           [[ "$SFTP_PORT" =~ ^[0-9]+$ ]] || exit 1
           [[ "$SFTP_USER" =~ ^[a-zA-Z0-9._-]+$ ]] || exit 1
           [[ "$PM2_APP_NAME" =~ ^[a-zA-Z0-9._-]+$ ]] || exit 1
+          [[ "$PM2_APP_NAME" == "lpubelts-api-server-prod-next" ]] || {
+            echo "PM2_APP_NAME must match ecosystem.prod.json." >&2
+            exit 1
+          }
           [[ "$DEPLOY_ROOT" =~ ^/[a-zA-Z0-9._/-]+$ ]] || exit 1
           [[ "$REMOTE_NODE_BIN" =~ ^/[a-zA-Z0-9._/-]+$ ]] || exit 1
           [[ "$DEPLOY_ROOT" != "/" && "$DEPLOY_ROOT" != *".."* ]] || exit 1
@@ -202,6 +206,9 @@ jobs:
           mkdir "$release_dir"
           tar -xzf "$archive" -C "$release_dir"
           ln -s "$shared_env" "$release_dir/.env.production"
+          git_sha=${release_id%%-*}
+          printf '{"releaseId":"%s","gitSha":"%s"}\n' \
+            "$release_id" "$git_sha" > "$release_dir/.release.json"
 
           export PATH="$node_bin:$PATH"
           command -v node >/dev/null
@@ -211,8 +218,14 @@ jobs:
           pm2 describe "$pm2_app_name" >/dev/null
 
           cd "$release_dir"
+          required_node_version=$(tr -d '[:space:]' < .nvmrc)
+          actual_node_version=$(node --version)
+          if [[ "$actual_node_version" != "v$required_node_version" ]]; then
+            echo "REMOTE_NODE_BIN provides $actual_node_version; expected v$required_node_version" >&2
+            exit 1
+          fi
           corepack yarn install --immutable
-          node --check src/exploreLPUbeltsServer.js
+          node --check src/lpubeltsApiServer.js
 
           previous_release=$(readlink "$current_link")
 
@@ -235,7 +248,8 @@ jobs:
             exit 1
           fi
 
-          if ! curl \
+          health_response=''
+          if ! health_response=$(curl \
             --fail \
             --silent \
             --show-error \
@@ -243,7 +257,31 @@ jobs:
             --retry 5 \
             --retry-all-errors \
             --retry-delay 2 \
-            "$healthcheck_url" >/dev/null; then
+            "$healthcheck_url"); then
+            rollback
+            exit 1
+          fi
+
+          if ! node -e '
+            const payload = JSON.parse(process.argv[2])
+            if (payload.ready !== true || payload.releaseId !== process.argv[1]) process.exit(1)
+          ' "$release_id" "$health_response"; then
+            echo "Readiness response did not identify release $release_id" >&2
+            rollback
+            exit 1
+          fi
+
+          public_smoke_url="${healthcheck_url%/ready}/api/v1/stats/collections/locks"
+          if ! curl \
+            --fail \
+            --silent \
+            --show-error \
+            --max-time 10 \
+            --retry 2 \
+            --retry-all-errors \
+            --retry-delay 2 \
+            "$public_smoke_url" >/dev/null; then
+            echo "Public collection-statistics smoke check failed" >&2
             rollback
             exit 1
           fi

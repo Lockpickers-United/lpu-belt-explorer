@@ -3,11 +3,11 @@ import request from 'supertest'
 import {describe, expect, it} from 'vitest'
 import {registerRoutes, shouldEnableDiagnosticRoutes} from '../routes.js'
 
-function createApp({enableDiagnosticRoutes}) {
+function createApp({enableDiagnosticRoutes, readinessHandler}) {
     const app = express()
     app.use(express.json())
-    registerRoutes(app, {prefix: '/services', enableDiagnosticRoutes})
-    registerRoutes(app, {prefix: '', enableDiagnosticRoutes})
+    registerRoutes(app, {prefix: '/services', enableDiagnosticRoutes, readinessHandler})
+    registerRoutes(app, {prefix: '', enableDiagnosticRoutes, readinessHandler})
     app.use((error, _req, res, _next) => {
         res.status(error.status || 500).json({error: error.message})
     })
@@ -40,6 +40,20 @@ describe('testing route production gate', () => {
             expect(response.body).toEqual({ready: true})
         }
     )
+
+    it('uses the configured readiness handler for the API server', async () => {
+        const readinessHandler = (_req, res) => res.status(503).json({
+            ready: false,
+            releaseId: 'release-1'
+        })
+        const response = await request(createApp({
+            enableDiagnosticRoutes: false,
+            readinessHandler
+        })).get('/ready')
+
+        expect(response.status).toBe(503)
+        expect(response.body).toEqual({ready: false, releaseId: 'release-1'})
+    })
 
     it.each(['/echo', '/services/echo'])(
         'does not mount the echo route at %s when diagnostics are disabled',

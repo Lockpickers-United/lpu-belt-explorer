@@ -1,101 +1,146 @@
 import fs from 'node:fs/promises'
-import {setDeepPush} from '../../util/setDeep.js'
 import path from 'node:path'
+import isDirectRun from '../../util/isDirectRun.js'
+import {writeJsonFileAtomic} from '../../util/writeJsonFileAtomic.js'
+import {loadCollectionEnvironment} from './collectionEnvironment.js'
+import {exportJobConfigSummary, loadExportJobConfig} from './exportJobConfig.js'
 
-import {localUser, prodUser} from '../../../keys/users.js'
+const cohorts = ['allUsers', 'blackBeltOnly']
+const statsFilePattern = /^collectionStats_(\d{4}-\d{2}-\d{2})\.json$/
 
-const production = process.env.USER !== localUser
+async function readDailyStats(dailyDir) {
+    const datedFiles = (await fs.readdir(dailyDir))
+        .map(file => ({file, date: file.match(statsFilePattern)?.[1]}))
+        .filter(file => file.date)
+        .sort((a, b) => a.date.localeCompare(b.date))
 
-const dailyDir = production
-    ? `/home/${prodUser}/firebase/collectionsDailyData`
-    : `/Users/${localUser}/Documents/LOCKPICK/LPU-Belt-Explorer/lpu-belt-explorer-analytics/Collections/collectionsDailyData`
-const serverDir = production
-    ? `/home/${prodUser}/explore.lpubelts.com/public/data/`
-    : `/Users/${localUser}/Documents/LOCKPICK/LPU-Belt-Explorer/lpu-belt-explorer-analytics/Collections`
-
-export async function collectionStatsProcess() {
-
-    const dailyFiles = (await readFilesInDirectory(dailyDir))
-    const dailyData = await Promise.all(dailyFiles.map(async (file) => {
-        return {file: file.file, content: JSON.parse(file.content)}
-    }))
-
-    const cohorts = ['allUsers', 'blackBeltOnly']
-    const dailyStats = dailyData.reduce((acc, daily) => {
-        const temp = {}
-        const date = daily.file.replace('collectionStats_', '').replace('.json', '')
-
-        const blackBelts = daily.content.blackBeltOnly.blackBelts || {}
-        Object.keys(blackBelts).forEach((userId) => {
-            blackBelts[userId].acquired = acc['blackBelts'][userId]
-            ? acc['blackBelts'][userId].acquired
-            : date
-        })
-        acc.blackBelts = blackBelts
-
-        cohorts.forEach(cohort => {
-            const totalProfiles = daily.content[cohort].totalProfiles || 0
-            const listUsers = daily.content[cohort].listUsers || 0
-            const totalSaves = daily.content[cohort].totalSaves || 0
-            const lockSaves = daily.content[cohort].lockSaves || 0
-            const totalAwards = daily.content[cohort].importSummary?.totalAwards || 0
-            const importUsers = daily.content[cohort].importSummary?.importUsers || 0
-            const awardUsers = daily.content[cohort].importSummary?.awardUsers || 0
-            const listStats = daily.content[cohort].listStats
-                ? Object.keys(daily.content[cohort].listStats).map(listName => {
-                    return {
-                        listName,
-                        userCount: daily.content[cohort].listStats[listName].userCount,
-                        totalSaves: daily.content[cohort].listStats[listName].totalSaves
-                    }
-                })
-                : []
-            const newProfiles = acc.length > 0
-                ? (totalProfiles || 0) - (acc[acc.length - 1][cohort].totalProfiles || 0)
-                : totalProfiles || 0
-            const newListUsers = acc.length > 0
-                ? (listUsers || 0) - (acc[acc.length - 1][cohort].listUsers || 0)
-                : listUsers || 0
-            const newImportUsers = acc.length > 0
-                ? (importUsers || 0) - (acc[acc.length - 1][cohort].importUsers || 0)
-                : importUsers || 0
-
-            temp[cohort] = {
-                date, totalProfiles, listUsers, totalSaves,
-                lockSaves, totalAwards, importUsers, awardUsers, listStats,
-                newProfiles, newListUsers, newImportUsers
-            }
-        })
-        temp.date = date
-        setDeepPush(acc, ['dayData'], temp)
-        acc.metadata = {updatedDateTime: new Date().toISOString()}
-
-        return acc
-    }, {})
-
-    //jsonIt('dailyStats', dailyStats)
-
-    await fs.writeFile(`${serverDir}/collectionStatsDaily.json`, JSON.stringify(dailyStats), function (err) {
-        if (err) {
-            console.error('save collectionStatsDaily error:', err)
-        }
-    })
-
+    return Promise.all(datedFiles.map(async ({file, date}) => ({
+        date,
+        content: JSON.parse(await fs.readFile(path.join(dailyDir, file), 'utf8'))
+    })))
 }
 
-collectionStatsProcess().then()
+function cohortStats({date, current = {}, previous}) {
+    const totalProfiles = current.totalProfiles || 0
+    const listUsers = current.listUsers || 0
+    const totalSaves = current.totalSaves || 0
+    const lockSaves = current.lockSaves || 0
+    const totalAwards = current.importSummary?.totalAwards || 0
+    const importUsers = current.importSummary?.importUsers || 0
+    const awardUsers = current.importSummary?.awardUsers || 0
+    const listStats = current.listStats
+        ? Object.entries(current.listStats).map(([listName, stats]) => ({
+            listName,
+            userCount: stats.userCount,
+            totalSaves: stats.totalSaves
+        }))
+        : []
 
-async function readFilesInDirectory(directoryPath) {
-    try {
-        const files = (await fs.readdir(directoryPath)).filter(file => file.includes('collectionStats'))
-        return await Promise.all(
-            files.map(async (file) => {
-                const filePath = path.join(directoryPath, file)
-                const content = await fs.readFile(filePath, 'utf8')
-                return {file, content}
-            })
-        )
-    } catch (err) {
-        console.error('Error reading files:', err)
+    return {
+        date,
+        totalProfiles,
+        listUsers,
+        totalSaves,
+        lockSaves,
+        totalAwards,
+        importUsers,
+        awardUsers,
+        listStats,
+        newProfiles: previous ? totalProfiles - previous.totalProfiles : totalProfiles,
+        newListUsers: previous ? listUsers - previous.listUsers : listUsers,
+        newImportUsers: previous ? importUsers - previous.importUsers : importUsers
     }
+}
+
+export function buildCollectionStatsDaily(dailyData, runDate) {
+    const dayData = []
+    const blackBeltAcquiredDates = new Map()
+    let blackBelts = {}
+
+    dailyData.forEach(({date, content}) => {
+        const currentBlackBelts = content.blackBeltOnly?.blackBelts ?? {}
+        blackBelts = Object.fromEntries(Object.entries(currentBlackBelts).map(([userId, belt]) => {
+            if (!blackBeltAcquiredDates.has(userId)) {
+                blackBeltAcquiredDates.set(userId, date)
+            }
+            return [userId, {
+                ...belt,
+                acquired: blackBeltAcquiredDates.get(userId)
+            }]
+        }))
+
+        const previousDay = dayData.at(-1)
+        const day = {date}
+        cohorts.forEach(cohort => {
+            day[cohort] = cohortStats({
+                date,
+                current: content[cohort],
+                previous: previousDay?.[cohort]
+            })
+        })
+        dayData.push(day)
+    })
+
+    return {
+        blackBelts,
+        dayData,
+        metadata: {updatedDateTime: runDate.toISOString()}
+    }
+}
+
+export async function runCollectionStatsProcess({
+    dailyDir,
+    publicDataDir,
+    now = () => new Date()
+}) {
+    const runDate = now()
+    const dailyData = await readDailyStats(dailyDir)
+    const collectionStatsDaily = buildCollectionStatsDaily(dailyData, runDate)
+    const outputFile = path.join(publicDataDir, 'collectionStatsDaily.json')
+    await writeJsonFileAtomic(outputFile, collectionStatsDaily)
+
+    return Object.freeze({
+        dayCount: collectionStatsDaily.dayData.length,
+        outputFile,
+        collectionStatsDaily
+    })
+}
+
+export const collectionStatsProcess = runCollectionStatsProcess
+
+export async function collectionStatsProcessMain({
+    env = process.env,
+    argv = process.argv,
+    writeOutput = console.log,
+    loadEnvironment,
+    now = () => new Date()
+} = {}) {
+    loadCollectionEnvironment({env, loadEnvironment})
+    const config = loadExportJobConfig({
+        env,
+        requirePublicDataDir: true,
+        requireDailyDir: true
+    })
+    const summary = exportJobConfigSummary(config)
+    if (argv.includes('--check-config')) {
+        writeOutput(JSON.stringify(summary, null, 2))
+        return summary
+    }
+
+    const result = await runCollectionStatsProcess({
+        dailyDir: config.dailyDir,
+        publicDataDir: config.publicDataDir,
+        now
+    })
+    if (!argv.includes('cron')) {
+        writeOutput('Collection stats processing complete', {
+            dayCount: result.dayCount,
+            outputFile: result.outputFile
+        })
+    }
+    return result
+}
+
+if (isDirectRun(import.meta.url)) {
+    await collectionStatsProcessMain()
 }

@@ -1,12 +1,30 @@
 import {fileURLToPath} from 'node:url'
-import {dirname, resolve} from 'node:path'
+import path, {dirname, resolve} from 'node:path'
 import {readJsonCached} from '../util/readJsonCache.js'
 
 const currentDir = dirname(fileURLToPath(import.meta.url))
-const collectionStatsPath = resolve(currentDir, '../../data/collectionStatsByIdFull.json')
+const fixtureCollectionStatsPath = resolve(currentDir, '../../data/collectionStatsByIdFull.json')
 
-async function getCollectionStats() {
-    return readJsonCached(collectionStatsPath)
+export function getCollectionStatsPath(env = process.env) {
+    const configuredDir = env.COLLECTION_API_DIR?.trim()
+    if (configuredDir) {
+        if (!path.isAbsolute(configuredDir)) {
+            const error = new Error('COLLECTION_API_DIR must be an absolute path')
+            error.code = 'collection_stats_path_invalid'
+            throw error
+        }
+        return path.join(path.normalize(configuredDir), 'collectionStatsByIdFull.json')
+    }
+    if (env.NODE_ENV === 'production') {
+        const error = new Error('COLLECTION_API_DIR is required in production')
+        error.code = 'collection_stats_path_missing'
+        throw error
+    }
+    return fixtureCollectionStatsPath
+}
+
+async function getCollectionStats(env) {
+    return readJsonCached(getCollectionStatsPath(env))
 }
 
 function withLocks(source, locks) {
@@ -18,12 +36,12 @@ function withLocks(source, locks) {
     }
 }
 
-export async function getAllLockCollectionStats() {
-    return getCollectionStats()
+export async function getAllLockCollectionStats(env) {
+    return getCollectionStats(env)
 }
 
-export async function getOwnLockCollectionStats() {
-    const source = await getCollectionStats()
+export async function getOwnLockCollectionStats(env) {
+    const source = await getCollectionStats(env)
     const locks = source.data.locks.map(lock => ({
         id: lock.id,
         name: lock.name,
@@ -32,8 +50,8 @@ export async function getOwnLockCollectionStats() {
     return withLocks(source, locks)
 }
 
-export async function getScorecardLockCollectionStats() {
-    const source = await getCollectionStats()
+export async function getScorecardLockCollectionStats(env) {
+    const source = await getCollectionStats(env)
     const locks = source.data.locks.map(lock => ({
         id: lock.id,
         name: lock.name,
@@ -42,8 +60,8 @@ export async function getScorecardLockCollectionStats() {
     return withLocks(source, locks)
 }
 
-export async function getWishlistLockCollectionStats() {
-    const source = await getCollectionStats()
+export async function getWishlistLockCollectionStats(env) {
+    const source = await getCollectionStats(env)
     const locks = source.data.locks.map(lock => ({
         id: lock.id,
         name: lock.name,

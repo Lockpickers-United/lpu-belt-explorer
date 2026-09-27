@@ -1,10 +1,24 @@
 import fs from 'node:fs/promises'
+import {fileURLToPath} from 'node:url'
 import express from 'express'
 import request from 'supertest'
-import {beforeAll, describe, expect, it} from 'vitest'
+import {afterAll, beforeAll, beforeEach, describe, expect, it, vi} from 'vitest'
 import {registerRoutes} from '../../routes.js'
 import normalizeRequestUrl from '../../util/normalizeRequestUrl.js'
 import {rateLimitPolicies} from '../middleware/rateLimit.js'
+
+const mocks = vi.hoisted(() => ({
+    getUserProfileResponse: vi.fn(),
+    verifyFirebaseIdToken: vi.fn()
+}))
+
+vi.mock('../services/firebaseAdmin.js', () => ({
+    verifyFirebaseIdToken: mocks.verifyFirebaseIdToken
+}))
+
+vi.mock('../services/userProfileService.js', () => ({
+    getUserProfileResponse: mocks.getUserProfileResponse
+}))
 
 function createApiTestApp() {
     const app = express()
@@ -24,10 +38,19 @@ function createApiTestApp() {
 
 let app
 let collectionStats
+const collectionStatsFixtureDir = fileURLToPath(new URL('../../data/', import.meta.url))
+const collectionStatsFixturePath = fileURLToPath(
+    new URL('../../data/collectionStatsByIdFull.json', import.meta.url)
+)
 
 beforeAll(async () => {
+    vi.stubEnv('COLLECTION_API_DIR', collectionStatsFixtureDir)
     app = createApiTestApp()
-    collectionStats = JSON.parse(await fs.readFile('src/data/collectionStatsByIdFull.json', 'utf8'))
+    collectionStats = JSON.parse(await fs.readFile(collectionStatsFixturePath, 'utf8'))
+})
+
+afterAll(() => {
+    vi.unstubAllEnvs()
 })
 
 describe('collection stats API', () => {
@@ -81,11 +104,63 @@ describe('collection stats API', () => {
 })
 
 describe('user API auth guard', () => {
+    beforeEach(() => {
+        vi.clearAllMocks()
+        mocks.getUserProfileResponse.mockImplementation(async userId => ({
+            metadata: {source: 'firebase'},
+            data: {userId, profile: {displayName: 'Test User'}}
+        }))
+    })
+
     it('GET /api/v1/users/:id/profile requires auth', async () => {
         const res = await request(app).get('/api/v1/users/example-user/profile')
 
         expect(res.status).toBe(401)
         expect(res.headers['x-ratelimit-limit']).toBe(String(rateLimitPolicies.userProfiles.max))
         expect(res.body.error.code).toBe('unauthorized')
+    })
+
+    it('rejects a bearer token that Firebase cannot verify', async () => {
+        mocks.verifyFirebaseIdToken.mockRejectedValue(new Error('invalid token'))
+
+        const res = await request(app)
+            .get('/api/v1/users/example-user/profile')
+            .set('Authorization', 'Bearer invalid-token')
+
+        expect(res.status).toBe(401)
+        expect(res.body.error.code).toBe('invalid_token')
+        expect(mocks.getUserProfileResponse).not.toHaveBeenCalled()
+    })
+
+    it.each([
+        {claims: {uid: 'another-user'}, label: 'non-owner'},
+        {claims: {uid: 'another-user', admin: false}, label: 'false admin claim'},
+        {claims: {uid: 'another-user', admin: 'true'}, label: 'non-boolean admin claim'}
+    ])('denies profile access for a $label', async ({claims}) => {
+        mocks.verifyFirebaseIdToken.mockResolvedValue(claims)
+
+        const res = await request(app)
+            .get('/api/v1/users/example-user/profile')
+            .set('Authorization', 'Bearer signed-token')
+
+        expect(res.status).toBe(403)
+        expect(res.body.error.code).toBe('forbidden')
+        expect(mocks.getUserProfileResponse).not.toHaveBeenCalled()
+    })
+
+    it.each([
+        {claims: {uid: 'example-user'}, label: 'profile owner'},
+        {claims: {uid: 'another-user', admin: true}, label: 'verified admin'}
+    ])('allows the $label to read the full profile', async ({claims}) => {
+        mocks.verifyFirebaseIdToken.mockResolvedValue(claims)
+
+        const res = await request(app)
+            .get('/api/v1/users/example-user/profile')
+            .set('Authorization', 'Bearer signed-token')
+
+        expect(res.status).toBe(200)
+        expect(res.headers['cache-control']).toBe('private, no-store')
+        expect(res.body.data.userId).toBe('example-user')
+        expect(mocks.getUserProfileResponse).toHaveBeenCalledWith('example-user')
     })
 })

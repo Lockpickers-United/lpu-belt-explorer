@@ -1,37 +1,17 @@
-import path from 'node:path'
 import {fileURLToPath} from 'node:url'
-import dotenv from 'dotenv'
 import {runRedditBeltsRefresh} from './getRedditBelts.js'
 import {loadRedditBeltsConfig, redditBeltsConfigSummary} from './redditBeltsConfig.js'
 import isDirectRun from '../../util/isDirectRun.js'
+import {loadRuntimeEnvironment} from '../../util/runtimeEnvironment.js'
 
-const validEnvironmentName = /^[a-zA-Z0-9_-]+$/
 const projectRootUrl = new URL('../../../', import.meta.url)
 
 export function loadRedditBeltsEnvironment({
                                                env = process.env,
-                                               loadEnvironment = dotenv.config,
+                                               loadEnvironment,
                                                projectRoot = fileURLToPath(projectRootUrl)
                                            } = {}) {
-    const environment = env.NODE_ENV || 'local'
-    if (!validEnvironmentName.test(environment)) {
-        const error = new Error('NODE_ENV contains invalid characters')
-        error.code = 'reddit_belts_invalid_node_env'
-        throw error
-    }
-
-    const envPath = path.resolve(projectRoot, `.env.${environment}`)
-    const result = loadEnvironment({
-        path: envPath,
-        processEnv: env,
-        quiet: true
-    })
-
-    return Object.freeze({
-        environment,
-        envPath,
-        loaded: !result?.error
-    })
+    return loadRuntimeEnvironment({env, envDir: projectRoot, loadEnvironment})
 }
 
 export async function getRedditBeltsMain({

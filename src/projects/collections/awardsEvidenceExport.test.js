@@ -14,6 +14,7 @@ async function makeTempDirs() {
     const exportDir = path.join(root, 'exports')
     const backupDir = path.join(root, 'backups')
     const publicDataDir = path.join(root, 'public-data')
+    const unclaimedEvidenceFile = path.join(root, 'allUnclaimedEvidence.json')
     await Promise.all([
         fs.mkdir(exportDir, {recursive: true}),
         fs.mkdir(backupDir, {recursive: true}),
@@ -25,9 +26,9 @@ async function makeTempDirs() {
         fs.writeFile(path.join(backupDir, 'backup.json'), JSON.stringify({
             __collections__: {lockcollections: {}}
         })),
-        fs.writeFile(path.join(publicDataDir, 'unclaimedEvidence.json'), '[]')
+        fs.writeFile(unclaimedEvidenceFile, '[]')
     ])
-    return {root, exportDir, backupDir, publicDataDir}
+    return {root, exportDir, backupDir, publicDataDir, unclaimedEvidenceFile}
 }
 
 function createIncrementalDb({changes = {}, sourceDocs = {}} = {}) {
@@ -50,6 +51,29 @@ function createIncrementalDb({changes = {}, sourceDocs = {}} = {}) {
     return {db: {collection, getAll}, getAll, sourceGet}
 }
 
+function createFullExportDb({changes = {}, fullSourceDocs = {}, sourceDocs = {}} = {}) {
+    const sourceGets = new Map()
+    const changeWheres = new Map()
+    const collection = vi.fn(name => {
+        if (name.endsWith('ChangeIndex')) {
+            const get = vi.fn().mockResolvedValue({docs: changes[name] ?? []})
+            const where = vi.fn(() => ({orderBy: vi.fn(() => ({get}))}))
+            changeWheres.set(name, where)
+            return {where}
+        }
+
+        const get = sourceGets.get(name)
+            ?? vi.fn().mockResolvedValue({docs: fullSourceDocs[name] ?? []})
+        sourceGets.set(name, get)
+        return {
+            doc: id => ({collection: name, id}),
+            get
+        }
+    })
+    const getAll = vi.fn(async (...refs) => refs.map(ref => sourceDocs[`${ref.collection}/${ref.id}`]))
+    return {db: {collection, getAll}, getAll, sourceGets, changeWheres}
+}
+
 const emptyItemDetailLoaders = {
     lockDetails: vi.fn().mockResolvedValue({}),
     safelockDetails: vi.fn().mockResolvedValue({}),
@@ -64,7 +88,7 @@ afterEach(async () => {
 
 describe('runAwardsEvidenceExport', () => {
     it('regenerates derived outputs without full source reads when there are no changes', async () => {
-        const {exportDir, backupDir, publicDataDir} = await makeTempDirs()
+        const {exportDir, backupDir, publicDataDir, unclaimedEvidenceFile} = await makeTempDirs()
         const {db, getAll, sourceGet} = createIncrementalDb()
         const activityLogger = vi.fn().mockResolvedValue(undefined)
 
@@ -78,6 +102,7 @@ describe('runAwardsEvidenceExport', () => {
             trigger: 'cronjob',
             activityLogger,
             itemDetailLoaders: emptyItemDetailLoaders,
+            unclaimedEvidenceFile,
             now: () => runDate
         })
 
@@ -103,8 +128,63 @@ describe('runAwardsEvidenceExport', () => {
         ])
     })
 
+    it('maps project records from allUnclaimedEvidence to the established output shape', async () => {
+        const {exportDir, backupDir, publicDataDir, unclaimedEvidenceFile} = await makeTempDirs()
+        await fs.writeFile(unclaimedEvidenceFile, JSON.stringify([
+            {
+                docId: 'unclaimed-project-evidence',
+                projectId: 'project-1',
+                tabName: 'Picker',
+                displayName: 'Picker Display Name',
+                evidenceCreatedAt: '2026-09-10T12:00:00.000Z'
+            },
+            {
+                docId: 'unclaimed-lock-evidence',
+                projectId: 'lock-1',
+                tabName: 'Picker',
+                displayName: 'Picker Display Name',
+                evidenceCreatedAt: '2026-09-10T12:00:00.000Z'
+            }
+        ]))
+        const {db} = createIncrementalDb()
+
+        await runAwardsEvidenceExport({
+            db,
+            publicDataDir,
+            backupDir,
+            exportDir,
+            lookbackMs: 300_000,
+            trigger: 'cronjob',
+            itemDetailLoaders: {
+                ...emptyItemDetailLoaders,
+                projectDetails: vi.fn().mockResolvedValue({
+                    'project-1': {name: 'Pin Tumblers, Novice', tier: 1}
+                })
+            },
+            unclaimedEvidenceFile,
+            now: () => new Date('2026-09-11T15:30:00.000Z')
+        })
+
+        const allProjects = JSON.parse(await fs.readFile(
+            path.join(publicDataDir, 'allProjectsEvidence.json'),
+            'utf8'
+        ))
+        expect(allProjects.evidence).toEqual([{
+            id: 'unclaimed-project-evidence',
+            projectId: 'project-1',
+            tabName: 'Picker',
+            displayName: 'Picker Display Name',
+            evidenceCreatedAt: '2026-09-10T12:00:00.000Z',
+            unclaimed: true,
+            discipline: 'Pin Tumblers',
+            tier: 1,
+            date: '2026-09-10'
+        }])
+        expect(allProjects.evidence[0]).not.toHaveProperty('docId')
+    })
+
     it('does not advance state when a dependent output cannot be written', async () => {
-        const {exportDir, backupDir, publicDataDir} = await makeTempDirs()
+        const {exportDir, backupDir, publicDataDir, unclaimedEvidenceFile} = await makeTempDirs()
         await fs.mkdir(path.join(publicDataDir, 'allProjectsEvidence.json'))
 
         const changedAt = Timestamp.fromDate(new Date('2026-09-10T12:00:00.000Z'))
@@ -133,11 +213,161 @@ describe('runAwardsEvidenceExport', () => {
             trigger: 'cronjob',
             activityLogger,
             itemDetailLoaders: emptyItemDetailLoaders,
+            unclaimedEvidenceFile,
             now: () => new Date('2026-09-11T15:30:00.000Z')
         })).rejects.toThrow()
 
         await expect(fs.access(path.join(exportDir, 'awards.exportState.json')))
             .rejects.toMatchObject({code: 'ENOENT'})
         expect(activityLogger).not.toHaveBeenCalled()
+    })
+
+    it('creates full baselines for awards and evidence with fresh watermarks', async () => {
+        const {exportDir, backupDir, publicDataDir, unclaimedEvidenceFile} = await makeTempDirs()
+        await Promise.all([
+            fs.writeFile(path.join(exportDir, 'awards.json'), JSON.stringify({
+                metadata: {},
+                data: [{docId: 'stale-award'}]
+            })),
+            fs.writeFile(path.join(exportDir, 'evidence.json'), JSON.stringify({
+                metadata: {},
+                data: [{docId: 'stale-evidence'}]
+            }))
+        ])
+
+        const previousState = {
+            lastSuccessfulExportChangedAt: {
+                seconds: Timestamp.fromDate(new Date('2026-09-01T00:00:00.000Z')).seconds,
+                nanoseconds: 0,
+                iso: '2026-09-01T00:00:00.000Z'
+            },
+            processedChangeKeys: []
+        }
+        await Promise.all([
+            fs.writeFile(
+                path.join(exportDir, 'awards.exportState.json'),
+                JSON.stringify(previousState)
+            ),
+            fs.writeFile(
+                path.join(exportDir, 'evidence.exportState.json'),
+                JSON.stringify(previousState)
+            )
+        ])
+
+        const runDate = new Date('2026-09-11T15:30:00.000Z')
+        const changedAt = Timestamp.fromDate(new Date('2026-09-11T15:29:00.000Z'))
+        const changes = {
+            awardsChangeIndex: [
+                {id: 'award-1', data: () => ({docId: 'award-1', changedAt})},
+                {id: 'award-removed', data: () => ({docId: 'award-removed', changedAt})}
+            ]
+        }
+        const fullSourceDocs = {
+            awards: [
+                {id: 'award-1', data: () => ({awardId: 'type-1'})},
+                {id: 'award-removed', data: () => ({awardId: 'type-2'})}
+            ],
+            evidence: [
+                {id: 'evidence-1', data: () => ({projectId: 'project-1'})}
+            ]
+        }
+        const sourceDocs = {
+            'awards/award-1': {
+                id: 'award-1',
+                exists: true,
+                data: () => ({awardId: 'type-1-updated'})
+            },
+            'awards/award-removed': {
+                id: 'award-removed',
+                exists: false,
+                data: () => undefined
+            }
+        }
+        const {db, getAll, sourceGets, changeWheres} = createFullExportDb({
+            changes,
+            fullSourceDocs,
+            sourceDocs
+        })
+        const activityLogger = vi.fn().mockResolvedValue(undefined)
+
+        await runAwardsEvidenceExport({
+            db,
+            publicDataDir,
+            backupDir,
+            exportDir,
+            lookbackMs: 300_000,
+            trigger: 'cronjob',
+            activityLogger,
+            itemDetailLoaders: emptyItemDetailLoaders,
+            unclaimedEvidenceFile,
+            now: () => runDate,
+            fullExport: true
+        })
+
+        expect(sourceGets.get('awards')).toHaveBeenCalledOnce()
+        expect(sourceGets.get('evidence')).toHaveBeenCalledOnce()
+        expect(getAll).toHaveBeenCalledOnce()
+        for (const changeIndex of ['awardsChangeIndex', 'evidenceChangeIndex']) {
+            expect(changeWheres.get(changeIndex)).toHaveBeenCalledWith(
+                'changedAt',
+                '>',
+                Timestamp.fromDate(new Date('2026-09-11T15:25:00.000Z'))
+            )
+        }
+
+        const awardsExport = JSON.parse(await fs.readFile(
+            path.join(exportDir, 'awards.json'),
+            'utf8'
+        ))
+        const evidenceExport = JSON.parse(await fs.readFile(
+            path.join(exportDir, 'evidence.json'),
+            'utf8'
+        ))
+        expect(awardsExport.data).toEqual([{
+            docId: 'award-1',
+            awardId: 'type-1-updated'
+        }])
+        expect(awardsExport.metadata).toMatchObject({
+            incremental: false,
+            fullExport: true,
+            bootstrapped: true,
+            docCount: 1,
+            changedDocCount: 2,
+            deletedDocCount: 1,
+            sourceReadCount: 4,
+            previousWatermark: {iso: '2026-09-01T00:00:00.000Z'},
+            queryWatermark: {iso: '2026-09-11T15:30:00.000Z'},
+            newWatermark: {iso: '2026-09-11T15:30:00.000Z'}
+        })
+        expect(evidenceExport.data).toEqual([{
+            docId: 'evidence-1',
+            projectId: 'project-1'
+        }])
+        expect(evidenceExport.metadata).toMatchObject({
+            incremental: false,
+            fullExport: true,
+            bootstrapped: true,
+            docCount: 1,
+            changedDocCount: 0,
+            sourceReadCount: 1,
+            queryWatermark: {iso: '2026-09-11T15:30:00.000Z'},
+            newWatermark: {iso: '2026-09-11T15:30:00.000Z'}
+        })
+
+        for (const collection of ['awards', 'evidence']) {
+            const state = JSON.parse(await fs.readFile(
+                path.join(exportDir, `${collection}.exportState.json`),
+                'utf8'
+            ))
+            expect(state.lastSuccessfulExportChangedAt.iso)
+                .toBe('2026-09-11T15:30:00.000Z')
+            expect(state.lastRun.fullExport).toBe(true)
+        }
+        expect(activityLogger).toHaveBeenCalledWith([
+            expect.objectContaining({source: 'awardsEvidenceExport_awardsChangeIndex', count: 2}),
+            expect.objectContaining({source: 'awardsEvidenceExport_awards', count: 4}),
+            expect.objectContaining({source: 'awardsEvidenceExport_evidenceChangeIndex', count: 0}),
+            expect.objectContaining({source: 'awardsEvidenceExport_evidence', count: 1})
+        ])
     })
 })

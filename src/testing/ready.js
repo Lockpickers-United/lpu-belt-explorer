@@ -1,6 +1,9 @@
 import { Router } from 'express'
-const router = Router()
 
-router.get('/ready', (_req, res) => res.json({ ready: true }))
+export function createReadyRouter(readinessHandler = (_req, res) => res.json({ready: true})) {
+    const router = Router()
+    router.get('/ready', readinessHandler)
+    return router
+}
 
-export default router
+export default createReadyRouter()

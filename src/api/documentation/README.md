@@ -101,7 +101,7 @@ Access:
 Source:
 
 - generated JSON summary
-- `src/data/collectionStatsByIdFull.json`
+- `COLLECTION_API_DIR/collectionStatsByIdFull.json` (the checked-in copy is a non-production fixture)
 
 Cache:
 
@@ -145,7 +145,7 @@ Access:
 Source:
 
 - generated JSON summary
-- derived from `src/data/collectionStatsByIdFull.json`
+- derived from `COLLECTION_API_DIR/collectionStatsByIdFull.json`
 
 Cache:
 
@@ -187,7 +187,7 @@ Access:
 Source:
 
 - generated JSON summary
-- derived from `src/data/collectionStatsByIdFull.json`
+- derived from `COLLECTION_API_DIR/collectionStatsByIdFull.json`
 
 Cache:
 
