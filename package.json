@@ -7,6 +7,8 @@
   "scripts": {
     "test": "vitest",
     "lint": "eslint \"./src/**\" \"./scripts/runCollectionExportAnalysis.js\" \"./scripts/runCollectionExportAnalysis.test.js\" \"./scripts/runFetchAnalyzeLogs.js\" \"./scripts/runFetchAnalyzeLogs.test.js\"",
+    "validate": "yarn lint && yarn test --run",
+    "hooks:install": "git config core.hooksPath .githooks",
     "security:scan": "node scripts/security-scan.js",
     "collections:dev": "NODE_ENV=development node ./scripts/runCollectionExportAnalysis.js",
     "collections:prod": "NODE_ENV=production node ./scripts/runCollectionExportAnalysis.js",

@@ -42,6 +42,8 @@ The index at `.agents/references/README.md` describes their scope. Update the re
 Common root commands:
 
 - Install dependencies: `yarn install`
+- Install the tracked pre-commit hook: `yarn hooks:install`
+- Run lint and all tests once: `yarn validate`
 - Run all tests interactively: `yarn test`
 - Run all tests once: `yarn test --run`
 - Run one test file: `yarn vitest run src/api/testing/apiRoutes.test.js`

@@ -13,7 +13,7 @@ The workflow:
 1. Checks out the exact requested commit.
 2. uses the Node patch pinned in `.nvmrc` and the pinned Yarn version.
 3. installs dependencies with the immutable lockfile.
-4. runs tests and lint.
+4. runs the shared `yarn validate` command (lint and the complete test suite).
 5. creates a Git archive and checksum.
 6. uploads them over SFTP to `incoming`.
 7. connects over SSH and verifies the checksum.
@@ -44,6 +44,22 @@ It needs these secrets:
 Expected values include `DEPLOY_ROOT=/home/lpubelts_api/apps/api-server-prod` and `HEALTHCHECK_URL=https://api.lpubelts.com/ready`. Do not put secret values in repository files or agent references.
 
 Before the first dependency-upgrade deployment and whenever `.nvmrc` changes, verify on the production host that `REMOTE_NODE_BIN` provides the exact `.nvmrc` version. The deployment workflow repeats this check before installing dependencies and exits before changing the `current` release if the versions differ.
+
+## Production cron commands
+
+Cron must invoke each runner through the absolute pinned Node binary. Runner files
+are intentionally tracked without an executable bit, and cron does not initialize
+NVM or inherit an interactive shell's `PATH`. Production command fields are:
+
+```sh
+NODE_ENV=production /home/lpubelts_api/.nvm/versions/node/v24.21.0/bin/node /home/lpubelts_api/apps/api-server-prod/current/scripts/runFetchAnalyzeLogs.js cron 2>&1
+NODE_ENV=production /home/lpubelts_api/.nvm/versions/node/v24.21.0/bin/node /home/lpubelts_api/apps/api-server-prod/current/scripts/runCollectionExportAnalysis.js cron 2>&1
+```
+
+Enter each command as one line. Keep the Node path synchronized with `.nvmrc`,
+retain the `cron` argument, and keep output under the stable `shared` tree. Do not
+invoke a runner `.js` path directly or make release copies executable as a cron
+workaround.
 
 ## Bootstrap requirements
 

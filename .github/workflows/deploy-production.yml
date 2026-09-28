@@ -50,11 +50,8 @@ jobs:
           corepack enable
           yarn install --immutable
 
-      - name: Run tests
-        run: yarn test --run
-
-      - name: Run lint
-        run: yarn lint
+      - name: Run validation
+        run: yarn validate
 
   deploy:
     name: Upload and activate release

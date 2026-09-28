@@ -2,6 +2,11 @@
 
 The `Deploy production` workflow validates the selected `main` commit, uploads a tracked-files-only archive over SFTP, and activates an immutable release over SSH. It is manual-only and uses the GitHub `production` environment.
 
+The verification job installs the immutable lockfile and runs `yarn validate`, the
+same lint and complete-test command used by the tracked pre-commit hook and the
+automatic pull request workflow. See `CONTRIBUTING.md` for local hook setup and
+pull request validation details.
+
 ## GitHub production environment
 
 Create an environment named `production`. Restrict it to the `main` branch and add a required reviewer when the repository plan supports deployment protection rules.
@@ -48,6 +53,23 @@ script: DEPLOY_ROOT/current/src/lpubeltsApiServer.js
 ```
 
 Production cron entries should likewise run scripts beneath `DEPLOY_ROOT/current`. Keep `.env.production`, credentials, logs, generated data, and writable upload/output directories under stable shared or external paths. The workflow links `shared/.env.production` into each release and never uploads an environment file.
+
+Invoke cron jobs with the absolute path to the pinned Node binary. The runner
+scripts are tracked as non-executable files, and cron does not load the NVM shell
+initialization that normally adds Node to `PATH`. Use these as the command fields
+(each command is one line):
+
+```sh
+NODE_ENV=production /home/lpubelts_api/.nvm/versions/node/v24.21.0/bin/node /home/lpubelts_api/apps/api-server-prod/current/scripts/runFetchAnalyzeLogs.js cron 2>&1
+NODE_ENV=production /home/lpubelts_api/.nvm/versions/node/v24.21.0/bin/node /home/lpubelts_api/apps/api-server-prod/current/scripts/runCollectionExportAnalysis.js cron 2>&1
+```
+
+Keep the Node path synchronized with `.nvmrc` when the pinned version changes.
+The `cron` argument suppresses interactive progress output and is forwarded to
+the component jobs. Do not invoke either `.js` path directly or depend on its
+shebang; a direct invocation fails with `Permission denied` at the tracked file
+mode, and making it executable would still depend on cron finding the correct
+Node version through `/usr/bin/env`.
 
 The tracked, secret-free `ecosystem.prod.json` is the bootstrap definition for
 the parallel process. Start it from the initial release with a deliberately small
