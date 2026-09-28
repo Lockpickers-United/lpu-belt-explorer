@@ -49,3 +49,4 @@ src/data/linkCache.json
 .env.local
 .env.production
 .env.development
+/shared/credentials/
