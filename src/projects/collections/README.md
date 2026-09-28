@@ -189,7 +189,7 @@ Each full run records a baseline watermark when it starts, reconciles change-ind
 The repository-level runner loads the collections configuration that matches the required `NODE_ENV`, validates catalog and seed inputs before any child job writes output, then runs the collection exports and dependent analysis jobs in order. When catalog refresh is enabled, the downloader runs first and performs the catalog validation; otherwise preflight validates the existing snapshots. It holds `.collection-export-analysis.lock` beneath `COLLECTION_EXPORT_DIR` for the child-job phase and rejects an overlapping run. The lock is removed after success or failure. If the process is killed before cleanup, inspect the recorded `owner.json` before manually removing the stale lock. The runner stops at the first failed job. Catalog, Reddit, and Discord refreshes are included only when their respective enable flags are `true`; disabled platform refreshes use the validated belt-count snapshots in `COLLECTION_PUBLIC_DATA_DIR`.
 
 ```bash
-NODE_ENV=development node /home/lpubelts_api/apps/api-server-dev/current/scripts/runCollectionExportAnalysis.js cron
+NODE_ENV=development node /home/lpubelts_api/apps/api-server-dev/current-dev/scripts/runCollectionExportAnalysis.js cron
 ```
 
 Use `--check-config` to print the selected paths, catalog source, integration flags,

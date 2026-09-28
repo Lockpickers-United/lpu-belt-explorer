@@ -374,7 +374,7 @@ The final audit still exits with status 1 for the two documented deprecation ent
 
 After code review and separate approval for the development deployment and integrations:
 
-1. Upload the reviewed files to `/home/lpubelts_api/apps/api-server-dev/current`, confirm the protected environment-file link was not replaced, select the protected Node 24.21.0 binary, and run `corepack yarn install --immutable`.
+1. Upload the reviewed files to `/home/lpubelts_api/apps/api-server-dev/current-dev`, confirm the protected environment-file link was not replaced, select the protected Node 24.21.0 binary, and run `corepack yarn install --immutable`.
 2. Before restart, run `node --check src/lpubeltsApiServer.js`. On the DreamHost architecture, import Sharp and GeoIP and perform the same one-pixel image conversion and non-sensitive IP lookup used locally. Development and production share the same VPS architecture, but the production release's own immutable install must repeat these probes before production activation.
 3. Restart `lpubelts-api-server-dev`, then confirm `/ready` returns `ready: true`, identifies `development` and the expected release, and the public `/api/v1/stats/collections/locks` response is available.
 4. With development credentials and non-sensitive data, verify owner profile access, denied cross-user access, boolean-admin access, `private, no-store`, valid and rejected upload/email-form/request-lock multipart requests, Flickr info, and an RAFL preview that reuses the external cached token.

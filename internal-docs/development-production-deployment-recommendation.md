@@ -48,7 +48,7 @@ Keep development and production under distinct roots:
 ```text
 /home/lpubelts_api/apps/
   api-server-dev/
-    current/                    # Mutable WebStorm upload target
+    current-dev/                # Mutable WebStorm upload target
       src/
       package.json
       yarn.lock
@@ -74,7 +74,7 @@ Keep development and production under distinct roots:
       logs/
 ```
 
-The development `current` and `shared` directories and the production `shared` directory are already present. Complete the production structure by adding `incoming`, `releases`, an initial release, and the `current` symlink before enabling the workflow.
+The development `current-dev` and `shared` directories and the production `shared` directory are already present. Complete the production structure by adding `incoming`, `releases`, an initial release, and the `current` symlink before enabling the workflow.
 
 Credentials, logs, uploads, and generated data must use absolute paths under the applicable `shared` directory. WebStorm must never upload them. Production releases link `shared/.env.production`; development's mutable checkout links `shared/.env.development`.
 
@@ -92,7 +92,7 @@ root aligned with the deployed `public/` directory and verify the static site an
 API proxy independently after a release.
 
 The tracked PM2 definitions are `ecosystem.dev.json` and `ecosystem.prod.json`.
-They use the corresponding `current` directory and `src/lpubeltsApiServer.js`.
+They use the development `current-dev` or production `current` directory and `src/lpubeltsApiServer.js`.
 JSON is intentional: PM2 treated the former `ecosystem.config.dev.cjs` filename
 as an application script instead of an ecosystem definition, while a
 `.config.js` CommonJS definition conflicts with this repository's ES-module
@@ -112,7 +112,7 @@ process and does not describe or alter the existing backend.
 Create one WebStorm deployment server named clearly, such as `LPU API - DEVELOPMENT`. Map the local repository root to:
 
 ```text
-/home/lpubelts_api/apps/api-server-dev/current
+/home/lpubelts_api/apps/api-server-dev/current-dev
 ```
 
 Recommended WebStorm settings:
@@ -148,7 +148,7 @@ Before the first PM2 start, create the configured log directory because the ecos
 mkdir -p /home/lpubelts_api/apps/api-server-dev/shared/logs
 ```
 
-Start the JSON process definition from the development `current` directory:
+Start the JSON process definition from the development `current-dev` directory:
 
 ```bash
 pm2 start ./ecosystem.dev.json --only lpubelts-api-server-dev
@@ -156,7 +156,7 @@ pm2 start ./ecosystem.dev.json --only lpubelts-api-server-dev
 
 A manual restart is safer than PM2 watch with SFTP. WebStorm uploads files individually, and PM2 could restart after the first file while related files are still transferring. Manual restart creates a clear boundary after the complete change set is present.
 
-When `package.json` or `yarn.lock` changes, upload both files, connect over SSH, and run this from the development `current` directory before restarting:
+When `package.json` or `yarn.lock` changes, upload both files, connect over SSH, and run this from the development `current-dev` directory before restarting:
 
 ```bash
 corepack yarn install --immutable
@@ -322,7 +322,7 @@ Weekly, review PM2 status, logs, restart counts, disk use, and failed workflows.
 3. Validate the workflow and tracked PM2 definitions use `src/lpubeltsApiServer.js`, the new deployment roots, and `lpubelts-api-server-prod-next`.
 4. Configure `.env.development` for port `10081` and `lpubelts-dev`; verify all live-effect features are disabled or use development targets.
 5. Configure DreamHost proxies and SSL for both hostnames and ports.
-6. Point the development PM2 process at the mutable development `current` directory.
+6. Point the development PM2 process at the mutable development `current-dev` directory.
 7. Configure WebStorm's development-only SFTP mapping, exclusions, and explicit-save/manual upload behavior.
 8. Exercise upload, dependency update, manual restart, readiness, and log inspection in development.
 9. Complete the GitHub production environment and immutable production release root.

@@ -5,7 +5,7 @@
 WebStorm uploads changed files over SFTP into:
 
 ```text
-/home/lpubelts_api/apps/api-server-dev/current
+/home/lpubelts_api/apps/api-server-dev/current-dev
 ```
 
 Exclude `.env*`, credentials, `node_modules`, logs, uploads, and generated runtime data from automatic uploads. Install dependencies on the server when `package.json` or `yarn.lock` changes.
@@ -13,7 +13,7 @@ Exclude `.env*`, credentials, `node_modules`, logs, uploads, and generated runti
 The server and command-line jobs validate `NODE_ENV` as `local`, `development`, or `production` and load the matching file from the repository root. This single file contains the API, integration, `COLLECTION_*`, and `LOG_ANALYSIS_*` job settings. Link that path to the protected shared file once during setup:
 
 ```sh
-ln -s ../shared/.env.development /home/lpubelts_api/apps/api-server-dev/current/.env.development
+ln -s ../shared/.env.development /home/lpubelts_api/apps/api-server-dev/current-dev/.env.development
 ```
 
 Confirm that the destination does not already exist before creating the link. WebStorm must exclude the link path as well as `.env*` so an upload cannot replace it.
@@ -42,7 +42,7 @@ PM2 file watching remains disabled. A multi-file SFTP upload is not atomic, so w
 
 ## PM2 declaration
 
-The tracked development declaration is `ecosystem.dev.json`. Its application name is `lpubelts-api-server-dev`, its working directory is the development `current` directory, and it starts `src/lpubeltsApiServer.js` with `NODE_ENV=development`.
+The tracked development declaration is `ecosystem.dev.json`. Its application name is `lpubelts-api-server-dev`, its working directory is the development `current-dev` directory, and it starts `src/lpubeltsApiServer.js` with `NODE_ENV=development`.
 
 Do not restore the former `ecosystem.config.dev.cjs` filename. PM2 did not recognize that file as an ecosystem declaration and instead started the configuration file as the application. The failure signature was:
 
@@ -58,7 +58,7 @@ PM2's JavaScript ecosystem filename convention requires a `.config.js` suffix. J
 Run these commands from the DreamHost shell after the files, environment, and environment-file symlink are in place:
 
 ```sh
-cd /home/lpubelts_api/apps/api-server-dev/current
+cd /home/lpubelts_api/apps/api-server-dev/current-dev
 mkdir -p /home/lpubelts_api/apps/api-server-dev/shared/logs
 pm2 delete ecosystem.config.dev
 pm2 start ./ecosystem.dev.json --only lpubelts-api-server-dev
@@ -82,7 +82,7 @@ Configured PM2 logs are:
 Before Phase 1 begins and whenever `.nvmrc` changes, verify that the development server's protected Node binary directory provides the exact pinned version:
 
 ```sh
-cd /home/lpubelts_api/apps/api-server-dev/current
+cd /home/lpubelts_api/apps/api-server-dev/current-dev
 export PATH="/absolute/path/from/the/server/REMOTE_NODE_BIN:$PATH"
 test "$(node --version)" = "v$(tr -d '[:space:]' < .nvmrc)"
 corepack yarn --version
@@ -93,7 +93,7 @@ Use the development host's actual protected binary directory in place of the pla
 When a development upload changes dependency declarations, run the repository's pinned Node and Yarn versions on the server before restarting:
 
 ```sh
-cd /home/lpubelts_api/apps/api-server-dev/current
+cd /home/lpubelts_api/apps/api-server-dev/current-dev
 corepack yarn install --immutable
 pm2 restart lpubelts-api-server-dev
 curl --fail http://127.0.0.1:10081/ready
@@ -104,7 +104,7 @@ curl --fail http://127.0.0.1:10081/ready
 The direct diagnostic command is:
 
 ```sh
-NODE_ENV=development node /home/lpubelts_api/apps/api-server-dev/current/src/lpubeltsApiServer.js
+NODE_ENV=development node /home/lpubelts_api/apps/api-server-dev/current-dev/src/lpubeltsApiServer.js
 ```
 
 The logger intentionally behaves differently under PM2. `src/logger/logger.js` detects `pm_id` and writes production-style JSON output to stdout and stderr; PM2 captures those streams in the configured files. A direct development run uses pretty console output and the development file log.

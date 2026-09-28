@@ -19,7 +19,7 @@ Development is a mutable working tree populated by WebStorm:
 
 ```text
 /home/lpubelts_api/apps/api-server-dev/
-├── current/                 # uploaded development application
+├── current-dev/             # uploaded development application
 │   └── .env.development -> ../shared/.env.development
 └── shared/
     ├── .env.development     # server-only environment values

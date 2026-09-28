@@ -2,8 +2,8 @@
   "apps": [
     {
       "name": "lpubelts-api-server-dev",
-      "cwd": "/home/lpubelts_api/apps/api-server-dev/current",
-      "script": "/home/lpubelts_api/apps/api-server-dev/current/src/lpubeltsApiServer.js",
+      "cwd": "/home/lpubelts_api/apps/api-server-dev/current-dev",
+      "script": "/home/lpubelts_api/apps/api-server-dev/current-dev/src/lpubeltsApiServer.js",
       "node_args": "",
       "instances": 1,
       "exec_mode": "fork",
