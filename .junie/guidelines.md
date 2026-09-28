@@ -6,8 +6,8 @@ This document captures the project-specific build, configuration, testing, and d
 ### Stack and runtime assumptions
 - Node.js: Use Node 20 LTS (or newer). The project is ESM-only (package.json has "type": "module"). Many scripts rely on top-level await and global fetch (Node 18+). Node 20 avoids interop pain with node-fetch and ESM-only deps.
 - Package manager: Yarn (yarn.lock is present). npm will work but CI/contributor instructions assume yarn.
-- OS-specific behavior: Several scripts derive production vs. local paths from process.env.USER and values in keys/users.js.
-- HTTPS server: The main server is HTTPS-enabled and expects server.key and server.crt in keys/.
+- OS-specific behavior: Several scripts derive production vs. local paths from process.env.USER and values in `users.js` under `DEPRECATED_KEYS_DIR`.
+- Legacy HTTPS utilities expect `server.key` and `server.crt` under `DEPRECATED_KEYS_DIR`.
 - Notable deps with native/OS pre-reqs:
     - sharp: Requires libvips installed when no prebuilt binary is available (Linux build hosts). On Ubuntu/Debian: apt-get install -y libvips.
 
@@ -31,15 +31,15 @@ npm ci
 - Tests: The repo currently has no configured tests; see Testing section to add Vitest and run unit tests.
 
 #### 3) Keys and environment
-- keys/users.js defines:
+- `DEPRECATED_KEYS_DIR/users.js` defines:
     - localUser, prodUser
     - SMTP-esque credentials for email utilities (contentUser/contentPass/etc.)
     - Various "recipient" emails
 - Reddit API keys:
-    - keys/reddit-keys.js exports client_id, client_secret, refresh_token (also a JSON variant exists: keys/reddit-keys.json used by some Python/Node scripts via fs.readFile).
+    - `DEPRECATED_KEYS_DIR/reddit-keys.js` exports client_id, client_secret, refresh_token (also a JSON variant exists at `DEPRECATED_KEYS_DIR/reddit-keys.json`).
 - TLS:
-    - The HTTPS server reads keys/server.key and keys/server.crt. For local testing generate self-signed certs and place them in keys/.
-        - Example (mkcert): `mkcert -install && mkcert -key-file keys/server.key -cert-file keys/server.crt localhost`
+    - Legacy HTTPS utilities read `server.key` and `server.crt` under `DEPRECATED_KEYS_DIR`. For local testing, place self-signed certificates there.
+        - Example (mkcert): `mkcert -install && mkcert -key-file "$DEPRECATED_KEYS_DIR/server.key" -cert-file "$DEPRECATED_KEYS_DIR/server.crt" localhost`
 
 Security note: Secrets are committed for convenience in this repo snapshot. If you rotate or move to env-based configs, refactor imports that read JSON or named exports accordingly.
 
@@ -50,16 +50,16 @@ Security note: Secrets are committed for convenience in this repo snapshot. If y
         - Prod: `/home/${prodUser}/explore.lpubelts.com/public/data`
         - Local: `/Users/${localUser}/Documents/LOCKPICK/LPU-Belt-Explorer/BeltCounts`
 - Main server (src/lpubeltsApiServer.js) determines keys path based on whether process.env.USER === prodUser.
-- If your local OS account name differs from keys/users.js localUser, either:
+- If your local OS account name differs from `DEPRECATED_KEYS_DIR/users.js` localUser, either:
     - export USER=nealbayless temporarily (affects behavior broadly), or
-    - adjust localUser in keys/users.js for your machine, or
+    - adjust localUser in `DEPRECATED_KEYS_DIR/users.js` for your machine, or
     - modify the specific script to accept overrides via env (recommended for long-term, e.g., LOCAL_USER or explicit DATA_DIR).
 
 #### 5) Running the HTTP(S) server locally
 - Server entry: src/lpubeltsApiServer.js.
 - It binds both HTTP and HTTPS servers. Ports are set with prod=true currently; change prod=false for a cleaner dev experience if needed. Otherwise update port mapping as desired.
 - Requirements:
-    - keys/server.key and keys/server.crt files must exist and be readable.
+    - `DEPRECATED_KEYS_DIR/server.key` and `DEPRECATED_KEYS_DIR/server.crt` must exist and be readable.
     - Ensure process.env.USER is not prodUser (dh_m5s5pf) to use the local keys path resolution.
 - Run:
 ```
@@ -71,7 +71,7 @@ pm2 start /home/dh_m5s5pf/explore-lpubelts-com-node/lpubeltsApiServer.js --watch
 ```
 
 #### 6) Running one-off project scripts
-- Scripts live under src/projects/* and rely on local file data, users.js, and keys.
+- Scripts live under src/projects/* and may rely on local file data and legacy files under `DEPRECATED_KEYS_DIR`.
 - Inspect a script's inputs, outputs, environment selection, and external calls before running it. Live-service and live-data scripts require explicit approval under `AGENTS.md`.
 
 ---
@@ -244,13 +244,13 @@ test('GET /flickr-info requires id', async () => {
 - When porting to different machines, either create these dirs or add env-based overrides.
 
 #### Python helpers
-- Some Reddit workflows include Python utilities in src/projects/redditBelts/ that read keys/reddit-keys.json:
+- Some Reddit workflows include Python utilities in src/projects/redditBelts/ that read `DEPRECATED_KEYS_DIR/reddit-keys.json`:
     - get_reddit_refresh_token.py, fetch_reddit_flairs.py, fetch_sync_requests.py
 - Ensure your Python env can read JSON keys and that required packages are installed (requests, praw or equivalent if used later).
 
 #### Common pitfalls
 - ESM only: Avoid require()/CommonJS interop. Keep .js imports explicit (eslint import/extensions warns if missing extensions).
-- TLS files missing locally: The server will fail to start if keys/server.key or keys/server.crt are missing.
+- TLS files missing locally: Legacy HTTPS utilities will fail to start if `DEPRECATED_KEYS_DIR/server.key` or `DEPRECATED_KEYS_DIR/server.crt` is missing.
 - process.env.USER mismatch: Path logic will write to unexpected locations or select prod paths. Verify USER/localUser.
 - sharp on Linux: Install libvips or rely on supported platforms with prebuilt binaries.
 - Reddit rate limits and scopes: Writing flairs requires mod permissions; ensure your bot is moderator with proper scopes.
@@ -260,8 +260,8 @@ test('GET /flickr-info requires id', async () => {
 ### Quickstart checklist
 1) Node 20+, Yarn installed.
 2) yarn install
-3) Place TLS certs in keys/ (or set prod=false and adjust ports/behavior in src/lpubeltsApiServer.js for dev).
-4) Verify keys/users.js matches your local USER or adjust as needed.
+3) Place legacy TLS certificates under `DEPRECATED_KEYS_DIR` when a legacy HTTPS utility requires them.
+4) Verify `DEPRECATED_KEYS_DIR/users.js` matches your local USER or adjust as needed.
 5) Add tests with Vitest as above, run yarn test.
 6) Lint before commits: yarn lint.
 

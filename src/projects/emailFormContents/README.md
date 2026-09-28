@@ -17,7 +17,7 @@ LPU_JOB_ENV=local|development|production
 ALLOW_PRODUCTION_JOB=true
 ```
 
-`ALLOW_PRODUCTION_JOB=true` is required only when `LPU_JOB_ENV=production`. SMTP configuration and `raflEmailRecipients` currently remain in the ignored `keys/users.js` module and are loaded only while creating an enabled runtime.
+`ALLOW_PRODUCTION_JOB=true` is required only when `LPU_JOB_ENV=production`. SMTP configuration is loaded from `EMAIL_CONFIG_PATH`; `raflEmailRecipients` is loaded from `users.js` under `DEPRECATED_KEYS_DIR` only while creating an enabled runtime.
 
 If `EMAIL_FORM_ENABLED` is absent or `false`, the server still starts and `POST /email-form` returns `503` with the code `email_form_disabled`. Values other than `true` or `false` fail server startup as invalid configuration.
 

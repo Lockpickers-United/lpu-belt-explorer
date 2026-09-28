@@ -2,6 +2,7 @@ import fs from 'node:fs/promises'
 import {getFirebaseAdminServices} from '../../api/services/firebaseAdmin.js'
 import {createRequestLockHandlers} from './requestLock.js'
 import {loadRequestLockConfig} from './requestLockConfig.js'
+import {loadDeprecatedKeysModule} from '../../util/deprecatedKeys.js'
 
 let defaultRuntimePromise
 
@@ -12,7 +13,7 @@ export async function createRequestLockRuntime({env = process.env} = {}) {
 
     const [mailerModule, usersModule, activityModule] = await Promise.all([
         import('../nodeMailer/nodeMailer.js'),
-        import('../../../keys/users.js'),
+        loadDeprecatedKeysModule('users.js', {env}),
         import('../logFirebaseActivity/logFirebaseActivity.js')
     ])
 

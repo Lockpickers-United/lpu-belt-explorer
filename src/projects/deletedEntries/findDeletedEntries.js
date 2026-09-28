@@ -12,7 +12,9 @@ import customParseFormat from 'dayjs/plugin/customParseFormat.js'
 dayjs.extend(customParseFormat)
 
 import entryName from '../../util/entryName.js'
-import {localUser} from '../../../keys/users.js'
+import {loadDeprecatedKeysModule} from '../../util/deprecatedKeys.js'
+
+const {localUser} = await loadDeprecatedKeysModule('users.js')
 
 // CONFIGURATION
 const ignoreFiles = ['.', '..', '.DS_Store']
@@ -64,4 +66,3 @@ Object.keys(historicalData).forEach(id => {
 
 const json_text = JSON.stringify(historicalData, null, 2)
 fs.writeFileSync(`${outDir}/historicalData.json`, json_text, 'utf8')
-

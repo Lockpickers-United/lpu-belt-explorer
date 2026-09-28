@@ -2,18 +2,18 @@ import fs from 'node:fs'
 import {initializeApp, cert} from 'firebase-admin/app'
 import {getFirestore} from 'firebase-admin/firestore'
 
-import {localUser, prodUser} from '../../../../keys/users.js'
 import {logFirebaseActivity} from '../../logFirebaseActivity/logFirebaseActivity.js'
 import postFirebaseActivity from '../../../util/postFirebaseActivity.js'
 import {pathToFileURL} from 'url'
+import {getDeprecatedKeysDir, loadDeprecatedKeysModule} from '../../../util/deprecatedKeys.js'
+
+const {localUser, prodUser} = await loadDeprecatedKeysModule('users.js')
 
 const isDirectRun = process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href
 const isCron = !!process.argv[2] && process.argv[2] === 'cron'
 
 const production = process.env.USER !== localUser
-const keysDir = production
-    ? `/home/${prodUser}/explore-lpubelts-com-node/keys`
-    : `/Users/${localUser}/Documents/GitHub/explore-lpubelts-com-node/keys`
+const keysDir = getDeprecatedKeysDir()
 const serviceAccount = JSON.parse(await fs.promises.readFile(`${keysDir}/service-account.json`, 'utf8'))
 
 const config = {

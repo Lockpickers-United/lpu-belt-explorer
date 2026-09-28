@@ -1,5 +1,7 @@
 import {sendEmail} from '../nodeMailer/nodeMailer.js'
-import {contentUploadRecipients} from '../../../keys/users.js'
+import {loadDeprecatedKeysModule} from '../../util/deprecatedKeys.js'
+
+const {contentUploadRecipients} = await loadDeprecatedKeysModule('users.js')
 
 export default async function saveRequest(req, res) {
 

@@ -6,7 +6,9 @@ import {platform} from 'node:os'
 import {pathToFileURL} from 'node:url'
 
 import {jsonIt} from '../../util/jsonIt.js'
-import * as userKeys from '../../../keys/users.js'
+import {loadDeprecatedKeysModule} from '../../util/deprecatedKeys.js'
+
+const userKeys = await loadDeprecatedKeysModule('users.js')
 
 const defaultProjectId = 'lpu-belt-explorer'
 const defaultDatabaseId = '(default)'
@@ -45,7 +47,7 @@ const requireIdpToken = ({idToken, accessToken}) => {
 }
 
 const getTestAuthConfig = () => ({
-    apiKey: requireConfigValue(getFirebaseApiKey(), 'FIREBASE_API_KEY or keys/users.js firebaseKey'),
+    apiKey: requireConfigValue(getFirebaseApiKey(), 'FIREBASE_API_KEY or deprecated users.js firebaseKey'),
     providerId: requireConfigValue(getIdpProviderId(), 'FIREBASE_IDP_PROVIDER_ID'),
     requestUri: requireConfigValue(getIdpRequestUri(), 'FIREBASE_IDP_REQUEST_URI'),
     idToken: getIdpIdToken(),
@@ -246,7 +248,7 @@ export async function signInWithInteractiveGoogle({
                                                        browserOpen = openSystemBrowser,
                                                        timeoutMs = defaultFirebaseAuthTimeoutMs
                                                    } = {}) {
-    requireConfigValue(apiKey, 'FIREBASE_API_KEY or keys/users.js firebaseKey')
+    requireConfigValue(apiKey, 'FIREBASE_API_KEY or deprecated users.js firebaseKey')
     requireConfigValue(projectId, 'FIREBASE_PROJECT_ID')
 
     const nonce = randomBytes(24).toString('hex')
@@ -487,7 +489,7 @@ export async function firebasePostBatchGetTest(
 }
 
 export async function firebaseAnonSignupTest() {
-    const apiKey = requireConfigValue(getFirebaseApiKey(), 'FIREBASE_API_KEY or keys/users.js firebaseKey')
+    const apiKey = requireConfigValue(getFirebaseApiKey(), 'FIREBASE_API_KEY or deprecated users.js firebaseKey')
 
     const url = `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${apiKey}`
     const json = {'returnSecureToken': true}

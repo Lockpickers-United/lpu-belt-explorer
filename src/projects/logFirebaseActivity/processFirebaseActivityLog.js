@@ -1,7 +1,9 @@
-import {localUser, prodUser} from '../../../keys/users.js'
 import fs from 'fs'
 import dayjs from 'dayjs'
 import {setDeepAdd} from '../../util/setDeep.js'
+import {loadDeprecatedKeysModule} from '../../util/deprecatedKeys.js'
+
+const {localUser, prodUser} = await loadDeprecatedKeysModule('users.js')
 
 const local = process.env.USER === localUser
 const logsDir = local

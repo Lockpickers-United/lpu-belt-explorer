@@ -1,5 +1,7 @@
 import fs from 'fs'
-import {localUser, prodUser} from '../../../keys/users.js'
+import {loadDeprecatedKeysModule} from '../../util/deprecatedKeys.js'
+
+const {localUser, prodUser} = await loadDeprecatedKeysModule('users.js')
 import {uniqueBelts, beltSort} from '../../util/belts.js'
 import {setDeep, setDeepAdd, setDeepPush, setDeepUnique} from '../../util/setDeep.js'
 import {jsonIt} from '../../util/jsonIt.js'

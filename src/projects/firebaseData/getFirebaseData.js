@@ -2,8 +2,12 @@ import fs from 'fs'
 import {initializeApp, cert} from 'firebase-admin/app'
 import {getFirestore} from 'firebase-admin/firestore'
 import {jsonIt} from '../../util/jsonIt.js'
+import {getDeprecatedKeyPath} from '../../util/deprecatedKeys.js'
 
-const serviceAccount = JSON.parse(fs.readFileSync('../../../keys/lpu-belt-explorer-firebase-adminsdk.json'))
+const serviceAccount = JSON.parse(fs.readFileSync(
+    getDeprecatedKeyPath('lpu-belt-explorer-firebase-adminsdk.json'),
+    'utf8'
+))
 const app = initializeApp({
     credential: cert(serviceAccount),
     databaseURL: 'https://lpu-belt-explorer.firebaseio.com'

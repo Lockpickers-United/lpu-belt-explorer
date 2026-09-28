@@ -9,7 +9,11 @@ from prawcore.exceptions import TooManyRequests   #  catch raw 429s
 
 print('Current working directory:', os.getcwd())
 
-with open('../../../keys/reddit-keys.json') as f:
+deprecated_keys_dir = os.environ.get('DEPRECATED_KEYS_DIR')
+if not deprecated_keys_dir:
+    raise RuntimeError('DEPRECATED_KEYS_DIR is required')
+
+with open(os.path.join(deprecated_keys_dir, 'reddit-keys.json')) as f:
     keys = json.load(f)
 
 reddit = praw.Reddit(
