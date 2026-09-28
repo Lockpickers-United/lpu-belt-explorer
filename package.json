@@ -58,7 +58,7 @@
     "@emotion/styled": "^11.14.1",
     "@mui/icons-material": "^9.4.0",
     "@mui/material": "^9.4.0",
-    "@mui/x-date-pickers": "^9.13.0",
+    "@mui/x-date-pickers": "^9.14.0",
     "@nivo/bar": "^0.99.0",
     "@nivo/chord": "^0.99.0",
     "@nivo/core": "^0.99.0",
