@@ -38,6 +38,7 @@ export async function runAllEvidenceExport({
     backupDir,
     exportDir,
     publicDataDir,
+    apiDir,
     trigger = 'manual',
     projectDetailsLoader = projectDetails,
     lockDetailsLoader = lockDetails,
@@ -71,6 +72,21 @@ export async function runAllEvidenceExport({
         acc[evInfo] = true
 
         setDeepPush(fullDb, ['projects'], details)
+        return acc
+    }, {})
+
+    const lockVideos = scorecardEvidence.reduce((acc, evidence) => {
+        const lock = lockData[evidence.projectId]
+        if (!lock) return acc
+        const details = evidenceDetails(evidence, lock, collectionData)
+        const lockId = lock.id
+        const videoEntry = {
+            userId: evidence.userId,
+            pickerName: details.displayName,
+            pickerIsBlackBelt: !!details.blackBelt,
+            url: evidence.evidenceUrl
+        }
+        if (evidence.evidenceUrl.toLowerCase().includes('youtu')) setDeepPush(acc, [lockId], videoEntry)
         return acc
     }, {})
 
@@ -117,11 +133,13 @@ export async function runAllEvidenceExport({
         .filter(Boolean)
         .sort((a, b) => b.pickCount - a.pickCount)
 
-    fullDb.metadata = {updatedDateTime: dayjs(now()).format('YYYY-MM-DD HH:mm')}
+    const metadata = {updatedDateTime: dayjs(now()).format('YYYY-MM-DD HH:mm')}
+    fullDb.metadata = metadata
 
     await Promise.all([
         writeJsonFileAtomic(`${publicDataDir}/allProjects.json`, fullDb),
-        writeJsonFileAtomic(`${publicDataDir}/pickStats.json`, pickStats)
+        writeJsonFileAtomic(`${publicDataDir}/pickStats.json`, pickStats),
+        writeJsonFileAtomic(`${apiDir}/lockVideos.json`, {metadata, lockVideos})
     ])
 
     if (trigger !== 'cronjob') console.log('All evidence export complete')
@@ -139,7 +157,11 @@ export async function allEvidenceExportMain({
 } = {}) {
     loadCollectionEnvironment({env, loadEnvironment})
 
-    const config = loadExportJobConfig({env, requirePublicDataDir: true})
+    const config = loadExportJobConfig({
+        env,
+        requirePublicDataDir: true,
+        requireApiDir: true
+    })
     const summary = exportJobConfigSummary(config)
     if (argv.includes('--check-config')) {
         writeOutput(JSON.stringify(summary, null, 2))
@@ -151,6 +173,7 @@ export async function allEvidenceExportMain({
         backupDir: config.backupDir,
         exportDir: config.exportDir,
         publicDataDir: config.publicDataDir,
+        apiDir: config.apiDir,
         trigger
     })
 }

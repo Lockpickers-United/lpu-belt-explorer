@@ -10,9 +10,10 @@ Both modules are safe to import. Firebase credentials and clients are loaded onl
 `awardsEvidenceProcess.js` is a local processor that runs after the incremental exports.
 It reads `COLLECTION_EXPORT_DIR/evidence.json`, `COLLECTION_BACKUP_DIR/backup.json`,
 and the checked-in `src/data/allUnclaimedEvidence.json`, then writes
-`allProjects.json` and `pickStats.json` to `COLLECTION_PUBLIC_DATA_DIR`. It does not
-read Firestore and no longer writes the archived `allScorecardEvidence.json` or
-`allUnclaimedEvidence.json` outputs.
+`allProjects.json` and `pickStats.json` to `COLLECTION_PUBLIC_DATA_DIR` and
+`lockVideos.json` to `COLLECTION_API_DIR`. It does not read Firestore and no longer
+writes the archived `allScorecardEvidence.json` or `allUnclaimedEvidence.json`
+outputs.
 
 ## Required configuration
 
@@ -81,9 +82,10 @@ The awards/evidence exporter reads unclaimed evidence from the checked-in
 evidence and identifies records with `docId`; the exporter selects project records
 for `allProjectsEvidence.json` and emits the established `id` field in that output.
 
-`awardsEvidenceProcess.js` uses `COLLECTION_EXPORT_DIR`, `COLLECTION_BACKUP_DIR`, and
-`COLLECTION_PUBLIC_DATA_DIR` for its local inputs and outputs. Its unclaimed-evidence
-input is the same checked-in `src/data/allUnclaimedEvidence.json` file.
+`awardsEvidenceProcess.js` uses `COLLECTION_EXPORT_DIR` and `COLLECTION_BACKUP_DIR`
+for its local inputs, `COLLECTION_PUBLIC_DATA_DIR` for its public outputs, and
+`COLLECTION_API_DIR` for `lockVideos.json`. Its unclaimed-evidence input is the same
+checked-in `src/data/allUnclaimedEvidence.json` file.
 
 `ALLOW_PRODUCTION_JOB=true` is required when `LPU_JOB_ENV=production` or when `FIRESTORE_DATABASE_ID=(default)`. This technical guard does not replace the required human approval before any live-data or production run.
 
@@ -138,8 +140,9 @@ Before the next scheduled run, each cron entry must be updated to provide the re
 The analyzer reads dated `backup_YYYY-MM-DD.json` files from the `archive` directory under `COLLECTION_BACKUP_DIR`. It processes missing dates in ascending order and always reprocesses today's backup, ensuring the newest processed date supplies the current API and public-data outputs.
 
 The all-evidence processor reads the incremental evidence export and checked-in
-unclaimed-evidence snapshot to regenerate `allProjects.json` and `pickStats.json`
-without any additional database reads.
+unclaimed-evidence snapshot to regenerate `allProjects.json`, `pickStats.json`, and
+`lockVideos.json` without any additional database reads. `lockVideos.json` contains
+YouTube evidence grouped by lock ID and includes picker display and black-belt data.
 
 The stats processor reads the analyzer's dated files from `COLLECTION_DAILY_DIR`, calculates the chronological daily changes, and writes `collectionStatsDaily.json` to `COLLECTION_PUBLIC_DATA_DIR`.
 

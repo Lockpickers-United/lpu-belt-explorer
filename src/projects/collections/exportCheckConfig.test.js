@@ -66,4 +66,14 @@ describe('exporter --check-config mode', () => {
             quiet: true
         }))
     })
+
+    it('requires the API output directory for the all-evidence processor', async () => {
+        const {COLLECTION_API_DIR: _apiDir, ...envWithoutApiDir} = env
+
+        await expect(allEvidenceExportMain({
+            env: envWithoutApiDir,
+            argv: ['node', 'awardsEvidenceProcess.js', '--check-config'],
+            loadEnvironment: vi.fn().mockReturnValue({parsed: {}})
+        })).rejects.toThrow(/COLLECTION_API_DIR/)
+    })
 })

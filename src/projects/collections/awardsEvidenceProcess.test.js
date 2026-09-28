@@ -12,6 +12,7 @@ async function makeTempDirs() {
     const backupDir = path.join(root, 'backups')
     const exportDir = path.join(root, 'exports')
     const publicDataDir = path.join(root, 'public-data')
+    const apiDir = path.join(root, 'api-data')
     const unclaimedEvidenceFile = path.join(root, 'allUnclaimedEvidence.json')
     await Promise.all([
         fs.mkdir(backupDir, {recursive: true}),
@@ -30,14 +31,23 @@ async function makeTempDirs() {
         })),
         fs.writeFile(path.join(exportDir, 'evidence.json'), JSON.stringify({
             metadata: {},
-            data: [{
-                docId: 'evidence-1',
-                projectId: 'project-1',
-                userId: 'user-1',
-                evidenceUrl: 'https://example.com/evidence',
-                evidenceCreatedAt: {_seconds: 1789041600, _nanoseconds: 0},
-                modifier: true
-            }]
+            data: [
+                {
+                    docId: 'evidence-1',
+                    projectId: 'project-1',
+                    userId: 'user-1',
+                    evidenceUrl: 'https://www.youtube.com/watch?v=evidence',
+                    evidenceCreatedAt: {_seconds: 1789041600, _nanoseconds: 0},
+                    modifier: true
+                },
+                {
+                    docId: 'evidence-2',
+                    projectId: 'project-1',
+                    userId: 'user-1',
+                    evidenceUrl: 'https://example.com/photo',
+                    evidenceCreatedAt: {_seconds: 1789041600, _nanoseconds: 0}
+                }
+            ]
         })),
         fs.writeFile(unclaimedEvidenceFile, JSON.stringify([{
             docId: 'unclaimed-1',
@@ -47,7 +57,7 @@ async function makeTempDirs() {
             evidenceCreatedAt: '2026-09-11T12:00:00.000Z'
         }]))
     ])
-    return {backupDir, exportDir, publicDataDir, unclaimedEvidenceFile}
+    return {backupDir, exportDir, publicDataDir, apiDir, unclaimedEvidenceFile}
 }
 
 afterEach(async () => {
@@ -57,12 +67,19 @@ afterEach(async () => {
 
 describe('runAllEvidenceExport', () => {
     it('writes site evidence files from local exports without archived outputs', async () => {
-        const {backupDir, exportDir, publicDataDir, unclaimedEvidenceFile} = await makeTempDirs()
+        const {
+            backupDir,
+            exportDir,
+            publicDataDir,
+            apiDir,
+            unclaimedEvidenceFile
+        } = await makeTempDirs()
         const projectEntry = {
             belt: 'Blue Belt',
             makeModels: [{make: 'Example', model: 'Project'}]
         }
         const lockEntry = {
+            id: 'project-1',
             belt: 'Blue Belt 1',
             makeModels: [{make: 'Example', model: 'Lock'}],
             lockingMechanisms: ['Pin-tumbler']
@@ -73,6 +90,7 @@ describe('runAllEvidenceExport', () => {
             backupDir,
             exportDir,
             publicDataDir,
+            apiDir,
             trigger: 'cronjob',
             projectDetailsLoader: vi.fn().mockResolvedValue({'project-1': projectEntry}),
             lockDetailsLoader: vi.fn().mockResolvedValue({'project-1': lockEntry}),
@@ -81,16 +99,16 @@ describe('runAllEvidenceExport', () => {
         })
 
         expect(result.metadata.updatedDateTime).toBe('2026-09-12 15:30')
-        expect(result.projects).toHaveLength(2)
+        expect(result.projects).toHaveLength(3)
         expect(result.modifiers).toHaveLength(1)
 
         const pickStats = JSON.parse(await fs.readFile(
             path.join(publicDataDir, 'pickStats.json'),
             'utf8'
         ))
-        expect(pickStats.byLock).toEqual({'project-1': 1})
+        expect(pickStats.byLock).toEqual({'project-1': 2})
         expect(pickStats.lockDetails).toEqual([
-            expect.objectContaining({id: 'project-1', pickCount: 1})
+            expect.objectContaining({id: 'project-1', pickCount: 2})
         ])
 
         const allProjects = JSON.parse(await fs.readFile(
@@ -99,8 +117,26 @@ describe('runAllEvidenceExport', () => {
         ))
         expect(allProjects.projects).toEqual([
             expect.objectContaining({docId: 'evidence-1', date: '2026-09-10'}),
+            expect.objectContaining({docId: 'evidence-2', date: '2026-09-10'}),
             expect.objectContaining({docId: 'unclaimed-1', date: '2026-09-11'})
         ])
+
+        const lockVideos = JSON.parse(await fs.readFile(
+            path.join(apiDir, 'lockVideos.json'),
+            'utf8'
+        ))
+        expect(lockVideos).toEqual({
+            metadata: {updatedDateTime: '2026-09-12 15:30'},
+            lockVideos: {
+                'project-1': [{
+                    userId: 'user-1',
+                    pickerName: 'Picker One',
+                    pickerIsBlackBelt: true,
+                    url: 'https://www.youtube.com/watch?v=evidence'
+                }]
+            }
+        })
+
         await expect(fs.access(path.join(publicDataDir, 'allScorecardEvidence.json')))
             .rejects.toMatchObject({code: 'ENOENT'})
         await expect(fs.access(path.join(publicDataDir, 'allUnclaimedEvidence.json')))
