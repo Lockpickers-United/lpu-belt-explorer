@@ -3,7 +3,9 @@
 //photo 54185303779
 
 import {createFlickr} from 'flickr-sdk'
-import {key} from '../../../keys/flickr-keys.js'
+import {loadDeprecatedKeysModule} from '../../util/deprecatedKeys.js'
+
+const {key} = await loadDeprecatedKeysModule('flickr-keys.js')
 import { json2csv } from 'json-2-csv'
 import fs from 'fs'
 

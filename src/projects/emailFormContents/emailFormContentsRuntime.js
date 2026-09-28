@@ -1,5 +1,6 @@
 import {createEmailFormHandler} from './emailFormContents.js'
 import {loadEmailFormConfig} from './emailFormContentsConfig.js'
+import {loadDeprecatedKeysModule} from '../../util/deprecatedKeys.js'
 
 let defaultRuntimePromise
 
@@ -36,7 +37,7 @@ export async function createEmailFormRuntime({env = process.env} = {}) {
 
     const [mailerModule, usersModule] = await Promise.all([
         import('../nodeMailer/nodeMailer.js'),
-        import('../../../keys/users.js')
+        loadDeprecatedKeysModule('users.js', {env})
     ])
     const handler = createEmailFormHandler({
         runtimeEnvironment: config.runtimeEnvironment,

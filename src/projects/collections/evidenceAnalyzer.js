@@ -1,6 +1,8 @@
-import {localUser, prodUser} from '../../../keys/users.js'
 import fs from 'node:fs/promises'
 import {setDeepAdd, setDeepUnique} from '../../util/setDeep.js'
+import {loadDeprecatedKeysModule} from '../../util/deprecatedKeys.js'
+
+const {localUser, prodUser} = await loadDeprecatedKeysModule('users.js')
 
 const production = process.env.USER !== localUser
 const serverDir = production

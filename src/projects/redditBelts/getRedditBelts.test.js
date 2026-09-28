@@ -65,7 +65,7 @@ describe('runRedditBeltsRefresh', () => {
 
         const result = await runRedditBeltsRefresh({
             scriptPath: '/srv/lpu/fetch_reddit_flairs.py',
-            credentialsPath: '/srv/lpu/keys/reddit-keys.json',
+            credentialsPath: '/srv/lpu/keys_deprecated/reddit-keys.json',
             outputDir,
             pythonExecutable: '/usr/bin/python3',
             timeoutMs: 20_000,
@@ -76,7 +76,7 @@ describe('runRedditBeltsRefresh', () => {
 
         expect(executeFile).toHaveBeenCalledWith(
             '/usr/bin/python3',
-            ['/srv/lpu/fetch_reddit_flairs.py', '/srv/lpu/keys/reddit-keys.json'],
+            ['/srv/lpu/fetch_reddit_flairs.py', '/srv/lpu/keys_deprecated/reddit-keys.json'],
             {encoding: 'utf8', timeout: 20_000, maxBuffer: 50_000}
         )
         expect(result).toEqual({beltCounts: {'Blue Belt': 1, 'Black Belt': 1}, flairCount: 3})
@@ -112,7 +112,7 @@ describe('runRedditBeltsRefresh', () => {
 
         await expect(runRedditBeltsRefresh({
             scriptPath: '/srv/lpu/fetch_reddit_flairs.py',
-            credentialsPath: '/srv/lpu/keys/reddit-keys.json',
+            credentialsPath: '/srv/lpu/keys_deprecated/reddit-keys.json',
             outputDir,
             executeFile: vi.fn().mockResolvedValue({stdout: JSON.stringify(flairs)}),
             fileSystem,
@@ -131,7 +131,7 @@ describe('runRedditBeltsRefresh', () => {
 
         await expect(runRedditBeltsRefresh({
             scriptPath: '/srv/lpu/fetch_reddit_flairs.py',
-            credentialsPath: '/srv/lpu/keys/reddit-keys.json',
+            credentialsPath: '/srv/lpu/keys_deprecated/reddit-keys.json',
             outputDir,
             executeFile: vi.fn().mockRejectedValue(cause),
             jobLogger: {info: vi.fn()}

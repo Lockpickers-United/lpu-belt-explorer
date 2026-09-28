@@ -11,7 +11,7 @@ const configuredEnvironment = {
     ALLOW_PRODUCTION_JOB: 'true',
     REDDIT_BELTS_ENABLED: 'true',
     REDDIT_BELTS_SCRIPT_PATH: '/srv/lpu/fetch_reddit_flairs.py',
-    REDDIT_CREDENTIALS_PATH: '/srv/lpu/keys/reddit-keys.json',
+    REDDIT_CREDENTIALS_PATH: '/srv/lpu/keys_deprecated/reddit-keys.json',
     REDDIT_BELTS_OUTPUT_DIR: '/srv/lpu/public/data'
 }
 

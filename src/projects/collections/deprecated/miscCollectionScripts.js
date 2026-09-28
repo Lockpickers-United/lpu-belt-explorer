@@ -1,9 +1,11 @@
 import fs from 'node:fs/promises'
 import {setDeep, setDeepAdd, setDeepMax, setDeepPush, setDeepUnique} from '../../../util/setDeep.js'
 import {itemDetails} from '../../../util/getItemDetails.js'
-import {localUser, prodUser} from '../../../../keys/users.js'
+import {loadDeprecatedKeysModule} from '../../../util/deprecatedKeys.js'
 import dayjs from 'dayjs'
 import backup from './backup.json' with {type: 'json'}
+
+const {localUser, prodUser} = await loadDeprecatedKeysModule('users.js')
 
 ////
 // NOTE: backup.json is pulled from current directory

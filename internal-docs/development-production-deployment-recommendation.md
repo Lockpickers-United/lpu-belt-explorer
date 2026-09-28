@@ -121,7 +121,7 @@ Recommended WebStorm settings:
 - Keep this development connection as the only writable deployment mapping.
 - Do not create a WebStorm production mapping. Use a separate terminal or a read-only inspection profile if production diagnosis is necessary.
 - Prefer **upload on explicit save** or **manual upload of changed files**. Upload-on-every-save can transfer an incomplete multi-file edit.
-- Exclude `.env*`, `keys/`, credentials, logs, generated data, `.git/`, `.idea/`, `node_modules/`, and local temporary files.
+- Exclude `.env*`, `shared/credentials/`, credentials, logs, generated data, `.git/`, `.idea/`, `node_modules/`, and local temporary files.
 - Do not enable an option that deletes remote files merely because they are absent locally. Remove obsolete development files deliberately after reviewing the target path.
 - Compare local and deployed content before the first upload to prevent an accidental broad overwrite.
 

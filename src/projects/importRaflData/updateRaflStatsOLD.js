@@ -8,7 +8,9 @@ import {
 } from './importSchemas.js'
 import validate from './importValidate.js'
 
-import {sheetIds} from '../../../keys/raflSheetIds.js'
+import {loadDeprecatedKeysModule} from '../../util/deprecatedKeys.js'
+
+const {sheetIds} = await loadDeprecatedKeysModule('raflSheetIds.js')
 const {raflStatsId} = sheetIds
 
 export default async function updateRaflStatsOLD() {

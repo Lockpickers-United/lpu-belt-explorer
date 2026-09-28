@@ -6,7 +6,7 @@ const developmentEnv = {
     LPU_JOB_ENV: 'development',
     REDDIT_BELTS_ENABLED: 'true',
     REDDIT_BELTS_SCRIPT_PATH: '/srv/lpu/fetch_reddit_flairs.py',
-    REDDIT_CREDENTIALS_PATH: '/srv/lpu/keys/reddit-keys.json',
+    REDDIT_CREDENTIALS_PATH: '/srv/lpu/keys_deprecated/reddit-keys.json',
     REDDIT_BELTS_OUTPUT_DIR: '/srv/lpu/public/data'
 }
 
@@ -19,7 +19,7 @@ describe('loadRedditBeltsConfig', () => {
             environment: 'development',
             runtimeEnvironment: 'development',
             scriptPath: '/srv/lpu/fetch_reddit_flairs.py',
-            credentialsPath: '/srv/lpu/keys/reddit-keys.json',
+            credentialsPath: '/srv/lpu/keys_deprecated/reddit-keys.json',
             outputDir: '/srv/lpu/public/data',
             pythonExecutable: 'python3',
             timeoutMs: 120_000,

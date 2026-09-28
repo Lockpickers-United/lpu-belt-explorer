@@ -146,7 +146,7 @@ Production deployments and all live-data scripts are always approval-gated. Edit
 
 Many older project scripts infer `production` from `process.env.USER` and a value in ignored key files; some treat every unrecognized local username as production. Never assume a local shell makes a script safe, never spoof `USER` to bypass this behavior, and always inspect path/database selection before execution.
 
-Do not print, commit, or modify secrets from `keys/`, `.env*`, service-account JSON, OAuth credentials, TLS keys, SMTP configuration, or process-manager environments. It is fine to document the name of a required variable without exposing its value.
+Do not print, commit, or modify secrets from `shared/credentials/`, `DEPRECATED_KEYS_DIR`, `.env*`, service-account JSON, OAuth credentials, TLS keys, SMTP configuration, or process-manager environments. It is fine to document the name of a required variable without exposing its value.
 
 Read-only inspection, syntax checking, linting, and tests that mock external services do not require production approval. If a test unexpectedly requires credentials or network access, stop and report it rather than pointing it at production.
 

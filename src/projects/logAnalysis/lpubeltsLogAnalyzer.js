@@ -3,7 +3,6 @@
 import fs from 'fs'
 import fsPromises from 'node:fs/promises'
 import path from 'node:path'
-import {parse as parseUrl} from 'node:url'
 import expressUseragent from 'express-useragent'
 import geoipLite from 'geoip-lite'
 import isDirectRun from '../../util/isDirectRun.js'
@@ -226,14 +225,13 @@ export async function runLogAnalyzer({
             }
 
             // PARSE BEACON REQUESTS
-            const parsedUrl = URL.parse(fileRequested)
-            const query = parsedUrl.query
-            const trkString = query.trk?.trim()
-            const pageString = query.page?.trim()
-            const screenWidthString = query.w?.trim()
-            const refString = query.ref?.trim()
-            const ownerString = query.own?.trim()
-            const searchTerm = query.search?.trim().toLowerCase()
+            const parsedUrl = URL.parse(fileRequested) || {}
+            const trkString = parsedUrl.searchParams?.get('trk')?.trim()
+            const pageString = parsedUrl.searchParams?.get('page')?.trim()
+            const screenWidthString = parsedUrl.searchParams?.get('w')?.trim()
+            const refString = parsedUrl.searchParams?.get('ref')?.trim()
+            const ownerString = parsedUrl.searchParams?.get('own')?.trim()
+            const searchTerm = parsedUrl.searchParams?.get('search')?.trim().toLowerCase()
             let cleanReferrerString = refString ? refString.replace(/(https:\/\/lpubelts\.com\/).*/, '$1').trim() : undefined
             if (cleanReferrerString) {
                 setDeepAdd(stats, [requestDateText, 'referrerViews', cleanReferrerString], 1)

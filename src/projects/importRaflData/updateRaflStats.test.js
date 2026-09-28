@@ -7,24 +7,35 @@ import {
 
 describe('RAFL stats updater configuration', () => {
     it('summarizes development configuration without running the updater', async () => {
-        const env = {NODE_ENV: 'development', USER: 'development-user'}
+        const env = {
+            NODE_ENV: 'development',
+            USER: 'development-user',
+            DEPRECATED_KEYS_DIR: '/srv/lpu/keys_deprecated'
+        }
         const updateStatsFn = vi.fn()
         const writeOutput = vi.fn()
+        const usersModuleLoader = vi.fn().mockResolvedValue({
+            localUser: 'nealbayless',
+            prodUser: 'dh_m5s5pf'
+        })
 
         const summary = await updateRaflStatsMain({
             env,
             argv: ['node', 'updateRaflStats.js', '--check-config'],
             loadEnvironment: vi.fn().mockReturnValue({parsed: {}}),
             updateStatsFn,
-            writeOutput
+            writeOutput,
+            usersModuleLoader
         })
 
-        expect(summary).toEqual(loadUpdateRaflStatsConfig(env))
+        expect(summary).toEqual(await loadUpdateRaflStatsConfig(env, {
+            usersModuleLoader
+        }))
         expect(summary).toMatchObject({
             environment: 'development',
             production: true,
             credentialsPath: path.join(
-                '/home/dh_m5s5pf/explore-lpubelts-com-node/keys',
+                '/srv/lpu/keys_deprecated',
                 'credentials.json'
             )
         })
@@ -33,18 +44,29 @@ describe('RAFL stats updater configuration', () => {
     })
 
     it('passes the configured temporary directory to a normal run', async () => {
-        const env = {NODE_ENV: 'local', USER: 'nealbayless'}
+        const env = {
+            NODE_ENV: 'local',
+            USER: 'nealbayless',
+            DEPRECATED_KEYS_DIR: '/srv/lpu/keys_deprecated'
+        }
         const updateStatsFn = vi.fn().mockResolvedValue('complete')
+        const usersModuleLoader = vi.fn().mockResolvedValue({
+            localUser: 'nealbayless',
+            prodUser: 'dh_m5s5pf'
+        })
 
         await expect(updateRaflStatsMain({
             env,
             argv: ['node', 'updateRaflStats.js'],
             loadEnvironment: vi.fn().mockReturnValue({parsed: {}}),
-            updateStatsFn
+            updateStatsFn,
+            usersModuleLoader
         })).resolves.toBe('complete')
 
         expect(updateStatsFn).toHaveBeenCalledWith({
-            tempDir: '/Users/nealbayless/Documents/LOCKPICK/LPU-Belt-Explorer/RAFL'
+            tempDir: '/Users/nealbayless/Documents/LOCKPICK/LPU-Belt-Explorer/RAFL',
+            env,
+            usersModuleLoader
         })
     })
 })

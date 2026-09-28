@@ -1,19 +1,20 @@
 import fs from 'node:fs/promises'
 import path from 'node:path'
 import dayjs from 'dayjs'
-import {localUser, prodUser, responseRecipients} from '../../../keys/users.js'
 import validator from 'validator'
 import {sendEmail} from '../nodeMailer/nodeMailer.js'
 import isDirectRun from '../../util/isDirectRun.js'
 import {loadRuntimeEnvironment} from '../../util/runtimeEnvironment.js'
+import {getDeprecatedKeysDir, loadDeprecatedKeysModule} from '../../util/deprecatedKeys.js'
 
 const projectRoot = path.resolve(import.meta.dirname, '../../..')
 
-export function loadUpdateRaflStatsConfig(env = process.env) {
+export async function loadUpdateRaflStatsConfig(env = process.env, {
+    usersModuleLoader = loadDeprecatedKeysModule
+} = {}) {
+    const {localUser, prodUser} = await usersModuleLoader('users.js', {env})
     const production = env.USER !== localUser
-    const keysDir = production
-        ? `/home/${prodUser}/explore-lpubelts-com-node/keys`
-        : `/Users/${localUser}/Documents/GitHub/explore-lpubelts-com-node/keys`
+    const keysDir = getDeprecatedKeysDir({env})
     const tempDir = production
         ? `/home/${prodUser}/rafl-stats-temp`
         : `/Users/${localUser}/Documents/LOCKPICK/LPU-Belt-Explorer/RAFL`
@@ -36,9 +37,14 @@ async function loadRaflUtils() {
 }
 
 export async function updateRaflStats({
-    tempDir = loadUpdateRaflStatsConfig().tempDir,
-    raflUtilsFn
+    tempDir,
+    raflUtilsFn,
+    env = process.env,
+    usersModuleLoader = loadDeprecatedKeysModule
 } = {}) {
+    const effectiveTempDir = tempDir || (await loadUpdateRaflStatsConfig(env, {
+        usersModuleLoader
+    })).tempDir
 
     const runRaflUtility = raflUtilsFn || await loadRaflUtils()
 
@@ -51,7 +57,7 @@ export async function updateRaflStats({
         const raflData = await runRaflUtility('getRaflData').then()
 
         // COMPARE TO PREVIOUS
-        const previousResponses = JSON.parse(await fs.readFile(`${tempDir}/sheetsResponses.json`, 'utf8'))
+        const previousResponses = JSON.parse(await fs.readFile(`${effectiveTempDir}/sheetsResponses.json`, 'utf8'))
         const previousLast = dayjs(previousResponses[previousResponses.length - 1]['Date'])
 
         const allResponses = await runRaflUtility('getSheetsResponses')
@@ -145,8 +151,15 @@ export async function updateRaflStats({
         if (newResponses.length > 0) {
             //jsonIt('text', newResponseInfo.text)
 
-            await fs.writeFile(`${tempDir}/sheetsResponses.json`, JSON.stringify(currentResponses, null, 2))
-            await sendEmail('New RAFL Entries since last update', JSON.stringify(newResponseInfo.text, null, 2), newResponseInfo.html, responseRecipients)
+            const {responseRecipients} = await usersModuleLoader('users.js', {env})
+            await fs.writeFile(`${effectiveTempDir}/sheetsResponses.json`, JSON.stringify(currentResponses, null, 2))
+            await sendEmail({
+                emailConfig: 'content',
+                to: responseRecipients,
+                subject: 'New RAFL Entries since last update',
+                text: JSON.stringify(newResponseInfo.text, null, 2),
+                html: newResponseInfo.html
+            })
 
         }
 
@@ -160,17 +173,22 @@ export async function updateRaflStatsMain({
     argv = process.argv,
     loadEnvironment,
     writeOutput = console.log,
-    updateStatsFn = updateRaflStats
+    updateStatsFn = updateRaflStats,
+    usersModuleLoader = loadDeprecatedKeysModule
 } = {}) {
     loadRuntimeEnvironment({env, envDir: projectRoot, loadEnvironment})
-    const config = loadUpdateRaflStatsConfig(env)
+    const config = await loadUpdateRaflStatsConfig(env, {usersModuleLoader})
     const summary = updateRaflStatsConfigSummary(config)
     if (argv.includes('--check-config')) {
         writeOutput(JSON.stringify(summary, null, 2))
         return summary
     }
 
-    return updateStatsFn({tempDir: config.tempDir})
+    return updateStatsFn({
+        tempDir: config.tempDir,
+        env,
+        usersModuleLoader
+    })
 }
 
 if (isDirectRun(import.meta.url)) {

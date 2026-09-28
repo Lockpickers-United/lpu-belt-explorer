@@ -1,5 +1,7 @@
 import fs from 'fs'
-import {localUser, prodUser} from '../../../keys/users.js'
+import {loadDeprecatedKeysModule} from '../../util/deprecatedKeys.js'
+
+const {localUser, prodUser} = await loadDeprecatedKeysModule('users.js')
 import {beltSort} from '../../util/belts.js'
 import formidable from 'formidable'
 import authenticateRequest from '../../util/authenticateRequest.js'

@@ -1,9 +1,11 @@
-import {localUser, prodUser} from '../../../keys/users.js'
 import dayjs from 'dayjs'
 
 import {glob, open} from 'node:fs/promises'
 
 import {setDeepAdd} from '../../util/setDeep.js'
+import {loadDeprecatedKeysModule} from '../../util/deprecatedKeys.js'
+
+const {localUser, prodUser} = await loadDeprecatedKeysModule('users.js')
 
 const local = process.env.USER === localUser
 const logsDir = local
@@ -68,5 +70,4 @@ console.log('logData', JSON.stringify(logData, null, 2))
 export default async function processNodeServerLog() {
 
 }
-
 

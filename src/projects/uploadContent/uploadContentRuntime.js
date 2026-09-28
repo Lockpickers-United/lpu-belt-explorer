@@ -1,6 +1,7 @@
 import fs from 'node:fs/promises'
 import {createUploadContentHandler} from './uploadContent.js'
 import {loadUploadContentConfig} from './uploadContentConfig.js'
+import {loadDeprecatedKeysModule} from '../../util/deprecatedKeys.js'
 
 let defaultRuntimePromise
 
@@ -10,7 +11,7 @@ export async function createUploadContentRuntime({env = process.env} = {}) {
 
     const [mailerModule, usersModule] = await Promise.all([
         import('../nodeMailer/nodeMailer.js'),
-        import('../../../keys/users.js')
+        loadDeprecatedKeysModule('users.js', {env})
     ])
 
     const handler = createUploadContentHandler({

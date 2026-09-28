@@ -1,17 +1,16 @@
-import {localUser, prodUser} from '../../../keys/users.js'
 import fs from 'node:fs/promises'
 
 import {initializeApp, cert} from 'firebase-admin/app'
 import {getFirestore, FieldValue} from 'firebase-admin/firestore'
+import {getDeprecatedKeysDir, loadDeprecatedKeysModule} from '../../util/deprecatedKeys.js'
 
+const {localUser, prodUser} = await loadDeprecatedKeysModule('users.js')
 
 const production = process.env.USER !== localUser
 const serverDir = production
     ? `/home/${prodUser}/explore.lpubelts.com/public/data`
     : `/Users/${localUser}/Documents/LOCKPICK/LPU-Belt-Explorer/lpu-belt-explorer-analytics/Collections`
-const keysDir = production
-    ? `/home/${prodUser}/explore-lpubelts-com-node/keys`
-    : `/Users/${localUser}/Documents/GitHub/explore-lpubelts-com-node/keys`
+const keysDir = getDeprecatedKeysDir()
 
 const serviceAccount = JSON.parse(await fs.readFile(`${keysDir}/service-account.json`, 'utf8'))
 

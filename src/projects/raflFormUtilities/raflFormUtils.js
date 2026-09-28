@@ -2,17 +2,18 @@ import fs from 'node:fs/promises'
 import {fetch, CookieJar} from 'node-fetch-cookies'
 import dayjs from 'dayjs'
 import {authorizeGoogle} from './googleAuthorization.js'
+import {getDeprecatedKeysDir, loadDeprecatedKeysModule} from '../../util/deprecatedKeys.js'
 
-import {sheetIds} from '../../../keys/raflSheetIds.js'
-import {localUser, prodUser} from '../../../keys/users.js'
+const [{sheetIds}, {localUser, prodUser}] = await Promise.all([
+    loadDeprecatedKeysModule('raflSheetIds.js'),
+    loadDeprecatedKeysModule('users.js')
+])
 
 const live = true
 
 const production = process.env.USER !== localUser
 
-const keysDir = production
-    ? `/home/${prodUser}/explore-lpubelts-com-node/keys`
-    : `/Users/${localUser}/Documents/GitHub/explore-lpubelts-com-node/keys`
+const keysDir = getDeprecatedKeysDir()
 
 const serverDir = production
     ? `/home/${prodUser}/explore.lpubelts.com/public/data/`

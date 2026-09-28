@@ -1,5 +1,7 @@
 import {readFile} from 'node:fs/promises'
-import {localUser, prodUser} from '../../../keys/users.js'
+import {loadDeprecatedKeysModule} from '../../util/deprecatedKeys.js'
+
+const {localUser, prodUser} = await loadDeprecatedKeysModule('users.js')
 
 const production = process.env.USER === prodUser
 const dataDir = production
