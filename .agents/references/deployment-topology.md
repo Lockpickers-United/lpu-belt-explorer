@@ -61,10 +61,11 @@ The `shared` directory is for state that must survive release changes and must n
 - uploads
 - generated data and export state that are intentionally persistent
 
-`COLLECTION_API_DIR` must point to the environment's shared generated-data directory.
-Both `collectionAnalyzer.js` and the API use
-`collectionStatsByIdFull.json` at that path; production never silently uses the
-checked-in fixture.
+`COLLECTION_API_DIR` must point to the environment's shared generated-data API
+directory. The collection processors and API share
+`collectionStatsByIdFull.json` and `lockVideos.json` at that path; production
+never silently uses the checked-in fixtures. Readiness requires both files to be
+readable.
 
 Each environment has one protected `.env.<environment>` file linked at the repository root. It contains server and command-line job settings, including `COLLECTION_*`; do not create component-specific environment files inside `src/projects`.
 

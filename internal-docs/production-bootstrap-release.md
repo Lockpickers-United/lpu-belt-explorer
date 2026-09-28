@@ -24,8 +24,8 @@ Before starting:
 - Prepare `/home/lpubelts_api/apps/api-server-prod/shared/.env.production`.
 - Keep `APP_RELEASE_ID` and `APP_GIT_SHA` out of `.env.production`; the release
   obtains those values from `.release.json`.
-- Seed
-  `/home/lpubelts_api/apps/api-server-prod/shared/generated-data/collectionStatsByIdFull.json`.
+- Seed `collectionStatsByIdFull.json` and `lockVideos.json` in
+  `/home/lpubelts_api/apps/api-server-prod/shared/generated-data/api-data/`.
 - Ensure every path named in `.env.production`, including credentials and
   writable upload/output directories, exists with suitable permissions.
 - Configure DreamHost to proxy `api.lpubelts.com` to the production API port.
@@ -122,7 +122,8 @@ Verify the inputs and confirm that the intended release paths are unused:
 test -f "$bootstrap_archive"
 test -f "$bootstrap_checksum"
 test -f "$bootstrap_shared_env"
-test -f "$bootstrap_deploy_root/shared/generated-data/collectionStatsByIdFull.json"
+test -f "$bootstrap_deploy_root/shared/generated-data/api-data/collectionStatsByIdFull.json"
+test -f "$bootstrap_deploy_root/shared/generated-data/api-data/lockVideos.json"
 test ! -e "$bootstrap_staging"
 test ! -L "$bootstrap_staging"
 test ! -e "$bootstrap_release_dir"
@@ -214,7 +215,9 @@ The relevant layout is now:
   shared/
     .env.production
     generated-data/
-      collectionStatsByIdFull.json
+      api-data/
+        collectionStatsByIdFull.json
+        lockVideos.json
     logs/
 ```
 

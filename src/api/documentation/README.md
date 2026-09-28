@@ -29,10 +29,11 @@ http://localhost:8081/api/v1
 Production:
 
 ```txt
-https://explore.lpubelts.com/services/api/v1
+https://api.lpubelts.com/api/v1
 ```
 
-DreamHost proxies the public `/services/...` URL to the Node process. Internally, Node may receive paths like `//api/v1/...`; the server normalizes these before routing.
+DreamHost proxies the public API hostname to the Node process. Internally, Node
+may receive paths like `//api/v1/...`; the server normalizes these before routing.
 
 ## Response Pattern
 
@@ -88,6 +89,52 @@ Currently, `GET /users/{id}/profile` allows:
 - a Firebase token with `admin: true`
 
 ## Endpoints
+
+### GET `/locks/{lockId}/videos`
+
+Returns the public YouTube evidence videos indexed for a lock. A lock ID with no
+video entry returns `404 lock_videos_not_found`.
+
+Access:
+
+- public
+- read-only
+
+Source:
+
+- Firebase evidence, read from the generated index
+- `COLLECTION_API_DIR/lockVideos.json`
+- production path: `shared/generated-data/api-data/lockVideos.json`
+
+Cache:
+
+- `Cache-Control: public, max-age=300`
+
+Response shape:
+
+```json
+{
+  "metadata": {
+    "source": "firebase",
+    "fetchedDateTime": "2026-09-28T22:15:46.730Z"
+  },
+  "data": {
+    "lockId": "19573781",
+    "videos": [
+      {
+        "userId": "NdkmYGydSHfPTcj5xuqjwSyJJI42",
+        "pickerName": "Greenish",
+        "pickerIsBlackBelt": true,
+        "url": "https://youtu.be/ENKxPd9X5qQ"
+      }
+    ]
+  }
+}
+```
+
+Sample:
+
+- `src/api/requirements/samples/locks-lockId-videos.json`
 
 ### GET `/stats/collections/locks`
 
@@ -353,6 +400,7 @@ Sample:
 http://localhost:8081/api/v1/stats/collections/locks
 http://localhost:8081/api/v1/stats/collections/locks/own
 http://localhost:8081/api/v1/stats/collections/locks/scorecard
+http://localhost:8081/api/v1/locks/19573781/videos
 
 http://localhost:8081/api/v1/users/GGplAdctTfVDLVvYsfIADJmfp8f2/summary
 http://localhost:8081/api/v1/users/GGplAdctTfVDLVvYsfIADJmfp8f2/wishlist

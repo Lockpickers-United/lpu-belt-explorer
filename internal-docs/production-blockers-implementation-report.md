@@ -27,15 +27,16 @@ The review's separate high-priority reliability and repository-hygiene items rem
 
 ### Shared collection data
 
-The collection statistics API now resolves
-`COLLECTION_API_DIR/collectionStatsByIdFull.json`, the same file published by the
-analyzer. The directory must be absolute. Production fails closed when the setting
-is absent; only non-production service/test use may fall back to the checked-in
-fixture. The analyzer integration test now keeps one Express app alive while the
-generated file changes and verifies that the endpoint serves the update.
+The collection statistics and lock-video APIs resolve
+`COLLECTION_API_DIR/collectionStatsByIdFull.json` and
+`COLLECTION_API_DIR/lockVideos.json`, the same files published by the collection
+processors. The directory must be absolute. Production fails closed when the
+setting is absent; only non-production service/test use may fall back to checked-in
+fixtures. The analyzer integration test keeps one Express app alive while the
+generated statistics file changes and verifies that the endpoint serves the update.
 
-Production bootstrap must seed this file beneath the environment's shared
-generated-data directory and make it readable by the PM2 account.
+Production bootstrap must seed both files beneath the environment's shared
+generated-data API directory and make them readable by the PM2 account.
 
 ### Deterministic collection pipeline
 

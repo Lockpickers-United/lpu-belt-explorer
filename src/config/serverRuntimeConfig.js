@@ -3,6 +3,7 @@ import {getTrustProxyConfig} from '../api/middleware/trustProxy.js'
 import {validEnvironments} from '../util/runtimeEnvironment.js'
 
 const collectionStatsFilename = 'collectionStatsByIdFull.json'
+const lockVideosFilename = 'lockVideos.json'
 
 function configError(code, message) {
     const error = new Error(message)
@@ -102,6 +103,7 @@ export function loadServerRuntimeConfig(env = process.env) {
         corsOrigin: parseCorsOrigins(env.CORS_ORIGIN, environment),
         trustProxy: getTrustProxyConfig(env),
         collectionApiDir: path.normalize(collectionApiDir),
-        collectionStatsPath: path.join(path.normalize(collectionApiDir), collectionStatsFilename)
+        collectionStatsPath: path.join(path.normalize(collectionApiDir), collectionStatsFilename),
+        lockVideosPath: path.join(path.normalize(collectionApiDir), lockVideosFilename)
     })
 }

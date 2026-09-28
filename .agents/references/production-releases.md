@@ -72,8 +72,9 @@ Before the first workflow run, the production server must have:
 - the tracked `ecosystem.prod.json` declaration using `src/lpubeltsApiServer.js`
 - an existing `lpubelts-api-server-prod-next` PM2 application, matching `PM2_APP_NAME`
 - DreamHost proxying `api.lpubelts.com` to the application's internal port
-- `shared/generated-data/collectionStatsByIdFull.json`, readable by the PM2 account
-- `COLLECTION_API_DIR` pointing to that shared generated-data directory
+- `collectionStatsByIdFull.json` and `lockVideos.json` in the shared directory
+  selected by `COLLECTION_API_DIR`, readable by the PM2 account
+- `COLLECTION_API_DIR` pointing to the shared generated-data API directory
 
 The workflow deliberately checks that `current` is already a symlink and that the PM2 process exists. Bootstrap is a separate, reviewable operation. Use a JSON PM2 ecosystem declaration for the new production process, following the proven development pattern.
 
@@ -87,7 +88,7 @@ unintended inherited values before saving the process list.
 
 Retain three production releases: the active release and two rollback candidates. The current workflow does not prune old releases, so cleanup remains a separate maintenance action after verifying the active target. Never remove the target of `current` or either rollback candidate.
 
-The automated rollback covers failures during deployment activation and the readiness check. Readiness remains unavailable during startup and shutdown, verifies that the configured collection-statistics file is readable, and reports the release ID written by the workflow. For a later manual rollback:
+The automated rollback covers failures during deployment activation and the readiness check. Readiness remains unavailable during startup and shutdown, verifies that the configured collection-statistics and lock-video files are readable, and reports the release ID written by the workflow. For a later manual rollback:
 
 1. identify a known-good release,
 2. switch `current` atomically to that exact release,

@@ -23,7 +23,8 @@ describe('loadServerRuntimeConfig', () => {
             corsOrigin: ['https://dev.example.com'],
             trustProxy: ['loopback'],
             collectionApiDir: '/srv/lpubelts/shared/generated-data',
-            collectionStatsPath: '/srv/lpubelts/shared/generated-data/collectionStatsByIdFull.json'
+            collectionStatsPath: '/srv/lpubelts/shared/generated-data/collectionStatsByIdFull.json',
+            lockVideosPath: '/srv/lpubelts/shared/generated-data/lockVideos.json'
         })
     })
 

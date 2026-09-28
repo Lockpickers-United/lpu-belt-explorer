@@ -34,7 +34,7 @@ The collection command-line jobs load `.env.<NODE_ENV>` from the repository root
 | Variable | Purpose |
 | --- | --- |
 | `COLLECTION_DAILY_DIR` | Absolute directory for dated collection-statistics files |
-| `COLLECTION_API_DIR` | Absolute shared generated-data directory receiving `collectionStatsByIdFull.json`; the API reads the same file |
+| `COLLECTION_API_DIR` | Absolute shared generated-data API directory receiving `collectionStatsByIdFull.json` and `lockVideos.json`; the API reads both files |
 | `COLLECTION_PUBLIC_DATA_DIR` | Absolute directory receiving `collectionStatsCurrent.json` |
 
 `collectionStatsProcess.js` requires `COLLECTION_DAILY_DIR` for its dated inputs and
@@ -143,6 +143,7 @@ The all-evidence processor reads the incremental evidence export and checked-in
 unclaimed-evidence snapshot to regenerate `allProjects.json`, `pickStats.json`, and
 `lockVideos.json` without any additional database reads. `lockVideos.json` contains
 YouTube evidence grouped by lock ID and includes picker display and black-belt data.
+The public `GET /api/v1/locks/:lockId/videos` endpoint reads this file.
 
 The stats processor reads the analyzer's dated files from `COLLECTION_DAILY_DIR`, calculates the chronological daily changes, and writes `collectionStatsDaily.json` to `COLLECTION_PUBLIC_DATA_DIR`.
 

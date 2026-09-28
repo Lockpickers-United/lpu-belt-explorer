@@ -90,10 +90,11 @@ API or job configuration was inherited. The application then loads all other
 runtime values from `shared/.env.production`. The PM2 definition allows 12 seconds
 for the application's 10-second request drain before PM2 forces termination.
 
-Set `COLLECTION_API_DIR` to an absolute shared generated-data directory and seed
-`collectionStatsByIdFull.json` there before the first start. The PM2 account must
-be able to read it. The API validates its Firebase service-account configuration
-at startup and does not report ready until startup finishes.
+Set `COLLECTION_API_DIR` to the absolute shared generated-data API directory and
+seed `collectionStatsByIdFull.json` and `lockVideos.json` there before the first
+start. The PM2 account must be able to read both files. The API validates its
+Firebase service-account configuration at startup and does not report ready until
+startup finishes or while either generated API file is unavailable.
 
 Before enabling the workflow, manually verify that:
 

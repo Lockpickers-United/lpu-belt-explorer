@@ -39,14 +39,15 @@ const {
     corsOrigin,
     port,
     host,
-    collectionStatsPath
+    collectionStatsPath,
+    lockVideosPath
 } = serverConfig
 const releaseMetadata = loadReleaseMetadata({env: process.env, projectRoot})
 getFirebaseAdminApp()
 const readiness = createReadinessController({
     releaseMetadata,
     environment: env,
-    requiredFiles: [collectionStatsPath]
+    requiredFiles: [collectionStatsPath, lockVideosPath]
 })
 const isDev = env !== 'production'
 const _envText = isDev ? ' (DEV)' : ''

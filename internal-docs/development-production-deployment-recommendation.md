@@ -78,12 +78,12 @@ The development `current-dev` and `shared` directories and the production `share
 
 Credentials, logs, uploads, and generated data must use absolute paths under the applicable `shared` directory. WebStorm must never upload them. Production releases link `shared/.env.production`; development's mutable checkout links `shared/.env.development`.
 
-`COLLECTION_API_DIR` must point to the applicable environment's
-`shared/generated-data` directory. The collection analyzer publishes
-`collectionStatsByIdFull.json` there, and `/api/v1/stats/collections/*` reads that
-same file on each request. Production must not fall back to the copy in a release,
-so bootstrap the shared file before starting the API and preserve it across
-deployments and rollbacks.
+`COLLECTION_API_DIR` must point to the applicable environment's shared
+generated-data API directory. The collection processors publish
+`collectionStatsByIdFull.json` and `lockVideos.json` there. The collection-stats
+and lock-video endpoints read those files on each request. Production must not
+fall back to copies in a release, so bootstrap both shared files before starting
+the API and preserve them across deployments and rollbacks.
 
 The tracked root `public/` directory is intentional. DreamHost serves those HTML,
 icon, manifest, and robots assets separately from Express; the API application

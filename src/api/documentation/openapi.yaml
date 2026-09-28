@@ -6,14 +6,46 @@ info:
 servers:
   - url: http://localhost:8081/api/v1
     description: Local development
-  - url: https://explore.lpubelts.com/services/api/v1
-    description: Production through DreamHost services proxy
+  - url: https://api.lpubelts.com/api/v1
+    description: Production
 tags:
   - name: Collection Stats
     description: Public generated-summary collection statistics.
+  - name: Locks
+    description: Public lock-specific data generated from Firebase evidence.
   - name: Users
     description: Firebase-backed user profile data.
 paths:
+  /locks/{lockId}/videos:
+    get:
+      tags:
+        - Locks
+      summary: Get evidence videos for a lock
+      description: Returns public YouTube evidence details for a lock from the generated lock-video index.
+      operationId: getLockVideos
+      security: []
+      parameters:
+        - $ref: '#/components/parameters/LockId'
+      responses:
+        '200':
+          description: Public evidence videos for the lock.
+          headers:
+            Cache-Control:
+              schema:
+                type: string
+              example: public, max-age=300
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LockVideosResponse'
+        '400':
+          $ref: '#/components/responses/Error'
+        '404':
+          $ref: '#/components/responses/Error'
+        '429':
+          $ref: '#/components/responses/Error'
+        '500':
+          $ref: '#/components/responses/Error'
   /stats/collections/locks:
     get:
       tags:
@@ -218,6 +250,17 @@ components:
       scheme: bearer
       bearerFormat: Firebase ID token
   parameters:
+    LockId:
+      name: lockId
+      in: path
+      required: true
+      description: Lock catalog ID.
+      schema:
+        type: string
+        minLength: 1
+        maxLength: 128
+        pattern: '^[A-Za-z0-9_-]+$'
+      example: '19573781'
     UserId:
       name: id
       in: path
@@ -277,6 +320,48 @@ components:
             fetchedDateTime:
               type: string
               format: date-time
+    LockVideosResponse:
+      type: object
+      required:
+        - metadata
+        - data
+      properties:
+        metadata:
+          $ref: '#/components/schemas/FirebaseMetadata'
+        data:
+          type: object
+          required:
+            - lockId
+            - videos
+          properties:
+            lockId:
+              type: string
+              example: '19573781'
+            videos:
+              type: array
+              items:
+                $ref: '#/components/schemas/LockVideo'
+    LockVideo:
+      type: object
+      required:
+        - userId
+        - pickerName
+        - pickerIsBlackBelt
+        - url
+      properties:
+        userId:
+          type: string
+          example: NdkmYGydSHfPTcj5xuqjwSyJJI42
+        pickerName:
+          type: string
+          example: Greenish
+        pickerIsBlackBelt:
+          type: boolean
+          example: true
+        url:
+          type: string
+          format: uri
+          example: https://youtu.be/ENKxPd9X5qQ
     LockStatsResponse:
       type: object
       required:

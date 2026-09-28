@@ -38,15 +38,18 @@ function createApiTestApp() {
 
 let app
 let collectionStats
+let lockVideos
 const collectionStatsFixtureDir = fileURLToPath(new URL('../../data/', import.meta.url))
 const collectionStatsFixturePath = fileURLToPath(
     new URL('../../data/collectionStatsByIdFull.json', import.meta.url)
 )
+const lockVideosFixturePath = fileURLToPath(new URL('../../data/lockVideos.json', import.meta.url))
 
 beforeAll(async () => {
     vi.stubEnv('COLLECTION_API_DIR', collectionStatsFixtureDir)
     app = createApiTestApp()
     collectionStats = JSON.parse(await fs.readFile(collectionStatsFixturePath, 'utf8'))
+    lockVideos = JSON.parse(await fs.readFile(lockVideosFixturePath, 'utf8'))
 })
 
 afterAll(() => {
@@ -100,6 +103,38 @@ describe('collection stats API', () => {
             name: collectionStats.data.locks[0].name,
             scorecardCount: collectionStats.data.locks[0].scorecardCount
         })
+    })
+})
+
+describe('lock videos API', () => {
+    it('GET /api/v1/locks/:lockId/videos returns public video details', async () => {
+        const lockId = '19573781'
+        const res = await request(app).get(`/api/v1/locks/${lockId}/videos`)
+
+        expect(res.status).toBe(200)
+        expect(res.headers['x-ratelimit-limit']).toBe(String(rateLimitPolicies.collectionStats.max))
+        expect(res.headers['cache-control']).toBe('public, max-age=300')
+        expect(res.body.metadata.source).toBe('generated-summary')
+        expect(new Date(res.body.metadata.fetchedDateTime).toISOString())
+            .toBe(res.body.metadata.fetchedDateTime)
+        expect(res.body.data).toEqual({
+            lockId,
+            videos: lockVideos.lockVideos[lockId]
+        })
+    })
+
+    it('returns 404 when a lock has no videos', async () => {
+        const res = await request(app).get('/api/v1/locks/no-videos/videos')
+
+        expect(res.status).toBe(404)
+        expect(res.body.error.code).toBe('lock_videos_not_found')
+    })
+
+    it('rejects an invalid lock id', async () => {
+        const res = await request(app).get('/api/v1/locks/invalid%20id/videos')
+
+        expect(res.status).toBe(400)
+        expect(res.body.error.code).toBe('invalid_lock_id')
     })
 })
 
