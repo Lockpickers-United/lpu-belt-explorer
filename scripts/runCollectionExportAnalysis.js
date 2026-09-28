@@ -88,9 +88,6 @@ export async function preflightCollectionPipeline(env) {
         throw new Error('REDDIT_BELTS_OUTPUT_DIR must match COLLECTION_PUBLIC_DATA_DIR for the combined pipeline')
     }
 
-    if (catalogRefreshConfig.enabled && catalogConfig.source !== 'filesystem') {
-        throw new Error('LPU_CATALOG_SOURCE must be filesystem when catalog refresh is enabled')
-    }
     if (!catalogRefreshConfig.enabled) {
         await Promise.all(catalogFilenames.map(filename =>
             loadCatalogArray(filename, {config: catalogConfig})))

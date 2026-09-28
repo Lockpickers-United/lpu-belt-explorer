@@ -65,8 +65,9 @@ development setting. Remote mode uses the HTTPS `LPU_CATALOG_BASE_URL` and appli
 `catalogSnapshotDownload.js` fetches every catalog over bounded HTTPS, validates
 all responses before publishing any of them, and atomically replaces the files in
 `LPU_CATALOG_DIR`. Set `LPU_CATALOG_REFRESH_ENABLED=true` to add it as the first
-combined-runner job. Keep `LPU_CATALOG_SOURCE=filesystem` so later jobs consume the
-fresh snapshots. The development directory is
+combined-runner job. Refresh is independent of `LPU_CATALOG_SOURCE`: filesystem
+consumers read the newly written snapshots, while remote consumers continue reading
+the configured HTTPS source. The development directory is
 `/home/lpubelts_api/apps/api-server-dev/shared/snapshots`.
 
 `awardsEvidenceExport.js` additionally requires:

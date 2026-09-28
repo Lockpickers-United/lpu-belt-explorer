@@ -192,34 +192,40 @@ describe('collection export and analysis runner', () => {
         expect(selected[0]).toMatchObject({optionalRefresh: 'catalog'})
     })
 
-    it('permits missing catalog snapshots before an enabled refresh', async () => {
-        const root = await fs.mkdtemp(path.join(os.tmpdir(), 'collection-catalog-refresh-'))
-        temporaryDirectories.push(root)
-        const publicDataDir = path.join(root, 'public')
-        await fs.mkdir(publicDataDir)
-        await Promise.all([
-            fs.writeFile(path.join(publicDataDir, 'redditBeltCounts.json'), '{"Total":1}'),
-            fs.writeFile(path.join(publicDataDir, 'discordBeltCounts.json'), '{"Total":1}')
-        ])
+    it.each(['filesystem', 'remote'])(
+        'permits an enabled catalog refresh when the catalog source is %s',
+        async catalogSource => {
+            const root = await fs.mkdtemp(path.join(os.tmpdir(), 'collection-catalog-refresh-'))
+            temporaryDirectories.push(root)
+            const publicDataDir = path.join(root, 'public')
+            await fs.mkdir(publicDataDir)
+            await Promise.all([
+                fs.writeFile(path.join(publicDataDir, 'redditBeltCounts.json'), '{"Total":1}'),
+                fs.writeFile(path.join(publicDataDir, 'discordBeltCounts.json'), '{"Total":1}')
+            ])
 
-        await expect(preflightCollectionPipeline({
-            LPU_JOB_ENV: 'development',
-            FIREBASE_PROJECT_ID: 'test-project',
-            FIRESTORE_DATABASE_ID: 'test-database',
-            FIREBASE_SERVICE_ACCOUNT_PATH: path.join(root, 'service-account.json'),
-            COLLECTION_EXPORT_DIR: path.join(root, 'exports'),
-            COLLECTION_BACKUP_DIR: path.join(root, 'backups'),
-            COLLECTION_PUBLIC_DATA_DIR: publicDataDir,
-            COLLECTION_DAILY_DIR: path.join(root, 'daily'),
-            COLLECTION_API_DIR: path.join(root, 'api'),
-            LPU_CATALOG_SOURCE: 'filesystem',
-            LPU_CATALOG_REFRESH_ENABLED: 'true',
-            LPU_CATALOG_DIR: path.join(root, 'missing-snapshots'),
-            LPU_CATALOG_BASE_URL: 'https://catalog.example',
-            REDDIT_BELTS_ENABLED: 'false',
-            DISCORD_BELT_COUNTS_REFRESH_ENABLED: 'false'
-        })).resolves.toMatchObject({catalogRefreshConfig: {enabled: true}})
-    })
+            await expect(preflightCollectionPipeline({
+                LPU_JOB_ENV: 'development',
+                FIREBASE_PROJECT_ID: 'test-project',
+                FIRESTORE_DATABASE_ID: 'test-database',
+                FIREBASE_SERVICE_ACCOUNT_PATH: path.join(root, 'service-account.json'),
+                COLLECTION_EXPORT_DIR: path.join(root, 'exports'),
+                COLLECTION_BACKUP_DIR: path.join(root, 'backups'),
+                COLLECTION_PUBLIC_DATA_DIR: publicDataDir,
+                COLLECTION_DAILY_DIR: path.join(root, 'daily'),
+                COLLECTION_API_DIR: path.join(root, 'api'),
+                LPU_CATALOG_SOURCE: catalogSource,
+                LPU_CATALOG_REFRESH_ENABLED: 'true',
+                LPU_CATALOG_DIR: path.join(root, 'missing-snapshots'),
+                LPU_CATALOG_BASE_URL: 'https://catalog.example',
+                REDDIT_BELTS_ENABLED: 'false',
+                DISCORD_BELT_COUNTS_REFRESH_ENABLED: 'false'
+            })).resolves.toMatchObject({
+                catalogConfig: {source: catalogSource},
+                catalogRefreshConfig: {enabled: true}
+            })
+        }
+    )
 
     it('prevents overlapping runs and releases the lock after use', async () => {
         const exportDir = await fs.mkdtemp(path.join(os.tmpdir(), 'collection-runner-lock-'))
