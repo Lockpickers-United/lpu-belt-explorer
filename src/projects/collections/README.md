@@ -142,7 +142,8 @@ The analyzer reads dated `backup_YYYY-MM-DD.json` files from the `archive` direc
 The all-evidence processor reads the incremental evidence export and checked-in
 unclaimed-evidence snapshot to regenerate `allProjects.json`, `pickStats.json`, and
 `lockVideos.json` without any additional database reads. `lockVideos.json` contains
-YouTube evidence grouped by lock ID and includes picker display and black-belt data.
+YouTube evidence grouped by lock ID and includes the evidence date, picker display,
+and black-belt data.
 The public `GET /api/v1/locks/:lockId/videos` endpoint reads this file.
 
 The stats processor reads the analyzer's dated files from `COLLECTION_DAILY_DIR`, calculates the chronological daily changes, and writes `collectionStatsDaily.json` to `COLLECTION_PUBLIC_DATA_DIR`.

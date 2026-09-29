@@ -84,7 +84,8 @@ export async function runAllEvidenceExport({
             userId: evidence.userId,
             pickerName: details.displayName,
             pickerIsBlackBelt: !!details.blackBelt,
-            url: evidence.evidenceUrl
+            url: evidence.evidenceUrl,
+            date: details.date
         }
         if (evidence.evidenceUrl.toLowerCase().includes('youtu')) setDeepPush(acc, [lockId], videoEntry)
         return acc

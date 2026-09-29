@@ -115,7 +115,7 @@ Response shape:
 ```json
 {
   "metadata": {
-    "source": "firebase",
+    "source": "generated-summary",
     "fetchedDateTime": "2026-09-28T22:15:46.730Z"
   },
   "data": {
@@ -125,7 +125,8 @@ Response shape:
         "userId": "NdkmYGydSHfPTcj5xuqjwSyJJI42",
         "pickerName": "Greenish",
         "pickerIsBlackBelt": true,
-        "url": "https://youtu.be/ENKxPd9X5qQ"
+        "url": "https://youtu.be/ENKxPd9X5qQ",
+        "date": "2024-05-15"
       }
     ]
   }

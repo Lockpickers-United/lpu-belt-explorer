@@ -1,6 +1,7 @@
 import {fileURLToPath} from 'node:url'
 import path, {dirname, resolve} from 'node:path'
 import {readJsonCached} from '../util/readJsonCache.js'
+import dayjs from 'dayjs'
 
 const currentDir = dirname(fileURLToPath(import.meta.url))
 const fixtureLockVideosPath = resolve(currentDir, '../../data/lockVideos.json')
@@ -35,7 +36,8 @@ function publicVideo(video) {
         userId: video.userId,
         pickerName: video.pickerName,
         pickerIsBlackBelt: video.pickerIsBlackBelt,
-        url: video.url
+        url: video.url,
+        date: video.date
     }
 }
 
@@ -55,7 +57,9 @@ export async function getLockVideosResponse(
         },
         data: {
             lockId,
-            videos: videos.map(publicVideo)
+            videos: videos.map(publicVideo).sort((a, b) => {
+                return dayjs(b.date).valueOf() - dayjs(a.date).valueOf()
+            })
         }
     }
 }

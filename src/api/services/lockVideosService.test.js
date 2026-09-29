@@ -30,7 +30,8 @@ describe('lock videos generated-data contract', () => {
                     userId: 'user-1',
                     pickerName: 'Picker One',
                     pickerIsBlackBelt: true,
-                    url: 'https://youtu.be/example'
+                    url: 'https://youtu.be/example',
+                    date: '2026-09-10'
                 }]
             }
         })
@@ -50,7 +51,8 @@ describe('lock videos generated-data contract', () => {
                     userId: 'user-1',
                     pickerName: 'Picker One',
                     pickerIsBlackBelt: true,
-                    url: 'https://youtu.be/example'
+                    url: 'https://youtu.be/example',
+                    date: '2026-09-10'
                 }]
             }
         })

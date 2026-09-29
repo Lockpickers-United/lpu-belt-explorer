@@ -320,6 +320,19 @@ components:
             fetchedDateTime:
               type: string
               format: date-time
+    GeneratedSummaryFetchMetadata:
+      allOf:
+        - $ref: '#/components/schemas/ApiMetadata'
+        - type: object
+          required:
+            - source
+            - fetchedDateTime
+          properties:
+            source:
+              const: generated-summary
+            fetchedDateTime:
+              type: string
+              format: date-time
     LockVideosResponse:
       type: object
       required:
@@ -327,7 +340,7 @@ components:
         - data
       properties:
         metadata:
-          $ref: '#/components/schemas/FirebaseMetadata'
+          $ref: '#/components/schemas/GeneratedSummaryFetchMetadata'
         data:
           type: object
           required:
@@ -348,6 +361,7 @@ components:
         - pickerName
         - pickerIsBlackBelt
         - url
+        - date
       properties:
         userId:
           type: string
@@ -362,6 +376,11 @@ components:
           type: string
           format: uri
           example: https://youtu.be/ENKxPd9X5qQ
+        date:
+          type: string
+          format: date
+          description: Date associated with the evidence entry.
+          example: '2024-05-15'
     LockStatsResponse:
       type: object
       required:

@@ -132,7 +132,8 @@ describe('runAllEvidenceExport', () => {
                     userId: 'user-1',
                     pickerName: 'Picker One',
                     pickerIsBlackBelt: true,
-                    url: 'https://www.youtube.com/watch?v=evidence'
+                    url: 'https://www.youtube.com/watch?v=evidence',
+                    date: '2026-09-10'
                 }]
             }
         })
