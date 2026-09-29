@@ -34,6 +34,29 @@ function evidenceDetails(evidence, entry, collectionData) {
     }
 }
 
+function deduplicateEvidenceByDocId(evidenceItems) {
+    const deduplicated = []
+    const indexByDocId = new Map()
+
+    evidenceItems.forEach(evidence => {
+        if (typeof evidence.docId !== 'string' || !evidence.docId) {
+            deduplicated.push(evidence)
+            return
+        }
+
+        const existingIndex = indexByDocId.get(evidence.docId)
+        if (existingIndex === undefined) {
+            indexByDocId.set(evidence.docId, deduplicated.length)
+            deduplicated.push(evidence)
+            return
+        }
+
+        deduplicated[existingIndex] = evidence
+    })
+
+    return deduplicated
+}
+
 export async function runAllEvidenceExport({
     backupDir,
     exportDir,
@@ -51,9 +74,11 @@ export async function runAllEvidenceExport({
         fs.readFile(unclaimedEvidenceFile, 'utf8').then(JSON.parse)
     ])
     const collectionData = collectionBackup['__collections__']['lockcollections']
-    const scorecardEvidence = evidenceExport.data
-    if (!Array.isArray(scorecardEvidence)) throw new Error('Invalid evidence export data')
+    const exportedEvidence = evidenceExport.data
+    if (!Array.isArray(exportedEvidence)) throw new Error('Invalid evidence export data')
     if (!Array.isArray(unclaimedEvidence)) throw new Error('Invalid unclaimed evidence data')
+
+    const scorecardEvidence = deduplicateEvidenceByDocId(exportedEvidence)
 
     const allEvidence = [...scorecardEvidence, ...unclaimedEvidence]
     const [projectData, lockData] = await Promise.all([
@@ -87,7 +112,12 @@ export async function runAllEvidenceExport({
             url: evidence.evidenceUrl,
             date: details.date
         }
-        if (evidence.evidenceUrl.toLowerCase().includes('youtu')) setDeepPush(acc, [lockId], videoEntry)
+        if (evidence.evidenceUrl.toLowerCase().includes('youtu')
+            && !acc[lockId]?.some(({userId, url}) => {
+                return userId === evidence.userId && url === evidence.evidenceUrl
+            })) {
+            setDeepPush(acc, [lockId], videoEntry)
+        }
         return acc
     }, {})
 

@@ -25,6 +25,9 @@ async function makeTempDirs() {
                     'user-1': {
                         displayName: 'Picker One',
                         blackBeltAwardedAt: '2026-01-01'
+                    },
+                    'user-2': {
+                        displayName: 'Picker Two'
                     }
                 }
             }
@@ -46,6 +49,28 @@ async function makeTempDirs() {
                     userId: 'user-1',
                     evidenceUrl: 'https://example.com/photo',
                     evidenceCreatedAt: {_seconds: 1789041600, _nanoseconds: 0}
+                },
+                {
+                    docId: 'evidence-1',
+                    projectId: 'project-1',
+                    userId: 'user-1',
+                    evidenceUrl: 'https://www.youtube.com/watch?v=evidence',
+                    evidenceCreatedAt: {_seconds: 1789041600, _nanoseconds: 0},
+                    modifier: true
+                },
+                {
+                    docId: 'evidence-3',
+                    projectId: 'project-1',
+                    userId: 'user-1',
+                    evidenceUrl: 'https://www.youtube.com/watch?v=evidence',
+                    evidenceCreatedAt: {_seconds: 1789041600, _nanoseconds: 0}
+                },
+                {
+                    docId: 'evidence-4',
+                    projectId: 'project-1',
+                    userId: 'user-2',
+                    evidenceUrl: 'https://www.youtube.com/watch?v=evidence',
+                    evidenceCreatedAt: {_seconds: 1789041600, _nanoseconds: 0}
                 }
             ]
         })),
@@ -66,7 +91,7 @@ afterEach(async () => {
 })
 
 describe('runAllEvidenceExport', () => {
-    it('writes site evidence files from local exports without archived outputs', async () => {
+    it('writes deduplicated site evidence files from local exports without archived outputs', async () => {
         const {
             backupDir,
             exportDir,
@@ -106,9 +131,9 @@ describe('runAllEvidenceExport', () => {
             path.join(publicDataDir, 'pickStats.json'),
             'utf8'
         ))
-        expect(pickStats.byLock).toEqual({'project-1': 2})
+        expect(pickStats.byLock).toEqual({'project-1': 4})
         expect(pickStats.lockDetails).toEqual([
-            expect.objectContaining({id: 'project-1', pickCount: 2})
+            expect.objectContaining({id: 'project-1', pickCount: 4})
         ])
 
         const allProjects = JSON.parse(await fs.readFile(
@@ -128,13 +153,22 @@ describe('runAllEvidenceExport', () => {
         expect(lockVideos).toEqual({
             metadata: {updatedDateTime: '2026-09-12 15:30'},
             lockVideos: {
-                'project-1': [{
-                    userId: 'user-1',
-                    pickerName: 'Picker One',
-                    pickerIsBlackBelt: true,
-                    url: 'https://www.youtube.com/watch?v=evidence',
-                    date: '2026-09-10'
-                }]
+                'project-1': [
+                    {
+                        userId: 'user-1',
+                        pickerName: 'Picker One',
+                        pickerIsBlackBelt: true,
+                        url: 'https://www.youtube.com/watch?v=evidence',
+                        date: '2026-09-10'
+                    },
+                    {
+                        userId: 'user-2',
+                        pickerName: 'Picker Two',
+                        pickerIsBlackBelt: false,
+                        url: 'https://www.youtube.com/watch?v=evidence',
+                        date: '2026-09-10'
+                    }
+                ]
             }
         })
 
