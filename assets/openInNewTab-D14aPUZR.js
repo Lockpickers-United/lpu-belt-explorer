@@ -1,0 +1,1 @@
+function e(e){let t=window.open(e,`_blank`,`noopener,noreferrer`);t&&(t.opener=null)}export{e as t};
