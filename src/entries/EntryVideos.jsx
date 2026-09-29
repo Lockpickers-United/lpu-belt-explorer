@@ -5,13 +5,16 @@ import {Table} from '@mui/material'
 import Link from '@mui/material/Link'
 import openInNewTab from '../util/openInNewTab'
 import AppContext from '../app/AppContext.jsx'
+import AuthContext from '../app/AuthContext.jsx'
 
 // https://api-dev.lpubelts.com/api/v1/locks/3ac43ea8/videos
 
 export default function EntryVideos({entry}) {
+    const {user} = useContext(AuthContext)
     const {modEnabled} = useContext(AppContext)
+
     const url = `${apiServerUrl}/api/v1/locks/${entry.id}/videos`
-    const response = useGetRequest({url}) || {data: {}, status: 'error'}
+    const response = useGetRequest({user, url}) || {data: {}, status: 'error'}
     const videos = response?.data?.data?.videos || []
 
     if (!modEnabled) return null

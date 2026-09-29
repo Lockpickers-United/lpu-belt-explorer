@@ -29,8 +29,7 @@ const newClaims = {lpuMod: true}
 const removeClaims = []
 
 const users = [
-    {uid: 'GGplAdctTfVDLVvYsfIADJmfp8f2', name: 'mgsecure'},
-    {uid: '4qqxB0nW8dczUws5XuAyhEkgZEj2', name: 'mgtest'},
+    {uid: 'vOi8rfTRluYlcVizuVvX9PWFJdn2', name: 'Dynamic'},
 ]
 
 const _allUsers = [
@@ -43,6 +42,7 @@ const _allUsers = [
     {uid: '84dULJFIN4bHIC1LxCiuvBCSqT43', name: 'todd'},
     {uid: 'Hqww5ljRCfQjMppspbvFZsZ5xQI2', name: 'CorrectJeans'},
     {uid: 's5iyDrszY4Nc3zR7rILCQLO7I8v2', name: 'Norlin'},
+    {uid: 'vOi8rfTRluYlcVizuVvX9PWFJdn2', name: 'Dynamic'},
 ]
 
 async function updateCustomClaimsForUsers() {

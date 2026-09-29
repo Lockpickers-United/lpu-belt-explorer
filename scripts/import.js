@@ -23,6 +23,7 @@ import validate from './validate.js'
 import entryName from '../src/entries/entryName.js'
 import {saveLockStats} from './saveLockStats.js'
 import {setDeepUnique, setDeepPush} from '../src/util/setDeep.js'
+import flickrReport from '../src/data/flickr-replacement-unique-ids.json' with {type:'json'}
 
 const importRaflData = false
 
@@ -102,6 +103,7 @@ const jsonData = mainData
         const modelNum = datum['Model Num']
 
         if (datum['Latest Changelog'].length) features.push('Latest Changelog')
+        if (flickrReport.uniqueIds.includes(id)) features.push('Flickr Update')
 
         const collectionStats = collectionStatsData?.data?.locks?.find(item => item.id === datum['Unique ID'])
         const popularityIndex = collectionStats ? collectionStats.ownCount : undefined
