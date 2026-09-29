@@ -2,6 +2,17 @@ import Button from '@mui/material/Button'
 import {enqueueSnackbar} from 'notistack'
 import React, {useCallback, useEffect, useMemo, useState} from 'react'
 import {getData} from '../formUtils/getData.jsx'
+import LoadingDisplaySmall from '../misc/LoadingDisplaySmall.jsx'
+import CheckCircleIcon from '@mui/icons-material/CheckCircle'
+import ReportIcon from '@mui/icons-material/Report'
+import WarningIcon from '@mui/icons-material/Warning'
+
+const statusIndicators = {
+    loading: <LoadingDisplaySmall style={{marginTop: 0}}/>,
+    error: <ReportIcon color='error'/>,
+    success: <CheckCircleIcon color='success'/>,
+    'data-error': <WarningIcon color='warning'/>
+}
 
 export default function useGetRequest({user, url, urls, snackBars=false, enabled=true}) {
     const [loading, setLoading] = useState(true)
@@ -10,11 +21,13 @@ export default function useGetRequest({user, url, urls, snackBars=false, enabled
     const [error, setError] = useState(false)
     const [errorMessage, setErrorMessage] = useState(false)
     const [status, setStatus] = useState('idle')
+    const [statusIndicator, setStatusIndicator] = useState(<></>)
 
     const loadData = useCallback(async () => {
         if (enabled) try {
             setLoading(true)
             setStatus('loading')
+            setStatusIndicator(statusIndicators.loading)
 
             let value
             if (url) {
@@ -32,6 +45,7 @@ export default function useGetRequest({user, url, urls, snackBars=false, enabled
             setLoading(false)
             setError(false)
             setStatus(value.error ? 'data-error' : 'success')
+            setStatusIndicator(statusIndicators[value.error ? 'error' : 'success'])
             setDataError(value.error)
 
         } catch (ex) {
@@ -44,6 +58,7 @@ export default function useGetRequest({user, url, urls, snackBars=false, enabled
             setError(true)
             setErrorMessage(ex.message)
             setStatus('error')
+            setStatusIndicator(statusIndicators.error)
         }
     }, [enabled, url, urls, user, snackBars])
 
@@ -58,6 +73,7 @@ export default function useGetRequest({user, url, urls, snackBars=false, enabled
         error,
         errorMessage,
         status,
+        statusIndicator,
         refresh: loadData
-    }), [loading, data, dataError, error, errorMessage, status, loadData])
+    }), [loading, data, dataError, error, errorMessage, status, statusIndicator, loadData])
 }

@@ -24,12 +24,17 @@ import AuthContext from '../app/AuthContext'
 import DBContext from '../app/DBContext'
 import AppContext from '../app/AppContext'
 import {useNavigate} from 'react-router-dom'
+import SportsMartialArtsIcon from '@mui/icons-material/SportsMartialArts'
 
 function UserMenu() {
     const navigate = useNavigate()
     const {isLoggedIn, user, logout} = useContext(AuthContext)
     const {adminRole, lockCollection, qaUserRole} = useContext(DBContext)
-    const {adminEnabled, setAdminEnabled, qaUserEnabled, setQaUserEnabled} = useContext(AppContext)
+    const {
+        adminEnabled, setAdminEnabled,
+        qaUserEnabled, setQaUserEnabled,
+        isLpuMod, modEnabled, toggleModEnabled
+    } = useContext(AppContext)
     const [anchorEl, setAnchorEl] = useState(null)
     const open = Boolean(anchorEl)
     const handleOpen = useCallback(event => setAnchorEl(event.currentTarget), [])
@@ -48,12 +53,12 @@ function UserMenu() {
     }, [handleClose, navigate])
 
     const handleToggleAdmin = useCallback(() => {
-        setAdminEnabled(!adminEnabled)
-    }, [adminEnabled, setAdminEnabled])
+        setAdminEnabled(current => !current)
+    }, [setAdminEnabled])
 
     const handleToggleQaUser = useCallback(() => {
-        setQaUserEnabled(!qaUserEnabled)
-    }, [qaUserEnabled, setQaUserEnabled])
+        setQaUserEnabled(current => !current)
+    }, [setQaUserEnabled])
 
     const handleLogout = useCallback(() => {
         handleClose()
@@ -82,7 +87,7 @@ function UserMenu() {
                 onClose={handleClose}
                 sx={{
                     '.MuiMenuItem-root': {
-                        minHeight: '36px', minWidth: '190px'
+                        minHeight: '36px', minWidth: '210px'
                     }
                 }}
             >
@@ -111,6 +116,17 @@ function UserMenu() {
                                     <ListItemText>Disable Admin</ListItemText>
                                     :
                                     <ListItemText>Enable Admin</ListItemText>
+                                }
+                            </MenuItem>
+                        }
+                        {isLpuMod &&
+                            <MenuItem onClick={toggleModEnabled}>
+                                <ListItemIcon>
+                                    <SportsMartialArtsIcon color={modEnabled ? 'warning' : 'default'}/>
+                                </ListItemIcon>
+                                {modEnabled
+                                    ? <ListItemText>Disable Mod Mode</ListItemText>
+                                    : <ListItemText>Enable Mod Mode</ListItemText>
                                 }
                             </MenuItem>
                         }
@@ -160,13 +176,15 @@ function UserMenu() {
                             <ListItemIcon>
                                 <LockOpenOutlinedIcon fontSize='small'/>
                             </ListItemIcon>
-                            <ListItemText>Picked ({[...new Set(lockCollection.picked || [])].length || 0})</ListItemText>
+                            <ListItemText>Picked
+                                ({[...new Set(lockCollection.picked || [])].length || 0})</ListItemText>
                         </MenuItem>
                         <MenuItem onClick={handleClick(`/profile/${user.uid}?name=${safeName}&collection=Wishlist`)}>
                             <ListItemIcon>
                                 <SavingsOutlinedIcon fontSize='small'/>
                             </ListItemIcon>
-                            <ListItemText>Wishlist ({[...new Set(lockCollection.wishlist || [])].length || 0})</ListItemText>
+                            <ListItemText>Wishlist
+                                ({[...new Set(lockCollection.wishlist || [])].length || 0})</ListItemText>
                         </MenuItem>
 
                         <Divider/>

@@ -35,9 +35,13 @@ import FilterContext from '../context/FilterContext.jsx'
 import Box from '@mui/material/Box'
 import entryName from './entryName'
 import Link from '@mui/material/Link'
+import EntryVideos from './EntryVideos.jsx'
+import AppContext from '../app/AppContext.jsx'
+import {Collapse} from '@mui/material'
 
 function EntrySimple({entry, expanded, onExpand}) {
     const navigate = useNavigate()
+    const {modEnabled} = useContext(AppContext)
     const {expandAll} = useContext(DataContext)
     const {addAdvancedFilterGroup, filters} = useContext(FilterContext)
     const {userId} = useParams()
@@ -46,6 +50,7 @@ function EntrySimple({entry, expanded, onExpand}) {
     const ref = useRef(null)
     const {search} = filters
     const lockName = entryName(entry, 'short', {includeVersion: true})
+    const [showVideos, setShowVideos] = useState(false)
 
     const allRelatedIds = [...new Set([...(entry.relatedIds || []), ...upgradeTree(entry.id)])]
         .sort((a, b) => {
@@ -56,6 +61,10 @@ function EntrySimple({entry, expanded, onExpand}) {
     const handleChange = useCallback((_, isExpanded) => {
         onExpand && onExpand(isExpanded ? entry.id : false)
     }, [entry, onExpand])
+
+    const handleShowVideos = useCallback(() => {
+        setShowVideos((curr) => !curr)
+    }, [])
 
     const handleAddFilter = useCallback((event, fieldName, valueToAdd) => {
         event.preventDefault()
@@ -177,19 +186,21 @@ function EntrySimple({entry, expanded, onExpand}) {
                         <Stack direction='row' spacing={1} sx={{width: '100%', flexWrap: 'wrap'}}>
                             <FieldValue
                                 style={{width: '50%', marginLeft: '0px'}} value={
-                                <React.Fragment>
-                                    <Typography style={{
-                                        marginLeft: '0px',
-                                        fontSize: '1rem',
-                                        lineHeight: 1.25,
-                                        fontWeight: 500
-                                    }} role='heading' aria-level={2} aria-label={`${entry.belt} Belt`}>
-                                        {entry.belt}
-                                        <DanPoints belt={entry.belt}/>
-                                    </Typography>
-                                    <BeltIcon value={entry.belt} style={{marginBottom: -10}}/>
-                                </React.Fragment>
-                            }/>
+                                                                               <React.Fragment>
+                                                                                  <Typography style={{
+                                                                                      marginLeft: '0px',
+                                                                                      fontSize: '1rem',
+                                                                                      lineHeight: 1.25,
+                                                                                      fontWeight: 500
+                                                                                  }} role='heading' aria-level={2}
+                                                                                              aria-label={`${entry.belt} Belt`}>
+                                                                                      {entry.belt}
+                                                                                      <DanPoints belt={entry.belt}/>
+                                                                                  </Typography>
+                                                                                  <BeltIcon value={entry.belt}
+                                                                                            style={{marginBottom: -10}}/>
+                                                                              </React.Fragment>
+                                                                          }/>
                             <div style={{marginLeft: 'auto'}}>
                                 <CollectionButton id={entry.id} makeModels={entry.makeModels}/>
                             </div>
@@ -197,36 +208,39 @@ function EntrySimple({entry, expanded, onExpand}) {
                         {!!entry.notes &&
                             <Stack direction='row' spacing={0} sx={{width: '100%', flexWrap: 'wrap'}}>
                                 <FieldValue name='Comments' value={
-                                    <Typography component='div' style={{marginTop: -16}}>
-                                        <ReactMarkdown rehypePlugins={[[rehypeExternalLinks, {target: '_blank'}]]}>
-                                            {entry.notes}
-                                        </ReactMarkdown>
-                                    </Typography>
-                                }/>
+                                                                 <Typography component='div' style={{marginTop: -16}}>
+                                                                    <ReactMarkdown
+                                                                        rehypePlugins={[[rehypeExternalLinks, {target: '_blank'}]]}>
+                                                                        {entry.notes}
+                                                                    </ReactMarkdown>
+                                                                </Typography>
+                                                            }/>
                             </Stack>
                         }
                         {!!entry.features?.length &&
                             <FieldValue name='Features' value={
-                                <Stack direction='row' spacing={0} sx={{flexWrap: 'wrap'}}>
-                                    {entry.features.map((feature, index) =>
-                                        <FilterChip
-                                            key={index}
-                                            value={feature}
-                                            field='features'
-                                        />
-                                    )}
-                                </Stack>
-                            }/>
+                                                            <Stack direction='row' spacing={0} sx={{flexWrap: 'wrap'}}>
+                                                                {entry.features.map((feature, index) =>
+                                                                    <FilterChip
+                                                                        key={index}
+                                                                        value={feature}
+                                                                        field='features'
+                                                                    />
+                                                                )}
+                                                            </Stack>
+                                                        }/>
                         }
                         {allRelatedIds?.length > 1 && !userId &&
                             <FieldValue name={relatedHeader} value={
-                                <React.Fragment>
-                                    {allRelatedIds.map(relatedId =>
-                                        <RelatedEntryButton key={relatedId} id={relatedId} onExpand={onExpand}
-                                                            entryId={entry.id}/>
-                                    )}
-                                </React.Fragment>
-                            }/>
+                                                                 <React.Fragment>
+                                                                     {allRelatedIds.map(relatedId =>
+                                                                         <RelatedEntryButton key={relatedId}
+                                                                                             id={relatedId}
+                                                                                             onExpand={onExpand}
+                                                                                             entryId={entry.id}/>
+                                                                     )}
+                                                                 </React.Fragment>
+                                                             }/>
                         }
                         {!!entry.description &&
                             <div style={{margin: 8}}>
@@ -243,39 +257,59 @@ function EntrySimple({entry, expanded, onExpand}) {
                             <EntryNotes entry={entry}/>
                         </div>
 
+                        {modEnabled &&
+                            <div style={{margin: '6px 0px 20px 6px'}}>
+                                <Link style={{
+                                    fontWeight: 600,
+                                    color: '#2b7eb2',
+                                    textDecoration: 'none',
+                                    cursor: 'pointer'
+                                }} onClick={handleShowVideos && handleShowVideos}>
+                                    {showVideos ? 'Hide' : 'Show'} Scorecard Videos
+                                </Link> <span style={{color: '#888'}}>(Mod Only)</span>
+                                <Collapse in={showVideos} style={{margin: '6px 0px 20px 0px'}}>
+                                    {showVideos &&
+                                        <EntryVideos entry={entry}/>
+                                    }
+                                </Collapse>
+                            </div>
+                        }
+
                         {
                             !!entry.media?.length &&
                             <FieldValue value={
-                                <LockImageGallery entry={entry}/>
-                            }/>
+                                            <LockImageGallery entry={entry}/>
+                                        }/>
                         }
 
                         <div style={{display: 'flex'}}>
                             {
                                 !!entry.links?.length &&
                                 <FieldValue name='Links' value={
-                                    <Stack direction='row' spacing={1} sx={{flexWrap: 'wrap'}}>
-                                        {entry.links.map(({title, url}, index) =>
-                                            <Button
-                                                key={index}
-                                                href={url}
-                                                target='_blank'
-                                                rel='noopener noreferrer'
-                                                color='secondary'
-                                                variant='outlined'
-                                                sx={{textTransform: 'none'}}
-                                                style={{margin: 4}}
-                                            >
-                                                {title}
-                                            </Button>
-                                        )}
-                                    </Stack>
-                                }/>
+                                                             <Stack direction='row' spacing={1} sx={{flexWrap: 'wrap'}}>
+                                                                 {entry.links.map(({title, url}, index) =>
+                                                                     <Button
+                                                                         key={index}
+                                                                         href={url}
+                                                                         target='_blank'
+                                                                         rel='noopener noreferrer'
+                                                                         color='secondary'
+                                                                         variant='outlined'
+                                                                         sx={{textTransform: 'none'}}
+                                                                         style={{margin: 4}}
+                                                                     >
+                                                                         {title}
+                                                                     </Button>
+                                                                 )}
+                                                             </Stack>
+                                                         }/>
                             }
 
                             <FieldValue name='For sale' style={{marginLeft: 15}} value={
-                                <OpenLinkToLockbazaarButton entry={entry} buttonType={'text'}/>
-                            }/>
+                                                                                      <OpenLinkToLockbazaarButton
+                                                                                         entry={entry}
+                                                                                         buttonType={'text'}/>
+                                                                                 }/>
 
 
                         </div>

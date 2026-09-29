@@ -6,11 +6,13 @@ import AuthContext from '../../app/AuthContext.jsx'
 import DBContext from '../../app/DBContext.jsx'
 import LoadingDisplay from '../../misc/LoadingDisplay.jsx'
 import Nav from '../../nav/Nav.jsx'
+import usePageTitle from '../../util/usePageTitle.jsx'
 
 export default function ServerTestRoute() {
     const {authLoaded} = useContext(AuthContext)
     const {dbLoaded} = useContext(DBContext)
-    const title = !authLoaded || !dbLoaded ? 'Loading...' : 'User Info'
+    usePageTitle('Server Status')
+    const title = !authLoaded || !dbLoaded ? 'Loading...' : 'Server Status'
 
     return (
         <FilterProvider filterFields={[]}>

@@ -15,7 +15,7 @@ import LockingMechanismsByBelt from './LockingMechanismsByBelt.jsx'
 import PlatformBeltCountsChart from './PlatformBeltCountsChart.jsx'
 import PlatformBeltCountsTable from './PlatformBeltCountsTable.jsx'
 
-function StatsMainPage({data, loading, error}) {
+function StatsMainPage({data}) {
 
     const {lockCollection} = useContext(DBContext)
 

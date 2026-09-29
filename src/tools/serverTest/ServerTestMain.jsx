@@ -1,5 +1,4 @@
 import React, {useContext, useMemo} from 'react'
-import DBContext from '../../app/DBContext.jsx'
 import AuthContext from '../../app/AuthContext.jsx'
 import ProfileContext from '../../app/ProfileContext.jsx'
 import {LocalizationProvider} from '@mui/x-date-pickers'
@@ -9,7 +8,6 @@ import dayjs from 'dayjs'
 import Footer from '../../nav/Footer.jsx'
 import LoadingDisplay from '../../misc/LoadingDisplay.jsx'
 import useGetRequest from '../../util/useGetRequest.jsx'
-import AppContext from '../../app/AppContext.jsx'
 import LoadingDisplaySmall from '../../misc/LoadingDisplaySmall.jsx'
 import IconButton from '@mui/material/IconButton'
 import CheckCircleIcon from '@mui/icons-material/CheckCircle'
@@ -26,8 +24,6 @@ const statusIndicators = {
 
 export default function ServerTestMain() {
     const {user, userClaims, getUserClaims} = useContext(AuthContext)
-    const {adminRole} = useContext(DBContext)
-    const {adminEnabled} = useContext(AppContext)
 
     const {userId, data, loading, error, isFullProfile} = useContext(ProfileContext)
     const profile = useMemo(() => data ? data.profile : {}, [data])
