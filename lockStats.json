@@ -543,7 +543,7 @@
         "coverage": "94%"
       }
     ],
-    "uniqueImages": 4821,
+    "uniqueImages": 4820,
     "contributors": 321,
     "topPhotographers": [
       {
@@ -552,7 +552,7 @@
       },
       {
         "contributor": "mgsecure",
-        "images": 333
+        "images": 332
       },
       {
         "contributor": "Reinder Stegen",
@@ -22956,6 +22956,6 @@
   },
   "metadata": {
     "source": "import-data",
-    "updatedDateTime": "2026-09-29 19:16"
+    "updatedDateTime": "2026-09-29 22:03"
   }
 }
