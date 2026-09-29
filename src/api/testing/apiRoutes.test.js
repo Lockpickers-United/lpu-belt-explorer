@@ -117,10 +117,11 @@ describe('lock videos API', () => {
         expect(res.body.metadata.source).toBe('generated-summary')
         expect(new Date(res.body.metadata.fetchedDateTime).toISOString())
             .toBe(res.body.metadata.fetchedDateTime)
-        //expect(res.body.data).toEqual({
-        //    lockId,
-        //    videos: lockVideos.lockVideos[lockId]
-        //})
+        expect(res.body.data).toEqual({
+            lockId,
+            videos: [...lockVideos.lockVideos[lockId]]
+                .sort((a, b) => b.date.localeCompare(a.date))
+        })
     })
 
     it('returns 404 when a lock has no videos', async () => {
