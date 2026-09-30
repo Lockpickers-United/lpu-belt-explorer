@@ -580,9 +580,9 @@
     ],
     "name": "ASSA Twin Exclusive, Twin 6000",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 131,
+    "views": 132,
     "lastUpdated": "2025-03-19T01:20:51.391Z",
-    "popularityIndex": 131,
+    "popularityIndex": 132,
     "scorecardCount": 60
   },
   "55511995": {
@@ -5138,9 +5138,9 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53955594897_4a6354e9d3_o.jpg"
       }
     ],
-    "views": 264,
+    "views": 265,
     "lastUpdated": "2025-03-19T01:20:51.356Z",
-    "popularityIndex": 264,
+    "popularityIndex": 265,
     "scorecardCount": 24
   },
   "d4299b24": {
@@ -10872,12 +10872,12 @@
     ],
     "name": "American Lock 1100 / A1100",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 1440,
+    "views": 1441,
     "lastUpdated": "2025-03-19T01:20:51.360Z",
     "relatedIds": [
       "1ae40987"
     ],
-    "popularityIndex": 1440,
+    "popularityIndex": 1441,
     "scorecardCount": 276
   },
   "b16ffe3f": {
@@ -15434,9 +15434,9 @@
     ],
     "name": "Schlage Everest",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 146,
+    "views": 147,
     "lastUpdated": "2025-03-19T15:44:57.286Z",
-    "popularityIndex": 146,
+    "popularityIndex": 147,
     "scorecardCount": 37
   },
   "44bdfa06": {
@@ -34408,7 +34408,7 @@
       "Rotating fingerpins"
     ],
     "popularityIndex": 134,
-    "scorecardCount": 45
+    "scorecardCount": 46
   },
   "626da374": {
     "id": "626da374",
@@ -42213,7 +42213,7 @@
     "views": 39,
     "lastUpdated": "2025-03-18T23:29:31.283Z",
     "popularityIndex": 39,
-    "scorecardCount": 17
+    "scorecardCount": 18
   },
   "7ea33803": {
     "id": "7ea33803",
@@ -46276,12 +46276,12 @@
       "Pin key",
       "Double bitted"
     ],
-    "views": 6,
+    "views": 7,
     "lastUpdated": "2025-03-19T01:20:51.395Z",
     "relatedIds": [
       "f29a212f"
     ],
-    "popularityIndex": 6,
+    "popularityIndex": 7,
     "scorecardCount": 3
   },
   "f29a212f": {
@@ -48693,7 +48693,7 @@
     "name": "An Jia Bao padlock / HPP padlock / Ming Gao padlock",
     "dateAdded": "2023-03-02T19:05:25.000Z",
     "lastUpdated": "2025-03-19T15:44:57.282Z",
-    "views": 99,
+    "views": 100,
     "version": "5-6 disc generic disc detainer padlock with same style keybow",
     "lockingMechanisms": [
       "Disc detainer"
@@ -48736,7 +48736,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53168633320_2f2f5fc32f_o.jpg"
       }
     ],
-    "popularityIndex": 99,
+    "popularityIndex": 100,
     "scorecardCount": 17
   },
   "fd93632b": {
@@ -50977,7 +50977,7 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "views": 14,
+    "views": 15,
     "lastUpdated": "2025-03-18T23:29:31.286Z",
     "media": [
       {
@@ -51009,7 +51009,7 @@
       }
     ],
     "version": "Non-SFIC",
-    "popularityIndex": 14,
+    "popularityIndex": 15,
     "scorecardCount": 6
   },
   "e6872b30": {
@@ -54188,11 +54188,15 @@
     "makeModels": [
       {
         "make": "Bramah",
-        "model": "bp17"
+        "model": "BP17"
+      },
+      {
+        "make": "Bramah",
+        "model": "XX17 series"
       }
     ],
     "lastUpdated": "2025-03-19T15:44:57.307Z",
-    "name": "Bramah bp17",
+    "name": "Bramah BP17, XX17 series",
     "dateAdded": "2023-08-03T13:21:21.000Z",
     "views": 8,
     "media": [
