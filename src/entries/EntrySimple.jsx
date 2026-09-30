@@ -251,7 +251,7 @@ function EntrySimple({entry, expanded, onExpand}) {
                             <EntryNotes entry={entry}/>
                         </div>
 
-                        {accessInfo.level >= 50 &&
+                        {accessInfo.enabledLevel >= 50 &&
                             <EntryActionBar entry={entry}/>
                         }
 

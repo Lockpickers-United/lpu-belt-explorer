@@ -1,6 +1,5 @@
 import React, {useCallback, useMemo, useContext} from 'react'
 import {useLocalStorage} from 'usehooks-ts'
-import DBContext from './DBContext'
 import dayjs from 'dayjs'
 import AuthContext from './AuthContext.jsx'
 import {useTheme} from '@mui/material'
@@ -10,98 +9,112 @@ import BiotechIcon from '@mui/icons-material/Biotech'
 
 const AccessContext = React.createContext({})
 
+const roleLevels = {
+    admin: 100,
+    lpuMod: 90,
+    qaUser: 20
+}
+
 export function AccessProvider({children}) {
     const theme = useTheme()
 
-    const {authLoaded, isLoggedIn, user, userClaims} = useContext(AuthContext)
-    const {adminRole, qaUserRole} = useContext(DBContext)
-    const [adminEnabled, setAdminEnabled] = useLocalStorage('adminEnabled', adminRole && !!import.meta.env.DEV)
+    const {userClaims = []} = useContext(AuthContext)
 
-    const isLpuMod = authLoaded && isLoggedIn && user && (['lpuMod'].some(claim => userClaims.includes(claim)))
-    const [modFlag, setModFlag] = useLocalStorage('modEnabled', '')
-    const modEnabled = isLpuMod && dayjs().day() === dayjs(modFlag).day()
+    const roles = userClaims.reduce((acc, claim) => {
+        acc[claim] = true
+        return acc
+    }, {})
 
-    const [qaUserEnabled, setQaUserEnabled] = useLocalStorage('qaUserEnabled', qaUserRole && !!import.meta.env.DEV)
-    const [beta, setBeta] = useLocalStorage('beta2024', false)
+    const [adminEnabled, setAdminEnabled] = useLocalStorage('adminEnabled', roles.admin)
 
-    const roleColors = {
-        admin: theme.palette.success.main,
-        mod: theme.palette.warning.main,
-        qa: theme.palette.info.main
-    }
+    const [lpuModFlag, setLpuModFlag] = useLocalStorage('lpuModEnabled', '')
+    const lpuModEnabled = roles.lpuMod && dayjs().day() === dayjs(lpuModFlag).day()
+
+    const [qaUserFlag, setQaUserFlag] = useLocalStorage('qaUserEnabled', '')
+    const qaUserEnabled = roles.qaUser && dayjs().day() === dayjs(qaUserFlag).day()
+
+    const enabledRoles = useMemo(() => {
+        return {
+            admin: adminEnabled,
+            lpuMod: lpuModEnabled,
+            qaUser: qaUserEnabled
+        }
+    }, [adminEnabled, lpuModEnabled, qaUserEnabled])
 
     const accessInfo = useMemo(() => {
-        if (adminEnabled) {
-            return {
-                level: 100,
-                color: roleColors.admin,
-                icon: <AdminPanelSettingsIcon style={{color: roleColors.admin, marginLeft: 6}}/>
+        const enabledRoleLevels = Object.entries(roleLevels).reduce((acc, [role, level]) => {
+            if (enabledRoles[role]) {
+                acc[role] = level
+            }
+            return acc
+        }, {})
+        const maxLevel = Math.max(...Object.values(roleLevels)) || 0
+        const maxEnabledLevel = Math.max(...Object.values(enabledRoleLevels)) || 0
+        const base = {
+            roles,
+            enabledRoles,
+            level: maxLevel,
+            enabledLevel: maxEnabledLevel,
+        }
 
-            }
-        } else if (modEnabled) {
+        const palette = theme.palette
+        const roleColors = {
+            admin: palette.success.main,
+            lpuMod: palette.warning.main,
+            qaUser: palette.info.main
+        }
+
+        if (enabledRoles.admin) {
             return {
-                level: 90,
-                color: roleColors.mod,
-                icon: <SportsMartialArtsIcon style={{color: roleColors.mod, marginLeft: 6}}/>
+                ...base,
+                color: adminEnabled ? roleColors.admin : 'inherit',
+                icon: <AdminPanelSettingsIcon style={{color: roleColors.admin, marginLeft: 6}}/>
             }
-        } else if (qaUserEnabled) {
+        } else if (enabledRoles.lpuMod) {
             return {
-                level: 20,
-                color: roleColors.qa,
-                icon: <BiotechIcon style={{color: roleColors.qa, marginLeft: 6}}/>
+                ...base,
+                color: enabledRoles.lpuMod ? roleColors.lpuMod : 'inherit',
+                icon: <SportsMartialArtsIcon style={{color: roleColors.lpuMod, marginLeft: 6}}/>
+            }
+        } else if (enabledRoles.qa) {
+            return {
+                ...base,
+                color: qaUserEnabled ? roleColors.qaUser : 'inherit',
+                icon: <BiotechIcon style={{color: roleColors.qaUser, marginLeft: 6}}/>
             }
         }
         return {
-            level: 0,
+            ...base,
             color: 'inherit',
             icon: <></>
         }
-    }, [adminEnabled, modEnabled, qaUserEnabled, roleColors.admin, roleColors.mod, roleColors.qa])
+    }, [adminEnabled, enabledRoles, qaUserEnabled, roles, theme.palette])
 
     const _avatarBorderColor = adminEnabled
         ? '#65b642'
-        : modEnabled
+        : lpuModEnabled
             ? '#e5a20a'
             : qaUserEnabled
                 ? '#5397e0'
                 : 'inherit'
 
-
-    const handleSetBeta = useCallback(value => {
-        setBeta(value)
-    }, [setBeta])
-
-    const handleSetAdminEnabled = useCallback(value => {
-        if (adminRole) setAdminEnabled(value)
-        else setAdminEnabled(false)
-    }, [setAdminEnabled, adminRole])
-
-    const toggleModEnabled = useCallback(() => {
-        if (isLpuMod && !modEnabled) {
-            setModFlag(dayjs().format())
-        } else setModFlag('')
-    }, [isLpuMod, modEnabled, setModFlag])
-
-    const handleSetQaUserEnabled = useCallback(value => {
-        if (qaUserRole) {
-            setQaUserEnabled(value)
-        } else {
-            setQaUserEnabled(false)
+    const toggleRoleEnabled = useCallback((role) => {
+        if (role === 'admin') {
+            if (roles.admin) setAdminEnabled(current => !current)
+            else setAdminEnabled(false)
+        } else if (role === 'mod') {
+            if (roles.lpuMod && !lpuModEnabled) setLpuModFlag(dayjs().format())
+            else setLpuModFlag('')
+        } else if (role === 'qa') {
+            if (roles.qaUser && !qaUserEnabled) setQaUserFlag(dayjs().format())
+            else setQaUserFlag('')
         }
-    }, [qaUserRole, setQaUserEnabled])
+    }, [roles.admin, roles.lpuMod, roles.qaUser, setAdminEnabled, lpuModEnabled, setLpuModFlag, qaUserEnabled, setQaUserFlag])
 
     const value = useMemo(() => ({
         accessInfo,
-        beta,
-        setBeta: handleSetBeta,
-        adminEnabled,
-        setAdminEnabled: handleSetAdminEnabled,
-        isLpuMod,
-        modEnabled,
-        toggleModEnabled,
-        qaUserEnabled,
-        setQaUserEnabled: handleSetQaUserEnabled
-    }), [accessInfo, beta, handleSetBeta, adminEnabled, handleSetAdminEnabled, isLpuMod, modEnabled, toggleModEnabled, qaUserEnabled, handleSetQaUserEnabled])
+        toggleRoleEnabled
+    }), [accessInfo, toggleRoleEnabled])
 
     return (
         <AccessContext.Provider value={value}>

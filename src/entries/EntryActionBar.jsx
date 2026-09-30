@@ -23,9 +23,11 @@ export default function EntryActionBar({entry}) {
         }}>
             <div style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between'}}>
                 {accessInfo.icon}
-                <IconButton onClick={handleShowVideos} style={{marginLeft: '10px'}}>
-                    <SmartDisplayIcon style={{color: showVideos ? '#fff' : '#ccc'}}/>
-                </IconButton>
+                {accessInfo.level >= 80 &&
+                    <IconButton onClick={handleShowVideos} style={{marginLeft: '10px'}}>
+                        <SmartDisplayIcon style={{color: showVideos ? '#fff' : '#ccc'}}/>
+                    </IconButton>
+                }
             </div>
             <Collapse in={showVideos}>
                 {showVideos &&

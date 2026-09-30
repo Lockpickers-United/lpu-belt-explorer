@@ -22,7 +22,6 @@ import Tooltip from '@mui/material/Tooltip'
 import SignInButton from '../auth/SignInButton'
 import AuthContext from '../app/AuthContext'
 import DBContext from '../app/DBContext'
-import AppContext from '../app/AppContext'
 import {useNavigate} from 'react-router-dom'
 import SportsMartialArtsIcon from '@mui/icons-material/SportsMartialArts'
 import AccessContext from '../app/AccessContext.jsx'
@@ -30,21 +29,16 @@ import AccessContext from '../app/AccessContext.jsx'
 function UserMenu() {
     const navigate = useNavigate()
     const {isLoggedIn, user, logout} = useContext(AuthContext)
-    const {accessInfo = {}} = useContext(AccessContext)
-    const {adminRole, lockCollection, qaUserRole} = useContext(DBContext)
-    const {
-        adminEnabled, setAdminEnabled,
-        qaUserEnabled, setQaUserEnabled,
-        isLpuMod, modEnabled, toggleModEnabled
-    } = useContext(AppContext)
+    const {accessInfo = {}, toggleRoleEnabled} = useContext(AccessContext)
+    const {lockCollection} = useContext(DBContext)
     const [anchorEl, setAnchorEl] = useState(null)
     const open = Boolean(anchorEl)
     const handleOpen = useCallback(event => setAnchorEl(event.currentTarget), [])
     const handleClose = useCallback(() => setAnchorEl(null), [])
+
     const safeName = lockCollection.displayName && !lockCollection.privacyAnonymous
         ? lockCollection.displayName.replace(/\s/g, '_')
         : 'anonymous'
-
     const displayName = lockCollection.displayName
         ? lockCollection.displayName
         : 'Your Account'
@@ -53,14 +47,6 @@ function UserMenu() {
         handleClose()
         navigate(url)
     }, [handleClose, navigate])
-
-    const handleToggleAdmin = useCallback(() => {
-        setAdminEnabled(current => !current)
-    }, [setAdminEnabled])
-
-    const handleToggleQaUser = useCallback(() => {
-        setQaUserEnabled(current => !current)
-    }, [setQaUserEnabled])
 
     const handleLogout = useCallback(() => {
         handleClose()
@@ -110,35 +96,35 @@ function UserMenu() {
                             </ListItemIcon>
                             <ListItemText>Edit Profile</ListItemText>
                         </MenuItem>
-                        {adminRole &&
-                            <MenuItem onClick={handleToggleAdmin}>
+                        {accessInfo.roles.admin &&
+                            <MenuItem onClick={() => toggleRoleEnabled('admin')}>
                                 <ListItemIcon>
-                                    <AdminPanelSettingsIcon color={adminEnabled ? 'success' : 'default'}/>
+                                    <AdminPanelSettingsIcon color={accessInfo.enabledRoles.admin ? 'success' : 'default'}/>
                                 </ListItemIcon>
-                                {adminEnabled ?
+                                {accessInfo.enabledRoles.admin ?
                                     <ListItemText>Disable Admin</ListItemText>
                                     :
                                     <ListItemText>Enable Admin</ListItemText>
                                 }
                             </MenuItem>
                         }
-                        {isLpuMod &&
-                            <MenuItem onClick={toggleModEnabled}>
+                        {accessInfo.roles.lpuMod &&
+                            <MenuItem onClick={() => toggleRoleEnabled('mod')}>
                                 <ListItemIcon>
-                                    <SportsMartialArtsIcon color={modEnabled ? 'warning' : 'default'}/>
+                                    <SportsMartialArtsIcon color={accessInfo.enabledRoles.lpuMod ? 'warning' : 'default'}/>
                                 </ListItemIcon>
-                                {modEnabled
+                                {accessInfo.enabledRoles.lpuMod
                                     ? <ListItemText>Disable Mod Mode</ListItemText>
                                     : <ListItemText>Enable Mod Mode</ListItemText>
                                 }
                             </MenuItem>
                         }
-                        {qaUserRole &&
-                            <MenuItem onClick={handleToggleQaUser}>
+                        {accessInfo.roles.qaUser &&
+                            <MenuItem onClick={() => toggleRoleEnabled('qaUser')}>
                                 <ListItemIcon>
-                                    <BiotechIcon color={qaUserEnabled ? 'info' : 'default'}/>
+                                    <BiotechIcon color={accessInfo.enabledRoles.qaUser ? 'info' : 'default'}/>
                                 </ListItemIcon>
-                                {qaUserEnabled
+                                {accessInfo.qaUser
                                     ? <ListItemText>Disable QA Role</ListItemText>
                                     : <ListItemText>Enable QA Role</ListItemText>
                                 }
