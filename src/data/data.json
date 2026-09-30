@@ -49496,11 +49496,7 @@
     "makeModels": [
       {
         "make": "Bramah",
-        "model": "BP17"
-      },
-      {
-        "make": "Bramah",
-        "model": "XX17 series"
+        "model": "Modern 7 Wafer"
       }
     ],
     "lockingMechanisms": [
@@ -49548,7 +49544,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53111122453_d87f1a716d_o.jpg"
       }
     ],
-    "lastUpdated": "2026-09-30T04:14:32.197Z"
+    "lastUpdated": "2026-09-30T04:39:03.584Z"
   },
   {
     "id": "ab1cdc56",

@@ -54188,15 +54188,11 @@
     "makeModels": [
       {
         "make": "Bramah",
-        "model": "BP17"
-      },
-      {
-        "make": "Bramah",
-        "model": "XX17 series"
+        "model": "Modern 7 Wafer"
       }
     ],
     "lastUpdated": "2025-03-19T15:44:57.307Z",
-    "name": "Bramah BP17, XX17 series",
+    "name": "Bramah Modern 7 Wafer",
     "dateAdded": "2023-08-03T13:21:21.000Z",
     "views": 8,
     "media": [
