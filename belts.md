@@ -1064,7 +1064,7 @@ Ultra-high security is your middle name. Your lock collection is worth more than
 - [Australian Lock Co. BiLock](https://lpubelts.com/#/locks?id=5b60be8a) (12 sliders, 3-4 mastered)
 - [Banham m2002](https://lpubelts.com/#/locks?id=9eb3e9c4)
 - [BKS Janus](https://lpubelts.com/#/locks?id=3af2407a) (&lt; 13 pins)
-- [Bramah BP17 / Bramah XX17 series](https://lpubelts.com/#/locks?id=c640fe2c)
+- [Bramah Modern 7 Wafer](https://lpubelts.com/#/locks?id=c640fe2c)
 - [Chubb 110 (3g110) / Union 110 (3g110)](https://lpubelts.com/#/locks?id=ab1cdc56) (5 lever)
 - [CISM Atlas](https://lpubelts.com/#/locks?id=9bb97454)
 - [Clavis T-20](https://lpubelts.com/#/locks?id=add0b067) (15-19 pins)
