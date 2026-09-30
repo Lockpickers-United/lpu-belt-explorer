@@ -11,11 +11,14 @@ export function AppProvider({children}) {
     const {adminRole, qaUserRole} = useContext(DBContext)
     const [beta, setBeta] = useLocalStorage('beta2024', false)
     const [adminEnabled, setAdminEnabled] = useLocalStorage('adminEnabled', adminRole && !!import.meta.env.DEV)
-    const [qaUserEnabled, setQaUserEnabled] = useLocalStorage('qaUserEnabled', qaUserRole && !!import.meta.env.DEV)
 
     const isLpuMod = authLoaded && isLoggedIn && user && (['lpuMod'].some(claim => userClaims.includes(claim)))
     const [modFlag, setModFlag] = useLocalStorage('modEnabled', '')
     const modEnabled = isLpuMod && dayjs().day() === dayjs(modFlag).day()
+
+    const privilegeEnabled = adminEnabled || modEnabled
+
+    const [qaUserEnabled, setQaUserEnabled] = useLocalStorage('qaUserEnabled', qaUserRole && !!import.meta.env.DEV)
 
     const [compact, setCompact] = useState(false)
 
@@ -99,13 +102,14 @@ export function AppProvider({children}) {
         isLpuMod,
         modEnabled,
         toggleModEnabled,
+        privilegeEnabled,
         qaUserEnabled,
         setQaUserEnabled: handleSetQaUserEnabled,
         version: initial,
         updateRequired,
         updateAvailable,
         compact, setCompact,
-    }), [beta, handleSetBeta, adminEnabled, handleSetAdminEnabled, isLpuMod, modEnabled, toggleModEnabled, qaUserEnabled, handleSetQaUserEnabled, initial, updateRequired, updateAvailable, compact])
+    }), [beta, handleSetBeta, adminEnabled, handleSetAdminEnabled, isLpuMod, modEnabled, toggleModEnabled, privilegeEnabled, qaUserEnabled, handleSetQaUserEnabled, initial, updateRequired, updateAvailable, compact])
 
     return (
         <AppContext.Provider value={value}>

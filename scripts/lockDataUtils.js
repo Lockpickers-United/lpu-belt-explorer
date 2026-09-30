@@ -2,7 +2,7 @@ import defaultEntries from '../src/data/data.json' with {type:'json'}
 
 console.log(defaultEntries[0])
 
-const photoIds = [
+const _photoIds = [
     '55559254506',
     '52687733684',
     '52687787719',

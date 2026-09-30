@@ -35,13 +35,12 @@ import FilterContext from '../context/FilterContext.jsx'
 import Box from '@mui/material/Box'
 import entryName from './entryName'
 import Link from '@mui/material/Link'
-import EntryVideos from './EntryVideos.jsx'
-import AppContext from '../app/AppContext.jsx'
-import {Collapse} from '@mui/material'
+import EntryActionBar from './EntryActionBar.jsx'
+import AccessContext from '../app/AccessContext.jsx'
 
 function EntrySimple({entry, expanded, onExpand}) {
     const navigate = useNavigate()
-    const {modEnabled} = useContext(AppContext)
+    const {accessInfo = {}} = useContext(AccessContext)
     const {expandAll} = useContext(DataContext)
     const {addAdvancedFilterGroup, filters} = useContext(FilterContext)
     const {userId} = useParams()
@@ -50,7 +49,6 @@ function EntrySimple({entry, expanded, onExpand}) {
     const ref = useRef(null)
     const {search} = filters
     const lockName = entryName(entry, 'short', {includeVersion: true})
-    const [showVideos, setShowVideos] = useState(false)
 
     const allRelatedIds = [...new Set([...(entry.relatedIds || []), ...upgradeTree(entry.id)])]
         .sort((a, b) => {
@@ -61,10 +59,6 @@ function EntrySimple({entry, expanded, onExpand}) {
     const handleChange = useCallback((_, isExpanded) => {
         onExpand && onExpand(isExpanded ? entry.id : false)
     }, [entry, onExpand])
-
-    const handleShowVideos = useCallback(() => {
-        setShowVideos((curr) => !curr)
-    }, [])
 
     const handleAddFilter = useCallback((event, fieldName, valueToAdd) => {
         event.preventDefault()
@@ -257,22 +251,8 @@ function EntrySimple({entry, expanded, onExpand}) {
                             <EntryNotes entry={entry}/>
                         </div>
 
-                        {modEnabled &&
-                            <div style={{margin: '6px 0px 20px 6px'}}>
-                                <Link style={{
-                                    fontWeight: 600,
-                                    color: '#2b7eb2',
-                                    textDecoration: 'none',
-                                    cursor: 'pointer'
-                                }} onClick={handleShowVideos && handleShowVideos}>
-                                    {showVideos ? 'Hide' : 'Show'} Scorecard Videos
-                                </Link> <span style={{color: '#888'}}>(Mod Only)</span>
-                                <Collapse in={showVideos} style={{margin: '6px 0px 20px 0px'}}>
-                                    {showVideos &&
-                                        <EntryVideos entry={entry}/>
-                                    }
-                                </Collapse>
-                            </div>
+                        {accessInfo.level >= 50 &&
+                            <EntryActionBar entry={entry}/>
                         }
 
                         {

@@ -25,10 +25,12 @@ import DBContext from '../app/DBContext'
 import AppContext from '../app/AppContext'
 import {useNavigate} from 'react-router-dom'
 import SportsMartialArtsIcon from '@mui/icons-material/SportsMartialArts'
+import AccessContext from '../app/AccessContext.jsx'
 
 function UserMenu() {
     const navigate = useNavigate()
     const {isLoggedIn, user, logout} = useContext(AuthContext)
+    const {accessInfo = {}} = useContext(AccessContext)
     const {adminRole, lockCollection, qaUserRole} = useContext(DBContext)
     const {
         adminEnabled, setAdminEnabled,
@@ -68,7 +70,8 @@ function UserMenu() {
     return (
         <React.Fragment>
             <Tooltip title={isLoggedIn ? displayName : 'Account'} arrow disableFocusListener>
-                <IconButton color='inherit' onClick={handleOpen} edge='end'>
+                <IconButton color='info' onClick={handleOpen} edge='end'
+                            sx={{width: 36, height: 36, margin: '4px', backgroundColor: accessInfo.color}}>
                     {
                         isLoggedIn
                             ? <Avatar

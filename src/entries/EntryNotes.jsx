@@ -140,9 +140,9 @@ export default function EntryNotes({entry}) {
                 ? <div style={{fontWeight: 700, marginTop: 15}}>
                     <div style={{display: 'flex'}}>
                         <span style={{}}>My private notes &nbsp;</span>
-                        <Link style={{fontWeight: 400, color: '#2bb259'}} onClick={handleNotesOpen}>edit</Link>
+                        <Link style={{fontWeight: 400, color: '#2e9457'}} onClick={handleNotesOpen}>edit</Link>
                         &nbsp;•&nbsp;
-                        <Link style={{fontWeight: 400, color: '#2bb259'}} onClick={removeNotes}>remove</Link>
+                        <Link style={{fontWeight: 400, color: '#2e9457'}} onClick={removeNotes}>remove</Link>
                     </div>
                     <div style={{
                         fontSize: contentsFontSize,
@@ -182,7 +182,7 @@ export default function EntryNotes({entry}) {
                 </div>
 
                 : <div style={{fontWeight: 700, marginTop: 15}}>
-                    <Link style={{fontWeight: 600, color: '#2bb259', textDecoration: 'none', cursor: 'pointer'}}
+                    <Link style={{fontWeight: 600, color: '#afafaf', textDecoration: 'none', cursor: 'pointer'}}
                           onClick={handleNotesOpen}>
                         Add your own private notes
                     </Link>
