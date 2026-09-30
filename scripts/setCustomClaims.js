@@ -29,13 +29,14 @@ const newClaims = {lpuMod: true}
 const removeClaims = []
 
 const users = [
-    {uid: 'vOi8rfTRluYlcVizuVvX9PWFJdn2', name: 'Dynamic'},
+    {uid: 'f2yySWbxUBXF8k3HgorYhrm76gx2', name: 'Rein'},
 ]
 
 const _allUsers = [
     {uid: 'GGplAdctTfVDLVvYsfIADJmfp8f2', name: 'mgsecure'},
     {uid: '4qqxB0nW8dczUws5XuAyhEkgZEj2', name: 'mgtest'},
     {uid: 'WMSvvuutyShfvBBYB3PmDe4fmeS2', name: 'NiXXeD'},
+    {uid: 'Mwbvdkq1QtWu2zLwEaj3imULSry1', name: 'decoder'},
     {uid: 'BJyWOIOsqmRDkgHZBqIEGbGnVSA3', name: 'tonysansan'},
     {uid: 'mZyfQIARjCP1uJJJc7ioMAALV9v2', name: 'peace'},
     {uid: 'XoUDXU5McjTuVnPA1xfmzytcKuy2', name: 'Red Wanderer'},
@@ -43,6 +44,7 @@ const _allUsers = [
     {uid: 'Hqww5ljRCfQjMppspbvFZsZ5xQI2', name: 'CorrectJeans'},
     {uid: 's5iyDrszY4Nc3zR7rILCQLO7I8v2', name: 'Norlin'},
     {uid: 'vOi8rfTRluYlcVizuVvX9PWFJdn2', name: 'Dynamic'},
+    {uid: 'XKPQaAR525XV2JsqGn12eEKwxD62', name: 'dnd'},
 ]
 
 async function updateCustomClaimsForUsers() {

@@ -29,11 +29,11 @@ export function AppProvider({children}) {
     }, [setAdminEnabled, adminRole])
 
     const toggleModEnabled = useCallback(() => {
-        if (isLpuMod && modFlag === '') {
+        if (isLpuMod && !modEnabled) {
             setModFlag(dayjs().format())
         }
         else setModFlag('')
-    }, [isLpuMod, modFlag, setModFlag])
+    }, [isLpuMod, modEnabled, setModFlag])
 
     const handleSetQaUserEnabled = useCallback(value => {
         if (qaUserRole) {
