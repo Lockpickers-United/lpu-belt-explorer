@@ -19,11 +19,12 @@ Read this reference for provider, route, context, authentication, role, or profi
 `src/app/App.jsx` establishes this provider dependency order:
 
 1. `AuthProvider`
-2. `DBProvider`
-3. `APIProvider`
-4. `AppProvider`
-5. `SystemMessageProvider`
-6. `ScoringProvider`
+2. `AccessProvider`
+3. `DBProvider`
+4. `APIProvider`
+5. `AppProvider`
+6. `SystemMessageProvider`
+7. `ScoringProvider`
 
 `ProfileProvider` is route-scoped where profile data is needed. Preserve provider ordering when adding dependencies, and update test render helpers/mocks when a context contract changes.
 
@@ -36,8 +37,9 @@ Before adding a fetch, subscription, or context, identify the existing owner. Sh
 Authorization and optional UI modes are separate:
 
 - `AuthContext.userClaims` is the source for authenticated roles such as `admin`, `lpuAdmin`, and `qaUser`.
+- `AccessContext` derives claimed and user-enabled UI roles from the authenticated user. Consumers use `useAccess()` and distinguish `level` from `enabledLevel`.
 - `DBContext.adminRole` and `DBContext.qaUserRole` derive role status from authentication and claims.
-- `AppContext.adminEnabled` and `AppContext.qaUserEnabled` are user-controlled UI/development flags. They must never grant data access or permit writes.
+- `AccessContext.accessInfo.enabledRoles` contains user-controlled UI/development modes. These modes must never grant data access or permit writes.
 
 Security must also be enforced by deployed rules or trusted server code; client checks are not authorization boundaries.
 

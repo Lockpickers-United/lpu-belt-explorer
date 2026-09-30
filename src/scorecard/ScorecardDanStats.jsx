@@ -7,12 +7,13 @@ import {enqueueSnackbar} from 'notistack'
 import AuthContext from '../app/AuthContext.jsx'
 import {getAwardEntryFromId} from '../entries/entryutils'
 import Dans from '../data/dans.json'
-import AppContext from '../app/AppContext.jsx'
+import {useAccess} from '../app/AccessContext.jsx'
 
 export default function ScorecardDanStats({profile, owner}) {
     const {userId} = useParams()
     const {user} = useContext(AuthContext)
-    const {adminEnabled} = useContext(AppContext)
+    const {accessInfo} = useAccess()
+    const adminEnabled = accessInfo.enabledRoles.admin
     const safeName = profile?.displayName?.replace(/\s/g, '_')
     const navigate = useNavigate()
     const openUpgrades = useCallback(() => {

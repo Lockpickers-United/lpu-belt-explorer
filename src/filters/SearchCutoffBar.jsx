@@ -7,12 +7,13 @@ import {InputLabel} from '@mui/material'
 import FormControl from '@mui/material/FormControl'
 import Link from '@mui/material/Link'
 import entryName from '../entries/entryName'
-import AppContext from '../app/AppContext.jsx'
+import {useAccess} from '../app/AccessContext.jsx'
 
 export default function SearchCutoffBar() {
 
     const {searchCutoff, setSearchCutoff, searchVariant, setSearchVariant, visibleBeltEntries = []} = useContext(DataContext)
-    const {adminEnabled, qaUserEnabled} = useContext(AppContext)
+    const {accessInfo} = useAccess()
+    const {admin: adminEnabled, qaUser: qaUserEnabled} = accessInfo.enabledRoles
 
     useEffect(() => {
         // Avoid infinite updates: compare by fields, not by object identity

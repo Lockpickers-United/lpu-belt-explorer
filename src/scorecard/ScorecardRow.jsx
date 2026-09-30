@@ -24,7 +24,7 @@ import {useNavigate} from 'react-router-dom'
 import Tooltip from '@mui/material/Tooltip'
 import IconButton from '@mui/material/IconButton'
 import PrintIcon from '@mui/icons-material/Print'
-import AppContext from '../app/AppContext.jsx'
+import {useAccess} from '../app/AccessContext.jsx'
 import {blackBeltAwardId} from '../entries/entryutils'
 import DataContext from '../context/DataContext.jsx'
 
@@ -41,7 +41,8 @@ function ScorecardRow({owner, activity, expanded, onExpand, merged}) {
         getAwardEntryFromId,
         getDeletedEntryFromId
     } = useContext(ScorecardDataContext)
-    const {adminEnabled} = useContext(AppContext)
+    const {accessInfo} = useAccess()
+    const adminEnabled = accessInfo.enabledRoles.admin
     const {blackBeltScorecard} = useContext(DataContext)
 
     const entry = getEntryFromId(activity.matchId)

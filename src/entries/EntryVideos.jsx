@@ -5,19 +5,19 @@ import {Table} from '@mui/material'
 import Link from '@mui/material/Link'
 import openInNewTab from '../util/openInNewTab'
 import AuthContext from '../app/AuthContext.jsx'
-import AccessContext from '../app/AccessContext.jsx'
+import {useAccess} from '../app/AccessContext.jsx'
 
 // https://api-dev.lpubelts.com/api/v1/locks/3ac43ea8/videos
 
 export default function EntryVideos({entry}) {
     const {user} = useContext(AuthContext)
-    const {accessInfo = {}} = useContext(AccessContext)
+    const {accessInfo} = useAccess()
 
     const url = `${apiServerUrl}/api/v1/locks/${entry.id}/videos`
-    const response = useGetRequest({user, url}) || {data: {}, status: 'error'}
+    const response = useGetRequest({user, url, enabled: accessInfo.enabledLevel >= 50}) || {data: {}, status: 'error'}
     const videos = response?.data?.data?.videos || []
 
-    if (!accessInfo.level > 49) return null
+    if (accessInfo.enabledLevel < 50) return null
 
     const handleOpenVideo = (video) => {
         openInNewTab(video.url)
@@ -69,4 +69,3 @@ export default function EntryVideos({entry}) {
         </div>
     )
 }
-

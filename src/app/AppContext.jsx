@@ -1,50 +1,17 @@
-import React, {useCallback, useMemo, useContext, useEffect, useState} from 'react'
+import React, {useCallback, useMemo, useEffect, useState} from 'react'
 import {useInterval, useLocalStorage} from 'usehooks-ts'
-import DBContext from './DBContext'
 import dayjs from 'dayjs'
-import AuthContext from './AuthContext.jsx'
 
 const AppContext = React.createContext({})
 
 export function AppProvider({children}) {
-    const {authLoaded, isLoggedIn, user, userClaims} = useContext(AuthContext)
-    const {adminRole, qaUserRole} = useContext(DBContext)
     const [beta, setBeta] = useLocalStorage('beta2024', false)
-    const [adminEnabled, setAdminEnabled] = useLocalStorage('adminEnabled', adminRole && !!import.meta.env.DEV)
-
-    const isLpuMod = authLoaded && isLoggedIn && user && (['lpuMod'].some(claim => userClaims.includes(claim)))
-    const [modFlag, setModFlag] = useLocalStorage('modEnabled', '')
-    const modEnabled = isLpuMod && dayjs().day() === dayjs(modFlag).day()
-
-    const privilegeEnabled = adminEnabled || modEnabled
-
-    const [qaUserEnabled, setQaUserEnabled] = useLocalStorage('qaUserEnabled', qaUserRole && !!import.meta.env.DEV)
 
     const [compact, setCompact] = useState(false)
 
     const handleSetBeta = useCallback(value => {
         setBeta(value)
     }, [setBeta])
-
-    const handleSetAdminEnabled = useCallback(value => {
-        if (adminRole) setAdminEnabled(value)
-        else setAdminEnabled(false)
-    }, [setAdminEnabled, adminRole])
-
-    const toggleModEnabled = useCallback(() => {
-        if (isLpuMod && !modEnabled) {
-            setModFlag(dayjs().format())
-        }
-        else setModFlag('')
-    }, [isLpuMod, modEnabled, setModFlag])
-
-    const handleSetQaUserEnabled = useCallback(value => {
-        if (qaUserRole) {
-            setQaUserEnabled(value)
-        } else {
-            setQaUserEnabled(false)
-        }
-    }, [qaUserRole, setQaUserEnabled])
 
     const [initial, setInitial] = useState()
     const [version, setVersion] = useState()
@@ -97,19 +64,11 @@ export function AppProvider({children}) {
     const value = useMemo(() => ({
         beta,
         setBeta: handleSetBeta,
-        adminEnabled,
-        setAdminEnabled: handleSetAdminEnabled,
-        isLpuMod,
-        modEnabled,
-        toggleModEnabled,
-        privilegeEnabled,
-        qaUserEnabled,
-        setQaUserEnabled: handleSetQaUserEnabled,
         version: initial,
         updateRequired,
         updateAvailable,
         compact, setCompact,
-    }), [beta, handleSetBeta, adminEnabled, handleSetAdminEnabled, isLpuMod, modEnabled, toggleModEnabled, privilegeEnabled, qaUserEnabled, handleSetQaUserEnabled, initial, updateRequired, updateAvailable, compact])
+    }), [beta, handleSetBeta, initial, updateRequired, updateAvailable, compact])
 
     return (
         <AppContext.Provider value={value}>

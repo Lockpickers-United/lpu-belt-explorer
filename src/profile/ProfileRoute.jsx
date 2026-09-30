@@ -23,12 +23,13 @@ import AuthContext from '../app/AuthContext.jsx'
 import ExportButton from '../locks/ExportButton.jsx'
 import ViewFilterButtons from '../filters/ViewFilterButtons.jsx'
 import ProfileContext from '../app/ProfileContext.jsx'
-import AppContext from '../app/AppContext.jsx'
+import {useAccess} from '../app/AccessContext.jsx'
 
 function ProfileRoute() {
     const {user} = useContext(AuthContext)
     const {userId} = useParams()
-    const {adminEnabled} = useContext(AppContext)
+    const {accessInfo} = useAccess()
+    const adminEnabled = accessInfo.enabledRoles.admin
     const {getPickerActivity} = useContext(DBContext)
     const {data, loading, error, isFullProfile} = useContext(ProfileContext)
     const profile = useMemo(() => data ? data.profile : {}, [data])

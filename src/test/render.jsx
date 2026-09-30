@@ -5,6 +5,7 @@ import { MemoryRouter, HashRouter } from 'react-router-dom'
 import DBContext from '../app/DBContext.jsx'
 import AuthContext from '../app/AuthContext.jsx'
 import AppContext from '../app/AppContext.jsx'
+import AccessContext from '../app/AccessContext.jsx'
 import APIContext from '../app/APIContext.jsx'
 import ScoringContext from '../context/ScoringContext.jsx'
 import { SystemMessageProvider } from '../systemMessage/SystemMessageContext.jsx'
@@ -32,12 +33,20 @@ export const defaultTestContextValues = {
     },
     app: {
         beta: false,
-        adminEnabled: false,
-        qaUserEnabled: false,
         version: '2024-01-01',
         updateRequired: false,
         updateAvailable: false,
         compact: false
+    },
+    access: {
+        accessInfo: {
+            roles: {admin: false, lpuMod: false, qaUser: false},
+            enabledRoles: {admin: false, lpuMod: false, qaUser: false},
+            level: 0,
+            enabledLevel: 0,
+            activeRole: null
+        },
+        toggleRoleEnabled: () => {}
     },
     scoring: {
         scoredActivity: [],
@@ -57,21 +66,24 @@ export const renderWithProviders = (ui, {
     db,
     api,
     app,
+    access,
     scoring
 } = {}) => {
     const Wrapper = ({children}) => (
         <AuthContext.Provider value={withDefaults('auth', auth)}>
-            <DBContext.Provider value={withDefaults('db', db)}>
-                <APIContext.Provider value={withDefaults('api', api)}>
-                    <AppContext.Provider value={withDefaults('app', app)}>
-                        <SystemMessageProvider>
-                            <ScoringContext.Provider value={withDefaults('scoring', scoring)}>
-                                {children}
-                            </ScoringContext.Provider>
-                        </SystemMessageProvider>
-                    </AppContext.Provider>
-                </APIContext.Provider>
-            </DBContext.Provider>
+            <AccessContext.Provider value={withDefaults('access', access)}>
+                <DBContext.Provider value={withDefaults('db', db)}>
+                    <APIContext.Provider value={withDefaults('api', api)}>
+                        <AppContext.Provider value={withDefaults('app', app)}>
+                            <SystemMessageProvider>
+                                <ScoringContext.Provider value={withDefaults('scoring', scoring)}>
+                                    {children}
+                                </ScoringContext.Provider>
+                            </SystemMessageProvider>
+                        </AppContext.Provider>
+                    </APIContext.Provider>
+                </DBContext.Provider>
+            </AccessContext.Provider>
         </AuthContext.Provider>
     )
 
@@ -81,7 +93,7 @@ export const renderWithProviders = (ui, {
 /**
  * Render with Providers + Router
  * @param {React.ReactNode} ui
- * @param {{ route?: string, useHash?: boolean, initialEntries?: string[], auth?: object, db?: object, api?: object, app?: object, scoring?: object }} opts
+ * @param {{ route?: string, useHash?: boolean, initialEntries?: string[], auth?: object, db?: object, api?: object, app?: object, access?: object, scoring?: object }} opts
  */
 export const renderWithRouter = (ui, {
     route = '/',

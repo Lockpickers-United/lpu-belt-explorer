@@ -22,7 +22,7 @@ import useWindowSize from '../util/useWindowSize.jsx'
 import {getEntryFromId, isAward} from '../entries/entryutils'
 import EvidenceLockSearchBox from './EvidenceLockSearchBox.jsx'
 import DataContext from '../context/DataContext.jsx'
-import AppContext from '../app/AppContext.jsx'
+import {useAccess} from '../app/AccessContext.jsx'
 import ViewPageDrawer from '../viewPage/ViewPageDrawer.jsx'
 import sanitizeValues from '../util/sanitizeValues'
 
@@ -30,7 +30,8 @@ import sanitizeValues from '../util/sanitizeValues'
 export default function EvidenceForm({activity, lockId, handleUpdate, addLock, addProject, addAward, source}) {
     const {userId} = useParams()
     const {user} = useContext(AuthContext)
-    const {adminEnabled} = useContext(AppContext)
+    const {accessInfo} = useAccess()
+    const adminEnabled = accessInfo.enabledRoles.admin
     const {blackBeltUser} = useContext(DataContext)
 
     const {addPickerActivity, updatePickerActivity, removePickerActivity, userLockNotes, updateProfileField} = useContext(DBContext)

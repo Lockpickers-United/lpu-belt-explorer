@@ -15,12 +15,13 @@ import useData from '../util/useData.jsx'
 import {allAwardsById} from '../entries/entryutils'
 import {TextField, Button} from '@mui/material'
 import calculateScoreForUser from '../scorecard/scoring'
-import AppContext from '../app/AppContext.jsx'
+import {useAccess} from '../app/AccessContext.jsx'
 
 export default function UserInfoMain() {
     const {user, userClaims} = useContext(AuthContext)
     const {adminRole, getPickerActivity} = useContext(DBContext)
-    const {adminEnabled} = useContext(AppContext)
+    const {accessInfo} = useAccess()
+    const adminEnabled = accessInfo.enabledRoles.admin
 
     console.log('userClaims', userClaims)
     const {userId, data, loading, error, isFullProfile} = useContext(ProfileContext)

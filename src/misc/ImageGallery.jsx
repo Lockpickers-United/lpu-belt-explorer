@@ -10,6 +10,7 @@ import useWindowSize from '../util/useWindowSize'
 import ytIcon from '../resources/yt.png'
 import ImageViewer from './ImageViewer'
 import AppContext from '../app/AppContext.jsx'
+import {useAccess} from '../app/AccessContext.jsx'
 import {useLocalStorage} from 'usehooks-ts'
 
 function ImageGallery(props) {
@@ -25,7 +26,9 @@ function ImageGallery(props) {
         shareParams
     } = props
 
-    const {adminEnabled, beta} = useContext(AppContext)
+    const {beta} = useContext(AppContext)
+    const {accessInfo} = useAccess()
+    const adminEnabled = accessInfo.enabledRoles.admin
     const [flickrDirect, _setFlickrDirect] = useLocalStorage('flickrDirect', false)
 
     const {isMobile} = useWindowSize()

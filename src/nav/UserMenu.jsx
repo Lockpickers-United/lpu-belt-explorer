@@ -24,12 +24,12 @@ import AuthContext from '../app/AuthContext'
 import DBContext from '../app/DBContext'
 import {useNavigate} from 'react-router-dom'
 import SportsMartialArtsIcon from '@mui/icons-material/SportsMartialArts'
-import AccessContext from '../app/AccessContext.jsx'
+import {useAccess} from '../app/AccessContext.jsx'
 
 function UserMenu() {
     const navigate = useNavigate()
     const {isLoggedIn, user, logout} = useContext(AuthContext)
-    const {accessInfo = {}, toggleRoleEnabled} = useContext(AccessContext)
+    const {accessInfo, toggleRoleEnabled} = useAccess()
     const {lockCollection} = useContext(DBContext)
     const [anchorEl, setAnchorEl] = useState(null)
     const open = Boolean(anchorEl)
@@ -57,7 +57,12 @@ function UserMenu() {
         <React.Fragment>
             <Tooltip title={isLoggedIn ? displayName : 'Account'} arrow disableFocusListener>
                 <IconButton color='info' onClick={handleOpen} edge='end'
-                            sx={{width: 36, height: 36, margin: '4px', backgroundColor: accessInfo.color}}>
+                            sx={{
+                                width: 36,
+                                height: 36,
+                                margin: '4px',
+                                backgroundColor: roleColors[accessInfo.activeRole] || 'inherit'
+                            }}>
                     {
                         isLoggedIn
                             ? <Avatar
@@ -109,7 +114,7 @@ function UserMenu() {
                             </MenuItem>
                         }
                         {accessInfo.roles.lpuMod &&
-                            <MenuItem onClick={() => toggleRoleEnabled('mod')}>
+                            <MenuItem onClick={() => toggleRoleEnabled('lpuMod')}>
                                 <ListItemIcon>
                                     <SportsMartialArtsIcon color={accessInfo.enabledRoles.lpuMod ? 'warning' : 'default'}/>
                                 </ListItemIcon>
@@ -124,7 +129,7 @@ function UserMenu() {
                                 <ListItemIcon>
                                     <BiotechIcon color={accessInfo.enabledRoles.qaUser ? 'info' : 'default'}/>
                                 </ListItemIcon>
-                                {accessInfo.qaUser
+                                {accessInfo.enabledRoles.qaUser
                                     ? <ListItemText>Disable QA Role</ListItemText>
                                     : <ListItemText>Enable QA Role</ListItemText>
                                 }
@@ -215,6 +220,12 @@ function UserMenu() {
             </Menu>
         </React.Fragment>
     )
+}
+
+const roleColors = {
+    admin: 'success.main',
+    lpuMod: 'warning.main',
+    qaUser: 'info.main'
 }
 
 export default UserMenu

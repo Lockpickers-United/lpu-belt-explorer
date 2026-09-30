@@ -36,11 +36,11 @@ import Box from '@mui/material/Box'
 import entryName from './entryName'
 import Link from '@mui/material/Link'
 import EntryActionBar from './EntryActionBar.jsx'
-import AccessContext from '../app/AccessContext.jsx'
+import {useAccess} from '../app/AccessContext.jsx'
 
 function EntrySimple({entry, expanded, onExpand}) {
     const navigate = useNavigate()
-    const {accessInfo = {}} = useContext(AccessContext)
+    const {accessInfo} = useAccess()
     const {expandAll} = useContext(DataContext)
     const {addAdvancedFilterGroup, filters} = useContext(FilterContext)
     const {userId} = useParams()

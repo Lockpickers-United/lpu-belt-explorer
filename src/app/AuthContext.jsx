@@ -11,20 +11,30 @@ export function AuthProvider({children}) {
     const [initialUser, setInitialUser] = useState(null)
 
     useEffect(() => {
+        let authStateVersion = 0
         const unregisterAuthObserver = auth.onAuthStateChanged(user => {
+            const currentVersion = ++authStateVersion
             setAuthLoaded(true)
             setUser(user)
-            auth.currentUser?.getIdTokenResult()
+            setUserClaims([])
+            user?.getIdTokenResult()
                 .then(idTokenResult => {
-                    setUserClaims(Object.keys(idTokenResult.claims)
-                        .filter(claim => idTokenResult.claims[claim] === true)
-                        .filter(claim => claim !== 'email_verified'))
+                    if (currentVersion === authStateVersion) {
+                        setUserClaims(Object.keys(idTokenResult.claims)
+                            .filter(claim => idTokenResult.claims[claim] === true)
+                            .filter(claim => claim !== 'email_verified'))
+                    }
                 })
                 .catch(error => {
-                    console.error('Error getting token result:', error)
+                    if (currentVersion === authStateVersion) {
+                        console.error('Error getting token result:', error)
+                    }
                 })
         })
-        return () => unregisterAuthObserver()
+        return () => {
+            authStateVersion++
+            unregisterAuthObserver()
+        }
     }, [])
 
     const login = useCallback(() => {
@@ -44,6 +54,7 @@ export function AuthProvider({children}) {
     const logout = useCallback(() => {
         setInitialUser('no')
         setUser({})
+        setUserClaims([])
         return signOut(auth)
     }, [])
 

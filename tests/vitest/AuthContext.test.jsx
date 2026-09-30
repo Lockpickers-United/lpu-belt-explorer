@@ -48,15 +48,16 @@ function AuthState() {
 const renderAuth = () => render(<AuthProvider><AuthState/></AuthProvider>)
 
 async function emitAuthState(user, claims = {}) {
-    authHarness.auth.currentUser = user
+    const authUser = user
         ? {
             ...user,
             getIdTokenResult: vi.fn().mockResolvedValue({claims})
         }
         : null
+    authHarness.auth.currentUser = authUser
 
     await act(async () => {
-        authHarness.observer(user)
+        authHarness.observer(authUser)
         await Promise.resolve()
     })
 }
@@ -109,6 +110,31 @@ describe('AuthContext', () => {
         await waitFor(() => expect(screen.getByText('Claims: lpuAdmin')).toBeInTheDocument())
     })
 
+    it('does not apply claims returned for a previous account', async () => {
+        let resolveFirstClaims
+        const firstUser = {
+            uid: 'first-user',
+            getIdTokenResult: vi.fn(() => new Promise(resolve => {
+                resolveFirstClaims = resolve
+            }))
+        }
+        const secondUser = {
+            uid: 'second-user',
+            getIdTokenResult: vi.fn().mockResolvedValue({claims: {}})
+        }
+        renderAuth()
+
+        await act(async () => authHarness.observer(firstUser))
+        await act(async () => authHarness.observer(secondUser))
+        expect(screen.getByText('User: second-user')).toBeInTheDocument()
+        expect(screen.getByText('Claims: none')).toBeInTheDocument()
+
+        await act(async () => resolveFirstClaims({claims: {admin: true}}))
+
+        expect(screen.getByText('User: second-user')).toBeInTheDocument()
+        expect(screen.getByText('Claims: none')).toBeInTheDocument()
+    })
+
     it('configures popup login and propagates popup failures', async () => {
         const popupError = new Error('popup blocked')
         authHarness.signInWithPopup.mockRejectedValue(popupError)
@@ -141,6 +167,7 @@ describe('AuthContext', () => {
         expect(authHarness.signOut).toHaveBeenCalledWith(authHarness.auth)
         expect(screen.getByText('Logged in: false')).toBeInTheDocument()
         expect(screen.getByText('User: none')).toBeInTheDocument()
+        expect(screen.getByText('Claims: none')).toBeInTheDocument()
         expect(screen.getByText('Initial: no')).toBeInTheDocument()
     })
 })

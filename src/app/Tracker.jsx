@@ -1,9 +1,10 @@
-import React, {useContext} from 'react'
+import React from 'react'
 import querystring from 'query-string'
-import AppContext from './AppContext'
+import {useAccess} from './AccessContext.jsx'
 
 function Tracker({feature, ...extraParams}) {
-    const {adminEnabled} = useContext(AppContext) //eslint-disable-line
+    const {accessInfo} = useAccess()
+    const adminEnabled = accessInfo.enabledRoles.admin
 
     // disable for rafl testing/reporting
     if (import.meta.env.DEV || import.meta.env.MODE === 'test' || adminEnabled) return null

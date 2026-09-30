@@ -8,10 +8,11 @@ import blackBelts from './blackBelts.json'
 import {FormControl, InputLabel, Select} from '@mui/material'
 import MenuItem from '@mui/material/MenuItem'
 import {useSearchParams} from 'react-router-dom'
-import AppContext from '../../app/AppContext.jsx'
+import {useAccess} from '../../app/AccessContext.jsx'
 
 function PreviewScorecard({owner, profile, tab, setTab}) {
-    const {adminEnabled} = useContext(AppContext)
+    const {accessInfo} = useAccess()
+    const adminEnabled = accessInfo.enabledRoles.admin
     const {isMobile} = useWindowSize()
     const headerDivStyle = isMobile ? 'block' : 'flex'
     const {visibleEntries = []} = useContext(ScorecardDataContext)

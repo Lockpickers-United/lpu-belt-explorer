@@ -21,11 +21,12 @@ import useData from '../util/useData.jsx'
 import {allAwardsById} from '../entries/entryutils'
 import usePageTitle from '../util/usePageTitle.jsx'
 import ProfileContext from '../app/ProfileContext.jsx'
-import AppContext from '../app/AppContext.jsx'
+import {useAccess} from '../app/AccessContext.jsx'
 
 function ScorecardRoute({mostPopular}) {
     const {user} = useContext(AuthContext)
-    const {adminEnabled} = useContext(AppContext)
+    const {accessInfo} = useAccess()
+    const adminEnabled = accessInfo.enabledRoles.admin
     const {getPickerActivity} = useContext(DBContext)
 
     usePageTitle('Scorecard')

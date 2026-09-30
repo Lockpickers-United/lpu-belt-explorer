@@ -4,6 +4,22 @@ import {afterEach, beforeEach, describe, expect, it, vi} from 'vitest'
 import {MemoryRouter, useLocation, useNavigate, useSearchParams} from 'react-router-dom'
 import FilterContext, {FilterProvider} from '../../src/context/FilterContext.jsx'
 import SearchBox from '../../src/nav/SearchBox.jsx'
+import AccessContext from '../../src/app/AccessContext.jsx'
+
+const accessValue = {
+    accessInfo: {
+        roles: {admin: false, lpuMod: false, qaUser: false},
+        enabledRoles: {admin: false, lpuMod: false, qaUser: false},
+        level: 0,
+        enabledLevel: 0,
+        activeRole: null
+    },
+    toggleRoleEnabled: vi.fn()
+}
+
+const renderWithAccess = ui => render(
+    <AccessContext.Provider value={accessValue}>{ui}</AccessContext.Provider>
+)
 
 function DelayedFilterProvider({children, delay = 100}) {
     const [searchParams, setSearchParams] = useSearchParams()
@@ -75,7 +91,7 @@ describe('SearchBox', () => {
     })
 
     it('does not replace newer input with a delayed URL update', async () => {
-        render(
+        renderWithAccess(
             <MemoryRouter>
                 <DelayedFilterProvider>
                     <SearchBox label='Locks'/>
@@ -102,7 +118,7 @@ describe('SearchBox', () => {
     })
 
     it('still accepts search text from external navigation', async () => {
-        render(
+        renderWithAccess(
             <MemoryRouter>
                 <FilterProvider>
                     <SearchBox label='Locks'/>
@@ -117,7 +133,7 @@ describe('SearchBox', () => {
     })
 
     it('keeps a clear action when an older URL update is pending', async () => {
-        render(
+        renderWithAccess(
             <MemoryRouter>
                 <DelayedFilterProvider>
                     <SearchBox label='Locks'/>
@@ -138,7 +154,7 @@ describe('SearchBox', () => {
     })
 
     it('synchronizes search text during browser back and forward navigation', async () => {
-        render(
+        renderWithAccess(
             <MemoryRouter
                 initialEntries={['/?search=first']}
             >
@@ -171,7 +187,7 @@ describe('SearchBox', () => {
 
     it('cancels pending debounce work when unmounted', async () => {
         const consoleError = vi.spyOn(console, 'error').mockImplementation(() => {})
-        const {unmount} = render(
+        const {unmount} = renderWithAccess(
             <MemoryRouter>
                 <FilterProvider>
                     <SearchBox label='Locks'/>
