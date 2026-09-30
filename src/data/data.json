@@ -4810,9 +4810,9 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "popularityIndex": 264,
+    "popularityIndex": 265,
     "scorecardCount": 24,
-    "views": 264,
+    "views": 265,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -9245,9 +9245,9 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "popularityIndex": 146,
+    "popularityIndex": 147,
     "scorecardCount": 37,
-    "views": 146,
+    "views": 147,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -12422,9 +12422,9 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "popularityIndex": 1440,
+    "popularityIndex": 1441,
     "scorecardCount": 276,
-    "views": 1440,
+    "views": 1441,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -12864,9 +12864,9 @@
     "lockingMechanisms": [
       "Disc detainer"
     ],
-    "popularityIndex": 99,
+    "popularityIndex": 100,
     "scorecardCount": 17,
-    "views": 99,
+    "views": 100,
     "dateAdded": "2023-03-02T19:05:25.000Z",
     "media": [
       {
@@ -28792,9 +28792,9 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "popularityIndex": 14,
+    "popularityIndex": 15,
     "scorecardCount": 6,
-    "views": 14,
+    "views": 15,
     "dateAdded": "2023-03-02T19:05:25.000Z",
     "media": [
       {
@@ -47657,7 +47657,7 @@
       "Rotating fingerpins"
     ],
     "popularityIndex": 134,
-    "scorecardCount": 45,
+    "scorecardCount": 46,
     "views": 134,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
@@ -49496,7 +49496,11 @@
     "makeModels": [
       {
         "make": "Bramah",
-        "model": "bp17"
+        "model": "BP17"
+      },
+      {
+        "make": "Bramah",
+        "model": "XX17 series"
       }
     ],
     "lockingMechanisms": [
@@ -49544,7 +49548,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53111122453_d87f1a716d_o.jpg"
       }
     ],
-    "lastUpdated": "2025-12-02T23:39:17.954Z"
+    "lastUpdated": "2026-09-30T04:14:32.197Z"
   },
   {
     "id": "ab1cdc56",
@@ -56234,9 +56238,9 @@
       "Sidepins",
       "Active sidebar"
     ],
-    "popularityIndex": 131,
+    "popularityIndex": 132,
     "scorecardCount": 60,
-    "views": 131,
+    "views": 132,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -57617,7 +57621,7 @@
       "Dimple"
     ],
     "popularityIndex": 39,
-    "scorecardCount": 17,
+    "scorecardCount": 18,
     "views": 39,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
@@ -62972,9 +62976,9 @@
       "Pin key",
       "Double bitted"
     ],
-    "popularityIndex": 6,
+    "popularityIndex": 7,
     "scorecardCount": 3,
-    "views": 6,
+    "views": 7,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
