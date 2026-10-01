@@ -143,29 +143,30 @@ export default function FormElement({
                     <div style={{display: 'flex', alignItems: 'center'}}>
                         <TextField type='text'
                                    name={fieldName}
-                                   style={{width: fullWidth ? '100%' : settings.inputWidth, margin: '6px 0px 0px 0px'}}
-                                   multiline={multiline}
+                                   style={{width: fullWidth ? '100%' : settings.inputWidth, margin: '2px 0px 0px 0px'}}
+                                   multiline={multiline || rows > 0}
                                    fullWidth
                                    rows={rows}
                                    size={settings.inputSize}
+                                   placeholder={settings.placeholder}
                                    onChange={form.update}
                                    value={form.form[fieldName] || ''}
-                                   color={isValid ? settings.color : 'error'}/>
+                                   color={isValid ? settings.color : 'error'}
+                                   slotProps={settings.slotProps}
+                        />
 
-                        {checkValid &&
-                            <div style={{marginLeft: 12}}>
-                                {form.form?.[fieldName] &&
-                                    <>
-                                        {isNotValid && <ReportProblemIcon color='error'/>}
-                                        {isValid && <CheckCircleIcon color='success'/>}
-                                    </>
-                                }
+                        {checkValid && form.form?.[fieldName] &&
+                            <div style={{margin: '6px 0 0 12px'}}>
+                                {isNotValid && <ReportProblemIcon color='error'/>}
+                                {isValid && <CheckCircleIcon color='success'/>}
                             </div>
                         }
                     </div>
-                    <Typography sx={{color: '#e00', fontSize: '0.85rem', marginBottom: '2px'}}>
-                        &nbsp; {errorMessage && errorMessage}
-                    </Typography>
+                    {checkValid &&
+                        <Typography sx={{color: '#e00', fontSize: '0.85rem', marginBottom: '2px'}}>
+                            &nbsp; {errorMessage && errorMessage}
+                        </Typography>
+                    }
                     {after}
                 </div>
             }
@@ -173,7 +174,7 @@ export default function FormElement({
             {fieldType === 'SelectBox' &&
                 <div style={{...settings.style, margin: settings.margin}}>
                     {label &&
-                        <Typography sx={{...settings.labelStyle, marginBottom: '2px'}}>{label}</Typography>
+                        <Typography sx={{marginBottom: '2px', ...settings.labelStyle}}>{label}</Typography>
                     }
                     {description &&
                         <Typography sx={{...settings.descriptionStyle, marginBottom: '2px'}}>{description}</Typography>
@@ -210,22 +211,40 @@ export default function FormElement({
                             onChange={(e) => handleRadioSelect(e)}
                         >
                             {options.map(option =>
-                                <FormControlLabel key={option} value={option} label={option} control={
-                                    <Radio size={settings.inputSize}
-                                           color={settings.color || 'success'}
-                                           onClick={() => handleRadioSelect({target: {name: fieldName, value: option}})}
-                                           sx={{height: '36px', width: '36px', marginRight: '4px'}}
-                                    />}
+                                <FormControlLabel key={option}
+                                                  value={option}
+                                                  label={option}
+                                                  control={
+                                                      <Radio
+                                                          size={settings.inputSize}
+                                                          color={settings.color || 'success'}
+                                                          onClick={() => handleRadioSelect({
+                                                              target: {
+                                                                  name: fieldName,
+                                                                  value: option
+                                                              }
+                                                          })}
+                                                          sx={{
+                                                              height: '36px',
+                                                              width: '36px',
+                                                              marginRight: '4px'
+                                                          }}
+                                                      />}
                                 />)
                             }
                             {otherOptionField &&
                                 <div style={{display: 'flex', height: 40}}>
                                     <FormControlLabel key='Other' value='Other' label='Other' control={
-                                        <Radio size={settings.inputSize}
-                                               color={settings.color || 'success'}
-                                               sx={{height: '36px', width: '36px', marginRight: '4px'}}
-                                        />
-                                    }/>
+                                                                                                   <Radio
+                                                                                                      size={settings.inputSize}
+                                                                                                      color={settings.color || 'success'}
+                                                                                                      sx={{
+                                                                                                          height: '36px',
+                                                                                                          width: '36px',
+                                                                                                          marginRight: '4px'
+                                                                                                      }}
+                                                                                                  />
+                                                                                              }/>
                                     {showOtherField &&
                                         <TextField type='text'
                                                    name={otherOptionField}
@@ -258,21 +277,21 @@ export default function FormElement({
                                           label={options}
                                           sx={{
                                               '.MuiFormControlLabel-label': {
-                                                  fontWeight: settings.fontWeight || 400,
+                                                  fontWeight: settings.fontWeight || 400
                                               }
                                           }} control={
-                            <Checkbox size={settings.inputSize}
-                                      onChange={(e) => handleSingleCheckboxSelect({
-                                          target: {
-                                              name: fieldName,
-                                              value: e.target.checked,
-                                              checked: e.target.checked
-                                          }
-                                      })}
-                                      checked={!!form.form[fieldName]}
-                                      color={settings.color || 'success'}
-                            />
-                        }
+                                                  <Checkbox size={settings.inputSize}
+                                                            onChange={(e) => handleSingleCheckboxSelect({
+                                                                target: {
+                                                                    name: fieldName,
+                                                                    value: e.target.checked,
+                                                                    checked: e.target.checked
+                                                                }
+                                                            })}
+                                                            checked={!!form.form[fieldName]}
+                                                            color={settings.color || 'success'}
+                                                 />
+                                             }
                         />
                     </FormControl>
                 </div>
@@ -289,46 +308,48 @@ export default function FormElement({
                     <FormControl style={{marginLeft: 6}}>
                         {options.map(option =>
                             <FormControlLabel key={option} value={option} label={option} control={
-                                <Checkbox size={settings.inputSize}
-                                          onChange={(e) => handleCheckboxSelect({
-                                              target: {
-                                                  name: fieldName,
-                                                  value: option,
-                                                  checked: e.target.checked
-                                              }
-                                          })}
-                                          sx={{
-                                              height: '36px',
-                                              width: '36px',
-                                              marginRight: '4px',
-                                              color: theme.palette.info
-                                          }}
-                                          color='success'/>
-                            }
+                                                                                             <Checkbox
+                                                                                                 size={settings.inputSize}
+                                                                                                 onChange={(e) => handleCheckboxSelect({
+                                                                                                     target: {
+                                                                                                         name: fieldName,
+                                                                                                         value: option,
+                                                                                                         checked: e.target.checked
+                                                                                                     }
+                                                                                                 })}
+                                                                                                 sx={{
+                                                                                                     height: '36px',
+                                                                                                     width: '36px',
+                                                                                                     marginRight: '4px',
+                                                                                                     color: theme.palette.info
+                                                                                                 }}
+                                                                                                 color='success'/>
+                                                                                         }
                             />)
                         }
                         {otherOptionField &&
                             <div style={{display: 'flex', height: 40}}>
                                 <FormControlLabel key='Other' value='Other' label='Other' control={
-                                    <Checkbox size={settings.inputSize}
-                                              onChange={(e) => handleCheckboxSelect({
-                                                  target: {
-                                                      name: fieldName,
-                                                      value: 'Other',
-                                                      checked: e.target.checked
-                                                  }
-                                              })}
-                                              sx={{
-                                                  height: '36px',
-                                                  width: '36px',
-                                                  marginRight: '4px',
-                                                  color: theme.palette.info,
-                                                  '&.Mui-checked': {
-                                                      color: theme.palette.info
-                                                  }
-                                              }}
-                                    />
-                                }/>
+                                                                                               <Checkbox
+                                                                                                  size={settings.inputSize}
+                                                                                                  onChange={(e) => handleCheckboxSelect({
+                                                                                                      target: {
+                                                                                                          name: fieldName,
+                                                                                                          value: 'Other',
+                                                                                                          checked: e.target.checked
+                                                                                                      }
+                                                                                                  })}
+                                                                                                  sx={{
+                                                                                                      height: '36px',
+                                                                                                      width: '36px',
+                                                                                                      marginRight: '4px',
+                                                                                                      color: theme.palette.info,
+                                                                                                      '&.Mui-checked': {
+                                                                                                          color: theme.palette.info
+                                                                                                      }
+                                                                                                  }}
+                                                                                              />
+                                                                                          }/>
                                 {showOtherField &&
                                     <TextField type='text'
                                                name={otherOptionField}

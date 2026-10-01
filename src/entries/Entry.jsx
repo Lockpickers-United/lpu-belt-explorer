@@ -38,7 +38,7 @@ import Link from '@mui/material/Link'
 import EntryActionBar from './EntryActionBar.jsx'
 import {useAccess} from '../app/AccessContext.jsx'
 
-function EntrySimple({entry, expanded, onExpand}) {
+function Entry({entry, expanded, onExpand}) {
     const navigate = useNavigate()
     const {accessInfo} = useAccess()
     const {expandAll} = useContext(DataContext)
@@ -106,8 +106,9 @@ function EntrySimple({entry, expanded, onExpand}) {
         }
     }
     const relatedHeader = upgradeBaseId
-        ? <div style={{marginBottom: 2}}>Other Versions | <Link sx={linkSx}
-                                                                onClick={() => navigate(`/profile/scorecard/upgrades?id=${upgradeBaseId}`)}>View
+        ? <div style={{marginBottom: 2}}>
+            Other Versions | <Link sx={linkSx}
+                                   onClick={() => navigate(`/profile/scorecard/upgrades?id=${upgradeBaseId}`)}>View
             Upgrades</Link></div>
         : <>Other Versions Only</>
 
@@ -179,62 +180,69 @@ function EntrySimple({entry, expanded, onExpand}) {
                     <AccordionDetails sx={{padding: '8px 16px 0px 16px'}}>
                         <Stack direction='row' spacing={1} sx={{width: '100%', flexWrap: 'wrap'}}>
                             <FieldValue
-                                style={{width: '50%', marginLeft: '0px'}} value={
-                                                                               <React.Fragment>
-                                                                                  <Typography style={{
-                                                                                      marginLeft: '0px',
-                                                                                      fontSize: '1rem',
-                                                                                      lineHeight: 1.25,
-                                                                                      fontWeight: 500
-                                                                                  }} role='heading' aria-level={2}
-                                                                                              aria-label={`${entry.belt} Belt`}>
-                                                                                      {entry.belt}
-                                                                                      <DanPoints belt={entry.belt}/>
-                                                                                  </Typography>
-                                                                                  <BeltIcon value={entry.belt}
-                                                                                            style={{marginBottom: -10}}/>
-                                                                              </React.Fragment>
-                                                                          }/>
+                                style={{width: '50%', marginLeft: '0px'}}
+                                value={
+                                    <React.Fragment>
+                                        <Typography style={{
+                                            marginLeft: '0px',
+                                            fontSize: '1rem',
+                                            lineHeight: 1.25,
+                                            fontWeight: 500
+                                        }} role='heading' aria-level={2}
+                                                    aria-label={`${entry.belt} Belt`}>
+                                            {entry.belt}
+                                            <DanPoints belt={entry.belt}/>
+                                        </Typography>
+                                        <BeltIcon value={entry.belt}
+                                                  style={{marginBottom: -10}}/>
+                                    </React.Fragment>
+                                }/>
                             <div style={{marginLeft: 'auto'}}>
                                 <CollectionButton id={entry.id} makeModels={entry.makeModels}/>
                             </div>
                         </Stack>
                         {!!entry.notes &&
                             <Stack direction='row' spacing={0} sx={{width: '100%', flexWrap: 'wrap'}}>
-                                <FieldValue name='Comments' value={
-                                                                 <Typography component='div' style={{marginTop: -16}}>
-                                                                    <ReactMarkdown
-                                                                        rehypePlugins={[[rehypeExternalLinks, {target: '_blank'}]]}>
-                                                                        {entry.notes}
-                                                                    </ReactMarkdown>
-                                                                </Typography>
-                                                            }/>
+                                <FieldValue
+                                    name='Comments'
+                                    value={
+                                        <Typography component='div' style={{marginTop: -16}}>
+                                            <ReactMarkdown
+                                                rehypePlugins={[[rehypeExternalLinks, {target: '_blank'}]]}>
+                                                {entry.notes}
+                                            </ReactMarkdown>
+                                        </Typography>
+                                    }/>
                             </Stack>
                         }
                         {!!entry.features?.length &&
-                            <FieldValue name='Features' value={
-                                                            <Stack direction='row' spacing={0} sx={{flexWrap: 'wrap'}}>
-                                                                {entry.features.map((feature, index) =>
-                                                                    <FilterChip
-                                                                        key={index}
-                                                                        value={feature}
-                                                                        field='features'
-                                                                    />
-                                                                )}
-                                                            </Stack>
-                                                        }/>
+                            <FieldValue
+                                name='Features'
+                                value={
+                                    <Stack direction='row' spacing={0} sx={{flexWrap: 'wrap'}}>
+                                        {entry.features.map((feature, index) =>
+                                            <FilterChip
+                                                key={index}
+                                                value={feature}
+                                                field='features'
+                                            />
+                                        )}
+                                    </Stack>
+                                }/>
                         }
                         {allRelatedIds?.length > 1 && !userId &&
-                            <FieldValue name={relatedHeader} value={
-                                                                 <React.Fragment>
-                                                                     {allRelatedIds.map(relatedId =>
-                                                                         <RelatedEntryButton key={relatedId}
-                                                                                             id={relatedId}
-                                                                                             onExpand={onExpand}
-                                                                                             entryId={entry.id}/>
-                                                                     )}
-                                                                 </React.Fragment>
-                                                             }/>
+                            <FieldValue
+                                name={relatedHeader}
+                                value={
+                                    <React.Fragment>
+                                        {allRelatedIds.map(relatedId =>
+                                            <RelatedEntryButton key={relatedId}
+                                                                id={relatedId}
+                                                                onExpand={onExpand}
+                                                                entryId={entry.id}/>
+                                        )}
+                                    </React.Fragment>
+                                }/>
                         }
                         {!!entry.description &&
                             <div style={{margin: 8}}>
@@ -247,49 +255,53 @@ function EntrySimple({entry, expanded, onExpand}) {
                             </div>
                         }
 
+                        {accessInfo.enabledLevel >= 50 &&
+                            <div style={{margin: '24px 0px 20px 6px'}}>
+                                <EntryActionBar entry={entry}/>
+                            </div>
+                        }
+
                         <div style={{margin: '12px 0px 20px 6px'}}>
                             <EntryNotes entry={entry}/>
                         </div>
 
-                        {accessInfo.enabledLevel >= 50 &&
-                            <EntryActionBar entry={entry}/>
-                        }
-
-                        {
-                            !!entry.media?.length &&
-                            <FieldValue value={
-                                            <LockImageGallery entry={entry}/>
-                                        }/>
+                        {!!entry.media?.length &&
+                            <div style={{marginLeft: 6}}>
+                                <LockImageGallery entry={entry}/>
+                            </div>
                         }
 
                         <div style={{display: 'flex'}}>
                             {
                                 !!entry.links?.length &&
-                                <FieldValue name='Links' value={
-                                                             <Stack direction='row' spacing={1} sx={{flexWrap: 'wrap'}}>
-                                                                 {entry.links.map(({title, url}, index) =>
-                                                                     <Button
-                                                                         key={index}
-                                                                         href={url}
-                                                                         target='_blank'
-                                                                         rel='noopener noreferrer'
-                                                                         color='secondary'
-                                                                         variant='outlined'
-                                                                         sx={{textTransform: 'none'}}
-                                                                         style={{margin: 4}}
-                                                                     >
-                                                                         {title}
-                                                                     </Button>
-                                                                 )}
-                                                             </Stack>
-                                                         }/>
+                                <FieldValue name='Links'
+                                            value={
+                                                <Stack direction='row' spacing={1} sx={{flexWrap: 'wrap'}}>
+                                                    {entry.links.map(({title, url}, index) =>
+                                                        <Button
+                                                            key={index}
+                                                            href={url}
+                                                            target='_blank'
+                                                            rel='noopener noreferrer'
+                                                            color='secondary'
+                                                            variant='outlined'
+                                                            sx={{textTransform: 'none'}}
+                                                            style={{margin: 4}}
+                                                        >
+                                                            {title}
+                                                        </Button>
+                                                    )}
+                                                </Stack>
+                                            }/>
                             }
 
-                            <FieldValue name='For sale' style={{marginLeft: 15}} value={
-                                                                                      <OpenLinkToLockbazaarButton
-                                                                                         entry={entry}
-                                                                                         buttonType={'text'}/>
-                                                                                 }/>
+                            <FieldValue name='For sale'
+                                        style={{marginLeft: 15}}
+                                        value={
+                                            <OpenLinkToLockbazaarButton
+                                                entry={entry}
+                                                buttonType={'text'}/>
+                                        }/>
 
 
                         </div>
@@ -320,7 +332,7 @@ function EntrySimple({entry, expanded, onExpand}) {
     )
 }
 
-export default React.memo(EntrySimple, (prevProps, nextProps) => {
+export default React.memo(Entry, (prevProps, nextProps) => {
     return prevProps.entry.id === nextProps.entry.id &&
         prevProps.expanded === nextProps.expanded &&
         prevProps.onExpand === nextProps.onExpand

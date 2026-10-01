@@ -109,6 +109,9 @@ const jsonData = mainData
         const popularityIndex = collectionStats ? collectionStats.ownCount : undefined
         const scorecardCount = collectionStats ? collectionStats.scorecardCount : undefined
 
+        // baseline for Classification
+        const currentBeltDate = dayjs().format()
+
         const value = {
             id,
             belt,
@@ -122,6 +125,7 @@ const jsonData = mainData
             popularityIndex,
             scorecardCount,
             views: popularityIndex,
+            currentBeltDate
         }
 
         // Clean up empty values to reduce payload size

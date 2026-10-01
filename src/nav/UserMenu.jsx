@@ -101,8 +101,12 @@ function UserMenu() {
                             </ListItemIcon>
                             <ListItemText>Edit Profile</ListItemText>
                         </MenuItem>
+                        {accessInfo.level > 0 &&
+                            <Divider/>
+                        }
+
                         {accessInfo.roles.admin &&
-                            <MenuItem onClick={() => toggleRoleEnabled('admin')}>
+                            <MenuItem onClick={() => toggleRoleEnabled('admin')} style={{fontStyle: 'italic'}}>
                                 <ListItemIcon>
                                     <AdminPanelSettingsIcon color={accessInfo.enabledRoles.admin ? 'success' : 'default'}/>
                                 </ListItemIcon>
@@ -114,7 +118,7 @@ function UserMenu() {
                             </MenuItem>
                         }
                         {accessInfo.roles.lpuMod &&
-                            <MenuItem onClick={() => toggleRoleEnabled('lpuMod')}>
+                            <MenuItem onClick={() => toggleRoleEnabled('lpuMod')} style={{fontStyle: 'italic'}}>
                                 <ListItemIcon>
                                     <SportsMartialArtsIcon color={accessInfo.enabledRoles.lpuMod ? 'warning' : 'default'}/>
                                 </ListItemIcon>
@@ -125,7 +129,7 @@ function UserMenu() {
                             </MenuItem>
                         }
                         {accessInfo.roles.qaUser &&
-                            <MenuItem onClick={() => toggleRoleEnabled('qaUser')}>
+                            <MenuItem onClick={() => toggleRoleEnabled('qaUser')} style={{fontStyle: 'italic'}}>
                                 <ListItemIcon>
                                     <BiotechIcon color={accessInfo.enabledRoles.qaUser ? 'info' : 'default'}/>
                                 </ListItemIcon>

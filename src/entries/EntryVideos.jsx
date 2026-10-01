@@ -30,7 +30,14 @@ export default function EntryVideos({entry}) {
     }
 
     return (
-        <div>
+        <div style={{borderTop: '1px solid #444'}}>
+            <div style={{
+                fontSize: '0.9rem',
+                fontWeight: 500,
+                margin: '6px 0',
+                width: '100%',
+                textAlign: 'center'
+            }}>&nbsp;</div>
             <Table
                 style={{borderCollapse: 'collapse', border: 0, fontSize: '0.9rem'}}
                 sx={{
@@ -39,7 +46,7 @@ export default function EntryVideos({entry}) {
                     }
                 }}>
                 <tbody>
-                { response.status !== 'success' &&
+                {response.status !== 'success' &&
                     <tr>
                         <td colSpan={3} align='center'>
                             {response.statusIndicator}<br/>

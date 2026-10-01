@@ -1,7 +1,7 @@
 import React, {useMemo} from 'react'
 import belts from '../data/belts'
 
-function BeltStripeMini({value = 'Unranked', style = {}}) {
+function BeltStripeMini({value = 'Unranked', style = {}, width = 4, offset= 0}) {
 
     const beltColor = value.replace(' Belt', '')
     const bgColor = beltColor.includes('Unranked')
@@ -14,7 +14,7 @@ function BeltStripeMini({value = 'Unranked', style = {}}) {
 
     //const {color: backgroundColor} = belts[value] || {color: '#769e49'}
     const stripeStyle = {
-        width: 4,
+        width,
         height: '100%',
         position: 'relative',
         left: 0,
@@ -30,17 +30,17 @@ function BeltStripeMini({value = 'Unranked', style = {}}) {
             return Array(stripeCount).fill(0)
                 .map((_beltColor, index) =>
                     <div key={index} style={{
-                        width: 4,
+                        width,
                         height: 2,
                         position: 'relative',
                         left: 0,
-                        top: 8 + (index * 3),
+                        top: 8 + offset + (index * 3),
                         backgroundColor: stripeColor
                         //backgroundColor: '#b00'
                     }}/>
                 )
         }
-    }, [beltColor, stripeColor])
+    }, [beltColor, offset, stripeColor, width])
 
     return (
         <div style={{height: '100%', padding: 0, backgroundColor: bgColor, ...style}}>

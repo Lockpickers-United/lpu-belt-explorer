@@ -1,7 +1,7 @@
 import React from 'react'
 import belts from '../data/belts'
 
-function BeltIcon({value, style, related, disabled, containerStyle={}}) {
+function BeltIcon({value, style, related, disabled, containerStyle, rankStyle, text}) {
     if (!value) return null
     const rank = parseInt(value.slice(-1)) > 1 ? parseInt(value.slice(-1)) : ''
     const {color, lineColor = '#010101'} = belts[value]
@@ -45,8 +45,8 @@ function BeltIcon({value, style, related, disabled, containerStyle={}}) {
                     />
                 </svg>
             </div>
-            {related &&
-            <div style={{position: 'absolute', top: 6, left: 14.5, fontSize: '0.58rem', color:rankColor}}>{rank}</div>
+            {(rank > 1 || text) &&
+                <div style={{position: 'absolute', top: related ? 6 : 5, left: 14.5, fontSize: '0.58rem', color:rankColor, ...rankStyle}}>{rank || text}</div>
             }
         </div>
     )

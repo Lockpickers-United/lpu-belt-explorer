@@ -2,19 +2,30 @@ import React, {useCallback, useContext, useEffect, useMemo, useState} from 'reac
 import {useLocalStorage} from 'usehooks-ts'
 import dayjs from 'dayjs'
 import AuthContext from './AuthContext.jsx'
+import SportsMartialArtsIcon from '@mui/icons-material/SportsMartialArts'
+import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings'
+import BiotechIcon from '@mui/icons-material/Biotech'
 
 const AccessContext = React.createContext(undefined)
 
 const roleLevels = {
     admin: 100,
     lpuMod: 90,
+    requestAdmin: 85,
     qaUser: 20
 }
 
 const emptyRoles = {
     admin: false,
     lpuMod: false,
+    requestAdmin: false,
     qaUser: false
+}
+
+const roleIcons = {
+    admin: <AdminPanelSettingsIcon color='success' style={{marginLeft: 6}}/>,
+    lpuMod: <SportsMartialArtsIcon color='warning' style={{marginLeft: 6}}/>,
+    qaUser: <BiotechIcon color='info' style={{marginLeft: 6}}/>
 }
 
 const getHighestRoleLevel = roles => Math.max(
@@ -47,20 +58,23 @@ export function AccessProvider({children}) {
         return {
             admin: claims.has('admin'),
             lpuMod: claims.has('lpuMod'),
+            requestAdmin: claims.has('requestAdmin'),
             // Administrators retain the previous ability to preview QA-only UI.
             qaUser: claims.has('qaUser') || claims.has('admin')
         }
     }, [authLoaded, isLoggedIn, user?.uid, userClaims])
 
     const adminEnabled = roles.admin && adminPreference === true
+    const requestAdminEnabled = roles.requestAdmin
     const lpuModEnabled = roles.lpuMod && isEnabledToday(lpuModEnabledAt)
     const qaUserEnabled = roles.qaUser && isEnabledToday(qaUserEnabledAt)
 
     const enabledRoles = useMemo(() => ({
         admin: adminEnabled,
         lpuMod: lpuModEnabled,
+        requestAdmin: requestAdminEnabled,
         qaUser: qaUserEnabled
-    }), [adminEnabled, lpuModEnabled, qaUserEnabled])
+    }), [adminEnabled, lpuModEnabled, qaUserEnabled, requestAdminEnabled])
 
     const dailyRoleExpiration = useMemo(() => {
         if (!enabledRoles.lpuMod && !enabledRoles.qaUser) return null
@@ -81,7 +95,8 @@ export function AccessProvider({children}) {
         enabledRoles,
         level: getHighestRoleLevel(roles),
         enabledLevel: getHighestRoleLevel(enabledRoles),
-        activeRole: getActiveRole(enabledRoles)
+        activeRole: getActiveRole(enabledRoles),
+        icon: roleIcons[getActiveRole(enabledRoles)] || null
     }), [enabledRoles, roles])
 
     const toggleRoleEnabled = useCallback(role => {

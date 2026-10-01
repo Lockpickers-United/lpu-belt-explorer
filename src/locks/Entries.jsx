@@ -1,6 +1,6 @@
 import React, {useState, useContext, useMemo} from 'react'
 import CompactEntries from './CompactEntries'
-import EntrySimple from '../entries/EntrySimple'
+import EntrySimple from '../entries/Entry.jsx'
 import BeltRequirements from '../info/BeltRequirements.jsx'
 import DataContext from './LockDataProvider'
 import LockListContext from './LockListContext'
