@@ -2,6 +2,8 @@ import React from 'react'
 import {redirect} from 'react-router-dom'
 import LoadingDisplay from '../misc/LoadingDisplay'
 import ErrorBoundary from './ErrorBoundary'
+import RequireRoles from './RequireRoles.jsx'
+import LoadingDisplayNav from '../nav/LoadingDisplayNav'
 
 export default [
     {
@@ -378,6 +380,19 @@ export default [
         ]
     },
     {
+        path: '/classification',
+        lazy: async () => {
+            const {default: ClassificationRoute} = await import('../classification/ClassificationRoute.jsx')
+            return {
+                element: (
+                    <RequireRoles roles={['admin']}>
+                        <ClassificationRoute/>
+                    </RequireRoles>
+                )
+            }
+        }
+    },
+    {
         path: '/rankingrequests',
         lazy: async () => {
             const {default: RankingRequestsParentRoute} = await import('../rankingRequests/RankingRequestsParentRoute.jsx')
@@ -629,5 +644,5 @@ export default [
 ].map(route => ({
     ...route,
     errorElement: <ErrorBoundary/>,
-    hydrateFallbackElement: <LoadingDisplay/>
+    hydrateFallbackElement: <LoadingDisplayNav/>
 }))

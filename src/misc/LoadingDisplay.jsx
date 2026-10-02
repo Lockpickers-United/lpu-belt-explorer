@@ -3,17 +3,19 @@ import CircularProgress from '@mui/material/CircularProgress'
 import Box from '@mui/material/Box'
 import {circularProgressClasses} from '@mui/material'
 
-function LoadingDisplay({message = undefined}) {
+function LoadingDisplay({message = undefined, size = 60, thickness = 4, style = {}}) {
     return (
         <React.Fragment>
             <div style={{
                 display: 'flex',
+                flexDirection: 'column',
                 placeItems: 'center',
                 width: '100%',
                 alignItems: 'center',
                 height: 200,
                 marginRight: 'auto',
-                marginLeft: 'auto'
+                marginLeft: 'auto',
+                ...style
             }}>
                 <div style={{
                     marginRight: 'auto',
@@ -26,8 +28,8 @@ function LoadingDisplay({message = undefined}) {
                                 color: (theme) =>
                                     theme.palette.grey[theme.palette.mode === 'light' ? 200 : 800]
                             }}
-                            size={60}
-                            thickness={4}
+                            size={size}
+                            thickness={thickness}
                             value={100}
                         />
                         <CircularProgress
@@ -42,13 +44,15 @@ function LoadingDisplay({message = undefined}) {
                                     strokeLinecap: 'round'
                                 }
                             }}
-                            size={60}
-                            thickness={4}
+                            size={size}
+                            thickness={thickness}
                         />
                     </Box>
                 </div>
+                {message &&
+                    <div style={{marginTop: 16}}>{message}</div>
+                }
             </div>
-            {message}
         </React.Fragment>
     )
 }

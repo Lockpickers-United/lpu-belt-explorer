@@ -1,7 +1,7 @@
 import React, {useCallback, useContext, useEffect, useMemo, useState} from 'react'
 import AuthContext from '../app/AuthContext.jsx'
 import {useAccess} from '../app/AccessContext.jsx'
-import {sampleData} from '../classification/classificationData'
+import sampleData from '../data/classification-samples.json'
 import {danBelts} from '../data/belts'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'

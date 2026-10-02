@@ -14,23 +14,35 @@ export function AuthProvider({children}) {
         let authStateVersion = 0
         const unregisterAuthObserver = auth.onAuthStateChanged(user => {
             const currentVersion = ++authStateVersion
-            setAuthLoaded(true)
+            setAuthLoaded(false)
             setUser(user)
             setUserClaims([])
+
+            if (!user) {
+                setAuthLoaded(true)
+                return
+            }
+
             user?.getIdTokenResult()
                 .then(idTokenResult => {
-                    if (currentVersion === authStateVersion) {
-                        setUserClaims(Object.keys(idTokenResult.claims)
-                            .filter(claim => idTokenResult.claims[claim] === true)
-                            .filter(claim => claim !== 'email_verified'))
-                    }
+                    if (currentVersion !== authStateVersion) return
+
+                    setUserClaims(Object.keys(idTokenResult.claims)
+                        .filter(claim => idTokenResult.claims[claim] === true)
+                        .filter(claim => claim !== 'email_verified'))
                 })
                 .catch(error => {
                     if (currentVersion === authStateVersion) {
                         console.error('Error getting token result:', error)
                     }
                 })
+                .finally(() => {
+                    if (currentVersion === authStateVersion) {
+                        setAuthLoaded(true)
+                    }
+                })
         })
+
         return () => {
             authStateVersion++
             unregisterAuthObserver()

@@ -6,14 +6,12 @@ import SmartDisplayIcon from '@mui/icons-material/SmartDisplay'
 import {useAccess} from '../app/AccessContext.jsx'
 import EntryClassification from './EntryClassification.jsx'
 import BeltIcon from './BeltIcon.jsx'
-import {sampleData} from '../classification/classificationData'
+import sampleData from '../data/classification-samples.json'
 import AuthContext from '../app/AuthContext.jsx'
 
 export default function EntryActionBar({entry}) {
     const {accessInfo} = useAccess()
     const {user = {}} = useContext(AuthContext)
-
-    console.log('accessInfo', accessInfo)
 
     const [showFeature, setShowFeature] = useState({})
     const handleToggle = useCallback((feature) => {

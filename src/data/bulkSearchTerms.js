@@ -19,7 +19,7 @@ const terms = [
     'American Lock 6560',
     'Ankerslot Global',
     'Arrow ChoICe HS : 6/7 pin  with twin 6k sidebar',
-    'Angal (Propose adding US Star/US Star Tech, US 1 Lock) same line with US Star High Security @Purple 5 serrated pin-in-pin mtl clone with poorer tolerances.',
+    'Angal',
     'ASSA Neptun Camlock (6 pin, standard drivers, 5 serrated finger pins)',
     'ASSA twin 6k (Cam lock)',
     'ASSA Twin V10 Cam Lock',
