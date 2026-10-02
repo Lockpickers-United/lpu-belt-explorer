@@ -34,6 +34,13 @@ export default [
         }
     },
     {
+        path: '/locksearch',
+        lazy: async () => {
+            const {default: LockSearchRoute} = await import('../locks/LockSearchRoute')
+            return {element: <LockSearchRoute/>}
+        }
+    },
+    {
         path: '/scorecard/info',
         lazy: async () => {
             const {default: ScorecardInfoRoute} = await import('../scorecard/ScorecardInfoRoute.jsx')

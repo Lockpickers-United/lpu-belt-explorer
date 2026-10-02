@@ -18,10 +18,11 @@ export default function SearchedLockEntries({entry, requestMod}) {
     if (!requestMod) return null
     //if (entry.requestStatus === 'Ranked') return null
 
-    const {lockEntries} = useContext(DataContext)
+    const {lockEntries, mappedEntries} = useContext(DataContext)
+    const entries = lockEntries || mappedEntries
     const searchedEntries = useMemo(() => {
-        return searchEntriesForText(entryName(entry), [...lockEntries])
-    }, [entry, lockEntries]).slice(0, 3)
+        return searchEntriesForText(entryName(entry), [...entries])
+    }, [entries, entry]).slice(0, 3)
 
     if (!searchedEntries.length) return null
 
