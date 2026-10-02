@@ -7,11 +7,11 @@
         "label": "Ranked"
       },
       {
-        "value": 967,
+        "value": 968,
         "label": "All"
       },
       {
-        "value": 114,
+        "value": 115,
         "label": "Unranked"
       }
     ]
@@ -20,61 +20,61 @@
     {
       "belt": "White",
       "count": 18,
-      "value": 0.01861427094105481,
+      "value": 0.01859504132231405,
       "id": "White"
     },
     {
       "belt": "Yellow",
       "count": 71,
-      "value": 0.0734229576008273,
+      "value": 0.07334710743801653,
       "id": "Yellow"
     },
     {
       "belt": "Orange",
       "count": 84,
-      "value": 0.08686659772492245,
+      "value": 0.08677685950413223,
       "id": "Orange"
     },
     {
       "belt": "Green",
       "count": 159,
-      "value": 0.16442605997931747,
+      "value": 0.16425619834710745,
       "id": "Green"
     },
     {
       "belt": "Blue",
       "count": 140,
-      "value": 0.14477766287487073,
+      "value": 0.1446280991735537,
       "id": "Blue"
     },
     {
       "belt": "Purple",
       "count": 121,
-      "value": 0.125129265770424,
+      "value": 0.125,
       "id": "Purple"
     },
     {
       "belt": "Brown",
       "count": 85,
-      "value": 0.08790072388831438,
+      "value": 0.0878099173553719,
       "id": "Brown"
     },
     {
       "belt": "Red",
       "count": 74,
-      "value": 0.07652533609100311,
+      "value": 0.07644628099173553,
       "id": "Red"
     },
     {
       "belt": "Black",
       "count": 101,
-      "value": 0.10444674250258532,
+      "value": 0.10433884297520661,
       "id": "Black"
     },
     {
       "belt": "Unranked",
-      "count": 114,
-      "value": 0.11789038262668046,
+      "count": 115,
+      "value": 0.11880165289256199,
       "id": "Unranked"
     }
   ],
@@ -86,7 +86,7 @@
     },
     {
       "label": "Dimple",
-      "value": 221,
+      "value": 222,
       "id": "dimple"
     },
     {
@@ -492,7 +492,7 @@
       },
       {
         "label": "Dimple",
-        "value": 18,
+        "value": 19,
         "id": "dimple"
       },
       {
@@ -538,7 +538,7 @@
       },
       {
         "segment": "All locks",
-        "count": 967,
+        "count": 968,
         "media": 917,
         "coverage": "94%"
       }
@@ -12723,44 +12723,44 @@
           "label": "Green",
           "id": "Green",
           "count": 1,
-          "value": 0.029
+          "value": 0.028
         },
         {
           "label": "Blue",
           "id": "Blue",
           "count": 1,
-          "value": 0.029
+          "value": 0.028
         },
         {
           "label": "Purple",
           "id": "Purple",
           "count": 1,
-          "value": 0.029
+          "value": 0.028
         },
         {
           "label": "Brown",
           "id": "Brown",
           "count": 4,
-          "value": 0.114
+          "value": 0.111
         },
         {
           "label": "Red",
           "id": "Red",
           "count": 11,
-          "value": 0.314
+          "value": 0.306
         },
         {
           "label": "Black",
           "id": "Black",
           "count": 16,
-          "value": 0.457
+          "value": 0.444
         }
       ],
       "mechanisms": [
         {
           "label": "Dimple",
           "id": "Dimple",
-          "count": 35,
+          "count": 36,
           "value": 1
         }
       ]
@@ -22956,6 +22956,6 @@
   },
   "metadata": {
     "source": "import-data",
-    "updatedDateTime": "2026-09-30 04:39"
+    "updatedDateTime": "2026-10-02 02:47"
   }
 }
