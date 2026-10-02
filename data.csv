@@ -896,6 +896,7 @@ Unranked,"Hong Dun","model tbd","security pinned dimple with sliders",,"Under Re
 Unranked,Hori,1601,,Lever,,,476995cc
 Unranked,Hori,Trident,"standard pins",Dimple,"Under Review ⚑",,97e1ae9f
 Unranked,Kaba,"Gemini T","≥13 pins",Dimple,"Under Review ⚑","High pin count",a7d98df3
+Unranked,Kaba,"Gemini T","<13 pins",Dimple,"Under Review ⚑","High pin count",f97ad477
 Unranked,Kibb,"5 lever",,Lever,"Under Review ⚑",,991c6c07
 Unranked,"La Gard",2270,,,"Under Review ⚑",,c65959a3
 Unranked,Laperche,Diam,,Dimple,,,64662298
