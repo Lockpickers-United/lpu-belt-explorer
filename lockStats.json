@@ -7,11 +7,11 @@
         "label": "Ranked"
       },
       {
-        "value": 968,
+        "value": 974,
         "label": "All"
       },
       {
-        "value": 115,
+        "value": 121,
         "label": "Unranked"
       }
     ]
@@ -20,78 +20,78 @@
     {
       "belt": "White",
       "count": 18,
-      "value": 0.01859504132231405,
+      "value": 0.018480492813141684,
       "id": "White"
     },
     {
       "belt": "Yellow",
       "count": 71,
-      "value": 0.07334710743801653,
+      "value": 0.0728952772073922,
       "id": "Yellow"
     },
     {
       "belt": "Orange",
       "count": 84,
-      "value": 0.08677685950413223,
+      "value": 0.08624229979466119,
       "id": "Orange"
     },
     {
       "belt": "Green",
       "count": 159,
-      "value": 0.16425619834710745,
+      "value": 0.16324435318275154,
       "id": "Green"
     },
     {
       "belt": "Blue",
       "count": 140,
-      "value": 0.1446280991735537,
+      "value": 0.1437371663244353,
       "id": "Blue"
     },
     {
       "belt": "Purple",
       "count": 121,
-      "value": 0.125,
+      "value": 0.12422997946611909,
       "id": "Purple"
     },
     {
       "belt": "Brown",
       "count": 85,
-      "value": 0.0878099173553719,
+      "value": 0.08726899383983573,
       "id": "Brown"
     },
     {
       "belt": "Red",
       "count": 74,
-      "value": 0.07644628099173553,
+      "value": 0.07597535934291581,
       "id": "Red"
     },
     {
       "belt": "Black",
       "count": 101,
-      "value": 0.10433884297520661,
+      "value": 0.10369609856262833,
       "id": "Black"
     },
     {
       "belt": "Unranked",
-      "count": 115,
-      "value": 0.11880165289256199,
+      "count": 121,
+      "value": 0.12422997946611909,
       "id": "Unranked"
     }
   ],
   "lockingMechanisms": [
     {
       "label": "Pin-tumbler",
-      "value": 380,
+      "value": 384,
       "id": "pin-tumbler"
     },
     {
       "label": "Dimple",
-      "value": 222,
+      "value": 229,
       "id": "dimple"
     },
     {
       "label": "Multiple",
-      "value": 100,
+      "value": 102,
       "id": "multiple"
     },
     {
@@ -111,7 +111,7 @@
     },
     {
       "label": "Pump/push",
-      "value": 30,
+      "value": 31,
       "id": "pump-push"
     },
     {
@@ -173,7 +173,7 @@
     "Orange": [
       {
         "label": "Pin-tumbler",
-        "value": 74,
+        "value": 75,
         "id": "pin-tumbler"
       },
       {
@@ -486,19 +486,24 @@
         "id": "lever"
       },
       {
-        "label": "Pin-tumbler",
-        "value": 23,
-        "id": "pin-tumbler"
-      },
-      {
         "label": "Dimple",
-        "value": 19,
+        "value": 26,
         "id": "dimple"
       },
       {
+        "label": "Pin-tumbler",
+        "value": 26,
+        "id": "pin-tumbler"
+      },
+      {
         "label": "Pump/push",
-        "value": 5,
+        "value": 6,
         "id": "pump-push"
+      },
+      {
+        "label": "Multiple",
+        "value": 5,
+        "id": "multiple"
       },
       {
         "label": "Disc detainer",
@@ -509,11 +514,6 @@
         "label": "Wafer",
         "value": 4,
         "id": "wafer"
-      },
-      {
-        "label": "Multiple",
-        "value": 3,
-        "id": "multiple"
       },
       {
         "label": "Magnet",
@@ -538,7 +538,7 @@
       },
       {
         "segment": "All locks",
-        "count": 968,
+        "count": 974,
         "media": 917,
         "coverage": "94%"
       }
@@ -2038,14 +2038,8 @@
         {
           "label": "Pin-tumbler",
           "id": "Pin-tumbler",
-          "count": 89,
-          "value": 0.712
-        },
-        {
-          "label": "unknown",
-          "id": "unknown",
-          "count": 1,
-          "value": 0.008
+          "count": 90,
+          "value": 0.72
         },
         {
           "label": "Dimple",
@@ -3974,8 +3968,8 @@
       ],
       "mechanisms": [
         {
-          "label": "unknown",
-          "id": "unknown",
+          "label": "Pin-tumbler",
+          "id": "Pin-tumbler",
           "count": 1,
           "value": 1
         }
@@ -5950,20 +5944,14 @@
         {
           "label": "Pin-tumbler",
           "id": "Pin-tumbler",
-          "count": 3,
-          "value": 0.333
+          "count": 4,
+          "value": 0.444
         },
         {
           "label": "Dimple",
           "id": "Dimple",
           "count": 5,
           "value": 0.556
-        },
-        {
-          "label": "unknown",
-          "id": "unknown",
-          "count": 1,
-          "value": 0.111
         }
       ]
     },
@@ -6615,32 +6603,32 @@
           "label": "Purple",
           "id": "Purple",
           "count": 1,
-          "value": 0.167
+          "value": 0.143
         },
         {
           "label": "Brown",
           "id": "Brown",
           "count": 1,
-          "value": 0.167
+          "value": 0.143
         },
         {
           "label": "Red",
           "id": "Red",
           "count": 1,
-          "value": 0.167
+          "value": 0.143
         },
         {
           "label": "Black",
           "id": "Black",
           "count": 3,
-          "value": 0.5
+          "value": 0.429
         }
       ],
       "mechanisms": [
         {
           "label": "Dimple",
           "id": "Dimple",
-          "count": 6,
+          "count": 7,
           "value": 1
         }
       ]
@@ -11620,8 +11608,8 @@
         {
           "label": "Dimple",
           "id": "Dimple",
-          "count": 1,
-          "value": 0.25
+          "count": 2,
+          "value": 0.5
         },
         {
           "label": "Pin-tumbler",
@@ -11632,12 +11620,6 @@
         {
           "label": "Pump/push",
           "id": "Pump/push",
-          "count": 1,
-          "value": 0.25
-        },
-        {
-          "label": "unknown",
-          "id": "unknown",
           "count": 1,
           "value": 0.25
         }
@@ -11834,8 +11816,8 @@
       ],
       "mechanisms": [
         {
-          "label": "unknown",
-          "id": "unknown",
+          "label": "Multiple",
+          "id": "Multiple",
           "count": 1,
           "value": 1
         }
@@ -12216,6 +12198,72 @@
           "id": "Pump/push",
           "count": 1,
           "value": 0.111
+        }
+      ]
+    },
+    "Ikon": {
+      "belts": [
+        {
+          "label": "White",
+          "id": "White",
+          "count": 0,
+          "value": 0
+        },
+        {
+          "label": "Yellow",
+          "id": "Yellow",
+          "count": 0,
+          "value": 0
+        },
+        {
+          "label": "Orange",
+          "id": "Orange",
+          "count": 0,
+          "value": 0
+        },
+        {
+          "label": "Green",
+          "id": "Green",
+          "count": 0,
+          "value": 0
+        },
+        {
+          "label": "Blue",
+          "id": "Blue",
+          "count": 0,
+          "value": 0
+        },
+        {
+          "label": "Purple",
+          "id": "Purple",
+          "count": 0,
+          "value": 0
+        },
+        {
+          "label": "Brown",
+          "id": "Brown",
+          "count": 0,
+          "value": 0
+        },
+        {
+          "label": "Red",
+          "id": "Red",
+          "count": 0,
+          "value": 0
+        },
+        {
+          "label": "Black",
+          "id": "Black",
+          "count": 0,
+          "value": 0
+        }
+      ],
+      "mechanisms": [
+        {
+          "label": "unknown",
+          "id": "unknown",
+          "count": 1,
+          "value": 1
         }
       ]
     },
@@ -14176,14 +14224,8 @@
         {
           "label": "Dimple",
           "id": "Dimple",
-          "count": 2,
-          "value": 0.667
-        },
-        {
-          "label": "unknown",
-          "id": "unknown",
-          "count": 1,
-          "value": 0.333
+          "count": 3,
+          "value": 1
         }
       ]
     },
@@ -15753,37 +15795,37 @@
           "label": "Orange",
           "id": "Orange",
           "count": 1,
-          "value": 0.056
+          "value": 0.053
         },
         {
           "label": "Green",
           "id": "Green",
           "count": 2,
-          "value": 0.111
+          "value": 0.105
         },
         {
           "label": "Blue",
           "id": "Blue",
           "count": 4,
-          "value": 0.222
+          "value": 0.211
         },
         {
           "label": "Purple",
           "id": "Purple",
           "count": 4,
-          "value": 0.222
+          "value": 0.211
         },
         {
           "label": "Brown",
           "id": "Brown",
           "count": 6,
-          "value": 0.333
+          "value": 0.316
         },
         {
           "label": "Red",
           "id": "Red",
           "count": 1,
-          "value": 0.056
+          "value": 0.053
         },
         {
           "label": "Black",
@@ -15797,13 +15839,19 @@
           "label": "Pin-tumbler",
           "id": "Pin-tumbler",
           "count": 3,
-          "value": 0.167
+          "value": 0.158
         },
         {
           "label": "Multiple",
           "id": "Multiple",
           "count": 15,
-          "value": 0.833
+          "value": 0.789
+        },
+        {
+          "label": "unknown",
+          "id": "unknown",
+          "count": 1,
+          "value": 0.053
         }
       ]
     },
@@ -16905,6 +16953,72 @@
         }
       ]
     },
+    "Opel": {
+      "belts": [
+        {
+          "label": "White",
+          "id": "White",
+          "count": 0,
+          "value": 0
+        },
+        {
+          "label": "Yellow",
+          "id": "Yellow",
+          "count": 0,
+          "value": 0
+        },
+        {
+          "label": "Orange",
+          "id": "Orange",
+          "count": 0,
+          "value": 0
+        },
+        {
+          "label": "Green",
+          "id": "Green",
+          "count": 0,
+          "value": 0
+        },
+        {
+          "label": "Blue",
+          "id": "Blue",
+          "count": 0,
+          "value": 0
+        },
+        {
+          "label": "Purple",
+          "id": "Purple",
+          "count": 0,
+          "value": 0
+        },
+        {
+          "label": "Brown",
+          "id": "Brown",
+          "count": 0,
+          "value": 0
+        },
+        {
+          "label": "Red",
+          "id": "Red",
+          "count": 0,
+          "value": 0
+        },
+        {
+          "label": "Black",
+          "id": "Black",
+          "count": 0,
+          "value": 0
+        }
+      ],
+      "mechanisms": [
+        {
+          "label": "Dimple",
+          "id": "Dimple",
+          "count": 1,
+          "value": 1
+        }
+      ]
+    },
     "Opnus": {
       "belts": [
         {
@@ -17361,13 +17475,13 @@
           "label": "Purple",
           "id": "Purple",
           "count": 1,
-          "value": 0.333
+          "value": 0.25
         },
         {
           "label": "Brown",
           "id": "Brown",
           "count": 1,
-          "value": 0.333
+          "value": 0.25
         },
         {
           "label": "Red",
@@ -17386,7 +17500,7 @@
         {
           "label": "Pump/push",
           "id": "Pump/push",
-          "count": 3,
+          "count": 4,
           "value": 1
         }
       ]
@@ -17559,7 +17673,7 @@
           "label": "Purple",
           "id": "Purple",
           "count": 1,
-          "value": 0.5
+          "value": 0.333
         },
         {
           "label": "Brown",
@@ -17584,14 +17698,14 @@
         {
           "label": "Dimple",
           "id": "Dimple",
-          "count": 1,
-          "value": 0.5
+          "count": 2,
+          "value": 0.667
         },
         {
-          "label": "unknown",
-          "id": "unknown",
+          "label": "Multiple",
+          "id": "Multiple",
           "count": 1,
-          "value": 0.5
+          "value": 0.333
         }
       ]
     },
@@ -17726,8 +17840,8 @@
       ],
       "mechanisms": [
         {
-          "label": "unknown",
-          "id": "unknown",
+          "label": "Dimple",
+          "id": "Dimple",
           "count": 1,
           "value": 1
         }
@@ -19972,14 +20086,8 @@
         {
           "label": "Dimple",
           "id": "Dimple",
-          "count": 3,
-          "value": 0.6
-        },
-        {
-          "label": "unknown",
-          "id": "unknown",
-          "count": 1,
-          "value": 0.2
+          "count": 4,
+          "value": 0.8
         },
         {
           "label": "Disc detainer",
@@ -22396,8 +22504,8 @@
         {
           "label": "Pin-tumbler",
           "id": "Pin-tumbler",
-          "count": 11,
-          "value": 0.458
+          "count": 12,
+          "value": 0.5
         },
         {
           "label": "Lever",
@@ -22416,12 +22524,6 @@
           "id": "Multiple",
           "count": 7,
           "value": 0.292
-        },
-        {
-          "label": "unknown",
-          "id": "unknown",
-          "count": 1,
-          "value": 0.042
         }
       ]
     },
@@ -22956,6 +23058,6 @@
   },
   "metadata": {
     "source": "import-data",
-    "updatedDateTime": "2026-10-02 02:47"
+    "updatedDateTime": "2026-10-03 22:57"
   }
 }
