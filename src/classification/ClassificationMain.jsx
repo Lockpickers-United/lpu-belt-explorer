@@ -3,7 +3,7 @@ import useWindowSize from '../util/useWindowSize.jsx'
 import DataContext from '../locks/LockDataProvider.jsx'
 import SearchBox from '../nav/SearchBox.jsx'
 import ViewFilterButtons from '../filters/ViewFilterButtons.jsx'
-import {projectsSortFields} from '../data/sortFields'
+import {classificationSortFields} from '../data/sortFields'
 import Nav from '../nav/Nav.jsx'
 import Tracker from '../app/Tracker.jsx'
 import usePageTitle from '../util/usePageTitle.jsx'
@@ -20,7 +20,7 @@ export default function ClassificationMain() {
         <React.Fragment>
             <SearchBox label='Locks' extraFilters={[{key: 'tab', value: 'search'}]} keepOpen={false}
                        entryCount={visibleEntries.length}/>
-            <ViewFilterButtons sortValues={projectsSortFields} advancedEnabled={true}
+            <ViewFilterButtons sortValues={classificationSortFields} advancedEnabled={true}
                                extraFilters={[]} entryType='Project'
                                compactMode={false} resetAll={true} expandAll={false}/>
             {!isMobile && <div style={{flexGrow: 1, minWidth: '10px'}}/>}

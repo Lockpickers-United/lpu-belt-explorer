@@ -18,6 +18,8 @@ function RelatedEntryButton({id, onExpand, entryId}) {
     const style = id === entryId ? {border: '1px solid #777'} : {}
     const disabled = id === entryId
 
+    if (!entry) return null
+
     return (
         <Tooltip title={entry.version} arrow disableFocusListener>
             <span>

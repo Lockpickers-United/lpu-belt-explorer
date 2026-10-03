@@ -17,7 +17,7 @@ export function DataProvider({children, profile}) {
     const {search, sort, expandAll} = allFilters
 
     const mappedEntries = useMemo(() => {
-        return lockEntries?.filter(l => classificationEntries.find(entry => entry.entryId === l.id)).map(entry => {
+        return lockEntries?.filter(l => classificationEntries.find(e => e.entryId === l.id)).map(entry => {
 
             const voteEntries = classificationEntries.filter(vote => vote.entryId === entry.id)
             const voters = voteEntries.map(v => v.displayName)
@@ -61,7 +61,9 @@ export function DataProvider({children, profile}) {
             entries: mappedEntries
         })
 
-        const searched = searchEntriesForText(search, [...filtered])
+        const searched = searchEntriesForText(search, [...filtered]).sort((a, b) => {
+            return a.fuzzy.localeCompare(b.fuzzy)
+        })
 
         return sort
             ? searched.sort((a, b) => {
@@ -80,9 +82,10 @@ export function DataProvider({children, profile}) {
                 } else if (sort === 'evidenceUrl') {
                     return a.evidenceUrl.localeCompare(b.evidenceUrl)
                         || a.pickerName.localeCompare(b.pickerName)
-                } else {
-                    return a.pickerName.localeCompare(b.pickerName)
                 }
+
+                return a.fuzzy.localeCompare(b.fuzzy)
+
             })
             : searched
     }, [advancedFilterGroups, mappedEntries, search, sort])
@@ -90,8 +93,8 @@ export function DataProvider({children, profile}) {
     //console.log('visibleEntries', visibleEntries)
 
     const getEntryFromId = useCallback(id => {
-        return allEntries.find(e => e.id === id)
-    }, [allEntries])
+        return mappedEntries.find(e => e.id === id)
+    }, [mappedEntries])
 
     const lockbazzarAvailable = useCallback((_) => {
         return false

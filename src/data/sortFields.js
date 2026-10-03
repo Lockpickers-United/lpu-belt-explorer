@@ -13,6 +13,10 @@ export const lockSortFields = [
     {label: 'Date Added', value: 'dateAdded'}
 ]
 
+export const classificationSortFields = [
+    {label: 'Default', value: undefined},
+]
+
 export const dialSortFields = [
     {label: 'Default', value: undefined},
     {label: 'UL Group (Ascending)', value: 'groupAscending'},
