@@ -90,7 +90,7 @@ describe('LockListRoute', () => {
         const list = await screen.findByRole('list', {name: 'Locks'})
         expect(within(list).getByRole('listitem', {name: 'Any Acrylic Padlock'})).toBeInTheDocument()
         const firstListItem = within(list).getAllByRole('listitem')[0]
-        const summary = within(firstListItem).getByRole('button')
+        const summary = within(firstListItem).getAllByRole('button')[0]
         await user.click(summary)
         expect(summary).toHaveAttribute('aria-expanded', 'true')
         expect(await within(firstListItem).findByRole('img', {name: 'belt-icon'})).toBeInTheDocument()

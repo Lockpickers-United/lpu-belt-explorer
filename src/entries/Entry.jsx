@@ -32,7 +32,6 @@ import EntryNotes from './EntryNotes'
 import LogEntryButton from './LogEntryButton.jsx'
 import useWindowSize from '../util/useWindowSize.jsx'
 import FilterContext from '../context/FilterContext.jsx'
-import Box from '@mui/material/Box'
 import entryName from './entryName'
 import Link from '@mui/material/Link'
 import EntryActionBar from './EntryActionBar.jsx'
@@ -46,7 +45,7 @@ function Entry({entry, expanded, onExpand, isClassification, scorecardId}) {
     const navigate = useNavigate()
     const {accessInfo} = useAccess()
     const {expandAll} = useContext(DataContext)
-    const {addAdvancedFilterGroup, filters} = useContext(FilterContext)
+    const {filters} = useContext(FilterContext)
     const {userId} = useParams()
     const [scrolled, setScrolled] = useState(false)
     const style = {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto'}
@@ -63,13 +62,6 @@ function Entry({entry, expanded, onExpand, isClassification, scorecardId}) {
     const handleChange = useCallback((_, isExpanded) => {
         onExpand && onExpand(isExpanded ? entry.id : false)
     }, [entry, onExpand])
-
-    const handleAddFilter = useCallback((event, fieldName, valueToAdd) => {
-        event.preventDefault()
-        event.stopPropagation()
-        addAdvancedFilterGroup({fieldName, valueToAdd, operator: 'AND'})
-        window.scrollTo({top: 0, behavior: 'smooth'})
-    }, [addAdvancedFilterGroup])
 
     useEffect(() => {
         if (expanded && ref && !scrolled && !expandAll) {
@@ -133,11 +125,14 @@ function Entry({entry, expanded, onExpand, isClassification, scorecardId}) {
     return (
         <Accordion expanded={expanded} onChange={handleChange} style={style} ref={ref} slots={{heading: 'div'}}
                    role='listitem' aria-label={lockName}>
-            <AccordionSummary component='div' nativeButton={false} expandIcon={<ExpandMoreIcon/>} sx={{
-                '.MuiAccordionSummary-content': {
-                    alignItems: 'center'
-                }
-            }} style={{}}>
+            <AccordionSummary component='div'
+                              nativeButton={false}
+                              expandIcon={<ExpandMoreIcon/>}
+                              sx={{
+                                  '.MuiAccordionSummary-content': {
+                                      alignItems: 'center'
+                                  }
+                              }} style={{}}>
 
                 <BeltStripe value={entry.belt}/>
                 <div
@@ -161,42 +156,33 @@ function Entry({entry, expanded, onExpand, isClassification, scorecardId}) {
 
                 {(entry.lockingMechanisms?.length > 0 || entry.voteEntries) &&
                     <div style={{margin: '0px 0px 0px 0px', width: detailsWidth, flexShrink: 0, flexDirection: 'row'}}>
-
                         {isClassification && entry.voteEntries &&
                             <div style={{
                                 display: 'flex',
                                 marginBottom: 12,
                                 paddingRight: !isMobile ? 0 : 0,
                                 width: '100%',
-                                justifyContent: 'right'
+                                justifyContent: 'left'
                             }}>
                                 <ClassificationVotes votes={entry.voteEntries}/>
                             </div>
                         }
-                        <div style={{margin: '0px 0px 0px 0px', width: '100%', flexShrink: 0, flexDirection: 'row'}}>
+                        <div style={{
+                            margin: '0px 0px 0px 0px',
+                            width: '100%',
+                            flexShrink: 0,
+                            flexGrow: 1,
+                            flexDirection: 'row'
+                        }}>
                             {entry.lockingMechanisms?.sort().map((lockingMechanism, index) =>
-                                <Box
-                                    key={index}
-                                    style={{
-                                        display: 'inline-block',
-                                        color: '#fff',
-                                        fontSize: '0.85rem',
-                                        border: '1px solid #666',
-                                        borderRadius: 16,
-                                        padding: '2px 10px',
-                                        cursor: 'pointer',
-                                        margin: '0 4px 4px 0',
-                                        whiteSpace: 'nowrap'
-                                    }}
-                                    sx={{
-                                        '&:hover': {
-                                            backgroundColor: '#333'
-                                        }
-                                    }}
-                                    onClick={(event) => handleAddFilter(event, 'lockingMechanisms', lockingMechanism)}
-                                >
-                                    {String(lockingMechanism)}
-                                </Box>
+                                <span key={index}>
+                                    {!isClassification
+                                        ? <FilterChip mode={'simple'} value={lockingMechanism}
+                                                      field='lockingMechanisms'/>
+                                        : <FilterChip mode={'text'} value={lockingMechanism}
+                                                      field='lockingMechanisms'/>
+                                    }
+                                </span>
                             )}
                         </div>
                     </div>
@@ -259,11 +245,7 @@ function Entry({entry, expanded, onExpand, isClassification, scorecardId}) {
                                 value={
                                     <Stack direction='row' spacing={0} sx={{flexWrap: 'wrap'}}>
                                         {entry.features.map((feature, index) =>
-                                            <FilterChip
-                                                key={index}
-                                                value={feature}
-                                                field='features'
-                                            />
+                                            <FilterChip key={index} value={feature} field='features'/>
                                         )}
                                     </Stack>
                                 }/>
@@ -282,6 +264,7 @@ function Entry({entry, expanded, onExpand, isClassification, scorecardId}) {
                                     </React.Fragment>
                                 }/>
                         }
+
                         {!!entry.description &&
                             <div style={{margin: 8}}>
                                 <ReactMarkdown rehypePlugins={[[rehypeExternalLinks, {

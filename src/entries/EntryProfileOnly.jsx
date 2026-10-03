@@ -130,11 +130,7 @@ function Entry({entry, expanded, onExpand, scorecardId}) {
                             value={
                                 <Stack direction='row' spacing={0} sx={{flexWrap: 'wrap'}}>
                                     {entry.lockingMechanisms?.sort().map((lockingMechanism, index) =>
-                                        <FilterChip
-                                            key={index}
-                                            value={lockingMechanism}
-                                            field='lockingMechanisms'
-                                        />
+                                        <FilterChip key={index} value={lockingMechanism} field='lockingMechanisms'/>
                                     )}
                                 </Stack>
                             }
