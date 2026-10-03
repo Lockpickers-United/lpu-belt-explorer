@@ -1,6 +1,6 @@
 import {createGoogleSheetsClient} from '../src/data/googleSheetsClient.js'
 import {sheetConfig} from '../keys/classificationSheetDetails.js'
-import {voters} from '../keys/classificationVoters.js'
+import {voters, votersNotOnSite} from '../keys/classificationVoters.js'
 import dayjs from 'dayjs'
 import fs from 'fs'
 
@@ -47,18 +47,19 @@ async function processData() {
         const [description, entryId, ranking, sheetLink, type, ...voteRanks] = row.cells
         const allRowNotes = sheetData.notes.filter(note => note.sheetRow === row.sheetRow)
 
+        const knownVoters = [...voters, ...votersNotOnSite]
         const votes = voteRanks.map((vote, index) => {
             const note = allRowNotes.find(note => note.columnIndex === index + 5)
             const votedBelt = beltNames[vote.toLowerCase()] || vote
-            const noteMentions = voters.reduce((acc, author) => {
-                if ([author.displayName, ...author.aliases].some(name => note?.note?.toLowerCase().includes(name.toLowerCase()))) {
+            const noteMentions = knownVoters.reduce((acc, author) => {
+                if ([author.displayName, ...author.aliases].some(name => note?.note?.toLowerCase().includes(name.trim().toLowerCase()))) {
                     acc.push(author)
                 }
                 return acc
             }, [])
 
-            const userId = noteMentions?.[noteMentions.length - 1]?.userId
-            const displayName = noteMentions?.map(author => author.displayName).join(' / ')
+            const userId = noteMentions?.[noteMentions.length - 1]?.userId || 'unknown'
+            const displayName = noteMentions?.map(author => author.displayName).join(' / ') || 'Unknown'
 
             return {votedBelt, comment: note?.note, userId, displayName}
         })
@@ -85,7 +86,7 @@ async function processData() {
 
     rowData.forEach(row => {
         // no author found
-        if (row.comment?.length > 0 && !row.userId) {
+        if (row.comment?.length > 0 && row.displayName === 'Unknown') {
             console.log(row.comment, '\n')
         }
 
@@ -110,7 +111,7 @@ async function processData() {
 
 }
 
-processData().then()
+!refreshData && processData().then()
 
 const beltNames = {
     w: 'White',

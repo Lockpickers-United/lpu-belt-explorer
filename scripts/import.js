@@ -110,7 +110,7 @@ const jsonData = mainData
         const scorecardCount = collectionStats ? collectionStats.scorecardCount : undefined
 
         // baseline for Classification
-        const currentBeltDate = dayjs().format()
+        const currentBeltDate = dayjs().toISOString()
 
         const value = {
             id,
