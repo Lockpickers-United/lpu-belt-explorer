@@ -1,5 +1,5 @@
 import React, {useState, useContext, useDeferredValue, useEffect} from 'react'
-import Entry from '../entries/EntryProfileOnly.jsx'
+import Entry from '../entries/Entry.jsx'
 import CompactEntries from '../locks/CompactEntries'
 import DataContext from '../locks/LockDataProvider'
 import LockListContext from '../locks/LockListContext'

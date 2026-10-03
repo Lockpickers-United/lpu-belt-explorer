@@ -20,6 +20,19 @@ export const lockFilterFields = [
     {label: 'Collection', fieldName: 'collection', sort: collectionFieldSort, userBased: true}
 ]
 
+export const classificationFilterFields = [
+    {label: 'Make', fieldName: 'makes'},
+    {label: 'Vote From', fieldName: 'voters'},
+    {label: 'Voted Belt', fieldName: 'voteBelts'},
+    {label: 'Assigned Belt', fieldName: 'belt', sort: beltSort},
+    {label: 'Locking Mechanism', fieldName: 'lockingMechanisms'},
+    {label: 'Features', fieldName: 'features'},
+    {label: 'Content', fieldName: 'content'},
+    {label: 'Collection', fieldName: 'collection', sort: collectionFieldSort, userBased: true}
+]
+
+
+
 export const dialFilterFields = [
     {label: 'Make', fieldName: 'make'},
     {label: 'Wheels', fieldName: 'wheels'},

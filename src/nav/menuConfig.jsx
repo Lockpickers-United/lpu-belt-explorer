@@ -20,6 +20,7 @@ import TurnSharpRightIcon from '@mui/icons-material/TurnSharpRight'
 import LocalLibraryIcon from '@mui/icons-material/LocalLibrary'
 import SpeakerNotesIcon from '@mui/icons-material/SpeakerNotes'
 import MonitorHeartIcon from '@mui/icons-material/MonitorHeart'
+import HowToVoteIcon from '@mui/icons-material/HowToVote'
 
 const {VITE_RAFL_STATE: raflState} = import.meta.env
 
@@ -142,6 +143,12 @@ export default [
         title: 'About LPU Belts',
         icon: <FeedIcon fontSize='small'/>,
         path: '/about'
+    },
+    {
+        title: 'Classification',
+        icon: <HowToVoteIcon fontSize='small'/>,
+        path: '/classification',
+        userClaims: ['admin'],
     },
     {
         title: 'Server Status',

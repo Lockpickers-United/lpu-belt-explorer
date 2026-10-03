@@ -30,7 +30,7 @@ describe('UserMenu access controls', () => {
         })
 
         fireEvent.click(screen.getByRole('button', {name: 'QA User'}))
-        fireEvent.click(screen.getByText('Enable QA Role'))
+        fireEvent.click(screen.getByText('Enable QA Mode'))
 
         expect(toggleRoleEnabled).toHaveBeenCalledWith('qaUser')
     })
@@ -60,6 +60,6 @@ describe('UserMenu access controls', () => {
 
         fireEvent.click(screen.getByRole('button', {name: 'QA User'}))
 
-        expect(screen.getByText('Disable QA Role')).toBeInTheDocument()
+        expect(screen.getByText('Disable QA Mode')).toBeInTheDocument()
     })
 })

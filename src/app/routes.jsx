@@ -1,6 +1,5 @@
 import React from 'react'
 import {redirect} from 'react-router-dom'
-import LoadingDisplay from '../misc/LoadingDisplay'
 import ErrorBoundary from './ErrorBoundary'
 import RequireRoles from './RequireRoles.jsx'
 import LoadingDisplayNav from '../nav/LoadingDisplayNav'

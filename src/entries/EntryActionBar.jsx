@@ -9,11 +9,11 @@ import BeltIcon from './BeltIcon.jsx'
 import sampleData from '../data/classification-samples.json'
 import AuthContext from '../app/AuthContext.jsx'
 
-export default function EntryActionBar({entry}) {
+export default function EntryActionBar({entry, isClassification}) {
     const {accessInfo} = useAccess()
     const {user = {}} = useContext(AuthContext)
 
-    const [showFeature, setShowFeature] = useState({})
+    const [showFeature, setShowFeature] = useState(isClassification ? {classification: true} : {})
     const handleToggle = useCallback((feature) => {
         setShowFeature(current => current[feature] ? {} : {[feature]: true})
     }, [])
@@ -35,7 +35,7 @@ export default function EntryActionBar({entry}) {
                     {accessInfo.icon || null}
                 </div>
                 <div style={{display: 'flex', justifyContent: 'flex-end'}}/>
-                {accessInfo.enabledLevel > 90 &&
+                {accessInfo.level > 90 &&
                     <IconButton onClick={() => handleToggle('classification')}
                                 style={{marginRight: '10px', padding: '8px 4px'}}>
                         <BeltIcon value={userVote?.votedBelt || 'Unclassified'}
@@ -62,7 +62,7 @@ export default function EntryActionBar({entry}) {
             <Collapse in={showFeature.classification}>
                 {showFeature.classification &&
                     <div style={{margin: '6px 0px 20px 0px'}}>
-                        <EntryClassification entry={entry}/>
+                        <EntryClassification entry={entry} isClassification={isClassification}/>
                     </div>
                 }
             </Collapse>

@@ -16,7 +16,6 @@ function LockImageGallery({entry}) {
     const [flickrDirect, _setFlickrDirect] = useLocalStorage('flickrDirect', false)
     
     const handleOpenImage = useCallback((imageNum, fullUrl) => {
-        //console.log('handleOpenImage', imageNum, fullUrl)
         if (!flickrDirect) {
             addFilters([
                 {key: 'image', value: imageNum},

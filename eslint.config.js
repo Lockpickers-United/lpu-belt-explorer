@@ -68,6 +68,11 @@ export default [
                     jsx: 'never',
                     json: 'always',
                 },
+                pathGroupOverrides: [{
+                    pattern: '*.js',
+                    patternOptions: {matchBase: true},
+                    action: 'ignore',
+                }],
             }],
             'import-x/no-unresolved': 'off',
             'import-x/namespace': 'off',

@@ -1,54 +1,61 @@
 import React, {useCallback, useContext, useMemo} from 'react'
 import DataContext from '../context/DataContext'
 import FilterContext from '../context/FilterContext'
-import dayjs from 'dayjs'
 import removeAccents from 'remove-accents'
-import useData from '../util/useData.jsx'
-import {allProjectsEvidence} from '../data/dataUrls'
 import filterEntriesAdvanced from '../filters/filterEntriesAdvanced'
 import entryName from '../entries/entryName'
 import searchEntriesForText from '../filters/searchEntriesForText'
+import classificationEntries from '../data/classification-samples.json'
 import lockEntries from '../data/data.json'
+import belts from '../data/belts.js'
+import dayjs from 'dayjs'
+import collectionOptions from '../data/collectionTypes'
 
 export function DataProvider({children, profile}) {
-    const {data, loading, error, _errorMessage} = useData({urls})
-    const updateTime = dayjs(data?.metadata?.updatedDateTime).format('MM/DD/YY HH:mm')
-
+    const {allEntries} = useContext(DataContext)
     const {filters: allFilters, advancedFilterGroups} = useContext(FilterContext)
     const {search, sort, expandAll} = allFilters
 
-    const allEntries = useMemo(() => {
-        return data && !loading && !error ? data?.allProjectsEvidence?.evidence : []
-    }, [data, error, loading])
-
     const mappedEntries = useMemo(() => {
-        return allEntries?.map(entry => {
+        return lockEntries?.filter(l => classificationEntries.find(entry => entry.entryId === l.id)).map(entry => {
 
-            const lock = lockEntries.find(lockEntry => lockEntry.id === entry.entryId)
+            const voteEntries = classificationEntries.filter(vote => vote.entryId === entry.id)
+            const voters = voteEntries.map(v => v.displayName)
+            const voteBelts = voteEntries.map(v => v.votedBelt)
 
             return {
-                ...lock,
                 ...entry,
-                tierName: tierNames[entry.tier],
+                voters,
+                voteBelts,
+                voteEntries,
+                makes: entry.makeModels[0].make ? entry.makeModels.map(({make}) => make) : entry.makeModels[0].model,
+                content: [
+                    entry.media?.some(m => !m.fullUrl.match(/youtube\.com/)) ? 'Has Images' : 'No Images',
+                    entry.media?.some(m => m.fullUrl.match(/youtube\.com/)) ? 'Has Video' : 'No Video',
+                    entry.media?.some(m => m.label) ? 'Model Photos' : undefined,
+                    entry.links?.length > 0 ? 'Has Links' : 'No Links',
+                    belts[entry.belt].danPoints > 0 ? 'Worth Dan Points' : undefined,
+                    dayjs(entry.lastUpdated).isAfter(dayjs().subtract(1, 'days')) ? 'Updated Recently' : undefined,
+                    entry.belt !== 'Unranked' ? 'Is Ranked' : undefined,
+                    profile?.userLockNotes?.[entry.id] ? 'Has Personal Notes' : undefined
+                ].flat().filter(x => x),
+                collection: collectionOptions.locks.map.map(m => profile && profile[m.key] && profile[m.key].includes(entry.id) ? m.label : 'Not ' + m.label),
                 fuzzy: removeAccents(
                     [entryName(entry, 'long')]
                         .concat([
-                            entry.discipline,
-                            entry.displayName,
-                            entry.tabName
+                            voters.join(',')
                         ])
                         .join(',')
-                ),
+                )
             }
         })
-    }, [allEntries])
+    }, [profile])
 
     const searchedEntries = useMemo(() => {
         return searchEntriesForText(search, [...mappedEntries])
-    },[mappedEntries, search])
+    }, [mappedEntries, search])
 
     const visibleEntries = useMemo(() => {
-        // Filter the data
         const filtered = filterEntriesAdvanced({
             advancedFilterGroups: advancedFilterGroups(),
             entries: mappedEntries
@@ -86,6 +93,10 @@ export function DataProvider({children, profile}) {
         return allEntries.find(e => e.id === id)
     }, [allEntries])
 
+    const lockbazzarAvailable = useCallback((_) => {
+        return false
+    }, [])
+
     const value = useMemo(() => ({
         allEntries,
         mappedEntries,
@@ -94,23 +105,14 @@ export function DataProvider({children, profile}) {
         getEntryFromId,
         expandAll,
         profile,
-        updateTime
-    }), [allEntries, mappedEntries, visibleEntries, searchedEntries, getEntryFromId, expandAll, profile, updateTime])
+        lockbazzarAvailable
+    }), [allEntries, mappedEntries, visibleEntries, searchedEntries, getEntryFromId, expandAll, profile, lockbazzarAvailable])
 
     return (
         <DataContext.Provider value={value}>
             {children}
         </DataContext.Provider>
     )
-}
-
-const urls = {allProjectsEvidence}
-const tierNames = {
-    'T1': 'Tier 1',
-    'T2': 'Tier 2',
-    'T3': 'Tier 3',
-    'T4': 'Tier 4',
-    'T5': 'Tier 5'
 }
 
 export default DataContext

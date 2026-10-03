@@ -37,8 +37,12 @@ import entryName from './entryName'
 import Link from '@mui/material/Link'
 import EntryActionBar from './EntryActionBar.jsx'
 import {useAccess} from '../app/AccessContext.jsx'
+import ClassificationVotes from '../classification/ClassificationVotes.jsx'
+import Tooltip from '@mui/material/Tooltip'
+import IconButton from '@mui/material/IconButton'
+import ListAltIcon from '@mui/icons-material/ListAlt'
 
-function Entry({entry, expanded, onExpand}) {
+function Entry({entry, expanded, onExpand, isClassification, scorecardId}) {
     const navigate = useNavigate()
     const {accessInfo} = useAccess()
     const {expandAll} = useContext(DataContext)
@@ -98,6 +102,13 @@ function Entry({entry, expanded, onExpand}) {
         )
     }, [entry.makeModels])
 
+    const handleScorecardClick = useCallback((event) => {
+        event.preventDefault()
+        event.stopPropagation()
+        const scorecardLink = scorecardId && userId && `/profile/${userId}/scorecard?scorecardId=${scorecardId}`
+        navigate(scorecardLink)
+    }, [navigate, scorecardId, userId])
+
     const textColor = entry.belt === 'Unranked' ? '#aaa' : '#fff'
     const versionColor = entry.belt === 'Unranked' ? '#aaa' : '#ccc'
     const linkSx = {
@@ -113,7 +124,9 @@ function Entry({entry, expanded, onExpand}) {
         : <>Other Versions Only</>
 
     const {isMobile} = useWindowSize()
-    const makeModelWidth = isMobile ? '55%' : '65%'
+    const makeModelWidth = !isMobile ? '65%' : '63%'
+    const detailsWidth = scorecardId ? '28%' : '32%'
+    const mainMargin = !isMobile ? '6px 0px 8px 12px' : '4px 0px 6px 4px'
 
     // TODO - don't bring in FilterChip, just render here. Fix add filter for new style.
 
@@ -128,7 +141,7 @@ function Entry({entry, expanded, onExpand}) {
 
                 <BeltStripe value={entry.belt}/>
                 <div
-                    style={{margin: '6px 0px 8px 12px', width: makeModelWidth, flexShrink: 0, flexDirection: 'column'}}>
+                    style={{margin: mainMargin, width: makeModelWidth, flexShrink: 0, flexDirection: 'column'}}>
                     <div style={{
                         color: textColor
                     }}>{makeModels}</div>
@@ -145,34 +158,59 @@ function Entry({entry, expanded, onExpand}) {
                         </div>
                     }
                 </div>
-                {entry.lockingMechanisms?.length > 0 &&
-                    <div style={{margin: '0px 0px 0px 0px', width: '40%', flexShrink: 0, flexDirection: 'row'}}>
-                        {entry.lockingMechanisms?.sort().map((lockingMechanism, index) =>
-                            <Box
-                                key={index}
-                                style={{
-                                    display: 'inline-block',
-                                    color: '#fff',
-                                    fontSize: '0.85rem',
-                                    border: '1px solid #666',
-                                    borderRadius: 16,
-                                    padding: '2px 10px',
-                                    cursor: 'pointer',
-                                    marginRight: 4,
-                                    marginBottom: 4
-                                }}
-                                sx={{
-                                    '&:hover': {
-                                        backgroundColor: '#333'
-                                    }
-                                }}
-                                onClick={(event) => handleAddFilter(event, 'lockingMechanisms', lockingMechanism)}
-                            >
-                                {String(lockingMechanism)}
-                            </Box>
-                        )}
+
+                {(entry.lockingMechanisms?.length > 0 || entry.voteEntries) &&
+                    <div style={{margin: '0px 0px 0px 0px', width: detailsWidth, flexShrink: 0, flexDirection: 'row'}}>
+
+                        {isClassification && entry.voteEntries &&
+                            <div style={{
+                                display: 'flex',
+                                marginBottom: 12,
+                                paddingRight: !isMobile ? 0 : 0,
+                                width: '100%',
+                                justifyContent: 'right'
+                            }}>
+                                <ClassificationVotes votes={entry.voteEntries}/>
+                            </div>
+                        }
+                        <div style={{margin: '0px 0px 0px 0px', width: '100%', flexShrink: 0, flexDirection: 'row'}}>
+                            {entry.lockingMechanisms?.sort().map((lockingMechanism, index) =>
+                                <Box
+                                    key={index}
+                                    style={{
+                                        display: 'inline-block',
+                                        color: '#fff',
+                                        fontSize: '0.85rem',
+                                        border: '1px solid #666',
+                                        borderRadius: 16,
+                                        padding: '2px 10px',
+                                        cursor: 'pointer',
+                                        margin: '0 4px 4px 0',
+                                        whiteSpace: 'nowrap'
+                                    }}
+                                    sx={{
+                                        '&:hover': {
+                                            backgroundColor: '#333'
+                                        }
+                                    }}
+                                    onClick={(event) => handleAddFilter(event, 'lockingMechanisms', lockingMechanism)}
+                                >
+                                    {String(lockingMechanism)}
+                                </Box>
+                            )}
+                        </div>
                     </div>
                 }
+                {scorecardId &&
+                    <div style={{margin: '0px 10px 0px 0px'}}>
+                        <Tooltip title='View in Scorecard' arrow disableFocusListener>
+                            <IconButton onClick={handleScorecardClick} size='small' aria-label='scorecard'>
+                                <ListAltIcon/>
+                            </IconButton>
+                        </Tooltip>
+                    </div>
+                }
+
             </AccordionSummary>
             {
                 expanded &&
@@ -257,7 +295,7 @@ function Entry({entry, expanded, onExpand}) {
 
                         {accessInfo.enabledLevel >= 50 &&
                             <div style={{margin: '24px 0px 20px 6px'}}>
-                                <EntryActionBar entry={entry}/>
+                                <EntryActionBar entry={entry} isClassification={isClassification}/>
                             </div>
                         }
 

@@ -1,20 +1,20 @@
 import React, {useState, useContext, useMemo} from 'react'
-import CompactEntries from './CompactEntries'
+import CompactEntries from '../locks/CompactEntries'
 import Entry from '../entries/Entry.jsx'
 import BeltRequirements from '../info/BeltRequirements.jsx'
-import DataContext from './LockDataProvider'
-import LockListContext from './LockListContext'
-import NoEntriesCard from './NoEntriesCard'
-import HotkeyInfoButton from './HotkeyInfoButton'
-import RandomEntryButton from './RandomEntryButton'
-import SlideshowButton from './SlideshowButton'
-import ExportButton from './ExportButton'
+import DataContext from '../locks/LockDataProvider'
+import LockListContext from '../locks/LockListContext'
+import NoEntriesCard from '../locks/NoEntriesCard'
+import HotkeyInfoButton from '../locks/HotkeyInfoButton'
+import RandomEntryButton from '../locks/RandomEntryButton'
+import SlideshowButton from '../locks/SlideshowButton'
+import ExportButton from '../locks/ExportButton'
 import Footer from '../nav/Footer'
 import FilterContext from '../context/FilterContext.jsx'
 import AppContext from '../app/AppContext.jsx'
 import AdvancedFilters from '../filters/AdvancedFilters.jsx'
 
-function Entries({advancedEnabled = false}) {
+export default function ClassificationEntries({advancedEnabled = false}) {
     const {tab} = useContext(LockListContext)
     const {compact} = useContext(AppContext)
     const {visibleEntries = [], expandAll} = useContext(DataContext)
@@ -68,6 +68,7 @@ function Entries({advancedEnabled = false}) {
                                     || !!expandAll
                                     || visibleEntries.length === 1}
                                 onExpand={setEntryExpanded}
+                                isClassification={true}
                             />
                         )
                     }
@@ -77,5 +78,3 @@ function Entries({advancedEnabled = false}) {
         </React.Fragment>
     )
 }
-
-export default Entries

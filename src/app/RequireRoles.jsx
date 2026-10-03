@@ -4,6 +4,8 @@ import AuthContext from './AuthContext.jsx'
 import {useAccess} from './AccessContext.jsx'
 import LoadingDisplayNav from '../nav/LoadingDisplayNav'
 
+// TODO: add access by level
+
 export default function RequireRoles({roles = [], children}) {
     const {authLoaded} = useContext(AuthContext)
     const {accessInfo} = useAccess()

@@ -134,8 +134,8 @@ function UserMenu() {
                                     <BiotechIcon color={accessInfo.enabledRoles.qaUser ? 'info' : 'default'}/>
                                 </ListItemIcon>
                                 {accessInfo.enabledRoles.qaUser
-                                    ? <ListItemText>Disable QA Role</ListItemText>
-                                    : <ListItemText>Enable QA Role</ListItemText>
+                                    ? <ListItemText>Disable QA Mode</ListItemText>
+                                    : <ListItemText>Enable QA Mode</ListItemText>
                                 }
                             </MenuItem>
                         }

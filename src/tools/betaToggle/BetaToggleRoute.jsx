@@ -40,12 +40,12 @@ export default function BetaToggleRoute() {
 
             <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', fontWeight: 700, margin:'90px 0 0'}}>
                 <Link onClick={handleBetaClick} sx={linkSx}>Beta Features</Link>
-                <Switch label='Beta Mode' checked={beta} onChange={handleBetaClick} color='secondary'/>
+                <Switch label='Beta Mode' checked={beta} onChange={() => handleBetaClick()} color='secondary'/>
             </div>
 
             <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', fontWeight: 700, margin:'10px 0 90px'}}>
                 <Link onClick={handleFlickrClick} sx={linkSx}>Images link to flickr</Link>
-                <Switch label='Flickr Direct' checked={flickrDirect} onChange={handleFlickrClick} color='secondary'/>
+                <Switch label='Flickr Direct' checked={flickrDirect} onChange={() => handleFlickrClick()} color='secondary'/>
             </div>
 
             <Footer/>
