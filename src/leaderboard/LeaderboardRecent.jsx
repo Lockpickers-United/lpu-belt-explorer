@@ -17,8 +17,10 @@ function LeaderboardRecent({data}) {
     const {user} = useContext(AuthContext)
     const {isMobile} = useWindowSize()
 
+    console.log('data', data)
+
     const awards = useMemo(() => {
-        return data
+        return data.awards
             ? data.awards
                 .filter(award => award.displayName)
                 .filter(award => dayjs().diff(award.date, 'day') <= 14)
@@ -32,7 +34,7 @@ function LeaderboardRecent({data}) {
     }, [data, user?.uid])
 
     const evidence = useMemo(() => {
-        return data
+        return data.evidence
             ? data.evidence
                 .filter(evidence => evidence.displayName)
                 .filter(evidence => dayjs().diff(evidence.date, 'day') <= 14)

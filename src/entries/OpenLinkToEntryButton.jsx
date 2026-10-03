@@ -3,8 +3,11 @@ import IconButton from '@mui/material/IconButton'
 import Tooltip from '@mui/material/Tooltip'
 import entryName from './entryName'
 import OpenInNewIcon from '@mui/icons-material/OpenInNew'
+import {useAccess} from '../app/AccessContext.jsx'
 
 function OpenLinkToEntryButton({entry, nameType}) {
+    const {accessInfo} = useAccess()
+    const {qaUser} = accessInfo.roles
 
     const openInNewTab = useCallback(() => {
         const name =  entryName(entry, nameType)
@@ -14,6 +17,7 @@ function OpenLinkToEntryButton({entry, nameType}) {
         if (newWindow) newWindow.opener = null
     }, [entry, nameType])
 
+    if (!qaUser) return null
 
     return (
         <Tooltip title='Open Link to Entry in New Tab' arrow disableFocusListener>

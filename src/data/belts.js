@@ -153,7 +153,6 @@ export const beltSortReverse = (a, b) => {
     return allBeltsReverse.indexOf(a) - allBeltsReverse.indexOf(b)
 }
 
-
 export const danBeltSort = (a, b) => {
     return danBeltsFull.indexOf(a) - danBeltsFull.indexOf(b)
 }
@@ -181,6 +180,12 @@ export const modifierMultiplier = {
     'First Recorded Defeat': 1.5,
     'First Recorded Defeat (Notable)': 2,
     'Upgraded': 0
+}
+
+export function highestBelt(belts) {
+    return belts.reduce((highest, belt) => {
+        return danBeltsFull.indexOf(highest) > danBeltsFull.indexOf(belt) ? highest : belt
+    }, undefined)
 }
 
 ////

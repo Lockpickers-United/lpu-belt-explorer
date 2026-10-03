@@ -11,6 +11,7 @@ import VideocamOutlinedIcon from '@mui/icons-material/VideocamOutlined'
 import SportsMartialArtsIcon from '@mui/icons-material/SportsMartialArts'
 import NumbersIcon from '@mui/icons-material/Numbers'
 import EventAvailableIcon from '@mui/icons-material/EventAvailable'
+import Link from '@mui/material/Link'
 
 function LeaderboardHeader({columns}) {
     const [searchParams, setSearchParams] = useSearchParams()
@@ -67,7 +68,7 @@ function LeaderboardHeader({columns}) {
                         backgroundColor: '#000'
                     }}
                 >
-                    Name
+                    <Link onClick={handleSort('displayName')}>Name</Link>
                 </TableCell>
 
                 {columns.map((column, index) => {

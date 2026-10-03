@@ -7,9 +7,10 @@ import entryName from '../entries/entryName'
 import searchEntriesForText from '../filters/searchEntriesForText'
 import classificationEntries from '../data/classification-samples.json'
 import lockEntries from '../data/data.json'
-import belts from '../data/belts.js'
+import belts, {highestBelt} from '../data/belts.js'
 import dayjs from 'dayjs'
 import collectionOptions from '../data/collectionTypes'
+import {getLockSortComparator} from '../locks/lockSortComparators'
 
 export function DataProvider({children, profile}) {
     const {allEntries} = useContext(DataContext)
@@ -22,12 +23,22 @@ export function DataProvider({children, profile}) {
             const voteEntries = classificationEntries.filter(vote => vote.entryId === entry.id)
             const voters = voteEntries.map(v => v.displayName)
             const voteBelts = voteEntries.map(v => v.votedBelt)
+            const voteCounts = voteEntries.reduce((acc, vote) => {
+                acc[vote.votedBelt] = (acc[vote.votedBelt] || 0) + 1
+                return acc
+            }, {})
+            const leadingBelt = Object.keys(voteCounts).reduce((a, b) => voteCounts[a] > voteCounts[b] ? a : b)
+            const hasConsensus = voteEntries.length >= 3 && (voteCounts[leadingBelt] > voteEntries.length/2) ? 'Yes' : 'No'
 
             return {
                 ...entry,
                 voters,
                 voteBelts,
                 voteEntries,
+                hasVotes: voteEntries.length > 0 ? 'Yes' : 'No',
+                voteCount: voteEntries.length,
+                hasConsensus,
+                highestVoteBelt: highestBelt(voteBelts),
                 makes: entry.makeModels[0].make ? entry.makeModels.map(({make}) => make) : entry.makeModels[0].model,
                 content: [
                     entry.media?.some(m => !m.fullUrl.match(/youtube\.com/)) ? 'Has Images' : 'No Images',
@@ -66,28 +77,9 @@ export function DataProvider({children, profile}) {
         })
 
         return sort
-            ? searched.sort((a, b) => {
-                if (sort === 'discipline') {
-                    return a.discipline.localeCompare(b.discipline)
-                        || a.pickerName.localeCompare(b.pickerName)
-                } else if (sort === 'tier') {
-                    return a.tier.localeCompare(b.tier)
-                        || a.pickerName.localeCompare(b.pickerName)
-                } else if (sort === 'date') {
-                    return a.date.localeCompare(b.date)
-                        || a.pickerName.localeCompare(b.pickerName)
-                } else if (sort === 'source') {
-                    return a.source.localeCompare(b.source)
-                        || a.pickerName.localeCompare(b.pickerName)
-                } else if (sort === 'evidenceUrl') {
-                    return a.evidenceUrl.localeCompare(b.evidenceUrl)
-                        || a.pickerName.localeCompare(b.pickerName)
-                }
-
-                return a.fuzzy.localeCompare(b.fuzzy)
-
-            })
+            ? searched.sort(getLockSortComparator(sort))
             : searched
+
     }, [advancedFilterGroups, mappedEntries, search, sort])
 
     //console.log('visibleEntries', visibleEntries)

@@ -15,6 +15,11 @@ export const lockSortFields = [
 
 export const classificationSortFields = [
     {label: 'Default', value: undefined},
+    {label: 'Vote Count', value: 'voteCount'},
+    {label: 'Highest Vote', value: 'highestVoteBelt'},
+    {label: 'Scorecard Count', value: 'scorecardCount', admin:true},
+    {label: 'Recently Updated', value: 'recentlyUpdated'},
+    {label: 'Date Added', value: 'dateAdded'}
 ]
 
 export const dialSortFields = [

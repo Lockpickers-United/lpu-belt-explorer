@@ -86,7 +86,7 @@ async function processData() {
     rowData.forEach(row => {
         // no author found
         if (row.comment?.length > 0 && !row.userId) {
-            //console.log('\n', row.comment)
+            console.log(row.comment, '\n')
         }
 
         // multiple author found

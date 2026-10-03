@@ -29,7 +29,21 @@ const darkTheme = createTheme({
             dark: '#117e11',
             contrastText: '#000000'
         }
-    }
+    },
+    components: {
+        MuiLink: {
+            styleOverrides: {
+                root: {
+                    color: '#ddd',
+                    textDecoration: 'none',
+                    cursor: 'pointer',
+                    '&:hover': {
+                        color: '#fff',
+                    },
+                },
+            },
+        },
+    },
 })
 
 function App() {

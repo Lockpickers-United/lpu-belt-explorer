@@ -106,6 +106,9 @@ function Leaderboard({tab}) {
     }, [data])
 
     const sortedData = useMemo(() => {
+        if (sort && sort === 'displayName') return filteredData.sort((a, b) => {
+            return a.displayName.localeCompare(b.displayName)
+        })
         if (sort && sortOrder === 'desc') return filteredData.sort((a, b) => {
             return (b[sort] || 0) - (a[sort] || 0)
         })
@@ -244,6 +247,7 @@ function Leaderboard({tab}) {
 const urls = {leaderboardData, recentAwardsEvidence}
 
 const validSort = [
+    'displayName',
     'own',
     'picked',
     'recordedLocks',

@@ -53,7 +53,6 @@ export function DBProvider({children}) {
 
     const dbLoaded = collectionDBLoaded && activityLoaded
     const adminRole = isLoggedIn && user && (['admin'].some(claim => userClaims.includes(claim)))
-    const qaUserRole = isLoggedIn && user && (['qaUser', 'admin'].some(claim => userClaims.includes(claim)) || adminRole)
 
     const addToLockCollection = useCallback(async (key, entryId) => {
         if (dbError) return false
@@ -509,7 +508,7 @@ export function DBProvider({children}) {
         updateSystemMessageStatus,
         removeDismissedMessages,
         userLockNotes: lockCollection.userLockNotes || {},
-        qaUserRole
+        isBlackBelt: lockCollection.blackBeltAwardedAt > 0 || false,
     }), [dbLoaded,
         adminRole,
         lockCollection,
@@ -538,7 +537,6 @@ export function DBProvider({children}) {
         updateSystemMessage,
         updateSystemMessageStatus,
         removeDismissedMessages,
-        qaUserRole
     ])
 
     return (

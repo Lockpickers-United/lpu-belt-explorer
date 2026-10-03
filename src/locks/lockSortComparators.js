@@ -26,7 +26,16 @@ export const lockSortComparators = Object.freeze({
         return Math.floor(dayjs(b.dateAdded).valueOf() / 3600 * 24) - Math.floor(dayjs(a.dateAdded).valueOf() / 3600 * 24)
             || beltSort(a.belt, b.belt)
             || a.fuzzy.localeCompare(b.fuzzy)
-    }
+    },
+    voteCount: (a, b) => {
+        return b.voteCount - a.voteCount
+            || a.fuzzy.localeCompare(b.fuzzy)
+    },
+    highestVoteBelt: (a, b) => {
+        return beltSortReverse(a.highestVoteBelt, b.highestVoteBelt)
+            || a.fuzzy.localeCompare(b.fuzzy)
+    },
+
 })
 
 export function getLockSortComparator(sort) {

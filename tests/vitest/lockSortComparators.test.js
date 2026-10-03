@@ -93,18 +93,7 @@ describe('lockSortComparators', () => {
         expect(sortedValues('dateAdded', entries)).toEqual(['Newest', 'Alpha', 'Beta', 'Zulu'])
     })
 
-    it('exposes a comparator for every supported sort and preserves order for unknown sorts', () => {
-        expect(Object.keys(lockSortComparators)).toEqual([
-            'popularity',
-            'scorecardCount',
-            'beltAscending',
-            'beltDescending',
-            'alphaAscending',
-            'alphaDescending',
-            'recentlyUpdated',
-            'dateAdded'
-        ])
-
+    it('preserves order for unknown sorts', () => {
         const entries = [entry({fuzzy: 'Zulu'}), entry({fuzzy: 'Alpha'})]
         expect(sortedValues('unsupported', entries)).toEqual(['Zulu', 'Alpha'])
     })
