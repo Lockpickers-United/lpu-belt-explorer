@@ -31,7 +31,6 @@ export function DataProvider({children, profile}) {
                 entries: allVoteEntries
             }) ?? []
 
-            //const filteredVoteEntries = voteEntries.filter(v => allFilters.voters.includes(v.displayName))
             const displayName = voteEntries.map(v => v.displayName)
             const votedBelt = voteEntries.map(v => v.votedBelt)
             const voteCounts = voteEntries.reduce((acc, vote) => {
