@@ -155,7 +155,7 @@ function Entry({entry, expanded, onExpand, isClassification, scorecardId}) {
                 </div>
 
                 {(entry.lockingMechanisms?.length > 0 || entry.voteEntries) &&
-                    <div style={{margin: '0px 0px 0px 0px', width: detailsWidth, flexShrink: 0, flexDirection: 'row'}}>
+                    <div style={{margin: '0px 0px 0px 0px', flexGrow: 1, flexDirection: 'row'}}>
                         {isClassification && entry.voteEntries &&
                             <div style={{
                                 display: 'flex',
@@ -179,7 +179,8 @@ function Entry({entry, expanded, onExpand, isClassification, scorecardId}) {
                                     {!isClassification
                                         ? <FilterChip mode={'simple'} value={lockingMechanism}
                                                       field='lockingMechanisms'/>
-                                        : <FilterChip mode={'text'} value={lockingMechanism}
+                                        : <FilterChip mode={'text'} style={{color: '#aaa'}}
+                                                      value={lockingMechanism}
                                                       field='lockingMechanisms'/>
                                     }
                                 </span>

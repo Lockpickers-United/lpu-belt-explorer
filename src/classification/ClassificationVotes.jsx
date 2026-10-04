@@ -12,7 +12,7 @@ export default function ClassificationVotes({votes, style={}}) {
     })
 
     return (
-        <div style={{display: 'flex', flexDirection: 'row', gap: 2, ...style}}>
+        <div style={{display: 'flex', flexDirection: 'row', gap: 2, flexWrap: 'wrap', flexGrow: 1, ...style}}>
             {sortedVotes.map((vote) => {
                 const blackLevel = vote.votedBelt.toLowerCase().match(/black (\d)/)
                     ? vote.votedBelt.toLowerCase().match(/black (\d)/)[1]

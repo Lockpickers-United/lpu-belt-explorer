@@ -109,9 +109,6 @@ const jsonData = mainData
         const popularityIndex = collectionStats ? collectionStats.ownCount : undefined
         const scorecardCount = collectionStats ? collectionStats.scorecardCount : undefined
 
-        // baseline for Classification
-        const currentBeltDate = dayjs().toISOString()
-
         const value = {
             id,
             belt,
@@ -125,7 +122,6 @@ const jsonData = mainData
             popularityIndex,
             scorecardCount,
             views: popularityIndex,
-            currentBeltDate
         }
 
         // Clean up empty values to reduce payload size
@@ -166,6 +162,8 @@ const jsonData = mainData
 
 // Find any added or deleted entries
 const historicalData = JSON.parse(fs.readFileSync('./src/data/historicalData.json', 'utf8'))
+
+// TODO: detect ranking changes
 
 let changedEntries = 0
 jsonData.forEach(entry => {

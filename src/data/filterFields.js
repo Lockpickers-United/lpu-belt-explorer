@@ -22,8 +22,8 @@ export const lockFilterFields = [
 
 export const classificationFilterFields = [
     {label: 'Make', fieldName: 'makes'},
-    {label: 'Vote From', fieldName: 'voters'},
-    {label: 'Voted Belt', fieldName: 'voteBelts'},
+    {label: 'Vote From', fieldName: 'displayName'},
+    {label: 'Voted Belt', fieldName: 'votedBelt'},
     {label: 'Has Votes', fieldName: 'hasVotes'},
     {label: 'Has Consensus', fieldName: 'hasConsensus'},
     {label: 'Assigned Belt', fieldName: 'belt', sort: beltSort},

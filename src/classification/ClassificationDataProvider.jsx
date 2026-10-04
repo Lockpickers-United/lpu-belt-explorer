@@ -17,28 +17,39 @@ export function DataProvider({children, profile}) {
     const {filters: allFilters, advancedFilterGroups} = useContext(FilterContext)
     const {search, sort, expandAll} = allFilters
 
+    const voteFilterGroups = useMemo(() => {
+        return advancedFilterGroups().filter(g => ['displayName', 'votedBelt'].includes(g.fieldName))
+    }, [advancedFilterGroups])
+
     const mappedEntries = useMemo(() => {
         return lockEntries?.filter(l => classificationEntries.find(e => e.entryId === l.id)).map(entry => {
 
-            const voteEntries = classificationEntries.filter(vote => vote.entryId === entry.id)
-            const voters = voteEntries.map(v => v.displayName)
-            const voteBelts = voteEntries.map(v => v.votedBelt)
+            const allVoteEntries = classificationEntries.filter(vote => vote.entryId === entry.id)
+
+            const voteEntries = filterEntriesAdvanced({
+                advancedFilterGroups: voteFilterGroups,
+                entries: allVoteEntries
+            }) ?? []
+
+            //const filteredVoteEntries = voteEntries.filter(v => allFilters.voters.includes(v.displayName))
+            const displayName = voteEntries.map(v => v.displayName)
+            const votedBelt = voteEntries.map(v => v.votedBelt)
             const voteCounts = voteEntries.reduce((acc, vote) => {
                 acc[vote.votedBelt] = (acc[vote.votedBelt] || 0) + 1
                 return acc
             }, {})
-            const leadingBelt = Object.keys(voteCounts).reduce((a, b) => voteCounts[a] > voteCounts[b] ? a : b)
-            const hasConsensus = voteEntries.length >= 3 && (voteCounts[leadingBelt] > voteEntries.length/2) ? 'Yes' : 'No'
+            const leadingBelt = Object.keys(voteCounts).reduce((a, b) => voteCounts[a] > voteCounts[b] ? a : b,'')
+            const hasConsensus = voteCounts[leadingBelt] >= 3 && (voteCounts[leadingBelt] >= voteEntries.length/2) ? 'Yes' : 'No'
 
             return {
                 ...entry,
-                voters,
-                voteBelts,
+                displayName,
+                votedBelt,
                 voteEntries,
                 hasVotes: voteEntries.length > 0 ? 'Yes' : 'No',
                 voteCount: voteEntries.length,
                 hasConsensus,
-                highestVoteBelt: highestBelt(voteBelts),
+                highestVoteBelt: highestBelt(votedBelt),
                 makes: entry.makeModels[0].make ? entry.makeModels.map(({make}) => make) : entry.makeModels[0].model,
                 content: [
                     entry.media?.some(m => !m.fullUrl.match(/youtube\.com/)) ? 'Has Images' : 'No Images',
@@ -54,13 +65,13 @@ export function DataProvider({children, profile}) {
                 fuzzy: removeAccents(
                     [entryName(entry, 'long')]
                         .concat([
-                            voters.join(',')
+                            displayName.join(',')
                         ])
                         .join(',')
                 )
             }
         })
-    }, [profile])
+    }, [profile, voteFilterGroups])
 
     const searchedEntries = useMemo(() => {
         return searchEntriesForText(search, [...mappedEntries])

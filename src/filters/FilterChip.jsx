@@ -9,7 +9,7 @@ import glossary from '../data/glossary.json'
 import Link from '@mui/material/Link'
 import Box from '@mui/material/Box'
 
-function FilterChip({field, value, label = value, mode, clickable = true, ...props}) {
+function FilterChip({field, value, label = value, mode, clickable = true, style={}, ...props}) {
     const navigate = useNavigate()
     const [open, setOpen] = useState(false)
     const {addAdvancedFilterGroup} = useContext(FilterContext)
@@ -111,7 +111,7 @@ function FilterChip({field, value, label = value, mode, clickable = true, ...pro
             }
             {(mode === 'text') &&
                 <Link
-                    style={{color: '#fff', marginRight: 16}}
+                    style={{color: '#fff', marginRight: 16, ...style}}
                     onClick={handleFilter}
                     {...props}
                 >

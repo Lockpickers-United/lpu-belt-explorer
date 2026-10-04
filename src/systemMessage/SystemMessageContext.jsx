@@ -24,7 +24,7 @@ export function SystemMessageProvider({children}) {
         }
     }, [addToLockCollection, dismissedMessages, isLoggedIn, setDismissedMessages])
 
-    const filteredMessages = useMemo(() => systemMessages.map(message => {
+    const filteredMessages = useMemo(() => systemMessages?.map(message => {
 
             const profileMessages = profile?.dismissedMessages || []
             const allDismissedMessages = [...new Set([...profileMessages, ...dismissedMessages])]
