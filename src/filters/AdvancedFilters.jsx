@@ -1,4 +1,4 @@
-import React, {useCallback, useContext, useEffect, useMemo, useState} from 'react'
+import React, {useCallback, useContext, useEffect, useState} from 'react'
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
 import AdvancedFilterField from './AdvancedFilterField.jsx'
@@ -11,24 +11,19 @@ import queryString from 'query-string'
 import {useLocation} from 'react-router-dom'
 import FilterScopeToggle from './FilterScopeToggle.jsx'
 import ResetFiltersButton from './ResetFiltersButton.jsx'
-import AppContext from '../app/AppContext.jsx'
-import AuthContext from '../app/AuthContext.jsx'
+import useAdvancedFilterRows from './useAdvancedFilterRows.js'
 
 export default function AdvancedFilters() {
     const {
-        advancedFilterGroups,
-        setAdvancedFilterGroups,
         showAdvancedSearch,
         setShowAdvancedSearch,
         hideAdvancedSearch,
-        filterFields,
         filterCount,
         removeFilters,
         clearFilters
     } = useContext(FilterContext)
     const {visibleEntries = [], visibleBeltEntries} = useContext(DataContext)
-    const {beta} = useContext(AppContext)
-    const {isLoggedIn} = useContext(AuthContext)
+    const {visibleFilterGroups, addFilter, changeGroup, removeGroup} = useAdvancedFilterRows()
 
     const location = useLocation()
     const searchParams = queryString.parse(location.search)
@@ -39,59 +34,13 @@ export default function AdvancedFilters() {
         }
     }, [removeFilters, searchParams.preview, setShowAdvancedSearch])
 
-    const visibleFilterGroups = useMemo(() => advancedFilterGroups()
-        .filter(group => {
-            const filterField = filterFields.find(f => f.fieldName === group.fieldName)
-            return (!filterField?.beta || beta) && (!filterField?.userBased || isLoggedIn)
-        })
-    , [advancedFilterGroups, beta, filterFields, isLoggedIn])
-
-    const addFilter = useCallback(() => {
-        const next = [...advancedFilterGroups(), {
-            _id: `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
-            fieldName: '',
-            matchType: 'Is',
-            operator: 'OR',
-            values: []
-        }]
-        setAdvancedFilterGroups(next)
-    }, [advancedFilterGroups, setAdvancedFilterGroups])
-
     const handleClearAll = useCallback(() => {
         clearFilters()
     }, [clearFilters])
 
-    const handleChangeGroup = useCallback((idx, updated) => {
-        const groups = advancedFilterGroups()
-        const next = groups.map((g, i) => (i === idx ? {...g, ...updated} : g))
-        setAdvancedFilterGroups(next)
-    }, [advancedFilterGroups, setAdvancedFilterGroups])
-
-    const handleRemoveGroup = useCallback((idx) => {
-        const groups = advancedFilterGroups()
-        let next = groups.filter((_, i) => i !== idx)
-        if (next.length === 0) next = [{
-            _id: `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
-            fieldName: '',
-            matchType: 'Is',
-            operator: 'OR',
-            values: []
-        }]
-        setAdvancedFilterGroups(next)
-    }, [advancedFilterGroups, setAdvancedFilterGroups])
-
     useEffect(() => {
-        if (advancedFilterGroups().length === 0 && !hideAdvancedSearch) {
-            setAdvancedFilterGroups([{
-                _id: `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
-                fieldName: '',
-                matchType: 'Is',
-                operator: 'OR',
-                values: []
-            }])
-        }
         if (filterCount > 0) setShowAdvancedSearch(true)
-    }, [advancedFilterGroups, filterCount, hideAdvancedSearch, setAdvancedFilterGroups, setShowAdvancedSearch])
+    }, [filterCount, setShowAdvancedSearch])
 
     const {isMobile} = useWindowSize()
     const style = isMobile
@@ -160,13 +109,13 @@ export default function AdvancedFilters() {
 
                         <div
                             style={{display: 'flex', flexDirection: 'column'}}>
-                            {visibleFilterGroups.map((group, index) => (
+                            {visibleFilterGroups.map(group => (
                                 <AdvancedFilterField
-                                    key={group._id || index}
-                                    group={{...group, groupIndex: index, groupId: group._id}}
-                                    groupIndex={index}
-                                    onChange={(updated) => handleChangeGroup(index, updated)}
-                                    onRemove={() => handleRemoveGroup(index)}
+                                    key={group._id}
+                                    group={{...group, groupId: group._id}}
+                                    groupIndex={group.groupIndex}
+                                    onChange={(updated) => changeGroup(group._id, updated)}
+                                    onRemove={() => removeGroup(group._id)}
                                 />
                             ))}
                         </div>

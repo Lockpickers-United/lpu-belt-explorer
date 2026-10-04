@@ -7,7 +7,7 @@ import RaffleContext from './RaffleContext.jsx'
 import filterEntriesAdvanced from '../filters/filterEntriesAdvanced'
 
 export function RaffleCharitiesProvider({children}) {
-    const {filters: allFilters, advancedFilterGroups} = useContext(FilterContext)
+    const {filters: allFilters, activeFilterGroups} = useContext(FilterContext)
     const {search, sort} = allFilters
     const {allCharities} = useContext(RaffleContext)
 
@@ -36,7 +36,7 @@ export function RaffleCharitiesProvider({children}) {
     const visibleEntries = useMemo(() => {
         // Filter the data
         const filtered = filterEntriesAdvanced({
-            advancedFilterGroups: advancedFilterGroups(),
+            advancedFilterGroups: activeFilterGroups(),
             entries: allCharities
         }).sort((a, b) => {
             return a.sortPotNumber - b.sortPotNumber
@@ -54,7 +54,7 @@ export function RaffleCharitiesProvider({children}) {
                 }
             })
             : searched
-    }, [advancedFilterGroups, allCharities, searchEntriesForText, sort])
+    }, [activeFilterGroups, allCharities, searchEntriesForText, sort])
 
     const value = useMemo(() => ({
         allCharities,

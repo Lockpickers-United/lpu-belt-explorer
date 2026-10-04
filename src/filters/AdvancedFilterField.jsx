@@ -5,26 +5,22 @@ import Select from '@mui/material/Select'
 import MenuItem from '@mui/material/MenuItem'
 import FilterContext from '../context/FilterContext.jsx'
 import AdvancedFilterValues from './AdvancedFilterValues'
-import AuthContext from '../app/AuthContext.jsx'
-import AppContext from '../app/AppContext.jsx'
 import {Collapse} from '@mui/material'
 import ChoiceButtonGroupAdvanced from '../util/ChoiceButtonGroupAdvanced.jsx'
+import useFilterFieldVisibility from './useFilterFieldVisibility.js'
 
 export default function AdvancedFilterField({group = {}, onChange}) {
-    const {isLoggedIn} = useContext(AuthContext)
-    const {beta} = useContext(AppContext)
     const {filterFields, advancedFilterGroups} = useContext(FilterContext)
+    const isFilterFieldVisible = useFilterFieldVisibility()
     const {fieldName = '', matchType = 'Is'} = group
 
     const [filterField, setFilterField] = useState(fieldName)
 
     const options = useMemo(() => filterFields
-        .filter(field => {
-            return (!field.beta || beta) && (!field.userBased || isLoggedIn)
-        })
+        .filter(isFilterFieldVisible)
         .filter(field => {
             return !advancedFilterGroups().some(group => group.fieldName === field.fieldName && field.fieldName !== fieldName)
-        }), [advancedFilterGroups, beta, fieldName, filterFields, isLoggedIn])
+        }), [advancedFilterGroups, fieldName, filterFields, isFilterFieldVisible])
 
     const handleSelect = useCallback((event) => {
         const newField = event.target.value

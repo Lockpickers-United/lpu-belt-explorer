@@ -7,7 +7,7 @@ import Tracker from '../../app/Tracker.jsx'
 import allEntries from '../../data/data.json'
 import deletedEntries from '../../data/deletedEntries.json'
 
-import {lockFilterFields} from '../../data/filterFields'
+import {lockAdditionalFilterKeys, lockFilterFields} from '../../data/filterFields'
 import {FilterProvider} from '../../context/FilterContext.jsx'
 import {DataProvider} from '../../locks/LockDataProvider.jsx'
 
@@ -15,7 +15,7 @@ function RecentChangesRoute() {
     usePageTitle('Recent Changes')
 
     return (
-        <FilterProvider filterFields={lockFilterFields}>
+        <FilterProvider filterFields={lockFilterFields} additionalFilterKeys={lockAdditionalFilterKeys}>
             <DataProvider allEntries={allEntries} deletedEntries={deletedEntries} profile={undefined}>
                 <React.Fragment>
                     <Nav title='Recent Changes'/>

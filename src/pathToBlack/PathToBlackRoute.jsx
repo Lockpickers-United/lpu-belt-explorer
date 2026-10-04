@@ -6,7 +6,7 @@ import usePageTitle from '../util/usePageTitle'
 import PathToBlackPage from './PathToBlackPage'
 import allEntries from '../data/data.json'
 import {DataProvider} from '../locks/LockDataProvider.jsx'
-import {lockFilterFields} from '../data/filterFields'
+import {lockAdditionalFilterKeys, lockFilterFields} from '../data/filterFields'
 import {FilterProvider} from '../context/FilterContext.jsx'
 
 export default function PathToBlackRoute() {
@@ -18,7 +18,7 @@ export default function PathToBlackRoute() {
     )
 
     return (
-        <FilterProvider filterFields={lockFilterFields}>
+        <FilterProvider filterFields={lockFilterFields} additionalFilterKeys={lockAdditionalFilterKeys}>
             <DataProvider allEntries={allEntries}>
                 <Nav title='Path To Black' extras={nav}/>
 

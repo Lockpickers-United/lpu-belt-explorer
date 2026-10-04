@@ -17,7 +17,7 @@ export function RaffleAdminDataProviderEntries({children}) {
     const {entriesLoaded, allRaffleEntries, winnerData} = useContext(DBContext)
     const {allPots} = useContext(RaffleContext)
 
-    const {filters: allFilters, advancedFilterGroups} = useContext(FilterContext)
+    const {filters: allFilters, activeFilterGroups} = useContext(FilterContext)
     const {search, id, tab, name, sort, image, preview, single, expandAll, ..._filters} = allFilters || {}
 
     const entryWins = useMemo(() => {
@@ -87,7 +87,7 @@ export function RaffleAdminDataProviderEntries({children}) {
     const visibleEntries = useMemo(() => {
         if (!entriesLoaded) return []
         const filtered = filterEntriesAdvanced({
-            advancedFilterGroups: advancedFilterGroups(),
+            advancedFilterGroups: activeFilterGroups(),
             entries: mappedEntries
         })
         const searched = searchEntriesForText(search, [...filtered], searchCutoff)
@@ -108,7 +108,7 @@ export function RaffleAdminDataProviderEntries({children}) {
             : searched.sort((a, b) => {
                 return dayjs(a.createdAt).isBefore(dayjs(b.createdAt)) ? 1 : -1
             })
-    }, [advancedFilterGroups, entriesLoaded, mappedEntries, search, sort])
+    }, [activeFilterGroups, entriesLoaded, mappedEntries, search, sort])
 
     const mappedPotEntries = useMemo(() => {
         return allPots.map((pot) => {
@@ -122,7 +122,7 @@ export function RaffleAdminDataProviderEntries({children}) {
 
     const visiblePotEntries = useMemo(() => {
         const filtered = filterEntriesAdvanced({
-            advancedFilterGroups: advancedFilterGroups(),
+            advancedFilterGroups: activeFilterGroups(),
             entries: mappedEntries
         })
         const searched = searchEntriesForText(search, [...filtered], searchCutoff)
@@ -143,7 +143,7 @@ export function RaffleAdminDataProviderEntries({children}) {
             : searched.sort((a, b) => {
                 return a.potNumber - b.potNumber
             })
-    }, [advancedFilterGroups, mappedEntries, search, sort])
+    }, [activeFilterGroups, mappedEntries, search, sort])
 
     const getPotFromId = useCallback(id => {
         return mappedPotEntries.find(e => e.id === id)

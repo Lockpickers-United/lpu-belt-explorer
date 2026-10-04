@@ -13,7 +13,7 @@ export function DataProvider({children, profile}) {
     const {data, loading, error, _errorMessage} = useData({urls})
     const updateTime = dayjs(data?.metadata?.updatedDateTime).format('MM/DD/YY HH:mm')
 
-    const {filters: allFilters, advancedFilterGroups} = useContext(FilterContext)
+    const {filters: allFilters, activeFilterGroups} = useContext(FilterContext)
     const {search, sort, expandAll} = allFilters
 
     const allEntries = useMemo(() => {
@@ -57,7 +57,7 @@ export function DataProvider({children, profile}) {
     const visibleEntries = useMemo(() => {
         // Filter the data
         const filtered = filterEntriesAdvanced({
-            advancedFilterGroups: advancedFilterGroups(),
+            advancedFilterGroups: activeFilterGroups(),
             entries: mappedEntries
         }).sort((a, b) => a.pickerName.toLowerCase().localeCompare(b.pickerName.toLowerCase()))
 
@@ -85,7 +85,7 @@ export function DataProvider({children, profile}) {
                 }
             })
             : searched
-    }, [advancedFilterGroups, mappedEntries, search, sort])
+    }, [activeFilterGroups, mappedEntries, search, sort])
 
     //console.log('visibleEntries', visibleEntries)
 

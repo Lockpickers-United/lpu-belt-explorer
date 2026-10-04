@@ -1,27 +1,14 @@
-import React, {useState, useContext, useDeferredValue, useEffect} from 'react'
+import React, {useState, useContext, useDeferredValue} from 'react'
 import SafelockEntry from '../safelocks/SafelockEntry.jsx'
 import DataContext from '../context/DataContext'
 import AdvancedFilters from '../filters/AdvancedFilters.jsx'
-import FilterContext from '../context/FilterContext.jsx'
+import useDefaultAdvancedFilterGroup from '../filters/useDefaultAdvancedFilterGroup.js'
 
 function SafelocksCollectionPage() {
     const [expanded, setExpanded] = useState(false)
     const {visibleEntries = []} = useContext(DataContext)
     const defExpanded = useDeferredValue(expanded)
-    const {setAdvancedFilterGroups, advancedFilterGroups} = useContext(FilterContext)
-
-    const [initialRender, setInitialRender] = useState(true)
-    useEffect(() => {
-        const newGroup = {
-            _id: `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
-            fieldName: 'collection',
-            matchType: 'Is',
-            operator: 'OR',
-            values: ['Any']
-        }
-        if (initialRender && advancedFilterGroups().length === 0 ) setAdvancedFilterGroups([newGroup])
-        setInitialRender(false)
-    }, [advancedFilterGroups, initialRender, setAdvancedFilterGroups])
+    useDefaultAdvancedFilterGroup({fieldName: 'collection', value: 'Any'})
 
     return (
         <React.Fragment>

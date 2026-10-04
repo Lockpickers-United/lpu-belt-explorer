@@ -5,7 +5,7 @@ import Tracker from '../app/Tracker.jsx'
 import Link from '@mui/material/Link'
 import {useNavigate} from 'react-router-dom'
 import usePageTitle from '../util/usePageTitle.jsx'
-import {lockFilterFields} from '../data/filterFields'
+import {lockAdditionalFilterKeys, lockFilterFields} from '../data/filterFields'
 import allEntries from '../data/data.json'
 import {FilterProvider} from '../context/FilterContext.jsx'
 import {DataProvider} from '../locks/LockDataProvider.jsx'
@@ -22,7 +22,7 @@ function ToolsRoute() {
     const itemPadding = 20
 
     return (
-        <FilterProvider filterFields={lockFilterFields}>
+        <FilterProvider filterFields={lockFilterFields} additionalFilterKeys={lockAdditionalFilterKeys}>
             <DataProvider allEntries={allEntries} profile={null}>
                 <Nav title='Tools' extras={nav}/>
                 <div style={{

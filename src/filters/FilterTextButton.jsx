@@ -23,7 +23,7 @@ function FilterTextButton({onFiltersChanged}) {
 
     const {isLoggedIn} = useContext(AuthContext)
     const {beta} = useContext(AppContext)
-    const {filters, filterCount, addFilters, addFilter, filterFields, removeFilters} = useContext(FilterContext)
+    const {filters, filterCount, addFilters, addFilter, filterFields} = useContext(FilterContext)
     const {tab} = useContext(LockListContext)
     const {belt} = filters
 
@@ -53,10 +53,12 @@ function FilterTextButton({onFiltersChanged}) {
         if (value === 'all') {
             addFilter('tab', 'search', true)
         } else if (value === 'belt') {
-            removeFilters(['belt'])
-            addFilter('tab', initialBelt, true)
+            addFilters([
+                {key: 'belt', value: undefined},
+                {key: 'tab', value: initialBelt}
+            ], true)
         }
-    }, [addFilter, initialBelt, removeFilters])
+    }, [addFilter, addFilters, initialBelt])
 
     const handleAddFilter = useCallback((keyToAdd, valueToAdd) => {
         addFilters([

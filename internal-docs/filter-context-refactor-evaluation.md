@@ -302,10 +302,53 @@ from parsed active groups; one OR/AND group produces one chip, deletion removes 
 whole group, and unrelated drafts survive the local edit.
 
 The hardened pure modules and portable tests are byte-identical in both repositories.
-They pass under Vitest 4 in coffee and Vitest 5 in LPU. LPU's runtime context remains on
-its existing implementation until Phase 3, so the copied modules are intentionally
-unused there for now. This keeps the broad provider migration atomic as required by
-the plan.
+They pass under Vitest 4 in coffee and Vitest 5 in LPU. At Phase 2 completion, LPU's
+runtime context remained on its existing implementation and the copied modules were
+intentionally unused. That kept the broad provider migration atomic for Phase 3.
+
+### Phase 3 implementation findings
+
+Phase 3 integrated the hardened state model into LPU. `FilterContext` now derives
+committed groups from the URL under an explicit allowed-key policy and stores only
+draft/presentation rows locally. Its existing function-shaped context methods remain
+as compatibility aliases, while `activeFilterGroups()` is the committed selector and
+`advancedFilterGroups()` is the rendered UI-row selector. All ten audited data-provider
+paths now consume the committed selector in the same change; progressive option counts
+continue to use UI rows intentionally.
+
+LPU route policy comes from each provider's `filterFields` plus optional
+`additionalFilterKeys`. Empty field registries allow no data filters. This makes `uid`,
+`hours`, preview/scorecard state, and unknown query keys preserved controls instead of
+accidental filters. `belt` is active only on routes whose field registry declares it;
+it remains lock-list scope state elsewhere. `photographers` is explicitly declared as
+a hidden active filter on lock-list routes that expose `lockFilterFields`.
+
+The LPU advanced UI now shares ID-based row operations and one beta/auth/admin
+visibility predicate across the field picker and rendered rows. Applied displays use
+parsed committed groups, so a multi-value OR/AND expression produces one chip and
+deletion removes the complete group without dropping unrelated drafts. The drawer
+uses committed groups for active status and rendered rows for edits. Profile and
+safelock collection defaults now run through one initializer that commits
+`collection=Any` only when the entered location has no committed filters.
+
+Two additional integration findings required small fixes:
+
+- Belt-tab and scope controls had relied on mutating one router-owned
+  `URLSearchParams` instance across consecutive writes. Immutable writers exposed the
+  race, so those interactions now remove legacy `belt` scope and set `tab` in one
+  atomic `addFilters()` call.
+- When every existing row was hidden by visibility policy, the shared row hook showed
+  a fallback blank row but could not edit it because it was absent from the source
+  rows. The hook now appends that fallback before applying the ID-based change. The
+  fix and regression test are synchronized in both projects.
+
+LPU focused tests cover route-policy controls, the hidden photographer key,
+active-plus-draft edits, empty value slots, external and browser-history navigation,
+`false`/`0` writers, clear behavior, ID-based hidden-row operations, multi-value chip
+deletion, default-filter precedence, and a real lock-provider field-A-to-field-B route
+transition. The full LPU unit suite, test build, focused browser filter journeys, and
+cross-repository pure-file comparisons pass. The only full-lint diagnostic is the
+pre-existing unused `detailsWidth` warning in `src/entries/Entry.jsx`.
 
 ### URL-key inventory: `lpu-belt-explorer`
 
@@ -520,6 +563,9 @@ Execute the portable contract tests in `something.coffee` first. LPU-specific te
 Apply these fixes to `something.coffee` first because its current implementation is the behavioral prototype and already has focused tests. Copy the hardened pure files and portable tests to LPU only after this phase passes.
 
 ### Phase 3: integrate into `lpu-belt-explorer`
+
+Completed on 2026-10-03. All eight integration steps below are implemented and covered
+by the Phase 3 findings and verification log in the implementation report.
 
 1. Add the shared pure modules and context tests under `tests/vitest`.
 2. Replace the embedded codec in `src/context/FilterContext.jsx` with the shared helpers and expose committed and UI selectors separately.

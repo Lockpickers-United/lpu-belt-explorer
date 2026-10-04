@@ -5,6 +5,7 @@ import {renderWithRouter} from '../../src/test/render.jsx'
 import LockListRoute from '../../src/locks/LockListRoute.jsx'
 import {userEvent} from '@testing-library/user-event'
 import allEntries from '../../src/data/data.json'
+import {useNavigate} from 'react-router-dom'
 
 const fixtureEntryIds = new Set([
     '07034c0f', // Any Acrylic Padlock
@@ -17,6 +18,11 @@ const fixtureEntryIds = new Set([
     '5e3397a9' // Zeta Padlock
 ])
 const fixtureEntries = allEntries.filter(({id}) => fixtureEntryIds.has(id))
+
+function FilterNavigation() {
+    const navigate = useNavigate()
+    return <button onClick={() => navigate('/locks?tab=search&filterBelts=Blue')}>show blue filters</button>
+}
 
 describe('LockListRoute', () => {
     const renderLocks = (route = '/locks') =>
@@ -37,6 +43,25 @@ describe('LockListRoute', () => {
         expect(screen.getByRole('listitem', {name: 'Master Lock #1'})).toBeInTheDocument()
     })
 
+    it('replaces a prior field filter when route navigation supplies a different field', async () => {
+        const user = userEvent.setup()
+        renderWithRouter(
+            <>
+                <FilterNavigation/>
+                <LockListRoute allEntries={fixtureEntries}/>
+            </>,
+            {route: '/locks?tab=search&makes=Master+Lock'}
+        )
+
+        expect(screen.getByRole('listitem', {name: 'Master Lock #1'})).toBeInTheDocument()
+        await user.click(screen.getByRole('button', {name: 'show blue filters'}))
+
+        await waitFor(() => {
+            expect(screen.getByRole('listitem', {name: 'Any SFIC format lock (**)'})).toBeInTheDocument()
+            expect(screen.queryByRole('listitem', {name: 'Master Lock #1'})).not.toBeInTheDocument()
+        })
+    })
+
     it('renders Lock List with search', async () => {
         renderLocks('/locks?tab=search&search=v18')
         let firstListItem = screen.getAllByRole('listitem')[0]
@@ -54,7 +79,9 @@ describe('LockListRoute', () => {
         await screen.findByRole('tab', {name: /white/i})
         const blueTab = screen.getByRole('tab', {name: /blue/i})
         await user.click(blueTab)
-        expect(blueTab).toHaveAttribute('aria-selected', 'true')
+        await waitFor(() => {
+            expect(screen.getByRole('tab', {name: /blue/i})).toHaveAttribute('aria-selected', 'true')
+        })
         expect(screen.getByRole('listitem', {name: 'Any SFIC format lock (**)'})).toBeInTheDocument()
     })
 

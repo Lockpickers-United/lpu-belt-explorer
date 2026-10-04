@@ -1,13 +1,10 @@
-import React, {useCallback, useContext, useState} from 'react'
+import React, {useCallback, useState} from 'react'
 import Chip from '@mui/material/Chip'
-import FilterContext from '../context/FilterContext.jsx'
 import SettingsIcon from '@mui/icons-material/Settings'
 import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
 
-export default function FilterChipExclude({filterKey, filterValue, label}) {
-
-    const {removeFilter, addFilter} = useContext(FilterContext)
+export default function FilterChipExclude({label, negative, onToggle, onDelete}) {
     const [open, setOpen] = useState(false)
 
     const handleClose = useCallback(() => setOpen(false), [])
@@ -16,20 +13,17 @@ export default function FilterChipExclude({filterKey, filterValue, label}) {
         setOpen(event.currentTarget)
     }, [])
 
-    const handleExcludeFilter = useCallback((keyToToggle, valueToToggle) => () => {
-        const str = String(valueToToggle ?? '')
-        const newValue = str.startsWith('!') ? str.slice(1) : '!' + str
-        removeFilter(keyToToggle, valueToToggle)
-        addFilter(keyToToggle, newValue)
+    const handleExcludeFilter = useCallback(() => {
+        onToggle && onToggle()
         setOpen(false)
-    }, [addFilter, removeFilter])
+    }, [onToggle])
 
-    const handleDeleteFilter = useCallback((keyToDelete, valueToDelete) => () => {
-        removeFilter(keyToDelete, valueToDelete)
-    }, [removeFilter])
+    const handleDeleteFilter = useCallback(() => {
+        onDelete && onDelete()
+    }, [onDelete])
 
-    const menuText = filterValue.startsWith('!') ? 'Show Only Matches' : 'Exclude Matches'
-    const bgColor = filterValue.startsWith('!') ? '#642c2c' : 'inherit'
+    const menuText = negative ? 'Show Only Matches' : 'Exclude Matches'
+    const bgColor = negative ? '#642c2c' : 'inherit'
 
     return (
         <React.Fragment>
@@ -48,8 +42,8 @@ export default function FilterChipExclude({filterKey, filterValue, label}) {
                     anchorOrigin={{horizontal: 'right', vertical: 'bottom'}}
                     onClose={handleClose}
                 >
-                    <MenuItem onClick={handleExcludeFilter(filterKey, filterValue)}>{menuText}</MenuItem>
-                    <MenuItem onClick={handleDeleteFilter(filterKey, filterValue)}>
+                    <MenuItem onClick={handleExcludeFilter}>{menuText}</MenuItem>
+                    <MenuItem onClick={handleDeleteFilter}>
                         Delete Filter
                     </MenuItem>
                 </Menu>
@@ -57,5 +51,3 @@ export default function FilterChipExclude({filterKey, filterValue, label}) {
         </React.Fragment>
     )
 }
-
-

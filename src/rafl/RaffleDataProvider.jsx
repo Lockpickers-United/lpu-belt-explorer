@@ -8,7 +8,7 @@ import filterEntriesAdvanced from '../filters/filterEntriesAdvanced'
 
 export function RaffleDataProvider({children, allEntries = []}) {
     const {summary} = useContext(RaffleContext)
-    const {filters: allFilters, advancedFilterGroups} = useContext(FilterContext)
+    const {filters: allFilters, activeFilterGroups} = useContext(FilterContext)
     const {search, id, tab, name, sort, image, preview, expandAll, ..._filters} = allFilters
 
     const searchCutoff = 0.3
@@ -38,7 +38,7 @@ export function RaffleDataProvider({children, allEntries = []}) {
 
         // Filter the data
         const filtered = filterEntriesAdvanced({
-            advancedFilterGroups: advancedFilterGroups(),
+            advancedFilterGroups: activeFilterGroups(),
             entries: allEntries
         }).sort((a, b) => {
             return a.sortPotNumber - b.sortPotNumber
@@ -66,7 +66,7 @@ export function RaffleDataProvider({children, allEntries = []}) {
                     || parseInt(a.sortPotNumber) - parseInt(b.sortPotNumber)
                     || a.title.localeCompare(b.title)
             })
-    }, [advancedFilterGroups, allEntries, searchEntriesForText, sort, summary])
+    }, [activeFilterGroups, allEntries, searchEntriesForText, sort, summary])
 
     const getPotFromId = useCallback(id => {
         return allEntries.find(e => e.id === id)

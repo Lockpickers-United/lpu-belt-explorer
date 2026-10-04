@@ -14,12 +14,12 @@ import {getLockSortComparator} from '../locks/lockSortComparators'
 
 export function DataProvider({children, profile}) {
     const {allEntries} = useContext(DataContext)
-    const {filters: allFilters, advancedFilterGroups} = useContext(FilterContext)
+    const {filters: allFilters, activeFilterGroups} = useContext(FilterContext)
     const {search, sort, expandAll} = allFilters
 
     const voteFilterGroups = useMemo(() => {
-        return advancedFilterGroups().filter(g => ['displayName', 'votedBelt'].includes(g.fieldName))
-    }, [advancedFilterGroups])
+        return activeFilterGroups().filter(g => ['displayName', 'votedBelt'].includes(g.fieldName))
+    }, [activeFilterGroups])
 
     const mappedEntries = useMemo(() => {
         return lockEntries?.filter(l => classificationEntries.find(e => e.entryId === l.id)).map(entry => {
@@ -80,7 +80,7 @@ export function DataProvider({children, profile}) {
 
     const visibleEntries = useMemo(() => {
         const filtered = filterEntriesAdvanced({
-            advancedFilterGroups: advancedFilterGroups(),
+            advancedFilterGroups: activeFilterGroups(),
             entries: mappedEntries
         })
 
@@ -92,7 +92,7 @@ export function DataProvider({children, profile}) {
             ? searched.sort(getLockSortComparator(sort))
             : searched
 
-    }, [advancedFilterGroups, mappedEntries, search, sort])
+    }, [activeFilterGroups, mappedEntries, search, sort])
 
     //console.log('visibleEntries', visibleEntries)
 

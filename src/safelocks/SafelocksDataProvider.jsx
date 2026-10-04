@@ -9,7 +9,7 @@ import {groupSort, groupSortReverse} from './groups'
 import filterEntriesAdvanced from '../filters/filterEntriesAdvanced'
 
 export function SafelocksDataProvider({children, allEntries, profile}) {
-    const {filters: allFilters, advancedFilterGroups} = useContext(FilterContext)
+    const {filters: allFilters, activeFilterGroups} = useContext(FilterContext)
     const {search, sort, expandAll} = allFilters
 
     const mappedEntries = useMemo(() => {
@@ -56,7 +56,7 @@ export function SafelocksDataProvider({children, allEntries, profile}) {
     const visibleEntries = useMemo(() => {
 
         const filtered = filterEntriesAdvanced({
-            advancedFilterGroups: advancedFilterGroups(),
+            advancedFilterGroups: activeFilterGroups(),
             entries: mappedEntries,
         })
         const searched = searchEntries([...filtered])
@@ -94,7 +94,7 @@ export function SafelocksDataProvider({children, allEntries, profile}) {
                 }
             })
             : searched
-    }, [advancedFilterGroups, mappedEntries, searchEntries, sort])
+    }, [activeFilterGroups, mappedEntries, searchEntries, sort])
 
     const value = useMemo(() => ({
         allEntries,

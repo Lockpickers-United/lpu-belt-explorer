@@ -1,7 +1,7 @@
 import React, {useContext} from 'react'
 import DBContext from '../app/DBContext'
 import Tracker from '../app/Tracker'
-import {lockFilterFields} from '../data/filterFields'
+import {lockAdditionalFilterKeys, lockFilterFields} from '../data/filterFields'
 import usePageTitle from '../util/usePageTitle'
 import {LockListProvider} from '../locks/LockListContext'
 import {DataProvider} from '../locks/LockDataProvider'
@@ -19,7 +19,7 @@ function UpgradesRoute() {
     const footer = null
 
     return (
-        <FilterProvider filterFields={lockFilterFields}>
+        <FilterProvider filterFields={lockFilterFields} additionalFilterKeys={lockAdditionalFilterKeys}>
             <DataProvider allEntries={allEntries} profile={lockCollection}>
                 <LockListProvider>
                     <Nav title='Upgrades' extras={nav}/>

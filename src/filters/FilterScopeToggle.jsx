@@ -10,7 +10,7 @@ export default function FilterScopeToggle({style = {}}) {
     const {
         filters,
         addFilter,
-        removeFilters,
+        addFilters,
     } = useContext(FilterContext)
     const {tab} = useContext(LockListContext)
     const {belt} = filters
@@ -37,10 +37,12 @@ export default function FilterScopeToggle({style = {}}) {
         if (value === 'all') {
             addFilter('tab', 'search', true)
         } else if (value === 'belt') {
-            removeFilters(['belt'])
-            addFilter('tab', initialBelt, true)
+            addFilters([
+                {key: 'belt', value: undefined},
+                {key: 'tab', value: initialBelt}
+            ], true)
         }
-    }, [addFilter, initialBelt, removeFilters])
+    }, [addFilter, addFilters, initialBelt])
 
     const {color} = belts[initialBelt] ? belts[initialBelt] : {color: '#inherit'}
     const lineColor = initialBelt === 'Black' ? '#444' : color

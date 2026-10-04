@@ -18,7 +18,7 @@ import entryName from '../entries/entryName'
  */
 
 export function DataProvider({children, allEntries=[], profile}) {
-    const {filters: allFilters, advancedFilterGroups} = useContext(FilterContext)
+    const {filters: allFilters, activeFilterGroups} = useContext(FilterContext)
     const {search, id, tab, name, sort, image, expandAll, ..._filters} = allFilters
 
     const [searchCutoff, setSearchCutoff] = useState(0.30)
@@ -77,7 +77,7 @@ export function DataProvider({children, allEntries=[], profile}) {
 
         // Filter the data
         const filtered = filterEntriesAdvanced({
-            advancedFilterGroups: advancedFilterGroups(),
+            advancedFilterGroups: activeFilterGroups(),
             entries: mappedEntries
         })
 
@@ -106,7 +106,7 @@ export function DataProvider({children, allEntries=[], profile}) {
                         || a.fuzzy.localeCompare(b.fuzzy)
                 }
             })
-    }, [advancedFilterGroups, mappedEntries, search, searchCutoff, sort])
+    }, [activeFilterGroups, mappedEntries, search, searchCutoff, sort])
 
     const getEntryFromId = useCallback(id => {
         return allEntries.find(e => e.id === id)
