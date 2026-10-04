@@ -2,25 +2,28 @@
 
 ## Status
 
-Phase 1 is complete. The contract decisions are executable in `something.coffee`: the
-pure row-state helper has 10 passing cases, six existing/expanded codec cases pass, and
-11 codec cases are registered as expected failures for Phase 2. No LPU runtime code or
-current coffee runtime behavior changed.
+Phase 2 is complete. `something.coffee` now runs the hardened policy-aware codec,
+URL-authoritative committed state, draft-only local UI state, ID-based row actions, common
+visibility policy, and parsed applied-group chips. All former expected failures are
+ordinary passing tests. The pure modules and portable tests have been copied unchanged
+to LPU; LPU runtime integration remains intentionally deferred to Phase 3.
 
 ## Scope
 
 This report tracks the filter-context refactor described in
-`filter-context-refactor-evaluation.md`. Phase 1 covers:
+`filter-context-refactor-evaluation.md`. Work through Phase 2 covers:
 
 - the route-policy, codec, and row-state API contract;
 - portable codec cases for legacy syntax, canonical serialization, repeated keys,
   empty values, opaque URL state, and round-trip equivalence;
 - pure row-state operations for committed-plus-draft rendering, stable IDs, field
-  changes, duplicate prevention, and ID-based changes/removal; and
-- the implementation findings that constrain Phase 2.
+  changes, duplicate prevention, ID-based changes/removal, and UI-only empty value
+  slots;
+- coffee context, row UI, visibility, mini-context, and applied-chip integration; and
+- byte-identical portable modules and tests in LPU.
 
-Context integration, consumer changes, deployment, live-data access, generated-data
-updates, and unrelated filter matching changes remain outside Phase 1.
+LPU context/provider integration, deployment, live-data access, generated-data updates,
+and unrelated filter matching changes remain outside Phase 2.
 
 ## Progress
 
@@ -49,6 +52,28 @@ updates, and unrelated filter matching changes remain outside Phase 1.
   immutable group addition, and `false`/`0` values.
 - [x] Run focused Vitest and ESLint verification in `something.coffee`.
 - [x] Update the evaluation with Phase 1 API and malformed-input findings.
+- [x] Implement the allowed-key policy, repetition normalization, opaque-parameter
+  preservation, unique-field serialization, and shared non-empty-value rule.
+- [x] Convert all 11 codec expected failures to ordinary passing tests.
+- [x] Integrate the pure row-state helper into the coffee provider and remove mirrored
+  committed filter state.
+- [x] Preserve drafts only for matching local URL writes and discard them on unrelated
+  navigation and browser history changes.
+- [x] Replace visible-array row edits/removals with stable `_id` operations while
+  retaining the underlying index for progressive option counts.
+- [x] Apply one beta/auth/admin visibility predicate across coffee filter pickers.
+- [x] Render applied chips from parsed active groups and delete a complete group without
+  dropping unrelated drafts.
+- [x] Move both normal and mini providers to explicit allowed-key counting and preserve
+  `false`/`0` in URL writers.
+- [x] Copy the hardened pure modules and portable tests byte-for-byte into LPU.
+- [x] Run coffee focused/full tests and lint, plus LPU portable tests, lint, and
+  cross-repository equality checks.
+- [x] Update the evaluation and implementation report in both repositories.
+- [x] Repair the post-Phase-2 add-value regression by retaining empty value slots as
+  UI-only draft metadata while serializing only the row's non-empty values.
+- [x] Add pure-state, provider, and real button-interaction regressions for the repaired
+  mixed committed/draft row behavior.
 
 ## Working decisions
 
@@ -56,6 +81,9 @@ The evaluation now records these decisions in detail:
 
 - Treat the URL as the sole source of committed filters.
 - Keep incomplete advanced-filter rows as local draft state.
+- Treat an empty value slot on a committed row as temporary UI metadata: existing
+  non-empty values stay URL-committed and the slot remains visible until filled or
+  removed.
 - Use one committed group per field and normalize repeated representations
   deterministically.
 - Address advanced rows by stable ID rather than visible-array index.
@@ -118,6 +146,30 @@ The evaluation now records these decisions in detail:
   - Passed with no errors or warnings.
 - `git -C ../something.coffee diff --check`
   - Passed with no whitespace errors.
+- `yarn workspace @starter/client vitest run src/context/filterUrlState.spec.js src/context/advancedFilterState.spec.js src/context/FilterContext.spec.jsx src/filters/useAdvancedFilterRows.spec.jsx src/filters/FilterDisplayAdvanced.spec.jsx src/filters/AdvancedSelect.spec.jsx src/filters/filterEntriesAdvanced.spec.js`
+  - Passed after integration: 7 files and 45 tests.
+- `yarn workspace @starter/client test:run`
+  - Passed during final Phase 2 validation: 11 files and 61 tests.
+- `yarn workspace @starter/client vitest run src/context/FilterContext.spec.jsx`
+  - Passed after the final navigation-render adjustment: 1 file and 5 tests.
+- `yarn workspace @starter/client lint`
+  - Passed with no errors or warnings after the final Phase 2 changes.
+- `yarn test:run`
+  - Passed after the add-value repair: 12 files and 64 tests in `something.coffee`.
+- `yarn eslint src/context/advancedFilterState.js src/context/advancedFilterState.spec.js src/context/FilterContext.spec.jsx src/filters/AdvancedFilterValues.spec.jsx`
+  - Passed with no errors or warnings after the add-value repair.
+- `npx vitest run src/context/filterUrlState.spec.js src/context/advancedFilterState.spec.js`
+  - Passed after synchronizing the repair to LPU: 2 files and 28 tests under Vitest 5.
+- `npx eslint src/context/advancedFilterState.js src/context/advancedFilterState.spec.js`
+  - Passed in LPU after synchronizing the repair.
+- `npx vitest run src/context/filterUrlState.spec.js src/context/advancedFilterState.spec.js`
+  - Passed in LPU under Vitest 5: 2 files and 27 tests.
+- `npx eslint src/context/filterUrlState.js src/context/advancedFilterState.js src/context/filterUrlState.spec.js src/context/advancedFilterState.spec.js`
+  - Passed in LPU with no errors or warnings.
+- Four `git diff --no-index --exit-code` comparisons for the portable modules and tests
+  - Passed with no differences between coffee and LPU.
+- Builds and browser tests were not run because Phase 2 does not integrate the copied
+  modules into LPU runtime bundles; route-level LPU validation belongs to Phase 3.
 
 ## Change log
 
@@ -137,3 +189,19 @@ The evaluation now records these decisions in detail:
   `something.coffee/client/src/context/advancedFilterState.spec.js`.
 - Recorded the explicit route-policy signatures, malformed-input behavior, state-helper
   API, and expected-failure protocol in the evaluation.
+- Hardened the shared codec, removed every expected-failure marker, and integrated the
+  pure state helper into the coffee context.
+- Replaced coffee row-index actions and scattered visibility checks with stable-ID
+  actions and one beta/auth/admin predicate.
+- Reworked the applied display around parsed active groups and added regressions for
+  multi-value deletion and unrelated draft preservation.
+- Added coffee context regressions for local active-plus-draft changes, external
+  navigation, and browser history, plus a mini-context control-state regression.
+- Copied the two pure modules and their tests unchanged to LPU and verified cross-repo
+  equality.
+- Updated both repositories' evaluation and report for Phase 2 findings and results.
+- Fixed the add-value regression in the portable row helper. Mixed rows now commit only
+  their non-empty values while retaining empty selectors as local presentation state;
+  added pure, context, and `AdvancedFilterValues` interaction coverage.
+- Synchronized the repaired portable helper and test to LPU, updated both repositories'
+  evaluation and report, and reverified cross-repository equality.

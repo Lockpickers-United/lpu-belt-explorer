@@ -112,9 +112,11 @@ Use three explicit representations with one-way responsibilities:
 
 1. `searchParams` is the persisted, shareable source for committed filters and route controls.
 2. `activeFilterGroups` is a pure parse of the committed filter parameters. Data providers, badges, and applied-filter chips use this representation.
-3. `draftFilterRows` contains only incomplete rows or temporary UI metadata. Drafts never filter entries and never serialize until they contain a valid field and value.
+3. `draftFilterRows` contains incomplete rows or temporary UI metadata, including empty
+   value slots attached to an otherwise committed row. Draft state never filters entries;
+   only the row's non-empty values serialize.
 
-The rendered advanced rows are derived by combining active groups with drafts. This avoids keeping two complete mutable copies of active filters “in sync.” A local action that makes a row concrete serializes it and removes its draft. Clearing the last value removes the active URL group and creates or retains a draft with the same stable row ID. External navigation replaces active groups from the URL and follows an explicit draft policy; the recommended default is to discard drafts on a different location key and preserve them only for the local action that created them.
+The rendered advanced rows are derived by combining active groups with drafts. This avoids keeping two complete mutable copies of active filters “in sync.” A local action that makes a row concrete serializes it and removes its draft. Adding another value first creates an empty UI slot: the existing non-empty values remain committed while the row shape is retained as temporary draft metadata. Filling or removing the slot clears that metadata. Clearing the last value removes the active URL group and creates or retains a draft with the same stable row ID. External navigation replaces active groups from the URL and follows an explicit draft policy; the recommended default is to discard drafts on a different location key and preserve them only for the local action that created them.
 
 Enforce one group per field. Both UIs already prevent choosing the same field twice, and the URL format naturally maps a field to one encoded group. The parser should canonicalize compatible repeated parameters into one group and reject or deterministically normalize incompatible repeated forms. This is safer than pretending the current `set()` serializer supports duplicates.
 
@@ -156,7 +158,7 @@ context plus directly parsed route keys that a context must preserve when presen
 | Concern | Decision for the first refactor |
 | --- | --- |
 | Committed source | `location.search` is the only committed-filter source. `activeFilterGroups` is a value parsed from the current URL, and all data providers consume it. |
-| Editable state | Local state stores draft rows and stable UI metadata. A row becomes committed as soon as it has an allowed field and at least one non-empty value. Rendered rows are derived from committed groups plus drafts; the provider does not keep a second editable copy of every committed group. |
+| Editable state | Local state stores draft rows and stable UI metadata. A row becomes committed as soon as it has an allowed field and at least one non-empty value. If a committed row also contains an empty value slot, its non-empty values remain committed and its full value-slot shape is retained temporarily as UI metadata. Rendered rows are derived from committed groups plus drafts; the provider does not keep a second editable copy of every committed group. |
 | Allowed filter keys | Each provider supplies its allowed data-filter keys from its `filterFields`, plus an explicit list for supported hidden filters. A key is not a data filter merely because it is absent from a global non-filter list. |
 | Unknown keys | Preserve unknown query parameters by decoded key/value and multiplicity across local filter edits, but exclude them from active groups and `filterCount`. This prevents unrelated route state from filtering data while avoiding destructive URL cleanup. `URLSearchParams` may normalize equivalent percent encoding. Emit a development-only diagnostic when practical. |
 | One field, one group | A canonical URL contains at most one parameter per active field and the in-memory model contains at most one committed group per field. The field selector prevents duplicates and the state helper rejects a second draft choosing an occupied field. |
@@ -238,8 +240,10 @@ The pure row-state contract is represented by these functions:
 - `changeAdvancedFilterRow()` and `removeAdvancedFilterRow()` address rows by `_id`;
 - `addAdvancedFilterGroup()` merges a value into the one row for its field without
   mutating the input; and
-- `splitAdvancedFilterRows()` separates concrete groups from incomplete drafts after a
-  local row operation.
+- `splitAdvancedFilterRows()` separates concrete values from incomplete drafts after a
+  local row operation. A mixed row with committed values and an empty value slot
+  contributes its cleaned values to `activeGroups` and its full UI shape to
+  `draftRows` until that slot is filled or removed.
 
 The helper rejects a field change that would duplicate an occupied field. Changing a
 row's field clears its values while retaining its ID, and clearing its last value turns
@@ -249,13 +253,59 @@ Visibility is intentionally absent from the pure helper, so a project adapter fi
 rendered rows but still sends the stable ID of the selected row to these operations.
 
 Phase 1 added the unused pure helper and its passing tests to `something.coffee` so the
-row API is concrete before context integration. The codec file still has runtime
-consumers, so it was not changed in this phase. Eleven codec assertions use Vitest's
-`it.fails` as executable red tests for the missing allowed-key policy, repetition
-normalization, malformed-input cleanup, opaque-parameter preservation, `false`/`0`, and
-policy-aware round trips. Phase 2 must remove every `it.fails` marker as it makes the
-assertion pass; an unexpectedly passing red test already fails the suite and therefore
-cannot be forgotten silently.
+row API was concrete before context integration. Eleven codec assertions used
+Vitest's `it.fails` as executable red tests for the missing allowed-key policy,
+repetition normalization, malformed-input cleanup, opaque-parameter preservation,
+`false`/`0`, and policy-aware round trips. Phase 2 implemented every case and converted
+all 11 to ordinary passing assertions.
+
+### Phase 2 implementation findings
+
+The hardened coffee provider now derives committed groups only from the URL and keeps
+only incomplete UI state in local React state. It reconciles those two sources through
+`advancedFilterState.js`; no effect maintains a second mutable copy of committed
+groups. A local write records its exact expected search string. The next matching
+router location preserves drafts, including same-search replacements, while an
+unrelated location key clears them. Context tests cover active-plus-draft edits,
+field-A-to-field-B navigation, and browser history restoration.
+
+A post-Phase-2 interaction regression exposed one additional form of draft state.
+Clicking `add filter group` appended `''` to a committed row, but the original splitter
+classified the whole row as active. Serialization correctly removed the empty value,
+then URL reconciliation rebuilt the row without the new selector, so the click appeared
+to do nothing. The shared row helper now splits a mixed row into cleaned committed
+values plus a temporary presentation overlay and reapplies that overlay only when its
+non-empty values still match the URL-derived group. This also retains an AND choice for
+a one-value URL, where the wire form cannot encode the operator yet. Component, context,
+and pure-state regressions cover the button, unchanged committed URL state, and the
+empty-slot overlay.
+
+The provider derives `allowedFilterKeys` from its route's `filterFields` and optional
+`additionalFilterKeys`. An empty field registry therefore allows zero data filters.
+The PSD mini provider uses the same count/value rules and explicitly treats
+`sampleSet` as control state. The legacy non-filter-list signatures remain in the codec
+only as migration adapters for LPU and other untouched consumers; new provider work
+uses the policy form.
+
+The codec now parses at most one group per field. Compatible repeated scalars merge to
+one deduplicated AND group; incompatible or structured repetitions select the last
+valid occurrence. Serialization clones the original `URLSearchParams`, removes only
+managed fields, canonicalizes duplicate supplied groups to the last concrete group,
+and retains opaque parameter multiplicity. Local filter writes use
+`hasNonEmptyValue()`, so `false` and `0` survive.
+
+Advanced row actions now target `_id`. The visible-row adapter carries the underlying
+group index separately for progressive option counts, so hiding an earlier row cannot
+retarget an edit. One project visibility predicate covers beta, authenticated-user,
+and admin-only fields across advanced rows and all filter pickers. Applied chips render
+from parsed active groups; one OR/AND group produces one chip, deletion removes that
+whole group, and unrelated drafts survive the local edit.
+
+The hardened pure modules and portable tests are byte-identical in both repositories.
+They pass under Vitest 4 in coffee and Vitest 5 in LPU. LPU's runtime context remains on
+its existing implementation until Phase 3, so the copied modules are intentionally
+unused there for now. This keeps the broad provider migration atomic as required by
+the plan.
 
 ### URL-key inventory: `lpu-belt-explorer`
 
@@ -366,6 +416,7 @@ tests without weakening those baselines:
 | --- | --- |
 | URL changes from field A to field B remove A from active data and UI rows | Context integration in both projects; one LPU provider/route assertion. |
 | A committed group plus a second incomplete draft survives the local same-search write | Pure state helper and context integration. |
+| Adding a value slot to a committed group renders the empty selector without changing committed URL values | Pure state helper, context integration, and `AdvancedFilterValues` button interaction test. |
 | External navigation and Back/Forward discard drafts and restore committed groups | Context integration with multiple `MemoryRouter` history entries; focused Playwright journey in LPU. |
 | OR/AND and negated groups round-trip, including escaped `!`, `|`, `@`, and `\` | Table-driven codec tests copied unchanged between projects. |
 | Compatible repeated fields canonicalize; incompatible repetitions choose the last valid occurrence | Table-driven codec tests, including duplicate-value order. |
@@ -504,4 +555,12 @@ Roll out without changing the existing URL syntax. Before merge, manually compar
 - The `something.coffee` focused filter suite passed: 4 test files and 12 tests (`filterUrlState`, `FilterContext`, `AdvancedSelect`, and `filterEntriesAdvanced`).
 - A direct serializer check demonstrated that two same-field groups reduce to the last group.
 - A direct parser check demonstrated that compatible repeated scalar parameters become one AND group, while mixed-sign repetitions become two groups and then reserialize to only the last group.
+- Phase 2 converted all 11 codec expected failures to passing assertions and the final
+  coffee client suite passed 61 tests across 11 files.
+- Coffee client lint passed after context, row UI, visibility, mini-context, and applied
+  display integration.
+- The copied LPU portable suite passed 27 tests across 2 files under Vitest 5, and
+  focused ESLint passed for all four copied files.
+- Cross-repository no-index diffs confirmed that both pure modules and both portable
+  test files are byte-identical.
 - No live services, credentials, generated-data workflows, deployments, or production data were used.
