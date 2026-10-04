@@ -31,7 +31,7 @@ function AdvancedFilterByField({
 
     const {searchedEntries, searchedBeltEntries, visibleEntries, visibleBeltEntries} = useContext(DataContext)
     const {advancedFilterGroups, setAdvancedFilterGroups} = useContext(FilterContext)
-    const {fieldName, groupIndex, matchType, values = []} = group
+    const {_id: groupId, fieldName, groupIndex, matchType, values = []} = group
 
     const baseEntries = useMemo(() => searchedBeltEntries || searchedEntries || [], [searchedBeltEntries, searchedEntries])
     const visEntries = useMemo(() => visibleBeltEntries || visibleEntries || [], [visibleBeltEntries, visibleEntries])
@@ -181,16 +181,11 @@ function AdvancedFilterByField({
 
     const handleRemoveGroup = useCallback(() => {
         const groups = advancedFilterGroups()
-        let next = groups.filter((_, i) => i !== groupIndex)
-        if (next.length === 0) next = [{
-            _id: `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
-            fieldName: '',
-            matchType: 'Is',
-            operator: 'OR',
-            values: []
-        }]
+        const next = groupId
+            ? groups.filter(row => row._id !== groupId)
+            : groups.filter(row => row.fieldName !== fieldName)
         setAdvancedFilterGroups(next)
-    }, [advancedFilterGroups, groupIndex, setAdvancedFilterGroups])
+    }, [advancedFilterGroups, fieldName, groupId, setAdvancedFilterGroups])
 
     const handleRemoveValue = useCallback(() => {
         onRemove && onRemove()

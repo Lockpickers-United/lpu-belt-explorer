@@ -17,7 +17,7 @@ import sampleData from '../data/classification-samples.json'
 
 export function DataProvider({children, allEntries, profile}) {
 
-    const {filters: allFilters, advancedFilterGroups} = useContext(FilterContext)
+    const {filters: allFilters, activeFilterGroups} = useContext(FilterContext)
     const {search, tab, sort, expandAll} = allFilters
     const {data, loading, error} = useData({urls})
     const lockbazzarIds = useMemo(() => {
@@ -179,7 +179,7 @@ export function DataProvider({children, allEntries, profile}) {
     const visibleEntries = useMemo(() => {
         // Filter the data
         const filtered = filterEntriesAdvanced({
-            advancedFilterGroups: advancedFilterGroups(),
+            advancedFilterGroups: activeFilterGroups(),
             entries: mappedEntries
         })
         const searched = searchEntriesForText([...filtered])
@@ -187,7 +187,7 @@ export function DataProvider({children, allEntries, profile}) {
         return sort
             ? searched.sort(getLockSortComparator(sort))
             : searched
-    }, [advancedFilterGroups, mappedEntries, searchEntriesForText, sort])
+    }, [activeFilterGroups, mappedEntries, searchEntriesForText, sort])
 
     const getEntryFromId = useCallback(id => {
         return allEntries.find(e => e.id === id)

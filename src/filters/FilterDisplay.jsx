@@ -6,23 +6,20 @@ import FilterContext from '../context/FilterContext'
 import {filterValueNames} from '../data/filterValues'
 
 function FilterDisplay() {
-    const {filters, filterCount, removeFilter, filterFieldsByFieldName} = useContext(FilterContext)
+    const {
+        filterCount,
+        filterFieldsByFieldName,
+        activeFilterGroups,
+        advancedFilterGroups,
+        setAdvancedFilterGroups
+    } = useContext(FilterContext)
 
-    const handleDeleteFilter = useCallback((keyToDelete, valueToDelete) => () => {
-        removeFilter(keyToDelete, valueToDelete)
-    }, [removeFilter])
+    const activeGroups = activeFilterGroups()
 
-    const filterValues = useMemo(() => {
-        const {search, id, tab, name, sort, image, ...rest} = filters
-        return Object.keys(rest)
-            .map(key => {
-                const value = filters[key]
-                return Array.isArray(value)
-                    ? value.map(subValue => ({key, value: subValue}))
-                    : {key, value}
-            })
-            .flat()
-    }, [filters])
+    const handleDeleteFilter = useCallback(fieldName => () => {
+        setAdvancedFilterGroups(advancedFilterGroups()
+            .filter(group => group.fieldName !== fieldName))
+    }, [advancedFilterGroups, setAdvancedFilterGroups])
 
     const cleanChipLabel = useCallback((label, value) => {
         if (label === 'Belt') {
@@ -44,21 +41,33 @@ function FilterDisplay() {
         return value
     }, [])
 
+    const chips = useMemo(() => activeGroups.map(group => {
+        const label = filterFieldsByFieldName[group.fieldName]?.label
+        const delimiter = group.operator === 'AND' ? ' AND ' : ' OR '
+        const values = group.values.map(value => cleanChipLabel(label, String(value)))
+        return {
+            fieldName: group.fieldName,
+            label: `${group.matchType === 'Is Not' ? 'NOT ' : ''}${values.join(delimiter)}`,
+            negative: group.matchType === 'Is Not'
+        }
+    }), [activeGroups, cleanChipLabel, filterFieldsByFieldName])
+
     if (filterCount === 0) return null
 
     return (
         <FieldValue name='Current Filters' style={{marginBottom: 0}} value={
             <Stack direction='row' spacing={0} sx={{flexWrap: 'wrap'}} style={{marginRight: -24}}>
-                {filterValues.map(({key, value: filter}, index) => {
-                        const bgColor = filter.startsWith('!') ? '#642c2c' : 'inherit'
-                        const chipLabel = cleanChipLabel(filterFieldsByFieldName[key]?.label, filter)
-                            .replace('!', 'NOT ').replace('||', ' OR ').replace('@@', ' AND ')
+                {chips.map(chip => {
                         return <Chip
-                            key={index}
-                            label={chipLabel}
+                            key={chip.fieldName}
+                            label={chip.label}
                             variant='outlined'
-                            style={{marginRight: 4, marginBottom: 4, backgroundColor: bgColor}}
-                            onDelete={handleDeleteFilter(key, filter)}
+                            style={{
+                                marginRight: 4,
+                                marginBottom: 4,
+                                backgroundColor: chip.negative ? '#642c2c' : 'inherit'
+                            }}
+                            onDelete={handleDeleteFilter(chip.fieldName)}
                         />
                     }
                 )}

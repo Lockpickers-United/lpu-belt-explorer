@@ -2,16 +2,17 @@
 
 ## Status
 
-Phase 2 is complete. `something.coffee` now runs the hardened policy-aware codec,
-URL-authoritative committed state, draft-only local UI state, ID-based row actions, common
-visibility policy, and parsed applied-group chips. All former expected failures are
-ordinary passing tests. The pure modules and portable tests have been copied unchanged
-to LPU; LPU runtime integration remains intentionally deferred to Phase 3.
+Phase 3 is complete. Both applications now use URL-authoritative committed filter
+state, draft-only local UI state, ID-based row actions, common field-visibility policy,
+and parsed applied-group chips. All ten LPU data providers consume committed groups,
+LPU route controls follow explicit allowed-key policy, and profile/safelock defaults
+commit without overriding direct filtered URLs. The jointly owned pure modules and
+portable tests remain byte-identical.
 
 ## Scope
 
 This report tracks the filter-context refactor described in
-`filter-context-refactor-evaluation.md`. Work through Phase 2 covers:
+`filter-context-refactor-evaluation.md`. Work through Phase 3 covers:
 
 - the route-policy, codec, and row-state API contract;
 - portable codec cases for legacy syntax, canonical serialization, repeated keys,
@@ -20,10 +21,13 @@ This report tracks the filter-context refactor described in
   changes, duplicate prevention, ID-based changes/removal, and UI-only empty value
   slots;
 - coffee context, row UI, visibility, mini-context, and applied-chip integration; and
-- byte-identical portable modules and tests in LPU.
+- byte-identical portable modules and tests in LPU;
+- LPU context, route-policy, provider, advanced-row, drawer, and applied-chip
+  integration; and
+- LPU profile/safelock defaults plus atomic belt-scope URL actions.
 
-LPU context/provider integration, deployment, live-data access, generated-data updates,
-and unrelated filter matching changes remain outside Phase 2.
+Deployment, live-data access, generated-data updates, and unrelated filter matching
+changes remain outside Phase 3.
 
 ## Progress
 
@@ -74,6 +78,27 @@ and unrelated filter matching changes remain outside Phase 2.
   UI-only draft metadata while serializing only the row's non-empty values.
 - [x] Add pure-state, provider, and real button-interaction regressions for the repaired
   mixed committed/draft row behavior.
+- [x] Replace LPU's embedded codec and mirrored committed state with the shared pure
+  helpers and explicit committed/UI selectors.
+- [x] Derive LPU allowed filter keys from route field registries and declare the hidden
+  `photographers` filter on lock-list routes.
+- [x] Migrate all ten audited LPU data providers to `activeFilterGroups()` atomically.
+- [x] Move LPU advanced rows to ID-based actions and one beta/auth/admin visibility
+  policy while preserving progressive option counts over rendered UI rows.
+- [x] Render LPU applied chips from parsed committed groups and make multi-value delete
+  and exclude actions group-aware.
+- [x] Update the LPU drawer to use committed status and UI rows for editing.
+- [x] Replace profile/safelock initialization with a shared default-group hook that
+  yields to direct filtered URLs.
+- [x] Make belt tab/scope changes atomic after immutable URL writers exposed their
+  previous reliance on shared `URLSearchParams` mutation.
+- [x] Preserve existing hidden rows when editing the fallback blank row and synchronize
+  that hook fix and regression test to coffee.
+- [x] Add LPU context, hook, display, default, value-slot, and real provider-route
+  regressions.
+- [x] Run LPU focused/full tests, lint, test build, focused Playwright journeys, coffee
+  focused verification, and cross-repository equality checks.
+- [x] Update the evaluation and implementation report in both repositories for Phase 3.
 
 ## Working decisions
 
@@ -101,6 +126,11 @@ The evaluation now records these decisions in detail:
   single operator characters and dangling backslashes as literals.
 - Keep visibility outside the pure state helper; project adapters select visible rows,
   while row edits always target the underlying `_id`.
+- LPU route adapters derive allowed keys from `filterFields`; only declared hidden keys
+  extend that set. Opaque controls remain URL-preserved but never affect filter count or
+  data filtering.
+- Treat coupled route-control changes as one filter action. Belt tab/scope changes
+  delete legacy `belt` and set `tab` in the same `addFilters()` call.
 
 ## Audit findings added to the evaluation
 
@@ -170,6 +200,33 @@ The evaluation now records these decisions in detail:
   - Passed with no differences between coffee and LPU.
 - Builds and browser tests were not run because Phase 2 does not integrate the copied
   modules into LPU runtime bundles; route-level LPU validation belongs to Phase 3.
+- `npx vitest run src/context/filterUrlState.spec.js src/context/advancedFilterState.spec.js tests/vitest/AdvancedFilterValues.test.jsx tests/vitest/FilterContext.test.jsx tests/vitest/FilterDisplay.test.jsx tests/vitest/useAdvancedFilterRows.test.jsx tests/vitest/useDefaultAdvancedFilterGroup.test.jsx tests/vitest/LockListRoute.test.jsx tests/vitest/SafelocksRoute.test.jsx tests/vitest/ContentRoutes.test.jsx`
+  - Passed after Phase 3 integration: 10 files and 62 tests.
+- `npm run test:run`
+  - Passed after the final applied-exclusion regression: 29 files and 145 tests.
+- `npm run ci-pr`
+  - Passed after the final synchronized hook repair: lint completed with the one
+    pre-existing warning below, all 29 files and 144 tests passed, and the test build
+    completed successfully.
+- `npm run lint`
+  - Completed with no errors and one pre-existing warning:
+    `src/entries/Entry.jsx:120` assigns unused `detailsWidth`.
+- `npm run build:test`
+  - Passed after Phase 3 integration; Vite transformed 3,678 modules. The existing
+    large-chunk advisory remained informational.
+- `npx playwright test tests/e2e/locks.spec.js tests/e2e/makeAutocomplete.spec.js`
+  - Passed: 5 browser tests covering direct lock routes, details, drawer filtering,
+    mobile controls, make autocomplete, and reset.
+  - The sandboxed attempt could not bind the local preview port; the approved rerun
+    completed successfully.
+- `yarn workspace @starter/client vitest run src/filters/useAdvancedFilterRows.spec.jsx`
+  - Passed in coffee after the synchronized hidden-only fallback repair: 1 file and 6
+    tests. The first sandboxed attempt could not write Vite's temporary cache; the
+    approved rerun completed successfully.
+- `yarn workspace @starter/client eslint src/filters/useAdvancedFilterRows.js src/filters/useAdvancedFilterRows.spec.jsx`
+  - Passed with no errors or warnings.
+- Four `git diff --no-index --exit-code` comparisons for the portable modules and tests
+  - Passed again after Phase 3 with no differences between coffee and LPU.
 
 ## Change log
 
@@ -205,3 +262,12 @@ The evaluation now records these decisions in detail:
   added pure, context, and `AdvancedFilterValues` interaction coverage.
 - Synchronized the repaired portable helper and test to LPU, updated both repositories'
   evaluation and report, and reverified cross-repository equality.
+- Integrated the shared codec/state model into LPU's runtime `FilterContext` and
+  migrated all audited providers to URL-derived committed groups.
+- Added LPU route-key policy, explicit hidden photographer support, stable-ID row
+  operations, common field visibility, parsed group chips, and group-aware exclusion.
+- Added a shared default-filter hook for profile and safelock collection routes.
+- Made belt tab/scope actions atomic under immutable URL writes.
+- Fixed and synchronized the hidden-only fallback-row edit case in both projects.
+- Added the Phase 3 LPU regression suites and provider-route assertion, then completed
+  full unit, lint, test-build, browser, coffee, and drift verification.

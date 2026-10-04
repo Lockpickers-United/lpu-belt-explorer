@@ -24,7 +24,7 @@ export function ScorecardDataProvider({
                                           profile,
                                           blackBeltScorecard
                                       }) {
-    const {filters: allFilters, advancedFilterGroups} = useContext(FilterContext)
+    const {filters: allFilters, activeFilterGroups} = useContext(FilterContext)
     const {search, sort} = allFilters
 
     const allActivityEntries = useMemo(() => cardActivity.map(act => {
@@ -67,8 +67,8 @@ export function ScorecardDataProvider({
     })), [popularLocksBB, activityByMatchId])
 
     const {visibleEntries, searchedEntries} = useMemo(() =>
-        processEntries(allActivityEntries, search, sort, profile, advancedFilterGroups()),
-        [allActivityEntries, search, sort, profile, advancedFilterGroups])
+        processEntries(allActivityEntries, search, sort, profile, activeFilterGroups()),
+        [allActivityEntries, search, sort, profile, activeFilterGroups])
 
     const {visibleEntries: popularEntries} = useMemo(() => processEntries(allPopularEntries, search, 'popular', profile, true), [allPopularEntries, profile, search])
 

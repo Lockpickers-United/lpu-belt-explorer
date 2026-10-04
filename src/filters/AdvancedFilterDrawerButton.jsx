@@ -3,13 +3,11 @@ import Box from '@mui/material/Box'
 import Drawer from '@mui/material/Drawer'
 import Tooltip from '@mui/material/Tooltip'
 import Badge from '@mui/material/Badge'
-import AuthContext from '../app/AuthContext'
 import FilterContext from '../context/FilterContext'
 import AdvancedFilterByField from './AdvancedFilterByField'
 import ClearFiltersButton from './ClearFiltersButton'
 import ResetFiltersButton from './ResetFiltersButton'
 import Button from '@mui/material/Button'
-import AppContext from '../app/AppContext'
 import {useHotkeys} from 'react-hotkeys-hook'
 import LockListContext from '../locks/LockListContext.jsx'
 import FilterAltIcon from '@mui/icons-material/FilterAlt'
@@ -18,36 +16,37 @@ import Link from '@mui/material/Link'
 import DataContext from '../context/DataContext.jsx'
 import FilterScopeToggle from './FilterScopeToggle.jsx'
 import {motion} from 'motion/react'
+import useFilterFieldVisibility from './useFilterFieldVisibility.js'
 
 function AdvancedFilterDrawerButton({entryType='Lock'}) {
     const [open, setOpen] = useState(false)
 
-    const {isLoggedIn} = useContext(AuthContext)
-    const {beta} = useContext(AppContext)
     const {
         filters,
         filterCount,
         filterFields,
         showAdvancedSearch,
         setShowAdvancedSearch,
+        activeFilterGroups,
         advancedFilterGroups,
-        setAdvancedFilterGroups
+        addAdvancedFilterGroup
     } = useContext(FilterContext)
+    const isFilterFieldVisible = useFilterFieldVisibility()
     const {tab} = useContext(LockListContext)
     const {visibleEntries = [], visibleBeltEntries} = useContext(DataContext)
     const {belt} = filters
 
     const filterList = useMemo(() => {
-        const activeFilters = advancedFilterGroups()
-            .filter(group => group.fieldName.length > 0 && Array.isArray(group.values) && group.values.length > 0)
+        const activeFilters = activeFilterGroups()
             .map(group => {
                 const field = filterFields.find(f => f.fieldName === group.fieldName)
-                return {...field, active: true}
+                return field ? {...field, active: true} : null
             })
+            .filter(Boolean)
         const otherFilters = filterFields
             .filter(field => !activeFilters.find(f => f.fieldName === field.fieldName))
         return [...activeFilters, ...otherFilters]
-    }, [advancedFilterGroups, filterFields])
+    }, [activeFilterGroups, filterFields])
 
     const beltScope = useMemo(() => {
         return tab
@@ -71,29 +70,8 @@ function AdvancedFilterDrawerButton({entryType='Lock'}) {
 
     const handleQuickAdd = useCallback((fieldName, valueToAdd) => {
         if (!fieldName || !valueToAdd) return
-        setShowAdvancedSearch(true)
-        const groups = [...advancedFilterGroups().filter(group => group.fieldName.length > 0)]
-
-        const existingIndex = groups.findIndex(g => g.fieldName === fieldName && Array.isArray(g.values) && g.values.length > 0)
-        if (existingIndex >= 0) {
-            const existing = groups[existingIndex]
-            if (existing.values.includes(valueToAdd)) return
-            groups[existingIndex] = {
-                ...existing,
-                values: [valueToAdd]
-            }
-            setAdvancedFilterGroups(groups)
-            return
-        }
-        const newGroup = {
-            _id: `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
-            fieldName,
-            matchType: 'Is',
-            operator: 'OR',
-            values: [valueToAdd]
-        }
-        setAdvancedFilterGroups([...groups, newGroup])
-    }, [advancedFilterGroups, setAdvancedFilterGroups, setShowAdvancedSearch])
+        addAdvancedFilterGroup({fieldName, valueToAdd})
+    }, [addAdvancedFilterGroup])
 
     const openDrawer = useCallback(() => setOpen(true), [])
     const closeDrawer = useCallback(() => setOpen(false), [])
@@ -174,9 +152,7 @@ function AdvancedFilterDrawerButton({entryType='Lock'}) {
                         <Box sx={{margin: 1}}>
                             <motion.div layout style={{minWidth: 250}}>
                                 {filterList
-                                    .filter(field => {
-                                        return (!field.beta || beta) && (!field.userBased || isLoggedIn)
-                                    })
+                                    .filter(isFilterFieldVisible)
                                     .filter(field => {
                                         return !(scope === 'belt' && tab !== 'search' && field.label === 'Belt')
                                     })

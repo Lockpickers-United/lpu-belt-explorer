@@ -1,6 +1,6 @@
 import React, {useContext} from 'react'
 import DBContext from '../app/DBContext'
-import {lockFilterFields} from '../data/filterFields'
+import {lockAdditionalFilterKeys, lockFilterFields} from '../data/filterFields'
 import usePageTitle from '../util/usePageTitle'
 import {LockListProvider} from './LockListContext'
 import {DataProvider} from './LockDataProvider'
@@ -13,7 +13,7 @@ function LockSearchRoute({allEntries = defaultEntries}) {
     usePageTitle('Bulk Search')
 
     return (
-        <FilterProvider filterFields={lockFilterFields}>
+        <FilterProvider filterFields={lockFilterFields} additionalFilterKeys={lockAdditionalFilterKeys}>
             <DataProvider allEntries={allEntries} profile={lockCollection}>
                 <LockListProvider>
                     <LockSearch/>

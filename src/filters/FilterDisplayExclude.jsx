@@ -5,24 +5,28 @@ import {filterValueNames} from '../data/filterValues'
 import FilterChipExclude from './FilterChipExclude'
 
 function FilterDisplay() {
-    const {filters, filterCount, removeFilter, filterFieldsByFieldName, nonFilters} = useContext(FilterContext)
+    const {
+        filterCount,
+        filterFieldsByFieldName,
+        activeFilterGroups,
+        advancedFilterGroups,
+        setAdvancedFilterGroups
+    } = useContext(FilterContext)
 
-    const handleDeleteFilter = useCallback((keyToDelete, valueToDelete) => () => {
-        removeFilter(keyToDelete, valueToDelete)
-    }, [removeFilter])
+    const activeGroups = activeFilterGroups()
 
-    const filterValues = useMemo(() => {
-        const {search, id, tab, name, sort, image, ...rest} = filters
-        return Object.keys(rest)
-            .filter(key => !nonFilters.includes(key) && filters[key] !== undefined && filters[key] !== null && filters[key] !== '')
-            .map(key => {
-                const value = filters[key]
-                return Array.isArray(value)
-                    ? value.map(subValue => ({key, value: subValue}))
-                    : {key, value}
-            })
-            .flat()
-    }, [filters, nonFilters])
+    const handleDeleteFilter = useCallback(fieldName => {
+        setAdvancedFilterGroups(advancedFilterGroups()
+            .filter(group => group.fieldName !== fieldName))
+    }, [advancedFilterGroups, setAdvancedFilterGroups])
+
+    const handleToggleFilter = useCallback(fieldName => {
+        setAdvancedFilterGroups(advancedFilterGroups().map(group => (
+            group.fieldName === fieldName
+                ? {...group, matchType: group.matchType === 'Is Not' ? 'Is' : 'Is Not'}
+                : group
+        )))
+    }, [advancedFilterGroups, setAdvancedFilterGroups])
 
     const cleanChipLabel = useCallback((label, value) => {
         if (label === 'Belt') {
@@ -47,23 +51,30 @@ function FilterDisplay() {
 
 
 
+    const chips = useMemo(() => activeGroups.map(group => {
+        const fieldLabel = filterFieldsByFieldName[group.fieldName]?.label
+        const delimiter = group.operator === 'AND' ? ' AND ' : ' OR '
+        const values = group.values.map(value => cleanChipLabel(fieldLabel, String(value)))
+        const negative = group.matchType === 'Is Not'
+        return {
+            fieldName: group.fieldName,
+            label: `${negative ? 'NOT ' : ''}${values.join(delimiter)}`,
+            negative
+        }
+    }), [activeGroups, cleanChipLabel, filterFieldsByFieldName])
+
     if (filterCount === 0) return null
     return (
             <Stack direction='row' spacing={0} sx={{flexWrap: 'wrap'}} style={{marginTop: 12}}>
-                {filterValues.map(({key, value: filter}, index) => {
-
-                    const baseValue = filter.startsWith('!') ? filter.slice(1) : filter
-                    const cleanValue = cleanChipLabel(filterFieldsByFieldName[key]?.label, baseValue)
-                    const label = filter.startsWith('!') ? `NOT ${cleanValue}` : cleanValue
-
-                    return <React.Fragment key={index}>
+                {chips.map(chip => {
+                    return <React.Fragment key={chip.fieldName}>
                             <FilterChipExclude
-                                filterKey={key}
-                                filterValue={filter}
-                                label={label}
+                                label={chip.label}
+                                negative={chip.negative}
+                                onToggle={() => handleToggleFilter(chip.fieldName)}
+                                onDelete={() => handleDeleteFilter(chip.fieldName)}
                                 variant='outlined'
                                 style={{marginRight: 4, marginBottom: 4}}
-                                onDelete={handleDeleteFilter(key, filter)}
                             />
                         </React.Fragment>
                     }

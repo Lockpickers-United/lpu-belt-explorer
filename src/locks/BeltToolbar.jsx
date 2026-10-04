@@ -5,7 +5,6 @@ import Tooltip from '@mui/material/Tooltip'
 import React, {useCallback, useContext} from 'react'
 import {useHotkeys} from 'react-hotkeys-hook'
 import LockListContext from './LockListContext'
-import FilterContext from '../context/FilterContext'
 import {uniqueBelts} from '../data/belts'
 import BeltIcon from '../entries/BeltIcon'
 import useWindowSize from '../util/useWindowSize'
@@ -14,7 +13,6 @@ import DataContext from './LockDataProvider.jsx'
 
 function BeltToolbar() {
     const {tab, setTab} = useContext(LockListContext)
-    const {addFilter, removeFilters} = useContext(FilterContext)
     const {visibleEntries = []} = useContext(DataContext)
 
     const beltCounts = visibleEntries.reduce((acc, entry) => {
@@ -38,12 +36,8 @@ function BeltToolbar() {
     const handleTabClick = useCallback((_event, value) => setTab(value), [setTab])
 
     const handleClick = useCallback(value => () => {
-        if (tab === value) {
-            addFilter('tab', tab, true)
-        } else {
-            removeFilters(['belt'])
-        }
-    }, [addFilter, removeFilters, tab])
+        if (tab === value) setTab(value)
+    }, [setTab, tab])
 
     const allColor = tab === 'search' ? '#eee' : '#aaa'
 

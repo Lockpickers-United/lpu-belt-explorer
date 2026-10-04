@@ -11,6 +11,8 @@ const safelockCollectionFieldSort = (a, b) => {
     return safelockCollectionFieldValues.indexOf(a) - safelockCollectionFieldValues.indexOf(b)
 }
 
+export const lockAdditionalFilterKeys = ['photographers']
+
 export const lockFilterFields = [
     {label: 'Make', fieldName: 'makes'},
     {label: 'Locking Mechanism', fieldName: 'lockingMechanisms'},
@@ -127,5 +129,4 @@ export const projectFilterFields = [
     {label: 'Picker Name', fieldName: 'pickerName'},
     {label: 'Source', fieldName: 'source'},
 ]
-
 

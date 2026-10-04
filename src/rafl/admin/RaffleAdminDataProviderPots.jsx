@@ -15,7 +15,7 @@ export function RaffleAdminDataProviderPots({children, drawing}) {
     const {allPots} = useContext(RaffleContext)
     const {allRaffleEntries} = useContext(DBContext)
 
-    const {filters: allFilters, advancedFilterGroups} = useContext(FilterContext)
+    const {filters: allFilters, activeFilterGroups} = useContext(FilterContext)
     const {search, id, tab, name, sort, image, preview, expandAll, ..._filters} = allFilters || {}
 
     const flatEntries = useMemo(() => {
@@ -53,7 +53,7 @@ export function RaffleAdminDataProviderPots({children, drawing}) {
 
     const visibleEntries = useMemo(() => {
         const filtered = filterEntriesAdvanced({
-            advancedFilterGroups: advancedFilterGroups(),
+            advancedFilterGroups: activeFilterGroups(),
             entries: mappedPotEntries
         })
         const searched = searchEntriesForText(search, [...filtered], searchCutoff)
@@ -77,7 +77,7 @@ export function RaffleAdminDataProviderPots({children, drawing}) {
             })
         if (drawing) sorted = sorted.filter(pot => pot.entrants?.length > 0)
         return sorted
-    }, [advancedFilterGroups, drawing, mappedPotEntries, search, sort])
+    }, [activeFilterGroups, drawing, mappedPotEntries, search, sort])
 
     const getPotFromId = useCallback(id => {
         return mappedPotEntries.find(e => e.id === id)

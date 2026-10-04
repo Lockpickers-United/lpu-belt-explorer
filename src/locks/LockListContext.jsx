@@ -41,6 +41,7 @@ export function LockListProvider({children}) {
     const handleSetTab = useCallback(tab => {
         addFilters([
             {key: 'tab', value: tab},
+            {key: 'belt', value: undefined},
             {key: 'id', value: expanded === 'beltreqs' ? 'beltreqs' : undefined},
             {key: 'name', value: undefined}
         ], true)
