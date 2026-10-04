@@ -43,6 +43,7 @@ export function DataProvider({children, profile}) {
 
             return {
                 ...entry,
+                assignedBelt: entry.belt,
                 displayName,
                 votedBelt,
                 voteEntries,
