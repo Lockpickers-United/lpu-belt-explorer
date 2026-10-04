@@ -146,7 +146,7 @@ The existing function-shaped `activeFilterGroups()` and `advancedFilterGroups()`
 ## Pre-implementation decision record
 
 This section satisfies the documentation gate for Phase 1. The audit reflects
-`lpu-belt-explorer` at `f46ca4a82329caabf6129412646e18045615b453` and
+`lpu-belt-explorer` at `4ff5e2cf4ec848d4b0082704ecd06918f9e2039a` and
 `something.coffee` at `44a74c267ba69f7ca018d0e1f5f0681a7c70b30c`, both on
 `main` on 2026-10-03. The inventories cover URL state that reaches either filter
 context plus directly parsed route keys that a context must preserve when present.
@@ -158,7 +158,7 @@ context plus directly parsed route keys that a context must preserve when presen
 | Committed source | `location.search` is the only committed-filter source. `activeFilterGroups` is a value parsed from the current URL, and all data providers consume it. |
 | Editable state | Local state stores draft rows and stable UI metadata. A row becomes committed as soon as it has an allowed field and at least one non-empty value. Rendered rows are derived from committed groups plus drafts; the provider does not keep a second editable copy of every committed group. |
 | Allowed filter keys | Each provider supplies its allowed data-filter keys from its `filterFields`, plus an explicit list for supported hidden filters. A key is not a data filter merely because it is absent from a global non-filter list. |
-| Unknown keys | Preserve unknown query parameters byte-semantically across local filter edits, but exclude them from active groups and `filterCount`. This prevents unrelated route state from filtering data while avoiding destructive URL cleanup. Emit a development-only diagnostic when practical. |
+| Unknown keys | Preserve unknown query parameters by decoded key/value and multiplicity across local filter edits, but exclude them from active groups and `filterCount`. This prevents unrelated route state from filtering data while avoiding destructive URL cleanup. `URLSearchParams` may normalize equivalent percent encoding. Emit a development-only diagnostic when practical. |
 | One field, one group | A canonical URL contains at most one parameter per active field and the in-memory model contains at most one committed group per field. The field selector prevents duplicates and the state helper rejects a second draft choosing an occupied field. |
 | Compatible repeated fields | Legacy `field=A&field=B` and `field=!A&field=!B` inputs retain their current AND meaning and canonicalize on the next filter edit to `field=A@@B` and `field=!A@@B`. Duplicate values are removed while preserving first-seen order. |
 | Incompatible repeated fields | Mixed-sign or mixed-operator repetitions cannot be represented by one group. Parse them deterministically using the last valid occurrence, matching the current serializer's effective last-write behavior, and canonicalize on the next local filter edit. Add a development diagnostic and a regression fixture for the discarded occurrences. |
@@ -201,6 +201,62 @@ where possible, then writes managed filter fields in rendered committed-group or
 Tests should compare parsed entries for preservation-sensitive cases and exact strings
 only for canonical managed-filter examples.
 
+### Phase 1 executable contract findings
+
+The codec contract now uses an explicit policy object rather than overloading a list of
+keys to skip:
+
+```js
+const policy = {allowedFilterKeys: ['roaster', 'originCountry']}
+
+parseFiltersToGroups(filters, policy)
+countActiveFilterParams(searchParams, policy)
+serializeAdvancedFilterGroups({
+    groups,
+    searchParams,
+    allowedFilterKeys: policy.allowedFilterKeys
+})
+```
+
+`parseFiltersToGroups()` and `countActiveFilterParams()` classify only allowed keys.
+`serializeAdvancedFilterGroups()` receives the original `URLSearchParams`, removes and
+rewrites only allowed keys, and leaves every opaque key/value pair in decoded order.
+This signature makes unknown-key preservation possible; the former `filters` object
+cannot retain interleaved parameter order after repeated keys are collapsed into arrays.
+The existing `filters` and non-filter-list signatures may remain as migration adapters,
+but they are not the portable contract.
+
+Malformed syntax is normalized conservatively. A lone negation marker produces no
+group, empty segments around `||` or `@@` are dropped, unmatched single `|` or `@`
+characters remain literal values, and a dangling backslash remains literal. Valid
+escape sequences keep the reserved-character behavior in the canonical examples.
+
+The pure row-state contract is represented by these functions:
+
+- `reconcileAdvancedFilterRows()` combines URL-derived active groups with local drafts,
+  reuses IDs by field, and accepts an injected ID generator;
+- `changeAdvancedFilterRow()` and `removeAdvancedFilterRow()` address rows by `_id`;
+- `addAdvancedFilterGroup()` merges a value into the one row for its field without
+  mutating the input; and
+- `splitAdvancedFilterRows()` separates concrete groups from incomplete drafts after a
+  local row operation.
+
+The helper rejects a field change that would duplicate an occupied field. Changing a
+row's field clears its values while retaining its ID, and clearing its last value turns
+the same row into a draft. External navigation discards drafts by reconciling with an
+empty `draftRows` list; local same-search work supplies the drafts it intends to retain.
+Visibility is intentionally absent from the pure helper, so a project adapter filters
+rendered rows but still sends the stable ID of the selected row to these operations.
+
+Phase 1 added the unused pure helper and its passing tests to `something.coffee` so the
+row API is concrete before context integration. The codec file still has runtime
+consumers, so it was not changed in this phase. Eleven codec assertions use Vitest's
+`it.fails` as executable red tests for the missing allowed-key policy, repetition
+normalization, malformed-input cleanup, opaque-parameter preservation, `false`/`0`, and
+policy-aware round trips. Phase 2 must remove every `it.fails` marker as it makes the
+assertion pass; an unexpectedly passing red test already fails the suite and therefore
+cannot be forgotten silently.
+
 ### URL-key inventory: `lpu-belt-explorer`
 
 The current global `nonFilters` list contains `id`, `name`, `search`, `tab`, `sort`,
@@ -213,7 +269,7 @@ cannot classify every route correctly.
 | Shared filter-context controls | `id`, `name`, `search`, `tab`, `sort`, `image`, `expandAll` | Entry expansion/share labels, text search, list scope, ordering, gallery position, and expansion state. Preserve on applicable routes; never parse as advanced groups. |
 | LPU route controls already excluded | `locks`, `debug`, `preview`, `single`, `dataset`, `scorecardId` | Scorecard mode, edit diagnostics, RAFL/advanced preview, RAFL admin mode, scorecard cohort, and scorecard-entry linkage. |
 | LPU route controls currently missing | `uid`, `hours` | `/userinfo` profile selection and `/recent` time window. They currently inflate `filterCount` and become bogus advanced groups. |
-| Route-dependent collision | `belt` | Legacy/fallback lock-list scope on `/locks`; a real active field on classification, ranking-request, and scorecard providers. It must be supplied by route policy, never placed in a global list. |
+| Route-dependent collision | `belt` | Legacy/fallback lock-list scope on `/locks`; a real active field on ranking-request, scorecard, scorecard-exploration, and RAFL-entry providers. It must be supplied by route policy, never placed in a global list. Classification now uses the unambiguous `assignedBelt` field. |
 | Supported hidden active filter | `photographers` on lock data routes | `LockDataProvider` maps photographer names and `LockImageGallery` also narrows media with the same value. Keep it active only where this hidden URL contract is intended; add it explicitly rather than relying on unknown-key parsing. |
 | Direct route controls outside filter context | `term`, `pageId`, `user`, `bb1`, `bb2`, `title` | Glossary selection, content/path selection, and leaderboard search/compare state are parsed by their route components. They remain opaque if a filter provider is later added around those routes. |
 | OAuth/external query state | `code`, `state`, `error`, `error_description`, `h` | Authentication callback state or external share-host metadata. It is outside the hash-route filter codec. |
@@ -223,7 +279,7 @@ Allowed LPU active fields are route-scoped subsets of the following audited regi
 - locks/profile: `makes`, `lockingMechanisms`, `filterBelts`, `features`, `content`,
   `collection`, plus the explicit hidden `photographers` contract;
 - classification: `makes`, `displayName`, `votedBelt`, `hasVotes`, `hasConsensus`,
-  `belt`, `lockingMechanisms`, `features`, `content`, `collection`;
+  `assignedBelt`, `lockingMechanisms`, `features`, `content`, `collection`;
 - safelocks: `make`, `wheels`, `group`, `tier`, `fence`, `digits`, `features`,
   `content`, `collection`;
 - scorecard: `type`, `makes`, `lockingMechanisms`, `belt`, `features`, `content`,
@@ -403,7 +459,7 @@ Execute the portable contract tests in `something.coffee` first. LPU-specific te
 ### Phase 2: harden the common implementation
 
 1. Extract and correct `filterUrlState.js`; replace truthiness checks with one `hasNonEmptyValue` rule.
-2. Add `advancedFilterState.js` so navigation reconciliation and row edits are pure and testable.
+2. Harden and integrate the Phase 1 `advancedFilterState.js` helper so navigation reconciliation and row edits use its tested pure operations.
 3. Remove same-field overwrite ambiguity by enforcing/canonicalizing the unique-field invariant.
 4. Replace index-based row actions with `_id`-based actions.
 5. Make one injected visibility predicate cover beta, authenticated-user, and admin-only fields.
@@ -444,6 +500,7 @@ Roll out without changing the existing URL syntax. Before merge, manually compar
 
 - Both working trees had no tracked modifications at the start of this documentation pass. The supplied evaluation document was untracked in LPU.
 - The LPU focused route baseline passed: 3 test files and 16 tests (`LockListRoute`, `SafelocksRoute`, and `ContentRoutes`).
+- Focused ESLint passed for `src/data/filterFields.js` and `src/classification/ClassificationDataProvider.jsx` after the `assignedBelt` rename.
 - The `something.coffee` focused filter suite passed: 4 test files and 12 tests (`filterUrlState`, `FilterContext`, `AdvancedSelect`, and `filterEntriesAdvanced`).
 - A direct serializer check demonstrated that two same-field groups reduce to the last group.
 - A direct parser check demonstrated that compatible repeated scalar parameters become one AND group, while mixed-sign repetitions become two groups and then reserialize to only the last group.
