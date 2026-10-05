@@ -11,7 +11,7 @@ export default function VoteDisplay({vote = {}, owner, entry}) {
     }
 
     return (
-        <div style={{marginBottom: 24}}>
+        <div style={{marginBottom: owner ? 24 : 8}}>
             <Collapse in={!vote.id && !active.voteForm}>
                 <div style={{width: '100%', display: 'flex', justifyContent: 'center', marginTop: 16}}>
                     <Button onClick={() => handleActive('voteForm')} variant='text' size='small'
@@ -22,7 +22,7 @@ export default function VoteDisplay({vote = {}, owner, entry}) {
                 <VoteView vote={vote} handleActive={handleActive} owner={owner}/>
             </Collapse>
             <Collapse in={active.voteForm}>
-                <VoteForm entry={entry} vote={vote} handleActive={handleActive}/>
+                <VoteForm entry={entry} vote={vote} handleActive={handleActive} owner={owner}/>
             </Collapse>
         </div>
     )

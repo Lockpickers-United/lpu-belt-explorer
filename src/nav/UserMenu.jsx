@@ -117,17 +117,6 @@ function UserMenu() {
                                 }
                             </MenuItem>
                         }
-                        {accessInfo.roles.lpuMod &&
-                            <MenuItem onClick={() => toggleRoleEnabled('lpuMod')} style={{fontStyle: 'italic'}}>
-                                <ListItemIcon>
-                                    <SportsMartialArtsIcon color={accessInfo.enabledRoles.lpuMod ? 'warning' : 'default'}/>
-                                </ListItemIcon>
-                                {accessInfo.enabledRoles.lpuMod
-                                    ? <ListItemText>Disable Mod Mode</ListItemText>
-                                    : <ListItemText>Enable Mod Mode</ListItemText>
-                                }
-                            </MenuItem>
-                        }
                         {accessInfo.roles.qaUser &&
                             <MenuItem onClick={() => toggleRoleEnabled('qaUser')} style={{fontStyle: 'italic'}}>
                                 <ListItemIcon>

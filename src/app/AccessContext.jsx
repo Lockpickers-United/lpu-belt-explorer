@@ -2,31 +2,21 @@ import React, {useCallback, useContext, useEffect, useMemo, useState} from 'reac
 import {useLocalStorage} from 'usehooks-ts'
 import dayjs from 'dayjs'
 import AuthContext from './AuthContext.jsx'
-import SportsMartialArtsIcon from '@mui/icons-material/SportsMartialArts'
-import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings'
-import BiotechIcon from '@mui/icons-material/Biotech'
 
 const AccessContext = React.createContext(undefined)
 
 const roleLevels = {
     admin: 100,
     lpuMod: 90,
-    requestAdmin: 85,
+    classificationAdmin: 85,
+    classificationTeam: 60,
     qaUser: 20
 }
 
-const emptyRoles = {
-    admin: false,
-    lpuMod: false,
-    requestAdmin: false,
-    qaUser: false
-}
-
-const roleIcons = {
-    admin: <AdminPanelSettingsIcon color='success' style={{marginLeft: 6}}/>,
-    lpuMod: <SportsMartialArtsIcon color='warning' style={{marginLeft: 6}}/>,
-    qaUser: <BiotechIcon color='info' style={{marginLeft: 6}}/>
-}
+const emptyRoles = Object.keys(roleLevels).reduce((acc, role) => ({
+    ...acc,
+    [role]: false
+}), {})
 
 const getHighestRoleLevel = roles => Math.max(
     0,
@@ -47,7 +37,6 @@ const isEnabledToday = enabledAt => {
 export function AccessProvider({children}) {
     const {authLoaded, isLoggedIn, user, userClaims = []} = useContext(AuthContext)
     const [adminPreference, setAdminPreference] = useLocalStorage('adminEnabled', false)
-    const [lpuModEnabledAt, setLpuModEnabledAt] = useLocalStorage('lpuModEnabled', '')
     const [qaUserEnabledAt, setQaUserEnabledAt] = useLocalStorage('qaUserEnabledAt', '')
     const [, setExpirationTick] = useState(0)
 
@@ -57,33 +46,38 @@ export function AccessProvider({children}) {
         const claims = new Set(userClaims)
         return {
             admin: claims.has('admin'),
+            classificationAdmin: claims.has('classificationAdmin') || claims.has('admin'),
             lpuMod: claims.has('lpuMod'),
-            requestAdmin: claims.has('requestAdmin'),
-            // Administrators retain the previous ability to preview QA-only UI.
+            classificationTeam: claims.has('classificationTeam'),
             qaUser: claims.has('qaUser') || claims.has('admin')
         }
     }, [authLoaded, isLoggedIn, user?.uid, userClaims])
 
     const adminEnabled = roles.admin && adminPreference === true
-    const requestAdminEnabled = roles.requestAdmin
-    const lpuModEnabled = roles.lpuMod && isEnabledToday(lpuModEnabledAt)
     const qaUserEnabled = roles.qaUser && isEnabledToday(qaUserEnabledAt)
 
     const enabledRoles = useMemo(() => ({
         admin: adminEnabled,
-        lpuMod: lpuModEnabled,
-        requestAdmin: requestAdminEnabled,
         qaUser: qaUserEnabled
-    }), [adminEnabled, lpuModEnabled, qaUserEnabled, requestAdminEnabled])
+    }), [adminEnabled, qaUserEnabled])
+
+    const features = useMemo(() => {
+        return {
+            entryBar: getHighestRoleLevel(roles) >= 50,
+            classificationVote: ['admin', 'classificationAdmin', 'lpuMod', 'classificationTeam'].some(role => roles[role]),
+            scorecardVideos: ['admin', 'lpuMod'].some(role => roles[role]),
+            manageRequests: ['admin', 'classificationAdmin'].some(role => roles[role]),
+            someQaFeature: enabledRoles.qaUser
+        }
+    }, [enabledRoles, roles])
 
     const dailyRoleExpiration = useMemo(() => {
-        if (!enabledRoles.lpuMod && !enabledRoles.qaUser) return null
+        if (!enabledRoles.qaUser) return null
         return Math.max(0, dayjs().endOf('day').diff(dayjs()) + 1)
-    }, [enabledRoles.lpuMod, enabledRoles.qaUser])
+    }, [enabledRoles.qaUser])
 
     useEffect(() => {
         if (dailyRoleExpiration === null) return undefined
-
         const timeout = window.setTimeout(() => {
             setExpirationTick(current => current + 1)
         }, dailyRoleExpiration)
@@ -93,21 +87,19 @@ export function AccessProvider({children}) {
     const accessInfo = useMemo(() => ({
         roles,
         enabledRoles,
+        features,
         level: getHighestRoleLevel(roles),
         enabledLevel: getHighestRoleLevel(enabledRoles),
-        activeRole: getActiveRole(enabledRoles),
-        icon: roleIcons[getActiveRole(enabledRoles)] || null
-    }), [enabledRoles, roles])
+        activeRole: getActiveRole(enabledRoles)
+    }), [enabledRoles, features, roles])
 
     const toggleRoleEnabled = useCallback(role => {
         if (role === 'admin') {
             setAdminPreference(current => roles.admin && current !== true)
-        } else if (role === 'lpuMod') {
-            setLpuModEnabledAt(roles.lpuMod && !enabledRoles.lpuMod ? dayjs().toISOString() : '')
         } else if (role === 'qaUser') {
             setQaUserEnabledAt(roles.qaUser && !enabledRoles.qaUser ? dayjs().toISOString() : '')
         }
-    }, [enabledRoles.lpuMod, enabledRoles.qaUser, roles.admin, roles.lpuMod, roles.qaUser, setAdminPreference, setLpuModEnabledAt, setQaUserEnabledAt])
+    }, [enabledRoles.qaUser, roles.admin, roles.qaUser, setAdminPreference, setQaUserEnabledAt])
 
     const value = useMemo(() => ({
         accessInfo,

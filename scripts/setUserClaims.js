@@ -25,11 +25,11 @@ const _allClaims = {
     dataAdmin: true    // can write to firebase: data-cache
 }
 //const newClaims = {raflAdmin:true, dataAdmin:true}
-const newClaims = {lpuMod: true}
+const newClaims = {admin: true}
 const removeClaims = []
 
 const users = [
-    {uid: 'f2yySWbxUBXF8k3HgorYhrm76gx2', name: 'Rein'},
+    {uid: 'Mwbvdkq1QtWu2zLwEaj3imULSry1', name: 'decoder'},
 ]
 
 const _allUsers = [
@@ -45,6 +45,7 @@ const _allUsers = [
     {uid: 's5iyDrszY4Nc3zR7rILCQLO7I8v2', name: 'Norlin'},
     {uid: 'vOi8rfTRluYlcVizuVvX9PWFJdn2', name: 'Dynamic'},
     {uid: 'XKPQaAR525XV2JsqGn12eEKwxD62', name: 'dnd'},
+    {uid: 'f2yySWbxUBXF8k3HgorYhrm76gx2', name: 'Rein'},
 ]
 
 async function updateCustomClaimsForUsers() {

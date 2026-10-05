@@ -1,5 +1,5 @@
-import {isValidRegex} from '../util/stringUtils'
-import entryName from '../entries/entryName'
+import {isValidRegex} from '../util/stringUtils.js'
+import entryName from '../entries/entryName.js'
 import fuzzysort from 'fuzzysort'
 import removeAccents from 'remove-accents'
 

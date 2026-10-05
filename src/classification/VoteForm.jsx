@@ -13,7 +13,7 @@ import AuthContext from '../app/AuthContext.jsx'
 import {useAccess} from '../app/AccessContext.jsx'
 import DBContext from '../app/DBContext.jsx'
 
-export default function VoteForm({entry, vote, handleActive}) {
+export default function VoteForm({entry, vote, handleActive, owner}) {
     const {user} = useContext(AuthContext)
     const {lockCollection} = useContext(DBContext)
     const {accessInfo} = useAccess()
@@ -21,7 +21,7 @@ export default function VoteForm({entry, vote, handleActive}) {
     const hasLock = lockCollection?.recordedLocks.includes(entry.id)
 
     const url = `${apiServerUrl}/api/v1/locks/${entry.id}/videos`
-    const response = useGetRequest({user, url, enabled: hasLock && accessInfo.enabledLevel >= 50})
+    const response = useGetRequest({user, url, enabled: hasLock && accessInfo.features.scorecardVideos})
     const videos = response?.data?.data?.videos ?? []
     const scorecardVideo = videos.find(video => video.userId === user.uid) ?? null
 
@@ -81,7 +81,7 @@ export default function VoteForm({entry, vote, handleActive}) {
                         style={{position: 'absolute', top: 0, left: 0, bottom: 0}}/>
         <div style={{margin: '0px 0 0 16px', width: '100%'}}>
             <div style={{fontSize: '1.0rem', fontWeight: 600, margin: '0px 0px 2px 0px'}}>
-                My Vote
+                {owner ? 'My Vote' : vote.displayName}
             </div>
             <FormElement fieldType={'SelectBox'}
                          fieldName={'votedBelt'}

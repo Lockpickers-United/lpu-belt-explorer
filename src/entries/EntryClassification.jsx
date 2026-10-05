@@ -3,7 +3,6 @@ import AuthContext from '../app/AuthContext.jsx'
 import {useAccess} from '../app/AccessContext.jsx'
 import ClassificationVotes from '../classification/ClassificationVotes.jsx'
 import VoteDisplay from '../classification/VoteDisplay.jsx'
-import VoteView from '../classification/VoteView.jsx'
 import {beltSort} from '../data/belts.js'
 import dayjs from 'dayjs'
 import useWindowSize from '../util/useWindowSize.jsx'
@@ -26,7 +25,7 @@ export default function EntryClassification({entry, isClassification}) {
     const {isMobile} = useWindowSize()
     const padding = !isMobile ? '0 20px 0 8px' : '0 6px 0 0px'
 
-    if (accessInfo.enabledLevel < 50) return null
+    if (!accessInfo.features.classificationVote) return null
 
 
     return (
@@ -44,11 +43,10 @@ export default function EntryClassification({entry, isClassification}) {
             <VoteDisplay entry={entry} vote={userVote} owner={userVote?.userId === user.uid}/>
 
             {otherVotes?.length > 0 && otherVotes.map(vote => {
-                return <div key={vote.id} style={{marginBottom: 24}}>
-                    <VoteView entry={entry} vote={vote} owner={vote.userId === user.uid}/>
+                return <div key={vote.id}>
+                    <VoteDisplay entry={entry} vote={vote} owner={vote.userId === user.uid}/>
                 </div>
             })}
         </div>
     )
 }
-

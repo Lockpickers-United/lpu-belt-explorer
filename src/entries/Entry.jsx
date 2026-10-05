@@ -117,7 +117,6 @@ function Entry({entry, expanded, onExpand, isClassification, scorecardId}) {
 
     const {isMobile} = useWindowSize()
     const makeModelWidth = !isMobile ? '65%' : '63%'
-    const detailsWidth = scorecardId ? '28%' : '32%'
     const mainMargin = !isMobile ? '6px 0px 8px 12px' : '4px 0px 6px 4px'
 
     // TODO - don't bring in FilterChip, just render here. Fix add filter for new style.
@@ -164,7 +163,7 @@ function Entry({entry, expanded, onExpand, isClassification, scorecardId}) {
                                 width: '100%',
                                 justifyContent: 'left'
                             }}>
-                                <ClassificationVotes votes={entry.voteEntries}/>
+                                <ClassificationVotes entry={entry}/>
                             </div>
                         }
                         <div style={{
@@ -277,7 +276,7 @@ function Entry({entry, expanded, onExpand, isClassification, scorecardId}) {
                             </div>
                         }
 
-                        {accessInfo.enabledLevel >= 50 &&
+                        {accessInfo.features.entryBar &&
                             <div style={{margin: '24px 0px 20px 6px'}}>
                                 <EntryActionBar entry={entry} isClassification={isClassification}/>
                             </div>

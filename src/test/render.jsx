@@ -40,8 +40,15 @@ export const defaultTestContextValues = {
     },
     access: {
         accessInfo: {
-            roles: {admin: false, lpuMod: false, qaUser: false},
-            enabledRoles: {admin: false, lpuMod: false, qaUser: false},
+            roles: {admin: false, lpuMod: false, classificationAdmin: false, classificationTeam: false, qaUser: false},
+            enabledRoles: {admin: false, qaUser: false},
+            features: {
+                entryBar: false,
+                classificationVote: false,
+                scorecardVideos: false,
+                manageRequests: false,
+                someQaFeature: false
+            },
             level: 0,
             enabledLevel: 0,
             activeRole: null

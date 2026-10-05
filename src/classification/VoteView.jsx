@@ -5,10 +5,14 @@ import remarkGfm from 'remark-gfm'
 import rehypeExternalLinks from 'rehype-external-links'
 import Button from '@mui/material/Button'
 import AttachmentIcon from '@mui/icons-material/Attachment'
+import {useAccess} from '../app/AccessContext.jsx'
 
 export default function VoteView({vote = {}, handleActive, owner}) {
+    const {accessInfo} = useAccess()
 
     const description = owner ? 'My Vote: ' : `${vote.displayName}: `
+
+    const buttonColor = owner ? '#ddd' : '#e16936'
 
     return (
         <div style={{
@@ -44,10 +48,10 @@ export default function VoteView({vote = {}, handleActive, owner}) {
                     </div>
                 }
 
-                {owner &&
+                {(owner || accessInfo.roles.classificationAdmin) &&
                     <div style={{width: '100%', display: 'flex', justifyContent: 'flex-end', marginTop: 8}}>
                         <Button onClick={() => handleActive('voteForm')} variant='text' size='small'
-                                style={{color: '#ddd'}}>Edit</Button>
+                                style={{color: buttonColor}}>Edit</Button>
                     </div>
                 }
             </div>

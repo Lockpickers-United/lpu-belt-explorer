@@ -35,7 +35,10 @@ export const lockSortComparators = Object.freeze({
         return beltSortReverse(a.highestVoteBelt, b.highestVoteBelt)
             || a.fuzzy.localeCompare(b.fuzzy)
     },
-
+    maxClassificationDate: (a, b) => {
+        return b.maxClassificationDate - a.maxClassificationDate
+            || a.fuzzy.localeCompare(b.fuzzy)
+    },
 })
 
 export function getLockSortComparator(sort) {

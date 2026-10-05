@@ -13,7 +13,7 @@ import Footer from '../nav/Footer.jsx'
 import LoadingDisplay from '../misc/LoadingDisplay.jsx'
 import useData from '../util/useData.jsx'
 import {allAwardsById} from '../entries/entryutils'
-import {TextField, Button} from '@mui/material'
+import {TextField, Button, Table, TableBody, TableCell, TableContainer, TableHead, TableRow} from '@mui/material'
 import calculateScoreForUser from '../scorecard/scoring'
 import {useAccess} from '../app/AccessContext.jsx'
 
@@ -23,7 +23,9 @@ export default function UserInfoMain() {
     const {accessInfo} = useAccess()
     const adminEnabled = accessInfo.enabledRoles.admin
 
+    console.log('accessInfo', accessInfo)
     console.log('userClaims', userClaims)
+
     const {userId, data, loading, error, isFullProfile} = useContext(ProfileContext)
     const profile = useMemo(() => data ? data.profile : {}, [data])
 
@@ -103,8 +105,8 @@ export default function UserInfoMain() {
 
     const footerBefore = undefined
 
-    const headerStyle = {fontWeight: 700, backgroundColor: '#333', padding: 2, textAlign: 'left', marginTop: 10}
-    const varStyle = {fontWeight: 700, paddingRight: 10}
+    const headerStyle = {fontWeight: 700, backgroundColor: '#333', padding: '2px 8px', textAlign: 'left'}
+    const varStyle = {fontWeight: 700, paddingRight: '10px'}
 
     const handleUidApply = useCallback(() => {
         const value = (uidInput || '').trim()
@@ -128,7 +130,7 @@ export default function UserInfoMain() {
         return null
     }
 
-    return (
+            return (
         <ScorecardDataProvider cardActivity={cardActivity} cardBBCount={cardBBCount}
                                cardDanPoints={cardDanPoints}
                                cardEligibleDan={cardEligibleDan} cardNextDanPoints={cardNextDanPoints}
@@ -166,147 +168,183 @@ export default function UserInfoMain() {
                                         to me</Button>
                                 </div>
                             }
-                            <table id='userInfo'>
-                                <thead>
-                                <tr style={headerStyle}>
-                                    <th>Parameter</th>
-                                    <th>Value</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr style={{height: 10}}></tr>
-                                <tr>
-                                    <td style={varStyle}>display name</td>
-                                    <td>{profile?.displayName}</td>
-                                </tr>
-                                <tr>
-                                    <td style={varStyle}>user id</td>
-                                    <td>{userId}</td>
-                                </tr>
-                                <tr style={{height: 10}}></tr>
-                                <tr>
-                                    <td style={varStyle}>source</td>
-                                    <td>{data?.source}</td>
-                                </tr>
-                                <tr>
-                                    <td style={varStyle}>Is Full Profile</td>
-                                    <td>{data?.isFullProfile ? 'Yes' : 'No'}</td>
-                                </tr>
+                            <TableContainer id='userInfo' sx={{width: 'auto', backgroundColor: '#000'}}>
+                                <Table size='small' sx={{minWidth: 360, color: '#fff'}}>
+                                    <TableHead>
+                                        <TableRow>
+                                            <TableCell sx={{...headerStyle, color: '#fff'}}>Parameter</TableCell>
+                                            <TableCell sx={{...headerStyle, color: '#fff'}}>Value</TableCell>
+                                        </TableRow>
+                                    </TableHead>
+                                    <TableBody sx={{'& .MuiTableRow-root:nth-of-type(even) .MuiTableCell-root': {backgroundColor: '#191919'}}}>
+                                <TableRow><TableCell colSpan={2} sx={{height: 10, padding: 0, border: 0}} /></TableRow>
+                                <TableRow>
+                                    <TableCell sx={varStyle}>display name</TableCell>
+                                    <TableCell>{profile?.displayName}</TableCell>
+                                </TableRow>
+                                <TableRow>
+                                    <TableCell sx={varStyle}>user id</TableCell>
+                                    <TableCell>{userId}</TableCell>
+                                </TableRow>
+                                <TableRow><TableCell colSpan={2} sx={{height: 10, padding: 0, border: 0}} /></TableRow>
+                                <TableRow>
+                                    <TableCell sx={varStyle}>source</TableCell>
+                                    <TableCell>{data?.source}</TableCell>
+                                </TableRow>
+                                <TableRow>
+                                    <TableCell sx={varStyle}>Is Full Profile</TableCell>
+                                    <TableCell>{data?.isFullProfile ? 'Yes' : 'No'}</TableCell>
+                                </TableRow>
                                 {(user?.uid === userId) &&
-                                    <tr>
-                                        <td style={varStyle}>user claims</td>
-                                        <td>{userClaims?.join(', ')}</td>
-                                    </tr>
+                                    <TableRow>
+                                        <TableCell sx={varStyle}>user claims</TableCell>
+                                        <TableCell>{userClaims?.join(', ')}</TableCell>
+                                    </TableRow>
                                 }
                                 {isFullProfile &&
-                                    <tr>
-                                        <td style={varStyle}>profile.admin</td>
-                                        <td>true</td>
-                                    </tr>
+                                    <TableRow>
+                                        <TableCell sx={varStyle}>profile.admin</TableCell>
+                                        <TableCell>true</TableCell>
+                                    </TableRow>
                                 }
 
-                                <tr style={{height: 10}}></tr>
-                                <tr>
-                                    <td style={headerStyle} colSpan={2}>SCORECARD</td>
-                                </tr>
-                                {isFullProfile &&
-                                    <tr>
-                                        <td style={varStyle}>blackBeltAwarded</td>
-                                        <td>{profile?.blackBeltAwardedAt ? 'true' : ''}</td>
-                                    </tr>
+                                <TableRow><TableCell colSpan={2} sx={{height: 10, padding: 0, border: 0}} /></TableRow>
+                                <TableRow>
+                                    <TableCell sx={{...headerStyle, color: '#fff'}} colSpan={2}>ACCESS CONTEXT</TableCell>
+                                </TableRow>
+                                <TableRow>
+                                    <TableCell sx={varStyle}>activeRole</TableCell>
+                                    <TableCell>{accessInfo?.activeRole}</TableCell>
+                                </TableRow>
+                                <TableRow>
+                                    <TableCell sx={varStyle}>level</TableCell>
+                                    <TableCell>{accessInfo?.level}</TableCell>
+                                </TableRow>
+                                <TableRow>
+                                    <TableCell sx={varStyle}>enabledLevel</TableCell>
+                                    <TableCell>{accessInfo?.enabledLevel}</TableCell>
+                                </TableRow>
+                                {accessInfo.roles &&
+                                    <TableRow>
+                                        <TableCell sx={varStyle}>Roles</TableCell>
+                                        <TableCell>
+                                            {Object.keys(accessInfo?.roles).map((role, index) => (
+                                                <div
+                                                    key={'role' + index}>{role}: {accessInfo.roles[role] ? 'True' : 'False'}</div>
+                                            ))}
+                                        </TableCell>
+                                    </TableRow>
                                 }
-                                <tr>
-                                    <td style={varStyle}>cardMaxBelt</td>
-                                    <td>{cardMaxBelt?.name}</td>
-                                </tr>
-                                <tr>
-                                    <td style={varStyle}>cardBBCount</td>
-                                    <td>{cardBBCount}</td>
-                                </tr>
-                                <tr>
-                                    <td style={varStyle}>cardDanPoints</td>
-                                    <td>{cardDanPoints}</td>
-                                </tr>
-                                <tr>
-                                    <td style={varStyle}>cardEligibleDan</td>
-                                    <td>{cardEligibleDan}</td>
-                                </tr>
-                                <tr>
-                                    <td style={varStyle}>cardNextDanPoints</td>
-                                    <td>{cardNextDanPoints}</td>
-                                </tr>
-                                <tr>
-                                    <td style={varStyle}>cardNextDanLocks</td>
-                                    <td>{cardNextDanLocks}</td>
-                                </tr>
-                                <tr>
-                                    <td style={varStyle}>cardUniqueLocks</td>
-                                    <td>{cardUniqueLocks}</td>
-                                </tr>
+                                {accessInfo.enabledRoles &&
+                                    <TableRow>
+                                        <TableCell sx={varStyle}>Enabled Roles</TableCell>
+                                        <TableCell>
+                                            {Object.keys(accessInfo?.enabledRoles).map((role, index) => (
+                                                <div
+                                                    key={'role' + index}>{role}: {accessInfo.enabledRoles[role] ? 'True' : 'False'}</div>
+                                            ))}
+                                        </TableCell>
+                                    </TableRow>
+                                }
+                                <TableRow><TableCell colSpan={2} sx={{height: 10, padding: 0, border: 0}} /></TableRow>
+                                <TableRow><TableCell sx={{...headerStyle, color: '#fff'}} colSpan={2}>SCORECARD</TableCell></TableRow>
+                                {isFullProfile &&
+                                    <TableRow>
+                                        <TableCell sx={varStyle}>blackBeltAwarded</TableCell>
+                                        <TableCell>{profile?.blackBeltAwardedAt ? 'true' : ''}</TableCell>
+                                    </TableRow>
+                                }
+                                <TableRow>
+                                    <TableCell sx={varStyle}>cardMaxBelt</TableCell>
+                                    <TableCell>{cardMaxBelt?.name}</TableCell>
+                                </TableRow>
+                                <TableRow>
+                                    <TableCell sx={varStyle}>cardBBCount</TableCell>
+                                    <TableCell>{cardBBCount}</TableCell>
+                                </TableRow>
+                                <TableRow>
+                                    <TableCell sx={varStyle}>cardDanPoints</TableCell>
+                                    <TableCell>{cardDanPoints}</TableCell>
+                                </TableRow>
+                                <TableRow>
+                                    <TableCell sx={varStyle}>cardEligibleDan</TableCell>
+                                    <TableCell>{cardEligibleDan}</TableCell>
+                                </TableRow>
+                                <TableRow>
+                                    <TableCell sx={varStyle}>cardNextDanPoints</TableCell>
+                                    <TableCell>{cardNextDanPoints}</TableCell>
+                                </TableRow>
+                                <TableRow>
+                                    <TableCell sx={varStyle}>cardNextDanLocks</TableCell>
+                                    <TableCell>{cardNextDanLocks}</TableCell>
+                                </TableRow>
+                                <TableRow>
+                                    <TableCell sx={varStyle}>cardUniqueLocks</TableCell>
+                                    <TableCell>{cardUniqueLocks}</TableCell>
+                                </TableRow>
                                 {isFullProfile &&
                                     <>
-                                        <tr>
-                                            <td style={varStyle}>projects</td>
-                                            <td>{profile?.projects?.length}</td>
-                                        </tr>
-                                        <tr>
-                                            <td style={varStyle}>tabClaimed</td>
-                                            <td>{profile?.tabClaimed}</td>
-                                        </tr>
-                                        <tr>
-                                            <td style={varStyle}>redditUsername</td>
-                                            <td>{profile?.redditUsername}</td>
-                                        </tr>
-                                        <tr>
-                                            <td style={varStyle}>discordUsername</td>
-                                            <td>{profile?.discordUsername}</td>
-                                        </tr>
+                                        <TableRow>
+                                            <TableCell sx={varStyle}>projects</TableCell>
+                                            <TableCell>{profile?.projects?.length}</TableCell>
+                                        </TableRow>
+                                        <TableRow>
+                                            <TableCell sx={varStyle}>tabClaimed</TableCell>
+                                            <TableCell>{profile?.tabClaimed}</TableCell>
+                                        </TableRow>
+                                        <TableRow>
+                                            <TableCell sx={varStyle}>redditUsername</TableCell>
+                                            <TableCell>{profile?.redditUsername}</TableCell>
+                                        </TableRow>
+                                        <TableRow>
+                                            <TableCell sx={varStyle}>discordUsername</TableCell>
+                                            <TableCell>{profile?.discordUsername}</TableCell>
+                                        </TableRow>
                                     </>
                                 }
-
-                                <tr style={{height: 10}}></tr>
-                                <tr>
-                                    <td style={headerStyle} colSpan={2}>LOCK COLLECTION</td>
-                                </tr>
-                                <tr>
-                                    <td style={varStyle}>any</td>
-                                    <td>{profile?.any?.length}</td>
-                                </tr>
-                                <tr>
-                                    <td style={varStyle}>own</td>
-                                    <td>{profile?.own?.length}</td>
-                                </tr>
-                                <tr>
-                                    <td style={varStyle}>picked</td>
-                                    <td>{profile?.picked?.length}</td>
-                                </tr>
-                                <tr>
-                                    <td style={varStyle}>recorded</td>
-                                    <td>{profile?.recorded?.length}</td>
-                                </tr>
-                                <tr>
-                                    <td style={varStyle}>wishlist</td>
-                                    <td>{profile?.wishlist?.length}</td>
-                                </tr>
-                                <tr>
-                                    <td style={varStyle}>safelocksAny</td>
-                                    <td>{profile?.safelocksAny?.length}</td>
-                                </tr>
-                                <tr>
-                                    <td style={varStyle}>safelocksCracked</td>
-                                    <td>{profile?.safelocksCracked?.length}</td>
-                                </tr>
-                                <tr>
-                                    <td style={varStyle}>safelocksOwn</td>
-                                    <td>{profile?.safelocksOwn?.length}</td>
-                                </tr>
-                                <tr>
-                                    <td style={varStyle}>safelocksWishlist</td>
-                                    <td>{profile?.safelocksWishlist?.length}</td>
-                                </tr>
-
-                                </tbody>
-                            </table>
+                                <TableRow><TableCell colSpan={2} sx={{height: 10, padding: 0, border: 0}} /></TableRow>
+                                <TableRow>
+                                    <TableCell sx={{...headerStyle, color: '#fff'}} colSpan={2}>LOCK COLLECTION</TableCell>
+                                </TableRow>
+                                <TableRow>
+                                    <TableCell sx={varStyle}>any</TableCell>
+                                    <TableCell>{profile?.any?.length}</TableCell>
+                                </TableRow>
+                                <TableRow>
+                                    <TableCell sx={varStyle}>own</TableCell>
+                                    <TableCell>{profile?.own?.length}</TableCell>
+                                </TableRow>
+                                <TableRow>
+                                    <TableCell sx={varStyle}>picked</TableCell>
+                                    <TableCell>{profile?.picked?.length}</TableCell>
+                                </TableRow>
+                                <TableRow>
+                                    <TableCell sx={varStyle}>recorded</TableCell>
+                                    <TableCell>{profile?.recorded?.length}</TableCell>
+                                </TableRow>
+                                <TableRow>
+                                    <TableCell sx={varStyle}>wishlist</TableCell>
+                                    <TableCell>{profile?.wishlist?.length}</TableCell>
+                                </TableRow>
+                                <TableRow>
+                                    <TableCell sx={varStyle}>safelocksAny</TableCell>
+                                    <TableCell>{profile?.safelocksAny?.length}</TableCell>
+                                </TableRow>
+                                <TableRow>
+                                    <TableCell sx={varStyle}>safelocksCracked</TableCell>
+                                    <TableCell>{profile?.safelocksCracked?.length}</TableCell>
+                                </TableRow>
+                                <TableRow>
+                                    <TableCell sx={varStyle}>safelocksOwn</TableCell>
+                                    <TableCell>{profile?.safelocksOwn?.length}</TableCell>
+                                </TableRow>
+                                <TableRow>
+                                    <TableCell sx={varStyle}>safelocksWishlist</TableCell>
+                                    <TableCell>{profile?.safelocksWishlist?.length}</TableCell>
+                                </TableRow>
+                                    </TableBody>
+                                </Table>
+                            </TableContainer>
 
                         </div>
                     }

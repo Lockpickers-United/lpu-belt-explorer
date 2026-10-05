@@ -12,15 +12,18 @@ import {db} from '../auth/firebase'
 import postFirebaseActivity from './postFirebaseActivity'
 import ProfileLoader from '../auth/ProfileLoader.jsx'
 import ProfileContext from '../app/ProfileContext.jsx'
+import {useAccess} from '../app/AccessContext.jsx'
 
 export default function ViewLockRequestsRoute() {
     usePageTitle('View Lock Requests')
+    const {accessInfo} = useAccess()
 
-    const {user, userClaims, isLoggedIn} = useContext(AuthContext)
+    const {user, isLoggedIn} = useContext(AuthContext)
     const {data, loading, error} = useContext(ProfileContext)
     const profile = useMemo(() => data ? data.profile : {}, [data])
 
-    const requestMod = ['requestAdmin', 'admin'].some(claim => userClaims.includes(claim))
+    const requestMod = accessInfo.features?.manageRequests
+
     const {isMobile} = useWindowSize()
 
     const [requestData, setRequestData] = useState([])

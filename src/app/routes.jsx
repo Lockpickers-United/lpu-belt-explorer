@@ -384,7 +384,7 @@ export default [
             const {default: ClassificationRoute} = await import('../classification/ClassificationRoute.jsx')
             return {
                 element: (
-                    <RequireRoles roles={['admin']}>
+                    <RequireRoles roles={['admin', 'classificationAdmin', 'lpuMod', 'classificationTeam']}>
                         <ClassificationRoute/>
                     </RequireRoles>
                 )

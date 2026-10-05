@@ -75,8 +75,8 @@ async function processData() {
                 type,
                 ...vote,
                 source: 'Classification Sheet',
-                createdAt: dayjs().format(),
-                updatedAt: dayjs().format()
+                createdAt: dayjs().toISOString(),
+                updatedAt: dayjs().toISOString()
             }
             acc.push(voteData)
         })

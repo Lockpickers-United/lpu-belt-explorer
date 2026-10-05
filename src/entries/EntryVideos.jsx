@@ -14,10 +14,10 @@ export default function EntryVideos({entry}) {
     const {accessInfo} = useAccess()
 
     const url = `${apiServerUrl}/api/v1/locks/${entry.id}/videos`
-    const response = useGetRequest({user, url, enabled: accessInfo.enabledLevel >= 50}) || {data: {}, status: 'error'}
+    const response = useGetRequest({user, url, enabled: accessInfo.features.scorecardVideos}) || {data: {}, status: 'error'}
     const videos = response?.data?.data?.videos || []
 
-    if (accessInfo.enabledLevel < 50) return null
+    if (!accessInfo.features.scorecardVideos) return null
 
     const handleOpenVideo = (video) => {
         openInNewTab(video.url)

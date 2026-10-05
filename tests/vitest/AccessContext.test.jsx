@@ -11,11 +11,11 @@ function AccessState() {
         <div>
             <span>Roles: {JSON.stringify(accessInfo.roles)}</span>
             <span>Enabled: {JSON.stringify(accessInfo.enabledRoles)}</span>
+            <span>Features: {JSON.stringify(accessInfo.features)}</span>
             <span>Level: {accessInfo.level}</span>
             <span>Enabled level: {accessInfo.enabledLevel}</span>
             <span>Active role: {accessInfo.activeRole || 'none'}</span>
             <button onClick={() => toggleRoleEnabled('admin')}>Toggle admin</button>
-            <button onClick={() => toggleRoleEnabled('lpuMod')}>Toggle moderator</button>
             <button onClick={() => toggleRoleEnabled('qaUser')}>Toggle QA</button>
         </div>
     )
@@ -54,6 +54,8 @@ describe('AccessContext', () => {
         expect(screen.getByText('Enabled level: 0')).toBeInTheDocument()
         expect(screen.getByText('Active role: none')).toBeInTheDocument()
         expect(screen.getByText(/Enabled:.*"admin":false/)).toBeInTheDocument()
+        expect(screen.getByText(/Features:.*"entryBar":false/)).toBeInTheDocument()
+        expect(screen.getByText(/Features:.*"manageRequests":false/)).toBeInTheDocument()
     })
 
     it('removes access immediately when the authenticated account changes', () => {
@@ -85,23 +87,29 @@ describe('AccessContext', () => {
 
         expect(screen.getByText('Level: 0')).toBeInTheDocument()
         expect(screen.getByText('Enabled level: 0')).toBeInTheDocument()
+        expect(screen.getByText(/Features:.*"classificationVote":false/)).toBeInTheDocument()
     })
 
-    it('calculates claimed and enabled moderator levels independently', () => {
+    it.each([
+        ['admin', 100, {entryBar: true, classificationVote: true, scorecardVideos: true, manageRequests: true}],
+        ['lpuMod', 90, {entryBar: true, classificationVote: true, scorecardVideos: true, manageRequests: false}],
+        ['classificationAdmin', 85, {entryBar: true, classificationVote: true, scorecardVideos: false, manageRequests: true}],
+        ['classificationTeam', 60, {entryBar: true, classificationVote: true, scorecardVideos: false, manageRequests: false}],
+        ['qaUser', 20, {entryBar: false, classificationVote: false, scorecardVideos: false, manageRequests: false}]
+    ])('grants the expected features for the %s claim without enabling a UI mode', (claim, level, expectedFeatures) => {
         renderAccess({
             authLoaded: true,
             isLoggedIn: true,
-            user: {uid: 'moderator'},
-            userClaims: ['lpuMod']
+            user: {uid: claim},
+            userClaims: [claim]
         })
 
-        expect(screen.getByText('Level: 90')).toBeInTheDocument()
+        expect(screen.getByText(`Level: ${level}`)).toBeInTheDocument()
         expect(screen.getByText('Enabled level: 0')).toBeInTheDocument()
-
-        fireEvent.click(screen.getByRole('button', {name: 'Toggle moderator'}))
-
-        expect(screen.getByText('Enabled level: 90')).toBeInTheDocument()
-        expect(screen.getByText('Active role: lpuMod')).toBeInTheDocument()
+        expect(screen.getByText('Active role: none')).toBeInTheDocument()
+        for (const [feature, enabled] of Object.entries(expectedFeatures)) {
+            expect(screen.getByText(new RegExp(`Features:.*"${feature}":${enabled}`))).toBeInTheDocument()
+        }
     })
 
     it('uses calendar dates for QA expiry and the canonical QA role key', () => {
@@ -124,6 +132,7 @@ describe('AccessContext', () => {
         expect(screen.getByText('Enabled level: 20')).toBeInTheDocument()
         expect(screen.getByText('Active role: qaUser')).toBeInTheDocument()
         expect(screen.getByText(/Enabled:.*"qaUser":true/)).toBeInTheDocument()
+        expect(screen.getByText(/Features:.*"someQaFeature":true/)).toBeInTheDocument()
     })
 
     it('expires daily role modes when the calendar day ends', () => {
@@ -144,6 +153,7 @@ describe('AccessContext', () => {
 
         expect(screen.getByText('Enabled level: 0')).toBeInTheDocument()
         expect(screen.getByText('Active role: none')).toBeInTheDocument()
+        expect(screen.getByText(/Features:.*"someQaFeature":false/)).toBeInTheDocument()
     })
 
     it('lets administrators preview QA mode after disabling admin mode', () => {
@@ -156,11 +166,14 @@ describe('AccessContext', () => {
         })
 
         expect(screen.getByText(/Roles:.*"qaUser":true/)).toBeInTheDocument()
+        expect(screen.getByText(/Roles:.*"classificationAdmin":true/)).toBeInTheDocument()
+        expect(screen.getByText(/Features:.*"manageRequests":true/)).toBeInTheDocument()
         fireEvent.click(screen.getByRole('button', {name: 'Toggle admin'}))
         fireEvent.click(screen.getByRole('button', {name: 'Toggle QA'}))
 
         expect(screen.getByText('Enabled level: 20')).toBeInTheDocument()
         expect(screen.getByText('Active role: qaUser')).toBeInTheDocument()
+        expect(screen.getByText(/Features:.*"classificationVote":true/)).toBeInTheDocument()
     })
 })
 

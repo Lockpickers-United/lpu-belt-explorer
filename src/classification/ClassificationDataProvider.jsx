@@ -26,6 +26,8 @@ export function DataProvider({children, profile}) {
 
             const allVoteEntries = classificationEntries.filter(vote => vote.entryId === entry.id)
 
+            const maxClassificationDate = Math.max(...allVoteEntries.map(vote => dayjs(vote.updatedAt).valueOf()))
+
             const voteEntries = filterEntriesAdvanced({
                 advancedFilterGroups: voteFilterGroups,
                 entries: allVoteEntries
@@ -50,6 +52,7 @@ export function DataProvider({children, profile}) {
                 voteCount: voteEntries.length,
                 hasConsensus,
                 highestVoteBelt: highestBelt(votedBelt),
+                maxClassificationDate,
                 makes: entry.makeModels[0].make ? entry.makeModels.map(({make}) => make) : entry.makeModels[0].model,
                 content: [
                     entry.media?.some(m => !m.fullUrl.match(/youtube\.com/)) ? 'Has Images' : 'No Images',
