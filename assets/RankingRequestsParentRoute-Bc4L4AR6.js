@@ -1,0 +1,1 @@
+import{a as e}from"./rolldown-runtime-B0Z9INg1.js";import{J as t,st as n}from"./utils-B19WLMKm.js";import{n as r}from"./chunk-OB3PAWPO-Bf1dFeiA.js";import{t as i}from"./Footer-BjVaJISX.js";var a=e(n(),1),o=t();function s(){return(0,o.jsxs)(a.Fragment,{children:[(0,o.jsx)(r,{}),(0,o.jsx)(i,{})]})}export{s as default};
