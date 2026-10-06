@@ -43,11 +43,11 @@ export const defaultTestContextValues = {
             roles: {admin: false, lpuMod: false, classificationAdmin: false, classificationTeam: false, qaUser: false},
             enabledRoles: {admin: false, qaUser: false},
             features: {
-                entryBar: false,
+                entryActionBar: false,
                 classificationVote: false,
                 scorecardVideos: false,
                 manageRequests: false,
-                someQaFeature: false
+                qaTools: false
             },
             level: 0,
             enabledLevel: 0,

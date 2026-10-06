@@ -5,12 +5,13 @@ import removeAccents from 'remove-accents'
 import filterEntriesAdvanced from '../filters/filterEntriesAdvanced'
 import entryName from '../entries/entryName'
 import searchEntriesForText from '../filters/searchEntriesForText'
-import classificationEntries from '../data/classification-samples.json'
 import lockEntries from '../data/data.json'
 import belts, {highestBelt} from '../data/belts.js'
 import dayjs from 'dayjs'
 import collectionOptions from '../data/collectionTypes'
 import {getLockSortComparator} from '../locks/lockSortComparators'
+import classificationEntries from '../data/classification-samples.json'
+import classificationAdminActions from '../data/classification-samples-admin.json'
 
 export function DataProvider({children, profile}) {
     const {allEntries} = useContext(DataContext)
@@ -25,13 +26,14 @@ export function DataProvider({children, profile}) {
         return lockEntries?.filter(l => classificationEntries.find(e => e.entryId === l.id)).map(entry => {
 
             const allVoteEntries = classificationEntries.filter(vote => vote.entryId === entry.id)
-
-            const maxClassificationDate = Math.max(...allVoteEntries.map(vote => dayjs(vote.updatedAt).valueOf()))
-
+            const maxVoteDate = Math.max(...allVoteEntries.map(vote => dayjs(vote.updatedAt).valueOf()))
             const voteEntries = filterEntriesAdvanced({
                 advancedFilterGroups: voteFilterGroups,
                 entries: allVoteEntries
             }) ?? []
+
+            const classificationAdminAction = classificationAdminActions.sort((a, b) => dayjs(b.updatedAt).valueOf() - dayjs(a.updatedAt).valueOf())
+                .find(a => a.entryId === entry.id)
 
             const displayName = voteEntries.map(v => v.displayName)
             const votedBelt = voteEntries.map(v => v.votedBelt)
@@ -52,7 +54,7 @@ export function DataProvider({children, profile}) {
                 voteCount: voteEntries.length,
                 hasConsensus,
                 highestVoteBelt: highestBelt(votedBelt),
-                maxClassificationDate,
+                maxVoteDate,
                 makes: entry.makeModels[0].make ? entry.makeModels.map(({make}) => make) : entry.makeModels[0].model,
                 content: [
                     entry.media?.some(m => !m.fullUrl.match(/youtube\.com/)) ? 'Has Images' : 'No Images',
@@ -111,6 +113,7 @@ export function DataProvider({children, profile}) {
         mappedEntries,
         visibleEntries,
         searchedEntries,
+        classificationAdminActions,
         getEntryFromId,
         expandAll,
         profile,

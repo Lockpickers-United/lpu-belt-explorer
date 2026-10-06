@@ -63,11 +63,12 @@ export function AccessProvider({children}) {
 
     const features = useMemo(() => {
         return {
-            entryBar: getHighestRoleLevel(roles) >= 50,
+            entryActionBar: getHighestRoleLevel(roles) >= 50,
             classificationVote: ['admin', 'classificationAdmin', 'lpuMod', 'classificationTeam'].some(role => roles[role]),
+            classificationAdmin: ['admin', 'classificationAdmin'].some(role => roles[role]),
             scorecardVideos: ['admin', 'lpuMod'].some(role => roles[role]),
             manageRequests: ['admin', 'classificationAdmin'].some(role => roles[role]),
-            someQaFeature: enabledRoles.qaUser
+            qaTools: enabledRoles.qaUser || roles.admin
         }
     }, [enabledRoles, roles])
 
@@ -85,9 +86,9 @@ export function AccessProvider({children}) {
     }, [dailyRoleExpiration])
 
     const accessInfo = useMemo(() => ({
-        roles,
-        enabledRoles,
-        features,
+        roles: roles ?? {},
+        enabledRoles: enabledRoles ?? {},
+        features: features ?? {},
         level: getHighestRoleLevel(roles),
         enabledLevel: getHighestRoleLevel(enabledRoles),
         activeRole: getActiveRole(enabledRoles)

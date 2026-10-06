@@ -482,6 +482,7 @@ export function DBProvider({children}) {
         dbLoaded,
         adminRole,
         lockCollection,
+        profile: lockCollection,
         addToLockCollection,
         removeFromLockCollection,
         getProfile,

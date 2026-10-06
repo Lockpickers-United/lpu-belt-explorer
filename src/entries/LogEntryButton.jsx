@@ -9,19 +9,17 @@ import {useAccess} from '../app/AccessContext.jsx'
 export default function LogEntryButton({entry}) {
     const {accessInfo} = useAccess()
 
-    const {qaUser} = accessInfo.roles
-
     const handleClick = useCallback(async () => {
         const name =  entryName(entry)
         jsonIt(name, entry)
     }, [entry])
 
-    if (!qaUser) return null
+    if (!accessInfo.features.qaTools) return null
 
     return (
         <Tooltip title='Log Entry Details' arrow disableFocusListener>
             <IconButton onClick={handleClick}>
-                <WysiwygIcon color='primary'/>
+                <WysiwygIcon style={{color: '#434380'}}/>
             </IconButton>
         </Tooltip>
     )

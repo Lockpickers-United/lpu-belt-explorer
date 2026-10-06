@@ -1,6 +1,6 @@
 import React, {useState, useMemo, useContext, useCallback} from 'react'
 import Button from '@mui/material/Button'
-import ScorecardRow from './ScorecardRow.jsx'
+import ScorecardRow from './ScorecardEntry.jsx'
 import ScorecardDataContext from './ScorecardDataProvider'
 import ScorecardListContext from './ScorecardListContext'
 import FilterContext from '../context/FilterContext'

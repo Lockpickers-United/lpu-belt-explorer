@@ -1,5 +1,5 @@
 import React, {useCallback, useContext, useMemo, useState} from 'react'
-import ScorecardRow from '../ScorecardRow.jsx'
+import ScorecardRow from '../ScorecardEntry.jsx'
 import ScorecardDataContext from '../ScorecardDataProvider'
 import InlineScorecardCharts from '../InlineScorecardCharts'
 import ScorecardDanStats from '../ScorecardDanStats.jsx'

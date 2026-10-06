@@ -5,8 +5,10 @@ import AuthContext from '../app/AuthContext.jsx'
 import Tooltip from '@mui/material/Tooltip'
 import ScheduleIcon from '@mui/icons-material/Schedule'
 
-export default function ClassificationVotes({entry, style = {}}) {
+export default function DisplayClassificationVotes({entry, style = {}, context}) {
     const {user} = useContext(AuthContext)
+
+    if (!entry || !entry.voteEntries?.length) return null
 
     const sortedVotes = [...entry.voteEntries || []].sort((a, b) => {
         return beltSort(a.votedBelt, b.votedBelt) || dayjs(a.updatedAt).valueOf() - dayjs(b.updatedAt).valueOf()
@@ -18,7 +20,7 @@ export default function ClassificationVotes({entry, style = {}}) {
 
     return (
         <div style={{display: 'flex', flexDirection: 'row', gap: 2, flexWrap: 'wrap', flexGrow: 1, ...style}}>
-            {currentBeltColor &&
+            {currentBeltColor && context !== 'admin' &&
                 <Tooltip key={entry.belt} title={'Previous Votes'}>
                     <div style={{
                         height: 32, width: 32, padding: 2,

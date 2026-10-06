@@ -11,40 +11,9 @@ import initializeLocales from '../util/datetime'
 import {SystemMessageProvider} from '../systemMessage/SystemMessageContext.jsx'
 import {APIProvider} from './APIContext.jsx'
 import {AccessProvider} from './AccessContext.jsx'
+import {darkTheme} from './Theme.jsx'
 
 initializeLocales()
-
-const darkTheme = createTheme({
-    palette: {
-        mode: 'dark',
-        primary: {
-            main: '#000000',
-            light: '#2c2c2c',
-            dark: '#000000',
-            contrastText: '#ffffff'
-        },
-        secondary: {
-            main: '#18aa18',
-            light: '#23d523',
-            dark: '#117e11',
-            contrastText: '#000000'
-        }
-    },
-    components: {
-        MuiLink: {
-            styleOverrides: {
-                root: {
-                    color: '#ddd',
-                    textDecoration: 'none',
-                    cursor: 'pointer',
-                    '&:hover': {
-                        color: '#fff',
-                    },
-                },
-            },
-        },
-    },
-})
 
 function App() {
     const style = getRootStyle(darkTheme)

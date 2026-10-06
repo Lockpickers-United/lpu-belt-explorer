@@ -36,7 +36,7 @@ import entryName from './entryName'
 import Link from '@mui/material/Link'
 import EntryActionBar from './EntryActionBar.jsx'
 import {useAccess} from '../app/AccessContext.jsx'
-import ClassificationVotes from '../classification/ClassificationVotes.jsx'
+import DisplayClassificationVotes from '../classification/DisplayClassificationVotes.jsx'
 import Tooltip from '@mui/material/Tooltip'
 import IconButton from '@mui/material/IconButton'
 import ListAltIcon from '@mui/icons-material/ListAlt'
@@ -163,7 +163,7 @@ function Entry({entry, expanded, onExpand, isClassification, scorecardId}) {
                                 width: '100%',
                                 justifyContent: 'left'
                             }}>
-                                <ClassificationVotes entry={entry}/>
+                                <DisplayClassificationVotes entry={entry}/>
                             </div>
                         }
                         <div style={{
@@ -276,7 +276,7 @@ function Entry({entry, expanded, onExpand, isClassification, scorecardId}) {
                             </div>
                         }
 
-                        {accessInfo.features.entryBar &&
+                        {accessInfo.features.entryActionBar &&
                             <div style={{margin: '24px 0px 20px 6px'}}>
                                 <EntryActionBar entry={entry} isClassification={isClassification}/>
                             </div>
@@ -345,7 +345,6 @@ function Entry({entry, expanded, onExpand, isClassification, scorecardId}) {
                                 <CopyLinkToEntryButton entry={entry}/>
                             </div>
                         </div>
-
                     </AccordionActions>
                 </React.Fragment>
             }

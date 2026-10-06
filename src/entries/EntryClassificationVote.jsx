@@ -1,15 +1,13 @@
 import React, {useContext, useMemo} from 'react'
 import AuthContext from '../app/AuthContext.jsx'
 import {useAccess} from '../app/AccessContext.jsx'
-import ClassificationVotes from '../classification/ClassificationVotes.jsx'
+import DisplayClassificationVotes from '../classification/DisplayClassificationVotes.jsx'
 import VoteDisplay from '../classification/VoteDisplay.jsx'
 import {beltSort} from '../data/belts.js'
 import dayjs from 'dayjs'
 import useWindowSize from '../util/useWindowSize.jsx'
 
-// https://api-dev.lpubelts.com/api/v1/locks/3ac43ea8/videos
-
-export default function EntryClassification({entry, isClassification}) {
+export default function EntryClassificationVote({entry, isClassification}) {
     const {user} = useContext(AuthContext)
     const {accessInfo} = useAccess()
 
@@ -36,7 +34,7 @@ export default function EntryClassification({entry, isClassification}) {
                     fontSize: '0.9rem', lineHeight: '1.8rem'
                 }}>
                     current votes<br/>
-                    <ClassificationVotes votes={entry.voteEntries}/>
+                    <DisplayClassificationVotes votes={entry.voteEntries}/>
                 </div>
             }
 

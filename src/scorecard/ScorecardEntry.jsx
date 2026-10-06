@@ -27,10 +27,18 @@ import PrintIcon from '@mui/icons-material/Print'
 import {useAccess} from '../app/AccessContext.jsx'
 import {blackBeltAwardId} from '../entries/entryutils'
 import DataContext from '../context/DataContext.jsx'
+import EntryActionBar from '../entries/EntryActionBar.jsx'
+import Tracker from '../app/Tracker.jsx'
+import CopyEntryIdButton from '../entries/CopyEntryIdButton.jsx'
+import OpenLinkToEntryButton from '../entries/OpenLinkToEntryButton.jsx'
+import LogEntryButton from '../entries/LogEntryButton.jsx'
+import CopyEntryTextButton from '../entries/CopyEntryTextButton.jsx'
+import CopyLinkToEntryButton from '../entries/CopyLinkToEntryButton.jsx'
+import AccordionActions from '@mui/material/AccordionActions'
 
 dayjs.extend(utc)
 
-function ScorecardRow({owner, activity, expanded, onExpand, merged}) {
+function ScorecardEntry({owner, activity, expanded, onExpand, merged}) {
 
     const navigate = useNavigate()
     const {setFilters} = useContext(FilterContext)
@@ -170,7 +178,8 @@ function ScorecardRow({owner, activity, expanded, onExpand, merged}) {
     return (
         <Accordion key={activity.id} expanded={expanded} onChange={handleChange} ref={ref}
                    slots={{heading: 'div'}}>
-            <AccordionSummary component='div' nativeButton={false} expandIcon={expandIcon} style={{...style, ...cursorStyle}}>
+            <AccordionSummary component='div' nativeButton={false} expandIcon={expandIcon}
+                              style={{...style, ...cursorStyle}}>
                 <BeltStripe value={entity ? entity.belt : ''}/>
                 <div style={{
                     margin: '8px 0px 0px 8px',
@@ -210,7 +219,10 @@ function ScorecardRow({owner, activity, expanded, onExpand, merged}) {
                         <FieldValue
                             name='Version'
                             value={<Typography component='span'
-                                style={{fontSize: '0.95rem', lineHeight: 1.25}}>{entity?.version}</Typography>}
+                                               style={{
+                                                   fontSize: '0.95rem',
+                                                   lineHeight: 1.25
+                                               }}>{entity?.version}</Typography>}
                             textStyle={entity?.belt === 'Unranked' ? {color: '#aaa'} : {}}
                         />
                     }
@@ -275,16 +287,36 @@ function ScorecardRow({owner, activity, expanded, onExpand, merged}) {
             </AccordionSummary>
             {(owner || adminEnabled) && expanded &&
                 <AccordionDetails sx={{padding: '4px 16px 0px 26px'}}>
+
+                    {entry && !exceptionNote &&
+                        <EntryActionBar entry={entry} style={{marginBottom: 24}}/>
+                    }
+
                     <EvidenceForm activity={activity} handleUpdate={() => {
                     }}/>
                 </AccordionDetails>
+            }
+            {entry &&
+                <AccordionActions disableSpacing>
+                    <div style={{display: 'flex', width: '100%'}}>
+                        <div style={{flexGrow: 1, justifyItems: 'left'}}>
+                            <CopyEntryIdButton entry={entry}/>
+                            <OpenLinkToEntryButton entry={entry}/>
+                            <LogEntryButton entry={entry}/>
+                        </div>
+                        <div style={{display: 'flex'}}>
+                            <CopyEntryTextButton entry={entry}/>
+                            <CopyLinkToEntryButton entry={entry}/>
+                        </div>
+                    </div>
+                </AccordionActions>
             }
         </Accordion>
     )
 
 }
 
-export default React.memo(ScorecardRow, (prevProps, nextProps) => {
+export default React.memo(ScorecardEntry, (prevProps, nextProps) => {
     const prevActKeys = Object.keys(prevProps.activity)
     const nextActKeys = Object.keys(nextProps.activity)
 

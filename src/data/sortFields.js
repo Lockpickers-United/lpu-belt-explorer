@@ -15,7 +15,7 @@ export const lockSortFields = [
 
 export const classificationSortFields = [
     {label: 'Default', value: undefined},
-    {label: 'Recently Updated', value: 'maxClassificationDate'},
+    {label: 'Recently Updated', value: 'maxVoteDate'},
     {label: 'Vote Count', value: 'voteCount'},
     {label: 'Highest Vote', value: 'highestVoteBelt'},
     {label: 'Scorecard Count', value: 'scorecardCount', admin:true},

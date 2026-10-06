@@ -15,10 +15,10 @@ import DBContext from '../app/DBContext.jsx'
 
 export default function VoteForm({entry, vote, handleActive, owner}) {
     const {user} = useContext(AuthContext)
-    const {lockCollection} = useContext(DBContext)
+    const {profile} = useContext(DBContext)
     const {accessInfo} = useAccess()
 
-    const hasLock = lockCollection?.recordedLocks.includes(entry.id)
+    const hasLock = profile?.recordedLocks.includes(entry.id)
 
     const url = `${apiServerUrl}/api/v1/locks/${entry.id}/videos`
     const response = useGetRequest({user, url, enabled: hasLock && accessInfo.features.scorecardVideos})

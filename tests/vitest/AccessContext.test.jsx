@@ -54,7 +54,7 @@ describe('AccessContext', () => {
         expect(screen.getByText('Enabled level: 0')).toBeInTheDocument()
         expect(screen.getByText('Active role: none')).toBeInTheDocument()
         expect(screen.getByText(/Enabled:.*"admin":false/)).toBeInTheDocument()
-        expect(screen.getByText(/Features:.*"entryBar":false/)).toBeInTheDocument()
+        expect(screen.getByText(/Features:.*"entryActionBar":false/)).toBeInTheDocument()
         expect(screen.getByText(/Features:.*"manageRequests":false/)).toBeInTheDocument()
     })
 
@@ -91,11 +91,11 @@ describe('AccessContext', () => {
     })
 
     it.each([
-        ['admin', 100, {entryBar: true, classificationVote: true, scorecardVideos: true, manageRequests: true}],
-        ['lpuMod', 90, {entryBar: true, classificationVote: true, scorecardVideos: true, manageRequests: false}],
-        ['classificationAdmin', 85, {entryBar: true, classificationVote: true, scorecardVideos: false, manageRequests: true}],
-        ['classificationTeam', 60, {entryBar: true, classificationVote: true, scorecardVideos: false, manageRequests: false}],
-        ['qaUser', 20, {entryBar: false, classificationVote: false, scorecardVideos: false, manageRequests: false}]
+        ['admin', 100, {entryActionBar: true, classificationVote: true, scorecardVideos: true, manageRequests: true}],
+        ['lpuMod', 90, {entryActionBar: true, classificationVote: true, scorecardVideos: true, manageRequests: false}],
+        ['classificationAdmin', 85, {entryActionBar: true, classificationVote: true, scorecardVideos: false, manageRequests: true}],
+        ['classificationTeam', 60, {entryActionBar: true, classificationVote: true, scorecardVideos: false, manageRequests: false}],
+        ['qaUser', 20, {entryActionBar: false, classificationVote: false, scorecardVideos: false, manageRequests: false}]
     ])('grants the expected features for the %s claim without enabling a UI mode', (claim, level, expectedFeatures) => {
         renderAccess({
             authLoaded: true,
@@ -132,7 +132,7 @@ describe('AccessContext', () => {
         expect(screen.getByText('Enabled level: 20')).toBeInTheDocument()
         expect(screen.getByText('Active role: qaUser')).toBeInTheDocument()
         expect(screen.getByText(/Enabled:.*"qaUser":true/)).toBeInTheDocument()
-        expect(screen.getByText(/Features:.*"someQaFeature":true/)).toBeInTheDocument()
+        expect(screen.getByText(/Features:.*"qaTools":true/)).toBeInTheDocument()
     })
 
     it('expires daily role modes when the calendar day ends', () => {
@@ -153,7 +153,7 @@ describe('AccessContext', () => {
 
         expect(screen.getByText('Enabled level: 0')).toBeInTheDocument()
         expect(screen.getByText('Active role: none')).toBeInTheDocument()
-        expect(screen.getByText(/Features:.*"someQaFeature":false/)).toBeInTheDocument()
+        expect(screen.getByText(/Features:.*"qaTools":false/)).toBeInTheDocument()
     })
 
     it('lets administrators preview QA mode after disabling admin mode', () => {

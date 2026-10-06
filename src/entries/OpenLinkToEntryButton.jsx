@@ -7,7 +7,6 @@ import {useAccess} from '../app/AccessContext.jsx'
 
 function OpenLinkToEntryButton({entry, nameType}) {
     const {accessInfo} = useAccess()
-    const {qaUser} = accessInfo.roles
 
     const openInNewTab = useCallback(() => {
         const name =  entryName(entry, nameType)
@@ -17,12 +16,12 @@ function OpenLinkToEntryButton({entry, nameType}) {
         if (newWindow) newWindow.opener = null
     }, [entry, nameType])
 
-    if (!qaUser) return null
+    if (!accessInfo.features.qaTools) return null
 
     return (
         <Tooltip title='Open Link to Entry in New Tab' arrow disableFocusListener>
             <IconButton onClick={openInNewTab}>
-                <OpenInNewIcon color='primary'/>
+                <OpenInNewIcon style={{color: '#434380'}}/>
             </IconButton>
         </Tooltip>
     )
