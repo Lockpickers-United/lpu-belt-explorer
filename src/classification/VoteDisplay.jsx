@@ -4,9 +4,11 @@ import VoteView from './VoteView.jsx'
 import VoteForm from './VoteForm.jsx'
 import Button from '@mui/material/Button'
 
-export default function VoteDisplay({vote = {}, owner, entry}) {
+export default function VoteDisplay({vote = {}, owner, entry, previous = false}) {
+    const activeValues = {userVote: false, voteForm: false}
     const [active, setActive] = useState(vote ? {userVote: true} : {})
     const handleActive = (type) => {
+        if (!activeValues[type]) return null
         setActive( type ? {[type]: true} : {})
     }
 
@@ -19,7 +21,7 @@ export default function VoteDisplay({vote = {}, owner, entry}) {
                 </div>
             </Collapse>
             <Collapse in={vote?.id && !active.voteForm}>
-                <VoteView vote={vote} handleActive={handleActive} owner={owner}/>
+                <VoteView vote={vote} handleActive={handleActive} owner={owner} previous={previous}/>
             </Collapse>
             <Collapse in={active.voteForm}>
                 <VoteForm entry={entry} vote={vote} handleActive={handleActive} owner={owner}/>

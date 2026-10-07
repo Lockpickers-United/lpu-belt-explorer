@@ -45,8 +45,8 @@ export default function EntryClassificationAdmin({entry, handleToggle}) {
             })
         }
         return events
-    },[])
-            const handleCancel = useCallback(() => {
+    }, [])
+    const handleCancel = useCallback(() => {
         form.reload()
         handleToggle && handleToggle()
     }, [form, handleToggle])
@@ -69,7 +69,7 @@ export default function EntryClassificationAdmin({entry, handleToggle}) {
 
 
     const showVotes = true
-    const [showPreviousVotes, setShowPreviousVotes] = useState(false)
+    const [showPreviousVotes, setShowPreviousVotes] = useState(!entry.currentVotes)
 
     const {isMobile} = useWindowSize()
     const padding = !isMobile ? '0 20px 0 8px' : '0 6px 0 0px'
@@ -83,22 +83,26 @@ export default function EntryClassificationAdmin({entry, handleToggle}) {
         <div style={{borderTop: '1px solid #444', padding}}>
             {showVotes &&
                 <>
-                    <div style={{
-                        display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center',
-                        fontSize: '0.9rem', lineHeight: '1.8rem'
-                    }}>
-                        current votes<br/>
-                        <DisplayClassificationVotes entry={entry} context={'admin'}/>
-                    </div>
-                    <div style={{
-                        display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center',
-                        fontSize: '0.8rem', lineHeight: '1.8rem', marginTop: 2
-                    }}>
-                        <Link
-                            onClick={() => setShowPreviousVotes(!showPreviousVotes)}>{showPreviousVotes ? 'hide' : 'show'} previous
-                            votes</Link>
-                        {showPreviousVotes && <DisplayClassificationVotes entry={entry}/>}
-                    </div>
+                    {entry.currentVotes?.length > 0 &&
+                        <div style={{
+                            display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center',
+                            fontSize: '0.9rem', lineHeight: '1.8rem'
+                        }}>
+                            current votes<br/>
+                            <DisplayClassificationVotes votes={entry.currentVotes} context={'admin'}/>
+                        </div>
+                    }
+                    {entry.previousVotes?.length > 0 &&
+                        <div style={{
+                            display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center',
+                            fontSize: '0.8rem', lineHeight: '1.8rem', marginTop: 2
+                        }}>
+                            <Link
+                                onClick={() => setShowPreviousVotes(!showPreviousVotes)}>{showPreviousVotes ? 'hide' : 'show'} previous
+                                votes</Link>
+                            {showPreviousVotes && <DisplayClassificationVotes votes={entry.previousVotes}/>}
+                        </div>
+                    }
                 </>
             }
             <div style={{
@@ -120,7 +124,7 @@ export default function EntryClassificationAdmin({entry, handleToggle}) {
                                  }}
                                  form={form} formDefaults={formDefaults}/>
 
-                    <Collapse in={!['Settled'].includes(form.form.status)}>
+                    <Collapse in={!['Settled', 'Re-opened'].includes(form.form.status)}>
                         <div style={{display: 'flex', flexDirection: 'row', gap: 16, alignItems: 'center'}}>
                             <div>
                                 <div style={{fontSize: '1.0rem', fontWeight: 600, margin: '0px 0px 2px 0px'}}>

@@ -7,12 +7,17 @@ import Button from '@mui/material/Button'
 import AttachmentIcon from '@mui/icons-material/Attachment'
 import {useAccess} from '../app/AccessContext.jsx'
 
-export default function VoteView({vote = {}, handleActive, owner}) {
+export default function VoteView({vote = {}, handleActive, owner, previous}) {
     const {accessInfo} = useAccess()
 
-    const description = owner ? 'My Vote: ' : `${vote.displayName}: `
+    const dateString = vote.updatedAt ? ` (${new Date(vote.updatedAt).toLocaleDateString()})` : ''
 
+    const description = owner ? 'My Vote: ' : `${vote.displayName}: `
     const buttonColor = owner ? '#ddd' : '#e16936'
+
+    const renderers = {
+        p: ({children}) => <div>{children}</div>
+    }
 
     return (
         <div style={{
@@ -25,16 +30,18 @@ export default function VoteView({vote = {}, handleActive, owner}) {
                             style={{position: 'absolute', top: 0, left: 0, bottom: 0}}/>
 
             <div style={{margin: '4px 0 0 16px', paddingRight: 8, width: '100%', overflow: 'hidden'}}>
-                <div style={{fontSize: '1.0rem', marginTop: 16}}>
+                <div style={{fontSize: '1.0rem', marginTop: 8}}>
                     <span style={{fontWeight: 600}}>{description}</span>
                     &nbsp;{vote.votedBelt} {/black (\d)/.test(vote.votedBelt?.toLowerCase()) ? '' : ' Belt'}
                 </div>
                 {vote.comment &&
-                    <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[[rehypeExternalLinks, {
-                        target: '_blank',
-                        rel: ['nofollow', 'noopener', 'noreferrer']
-                    }]]}>
-                        {vote.comment}
+                    <ReactMarkdown components={renderers || []}
+                                   remarkPlugins={[remarkGfm]}
+                                   rehypePlugins={[[rehypeExternalLinks, {
+                                       target: '_blank',
+                                       rel: ['nofollow', 'noopener', 'noreferrer']
+                                   }]]}>
+                        {vote.comment + dateString}
                     </ReactMarkdown>
                 }
                 {vote.mediaUrl &&
@@ -48,8 +55,8 @@ export default function VoteView({vote = {}, handleActive, owner}) {
                     </div>
                 }
 
-                {(owner || accessInfo.roles.classificationAdmin) &&
-                    <div style={{width: '100%', display: 'flex', justifyContent: 'flex-end', marginTop: 8}}>
+                {(owner || accessInfo.roles.classificationAdmin) && !previous &&
+                    <div style={{width: '100%', display: 'flex', justifyContent: 'flex-end', marginTop: 4}}>
                         <Button onClick={() => handleActive('voteForm')} variant='text' size='small'
                                 style={{color: buttonColor}}>Edit</Button>
                     </div>

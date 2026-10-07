@@ -18,7 +18,7 @@ export default function ClassificationMain() {
 
     const extras = (
         <React.Fragment>
-            <SearchBox label='Locks' extraFilters={[{key: 'tab', value: 'search'}]} keepOpen={false}
+            <SearchBox label='Locks' keepOpen={false}
                        entryCount={visibleEntries.length}/>
             <ViewFilterButtons sortValues={classificationSortFields} visibleEntries={visibleEntries}
                                advancedEnabled={true} extraFilters={[]} entryType='Lock'

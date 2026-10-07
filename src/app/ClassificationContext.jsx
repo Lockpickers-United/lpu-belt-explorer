@@ -14,7 +14,7 @@ export function ClassificationProvider({children}) {
 
     const getLatestMilestone = useCallback((entry) => {
         const publishDateValues = allAdminActions
-            .filter(action => action.entryId === entry.id && action.action === 'Published')
+            .filter(action => action.entryId === entry.id && action.status === 'Published')
             .map(action => dayjs(action.updatedAt).valueOf())
         return dayjs(Math.max(...publishDateValues, dayjs(entry.currentBeltDate).valueOf()))
     }, [allAdminActions])
@@ -22,8 +22,8 @@ export function ClassificationProvider({children}) {
     const getAdminAction = useCallback((entry) => {
         return allAdminActions
             .filter(action => action.entryId === entry.id)
-            .filter(action => dayjs(action.updatedAt).isAfter(getLatestMilestone(entry)))
-            .sort((a, b) => dayjs(b.updatedAt).valueOf - dayjs(a.updatedAt).valueOf)[0] ?? null
+            .filter(action => dayjs(action.updatedAt).valueOf() >= getLatestMilestone(entry).valueOf())
+            .sort((a, b) => dayjs(b.updatedAt).valueOf() - dayjs(a.updatedAt).valueOf())[0] ?? null
     }, [allAdminActions, getLatestMilestone])
 
     const loggedInUserVotes = useMemo(() => {
@@ -32,30 +32,38 @@ export function ClassificationProvider({children}) {
             .filter(vote => vote.userId === user?.uid) ?? null
     }, [allVotes, user])
 
-    const getActiveVotes = useCallback((entry) => {
+    const getCurrentVotes = useCallback((entry) => {
         return allVotes
             .filter(v => v.entryId === entry.id)
-            .filter(v => dayjs(v.updatedAt).isAfter(getLatestMilestone(entry)))
+            .filter(v => dayjs(v.updatedAt).valueOf() >= getLatestMilestone(entry).valueOf())
+    }, [allVotes, getLatestMilestone])
+
+    const getPreviousVotes = useCallback((entry) => {
+        return allVotes
+            .filter(v => v.entryId === entry.id)
+            .filter(v => dayjs(v.updatedAt).valueOf() < getLatestMilestone(entry).valueOf())
     }, [allVotes, getLatestMilestone])
 
     const getUserVote = useCallback((entry) => {
         return loggedInUserVotes
-            .filter(v => dayjs(v.updatedAt).isAfter(getLatestMilestone(entry)))
+            .filter(v => dayjs(v.updatedAt).valueOf() >= getLatestMilestone(entry).valueOf())
             .sort((a, b) => dayjs(b.updatedAt).valueOf - dayjs(a.updatedAt).valueOf)
             .find(vote => vote.entryId === entry.id) ?? null
     }, [getLatestMilestone, loggedInUserVotes])
 
-
     const getAdminActionStatus = useCallback((entry) => {
         const action = getAdminAction(entry)
-        const votes = getActiveVotes(entry)
+        const votes = getCurrentVotes(entry)
         return action?.status
             ? action?.status
             : votes?.length > 0
                 ? 'Has Votes'
                 : 'No Votes'
-    }, [getActiveVotes, getAdminAction])
+    }, [getCurrentVotes, getAdminAction])
 
+    const isActive = useCallback((entry) => {
+        return entry.belt === 'Unranked' || getAdminActionStatus(entry) === 'Re-opened'
+    }, [getAdminActionStatus])
 
 
 const value = useMemo(() => ({
@@ -65,8 +73,11 @@ const value = useMemo(() => ({
     getUserVote,
     getAdminAction,
     getLatestMilestone,
-    getAdminActionStatus
-}), [allVotes, allAdminActions, loggedInUserVotes, getUserVote, getAdminAction, getLatestMilestone, getAdminActionStatus])
+    getAdminActionStatus,
+    getCurrentVotes,
+    getPreviousVotes,
+    isActive
+}), [allVotes, allAdminActions, loggedInUserVotes, getUserVote, getAdminAction, getLatestMilestone, getAdminActionStatus, getCurrentVotes, getPreviousVotes, isActive])
 
 return (
     <ClassificationContext.Provider value={value}>

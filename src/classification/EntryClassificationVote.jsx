@@ -7,6 +7,7 @@ import {beltSort} from '../data/belts.js'
 import dayjs from 'dayjs'
 import useWindowSize from '../util/useWindowSize.jsx'
 import ClassificationContext from '../app/ClassificationContext.jsx'
+import BeltStripeMini from '../entries/BeltStripeMini.jsx'
 
 export default function EntryClassificationVote({entry, isClassification}) {
     const {user} = useContext(AuthContext)
@@ -15,12 +16,12 @@ export default function EntryClassificationVote({entry, isClassification}) {
     const userVote = getUserVote(entry)
 
     const otherVotes = useMemo(() => {
-        return entry.voteEntries?.filter(vote => vote.userId !== user.uid).sort((a, b) => {
+        return entry.currentVotes?.filter(vote => vote.userId !== user.uid).sort((a, b) => {
             return beltSort(a.belt, b.belt) || dayjs(a.updatedAt).valueOf() - dayjs(b.updatedAt).valueOf()
         })
-    }, [entry.voteEntries, user.uid])
+    }, [entry.currentVotes, user.uid])
 
-    const showVotes = (entry.voteEntries?.length - (userVote?.id ? 1 : 0)) > 1 && !isClassification
+    const showVotes = (entry.currentVotes?.length - (userVote?.id ? 1 : 0)) > 1 && !isClassification
 
     const {isMobile} = useWindowSize()
     const padding = !isMobile ? '0 20px 0 8px' : '0 6px 0 0px'
@@ -36,7 +37,7 @@ export default function EntryClassificationVote({entry, isClassification}) {
                     fontSize: '0.9rem', lineHeight: '1.8rem'
                 }}>
                     current votes<br/>
-                    <DisplayClassificationVotes votes={entry.voteEntries}/>
+                    <DisplayClassificationVotes votes={entry.currentVotes}/>
                 </div>
             }
 
@@ -47,6 +48,22 @@ export default function EntryClassificationVote({entry, isClassification}) {
                     <VoteDisplay entry={entry} vote={vote} owner={vote.userId === user.uid}/>
                 </div>
             })}
+
+            {entry?.previousVotes?.length > 0 &&
+                <div style={{marginTop: 24}}>
+                    <div style={{fontWeight: 600, position: 'relative', paddingLeft: 24 }}>
+                        <BeltStripeMini value={entry?.belt} width={16} offset={0}
+                                        style={{position: 'absolute', top: 0, left: 0, bottom: 0}}/>
+                        PREVIOUS VOTES
+                    </div>
+                    {entry.previousVotes.map(vote => {
+                        return <div key={vote.id}>
+                            <VoteDisplay votes={entry} vote={vote} previous={true} owner={vote.userId === user.uid}/>
+                        </div>
+                    })}
+                </div>
+            }
+
         </div>
     )
 }

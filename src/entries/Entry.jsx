@@ -155,9 +155,9 @@ function Entry({entry, expanded, onExpand, isClassification, scorecardId}) {
                     }
                 </div>
 
-                {(entry.lockingMechanisms?.length > 0 || entry.voteEntries?.length) &&
+                {(entry.lockingMechanisms?.length > 0 || entry.currentVotes?.length) &&
                     <div style={{margin: '0px 0px 0px 0px', flexGrow: 1, flexDirection: 'row'}}>
-                        {isClassification && entry.voteEntries?.length > 0 &&
+                        {isClassification && entry.currentVotes?.length > 0 &&
                             <div style={{
                                 display: 'flex',
                                 marginBottom: 12,
@@ -165,7 +165,7 @@ function Entry({entry, expanded, onExpand, isClassification, scorecardId}) {
                                 width: '100%',
                                 justifyContent: 'left'
                             }}>
-                                <DisplayClassificationVotes entry={entry}/>
+                                <DisplayClassificationVotes votes={entry.currentVotes}/>
                             </div>
                         }
                         <div style={{

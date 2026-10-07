@@ -32,18 +32,17 @@ export default function ClassificationAdminButton({entry, handleToggle, style, f
                 </div>)}
         </div>
 
-    return (
-        <Tooltip title={Legend} arrow disableFocusListener slotProps={{
-            tooltip: {
-                sx: {
-                    backgroundColor: '#333'
-                }
-            }
-        }}
-        >
-            <IconButton onClick={handleToggle} style={{...buttonStyle, ...style}}>
+    return !flag
+        ? (
+            <Tooltip title={Legend} arrow disableFocusListener slotProps={{tooltip: {sx: {backgroundColor: '#333'}}}}>
+                <IconButton onClick={handleToggle} style={{...buttonStyle, ...style}}>
+                    <Icon style={{color, fontSize}}/>
+                </IconButton>
+            </Tooltip>
+        )
+        : (
+            <IconButton onClick={handleToggle} disabled style={{...buttonStyle, ...style}}>
                 <Icon style={{color, fontSize}}/>
             </IconButton>
-        </Tooltip>
-    )
+        )
 }
