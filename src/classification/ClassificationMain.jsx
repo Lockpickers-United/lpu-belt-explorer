@@ -1,6 +1,6 @@
 import React, {useContext} from 'react'
 import useWindowSize from '../util/useWindowSize.jsx'
-import ClassificationContext from '../app/ClassificationContext.jsx'
+import DataContext from '../context/DataContext.jsx'
 import SearchBox from '../nav/SearchBox.jsx'
 import ViewFilterButtons from '../filters/ViewFilterButtons.jsx'
 import {classificationSortFields} from '../data/sortFields'
@@ -12,7 +12,7 @@ import ClassificationEntries from './ClassificationEntries.jsx'
 export default function ClassificationMain() {
     usePageTitle('Classification')
 
-    const {visibleEntries = [], profile} = useContext(ClassificationContext)
+    const {visibleEntries = []} = useContext(DataContext)
 
     const {isMobile} = useWindowSize()
 
@@ -31,7 +31,7 @@ export default function ClassificationMain() {
         <React.Fragment>
             <Nav title='Classification' extras={extras}/>
 
-            <ClassificationEntries profile={profile} advancedEnabled={true}/>
+            <ClassificationEntries advancedEnabled={true}/>
 
             <Tracker feature='classification'/>
 

@@ -6,14 +6,15 @@ import removeAccents from 'remove-accents'
 import filterEntriesAdvanced from '../filters/filterEntriesAdvanced'
 import entryName from '../entries/entryName'
 import searchEntriesForText from '../filters/searchEntriesForText'
-import belts, {highestBelt} from '../data/belts.js'
+import belts from '../data/belts.js'
 import dayjs from 'dayjs'
 import collectionOptions from '../data/collectionTypes'
 import {getLockSortComparator} from '../locks/lockSortComparators'
 import DBContext from '../app/DBContext.jsx'
+import classificationVoteStats from './classificationVoteStats.js'
 
 export function ClassificationDataProvider({children, allEntries}) {
-    const profile = useContext(DBContext)
+    const {profile} = useContext(DBContext)
 
     const {
         getAdminActionStatus,
@@ -37,20 +38,13 @@ export function ClassificationDataProvider({children, allEntries}) {
                     advancedFilterGroups: voteFilterGroups,
                     entries: allCurrentVotes
                 }) ?? []
-                const latestVoteDate = Math.max(...currentVotes.map(vote => dayjs(vote.updatedAt).valueOf()))
+                const voteStats = classificationVoteStats(allCurrentVotes)
 
                 const classificationActive = isActive(entry)
                 const classificationStatus = getAdminActionStatus(entry)
 
                 const displayName = currentVotes.map(v => v.displayName)
                 const votedBelt = currentVotes.map(v => v.votedBelt)
-                const voteCounts = currentVotes.reduce((acc, vote) => {
-                    acc[vote.votedBelt] = (acc[vote.votedBelt] || 0) + 1
-                    return acc
-                }, {})
-                const leadingBelt = Object.keys(voteCounts).reduce((a, b) => voteCounts[a] > voteCounts[b] ? a : b, '')
-                const hasConsensus = voteCounts[leadingBelt] >= 3 && (voteCounts[leadingBelt] >= currentVotes.length / 2) ? 'Yes' : 'No'
-
                 return {
                     ...entry,
                     assignedBelt: entry.belt,
@@ -60,11 +54,7 @@ export function ClassificationDataProvider({children, allEntries}) {
                     votedBelt,
                     previousVotes: getPreviousVotes(entry),
                     currentVotes,
-                    hasVotes: currentVotes.length > 0 ? 'Yes' : 'No',
-                    voteCount: currentVotes.length,
-                    hasConsensus,
-                    highestVoteBelt: highestBelt(votedBelt),
-                    latestVoteDate,
+                    ...voteStats,
                     makes: entry.makeModels[0].make ? entry.makeModels.map(({make}) => make) : entry.makeModels[0].model,
                     content: [
                         entry.media?.some(m => !m.fullUrl.match(/youtube\.com/)) ? 'Has Images' : 'No Images',
@@ -80,7 +70,7 @@ export function ClassificationDataProvider({children, allEntries}) {
                     fuzzy: removeAccents(
                         [entryName(entry, 'long')]
                             .concat([
-                                displayName.join(',')
+                                allCurrentVotes.map(vote => vote.displayName).join(',')
                             ])
                             .join(',')
                     )
@@ -89,13 +79,13 @@ export function ClassificationDataProvider({children, allEntries}) {
     }, [allEntries, getAdminActionStatus, getCurrentVotes, getPreviousVotes, isActive, profile, voteFilterGroups])
 
     const searchedEntries = useMemo(() => {
-        return searchEntriesForText(search, [...mappedEntries])
+        return searchEntriesForText(search, mappedEntries.filter(entry => entry.classificationActive))
     }, [mappedEntries, search])
 
     const allVisibleEntries = useMemo(() => {
         const filtered = filterEntriesAdvanced({
             advancedFilterGroups: activeFilterGroups(),
-            entries: mappedEntries
+            entries: mappedEntries.filter(entry => entry.classificationActive)
         })
         const searched = searchEntriesForText(search, [...filtered]).sort((a, b) => {
             return a.fuzzy.localeCompare(b.fuzzy)
@@ -105,9 +95,7 @@ export function ClassificationDataProvider({children, allEntries}) {
             : searched
     }, [activeFilterGroups, mappedEntries, search, sort])
 
-    const visibleEntries = useMemo(() => {
-        return allVisibleEntries.filter(e => e.classificationActive)
-    }, [allVisibleEntries])
+    const visibleEntries = allVisibleEntries
 
     const getEntryFromId = useCallback(id => {
         return mappedEntries.find(e => e.id === id)

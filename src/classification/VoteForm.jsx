@@ -33,12 +33,7 @@ export default function VoteForm({entry, vote, handleActive, owner}) {
         handleActive && handleActive()
     }, [form, handleActive])
 
-    const handleSubmit = useCallback((_form) => {
-        console.log('handleSubmit called')
-        //    const {saveSurveySubmission} = useContext(DBContext)
-    }, [])
-
-    form = useForm({baseForm, handleSubmit})
+    form = useForm({baseForm})
     useEffect(() => {
         if (!form.intialized) {
             form.initialize({
@@ -131,14 +126,13 @@ export default function VoteForm({entry, vote, handleActive, owner}) {
             />
 
             <div style={{display: 'flex', flexGrow: 1, justifyContent: 'right', marginTop: 16, gap: 10}}>
-                {vote.id &&
-                    <Button variant='text' size='small' style={{color: '#e12121', marginRight: 40}}
-                            onClick={handleCancel}>Delete</Button>
-                }
                 <Button variant='text' size='small' style={{color: '#aaa'}}
                         onClick={handleCancel}>Cancel</Button>
-                <Button variant='text' size='small' disabled={form.canSave || form.invalid?.length > 0}
+                <Button variant='text' size='small' disabled
                         color='success' style={{whiteSpace: 'nowrap'}}>{buttonText}</Button>
+            </div>
+            <div role='status' style={{color: '#aaa', fontSize: '0.85rem', textAlign: 'right'}}>
+                Preview only — vote saving is unavailable.
             </div>
 
         </div>

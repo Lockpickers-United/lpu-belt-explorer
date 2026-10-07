@@ -176,7 +176,7 @@ function Entry({entry, expanded, onExpand, isClassification, scorecardId}) {
                             flexDirection: 'row'
                         }}>
                             <Stack direction='row' spacing={0} sx={{flexWrap: 'wrap'}}>
-                                {entry.lockingMechanisms?.sort().map((lockingMechanism, index) =>
+                                {entry.lockingMechanisms?.toSorted().map((lockingMechanism, index) =>
                                     <FilterChip key={index}
                                                 mode={!isClassification ? 'simple' : 'text'}
                                                 style={!isClassification ? {} : {color: '#aaa'}}

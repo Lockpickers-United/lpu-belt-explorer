@@ -14,8 +14,6 @@ export default function UserClassificationButton({entry, handleToggle, isClassif
     const currentUserVote = getUserVote(entry)
     const status = getAdminActionStatus(entry)
 
-    currentUserVote && console.log('currentUserVote', currentUserVote)
-
     const iconText = status === 'Settled'
         ? 'X'
         : currentUserVote?.votedBelt

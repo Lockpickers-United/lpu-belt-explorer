@@ -5,51 +5,64 @@ import dayjs from 'dayjs'
 import AuthContext from './AuthContext.jsx'
 
 const ClassificationContext = React.createContext({})
+const newestFirst = (a, b) => dayjs(b.updatedAt).valueOf() - dayjs(a.updatedAt).valueOf()
+
+function groupByEntry(records) {
+    const grouped = new Map()
+    records.forEach(record => {
+        const entryRecords = grouped.get(record.entryId) ?? []
+        entryRecords.push(record)
+        grouped.set(record.entryId, entryRecords)
+    })
+    grouped.forEach(entryRecords => entryRecords.sort(newestFirst))
+    return grouped
+}
 
 export function ClassificationProvider({children}) {
     const {user} = useContext(AuthContext)
 
     const allVotes = useMemo(() => classificationVotes || [], [])
     const allAdminActions = useMemo(() => classificationAdminActions || [], [])
+    const votesByEntry = useMemo(() => groupByEntry(allVotes), [allVotes])
+    const actionsByEntry = useMemo(() => groupByEntry(allAdminActions), [allAdminActions])
 
     const getLatestMilestone = useCallback((entry) => {
-        const publishDateValues = allAdminActions
-            .filter(action => action.entryId === entry.id && action.status === 'Published')
+        const publishDateValues = (actionsByEntry.get(entry.id) ?? [])
+            .filter(action => action.status === 'Published')
             .map(action => dayjs(action.updatedAt).valueOf())
         return dayjs(Math.max(...publishDateValues, dayjs(entry.currentBeltDate).valueOf()))
-    }, [allAdminActions])
+    }, [actionsByEntry])
 
     const getAdminAction = useCallback((entry) => {
-        return allAdminActions
-            .filter(action => action.entryId === entry.id)
-            .filter(action => dayjs(action.updatedAt).valueOf() >= getLatestMilestone(entry).valueOf())
-            .sort((a, b) => dayjs(b.updatedAt).valueOf() - dayjs(a.updatedAt).valueOf())[0] ?? null
-    }, [allAdminActions, getLatestMilestone])
+        const milestone = getLatestMilestone(entry).valueOf()
+        return (actionsByEntry.get(entry.id) ?? [])
+            .find(action => dayjs(action.updatedAt).valueOf() >= milestone) ?? null
+    }, [actionsByEntry, getLatestMilestone])
 
     const loggedInUserVotes = useMemo(() => {
         return allVotes
-            .sort((a, b) => dayjs(b.updatedAt).valueOf - dayjs(a.updatedAt).valueOf)
-            .filter(vote => vote.userId === user?.uid) ?? null
-    }, [allVotes, user])
+            .filter(vote => vote.userId === user?.uid)
+            .sort(newestFirst)
+    }, [allVotes, user?.uid])
 
     const getCurrentVotes = useCallback((entry) => {
-        return allVotes
-            .filter(v => v.entryId === entry.id)
-            .filter(v => dayjs(v.updatedAt).valueOf() >= getLatestMilestone(entry).valueOf())
-    }, [allVotes, getLatestMilestone])
+        const milestone = getLatestMilestone(entry).valueOf()
+        return (votesByEntry.get(entry.id) ?? [])
+            .filter(vote => dayjs(vote.updatedAt).valueOf() >= milestone)
+    }, [votesByEntry, getLatestMilestone])
 
     const getPreviousVotes = useCallback((entry) => {
-        return allVotes
-            .filter(v => v.entryId === entry.id)
-            .filter(v => dayjs(v.updatedAt).valueOf() < getLatestMilestone(entry).valueOf())
-    }, [allVotes, getLatestMilestone])
+        const milestone = getLatestMilestone(entry).valueOf()
+        return (votesByEntry.get(entry.id) ?? [])
+            .filter(vote => dayjs(vote.updatedAt).valueOf() < milestone)
+    }, [votesByEntry, getLatestMilestone])
 
     const getUserVote = useCallback((entry) => {
-        return loggedInUserVotes
-            .filter(v => dayjs(v.updatedAt).valueOf() >= getLatestMilestone(entry).valueOf())
-            .sort((a, b) => dayjs(b.updatedAt).valueOf - dayjs(a.updatedAt).valueOf)
-            .find(vote => vote.entryId === entry.id) ?? null
-    }, [getLatestMilestone, loggedInUserVotes])
+        if (!user?.uid) return null
+        const milestone = getLatestMilestone(entry).valueOf()
+        return (votesByEntry.get(entry.id) ?? [])
+            .find(vote => vote.userId === user.uid && dayjs(vote.updatedAt).valueOf() >= milestone) ?? null
+    }, [getLatestMilestone, user?.uid, votesByEntry])
 
     const getAdminActionStatus = useCallback((entry) => {
         const action = getAdminAction(entry)

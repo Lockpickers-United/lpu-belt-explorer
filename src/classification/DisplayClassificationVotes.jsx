@@ -7,9 +7,9 @@ import Tooltip from '@mui/material/Tooltip'
 export default function DisplayClassificationVotes({votes, style = {}}) {
     const {user} = useContext(AuthContext)
 
-    if (!votes || !votes?.length > 0?.length) return null
+    if (!votes?.length) return null
 
-    const sortedVotes = votes.sort((a, b) => {
+    const sortedVotes = votes.toSorted((a, b) => {
         return beltSort(a.votedBelt, b.votedBelt) || dayjs(a.updatedAt).valueOf() - dayjs(b.updatedAt).valueOf()
     })
 

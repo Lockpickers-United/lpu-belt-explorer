@@ -36,8 +36,12 @@ export const lockSortComparators = Object.freeze({
             || a.fuzzy.localeCompare(b.fuzzy)
     },
     latestVoteDate: (a, b) => {
-        return b.latestVoteDate - a.latestVoteDate
-            || a.fuzzy.localeCompare(b.fuzzy)
+        const firstDate = a.latestVoteDate ?? null
+        const secondDate = b.latestVoteDate ?? null
+        if (firstDate === null && secondDate === null) return a.fuzzy.localeCompare(b.fuzzy)
+        if (firstDate === null) return 1
+        if (secondDate === null) return -1
+        return secondDate - firstDate || a.fuzzy.localeCompare(b.fuzzy)
     },
 })
 

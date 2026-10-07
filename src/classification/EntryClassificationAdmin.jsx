@@ -17,10 +17,12 @@ const actions = ['Belt Change', 'Sameline', 'Delete']
 
 export default function EntryClassificationAdmin({entry, handleToggle}) {
     const {accessInfo} = useAccess()
-
-
     if (!accessInfo.roles.classificationAdmin) return null
 
+    return <AdminPreview entry={entry} handleToggle={handleToggle}/>
+}
+
+function AdminPreview({entry, handleToggle}) {
     const entryClassificationAdminActions = useMemo(() => classificationAdminActions && classificationAdminActions
             .filter(a => a.entryId === entry.id)
             .sort((a, b) => dayjs(b.updatedAt).valueOf() - dayjs(a.updatedAt).valueOf())
@@ -39,7 +41,7 @@ export default function EntryClassificationAdmin({entry, handleToggle}) {
         let events = [event]
 
         const changelogFields = ['updatedBelt']
-        if (name === 'status' && value !== 'Settled') {
+        if (name === 'status' && ['Settled', 'Re-opened'].includes(value)) {
             changelogFields.forEach((fieldName) => {
                 events.push({target: {name: fieldName, action: 'delete'}})
             })
@@ -51,12 +53,7 @@ export default function EntryClassificationAdmin({entry, handleToggle}) {
         handleToggle && handleToggle()
     }, [form, handleToggle])
 
-    const handleSubmit = useCallback((_form) => {
-        console.log('handleSubmit called')
-        //    const {saveSurveySubmission} = useContext(DBContext)
-    }, [])
-
-    form = useForm({baseForm, processChange, handleSubmit})
+    form = useForm({baseForm, processChange})
 
     useEffect(() => {
         if (!form.intialized) {
@@ -69,7 +66,7 @@ export default function EntryClassificationAdmin({entry, handleToggle}) {
 
 
     const showVotes = true
-    const [showPreviousVotes, setShowPreviousVotes] = useState(!entry.currentVotes)
+    const [showPreviousVotes, setShowPreviousVotes] = useState(!entry.currentVotes?.length)
 
     const {isMobile} = useWindowSize()
     const padding = !isMobile ? '0 20px 0 8px' : '0 6px 0 0px'
@@ -171,7 +168,6 @@ export default function EntryClassificationAdmin({entry, handleToggle}) {
                             fontSize: '1.0rem', fontWeight: 600, margin: '0px 0px 2px 0px', color: noteColor
                         }}>
                             Changelog Note
-                            <Link style={{fontWeight: 400}}>preview</Link>
                         </div>
                         <FormElement fieldType={'TextField'} fieldName={'note'}
                                      fieldSettings={{
@@ -204,8 +200,7 @@ export default function EntryClassificationAdmin({entry, handleToggle}) {
                     }}>
 
                         {adminAction.id &&
-                            <Button variant='text' size='small' style={{color: '#e12121'}}
-                                    onClick={handleCancel}>Delete</Button>
+                            <Button variant='text' size='small' style={{color: '#e12121'}} disabled>Delete</Button>
                         }
                         <div style={{flexGrow: 1}}/>
                         <Button variant='text' size='small' style={{color: '#aaa'}}
@@ -216,11 +211,14 @@ export default function EntryClassificationAdmin({entry, handleToggle}) {
                             justifyContent: 'right',
                             gap: 16
                         }}>
-                            <Button variant='text' size='small' disabled={form.canSave || form.invalid?.length > 0}
+                            <Button variant='text' size='small' disabled
                                     color='success' style={{whiteSpace: 'nowrap'}}>{buttonText}</Button>
-                            <Button variant='text' size='small' disabled={form.canSave || form.invalid?.length > 0}
+                            <Button variant='text' size='small' disabled
                                     color='success' style={{whiteSpace: 'nowrap'}}>Save And Stage</Button>
                         </div>
+                    </div>
+                    <div role='status' style={{color: '#aaa', fontSize: '0.85rem', textAlign: 'right'}}>
+                        Preview only — admin changes are unavailable.
                     </div>
 
                 </div>
