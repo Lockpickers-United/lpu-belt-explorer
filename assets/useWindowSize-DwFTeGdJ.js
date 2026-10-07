@@ -1,0 +1,1 @@
+import{a as e}from"./rolldown-runtime-B0Z9INg1.js";import{ot as t}from"./utils-BBPQSqcU.js";var n=e(t(),1);function r(){let e,t=!1;function r(){e=window.innerWidth}return window.addEventListener(`resize`,function(){clearTimeout(t),t=setTimeout(r,250)}),r(),(0,n.useMemo)(()=>({width:e,isMobile:e<650,flexStyle:e<650?`block`:`flex`}),[e])}export{r as t};
