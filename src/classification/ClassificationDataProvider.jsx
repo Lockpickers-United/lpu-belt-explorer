@@ -17,7 +17,7 @@ export function ClassificationDataProvider({children, allEntries}) {
     const {user} = useContext(AuthContext)
     const profile = useContext(DBContext)
 
-    const {allVotes, allAdminActions} = useContext(ClassificationContext)
+    const {allVotes, allAdminActions, getAdminActionStatus} = useContext(ClassificationContext)
 
     const {filters: allFilters, activeFilterGroups} = useContext(FilterContext)
     const {search, sort, expandAll} = allFilters
@@ -88,6 +88,7 @@ export function ClassificationDataProvider({children, allEntries}) {
                 }) ?? []
 
                 const classificationActive = isActive(entry)
+                const classificationStatus = getAdminActionStatus(entry)
 
                 const displayName = voteEntries.map(v => v.displayName)
                 const votedBelt = voteEntries.map(v => v.votedBelt)
@@ -103,6 +104,7 @@ export function ClassificationDataProvider({children, allEntries}) {
                     assignedBelt: entry.belt,
                     displayName,
                     classificationActive,
+                    classificationStatus,
                     votedBelt,
                     voteEntries,
                     hasVotes: voteEntries.length > 0 ? 'Yes' : 'No',
@@ -131,7 +133,7 @@ export function ClassificationDataProvider({children, allEntries}) {
                     )
                 }
             })
-    }, [allEntries, allVotes, isActive, profile, voteFilterGroups])
+    }, [allEntries, allVotes, getAdminActionStatus, isActive, profile, voteFilterGroups])
 
     const searchedEntries = useMemo(() => {
         return searchEntriesForText(search, [...mappedEntries])

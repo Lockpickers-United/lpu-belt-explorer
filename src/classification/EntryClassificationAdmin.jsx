@@ -1,28 +1,23 @@
-import React, {useCallback, useContext, useEffect, useMemo, useState} from 'react'
-import AuthContext from '../app/AuthContext.jsx'
+import React, {useCallback, useEffect, useMemo, useState} from 'react'
 import {useAccess} from '../app/AccessContext.jsx'
 import classificationAdminActions from '../data/classification-samples-admin.json'
-import DisplayClassificationVotes from '../classification/DisplayClassificationVotes.jsx'
+import DisplayClassificationVotes from './DisplayClassificationVotes.jsx'
 import dayjs from 'dayjs'
 import useWindowSize from '../util/useWindowSize.jsx'
 import Link from '@mui/material/Link'
-import DBContext from '../app/DBContext.jsx'
 import useForm from '../formUtils/useForm.jsx'
 import FormElement from '../formUtils/FormElement.jsx'
 import {danBelts} from '../data/belts.js'
-import BeltStripeMini from './BeltStripeMini.jsx'
+import BeltStripeMini from '../entries/BeltStripeMini.jsx'
 import Button from '@mui/material/Button'
 import {Collapse} from '@mui/material'
 
 const statuses = ['Pending', 'Staged', 'Published', 'Re-opened', 'Settled']
 const actions = ['Belt Change', 'Sameline', 'Delete']
 
-export default function EntryClassificationAdmin({entry, isClassification, handleToggle}) {
-    const {user} = useContext(AuthContext)
+export default function EntryClassificationAdmin({entry, handleToggle}) {
     const {accessInfo} = useAccess()
-    const {profile} = useContext(DBContext)
 
-    console.log('EntryClassificationAdmin', isClassification, user.uid, profile.userId)
 
     if (!accessInfo.roles.classificationAdmin) return null
 
@@ -118,7 +113,7 @@ export default function EntryClassificationAdmin({entry, isClassification, handl
                     <div style={{fontSize: '1.0rem', fontWeight: 600, margin: '0px 0px 2px 0px'}}>
                         Set Status
                     </div>
-                    <FormElement fieldType={'SelectBox'} fieldName={'status'} options={[statuses]}
+                    <FormElement fieldType={'SelectBox'} fieldName={'status'} options={statuses}
                                  fieldSettings={{
                                      inputWidth: 140,
                                      inputSize: 'small'

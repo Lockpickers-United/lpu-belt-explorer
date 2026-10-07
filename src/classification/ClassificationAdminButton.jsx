@@ -2,23 +2,29 @@ import React, {useContext} from 'react'
 import IconButton from '@mui/material/IconButton'
 import Tooltip from '@mui/material/Tooltip'
 import {useAccess} from '../app/AccessContext.jsx'
-import {classificationStatuses} from './ClassificationConfig.jsx'
+import {classificationStatuses, flagStatuses} from './ClassificationConfig.jsx'
 import ShieldMoonIcon from '@mui/icons-material/ShieldMoon'
 import ClassificationContext from '../app/ClassificationContext.jsx'
+import {useMatches} from 'react-router-dom'
 
-export default function ClassificationAdminButton({entry, handleToggle}) {
+export default function ClassificationAdminButton({entry, handleToggle, style, flag = false}) {
     const {accessInfo} = useAccess()
+    const isClassification = useMatches().some(match => match.handle?.route === 'classification')
+    const {getAdminActionStatus} = useContext(ClassificationContext)
+
     if (!accessInfo?.features?.classificationAdmin) return null
+    if (!isClassification) return null
 
-    const {getAdminAction} = useContext(ClassificationContext)
+    const status = getAdminActionStatus(entry) ?? 'No Votes'
+    if (flag && !flagStatuses.includes(status)) return null
 
-    const classificationAdminAction = getAdminAction(entry)
-
-    const status = classificationAdminAction?.status ?? 'No Votes'
-    const color = classificationStatuses[status]?.color ??'#666'
+    const color = classificationStatuses[status]?.color ?? '#666'
     const Icon = classificationStatuses[status]?.Icon ?? ShieldMoonIcon
 
-    const TestPanel =
+    const fontSize = flag ? '1.4rem' : '1.6rem'
+    const buttonStyle = flag ? {padding: 2} : {}
+
+    const Legend =
         <div>
             {Object.entries(classificationStatuses).map(([status, {color, Icon}], index) =>
                 <div key={index} style={{display: 'flex', alignItems: 'center', gap: 8, margin: 6}}>
@@ -27,16 +33,16 @@ export default function ClassificationAdminButton({entry, handleToggle}) {
         </div>
 
     return (
-        <Tooltip title={TestPanel} arrow disableFocusListener slotProps={{
+        <Tooltip title={Legend} arrow disableFocusListener slotProps={{
             tooltip: {
                 sx: {
-                    backgroundColor: '#333',
-                },
-            },
+                    backgroundColor: '#333'
+                }
+            }
         }}
         >
-            <IconButton onClick={handleToggle} style={{marginRight: '10px'}}>
-                <Icon style={{color, fontSize: '1.6rem'}}/>
+            <IconButton onClick={handleToggle} style={{...buttonStyle, ...style}}>
+                <Icon style={{color, fontSize}}/>
             </IconButton>
         </Tooltip>
     )

@@ -21,12 +21,9 @@ import useData from '../util/useData.jsx'
 import {allAwardsById} from '../entries/entryutils'
 import usePageTitle from '../util/usePageTitle.jsx'
 import ProfileContext from '../app/ProfileContext.jsx'
-import {useAccess} from '../app/AccessContext.jsx'
 
 function ScorecardRoute({mostPopular}) {
     const {user} = useContext(AuthContext)
-    const {accessInfo} = useAccess()
-    const adminEnabled = accessInfo.enabledRoles.admin
     const {getPickerActivity} = useContext(DBContext)
 
     usePageTitle('Scorecard')
@@ -38,8 +35,6 @@ function ScorecardRoute({mostPopular}) {
 
     const {userId, data, loading, error} = useContext(ProfileContext)
     const profile = useMemo(() => data ? data.profile : {}, [data])
-
-    adminEnabled && console.log('admin log: scorecardRoute', {userId, data, loading, error})
 
     const {
         scoredActivity,
@@ -93,8 +88,6 @@ function ScorecardRoute({mostPopular}) {
     const scorecardData = useData({loadFn})
     const combinedProfile = useMemo(() => ({...profile, ...scorecardData.data}), [profile, scorecardData.data])
     const blackBeltScorecard = !!combinedProfile?.blackBeltAwardedAt
-
-    adminEnabled && console.log('admin log: combinedProfile', combinedProfile)
 
     const owner = user?.uid === userId
 

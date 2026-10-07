@@ -3,13 +3,13 @@ import Collapse from '@mui/material/Collapse'
 import EntryVideos from './EntryVideos.jsx'
 import IconButton from '@mui/material/IconButton'
 import {useAccess} from '../app/AccessContext.jsx'
-import EntryClassificationVote from './EntryClassificationVote.jsx'
+import EntryClassificationVote from '../classification/EntryClassificationVote.jsx'
 import {useTheme} from '@mui/material'
 import ClassificationAdminButton from '../classification/ClassificationAdminButton.jsx'
 import SportsMartialArtsIcon from '@mui/icons-material/SportsMartialArts'
 import BiotechIcon from '@mui/icons-material/Biotech'
 import SmartDisplayIcon from '@mui/icons-material/SmartDisplay'
-import EntryClassificationAdmin from './EntryClassificationAdmin.jsx'
+import EntryClassificationAdmin from '../classification/EntryClassificationAdmin.jsx'
 import OfflineBoltIcon from '@mui/icons-material/OfflineBolt'
 import UserClassificationButton from '../classification/UserClassificationButton.jsx'
 import {ClassificationProvider} from '../app/ClassificationContext.jsx'
@@ -71,11 +71,13 @@ export default function EntryActionBar({entry, isClassification, style = {}}) {
                     <div style={{display: 'flex', justifyContent: 'flex-end'}}>
 
                         {accessInfo.features.classificationAdmin &&
-                            <ClassificationAdminButton entry={entry}
-                                                       handleToggle={() => handleToggle('classificationAdmin')}/>
+                            <ClassificationAdminButton
+                                entry={entry}
+                                style={{marginRight: '10px'}}
+                                handleToggle={() => handleToggle('classificationAdmin')}/>
                         }
                         {accessInfo.features.classificationVote &&
-                            <UserClassificationButton entry={entry}
+                            <UserClassificationButton entry={entry} isClassification={isClassification}
                                                       handleToggle={() => handleToggle('classification')}/>
                         }
                         {accessInfo.features.scorecardVideos &&

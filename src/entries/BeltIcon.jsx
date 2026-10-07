@@ -1,14 +1,14 @@
 import React from 'react'
 import belts from '../data/belts'
 
-function BeltIcon({value, style, related, disabled, containerStyle, rankStyle, text}) {
+function BeltIcon({value, style, related, disabled, inactive, containerStyle, rankStyle, text}) {
     if (!value) return null
     const rank = parseInt(value.slice(-1)) > 1 ? parseInt(value.slice(-1)) : ''
     const {color, lineColor = '#010101'} = belts[value]
     if (value === 'Unranked') return null
     const rankColor = !disabled ? '#fff' : '#bbb'
     return (
-        <div style={{position: 'relative', minWidth: 32, height: 32, ...containerStyle }}  role='img' aria-label='belt-icon'>
+        <div style={{position: 'relative', minWidth: 32, height: 32, ...containerStyle, opacity: inactive ? 0.4 : 1 }}  role='img' aria-label='belt-icon'>
             <div style={{display: 'inline-block', minWidth: 32, height: 32, ...style,position: 'absolute', top: 0, left: 1}}>
                 <svg x='0' y='0' viewBox='0 -2 32 32' aria-label={`${value} Belt`}>
                     <path

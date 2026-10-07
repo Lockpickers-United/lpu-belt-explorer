@@ -6,7 +6,8 @@ import LocalPoliceIcon from '@mui/icons-material/LocalPolice'
 import ShieldMoonIcon from '@mui/icons-material/ShieldMoon'
 import PrivacyTipIcon from '@mui/icons-material/PrivacyTip'
 
-// display variables
+export const flagStatuses=['Draft', 'Pending', 'Staged', 'Published', 'Re-opened', 'Settled', 'Error']
+
 export const classificationStatuses = {
     'No Votes': {
         color: '#777',

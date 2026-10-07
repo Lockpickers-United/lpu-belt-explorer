@@ -28,6 +28,7 @@ export const classificationFilterFields = [
     {label: 'Voted Belt', fieldName: 'votedBelt', sort: beltSort},
     {label: 'Has Votes', fieldName: 'hasVotes'},
     {label: 'Has Consensus', fieldName: 'hasConsensus'},
+    {label: 'Status', fieldName: 'classificationStatus'},
     {label: 'Assigned Belt', fieldName: 'assignedBelt', sort: beltSort},
     {label: 'Locking Mechanism', fieldName: 'lockingMechanisms'},
     {label: 'Features', fieldName: 'features'},

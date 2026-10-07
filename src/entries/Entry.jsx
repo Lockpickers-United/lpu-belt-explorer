@@ -40,6 +40,7 @@ import DisplayClassificationVotes from '../classification/DisplayClassificationV
 import Tooltip from '@mui/material/Tooltip'
 import IconButton from '@mui/material/IconButton'
 import ListAltIcon from '@mui/icons-material/ListAlt'
+import ClassificationAdminButton from '../classification/ClassificationAdminButton.jsx'
 
 function Entry({entry, expanded, onExpand, isClassification, scorecardId}) {
     const navigate = useNavigate()
@@ -116,10 +117,14 @@ function Entry({entry, expanded, onExpand, isClassification, scorecardId}) {
         : <>Other Versions Only</>
 
     const {isMobile} = useWindowSize()
-    const makeModelWidth = !isMobile ? '65%' : '63%'
+    const makeModelWidth = !isMobile ? '65%' : '60%'
     const mainMargin = !isMobile ? '6px 0px 8px 12px' : '4px 0px 6px 4px'
 
-    // TODO - don't bring in FilterChip, just render here. Fix add filter for new style.
+    const doNothing = (event) => {
+        event.preventDefault()
+        event.stopPropagation()
+        return null
+    }
 
     return (
         <Accordion expanded={expanded} onChange={handleChange} style={style} ref={ref} slots={{heading: 'div'}}
@@ -134,11 +139,8 @@ function Entry({entry, expanded, onExpand, isClassification, scorecardId}) {
                               }} style={{}}>
 
                 <BeltStripe value={entry.belt}/>
-                <div
-                    style={{margin: mainMargin, width: makeModelWidth, flexShrink: 0, flexDirection: 'column'}}>
-                    <div style={{
-                        color: textColor
-                    }}>{makeModels}</div>
+                <div style={{margin: mainMargin, width: makeModelWidth, paddingRight:4 ,flexShrink: 0, flexDirection: 'column'}}>
+                    <div style={{color: textColor}}>{makeModels}</div>
 
                     {!!entry.version &&
                         <div style={{marginTop: 5}}>
@@ -153,9 +155,9 @@ function Entry({entry, expanded, onExpand, isClassification, scorecardId}) {
                     }
                 </div>
 
-                {(entry.lockingMechanisms?.length > 0 || entry.voteEntries) &&
+                {(entry.lockingMechanisms?.length > 0 || entry.voteEntries?.length) &&
                     <div style={{margin: '0px 0px 0px 0px', flexGrow: 1, flexDirection: 'row'}}>
-                        {isClassification && entry.voteEntries &&
+                        {isClassification && entry.voteEntries?.length > 0 &&
                             <div style={{
                                 display: 'flex',
                                 marginBottom: 12,
@@ -173,22 +175,20 @@ function Entry({entry, expanded, onExpand, isClassification, scorecardId}) {
                             flexGrow: 1,
                             flexDirection: 'row'
                         }}>
-                            {entry.lockingMechanisms?.sort().map((lockingMechanism, index) =>
-                                <span key={index}>
-                                    {!isClassification
-                                        ? <FilterChip mode={'simple'} value={lockingMechanism}
-                                                      field='lockingMechanisms'/>
-                                        : <FilterChip mode={'text'} style={{color: '#aaa'}}
-                                                      value={lockingMechanism}
-                                                      field='lockingMechanisms'/>
-                                    }
-                                </span>
-                            )}
+                            <Stack direction='row' spacing={0} sx={{flexWrap: 'wrap'}}>
+                                {entry.lockingMechanisms?.sort().map((lockingMechanism, index) =>
+                                    <FilterChip key={index}
+                                                mode={!isClassification ? 'simple' : 'text'}
+                                                style={!isClassification ? {} : {color: '#aaa'}}
+                                                value={lockingMechanism}
+                                                field='lockingMechanisms'/>
+                                )}
+                            </Stack>
                         </div>
                     </div>
                 }
                 {scorecardId &&
-                    <div style={{margin: '0px 10px 0px 0px'}}>
+                    <div style={{margin: '0px 0px 0px 0px'}}>
                         <Tooltip title='View in Scorecard' arrow disableFocusListener>
                             <IconButton onClick={handleScorecardClick} size='small' aria-label='scorecard'>
                                 <ListAltIcon/>
@@ -196,7 +196,9 @@ function Entry({entry, expanded, onExpand, isClassification, scorecardId}) {
                         </Tooltip>
                     </div>
                 }
-
+                {!scorecardId && isClassification &&
+                    <ClassificationAdminButton entry={entry} handleToggle={doNothing} flag={true}/>
+                }
             </AccordionSummary>
             {
                 expanded &&

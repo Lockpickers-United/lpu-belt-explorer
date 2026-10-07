@@ -12,37 +12,67 @@ export function ClassificationProvider({children}) {
     const allVotes = useMemo(() => classificationVotes || [], [])
     const allAdminActions = useMemo(() => classificationAdminActions || [], [])
 
-    const currentUserVotes = useMemo(() => {
+    const getLatestMilestone = useCallback((entry) => {
+        const publishDateValues = allAdminActions
+            .filter(action => action.entryId === entry.id && action.action === 'Published')
+            .map(action => dayjs(action.updatedAt).valueOf())
+        return dayjs(Math.max(...publishDateValues, dayjs(entry.currentBeltDate).valueOf()))
+    }, [allAdminActions])
+
+    const getAdminAction = useCallback((entry) => {
+        return allAdminActions
+            .filter(action => action.entryId === entry.id)
+            .filter(action => dayjs(action.updatedAt).isAfter(getLatestMilestone(entry)))
+            .sort((a, b) => dayjs(b.updatedAt).valueOf - dayjs(a.updatedAt).valueOf)[0] ?? null
+    }, [allAdminActions, getLatestMilestone])
+
+    const loggedInUserVotes = useMemo(() => {
         return allVotes
             .sort((a, b) => dayjs(b.updatedAt).valueOf - dayjs(a.updatedAt).valueOf)
             .filter(vote => vote.userId === user?.uid) ?? null
     }, [allVotes, user])
 
-    const getUserVote = useCallback((entryId) => {
-        return currentUserVotes
-            .find(vote => vote.entryId === entryId) ?? null
-    }, [currentUserVotes])
+    const getActiveVotes = useCallback((entry) => {
+        return allVotes
+            .filter(v => v.entryId === entry.id)
+            .filter(v => dayjs(v.updatedAt).isAfter(getLatestMilestone(entry)))
+    }, [allVotes, getLatestMilestone])
 
-    const getAdminAction = useCallback((entry) => {
-        return allAdminActions
+    const getUserVote = useCallback((entry) => {
+        return loggedInUserVotes
+            .filter(v => dayjs(v.updatedAt).isAfter(getLatestMilestone(entry)))
             .sort((a, b) => dayjs(b.updatedAt).valueOf - dayjs(a.updatedAt).valueOf)
-            .find(action => action.entryId === entry.id) ?? null
-    }, [allAdminActions])
+            .find(vote => vote.entryId === entry.id) ?? null
+    }, [getLatestMilestone, loggedInUserVotes])
 
 
-    const value = useMemo(() => ({
-        allVotes,
-        allAdminActions,
-        currentUserVotes,
-        getUserVote,
-        getAdminAction
-    }), [allVotes, allAdminActions, currentUserVotes, getUserVote, getAdminAction])
+    const getAdminActionStatus = useCallback((entry) => {
+        const action = getAdminAction(entry)
+        const votes = getActiveVotes(entry)
+        return action?.status
+            ? action?.status
+            : votes?.length > 0
+                ? 'Has Votes'
+                : 'No Votes'
+    }, [getActiveVotes, getAdminAction])
 
-    return (
-        <ClassificationContext.Provider value={value}>
-            {children}
-        </ClassificationContext.Provider>
-    )
+
+
+const value = useMemo(() => ({
+    allVotes,
+    allAdminActions,
+    loggedInUserVotes,
+    getUserVote,
+    getAdminAction,
+    getLatestMilestone,
+    getAdminActionStatus
+}), [allVotes, allAdminActions, loggedInUserVotes, getUserVote, getAdminAction, getLatestMilestone, getAdminActionStatus])
+
+return (
+    <ClassificationContext.Provider value={value}>
+        {children}
+    </ClassificationContext.Provider>
+)
 }
 
 export default ClassificationContext

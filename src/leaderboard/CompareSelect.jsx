@@ -32,8 +32,11 @@ function CompareSelect({blackBeltData, fighter, label, param, opponent}) {
                 onChange={handleChange}
                 style={{fontWeight: 400, color: '#eee'}}
                 color='info'
+                variant='outlined'
             >
-                {blackBeltData.filter(bb => bb.id !== opponent).map((blackbelt, index) =>
+                {blackBeltData.filter(bb => bb.id !== opponent)
+                    .sort((a, b) => a.displayName.localeCompare(b.displayName))
+                    .map((blackbelt, index) =>
                     <MenuItem key={index} value={blackbelt}>{blackbelt.displayName}</MenuItem>
                 )}
             </Select>

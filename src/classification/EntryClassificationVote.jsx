@@ -1,17 +1,19 @@
 import React, {useContext, useMemo} from 'react'
 import AuthContext from '../app/AuthContext.jsx'
 import {useAccess} from '../app/AccessContext.jsx'
-import DisplayClassificationVotes from '../classification/DisplayClassificationVotes.jsx'
-import VoteDisplay from '../classification/VoteDisplay.jsx'
+import DisplayClassificationVotes from './DisplayClassificationVotes.jsx'
+import VoteDisplay from './VoteDisplay.jsx'
 import {beltSort} from '../data/belts.js'
 import dayjs from 'dayjs'
 import useWindowSize from '../util/useWindowSize.jsx'
+import ClassificationContext from '../app/ClassificationContext.jsx'
 
 export default function EntryClassificationVote({entry, isClassification}) {
     const {user} = useContext(AuthContext)
     const {accessInfo} = useAccess()
+    const {getUserVote} = useContext(ClassificationContext)
+    const userVote = getUserVote(entry)
 
-    const userVote = useMemo(() => entry.voteEntries?.find(vote => vote.userId === user.uid) || {}, [entry.voteEntries, user.uid])
     const otherVotes = useMemo(() => {
         return entry.voteEntries?.filter(vote => vote.userId !== user.uid).sort((a, b) => {
             return beltSort(a.belt, b.belt) || dayjs(a.updatedAt).valueOf() - dayjs(b.updatedAt).valueOf()
@@ -38,7 +40,7 @@ export default function EntryClassificationVote({entry, isClassification}) {
                 </div>
             }
 
-            <VoteDisplay entry={entry} vote={userVote} owner={userVote?.userId === user.uid}/>
+            <VoteDisplay entry={entry} vote={userVote ?? {}} owner={userVote?.userId === user.uid}/>
 
             {otherVotes?.length > 0 && otherVotes.map(vote => {
                 return <div key={vote.id}>
