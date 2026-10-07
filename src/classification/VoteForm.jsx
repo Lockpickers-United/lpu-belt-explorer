@@ -18,7 +18,7 @@ export default function VoteForm({entry, vote, handleActive, owner}) {
     const {profile} = useContext(DBContext)
     const {accessInfo} = useAccess()
 
-    const hasLock = profile?.recordedLocks.includes(entry.id)
+    const hasLock = profile?.recordedLocks?.includes(entry.id)
 
     const url = `${apiServerUrl}/api/v1/locks/${entry.id}/videos`
     const response = useGetRequest({user, url, enabled: hasLock && accessInfo.features.scorecardVideos})

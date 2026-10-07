@@ -1,18 +1,22 @@
 import React, {useContext} from 'react'
 import DBContext from '../app/DBContext'
 import {classificationFilterFields} from '../data/filterFields'
-import {DataProvider} from './ClassificationDataProvider.jsx'
 import {FilterProvider} from '../context/FilterContext'
+import {ClassificationProvider} from '../app/ClassificationContext.jsx'
+import {ClassificationDataProvider} from './ClassificationDataProvider'
 import ClassificationMain from './ClassificationMain'
+import allEntries from '../data/data.json'
 
 export default function ClassificationRoute() {
-    const {lockCollection} = useContext(DBContext)
+    const {profile} = useContext(DBContext)
 
     return (
         <FilterProvider filterFields={classificationFilterFields}>
-            <DataProvider profile={lockCollection}>
-                <ClassificationMain />
-            </DataProvider>
+            <ClassificationProvider>
+                <ClassificationDataProvider allEntries={allEntries} profile={profile}>
+                    <ClassificationMain/>
+                </ClassificationDataProvider>
+            </ClassificationProvider>
         </FilterProvider>
     )
 }

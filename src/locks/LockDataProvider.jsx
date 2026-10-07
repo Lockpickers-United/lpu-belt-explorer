@@ -15,6 +15,8 @@ import entryName from '../entries/entryName'
 import {getLockSortComparator} from './lockSortComparators'
 import sampleData from '../data/classification-samples.json'
 
+// TODO: need to get classification flag from JSON
+
 export function DataProvider({children, allEntries, profile}) {
 
     const {filters: allFilters, activeFilterGroups} = useContext(FilterContext)

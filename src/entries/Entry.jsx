@@ -316,14 +316,9 @@ function Entry({entry, expanded, onExpand, isClassification, scorecardId}) {
                                             }/>
                             }
 
-                            <FieldValue name='For sale'
-                                        style={{marginLeft: 15}}
-                                        value={
-                                            <OpenLinkToLockbazaarButton
-                                                entry={entry}
-                                                buttonType={'text'}/>
-                                        }/>
-
+                            <OpenLinkToLockbazaarButton
+                                entry={entry}
+                                buttonType={'text'}/>
 
                         </div>
                     </AccordionDetails>

@@ -14,10 +14,12 @@ import Link from '@mui/material/Link'
 
 function OpenLinkToLockbazaarButton({entry, buttonType = 'text', nameType}) {
     const {lockbazzarAvailable} = useContext(DataContext)
+    if (!lockbazzarAvailable) return null
+
     const [dialogOpen, setDialogOpen] = useState(false)
     const [showDialog, setShowDialog] = useLocalStorage('showLpulocksDialog', true)
 
-    const hasListings = lockbazzarAvailable(entry.id)
+    const hasListings = lockbazzarAvailable && lockbazzarAvailable(entry.id)
 
     const toggleDialog = useCallback(() => {
         setDialogOpen(!dialogOpen)
@@ -32,8 +34,7 @@ function OpenLinkToLockbazaarButton({entry, buttonType = 'text', nameType}) {
         const safeName = name.replace(/[\s/]/g, '_').replace(/\W/g, '')
         const link = 'https://lpulocks.com/#/lockbazaar'
         const queryString = entryId ? `?search=${entry.id}&name=${safeName}` : ''
-        const newWindow = window.open(`${link}${queryString}`, '_blank', 'noopener,noreferrer')
-        if (newWindow) newWindow.opener = null
+        window.open(`${link}${queryString}`, '_blank', 'noopener,noreferrer')
         setDialogOpen(false)
     }, [entry, nameType])
 
@@ -45,11 +46,11 @@ function OpenLinkToLockbazaarButton({entry, buttonType = 'text', nameType}) {
         }
     }, [entry.id, hasListings, openInNewTab, showDialog, toggleDialog])
 
-
     const buttonColor = hasListings ? '#38b9f6' : '#777'
 
     return (
-        <React.Fragment>
+        <div style={{color: '#777', fontSize: '0.9rem', marginBottom: 8}}>
+            For sale<br/>
             {buttonType === 'icon'
                 ? <Tooltip title='lock-bazaar listings available' arrow disableFocusListener>
                     <IconButton onClick={toggleDialog} style={{marginRight: 20, color: buttonColor}}>
@@ -140,7 +141,7 @@ function OpenLinkToLockbazaarButton({entry, buttonType = 'text', nameType}) {
                     </div>
                 }
             </Dialog>
-        </React.Fragment>
+        </div>
     )
 }
 

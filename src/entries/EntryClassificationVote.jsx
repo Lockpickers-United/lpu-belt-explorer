@@ -14,7 +14,7 @@ export default function EntryClassificationVote({entry, isClassification}) {
     const userVote = useMemo(() => entry.voteEntries?.find(vote => vote.userId === user.uid) || {}, [entry.voteEntries, user.uid])
     const otherVotes = useMemo(() => {
         return entry.voteEntries?.filter(vote => vote.userId !== user.uid).sort((a, b) => {
-            return beltSort(a.votedBelt, b.votedBelt) || dayjs(a.updatedAt).valueOf() - dayjs(b.updatedAt).valueOf()
+            return beltSort(a.belt, b.belt) || dayjs(a.updatedAt).valueOf() - dayjs(b.updatedAt).valueOf()
         })
     }, [entry.voteEntries, user.uid])
 

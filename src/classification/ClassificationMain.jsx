@@ -1,6 +1,6 @@
 import React, {useContext} from 'react'
 import useWindowSize from '../util/useWindowSize.jsx'
-import DataContext from '../locks/LockDataProvider.jsx'
+import ClassificationContext from '../app/ClassificationContext.jsx'
 import SearchBox from '../nav/SearchBox.jsx'
 import ViewFilterButtons from '../filters/ViewFilterButtons.jsx'
 import {classificationSortFields} from '../data/sortFields'
@@ -12,7 +12,7 @@ import ClassificationEntries from './ClassificationEntries.jsx'
 export default function ClassificationMain() {
     usePageTitle('Classification')
 
-    const {visibleEntries = [], profile} = useContext(DataContext)
+    const {visibleEntries = [], profile} = useContext(ClassificationContext)
 
     const {isMobile} = useWindowSize()
 
@@ -20,8 +20,8 @@ export default function ClassificationMain() {
         <React.Fragment>
             <SearchBox label='Locks' extraFilters={[{key: 'tab', value: 'search'}]} keepOpen={false}
                        entryCount={visibleEntries.length}/>
-            <ViewFilterButtons sortValues={classificationSortFields} advancedEnabled={true}
-                               extraFilters={[]} entryType='Project'
+            <ViewFilterButtons sortValues={classificationSortFields} visibleEntries={visibleEntries}
+                               advancedEnabled={true} extraFilters={[]} entryType='Lock'
                                compactMode={false} resetAll={true} expandAll={false}/>
             {!isMobile && <div style={{flexGrow: 1, minWidth: '10px'}}/>}
         </React.Fragment>

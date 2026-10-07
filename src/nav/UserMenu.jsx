@@ -11,7 +11,6 @@ import LockOpenOutlinedIcon from '@mui/icons-material/LockOpenOutlined'
 import SavingsOutlinedIcon from '@mui/icons-material/SavingsOutlined'
 import LogoutIcon from '@mui/icons-material/Logout'
 import LibraryBooksIcon from '@mui/icons-material/LibraryBooks'
-import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings'
 import BiotechIcon from '@mui/icons-material/Biotech'
 import AvTimerIcon from '@mui/icons-material/AvTimer'
 import EditIcon from '@mui/icons-material/Edit'
@@ -23,8 +22,8 @@ import SignInButton from '../auth/SignInButton'
 import AuthContext from '../app/AuthContext'
 import DBContext from '../app/DBContext'
 import {useNavigate} from 'react-router-dom'
-import SportsMartialArtsIcon from '@mui/icons-material/SportsMartialArts'
 import {useAccess} from '../app/AccessContext.jsx'
+import BoltIcon from '@mui/icons-material/Bolt'
 
 function UserMenu() {
     const navigate = useNavigate()
@@ -108,7 +107,9 @@ function UserMenu() {
                         {accessInfo.roles.admin &&
                             <MenuItem onClick={() => toggleRoleEnabled('admin')} style={{fontStyle: 'italic'}}>
                                 <ListItemIcon>
-                                    <AdminPanelSettingsIcon color={accessInfo.enabledRoles.admin ? 'success' : 'default'}/>
+                                    <BoltIcon
+                                        color={accessInfo.enabledRoles.admin ? 'success' : 'default'}
+                                    />
                                 </ListItemIcon>
                                 {accessInfo.enabledRoles.admin ?
                                     <ListItemText>Disable Admin</ListItemText>
