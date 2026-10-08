@@ -23,7 +23,7 @@ import validate from './validate.js'
 import entryName from '../src/entries/entryName.js'
 import {saveLockStats} from './saveLockStats.js'
 import {setDeepUnique, setDeepPush} from '../src/util/setDeep.js'
-import flickrReport from '../src/data/flickr-replacement-unique-ids.json' with {type:'json'}
+import flickrReport from '../src/data/flickr-replacement-unique-ids.json' with {type: 'json'}
 
 const importRaflData = false
 
@@ -121,7 +121,7 @@ const jsonData = mainData
             modelNum,
             popularityIndex,
             scorecardCount,
-            views: popularityIndex,
+            views: popularityIndex
         }
 
         // Clean up empty values to reduce payload size
@@ -169,15 +169,38 @@ let changedEntries = 0
 jsonData.forEach(entry => {
     const name = entryName(entry, 'short').trim()
     const previousEntry = originalData.find(e => e.id === entry.id)
+
     if (!previousEntry && !historicalData[entry.id]) {
-        historicalData[entry.id] = {...entry, name, dateAdded: dayjs().toISOString()}
+
+        // new entry
+        historicalData[entry.id] = {
+            ...entry,
+            name,
+            currentBeltDate: dayjs().toISOString(),
+            dateAdded: dayjs().toISOString()
+        }
         changedEntries++
+
     } else if (historicalData[entry.id]) {
+
+        // existing entry
         delete historicalData[entry.id].dateDeleted
-        historicalData[entry.id] = {...historicalData[entry.id], ...entry, name}
+
+        if (previousEntry?.belt !== entry.belt) {
+            entry.currentBeltDate = dayjs().toISOString()
+        }
+
+        historicalData[entry.id] = {
+            ...historicalData[entry.id],
+            ...entry,
+            name,
+        }
     }
+
     entry.dateAdded = historicalData[entry.id].dateAdded
+
 })
+
 originalData.forEach(entry => {
     const currentEntry = jsonData.find(e => e.id === entry.id)
     if (!currentEntry) {

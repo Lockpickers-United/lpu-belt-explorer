@@ -155,7 +155,7 @@ function Entry({entry, expanded, onExpand, isClassification, scorecardId}) {
                     }
                 </div>
 
-                {(entry.lockingMechanisms?.length > 0 || entry.currentVotes?.length) &&
+                {(entry.lockingMechanisms?.length > 0 || entry.currentVotes?.length > 0) &&
                     <div style={{margin: '0px 0px 0px 0px', flexGrow: 1, flexDirection: 'row'}}>
                         {isClassification && entry.currentVotes?.length > 0 &&
                             <div style={{
