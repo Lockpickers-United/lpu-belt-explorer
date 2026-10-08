@@ -3,9 +3,11 @@ import belts, {beltSort} from '../data/belts'
 import dayjs from 'dayjs'
 import AuthContext from '../app/AuthContext.jsx'
 import Tooltip from '@mui/material/Tooltip'
+import useWindowSize from '../util/useWindowSize.jsx'
 
 export default function DisplayClassificationVotes({votes, style = {}}) {
     const {user} = useContext(AuthContext)
+    const {isMobile} = useWindowSize()
 
     if (!votes?.length) return null
 
@@ -16,26 +18,39 @@ export default function DisplayClassificationVotes({votes, style = {}}) {
     return (
         <div style={{display: 'flex', flexDirection: 'row', gap: 2, flexWrap: 'wrap', flexGrow: 1, ...style}}>
             {sortedVotes.map((vote) => {
-                const blackLevel = vote.votedBelt.toLowerCase().match(/black (\d)/)
-                    ? vote.votedBelt.toLowerCase().match(/black (\d)/)[1]
+                const num = vote.votedBelt.toLowerCase().match(/black (\d)/)
+                const blackLevel = num && num[1] > 1
+                    ? num[1]
                     : null
+                const displayName = !isMobile
+                    //? vote.displayName.substring(0, 1).toUpperCase() + vote.displayName.substring(1, 3).toLowerCase()
+                    ? undefined
+                    : undefined
+
+                const size = !isMobile ? 28 : 24
+
                 return (
                     <Tooltip key={vote.id} title={vote.displayName}>
                         <div style={{
-                            height: 32, width: 32, padding: 2,
+                            position: 'relative',
+                            height: size, width: size, padding: 2,
                             color: '#ccc', lineHeight: '0.85rem',
                             backgroundColor: belts[vote.votedBelt].color,
                             border: vote.userId === user.uid ? '1px solid #999' : '1px solid #222'
                         }}>
-                            <div style={{
-                                color: '#aaa',
-                                fontSize: '0.85rem',
+                            {displayName &&
+                                <div style={{
+                                color: '#999',
+                                fontSize: '0.8rem',
                                 width: '100%'
-                            }}>{vote.displayName.substring(0, 1).toUpperCase()}{vote.displayName.substring(1, 3).toLowerCase()}</div>
+                            }}>{displayName}</div>
+                            }
                             <div style={{
-                                color: '#ccc',
+                                color: '#ddd',
+                                position: 'absolute',
+                                bottom: 2,
+                                right: 4,
                                 fontSize: '0.7rem',
-                                width: '100%',
                                 textAlign: 'right'
                             }}>{blackLevel}</div>
                         </div>

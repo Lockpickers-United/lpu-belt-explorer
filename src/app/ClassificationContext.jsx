@@ -68,7 +68,9 @@ export function ClassificationProvider({children}) {
         const publishDateValues = (actionsByEntry.get(entry.id) ?? [])
             .filter(action => action.status === 'Published')
             .map(action => dayjs(action.updatedAt).valueOf())
-        return dayjs(Math.max(...publishDateValues, dayjs(entry.currentBeltDate).valueOf()))
+        const currentBeltDate = entry.currentBeltDate ? dayjs(entry.currentBeltDate) : null
+        const beltDateValue = currentBeltDate?.isValid() ? currentBeltDate.valueOf() : 0
+        return dayjs(Math.max(0, ...publishDateValues, beltDateValue))
     }, [actionsByEntry])
 
     const getAdminAction = useCallback((entry) => {
@@ -113,11 +115,9 @@ export function ClassificationProvider({children}) {
     }, [getCurrentVotes, getAdminAction])
 
     const isActive = useCallback((entry) => {
-        //return entry.belt === 'Unranked' || getAdminActionStatus(entry) === 'Re-opened'
-
-        return getCurrentVotes(entry).length > 0
-
-    }, [getCurrentVotes])
+        return entry.belt === 'Unranked' ||
+            ['Re-opened', 'Pending', 'Staged', 'Has Votes'].includes(getAdminActionStatus(entry))
+    }, [getAdminActionStatus])
 
 
     const value = useMemo(() => ({

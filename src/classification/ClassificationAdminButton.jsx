@@ -12,7 +12,7 @@ export default function ClassificationAdminButton({entry, handleToggle, style, f
     const isClassification = useMatches().some(match => match.handle?.route === 'classification')
     const {getAdminActionStatus} = useContext(ClassificationContext)
 
-    if (!accessInfo?.features?.classificationAdmin) return null
+    if (!accessInfo?.features?.classificationVote) return null
     if (!isClassification) return null
 
     const status = getAdminActionStatus(entry) ?? 'No Votes'
@@ -41,8 +41,10 @@ export default function ClassificationAdminButton({entry, handleToggle, style, f
             </Tooltip>
         )
         : (
-            <IconButton onClick={handleToggle} disabled style={{...buttonStyle, ...style}}>
-                <Icon style={{color, fontSize}}/>
-            </IconButton>
+            <Tooltip title={Legend} arrow disableFocusListener slotProps={{tooltip: {sx: {backgroundColor: '#333'}}}}>
+                <IconButton style={{...buttonStyle, ...style}}>
+                    <Icon style={{color, fontSize}}/>
+                </IconButton>
+            </Tooltip>
         )
 }

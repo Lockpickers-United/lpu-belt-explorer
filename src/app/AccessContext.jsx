@@ -7,8 +7,8 @@ const AccessContext = React.createContext(undefined)
 
 const roleLevels = {
     admin: 100,
+    classificationAdmin: 95,
     lpuMod: 90,
-    classificationAdmin: 85,
     classificationTeam: 60,
     qaUser: 20
 }

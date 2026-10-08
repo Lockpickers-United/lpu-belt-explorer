@@ -22,15 +22,18 @@ const _allClaims = {
     raflAdmin: true,
     qaUser: true,
     lpuMod: true,
-    dataAdmin: true    // can write to firebase: data-cache
+    dataAdmin: true,    // can write to firebase: data-cache
+    classificationAdmin: true,
+    classificationTeam: true,
 }
-//const newClaims = {raflAdmin:true, dataAdmin:true}
-const newClaims = {admin: true}
-const removeClaims = []
+//const newClaims = {raflAdmin:true, dataAdmin:true, admin: true}
+const newClaims = {}
+const removeClaims = ['lpuMod']
 
 const users = [
-    {uid: 'Mwbvdkq1QtWu2zLwEaj3imULSry1', name: 'decoder'},
+    {uid: 'BJyWOIOsqmRDkgHZBqIEGbGnVSA3', name: 'tonysansan'},
 ]
+
 
 const _allUsers = [
     {uid: 'GGplAdctTfVDLVvYsfIADJmfp8f2', name: 'mgsecure'},
@@ -46,6 +49,9 @@ const _allUsers = [
     {uid: 'vOi8rfTRluYlcVizuVvX9PWFJdn2', name: 'Dynamic'},
     {uid: 'XKPQaAR525XV2JsqGn12eEKwxD62', name: 'dnd'},
     {uid: 'f2yySWbxUBXF8k3HgorYhrm76gx2', name: 'Rein'},
+    {uid: '8PKfUHTiafgObsQQr162dQRlBCo1', name: 'GravityKarma'},
+    {uid: 'pzSak8xusHdeNlD0JmTru5kMrww2', name: 'Sidepicks'},
+
 ]
 
 async function updateCustomClaimsForUsers() {
@@ -61,7 +67,7 @@ async function updateCustomClaimsForUsers() {
             if (WRITE_TO_DB) await getAuth().setCustomUserClaims(uid, updatedClaims)
 
             const ref = db.doc(`/user-claims-info/${uid}`)
-            await ref.set({...updatedClaims, name})
+            if (WRITE_TO_DB) await ref.set({...updatedClaims, name})
 
             console.log(`${WRITE_TO_DB ? 'Updated' : 'WRITE_TO_DB is off, not saving'} custom claims for user ${uid} (${userRecord.displayName})`, updatedClaims)
         } catch (error) {

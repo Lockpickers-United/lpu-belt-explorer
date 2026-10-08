@@ -13,6 +13,7 @@ import dayjs from 'dayjs'
 import ExportButtonGeneric from '../misc/ExportButtonGeneric.jsx'
 import Button from '@mui/material/Button'
 import ClassificationToolbar from './ClassificationToolbar.jsx'
+import Tooltip from '@mui/material/Tooltip'
 
 export default function ChangelogMain() {
     usePageTitle('Changelog')
@@ -35,8 +36,6 @@ export default function ChangelogMain() {
         }
         return acc
     }, {})
-
-    console.log('groupedEntries', groupedEntries)
 
     const sections = ['New Additions', 'Upgrades', 'Downgrades', 'Unchanged']
 
@@ -76,8 +75,6 @@ export default function ChangelogMain() {
         }
         return acc
     }, [])
-    console.log('rows', rows)
-
 
     const exportData = useMemo(() => {
         const csvHeaders = [
@@ -108,8 +105,10 @@ export default function ChangelogMain() {
         <div style={{display: 'flex', marginTop: 6, alignItems: 'center', marginRight: 24}}>
             <div style={{flexGrow: 1, minWidth: !isMobile ? 10 : 0}}/>
             <ExportButtonGeneric exportData={exportData} clipboardContent={clipboardText}/>
-            <Button variant='contained' color='success' size='small'
+            <Tooltip title={'Publish coming soon'} arrow disableFocusListener >
+                <Button variant='contained' color='success' size='small'
                     style={{height: 32, marginLeft: 16}}>Publish</Button>
+            </Tooltip>
         </div>
     )
 

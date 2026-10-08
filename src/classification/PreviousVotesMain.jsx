@@ -35,7 +35,7 @@ export default function PreviousVotesMain() {
             <ClassificationToolbar/>
 
             <div style={style}>
-                previous votes here soon
+                1,927 previous votes here soon
             </div>
 
 

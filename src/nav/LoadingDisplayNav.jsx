@@ -42,7 +42,7 @@ export default function LoadingDisplayNav() {
                                 marginTop: 6
                             }} role='heading' aria-label='Loading'>
                                 {(!smallWidth) &&
-                                    <div style={{whiteSpace: 'nowrap'}}>Loading</div>
+                                    <div style={{whiteSpace: 'nowrap'}}></div>
                                 }
                             </div>
                             {!isMobile && <div style={{flexGrow: 1, minWidth: '10px'}}/>}

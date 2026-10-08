@@ -93,7 +93,7 @@ describe('AccessContext', () => {
     it.each([
         ['admin', 100, {entryActionBar: true, classificationVote: true, scorecardVideos: true, manageRequests: true}],
         ['lpuMod', 90, {entryActionBar: true, classificationVote: true, scorecardVideos: true, manageRequests: false}],
-        ['classificationAdmin', 85, {entryActionBar: true, classificationVote: true, scorecardVideos: false, manageRequests: true}],
+        ['classificationAdmin', 95, {entryActionBar: true, classificationVote: true, scorecardVideos: false, manageRequests: true}],
         ['classificationTeam', 60, {entryActionBar: true, classificationVote: true, scorecardVideos: false, manageRequests: false}],
         ['qaUser', 20, {entryActionBar: false, classificationVote: false, scorecardVideos: false, manageRequests: false}]
     ])('grants the expected features for the %s claim without enabling a UI mode', (claim, level, expectedFeatures) => {

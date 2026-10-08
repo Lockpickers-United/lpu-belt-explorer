@@ -1,5 +1,5 @@
 import React, {useContext} from 'react'
-import {createMemoryRouter, RouterProvider} from 'react-router-dom'
+import {createMemoryRouter, MemoryRouter, RouterProvider} from 'react-router-dom'
 import {describe, expect, it} from 'vitest'
 import {screen, waitFor, within} from '@testing-library/react'
 import {userEvent} from '@testing-library/user-event'
@@ -23,6 +23,35 @@ function VoteCount() {
 }
 
 describe('ClassificationDataProvider', () => {
+    it('includes ranked entries with votes or staged actions in the classification views', () => {
+        let classificationData
+        function CaptureData() {
+            classificationData = useContext(DataContext)
+            return null
+        }
+
+        const rankedVoteEntry = allEntries.find(entry => entry.id === 'e2fd1519')
+        const rankedStagedEntry = allEntries.find(entry => entry.id === '18ecc45b')
+
+        renderWithProviders(
+            <MemoryRouter>
+                <FilterProvider filterFields={classificationFilterFields}>
+                    <ClassificationProvider>
+                        <ClassificationDataProvider allEntries={[rankedVoteEntry, rankedStagedEntry]}>
+                            <CaptureData/>
+                        </ClassificationDataProvider>
+                    </ClassificationProvider>
+                </FilterProvider>
+            </MemoryRouter>,
+            {auth: {user: {uid: 'test-user'}}}
+        )
+
+        expect(classificationData.visibleEntries.map(entry => entry.id)).toEqual(expect.arrayContaining([
+            rankedVoteEntry.id, rankedStagedEntry.id
+        ]))
+        expect(classificationData.visibleChangelogEntries.map(entry => entry.id)).toEqual([rankedStagedEntry.id])
+    })
+
     it('updates nested vote entries when a voter filter is applied', async () => {
         const user = userEvent.setup()
 
