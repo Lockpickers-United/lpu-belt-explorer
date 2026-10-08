@@ -34,6 +34,7 @@ export default function EntryActionBar({entry, isClassification, style = {}}) {
     const theme = useTheme()
 
     const [showFeature, setShowFeature] = useState(isClassification ? {classification: true} : {})
+
     const handleToggle = useCallback((feature) => {
         setShowFeature(current => current[feature] ? {} : {[feature]: true})
     }, [])
@@ -77,8 +78,10 @@ export default function EntryActionBar({entry, isClassification, style = {}}) {
                                 handleToggle={() => handleToggle('classificationAdmin')}/>
                         }
                         {accessInfo.features.classificationVote &&
-                            <UserClassificationButton entry={entry} isClassification={isClassification}
-                                                      handleToggle={() => handleToggle('classification')}/>
+                            <UserClassificationButton
+                                entry={entry}
+                                isClassification={isClassification}
+                                handleToggle={() => handleToggle('classification')}/>
                         }
                         {accessInfo.features.scorecardVideos &&
                             <IconButton onClick={() => handleToggle('videos')} style={{marginRight: '10px'}}>

@@ -1,4 +1,4 @@
-import React, {useContext, useMemo} from 'react'
+import React, {useContext, useMemo, useState} from 'react'
 import AuthContext from '../app/AuthContext.jsx'
 import {useAccess} from '../app/AccessContext.jsx'
 import DisplayClassificationVotes from './DisplayClassificationVotes.jsx'
@@ -8,11 +8,18 @@ import dayjs from 'dayjs'
 import useWindowSize from '../util/useWindowSize.jsx'
 import ClassificationContext from '../app/ClassificationContext.jsx'
 import BeltStripeMini from '../entries/BeltStripeMini.jsx'
+import Button from '@mui/material/Button'
+import {Collapse} from '@mui/material'
 
-export default function EntryClassificationVote({entry, isClassification}) {
+export default function EntryClassificationVote({entry, isClassification, showCurrentVotes=true}) {
     const {user} = useContext(AuthContext)
     const {accessInfo} = useAccess()
-    const {getUserVote} = useContext(ClassificationContext)
+    const {
+        getUserVote,
+        getHistoricalVotes,
+        loadHistoricalVotes,
+        historicalVotesLoaded
+    } = useContext(ClassificationContext)
     const userVote = getUserVote(entry)
 
     const otherVotes = useMemo(() => {
@@ -21,6 +28,22 @@ export default function EntryClassificationVote({entry, isClassification}) {
         })
     }, [entry.currentVotes, user.uid])
 
+    const pastVotes = historicalVotesLoaded ? getHistoricalVotes(entry.id) : null
+    const [loadingPastVotes, setLoadingPastVotes] = useState(false)
+    const [pastVotesError, setPastVotesError] = useState(false)
+
+    const loadPastVotes = async () => {
+        setLoadingPastVotes(true)
+        setPastVotesError(false)
+        try {
+            await loadHistoricalVotes()
+        } catch {
+            setPastVotesError(true)
+        } finally {
+            setLoadingPastVotes(false)
+        }
+    }
+
     const showVotes = (entry.currentVotes?.length - (userVote?.id ? 1 : 0)) > 1 && !isClassification
 
     const {isMobile} = useWindowSize()
@@ -28,10 +51,9 @@ export default function EntryClassificationVote({entry, isClassification}) {
 
     if (!accessInfo.features.classificationVote) return null
 
-
     return (
         <div style={{borderTop: '1px solid #444', padding}}>
-            {showVotes &&
+            {showVotes && showCurrentVotes &&
                 <div style={{
                     display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center',
                     fontSize: '0.9rem', lineHeight: '1.8rem'
@@ -51,7 +73,7 @@ export default function EntryClassificationVote({entry, isClassification}) {
 
             {entry?.previousVotes?.length > 0 &&
                 <div style={{marginTop: 24}}>
-                    <div style={{fontWeight: 600, position: 'relative', paddingLeft: 24 }}>
+                    <div style={{fontWeight: 600, position: 'relative', paddingLeft: 24}}>
                         <BeltStripeMini value={entry?.belt} width={16} offset={0}
                                         style={{position: 'absolute', top: 0, left: 0, bottom: 0}}/>
                         PREVIOUS VOTES
@@ -63,6 +85,47 @@ export default function EntryClassificationVote({entry, isClassification}) {
                     })}
                 </div>
             }
+
+            <div style={{
+                display: 'flex',
+                flexDirection: 'column',
+                marginTop: 24,
+                width: '100%',
+                justifyContent: 'center'
+            }}>
+                {!historicalVotesLoaded &&
+                    <Button onClick={loadPastVotes} disabled={loadingPastVotes}>
+                        {loadingPastVotes ? 'LOADING HISTORICAL VOTES...' : 'CHECK FOR HISTORICAL VOTES'}
+                    </Button>
+                }
+
+                {pastVotesError && !historicalVotesLoaded &&
+                    <div role='alert'
+                         style={{width: '100%', textAlign: 'center', fontStyle: 'italic', fontSize: '0.9rem'}}>
+                        Could not load historical votes. Please try again.
+                    </div>
+                }
+
+                {pastVotes?.length === 0 &&
+                    <div style={{width: '100%', textAlign: 'center', fontStyle: 'italic', fontSize: '0.9rem'}}>
+                        No historical votes found
+                    </div>
+                }
+
+                <Collapse in={pastVotes?.length > 0} style={{width: '100%'}}>
+                    <div style={{fontWeight: 600, position: 'relative', paddingLeft: 24}}>
+                        <BeltStripeMini value={entry?.belt} width={16} offset={0}
+                                        style={{position: 'absolute', top: 0, left: 0, bottom: 0}}/>
+                        HISTORICAL VOTES
+                    </div>
+                    {pastVotes?.map(vote => {
+                        return <div key={vote.id} style={{width: '100%'}}>
+                            <VoteDisplay entry={entry} vote={vote} previous={true} owner={vote.userId === user.uid}/>
+                        </div>
+                    })}
+                </Collapse>
+
+            </div>
 
         </div>
     )

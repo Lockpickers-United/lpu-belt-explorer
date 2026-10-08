@@ -11,6 +11,7 @@ import {danBelts} from '../data/belts.js'
 import BeltStripeMini from '../entries/BeltStripeMini.jsx'
 import Button from '@mui/material/Button'
 import {Collapse} from '@mui/material'
+import EntryClassificationVote from './EntryClassificationVote.jsx'
 
 const statuses = ['Pending', 'Staged', 'Published', 'Re-opened', 'Settled']
 const actions = ['Belt Change', 'Sameline', 'Delete']
@@ -223,6 +224,9 @@ function AdminPreview({entry, handleToggle}) {
 
                 </div>
             </div>
+
+            <EntryClassificationVote entry={entry} showCurrentVotes={false}/>
+
         </div>
     )
 }

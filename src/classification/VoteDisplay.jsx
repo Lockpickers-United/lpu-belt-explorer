@@ -11,10 +11,15 @@ export default function VoteDisplay({vote = {}, owner, entry, previous = false})
     return (
         <div style={{marginBottom: owner ? 24 : 8}}>
             <Collapse in={!vote?.id && !editing}>
-                <div style={{width: '100%', display: 'flex', justifyContent: 'center', marginTop: 16}}>
-                    <Button onClick={() => handleActive('voteForm')} variant='text' size='small'
-                            style={{color: '#ddd'}}>Add Your Belt Ranking Vote</Button>
-                </div>
+                {entry.classificationStatus !== 'Settled'
+                    ? < div style={{width: '100%', display: 'flex', justifyContent: 'center', marginTop: 16}}>
+                        <Button onClick={() => handleActive('voteForm')} variant='text' size='small'
+                                style={{color: '#ddd'}}>Add Your Belt Ranking Vote</Button>
+                    </div>
+                    : <div style={{width: '100%', display: 'flex', justifyContent: 'center', marginTop: 24, fontWeight: 600}}>
+                        Not open to votes at this time.
+                    </div>
+                }
             </Collapse>
             <Collapse in={Boolean(vote?.id) && !editing}>
                 <VoteView vote={vote} handleActive={handleActive} owner={owner} previous={previous}/>

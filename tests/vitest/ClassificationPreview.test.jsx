@@ -1,9 +1,10 @@
 import React from 'react'
 import {describe, expect, it} from 'vitest'
-import {render, screen} from '@testing-library/react'
+import {screen} from '@testing-library/react'
 import {userEvent} from '@testing-library/user-event'
-import {renderWithRouter} from '../../src/test/render.jsx'
+import {defaultTestContextValues, renderWithProviders, renderWithRouter} from '../../src/test/render.jsx'
 import AccessContext from '../../src/app/AccessContext.jsx'
+import {ClassificationProvider} from '../../src/app/ClassificationContext.jsx'
 import VoteDisplay from '../../src/classification/VoteDisplay.jsx'
 import EntryClassificationAdmin from '../../src/classification/EntryClassificationAdmin.jsx'
 
@@ -24,19 +25,27 @@ describe('classification previews', () => {
 
     it('can reveal the admin preview after access becomes available', () => {
         const entry = {id: 'test-lock', currentVotes: [], previousVotes: []}
-        const access = allowed => ({accessInfo: {roles: {classificationAdmin: allowed}}})
-        const {rerender} = render(
-            <AccessContext.Provider value={access(false)}>
-                <EntryClassificationAdmin entry={entry}/>
-            </AccessContext.Provider>
+        const baseAccessInfo = defaultTestContextValues.access.accessInfo
+        const access = allowed => ({
+            accessInfo: {
+                ...baseAccessInfo,
+                roles: {...baseAccessInfo.roles, classificationAdmin: allowed},
+                features: {...baseAccessInfo.features, classificationVote: allowed}
+            }
+        })
+        const adminPreview = allowed => (
+            <ClassificationProvider>
+                <AccessContext.Provider value={access(allowed)}>
+                    <EntryClassificationAdmin entry={entry}/>
+                </AccessContext.Provider>
+            </ClassificationProvider>
         )
+        const {rerender} = renderWithProviders(adminPreview(false), {
+            auth: {user: {uid: 'test-user'}}
+        })
 
         expect(screen.queryByText('Preview only — admin changes are unavailable.')).not.toBeInTheDocument()
-        rerender(
-            <AccessContext.Provider value={access(true)}>
-                <EntryClassificationAdmin entry={entry}/>
-            </AccessContext.Provider>
-        )
+        rerender(adminPreview(true))
 
         expect(screen.getByText('Preview only — admin changes are unavailable.')).toBeInTheDocument()
         expect(screen.getByRole('button', {name: 'Save'})).toBeDisabled()

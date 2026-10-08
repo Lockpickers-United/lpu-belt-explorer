@@ -1,4 +1,4 @@
-import React, {useCallback, useContext, useMemo} from 'react'
+import React, {useCallback, useContext, useMemo, useSyncExternalStore} from 'react'
 import classificationVotes from '../data/classification-samples.json'
 import classificationAdminActions from '../data/classification-samples-admin.json'
 import dayjs from 'dayjs'
@@ -18,6 +18,35 @@ function groupByEntry(records) {
     return grouped
 }
 
+let historicalVotesByEntry = null
+let historicalVotesPromise
+const historicalVoteListeners = new Set()
+
+function subscribeToHistoricalVotes(listener) {
+    historicalVoteListeners.add(listener)
+    return () => historicalVoteListeners.delete(listener)
+}
+
+function getHistoricalVotesSnapshot() {
+    return historicalVotesByEntry
+}
+
+function loadHistoricalVotes() {
+    if (!historicalVotesPromise) {
+        historicalVotesPromise = import('../data/classification-votes-historical.json')
+            .then(({default: votes}) => {
+                historicalVotesByEntry = groupByEntry(votes)
+                historicalVoteListeners.forEach(listener => listener())
+                return votes
+            })
+            .catch(error => {
+                historicalVotesPromise = null
+                throw error
+            })
+    }
+    return historicalVotesPromise
+}
+
 export function ClassificationProvider({children}) {
     const {user} = useContext(AuthContext)
 
@@ -25,6 +54,15 @@ export function ClassificationProvider({children}) {
     const allAdminActions = useMemo(() => classificationAdminActions || [], [])
     const votesByEntry = useMemo(() => groupByEntry(allVotes), [allVotes])
     const actionsByEntry = useMemo(() => groupByEntry(allAdminActions), [allAdminActions])
+    const historicalVotes = useSyncExternalStore(
+        subscribeToHistoricalVotes,
+        getHistoricalVotesSnapshot,
+        getHistoricalVotesSnapshot
+    )
+    const historicalVotesLoaded = historicalVotes !== null
+    const getHistoricalVotes = useCallback((entryId) => {
+        return historicalVotes?.get(entryId) ?? []
+    }, [historicalVotes])
 
     const getLatestMilestone = useCallback((entry) => {
         const publishDateValues = (actionsByEntry.get(entry.id) ?? [])
@@ -79,24 +117,27 @@ export function ClassificationProvider({children}) {
     }, [getAdminActionStatus])
 
 
-const value = useMemo(() => ({
-    allVotes,
-    allAdminActions,
-    loggedInUserVotes,
-    getUserVote,
-    getAdminAction,
-    getLatestMilestone,
-    getAdminActionStatus,
-    getCurrentVotes,
-    getPreviousVotes,
-    isActive
-}), [allVotes, allAdminActions, loggedInUserVotes, getUserVote, getAdminAction, getLatestMilestone, getAdminActionStatus, getCurrentVotes, getPreviousVotes, isActive])
+    const value = useMemo(() => ({
+        allVotes,
+        allAdminActions,
+        loggedInUserVotes,
+        getUserVote,
+        getAdminAction,
+        getLatestMilestone,
+        getAdminActionStatus,
+        getCurrentVotes,
+        getPreviousVotes,
+        getHistoricalVotes,
+        loadHistoricalVotes,
+        historicalVotesLoaded,
+        isActive
+    }), [allVotes, allAdminActions, loggedInUserVotes, getUserVote, getAdminAction, getLatestMilestone, getAdminActionStatus, getCurrentVotes, getPreviousVotes, getHistoricalVotes, historicalVotesLoaded, isActive])
 
-return (
-    <ClassificationContext.Provider value={value}>
-        {children}
-    </ClassificationContext.Provider>
-)
+    return (
+        <ClassificationContext.Provider value={value}>
+            {children}
+        </ClassificationContext.Provider>
+    )
 }
 
 export default ClassificationContext

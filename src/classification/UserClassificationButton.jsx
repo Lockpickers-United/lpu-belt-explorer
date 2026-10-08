@@ -5,7 +5,7 @@ import {useAccess} from '../app/AccessContext.jsx'
 import BeltIcon from '../entries/BeltIcon.jsx'
 import ClassificationContext from '../app/ClassificationContext.jsx'
 
-export default function UserClassificationButton({entry, handleToggle, isClassification}) {
+export default function UserClassificationButton({entry, handleToggle}) {
     const {accessInfo} = useAccess()
     const {getUserVote, getAdminActionStatus} = useContext(ClassificationContext)
 
@@ -25,9 +25,9 @@ export default function UserClassificationButton({entry, handleToggle, isClassif
         : 'Classification'
 
     const handleClick = useCallback(() => {
-            !isClassification && handleToggle('classification')
+            handleToggle && status !== 'Settled' && handleToggle()
         },
-        [handleToggle, isClassification])
+        [handleToggle, status])
 
     return (
         <Tooltip title={tooltipText} arrow disableFocusListener>

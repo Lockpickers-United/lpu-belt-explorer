@@ -3,19 +3,22 @@ import {sheetConfig} from '../keys/classificationSheetDetails.js'
 import {voters, votersNotOnSite} from '../keys/classificationVoters.js'
 import dayjs from 'dayjs'
 import fs from 'fs'
+import {findLastMentionedVoter} from './classificationNoteMatcher.js'
 
 const refreshData = false
 
 const CREDENTIALS_PATH = new URL('../keys/google-credentials.json', import.meta.url)
-const OUTPUT_PATH = new URL('../src/data/classification-sheet-export.json', import.meta.url)
-const DATA_PATH = new URL('../src/data/classification-samples.json', import.meta.url)
+const OUTPUT_DIR = new URL('../src/data/classification/', import.meta.url)
+const DATA_DIR = new URL('../src/data/classification/', import.meta.url)
 
 const sheetsClient = await createGoogleSheetsClient(CREDENTIALS_PATH)
 
-async function getSheetData() {
+const historicalTabs = ['1214572951', '1458208653', '2003859332', '1613106571']
+
+async function getMainSheetData(sheetId) {
     const sheet = await sheetsClient.getSheet({
         spreadsheetId: sheetConfig.spreadsheetId,
-        sheetId: sheetConfig.gid,
+        sheetId,
         comments: true,
         notes: true
     })
@@ -23,7 +26,7 @@ async function getSheetData() {
     console.log(`Found ${sheet.comments.length} comments, ${sheet.commentAnchors.length} comment anchors, and ${sheet.notes.length} cell notes`)
     console.dir(sheet, {depth: null})
 
-    fs.writeFile(OUTPUT_PATH, JSON.stringify(sheet, null, 2), function (err) {
+    fs.writeFile(new URL(`classification-sheet-export-${sheetId}.json`, OUTPUT_DIR), JSON.stringify(sheet, null, 2), function (err) {
         if (err) {
             console.error('save classification-sheet-export.json error:', err)
             return (`save classification-sheet-export.json error: ${err}`)
@@ -33,50 +36,50 @@ async function getSheetData() {
     })
 }
 
-refreshData && getSheetData()
+refreshData && getMainSheetData(historicalTabs[0])
 
-async function readData() {
-    const jsonString = fs.readFileSync(OUTPUT_PATH, 'utf8')
+
+async function readData(sheetId) {
+    const jsonString = fs.readFileSync(new URL(`classification-sheet-export-${sheetId}.json`, OUTPUT_DIR), 'utf8')
     return JSON.parse(jsonString)
 }
 
-async function processData() {
-    const sheetData = await readData()
+async function processData(sheetId) {
+    const sheetData = await readData(sheetId)
 
     const rowData = sheetData.rows.reduce((acc, row) => {
-        const [description, entryId, ranking, sheetLink, type, ...voteRanks] = row.cells
+        const [_changeDate, make, model, version, entryId, _ranking, nameLink, _type, ...voteRanks] = row.cells
         const allRowNotes = sheetData.notes.filter(note => note.sheetRow === row.sheetRow)
 
         const knownVoters = [...voters, ...votersNotOnSite]
         const votes = voteRanks.map((vote, index) => {
-            const note = allRowNotes.find(note => note.columnIndex === index + 5)
+            const note = allRowNotes.find(note => note.columnIndex === index + 8)
             const votedBelt = beltNames[vote.toLowerCase()] || vote
-            const noteMentions = knownVoters.reduce((acc, author) => {
-                if ([author.displayName, ...author.aliases].some(name => note?.note?.toLowerCase().includes(name.trim().toLowerCase()))) {
-                    acc.push(author)
-                }
-                return acc
-            }, [])
+            const lastAuthor = findLastMentionedVoter(note?.note, knownVoters)
+            const userId = lastAuthor?.userId && lastAuthor?.userId !== 'unknown'
+                ? lastAuthor?.userId
+                : 'u_' + genHexString(8)
 
-            const userId = noteMentions?.[noteMentions.length - 1]?.userId || 'unknown'
-            const displayName = noteMentions?.map(author => author.displayName).join(' / ') || 'Unknown'
+            const displayName = lastAuthor?.displayName || 'Unknown'
 
             return {votedBelt, comment: note?.note, userId, displayName}
         })
 
-        votes.forEach(vote => {
+        const dateString = '2026-10-01T01:01:01.001Z'
+            // dayjs().toISOString()
+
+            votes.forEach((vote, index) => {
             const voteData = {
                 id: 'v_' + genHexString(8),
-                sheetRow: row.sheetRow,
-                lockname: description,
+                type: 'historicalVote',
+                //sheetRow: row.sheetRow,
+                //lockname: `${make} ${model} ${version}`,
                 entryId,
-                ranking,
-                sheetLink,
-                type,
+                //nameLink,
                 ...vote,
                 source: 'Classification Sheet',
-                createdAt: dayjs().toISOString(),
-                updatedAt: dayjs().toISOString()
+                createdAt: dayjs(dateString).add(index, 'minute'),
+                updatedAt: dayjs(dateString).add(index, 'minute'),
             }
             acc.push(voteData)
         })
@@ -99,8 +102,18 @@ async function processData() {
 
     const exportData = rowData.filter(row => row.userId && row.entryId && row.votedBelt)
     console.log('exportData', exportData.length)
+    return exportData
+}
 
-    fs.writeFile(DATA_PATH, JSON.stringify(exportData, null, 2), function (err) {
+async function processAll() {
+    const exportData = []
+
+    for (const sheetId of historicalTabs) {
+        const data = await processData(sheetId)
+        exportData.push(...data)
+    }
+
+    fs.writeFile(new URL('classification--votes-historical.json', DATA_DIR), JSON.stringify(exportData, null, 2), function (err) {
         if (err) {
             console.error('save classification-sheet-export.json error:', err)
             return (`save classification-sheet-export.json error: ${err}`)
@@ -109,9 +122,11 @@ async function processData() {
         }
     })
 
+
 }
 
-!refreshData && processData().then()
+//!refreshData && processData(historicalTabs[0]).then()
+!refreshData && processAll().then()
 
 const beltNames = {
     w: 'White',

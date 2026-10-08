@@ -29,7 +29,7 @@ export default [
     },
     {
         path: '/locks',
-        handle: { route: 'locks' },
+        handle: {route: 'locks'},
         lazy: async () => {
             const {default: LockListRoute} = await import('../locks/LockListRoute')
             return {element: <LockListRoute/>}
@@ -221,7 +221,7 @@ export default [
 
     {
         path: '/profile',
-        handle: { route: 'profile' },
+        handle: {route: 'profile'},
         lazy: async () => {
             const {default: ProfileParentRoute} = await import('../profile/ProfileParentRoute.jsx')
             return {element: <ProfileParentRoute/>}
@@ -382,17 +382,26 @@ export default [
     },
     {
         path: '/classification',
-        handle: { route: 'classification' },
+        handle: {route: 'classification'},
         lazy: async () => {
-            const {default: ClassificationRoute} = await import('../classification/ClassificationRoute.jsx')
+            const {default: ClassificationParentRoute} = await import('../classification/ClassificationParentRoute.jsx')
             return {
                 element: (
                     <RequireRoles roles={['admin', 'classificationAdmin', 'lpuMod', 'classificationTeam']}>
-                        <ClassificationRoute/>
+                        <ClassificationParentRoute/>
                     </RequireRoles>
                 )
             }
-        }
+        },
+        children: [
+            {
+                path: '/classification',
+                lazy: async () => {
+                    const {default: ClassificationRoute} = await import('../classification/ClassificationRoute.jsx')
+                    return {element: <ClassificationRoute/>}
+                }
+            }
+        ]
     },
     {
         path: '/rankingrequests',
