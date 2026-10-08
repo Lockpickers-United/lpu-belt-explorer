@@ -10,7 +10,9 @@ import {useAccess} from '../app/AccessContext.jsx'
 export default function VoteView({vote = {}, handleActive, owner, previous}) {
     const {accessInfo} = useAccess()
 
-    const dateString = vote.updatedAt ? ` (${new Date(vote.updatedAt).toLocaleDateString()})` : ''
+    const dateString = vote.updatedAt && vote.type !== 'historicalVote'
+        ? ` (${new Date(vote.updatedAt).toLocaleDateString()})`
+        : ''
 
     const description = owner ? 'My Vote: ' : `${vote.displayName}: `
     const buttonColor = owner ? '#ddd' : '#e16936'

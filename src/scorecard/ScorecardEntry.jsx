@@ -292,7 +292,7 @@ function ScorecardEntry({owner, activity, expanded, onExpand, merged}) {
                     }
 
                     <EvidenceForm activity={activity} handleUpdate={() => {
-                    }}/>
+                    }} handleCancel={handleChange}/>
                 </AccordionDetails>
             }
             {entry &&

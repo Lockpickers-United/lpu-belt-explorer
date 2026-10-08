@@ -27,7 +27,7 @@ import ViewPageDrawer from '../viewPage/ViewPageDrawer.jsx'
 import sanitizeValues from '../util/sanitizeValues'
 
 
-export default function EvidenceForm({activity, lockId, handleUpdate, addLock, addProject, addAward, source}) {
+export default function EvidenceForm({activity, lockId, handleUpdate, handleCancel, addLock, addProject, addAward, source}) {
     const {userId} = useParams()
     const {user} = useContext(AuthContext)
     const {accessInfo} = useAccess()
@@ -159,11 +159,11 @@ export default function EvidenceForm({activity, lockId, handleUpdate, addLock, a
             setEntryNotes(entryNotes)
 
             setUpdated(false)
-            handleUpdate()
+            handleCancel()
         } else {
-            handleUpdate()
+            handleCancel()
         }
-    }, [activity, entryNotes, handleUpdate, updated])
+    }, [activity, entryNotes, handleCancel, updated])
 
     const processURL = useCallback(event => {
         const {value} = event.target

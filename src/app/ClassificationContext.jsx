@@ -64,6 +64,10 @@ export function ClassificationProvider({children}) {
         return historicalVotes?.get(entryId) ?? []
     }, [historicalVotes])
 
+    // TODO : fix date logic
+    // set default date in code
+    // update on change during import
+
     const getLatestMilestone = useCallback((entry) => {
         const publishDateValues = (actionsByEntry.get(entry.id) ?? [])
             .filter(action => action.status === 'Published')
