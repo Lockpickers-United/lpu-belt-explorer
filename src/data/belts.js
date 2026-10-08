@@ -54,7 +54,7 @@ const belts = {
     'Dan Points 10': {color: '#548fb3', lineColor: '#548fb3', danPoints: 10},
     'Dan Points 25': {color: '#548fb3', lineColor: '#548fb3', danPoints: 25},
     'Dan Points 30': {color: '#548fb3', lineColor: '#548fb3', danPoints: 30},
-    Unclassified: {color: '#333', lineColor: '#aaa', danPoints: 0},
+    Unclassified: {color: '#333', lineColor: '#aaa', danPoints: 0}
 }
 
 export default belts
@@ -143,7 +143,7 @@ export const beltRoles = [
     '17th Dan',
     '18th Dan',
     '19th Dan',
-    '20th Dan',
+    '20th Dan'
 ]
 
 export const beltSort = (a, b) => {
@@ -170,7 +170,7 @@ export const projectTiers = {
     T10: {danPoints: 5},
     T11: {danPoints: 10},
     T12: {danPoints: 25},
-    T13: {danPoints: 30},
+    T13: {danPoints: 30}
 }
 
 export const modifierMultiplier = {
@@ -186,6 +186,13 @@ export function highestBelt(belts) {
     return belts.reduce((highest, belt) => {
         return danBeltsFull.indexOf(highest) > danBeltsFull.indexOf(belt) ? highest : belt
     }, undefined)
+}
+
+export function compareBelts(beltA, beltB) {
+    if (beltA === beltB) return 0
+    return danBeltsFull.indexOf(beltA) > danBeltsFull.indexOf(beltB)
+        ? 1
+        : -1
 }
 
 ////

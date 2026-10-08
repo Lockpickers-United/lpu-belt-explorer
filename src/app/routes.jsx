@@ -43,6 +43,43 @@ export default [
         }
     },
     {
+        path: '/classification',
+        handle: {route: 'classification'},
+        lazy: async () => {
+            const {default: ClassificationParentRoute} = await import('../classification/ClassificationParentRoute.jsx')
+            return {
+                element: (
+                    <RequireRoles roles={['admin', 'classificationAdmin', 'lpuMod', 'classificationTeam']}>
+                        <ClassificationParentRoute/>
+                    </RequireRoles>
+                )
+            }
+        },
+        children: [
+            {
+                path: '/classification',
+                lazy: async () => {
+                    const {default: ClassificationRoute} = await import('../classification/ClassificationRoute.jsx')
+                    return {element: <ClassificationRoute/>}
+                }
+            },
+            {
+                path: '/classification/previous',
+                lazy: async () => {
+                    const {default: PreviousVotesRoute} = await import('../classification/PreviousVotesRoute.jsx')
+                    return {element: <PreviousVotesRoute/>}
+                }
+            },
+            {
+                path: '/classification/changelog',
+                lazy: async () => {
+                    const {default: ChangelogRoute} = await import('../classification/ChangelogRoute.jsx')
+                    return {element: <ChangelogRoute/>}
+                }
+            },
+        ]
+    },
+    {
         path: '/scorecard/info',
         lazy: async () => {
             const {default: ScorecardInfoRoute} = await import('../scorecard/ScorecardInfoRoute.jsx')
@@ -218,7 +255,6 @@ export default [
             }
         ]
     },
-
     {
         path: '/profile',
         handle: {route: 'profile'},
@@ -376,29 +412,6 @@ export default [
                 lazy: async () => {
                     const {default: BeltRequestSubmitRoute} = await import('../beltRequests/requestSubmit/BeltRequestSubmitRoute.jsx')
                     return {element: <BeltRequestSubmitRoute/>}
-                }
-            }
-        ]
-    },
-    {
-        path: '/classification',
-        handle: {route: 'classification'},
-        lazy: async () => {
-            const {default: ClassificationParentRoute} = await import('../classification/ClassificationParentRoute.jsx')
-            return {
-                element: (
-                    <RequireRoles roles={['admin', 'classificationAdmin', 'lpuMod', 'classificationTeam']}>
-                        <ClassificationParentRoute/>
-                    </RequireRoles>
-                )
-            }
-        },
-        children: [
-            {
-                path: '/classification',
-                lazy: async () => {
-                    const {default: ClassificationRoute} = await import('../classification/ClassificationRoute.jsx')
-                    return {element: <ClassificationRoute/>}
                 }
             }
         ]

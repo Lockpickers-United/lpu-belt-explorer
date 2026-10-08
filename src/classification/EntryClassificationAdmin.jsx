@@ -224,6 +224,7 @@ function AdminPreview({entry, handleToggle}) {
 
                 </div>
             </div>
+            <div style={{marginTop: 24}}/>
 
             <EntryClassificationVote entry={entry} showCurrentVotes={false}/>
 

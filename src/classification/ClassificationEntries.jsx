@@ -1,4 +1,5 @@
 import React, {useState, useContext} from 'react'
+import DataContext from '../context/DataContext.jsx'
 import Entry from '../entries/Entry.jsx'
 import NoEntriesCard from '../locks/NoEntriesCard'
 import HotkeyInfoButton from '../locks/HotkeyInfoButton'
@@ -8,10 +9,9 @@ import ExportButton from '../locks/ExportButton'
 import Footer from '../nav/Footer'
 import FilterContext from '../context/FilterContext.jsx'
 import AdvancedFilters from '../filters/AdvancedFilters.jsx'
-import ClassificationContext from './ClassificationDataProvider.jsx'
 
 export default function ClassificationEntries({advancedEnabled = false}) {
-    const {visibleEntries = [], expandAll} = useContext(ClassificationContext)
+    const {visibleEntries = [], expandAll} = useContext(DataContext)
 
     const {filters, isSearch} = useContext(FilterContext)
     const [entryExpanded, setEntryExpanded] = useState(filters.id)

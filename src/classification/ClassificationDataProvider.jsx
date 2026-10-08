@@ -82,7 +82,7 @@ export function ClassificationDataProvider({children, allEntries}) {
         return searchEntriesForText(search, mappedEntries.filter(entry => entry.classificationActive))
     }, [mappedEntries, search])
 
-    const allVisibleEntries = useMemo(() => {
+    const visibleEntries = useMemo(() => {
         const filtered = filterEntriesAdvanced({
             advancedFilterGroups: activeFilterGroups(),
             entries: mappedEntries.filter(entry => entry.classificationActive)
@@ -95,7 +95,7 @@ export function ClassificationDataProvider({children, allEntries}) {
             : searched
     }, [activeFilterGroups, mappedEntries, search, sort])
 
-    const visibleEntries = allVisibleEntries
+    const visibleChangelogEntries = useMemo(() => visibleEntries.filter(entry => entry.classificationStatus === 'Staged'), [visibleEntries])
 
     const getEntryFromId = useCallback(id => {
         return mappedEntries.find(e => e.id === id)
@@ -104,11 +104,12 @@ export function ClassificationDataProvider({children, allEntries}) {
     const value = useMemo(() => ({
         mappedEntries,
         visibleEntries,
+        visibleChangelogEntries,
         searchedEntries,
         getEntryFromId,
         expandAll,
         profile
-    }), [mappedEntries, visibleEntries, searchedEntries, getEntryFromId, expandAll, profile])
+    }), [mappedEntries, visibleEntries, visibleChangelogEntries, searchedEntries, getEntryFromId, expandAll, profile])
 
     return (
         <DataContext.Provider value={value}>

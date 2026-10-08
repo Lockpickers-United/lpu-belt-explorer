@@ -113,8 +113,11 @@ export function ClassificationProvider({children}) {
     }, [getCurrentVotes, getAdminAction])
 
     const isActive = useCallback((entry) => {
-        return entry.belt === 'Unranked' || getAdminActionStatus(entry) === 'Re-opened'
-    }, [getAdminActionStatus])
+        //return entry.belt === 'Unranked' || getAdminActionStatus(entry) === 'Re-opened'
+
+        return getCurrentVotes(entry).length > 0
+
+    }, [getCurrentVotes])
 
 
     const value = useMemo(() => ({

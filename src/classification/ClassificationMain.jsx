@@ -8,6 +8,7 @@ import Nav from '../nav/Nav.jsx'
 import Tracker from '../app/Tracker.jsx'
 import usePageTitle from '../util/usePageTitle.jsx'
 import ClassificationEntries from './ClassificationEntries.jsx'
+import ClassificationToolbar from './ClassificationToolbar.jsx'
 
 export default function ClassificationMain() {
     usePageTitle('Classification')
@@ -30,6 +31,7 @@ export default function ClassificationMain() {
     return (
         <React.Fragment>
             <Nav title='Classification' extras={extras}/>
+            <ClassificationToolbar/>
 
             <ClassificationEntries advancedEnabled={true}/>
 

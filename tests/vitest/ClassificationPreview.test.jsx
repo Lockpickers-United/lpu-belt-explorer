@@ -2,6 +2,7 @@ import React from 'react'
 import {describe, expect, it} from 'vitest'
 import {screen} from '@testing-library/react'
 import {userEvent} from '@testing-library/user-event'
+import {createMemoryRouter, RouterProvider} from 'react-router-dom'
 import {defaultTestContextValues, renderWithProviders, renderWithRouter} from '../../src/test/render.jsx'
 import AccessContext from '../../src/app/AccessContext.jsx'
 import {ClassificationProvider} from '../../src/app/ClassificationContext.jsx'
@@ -33,12 +34,19 @@ describe('classification previews', () => {
                 features: {...baseAccessInfo.features, classificationVote: allowed}
             }
         })
-        const adminPreview = allowed => (
-            <ClassificationProvider>
-                <AccessContext.Provider value={access(allowed)}>
+        const router = createMemoryRouter([{
+            path: '/classification',
+            handle: {route: 'classification'},
+            element: (
+                <ClassificationProvider>
                     <EntryClassificationAdmin entry={entry}/>
-                </AccessContext.Provider>
-            </ClassificationProvider>
+                </ClassificationProvider>
+            )
+        }], {initialEntries: ['/classification']})
+        const adminPreview = allowed => (
+            <AccessContext.Provider value={access(allowed)}>
+                <RouterProvider router={router}/>
+            </AccessContext.Provider>
         )
         const {rerender} = renderWithProviders(adminPreview(false), {
             auth: {user: {uid: 'test-user'}}
