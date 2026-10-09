@@ -1,6 +1,6 @@
 [
   {
-    "id": "v_ce3a5523",
+    "id": "v_dc6e8686",
     "type": "vote",
     "entryId": "3b7643da",
     "votedBelt": "Blue",
@@ -8,11 +8,11 @@
     "userId": "XoUDXU5McjTuVnPA1xfmzytcKuy2",
     "displayName": "Red Wanderer",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:49:29.007Z",
-    "updatedAt": "2026-10-09T01:49:29.007Z"
+    "createdAt": "2026-10-09T16:10:57.317Z",
+    "updatedAt": "2026-10-09T16:10:57.317Z"
   },
   {
-    "id": "v_cb07a747",
+    "id": "v_c5447115",
     "type": "vote",
     "entryId": "3b7643da",
     "votedBelt": "Green",
@@ -20,11 +20,11 @@
     "userId": "IzvfeUBxzWcd8VXKHq0T4MUhtQu1",
     "displayName": "LockPickingFisherman",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:50:29.007Z",
-    "updatedAt": "2026-10-09T01:50:29.007Z"
+    "createdAt": "2026-10-09T16:11:57.317Z",
+    "updatedAt": "2026-10-09T16:11:57.317Z"
   },
   {
-    "id": "v_4862e959",
+    "id": "v_5b226107",
     "type": "vote",
     "entryId": "18ecc45b",
     "votedBelt": "Yellow",
@@ -32,23 +32,23 @@
     "userId": "XoUDXU5McjTuVnPA1xfmzytcKuy2",
     "displayName": "Red Wanderer",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:49:29.009Z",
-    "updatedAt": "2026-10-09T01:49:29.009Z"
+    "createdAt": "2026-10-09T16:10:57.319Z",
+    "updatedAt": "2026-10-09T16:10:57.319Z"
   },
   {
-    "id": "v_c60057f0",
+    "id": "v_3e31df8b",
     "type": "vote",
     "entryId": "18ecc45b",
     "votedBelt": "Orange",
     "comment": "Yagias: 5 pin core with 4 spools and 1 control.\nCertainly harder that the Master Lock 140 and on par with an Abus 65 series",
-    "userId": "u_8c1f4f39",
+    "userId": "u_89015b15",
     "displayName": "Yagias",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:50:29.009Z",
-    "updatedAt": "2026-10-09T01:50:29.009Z"
+    "createdAt": "2026-10-09T16:11:57.319Z",
+    "updatedAt": "2026-10-09T16:11:57.319Z"
   },
   {
-    "id": "v_fcb82cc5",
+    "id": "v_84f44084",
     "type": "vote",
     "entryId": "18ecc45b",
     "votedBelt": "Yellow",
@@ -56,23 +56,47 @@
     "userId": "XFUUNfloCTSBbNREKPDZNSRxPdq2",
     "displayName": "Explosion",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:51:29.009Z",
-    "updatedAt": "2026-10-09T01:51:29.009Z"
+    "createdAt": "2026-10-09T16:12:57.319Z",
+    "updatedAt": "2026-10-09T16:12:57.319Z"
   },
   {
-    "id": "v_23536f95",
+    "id": "v_3d9ba0e7",
     "type": "vote",
     "entryId": "18ecc45b",
     "votedBelt": "Orange",
     "comment": "Same as many other ABUS with 4 spools and 1 regular on orange",
-    "userId": "u_ee58c7ae",
+    "userId": "u_12cc47d1",
     "displayName": "Unknown",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:52:29.009Z",
-    "updatedAt": "2026-10-09T01:52:29.009Z"
+    "createdAt": "2026-10-09T16:13:57.319Z",
+    "updatedAt": "2026-10-09T16:13:57.319Z"
   },
   {
-    "id": "v_0b17cb60",
+    "id": "v_f8d58023",
+    "type": "vote",
+    "entryId": "fdc8b16e",
+    "votedBelt": "Yellow",
+    "comment": "Red Wanderer - picked 3 of these. Felt like serrated pins, but navigating the tiny yale keyway even with a short hook is annoying and leads to oversets. ",
+    "userId": "XoUDXU5McjTuVnPA1xfmzytcKuy2",
+    "displayName": "Red Wanderer",
+    "source": "Classification Sheet",
+    "createdAt": "2026-10-09T16:10:57.319Z",
+    "updatedAt": "2026-10-09T16:10:57.319Z"
+  },
+  {
+    "id": "v_5d595415",
+    "type": "vote",
+    "entryId": "e98dba45",
+    "votedBelt": "Purple",
+    "comment": "Hard to find some feeling at first and need a LOT of tension to open, spent 5m rechecking every discs but it was already open\nClef",
+    "userId": "tbaq0CWuDTXerA0eUi0kGASVb1Z2",
+    "displayName": "Clefmentine",
+    "source": "Classification Sheet",
+    "createdAt": "2026-10-09T16:10:57.319Z",
+    "updatedAt": "2026-10-09T16:10:57.319Z"
+  },
+  {
+    "id": "v_a1cd7164",
     "type": "vote",
     "entryId": "1050a58c",
     "votedBelt": "Orange",
@@ -80,11 +104,47 @@
     "userId": "gWoqbd0FOsglFD5boH96NAtJ7DE3",
     "displayName": "LockFumbler",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:49:29.010Z",
-    "updatedAt": "2026-10-09T01:49:29.010Z"
+    "createdAt": "2026-10-09T16:10:57.319Z",
+    "updatedAt": "2026-10-09T16:10:57.319Z"
   },
   {
-    "id": "v_7250c70e",
+    "id": "v_d1921247",
+    "type": "vote",
+    "entryId": "8182fee6",
+    "votedBelt": "Blue",
+    "comment": "Please see here for first pick https://www.youtube.com/watch?v=eKcA-ssqm0I\n- GravityKarma",
+    "userId": "8PKfUHTiafgObsQQr162dQRlBCo1",
+    "displayName": "GravityKarma",
+    "source": "Classification Sheet",
+    "createdAt": "2026-10-09T16:10:57.319Z",
+    "updatedAt": "2026-10-09T16:10:57.319Z"
+  },
+  {
+    "id": "v_94bc2c8e",
+    "type": "vote",
+    "entryId": "8182fee6",
+    "votedBelt": "Blue",
+    "comment": "This is similar to Bravus 1000 without the element, also similar to XD25. \nSame as EC880. - decoder",
+    "userId": "Mwbvdkq1QtWu2zLwEaj3imULSry1",
+    "displayName": "decoder",
+    "source": "Classification Sheet",
+    "createdAt": "2026-10-09T16:11:57.319Z",
+    "updatedAt": "2026-10-09T16:11:57.319Z"
+  },
+  {
+    "id": "v_26f6d45f",
+    "type": "vote",
+    "entryId": "c24808aa",
+    "votedBelt": "White",
+    "comment": "NiXXeD\n3 pins, one tap each.",
+    "userId": "WMSvvuutyShfvBBYB3PmDe4fmeS2",
+    "displayName": "NiXXeD",
+    "source": "Classification Sheet",
+    "createdAt": "2026-10-09T16:10:57.319Z",
+    "updatedAt": "2026-10-09T16:10:57.319Z"
+  },
+  {
+    "id": "v_8d9a5a02",
     "type": "vote",
     "entryId": "b370e57b",
     "votedBelt": "Green",
@@ -92,47 +152,47 @@
     "userId": "mZyfQIARjCP1uJJJc7ioMAALV9v2",
     "displayName": "PeaceWeapon",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:49:29.010Z",
-    "updatedAt": "2026-10-09T01:49:29.010Z"
+    "createdAt": "2026-10-09T16:10:57.320Z",
+    "updatedAt": "2026-10-09T16:10:57.320Z"
   },
   {
-    "id": "v_472aaab1",
+    "id": "v_e2cb1f9c",
     "type": "vote",
     "entryId": "b370e57b",
     "votedBelt": "Green",
     "comment": "Same as bravus 1000 with different key tip, should be same rating with 360° requirement",
-    "userId": "u_562899a2",
+    "userId": "u_613272ae",
     "displayName": "Unknown",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:50:29.010Z",
-    "updatedAt": "2026-10-09T01:50:29.010Z"
+    "createdAt": "2026-10-09T16:11:57.320Z",
+    "updatedAt": "2026-10-09T16:11:57.320Z"
   },
   {
-    "id": "v_0cdd6dfe",
+    "id": "v_070b6a11",
     "type": "vote",
     "entryId": "9ae8b650",
     "votedBelt": "Purple",
     "comment": "Iona\nnot too hard but weird (wafers that act like discs, but you can pick with a hook), kinda like fontaine and others for ranking\ncould be blue\n",
-    "userId": "u_d23e45d8",
+    "userId": "u_dded11a8",
     "displayName": "Iona",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:49:29.069Z",
-    "updatedAt": "2026-10-09T01:49:29.069Z"
+    "createdAt": "2026-10-09T16:10:57.378Z",
+    "updatedAt": "2026-10-09T16:10:57.378Z"
   },
   {
-    "id": "v_a021cdf9",
+    "id": "v_41b43433",
     "type": "vote",
     "entryId": "9ae8b650",
     "votedBelt": "Orange",
     "comment": "Lock Noob\neasy bitting\nhttps://discord.com/channels/140129091796992000/349621948713795594/1108796783242518588",
-    "userId": "u_f788df8d",
+    "userId": "u_c940f29e",
     "displayName": "Lock Noob",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:50:29.069Z",
-    "updatedAt": "2026-10-09T01:50:29.069Z"
+    "createdAt": "2026-10-09T16:11:57.378Z",
+    "updatedAt": "2026-10-09T16:11:57.378Z"
   },
   {
-    "id": "v_c936133c",
+    "id": "v_843ea334",
     "type": "vote",
     "entryId": "9ae8b650",
     "votedBelt": "Green",
@@ -140,11 +200,11 @@
     "userId": "bSkotjOGENXHGd3rpo8G3TJeCk33",
     "displayName": "Crispix",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:51:29.069Z",
-    "updatedAt": "2026-10-09T01:51:29.069Z"
+    "createdAt": "2026-10-09T16:12:57.378Z",
+    "updatedAt": "2026-10-09T16:12:57.378Z"
   },
   {
-    "id": "v_21808ce0",
+    "id": "v_d56ae66e",
     "type": "vote",
     "entryId": "9ae8b650",
     "votedBelt": "Orange",
@@ -152,11 +212,11 @@
     "userId": "U3wCYsdGwYS8ujsO2K78iD68FMC3",
     "displayName": "Dig",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:52:29.069Z",
-    "updatedAt": "2026-10-09T01:52:29.069Z"
+    "createdAt": "2026-10-09T16:13:57.378Z",
+    "updatedAt": "2026-10-09T16:13:57.378Z"
   },
   {
-    "id": "v_1c5b7540",
+    "id": "v_bf2224ff",
     "type": "vote",
     "entryId": "9ae8b650",
     "votedBelt": "Orange",
@@ -164,11 +224,11 @@
     "userId": "BuX3JAgrlzUW6Vz0L4W3YZK9iNw1",
     "displayName": "LockChuck ",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:53:29.069Z",
-    "updatedAt": "2026-10-09T01:53:29.069Z"
+    "createdAt": "2026-10-09T16:14:57.378Z",
+    "updatedAt": "2026-10-09T16:14:57.378Z"
   },
   {
-    "id": "v_bbc4ee25",
+    "id": "v_1a1f12e3",
     "type": "vote",
     "entryId": "9ae8b650",
     "votedBelt": "Orange",
@@ -176,22 +236,166 @@
     "userId": "pzSak8xusHdeNlD0JmTru5kMrww2",
     "displayName": "Sidepicks",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:54:29.069Z",
-    "updatedAt": "2026-10-09T01:54:29.069Z"
+    "createdAt": "2026-10-09T16:15:57.378Z",
+    "updatedAt": "2026-10-09T16:15:57.378Z"
   },
   {
-    "id": "v_8bf1c9dd",
+    "id": "v_05061a6a",
+    "type": "vote",
+    "entryId": "8ce37fa9",
+    "votedBelt": "White",
+    "comment": "Really easy. Reasonable tension. Picked it with windshield wiper insert & Z-bar. — Marson",
+    "userId": "e2RNiz570rWqYYxDSDn6Y0uhgA43",
+    "displayName": "Marson",
+    "source": "Classification Sheet",
+    "createdAt": "2026-10-09T16:10:57.378Z",
+    "updatedAt": "2026-10-09T16:10:57.378Z"
+  },
+  {
+    "id": "v_11cb31cb",
+    "type": "vote",
+    "entryId": "d95d6c74",
+    "votedBelt": "White",
+    "comment": "I used a 2-in-1, but could tell it was similar to the small one. — Marson",
+    "userId": "e2RNiz570rWqYYxDSDn6Y0uhgA43",
+    "displayName": "Marson",
+    "source": "Classification Sheet",
+    "createdAt": "2026-10-09T16:10:57.378Z",
+    "updatedAt": "2026-10-09T16:10:57.378Z"
+  },
+  {
+    "id": "v_79e1bd7f",
+    "type": "vote",
+    "entryId": "343d6402",
+    "votedBelt": "Blue",
+    "comment": "11 Pins (6 top, 5 bottom).  Requires rear tension and that is the only real challenge.  All standard drivers that are fairly easy to set.  Only voting blue because tensioning is a little awkward.\n-Sidepicks",
+    "userId": "pzSak8xusHdeNlD0JmTru5kMrww2",
+    "displayName": "Sidepicks",
+    "source": "Classification Sheet",
+    "createdAt": "2026-10-09T16:10:57.378Z",
+    "updatedAt": "2026-10-09T16:10:57.378Z"
+  },
+  {
+    "id": "v_6f8202af",
+    "type": "vote",
+    "entryId": "343d6402",
+    "votedBelt": "Blue",
+    "comment": "A rear tensioned 2 row pin tumbler lock. It sounds weird but is actually pretty straightforward, the challenge is setting up an suitable tension setup that does rear tension and gives good access to both rows of pins. All pins are standard without quirks, blue seems fine\n-Dynamic",
+    "userId": "vOi8rfTRluYlcVizuVvX9PWFJdn2",
+    "displayName": "Dynamic",
+    "source": "Classification Sheet",
+    "createdAt": "2026-10-09T16:11:57.378Z",
+    "updatedAt": "2026-10-09T16:11:57.378Z"
+  },
+  {
+    "id": "v_24e0bb0b",
+    "type": "vote",
+    "entryId": "5288be2f",
+    "votedBelt": "Brown",
+    "comment": "17 pins in 3 rows.  Bottom pin is just a key control pin of sorts that just needs pushed all the way down.  Decent feedback, somewhat easy to overset when keyway is cramped with low lifts.  All standard drivers, not very tapered.  Straightforward, just a lot of pins.\n-Sidepicks",
+    "userId": "pzSak8xusHdeNlD0JmTru5kMrww2",
+    "displayName": "Sidepicks",
+    "source": "Classification Sheet",
+    "createdAt": "2026-10-09T16:10:57.379Z",
+    "updatedAt": "2026-10-09T16:10:57.379Z"
+  },
+  {
+    "id": "v_a82daaed",
+    "type": "vote",
+    "entryId": "02788bde",
+    "votedBelt": "Purple",
+    "comment": "13 pins.  Thin-lipped spools bite pretty hard.\n-Sidepicks",
+    "userId": "pzSak8xusHdeNlD0JmTru5kMrww2",
+    "displayName": "Sidepicks",
+    "source": "Classification Sheet",
+    "createdAt": "2026-10-09T16:10:57.379Z",
+    "updatedAt": "2026-10-09T16:10:57.379Z"
+  },
+  {
+    "id": "v_71b9eefe",
+    "type": "vote",
+    "entryId": "d5080254",
+    "votedBelt": "Purple",
+    "comment": "Yagias:\nI'd recommend same lining with Gege pExtra as it's the same lock with a different brand. ",
+    "userId": "u_89015b15",
+    "displayName": "Yagias",
+    "source": "Classification Sheet",
+    "createdAt": "2026-10-09T16:10:57.379Z",
+    "updatedAt": "2026-10-09T16:10:57.379Z"
+  },
+  {
+    "id": "v_afcc7b69",
+    "type": "vote",
+    "entryId": "4cd726f7",
+    "votedBelt": "Blue",
+    "comment": "6 sets of wafers (2 in a set that set together).  Leaves a lot to be desired.\n-Sidepicks",
+    "userId": "pzSak8xusHdeNlD0JmTru5kMrww2",
+    "displayName": "Sidepicks",
+    "source": "Classification Sheet",
+    "createdAt": "2026-10-09T16:10:57.379Z",
+    "updatedAt": "2026-10-09T16:10:57.379Z"
+  },
+  {
+    "id": "v_ea76c845",
+    "type": "vote",
+    "entryId": "4cd726f7",
+    "votedBelt": "Green",
+    "comment": "Jim\n6 pairs of wafers in dual rows. One top, middle and bottom on each side. Picks like standard pins but can overset. I only needed to pick 4 of the 6 wafers to open and several gave huge core shifts letting you know you were on the right track. ",
+    "userId": "UbhgAjZIuLauV1dw2G4QsocHIk83",
+    "displayName": "Georgia Jim",
+    "source": "Classification Sheet",
+    "createdAt": "2026-10-09T16:11:57.379Z",
+    "updatedAt": "2026-10-09T16:11:57.379Z"
+  },
+  {
+    "id": "v_30e6d9c1",
+    "type": "vote",
+    "entryId": "d60750c5",
+    "votedBelt": "Green",
+    "comment": "Jim\nSame aptc14 core found in the 6 pin 1100’s",
+    "userId": "UbhgAjZIuLauV1dw2G4QsocHIk83",
+    "displayName": "Georgia Jim",
+    "source": "Classification Sheet",
+    "createdAt": "2026-10-09T16:10:57.379Z",
+    "updatedAt": "2026-10-09T16:10:57.379Z"
+  },
+  {
+    "id": "v_b9dcec35",
+    "type": "vote",
+    "entryId": "88d5c4b4",
+    "votedBelt": "Orange",
+    "comment": "6 pins with gin type drivers without milling that basically do nothing.  \n-Sidepicks",
+    "userId": "pzSak8xusHdeNlD0JmTru5kMrww2",
+    "displayName": "Sidepicks",
+    "source": "Classification Sheet",
+    "createdAt": "2026-10-09T16:10:57.379Z",
+    "updatedAt": "2026-10-09T16:10:57.379Z"
+  },
+  {
+    "id": "v_3766e87c",
+    "type": "vote",
+    "entryId": "88d5c4b4",
+    "votedBelt": "Orange",
+    "comment": "Zehkar",
+    "userId": "1SqcRKce18boUZBtOHWSenGAI202",
+    "displayName": "Zehkar",
+    "source": "Classification Sheet",
+    "createdAt": "2026-10-09T16:11:57.379Z",
+    "updatedAt": "2026-10-09T16:11:57.379Z"
+  },
+  {
+    "id": "v_762a3fa3",
     "type": "vote",
     "entryId": "c2db34fb",
     "votedBelt": "Black 1",
-    "userId": "u_0474dc6f",
+    "userId": "u_68bed142",
     "displayName": "Unknown",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:49:29.070Z",
-    "updatedAt": "2026-10-09T01:49:29.070Z"
+    "createdAt": "2026-10-09T16:10:57.379Z",
+    "updatedAt": "2026-10-09T16:10:57.379Z"
   },
   {
-    "id": "v_82a248ce",
+    "id": "v_96327680",
     "type": "vote",
     "entryId": "fd93632b",
     "votedBelt": "Purple",
@@ -199,11 +403,11 @@
     "userId": "GGplAdctTfVDLVvYsfIADJmfp8f2",
     "displayName": "mgsecure",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:49:29.070Z",
-    "updatedAt": "2026-10-09T01:49:29.070Z"
+    "createdAt": "2026-10-09T16:10:57.379Z",
+    "updatedAt": "2026-10-09T16:10:57.379Z"
   },
   {
-    "id": "v_58ae6177",
+    "id": "v_95fe121b",
     "type": "vote",
     "entryId": "e2fd1519",
     "votedBelt": "Green",
@@ -211,11 +415,11 @@
     "userId": "NdkmYGydSHfPTcj5xuqjwSyJJI42",
     "displayName": "Greenish",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:49:29.071Z",
-    "updatedAt": "2026-10-09T01:49:29.071Z"
+    "createdAt": "2026-10-09T16:10:57.380Z",
+    "updatedAt": "2026-10-09T16:10:57.380Z"
   },
   {
-    "id": "v_676698d3",
+    "id": "v_fc0589b4",
     "type": "vote",
     "entryId": "e2fd1519",
     "votedBelt": "Green",
@@ -223,23 +427,23 @@
     "userId": "bSkotjOGENXHGd3rpo8G3TJeCk33",
     "displayName": "Crispix",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:50:29.071Z",
-    "updatedAt": "2026-10-09T01:50:29.071Z"
+    "createdAt": "2026-10-09T16:11:57.380Z",
+    "updatedAt": "2026-10-09T16:11:57.380Z"
   },
   {
-    "id": "v_6980f3a7",
+    "id": "v_979317e3",
     "type": "vote",
     "entryId": "b68b677c",
     "votedBelt": "Yellow",
     "comment": "Simple little 5 pin lock that is easy to obtain in the states for sure. Think its a tad more challenging than the standard master locks, but nothing to brag about.  CajunLockPick\n",
-    "userId": "u_4d885d3a",
+    "userId": "u_fef23d37",
     "displayName": "CajunLockPick",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:49:29.071Z",
-    "updatedAt": "2026-10-09T01:49:29.071Z"
+    "createdAt": "2026-10-09T16:10:57.380Z",
+    "updatedAt": "2026-10-09T16:10:57.380Z"
   },
   {
-    "id": "v_f5c9418f",
+    "id": "v_1b52a7a2",
     "type": "vote",
     "entryId": "2a69b223",
     "votedBelt": "Green",
@@ -247,11 +451,11 @@
     "userId": "f2yySWbxUBXF8k3HgorYhrm76gx2",
     "displayName": "Reinder",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:49:29.072Z",
-    "updatedAt": "2026-10-09T01:49:29.072Z"
+    "createdAt": "2026-10-09T16:10:57.381Z",
+    "updatedAt": "2026-10-09T16:10:57.381Z"
   },
   {
-    "id": "v_7ec782d1",
+    "id": "v_d09b46b7",
     "type": "vote",
     "entryId": "2a69b223",
     "votedBelt": "Orange",
@@ -259,11 +463,11 @@
     "userId": "NdkmYGydSHfPTcj5xuqjwSyJJI42",
     "displayName": "Greenish",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:50:29.072Z",
-    "updatedAt": "2026-10-09T01:50:29.072Z"
+    "createdAt": "2026-10-09T16:11:57.381Z",
+    "updatedAt": "2026-10-09T16:11:57.381Z"
   },
   {
-    "id": "v_845de204",
+    "id": "v_e4c276d1",
     "type": "vote",
     "entryId": "2a69b223",
     "votedBelt": "Green",
@@ -271,11 +475,11 @@
     "userId": "gWoqbd0FOsglFD5boH96NAtJ7DE3",
     "displayName": "LockFumbler",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:51:29.072Z",
-    "updatedAt": "2026-10-09T01:51:29.072Z"
+    "createdAt": "2026-10-09T16:12:57.381Z",
+    "updatedAt": "2026-10-09T16:12:57.381Z"
   },
   {
-    "id": "v_7895a5e7",
+    "id": "v_707fd72a",
     "type": "vote",
     "entryId": "08c823ed",
     "votedBelt": "Black 1",
@@ -283,11 +487,11 @@
     "userId": "BuX3JAgrlzUW6Vz0L4W3YZK9iNw1",
     "displayName": "LockChuck ",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:49:29.072Z",
-    "updatedAt": "2026-10-09T01:49:29.072Z"
+    "createdAt": "2026-10-09T16:10:57.381Z",
+    "updatedAt": "2026-10-09T16:10:57.381Z"
   },
   {
-    "id": "v_e7bf39ab",
+    "id": "v_152d2583",
     "type": "vote",
     "entryId": "08c823ed",
     "votedBelt": "Black 1",
@@ -295,11 +499,11 @@
     "userId": "e2RNiz570rWqYYxDSDn6Y0uhgA43",
     "displayName": "Marson",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:50:29.072Z",
-    "updatedAt": "2026-10-09T01:50:29.072Z"
+    "createdAt": "2026-10-09T16:11:57.381Z",
+    "updatedAt": "2026-10-09T16:11:57.381Z"
   },
   {
-    "id": "v_ebf109b2",
+    "id": "v_1c2470a7",
     "type": "vote",
     "entryId": "e35a3c91",
     "votedBelt": "Yellow",
@@ -307,11 +511,11 @@
     "userId": "pzSak8xusHdeNlD0JmTru5kMrww2",
     "displayName": "Sidepicks",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:49:29.073Z",
-    "updatedAt": "2026-10-09T01:49:29.073Z"
+    "createdAt": "2026-10-09T16:10:57.383Z",
+    "updatedAt": "2026-10-09T16:10:57.383Z"
   },
   {
-    "id": "v_11290534",
+    "id": "v_75605d1a",
     "type": "vote",
     "entryId": "e35a3c91",
     "votedBelt": "Yellow",
@@ -319,11 +523,11 @@
     "userId": "ogrEbc6fjmVOKtvfZ7vENh6oX072",
     "displayName": "Burnetb1",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:50:29.073Z",
-    "updatedAt": "2026-10-09T01:50:29.073Z"
+    "createdAt": "2026-10-09T16:11:57.383Z",
+    "updatedAt": "2026-10-09T16:11:57.383Z"
   },
   {
-    "id": "v_a2e618c3",
+    "id": "v_99e4e3dd",
     "type": "vote",
     "entryId": "e35a3c91",
     "votedBelt": "Orange",
@@ -331,11 +535,11 @@
     "userId": "IzvfeUBxzWcd8VXKHq0T4MUhtQu1",
     "displayName": "LockPickingFisherman",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:51:29.073Z",
-    "updatedAt": "2026-10-09T01:51:29.073Z"
+    "createdAt": "2026-10-09T16:12:57.383Z",
+    "updatedAt": "2026-10-09T16:12:57.383Z"
   },
   {
-    "id": "v_1171b15f",
+    "id": "v_d40fa9a0",
     "type": "vote",
     "entryId": "e35a3c91",
     "votedBelt": "White",
@@ -343,11 +547,11 @@
     "userId": "e2RNiz570rWqYYxDSDn6Y0uhgA43",
     "displayName": "Marson",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:52:29.073Z",
-    "updatedAt": "2026-10-09T01:52:29.073Z"
+    "createdAt": "2026-10-09T16:13:57.383Z",
+    "updatedAt": "2026-10-09T16:13:57.383Z"
   },
   {
-    "id": "v_b2d90be3",
+    "id": "v_7ce47636",
     "type": "vote",
     "entryId": "b1949215",
     "votedBelt": "Black 3",
@@ -355,11 +559,11 @@
     "userId": "BJyWOIOsqmRDkgHZBqIEGbGnVSA3",
     "displayName": "tonysansan",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:49:29.073Z",
-    "updatedAt": "2026-10-09T01:49:29.073Z"
+    "createdAt": "2026-10-09T16:10:57.383Z",
+    "updatedAt": "2026-10-09T16:10:57.383Z"
   },
   {
-    "id": "v_dca6517d",
+    "id": "v_fe036fdf",
     "type": "vote",
     "entryId": "e35772c9",
     "votedBelt": "Black 5",
@@ -367,11 +571,11 @@
     "userId": "BJyWOIOsqmRDkgHZBqIEGbGnVSA3",
     "displayName": "tonysansan",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:49:29.073Z",
-    "updatedAt": "2026-10-09T01:49:29.073Z"
+    "createdAt": "2026-10-09T16:10:57.383Z",
+    "updatedAt": "2026-10-09T16:10:57.383Z"
   },
   {
-    "id": "v_ee10c230",
+    "id": "v_0ae6c47d",
     "type": "vote",
     "entryId": "267e47c4",
     "votedBelt": "Brown",
@@ -379,11 +583,11 @@
     "userId": "ohnGCeCEgIOk9KzmxWcsWmGM0nM2",
     "displayName": "7woz3ro51x",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:49:29.074Z",
-    "updatedAt": "2026-10-09T01:49:29.074Z"
+    "createdAt": "2026-10-09T16:10:57.383Z",
+    "updatedAt": "2026-10-09T16:10:57.383Z"
   },
   {
-    "id": "v_988d3696",
+    "id": "v_1265b380",
     "type": "vote",
     "entryId": "267e47c4",
     "votedBelt": "Brown",
@@ -391,23 +595,23 @@
     "userId": "NdkmYGydSHfPTcj5xuqjwSyJJI42",
     "displayName": "Greenish",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:50:29.074Z",
-    "updatedAt": "2026-10-09T01:50:29.074Z"
+    "createdAt": "2026-10-09T16:11:57.383Z",
+    "updatedAt": "2026-10-09T16:11:57.383Z"
   },
   {
-    "id": "v_5751d981",
+    "id": "v_0a127528",
     "type": "vote",
     "entryId": "dbc6670b",
     "votedBelt": "Black 1",
     "comment": "Lock Noob\nhttps://discord.com/channels/140129091796992000/349621948713795594/1108796783242518588",
-    "userId": "u_48ca37bf",
+    "userId": "u_c940f29e",
     "displayName": "Lock Noob",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:49:29.074Z",
-    "updatedAt": "2026-10-09T01:49:29.074Z"
+    "createdAt": "2026-10-09T16:10:57.384Z",
+    "updatedAt": "2026-10-09T16:10:57.384Z"
   },
   {
-    "id": "v_1ec1256e",
+    "id": "v_f4941544",
     "type": "vote",
     "entryId": "c1c7e9d2",
     "votedBelt": "Black 2",
@@ -415,23 +619,23 @@
     "userId": "pzSak8xusHdeNlD0JmTru5kMrww2",
     "displayName": "Sidepicks",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:49:29.074Z",
-    "updatedAt": "2026-10-09T01:49:29.074Z"
+    "createdAt": "2026-10-09T16:10:57.384Z",
+    "updatedAt": "2026-10-09T16:10:57.384Z"
   },
   {
-    "id": "v_7edd5f7b",
+    "id": "v_0bc9bdd4",
     "type": "vote",
     "entryId": "c2c1f8e0",
     "votedBelt": "Purple",
     "comment": "Mugatu\nPipe key, 6 levers with false gates, good tolerances. Has another anti pick feature where a plunger effectively pushes down on the lever pack.",
-    "userId": "u_579fe754",
+    "userId": "u_f278d262",
     "displayName": "Mugatu",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:49:29.074Z",
-    "updatedAt": "2026-10-09T01:49:29.074Z"
+    "createdAt": "2026-10-09T16:10:57.384Z",
+    "updatedAt": "2026-10-09T16:10:57.384Z"
   },
   {
-    "id": "v_88db9fa9",
+    "id": "v_1059ac26",
     "type": "vote",
     "entryId": "22d70f2e",
     "votedBelt": "Blue",
@@ -439,11 +643,11 @@
     "userId": "bSkotjOGENXHGd3rpo8G3TJeCk33",
     "displayName": "Crispix",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:49:29.074Z",
-    "updatedAt": "2026-10-09T01:49:29.074Z"
+    "createdAt": "2026-10-09T16:10:57.384Z",
+    "updatedAt": "2026-10-09T16:10:57.384Z"
   },
   {
-    "id": "v_f92339ec",
+    "id": "v_db729b68",
     "type": "vote",
     "entryId": "2ae59863",
     "votedBelt": "Brown",
@@ -451,11 +655,11 @@
     "userId": "pzSak8xusHdeNlD0JmTru5kMrww2",
     "displayName": "Sidepicks",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:49:29.075Z",
-    "updatedAt": "2026-10-09T01:49:29.075Z"
+    "createdAt": "2026-10-09T16:10:57.385Z",
+    "updatedAt": "2026-10-09T16:10:57.385Z"
   },
   {
-    "id": "v_eff80e2d",
+    "id": "v_ed7b2908",
     "type": "vote",
     "entryId": "2ae59863",
     "votedBelt": "Brown",
@@ -463,11 +667,11 @@
     "userId": "WMSvvuutyShfvBBYB3PmDe4fmeS2",
     "displayName": "NiXXeD",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:50:29.075Z",
-    "updatedAt": "2026-10-09T01:50:29.075Z"
+    "createdAt": "2026-10-09T16:11:57.385Z",
+    "updatedAt": "2026-10-09T16:11:57.385Z"
   },
   {
-    "id": "v_6738f86d",
+    "id": "v_51b0a86a",
     "type": "vote",
     "entryId": "2ae59863",
     "votedBelt": "Brown",
@@ -475,23 +679,23 @@
     "userId": "ogrEbc6fjmVOKtvfZ7vENh6oX072",
     "displayName": "Burnetb1",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:51:29.075Z",
-    "updatedAt": "2026-10-09T01:51:29.075Z"
+    "createdAt": "2026-10-09T16:12:57.385Z",
+    "updatedAt": "2026-10-09T16:12:57.385Z"
   },
   {
-    "id": "v_221c6ffb",
+    "id": "v_b5a7b191",
     "type": "vote",
     "entryId": "4d738de3",
     "votedBelt": "Green",
     "comment": "Even though on their homepage stands it should contain mushrooms I can't feel anything besides crunchy standard drivers. paracentric keyway, therefore yellow I think. \nMoki",
-    "userId": "u_36ca18db",
+    "userId": "u_c3c19741",
     "displayName": "Moki",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:49:29.075Z",
-    "updatedAt": "2026-10-09T01:49:29.075Z"
+    "createdAt": "2026-10-09T16:10:57.385Z",
+    "updatedAt": "2026-10-09T16:10:57.385Z"
   },
   {
-    "id": "v_946f90c4",
+    "id": "v_0bbff29c",
     "type": "vote",
     "entryId": "955dbd20",
     "votedBelt": "Black 5",
@@ -499,11 +703,11 @@
     "userId": "BJyWOIOsqmRDkgHZBqIEGbGnVSA3",
     "displayName": "tonysansan",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:49:29.077Z",
-    "updatedAt": "2026-10-09T01:49:29.077Z"
+    "createdAt": "2026-10-09T16:10:57.387Z",
+    "updatedAt": "2026-10-09T16:10:57.387Z"
   },
   {
-    "id": "v_adecac04",
+    "id": "v_01ebf309",
     "type": "vote",
     "entryId": "89207b78",
     "votedBelt": "Brown",
@@ -511,11 +715,11 @@
     "userId": "pzSak8xusHdeNlD0JmTru5kMrww2",
     "displayName": "Sidepicks",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:49:29.077Z",
-    "updatedAt": "2026-10-09T01:49:29.077Z"
+    "createdAt": "2026-10-09T16:10:57.387Z",
+    "updatedAt": "2026-10-09T16:10:57.387Z"
   },
   {
-    "id": "v_825c6546",
+    "id": "v_30ce018d",
     "type": "vote",
     "entryId": "cd5acff8",
     "votedBelt": "Orange",
@@ -523,23 +727,23 @@
     "userId": "GGplAdctTfVDLVvYsfIADJmfp8f2",
     "displayName": "mgsecure",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:49:29.078Z",
-    "updatedAt": "2026-10-09T01:49:29.078Z"
+    "createdAt": "2026-10-09T16:10:57.387Z",
+    "updatedAt": "2026-10-09T16:10:57.387Z"
   },
   {
-    "id": "v_edb79caa",
+    "id": "v_70c3c2cf",
     "type": "vote",
     "entryId": "93324d19",
     "votedBelt": "Blue",
     "comment": "Mugatu\nAwkward to tension, tensioning after the first 1/4 core lockup becomes an issue. All standard pins, did not act taper.\nI'd say blue for the initial picked open position but could well see it purple for a full 360 given the tensioning complication.",
-    "userId": "u_cfe59c8a",
+    "userId": "u_f278d262",
     "displayName": "Mugatu",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:49:29.078Z",
-    "updatedAt": "2026-10-09T01:49:29.078Z"
+    "createdAt": "2026-10-09T16:10:57.388Z",
+    "updatedAt": "2026-10-09T16:10:57.388Z"
   },
   {
-    "id": "v_c45ccfdf",
+    "id": "v_c925da39",
     "type": "vote",
     "entryId": "352d0624",
     "votedBelt": "Purple",
@@ -547,11 +751,11 @@
     "userId": "tbaq0CWuDTXerA0eUi0kGASVb1Z2",
     "displayName": "Clefmentine",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:49:29.079Z",
-    "updatedAt": "2026-10-09T01:49:29.079Z"
+    "createdAt": "2026-10-09T16:10:57.388Z",
+    "updatedAt": "2026-10-09T16:10:57.388Z"
   },
   {
-    "id": "v_6cd61855",
+    "id": "v_2ce4f425",
     "type": "vote",
     "entryId": "352d0624",
     "votedBelt": "Blue",
@@ -559,11 +763,11 @@
     "userId": "UbhgAjZIuLauV1dw2G4QsocHIk83",
     "displayName": "Georgia Jim",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:50:29.079Z",
-    "updatedAt": "2026-10-09T01:50:29.079Z"
+    "createdAt": "2026-10-09T16:11:57.388Z",
+    "updatedAt": "2026-10-09T16:11:57.388Z"
   },
   {
-    "id": "v_c7d19993",
+    "id": "v_e0e3245d",
     "type": "vote",
     "entryId": "352d0624",
     "votedBelt": "Purple",
@@ -571,11 +775,11 @@
     "userId": "qXhqtUdEVFfrajxqblKl8bqQqXM2",
     "displayName": "DQ",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:51:29.079Z",
-    "updatedAt": "2026-10-09T01:51:29.079Z"
+    "createdAt": "2026-10-09T16:12:57.388Z",
+    "updatedAt": "2026-10-09T16:12:57.388Z"
   },
   {
-    "id": "v_6860f5f3",
+    "id": "v_06d41d68",
     "type": "vote",
     "entryId": "352d0624",
     "votedBelt": "Purple",
@@ -583,11 +787,11 @@
     "userId": "kBjhBaserkb0dTYBtgzNcLddnyy1",
     "displayName": "Nightmare",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:52:29.079Z",
-    "updatedAt": "2026-10-09T01:52:29.079Z"
+    "createdAt": "2026-10-09T16:13:57.388Z",
+    "updatedAt": "2026-10-09T16:13:57.388Z"
   },
   {
-    "id": "v_4bf55968",
+    "id": "v_3139648e",
     "type": "vote",
     "entryId": "81c91d86",
     "votedBelt": "Green",
@@ -595,11 +799,11 @@
     "userId": "f2yySWbxUBXF8k3HgorYhrm76gx2",
     "displayName": "Reinder",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:49:29.079Z",
-    "updatedAt": "2026-10-09T01:49:29.079Z"
+    "createdAt": "2026-10-09T16:10:57.389Z",
+    "updatedAt": "2026-10-09T16:10:57.389Z"
   },
   {
-    "id": "v_a11f7caf",
+    "id": "v_2fd77ac2",
     "type": "vote",
     "entryId": "476995cc",
     "votedBelt": "Brown",
@@ -607,23 +811,23 @@
     "userId": "pzSak8xusHdeNlD0JmTru5kMrww2",
     "displayName": "Sidepicks",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:49:29.079Z",
-    "updatedAt": "2026-10-09T01:49:29.079Z"
+    "createdAt": "2026-10-09T16:10:57.389Z",
+    "updatedAt": "2026-10-09T16:10:57.389Z"
   },
   {
-    "id": "v_e565824c",
+    "id": "v_a1bb8b77",
     "type": "vote",
     "entryId": "97e1ae9f",
     "votedBelt": "Black 1",
     "comment": "CK (with standard drivers)",
-    "userId": "u_2dd1a51c",
+    "userId": "u_a970b935",
     "displayName": "CK",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:49:29.079Z",
-    "updatedAt": "2026-10-09T01:49:29.079Z"
+    "createdAt": "2026-10-09T16:10:57.389Z",
+    "updatedAt": "2026-10-09T16:10:57.389Z"
   },
   {
-    "id": "v_b48bad8b",
+    "id": "v_b52307fe",
     "type": "vote",
     "entryId": "ca9828d7",
     "votedBelt": "Brown",
@@ -631,11 +835,11 @@
     "userId": "UbhgAjZIuLauV1dw2G4QsocHIk83",
     "displayName": "Georgia Jim",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:49:29.079Z",
-    "updatedAt": "2026-10-09T01:49:29.079Z"
+    "createdAt": "2026-10-09T16:10:57.389Z",
+    "updatedAt": "2026-10-09T16:10:57.389Z"
   },
   {
-    "id": "v_bfbca9c0",
+    "id": "v_29de4508",
     "type": "vote",
     "entryId": "ca9828d7",
     "votedBelt": "Red",
@@ -643,11 +847,11 @@
     "userId": "Gg9KxwHOwBf03QAIdOgZbfW3hRo1",
     "displayName": "yabende",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:50:29.079Z",
-    "updatedAt": "2026-10-09T01:50:29.079Z"
+    "createdAt": "2026-10-09T16:11:57.389Z",
+    "updatedAt": "2026-10-09T16:11:57.389Z"
   },
   {
-    "id": "v_a7b1d2df",
+    "id": "v_94d99024",
     "type": "vote",
     "entryId": "ca9828d7",
     "votedBelt": "Brown",
@@ -655,11 +859,11 @@
     "userId": "FGhShmNkxTXC9vwmZwWylOvU8K72",
     "displayName": "Alpama",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:51:29.079Z",
-    "updatedAt": "2026-10-09T01:51:29.079Z"
+    "createdAt": "2026-10-09T16:12:57.389Z",
+    "updatedAt": "2026-10-09T16:12:57.389Z"
   },
   {
-    "id": "v_a120c4ff",
+    "id": "v_07906ece",
     "type": "vote",
     "entryId": "ca9828d7",
     "votedBelt": "Red",
@@ -667,11 +871,11 @@
     "userId": "pzSak8xusHdeNlD0JmTru5kMrww2",
     "displayName": "Sidepicks",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:52:29.079Z",
-    "updatedAt": "2026-10-09T01:52:29.079Z"
+    "createdAt": "2026-10-09T16:13:57.389Z",
+    "updatedAt": "2026-10-09T16:13:57.389Z"
   },
   {
-    "id": "v_649a21f9",
+    "id": "v_4cf31d5f",
     "type": "vote",
     "entryId": "8d4632d9",
     "votedBelt": "Blue",
@@ -679,11 +883,11 @@
     "userId": "mZyfQIARjCP1uJJJc7ioMAALV9v2",
     "displayName": "PeaceWeapon",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:49:29.080Z",
-    "updatedAt": "2026-10-09T01:49:29.080Z"
+    "createdAt": "2026-10-09T16:10:57.389Z",
+    "updatedAt": "2026-10-09T16:10:57.389Z"
   },
   {
-    "id": "v_1083468d",
+    "id": "v_9f817cb0",
     "type": "vote",
     "entryId": "8d4632d9",
     "votedBelt": "Purple",
@@ -691,11 +895,11 @@
     "userId": "f2yySWbxUBXF8k3HgorYhrm76gx2",
     "displayName": "Reinder",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:50:29.080Z",
-    "updatedAt": "2026-10-09T01:50:29.080Z"
+    "createdAt": "2026-10-09T16:11:57.389Z",
+    "updatedAt": "2026-10-09T16:11:57.389Z"
   },
   {
-    "id": "v_4c46fbdf",
+    "id": "v_ff7b7014",
     "type": "vote",
     "entryId": "a7d98df3",
     "votedBelt": "Red",
@@ -703,11 +907,11 @@
     "userId": "8PKfUHTiafgObsQQr162dQRlBCo1",
     "displayName": "GravityKarma",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:49:29.080Z",
-    "updatedAt": "2026-10-09T01:49:29.080Z"
+    "createdAt": "2026-10-09T16:10:57.390Z",
+    "updatedAt": "2026-10-09T16:10:57.390Z"
   },
   {
-    "id": "v_2c073b62",
+    "id": "v_17a88283",
     "type": "vote",
     "entryId": "f97ad477",
     "votedBelt": "Purple",
@@ -715,11 +919,11 @@
     "userId": "kBjhBaserkb0dTYBtgzNcLddnyy1",
     "displayName": "Nightmare",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:49:29.080Z",
-    "updatedAt": "2026-10-09T01:49:29.080Z"
+    "createdAt": "2026-10-09T16:10:57.390Z",
+    "updatedAt": "2026-10-09T16:10:57.390Z"
   },
   {
-    "id": "v_7f73d124",
+    "id": "v_1bed245f",
     "type": "vote",
     "entryId": "fe9889e2",
     "votedBelt": "Red",
@@ -727,34 +931,34 @@
     "userId": "Gg9KxwHOwBf03QAIdOgZbfW3hRo1",
     "displayName": "yabende",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:49:29.081Z",
-    "updatedAt": "2026-10-09T01:49:29.081Z"
+    "createdAt": "2026-10-09T16:10:57.390Z",
+    "updatedAt": "2026-10-09T16:10:57.390Z"
   },
   {
-    "id": "v_a1c4076a",
+    "id": "v_495d243a",
     "type": "vote",
     "entryId": "fe9889e2",
     "votedBelt": "Red",
-    "userId": "u_4735f65f",
+    "userId": "u_490173df",
     "displayName": "Unknown",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:50:29.081Z",
-    "updatedAt": "2026-10-09T01:50:29.081Z"
+    "createdAt": "2026-10-09T16:11:57.390Z",
+    "updatedAt": "2026-10-09T16:11:57.390Z"
   },
   {
-    "id": "v_60ba721e",
+    "id": "v_69719b9b",
     "type": "vote",
     "entryId": "991c6c07",
     "votedBelt": "Purple",
     "comment": "A bit harder then 29a/b. Not by a lot IMHO -Retep",
-    "userId": "u_2906affa",
+    "userId": "u_7e351cf1",
     "displayName": "Retep",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:49:29.081Z",
-    "updatedAt": "2026-10-09T01:49:29.081Z"
+    "createdAt": "2026-10-09T16:10:57.391Z",
+    "updatedAt": "2026-10-09T16:10:57.391Z"
   },
   {
-    "id": "v_2d6d7b51",
+    "id": "v_75695a5b",
     "type": "vote",
     "entryId": "c65959a3",
     "votedBelt": "Purple",
@@ -762,11 +966,11 @@
     "userId": "pzSak8xusHdeNlD0JmTru5kMrww2",
     "displayName": "Sidepicks",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:49:29.081Z",
-    "updatedAt": "2026-10-09T01:49:29.081Z"
+    "createdAt": "2026-10-09T16:10:57.391Z",
+    "updatedAt": "2026-10-09T16:10:57.391Z"
   },
   {
-    "id": "v_d871cd1b",
+    "id": "v_202a1e6e",
     "type": "vote",
     "entryId": "64662298",
     "votedBelt": "Green",
@@ -774,22 +978,22 @@
     "userId": "tbaq0CWuDTXerA0eUi0kGASVb1Z2",
     "displayName": "Clefmentine",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:49:29.081Z",
-    "updatedAt": "2026-10-09T01:49:29.081Z"
+    "createdAt": "2026-10-09T16:10:57.391Z",
+    "updatedAt": "2026-10-09T16:10:57.391Z"
   },
   {
-    "id": "v_cd83cda9",
+    "id": "v_5f625e82",
     "type": "vote",
     "entryId": "64662298",
     "votedBelt": "Green",
-    "userId": "u_a39be530",
+    "userId": "u_b73b3624",
     "displayName": "Unknown",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:50:29.081Z",
-    "updatedAt": "2026-10-09T01:50:29.081Z"
+    "createdAt": "2026-10-09T16:11:57.391Z",
+    "updatedAt": "2026-10-09T16:11:57.391Z"
   },
   {
-    "id": "v_4a26fe91",
+    "id": "v_4cc1721e",
     "type": "vote",
     "entryId": "8e11009a",
     "votedBelt": "Blue",
@@ -797,11 +1001,11 @@
     "userId": "tbaq0CWuDTXerA0eUi0kGASVb1Z2",
     "displayName": "Clefmentine",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:49:29.082Z",
-    "updatedAt": "2026-10-09T01:49:29.082Z"
+    "createdAt": "2026-10-09T16:10:57.392Z",
+    "updatedAt": "2026-10-09T16:10:57.392Z"
   },
   {
-    "id": "v_aede2bea",
+    "id": "v_8166c313",
     "type": "vote",
     "entryId": "1dd55e66",
     "votedBelt": "Brown",
@@ -809,11 +1013,11 @@
     "userId": "U3wCYsdGwYS8ujsO2K78iD68FMC3",
     "displayName": "Dig",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:49:29.082Z",
-    "updatedAt": "2026-10-09T01:49:29.082Z"
+    "createdAt": "2026-10-09T16:10:57.392Z",
+    "updatedAt": "2026-10-09T16:10:57.392Z"
   },
   {
-    "id": "v_011568db",
+    "id": "v_ea7c7df0",
     "type": "vote",
     "entryId": "45bb95df",
     "votedBelt": "Red",
@@ -821,11 +1025,11 @@
     "userId": "qXhqtUdEVFfrajxqblKl8bqQqXM2",
     "displayName": "DQ",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:49:29.083Z",
-    "updatedAt": "2026-10-09T01:49:29.083Z"
+    "createdAt": "2026-10-09T16:10:57.393Z",
+    "updatedAt": "2026-10-09T16:10:57.393Z"
   },
   {
-    "id": "v_1c35676a",
+    "id": "v_733d1bf5",
     "type": "vote",
     "entryId": "45bb95df",
     "votedBelt": "Red",
@@ -833,11 +1037,11 @@
     "userId": "Gg9KxwHOwBf03QAIdOgZbfW3hRo1",
     "displayName": "yabende",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:50:29.083Z",
-    "updatedAt": "2026-10-09T01:50:29.083Z"
+    "createdAt": "2026-10-09T16:11:57.393Z",
+    "updatedAt": "2026-10-09T16:11:57.393Z"
   },
   {
-    "id": "v_0b7215cd",
+    "id": "v_890b5729",
     "type": "vote",
     "entryId": "45bb95df",
     "votedBelt": "Brown",
@@ -845,11 +1049,11 @@
     "userId": "f2yySWbxUBXF8k3HgorYhrm76gx2",
     "displayName": "Reinder",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:51:29.083Z",
-    "updatedAt": "2026-10-09T01:51:29.083Z"
+    "createdAt": "2026-10-09T16:12:57.393Z",
+    "updatedAt": "2026-10-09T16:12:57.393Z"
   },
   {
-    "id": "v_305046db",
+    "id": "v_b241e72f",
     "type": "vote",
     "entryId": "f74e0e97",
     "votedBelt": "Brown",
@@ -857,22 +1061,22 @@
     "userId": "f2yySWbxUBXF8k3HgorYhrm76gx2",
     "displayName": "Reinder",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:49:29.083Z",
-    "updatedAt": "2026-10-09T01:49:29.083Z"
+    "createdAt": "2026-10-09T16:10:57.394Z",
+    "updatedAt": "2026-10-09T16:10:57.394Z"
   },
   {
-    "id": "v_fdb3b73b",
+    "id": "v_49cd7074",
     "type": "vote",
     "entryId": "f74e0e97",
     "votedBelt": "Brown",
-    "userId": "u_9245819e",
+    "userId": "u_5dc3fe1b",
     "displayName": "Unknown",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:50:29.083Z",
-    "updatedAt": "2026-10-09T01:50:29.083Z"
+    "createdAt": "2026-10-09T16:11:57.394Z",
+    "updatedAt": "2026-10-09T16:11:57.394Z"
   },
   {
-    "id": "v_87a103a0",
+    "id": "v_86ace9e3",
     "type": "vote",
     "entryId": "a6f31065",
     "votedBelt": "Orange",
@@ -880,11 +1084,11 @@
     "userId": "mZyfQIARjCP1uJJJc7ioMAALV9v2",
     "displayName": "PeaceWeapon",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:49:29.083Z",
-    "updatedAt": "2026-10-09T01:49:29.083Z"
+    "createdAt": "2026-10-09T16:10:57.394Z",
+    "updatedAt": "2026-10-09T16:10:57.394Z"
   },
   {
-    "id": "v_542be182",
+    "id": "v_86a6beca",
     "type": "vote",
     "entryId": "a6f31065",
     "votedBelt": "Orange",
@@ -892,11 +1096,11 @@
     "userId": "IzvfeUBxzWcd8VXKHq0T4MUhtQu1",
     "displayName": "LockPickingFisherman",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:50:29.083Z",
-    "updatedAt": "2026-10-09T01:50:29.083Z"
+    "createdAt": "2026-10-09T16:11:57.394Z",
+    "updatedAt": "2026-10-09T16:11:57.394Z"
   },
   {
-    "id": "v_afb9de28",
+    "id": "v_bf36e27e",
     "type": "vote",
     "entryId": "ad46dc5a",
     "votedBelt": "Brown",
@@ -904,11 +1108,11 @@
     "userId": "zDpOLv3IAPSdIwPpSPGf8cKQumx2",
     "displayName": "Skwiggs",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:49:29.084Z",
-    "updatedAt": "2026-10-09T01:49:29.084Z"
+    "createdAt": "2026-10-09T16:10:57.395Z",
+    "updatedAt": "2026-10-09T16:10:57.395Z"
   },
   {
-    "id": "v_284d6cd9",
+    "id": "v_235bccbf",
     "type": "vote",
     "entryId": "ad46dc5a",
     "votedBelt": "Red",
@@ -916,11 +1120,11 @@
     "userId": "pa0Fe38BgdV9fcL5PPNToNd7NVU2",
     "displayName": "OnlyPins",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:50:29.084Z",
-    "updatedAt": "2026-10-09T01:50:29.084Z"
+    "createdAt": "2026-10-09T16:11:57.395Z",
+    "updatedAt": "2026-10-09T16:11:57.395Z"
   },
   {
-    "id": "v_0350a017",
+    "id": "v_5dd3c071",
     "type": "vote",
     "entryId": "ad46dc5a",
     "votedBelt": "Brown",
@@ -928,23 +1132,23 @@
     "userId": "Kvf5QQTos8OCbgr8AkULzkWjVqr1",
     "displayName": "MasterLockSux",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:51:29.084Z",
-    "updatedAt": "2026-10-09T01:51:29.084Z"
+    "createdAt": "2026-10-09T16:12:57.395Z",
+    "updatedAt": "2026-10-09T16:12:57.395Z"
   },
   {
-    "id": "v_49bce648",
+    "id": "v_1a1c696b",
     "type": "vote",
     "entryId": "e6872b30",
     "votedBelt": "Orange",
     "comment": "Lock Noob",
-    "userId": "u_92a30252",
+    "userId": "u_c940f29e",
     "displayName": "Lock Noob",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:49:29.085Z",
-    "updatedAt": "2026-10-09T01:49:29.085Z"
+    "createdAt": "2026-10-09T16:10:57.396Z",
+    "updatedAt": "2026-10-09T16:10:57.396Z"
   },
   {
-    "id": "v_457b5e6a",
+    "id": "v_4171e57f",
     "type": "vote",
     "entryId": "fb472463",
     "votedBelt": "Green",
@@ -952,11 +1156,11 @@
     "userId": "WMSvvuutyShfvBBYB3PmDe4fmeS2",
     "displayName": "NiXXeD",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:49:29.086Z",
-    "updatedAt": "2026-10-09T01:49:29.086Z"
+    "createdAt": "2026-10-09T16:10:57.396Z",
+    "updatedAt": "2026-10-09T16:10:57.396Z"
   },
   {
-    "id": "v_dfb5f6fd",
+    "id": "v_76275cbb",
     "type": "vote",
     "entryId": "fb472463",
     "votedBelt": "Blue",
@@ -964,22 +1168,22 @@
     "userId": "pzSak8xusHdeNlD0JmTru5kMrww2",
     "displayName": "Sidepicks",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:50:29.086Z",
-    "updatedAt": "2026-10-09T01:50:29.086Z"
+    "createdAt": "2026-10-09T16:11:57.396Z",
+    "updatedAt": "2026-10-09T16:11:57.396Z"
   },
   {
-    "id": "v_a21e003e",
+    "id": "v_7d75fa39",
     "type": "vote",
     "entryId": "4150776b",
     "votedBelt": "Black 1",
-    "userId": "u_9dbedbaa",
+    "userId": "u_3c15bdf5",
     "displayName": "Unknown",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:49:29.086Z",
-    "updatedAt": "2026-10-09T01:49:29.086Z"
+    "createdAt": "2026-10-09T16:10:57.396Z",
+    "updatedAt": "2026-10-09T16:10:57.396Z"
   },
   {
-    "id": "v_b576420a",
+    "id": "v_c9d8e124",
     "type": "vote",
     "entryId": "4150776b",
     "votedBelt": "Black 1",
@@ -987,11 +1191,11 @@
     "userId": "f2yySWbxUBXF8k3HgorYhrm76gx2",
     "displayName": "Reinder",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:50:29.086Z",
-    "updatedAt": "2026-10-09T01:50:29.086Z"
+    "createdAt": "2026-10-09T16:11:57.396Z",
+    "updatedAt": "2026-10-09T16:11:57.396Z"
   },
   {
-    "id": "v_1bc32edb",
+    "id": "v_a833cd3e",
     "type": "vote",
     "entryId": "ea4834c8",
     "votedBelt": "Red",
@@ -999,11 +1203,11 @@
     "userId": "XoUDXU5McjTuVnPA1xfmzytcKuy2",
     "displayName": "Red Wanderer",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:49:29.087Z",
-    "updatedAt": "2026-10-09T01:49:29.087Z"
+    "createdAt": "2026-10-09T16:10:57.398Z",
+    "updatedAt": "2026-10-09T16:10:57.398Z"
   },
   {
-    "id": "v_fe0fadc1",
+    "id": "v_99099f5c",
     "type": "vote",
     "entryId": "ea4834c8",
     "votedBelt": "Red",
@@ -1011,22 +1215,22 @@
     "userId": "pzSak8xusHdeNlD0JmTru5kMrww2",
     "displayName": "Sidepicks",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:50:29.087Z",
-    "updatedAt": "2026-10-09T01:50:29.087Z"
+    "createdAt": "2026-10-09T16:11:57.398Z",
+    "updatedAt": "2026-10-09T16:11:57.398Z"
   },
   {
-    "id": "v_e1c6009b",
+    "id": "v_c9e360f6",
     "type": "vote",
     "entryId": "3bfcd36c",
     "votedBelt": "Blue",
-    "userId": "u_1b5ce975",
+    "userId": "u_8dfd2b20",
     "displayName": "Unknown",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:49:29.087Z",
-    "updatedAt": "2026-10-09T01:49:29.087Z"
+    "createdAt": "2026-10-09T16:10:57.398Z",
+    "updatedAt": "2026-10-09T16:10:57.398Z"
   },
   {
-    "id": "v_cbf3946b",
+    "id": "v_e29f552c",
     "type": "vote",
     "entryId": "3bfcd36c",
     "votedBelt": "Blue",
@@ -1034,11 +1238,11 @@
     "userId": "kBjhBaserkb0dTYBtgzNcLddnyy1",
     "displayName": "Nightmare",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:50:29.087Z",
-    "updatedAt": "2026-10-09T01:50:29.087Z"
+    "createdAt": "2026-10-09T16:11:57.398Z",
+    "updatedAt": "2026-10-09T16:11:57.398Z"
   },
   {
-    "id": "v_767f7c74",
+    "id": "v_72814024",
     "type": "vote",
     "entryId": "3bfcd36c",
     "votedBelt": "Blue",
@@ -1046,11 +1250,11 @@
     "userId": "tUMX51TojfWcZxzqpiPYKTnOnQg1",
     "displayName": "BrianBreaksShit ",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:51:29.087Z",
-    "updatedAt": "2026-10-09T01:51:29.087Z"
+    "createdAt": "2026-10-09T16:12:57.398Z",
+    "updatedAt": "2026-10-09T16:12:57.398Z"
   },
   {
-    "id": "v_c1c4cd51",
+    "id": "v_9129c7e5",
     "type": "vote",
     "entryId": "3bfcd36c",
     "votedBelt": "Blue",
@@ -1058,11 +1262,11 @@
     "userId": "nOCg2aCpEgOI5lJOxwyScW9kXFX2",
     "displayName": "Klettus",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:52:29.087Z",
-    "updatedAt": "2026-10-09T01:52:29.087Z"
+    "createdAt": "2026-10-09T16:13:57.398Z",
+    "updatedAt": "2026-10-09T16:13:57.398Z"
   },
   {
-    "id": "v_5d2992fd",
+    "id": "v_62d8dd96",
     "type": "vote",
     "entryId": "c6cd3574",
     "votedBelt": "Red",
@@ -1070,11 +1274,11 @@
     "userId": "pzSak8xusHdeNlD0JmTru5kMrww2",
     "displayName": "Sidepicks",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:49:29.088Z",
-    "updatedAt": "2026-10-09T01:49:29.088Z"
+    "createdAt": "2026-10-09T16:10:57.398Z",
+    "updatedAt": "2026-10-09T16:10:57.398Z"
   },
   {
-    "id": "v_769f6cc0",
+    "id": "v_549ab150",
     "type": "vote",
     "entryId": "2ac99741",
     "votedBelt": "Blue",
@@ -1082,11 +1286,11 @@
     "userId": "tbaq0CWuDTXerA0eUi0kGASVb1Z2",
     "displayName": "Clefmentine",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:49:29.088Z",
-    "updatedAt": "2026-10-09T01:49:29.088Z"
+    "createdAt": "2026-10-09T16:10:57.399Z",
+    "updatedAt": "2026-10-09T16:10:57.399Z"
   },
   {
-    "id": "v_82331562",
+    "id": "v_6830645b",
     "type": "vote",
     "entryId": "2ac99741",
     "votedBelt": "Blue",
@@ -1094,23 +1298,23 @@
     "userId": "mZyfQIARjCP1uJJJc7ioMAALV9v2",
     "displayName": "PeaceWeapon",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:50:29.088Z",
-    "updatedAt": "2026-10-09T01:50:29.088Z"
+    "createdAt": "2026-10-09T16:11:57.399Z",
+    "updatedAt": "2026-10-09T16:11:57.399Z"
   },
   {
-    "id": "v_f03fb55a",
+    "id": "v_21e1abee",
     "type": "vote",
     "entryId": "3ca24202",
     "votedBelt": "Purple",
     "comment": "Craig: this felt purple to me. Some pins have to be mapped out because they bind no matter what, due to the second shearline, but the rest are easy. Could be a lot of variation with these.",
-    "userId": "u_44ba078d",
+    "userId": "u_9a4c8f0f",
     "displayName": "Craig",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:49:29.088Z",
-    "updatedAt": "2026-10-09T01:49:29.088Z"
+    "createdAt": "2026-10-09T16:10:57.399Z",
+    "updatedAt": "2026-10-09T16:10:57.399Z"
   },
   {
-    "id": "v_96bce62b",
+    "id": "v_ad6ef3c1",
     "type": "vote",
     "entryId": "3ca24202",
     "votedBelt": "Purple",
@@ -1118,11 +1322,11 @@
     "userId": "tbaq0CWuDTXerA0eUi0kGASVb1Z2",
     "displayName": "Clefmentine",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:50:29.088Z",
-    "updatedAt": "2026-10-09T01:50:29.088Z"
+    "createdAt": "2026-10-09T16:11:57.399Z",
+    "updatedAt": "2026-10-09T16:11:57.399Z"
   },
   {
-    "id": "v_5b8dfa70",
+    "id": "v_d98c105a",
     "type": "vote",
     "entryId": "3ca24202",
     "votedBelt": "Purple",
@@ -1130,11 +1334,11 @@
     "userId": "FGhShmNkxTXC9vwmZwWylOvU8K72",
     "displayName": "Alpama",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:51:29.088Z",
-    "updatedAt": "2026-10-09T01:51:29.088Z"
+    "createdAt": "2026-10-09T16:12:57.399Z",
+    "updatedAt": "2026-10-09T16:12:57.399Z"
   },
   {
-    "id": "v_c4e3e989",
+    "id": "v_f4775168",
     "type": "vote",
     "entryId": "f5086cb9",
     "votedBelt": "Purple",
@@ -1142,11 +1346,11 @@
     "userId": "NdkmYGydSHfPTcj5xuqjwSyJJI42",
     "displayName": "Greenish",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:49:29.089Z",
-    "updatedAt": "2026-10-09T01:49:29.089Z"
+    "createdAt": "2026-10-09T16:10:57.400Z",
+    "updatedAt": "2026-10-09T16:10:57.400Z"
   },
   {
-    "id": "v_5897842f",
+    "id": "v_6263636d",
     "type": "vote",
     "entryId": "f5086cb9",
     "votedBelt": "Purple",
@@ -1154,11 +1358,11 @@
     "userId": "tbaq0CWuDTXerA0eUi0kGASVb1Z2",
     "displayName": "Clefmentine",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:50:29.089Z",
-    "updatedAt": "2026-10-09T01:50:29.089Z"
+    "createdAt": "2026-10-09T16:11:57.400Z",
+    "updatedAt": "2026-10-09T16:11:57.400Z"
   },
   {
-    "id": "v_d2af65ee",
+    "id": "v_e0aec4a9",
     "type": "vote",
     "entryId": "f5086cb9",
     "votedBelt": "Brown",
@@ -1166,11 +1370,11 @@
     "userId": "YYh4QtNUrba1xOqNm9z2GqG7ssO2",
     "displayName": "baikunz",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:51:29.089Z",
-    "updatedAt": "2026-10-09T01:51:29.089Z"
+    "createdAt": "2026-10-09T16:12:57.400Z",
+    "updatedAt": "2026-10-09T16:12:57.400Z"
   },
   {
-    "id": "v_346128fb",
+    "id": "v_28f57018",
     "type": "vote",
     "entryId": "f5086cb9",
     "votedBelt": "Brown",
@@ -1178,11 +1382,11 @@
     "userId": "1SqcRKce18boUZBtOHWSenGAI202",
     "displayName": "Zehkar",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:52:29.089Z",
-    "updatedAt": "2026-10-09T01:52:29.089Z"
+    "createdAt": "2026-10-09T16:13:57.400Z",
+    "updatedAt": "2026-10-09T16:13:57.400Z"
   },
   {
-    "id": "v_c14a413c",
+    "id": "v_da9cc07e",
     "type": "vote",
     "entryId": "f5086cb9",
     "votedBelt": "Brown",
@@ -1190,11 +1394,11 @@
     "userId": "pzSak8xusHdeNlD0JmTru5kMrww2",
     "displayName": "Sidepicks",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:53:29.089Z",
-    "updatedAt": "2026-10-09T01:53:29.089Z"
+    "createdAt": "2026-10-09T16:14:57.400Z",
+    "updatedAt": "2026-10-09T16:14:57.400Z"
   },
   {
-    "id": "v_ed297282",
+    "id": "v_4ff9647c",
     "type": "vote",
     "entryId": "9637ddde",
     "votedBelt": "Brown",
@@ -1202,11 +1406,11 @@
     "userId": "8PKfUHTiafgObsQQr162dQRlBCo1",
     "displayName": "GravityKarma",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:49:29.089Z",
-    "updatedAt": "2026-10-09T01:49:29.089Z"
+    "createdAt": "2026-10-09T16:10:57.400Z",
+    "updatedAt": "2026-10-09T16:10:57.400Z"
   },
   {
-    "id": "v_42397b8a",
+    "id": "v_9de7661e",
     "type": "vote",
     "entryId": "aaca6c85",
     "votedBelt": "Blue",
@@ -1214,11 +1418,11 @@
     "userId": "pzSak8xusHdeNlD0JmTru5kMrww2",
     "displayName": "Sidepicks",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:49:29.089Z",
-    "updatedAt": "2026-10-09T01:49:29.089Z"
+    "createdAt": "2026-10-09T16:10:57.400Z",
+    "updatedAt": "2026-10-09T16:10:57.400Z"
   },
   {
-    "id": "v_88453cd0",
+    "id": "v_3ec19c67",
     "type": "vote",
     "entryId": "aaca6c85",
     "votedBelt": "Blue",
@@ -1226,11 +1430,11 @@
     "userId": "WMSvvuutyShfvBBYB3PmDe4fmeS2",
     "displayName": "NiXXeD",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:50:29.089Z",
-    "updatedAt": "2026-10-09T01:50:29.089Z"
+    "createdAt": "2026-10-09T16:11:57.400Z",
+    "updatedAt": "2026-10-09T16:11:57.400Z"
   },
   {
-    "id": "v_bc6b0bc7",
+    "id": "v_88b6fa2b",
     "type": "vote",
     "entryId": "aaca6c85",
     "votedBelt": "Blue",
@@ -1238,11 +1442,11 @@
     "userId": "ogrEbc6fjmVOKtvfZ7vENh6oX072",
     "displayName": "Burnetb1",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:51:29.089Z",
-    "updatedAt": "2026-10-09T01:51:29.089Z"
+    "createdAt": "2026-10-09T16:12:57.400Z",
+    "updatedAt": "2026-10-09T16:12:57.400Z"
   },
   {
-    "id": "v_68b8a459",
+    "id": "v_83bfa155",
     "type": "vote",
     "entryId": "6cb514ea",
     "votedBelt": "Blue",
@@ -1250,11 +1454,11 @@
     "userId": "UbhgAjZIuLauV1dw2G4QsocHIk83",
     "displayName": "Georgia Jim",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:49:29.089Z",
-    "updatedAt": "2026-10-09T01:49:29.089Z"
+    "createdAt": "2026-10-09T16:10:57.401Z",
+    "updatedAt": "2026-10-09T16:10:57.401Z"
   },
   {
-    "id": "v_8e893ec9",
+    "id": "v_8542d7a1",
     "type": "vote",
     "entryId": "6cb514ea",
     "votedBelt": "Purple",
@@ -1262,11 +1466,11 @@
     "userId": "GGplAdctTfVDLVvYsfIADJmfp8f2",
     "displayName": "mgsecure",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:50:29.089Z",
-    "updatedAt": "2026-10-09T01:50:29.089Z"
+    "createdAt": "2026-10-09T16:11:57.401Z",
+    "updatedAt": "2026-10-09T16:11:57.401Z"
   },
   {
-    "id": "v_8de7ab6e",
+    "id": "v_c08c850a",
     "type": "vote",
     "entryId": "6cb514ea",
     "votedBelt": "Green",
@@ -1274,11 +1478,11 @@
     "userId": "6dSEXTn8flPPg4EV5IlSQWGVT983",
     "displayName": "VectorPotential",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:51:29.089Z",
-    "updatedAt": "2026-10-09T01:51:29.089Z"
+    "createdAt": "2026-10-09T16:12:57.401Z",
+    "updatedAt": "2026-10-09T16:12:57.401Z"
   },
   {
-    "id": "v_7565ad25",
+    "id": "v_f410a356",
     "type": "vote",
     "entryId": "6cb514ea",
     "votedBelt": "Blue",
@@ -1286,11 +1490,11 @@
     "userId": "VBmk1eBTsyeE3MqvDJMRrWoM3mt1",
     "displayName": "Spyc",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:52:29.089Z",
-    "updatedAt": "2026-10-09T01:52:29.089Z"
+    "createdAt": "2026-10-09T16:13:57.401Z",
+    "updatedAt": "2026-10-09T16:13:57.401Z"
   },
   {
-    "id": "v_52bebc40",
+    "id": "v_dec56f17",
     "type": "vote",
     "entryId": "6cb514ea",
     "votedBelt": "Blue",
@@ -1298,22 +1502,22 @@
     "userId": "qtp7IM8d9sawUEAKsM0vwMITexR2",
     "displayName": "Bugasu",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:53:29.089Z",
-    "updatedAt": "2026-10-09T01:53:29.089Z"
+    "createdAt": "2026-10-09T16:14:57.401Z",
+    "updatedAt": "2026-10-09T16:14:57.401Z"
   },
   {
-    "id": "v_d3588db6",
+    "id": "v_4a208570",
     "type": "vote",
     "entryId": "6cb514ea",
     "votedBelt": "Blue",
-    "userId": "u_4946a9af",
+    "userId": "u_131ffcd3",
     "displayName": "Unknown",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:54:29.089Z",
-    "updatedAt": "2026-10-09T01:54:29.089Z"
+    "createdAt": "2026-10-09T16:15:57.401Z",
+    "updatedAt": "2026-10-09T16:15:57.401Z"
   },
   {
-    "id": "v_5fc72522",
+    "id": "v_e3736161",
     "type": "vote",
     "entryId": "d87bb501",
     "votedBelt": "Yellow",
@@ -1321,11 +1525,11 @@
     "userId": "pzSak8xusHdeNlD0JmTru5kMrww2",
     "displayName": "Sidepicks",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:49:29.090Z",
-    "updatedAt": "2026-10-09T01:49:29.090Z"
+    "createdAt": "2026-10-09T16:10:57.401Z",
+    "updatedAt": "2026-10-09T16:10:57.401Z"
   },
   {
-    "id": "v_a6fa8cbb",
+    "id": "v_250c265a",
     "type": "vote",
     "entryId": "d87bb501",
     "votedBelt": "Orange",
@@ -1333,11 +1537,11 @@
     "userId": "VBmk1eBTsyeE3MqvDJMRrWoM3mt1",
     "displayName": "Spyc",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:50:29.090Z",
-    "updatedAt": "2026-10-09T01:50:29.090Z"
+    "createdAt": "2026-10-09T16:11:57.401Z",
+    "updatedAt": "2026-10-09T16:11:57.401Z"
   },
   {
-    "id": "v_1076c9ee",
+    "id": "v_1e07c26b",
     "type": "vote",
     "entryId": "9b528165",
     "votedBelt": "Purple",
@@ -1345,11 +1549,11 @@
     "userId": "f2yySWbxUBXF8k3HgorYhrm76gx2",
     "displayName": "Reinder",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:49:29.090Z",
-    "updatedAt": "2026-10-09T01:49:29.090Z"
+    "createdAt": "2026-10-09T16:10:57.401Z",
+    "updatedAt": "2026-10-09T16:10:57.401Z"
   },
   {
-    "id": "v_21fe4957",
+    "id": "v_d6ceeedd",
     "type": "vote",
     "entryId": "5646568c",
     "votedBelt": "Black 5",
@@ -1357,11 +1561,11 @@
     "userId": "BJyWOIOsqmRDkgHZBqIEGbGnVSA3",
     "displayName": "tonysansan",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:49:29.090Z",
-    "updatedAt": "2026-10-09T01:49:29.090Z"
+    "createdAt": "2026-10-09T16:10:57.401Z",
+    "updatedAt": "2026-10-09T16:10:57.401Z"
   },
   {
-    "id": "v_83265412",
+    "id": "v_f05a7ccb",
     "type": "vote",
     "entryId": "d78c58be",
     "votedBelt": "Purple",
@@ -1369,11 +1573,11 @@
     "userId": "e2RNiz570rWqYYxDSDn6Y0uhgA43",
     "displayName": "Marson",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:49:29.090Z",
-    "updatedAt": "2026-10-09T01:49:29.090Z"
+    "createdAt": "2026-10-09T16:10:57.402Z",
+    "updatedAt": "2026-10-09T16:10:57.402Z"
   },
   {
-    "id": "v_b0d3a3e7",
+    "id": "v_85f86b34",
     "type": "vote",
     "entryId": "d78c58be",
     "votedBelt": "Purple",
@@ -1381,11 +1585,11 @@
     "userId": "NdkmYGydSHfPTcj5xuqjwSyJJI42",
     "displayName": "Greenish",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:50:29.090Z",
-    "updatedAt": "2026-10-09T01:50:29.090Z"
+    "createdAt": "2026-10-09T16:11:57.402Z",
+    "updatedAt": "2026-10-09T16:11:57.402Z"
   },
   {
-    "id": "v_cca5432a",
+    "id": "v_a30e5acb",
     "type": "vote",
     "entryId": "e713e7e6",
     "votedBelt": "Green",
@@ -1393,23 +1597,23 @@
     "userId": "mZyfQIARjCP1uJJJc7ioMAALV9v2",
     "displayName": "PeaceWeapon",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:49:29.091Z",
-    "updatedAt": "2026-10-09T01:49:29.091Z"
+    "createdAt": "2026-10-09T16:10:57.402Z",
+    "updatedAt": "2026-10-09T16:10:57.402Z"
   },
   {
-    "id": "v_a539cce1",
+    "id": "v_7f2f3510",
     "type": "vote",
     "entryId": "e713e7e6",
     "votedBelt": "Blue",
     "comment": "Yagias:\nGood fun and much trickier than say an ACE II, Requires custom tensioning tool.",
-    "userId": "u_a726aab1",
+    "userId": "u_89015b15",
     "displayName": "Yagias",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:50:29.091Z",
-    "updatedAt": "2026-10-09T01:50:29.091Z"
+    "createdAt": "2026-10-09T16:11:57.402Z",
+    "updatedAt": "2026-10-09T16:11:57.402Z"
   },
   {
-    "id": "v_26c5d098",
+    "id": "v_635cb663",
     "type": "vote",
     "entryId": "e713e7e6",
     "votedBelt": "Blue",
@@ -1417,11 +1621,11 @@
     "userId": "tbaq0CWuDTXerA0eUi0kGASVb1Z2",
     "displayName": "Clefmentine",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:51:29.091Z",
-    "updatedAt": "2026-10-09T01:51:29.091Z"
+    "createdAt": "2026-10-09T16:12:57.402Z",
+    "updatedAt": "2026-10-09T16:12:57.402Z"
   },
   {
-    "id": "v_b0a3052f",
+    "id": "v_f3bc332f",
     "type": "vote",
     "entryId": "8a7eee5c",
     "votedBelt": "Red",
@@ -1429,11 +1633,11 @@
     "userId": "qXhqtUdEVFfrajxqblKl8bqQqXM2",
     "displayName": "DQ",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:49:29.091Z",
-    "updatedAt": "2026-10-09T01:49:29.091Z"
+    "createdAt": "2026-10-09T16:10:57.403Z",
+    "updatedAt": "2026-10-09T16:10:57.403Z"
   },
   {
-    "id": "v_c100c77f",
+    "id": "v_b268b34d",
     "type": "vote",
     "entryId": "a72739bc",
     "votedBelt": "Black 2",
@@ -1441,11 +1645,11 @@
     "userId": "XKPQaAR525XV2JsqGn12eEKwxD62",
     "displayName": "DoNotDuplicate",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:49:29.092Z",
-    "updatedAt": "2026-10-09T01:49:29.092Z"
+    "createdAt": "2026-10-09T16:10:57.403Z",
+    "updatedAt": "2026-10-09T16:10:57.403Z"
   },
   {
-    "id": "v_9cfef924",
+    "id": "v_6a97c1f5",
     "type": "vote",
     "entryId": "55d4676c",
     "votedBelt": "Blue",
@@ -1453,11 +1657,11 @@
     "userId": "pzSak8xusHdeNlD0JmTru5kMrww2",
     "displayName": "Sidepicks",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:49:29.092Z",
-    "updatedAt": "2026-10-09T01:49:29.092Z"
+    "createdAt": "2026-10-09T16:10:57.404Z",
+    "updatedAt": "2026-10-09T16:10:57.404Z"
   },
   {
-    "id": "v_f9d3df40",
+    "id": "v_315e6117",
     "type": "vote",
     "entryId": "55d4676c",
     "votedBelt": "Purple",
@@ -1465,11 +1669,11 @@
     "userId": "WMSvvuutyShfvBBYB3PmDe4fmeS2",
     "displayName": "NiXXeD",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:50:29.092Z",
-    "updatedAt": "2026-10-09T01:50:29.092Z"
+    "createdAt": "2026-10-09T16:11:57.404Z",
+    "updatedAt": "2026-10-09T16:11:57.404Z"
   },
   {
-    "id": "v_e8bd5eba",
+    "id": "v_10ae9615",
     "type": "vote",
     "entryId": "55d4676c",
     "votedBelt": "Purple",
@@ -1477,11 +1681,11 @@
     "userId": "ogrEbc6fjmVOKtvfZ7vENh6oX072",
     "displayName": "Burnetb1",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:51:29.092Z",
-    "updatedAt": "2026-10-09T01:51:29.092Z"
+    "createdAt": "2026-10-09T16:12:57.404Z",
+    "updatedAt": "2026-10-09T16:12:57.404Z"
   },
   {
-    "id": "v_8315d7e2",
+    "id": "v_38d41720",
     "type": "vote",
     "entryId": "55d4676c",
     "votedBelt": "Purple",
@@ -1489,11 +1693,11 @@
     "userId": "XoUDXU5McjTuVnPA1xfmzytcKuy2",
     "displayName": "Red Wanderer",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:52:29.092Z",
-    "updatedAt": "2026-10-09T01:52:29.092Z"
+    "createdAt": "2026-10-09T16:13:57.404Z",
+    "updatedAt": "2026-10-09T16:13:57.404Z"
   },
   {
-    "id": "v_df5b3e25",
+    "id": "v_e5a75908",
     "type": "vote",
     "entryId": "6c395573",
     "votedBelt": "Black 2",
@@ -1501,11 +1705,11 @@
     "userId": "pzSak8xusHdeNlD0JmTru5kMrww2",
     "displayName": "Sidepicks",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:49:29.093Z",
-    "updatedAt": "2026-10-09T01:49:29.093Z"
+    "createdAt": "2026-10-09T16:10:57.404Z",
+    "updatedAt": "2026-10-09T16:10:57.404Z"
   },
   {
-    "id": "v_db539787",
+    "id": "v_695f1078",
     "type": "vote",
     "entryId": "6c395573",
     "votedBelt": "Black 2",
@@ -1513,71 +1717,71 @@
     "userId": "BJyWOIOsqmRDkgHZBqIEGbGnVSA3",
     "displayName": "tonysansan",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:50:29.093Z",
-    "updatedAt": "2026-10-09T01:50:29.093Z"
+    "createdAt": "2026-10-09T16:11:57.404Z",
+    "updatedAt": "2026-10-09T16:11:57.404Z"
   },
   {
-    "id": "v_23598ee8",
+    "id": "v_a37873b2",
     "type": "vote",
     "entryId": "452aaa17",
     "votedBelt": "Orange",
     "comment": "Mugatu\n3 levers on each side of pipe pin, one sheet of metal warding seperating levers 1 from 2&3. Levers interact directly with the shackle.",
-    "userId": "u_2a8ec234",
+    "userId": "u_f278d262",
     "displayName": "Mugatu",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:49:29.093Z",
-    "updatedAt": "2026-10-09T01:49:29.093Z"
+    "createdAt": "2026-10-09T16:10:57.404Z",
+    "updatedAt": "2026-10-09T16:10:57.404Z"
   },
   {
-    "id": "v_ca480600",
+    "id": "v_5173dee5",
     "type": "vote",
     "entryId": "97baf67b",
     "votedBelt": "White",
     "comment": "\nPanda-Frog",
-    "userId": "u_0cccc30c",
+    "userId": "u_93bfb607",
     "displayName": "Panda Frog",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:49:29.093Z",
-    "updatedAt": "2026-10-09T01:49:29.093Z"
+    "createdAt": "2026-10-09T16:10:57.405Z",
+    "updatedAt": "2026-10-09T16:10:57.405Z"
   },
   {
-    "id": "v_492bc40c",
+    "id": "v_2bec5ccb",
     "type": "vote",
     "entryId": "0d0bf1a5",
     "votedBelt": "White",
     "comment": "\nPanda-Frog",
-    "userId": "u_1cbc90a5",
+    "userId": "u_93bfb607",
     "displayName": "Panda Frog",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:49:29.093Z",
-    "updatedAt": "2026-10-09T01:49:29.093Z"
+    "createdAt": "2026-10-09T16:10:57.405Z",
+    "updatedAt": "2026-10-09T16:10:57.405Z"
   },
   {
-    "id": "v_392745b8",
+    "id": "v_86480a84",
     "type": "vote",
     "entryId": "29d423c8",
     "votedBelt": "Yellow",
     "comment": "Panda-Frog",
-    "userId": "u_ff547d42",
+    "userId": "u_93bfb607",
     "displayName": "Panda Frog",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:49:29.093Z",
-    "updatedAt": "2026-10-09T01:49:29.093Z"
+    "createdAt": "2026-10-09T16:10:57.405Z",
+    "updatedAt": "2026-10-09T16:10:57.405Z"
   },
   {
-    "id": "v_2985fd22",
+    "id": "v_d8c04890",
     "type": "vote",
     "entryId": "53365ed3",
     "votedBelt": "Orange",
     "comment": "Panda-Frog",
-    "userId": "u_6331c521",
+    "userId": "u_93bfb607",
     "displayName": "Panda Frog",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:49:29.093Z",
-    "updatedAt": "2026-10-09T01:49:29.093Z"
+    "createdAt": "2026-10-09T16:10:57.405Z",
+    "updatedAt": "2026-10-09T16:10:57.405Z"
   },
   {
-    "id": "v_6dbf6017",
+    "id": "v_5fb7aecb",
     "type": "vote",
     "entryId": "6d63be2d",
     "votedBelt": "Yellow",
@@ -1585,11 +1789,11 @@
     "userId": "e2RNiz570rWqYYxDSDn6Y0uhgA43",
     "displayName": "Marson",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:49:29.094Z",
-    "updatedAt": "2026-10-09T01:49:29.094Z"
+    "createdAt": "2026-10-09T16:10:57.405Z",
+    "updatedAt": "2026-10-09T16:10:57.405Z"
   },
   {
-    "id": "v_4d023f68",
+    "id": "v_bfad679b",
     "type": "vote",
     "entryId": "a77899fe",
     "votedBelt": "Blue",
@@ -1597,11 +1801,11 @@
     "userId": "UbhgAjZIuLauV1dw2G4QsocHIk83",
     "displayName": "Georgia Jim",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:49:29.094Z",
-    "updatedAt": "2026-10-09T01:49:29.094Z"
+    "createdAt": "2026-10-09T16:10:57.406Z",
+    "updatedAt": "2026-10-09T16:10:57.406Z"
   },
   {
-    "id": "v_20e3c2b6",
+    "id": "v_0a412018",
     "type": "vote",
     "entryId": "174e20c0",
     "votedBelt": "Brown",
@@ -1609,23 +1813,23 @@
     "userId": "bSkotjOGENXHGd3rpo8G3TJeCk33",
     "displayName": "Crispix",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:49:29.095Z",
-    "updatedAt": "2026-10-09T01:49:29.095Z"
+    "createdAt": "2026-10-09T16:10:57.406Z",
+    "updatedAt": "2026-10-09T16:10:57.406Z"
   },
   {
-    "id": "v_9bd3e3d8",
+    "id": "v_ba572f7d",
     "type": "vote",
     "entryId": "9a99a0a7",
     "votedBelt": "White",
     "comment": "Old model but sometimes available secondhand. 4 standard pins, nothing fancy.\nMoki",
-    "userId": "u_c2037b65",
+    "userId": "u_c3c19741",
     "displayName": "Moki",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:49:29.095Z",
-    "updatedAt": "2026-10-09T01:49:29.095Z"
+    "createdAt": "2026-10-09T16:10:57.407Z",
+    "updatedAt": "2026-10-09T16:10:57.407Z"
   },
   {
-    "id": "v_2c4051dd",
+    "id": "v_f53d9c48",
     "type": "vote",
     "entryId": "9d35efa9",
     "votedBelt": "Yellow",
@@ -1633,11 +1837,11 @@
     "userId": "WMSvvuutyShfvBBYB3PmDe4fmeS2",
     "displayName": "NiXXeD",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:49:29.096Z",
-    "updatedAt": "2026-10-09T01:49:29.096Z"
+    "createdAt": "2026-10-09T16:10:57.407Z",
+    "updatedAt": "2026-10-09T16:10:57.407Z"
   },
   {
-    "id": "v_c7f4e5e9",
+    "id": "v_602a1962",
     "type": "vote",
     "entryId": "9d35efa9",
     "votedBelt": "Yellow",
@@ -1645,11 +1849,11 @@
     "userId": "pzSak8xusHdeNlD0JmTru5kMrww2",
     "displayName": "Sidepicks",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:50:29.096Z",
-    "updatedAt": "2026-10-09T01:50:29.096Z"
+    "createdAt": "2026-10-09T16:11:57.407Z",
+    "updatedAt": "2026-10-09T16:11:57.407Z"
   },
   {
-    "id": "v_a001ef13",
+    "id": "v_5deb47c8",
     "type": "vote",
     "entryId": "288c8f6e",
     "votedBelt": "Blue",
@@ -1657,11 +1861,11 @@
     "userId": "Mwbvdkq1QtWu2zLwEaj3imULSry1",
     "displayName": "decoder",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:49:29.096Z",
-    "updatedAt": "2026-10-09T01:49:29.096Z"
+    "createdAt": "2026-10-09T16:10:57.408Z",
+    "updatedAt": "2026-10-09T16:10:57.408Z"
   },
   {
-    "id": "v_220e6722",
+    "id": "v_771a1cbc",
     "type": "vote",
     "entryId": "10679814",
     "votedBelt": "Blue",
@@ -1669,11 +1873,11 @@
     "userId": "Mwbvdkq1QtWu2zLwEaj3imULSry1",
     "displayName": "decoder",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:49:29.096Z",
-    "updatedAt": "2026-10-09T01:49:29.096Z"
+    "createdAt": "2026-10-09T16:10:57.408Z",
+    "updatedAt": "2026-10-09T16:10:57.408Z"
   },
   {
-    "id": "v_ac9a0ceb",
+    "id": "v_5ccdb00c",
     "type": "vote",
     "entryId": "10679814",
     "votedBelt": "Blue",
@@ -1681,23 +1885,23 @@
     "userId": "pzSak8xusHdeNlD0JmTru5kMrww2",
     "displayName": "Sidepicks",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:50:29.096Z",
-    "updatedAt": "2026-10-09T01:50:29.096Z"
+    "createdAt": "2026-10-09T16:11:57.408Z",
+    "updatedAt": "2026-10-09T16:11:57.408Z"
   },
   {
-    "id": "v_9aea7bfe",
+    "id": "v_c8d6540f",
     "type": "vote",
     "entryId": "c4a2fbe5",
     "votedBelt": "Blue",
     "comment": "Could be green, no security pins, drivers and key pins are rounded where they meet at shear. Only rated blue because you need to search for the binder in the 3 rows. 17 pins in mine.\n-Mugatu",
-    "userId": "u_16f39307",
+    "userId": "u_f278d262",
     "displayName": "Mugatu",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:49:29.097Z",
-    "updatedAt": "2026-10-09T01:49:29.097Z"
+    "createdAt": "2026-10-09T16:10:57.409Z",
+    "updatedAt": "2026-10-09T16:10:57.409Z"
   },
   {
-    "id": "v_ab677202",
+    "id": "v_d141eab8",
     "type": "vote",
     "entryId": "e16080de",
     "votedBelt": "Blue",
@@ -1705,11 +1909,11 @@
     "userId": "pzSak8xusHdeNlD0JmTru5kMrww2",
     "displayName": "Sidepicks",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:49:29.097Z",
-    "updatedAt": "2026-10-09T01:49:29.097Z"
+    "createdAt": "2026-10-09T16:10:57.409Z",
+    "updatedAt": "2026-10-09T16:10:57.409Z"
   },
   {
-    "id": "v_3634769f",
+    "id": "v_54c6c079",
     "type": "vote",
     "entryId": "ad6b0d8f",
     "votedBelt": "Yellow",
@@ -1717,23 +1921,23 @@
     "userId": "IzvfeUBxzWcd8VXKHq0T4MUhtQu1",
     "displayName": "LockPickingFisherman",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:49:29.097Z",
-    "updatedAt": "2026-10-09T01:49:29.097Z"
+    "createdAt": "2026-10-09T16:10:57.409Z",
+    "updatedAt": "2026-10-09T16:10:57.409Z"
   },
   {
-    "id": "v_33da6dc2",
+    "id": "v_c5992052",
     "type": "vote",
     "entryId": "a7ffa199",
     "votedBelt": "Green",
     "comment": "6 standards, 2 spools with poor tolerances. Could feel shifts in the core setting standard pins. Keyway isn’t really restrictive, was able to use tall MP flags to set pins. ",
-    "userId": "u_c4e0e984",
+    "userId": "u_77e04c0d",
     "displayName": "Unknown",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:49:29.097Z",
-    "updatedAt": "2026-10-09T01:49:29.097Z"
+    "createdAt": "2026-10-09T16:10:57.409Z",
+    "updatedAt": "2026-10-09T16:10:57.409Z"
   },
   {
-    "id": "v_7d070149",
+    "id": "v_40180e85",
     "type": "vote",
     "entryId": "2b6dd267",
     "votedBelt": "Blue",
@@ -1741,11 +1945,11 @@
     "userId": "SyjMMYh9rYPI0lrxAWu5z5rrawx2",
     "displayName": "Lock Picking Paul",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:49:29.097Z",
-    "updatedAt": "2026-10-09T01:49:29.097Z"
+    "createdAt": "2026-10-09T16:10:57.409Z",
+    "updatedAt": "2026-10-09T16:10:57.409Z"
   },
   {
-    "id": "v_26f1b41a",
+    "id": "v_8fec711a",
     "type": "vote",
     "entryId": "0757b1ed",
     "votedBelt": "Green",
@@ -1753,11 +1957,11 @@
     "userId": "UbhgAjZIuLauV1dw2G4QsocHIk83",
     "displayName": "Georgia Jim",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:49:29.098Z",
-    "updatedAt": "2026-10-09T01:49:29.098Z"
+    "createdAt": "2026-10-09T16:10:57.409Z",
+    "updatedAt": "2026-10-09T16:10:57.409Z"
   },
   {
-    "id": "v_bdd20366",
+    "id": "v_654c6ecf",
     "type": "vote",
     "entryId": "074db05e",
     "votedBelt": "Green",
@@ -1765,7 +1969,7 @@
     "userId": "UbhgAjZIuLauV1dw2G4QsocHIk83",
     "displayName": "Georgia Jim",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T01:49:29.098Z",
-    "updatedAt": "2026-10-09T01:49:29.098Z"
+    "createdAt": "2026-10-09T16:10:57.410Z",
+    "updatedAt": "2026-10-09T16:10:57.410Z"
   }
 ]

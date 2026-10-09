@@ -8,6 +8,24 @@ import historicalVotes from '../../src/data/classification-votes-historical.json
 import adminActions from '../../src/data/classification-samples-admin.json'
 
 describe('ClassificationProvider', () => {
+    it('shows sheet votes imported before an unranked entry was added', () => {
+        let classification
+        function CaptureContext() {
+            classification = useContext(ClassificationContext)
+            return null
+        }
+
+        renderWithProviders(<ClassificationProvider><CaptureContext/></ClassificationProvider>)
+
+        const entry = allEntries.find(item => item.id === 'fdc8b16e')
+        const vote = votes.find(record => record.entryId === entry.id)
+
+        expect(Date.parse(vote.updatedAt)).toBeLessThan(Date.parse(entry.currentBeltDate))
+        expect(classification.getCurrentVotes(entry)).toContainEqual(vote)
+        expect(classification.getPreviousVotes(entry)).not.toContainEqual(vote)
+        expect(classification.getAdminActionStatus(entry)).toBe('Has Votes')
+    })
+
     it('keeps votes and admin actions visible when an entry has no current belt date', () => {
         let classification
         function CaptureContext() {

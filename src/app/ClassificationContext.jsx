@@ -31,7 +31,8 @@ export function ClassificationProvider({children}) {
         const publishDateValues = (actionsByEntry.get(entry.id) ?? [])
             .filter(action => action.status === 'Published')
             .map(action => dayjs(action.updatedAt).valueOf())
-        const currentBeltDate = entry.currentBeltDate ? dayjs(entry.currentBeltDate) : null
+        const currentBeltDate = entry.belt !== 'Unranked' && entry.currentBeltDate
+            ? dayjs(entry.currentBeltDate) : null
         const beltDateValue = currentBeltDate?.isValid() ? currentBeltDate.valueOf() : 0
         return dayjs(Math.max(0, ...publishDateValues, beltDateValue))
     }, [])

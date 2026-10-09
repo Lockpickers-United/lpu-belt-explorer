@@ -6,6 +6,7 @@ import fs from 'fs'
 import {findLastMentionedVoter} from './classificationNoteMatcher.js'
 
 const refreshData = false
+const historical = false
 
 const CREDENTIALS_PATH = new URL('../keys/google-credentials.json', import.meta.url)
 const OUTPUT_DIR = new URL('../src/data/classification/', import.meta.url)
@@ -136,9 +137,11 @@ async function processAll() {
 
 }
 
-!refreshData && processData(sheetConfig.gid).then()
-
-//!refreshData && processAll().then()
+if (historical && !refreshData) {
+    processAll().then()
+} else if (!refreshData) {
+    processData(sheetConfig.gid).then()
+}
 
 const beltNames = {
     w: 'White',
