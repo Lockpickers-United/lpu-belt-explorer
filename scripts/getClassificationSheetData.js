@@ -36,7 +36,7 @@ async function getMainSheetData(sheetId) {
     })
 }
 
-refreshData && getMainSheetData(historicalTabs[0])
+refreshData && getMainSheetData(sheetConfig.gid)
 
 
 async function readData(sheetId) {
@@ -65,13 +65,13 @@ async function processData(sheetId) {
             return {votedBelt, comment: note?.note, userId, displayName}
         })
 
-        const dateString = '2026-10-01T01:01:01.001Z'
-            // dayjs().toISOString()
+        //const dateString = '2026-10-01T01:01:01.001Z'
+        const dateString = dayjs().toISOString()
 
             votes.forEach((vote, index) => {
             const voteData = {
                 id: 'v_' + genHexString(8),
-                type: 'historicalVote',
+                type: 'vote',
                 //sheetRow: row.sheetRow,
                 //lockname: `${make} ${model} ${version}`,
                 entryId,
@@ -102,6 +102,17 @@ async function processData(sheetId) {
 
     const exportData = rowData.filter(row => row.userId && row.entryId && row.votedBelt)
     console.log('exportData', exportData.length)
+
+    fs.writeFile(new URL(`classification-sheet-votes-${sheetId}.json`, DATA_DIR), JSON.stringify(exportData, null, 2), function (err) {
+        if (err) {
+            console.error('save classification-sheet-export.json error:', err)
+            return (`save classification-sheet-export.json error: ${err}`)
+        } else {
+            return ('classification-sheet-export.json saved')
+        }
+    })
+
+
     return exportData
 }
 
@@ -125,8 +136,9 @@ async function processAll() {
 
 }
 
-//!refreshData && processData(historicalTabs[0]).then()
-!refreshData && processAll().then()
+!refreshData && processData(sheetConfig.gid).then()
+
+//!refreshData && processAll().then()
 
 const beltNames = {
     w: 'White',

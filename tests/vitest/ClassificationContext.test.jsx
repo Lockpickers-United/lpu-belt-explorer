@@ -20,16 +20,25 @@ describe('ClassificationProvider', () => {
         const stagedAction = adminActions.find(action => action.status === 'Staged' &&
             allEntries.find(entry => entry.id === action.entryId)?.belt !== 'Unranked')
         const stagedEntry = allEntries.find(entry => entry.id === stagedAction.entryId)
-        const vote = votes.find(record => record.entryId === stagedEntry.id)
+        const entryVotes = votes.filter(record => record.entryId === stagedEntry.id)
+        const entryActions = adminActions.filter(action => action.entryId === stagedEntry.id)
+        const vote = entryVotes[0]
+        const entryWithoutBeltDate = {...stagedEntry, currentBeltDate: undefined}
 
-        expect(stagedEntry.currentBeltDate).toBeUndefined()
-        expect(classification.getLatestMilestone(stagedEntry).valueOf()).toBe(0)
-        expect(classification.getCurrentVotes(stagedEntry)).toContainEqual(vote)
-        expect(classification.getAdminAction(stagedEntry)).toEqual(stagedAction)
-        expect(classification.getAdminActionStatus(stagedEntry)).toBe('Staged')
-        expect(classification.isActive(stagedEntry)).toBe(true)
+        expect(classification.getLatestMilestone(entryWithoutBeltDate).valueOf()).toBe(0)
+        expect(classification.getCurrentVotes(entryWithoutBeltDate)).toContainEqual(vote)
+        expect(classification.getAdminAction(entryWithoutBeltDate)).toEqual(stagedAction)
+        expect(classification.getAdminActionStatus(entryWithoutBeltDate)).toBe('Staged')
+        expect(classification.isActive(entryWithoutBeltDate)).toBe(true)
 
-        const laterBeltDate = {...stagedEntry, currentBeltDate: '2026-10-05T00:00:00Z'}
+        const latestRecordTime = Math.max(
+            ...entryVotes.map(record => Date.parse(record.updatedAt)),
+            ...entryActions.map(action => Date.parse(action.updatedAt))
+        )
+        const laterBeltDate = {
+            ...stagedEntry,
+            currentBeltDate: new Date(latestRecordTime + 1).toISOString()
+        }
         expect(classification.getCurrentVotes(laterBeltDate)).toEqual([])
         expect(classification.getPreviousVotes(laterBeltDate)).toContainEqual(vote)
         expect(classification.getAdminAction(laterBeltDate)).toBeNull()

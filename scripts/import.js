@@ -190,13 +190,18 @@ jsonData.forEach(entry => {
             entry.currentBeltDate = dayjs().toISOString()
         }
 
+        const currentBeltDate = previousEntry?.belt !== entry.belt
+            ? dayjs().toISOString()
+            : historicalData[entry.id].currentBeltDate
+
         historicalData[entry.id] = {
             ...historicalData[entry.id],
             ...entry,
-            name,
+            currentBeltDate,
+            name
         }
     }
-
+    entry.currentBeltDate = historicalData[entry.id].currentBeltDate
     entry.dateAdded = historicalData[entry.id].dateAdded
 
 })
