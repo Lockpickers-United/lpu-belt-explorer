@@ -1,10 +1,12 @@
-import React, {useCallback, useContext, useMemo, useSyncExternalStore} from 'react'
-import classificationVotes from '../data/classification-samples.json'
+import React, {useCallback, useContext, useMemo} from 'react'
+import modernVotes from '../data/classification-samples.json'
+import historicalVotes from '../data/classification-votes-historical.json'
 import classificationAdminActions from '../data/classification-samples-admin.json'
 import dayjs from 'dayjs'
 import AuthContext from './AuthContext.jsx'
 
 const ClassificationContext = React.createContext({})
+
 const newestFirst = (a, b) => dayjs(b.updatedAt).valueOf() - dayjs(a.updatedAt).valueOf()
 
 function groupByEntry(records) {
@@ -18,55 +20,13 @@ function groupByEntry(records) {
     return grouped
 }
 
-let historicalVotesByEntry = null
-let historicalVotesPromise
-const historicalVoteListeners = new Set()
-
-function subscribeToHistoricalVotes(listener) {
-    historicalVoteListeners.add(listener)
-    return () => historicalVoteListeners.delete(listener)
-}
-
-function getHistoricalVotesSnapshot() {
-    return historicalVotesByEntry
-}
-
-function loadHistoricalVotes() {
-    if (!historicalVotesPromise) {
-        historicalVotesPromise = import('../data/classification-votes-historical.json')
-            .then(({default: votes}) => {
-                historicalVotesByEntry = groupByEntry(votes)
-                historicalVoteListeners.forEach(listener => listener())
-                return votes
-            })
-            .catch(error => {
-                historicalVotesPromise = null
-                throw error
-            })
-    }
-    return historicalVotesPromise
-}
+const allVotes = [...modernVotes, ...historicalVotes]
+const allAdminActions = classificationAdminActions || []
+const votesByEntry = groupByEntry(allVotes)
+const actionsByEntry = groupByEntry(allAdminActions)
 
 export function ClassificationProvider({children}) {
     const {user} = useContext(AuthContext)
-
-    const allVotes = useMemo(() => classificationVotes || [], [])
-    const allAdminActions = useMemo(() => classificationAdminActions || [], [])
-    const votesByEntry = useMemo(() => groupByEntry(allVotes), [allVotes])
-    const actionsByEntry = useMemo(() => groupByEntry(allAdminActions), [allAdminActions])
-    const historicalVotes = useSyncExternalStore(
-        subscribeToHistoricalVotes,
-        getHistoricalVotesSnapshot,
-        getHistoricalVotesSnapshot
-    )
-    const historicalVotesLoaded = historicalVotes !== null
-    const getHistoricalVotes = useCallback((entryId) => {
-        return historicalVotes?.get(entryId) ?? []
-    }, [historicalVotes])
-
-    // TODO : fix date logic
-    // set default date in code
-    // update on change during import
 
     const getLatestMilestone = useCallback((entry) => {
         const publishDateValues = (actionsByEntry.get(entry.id) ?? [])
@@ -75,38 +35,40 @@ export function ClassificationProvider({children}) {
         const currentBeltDate = entry.currentBeltDate ? dayjs(entry.currentBeltDate) : null
         const beltDateValue = currentBeltDate?.isValid() ? currentBeltDate.valueOf() : 0
         return dayjs(Math.max(0, ...publishDateValues, beltDateValue))
-    }, [actionsByEntry])
+    }, [])
 
     const getAdminAction = useCallback((entry) => {
         const milestone = getLatestMilestone(entry).valueOf()
         return (actionsByEntry.get(entry.id) ?? [])
             .find(action => dayjs(action.updatedAt).valueOf() >= milestone) ?? null
-    }, [actionsByEntry, getLatestMilestone])
+    }, [getLatestMilestone])
 
     const loggedInUserVotes = useMemo(() => {
         return allVotes
             .filter(vote => vote.userId === user?.uid)
             .sort(newestFirst)
-    }, [allVotes, user?.uid])
+    }, [user?.uid])
 
     const getCurrentVotes = useCallback((entry) => {
         const milestone = getLatestMilestone(entry).valueOf()
         return (votesByEntry.get(entry.id) ?? [])
-            .filter(vote => dayjs(vote.updatedAt).valueOf() >= milestone)
-    }, [votesByEntry, getLatestMilestone])
+            .filter(vote => dayjs(vote.updatedAt).valueOf() >= milestone && vote.type === 'vote')
+    }, [getLatestMilestone])
 
     const getPreviousVotes = useCallback((entry) => {
         const milestone = getLatestMilestone(entry).valueOf()
         return (votesByEntry.get(entry.id) ?? [])
-            .filter(vote => dayjs(vote.updatedAt).valueOf() < milestone)
-    }, [votesByEntry, getLatestMilestone])
+            .filter(vote => vote.type === 'historicalVote' ||
+                (vote.type === 'vote' && dayjs(vote.updatedAt).valueOf() < milestone))
+    }, [getLatestMilestone])
 
     const getUserVote = useCallback((entry) => {
         if (!user?.uid) return null
         const milestone = getLatestMilestone(entry).valueOf()
         return (votesByEntry.get(entry.id) ?? [])
-            .find(vote => vote.userId === user.uid && dayjs(vote.updatedAt).valueOf() >= milestone) ?? null
-    }, [getLatestMilestone, user?.uid, votesByEntry])
+            .find(vote => vote.type === 'vote' && vote.userId === user.uid &&
+                dayjs(vote.updatedAt).valueOf() >= milestone) ?? null
+    }, [getLatestMilestone, user?.uid])
 
     const getAdminActionStatus = useCallback((entry) => {
         const action = getAdminAction(entry)
@@ -120,9 +82,8 @@ export function ClassificationProvider({children}) {
 
     const isActive = useCallback((entry) => {
         return entry.belt === 'Unranked' ||
-            ['Re-opened', 'Pending', 'Staged', 'Has Votes'].includes(getAdminActionStatus(entry))
-    }, [getAdminActionStatus])
-
+            ['Re-opened', 'Pending', 'Staged'].includes(getAdminAction(entry)?.status)
+    }, [getAdminAction])
 
     const value = useMemo(() => ({
         allVotes,
@@ -134,11 +95,8 @@ export function ClassificationProvider({children}) {
         getAdminActionStatus,
         getCurrentVotes,
         getPreviousVotes,
-        getHistoricalVotes,
-        loadHistoricalVotes,
-        historicalVotesLoaded,
         isActive
-    }), [allVotes, allAdminActions, loggedInUserVotes, getUserVote, getAdminAction, getLatestMilestone, getAdminActionStatus, getCurrentVotes, getPreviousVotes, getHistoricalVotes, historicalVotesLoaded, isActive])
+    }), [loggedInUserVotes, getUserVote, getAdminAction, getLatestMilestone, getAdminActionStatus, getCurrentVotes, getPreviousVotes, isActive])
 
     return (
         <ClassificationContext.Provider value={value}>

@@ -66,6 +66,7 @@ function AdminPreview({entry, handleToggle}) {
     }, [form])
 
 
+    const previousVotes = useMemo(() => entry.previousVotes?.filter(vote => vote.type === 'vote') ?? [], [entry.previousVotes])
     const showVotes = true
     const [showPreviousVotes, setShowPreviousVotes] = useState(!entry.currentVotes?.length)
 
@@ -90,7 +91,7 @@ function AdminPreview({entry, handleToggle}) {
                             <DisplayClassificationVotes votes={entry.currentVotes} context={'admin'}/>
                         </div>
                     }
-                    {entry.previousVotes?.length > 0 &&
+                    {previousVotes.length > 0 &&
                         <div style={{
                             display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center',
                             fontSize: '0.8rem', lineHeight: '1.8rem', marginTop: 2
@@ -98,7 +99,7 @@ function AdminPreview({entry, handleToggle}) {
                             <Link
                                 onClick={() => setShowPreviousVotes(!showPreviousVotes)}>{showPreviousVotes ? 'hide' : 'show'} previous
                                 votes</Link>
-                            {showPreviousVotes && <DisplayClassificationVotes votes={entry.previousVotes}/>}
+                            {showPreviousVotes && <DisplayClassificationVotes votes={previousVotes}/>}
                         </div>
                     }
                 </>

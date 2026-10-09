@@ -1,4 +1,4 @@
-import React, {useContext, useMemo, useState} from 'react'
+import React, {useContext, useMemo} from 'react'
 import AuthContext from '../app/AuthContext.jsx'
 import {useAccess} from '../app/AccessContext.jsx'
 import DisplayClassificationVotes from './DisplayClassificationVotes.jsx'
@@ -8,22 +8,16 @@ import dayjs from 'dayjs'
 import useWindowSize from '../util/useWindowSize.jsx'
 import ClassificationContext from '../app/ClassificationContext.jsx'
 import BeltStripeMini from '../entries/BeltStripeMini.jsx'
-import Button from '@mui/material/Button'
-import {Collapse} from '@mui/material'
 import {useMatches} from 'react-router-dom'
 
 export default function EntryClassificationVote({entry, showCurrentVotes = true}) {
     const {user} = useContext(AuthContext)
     const {accessInfo} = useAccess()
-    const {
-        getUserVote,
-        getHistoricalVotes,
-        loadHistoricalVotes,
-        historicalVotesLoaded
-    } = useContext(ClassificationContext)
-    const userVote = getUserVote(entry)
+    const {getUserVote} = useContext(ClassificationContext)
 
     const isClassification = useMatches().some(match => match.handle?.route === 'classification')
+
+    const userVote = getUserVote(entry)
 
     const otherVotes = useMemo(() => {
         return entry.currentVotes?.filter(vote => vote.userId !== user.uid).sort((a, b) => {
@@ -31,21 +25,17 @@ export default function EntryClassificationVote({entry, showCurrentVotes = true}
         })
     }, [entry.currentVotes, user.uid])
 
-    const pastVotes = historicalVotesLoaded ? getHistoricalVotes(entry.id) : null
-    const [loadingPastVotes, setLoadingPastVotes] = useState(false)
-    const [pastVotesError, setPastVotesError] = useState(false)
+    const previousVotes = useMemo(() => {
+        return entry.previousVotes?.filter(vote => vote.type === 'vote').sort((a, b) => {
+            return beltSort(a.votedBelt, b.votedBelt) || dayjs(a.updatedAt).valueOf() - dayjs(b.updatedAt).valueOf()
+        })
+    }, [entry.previousVotes])
 
-    const loadPastVotes = async () => {
-        setLoadingPastVotes(true)
-        setPastVotesError(false)
-        try {
-            await loadHistoricalVotes()
-        } catch {
-            setPastVotesError(true)
-        } finally {
-            setLoadingPastVotes(false)
-        }
-    }
+    const historicalVotes = useMemo(() => {
+        return entry.previousVotes?.filter(vote => vote.type === 'historicalVote').sort((a, b) => {
+            return dayjs(a.updatedAt).valueOf() - dayjs(b.updatedAt).valueOf()
+        })
+    }, [entry.previousVotes])
 
     const showVotes = (entry.currentVotes?.length - (userVote?.id ? 1 : 0)) > 1 && !isClassification
 
@@ -74,14 +64,14 @@ export default function EntryClassificationVote({entry, showCurrentVotes = true}
                 </div>
             })}
 
-            {entry?.previousVotes?.length > 0 &&
-                <div style={{marginTop: 24}}>
+            {previousVotes?.length > 0 &&
+                <div role='group' aria-label='Previous votes' style={{marginTop: 24}}>
                     <div style={{fontWeight: 600, position: 'relative', paddingLeft: 24}}>
                         <BeltStripeMini value={entry?.belt} width={16} offset={0}
                                         style={{position: 'absolute', top: 0, left: 0, bottom: 0}}/>
                         PREVIOUS VOTES
                     </div>
-                    {entry.previousVotes.map(vote => {
+                    {previousVotes.map(vote => {
                         return <div key={vote.id}>
                             <VoteDisplay entry={entry} vote={vote} previous={true} owner={vote.userId === user.uid}/>
                         </div>
@@ -89,47 +79,25 @@ export default function EntryClassificationVote({entry, showCurrentVotes = true}
                 </div>
             }
 
-            {isClassification &&
-                <div style={{
+            {isClassification && historicalVotes?.length > 0 &&
+                <div role='group' aria-label='Historical votes' style={{
                     display: 'flex',
                     flexDirection: 'column',
                     marginTop: 24,
                     width: '100%',
                     justifyContent: 'center'
                 }}>
-                    {!historicalVotesLoaded &&
-                        <Button onClick={loadPastVotes} disabled={loadingPastVotes}>
-                            {loadingPastVotes ? 'LOADING HISTORICAL VOTES...' : 'CHECK FOR HISTORICAL VOTES'}
-                        </Button>
-                    }
-
-                    {pastVotesError && !historicalVotesLoaded &&
-                        <div role='alert'
-                             style={{width: '100%', textAlign: 'center', fontStyle: 'italic', fontSize: '0.9rem'}}>
-                            Could not load historical votes. Please try again.
+                    <div style={{fontWeight: 600, position: 'relative', paddingLeft: 24}}>
+                        <BeltStripeMini value={entry?.belt} width={16} offset={0}
+                                        style={{position: 'absolute', top: 0, left: 0, bottom: 0}}/>
+                        HISTORICAL VOTES
+                    </div>
+                    {historicalVotes.map(vote => {
+                        return <div key={vote.id} style={{width: '100%'}}>
+                            <VoteDisplay entry={entry} vote={vote} previous={true}
+                                         owner={vote.userId === user.uid}/>
                         </div>
-                    }
-
-                    {pastVotes?.length === 0 &&
-                        <div style={{width: '100%', textAlign: 'center', fontStyle: 'italic', fontSize: '0.9rem'}}>
-                            No historical votes found
-                        </div>
-                    }
-
-                    <Collapse in={pastVotes?.length > 0} style={{width: '100%'}}>
-                        <div style={{fontWeight: 600, position: 'relative', paddingLeft: 24}}>
-                            <BeltStripeMini value={entry?.belt} width={16} offset={0}
-                                            style={{position: 'absolute', top: 0, left: 0, bottom: 0}}/>
-                            HISTORICAL VOTES
-                        </div>
-                        {pastVotes?.map(vote => {
-                            return <div key={vote.id} style={{width: '100%'}}>
-                                <VoteDisplay entry={entry} vote={vote} previous={true}
-                                             owner={vote.userId === user.uid}/>
-                            </div>
-                        })}
-                    </Collapse>
-
+                    })}
                 </div>
             }
         </div>

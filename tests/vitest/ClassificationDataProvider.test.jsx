@@ -23,7 +23,7 @@ function VoteCount() {
 }
 
 describe('ClassificationDataProvider', () => {
-    it('includes ranked entries with votes or staged actions in the classification views', () => {
+    it('shows unranked entries and ranked entries with active admin actions, but not ranked votes alone', () => {
         let classificationData
         function CaptureData() {
             classificationData = useContext(DataContext)
@@ -32,12 +32,13 @@ describe('ClassificationDataProvider', () => {
 
         const rankedVoteEntry = allEntries.find(entry => entry.id === 'e2fd1519')
         const rankedStagedEntry = allEntries.find(entry => entry.id === '18ecc45b')
+        const unrankedEntry = allEntries.find(entry => entry.belt === 'Unranked')
 
         renderWithProviders(
             <MemoryRouter>
                 <FilterProvider filterFields={classificationFilterFields}>
                     <ClassificationProvider>
-                        <ClassificationDataProvider allEntries={[rankedVoteEntry, rankedStagedEntry]}>
+                        <ClassificationDataProvider allEntries={[rankedVoteEntry, rankedStagedEntry, unrankedEntry]}>
                             <CaptureData/>
                         </ClassificationDataProvider>
                     </ClassificationProvider>
@@ -46,9 +47,11 @@ describe('ClassificationDataProvider', () => {
             {auth: {user: {uid: 'test-user'}}}
         )
 
+        expect(classificationData.getEntryFromId(rankedVoteEntry.id).classificationStatus).toBe('Has Votes')
         expect(classificationData.visibleEntries.map(entry => entry.id)).toEqual(expect.arrayContaining([
-            rankedVoteEntry.id, rankedStagedEntry.id
+            rankedStagedEntry.id, unrankedEntry.id
         ]))
+        expect(classificationData.visibleEntries.map(entry => entry.id)).not.toContain(rankedVoteEntry.id)
         expect(classificationData.visibleChangelogEntries.map(entry => entry.id)).toEqual([rankedStagedEntry.id])
     })
 

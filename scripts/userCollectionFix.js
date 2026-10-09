@@ -34,6 +34,8 @@ const userId = '1dlgPlIKx1dmCO3SH8axvWDbqZB2'
 const data = {}
 // await replaceProfile()
 
+const fromUserId = '4qqxB0nW8dczUws5XuAyhEkgZEj2'
+const toUserId = 'rbeLhuQ49TT4ICbKVHjVTVz1O0q2'
 
 async function removeDuplicates() {
     let hasUpdates = false

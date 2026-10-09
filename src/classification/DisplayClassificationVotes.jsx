@@ -35,7 +35,7 @@ export default function DisplayClassificationVotes({votes, style = {}}) {
                             position: 'relative',
                             height: size, width: size, padding: 2,
                             color: '#ccc', lineHeight: '0.85rem',
-                            backgroundColor: belts[vote.votedBelt].color,
+                            backgroundColor: belts[vote.votedBelt]?.color,
                             border: vote.userId === user.uid ? '1px solid #999' : '1px solid #222'
                         }}>
                             {displayName &&

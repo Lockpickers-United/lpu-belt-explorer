@@ -63,13 +63,17 @@ export default function ChangelogMain() {
             groupedEntries[key].map(entry => {
                 const name = entryName(entry, 'short')
                 const version = entry.version ? ` (${entry.version})` : ''
+                const adminAction = getAdminAction(entry)
                 acc.push({
                     name,
                     version,
                     id: entry.id,
+                    adminActionId: adminAction.id,
+                    action: adminAction.action,
+                    samelineTarget: adminAction.samelineTarget,
                     change: key.replace(/s$/, ''),
-                    belt: getAdminAction(entry).updatedBelt,
-                    note: getAdminAction(entry).note
+                    belt: adminAction.updatedBelt,
+                    note: adminAction.note
                 })
             })
         }

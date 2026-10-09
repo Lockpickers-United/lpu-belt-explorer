@@ -1,10 +1,10 @@
 import React, {useContext} from 'react'
 import {describe, expect, it} from 'vitest'
-import {act} from '@testing-library/react'
 import {renderWithProviders} from '../../src/test/render.jsx'
 import ClassificationContext, {ClassificationProvider} from '../../src/app/ClassificationContext.jsx'
 import allEntries from '../../src/data/data.json'
 import votes from '../../src/data/classification-samples.json'
+import historicalVotes from '../../src/data/classification-votes-historical.json'
 import adminActions from '../../src/data/classification-samples-admin.json'
 
 describe('ClassificationProvider', () => {
@@ -42,10 +42,19 @@ describe('ClassificationProvider', () => {
         expect(classification.getCurrentVotes(laterBeltDate)).toEqual([])
         expect(classification.getPreviousVotes(laterBeltDate)).toContainEqual(vote)
         expect(classification.getAdminAction(laterBeltDate)).toBeNull()
+        expect(classification.isActive(laterBeltDate)).toBe(false)
+
+        const rankedVoteEntry = allEntries.find(entry => entry.id === 'e2fd1519')
+        expect(classification.getAdminActionStatus(rankedVoteEntry)).toBe('Has Votes')
+        expect(classification.isActive(rankedVoteEntry)).toBe(false)
+        expect(classification.isActive({...rankedVoteEntry, belt: 'Unranked'})).toBe(true)
     })
 
-    it('shares historical votes across provider instances after the first load', async () => {
+    it('combines vote types while keeping historical votes out of current and user votes', () => {
         const contexts = []
+        const historicalVote = historicalVotes.find(record => !votes.some(vote =>
+            vote.entryId === record.entryId && vote.userId === record.userId))
+        const entry = {id: historicalVote.entryId, currentBeltDate: undefined}
 
         function CaptureContext({index}) {
             contexts[index] = useContext(ClassificationContext)
@@ -60,27 +69,15 @@ describe('ClassificationProvider', () => {
                 <ClassificationProvider>
                     <CaptureContext index={1}/>
                 </ClassificationProvider>
-            </>
+            </>,
+            {auth: {user: {uid: historicalVote.userId}}}
         )
 
-        const currentVotes = contexts[0].allVotes
-        expect(contexts[0].historicalVotesLoaded).toBe(false)
-        expect(contexts[1].historicalVotesLoaded).toBe(false)
-
-        let historicalVotes
-        await act(async () => {
-            const firstLoad = contexts[0].loadHistoricalVotes()
-            expect(contexts[1].loadHistoricalVotes()).toBe(firstLoad)
-            historicalVotes = await firstLoad
-        })
-
-        expect(Array.isArray(historicalVotes)).toBe(true)
-        expect(historicalVotes.length).toBeGreaterThan(0)
-        expect(contexts[0].historicalVotesLoaded).toBe(true)
-        expect(contexts[1].historicalVotesLoaded).toBe(true)
-        expect(contexts[1].getHistoricalVotes(historicalVotes[0].entryId)).toContainEqual(historicalVotes[0])
-        expect(contexts[1].getHistoricalVotes('missing-entry')).toEqual([])
-        expect(await contexts[0].loadHistoricalVotes()).toBe(historicalVotes)
-        expect(contexts[0].allVotes).toBe(currentVotes)
+        expect(contexts[0].allVotes).toHaveLength(votes.length + historicalVotes.length)
+        expect(contexts[1].allVotes).toBe(contexts[0].allVotes)
+        expect(contexts[0].loggedInUserVotes).toContainEqual(historicalVote)
+        expect(contexts[0].getPreviousVotes(entry)).toContainEqual(historicalVote)
+        expect(contexts[0].getCurrentVotes(entry)).not.toContainEqual(historicalVote)
+        expect(contexts[0].getUserVote(entry)).toBeNull()
     })
 })
