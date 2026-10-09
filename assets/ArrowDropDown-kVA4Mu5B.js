@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime-DpJIb57s.js";import{t}from"./createSvgIcon-DhCdsIvv.js";var n=e(),r=t((0,n.jsx)(`path`,{d:`m7 14 5-5 5 5z`}),`ArrowDropUp`),i=t((0,n.jsx)(`path`,{d:`m7 10 5 5 5-5z`}),`ArrowDropDown`);export{r as n,i as t};
