@@ -13,7 +13,7 @@ import {getLockSortComparator} from '../locks/lockSortComparators'
 import DBContext from '../app/DBContext.jsx'
 import classificationVoteStats from './classificationVoteStats.js'
 
-export function ClassificationDataProvider({children, allEntries}) {
+export function ClassificationDataProvider({children, allEntries, route = 'active'}) {
     const {profile} = useContext(DBContext)
 
     const {
@@ -78,14 +78,21 @@ export function ClassificationDataProvider({children, allEntries}) {
             })
     }, [allEntries, getAdminActionStatus, getCurrentVotes, getPreviousVotes, isActive, profile, voteFilterGroups])
 
+    const routeEntries = useMemo(() => {
+        return route === 'ranked'
+            ? mappedEntries.filter(entry => entry.belt !== 'Unranked' &&
+                (entry.voteCount > 0 || entry.previousVotes.length > 0))
+            : mappedEntries.filter(entry => entry.classificationActive)
+    }, [mappedEntries, route])
+
     const searchedEntries = useMemo(() => {
-        return searchEntriesForText(search, mappedEntries.filter(entry => entry.classificationActive))
-    }, [mappedEntries, search])
+        return searchEntriesForText(search, routeEntries)
+    }, [routeEntries, search])
 
     const visibleEntries = useMemo(() => {
         const filtered = filterEntriesAdvanced({
             advancedFilterGroups: activeFilterGroups(),
-            entries: mappedEntries.filter(entry => entry.classificationActive)
+            entries: routeEntries
         })
         const searched = searchEntriesForText(search, [...filtered]).sort((a, b) => {
             return a.fuzzy.localeCompare(b.fuzzy)
@@ -93,7 +100,7 @@ export function ClassificationDataProvider({children, allEntries}) {
         return sort
             ? searched.sort(getLockSortComparator(sort))
             : searched
-    }, [activeFilterGroups, mappedEntries, search, sort])
+    }, [activeFilterGroups, routeEntries, search, sort])
 
     const visibleChangelogEntries = useMemo(() => visibleEntries.filter(entry => entry.classificationStatus === 'Staged'), [visibleEntries])
 

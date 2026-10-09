@@ -12,6 +12,7 @@ import AdvancedFilterDrawerButton from '../../src/filters/AdvancedFilterDrawerBu
 import ClassificationEntries from '../../src/classification/ClassificationEntries.jsx'
 import LockListContext from '../../src/locks/LockListContext.jsx'
 import allEntries from '../../src/data/data.json'
+import modernVotes from '../../src/data/classification-samples.json'
 import DataContext from '../../src/context/DataContext.jsx'
 
 const mixedVoteEntryName = /^Ikon SK6 Radienprofil Extra Code/
@@ -23,22 +24,25 @@ function VoteCount() {
 }
 
 describe('ClassificationDataProvider', () => {
-    it('shows unranked entries and ranked entries with active admin actions, but not ranked votes alone', () => {
+    it('keeps the active worklist and changelog scoped to active locks', () => {
         let classificationData
         function CaptureData() {
             classificationData = useContext(DataContext)
             return null
         }
 
-        const rankedVoteEntry = allEntries.find(entry => entry.id === 'e2fd1519')
+        const rankedVoteEntry = allEntries.find(entry => entry.id === '8d4632d9')
+        const rankedReopenedEntry = allEntries.find(entry => entry.id === 'e2fd1519')
         const rankedStagedEntry = allEntries.find(entry => entry.id === '18ecc45b')
-        const unrankedEntry = allEntries.find(entry => entry.belt === 'Unranked')
+        const unrankedStagedEntry = allEntries.find(entry => entry.id === '352d0624')
 
         renderWithProviders(
             <MemoryRouter>
                 <FilterProvider filterFields={classificationFilterFields}>
                     <ClassificationProvider>
-                        <ClassificationDataProvider allEntries={[rankedVoteEntry, rankedStagedEntry, unrankedEntry]}>
+                        <ClassificationDataProvider allEntries={[
+                            rankedVoteEntry, rankedReopenedEntry, rankedStagedEntry, unrankedStagedEntry
+                        ]}>
                             <CaptureData/>
                         </ClassificationDataProvider>
                     </ClassificationProvider>
@@ -49,10 +53,52 @@ describe('ClassificationDataProvider', () => {
 
         expect(classificationData.getEntryFromId(rankedVoteEntry.id).classificationStatus).toBe('Has Votes')
         expect(classificationData.visibleEntries.map(entry => entry.id)).toEqual(expect.arrayContaining([
-            rankedStagedEntry.id, unrankedEntry.id
+            rankedReopenedEntry.id, rankedStagedEntry.id, unrankedStagedEntry.id
         ]))
         expect(classificationData.visibleEntries.map(entry => entry.id)).not.toContain(rankedVoteEntry.id)
-        expect(classificationData.visibleChangelogEntries.map(entry => entry.id)).toEqual([rankedStagedEntry.id])
+        expect(classificationData.visibleChangelogEntries.map(entry => entry.id)).toEqual(expect.arrayContaining([
+            rankedStagedEntry.id, unrankedStagedEntry.id
+        ]))
+        expect(classificationData.visibleChangelogEntries).toHaveLength(2)
+    })
+
+    it('shows ranked locks with current or previous modern votes on the ranked route', () => {
+        let classificationData
+        function CaptureData() {
+            classificationData = useContext(DataContext)
+            return null
+        }
+
+        const rankedCurrentEntry = allEntries.find(entry => entry.id === '8d4632d9')
+        const rankedPreviousEntry = {
+            ...allEntries.find(entry => entry.id === 'e2fd1519'),
+            currentBeltDate: '2099-01-01T00:00:00.000Z'
+        }
+        const unrankedEntry = allEntries.find(entry => entry.id === '3b7643da')
+        const rankedNoVoteEntry = allEntries.find(entry => entry.belt !== 'Unranked' &&
+            !modernVotes.some(vote => vote.entryId === entry.id))
+
+        renderWithProviders(
+            <MemoryRouter>
+                <FilterProvider filterFields={classificationFilterFields}>
+                    <ClassificationProvider>
+                        <ClassificationDataProvider allEntries={[
+                            rankedCurrentEntry, rankedPreviousEntry, unrankedEntry, rankedNoVoteEntry
+                        ]} route='ranked'>
+                            <CaptureData/>
+                        </ClassificationDataProvider>
+                    </ClassificationProvider>
+                </FilterProvider>
+            </MemoryRouter>,
+            {auth: {user: {uid: 'test-user'}}}
+        )
+
+        expect(classificationData.getEntryFromId(rankedPreviousEntry.id).voteCount).toBe(0)
+        expect(classificationData.getEntryFromId(rankedPreviousEntry.id).previousVotes.length).toBeGreaterThan(0)
+        expect(classificationData.visibleEntries.map(entry => entry.id)).toEqual(expect.arrayContaining([
+            rankedCurrentEntry.id, rankedPreviousEntry.id
+        ]))
+        expect(classificationData.visibleEntries).toHaveLength(2)
     })
 
     it('updates nested vote entries when a voter filter is applied', async () => {

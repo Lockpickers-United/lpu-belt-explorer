@@ -65,6 +65,13 @@ export default [
                 }
             },
             {
+                path: '/classification/ranked',
+                lazy: async () => {
+                    const {default: RankedRoute} = await import('../classification/RankedRoute.jsx')
+                    return {element: <RankedRoute/>}
+                }
+            },
+            {
                 path: '/classification/past',
                 lazy: async () => {
                     const {default: HistoricalVotesRoute} = await import('../classification/HistoricalVotesRoute')

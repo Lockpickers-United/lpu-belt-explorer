@@ -18,7 +18,8 @@ export default function ClassificationToolbar() {
     }, [classificationAdmin])
 
     const tabs = useMemo(() => [
-        {label: 'Current Changes', mobileLabel: 'Current', value: '/classification'},
+        {label: 'Active', mobileLabel: 'Active', value: '/classification'},
+        {label: 'Ranked', mobileLabel: 'Ranked', value: '/classification/ranked'},
         {label: 'Historical', mobileLabel: 'Historical', value: '/classification/past'},
         {label: changelogLabel, mobileLabel: 'Changelogs', value: '/classification/changelog'}
     ], [changelogLabel])

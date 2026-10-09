@@ -62,10 +62,14 @@ describe('ClassificationProvider', () => {
         expect(classification.getAdminAction(laterBeltDate)).toBeNull()
         expect(classification.isActive(laterBeltDate)).toBe(false)
 
-        const rankedVoteEntry = allEntries.find(entry => entry.id === 'e2fd1519')
+        const rankedVoteEntry = allEntries.find(entry => entry.id === '8d4632d9')
         expect(classification.getAdminActionStatus(rankedVoteEntry)).toBe('Has Votes')
         expect(classification.isActive(rankedVoteEntry)).toBe(false)
         expect(classification.isActive({...rankedVoteEntry, belt: 'Unranked'})).toBe(true)
+
+        const reopenedEntry = allEntries.find(entry => entry.id === 'e2fd1519')
+        expect(classification.getAdminActionStatus(reopenedEntry)).toBe('Re-opened')
+        expect(classification.isActive(reopenedEntry)).toBe(true)
     })
 
     it('exposes only modern votes, including in previous and user vote lookups', () => {

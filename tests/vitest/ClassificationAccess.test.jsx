@@ -5,6 +5,7 @@ import {describe, expect, it} from 'vitest'
 import RequireRoles from '../../src/app/RequireRoles.jsx'
 import MainMenu from '../../src/nav/MainMenu.jsx'
 import routes from '../../src/app/routes.jsx'
+import RankedRoute from '../../src/classification/RankedRoute.jsx'
 import {renderWithProviders} from '../../src/test/render.jsx'
 
 const claimRoles = ['admin', 'classificationAdmin', 'lpuMod', 'classificationTeam']
@@ -36,9 +37,11 @@ describe('Classification access', () => {
     it('configures the route for both claimed and profile roles', async () => {
         const classificationRoute = routes.find(route => route.path === '/classification')
         const {element} = await classificationRoute.lazy()
+        const rankedRoute = classificationRoute.children.find(route => route.path === '/classification/ranked')
 
         expect(element.props.roles).toEqual(claimRoles)
         expect(element.props.profileRoles).toEqual(['blackBelt'])
+        expect((await rankedRoute.lazy()).element.type).toBe(RankedRoute)
     })
 
     it('admits a signed-in black belt after the matching profile loads', () => {

@@ -10,13 +10,18 @@ describe('ClassificationToolbar', () => {
         const user = userEvent.setup()
         renderWithRouter(<ClassificationToolbar/>, {route: '/classification/changelog'})
 
-        expect(screen.getAllByRole('tab')).toHaveLength(3)
+        expect(screen.getAllByRole('tab')).toHaveLength(4)
         expect(screen.getByRole('tab', {name: /Publish Changelog|Changelogs/}))
             .toHaveAttribute('aria-selected', 'true')
 
-        await user.click(screen.getByRole('tab', {name: /Current Changes|Current/}))
+        await user.click(screen.getByRole('tab', {name: 'Ranked'}))
 
-        expect(screen.getByRole('tab', {name: /Current Changes|Current/}))
+        expect(screen.getByRole('tab', {name: 'Ranked'}))
+            .toHaveAttribute('aria-selected', 'true')
+
+        await user.click(screen.getByRole('tab', {name: 'Active'}))
+
+        expect(screen.getByRole('tab', {name: 'Active'}))
             .toHaveAttribute('aria-selected', 'true')
 
         await user.click(screen.getByRole('tab', {name: 'Historical'}))
