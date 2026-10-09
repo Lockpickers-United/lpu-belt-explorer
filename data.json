@@ -484,9 +484,9 @@
       "Unguttable"
     ],
     "modelNum": "1",
-    "popularityIndex": 577,
+    "popularityIndex": 578,
     "scorecardCount": 70,
-    "views": 577,
+    "views": 578,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -4209,9 +4209,9 @@
       "Unguttable"
     ],
     "modelNum": "140",
-    "popularityIndex": 1885,
+    "popularityIndex": 1886,
     "scorecardCount": 252,
-    "views": 1885,
+    "views": 1886,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -8826,9 +8826,9 @@
     ],
     "notes": "Due to unbalanced stacks, drivers may rest below shear, risking damage to the springs if that chamber is not picked.",
     "modelNum": "570",
-    "popularityIndex": 698,
+    "popularityIndex": 699,
     "scorecardCount": 114,
-    "views": 698,
+    "views": 699,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -10481,9 +10481,9 @@
       "Picking Risk"
     ],
     "notes": "Due to unbalanced pin stacks, drivers in max lift chambers will rest below shear. This risks spring damage if the driver is not picked.",
-    "popularityIndex": 1047,
+    "popularityIndex": 1048,
     "scorecardCount": 147,
-    "views": 1047,
+    "views": 1048,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -17618,9 +17618,9 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "popularityIndex": 84,
+    "popularityIndex": 85,
     "scorecardCount": 13,
-    "views": 84,
+    "views": 85,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -20986,9 +20986,9 @@
       "Rear tension"
     ],
     "notes": "Can be front tensioned and counterrotated",
-    "popularityIndex": 165,
+    "popularityIndex": 166,
     "scorecardCount": 25,
-    "views": 165,
+    "views": 166,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -65542,6 +65542,116 @@
     "lastUpdated": "2025-12-02T23:39:17.964Z"
   },
   {
+    "id": "265e8045",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "ASSA",
+        "model": "Neptun Camlock"
+      }
+    ],
+    "version": "6 pin, standard drivers, 5 serrated finger pins",
+    "currentBeltDate": "2026-10-09T23:22:45.036Z",
+    "dateAdded": "2026-10-09T23:22:45.036Z",
+    "lastUpdated": "2026-10-09T23:22:45.343Z"
+  },
+  {
+    "id": "557513c8",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "ASSA",
+        "model": "Twin 6k"
+      }
+    ],
+    "version": "Cam lock",
+    "currentBeltDate": "2026-10-09T23:22:45.036Z",
+    "dateAdded": "2026-10-09T23:22:45.036Z",
+    "lastUpdated": "2026-10-09T23:22:45.343Z"
+  },
+  {
+    "id": "c0d919e8",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "ASSA",
+        "model": "Twin Combi"
+      }
+    ],
+    "version": "Old Trees, 5 Finger Pins",
+    "currentBeltDate": "2026-10-09T23:22:45.036Z",
+    "dateAdded": "2026-10-09T23:22:45.036Z",
+    "lastUpdated": "2026-10-09T23:22:45.343Z"
+  },
+  {
+    "id": "ce9d2399",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "ASSA",
+        "model": "Twin V10 Cam Lock"
+      }
+    ],
+    "currentBeltDate": "2026-10-09T23:22:45.036Z",
+    "dateAdded": "2026-10-09T23:22:45.036Z",
+    "lastUpdated": "2026-10-09T23:22:45.343Z"
+  },
+  {
+    "id": "4dda8329",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "ASSA",
+        "model": "Twin v10 LFIC"
+      }
+    ],
+    "currentBeltDate": "2026-10-09T23:22:45.036Z",
+    "dateAdded": "2026-10-09T23:22:45.036Z",
+    "lastUpdated": "2026-10-09T23:22:45.343Z"
+  },
+  {
+    "id": "b192d93f",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Atom",
+        "model": "TD5S"
+      }
+    ],
+    "version": "10 pin",
+    "currentBeltDate": "2026-10-09T23:22:45.036Z",
+    "dateAdded": "2026-10-09T23:22:45.036Z",
+    "lastUpdated": "2026-10-09T23:22:45.343Z"
+  },
+  {
+    "id": "29473ee7",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Belfry",
+        "model": "67"
+      }
+    ],
+    "version": "4 levers, pipe key",
+    "currentBeltDate": "2026-10-09T23:22:45.036Z",
+    "dateAdded": "2026-10-09T23:22:45.036Z",
+    "lastUpdated": "2026-10-09T23:22:45.343Z"
+  },
+  {
+    "id": "c3c7bc69",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Belfry",
+        "model": "910-8186"
+      }
+    ],
+    "version": "4 levers, pipe key",
+    "currentBeltDate": "2026-10-09T23:22:45.036Z",
+    "dateAdded": "2026-10-09T23:22:45.036Z",
+    "lastUpdated": "2026-10-09T23:22:45.343Z"
+  },
+  {
     "id": "b68b677c",
     "belt": "Unranked",
     "makeModels": [
@@ -65695,6 +65805,34 @@
       }
     ],
     "lastUpdated": "2025-12-02T23:39:17.964Z"
+  },
+  {
+    "id": "5d5f1d87",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "BKS",
+        "model": "Rundzylinder 3100"
+      }
+    ],
+    "version": "mushroom spools",
+    "currentBeltDate": "2026-10-09T23:22:45.036Z",
+    "dateAdded": "2026-10-09T23:22:45.036Z",
+    "lastUpdated": "2026-10-09T23:22:45.343Z"
+  },
+  {
+    "id": "aa9ffc7e",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Boda",
+        "model": "2925/2926"
+      }
+    ],
+    "version": "same 8 levers as 428/429 + bolt blocking mechanism",
+    "currentBeltDate": "2026-10-09T23:22:45.036Z",
+    "dateAdded": "2026-10-09T23:22:45.036Z",
+    "lastUpdated": "2026-10-09T23:22:45.343Z"
   },
   {
     "id": "08c823ed",
@@ -66281,6 +66419,34 @@
     "lastUpdated": "2026-08-14T21:52:46.952Z"
   },
   {
+    "id": "80a13301",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Chicago Lock Co",
+        "model": "Tubular UL"
+      }
+    ],
+    "version": "9-11 pin, with 2-4 pin in pin",
+    "currentBeltDate": "2026-10-09T23:22:45.036Z",
+    "dateAdded": "2026-10-09T23:22:45.036Z",
+    "lastUpdated": "2026-10-09T23:22:45.343Z"
+  },
+  {
+    "id": "8ea6b2be",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Chicago Lock Co",
+        "model": "Tubular UL Ace"
+      }
+    ],
+    "version": "7 pin, with 3 pin in pin",
+    "currentBeltDate": "2026-10-09T23:22:45.036Z",
+    "dateAdded": "2026-10-09T23:22:45.036Z",
+    "lastUpdated": "2026-10-09T23:22:45.344Z"
+  },
+  {
     "id": "267e47c4",
     "belt": "Unranked",
     "makeModels": [
@@ -66534,6 +66700,20 @@
       }
     ],
     "lastUpdated": "2026-04-29T19:34:22.726Z"
+  },
+  {
+    "id": "0b8eeedc",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Chubb",
+        "model": "Detector"
+      }
+    ],
+    "version": "6 lever, curtained - no false gates, standard mortise",
+    "currentBeltDate": "2026-10-09T23:22:45.036Z",
+    "dateAdded": "2026-10-09T23:22:45.036Z",
+    "lastUpdated": "2026-10-09T23:22:45.344Z"
   },
   {
     "id": "c2c1f8e0",
@@ -67697,9 +67877,9 @@
     "features": [
       "Under Review ⚑"
     ],
-    "popularityIndex": 6,
+    "popularityIndex": 7,
     "scorecardCount": 1,
-    "views": 6,
+    "views": 7,
     "dateAdded": "2023-03-02T19:05:25.000Z",
     "media": [
       {

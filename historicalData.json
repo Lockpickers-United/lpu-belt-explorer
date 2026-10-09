@@ -1712,10 +1712,10 @@
     ],
     "name": "Master Lock #1",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 577,
+    "views": 578,
     "lastUpdated": "2025-03-19T01:20:51.353Z",
     "modelNum": "1",
-    "popularityIndex": 577,
+    "popularityIndex": 578,
     "scorecardCount": 70
   },
   "38289b36": {
@@ -4579,11 +4579,11 @@
     ],
     "name": "Master Lock 140 Series, 9140 EURD",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 1885,
+    "views": 1886,
     "lastUpdated": "2025-03-19T01:20:51.355Z",
     "modelNum": "140",
     "version": "Ex: 140, 141, 142, etc.",
-    "popularityIndex": 1885,
+    "popularityIndex": 1886,
     "scorecardCount": 252
   },
   "6af6f704": {
@@ -8197,11 +8197,11 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/52977757532_f253bac324_o.jpg"
       }
     ],
-    "views": 698,
+    "views": 699,
     "lastUpdated": "2025-03-19T15:44:57.280Z",
     "notes": "Due to unbalanced stacks, drivers may rest below shear, risking damage to the springs if that chamber is not picked.",
     "modelNum": "570",
-    "popularityIndex": 698,
+    "popularityIndex": 699,
     "scorecardCount": 114
   },
   "9f832458": {
@@ -9293,14 +9293,14 @@
     ],
     "name": "ABUS 72/40, 34CS55 Platinum",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 1047,
+    "views": 1048,
     "lastUpdated": "2025-03-19T15:44:57.281Z",
     "features": [
       "Picking Risk"
     ],
     "notes": "Due to unbalanced pin stacks, drivers in max lift chambers will rest below shear. This risks spring damage if the driver is not picked.",
     "version": "Guttable version",
-    "popularityIndex": 1047,
+    "popularityIndex": 1048,
     "scorecardCount": 147
   },
   "e42853c7": {
@@ -13925,9 +13925,9 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53384460105_34b3583939_o.jpg"
       }
     ],
-    "views": 84,
+    "views": 85,
     "lastUpdated": "2025-03-18T23:29:31.271Z",
-    "popularityIndex": 84,
+    "popularityIndex": 85,
     "scorecardCount": 13
   },
   "7ec79663": {
@@ -16235,7 +16235,7 @@
       "Rear tension"
     ],
     "notes": "Can be front tensioned and counterrotated",
-    "views": 165,
+    "views": 166,
     "lastUpdated": "2025-03-19T01:20:51.365Z",
     "links": [
       {
@@ -16247,7 +16247,7 @@
         "url": "https://youtu.be/XuHCrqNRHlI"
       }
     ],
-    "popularityIndex": 165,
+    "popularityIndex": 166,
     "scorecardCount": 25
   },
   "c1d09460": {
@@ -50457,11 +50457,11 @@
     "name": "La Gard 2270",
     "dateAdded": "2023-03-02T19:05:25.000Z",
     "lastUpdated": "2023-08-03T13:21:20.106Z",
-    "views": 6,
+    "views": 7,
     "features": [
       "Under Review ⚑"
     ],
-    "popularityIndex": 6,
+    "popularityIndex": 7,
     "scorecardCount": 1
   },
   "728d4aa0": {
@@ -64332,5 +64332,185 @@
     "name": "Ankerslot Global",
     "currentBeltDate": "2026-10-09T16:14:03.523Z",
     "dateAdded": "2026-10-09T16:14:03.523Z"
+  },
+  "265e8045": {
+    "id": "265e8045",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "ASSA",
+        "model": "Neptun Camlock"
+      }
+    ],
+    "version": "6 pin, standard drivers, 5 serrated finger pins",
+    "name": "ASSA Neptun Camlock",
+    "currentBeltDate": "2026-10-09T23:22:45.036Z",
+    "dateAdded": "2026-10-09T23:22:45.036Z"
+  },
+  "557513c8": {
+    "id": "557513c8",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "ASSA",
+        "model": "Twin 6k"
+      }
+    ],
+    "version": "Cam lock",
+    "name": "ASSA Twin 6k",
+    "currentBeltDate": "2026-10-09T23:22:45.036Z",
+    "dateAdded": "2026-10-09T23:22:45.036Z"
+  },
+  "c0d919e8": {
+    "id": "c0d919e8",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "ASSA",
+        "model": "Twin Combi"
+      }
+    ],
+    "version": "Old Trees, 5 Finger Pins",
+    "name": "ASSA Twin Combi",
+    "currentBeltDate": "2026-10-09T23:22:45.036Z",
+    "dateAdded": "2026-10-09T23:22:45.036Z"
+  },
+  "ce9d2399": {
+    "id": "ce9d2399",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "ASSA",
+        "model": "Twin V10 Cam Lock"
+      }
+    ],
+    "name": "ASSA Twin V10 Cam Lock",
+    "currentBeltDate": "2026-10-09T23:22:45.036Z",
+    "dateAdded": "2026-10-09T23:22:45.036Z"
+  },
+  "4dda8329": {
+    "id": "4dda8329",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "ASSA",
+        "model": "Twin v10 LFIC"
+      }
+    ],
+    "name": "ASSA Twin v10 LFIC",
+    "currentBeltDate": "2026-10-09T23:22:45.036Z",
+    "dateAdded": "2026-10-09T23:22:45.036Z"
+  },
+  "b192d93f": {
+    "id": "b192d93f",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Atom",
+        "model": "TD5S"
+      }
+    ],
+    "version": "10 pin",
+    "name": "Atom TD5S",
+    "currentBeltDate": "2026-10-09T23:22:45.036Z",
+    "dateAdded": "2026-10-09T23:22:45.036Z"
+  },
+  "29473ee7": {
+    "id": "29473ee7",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Belfry",
+        "model": "67"
+      }
+    ],
+    "version": "4 levers, pipe key",
+    "name": "Belfry 67",
+    "currentBeltDate": "2026-10-09T23:22:45.036Z",
+    "dateAdded": "2026-10-09T23:22:45.036Z"
+  },
+  "c3c7bc69": {
+    "id": "c3c7bc69",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Belfry",
+        "model": "910-8186"
+      }
+    ],
+    "version": "4 levers, pipe key",
+    "name": "Belfry 910-8186",
+    "currentBeltDate": "2026-10-09T23:22:45.036Z",
+    "dateAdded": "2026-10-09T23:22:45.036Z"
+  },
+  "5d5f1d87": {
+    "id": "5d5f1d87",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "BKS",
+        "model": "Rundzylinder 3100"
+      }
+    ],
+    "version": "mushroom spools",
+    "name": "BKS Rundzylinder 3100",
+    "currentBeltDate": "2026-10-09T23:22:45.036Z",
+    "dateAdded": "2026-10-09T23:22:45.036Z"
+  },
+  "aa9ffc7e": {
+    "id": "aa9ffc7e",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Boda",
+        "model": "2925/2926"
+      }
+    ],
+    "version": "same 8 levers as 428/429 + bolt blocking mechanism",
+    "name": "Boda 2925/2926",
+    "currentBeltDate": "2026-10-09T23:22:45.036Z",
+    "dateAdded": "2026-10-09T23:22:45.036Z"
+  },
+  "80a13301": {
+    "id": "80a13301",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Chicago Lock Co",
+        "model": "Tubular UL"
+      }
+    ],
+    "version": "9-11 pin, with 2-4 pin in pin",
+    "name": "Chicago Lock Co Tubular UL",
+    "currentBeltDate": "2026-10-09T23:22:45.036Z",
+    "dateAdded": "2026-10-09T23:22:45.036Z"
+  },
+  "8ea6b2be": {
+    "id": "8ea6b2be",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Chicago Lock Co",
+        "model": "Tubular UL Ace"
+      }
+    ],
+    "version": "7 pin, with 3 pin in pin",
+    "name": "Chicago Lock Co Tubular UL Ace",
+    "currentBeltDate": "2026-10-09T23:22:45.036Z",
+    "dateAdded": "2026-10-09T23:22:45.036Z"
+  },
+  "0b8eeedc": {
+    "id": "0b8eeedc",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Chubb",
+        "model": "Detector"
+      }
+    ],
+    "version": "6 lever, curtained - no false gates, standard mortise",
+    "name": "Chubb Detector",
+    "currentBeltDate": "2026-10-09T23:22:45.036Z",
+    "dateAdded": "2026-10-09T23:22:45.036Z"
   }
 }

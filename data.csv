@@ -872,8 +872,18 @@ Unranked,,Angal,"5 serrated pin-in-pin ",Dimple,"Under Review ⚑",,fd93632b
 Unranked,Ankerslot,Global,,,,,88d5c4b4
 Unranked,Antoniolini,Mondial,"5 H-levers",Lever,"Pin key,Double bitted,Sliding levers",,f468ff5f
 Unranked,Arrow,"ChoICe HS SFIC",,"Pin-tumbler,Sidepins","Under Review ⚑,Sidepins,Active sidebar","6/7 pin SFIC with ASSA twin 6000 sidebar",c2db34fb
+Unranked,ASSA,"Neptun Camlock","6 pin, standard drivers, 5 serrated finger pins",,,,265e8045
+Unranked,ASSA,"Twin 6k","Cam lock",,,,557513c8
+Unranked,ASSA,"Twin Combi","Old Trees, 5 Finger Pins",,,,c0d919e8
+Unranked,ASSA,"Twin V10 Cam Lock",,,,,ce9d2399
+Unranked,ASSA,"Twin v10 LFIC",,,,,4dda8329
+Unranked,Atom,TD5S,"10 pin",,,,b192d93f
+Unranked,Belfry,67,"4 levers, pipe key",,,,29473ee7
+Unranked,Belfry,910-8186,"4 levers, pipe key",,,,c3c7bc69
 Unranked,BHP,"Home Depot Brand 5 pin lock",,Pin-tumbler,"Under Review ⚑",,b68b677c
 Unranked,BKS,Belvius,,,"Under Review ⚑",,2a69b223
+Unranked,BKS,"Rundzylinder 3100","mushroom spools",,,,5d5f1d87
+Unranked,Boda,2925/2926,"same 8 levers as 428/429 + bolt blocking mechanism",,,,aa9ffc7e
 Unranked,Boda,428/429,"8 levers",Lever,"Under Review ⚑",,08c823ed
 Unranked,"Bode Panzer",Tangential,,Wafer,"Safe lock,Pipe key",,a2bccc4b
 Unranked,,Bond,,Pin-tumbler,"Under Review ⚑",,4062aefb
@@ -884,9 +894,12 @@ Unranked,CATU,AL-230,"4 pins",Pin-tumbler,,"LOTO style, inside has Zenith 18 pad
 Unranked,CAWI,"Protector 7143",,,"Under Review ⚑",,5995db9e
 Unranked,Chatwood,Impregnable,,Lever,"Safe lock",,0a3affa0
 Unranked,Chatwood,Invincible,"Double bitted",Lever,"Safe lock,Anti-pressure",,81af33e7
+Unranked,"Chicago Lock Co","Tubular UL","9-11 pin, with 2-4 pin in pin",,,,80a13301
+Unranked,"Chicago Lock Co","Tubular UL Ace","7 pin, with 3 pin in pin",,,,8ea6b2be
 Unranked,Chubb,6k202,"7 lever with anti-pick",Lever,"Under Review ⚑",,267e47c4
 Unranked,Chubb,AVA,"rounded shaft key, 10 wafers",Wafer,"Under Review ⚑",,dbc6670b
 Unranked,Chubb,Detector,"curtained, 6 levers",Lever,"Curtain,Pin key,False gates",,c1c7e9d2
+Unranked,Chubb,Detector,"6 lever, curtained - no false gates, standard mortise",,,,0b8eeedc
 Unranked,Chubb,"GPO No.6",,,"Under Review ⚑",,c2c1f8e0
 Unranked,CISA,810,,Pin-tumbler,"Under Review ⚑",,22d70f2e
 Unranked,Clavis,"Q18 Clone",,Dimple,,,2ae59863
