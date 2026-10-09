@@ -25,6 +25,7 @@ Read this reference for provider, route, context, authentication, role, or profi
 5. `AppProvider`
 6. `SystemMessageProvider`
 7. `ScoringProvider`
+8. `UIProvider`
 
 `ProfileProvider` is route-scoped where profile data is needed. Preserve provider ordering when adding dependencies, and update test render helpers/mocks when a context contract changes.
 
@@ -40,6 +41,7 @@ Authorization and optional UI modes are separate:
 - `AccessContext` derives claimed and user-enabled UI roles from the authenticated user. Consumers use `useAccess()` and distinguish `level` from `enabledLevel`.
 - `DBContext.adminRole` and `DBContext.qaUserRole` derive role status from authentication and claims.
 - `AccessContext.accessInfo.enabledRoles` contains user-controlled UI/development modes. These modes must never grant data access or permit writes.
+- `UIContext` derives the signed-in user's black-belt UI role from the `DBContext` profile subscription. It does not add that profile role to authenticated claims or grant vote/write features.
 
 Security must also be enforced by deployed rules or trusted server code; client checks are not authorization boundaries.
 
@@ -48,6 +50,7 @@ Security must also be enforced by deployed rules or trusted server code; client 
 Profile reads are centralized in `ProfileContext`:
 
 - The signed-in user's full profile comes from the existing `DBContext` `lockCollection` subscription.
+- `DBContext.profileUserId` identifies the account whose profile snapshot is loaded; profile-based UI access must match it to the current authenticated UID.
 - An administrator requesting another user may receive the full profile through the authorized Firestore path.
 - Anonymous and non-admin requests for another user use the public API summary.
 - Consumers use `data`, `loading`, `error`, and `isFullProfile` from `ProfileContext` rather than reading `lockcollections` directly.

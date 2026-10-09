@@ -5,14 +5,23 @@ import Tooltip from '@mui/material/Tooltip'
 import React, {useMemo} from 'react'
 import useWindowSize from '../util/useWindowSize'
 import {Link, useLocation} from 'react-router-dom'
+import {useAccess} from '../app/AccessContext.jsx'
 
 export default function ClassificationToolbar() {
+    const {accessInfo} = useAccess()
+    const {classificationAdmin} = accessInfo
+
+    const changelogLabel = useMemo(() => {
+        return classificationAdmin
+            ? 'Publish Changelog'
+            : 'Changelogs'
+    }, [classificationAdmin])
 
     const tabs = useMemo(() => [
         {label: 'Current Changes', mobileLabel: 'Current', value: '/classification'},
         {label: 'Historical', mobileLabel: 'Historical', value: '/classification/past'},
-        {label: 'Publish Changelog', mobileLabel: 'Changelogs', value: '/classification/changelog'}
-    ], [])
+        {label: changelogLabel, mobileLabel: 'Changelogs', value: '/classification/changelog'}
+    ], [changelogLabel])
 
     const location = useLocation()
 

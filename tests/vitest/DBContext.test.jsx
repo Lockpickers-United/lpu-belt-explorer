@@ -128,6 +128,7 @@ describe('DBContext', () => {
 
         await waitFor(() => expect(screen.getByText('Loaded: true')).toBeInTheDocument())
         expect(screen.getByText('Profile: Subscribed profile')).toBeInTheDocument()
+        expect(currentDBContext.profileUserId).toBe('owner')
 
         unmount()
         expect(firestoreHarness.listeners.every(listener => listener.unsubscribe.mock.calls.length === 1)).toBe(true)

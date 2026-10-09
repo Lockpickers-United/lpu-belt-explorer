@@ -14,12 +14,13 @@ import ExportButtonGeneric from '../misc/ExportButtonGeneric.jsx'
 import Button from '@mui/material/Button'
 import ClassificationToolbar from './ClassificationToolbar.jsx'
 import Tooltip from '@mui/material/Tooltip'
+import {useAccess} from '../app/AccessContext.jsx'
 
 export default function ChangelogMain() {
     usePageTitle('Changelog')
-    const {
-        getAdminAction
-    } = useContext(ClassificationContext)
+    const {accessInfo} = useAccess()
+    const {classificationAdmin} = accessInfo
+    const {getAdminAction} = useContext(ClassificationContext)
 
     const {visibleChangelogEntries = []} = useContext(DataContext)
 
@@ -108,11 +109,15 @@ export default function ChangelogMain() {
     const extras = (
         <div style={{display: 'flex', marginTop: 6, alignItems: 'center', marginRight: 24}}>
             <div style={{flexGrow: 1, minWidth: !isMobile ? 10 : 0}}/>
-            <ExportButtonGeneric exportData={exportData} clipboardContent={clipboardText}/>
-            <Tooltip title={'Publish coming soon'} arrow disableFocusListener >
-                <Button variant='contained' color='success' size='small'
-                    style={{height: 32, marginLeft: 16}}>Publish</Button>
-            </Tooltip>
+            {classificationAdmin &&
+                <>
+                    <ExportButtonGeneric exportData={exportData} clipboardContent={clipboardText}/>
+                    <Tooltip title={'Publish coming soon'} arrow disableFocusListener>
+                        <Button variant='contained' color='success' size='small'
+                                style={{height: 32, marginLeft: 16}}>Publish</Button>
+                    </Tooltip>
+                </>
+            }
         </div>
     )
 

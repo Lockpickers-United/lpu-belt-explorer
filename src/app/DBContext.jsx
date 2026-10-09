@@ -45,6 +45,7 @@ const DBContext = React.createContext({})
 export function DBProvider({children}) {
     const {authLoaded, isLoggedIn, user, userClaims} = useContext(AuthContext)
     const [lockCollection, setLockCollection] = useState({})
+    const [profileUserId, setProfileUserId] = useState(null)
     const [pickerActivity, setPickerActivity] = useState([])
     const [collectionDBLoaded, setCollectionDBLoaded] = useState(false)
     const [activityLoaded, setActivityLoaded] = useState(false)
@@ -391,6 +392,7 @@ export function DBProvider({children}) {
                 } else {
                     setLockCollection({})
                 }
+                setProfileUserId(user.uid)
                 setCollectionDBLoaded(true)
             }, error => {
                 console.error('Error listening to DB:', error)
@@ -402,6 +404,7 @@ export function DBProvider({children}) {
             })
         } else if (authLoaded) {
             setLockCollection({})
+            setProfileUserId(null)
             setCollectionDBLoaded(true)
         }
     }, [authLoaded, isLoggedIn, user])
@@ -482,6 +485,7 @@ export function DBProvider({children}) {
         dbLoaded,
         adminRole,
         lockCollection,
+        profileUserId,
         profile: lockCollection,
         addToLockCollection,
         removeFromLockCollection,
@@ -513,6 +517,7 @@ export function DBProvider({children}) {
     }), [dbLoaded,
         adminRole,
         lockCollection,
+        profileUserId,
         addToLockCollection,
         removeFromLockCollection,
         getProfile,

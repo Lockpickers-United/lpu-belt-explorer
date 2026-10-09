@@ -12,7 +12,7 @@ const app = initializeApp({
 // change to (default) and true for production
 // const db = getFirestore(app, 'lpubelts-dev')
 
-const db = getFirestore(app)
+const db = getFirestore(app, 'lpubelts-dev')
 
 const WRITE_TO_DB = true
 
@@ -31,7 +31,7 @@ const newClaims = {}
 const removeClaims = ['lpuMod']
 
 const users = [
-    {uid: 'BJyWOIOsqmRDkgHZBqIEGbGnVSA3', name: 'tonysansan'},
+    {uid: '4qqxB0nW8dczUws5XuAyhEkgZEj2', name: 'mgtest'},
 ]
 
 

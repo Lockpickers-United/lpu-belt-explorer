@@ -14,11 +14,13 @@ import MainMenuItem from './MainMenuItem'
 import menuConfig from './menuConfig'
 import lpuHeaderSmall from '../resources/LPU-header-small.png'
 import AuthContext from '../app/AuthContext.jsx'
+import {useUI} from '../app/UIContext.jsx'
 
 function MainMenu() {
     const {beta} = useContext(AppContext)
     const {adminRole} = useContext(DBContext)
     const {userClaims} = useContext(AuthContext)
+    const {profileRoles} = useUI()
     const [open, setOpen] = useState(false)
 
     const handleHotkey = useCallback(() => setOpen(!open), [open])
@@ -74,7 +76,8 @@ function MainMenu() {
                         .filter(menuItem => adminRole || !menuItem.admin)
                         .filter(menuItem => !menuItem.hidden)
                         .filter(menuItem =>
-                            !(menuItem.userClaims && !menuItem.userClaims.some(claim => userClaims.includes(claim)))
+                            !menuItem.userClaims || menuItem.userClaims.some(claim => userClaims.includes(claim))
+                            || menuItem.profileRoles?.some(role => profileRoles[role])
                         )
                         .map((menuItem, index) =>
                             <React.Fragment key={index}>

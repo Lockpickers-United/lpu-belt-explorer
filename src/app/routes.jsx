@@ -49,7 +49,8 @@ export default [
             const {default: ClassificationParentRoute} = await import('../classification/ClassificationParentRoute.jsx')
             return {
                 element: (
-                    <RequireRoles roles={['admin', 'classificationAdmin', 'lpuMod', 'classificationTeam']}>
+                    <RequireRoles roles={['admin', 'classificationAdmin', 'lpuMod', 'classificationTeam']}
+                                  profileRoles={['blackBelt']}>
                         <ClassificationParentRoute/>
                     </RequireRoles>
                 )

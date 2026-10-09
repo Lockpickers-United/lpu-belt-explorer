@@ -11,6 +11,7 @@ import initializeLocales from '../util/datetime'
 import {SystemMessageProvider} from '../systemMessage/SystemMessageContext.jsx'
 import {APIProvider} from './APIContext.jsx'
 import {AccessProvider} from './AccessContext.jsx'
+import {UIProvider} from './UIContext.jsx'
 import {darkTheme} from './Theme.jsx'
 
 initializeLocales()
@@ -30,7 +31,9 @@ function App() {
                                 <AppProvider>
                                     <SystemMessageProvider>
                                         <ScoringProvider>
-                                            <AppRoutes/>
+                                            <UIProvider>
+                                                <AppRoutes/>
+                                            </UIProvider>
                                         </ScoringProvider>
                                     </SystemMessageProvider>
                                 </AppProvider>

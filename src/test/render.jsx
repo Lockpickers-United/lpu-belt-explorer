@@ -9,6 +9,7 @@ import AccessContext from '../app/AccessContext.jsx'
 import APIContext from '../app/APIContext.jsx'
 import ScoringContext from '../context/ScoringContext.jsx'
 import { SystemMessageProvider } from '../systemMessage/SystemMessageContext.jsx'
+import { UIProvider } from '../app/UIContext.jsx'
 
 export const defaultTestContextValues = {
     auth: {
@@ -23,6 +24,7 @@ export const defaultTestContextValues = {
         adminRole: false,
         qaUserRole: false,
         lockCollection: {},
+        profileUserId: null,
         pickerActivity: [],
         systemMessages: [],
         userLockNotes: {}
@@ -84,7 +86,7 @@ export const renderWithProviders = (ui, {
                         <AppContext.Provider value={withDefaults('app', app)}>
                             <SystemMessageProvider>
                                 <ScoringContext.Provider value={withDefaults('scoring', scoring)}>
-                                    {children}
+                                    <UIProvider>{children}</UIProvider>
                                 </ScoringContext.Provider>
                             </SystemMessageProvider>
                         </AppContext.Provider>

@@ -62,6 +62,7 @@ vi.mock('../app/DBContext.jsx', () => {
       adminRole: false,
       qaUserRole: false,
       lockCollection: {},
+      profileUserId: null,
       pickerActivity: [],
       systemMessages: [],
       userLockNotes: {},
