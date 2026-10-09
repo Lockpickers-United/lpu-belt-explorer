@@ -119,7 +119,7 @@ function Entry({entry, expanded, onExpand, isClassification, isHistorical = fals
         : <>Other Versions Only</>
 
     const {isMobile} = useWindowSize()
-    const makeModelWidth = !isMobile ? '65%' : '60%'
+    const makeModelWidth = !isMobile ? '60%' : '60%'
     const mainMargin = !isMobile ? '6px 0px 8px 12px' : '4px 0px 6px 4px'
 
     const doNothing = (event) => {
