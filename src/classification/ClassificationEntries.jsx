@@ -10,7 +10,7 @@ import Footer from '../nav/Footer'
 import FilterContext from '../context/FilterContext.jsx'
 import AdvancedFilters from '../filters/AdvancedFilters.jsx'
 
-export default function ClassificationEntries({advancedEnabled = false}) {
+export default function ClassificationEntries({advancedEnabled = false, historical = false}) {
     const {visibleEntries = [], expandAll} = useContext(DataContext)
 
     const {filters, isSearch} = useContext(FilterContext)
@@ -51,6 +51,7 @@ export default function ClassificationEntries({advancedEnabled = false}) {
                                     || visibleEntries.length === 1}
                                 onExpand={setEntryExpanded}
                                 isClassification={true}
+                                isHistorical={historical}
                             />
                         )
                     }

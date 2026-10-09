@@ -18,5 +18,10 @@ describe('ClassificationToolbar', () => {
 
         expect(screen.getByRole('tab', {name: /Current Changes|Current/}))
             .toHaveAttribute('aria-selected', 'true')
+
+        await user.click(screen.getByRole('tab', {name: 'Historical'}))
+
+        expect(screen.getByRole('tab', {name: 'Historical'}))
+            .toHaveAttribute('aria-selected', 'true')
     })
 })

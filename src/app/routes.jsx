@@ -64,10 +64,10 @@ export default [
                 }
             },
             {
-                path: '/classification/previous',
+                path: '/classification/past',
                 lazy: async () => {
-                    const {default: PreviousVotesRoute} = await import('../classification/PreviousVotesRoute.jsx')
-                    return {element: <PreviousVotesRoute/>}
+                    const {default: HistoricalVotesRoute} = await import('../classification/HistoricalVotesRoute')
+                    return {element: <HistoricalVotesRoute/>}
                 }
             },
             {

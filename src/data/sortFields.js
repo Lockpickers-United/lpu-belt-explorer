@@ -13,6 +13,16 @@ export const lockSortFields = [
     {label: 'Date Added', value: 'dateAdded'}
 ]
 
+export const historicalVotesSortFields = [
+    {label: 'Default', value: undefined},
+    {label: 'Belt (Ascending)', value: 'beltAscending'},
+    {label: 'Belt (Descending)', value: 'beltDescending'},
+    {label: 'Vote Count', value: 'voteCount'},
+    {label: 'Highest Vote', value: 'highestVoteBelt'},
+    {label: 'Scorecard Count', value: 'scorecardCount', admin:true},
+    {label: 'Date Added', value: 'dateAdded'}
+]
+
 export const classificationSortFields = [
     {label: 'Default', value: undefined},
     {label: 'Recently Updated', value: 'latestVoteDate'},
@@ -95,5 +105,4 @@ export const projectsSortFields = [
     {label: 'Date', value: 'date'},
     {label: 'Source', value: 'source'},
 ]
-
 

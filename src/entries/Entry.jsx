@@ -41,8 +41,9 @@ import Tooltip from '@mui/material/Tooltip'
 import IconButton from '@mui/material/IconButton'
 import ListAltIcon from '@mui/icons-material/ListAlt'
 import ClassificationAdminButton from '../classification/ClassificationAdminButton.jsx'
+import VoteView from '../classification/VoteView.jsx'
 
-function Entry({entry, expanded, onExpand, isClassification, scorecardId}) {
+function Entry({entry, expanded, onExpand, isClassification, isHistorical = false, scorecardId}) {
     const navigate = useNavigate()
     const {accessInfo} = useAccess()
     const {expandAll} = useContext(DataContext)
@@ -53,6 +54,7 @@ function Entry({entry, expanded, onExpand, isClassification, scorecardId}) {
     const ref = useRef(null)
     const {search} = filters
     const lockName = entryName(entry, 'short', {includeVersion: true})
+    const displayedVotes = isHistorical ? entry.historicalVotes : entry.currentVotes
 
     const allRelatedIds = [...new Set([...(entry.relatedIds || []), ...upgradeTree(entry.id)])]
         .sort((a, b) => {
@@ -155,9 +157,9 @@ function Entry({entry, expanded, onExpand, isClassification, scorecardId}) {
                     }
                 </div>
 
-                {(entry.lockingMechanisms?.length > 0 || entry.currentVotes?.length > 0) &&
+                {(entry.lockingMechanisms?.length > 0 || displayedVotes?.length > 0) &&
                     <div style={{margin: '0px 0px 0px 0px', flexGrow: 1, flexDirection: 'row'}}>
-                        {isClassification && entry.currentVotes?.length > 0 &&
+                        {isClassification && displayedVotes?.length > 0 &&
                             <div style={{
                                 display: 'flex',
                                 marginBottom: 12,
@@ -165,7 +167,7 @@ function Entry({entry, expanded, onExpand, isClassification, scorecardId}) {
                                 width: '100%',
                                 justifyContent: 'left'
                             }}>
-                                <DisplayClassificationVotes votes={entry.currentVotes}/>
+                                <DisplayClassificationVotes votes={displayedVotes}/>
                             </div>
                         }
                         <div style={{
@@ -196,7 +198,7 @@ function Entry({entry, expanded, onExpand, isClassification, scorecardId}) {
                         </Tooltip>
                     </div>
                 }
-                {!scorecardId && isClassification &&
+                {!scorecardId && isClassification && !isHistorical &&
                     <ClassificationAdminButton entry={entry} handleToggle={doNothing} flag={true}/>
                 }
             </AccordionSummary>
@@ -278,7 +280,15 @@ function Entry({entry, expanded, onExpand, isClassification, scorecardId}) {
                             </div>
                         }
 
-                        {accessInfo.features.entryActionBar &&
+                        {isHistorical && entry.historicalVotes?.length > 0 &&
+                            <div role='group' aria-label='Historical votes' style={{margin: '24px 0px 20px 6px'}}>
+                                {entry.historicalVotes.map(vote =>
+                                    <VoteView key={vote.id} vote={vote} previous={true}/>
+                                )}
+                            </div>
+                        }
+
+                        {accessInfo.features.entryActionBar && !isHistorical &&
                             <div style={{margin: '24px 0px 20px 6px'}}>
                                 <EntryActionBar entry={entry} isClassification={isClassification}/>
                             </div>

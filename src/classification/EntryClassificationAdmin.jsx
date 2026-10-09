@@ -66,7 +66,7 @@ function AdminPreview({entry, handleToggle}) {
     }, [form])
 
 
-    const previousVotes = useMemo(() => entry.previousVotes?.filter(vote => vote.type === 'vote') ?? [], [entry.previousVotes])
+    const previousVotes = entry.previousVotes ?? []
     const showVotes = true
     const [showPreviousVotes, setShowPreviousVotes] = useState(!entry.currentVotes?.length)
 

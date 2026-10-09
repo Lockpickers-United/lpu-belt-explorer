@@ -25,18 +25,6 @@ export default function EntryClassificationVote({entry, showCurrentVotes = true}
         })
     }, [entry.currentVotes, user.uid])
 
-    const previousVotes = useMemo(() => {
-        return entry.previousVotes?.filter(vote => vote.type === 'vote').sort((a, b) => {
-            return beltSort(a.votedBelt, b.votedBelt) || dayjs(a.updatedAt).valueOf() - dayjs(b.updatedAt).valueOf()
-        })
-    }, [entry.previousVotes])
-
-    const historicalVotes = useMemo(() => {
-        return entry.previousVotes?.filter(vote => vote.type === 'historicalVote').sort((a, b) => {
-            return dayjs(a.updatedAt).valueOf() - dayjs(b.updatedAt).valueOf()
-        })
-    }, [entry.previousVotes])
-
     const showVotes = (entry.currentVotes?.length - (userVote?.id ? 1 : 0)) > 1 && !isClassification
 
     const {isMobile} = useWindowSize()
@@ -64,38 +52,16 @@ export default function EntryClassificationVote({entry, showCurrentVotes = true}
                 </div>
             })}
 
-            {previousVotes?.length > 0 &&
+            {entry.previousVotes?.length > 0 &&
                 <div role='group' aria-label='Previous votes' style={{marginTop: 24}}>
                     <div style={{fontWeight: 600, position: 'relative', paddingLeft: 24}}>
                         <BeltStripeMini value={entry?.belt} width={16} offset={0}
                                         style={{position: 'absolute', top: 0, left: 0, bottom: 0}}/>
                         PREVIOUS VOTES
                     </div>
-                    {previousVotes.map(vote => {
+                    {entry.previousVotes.map(vote => {
                         return <div key={vote.id}>
                             <VoteDisplay entry={entry} vote={vote} previous={true} owner={vote.userId === user.uid}/>
-                        </div>
-                    })}
-                </div>
-            }
-
-            {isClassification && historicalVotes?.length > 0 &&
-                <div role='group' aria-label='Historical votes' style={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    marginTop: 24,
-                    width: '100%',
-                    justifyContent: 'center'
-                }}>
-                    <div style={{fontWeight: 600, position: 'relative', paddingLeft: 24}}>
-                        <BeltStripeMini value={entry?.belt} width={16} offset={0}
-                                        style={{position: 'absolute', top: 0, left: 0, bottom: 0}}/>
-                        HISTORICAL VOTES
-                    </div>
-                    {historicalVotes.map(vote => {
-                        return <div key={vote.id} style={{width: '100%'}}>
-                            <VoteDisplay entry={entry} vote={vote} previous={true}
-                                         owner={vote.userId === user.uid}/>
                         </div>
                     })}
                 </div>

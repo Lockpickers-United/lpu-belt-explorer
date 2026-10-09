@@ -50,11 +50,13 @@ describe('ClassificationProvider', () => {
         expect(classification.isActive({...rankedVoteEntry, belt: 'Unranked'})).toBe(true)
     })
 
-    it('combines vote types while keeping historical votes out of current and user votes', () => {
+    it('exposes only modern votes, including in previous and user vote lookups', () => {
         const contexts = []
         const historicalVote = historicalVotes.find(record => !votes.some(vote =>
             vote.entryId === record.entryId && vote.userId === record.userId))
         const entry = {id: historicalVote.entryId, currentBeltDate: undefined}
+        const modernVote = votes[0]
+        const modernEntry = {id: modernVote.entryId, currentBeltDate: undefined}
 
         function CaptureContext({index}) {
             contexts[index] = useContext(ClassificationContext)
@@ -70,14 +72,17 @@ describe('ClassificationProvider', () => {
                     <CaptureContext index={1}/>
                 </ClassificationProvider>
             </>,
-            {auth: {user: {uid: historicalVote.userId}}}
+            {auth: {user: {uid: modernVote.userId}}}
         )
 
-        expect(contexts[0].allVotes).toHaveLength(votes.length + historicalVotes.length)
+        expect(contexts[0].allVotes).toHaveLength(votes.length)
         expect(contexts[1].allVotes).toBe(contexts[0].allVotes)
-        expect(contexts[0].loggedInUserVotes).toContainEqual(historicalVote)
-        expect(contexts[0].getPreviousVotes(entry)).toContainEqual(historicalVote)
+        expect(contexts[0].allVotes).not.toContainEqual(historicalVote)
+        expect(contexts[0].loggedInUserVotes).toContainEqual(modernVote)
+        expect(contexts[0].loggedInUserVotes.every(vote => vote.type === 'vote')).toBe(true)
+        expect(contexts[0].getPreviousVotes(entry)).not.toContainEqual(historicalVote)
         expect(contexts[0].getCurrentVotes(entry)).not.toContainEqual(historicalVote)
-        expect(contexts[0].getUserVote(entry)).toBeNull()
+        expect(contexts[0].getCurrentVotes(modernEntry)).toContainEqual(modernVote)
+        expect(contexts[0].getUserVote(modernEntry)).toEqual(modernVote)
     })
 })

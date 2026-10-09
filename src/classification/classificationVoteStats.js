@@ -15,7 +15,7 @@ export default function classificationVoteStats(votes) {
         hasConsensus: leadingCount >= 3 && leadingCount > votes.length / 2 ? 'Yes' : 'No',
         highestVoteBelt: highestBelt(votedBelts),
         latestVoteDate: votes.length
-            ? Math.max(...votes.map(vote => dayjs(vote.updatedAt).valueOf()))
+            ? Math.max(...votes.map(vote => dayjs(vote.updatedAt ?? vote.createdAt).valueOf()))
             : null
     }
 }

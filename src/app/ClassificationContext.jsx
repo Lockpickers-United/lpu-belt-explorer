@@ -1,6 +1,5 @@
 import React, {useCallback, useContext, useMemo} from 'react'
 import modernVotes from '../data/classification-samples.json'
-import historicalVotes from '../data/classification-votes-historical.json'
 import classificationAdminActions from '../data/classification-samples-admin.json'
 import dayjs from 'dayjs'
 import AuthContext from './AuthContext.jsx'
@@ -20,7 +19,7 @@ function groupByEntry(records) {
     return grouped
 }
 
-const allVotes = [...modernVotes, ...historicalVotes]
+const allVotes = modernVotes
 const allAdminActions = classificationAdminActions || []
 const votesByEntry = groupByEntry(allVotes)
 const actionsByEntry = groupByEntry(allAdminActions)
@@ -58,8 +57,7 @@ export function ClassificationProvider({children}) {
     const getPreviousVotes = useCallback((entry) => {
         const milestone = getLatestMilestone(entry).valueOf()
         return (votesByEntry.get(entry.id) ?? [])
-            .filter(vote => vote.type === 'historicalVote' ||
-                (vote.type === 'vote' && dayjs(vote.updatedAt).valueOf() < milestone))
+            .filter(vote => vote.type === 'vote' && dayjs(vote.updatedAt).valueOf() < milestone)
     }, [getLatestMilestone])
 
     const getUserVote = useCallback((entry) => {

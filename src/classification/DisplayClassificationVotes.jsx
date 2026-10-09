@@ -12,7 +12,8 @@ export default function DisplayClassificationVotes({votes, style = {}}) {
     if (!votes?.length) return null
 
     const sortedVotes = votes.toSorted((a, b) => {
-        return beltSort(a.votedBelt, b.votedBelt) || dayjs(a.updatedAt).valueOf() - dayjs(b.updatedAt).valueOf()
+        return beltSort(a.votedBelt, b.votedBelt) ||
+            dayjs(a.updatedAt ?? a.createdAt).valueOf() - dayjs(b.updatedAt ?? b.createdAt).valueOf()
     })
 
     return (

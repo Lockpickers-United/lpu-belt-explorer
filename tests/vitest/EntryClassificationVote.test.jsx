@@ -5,13 +5,10 @@ import {createMemoryRouter, RouterProvider} from 'react-router-dom'
 import {renderWithProviders, defaultTestContextValues} from '../../src/test/render.jsx'
 import {ClassificationProvider} from '../../src/app/ClassificationContext.jsx'
 import EntryClassificationVote from '../../src/classification/EntryClassificationVote.jsx'
-import historicalVotes from '../../src/data/classification-votes-historical.json'
-
-const historicalVote = historicalVotes.find(vote => vote.votedBelt === 'White' && vote.displayName !== 'Unknown')
 const previousVote = {
     id: 'previous-modern-vote',
     type: 'vote',
-    entryId: historicalVote.entryId,
+    entryId: 'test-lock',
     votedBelt: 'Blue',
     userId: 'modern-reviewer',
     displayName: 'Modern Reviewer',
@@ -44,7 +41,7 @@ function renderClassification(entry, route = '/classification') {
 
 function entryFor(previousVotes) {
     return {
-        id: historicalVote.entryId,
+        id: 'test-lock',
         belt: 'Blue',
         currentVotes: [],
         previousVotes,
@@ -53,20 +50,17 @@ function entryFor(previousVotes) {
 }
 
 describe('EntryClassificationVote', () => {
-    it('shows previous modern and historical votes in separate sections', () => {
-        renderClassification(entryFor([historicalVote, previousVote]))
+    it('shows previous modern votes without a historical section', () => {
+        renderClassification(entryFor([previousVote]))
 
         const previous = screen.getByRole('group', {name: 'Previous votes'})
-        const historical = screen.getByRole('group', {name: 'Historical votes'})
         expect(within(previous).getByText(/Modern Reviewer:/)).toBeInTheDocument()
-        expect(within(previous).queryByText(new RegExp(`${historicalVote.displayName}:`))).not.toBeInTheDocument()
-        expect(within(historical).getByText(new RegExp(`${historicalVote.displayName}:`))).toBeInTheDocument()
-        expect(within(historical).queryByText(/Modern Reviewer:/)).not.toBeInTheDocument()
+        expect(screen.queryByRole('group', {name: 'Historical votes'})).not.toBeInTheDocument()
         expect(screen.queryByRole('button', {name: 'CHECK FOR HISTORICAL VOTES'})).not.toBeInTheDocument()
     })
 
-    it('keeps historical details off the lock route', () => {
-        renderClassification(entryFor([historicalVote, previousVote]), '/locks')
+    it('shows previous modern votes on the lock route', () => {
+        renderClassification(entryFor([previousVote]), '/locks')
 
         expect(screen.getByRole('group', {name: 'Previous votes'})).toBeInTheDocument()
         expect(screen.queryByRole('group', {name: 'Historical votes'})).not.toBeInTheDocument()

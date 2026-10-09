@@ -10,7 +10,7 @@ export default function ClassificationToolbar() {
 
     const tabs = useMemo(() => [
         {label: 'Current Changes', mobileLabel: 'Current', value: '/classification'},
-        {label: 'Previous Votes', mobileLabel: 'Previous', value: '/classification/previous'},
+        {label: 'Historical', mobileLabel: 'Historical', value: '/classification/past'},
         {label: 'Publish Changelog', mobileLabel: 'Changelogs', value: '/classification/changelog'}
     ], [])
 
