@@ -32,7 +32,7 @@ function SearchBox({label, extraFilters = [], entryCount = 0, keepOpen}) {
     const placeholder = (entryCount > 1) ? `Search ${entryCount ? entryCount.toString() + ' ' : ''}${label}` : 'Search'
 
     const handleChange = useCallback(event => {
-        const value = event.target.value.replaceAll('\t', ' ')
+        const value = event.target.value.replaceAll('\t', ' ').replaceAll(',', ' ')
         localEditRef.current = true
         textRef.current = value
         setText(value)

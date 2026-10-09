@@ -13,6 +13,7 @@ import EntryClassificationAdmin from '../classification/EntryClassificationAdmin
 import OfflineBoltIcon from '@mui/icons-material/OfflineBolt'
 import UserClassificationButton from '../classification/UserClassificationButton.jsx'
 import {ClassificationProvider} from '../app/ClassificationContext.jsx'
+import CopyEntryTextButtonAdmin from './CopyEntryTextButtonAdmin.jsx'
 
 const roleDisplay = {
     admin: {
@@ -65,8 +66,9 @@ export default function EntryActionBar({entry, isClassification, style = {}}) {
             }}>
                 <div style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between'}}>
                     <div style={{display: 'flex', flexGrow: 1, alignItems: 'center'}}>
-                        {roleDisplay[currentRole]?.icon ?
-                            <Icon style={{color: theme.palette[roleDisplay[currentRole]?.color]?.main}}/> : null}
+                        {roleDisplay[currentRole]?.icon
+                            ? <Icon style={{color: theme.palette[roleDisplay[currentRole]?.color]?.main}}/>
+                            : null}
                     </div>
 
                     <div style={{display: 'flex', justifyContent: 'flex-end'}}>
@@ -88,6 +90,7 @@ export default function EntryActionBar({entry, isClassification, style = {}}) {
                                 <SmartDisplayIcon style={{color: showFeature.videos ? '#fff' : '#ccc'}}/>
                             </IconButton>
                         }
+                        <CopyEntryTextButtonAdmin entry={entry}/>
                     </div>
                 </div>
                 <Collapse in={showFeature.videos}>
