@@ -14,9 +14,10 @@ export const lockSortFields = [
 ]
 
 export const historicalVotesSortFields = [
-    {label: 'Default', value: undefined},
-    {label: 'Belt (Ascending)', value: 'beltAscending'},
+    {label: 'Belt', value: undefined},
     {label: 'Belt (Descending)', value: 'beltDescending'},
+    {label: 'Alphabetical (Ascending)', value: 'alphaAscending'},
+    {label: 'Alphabetical (Descending)', value: 'alphaDescending'},
     {label: 'Vote Count', value: 'voteCount'},
     {label: 'Highest Vote', value: 'highestVoteBelt'},
     {label: 'Scorecard Count', value: 'scorecardCount', admin:true},

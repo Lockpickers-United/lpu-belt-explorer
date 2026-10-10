@@ -90,7 +90,7 @@ export function HistoricalVoteDataProvider({children, allEntries}) {
         })
         return sort
             ? searched.sort(getLockSortComparator(sort))
-            : searched
+            : searched.sort(getLockSortComparator('beltAscending'))
     }, [activeFilterGroups, mappedEntries, search, sort])
 
 

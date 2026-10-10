@@ -11,14 +11,19 @@ import DataContext from '../../src/context/DataContext.jsx'
 import LockListContext from '../../src/locks/LockListContext.jsx'
 import allEntries from '../../src/data/data.json'
 import historicalVotes from '../../src/data/classification-votes-historical.json'
+import modernVotes from '../../src/data/classification-samples.json'
 
-const archivedEntry = allEntries.find(entry => entry.id === '18ecc45b')
-const modernOnlyEntry = allEntries.find(entry => entry.id === '3b7643da')
-const archivedVote = historicalVotes.find(vote => vote.entryId === archivedEntry.id)
+const historicalVotesByEntry = new Map()
+historicalVotes.forEach(vote => {
+    const entryVotes = historicalVotesByEntry.get(vote.entryId) ?? []
+    entryVotes.push(vote)
+    historicalVotesByEntry.set(vote.entryId, entryVotes)
+})
 
 describe('HistoricalVoteDataProvider', () => {
     it('orders multiple archived votes by their synthetic createdAt sequence', () => {
-        const entry = allEntries.find(record => record.id === '07034c0f')
+        const entry = allEntries.find(record => historicalVotesByEntry.get(record.id)?.length > 1)
+        expect(entry).toBeDefined()
         let data
         function CaptureData() {
             data = useContext(DataContext)
@@ -48,6 +53,18 @@ describe('HistoricalVoteDataProvider', () => {
             data = useContext(DataContext)
             return null
         }
+
+        const archivedVote = historicalVotes.find(vote =>
+            historicalVotesByEntry.get(vote.entryId)?.length === 1 &&
+            allEntries.some(entry => entry.id === vote.entryId) &&
+            /^[A-Za-z0-9 ]+$/.test(vote.comment?.trim() ?? ''))
+        const modernOnlyVote = modernVotes.find(vote =>
+            !historicalVotesByEntry.has(vote.entryId) &&
+            allEntries.some(entry => entry.id === vote.entryId))
+        expect(archivedVote).toBeDefined()
+        expect(modernOnlyVote).toBeDefined()
+        const archivedEntry = allEntries.find(entry => entry.id === archivedVote.entryId)
+        const modernOnlyEntry = allEntries.find(entry => entry.id === modernOnlyVote.entryId)
 
         const router = createMemoryRouter([{
             path: '/classification/past',
@@ -88,8 +105,8 @@ describe('HistoricalVoteDataProvider', () => {
         expect(data.getEntryFromId(archivedEntry.id).currentVotes).toBeUndefined()
 
         const historicalDetails = screen.getByRole('group', {name: 'Historical votes'})
-        expect(within(historicalDetails).getByText(/DoctorHogmaster:/)).toBeInTheDocument()
-        expect(within(historicalDetails).getByText(/TEST - Doc Hog/)).toBeInTheDocument()
+        expect(within(historicalDetails).getByText(`${archivedVote.displayName}:`)).toBeInTheDocument()
+        expect(within(historicalDetails).getByText(archivedVote.comment.trim())).toBeInTheDocument()
         expect(screen.queryByRole('button', {name: /Add Your Belt Ranking Vote|Edit/})).not.toBeInTheDocument()
     })
 })

@@ -6,7 +6,7 @@ import fs from 'fs'
 import {findLastMentionedVoter} from './classificationNoteMatcher.js'
 
 const refreshData = false
-const historical = false
+const historical = true
 
 const CREDENTIALS_PATH = new URL('../keys/google-credentials.json', import.meta.url)
 const OUTPUT_DIR = new URL('../src/data/classification/', import.meta.url)
@@ -16,7 +16,7 @@ const sheetsClient = await createGoogleSheetsClient(CREDENTIALS_PATH)
 
 const historicalTabs = ['1214572951', '1458208653', '2003859332', '1613106571']
 
-async function getMainSheetData(sheetId) {
+async function getSheetData(sheetId) {
     const sheet = await sheetsClient.getSheet({
         spreadsheetId: sheetConfig.spreadsheetId,
         sheetId,
@@ -37,7 +37,15 @@ async function getMainSheetData(sheetId) {
     })
 }
 
-refreshData && getMainSheetData(sheetConfig.gid)
+async function fetchAll() {
+    for (const sheetId of historicalTabs) {
+        await getSheetData(sheetId)
+    }
+
+}
+
+refreshData && !historical && getSheetData(sheetConfig.gid)
+refreshData && historical && fetchAll()
 
 
 async function readData(sheetId) {
@@ -72,15 +80,15 @@ async function processData(sheetId) {
             votes.forEach((vote, index) => {
             const voteData = {
                 id: 'v_' + genHexString(8),
-                type: 'vote',
+                type: historical ? 'historicalVote' : 'vote',
                 //sheetRow: row.sheetRow,
                 //lockname: `${make} ${model} ${version}`,
                 entryId,
                 //nameLink,
                 ...vote,
-                source: 'Classification Sheet',
+                source: 'sheet',
                 createdAt: dayjs(dateString).add(index, 'minute'),
-                updatedAt: dayjs(dateString).add(index, 'minute'),
+                //updatedAt: dayjs(dateString).add(index, 'minute'),
             }
             acc.push(voteData)
         })
@@ -112,8 +120,7 @@ async function processData(sheetId) {
             return ('classification-sheet-export.json saved')
         }
     })
-
-
+    
     return exportData
 }
 
@@ -133,8 +140,6 @@ async function processAll() {
             return ('classification-sheet-export.json saved')
         }
     })
-
-
 }
 
 if (historical && !refreshData) {
