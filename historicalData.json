@@ -828,7 +828,7 @@
     "views": 60,
     "lastUpdated": "2025-03-19T15:44:57.298Z",
     "popularityIndex": 60,
-    "scorecardCount": 26
+    "scorecardCount": 27
   },
   "72675596": {
     "id": "72675596",
@@ -1508,13 +1508,13 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/52754853512_9a50b57915_o.jpg"
       }
     ],
-    "views": 475,
+    "views": 474,
     "lastUpdated": "2025-03-19T15:44:57.276Z",
     "lockingMechanisms": [
       "Various"
     ],
-    "popularityIndex": 475,
-    "scorecardCount": 35
+    "popularityIndex": 474,
+    "scorecardCount": 34
   },
   "5dc117cd": {
     "id": "5dc117cd",
@@ -1931,10 +1931,10 @@
     ],
     "name": "Master Lock #3",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 1505,
+    "views": 1506,
     "lastUpdated": "2025-03-19T01:20:51.353Z",
     "modelNum": "3",
-    "popularityIndex": 1505,
+    "popularityIndex": 1506,
     "scorecardCount": 172
   },
   "dff62f52": {
@@ -4584,7 +4584,7 @@
     "modelNum": "140",
     "version": "Ex: 140, 141, 142, etc.",
     "popularityIndex": 1886,
-    "scorecardCount": 252
+    "scorecardCount": 251
   },
   "6af6f704": {
     "id": "6af6f704",
@@ -5921,7 +5921,7 @@
     "lastUpdated": "2025-03-19T01:20:51.356Z",
     "modelNum": "64",
     "popularityIndex": 542,
-    "scorecardCount": 46
+    "scorecardCount": 45
   },
   "a0e50505": {
     "id": "a0e50505",
@@ -7950,10 +7950,10 @@
     ],
     "name": "Master Lock 150, 160, 9150 EURD",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 690,
+    "views": 691,
     "lastUpdated": "2025-03-19T15:44:57.280Z",
     "modelNum": "150",
-    "popularityIndex": 690,
+    "popularityIndex": 691,
     "scorecardCount": 88,
     "currentBeltDate": "2026-08-30T12:00:00.000Z"
   },
@@ -9644,9 +9644,9 @@
     ],
     "name": "ABUS 80TI Titalium",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 424,
+    "views": 425,
     "lastUpdated": "2025-03-19T15:44:57.281Z",
-    "popularityIndex": 424,
+    "popularityIndex": 425,
     "scorecardCount": 55
   },
   "9da8ebe0": {
@@ -9701,10 +9701,10 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/52829305062_3d45ae978e_o.jpg"
       }
     ],
-    "views": 162,
+    "views": 161,
     "lastUpdated": "2025-03-19T15:44:57.281Z",
-    "popularityIndex": 162,
-    "scorecardCount": 25
+    "popularityIndex": 161,
+    "scorecardCount": 24
   },
   "6b2e5290": {
     "id": "6b2e5290",
@@ -10876,13 +10876,13 @@
     ],
     "name": "American Lock 1100 / A1100",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 1446,
+    "views": 1445,
     "lastUpdated": "2025-03-19T01:20:51.360Z",
     "relatedIds": [
       "1ae40987"
     ],
-    "popularityIndex": 1446,
-    "scorecardCount": 279
+    "popularityIndex": 1445,
+    "scorecardCount": 278
   },
   "b16ffe3f": {
     "id": "b16ffe3f",
@@ -11073,7 +11073,7 @@
     ],
     "name": "American Lock S1100",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 159,
+    "views": 160,
     "lastUpdated": "2025-03-19T01:20:51.360Z",
     "media": [
       {
@@ -11150,7 +11150,7 @@
       }
     ],
     "description": "Six-pin lock that combines the familiar aluminum body of the American 1100 series with the core normally found in the Master Lock #410 LOTO.",
-    "popularityIndex": 159,
+    "popularityIndex": 160,
     "scorecardCount": 22
   },
   "e84582aa": {
@@ -11286,7 +11286,7 @@
     ],
     "name": "ASSA 500 / Ruko 500",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 48,
+    "views": 49,
     "lastUpdated": "2025-03-18T23:29:31.270Z",
     "relatedIds": [
       "e84582aa",
@@ -11295,7 +11295,7 @@
       "ef221c67",
       "f2d41749"
     ],
-    "popularityIndex": 48,
+    "popularityIndex": 49,
     "scorecardCount": 5
   },
   "ca6ce763": {
@@ -13477,7 +13477,7 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "views": 2,
+    "views": 1,
     "lastUpdated": "2025-03-19T15:44:57.284Z",
     "media": [
       {
@@ -13499,7 +13499,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53711078400_28a019db75_o.jpg"
       }
     ],
-    "popularityIndex": 2
+    "popularityIndex": 1
   },
   "3316c7d0": {
     "id": "3316c7d0",
@@ -14381,11 +14381,11 @@
     ],
     "name": "Master Lock 410 LOTO (Lockout Tagout)",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 874,
+    "views": 873,
     "lastUpdated": "2025-03-19T15:44:57.286Z",
     "modelNum": "410",
-    "popularityIndex": 874,
-    "scorecardCount": 105
+    "popularityIndex": 873,
+    "scorecardCount": 104
   },
   "366d5f50": {
     "id": "366d5f50",
@@ -14639,7 +14639,7 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "views": 81,
+    "views": 82,
     "lastUpdated": "2025-03-19T15:44:57.286Z",
     "media": [
       {
@@ -14715,7 +14715,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/52907089430_484fd0810a_o.jpg"
       }
     ],
-    "popularityIndex": 81,
+    "popularityIndex": 82,
     "scorecardCount": 7
   },
   "b8f4f5f5": {
@@ -15143,9 +15143,9 @@
     ],
     "name": "PACLOCK 100G",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 55,
+    "views": 56,
     "lastUpdated": "2025-03-18T23:29:31.272Z",
-    "popularityIndex": 55,
+    "popularityIndex": 56,
     "scorecardCount": 17,
     "features": [
       "Flickr Update"
@@ -16235,7 +16235,7 @@
       "Rear tension"
     ],
     "notes": "Can be front tensioned and counterrotated",
-    "views": 166,
+    "views": 165,
     "lastUpdated": "2025-03-19T01:20:51.365Z",
     "links": [
       {
@@ -16247,7 +16247,7 @@
         "url": "https://youtu.be/XuHCrqNRHlI"
       }
     ],
-    "popularityIndex": 166,
+    "popularityIndex": 165,
     "scorecardCount": 25
   },
   "c1d09460": {
@@ -17537,7 +17537,7 @@
     ],
     "name": "Burg Wächter Gamma 700",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 82,
+    "views": 83,
     "lastUpdated": "2025-03-19T15:44:57.289Z",
     "media": [
       {
@@ -17571,7 +17571,7 @@
     "features": [
       "Unguttable"
     ],
-    "popularityIndex": 82,
+    "popularityIndex": 83,
     "scorecardCount": 33
   },
   "5647f11c": {
@@ -20413,12 +20413,12 @@
     ],
     "name": "Lockwood 334B45, 356S63, 214A40, 215A40, 270S70",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 243,
+    "views": 244,
     "lastUpdated": "2025-03-19T01:20:51.370Z",
     "relatedIds": [
       "ae023398"
     ],
-    "popularityIndex": 243,
+    "popularityIndex": 244,
     "scorecardCount": 97
   },
   "36d61da4": {
@@ -21551,9 +21551,9 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53880309782_17ae6b095d_o.jpg"
       }
     ],
-    "views": 816,
+    "views": 815,
     "lastUpdated": "2025-03-19T15:44:57.293Z",
-    "popularityIndex": 816,
+    "popularityIndex": 815,
     "scorecardCount": 226
   },
   "74c225d1": {
@@ -22266,9 +22266,9 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/54400066972_bb68d9ac3d_o.jpg"
       }
     ],
-    "views": 23,
+    "views": 24,
     "lastUpdated": "2025-03-21T17:03:30.597Z",
-    "popularityIndex": 23,
+    "popularityIndex": 24,
     "scorecardCount": 21
   },
   "2c9d12fc": {
@@ -25986,7 +25986,7 @@
     "features": [
       "Pin-in-pin"
     ],
-    "views": 9,
+    "views": 10,
     "lastUpdated": "2025-03-19T01:20:51.375Z",
     "notes": "16 pins in three rows",
     "media": [
@@ -26018,8 +26018,8 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53157094163_4258da9e57_o.jpg"
       }
     ],
-    "popularityIndex": 9,
-    "scorecardCount": 4
+    "popularityIndex": 10,
+    "scorecardCount": 5
   },
   "4ffe03a9": {
     "id": "4ffe03a9",
@@ -26173,9 +26173,9 @@
     "features": [
       "Some formats guttable"
     ],
-    "views": 113,
+    "views": 112,
     "lastUpdated": "2025-03-18T23:29:31.276Z",
-    "popularityIndex": 113,
+    "popularityIndex": 112,
     "scorecardCount": 49
   },
   "c11aca1a": {
@@ -31479,7 +31479,7 @@
     ],
     "name": "DOM ix 10 / STS IX",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 95,
+    "views": 96,
     "lastUpdated": "2025-03-19T15:44:57.302Z",
     "links": [
       {
@@ -31543,7 +31543,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/22581920654_6d16a76102_o.jpg"
       }
     ],
-    "popularityIndex": 95,
+    "popularityIndex": 96,
     "scorecardCount": 37
   },
   "dd6a3683": {
@@ -36154,14 +36154,14 @@
       "Flickr Update"
     ],
     "notes": "** **Special Picking Requirement:** Must be raked prior to picking to reset pin combination. Ideally assembled on video prior to picking.",
-    "views": 75,
+    "views": 76,
     "lastUpdated": "2025-03-19T15:44:57.307Z",
     "relatedIds": [
       "71bce5b7",
       "c266d57b",
       "bf43348b"
     ],
-    "popularityIndex": 75,
+    "popularityIndex": 76,
     "scorecardCount": 18
   },
   "6b06f591": {
@@ -38166,7 +38166,7 @@
     "features": [
       "Magnetic sliders"
     ],
-    "views": 23,
+    "views": 24,
     "lastUpdated": "2025-03-19T15:44:57.309Z",
     "media": [
       {
@@ -38266,7 +38266,7 @@
         "url": "https://blackbag.toool.nl/?p=3907"
       }
     ],
-    "popularityIndex": 23,
+    "popularityIndex": 24,
     "scorecardCount": 17
   },
   "9094ca58": {
@@ -40740,9 +40740,9 @@
     ],
     "name": "ASSA dp4400, dp11 / TrioVing dp / Ruko Garant+",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 61,
+    "views": 62,
     "lastUpdated": "2025-03-19T15:44:57.311Z",
-    "popularityIndex": 61,
+    "popularityIndex": 62,
     "scorecardCount": 19
   },
   "104776ef": {
@@ -42584,9 +42584,9 @@
     ],
     "name": "DOM ix Twinstar",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 93,
+    "views": 94,
     "lastUpdated": "2025-03-19T01:20:51.392Z",
-    "popularityIndex": 93,
+    "popularityIndex": 94,
     "scorecardCount": 53
   },
   "f7452b9f": {
@@ -59054,7 +59054,7 @@
       "Trap element",
       "Picking Risk"
     ],
-    "views": 15,
+    "views": 16,
     "media": [
       {
         "title": "By: UrbanHawk",
@@ -59094,7 +59094,7 @@
       }
     ],
     "notes": "If trap elements are not dealt with, the lock will soft-brick, requiring a gut to fix.",
-    "popularityIndex": 15,
+    "popularityIndex": 16,
     "scorecardCount": 6
   },
   "e713e7e6": {
@@ -59865,9 +59865,9 @@
       }
     ],
     "version": "without overmilling",
-    "popularityIndex": 46,
+    "popularityIndex": 47,
     "scorecardCount": 13,
-    "views": 46
+    "views": 47
   },
   "bf8970de": {
     "id": "bf8970de",
@@ -62507,9 +62507,9 @@
     ],
     "name": "Defiant 5-pin Deadbolt",
     "dateAdded": "2025-10-04T16:19:03.606Z",
-    "popularityIndex": 19,
-    "scorecardCount": 4,
-    "views": 19
+    "popularityIndex": 18,
+    "scorecardCount": 3,
+    "views": 18
   },
   "5f600c8e": {
     "id": "5f600c8e",
@@ -62526,9 +62526,9 @@
     ],
     "name": "Defiant 5-pin Deadbolt",
     "dateAdded": "2025-10-04T16:19:03.607Z",
-    "popularityIndex": 16,
-    "views": 16,
-    "scorecardCount": 2
+    "popularityIndex": 15,
+    "views": 15,
+    "scorecardCount": 1
   },
   "d87bb501": {
     "id": "d87bb501",
@@ -63258,9 +63258,9 @@
     ],
     "name": "SEGA Cam Lock",
     "dateAdded": "2026-08-06T03:59:39.969Z",
-    "popularityIndex": 6,
+    "popularityIndex": 7,
     "scorecardCount": 4,
-    "views": 6
+    "views": 7
   },
   "1110ef61": {
     "id": "1110ef61",
@@ -63972,9 +63972,9 @@
     "searchKeywords": "multilock, mtl",
     "name": "Mul-T-Lock 700",
     "dateAdded": "2026-09-01T00:58:56.480Z",
-    "popularityIndex": 4,
-    "scorecardCount": 2,
-    "views": 4,
+    "popularityIndex": 5,
+    "scorecardCount": 3,
+    "views": 5,
     "currentBeltDate": "2026-08-30T12:00:00.000Z"
   },
   "fa0b5d10": {
@@ -64373,7 +64373,9 @@
     "version": "Old Trees, 5 Finger Pins",
     "name": "ASSA Twin Combi",
     "currentBeltDate": "2026-10-09T23:22:45.036Z",
-    "dateAdded": "2026-10-09T23:22:45.036Z"
+    "dateAdded": "2026-10-09T23:22:45.036Z",
+    "popularityIndex": 1,
+    "views": 1
   },
   "ce9d2399": {
     "id": "ce9d2399",
