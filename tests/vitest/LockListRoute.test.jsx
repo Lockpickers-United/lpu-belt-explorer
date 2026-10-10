@@ -1,11 +1,11 @@
 import React from 'react'
 import {describe, expect, it} from 'vitest'
 import {screen, waitFor, within} from '@testing-library/react'
-import {renderWithRouter} from '../../src/test/render.jsx'
+import {renderWithProviders} from '../../src/test/render.jsx'
 import LockListRoute from '../../src/locks/LockListRoute.jsx'
 import {userEvent} from '@testing-library/user-event'
 import allEntries from '../../src/data/data.json'
-import {useNavigate} from 'react-router-dom'
+import {createMemoryRouter, RouterProvider, useNavigate} from 'react-router-dom'
 
 const fixtureEntryIds = new Set([
     '07034c0f', // Any Acrylic Padlock
@@ -25,11 +25,20 @@ function FilterNavigation() {
 }
 
 describe('LockListRoute', () => {
-    const renderLocks = (route = '/locks') =>
-        renderWithRouter(
-            <LockListRoute allEntries={fixtureEntries}/>,
-            {route} // MemoryRouter initialEntries
-        )
+    const renderLocks = (route = '/locks', withNavigation = false) => {
+        const router = createMemoryRouter([{
+            path: '/locks',
+            handle: {route: 'locks'},
+            element: (
+                <>
+                    {withNavigation && <FilterNavigation/>}
+                    <LockListRoute allEntries={fixtureEntries}/>
+                </>
+            )
+        }], {initialEntries: [route]})
+
+        return renderWithProviders(<RouterProvider router={router}/>)
+    }
 
     it('renders default list with results', async () => {
         renderLocks('/locks')
@@ -45,13 +54,7 @@ describe('LockListRoute', () => {
 
     it('replaces a prior field filter when route navigation supplies a different field', async () => {
         const user = userEvent.setup()
-        renderWithRouter(
-            <>
-                <FilterNavigation/>
-                <LockListRoute allEntries={fixtureEntries}/>
-            </>,
-            {route: '/locks?tab=search&makes=Master+Lock'}
-        )
+        renderLocks('/locks?tab=search&makes=Master+Lock', true)
 
         expect(screen.getByRole('listitem', {name: 'Master Lock #1'})).toBeInTheDocument()
         await user.click(screen.getByRole('button', {name: 'show blue filters'}))

@@ -99,7 +99,7 @@ function ImportPreview({syncStatus, syncResult, service}) {
 
                         <Nav title={title} extras={nav}/>
                         {!syncStatus &&
-                            <div style={{textAlign: 'center'}}>
+                            <div style={{textAlign: 'center', marginTop: 40}}>
                                 <LoadingDisplay/>
                                 Please wait, this may take a minute or so.<br/><br/>
                             </div>

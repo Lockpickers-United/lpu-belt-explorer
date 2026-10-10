@@ -36,7 +36,7 @@ describe('OAuth callback route compatibility', () => {
 
         renderWithRouter(<AuthDiscordRoute/>, {route: '/auth/discord'})
 
-        await waitFor(() => expect(screen.getByText('Status: access_denied')).toBeInTheDocument())
+        await waitFor(() => expect(screen.getByText('Status: data_failed')).toBeInTheDocument())
         expect(screen.getByText('Service: Discord')).toBeInTheDocument()
         expect(fetch).not.toHaveBeenCalled()
     })

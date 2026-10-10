@@ -5,7 +5,7 @@ import AccordionDetails from '@mui/material/AccordionDetails'
 import AccordionSummary from '@mui/material/AccordionSummary'
 import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
-import {useNavigate, useParams} from 'react-router-dom'
+import {useMatches, useNavigate, useParams} from 'react-router-dom'
 import rehypeExternalLinks from 'rehype-external-links'
 import BeltStripe from './BeltStripe'
 import CollectionButton from './CollectionButton'
@@ -43,7 +43,7 @@ import ListAltIcon from '@mui/icons-material/ListAlt'
 import ClassificationAdminButton from '../classification/ClassificationAdminButton.jsx'
 import VoteView from '../classification/VoteView.jsx'
 
-function Entry({entry, expanded, onExpand, isClassification, isHistorical = false, scorecardId}) {
+function Entry({entry, expanded, onExpand, isHistorical = false, scorecardId}) {
     const navigate = useNavigate()
     const {accessInfo} = useAccess()
     const {expandAll} = useContext(DataContext)
@@ -119,7 +119,9 @@ function Entry({entry, expanded, onExpand, isClassification, isHistorical = fals
         : <>Other Versions Only</>
 
     const {isMobile} = useWindowSize()
-    const makeModelWidth = !isMobile ? '60%' : '60%'
+    const isClassification = useMatches().some(match => match.handle?.route === 'classification')
+
+    const makeModelWidth = !isClassification && !isMobile ? '65%' : '60%'
     const mainMargin = !isMobile ? '6px 0px 8px 12px' : '4px 0px 6px 4px'
 
     const doNothing = (event) => {
@@ -290,7 +292,7 @@ function Entry({entry, expanded, onExpand, isClassification, isHistorical = fals
 
                         {accessInfo.features.entryActionBar && !isHistorical &&
                             <div style={{margin: '24px 0px 20px 6px'}}>
-                                <EntryActionBar entry={entry} isClassification={isClassification}/>
+                                <EntryActionBar entry={entry}/>
                             </div>
                         }
 

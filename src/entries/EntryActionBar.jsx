@@ -14,6 +14,7 @@ import OfflineBoltIcon from '@mui/icons-material/OfflineBolt'
 import UserClassificationButton from '../classification/UserClassificationButton.jsx'
 import {ClassificationProvider} from '../app/ClassificationContext.jsx'
 import CopyEntryTextButtonAdmin from './CopyEntryTextButtonAdmin.jsx'
+import {useMatches} from 'react-router-dom'
 
 const roleDisplay = {
     admin: {
@@ -30,8 +31,9 @@ const roleDisplay = {
     }
 }
 
-export default function EntryActionBar({entry, isClassification, style = {}}) {
+export default function EntryActionBar({entry, style = {}}) {
     const {accessInfo} = useAccess()
+    const isClassification = useMatches().some(match => match.handle?.route === 'classification')
     const theme = useTheme()
 
     const [showFeature, setShowFeature] = useState(isClassification ? {classification: true} : {})
@@ -82,7 +84,6 @@ export default function EntryActionBar({entry, isClassification, style = {}}) {
                         {accessInfo.features.classificationVote &&
                             <UserClassificationButton
                                 entry={entry}
-                                isClassification={isClassification}
                                 handleToggle={() => handleToggle('classification')}/>
                         }
                         {accessInfo.features.scorecardVideos &&
@@ -103,14 +104,14 @@ export default function EntryActionBar({entry, isClassification, style = {}}) {
                 <Collapse in={showFeature.classification}>
                     {showFeature.classification &&
                         <div style={{margin: '6px 0px 20px 0px'}}>
-                            <EntryClassificationVote entry={entry} isClassification={isClassification}/>
+                            <EntryClassificationVote entry={entry}/>
                         </div>
                     }
                 </Collapse>
                 <Collapse in={showFeature.classificationAdmin}>
                     {showFeature.classificationAdmin &&
                         <div style={{margin: '6px 0px 20px 0px'}}>
-                            <EntryClassificationAdmin entry={entry} isClassification={isClassification}
+                            <EntryClassificationAdmin entry={entry}
                                                       handleToggle={() => handleToggle('classificationAdmin')}/>
                         </div>
                     }

@@ -50,7 +50,6 @@ export default function ClassificationEntries({advancedEnabled = false, historic
                                     || !!expandAll
                                     || visibleEntries.length === 1}
                                 onExpand={setEntryExpanded}
-                                isClassification={true}
                                 isHistorical={historical}
                             />
                         )

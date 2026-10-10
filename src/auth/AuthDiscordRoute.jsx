@@ -9,13 +9,13 @@ function AuthDiscordRoute() {
     const {VITE_DISCORD_CLIENT_ID: clientId, VITE_DISCORD_CLIENT_SECRET: clientSecret} = import.meta.env
     const code = URL.parse(window.location.href).searchParams.get('code')
     const iss = URL.parse(window.location.href).searchParams.get('iss')
-    const urlCode = iss === 'https://discord.com' ? code : null
+    const urlCode = iss === 'https://discord.com' ? code : 'failed-to-get-code'
     const urlMatchError = window.location.href.match(/\?error=([^&]+)&error_description/)
     const urlError = urlMatchError ? urlMatchError[1] : null
 
     const [credentials, setCredentials] = useState(null)
     const [syncResult, setSyncResult] = useState({})
-    const [syncException, setSyncException] = useState(false)
+    const [syncException, setSyncException] = useState(null)
     const usedCode = useRef(false)
 
     const syncStatus = syncException || (Object.keys(syncResult).length > 0 ? 'complete' : false)
@@ -51,6 +51,10 @@ function AuthDiscordRoute() {
         }
 
         if (urlCode && !usedCode.current) {
+            if (urlCode === 'failed-to-get-code') {
+                setSyncException('data_failed')
+                return
+            }
             usedCode.current = true
             getAccessToken()
         } else if (urlError) {
