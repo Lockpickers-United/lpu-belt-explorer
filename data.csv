@@ -902,9 +902,14 @@ Unranked,Chubb,Detector,"curtained, 6 levers",Lever,"Curtain,Pin key,False gates
 Unranked,Chubb,Detector,"6 lever, curtained - no false gates, standard mortise",,,,0b8eeedc
 Unranked,Chubb,"GPO No.6",,,"Under Review ⚑",,c2c1f8e0
 Unranked,CISA,810,,Pin-tumbler,"Under Review ⚑",,22d70f2e
+Unranked,CISA,AsixP8,,,,,99311bb8
+Unranked,CISA,C2000,,,,,da1e5052
+Unranked,CISA,"Nexo NI05",,,,,7e59d388
+Unranked,CISA,RS5,,,,,cbbe5ae1
 Unranked,Clavis,"Q18 Clone",,Dimple,,,2ae59863
 Unranked,Codkey,"Locksys MME (micro magnetic element)",,"Dimple,Magnet","Under Review ⚑",,45bb95df
 Unranked,"Corbin Russwin",Emhart,"Cam Lock - 5 pin",Pin-tumbler,"Under Review ⚑,Interlocking pins",,bf43348b
+Unranked,"Corbin Russwin",Pyramid,,,,,19bfe875
 Unranked,Crown,no.100,"solid brass padlock 5-Pin",,"Under Review ⚑",,4d738de3
 Unranked,"D'Alembert Métal","Serie S","9 pins, 4 sliders","Dimple,Slider","Unsprung sliders,Active sidebar",,aebd0373
 Unranked,Fichet,"5 lever",,Lever,"Pin key,Single bitted",,cadec525
