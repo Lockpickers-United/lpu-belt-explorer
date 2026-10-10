@@ -4509,9 +4509,9 @@
     "features": [
       "Unguttable"
     ],
-    "popularityIndex": 455,
+    "popularityIndex": 456,
     "scorecardCount": 59,
-    "views": 455,
+    "views": 456,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -8826,9 +8826,9 @@
     ],
     "notes": "Due to unbalanced stacks, drivers may rest below shear, risking damage to the springs if that chamber is not picked.",
     "modelNum": "570",
-    "popularityIndex": 699,
+    "popularityIndex": 700,
     "scorecardCount": 114,
-    "views": 699,
+    "views": 700,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -66819,6 +66819,58 @@
     "lastUpdated": "2026-10-03T22:57:35.474Z"
   },
   {
+    "id": "99311bb8",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "CISA",
+        "model": "AsixP8"
+      }
+    ],
+    "currentBeltDate": "2026-10-10T01:23:33.360Z",
+    "dateAdded": "2026-10-10T01:23:33.360Z",
+    "lastUpdated": "2026-10-10T01:23:33.878Z"
+  },
+  {
+    "id": "da1e5052",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "CISA",
+        "model": "C2000"
+      }
+    ],
+    "currentBeltDate": "2026-10-10T01:23:33.360Z",
+    "dateAdded": "2026-10-10T01:23:33.360Z",
+    "lastUpdated": "2026-10-10T01:23:33.879Z"
+  },
+  {
+    "id": "7e59d388",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "CISA",
+        "model": "Nexo NI05"
+      }
+    ],
+    "currentBeltDate": "2026-10-10T01:23:33.360Z",
+    "dateAdded": "2026-10-10T01:23:33.360Z",
+    "lastUpdated": "2026-10-10T01:23:33.879Z"
+  },
+  {
+    "id": "cbbe5ae1",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "CISA",
+        "model": "RS5"
+      }
+    ],
+    "currentBeltDate": "2026-10-10T01:23:33.360Z",
+    "dateAdded": "2026-10-10T01:23:33.360Z",
+    "lastUpdated": "2026-10-10T01:23:33.879Z"
+  },
+  {
     "id": "2ae59863",
     "belt": "Unranked",
     "makeModels": [
@@ -66920,6 +66972,19 @@
       "c266d57b"
     ],
     "lastUpdated": "2025-10-25T18:24:16.788Z"
+  },
+  {
+    "id": "19bfe875",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Corbin Russwin",
+        "model": "Pyramid"
+      }
+    ],
+    "currentBeltDate": "2026-10-10T01:23:33.360Z",
+    "dateAdded": "2026-10-10T01:23:33.360Z",
+    "lastUpdated": "2026-10-10T01:23:33.879Z"
   },
   {
     "id": "4d738de3",

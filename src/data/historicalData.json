@@ -4847,9 +4847,9 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/54108366688_cdeac847da_o.jpg"
       }
     ],
-    "views": 455,
+    "views": 456,
     "lastUpdated": "2025-03-19T15:44:57.278Z",
-    "popularityIndex": 455,
+    "popularityIndex": 456,
     "scorecardCount": 59
   },
   "2936bb00": {
@@ -8197,11 +8197,11 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/52977757532_f253bac324_o.jpg"
       }
     ],
-    "views": 699,
+    "views": 700,
     "lastUpdated": "2025-03-19T15:44:57.280Z",
     "notes": "Due to unbalanced stacks, drivers may rest below shear, risking damage to the springs if that chamber is not picked.",
     "modelNum": "570",
-    "popularityIndex": 699,
+    "popularityIndex": 700,
     "scorecardCount": 114
   },
   "9f832458": {
@@ -64512,5 +64512,70 @@
     "name": "Chubb Detector",
     "currentBeltDate": "2026-10-09T23:22:45.036Z",
     "dateAdded": "2026-10-09T23:22:45.036Z"
+  },
+  "99311bb8": {
+    "id": "99311bb8",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "CISA",
+        "model": "AsixP8"
+      }
+    ],
+    "name": "CISA AsixP8",
+    "currentBeltDate": "2026-10-10T01:23:33.360Z",
+    "dateAdded": "2026-10-10T01:23:33.360Z"
+  },
+  "da1e5052": {
+    "id": "da1e5052",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "CISA",
+        "model": "C2000"
+      }
+    ],
+    "name": "CISA C2000",
+    "currentBeltDate": "2026-10-10T01:23:33.360Z",
+    "dateAdded": "2026-10-10T01:23:33.360Z"
+  },
+  "7e59d388": {
+    "id": "7e59d388",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "CISA",
+        "model": "Nexo NI05"
+      }
+    ],
+    "name": "CISA Nexo NI05",
+    "currentBeltDate": "2026-10-10T01:23:33.360Z",
+    "dateAdded": "2026-10-10T01:23:33.360Z"
+  },
+  "cbbe5ae1": {
+    "id": "cbbe5ae1",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "CISA",
+        "model": "RS5"
+      }
+    ],
+    "name": "CISA RS5",
+    "currentBeltDate": "2026-10-10T01:23:33.360Z",
+    "dateAdded": "2026-10-10T01:23:33.360Z"
+  },
+  "19bfe875": {
+    "id": "19bfe875",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Corbin Russwin",
+        "model": "Pyramid"
+      }
+    ],
+    "name": "Corbin Russwin Pyramid",
+    "currentBeltDate": "2026-10-10T01:23:33.360Z",
+    "dateAdded": "2026-10-10T01:23:33.360Z"
   }
 }
