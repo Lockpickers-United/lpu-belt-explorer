@@ -11,8 +11,8 @@
     "updatedBelt": null,
     "samelineTarget": null,
     "note": null,
-    "includeInChangelog": null,
-    "publishedAt": null,
+    "includeInChangelog": true,
+    "lastPublishedAt": null,
     "source": "site",
     "createdAt": "2026-10-04T15:50:58-07:00",
     "updatedAt": "2026-10-04T15:50:59-07:00"
@@ -29,8 +29,8 @@
     "updatedBelt": "Green",
     "samelineTarget": null,
     "note": "Precise lock but pins are rather easy to access. The 5 pin version is orange, but the 6 pin version is good enough for green.",
-    "includeInChangelog": null,
-    "publishedAt": null,
+    "includeInChangelog": true,
+    "lastPublishedAt": null,
     "source": "site",
     "createdAt": "2026-10-04T15:50:58-07:00",
     "updatedAt": "2026-10-04T15:50:59-07:00"
@@ -47,8 +47,8 @@
     "updatedBelt": "Purple",
     "samelineTarget": null,
     "note": "This lock has 6 top pins and 10 sprung sliders (5 each side). Both the version with standard drivers and the version spool drivers have been voted to purple.",
-    "includeInChangelog": null,
-    "publishedAt": null,
+    "includeInChangelog": true,
+    "lastPublishedAt": null,
     "source": "site",
     "createdAt": "2026-10-04T15:50:58-07:00",
     "updatedAt": "2026-10-04T15:50:59-07:00"
@@ -65,8 +65,8 @@
     "updatedBelt": "Yellow",
     "samelineTarget": null,
     "note": "A very straightforward lock that never should have been Orange to begin with.",
-    "includeInChangelog": null,
-    "publishedAt": null,
+    "includeInChangelog": true,
+    "lastPublishedAt": null,
     "source": "site",
     "createdAt": "2026-10-04T15:50:58-07:00",
     "updatedAt": "2026-10-04T15:50:59-07:00"
@@ -83,8 +83,8 @@
     "updatedBelt": "Green",
     "samelineTarget": null,
     "note": "Difficult keyway, easy to slip off from the small pins. Good tolerances, pins for sidebar snap easily back leading to ping pong. Needs good tension control to get sidebar pins to set.",
-    "includeInChangelog": null,
-    "publishedAt": null,
+    "includeInChangelog": true,
+    "lastPublishedAt": null,
     "source": "site",
     "createdAt": "2026-10-04T15:50:58-07:00",
     "updatedAt": "2026-10-04T15:50:59-07:00"
@@ -99,9 +99,26 @@
     "entryName": "Keso 8000Ω² / Keso 6000 FP2",
     "note": "Enough already with the belt changing.",
     "includeInChangelog": null,
-    "publishedAt": null,
+    "lastPublishedAt": null,
     "source": "site",
     "createdAt": "2026-10-04T15:50:58-07:00",
     "updatedAt": "2026-10-04T15:50:59-07:00"
+  },
+  {
+    "id": "a_apapdc25",
+    "type": "adminAction",
+    "status": "Published",
+    "userId": "Mwbvdkq1QtWu2zLwEaj3imULSry1",
+    "displayName": "Decoder",
+    "entryId": "8d4632d9",
+    "entryName": "CompX Chicago TuBAR / Inceca Plana",
+    "action": "Belt Change",
+    "updatedBelt": "Purple",
+    "note": "Some note here for an old changelog",
+    "includeInChangelog": true,
+    "lastPublishedAt": "2026-10-09T15:50:58-07:00",
+    "source": "site",
+    "createdAt": "2026-10-04T15:50:58-07:00",
+    "updatedAt": "2026-10-09T15:50:58-07:00"
   }
 ]

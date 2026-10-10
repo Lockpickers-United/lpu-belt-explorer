@@ -1,0 +1,25 @@
+[
+  {
+    "id": "c_9876dc25",
+    "type": "changelog",
+    "status": "Published",
+    "userId": "Mwbvdkq1QtWu2zLwEaj3imULSry1",
+    "displayName": "Decoder",
+    "note": "Just a small update.",
+    "publishedAt": "2026-10-09T15:50:58-07:00",
+    "createdAt": "2026-10-09T15:50:58-07:00",
+    "updatedAt": "2026-10-09T15:50:59-07:00",
+    "changes": [
+      {
+        "name": "CompX Chicago TuBAR / Inceca Plana",
+        "version": "",
+        "id": "8d4632d9",
+        "adminActionId": "a_apapdc25",
+        "action": "Belt Change",
+        "change": "Unchanged",
+        "belt": "Purple",
+        "note": "Some note here for an old changelog"
+      }
+    ]
+  }
+]

@@ -13,6 +13,7 @@ import ClassificationEntries from '../../src/classification/ClassificationEntrie
 import LockListContext from '../../src/locks/LockListContext.jsx'
 import allEntries from '../../src/data/data.json'
 import modernVotes from '../../src/data/classification-samples.json'
+import adminActions from '../../src/data/classification-samples-admin.json'
 import DataContext from '../../src/context/DataContext.jsx'
 
 const mixedVoteEntryName = /^Ikon SK6 Radienprofil Extra Code/
@@ -31,10 +32,34 @@ describe('ClassificationDataProvider', () => {
             return null
         }
 
-        const rankedVoteEntry = allEntries.find(entry => entry.id === '8d4632d9')
-        const rankedReopenedEntry = allEntries.find(entry => entry.id === 'e2fd1519')
-        const rankedStagedEntry = allEntries.find(entry => entry.id === '18ecc45b')
-        const unrankedStagedEntry = allEntries.find(entry => entry.id === '352d0624')
+        const voteOnlyRecord = modernVotes.find(vote => vote.type === 'vote' &&
+            allEntries.some(entry => entry.id === vote.entryId) &&
+            !adminActions.some(action => action.entryId === vote.entryId))
+        const reopenedAction = adminActions.find(action => action.status === 'Re-opened' &&
+            allEntries.some(entry => entry.id === action.entryId && entry.belt !== 'Unranked'))
+        const rankedStagedAction = adminActions.find(action => action.status === 'Staged' &&
+            allEntries.some(entry => entry.id === action.entryId && entry.belt !== 'Unranked'))
+        const unrankedStagedAction = adminActions.find(action => action.status === 'Staged' &&
+            allEntries.some(entry => entry.id === action.entryId && entry.belt === 'Unranked'))
+        expect(voteOnlyRecord).toBeDefined()
+        expect(reopenedAction).toBeDefined()
+        expect(rankedStagedAction).toBeDefined()
+        expect(unrankedStagedAction).toBeDefined()
+
+        const rankedVoteEntry = {
+            ...allEntries.find(entry => entry.id === voteOnlyRecord.entryId),
+            belt: 'Orange',
+            currentBeltDate: undefined
+        }
+        const rankedReopenedEntry = {
+            ...allEntries.find(entry => entry.id === reopenedAction.entryId),
+            currentBeltDate: undefined
+        }
+        const rankedStagedEntry = {
+            ...allEntries.find(entry => entry.id === rankedStagedAction.entryId),
+            currentBeltDate: undefined
+        }
+        const unrankedStagedEntry = allEntries.find(entry => entry.id === unrankedStagedAction.entryId)
 
         renderWithProviders(
             <MemoryRouter>

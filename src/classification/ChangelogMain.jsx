@@ -19,7 +19,6 @@ import {useAccess} from '../app/AccessContext.jsx'
 export default function ChangelogMain() {
     usePageTitle('Changelog')
     const {accessInfo} = useAccess()
-    const {classificationAdmin} = accessInfo
     const {getAdminAction} = useContext(ClassificationContext)
 
     const {visibleChangelogEntries = []} = useContext(DataContext)
@@ -49,7 +48,7 @@ export default function ChangelogMain() {
         const adminAction = getAdminAction(entry)
         const name = entryName(entry, 'short')
         const version = entry.version ? ` (${entry.version})` : ''
-        return `- **${name}**${version} - ${adminAction.updatedBelt.toUpperCase()}. ${adminAction.note}`
+        return `- **${name}**${version} - ${adminAction.updatedBelt?.toUpperCase()}. ${adminAction.note}`
     }
 
     let clipboardText = `**${dayjs().format('MMMM YYYY')}**\n\n`
@@ -109,7 +108,7 @@ export default function ChangelogMain() {
     const extras = (
         <div style={{display: 'flex', marginTop: 6, alignItems: 'center', marginRight: 24}}>
             <div style={{flexGrow: 1, minWidth: !isMobile ? 10 : 0}}/>
-            {classificationAdmin &&
+            {accessInfo.roles.classificationAdmin &&
                 <>
                     <ExportButtonGeneric exportData={exportData} clipboardContent={clipboardText}/>
                     <Tooltip title={'Publish coming soon'} arrow disableFocusListener>

@@ -40,7 +40,8 @@ export default function ClassificationAdminButton({entry, handleToggle, style, f
                 </IconButton>
             </Tooltip>
         )
-        : (
+        : status !== 'Published' &&
+        (
             <Tooltip title={Legend} arrow disableFocusListener slotProps={{tooltip: {sx: {backgroundColor: '#333'}}}}>
                 <IconButton style={{...buttonStyle, ...style}}>
                     <Icon style={{color, fontSize}}/>

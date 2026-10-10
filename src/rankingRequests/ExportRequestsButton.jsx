@@ -73,7 +73,7 @@ function ExportRequestsButton({text, entries}) {
     }, [data, handleClose])
 
     const handleExportCsv = useCallback(() => {
-        const csvColumns = ['id', 'name', 'lockingMechanism', 'requestedBy', 'dateRequested']
+        const csvColumns = ['id', 'make', 'model', 'version', 'lockingMechanism']
         const headers = csvColumns.join(',')
         const csvData = data.map(datum => {
             return csvColumns

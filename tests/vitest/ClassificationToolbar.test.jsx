@@ -11,7 +11,7 @@ describe('ClassificationToolbar', () => {
         renderWithRouter(<ClassificationToolbar/>, {route: '/classification/changelog'})
 
         expect(screen.getAllByRole('tab')).toHaveLength(4)
-        expect(screen.getByRole('tab', {name: /Publish Changelog|Changelogs/}))
+        expect(screen.getByRole('tab', {name: /Publish Changelog|Changelog/}))
             .toHaveAttribute('aria-selected', 'true')
 
         await user.click(screen.getByRole('tab', {name: 'Ranked'}))

@@ -9,19 +9,18 @@ import {useAccess} from '../app/AccessContext.jsx'
 
 export default function ClassificationToolbar() {
     const {accessInfo} = useAccess()
-    const {classificationAdmin} = accessInfo
 
     const changelogLabel = useMemo(() => {
-        return classificationAdmin
+        return accessInfo.roles.classificationAdmin
             ? 'Publish Changelog'
-            : 'Changelogs'
-    }, [classificationAdmin])
+            : 'Changelog'
+    }, [accessInfo.roles.classificationAdmin])
 
     const tabs = useMemo(() => [
         {label: 'Active', mobileLabel: 'Active', value: '/classification'},
         {label: 'Ranked', mobileLabel: 'Ranked', value: '/classification/ranked'},
         {label: 'Historical', mobileLabel: 'Historical', value: '/classification/past'},
-        {label: changelogLabel, mobileLabel: 'Changelogs', value: '/classification/changelog'}
+        {label: changelogLabel, mobileLabel: 'Changelog', value: '/classification/changelog'}
     ], [changelogLabel])
 
     const location = useLocation()
