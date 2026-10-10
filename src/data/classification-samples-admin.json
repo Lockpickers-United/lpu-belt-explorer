@@ -120,5 +120,23 @@
     "source": "site",
     "createdAt": "2026-10-04T15:50:58-07:00",
     "updatedAt": "2026-10-09T15:50:58-07:00"
+  },
+  {
+    "id": "a_181pdc25",
+    "type": "adminAction",
+    "status": "Staged",
+    "userId": "GGplAdctTfVDLVvYsfIADJmfp8f2",
+    "displayName": "mgsecure",
+    "entryId": "f72085d2",
+    "entryName": "ABUS 34/55 Platinum",
+    "action": "Sameline",
+    "samelineTargetId": "ecb469c3",
+    "samelineTargetName": "ABUS 45/30, 45/35 (4 pins)",
+    "note": "Sameline with another ABUS lock",
+    "includeInChangelog": true,
+    "lastPublishedAt": null,
+    "source": "site",
+    "createdAt": "2026-10-08T15:50:58-07:00",
+    "updatedAt": "2026-10-08T15:50:58-07:00"
   }
 ]

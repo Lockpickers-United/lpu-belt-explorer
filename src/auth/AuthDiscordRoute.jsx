@@ -7,8 +7,9 @@ import {ProfileProvider} from '../app/ProfileContext.jsx'
 function AuthDiscordRoute() {
     const {setDiscordUserInfo, peekAtDiscordAwards} = useContext(DBContext)
     const {VITE_DISCORD_CLIENT_ID: clientId, VITE_DISCORD_CLIENT_SECRET: clientSecret} = import.meta.env
-    const urlMatchCode = window.location.href.match(/\?code=([^#]+)#/)
-    const urlCode = urlMatchCode ? urlMatchCode[1] : null
+    const code = URL.parse(window.location.href).searchParams.get('code')
+    const iss = URL.parse(window.location.href).searchParams.get('iss')
+    const urlCode = iss === 'https://discord.com' ? code : null
     const urlMatchError = window.location.href.match(/\?error=([^&]+)&error_description/)
     const urlError = urlMatchError ? urlMatchError[1] : null
 
