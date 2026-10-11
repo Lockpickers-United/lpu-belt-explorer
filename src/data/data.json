@@ -5700,9 +5700,9 @@
       "Unguttable"
     ],
     "modelNum": "64",
-    "popularityIndex": 543,
+    "popularityIndex": 544,
     "scorecardCount": 45,
-    "views": 543,
+    "views": 544,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -26473,6 +26473,9 @@
         "imageTitle": "Gege ANS2"
       }
     ],
+    "relatedIds": [
+      "92f98042"
+    ],
     "lastUpdated": "2026-10-11T11:34:47.730Z"
   },
   {
@@ -27214,9 +27217,9 @@
     "lockingMechanisms": [
       "Dimple"
     ],
-    "popularityIndex": 2,
+    "popularityIndex": 3,
     "scorecardCount": 6,
-    "views": 2,
+    "views": 3,
     "dateAdded": "2023-03-02T19:05:25.000Z",
     "media": [
       {
@@ -35740,6 +35743,9 @@
         "title": "Catalocks",
         "url": "https://www.catalocks.eu/GEGE/GEGE%20ANS-2_574.html"
       }
+    ],
+    "relatedIds": [
+      "4bbc3040"
     ],
     "lastUpdated": "2026-10-11T11:34:47.732Z"
   },
