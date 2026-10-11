@@ -1,5 +1,5 @@
 import React, {useContext} from 'react'
-import {createMemoryRouter, MemoryRouter, RouterProvider} from 'react-router-dom'
+import {createMemoryRouter, RouterProvider} from 'react-router-dom'
 import {describe, expect, it} from 'vitest'
 import {screen, waitFor, within} from '@testing-library/react'
 import {userEvent} from '@testing-library/user-event'
@@ -67,8 +67,10 @@ describe('ClassificationDataProvider', () => {
         const samelineEntry = allEntries.find(entry => entry.id === samelineAction.entryId)
         const deleteEntry = allEntries.find(entry => entry.id === deleteAction.entryId)
 
-        renderWithProviders(
-            <MemoryRouter>
+        const router = createMemoryRouter([{
+            path: '/classification',
+            handle: {route: 'classification'},
+            element: (
                 <FilterProvider filterFields={classificationFilterFields}>
                     <ClassificationProvider>
                         <ClassificationDataProvider allEntries={[
@@ -79,7 +81,11 @@ describe('ClassificationDataProvider', () => {
                         </ClassificationDataProvider>
                     </ClassificationProvider>
                 </FilterProvider>
-            </MemoryRouter>,
+            )
+        }], {initialEntries: ['/classification']})
+
+        renderWithProviders(
+            <RouterProvider router={router}/>,
             {auth: {user: {uid: 'test-user'}}}
         )
 
@@ -111,18 +117,24 @@ describe('ClassificationDataProvider', () => {
         const rankedNoVoteEntry = allEntries.find(entry => entry.belt !== 'Unranked' &&
             !modernVotes.some(vote => vote.entryId === entry.id))
 
-        renderWithProviders(
-            <MemoryRouter>
+        const router = createMemoryRouter([{
+            path: '/classification/ranked',
+            handle: {route: 'ranked'},
+            element: (
                 <FilterProvider filterFields={classificationFilterFields}>
                     <ClassificationProvider>
                         <ClassificationDataProvider allEntries={[
                             rankedCurrentEntry, rankedPreviousEntry, unrankedEntry, rankedNoVoteEntry
-                        ]} route='ranked'>
+                        ]}>
                             <CaptureData/>
                         </ClassificationDataProvider>
                     </ClassificationProvider>
                 </FilterProvider>
-            </MemoryRouter>,
+            )
+        }], {initialEntries: ['/classification/ranked']})
+
+        renderWithProviders(
+            <RouterProvider router={router}/>,
             {auth: {user: {uid: 'test-user'}}}
         )
 

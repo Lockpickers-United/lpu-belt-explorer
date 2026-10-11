@@ -4,8 +4,7 @@ import modernVotes from '../data/classification-samples.json'
 import classificationAdminActions from '../data/classification-samples-admin.json'
 import classificationChangelogs from '../data/classification-samples-changelog.json'
 import dayjs from 'dayjs'
-
-const ClassificationContext = React.createContext({})
+import ClassificationContext from './classificationContextValue.js'
 
 const newestFirst = (a, b) => dayjs(b.updatedAt).valueOf() - dayjs(a.updatedAt).valueOf()
 
@@ -30,7 +29,7 @@ export function ClassificationProvider({children}) {
 
     const getLatestMilestone = useCallback((entry) => {
         const publishDateValues = (actionsByEntry.get(entry.id) ?? [])
-            .filter(action => action.status === 'Published')
+            .filter(action => ['Published', 'Settled'].includes(action.status))
             .map(action => dayjs(action.updatedAt).valueOf())
         const currentBeltDate = entry.belt !== 'Unranked' && entry.currentBeltDate
             ? dayjs(entry.currentBeltDate) : null

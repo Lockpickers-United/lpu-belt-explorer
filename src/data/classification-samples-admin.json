@@ -1,5 +1,23 @@
 [
   {
+    "id": "a_e2fd1000",
+    "type": "adminAction",
+    "status": "Published",
+    "userId": "Mwbvdkq1QtWu2zLwEaj3imULSry1",
+    "displayName": "Decoder",
+    "entryId": "e2fd1519",
+    "entryName": "AXA Clinch",
+    "action": null,
+    "updatedBelt": null,
+    "samelineTarget": null,
+    "note": null,
+    "omitFromChangelog": false,
+    "lastPublishedAt": "2026-10-05T15:50:58-07:00",
+    "source": "site",
+    "createdAt": "2026-10-05T15:50:58-07:00",
+    "updatedAt": "2026-10-05T15:50:59-07:00"
+  },
+  {
     "id": "a_e2fd1519",
     "type": "adminAction",
     "status": "Re-opened",
@@ -14,8 +32,8 @@
     "omitFromChangelog": false,
     "lastPublishedAt": null,
     "source": "site",
-    "createdAt": "2026-10-04T15:50:58-07:00",
-    "updatedAt": "2026-10-04T15:50:59-07:00"
+    "createdAt": "2026-10-06T15:50:58-07:00",
+    "updatedAt": "2026-10-06T15:50:59-07:00"
   },
   {
     "id": "a_7305dc22",
@@ -99,10 +117,10 @@
     "entryName": "Keso 8000Ω² / Keso 6000 FP2",
     "note": "Enough already with the belt changing.",
     "includeInChangelog": null,
-    "lastPublishedAt": null,
+    "lastPublishedAt": "2026-10-08T15:50:58-07:00",
     "source": "site",
-    "createdAt": "2026-10-04T15:50:58-07:00",
-    "updatedAt": "2026-10-04T15:50:59-07:00"
+    "createdAt": "2026-10-08T15:50:58-07:00",
+    "updatedAt": "2026-10-08T15:50:59-07:00"
   },
   {
     "id": "a_apapdc25",

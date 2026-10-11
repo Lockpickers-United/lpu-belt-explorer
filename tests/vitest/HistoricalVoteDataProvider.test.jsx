@@ -68,7 +68,7 @@ describe('HistoricalVoteDataProvider', () => {
 
         const router = createMemoryRouter([{
             path: '/classification/past',
-            handle: {route: 'classification'},
+            handle: {route: 'historical'},
             element: (
                 <FilterProvider filterFields={classificationFilterFields}>
                     <HistoricalVoteDataProvider allEntries={[archivedEntry, modernOnlyEntry]}>

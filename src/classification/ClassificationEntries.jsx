@@ -6,10 +6,10 @@ import ExportButton from '../locks/ExportButton'
 import Footer from '../nav/Footer'
 import FilterContext from '../context/FilterContext.jsx'
 import AdvancedFilters from '../filters/AdvancedFilters.jsx'
+import {useMatches} from 'react-router-dom'
 
-export default function ClassificationEntries({advancedEnabled = false, historical = false}) {
+export default function ClassificationEntries({advancedEnabled = false}) {
     const {visibleEntries = [], expandAll} = useContext(DataContext)
-
     const {filters, isSearch} = useContext(FilterContext)
     const [entryExpanded, setEntryExpanded] = useState(filters.id)
 
@@ -38,7 +38,6 @@ export default function ClassificationEntries({advancedEnabled = false, historic
                                     || !!expandAll
                                     || visibleEntries.length === 1}
                                 onExpand={setEntryExpanded}
-                                isHistorical={historical}
                             />
                         )
                     }

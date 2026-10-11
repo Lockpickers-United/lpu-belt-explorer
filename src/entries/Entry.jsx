@@ -44,7 +44,7 @@ import ClassificationAdminButton from '../classification/ClassificationAdminButt
 import VoteView from '../classification/VoteView.jsx'
 import EntryActionBarWrapped from './EntryActionBarWrapped.jsx'
 
-function Entry({entry, expanded, onExpand, isHistorical = false, scorecardId}) {
+function Entry({entry, expanded, onExpand, scorecardId}) {
     const navigate = useNavigate()
     const {accessInfo} = useAccess()
     const {expandAll} = useContext(DataContext)
@@ -55,7 +55,15 @@ function Entry({entry, expanded, onExpand, isHistorical = false, scorecardId}) {
     const ref = useRef(null)
     const {search} = filters
     const lockName = entryName(entry, 'short', {includeVersion: true})
-    const displayedVotes = isHistorical ? entry.historicalVotes : entry.currentVotes
+
+    const isClassification = useMatches().some(match => match.handle?.route === 'classification')
+    const isHistorical = useMatches().some(match => match.handle?.route === 'historical')
+
+    const modernVotes = [
+        ...(entry.currentVotes ?? []),
+        ...(entry.previousVotes ?? []).map(vote => ({...vote, previous: true}))
+    ]
+    const displayedVotes = isHistorical ? entry.historicalVotes : modernVotes
 
     const allRelatedIds = [...new Set([...(entry.relatedIds || []), ...upgradeTree(entry.id)])]
         .sort((a, b) => {
@@ -120,7 +128,6 @@ function Entry({entry, expanded, onExpand, isHistorical = false, scorecardId}) {
         : <>Other Versions Only</>
 
 
-    const isClassification = useMatches().some(match => match.handle?.route === 'classification')
     const [openAdminForm, setOpenAdminForm] = useState(false)
 
     const {isMobile} = useWindowSize()

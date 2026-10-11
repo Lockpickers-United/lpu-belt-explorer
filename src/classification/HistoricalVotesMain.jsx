@@ -32,7 +32,7 @@ export default function HistoricalVotesMain() {
             <Nav title='Historical' extras={extras}/>
             <ClassificationToolbar/>
 
-            <ClassificationEntries advancedEnabled={true} historical={true}/>
+            <ClassificationEntries advancedEnabled={true}/>
 
             <Tracker feature='classificationPrevious'/>
 

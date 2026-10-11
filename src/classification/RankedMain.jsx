@@ -15,6 +15,9 @@ export default function RankedMain() {
 
     const {visibleEntries = []} = useContext(DataContext)
 
+    console.log(visibleEntries)
+    const rankedEntries = visibleEntries.filter(entry => entry.ranked)
+
     const {isMobile} = useWindowSize()
 
     const extras = (

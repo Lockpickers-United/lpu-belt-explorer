@@ -12,16 +12,17 @@ import collectionOptions from '../data/collectionTypes'
 import {getLockSortComparator} from '../locks/lockSortComparators'
 import DBContext from '../app/DBContext.jsx'
 import classificationVoteStats from './classificationVoteStats.js'
+import {useMatches} from 'react-router-dom'
 
-export function ClassificationDataProvider({children, allEntries, route = 'active'}) {
+export function ClassificationDataProvider({children, allEntries}) {
     const {profile} = useContext(DBContext)
-
     const {
         getAdminActionStatus,
         getCurrentVotes,
         getPreviousVotes,
         isActive
     } = useContext(ClassificationContext)
+    const isRanked = useMatches().some(match => match.handle?.route === 'ranked')
 
     const {filters: allFilters, activeFilterGroups} = useContext(FilterContext)
     const {search, sort, expandAll} = allFilters
@@ -79,11 +80,14 @@ export function ClassificationDataProvider({children, allEntries, route = 'activ
     }, [allEntries, getAdminActionStatus, getCurrentVotes, getPreviousVotes, isActive, profile, voteFilterGroups])
 
     const routeEntries = useMemo(() => {
-        return route === 'ranked'
-            ? mappedEntries.filter(entry => entry.belt !== 'Unranked' &&
-                (entry.voteCount > 0 || entry.previousVotes.length > 0))
+        return isRanked
+            ? mappedEntries.filter(entry => (
+                entry.belt !== 'Unranked'
+                && (!entry.classificationActive || entry.classificationStatus === 'Re-opened')
+                && (entry.voteCount > 0 || entry.previousVotes.length > 0)
+            ))
             : mappedEntries.filter(entry => entry.classificationActive)
-    }, [mappedEntries, route])
+    }, [isRanked, mappedEntries])
 
     const searchedEntries = useMemo(() => {
         return searchEntriesForText(search, routeEntries)

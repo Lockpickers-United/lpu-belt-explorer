@@ -497,8 +497,8 @@
     "userId": "NdkmYGydSHfPTcj5xuqjwSyJJI42",
     "displayName": "Greenish",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T23:22:56.789Z",
-    "updatedAt": "2026-10-09T23:22:56.789Z"
+    "createdAt": "2026-10-04T23:22:56.789Z",
+    "updatedAt": "2026-10-04T23:22:56.789Z"
   },
   {
     "id": "v_e226eeb3",
@@ -509,8 +509,8 @@
     "userId": "bSkotjOGENXHGd3rpo8G3TJeCk33",
     "displayName": "Crispix",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T23:23:56.789Z",
-    "updatedAt": "2026-10-09T23:23:56.789Z"
+    "createdAt": "2026-10-07T23:23:56.789Z",
+    "updatedAt": "2026-10-07T23:23:56.789Z"
   },
   {
     "id": "v_f0042bf3",
@@ -1085,8 +1085,8 @@
     "userId": "mZyfQIARjCP1uJJJc7ioMAALV9v2",
     "displayName": "PeaceWeapon",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T23:22:56.798Z",
-    "updatedAt": "2026-10-09T23:22:56.798Z"
+    "createdAt": "2026-10-08T23:22:56.798Z",
+    "updatedAt": "2026-10-08T23:22:56.798Z"
   },
   {
     "id": "v_872e76a9",
@@ -1097,8 +1097,20 @@
     "userId": "f2yySWbxUBXF8k3HgorYhrm76gx2",
     "displayName": "Reinder",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T22:49:56.798Z",
-    "updatedAt": "2026-10-09T22:49:56.798Z"
+    "createdAt": "2026-10-07T22:49:56.798Z",
+    "updatedAt": "2026-10-08T22:49:56.798Z"
+  },
+  {
+    "id": "v_1172e76aaa",
+    "type": "vote",
+    "entryId": "8d4632d9",
+    "votedBelt": "Purple",
+    "comment": "It's another modern vote",
+    "userId": "pzSak8xusHdeNlD0JmTru5kMrww2",
+    "displayName": "Sidepicks",
+    "source": "Classification Sheet",
+    "createdAt": "2026-10-10T22:49:56.798Z",
+    "updatedAt": "2026-10-10T22:49:56.798Z"
   },
   {
     "id": "v_f8df371b",
@@ -1133,8 +1145,8 @@
     "userId": "Gg9KxwHOwBf03QAIdOgZbfW3hRo1",
     "displayName": "yabende",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T23:22:56.799Z",
-    "updatedAt": "2026-10-09T23:22:56.799Z"
+    "createdAt": "2026-10-07T23:22:56.799Z",
+    "updatedAt": "2026-10-07T23:22:56.799Z"
   },
   {
     "id": "v_6b38f945",
@@ -1144,8 +1156,8 @@
     "userId": "u_46dcae62",
     "displayName": "Unknown",
     "source": "Classification Sheet",
-    "createdAt": "2026-10-09T23:23:56.799Z",
-    "updatedAt": "2026-10-09T23:23:56.799Z"
+    "createdAt": "2026-10-07T23:23:56.799Z",
+    "updatedAt": "2026-10-07T23:23:56.799Z"
   },
   {
     "id": "v_6cd72554",

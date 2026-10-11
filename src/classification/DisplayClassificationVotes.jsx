@@ -4,6 +4,8 @@ import dayjs from 'dayjs'
 import AuthContext from '../app/AuthContext.jsx'
 import Tooltip from '@mui/material/Tooltip'
 import useWindowSize from '../util/useWindowSize.jsx'
+import ScheduleIcon from '@mui/icons-material/Schedule'
+import {darken} from '@mui/material/styles'
 
 export default function DisplayClassificationVotes({votes, style = {}}) {
     const {user} = useContext(AuthContext)
@@ -16,6 +18,13 @@ export default function DisplayClassificationVotes({votes, style = {}}) {
             dayjs(a.updatedAt ?? a.createdAt).valueOf() - dayjs(b.updatedAt ?? b.createdAt).valueOf()
     })
 
+    const previousColors = Object.entries(belts).reduce((acc, [belt, info]) => {
+        acc[belt] = !belt.includes('Black') ? darken(info.color, 0.3) : '#666'
+        return acc
+    }, {})
+
+    const size = !isMobile ? 28 : 24
+
     return (
         <div style={{display: 'flex', flexDirection: 'row', gap: 2, flexWrap: 'wrap', flexGrow: 1, ...style}}>
             {sortedVotes.map((vote) => {
@@ -23,12 +32,7 @@ export default function DisplayClassificationVotes({votes, style = {}}) {
                 const blackLevel = num && num[1] > 1
                     ? num[1]
                     : null
-                const displayName = !isMobile
-                    //? vote.displayName.substring(0, 1).toUpperCase() + vote.displayName.substring(1, 3).toLowerCase()
-                    ? undefined
-                    : undefined
 
-                const size = !isMobile ? 28 : 24
 
                 return (
                     <Tooltip key={vote.id} title={vote.displayName}>
@@ -37,14 +41,12 @@ export default function DisplayClassificationVotes({votes, style = {}}) {
                             height: size, width: size, padding: 2,
                             color: '#ccc', lineHeight: '0.85rem',
                             backgroundColor: belts[vote.votedBelt]?.color,
-                            border: vote.userId === user.uid ? '1px solid #999' : '1px solid #222'
+                            border: vote.userId === user.uid ? '1px solid #999' : '1px solid #222',
+                            fontSize: '0.8rem'
+
                         }}>
-                            {displayName &&
-                                <div style={{
-                                color: '#999',
-                                fontSize: '0.8rem',
-                                width: '100%'
-                            }}>{displayName}</div>
+                            {vote.previous &&
+                                <ScheduleIcon style={{color: previousColors[vote.votedBelt]}} fontSize='inherit'/>
                             }
                             <div style={{
                                 color: '#ddd',
