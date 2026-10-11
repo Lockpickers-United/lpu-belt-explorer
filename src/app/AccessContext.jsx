@@ -48,8 +48,8 @@ export function AccessProvider({children}) {
         return {
             admin: claims.has('admin'),
             classificationAdmin: claims.has('classificationAdmin') || claims.has('admin'),
-            lpuMod: claims.has('lpuMod'),
-            classificationTeam: claims.has('classificationTeam'),
+            lpuMod: claims.has('lpuMod') || claims.has('admin'),
+            classificationTeam: claims.has('classificationTeam') || claims.has('admin'),
             qaUser: claims.has('qaUser') || claims.has('admin')
         }
     }, [authLoaded, isLoggedIn, user?.uid, userClaims])
@@ -63,7 +63,7 @@ export function AccessProvider({children}) {
         if (!previewRole) return claimedRoles
         if (previewRole === 'none') return emptyRoles
         if (previewRole === 'admin') {
-            return {...emptyRoles, admin: true, classificationAdmin: true, qaUser: true}
+            return claimedRoles
         }
 
         return {...emptyRoles, [previewRole]: true}

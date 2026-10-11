@@ -19,6 +19,7 @@ function AccessState() {
             <button onClick={() => toggleRoleEnabled('admin')}>Toggle admin</button>
             <button onClick={() => toggleRoleEnabled('qaUser')}>Toggle QA</button>
             <button onClick={() => setAccessPreview('none')}>Preview none</button>
+            <button onClick={() => setAccessPreview('admin')}>Preview admin</button>
             <button onClick={() => setAccessPreview('qaUser')}>Preview QA</button>
             <button onClick={() => setAccessPreview('lpuMod')}>Preview moderator</button>
             <button onClick={() => setAccessPreview(null)}>Clear preview</button>
@@ -173,6 +174,8 @@ describe('AccessContext', () => {
 
         expect(screen.getByText(/Roles:.*"qaUser":true/)).toBeInTheDocument()
         expect(screen.getByText(/Roles:.*"classificationAdmin":true/)).toBeInTheDocument()
+        expect(screen.getByText(/Roles:.*"lpuMod":true/)).toBeInTheDocument()
+        expect(screen.getByText(/Roles:.*"classificationTeam":true/)).toBeInTheDocument()
         expect(screen.getByText(/Features:.*"manageRequests":true/)).toBeInTheDocument()
         fireEvent.click(screen.getByRole('button', {name: 'Toggle admin'}))
         fireEvent.click(screen.getByRole('button', {name: 'Toggle QA'}))
@@ -199,7 +202,15 @@ describe('AccessContext', () => {
         expect(screen.getByText(/Features:.*"manageRequests":false/)).toBeInTheDocument()
 
         fireEvent.click(screen.getByRole('button', {name: 'Preview moderator'}))
-        expect(screen.getByText('Preview role: none')).toBeInTheDocument()
+        expect(screen.getByText('Preview role: lpuMod')).toBeInTheDocument()
+        expect(screen.getByText('Level: 90')).toBeInTheDocument()
+        expect(screen.getByText(/Features:.*"manageRequests":false/)).toBeInTheDocument()
+
+        fireEvent.click(screen.getByRole('button', {name: 'Preview admin'}))
+        expect(screen.getByText('Preview role: admin')).toBeInTheDocument()
+        expect(screen.getByText('Level: 100')).toBeInTheDocument()
+        expect(screen.getByText(/Roles:.*lpuMod.*true/)).toBeInTheDocument()
+        expect(screen.getByText(/Roles:.*classificationTeam.*true/)).toBeInTheDocument()
 
         fireEvent.click(screen.getByRole('button', {name: 'Preview QA'}))
         expect(screen.getByText('Preview role: qaUser')).toBeInTheDocument()

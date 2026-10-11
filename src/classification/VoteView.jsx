@@ -6,9 +6,11 @@ import rehypeExternalLinks from 'rehype-external-links'
 import Button from '@mui/material/Button'
 import AttachmentIcon from '@mui/icons-material/Attachment'
 import {useAccess} from '../app/AccessContext.jsx'
+import {useMatches} from 'react-router-dom'
 
 export default function VoteView({vote = {}, handleActive, owner, previous}) {
     const {accessInfo} = useAccess()
+    const isChangelog = useMatches().some(match => match.handle?.route === 'changelog')
 
     const dateString = vote.updatedAt && vote.type !== 'historicalVote'
         ? ` (${new Date(vote.updatedAt).toLocaleDateString()})`
@@ -57,7 +59,7 @@ export default function VoteView({vote = {}, handleActive, owner, previous}) {
                     </div>
                 }
 
-                {(owner || accessInfo.roles.classificationAdmin) && !previous &&
+                {(owner || accessInfo.roles.classificationAdmin) && !previous && !isChangelog &&
                     <div style={{width: '100%', display: 'flex', justifyContent: 'flex-end', marginTop: 4}}>
                         <Button onClick={() => handleActive('voteForm')} variant='text' size='small'
                                 style={{color: buttonColor}}>Edit</Button>

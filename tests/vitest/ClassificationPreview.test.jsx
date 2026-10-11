@@ -3,7 +3,7 @@ import {describe, expect, it} from 'vitest'
 import {screen} from '@testing-library/react'
 import {userEvent} from '@testing-library/user-event'
 import {createMemoryRouter, RouterProvider} from 'react-router-dom'
-import {defaultTestContextValues, renderWithProviders, renderWithRouter} from '../../src/test/render.jsx'
+import {defaultTestContextValues, renderWithProviders} from '../../src/test/render.jsx'
 import AccessContext from '../../src/app/AccessContext.jsx'
 import {ClassificationProvider} from '../../src/app/ClassificationContext.jsx'
 import VoteDisplay from '../../src/classification/VoteDisplay.jsx'
@@ -14,7 +14,12 @@ import allEntries from '../../src/data/data.json'
 describe('classification previews', () => {
     it('opens and cancels a vote preview without offering a save action', async () => {
         const user = userEvent.setup()
-        renderWithRouter(<VoteDisplay entry={{id: 'test-lock'}} vote={{}} owner/>, {
+        const router = createMemoryRouter([{
+            path: '/classification',
+            handle: {route: 'classification'},
+            element: <VoteDisplay entry={{id: 'test-lock'}} vote={{}} owner/>
+        }], {initialEntries: ['/classification']})
+        renderWithProviders(<RouterProvider router={router}/>, {
             auth: {user: {uid: 'test-user'}}
         })
 
@@ -24,6 +29,19 @@ describe('classification previews', () => {
 
         await user.click(screen.getByRole('button', {name: 'Cancel'}))
         expect(screen.getByRole('button', {name: 'Add Your Belt Ranking Vote'})).toBeInTheDocument()
+    })
+
+    it('shows votes without an edit control on the changelog route', () => {
+        const router = createMemoryRouter([{
+            path: '/classification/changelog',
+            handle: {route: 'changelog'},
+            element: <VoteDisplay entry={{id: 'test-lock'}} vote={{id: 'vote-1', votedBelt: 'Blue'}} owner/>
+        }], {initialEntries: ['/classification/changelog']})
+
+        renderWithProviders(<RouterProvider router={router}/>)
+
+        expect(screen.getByText('My Vote:')).toBeInTheDocument()
+        expect(screen.queryByRole('button', {name: 'Edit'})).not.toBeInTheDocument()
     })
 
     it('can reveal the admin preview after access becomes available', () => {

@@ -1,8 +1,9 @@
 import React, {useCallback, useContext, useMemo} from 'react'
+import AuthContext from './AuthContext.jsx'
 import modernVotes from '../data/classification-samples.json'
 import classificationAdminActions from '../data/classification-samples-admin.json'
+import classificationChangelogs from '../data/classification-samples-changelog.json'
 import dayjs from 'dayjs'
-import AuthContext from './AuthContext.jsx'
 
 const ClassificationContext = React.createContext({})
 
@@ -38,8 +39,9 @@ export function ClassificationProvider({children}) {
     }, [])
 
     const getAdminAction = useCallback((entry) => {
+        if (entry.adminActionId) return allAdminActions.find(action => action.id === entry.adminActionId)
         const milestone = getLatestMilestone(entry).valueOf()
-        return (actionsByEntry.get(entry.id) ?? [])
+        return (actionsByEntry.get(entry?.id) ?? [])
             .find(action => dayjs(action.updatedAt).valueOf() >= milestone) ?? null
     }, [getLatestMilestone])
 
@@ -94,7 +96,10 @@ export function ClassificationProvider({children}) {
         getAdminActionStatus,
         getCurrentVotes,
         getPreviousVotes,
-        isActive
+        isActive,
+        previousChangelogs: classificationChangelogs
+            .filter(log => log.changes.length > 0)
+            .sort((a, b) => dayjs(b.publishedAt).valueOf() - dayjs(a.publishedAt))
     }), [loggedInUserVotes, getUserVote, getAdminAction, getLatestMilestone, getAdminActionStatus, getCurrentVotes, getPreviousVotes, isActive])
 
     return (

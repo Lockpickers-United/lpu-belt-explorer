@@ -13,14 +13,14 @@ export default function ClassificationToolbar() {
     const changelogLabel = useMemo(() => {
         return accessInfo.roles.classificationAdmin
             ? 'Publish Changelog'
-            : 'Changelog'
+            : 'Changelogs'
     }, [accessInfo.roles.classificationAdmin])
 
     const tabs = useMemo(() => [
         {label: 'Active', mobileLabel: 'Active', value: '/classification'},
         {label: 'Ranked', mobileLabel: 'Ranked', value: '/classification/ranked'},
         {label: 'Historical', mobileLabel: 'Historical', value: '/classification/past'},
-        {label: changelogLabel, mobileLabel: 'Changelog', value: '/classification/changelog'}
+        {label: changelogLabel, mobileLabel: 'Changelogs', value: '/classification/changelog'}
     ], [changelogLabel])
 
     const location = useLocation()

@@ -108,10 +108,10 @@ describe('ClassificationProvider', () => {
         renderWithProviders(<ClassificationProvider><CaptureContext/></ClassificationProvider>)
 
         const publishedAction = adminActions.find(action => action.status === 'Published' &&
-            changelogs.some(changelog => changelog.changes.some(change => change.adminActionId === action.id)))
+            changelogs.some(changelog => changelog.changes.some(change => change.id === action.id)))
         expect(publishedAction).toBeDefined()
         const changelog = changelogs.find(record => record.changes.some(change =>
-            change.adminActionId === publishedAction.id))
+            change.id === publishedAction.id))
         const entry = allEntries.find(item => item.id === publishedAction.entryId)
         const previousVote = votes.find(vote => vote.entryId === entry.id &&
             Date.parse(vote.updatedAt) < Date.parse(changelog.publishedAt))
@@ -123,10 +123,12 @@ describe('ClassificationProvider', () => {
         expect(publishedAction.updatedAt).toBe(changelog.publishedAt)
         expect(publishedAction.lastPublishedAt).toBe(changelog.publishedAt)
         expect(changelog.changes).toContainEqual(expect.objectContaining({
-            id: entry.id,
-            adminActionId: publishedAction.id,
-            belt: publishedAction.updatedBelt
+            id: publishedAction.id,
+            entryId: entry.id,
+            updatedBelt: publishedAction.updatedBelt,
+            previousBelt: 'Blue'
         }))
+        expect(classification.previousChangelogs).toContain(changelog)
         expect(classification.allAdminActions.every(action => action.type === 'adminAction')).toBe(true)
         expect(classification.getLatestMilestone(entry).valueOf()).toBe(Date.parse(changelog.publishedAt))
         expect(classification.getAdminAction(entry)).toEqual(publishedAction)

@@ -11,15 +11,43 @@
     "updatedAt": "2026-10-09T15:50:59-07:00",
     "changes": [
       {
-        "name": "CompX Chicago TuBAR / Inceca Plana",
-        "version": "",
-        "id": "8d4632d9",
-        "adminActionId": "a_apapdc25",
+        "id": "a_apapdc25",
+        "type": "adminAction",
+        "status": "Published",
+        "userId": "Mwbvdkq1QtWu2zLwEaj3imULSry1",
+        "displayName": "Decoder",
+        "entryId": "8d4632d9",
+        "entryName": "CompX Chicago TuBAR / Inceca Plana",
         "action": "Belt Change",
-        "change": "Unchanged",
-        "belt": "Purple",
-        "note": "Some note here for an old changelog"
-      }
-    ]
+        "previousBelt": "Blue",
+        "updatedBelt": "Purple",
+        "note": "Some note here for an old changelog",
+        "omitFromChangelog": false,
+        "lastPublishedAt": "2026-10-09T15:50:58-07:00",
+        "source": "site",
+        "createdAt": "2026-10-04T15:50:58-07:00",
+        "updatedAt": "2026-10-09T15:50:58-07:00"
+      },
+      {
+        "id": "a_181jkl25",
+        "type": "adminAction",
+        "status": "Staged",
+        "userId": "GGplAdctTfVDLVvYsfIADJmfp8f2",
+        "displayName": "mgsecure",
+        "entryId": "not-found",
+        "entryName": "Tri-circle Padlock",
+        "action": "Delete",
+        "note": "Lock doesn't exist in this version",
+        "adminNote": "Have looked for this for a long time, unable to find proof it exists",
+        "omitFromChangelog": false,
+        "previousBelt": "White",
+        "updatedBelt": null,
+        "samelineTargetId": null,
+        "samelineTargetName": null,
+        "lastPublishedAt": "2026-10-09T15:50:58-07:00",
+        "source": "site",
+        "createdAt": "2026-10-05T15:50:58-07:00",
+        "updatedAt": "2026-10-05T15:50:58-07:00"
+      }]
   }
 ]

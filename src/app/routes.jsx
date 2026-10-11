@@ -66,6 +66,7 @@ export default [
             },
             {
                 path: '/classification/ranked',
+                handle: {route: 'ranked'},
                 lazy: async () => {
                     const {default: RankedRoute} = await import('../classification/RankedRoute.jsx')
                     return {element: <RankedRoute/>}
@@ -73,6 +74,7 @@ export default [
             },
             {
                 path: '/classification/past',
+                handle: {route: 'historical'},
                 lazy: async () => {
                     const {default: HistoricalVotesRoute} = await import('../classification/HistoricalVotesRoute')
                     return {element: <HistoricalVotesRoute/>}
@@ -80,6 +82,7 @@ export default [
             },
             {
                 path: '/classification/changelog',
+                handle: {route: 'changelog'},
                 lazy: async () => {
                     const {default: ChangelogRoute} = await import('../classification/ChangelogRoute.jsx')
                     return {element: <ChangelogRoute/>}
