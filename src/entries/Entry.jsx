@@ -42,6 +42,7 @@ import IconButton from '@mui/material/IconButton'
 import ListAltIcon from '@mui/icons-material/ListAlt'
 import ClassificationAdminButton from '../classification/ClassificationAdminButton.jsx'
 import VoteView from '../classification/VoteView.jsx'
+import EntryActionBarWrapped from './EntryActionBarWrapped.jsx'
 
 function Entry({entry, expanded, onExpand, isHistorical = false, scorecardId}) {
     const navigate = useNavigate()
@@ -118,17 +119,18 @@ function Entry({entry, expanded, onExpand, isHistorical = false, scorecardId}) {
             Upgrades</Link></div>
         : <>Other Versions Only</>
 
-    const {isMobile} = useWindowSize()
-    const isClassification = useMatches().some(match => match.handle?.route === 'classification')
 
+    const isClassification = useMatches().some(match => match.handle?.route === 'classification')
+    const [openAdminForm, setOpenAdminForm] = useState(false)
+
+    const {isMobile} = useWindowSize()
     const makeModelWidth = !isClassification && !isMobile ? '65%' : '60%'
     const mainMargin = !isMobile ? '6px 0px 8px 12px' : '4px 0px 6px 4px'
 
-    const doNothing = (event) => {
-        event.preventDefault()
-        event.stopPropagation()
-        return null
+    const handleFlagClick = () => {
+        setOpenAdminForm(accessInfo.features.classificationAdmin)
     }
+
 
     return (
         <Accordion expanded={expanded} onChange={handleChange} style={style} ref={ref} slots={{heading: 'div'}}
@@ -201,7 +203,7 @@ function Entry({entry, expanded, onExpand, isHistorical = false, scorecardId}) {
                     </div>
                 }
                 {!scorecardId && isClassification && !isHistorical &&
-                    <ClassificationAdminButton entry={entry} handleToggle={doNothing} flag={true}/>
+                    <ClassificationAdminButton entry={entry} handleToggle={handleFlagClick} flag={true}/>
                 }
             </AccordionSummary>
             {
@@ -291,8 +293,11 @@ function Entry({entry, expanded, onExpand, isHistorical = false, scorecardId}) {
                         }
 
                         {accessInfo.features.entryActionBar && !isHistorical &&
-                            <div style={{margin: '24px 0px 20px 6px'}}>
-                                <EntryActionBar entry={entry}/>
+                            <div style={{margin: !isMobile ? '24px 0px 20px 6px' : '24px 0px 20px 0px'}}>
+                                {!isClassification
+                                    ? <EntryActionBarWrapped entry={entry} openAdminForm={openAdminForm}/>
+                                    : <EntryActionBar entry={entry} openAdminForm={openAdminForm}/>
+                                }
                             </div>
                         }
 

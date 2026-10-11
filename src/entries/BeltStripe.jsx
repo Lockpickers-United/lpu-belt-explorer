@@ -3,9 +3,11 @@ import belts from '../data/belts'
 
 function BeltStripe({value = 'Unranked'}) {
 
+    if (!value) return null
+
     const bgColor = belts[value]
         ? belts[value].color
-        : value.includes('Dan')
+        : value?.includes('Dan')
             ? '#769e49'
             : ''
 

@@ -9,7 +9,8 @@ import entryName from '../entries/entryName'
 import {beltSort} from '../data/belts'
 import BeltStripeMini from '../entries/BeltStripeMini.jsx'
 
-function LockEntrySearchBox({handleChangeLock, allEntries, disabled, reset = false, lockIndex}) {
+function LockEntrySearchBox({handleChangeLock, lockId, allEntries, disabled, reset = false, lockIndex}) {
+
     const style = {maxWidth: 700}
     const {isMobile} = useWindowSize()
     const inputEl = useRef()
@@ -62,6 +63,8 @@ function LockEntrySearchBox({handleChangeLock, allEntries, disabled, reset = fal
             return {label: lock.lockName, id: lock.id, belt: lock.belt}
         })
 
+    const currentLock = options.find(lock => lock.id === lockId)
+
     const handleChange = useCallback((_event, value) => {
         if (!value) {
             handleChangeLock({})
@@ -90,6 +93,7 @@ function LockEntrySearchBox({handleChangeLock, allEntries, disabled, reset = fal
                 fullWidth
                 style={style}
                 options={options}
+                value={currentLock}
                 onChange={handleChange}
                 renderInput={(params) =>
                     <TextField

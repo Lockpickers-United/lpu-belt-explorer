@@ -71,7 +71,7 @@ export default function ExportButtonGeneric({exportData}) {
         const csvData = data.map(datum => {
             return csvHeaders.reduce((acc, header) => {
                 Object.entries(header).forEach(([key, value]) => {
-                    acc[value] = datum[key].trim()
+                    acc[value] = datum[key]?.trim() ?? ''
                 })
                 return acc
             }, {})

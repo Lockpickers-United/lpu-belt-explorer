@@ -38,9 +38,10 @@ export function AccessProvider({children}) {
     const {authLoaded, isLoggedIn, user, userClaims = []} = useContext(AuthContext)
     const [adminPreference, setAdminPreference] = useLocalStorage('adminEnabled', false)
     const [qaUserEnabledAt, setQaUserEnabledAt] = useLocalStorage('qaUserEnabledAt', '')
+    const [preview, setPreview] = useState(null)
     const [, setExpirationTick] = useState(0)
 
-    const roles = useMemo(() => {
+    const claimedRoles = useMemo(() => {
         if (!authLoaded || !isLoggedIn || !user?.uid) return emptyRoles
 
         const claims = new Set(userClaims)
@@ -52,6 +53,21 @@ export function AccessProvider({children}) {
             qaUser: claims.has('qaUser') || claims.has('admin')
         }
     }, [authLoaded, isLoggedIn, user?.uid, userClaims])
+
+    const previewRole = import.meta.env.DEV && preview && preview.uid === user?.uid &&
+        (preview.role === 'none' || claimedRoles[preview.role])
+        ? preview.role
+        : null
+
+    const roles = useMemo(() => {
+        if (!previewRole) return claimedRoles
+        if (previewRole === 'none') return emptyRoles
+        if (previewRole === 'admin') {
+            return {...emptyRoles, admin: true, classificationAdmin: true, qaUser: true}
+        }
+
+        return {...emptyRoles, [previewRole]: true}
+    }, [claimedRoles, previewRole])
 
     const adminEnabled = roles.admin && adminPreference === true
     const qaUserEnabled = roles.qaUser && isEnabledToday(qaUserEnabledAt)
@@ -91,8 +107,18 @@ export function AccessProvider({children}) {
         features: features ?? {},
         level: getHighestRoleLevel(roles),
         enabledLevel: getHighestRoleLevel(enabledRoles),
-        activeRole: getActiveRole(enabledRoles)
-    }), [enabledRoles, features, roles])
+        activeRole: getActiveRole(enabledRoles),
+        previewRole,
+        availablePreviewRoles: import.meta.env.DEV && isLoggedIn
+            ? Object.keys(roleLevels).filter(role => claimedRoles[role])
+            : []
+    }), [claimedRoles, enabledRoles, features, isLoggedIn, previewRole, roles])
+
+    const setAccessPreview = useCallback(role => {
+        if (!import.meta.env.DEV || !isLoggedIn || !user?.uid) return
+        if (role !== null && role !== 'none' && !claimedRoles[role]) return
+        setPreview(role === null ? null : {uid: user.uid, role})
+    }, [claimedRoles, isLoggedIn, user?.uid])
 
     const toggleRoleEnabled = useCallback(role => {
         if (role === 'admin') {
@@ -104,8 +130,9 @@ export function AccessProvider({children}) {
 
     const value = useMemo(() => ({
         accessInfo,
+        setAccessPreview,
         toggleRoleEnabled
-    }), [accessInfo, toggleRoleEnabled])
+    }), [accessInfo, setAccessPreview, toggleRoleEnabled])
 
     return (
         <AccessContext.Provider value={value}>

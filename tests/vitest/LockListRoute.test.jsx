@@ -13,7 +13,7 @@ const fixtureEntryIds = new Set([
     '63b2e02b', // GOAL V18 / GOAL GP (Black 1)
     '109531f4', // GOAL V18 / GOAL GP (Black 2)
     '5a91e6a5', // Master Lock #1
-    'c6529d9c', // Any SFIC format lock (**)
+    'c6529d9c', // Any SFIC format lock - **
     '6f837bb4', // A.S.I. Inc. Royal Guardian
     '5e3397a9' // Zeta Padlock
 ])
@@ -60,7 +60,7 @@ describe('LockListRoute', () => {
         await user.click(screen.getByRole('button', {name: 'show blue filters'}))
 
         await waitFor(() => {
-            expect(screen.getByRole('listitem', {name: 'Any SFIC format lock (**)'})).toBeInTheDocument()
+            expect(screen.getByRole('listitem', {name: 'Any SFIC format lock - **'})).toBeInTheDocument()
             expect(screen.queryByRole('listitem', {name: 'Master Lock #1'})).not.toBeInTheDocument()
         })
     })
@@ -85,7 +85,7 @@ describe('LockListRoute', () => {
         await waitFor(() => {
             expect(screen.getByRole('tab', {name: /blue/i})).toHaveAttribute('aria-selected', 'true')
         })
-        expect(screen.getByRole('listitem', {name: 'Any SFIC format lock (**)'})).toBeInTheDocument()
+        expect(screen.getByRole('listitem', {name: 'Any SFIC format lock - **'})).toBeInTheDocument()
     })
 
     it('sorts by user selection in the UI', async () => {

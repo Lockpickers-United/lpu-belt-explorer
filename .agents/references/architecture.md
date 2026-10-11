@@ -41,6 +41,7 @@ Authorization and optional UI modes are separate:
 - `AccessContext` derives claimed and user-enabled UI roles from the authenticated user. Consumers use `useAccess()` and distinguish `level` from `enabledLevel`.
 - `DBContext.adminRole` and `DBContext.qaUserRole` derive role status from authentication and claims.
 - `AccessContext.accessInfo.enabledRoles` contains user-controlled UI/development modes. These modes must never grant data access or permit writes.
+- In development, the account menu can preview a subset of the signed-in account's roles, or a member view. This preview only restricts `AccessContext` roles and features; it does not change Firebase claims, `DBContext` authorization, profile subscriptions, or server/rules access. It resets on reload and cannot test backend permissions.
 - `UIContext` derives the signed-in user's black-belt UI role from the `DBContext` profile subscription. It does not add that profile role to authenticated claims or grant vote/write features.
 
 Security must also be enforced by deployed rules or trusted server code; client checks are not authorization boundaries.

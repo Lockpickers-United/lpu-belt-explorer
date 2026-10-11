@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect, useMemo, useState} from 'react'
+import React, {useCallback, useContext, useEffect, useMemo, useState} from 'react'
 import {useAccess} from '../app/AccessContext.jsx'
 import classificationAdminActions from '../data/classification-samples-admin.json'
 import DisplayClassificationVotes from './DisplayClassificationVotes.jsx'
@@ -12,18 +12,16 @@ import BeltStripeMini from '../entries/BeltStripeMini.jsx'
 import Button from '@mui/material/Button'
 import {Collapse} from '@mui/material'
 import EntryClassificationVote from './EntryClassificationVote.jsx'
+import ChangelogPreviewButton from './ChangelogPreviewButton.jsx'
+import DataContext from '../context/DataContext.jsx'
 
 const statuses = ['Pending', 'Staged', 'Published', 'Re-opened', 'Settled']
 const actions = ['Belt Change', 'Sameline', 'Delete']
 
 export default function EntryClassificationAdmin({entry, handleToggle}) {
     const {accessInfo} = useAccess()
-    if (!accessInfo.roles.classificationAdmin) return null
+    const {allEntries} = useContext(DataContext)
 
-    return <AdminPreview entry={entry} handleToggle={handleToggle}/>
-}
-
-function AdminPreview({entry, handleToggle}) {
     const entryClassificationAdminActions = useMemo(() => classificationAdminActions && classificationAdminActions
             .filter(a => a.entryId === entry.id)
             .sort((a, b) => dayjs(b.updatedAt).valueOf() - dayjs(a.updatedAt).valueOf())
@@ -31,7 +29,7 @@ function AdminPreview({entry, handleToggle}) {
 
     const adminAction = useMemo(() =>
         entryClassificationAdminActions && entryClassificationAdminActions
-            .find(a => a.entryId === entry.id) || {status: ''}, [entryClassificationAdminActions, entry.id])
+            .find(a => a.entryId === entry.id) || {status: 'Pending'}, [entryClassificationAdminActions, entry.id])
 
     let form
     const baseForm = useMemo(() => adminAction ?? {}, [adminAction])
@@ -41,8 +39,8 @@ function AdminPreview({entry, handleToggle}) {
         //const cleanValue = sanitizeValues(value, {profanityOK: false, urlsOK: true})
         let events = [event]
 
-        const changelogFields = ['updatedBelt']
-        if (name === 'status' && ['Settled', 'Re-opened'].includes(value)) {
+        const changelogFields = ['updatedBelt', 'samelineLock']
+        if ((name === 'status' && ['Settled', 'Re-opened'].includes(value)) || name === 'action') {
             changelogFields.forEach((fieldName) => {
                 events.push({target: {name: fieldName, action: 'delete'}})
             })
@@ -65,18 +63,23 @@ function AdminPreview({entry, handleToggle}) {
         }
     }, [form])
 
+    const currentAction = useMemo(() => {
+        return {...adminAction, ...form.form}
+    }, [adminAction, form.form])
 
     const previousVotes = entry.previousVotes ?? []
     const showVotes = true
     const [showPreviousVotes, setShowPreviousVotes] = useState(!entry.currentVotes?.length)
 
     const {isMobile} = useWindowSize()
-    const padding = !isMobile ? '0 20px 0 8px' : '0 6px 0 0px'
+    const padding = !isMobile ? '0 20px 0 8px' : '0 0px 0 0'
     const rows = !isMobile ? 4 : 6
     const buttonText = adminAction.id
         ? 'Save Changes'
         : 'Save'
     const noteColor = form.form.omitChangelog ? '#999' : '#fff'
+
+    if (!accessInfo.roles.classificationAdmin) return null
 
     return (
         <div style={{borderTop: '1px solid #444', padding}}>
@@ -110,9 +113,10 @@ function AdminPreview({entry, handleToggle}) {
                 position: 'relative',
                 margin: '16px 0px 0px 0px'
             }}>
-                <BeltStripeMini value={form.form.updatedBelt} width={!isMobile ? 6 : 3} offset={26}
+                <BeltStripeMini value={form.form.updatedBelt || form.form.samelineLock?.belt} width={!isMobile ? 6 : 3}
+                                offset={26}
                                 style={{position: 'absolute', top: 0, left: 0, bottom: 0}}/>
-                <div style={{marginLeft: !isMobile ? 16 : 8, width: '100%'}}>
+                <div style={{marginLeft: !isMobile ? 16 : 10, width: '100%'}}>
                     <div style={{fontSize: '1.0rem', fontWeight: 600, margin: '0px 0px 2px 0px'}}>
                         Set Status
                     </div>
@@ -122,9 +126,14 @@ function AdminPreview({entry, handleToggle}) {
                                      inputSize: 'small'
                                  }}
                                  form={form} formDefaults={formDefaults}/>
-
                     <Collapse in={!['Settled', 'Re-opened'].includes(form.form.status)}>
-                        <div style={{display: 'flex', flexDirection: 'row', gap: 16, alignItems: 'center'}}>
+                        <div style={{
+                            display: 'flex',
+                            flexDirection: 'row',
+                            flexWrap: 'wrap',
+                            gap: 16,
+                            alignItems: 'flex-start'
+                        }}>
                             <div>
                                 <div style={{fontSize: '1.0rem', fontWeight: 600, margin: '0px 0px 2px 0px'}}>
                                     Action
@@ -137,18 +146,37 @@ function AdminPreview({entry, handleToggle}) {
                                              }}
                                              form={form} formDefaults={formDefaults}/>
                             </div>
-                            <div>
-                                <div style={{fontSize: '1.0rem', fontWeight: 600, margin: '0px 0px 2px 0px'}}>
-                                    New Belt
+                            {form.form?.action === 'Belt Change' &&
+                                <div>
+                                    <div style={{fontSize: '1.0rem', fontWeight: 600, margin: '0px 0px 2px 0px'}}>
+                                        New Belt
+                                    </div>
+                                    <FormElement fieldType={'SelectBox'} fieldName={'updatedBelt'}
+                                                 options={danBelts.slice(0, 13)}
+                                                 fieldSettings={{
+                                                     inputWidth: !isMobile ? 140 : 100,
+                                                     inputSize: 'small'
+                                                 }}
+                                                 form={form} formDefaults={formDefaults}/>
                                 </div>
-                                <FormElement fieldType={'SelectBox'} fieldName={'updatedBelt'}
-                                             options={danBelts.slice(0, 13)}
-                                             fieldSettings={{
-                                                 inputWidth: !isMobile ? 140 : 120,
-                                                 inputSize: 'small'
-                                             }}
-                                             form={form} formDefaults={formDefaults}/>
-                            </div>
+                            }
+                            {form.form?.action === 'Sameline' &&
+                                <div>
+                                    <div style={{fontSize: '1.0rem', fontWeight: 600, margin: '0px 0px 2px 0px'}}>
+                                        Sameline With
+                                    </div>
+                                    <FormElement fieldType={'LockEntrySearchBox'} fieldName={'samelineLock'}
+                                                 options={allEntries}
+                                                 fieldSettings={{
+                                                     margin: '6px 0px 0px 0px',
+                                                     style: {width: !isMobile ? 400 : 270},
+                                                     inputWidth: !isMobile ? 400 : 270,
+                                                     inputSize: 'small',
+                                                     lock: form.form.samelineLock
+                                                 }}
+                                                 form={form} formDefaults={formDefaults}/>
+                                </div>
+                            }
                         </div>
 
                         <FormElement fieldType={'SingleCheckbox'}
@@ -190,8 +218,37 @@ function AdminPreview({entry, handleToggle}) {
                                      color={'info'}
                                      form={form} formDefaults={formDefaults}
                         />
+
+                        <div style={{
+                            display: 'flex', justifyContent: 'space-between',
+                            fontSize: '1.0rem', fontWeight: 600, margin: '0px 0px 2px 0px', color: noteColor
+                        }}>
+                            Admin Notes
+                        </div>
+                        <FormElement fieldType={'TextField'} fieldName={'adminNote'}
+                                     fieldSettings={{
+                                         placeholder: 'Internal notes. Will not be included in changelog',
+                                         margin: '0 0 16px 0',
+                                         inputWidth: '100%',
+                                         style: {width: '100%'},
+                                         slotProps: {
+                                             htmlInput: {
+                                                 style: {
+                                                     fontSize: '0.9rem', color: noteColor
+                                                 }
+                                             }
+                                         }
+                                     }}
+                                     rows={rows}
+                                     fullWidth
+                                     color={'info'}
+                                     form={form} formDefaults={formDefaults}
+                        />
                     </Collapse>
 
+                    <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center'}}>
+                        <ChangelogPreviewButton entry={entry} currentAction={currentAction}/>
+                    </div>
                     <div style={{
                         display: 'flex',
                         flexGrow: 1,
@@ -200,13 +257,19 @@ function AdminPreview({entry, handleToggle}) {
                         marginTop: 16,
                         gap: 10
                     }}>
-
                         {adminAction.id &&
                             <Button variant='text' size='small' style={{color: '#e12121'}} disabled>Delete</Button>
                         }
                         <div style={{flexGrow: 1}}/>
-                        <Button variant='text' size='small' style={{color: '#aaa'}}
-                                onClick={handleCancel}>Cancel</Button>
+                        <div style={{
+                            display: 'flex',
+                            flexDirection: !isMobile ? 'row' : 'column',
+                            justifyContent: 'right',
+                            gap: 16
+                        }}>
+                            <Button variant='text' size='small' style={{color: '#aaa'}}
+                                    onClick={handleCancel}>Cancel</Button>
+                        </div>
                         <div style={{
                             display: 'flex',
                             flexDirection: !isMobile ? 'row' : 'column',

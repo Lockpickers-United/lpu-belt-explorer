@@ -24,11 +24,13 @@ import DBContext from '../app/DBContext'
 import {useNavigate} from 'react-router-dom'
 import {useAccess} from '../app/AccessContext.jsx'
 import BoltIcon from '@mui/icons-material/Bolt'
+import {Collapse} from '@mui/material'
+import ExpandButton from '../misc/ExpandButton.jsx'
 
 function UserMenu() {
     const navigate = useNavigate()
     const {isLoggedIn, user, logout} = useContext(AuthContext)
-    const {accessInfo, toggleRoleEnabled} = useAccess()
+    const {accessInfo, setAccessPreview, toggleRoleEnabled} = useAccess()
     const {lockCollection} = useContext(DBContext)
     const [anchorEl, setAnchorEl] = useState(null)
     const open = Boolean(anchorEl)
@@ -41,6 +43,9 @@ function UserMenu() {
     const displayName = lockCollection.displayName
         ? lockCollection.displayName
         : 'Your Account'
+    const accountTooltip = accessInfo.previewRole
+        ? `${displayName} (preview: ${previewRoleLabels[accessInfo.previewRole]})`
+        : isLoggedIn ? displayName : 'Account'
 
     const handleClick = useCallback(url => () => {
         handleClose()
@@ -52,9 +57,11 @@ function UserMenu() {
         logout()
     }, [handleClose, logout])
 
+    const [previewOpen, setPreviewOpen] = useState(false)
+
     return (
         <React.Fragment>
-            <Tooltip title={isLoggedIn ? displayName : 'Account'} arrow disableFocusListener>
+            <Tooltip title={accountTooltip} arrow disableFocusListener>
                 <IconButton color='info' onClick={handleOpen} edge='end'
                             sx={{
                                 width: 36,
@@ -103,7 +110,6 @@ function UserMenu() {
                         {accessInfo.level > 0 &&
                             <Divider/>
                         }
-
                         {accessInfo.roles.admin &&
                             <MenuItem onClick={() => toggleRoleEnabled('admin')} style={{fontStyle: 'italic'}}>
                                 <ListItemIcon>
@@ -128,6 +134,46 @@ function UserMenu() {
                                     : <ListItemText>Enable QA Mode</ListItemText>
                                 }
                             </MenuItem>
+                        }
+                        {import.meta.env.DEV && accessInfo.availablePreviewRoles?.length > 0 &&
+                            <>
+                                <Divider/>
+                                <MenuItem aria-expanded={previewOpen} onClick={() => setPreviewOpen(!previewOpen)}>
+                                    <ListItemText sx={{'& .MuiListItemText-primary':
+                                            {mb: 0.5, color: accessInfo.previewRole ? '#42d736' : 'inherit', fontStyle: 'italic'}}}>
+                                        UI Role Preview
+                                    </ListItemText>
+                                    <ExpandButton expanded={previewOpen}
+                                                  onChange={setPreviewOpen}
+                                                  small={true}
+                                                  color={accessInfo.previewRole ? '#42d736' : 'inherit'}
+                                    />
+                                </MenuItem>
+                                <Collapse in={previewOpen}>
+                                    <Divider/>
+                                    <MenuItem sx={{fontWeight: 600}} selected={!accessInfo.previewRole}
+                                              onClick={() => setAccessPreview(null)}>
+                                        <ListItemText sx={{'& .MuiListItemText-primary': {paddingLeft: 1, fontWeight: 'bold'}}}>
+                                            Actual access
+                                        </ListItemText>
+                                    </MenuItem>
+                                    {accessInfo.availablePreviewRoles.map(role =>
+                                        <MenuItem key={role} selected={accessInfo.previewRole === role}
+                                                  onClick={() => setAccessPreview(role)}>
+                                            <ListItemText
+                                                sx={{'& .MuiListItemText-primary': {paddingLeft: 1, color: accessInfo.previewRole === role ? '#42d736' : 'inherit'}}}>
+                                                {previewRoleLabels[role]}
+                                            </ListItemText>
+                                        </MenuItem>
+                                    )}
+                                    <MenuItem selected={accessInfo.previewRole === 'none'}
+                                              onClick={() => setAccessPreview('none')}
+                                              sx={{'& .MuiListItemText-primary': {paddingLeft: 1, color: accessInfo.previewRole === 'none' ? '#42d736' : 'inherit'}}}>
+                                        <ListItemText>None</ListItemText>
+                                    </MenuItem>
+
+                                </Collapse>
+                            </>
                         }
                         <Divider/>
 
@@ -220,6 +266,15 @@ const roleColors = {
     admin: 'success.main',
     lpuMod: 'warning.main',
     qaUser: 'info.main'
+}
+
+const previewRoleLabels = {
+    none: 'None',
+    admin: 'Admin',
+    classificationAdmin: 'Classification Admin',
+    lpuMod: 'LPU Moderator',
+    classificationTeam: 'Classification Team',
+    qaUser: 'QA User'
 }
 
 export default UserMenu

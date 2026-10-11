@@ -234,17 +234,18 @@ export default function FormElement({
                             }
                             {otherOptionField &&
                                 <div style={{display: 'flex', height: 40}}>
-                                    <FormControlLabel key='Other' value='Other' label='Other' control={
-                                                                                                   <Radio
-                                                                                                      size={settings.inputSize}
-                                                                                                      color={settings.color || 'success'}
-                                                                                                      sx={{
-                                                                                                          height: '36px',
-                                                                                                          width: '36px',
-                                                                                                          marginRight: '4px'
-                                                                                                      }}
-                                                                                                  />
-                                                                                              }/>
+                                    <FormControlLabel key='Other' value='Other' label='Other'
+                                                      control={
+                                                          <Radio
+                                                              size={settings.inputSize}
+                                                              color={settings.color || 'success'}
+                                                              sx={{
+                                                                  height: '36px',
+                                                                  width: '36px',
+                                                                  marginRight: '4px'
+                                                              }}
+                                                          />
+                                                      }/>
                                     {showOtherField &&
                                         <TextField type='text'
                                                    name={otherOptionField}
@@ -270,28 +271,30 @@ export default function FormElement({
                         <Typography sx={{...settings.descriptionStyle, marginBottom: '2px'}}>{description}</Typography>
                     }
                     <FormControl style={{marginLeft: 6}}>
-                        <FormControlLabel defaultValue={defaultValue || ''}
-                                          name={fieldName}
-                                          value={form.form[fieldName] || ''}
-                                          onChange={(e) => handleSingleCheckboxSelect(e)}
-                                          label={options}
-                                          sx={{
-                                              '.MuiFormControlLabel-label': {
-                                                  fontWeight: settings.fontWeight || 400
+                        <FormControlLabel
+                            defaultValue={defaultValue || ''}
+                            name={fieldName}
+                            value={form.form[fieldName] || ''}
+                            onChange={(e) => handleSingleCheckboxSelect(e)}
+                            label={options}
+                            sx={{
+                                '.MuiFormControlLabel-label': {
+                                    fontWeight: settings.fontWeight || 400
+                                }
+                            }}
+                            control={
+                                <Checkbox size={settings.inputSize}
+                                          onChange={(e) => handleSingleCheckboxSelect({
+                                              target: {
+                                                  name: fieldName,
+                                                  value: e.target.checked,
+                                                  checked: e.target.checked
                                               }
-                                          }} control={
-                                                  <Checkbox size={settings.inputSize}
-                                                            onChange={(e) => handleSingleCheckboxSelect({
-                                                                target: {
-                                                                    name: fieldName,
-                                                                    value: e.target.checked,
-                                                                    checked: e.target.checked
-                                                                }
-                                                            })}
-                                                            checked={!!form.form[fieldName]}
-                                                            color={settings.color || 'success'}
-                                                 />
-                                             }
+                                          })}
+                                          checked={!!form.form[fieldName]}
+                                          color={settings.color || 'success'}
+                                />
+                            }
                         />
                     </FormControl>
                 </div>
@@ -307,49 +310,53 @@ export default function FormElement({
                     }
                     <FormControl style={{marginLeft: 6}}>
                         {options.map(option =>
-                            <FormControlLabel key={option} value={option} label={option} control={
-                                                                                             <Checkbox
-                                                                                                 size={settings.inputSize}
-                                                                                                 onChange={(e) => handleCheckboxSelect({
-                                                                                                     target: {
-                                                                                                         name: fieldName,
-                                                                                                         value: option,
-                                                                                                         checked: e.target.checked
-                                                                                                     }
-                                                                                                 })}
-                                                                                                 sx={{
-                                                                                                     height: '36px',
-                                                                                                     width: '36px',
-                                                                                                     marginRight: '4px',
-                                                                                                     color: theme.palette.info
-                                                                                                 }}
-                                                                                                 color='success'/>
-                                                                                         }
+                            <FormControlLabel
+                                key={option} value={option} label={option}
+                                control={
+                                    <Checkbox
+                                        size={settings.inputSize}
+                                        onChange={(e) => handleCheckboxSelect({
+                                            target: {
+                                                name: fieldName,
+                                                value: option,
+                                                checked: e.target.checked
+                                            }
+                                        })}
+                                        sx={{
+                                            height: '36px',
+                                            width: '36px',
+                                            marginRight: '4px',
+                                            color: theme.palette.info
+                                        }}
+                                        color='success'/>
+                                }
                             />)
                         }
                         {otherOptionField &&
                             <div style={{display: 'flex', height: 40}}>
-                                <FormControlLabel key='Other' value='Other' label='Other' control={
-                                                                                               <Checkbox
-                                                                                                  size={settings.inputSize}
-                                                                                                  onChange={(e) => handleCheckboxSelect({
-                                                                                                      target: {
-                                                                                                          name: fieldName,
-                                                                                                          value: 'Other',
-                                                                                                          checked: e.target.checked
-                                                                                                      }
-                                                                                                  })}
-                                                                                                  sx={{
-                                                                                                      height: '36px',
-                                                                                                      width: '36px',
-                                                                                                      marginRight: '4px',
-                                                                                                      color: theme.palette.info,
-                                                                                                      '&.Mui-checked': {
-                                                                                                          color: theme.palette.info
-                                                                                                      }
-                                                                                                  }}
-                                                                                              />
-                                                                                          }/>
+                                <FormControlLabel
+                                    key='Other' value='Other' label='Other'
+                                    control={
+                                        <Checkbox
+                                            size={settings.inputSize}
+                                            onChange={(e) => handleCheckboxSelect({
+                                                target: {
+                                                    name: fieldName,
+                                                    value: 'Other',
+                                                    checked: e.target.checked
+                                                }
+                                            })}
+                                            sx={{
+                                                height: '36px',
+                                                width: '36px',
+                                                marginRight: '4px',
+                                                color: theme.palette.info,
+                                                '&.Mui-checked': {
+                                                    color: theme.palette.info
+                                                }
+                                            }}
+                                        />
+                                    }/>
                                 {showOtherField &&
                                     <TextField type='text'
                                                name={otherOptionField}
@@ -375,14 +382,19 @@ export default function FormElement({
                     {description &&
                         <Typography sx={{marginBottom: '2px', ...settings.descriptionStyle}}>{description}</Typography>
                     }
-                    <div style={{display: 'flex', placeItems: 'center', flexGrow: 0, margin: '6px 0px 0px 6px'}}>
-                        <div style={{margin: '6px 0px 0px', width: 32}}>
-                            <BeltIcon value={form?.form?.[fieldName] ? form.form[fieldName].belt : null}
-                                      style={{marginBottom: -10}}/>
-                        </div>
-                        <div style={{margin: '6px 12px 0px', width: '100%', maxWidth: settings.inputWidth}}>
-                            <LockEntrySearchBox handleChangeEntry={handleChangeEntry} allEntries={options}
-                                                lockIndex={0}/>
+                    <div style={{display: 'flex', placeItems: 'center', flexGrow: 0, margin: '0px 0px 0px 0px'}}>
+                        {settings.showBeltIcon &&
+                            <div style={{margin: '6px 0px 0px', width: 32}}>
+                                <BeltIcon value={form?.form?.[fieldName] ? form.form[fieldName].belt : null}
+                                          style={{marginBottom: -10}}/>
+                            </div>
+                        }
+                        <div style={{margin: '0px 0px 0px', width: '100%', maxWidth: settings.inputWidth}}>
+                            <LockEntrySearchBox
+                                handleChangeLock={handleChangeEntry}
+                                allEntries={options}
+                                lockId={settings.lock?.id ?? settings.lock?.lockId}
+                                lockIndex={0}/>
                         </div>
                         {!isValid &&
                             <ReportProblemIcon color='error'/>

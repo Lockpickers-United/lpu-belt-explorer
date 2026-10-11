@@ -53,8 +53,11 @@ export const defaultTestContextValues = {
             },
             level: 0,
             enabledLevel: 0,
-            activeRole: null
+            activeRole: null,
+            previewRole: null,
+            availablePreviewRoles: []
         },
+        setAccessPreview: () => {},
         toggleRoleEnabled: () => {}
     },
     scoring: {

@@ -5,7 +5,7 @@ import AuthContext from '../../src/app/AuthContext.jsx'
 import {AccessProvider, useAccess} from '../../src/app/AccessContext.jsx'
 
 function AccessState() {
-    const {accessInfo, toggleRoleEnabled} = useAccess()
+    const {accessInfo, setAccessPreview, toggleRoleEnabled} = useAccess()
 
     return (
         <div>
@@ -15,8 +15,13 @@ function AccessState() {
             <span>Level: {accessInfo.level}</span>
             <span>Enabled level: {accessInfo.enabledLevel}</span>
             <span>Active role: {accessInfo.activeRole || 'none'}</span>
+            <span>Preview role: {accessInfo.previewRole ?? 'actual'}</span>
             <button onClick={() => toggleRoleEnabled('admin')}>Toggle admin</button>
             <button onClick={() => toggleRoleEnabled('qaUser')}>Toggle QA</button>
+            <button onClick={() => setAccessPreview('none')}>Preview none</button>
+            <button onClick={() => setAccessPreview('qaUser')}>Preview QA</button>
+            <button onClick={() => setAccessPreview('lpuMod')}>Preview moderator</button>
+            <button onClick={() => setAccessPreview(null)}>Clear preview</button>
         </div>
     )
 }
@@ -43,6 +48,7 @@ describe('AccessContext', () => {
 
     afterEach(() => {
         vi.useRealTimers()
+        vi.unstubAllEnvs()
     })
 
     it('ignores a persisted admin preference without an authenticated admin claim', () => {
@@ -174,6 +180,49 @@ describe('AccessContext', () => {
         expect(screen.getByText('Enabled level: 20')).toBeInTheDocument()
         expect(screen.getByText('Active role: qaUser')).toBeInTheDocument()
         expect(screen.getByText(/Features:.*"classificationVote":true/)).toBeInTheDocument()
+    })
+
+    it('restricts a development preview to roles the account already has', () => {
+        vi.stubEnv('DEV', true)
+        window.localStorage.setItem('adminEnabled', JSON.stringify(true))
+        renderAccess({
+            authLoaded: true,
+            isLoggedIn: true,
+            user: {uid: 'admin-user'},
+            userClaims: ['admin']
+        })
+
+        fireEvent.click(screen.getByRole('button', {name: 'Preview none'}))
+        expect(screen.getByText('Preview role: none')).toBeInTheDocument()
+        expect(screen.getByText('Level: 0')).toBeInTheDocument()
+        expect(screen.getByText('Enabled level: 0')).toBeInTheDocument()
+        expect(screen.getByText(/Features:.*"manageRequests":false/)).toBeInTheDocument()
+
+        fireEvent.click(screen.getByRole('button', {name: 'Preview moderator'}))
+        expect(screen.getByText('Preview role: none')).toBeInTheDocument()
+
+        fireEvent.click(screen.getByRole('button', {name: 'Preview QA'}))
+        expect(screen.getByText('Preview role: qaUser')).toBeInTheDocument()
+        expect(screen.getByText('Level: 20')).toBeInTheDocument()
+        expect(screen.getByText(/Features:.*"classificationVote":false/)).toBeInTheDocument()
+
+        fireEvent.click(screen.getByRole('button', {name: 'Clear preview'}))
+        expect(screen.getByText('Preview role: actual')).toBeInTheDocument()
+        expect(screen.getByText('Level: 100')).toBeInTheDocument()
+    })
+
+    it('ignores preview requests outside development mode', () => {
+        vi.stubEnv('DEV', false)
+        renderAccess({
+            authLoaded: true,
+            isLoggedIn: true,
+            user: {uid: 'admin-user'},
+            userClaims: ['admin']
+        })
+
+        fireEvent.click(screen.getByRole('button', {name: 'Preview none'}))
+        expect(screen.getByText('Preview role: actual')).toBeInTheDocument()
+        expect(screen.getByText('Level: 100')).toBeInTheDocument()
     })
 })
 

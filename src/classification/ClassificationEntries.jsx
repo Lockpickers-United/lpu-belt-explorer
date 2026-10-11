@@ -22,16 +22,7 @@ export default function ClassificationEntries({advancedEnabled = false, historic
         </div>
     )
 
-    const footer = (
-        <React.Fragment>
-            <br/>
-            <HotkeyInfoButton/>
-            &nbsp;•&nbsp;
-            <RandomEntryButton onSelect={setEntryExpanded}/>
-            &nbsp;•&nbsp;
-            <SlideshowButton/>
-        </React.Fragment>
-    )
+    const footer = null
 
     return (
         <React.Fragment>

@@ -108,15 +108,21 @@ export function ClassificationDataProvider({children, allEntries, route = 'activ
         return mappedEntries.find(e => e.id === id)
     }, [mappedEntries])
 
+    const getLockFromId = useCallback(id => {
+        return allEntries.find(e => e.id === id)
+    }, [allEntries])
+
     const value = useMemo(() => ({
+        allEntries,
         mappedEntries,
         visibleEntries,
         visibleChangelogEntries,
         searchedEntries,
         getEntryFromId,
+        getLockFromId,
         expandAll,
         profile
-    }), [mappedEntries, visibleEntries, visibleChangelogEntries, searchedEntries, getEntryFromId, expandAll, profile])
+    }), [allEntries, mappedEntries, visibleEntries, visibleChangelogEntries, searchedEntries, getEntryFromId, getLockFromId, expandAll, profile])
 
     return (
         <DataContext.Provider value={value}>

@@ -2,10 +2,10 @@ import React from 'react'
 import Typography from '@mui/material/Typography'
 import ToggleBetaButton from './ToggleBetaButton'
 
-function Footer({extras, before}) {
+function Footer({extras, before, style = {}}) {
     return (
 
-        <Typography align='center' component='div' style={{marginTop: 16, marginBottom: 80}}>
+        <Typography align='center' component='div' style={{marginTop: 16, marginBottom: 80, ...style}}>
 
             {before}
 

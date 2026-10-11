@@ -1,6 +1,6 @@
 /*
     Usage:
-    entryName(entry,'any', {includeVersion: true}) -> ASSA Twin Combi, Triton, Neptun 4900 / TrioVing System 10, Twin Control (6 pin with 5 finger pins)
+    entryName(entry, [type], {includeVersion: true}) -> ASSA Twin Combi, Triton, Neptun 4900 / TrioVing System 10, Twin Control (6 pin with 5 finger pins)
     entryName(entry, 'short') -> ASSA Twin Combi, Triton, Neptun 4900 / TrioVing System 10, Twin Control
     entryName(entry, 'long')  -> ASSA Twin Combi / ASSA Triton / ASSA Neptun 4900 / TrioVing System 10 / TrioVing Twin Control
     entryName(entry, 'samelines')  -> ['ASSA Twin Combi', 'ASSA Triton', 'ASSA Neptun 4900', 'TrioVing System 10', 'TrioVing Twin Control']
@@ -13,7 +13,7 @@ import levenshtein from 'fast-levenshtein'
 
 function entryName(entry, nameType = 'short', options = {}) {
     let makeModels = entry.makeModels || [{make: entry.make, model: entry.model}]
-    const versionString = options.includeVersion && entry.version ? ' (' + entry.version + ')' : ''
+    const versionString = options.includeVersion && entry.version ? ' - ' + entry.version : ''
 
     if (options.matchTo) {
         const match = options.matchTo.match(/^([&/\w\s+.'-]+)/)

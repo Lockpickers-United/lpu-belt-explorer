@@ -15,46 +15,56 @@ import Button from '@mui/material/Button'
 import ClassificationToolbar from './ClassificationToolbar.jsx'
 import Tooltip from '@mui/material/Tooltip'
 import {useAccess} from '../app/AccessContext.jsx'
+import Footer from '../nav/Footer.jsx'
+import changelogEntryFormat from './changelogEntryFormat.js'
 
 export default function ChangelogMain() {
     usePageTitle('Changelog')
     const {accessInfo} = useAccess()
     const {getAdminAction} = useContext(ClassificationContext)
 
-    const {visibleChangelogEntries = []} = useContext(DataContext)
+    const {visibleChangelogEntries = [], getLockFromId} = useContext(DataContext)
 
-    const groupedEntries = visibleChangelogEntries.reduce((acc, entry) => {
+    const mappedEntries = useMemo(() => visibleChangelogEntries.map(entry => {
         const adminAction = getAdminAction(entry)
-        if (entry.belt === 'Unranked' && !!adminAction.updatedBelt) {
+        return {
+            ...entry,
+            adminAction,
+        }
+    }), [getAdminAction, visibleChangelogEntries])
+
+    const groupedEntries = mappedEntries.reduce((acc, entry) => {
+        const adminAction = getAdminAction(entry)
+        if (adminAction.action === 'Sameline') {
+            setDeepPush(acc, ['Samelines'], entry)
+        } else if (adminAction.action === 'Delete') {
+            setDeepPush(acc, ['Deleted'], entry)
+        } else if (entry.belt === 'Unranked' && adminAction.action === 'Belt Change') {
             setDeepPush(acc, ['New Additions'], entry)
         } else if (compareBelts(entry.belt, adminAction.updatedBelt) === 1) {
             setDeepPush(acc, ['Downgrades'], entry)
         } else if (compareBelts(entry.belt, adminAction.updatedBelt) === -1) {
             setDeepPush(acc, ['Upgrades'], entry)
         } else {
-            setDeepPush(acc, ['Unchanged'], entry)
+            setDeepPush(acc, ['Other'], entry)
         }
         return acc
     }, {})
 
-    const sections = ['New Additions', 'Upgrades', 'Downgrades', 'Unchanged']
+    const sections = ['New Additions', 'Samelines', 'Upgrades', 'Downgrades', 'Deleted', 'Other']
 
     // CES SP6 - GREEN. This is somewhat similar to the 6-pin PXM but with a different profile.
-
+    // ABUS E100 - sameline with ABUS Ti12 on ORANGE, this is the same lock.
     const {isMobile} = useWindowSize()
     const style = {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto', marginTop: 24, padding: '0 8px'}
 
-    function formatEntry(entry) {
-        const adminAction = getAdminAction(entry)
-        const name = entryName(entry, 'short')
-        const version = entry.version ? ` (${entry.version})` : ''
-        return `- **${name}**${version} - ${adminAction.updatedBelt?.toUpperCase()}. ${adminAction.note}`
-    }
-
-    let clipboardText = `**${dayjs().format('MMMM YYYY')}**\n\n`
+    let clipboardText = `**${dayjs().format('MMMM YYYY').toUpperCase()}**\n\n`
     sections.map((key) => {
             if (groupedEntries[key]?.length)
-                clipboardText += `**${key.toUpperCase()}**\n\n${groupedEntries[key].map(formatEntry).join('\n')}\n\n`
+                clipboardText += `**${key.toUpperCase()}**\n\n${
+                groupedEntries[key]
+                    .map(entry => changelogEntryFormat({entry})).join('\n')
+            }\n\n`
         }
     )
 
@@ -62,18 +72,27 @@ export default function ChangelogMain() {
         if (groupedEntries[key]?.length) {
             groupedEntries[key].map(entry => {
                 const name = entryName(entry, 'short')
-                const version = entry.version ? ` (${entry.version})` : ''
+                const version = entry.version
+
                 const adminAction = getAdminAction(entry)
+                const {id, action, samelineLock, note, adminNote} = adminAction
+
+                const lock = samelineLock ? getLockFromId(samelineLock.lockId) : null
+                const belt = adminAction.updatedBelt || lock?.belt || entry.belt ||null
+
                 acc.push({
                     name,
                     version,
                     id: entry.id,
-                    adminActionId: adminAction.id,
-                    action: adminAction.action,
-                    samelineTarget: adminAction.samelineTarget,
+                    adminActionId: id,
+                    action,
                     change: key.replace(/s$/, ''),
-                    belt: adminAction.updatedBelt,
-                    note: adminAction.note
+                    belt,
+                    samelineTargetId: lock ? lock.id : null,
+                    samelineTargetName: lock ? entryName(lock, 'short', {includeVersion: true}) : null,
+                    samelineTargetBelt: lock ? lock.belt : null,
+                    note,
+                    adminNote,
                 })
             })
         }
@@ -87,6 +106,8 @@ export default function ChangelogMain() {
             {id: 'ID'},
             {change: 'Change Type'},
             {belt: 'Belt'},
+            {samelineTargetName: 'Sameline Target'},
+            {samelineTargetId: 'Sameline Target ID'},
             {note: 'Note'}
         ]
 
@@ -137,6 +158,7 @@ export default function ChangelogMain() {
                 </div>
             )}
 
+            <Footer extras={null} before={null} style={{marginTop: 40}}/>
             <Tracker feature='changelog'/>
 
         </React.Fragment>

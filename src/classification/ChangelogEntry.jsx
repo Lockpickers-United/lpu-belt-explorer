@@ -1,60 +1,43 @@
-import React, {useContext, useMemo} from 'react'
+import React, {useContext} from 'react'
 import BeltStripe from '../entries/BeltStripe'
-import useWindowSize from '../util/useWindowSize.jsx'
 import entryName from '../entries/entryName'
 import ClassificationContext from '../app/ClassificationContext.jsx'
+import ReactMarkdown from 'react-markdown'
+import rehypeExternalLinks from 'rehype-external-links'
+import remarkGfm from 'remark-gfm'
+import changelogEntryFormat from './changelogEntryFormat.js'
 
 function ChangelogEntry({entry}) {
     const style = {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto'}
-    const lockName = entryName(entry, 'short', {includeVersion: true})
     const {
-        getAdminAction,
+        getAdminAction
     } = useContext(ClassificationContext)
 
     const adminAction = getAdminAction(entry)
 
-    const makeModels = useMemo(() => {
-        return (
-            <div style={{fontWeight: 500, fontSize: '1.07rem', lineHeight: 1.5, marginBottom: '4px'}}>
-                {entry.makeModels?.map(({make, model}, index) =>
-                    <span key={index}>{make && make !== model ? `${make} ${model}` : model}<br/></span>
-                )}
-            </div>
-        )
-    }, [entry.makeModels])
-
-    const {isMobile} = useWindowSize()
-    const makeModelWidth = !isMobile ? '65%' : '60%'
+    // sameline with Gera 3000 on BLUE
+    const name = entryName(entry, 'short')
+    const belt = adminAction.updatedBelt || adminAction.samelineLock?.belt || entry.belt
 
     return (
-        <div style={style} aria-label={lockName}>
+        <div style={style} aria-label={name}>
             <div style={{alignItems: 'center', position: 'relative', paddingLeft: 12, marginTop: 16}}>
-                <BeltStripe value={adminAction.updatedBelt || entry.belt}/>
+                <BeltStripe value={belt}/>
                 <div style={{
                     margin: '8px 16px',
-                    width: makeModelWidth,
-                    paddingRight: 4,
+                    padding: '6px 0',
                     flexShrink: 0,
                     flexDirection: 'column'
                 }}>
-                    <div>{makeModels}</div>
+                    <ReactMarkdown rehypePlugins={[[rehypeExternalLinks, {target: '_blank'}]]}
+                                   remarkPlugins={[remarkGfm]}
+                                   components={{p: 'div'}}
+                    >
+                        {changelogEntryFormat({entry, linebreak: true}).replace(/^-/g, '')}
+                    </ReactMarkdown>
+                </div>
 
-                    {!!entry.version &&
-                        <div style={{marginTop: 5}}>
-                            <div style={{
-                                fontSize: '0.95rem',
-                                lineHeight: 1.25,
-                                marginTop: 2,
-                                marginLeft: 8
-                            }}>{entry.version}</div>
-                        </div>
-                    }
-                </div>
-                <div style={{margin: '8px 16px', fontSize: '1.0rem'}}>
-                    {adminAction.note}
-                </div>
             </div>
-
         </div>
     )
 }
