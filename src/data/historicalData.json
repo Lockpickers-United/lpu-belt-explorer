@@ -1712,10 +1712,10 @@
     ],
     "name": "Master Lock #1",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 578,
+    "views": 579,
     "lastUpdated": "2025-03-19T01:20:51.353Z",
     "modelNum": "1",
-    "popularityIndex": 578,
+    "popularityIndex": 579,
     "scorecardCount": 70
   },
   "38289b36": {
@@ -2530,10 +2530,10 @@
     "name": "ABUS 64Ti/30",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "notes": "Includes 64Ti/20, 64Ti/25, 64Ti/30",
-    "views": 241,
+    "views": 242,
     "lastUpdated": "2025-03-19T01:20:51.354Z",
     "modelNum": "64.3",
-    "popularityIndex": 241,
+    "popularityIndex": 242,
     "scorecardCount": 22
   },
   "1ce31c29": {
@@ -3382,9 +3382,9 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/54362635612_79c7e02f4d_o.jpg"
       }
     ],
-    "views": 60,
+    "views": 61,
     "lastUpdated": "2025-03-19T01:20:51.355Z",
-    "popularityIndex": 60,
+    "popularityIndex": 61,
     "scorecardCount": 9
   },
   "7f56acb9": {
@@ -5917,10 +5917,10 @@
     ],
     "name": "ABUS 64Ti Titalium, MyLock T65AL, 70AL45",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 542,
+    "views": 543,
     "lastUpdated": "2025-03-19T01:20:51.356Z",
     "modelNum": "64",
-    "popularityIndex": 542,
+    "popularityIndex": 543,
     "scorecardCount": 45
   },
   "a0e50505": {
@@ -7640,7 +7640,8 @@
       }
     ],
     "popularityIndex": 22,
-    "scorecardCount": 4
+    "scorecardCount": 4,
+    "version": "6 pin"
   },
   "836c5ce3": {
     "id": "836c5ce3",
@@ -9482,9 +9483,9 @@
     ],
     "name": "ABUS EC 75/50, 75IB/50",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 243,
+    "views": 244,
     "lastUpdated": "2025-03-19T15:44:57.288Z",
-    "popularityIndex": 243,
+    "popularityIndex": 244,
     "scorecardCount": 42
   },
   "47e7cf73": {
@@ -14639,7 +14640,7 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "views": 82,
+    "views": 83,
     "lastUpdated": "2025-03-19T15:44:57.286Z",
     "media": [
       {
@@ -14715,7 +14716,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/52907089430_484fd0810a_o.jpg"
       }
     ],
-    "popularityIndex": 82,
+    "popularityIndex": 83,
     "scorecardCount": 7
   },
   "b8f4f5f5": {
@@ -21488,7 +21489,7 @@
     ],
     "searchKeywords": "multilock, mtl",
     "popularityIndex": 36,
-    "scorecardCount": 28
+    "scorecardCount": 29
   },
   "fb5a9eb7": {
     "id": "fb5a9eb7",
@@ -25083,7 +25084,7 @@
       "Interlocking pins",
       "Flickr Update"
     ],
-    "views": 13,
+    "views": 14,
     "lastUpdated": "2025-03-19T15:44:57.296Z",
     "relatedIds": [
       "c4f942f0",
@@ -25091,7 +25092,8 @@
       "bf43348b"
     ],
     "notes": "** **Special Picking Requirement:** Must be raked prior to picking to reset pin combination. Ideally assembled on video prior to picking.",
-    "popularityIndex": 13
+    "popularityIndex": 14,
+    "scorecardCount": 1
   },
   "50fd7a98": {
     "id": "50fd7a98",
@@ -28963,9 +28965,9 @@
     ],
     "name": "Sargent Signature",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 40,
+    "views": 41,
     "lastUpdated": "2025-03-19T15:44:57.300Z",
-    "popularityIndex": 40,
+    "popularityIndex": 41,
     "scorecardCount": 17
   },
   "3dabf132": {
@@ -29430,9 +29432,9 @@
     ],
     "name": "CompX Chicago TuBAR / Inceca Plana",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 33,
+    "views": 34,
     "lastUpdated": "2025-03-19T15:44:57.296Z",
-    "popularityIndex": 33,
+    "popularityIndex": 34,
     "scorecardCount": 18
   },
   "b35bf986": {
@@ -47087,9 +47089,9 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53335186572_b09b4432af_o.jpg"
       }
     ],
-    "views": 18,
+    "views": 19,
     "lastUpdated": "2025-03-19T01:20:51.378Z",
-    "popularityIndex": 18,
+    "popularityIndex": 19,
     "scorecardCount": 11
   },
   "5a4310d5": {
@@ -62015,7 +62017,7 @@
     "name": "IKON SK6 Sperrwelleprofil",
     "dateAdded": "2025-03-18T02:44:04.000Z",
     "popularityIndex": 10,
-    "scorecardCount": 7,
+    "scorecardCount": 8,
     "views": 10
   },
   "95e779e0": {
@@ -62488,9 +62490,9 @@
     "notes": "*** **Special Picking Requirement:** Must be raked prior to picking to reset pin combination",
     "name": "Medeco Biaxial Camlock, M3 Camlock",
     "dateAdded": "2025-09-29T22:09:57.767Z",
-    "popularityIndex": 9,
-    "scorecardCount": 2,
-    "views": 9
+    "popularityIndex": 10,
+    "scorecardCount": 3,
+    "views": 10
   },
   "59dab099": {
     "id": "59dab099",
@@ -64499,7 +64501,8 @@
     "version": "7 pin, with 3 pin in pin",
     "name": "Chicago Lock Co Tubular UL Ace",
     "currentBeltDate": "2026-10-09T23:22:45.036Z",
-    "dateAdded": "2026-10-09T23:22:45.036Z"
+    "dateAdded": "2026-10-09T23:22:45.036Z",
+    "scorecardCount": 1
   },
   "0b8eeedc": {
     "id": "0b8eeedc",
@@ -64579,5 +64582,22 @@
     "name": "Corbin Russwin Pyramid",
     "currentBeltDate": "2026-10-10T01:23:33.360Z",
     "dateAdded": "2026-10-10T01:23:33.360Z"
+  },
+  "4bbc3040": {
+    "id": "4bbc3040",
+    "belt": "Blue",
+    "makeModels": [
+      {
+        "make": "Gege",
+        "model": "ANS-2"
+      }
+    ],
+    "version": "5 pins",
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "name": "Gege ANS-2",
+    "currentBeltDate": "2026-10-11T11:34:47.287Z",
+    "dateAdded": "2026-10-11T11:34:47.287Z"
   }
 }
