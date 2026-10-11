@@ -169,8 +169,8 @@ export const allUpgradesPartitioned = Object.keys(maxBaseArraysByBase)
         // each up the upgrade tree and combining will give full
         // partition.
         const partition = [...new Set(basePartition.map(base => upgradesFrom(base)).flat())]
-        return partition.sort((a, b) => beltSort((allEntriesById[a] || allProjectsById[a]).belt, 
-                                                 (allEntriesById[b] || allProjectsById[b]).belt))
+        return partition.sort((a, b) => beltSort((allEntriesById[a] || allProjectsById[a])?.belt,
+                                                 (allEntriesById[b] || allProjectsById[b])?.belt))
 })
 
 export function isUpgradeOf(aId, bId) {
