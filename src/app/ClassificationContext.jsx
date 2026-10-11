@@ -51,24 +51,24 @@ export function ClassificationProvider({children}) {
     }, [user?.uid])
 
     const getCurrentVotes = useCallback((entry) => {
+        const reopened = getAdminAction(entry)?.status === 'Re-opened'
         const milestone = getLatestMilestone(entry).valueOf()
         return (votesByEntry.get(entry.id) ?? [])
-            .filter(vote => dayjs(vote.updatedAt).valueOf() >= milestone && vote.type === 'vote')
-    }, [getLatestMilestone])
+            .filter(vote => vote.type === 'vote' &&
+                (reopened || dayjs(vote.updatedAt).valueOf() >= milestone))
+    }, [getAdminAction, getLatestMilestone])
 
     const getPreviousVotes = useCallback((entry) => {
+        if (getAdminAction(entry)?.status === 'Re-opened') return []
         const milestone = getLatestMilestone(entry).valueOf()
         return (votesByEntry.get(entry.id) ?? [])
             .filter(vote => vote.type === 'vote' && dayjs(vote.updatedAt).valueOf() < milestone)
-    }, [getLatestMilestone])
+    }, [getAdminAction, getLatestMilestone])
 
     const getUserVote = useCallback((entry) => {
         if (!user?.uid) return null
-        const milestone = getLatestMilestone(entry).valueOf()
-        return (votesByEntry.get(entry.id) ?? [])
-            .find(vote => vote.type === 'vote' && vote.userId === user.uid &&
-                dayjs(vote.updatedAt).valueOf() >= milestone) ?? null
-    }, [getLatestMilestone, user?.uid])
+        return getCurrentVotes(entry).find(vote => vote.userId === user.uid) ?? null
+    }, [getCurrentVotes, user?.uid])
 
     const getAdminActionStatus = useCallback((entry) => {
         const action = getAdminAction(entry)

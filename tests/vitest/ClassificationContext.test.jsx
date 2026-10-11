@@ -138,6 +138,53 @@ describe('ClassificationProvider', () => {
         expect(classification.getCurrentVotes(entry)).not.toContainEqual(previousVote)
     })
 
+    it('returns every modern vote as current when a ranked lock is reopened', () => {
+        let classification
+        function CaptureContext() {
+            classification = useContext(ClassificationContext)
+            return null
+        }
+
+        const reopenedAction = adminActions.find(action => action.status === 'Re-opened')
+        const entry = allEntries.find(item => item.id === reopenedAction.entryId)
+        const previousVote = votes.find(vote => vote.entryId === entry.id &&
+            Date.parse(vote.updatedAt) < Date.parse(reopenedAction.updatedAt))
+        const laterVote = votes.find(vote => vote.entryId === entry.id &&
+            Date.parse(vote.updatedAt) > Date.parse(reopenedAction.updatedAt))
+        expect(previousVote).toBeDefined()
+        expect(laterVote).toBeDefined()
+
+        renderWithProviders(<ClassificationProvider><CaptureContext/></ClassificationProvider>, {
+            auth: {user: {uid: previousVote.userId}}
+        })
+
+        expect(classification.getAdminActionStatus(entry)).toBe('Re-opened')
+        expect(classification.getCurrentVotes(entry)).toEqual(expect.arrayContaining([previousVote, laterVote]))
+        expect(classification.getPreviousVotes(entry)).toEqual([])
+        expect(classification.getUserVote(entry)).toEqual(previousVote)
+    })
+
+    it('uses a settled action as a boundary for previous votes', () => {
+        let classification
+        function CaptureContext() {
+            classification = useContext(ClassificationContext)
+            return null
+        }
+
+        const settledAction = adminActions.find(action => action.status === 'Settled')
+        const entry = allEntries.find(item => item.id === settledAction.entryId)
+        const earlierVotes = votes.filter(vote => vote.entryId === entry.id &&
+            Date.parse(vote.updatedAt) < Date.parse(settledAction.updatedAt))
+        expect(earlierVotes.length).toBeGreaterThan(0)
+
+        renderWithProviders(<ClassificationProvider><CaptureContext/></ClassificationProvider>)
+
+        expect(classification.getLatestMilestone(entry).valueOf()).toBe(Date.parse(settledAction.updatedAt))
+        expect(classification.getCurrentVotes(entry)).toEqual([])
+        expect(classification.getPreviousVotes(entry)).toHaveLength(earlierVotes.length)
+        expect(classification.getPreviousVotes(entry)).toEqual(expect.arrayContaining(earlierVotes))
+    })
+
     it('exposes only modern votes, including in previous and user vote lookups', () => {
         const contexts = []
         const historicalVote = historicalVotes.find(record => !votes.some(vote =>

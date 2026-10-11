@@ -35,7 +35,9 @@ export default function DisplayClassificationVotes({votes, style = {}}) {
 
 
                 return (
-                    <Tooltip key={vote.id} title={vote.displayName}>
+                    <Tooltip key={vote.id} title={vote.previous
+                        ? `${vote.displayName} (previous vote)`
+                        : vote.displayName}>
                         <div style={{
                             position: 'relative',
                             height: size, width: size, padding: 2,

@@ -8,7 +8,7 @@ export default function ClassificationRoute() {
     const {allEntries} = useOutletContext()
 
     return (
-        <ClassificationDataProvider allEntries={allEntries} route='active'>
+        <ClassificationDataProvider allEntries={allEntries}>
             <ClassificationMain/>
         </ClassificationDataProvider>
     )

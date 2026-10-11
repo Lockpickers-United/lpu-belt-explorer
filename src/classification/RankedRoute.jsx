@@ -8,7 +8,7 @@ export default function RankedRoute() {
     const {allEntries} = useOutletContext()
 
     return (
-        <ClassificationDataProvider allEntries={allEntries} route='ranked'>
+        <ClassificationDataProvider allEntries={allEntries}>
             <RankedMain/>
         </ClassificationDataProvider>
     )

@@ -6,7 +6,6 @@ import ExportButton from '../locks/ExportButton'
 import Footer from '../nav/Footer'
 import FilterContext from '../context/FilterContext.jsx'
 import AdvancedFilters from '../filters/AdvancedFilters.jsx'
-import {useMatches} from 'react-router-dom'
 
 export default function ClassificationEntries({advancedEnabled = false}) {
     const {visibleEntries = [], expandAll} = useContext(DataContext)
