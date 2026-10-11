@@ -8,6 +8,8 @@ import AccessContext from '../../src/app/AccessContext.jsx'
 import {ClassificationProvider} from '../../src/app/ClassificationContext.jsx'
 import VoteDisplay from '../../src/classification/VoteDisplay.jsx'
 import EntryClassificationAdmin from '../../src/classification/EntryClassificationAdmin.jsx'
+import EntryActionBarWrapped from '../../src/entries/EntryActionBarWrapped.jsx'
+import allEntries from '../../src/data/data.json'
 
 describe('classification previews', () => {
     it('opens and cancels a vote preview without offering a save action', async () => {
@@ -58,5 +60,25 @@ describe('classification previews', () => {
         expect(screen.getByText('Preview only — admin changes are unavailable.')).toBeInTheDocument()
         expect(screen.getByRole('button', {name: 'Save'})).toBeDisabled()
         expect(screen.getByRole('button', {name: 'Save And Stage'})).toBeDisabled()
+    })
+
+    it('keeps the vote action available on a scorecard row', () => {
+        const router = createMemoryRouter([{
+            path: '/scorecard',
+            handle: {route: 'scorecard'},
+            element: <EntryActionBarWrapped entry={allEntries.find(entry => entry.id === 'f72085d2')}/>
+        }], {initialEntries: ['/scorecard']})
+        const baseAccessInfo = defaultTestContextValues.access.accessInfo
+
+        renderWithProviders(<RouterProvider router={router}/>, {
+            auth: {isLoggedIn: true, user: {uid: 'test-user'}},
+            access: {accessInfo: {
+                ...baseAccessInfo,
+                roles: {...baseAccessInfo.roles, classificationTeam: true},
+                features: {...baseAccessInfo.features, entryActionBar: true, classificationVote: true}
+            }}
+        })
+
+        expect(screen.getByRole('button', {name: 'Classification'})).toBeInTheDocument()
     })
 })

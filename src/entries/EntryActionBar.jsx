@@ -1,4 +1,4 @@
-import React, {useCallback, useState} from 'react'
+import React, {useCallback, useEffect, useState} from 'react'
 import Collapse from '@mui/material/Collapse'
 import EntryVideos from './EntryVideos.jsx'
 import IconButton from '@mui/material/IconButton'
@@ -35,12 +35,17 @@ export default function EntryActionBar({entry, style = {}, openAdminForm=true}) 
     const isClassification = useMatches().some(match => match.handle?.route === 'classification')
     const theme = useTheme()
 
-    console.log({openAdminForm}, accessInfo.features.classificationAdmin)
     const defaultFeature = openAdminForm && accessInfo.features.classificationAdmin
         ? 'classificationAdmin'
         : 'classification'
 
     const [showFeature, setShowFeature] = useState(isClassification ? {[defaultFeature]: true} : {})
+
+    useEffect(() => {
+        if (isClassification && openAdminForm && accessInfo.features.classificationAdmin) {
+            setShowFeature({classificationAdmin: true})
+        }
+    }, [accessInfo.features.classificationAdmin, isClassification, openAdminForm])
 
     const handleToggle = useCallback((feature) => {
         setShowFeature(current => current[feature] ? {} : {[feature]: true})

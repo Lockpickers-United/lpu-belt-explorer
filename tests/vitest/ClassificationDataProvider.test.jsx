@@ -41,10 +41,14 @@ describe('ClassificationDataProvider', () => {
             allEntries.some(entry => entry.id === action.entryId && entry.belt !== 'Unranked'))
         const unrankedStagedAction = adminActions.find(action => action.status === 'Staged' &&
             allEntries.some(entry => entry.id === action.entryId && entry.belt === 'Unranked'))
+        const samelineAction = adminActions.find(action => action.status === 'Staged' && action.action === 'Sameline')
+        const deleteAction = adminActions.find(action => action.status === 'Staged' && action.action === 'Delete')
         expect(voteOnlyRecord).toBeDefined()
         expect(reopenedAction).toBeDefined()
         expect(rankedStagedAction).toBeDefined()
         expect(unrankedStagedAction).toBeDefined()
+        expect(samelineAction).toBeDefined()
+        expect(deleteAction).toBeDefined()
 
         const rankedVoteEntry = {
             ...allEntries.find(entry => entry.id === voteOnlyRecord.entryId),
@@ -60,13 +64,16 @@ describe('ClassificationDataProvider', () => {
             currentBeltDate: undefined
         }
         const unrankedStagedEntry = allEntries.find(entry => entry.id === unrankedStagedAction.entryId)
+        const samelineEntry = allEntries.find(entry => entry.id === samelineAction.entryId)
+        const deleteEntry = allEntries.find(entry => entry.id === deleteAction.entryId)
 
         renderWithProviders(
             <MemoryRouter>
                 <FilterProvider filterFields={classificationFilterFields}>
                     <ClassificationProvider>
                         <ClassificationDataProvider allEntries={[
-                            rankedVoteEntry, rankedReopenedEntry, rankedStagedEntry, unrankedStagedEntry
+                            rankedVoteEntry, rankedReopenedEntry, rankedStagedEntry, unrankedStagedEntry,
+                            samelineEntry, deleteEntry
                         ]}>
                             <CaptureData/>
                         </ClassificationDataProvider>
@@ -78,13 +85,14 @@ describe('ClassificationDataProvider', () => {
 
         expect(classificationData.getEntryFromId(rankedVoteEntry.id).classificationStatus).toBe('Has Votes')
         expect(classificationData.visibleEntries.map(entry => entry.id)).toEqual(expect.arrayContaining([
-            rankedReopenedEntry.id, rankedStagedEntry.id, unrankedStagedEntry.id
+            rankedReopenedEntry.id, rankedStagedEntry.id, unrankedStagedEntry.id,
+            samelineEntry.id, deleteEntry.id
         ]))
         expect(classificationData.visibleEntries.map(entry => entry.id)).not.toContain(rankedVoteEntry.id)
         expect(classificationData.visibleChangelogEntries.map(entry => entry.id)).toEqual(expect.arrayContaining([
-            rankedStagedEntry.id, unrankedStagedEntry.id
+            rankedStagedEntry.id, unrankedStagedEntry.id, samelineEntry.id, deleteEntry.id
         ]))
-        expect(classificationData.visibleChangelogEntries).toHaveLength(2)
+        expect(classificationData.visibleChangelogEntries).toHaveLength(4)
     })
 
     it('shows ranked locks with current or previous modern votes on the ranked route', () => {

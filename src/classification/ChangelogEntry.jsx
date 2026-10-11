@@ -6,14 +6,18 @@ import ReactMarkdown from 'react-markdown'
 import rehypeExternalLinks from 'rehype-external-links'
 import remarkGfm from 'remark-gfm'
 import changelogEntryFormat from './changelogEntryFormat.js'
+import DataContext from '../context/DataContext.jsx'
 
 function ChangelogEntry({entry}) {
     const style = {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto'}
     const {
         getAdminAction
     } = useContext(ClassificationContext)
+    const {getLockFromId} = useContext(DataContext)
 
     const adminAction = getAdminAction(entry)
+    const targetLock = adminAction.samelineLock
+        ? getLockFromId(adminAction.samelineLock.lockId) : null
 
     // sameline with Gera 3000 on BLUE
     const name = entryName(entry, 'short')
@@ -33,7 +37,7 @@ function ChangelogEntry({entry}) {
                                    remarkPlugins={[remarkGfm]}
                                    components={{p: 'div'}}
                     >
-                        {changelogEntryFormat({entry, linebreak: true}).replace(/^-/g, '')}
+                        {changelogEntryFormat({entry, adminAction, targetLock, linebreak: true}).replace(/^-/g, '')}
                     </ReactMarkdown>
                 </div>
 

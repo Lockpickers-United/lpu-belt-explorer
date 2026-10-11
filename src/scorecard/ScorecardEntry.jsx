@@ -27,7 +27,7 @@ import PrintIcon from '@mui/icons-material/Print'
 import {useAccess} from '../app/AccessContext.jsx'
 import {blackBeltAwardId} from '../entries/entryutils'
 import DataContext from '../context/DataContext.jsx'
-import EntryActionBar from '../entries/EntryActionBar.jsx'
+import EntryActionBarWrapped from '../entries/EntryActionBarWrapped.jsx'
 import CopyEntryIdButton from '../entries/CopyEntryIdButton.jsx'
 import OpenLinkToEntryButton from '../entries/OpenLinkToEntryButton.jsx'
 import LogEntryButton from '../entries/LogEntryButton.jsx'
@@ -288,7 +288,7 @@ function ScorecardEntry({owner, activity, expanded, onExpand, merged}) {
                 <AccordionDetails sx={{padding: '4px 16px 0px 26px'}}>
 
                     {entry && !exceptionNote &&
-                        <EntryActionBar entry={entry} style={{marginBottom: 24}}/>
+                        <EntryActionBarWrapped entry={entry} style={{marginBottom: 24}}/>
                     }
 
                     <EvidenceForm activity={activity} handleUpdate={() => {

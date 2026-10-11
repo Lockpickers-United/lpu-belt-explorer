@@ -25,15 +25,7 @@ export default function ChangelogMain() {
 
     const {visibleChangelogEntries = [], getLockFromId} = useContext(DataContext)
 
-    const mappedEntries = useMemo(() => visibleChangelogEntries.map(entry => {
-        const adminAction = getAdminAction(entry)
-        return {
-            ...entry,
-            adminAction,
-        }
-    }), [getAdminAction, visibleChangelogEntries])
-
-    const groupedEntries = mappedEntries.reduce((acc, entry) => {
+    const groupedEntries = visibleChangelogEntries.reduce((acc, entry) => {
         const adminAction = getAdminAction(entry)
         if (adminAction.action === 'Sameline') {
             setDeepPush(acc, ['Samelines'], entry)
@@ -63,7 +55,12 @@ export default function ChangelogMain() {
             if (groupedEntries[key]?.length)
                 clipboardText += `**${key.toUpperCase()}**\n\n${
                 groupedEntries[key]
-                    .map(entry => changelogEntryFormat({entry})).join('\n')
+                    .map(entry => {
+                        const adminAction = getAdminAction(entry)
+                        const targetLock = adminAction.samelineLock
+                            ? getLockFromId(adminAction.samelineLock.lockId) : null
+                        return changelogEntryFormat({entry, adminAction, targetLock})
+                    }).join('\n')
             }\n\n`
         }
     )
