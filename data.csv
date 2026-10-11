@@ -398,6 +398,7 @@ Blue,FAB,2000,,Pin-tumbler,,,f938f2fe
 Blue,"FAB,FAB","3* Profi,4* Profi",,Pin-tumbler,,,aee424c0
 Blue,"Federal Lock",6KD3110,,Dimple,,,275d33c9
 Blue,,Fontaine,,Pump/push,,,7786832f
+Blue,Gege,ANS-2,"5 pins",Pin-tumbler,,,4bbc3040
 Blue,"GEGE,GEGE,GEGE","AP1000,AP2000,AP3000","5 pins",Pin-tumbler,"Flickr Update",,2801996f
 Blue,"Gege,Alfa","pExtra,""pExtra""","5 pin",Pin-tumbler,"Overmilling,Flickr Update",,aa7fc00e
 Blue,"Gera,Gera","3000,3100","6 pin",Pin-tumbler,"Latest Changelog",,8f219086
@@ -516,7 +517,7 @@ Purple,Eagle,"""Supr-Security""","without shutter",Wafer,,,e8901d1c
 Purple,Elzett,X11,,Dimple,,,04a402d6
 Purple,"EVVA,EVVA,EVVA,EVVA","DPI,DPS,DPX,EPS","slider version",Slider,"Trap element,False gates,Active sidebar,Flickr Update","Must have at least 4 sliders with false gates",8c2983b5
 Purple,Fichet,450,"no False gates",Lever/sidebar,,,93871dad
-Purple,Gege,ANS-2,,Pin-tumbler,,,92f98042
+Purple,Gege,ANS-2,"6 pin",Pin-tumbler,,,92f98042
 Purple,"GEGE,GEGE,GEGE","AP1000,AP2000,AP3000","6+ pins",Pin-tumbler,"Flickr Update",,8770b3d8
 Purple,"Gege,Alfa","pExtra,""pExtra""","6-7 pin",Pin-tumbler,"Overmilling,Flickr Update",,4cd09b3b
 Purple,Generic/Unknown,"6 or 7 Lever lock",,Lever,,,a6a225e5
