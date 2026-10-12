@@ -8,6 +8,8 @@ import historicalVotes from '../../src/data/classification-votes-historical.json
 import adminActions from '../../src/data/classification-samples-admin.json'
 import changelogs from '../../src/data/classification-samples-changelog.json'
 
+const voteTime = vote => Date.parse(vote.updatedAt ?? vote.createdAt)
+
 describe('ClassificationProvider', () => {
     it('keeps votes current for unranked entries despite a later belt date', () => {
         let classification
@@ -18,13 +20,13 @@ describe('ClassificationProvider', () => {
 
         renderWithProviders(<ClassificationProvider><CaptureContext/></ClassificationProvider>)
 
-        const vote = votes.find(record => record.type === 'vote' &&
+        const vote = votes.find(record => record.type === 'vote' && !record.updatedAt &&
             allEntries.some(entry => entry.id === record.entryId && entry.belt === 'Unranked') &&
             !adminActions.some(action => action.entryId === record.entryId))
         expect(vote).toBeDefined()
         const entry = {
             ...allEntries.find(item => item.id === vote.entryId),
-            currentBeltDate: new Date(Date.parse(vote.updatedAt) + 1).toISOString()
+            currentBeltDate: new Date(voteTime(vote) + 1).toISOString()
         }
         const rankedEntry = {...entry, belt: 'Orange'}
 
@@ -63,7 +65,7 @@ describe('ClassificationProvider', () => {
         expect(classification.isActive(entryWithoutBeltDate)).toBe(true)
 
         const latestRecordTime = Math.max(
-            ...entryVotes.map(record => Date.parse(record.updatedAt)),
+            ...entryVotes.map(voteTime),
             ...entryActions.map(action => Date.parse(action.updatedAt))
         )
         const laterBeltDate = {
@@ -114,9 +116,9 @@ describe('ClassificationProvider', () => {
             change.id === publishedAction.id))
         const entry = allEntries.find(item => item.id === publishedAction.entryId)
         const previousVote = votes.find(vote => vote.entryId === entry.id &&
-            Date.parse(vote.updatedAt) < Date.parse(changelog.lastPublishedAt))
+            voteTime(vote) < Date.parse(changelog.lastPublishedAt))
         const currentVote = votes.find(vote => vote.entryId === entry.id &&
-            Date.parse(vote.updatedAt) > Date.parse(changelog.lastPublishedAt))
+            voteTime(vote) > Date.parse(changelog.lastPublishedAt))
 
         expect(previousVote).toBeDefined()
         expect(currentVote).toBeDefined()
@@ -148,9 +150,9 @@ describe('ClassificationProvider', () => {
         const reopenedAction = adminActions.find(action => action.status === 'Re-opened')
         const entry = allEntries.find(item => item.id === reopenedAction.entryId)
         const previousVote = votes.find(vote => vote.entryId === entry.id &&
-            Date.parse(vote.updatedAt) < Date.parse(reopenedAction.updatedAt))
+            voteTime(vote) < Date.parse(reopenedAction.updatedAt))
         const laterVote = votes.find(vote => vote.entryId === entry.id &&
-            Date.parse(vote.updatedAt) > Date.parse(reopenedAction.updatedAt))
+            voteTime(vote) > Date.parse(reopenedAction.updatedAt))
         expect(previousVote).toBeDefined()
         expect(laterVote).toBeDefined()
 
@@ -174,7 +176,7 @@ describe('ClassificationProvider', () => {
         const settledAction = adminActions.find(action => action.status === 'Settled')
         const entry = allEntries.find(item => item.id === settledAction.entryId)
         const earlierVotes = votes.filter(vote => vote.entryId === entry.id &&
-            Date.parse(vote.updatedAt) < Date.parse(settledAction.updatedAt))
+            voteTime(vote) < Date.parse(settledAction.updatedAt))
         expect(earlierVotes.length).toBeGreaterThan(0)
 
         renderWithProviders(<ClassificationProvider><CaptureContext/></ClassificationProvider>)

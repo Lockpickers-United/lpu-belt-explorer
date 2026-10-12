@@ -13,8 +13,9 @@ export default function VoteView({vote = {}, handleActive, owner}) {
     const isChangelog = useMatches().some(match => match.handle?.route === 'changelog')
     const isHistorical = useMatches().some(match => match.handle?.route === 'historical')
 
-    const dateString = vote.updatedAt && vote.type !== 'historicalVote'
-        ? ` (${new Date(vote.updatedAt).toLocaleDateString()})`
+    const voteDate = vote.updatedAt ?? vote.createdAt
+    const dateString = voteDate && vote.type !== 'historicalVote'
+        ? ` (${new Date(voteDate).toLocaleDateString()})`
         : ''
 
     const description = owner ? 'My Vote: ' : `${vote.displayName}: `

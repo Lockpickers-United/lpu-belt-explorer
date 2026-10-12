@@ -60,9 +60,11 @@ describe('EntryClassificationVote', () => {
     })
 
     it('shows previous modern votes on the lock route', () => {
-        renderClassification(entryFor([previousVote]), '/locks')
+        const createdAt = '2026-09-01T00:00:00Z'
+        renderClassification(entryFor([{...previousVote, updatedAt: undefined, createdAt}]), '/locks')
 
         expect(screen.getByRole('group', {name: 'Previous votes'})).toBeInTheDocument()
+        expect(screen.getByText(`Previous round (${new Date(createdAt).toLocaleDateString()})`)).toBeInTheDocument()
         expect(screen.queryByRole('group', {name: 'Historical votes'})).not.toBeInTheDocument()
     })
 })

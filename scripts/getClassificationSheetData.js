@@ -6,7 +6,7 @@ import fs from 'fs'
 import {findLastMentionedVoter} from './classificationNoteMatcher.js'
 
 const refreshData = false
-const historical = true
+const historical = false
 
 const CREDENTIALS_PATH = new URL('../keys/google-credentials.json', import.meta.url)
 const OUTPUT_DIR = new URL('../src/data/classification/', import.meta.url)

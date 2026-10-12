@@ -6,7 +6,8 @@ import classificationChangelogs from '../data/classification-samples-changelog.j
 import dayjs from 'dayjs'
 import ClassificationContext from './classificationContextValue.js'
 
-const newestFirst = (a, b) => dayjs(b.updatedAt).valueOf() - dayjs(a.updatedAt).valueOf()
+const voteTime = vote => dayjs(vote.updatedAt ?? vote.createdAt).valueOf()
+const newestFirst = (a, b) => voteTime(b) - voteTime(a)
 
 function groupByEntry(records) {
     const grouped = new Map()
@@ -55,14 +56,14 @@ export function ClassificationProvider({children}) {
         const milestone = getLatestMilestone(entry).valueOf()
         return (votesByEntry.get(entry.id) ?? [])
             .filter(vote => vote.type === 'vote' &&
-                (reopened || dayjs(vote.updatedAt).valueOf() >= milestone))
+                (reopened || voteTime(vote) >= milestone))
     }, [getAdminAction, getLatestMilestone])
 
     const getPreviousVotes = useCallback((entry) => {
         if (getAdminAction(entry)?.status === 'Re-opened') return []
         const milestone = getLatestMilestone(entry).valueOf()
         return (votesByEntry.get(entry.id) ?? [])
-            .filter(vote => vote.type === 'vote' && dayjs(vote.updatedAt).valueOf() < milestone)
+            .filter(vote => vote.type === 'vote' && voteTime(vote) < milestone)
     }, [getAdminAction, getLatestMilestone])
 
     const getUserVote = useCallback((entry) => {
