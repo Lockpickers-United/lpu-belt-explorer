@@ -3169,5 +3169,20 @@
     "name": "CES RE Plus",
     "dateAdded": "2026-09-01T00:58:56.480Z",
     "dateDeleted": "2026-09-01T11:52:06.295Z"
+  },
+  {
+    "id": "80a13301",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Chicago Lock Co",
+        "model": "Tubular UL"
+      }
+    ],
+    "version": "9-11 pin, with 2-4 pin in pin",
+    "name": "Chicago Lock Co Tubular UL",
+    "currentBeltDate": "2026-10-09T23:22:45.036Z",
+    "dateAdded": "2026-10-09T23:22:45.036Z",
+    "dateDeleted": "2026-10-12T23:33:54.112Z"
   }
 ]
