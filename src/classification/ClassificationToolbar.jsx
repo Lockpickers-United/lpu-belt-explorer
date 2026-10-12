@@ -19,14 +19,14 @@ export default function ClassificationToolbar() {
     const tabs = useMemo(() => [
         {label: 'Active', mobileLabel: 'Active', value: '/classification'},
         {label: 'Ranked', mobileLabel: 'Ranked', value: '/classification/ranked'},
-        {label: 'Historical', mobileLabel: 'Historical', value: '/classification/past'},
+        {label: 'Historical', mobileLabel: 'Past', value: '/classification/past'},
         {label: changelogLabel, mobileLabel: 'Changelogs', value: '/classification/changelog'}
     ], [changelogLabel])
 
     const location = useLocation()
 
     const {isMobile} = useWindowSize()
-
+    const padding = !isMobile ? '12px 16px' : '12px 0px'
     return (
         <AppBar position='relative' style={{boxShadow: 'none'}}>
             <Tabs
@@ -38,12 +38,9 @@ export default function ClassificationToolbar() {
                 {tabs.map((tab) =>
                     <Tab
                         key={tab.value}
-                        label={
-                            <Tooltip title={tab.label} arrow disableFocusListener>
-                                <span>{!isMobile ? tab.label : tab.mobileLabel}</span>
-                            </Tooltip>
-                        }
+                        label={!isMobile ? tab.label : tab.mobileLabel}
                         value={tab.value}
+                        style={{padding}}
                         component={Link}
                         to={tab.value}/>
                 )}
