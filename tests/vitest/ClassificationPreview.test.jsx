@@ -80,6 +80,40 @@ describe('classification previews', () => {
         expect(screen.getByRole('button', {name: 'Save And Stage'})).toBeDisabled()
     })
 
+    it.each([
+        {actionId: 'a_e2fd1000', status: 'Pending', saveLabel: 'Save'},
+        {actionId: 'a_e2fd1519', status: 'Re-opened', saveLabel: 'Save Changes'}
+    ])('prefills only an unpublished context-selected action: $actionId', ({actionId, status, saveLabel}) => {
+        const entry = {
+            ...allEntries.find(item => item.id === 'e2fd1519'),
+            adminActionId: actionId,
+            currentVotes: [],
+            previousVotes: []
+        }
+        const baseAccessInfo = defaultTestContextValues.access.accessInfo
+        const router = createMemoryRouter([{
+            path: '/classification',
+            handle: {route: 'classification'},
+            element: (
+                <ClassificationProvider><EntryClassificationAdmin entry={entry}/></ClassificationProvider>
+            )
+        }], {initialEntries: ['/classification']})
+
+        renderWithProviders(
+            <RouterProvider router={router}/>,
+            {
+                auth: {user: {uid: 'test-user'}},
+                access: {accessInfo: {
+                    ...baseAccessInfo,
+                    roles: {...baseAccessInfo.roles, classificationAdmin: true}
+                }}
+            }
+        )
+
+        expect(screen.getByText(status)).toBeInTheDocument()
+        expect(screen.getByRole('button', {name: saveLabel})).toBeDisabled()
+    })
+
     it('keeps the vote action available on a scorecard row', () => {
         const router = createMemoryRouter([{
             path: '/scorecard',

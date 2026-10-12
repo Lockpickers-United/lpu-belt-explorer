@@ -159,9 +159,9 @@ describe('ClassificationDataProvider', () => {
         expect(classificationData.visibleEntries).toHaveLength(3)
         expect(screen.getByLabelText('Greenish')).toBeInTheDocument()
         expect(screen.getByLabelText('Crispix')).toBeInTheDocument()
-        expect(screen.getByLabelText('PeaceWeapon (previous vote)')).toBeInTheDocument()
+        expect(screen.getByLabelText('PeaceWeapon (previous)')).toBeInTheDocument()
         expect(screen.getByLabelText('Sidepicks')).toBeInTheDocument()
-        expect(screen.getByLabelText('yabende (previous vote)')).toBeInTheDocument()
+        expect(screen.getByLabelText('yabende (previous)')).toBeInTheDocument()
     })
 
     it('updates nested vote entries when a voter filter is applied', async () => {

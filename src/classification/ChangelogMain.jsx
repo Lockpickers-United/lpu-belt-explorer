@@ -76,7 +76,7 @@ export default function ChangelogMain() {
     const {isMobile} = useWindowSize()
     const style = {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto', marginTop: 24, padding: '0 8px'}
 
-    const exportDate = selectedChangelog ? dayjs(selectedChangelog.publishedAt) : dayjs()
+    const exportDate = selectedChangelog ? dayjs(selectedChangelog.lastPublishedAt) : dayjs()
     let clipboardText = `**${exportDate.format('MMMM YYYY').toUpperCase()}**\n\n`
     sections.map((key) => {
             if (groupedEntries[key]?.length)
@@ -194,7 +194,7 @@ export default function ChangelogMain() {
     }, [previousChangelogs, setSearchParams])
 
     const title = selectedChangelog
-        ? dayjs(selectedChangelog.publishedAt).format('MMMM D, YYYY').toUpperCase()
+        ? dayjs(selectedChangelog.lastPublishedAt).format('MMMM D, YYYY').toUpperCase()
         : accessInfo.roles.classificationAdmin ? 'STAGED CHANGES' : 'APPROVED CHANGES'
 
     return (
@@ -239,7 +239,7 @@ export default function ChangelogMain() {
                                       onClick={() => handleMenuClick(entry.id)}
                                       style={{display: 'flex', justifyContent: 'space-between'}}>
                                 <div style={{color: selectedChangelog?.id === entry.id ? '#42d736' : 'inherit'}}>
-                                    {dayjs(entry.publishedAt).format('MMMM D, YYYY')}
+                                    {dayjs(entry.lastPublishedAt).format('MMMM D, YYYY')}
                                 </div>
                                 <div style={{
                                     minWidth: '20px',

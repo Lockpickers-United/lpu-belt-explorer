@@ -1,8 +1,7 @@
 import React, {useCallback, useContext, useEffect, useMemo, useState} from 'react'
 import {useAccess} from '../app/AccessContext.jsx'
-import classificationAdminActions from '../data/classification-samples-admin.json'
+import ClassificationContext from '../app/ClassificationContext.jsx'
 import DisplayClassificationVotes from './DisplayClassificationVotes.jsx'
-import dayjs from 'dayjs'
 import useWindowSize from '../util/useWindowSize.jsx'
 import Link from '@mui/material/Link'
 import useForm from '../formUtils/useForm.jsx'
@@ -15,24 +14,21 @@ import EntryClassificationVote from './EntryClassificationVote.jsx'
 import ChangelogPreviewButton from './ChangelogPreviewButton.jsx'
 import DataContext from '../context/DataContext.jsx'
 
-const statuses = ['Pending', 'Staged', 'Published', 'Re-opened', 'Settled']
+const statuses = ['Draft', 'Pending', 'Staged', 'Published', 'Re-opened', 'Settled']
 const actions = ['Belt Change', 'Sameline', 'Delete']
 
 export default function EntryClassificationAdmin({entry, handleToggle}) {
     const {accessInfo} = useAccess()
+    const {getAdminAction} = useContext(ClassificationContext)
     const {allEntries} = useContext(DataContext)
 
-    const entryClassificationAdminActions = useMemo(() => classificationAdminActions && classificationAdminActions
-            .filter(a => a.entryId === entry.id)
-            .sort((a, b) => dayjs(b.updatedAt).valueOf() - dayjs(a.updatedAt).valueOf())
-        || [], [entry.id])
-
-    const adminAction = useMemo(() =>
-        entryClassificationAdminActions && entryClassificationAdminActions
-            .find(a => a.entryId === entry.id) || {status: 'Pending'}, [entryClassificationAdminActions, entry.id])
+    const adminAction = useMemo(() => {
+        const action = getAdminAction(entry)
+        return action && action.status !== 'Published' ? action : {status: 'Pending'}
+    }, [getAdminAction, entry])
 
     let form
-    const baseForm = useMemo(() => adminAction ?? {}, [adminAction])
+    const baseForm = adminAction
 
     const processChange = useCallback((event) => {
         const {name, value} = event.target

@@ -114,14 +114,14 @@ describe('ClassificationProvider', () => {
             change.id === publishedAction.id))
         const entry = allEntries.find(item => item.id === publishedAction.entryId)
         const previousVote = votes.find(vote => vote.entryId === entry.id &&
-            Date.parse(vote.updatedAt) < Date.parse(changelog.publishedAt))
+            Date.parse(vote.updatedAt) < Date.parse(changelog.lastPublishedAt))
         const currentVote = votes.find(vote => vote.entryId === entry.id &&
-            Date.parse(vote.updatedAt) > Date.parse(changelog.publishedAt))
+            Date.parse(vote.updatedAt) > Date.parse(changelog.lastPublishedAt))
 
         expect(previousVote).toBeDefined()
         expect(currentVote).toBeDefined()
-        expect(publishedAction.updatedAt).toBe(changelog.publishedAt)
-        expect(publishedAction.lastPublishedAt).toBe(changelog.publishedAt)
+        expect(publishedAction.updatedAt).toBe(changelog.lastPublishedAt)
+        expect(publishedAction.lastPublishedAt).toBe(changelog.lastPublishedAt)
         expect(changelog.changes).toContainEqual(expect.objectContaining({
             id: publishedAction.id,
             entryId: entry.id,
@@ -130,7 +130,7 @@ describe('ClassificationProvider', () => {
         }))
         expect(classification.previousChangelogs).toContain(changelog)
         expect(classification.allAdminActions.every(action => action.type === 'adminAction')).toBe(true)
-        expect(classification.getLatestMilestone(entry).valueOf()).toBe(Date.parse(changelog.publishedAt))
+        expect(classification.getLatestMilestone(entry).valueOf()).toBe(Date.parse(changelog.lastPublishedAt))
         expect(classification.getAdminAction(entry)).toEqual(publishedAction)
         expect(classification.getPreviousVotes(entry)).toContainEqual(previousVote)
         expect(classification.getPreviousVotes(entry)).not.toContainEqual(currentVote)

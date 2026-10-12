@@ -19,7 +19,7 @@ export default function DisplayClassificationVotes({votes, style = {}}) {
     })
 
     const previousColors = Object.entries(belts).reduce((acc, [belt, info]) => {
-        acc[belt] = !belt.includes('Black') ? darken(info.color, 0.3) : '#666'
+        acc[belt] = !belt.includes('Black') ? darken(info.color, 0.4) : '#666'
         return acc
     }, {})
 
@@ -36,7 +36,7 @@ export default function DisplayClassificationVotes({votes, style = {}}) {
 
                 return (
                     <Tooltip key={vote.id} title={vote.previous
-                        ? `${vote.displayName} (previous vote)`
+                        ? `${vote.displayName} (previous)`
                         : vote.displayName}>
                         <div style={{
                             position: 'relative',

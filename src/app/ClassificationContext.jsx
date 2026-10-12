@@ -98,7 +98,7 @@ export function ClassificationProvider({children}) {
         isActive,
         previousChangelogs: classificationChangelogs
             .filter(log => log.changes.length > 0)
-            .sort((a, b) => dayjs(b.publishedAt).valueOf() - dayjs(a.publishedAt))
+            .sort((a, b) => dayjs(b.lastPublishedAt).valueOf() - dayjs(a.lastPublishedAt))
     }), [loggedInUserVotes, getUserVote, getAdminAction, getLatestMilestone, getAdminActionStatus, getCurrentVotes, getPreviousVotes, isActive])
 
     return (
