@@ -1,3 +1,0 @@
-import{t as e}from"./entryName-DqGAeb60.js";function t({entry:t,adminAction:n,targetLock:r,linebreak:i}){let{action:a,samelineLock:o,updatedBelt:s,note:c}=n,l=r?e(r,`short`,{includeVersion:!0}):o?.lockFullName,u=r?.belt??o?.belt,d=e(t,`short`),f=t.version?` - ${t.version}`:``,p=i?`
-
-`:` - `,m=`- **${d}**${f}${p}${s?.toUpperCase()}. ${c}`;return a===`Sameline`&&(m=`- **${d}**${f}${p}sameline with **${l}** at ${u?.toUpperCase()}. ${c}`),a===`Delete`&&(m=`- **${d}**${f}${p}${t.belt}. ${c}`),m}export{t};
