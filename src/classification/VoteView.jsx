@@ -8,9 +8,10 @@ import AttachmentIcon from '@mui/icons-material/Attachment'
 import {useAccess} from '../app/AccessContext.jsx'
 import {useMatches} from 'react-router-dom'
 
-export default function VoteView({vote = {}, handleActive, owner, previous}) {
+export default function VoteView({vote = {}, handleActive, owner}) {
     const {accessInfo} = useAccess()
     const isChangelog = useMatches().some(match => match.handle?.route === 'changelog')
+    const isHistorical = useMatches().some(match => match.handle?.route === 'historical')
 
     const dateString = vote.updatedAt && vote.type !== 'historicalVote'
         ? ` (${new Date(vote.updatedAt).toLocaleDateString()})`
@@ -59,7 +60,7 @@ export default function VoteView({vote = {}, handleActive, owner, previous}) {
                     </div>
                 }
 
-                {(owner || accessInfo.roles.classificationAdmin) && !previous && !isChangelog &&
+                {(owner || accessInfo.roles.classificationAdmin) && !isChangelog && !isHistorical &&
                     <div style={{width: '100%', display: 'flex', justifyContent: 'flex-end', marginTop: 4}}>
                         <Button onClick={() => handleActive('voteForm')} variant='text' size='small'
                                 style={{color: buttonColor}}>Edit</Button>
