@@ -1,7 +1,6 @@
 import AppBar from '@mui/material/AppBar'
 import Tab from '@mui/material/Tab'
 import Tabs from '@mui/material/Tabs'
-import Tooltip from '@mui/material/Tooltip'
 import React, {useMemo} from 'react'
 import useWindowSize from '../util/useWindowSize'
 import {Link, useLocation} from 'react-router-dom'

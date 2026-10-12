@@ -275,7 +275,7 @@ export default function EntryClassificationAdmin({entry, handleToggle}) {
                             <Button variant='text' size='small' disabled
                                     color='success' style={{whiteSpace: 'nowrap'}}>{buttonText}</Button>
                             <Button variant='text' size='small' disabled
-                                    color='success' style={{whiteSpace: 'nowrap'}}>Save And Stage</Button>
+                                    color='success' style={{whiteSpace: 'nowrap'}}>Publish Now</Button>
                         </div>
                     </div>
                     <div role='status' style={{color: '#aaa', fontSize: '0.85rem', textAlign: 'right'}}>

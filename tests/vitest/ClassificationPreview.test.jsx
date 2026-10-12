@@ -77,7 +77,7 @@ describe('classification previews', () => {
 
         expect(screen.getByText('Preview only — admin changes are unavailable.')).toBeInTheDocument()
         expect(screen.getByRole('button', {name: 'Save'})).toBeDisabled()
-        expect(screen.getByRole('button', {name: 'Save And Stage'})).toBeDisabled()
+        expect(screen.getByRole('button', {name: 'Publish Now'})).toBeDisabled()
     })
 
     it.each([
