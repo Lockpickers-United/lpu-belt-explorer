@@ -1,0 +1,1 @@
+import"./rolldown-runtime-B0Z9INg1.js";import{n as e,t}from"./jsx-runtime-DpJIb57s.js";import{r as n}from"./chunk-OB3PAWPO-CoPIcGoc.js";import{t as r}from"./data-BhjketYE.js";import{n as i}from"./ClassificationContext-CcYrBNdo.js";e();var a=t();function o(){return(0,a.jsx)(i,{children:(0,a.jsx)(n,{context:{allEntries:r}})})}export{o as default};
