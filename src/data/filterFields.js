@@ -36,7 +36,15 @@ export const classificationFilterFields = [
     {label: 'Collection', fieldName: 'collection', sort: collectionFieldSort, userBased: true}
 ]
 
-
+export const historicalFilterFields = [
+    {label: 'Make', fieldName: 'makes'},
+    {label: 'Vote From', fieldName: 'displayName'},
+    {label: 'Belt', fieldName: 'belt', sort: beltSort},
+    {label: 'Locking Mechanism', fieldName: 'lockingMechanisms'},
+    {label: 'Features', fieldName: 'features'},
+    {label: 'Content', fieldName: 'content'},
+    {label: 'Collection', fieldName: 'collection', sort: collectionFieldSort, userBased: true}
+]
 
 export const dialFilterFields = [
     {label: 'Make', fieldName: 'make'},

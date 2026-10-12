@@ -27,6 +27,7 @@ export function HistoricalVoteDataProvider({children, allEntries}) {
     const {filters: allFilters, activeFilterGroups} = useContext(FilterContext)
     const {search, sort, expandAll} = allFilters
 
+
     const voteFilterGroups = useMemo(() => {
         return activeFilterGroups().filter(g => ['displayName', 'votedBelt'].includes(g.fieldName))
     }, [activeFilterGroups])
@@ -46,7 +47,7 @@ export function HistoricalVoteDataProvider({children, allEntries}) {
                 const votedBelt = filteredVotes.map(v => v.votedBelt)
                 return {
                     ...entry,
-                    assignedBelt: entry.belt,
+                    assignedBelt: entry.belt.replace(/ \d+/, ''),
                     displayName,
                     classificationActive: false,
                     classificationStatus: 'Has Votes',
@@ -104,7 +105,7 @@ export function HistoricalVoteDataProvider({children, allEntries}) {
         searchedEntries,
         getEntryFromId,
         expandAll,
-        profile
+        profile,
     }), [mappedEntries, visibleEntries, searchedEntries, getEntryFromId, expandAll, profile])
 
     return (

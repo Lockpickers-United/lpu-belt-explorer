@@ -11,12 +11,16 @@ import {lockSortFields} from '../data/sortFields'
 import DataContext from './LockDataProvider.jsx'
 import SearchDidYouMeanBar from '../filters/SearchDidYouMeanBar.jsx'
 import AuthContext from '../app/AuthContext.jsx'
+import LockListContext from './LockListContext.jsx'
+import AppBar from '@mui/material/AppBar'
 
 function LockList() {
     const {isMobile} = useWindowSize()
     const {lockCollection, adminRole} = useContext(DBContext)
     const {visibleBeltEntries = []} = useContext(DataContext)
     const {isLoggedIn, user, userClaims} = useContext(AuthContext)
+    const {tab, setTab} = useContext(LockListContext)
+
     const isAuthorized = isLoggedIn
         && user
         && (['lpuAdmin', 'admin'].some(claim => userClaims.includes(claim)) || adminRole)
@@ -37,8 +41,9 @@ function LockList() {
     return (
         <React.Fragment>
             <Nav title='Locks' extras={extras}/>
-
-            <BeltToolbar/>
+            <AppBar position='relative' style={{boxShadow: 'none'}}>
+                <BeltToolbar tab={tab} setTab={setTab}/>
+            </AppBar>
             <SearchDidYouMeanBar/>
 
             <Entries profile={lockCollection} advancedEnabled={true}/>

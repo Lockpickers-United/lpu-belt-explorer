@@ -8,10 +8,8 @@ import {Outlet} from 'react-router-dom'
 
 export default function ClassificationParentRoute() {
     return (
-        <FilterProvider filterFields={classificationFilterFields}>
             <ClassificationProvider>
                 <Outlet context={{allEntries}}/>
             </ClassificationProvider>
-        </FilterProvider>
     )
 }
