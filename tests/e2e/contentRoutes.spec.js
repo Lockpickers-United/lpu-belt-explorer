@@ -33,3 +33,10 @@ test('user can view About page', async ({page}) => {
     await page.goto('/#/about')
     await expect(page.getByRole('heading', {name: 'Introduction to the Belt Ranking System'})).toBeVisible()
 })
+
+test('anonymous visitors see the classification sign-in prompt', async ({page}) => {
+    await page.goto('/#/classification')
+
+    await expect(page.getByText('You must be signed in to continue.')).toBeVisible()
+    await expect(page.getByRole('button', {name: 'Sign In with Google'})).toBeVisible()
+})

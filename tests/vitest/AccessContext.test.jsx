@@ -13,6 +13,7 @@ function AccessState() {
             <span>Enabled: {JSON.stringify(accessInfo.enabledRoles)}</span>
             <span>Features: {JSON.stringify(accessInfo.features)}</span>
             <span>Level: {accessInfo.level}</span>
+            <span>Highest role: {accessInfo.highestRole || 'none'}</span>
             <span>Enabled level: {accessInfo.enabledLevel}</span>
             <span>Active role: {accessInfo.activeRole || 'none'}</span>
             <span>Preview role: {accessInfo.previewRole ?? 'actual'}</span>
@@ -59,6 +60,7 @@ describe('AccessContext', () => {
         renderAccess(anonymousAuth)
 
         expect(screen.getByText('Level: 0')).toBeInTheDocument()
+        expect(screen.getByText('Highest role: none')).toBeInTheDocument()
         expect(screen.getByText('Enabled level: 0')).toBeInTheDocument()
         expect(screen.getByText('Active role: none')).toBeInTheDocument()
         expect(screen.getByText(/Enabled:.*"admin":false/)).toBeInTheDocument()
@@ -114,6 +116,7 @@ describe('AccessContext', () => {
         })
 
         expect(screen.getByText(`Level: ${level}`)).toBeInTheDocument()
+        expect(screen.getByText(`Highest role: ${claim}`)).toBeInTheDocument()
         expect(screen.getByText('Enabled level: 0')).toBeInTheDocument()
         expect(screen.getByText('Active role: none')).toBeInTheDocument()
         for (const [feature, enabled] of Object.entries(expectedFeatures)) {
@@ -133,6 +136,7 @@ describe('AccessContext', () => {
         expect(screen.getByText(/Roles:.*"blackBelt":true/)).toBeInTheDocument()
         expect(screen.getByText(/Roles:.*"classificationTeam":true/)).toBeInTheDocument()
         expect(screen.getByText(/Features:.*"classificationVote":true/)).toBeInTheDocument()
+        expect(screen.getByText('Highest role: blackBelt')).toBeInTheDocument()
 
         rerender(
             <AuthContext.Provider value={{...blackBeltAuth, user: {uid: 'another-member'}, userClaims: []}}>
@@ -142,6 +146,7 @@ describe('AccessContext', () => {
 
         expect(screen.getByText(/Roles:.*"blackBelt":false/)).toBeInTheDocument()
         expect(screen.getByText(/Roles:.*"classificationTeam":false/)).toBeInTheDocument()
+        expect(screen.getByText('Highest role: none')).toBeInTheDocument()
     })
 
     it('uses calendar dates for QA expiry and the canonical QA role key', () => {
@@ -201,6 +206,7 @@ describe('AccessContext', () => {
         expect(screen.getByText(/Roles:.*"classificationAdmin":true/)).toBeInTheDocument()
         expect(screen.getByText(/Roles:.*"lpuMod":true/)).toBeInTheDocument()
         expect(screen.getByText(/Roles:.*"classificationTeam":true/)).toBeInTheDocument()
+        expect(screen.getByText('Highest role: admin')).toBeInTheDocument()
         expect(screen.getByText(/Features:.*"manageRequests":true/)).toBeInTheDocument()
         fireEvent.click(screen.getByRole('button', {name: 'Toggle admin'}))
         fireEvent.click(screen.getByRole('button', {name: 'Toggle QA'}))
@@ -223,23 +229,27 @@ describe('AccessContext', () => {
         fireEvent.click(screen.getByRole('button', {name: 'Preview none'}))
         expect(screen.getByText('Preview role: none')).toBeInTheDocument()
         expect(screen.getByText('Level: 0')).toBeInTheDocument()
+        expect(screen.getByText('Highest role: none')).toBeInTheDocument()
         expect(screen.getByText('Enabled level: 0')).toBeInTheDocument()
         expect(screen.getByText(/Features:.*"manageRequests":false/)).toBeInTheDocument()
 
         fireEvent.click(screen.getByRole('button', {name: 'Preview moderator'}))
         expect(screen.getByText('Preview role: lpuMod')).toBeInTheDocument()
         expect(screen.getByText('Level: 90')).toBeInTheDocument()
+        expect(screen.getByText('Highest role: lpuMod')).toBeInTheDocument()
         expect(screen.getByText(/Features:.*"manageRequests":false/)).toBeInTheDocument()
 
         fireEvent.click(screen.getByRole('button', {name: 'Preview admin'}))
         expect(screen.getByText('Preview role: admin')).toBeInTheDocument()
         expect(screen.getByText('Level: 100')).toBeInTheDocument()
+        expect(screen.getByText('Highest role: admin')).toBeInTheDocument()
         expect(screen.getByText(/Roles:.*lpuMod.*true/)).toBeInTheDocument()
         expect(screen.getByText(/Roles:.*classificationTeam.*true/)).toBeInTheDocument()
 
         fireEvent.click(screen.getByRole('button', {name: 'Preview black belt'}))
         expect(screen.getByText('Preview role: blackBelt')).toBeInTheDocument()
         expect(screen.getByText('Level: 70')).toBeInTheDocument()
+        expect(screen.getByText('Highest role: blackBelt')).toBeInTheDocument()
         expect(screen.getByText(/Roles:.*"classificationTeam":true/)).toBeInTheDocument()
         expect(screen.getByText(/Features:.*"classificationVote":true/)).toBeInTheDocument()
         expect(screen.getByText(/Features:.*"manageRequests":false/)).toBeInTheDocument()
@@ -247,6 +257,7 @@ describe('AccessContext', () => {
         fireEvent.click(screen.getByRole('button', {name: 'Preview QA'}))
         expect(screen.getByText('Preview role: qaUser')).toBeInTheDocument()
         expect(screen.getByText('Level: 20')).toBeInTheDocument()
+        expect(screen.getByText('Highest role: qaUser')).toBeInTheDocument()
         expect(screen.getByText(/Features:.*"classificationVote":false/)).toBeInTheDocument()
 
         fireEvent.click(screen.getByRole('button', {name: 'Clear preview'}))

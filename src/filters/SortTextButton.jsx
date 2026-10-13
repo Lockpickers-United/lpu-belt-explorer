@@ -70,7 +70,7 @@ function SortTextButton({sortValues, compactMode, expandAll}) {
                 <div style={{marginLeft: 5, padding: 5, fontWeight: 700}}>SORT BY</div>
                 {sortValues.map(({label, value, admin}) => {
                     const adminStyle = isAuthorized && admin
-                        ? {fontStyle: 'italic', color: theme.menu?.admin}
+                        ? {fontStyle: 'italic', color: theme.roles?.admin}
                         : {}
                     return <MenuItem
                             key={label}

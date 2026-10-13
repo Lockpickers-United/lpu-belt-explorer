@@ -166,7 +166,7 @@ export default [
         title: 'Reports',
         icon: <AssessmentIcon fontSize='small'/>,
         path: '/admin',
-        allowedRoles: ['admin', 'lpuMod'],
+        allowedRoles: ['admin'],
         children: [
             {
                 admin: true,

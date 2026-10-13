@@ -37,8 +37,9 @@ Before adding a fetch, subscription, or context, identify the existing owner. Sh
 Authorization and optional UI modes are separate:
 
 - `AuthContext.userClaims` is the source for authenticated roles such as `admin`, `lpuAdmin`, `qaUser`, and `blackBelt`.
-- `AccessContext` derives claimed and user-enabled UI roles from the authenticated user. Consumers use `useAccess()` and distinguish `level` from `enabledLevel`.
-- In the classification project, a `blackBelt` claim grants the `classificationTeam` access role. The classification route and menu use claims; the profile's `blackBeltAwardedAt` does not grant classification access. Other profile-based black-belt features still use profile data.
+- `AccessContext` derives claimed and user-enabled UI roles from the authenticated user. Consumers use `useAccess()` and distinguish `level` from `enabledLevel`. `highestRole` is the highest effective claimed or preview role used for navigation colors; it does not depend on an enabled UI mode.
+- Main menu entries with `allowedRoles` are shown when any role in `AccessContext.accessInfo.roles` matches. Menu visibility is a display choice; each route still needs its own access check. Reports and the `/admin` route require `admin`; Admin Tools and Server Status are also shown only to admins.
+- In the classification project, a `blackBelt` claim grants the `classificationTeam` access role. The classification route and menu use these derived roles; the profile's `blackBeltAwardedAt` does not grant classification access. Other profile-based black-belt features still use profile data. The classification parent route waits for authentication, prompts anonymous visitors to sign in, and shows an access dialog with a link back to Locks for signed-in users without a qualifying role.
 - `DBContext.adminRole` and `DBContext.qaUserRole` derive role status from authentication and claims.
 - `AccessContext.accessInfo.enabledRoles` contains user-controlled UI/development modes. These modes must never grant data access or permit writes.
 - In development, the account menu can preview a subset of the signed-in account's roles, or a member view. This preview only restricts `AccessContext` roles and features; it does not change Firebase claims, `DBContext` authorization, profile subscriptions, or server/rules access. It resets on reload and cannot test backend permissions.

@@ -18,7 +18,6 @@ import {useAccess} from '../app/AccessContext.jsx'
 
 function MainMenu() {
     const {accessInfo = {}} = useAccess()
-    console.log(accessInfo)
     const {beta} = useContext(AppContext)
     const {adminRole} = useContext(DBContext)
     const {userClaims} = useContext(AuthContext)

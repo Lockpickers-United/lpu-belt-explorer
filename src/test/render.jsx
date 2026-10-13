@@ -51,6 +51,7 @@ export const defaultTestContextValues = {
                 qaTools: false
             },
             level: 0,
+            highestRole: null,
             enabledLevel: 0,
             activeRole: null,
             previewRole: null,

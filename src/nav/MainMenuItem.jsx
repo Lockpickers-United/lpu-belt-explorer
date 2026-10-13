@@ -7,14 +7,15 @@ import {useLocation, useNavigate} from 'react-router-dom'
 import {useTheme} from '@mui/material'
 import {useAccess} from '../app/AccessContext.jsx'
 
-function MainMenuItem({menuItem, onClose, child, childCount, childIndex}) {
+function MainMenuItem({menuItem, onClose, child, childCount, childIndex, allowedRoles: parentAllowedRoles}) {
     const {accessInfo} = useAccess()
 
     const navigate = useNavigate()
     const location = useLocation()
     const theme = useTheme()
     const searchParams = queryString.parse(location.search)
-    const {children, title, params, path, icon, admin, allowedRoles} = menuItem
+    const {children, title, params, path, icon, admin, allowedRoles: itemAllowedRoles} = menuItem
+    const allowedRoles = itemAllowedRoles ?? parentAllowedRoles
 
     const isCurrentPath = location.pathname === path
     const isCurrentParams = Object.keys(params || [])
