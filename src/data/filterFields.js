@@ -39,7 +39,7 @@ export const classificationFilterFields = [
 export const historicalFilterFields = [
     {label: 'Make', fieldName: 'makes'},
     {label: 'Vote From', fieldName: 'displayName'},
-    {label: 'Belt', fieldName: 'belt', sort: beltSort},
+    {label: 'Belt', fieldName: 'assignedBelt', sort: beltSort},
     {label: 'Locking Mechanism', fieldName: 'lockingMechanisms'},
     {label: 'Features', fieldName: 'features'},
     {label: 'Content', fieldName: 'content'},

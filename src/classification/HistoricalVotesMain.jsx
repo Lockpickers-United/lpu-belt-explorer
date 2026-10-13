@@ -23,8 +23,8 @@ export default function HistoricalVotesMain() {
     const setTab = useCallback((value) => {
         setCurrentTab(value)
         if(value === 'search') {
-            removeFilters(['belt'])
-        } else addFilter('belt', value, true)
+            removeFilters(['assignedBelt'])
+        } else addFilter('assignedBelt', value, true)
     }, [addFilter, removeFilters])
 
     const {isMobile} = useWindowSize()
