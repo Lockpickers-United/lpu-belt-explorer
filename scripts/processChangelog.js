@@ -14,7 +14,7 @@ const app = initializeApp({
 
 const db = getFirestore(app)
 
-const WRITE_TO_DB = true
+const WRITE_TO_DB = false
 
 // set to desired id mapping
 // { 'old ID': 'new ID' }

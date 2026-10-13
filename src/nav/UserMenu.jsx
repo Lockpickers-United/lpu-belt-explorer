@@ -162,7 +162,7 @@ function UserMenu() {
                                                   onClick={() => setAccessPreview(role)}>
                                             <ListItemText
                                                 sx={{'& .MuiListItemText-primary': {paddingLeft: 1, color: accessInfo.previewRole === role ? '#42d736' : 'inherit'}}}>
-                                                {previewRoleLabels[role]}
+                                                {previewRoleLabels[role] ?? '[role]'}
                                             </ListItemText>
                                         </MenuItem>
                                     )}
@@ -273,6 +273,7 @@ const previewRoleLabels = {
     admin: 'Admin',
     classificationAdmin: 'Classification Admin',
     lpuMod: 'LPU Moderator',
+    blackBelt: 'Black Belt',
     classificationTeam: 'Classification Team',
     qaUser: 'QA User'
 }

@@ -12,9 +12,9 @@ const app = initializeApp({
 // change to (default) and true for production
 // const db = getFirestore(app, 'lpubelts-dev')
 
-const db = getFirestore(app, 'lpubelts-dev')
+const db = getFirestore(app)
 
-const WRITE_TO_DB = true
+const WRITE_TO_DB = false
 
 // Custom claims to set
 const _allClaims = {
@@ -25,15 +25,15 @@ const _allClaims = {
     dataAdmin: true,    // can write to firebase: data-cache
     classificationAdmin: true,
     classificationTeam: true,
+    blackBelt: true,
 }
 //const newClaims = {raflAdmin:true, dataAdmin:true, admin: true}
 const newClaims = {}
-const removeClaims = ['lpuMod']
+const removeClaims = ['blackBelt']
 
 const users = [
-    {uid: '4qqxB0nW8dczUws5XuAyhEkgZEj2', name: 'mgtest'},
+    {uid: 'GGplAdctTfVDLVvYsfIADJmfp8f2', name: 'mgsecure'},
 ]
-
 
 const _allUsers = [
     {uid: 'GGplAdctTfVDLVvYsfIADJmfp8f2', name: 'mgsecure'},

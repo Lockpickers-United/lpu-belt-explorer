@@ -84,7 +84,7 @@ describe('UserMenu access controls', () => {
                     enabledLevel: 0,
                     activeRole: null,
                     previewRole: 'none',
-                    availablePreviewRoles: ['admin', 'qaUser']
+                    availablePreviewRoles: ['admin', 'blackBelt', 'qaUser']
                 },
                 setAccessPreview
             }
@@ -96,9 +96,11 @@ describe('UserMenu access controls', () => {
         expect(previewMenuItem).toHaveAttribute('aria-expanded', 'true')
         fireEvent.click(screen.getByText('Actual access'))
         fireEvent.click(screen.getByText('QA User'))
+        fireEvent.click(screen.getByText('Black Belt'))
 
         expect(setAccessPreview).toHaveBeenNthCalledWith(1, null)
         expect(setAccessPreview).toHaveBeenNthCalledWith(2, 'qaUser')
+        expect(setAccessPreview).toHaveBeenNthCalledWith(3, 'blackBelt')
         expect(screen.queryByText('LPU Moderator')).not.toBeInTheDocument()
     })
 })

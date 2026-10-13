@@ -25,7 +25,6 @@ Read this reference for provider, route, context, authentication, role, or profi
 5. `AppProvider`
 6. `SystemMessageProvider`
 7. `ScoringProvider`
-8. `UIProvider`
 
 `ProfileProvider` is route-scoped where profile data is needed. Preserve provider ordering when adding dependencies, and update test render helpers/mocks when a context contract changes.
 
@@ -37,12 +36,12 @@ Before adding a fetch, subscription, or context, identify the existing owner. Sh
 
 Authorization and optional UI modes are separate:
 
-- `AuthContext.userClaims` is the source for authenticated roles such as `admin`, `lpuAdmin`, and `qaUser`.
+- `AuthContext.userClaims` is the source for authenticated roles such as `admin`, `lpuAdmin`, `qaUser`, and `blackBelt`.
 - `AccessContext` derives claimed and user-enabled UI roles from the authenticated user. Consumers use `useAccess()` and distinguish `level` from `enabledLevel`.
+- In the classification project, a `blackBelt` claim grants the `classificationTeam` access role. The classification route and menu use claims; the profile's `blackBeltAwardedAt` does not grant classification access. Other profile-based black-belt features still use profile data.
 - `DBContext.adminRole` and `DBContext.qaUserRole` derive role status from authentication and claims.
 - `AccessContext.accessInfo.enabledRoles` contains user-controlled UI/development modes. These modes must never grant data access or permit writes.
 - In development, the account menu can preview a subset of the signed-in account's roles, or a member view. This preview only restricts `AccessContext` roles and features; it does not change Firebase claims, `DBContext` authorization, profile subscriptions, or server/rules access. It resets on reload and cannot test backend permissions.
-- `UIContext` derives the signed-in user's black-belt UI role from the `DBContext` profile subscription. It does not add that profile role to authenticated claims or grant vote/write features.
 
 Security must also be enforced by deployed rules or trusted server code; client checks are not authorization boundaries.
 

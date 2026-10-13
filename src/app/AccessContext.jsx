@@ -9,6 +9,7 @@ const roleLevels = {
     admin: 100,
     classificationAdmin: 95,
     lpuMod: 90,
+    blackBelt: 70,
     classificationTeam: 60,
     qaUser: 20
 }
@@ -49,7 +50,8 @@ export function AccessProvider({children}) {
             admin: claims.has('admin'),
             classificationAdmin: claims.has('classificationAdmin') || claims.has('admin'),
             lpuMod: claims.has('lpuMod') || claims.has('admin'),
-            classificationTeam: claims.has('classificationTeam') || claims.has('admin'),
+            blackBelt: claims.has('blackBelt') || claims.has('admin'),
+            classificationTeam: claims.has('blackBelt') || claims.has('classificationTeam') || claims.has('admin'),
             qaUser: claims.has('qaUser') || claims.has('admin')
         }
     }, [authLoaded, isLoggedIn, user?.uid, userClaims])
@@ -66,7 +68,11 @@ export function AccessProvider({children}) {
             return claimedRoles
         }
 
-        return {...emptyRoles, [previewRole]: true}
+        return {
+            ...emptyRoles,
+            [previewRole]: true,
+            ...(previewRole === 'blackBelt' ? {classificationTeam: true} : {})
+        }
     }, [claimedRoles, previewRole])
 
     const adminEnabled = roles.admin && adminPreference === true

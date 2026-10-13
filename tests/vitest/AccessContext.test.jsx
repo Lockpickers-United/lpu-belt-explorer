@@ -22,6 +22,7 @@ function AccessState() {
             <button onClick={() => setAccessPreview('admin')}>Preview admin</button>
             <button onClick={() => setAccessPreview('qaUser')}>Preview QA</button>
             <button onClick={() => setAccessPreview('lpuMod')}>Preview moderator</button>
+            <button onClick={() => setAccessPreview('blackBelt')}>Preview black belt</button>
             <button onClick={() => setAccessPreview(null)}>Clear preview</button>
         </div>
     )
@@ -101,6 +102,7 @@ describe('AccessContext', () => {
         ['admin', 100, {entryActionBar: true, classificationVote: true, scorecardVideos: true, manageRequests: true}],
         ['lpuMod', 90, {entryActionBar: true, classificationVote: true, scorecardVideos: true, manageRequests: false}],
         ['classificationAdmin', 95, {entryActionBar: true, classificationVote: true, scorecardVideos: false, manageRequests: true}],
+        ['blackBelt', 70, {entryActionBar: true, classificationVote: true, scorecardVideos: false, manageRequests: false}],
         ['classificationTeam', 60, {entryActionBar: true, classificationVote: true, scorecardVideos: false, manageRequests: false}],
         ['qaUser', 20, {entryActionBar: false, classificationVote: false, scorecardVideos: false, manageRequests: false}]
     ])('grants the expected features for the %s claim without enabling a UI mode', (claim, level, expectedFeatures) => {
@@ -117,6 +119,29 @@ describe('AccessContext', () => {
         for (const [feature, enabled] of Object.entries(expectedFeatures)) {
             expect(screen.getByText(new RegExp(`Features:.*"${feature}":${enabled}`))).toBeInTheDocument()
         }
+    })
+
+    it('maps the black-belt claim to classification team access only for the signed-in account', () => {
+        const blackBeltAuth = {
+            authLoaded: true,
+            isLoggedIn: true,
+            user: {uid: 'black-belt'},
+            userClaims: ['blackBelt']
+        }
+        const {rerender} = renderAccess(blackBeltAuth)
+
+        expect(screen.getByText(/Roles:.*"blackBelt":true/)).toBeInTheDocument()
+        expect(screen.getByText(/Roles:.*"classificationTeam":true/)).toBeInTheDocument()
+        expect(screen.getByText(/Features:.*"classificationVote":true/)).toBeInTheDocument()
+
+        rerender(
+            <AuthContext.Provider value={{...blackBeltAuth, user: {uid: 'another-member'}, userClaims: []}}>
+                <AccessProvider><AccessState/></AccessProvider>
+            </AuthContext.Provider>
+        )
+
+        expect(screen.getByText(/Roles:.*"blackBelt":false/)).toBeInTheDocument()
+        expect(screen.getByText(/Roles:.*"classificationTeam":false/)).toBeInTheDocument()
     })
 
     it('uses calendar dates for QA expiry and the canonical QA role key', () => {
@@ -211,6 +236,13 @@ describe('AccessContext', () => {
         expect(screen.getByText('Level: 100')).toBeInTheDocument()
         expect(screen.getByText(/Roles:.*lpuMod.*true/)).toBeInTheDocument()
         expect(screen.getByText(/Roles:.*classificationTeam.*true/)).toBeInTheDocument()
+
+        fireEvent.click(screen.getByRole('button', {name: 'Preview black belt'}))
+        expect(screen.getByText('Preview role: blackBelt')).toBeInTheDocument()
+        expect(screen.getByText('Level: 70')).toBeInTheDocument()
+        expect(screen.getByText(/Roles:.*"classificationTeam":true/)).toBeInTheDocument()
+        expect(screen.getByText(/Features:.*"classificationVote":true/)).toBeInTheDocument()
+        expect(screen.getByText(/Features:.*"manageRequests":false/)).toBeInTheDocument()
 
         fireEvent.click(screen.getByRole('button', {name: 'Preview QA'}))
         expect(screen.getByText('Preview role: qaUser')).toBeInTheDocument()

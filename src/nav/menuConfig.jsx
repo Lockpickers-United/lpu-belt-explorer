@@ -148,9 +148,7 @@ export default [
         title: 'Classification',
         icon: <HowToVoteIcon fontSize='small'/>,
         path: '/classification',
-        userClaims: ['admin', 'classificationAdmin', 'lpuMod', 'classificationTeam'],
-        //disabled during development
-        //profileRoles: ['blackBelt'],
+        userClaims: ['admin', 'classificationAdmin', 'lpuMod', 'classificationTeam', 'blackBelt'],
     },
     {
         title: 'Server Status',

@@ -9,7 +9,6 @@ import AccessContext from '../app/AccessContext.jsx'
 import APIContext from '../app/APIContext.jsx'
 import ScoringContext from '../context/ScoringContext.jsx'
 import { SystemMessageProvider } from '../systemMessage/SystemMessageContext.jsx'
-import { UIProvider } from '../app/UIContext.jsx'
 
 export const defaultTestContextValues = {
     auth: {
@@ -42,7 +41,7 @@ export const defaultTestContextValues = {
     },
     access: {
         accessInfo: {
-            roles: {admin: false, lpuMod: false, classificationAdmin: false, classificationTeam: false, qaUser: false},
+            roles: {admin: false, lpuMod: false, classificationAdmin: false, blackBelt: false, classificationTeam: false, qaUser: false},
             enabledRoles: {admin: false, qaUser: false},
             features: {
                 entryActionBar: false,
@@ -89,7 +88,7 @@ export const renderWithProviders = (ui, {
                         <AppContext.Provider value={withDefaults('app', app)}>
                             <SystemMessageProvider>
                                 <ScoringContext.Provider value={withDefaults('scoring', scoring)}>
-                                    <UIProvider>{children}</UIProvider>
+                                    {children}
                                 </ScoringContext.Provider>
                             </SystemMessageProvider>
                         </AppContext.Provider>
