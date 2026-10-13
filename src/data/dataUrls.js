@@ -1,7 +1,7 @@
 const environment = import.meta.env || {}
 const url = environment.VITE_LOCAL_DATA === 'true'
     ? '/data'
-    : environment.VITE_DATA_SERVER_URL || 'https://explore.lpubelts.com/data'
+    : environment.VITE_DATA_SERVER_URL || 'https://assets.lpubelts.com/data-dev'
 
 if (environment.VITE_LOCAL_DATA === 'true') {
     console.info('Attention: App is using LOCAL DATA.')
@@ -46,5 +46,5 @@ export const urls = {
 
 const {VITE_DEV_FIRESTORE: devFirestore} = environment
 export const nodeServerUrl = environment.VITE_NODE_SERVER_URL
-    || (devFirestore==='true' ? 'https://explore.lpubelts.com/servicesDev' : 'https://explore.lpubelts.com/services')
-export const apiServerUrl = environment.VITE_API_SERVER_URL || 'https://explore.lpubelts.com/services'
+    || (devFirestore==='true' ? 'https://api-dev.lpubelts.com' : 'https://api.lpubelts.com')
+export const apiServerUrl = environment.VITE_API_SERVER_URL || 'https://api-dev.lpubelts.com'
