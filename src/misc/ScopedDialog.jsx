@@ -175,6 +175,11 @@ export default function ScopedDialog({
                         borderRadius: '4px',
                         //boxShadow: '0px 11px 15px -7px rgba(0,0,0,0.6),0px 18px 20px 0px rgba(0,0,0,0.4),0px 9px 46px 8px rgba(0,0,0,0.0)'
                         boxShadow: theme.shadows[10],
+                        display: 'flex',
+                        flexDirection: 'column',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        padding: '10px'
                     }}>
                         {dialogContent}
                     </Box>

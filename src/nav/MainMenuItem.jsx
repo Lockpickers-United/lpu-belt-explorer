@@ -4,12 +4,17 @@ import ListItemButton from '@mui/material/ListItemButton'
 import queryString from 'query-string'
 import React, {useCallback} from 'react'
 import {useLocation, useNavigate} from 'react-router-dom'
+import {useTheme} from '@mui/material'
+import {useAccess} from '../app/AccessContext.jsx'
 
 function MainMenuItem({menuItem, onClose, child, childCount, childIndex}) {
+    const {accessInfo} = useAccess()
+
     const navigate = useNavigate()
     const location = useLocation()
+    const theme = useTheme()
     const searchParams = queryString.parse(location.search)
-    const {children, title, params, path, icon, admin, userClaims} = menuItem
+    const {children, title, params, path, icon, admin, allowedRoles} = menuItem
 
     const isCurrentPath = location.pathname === path
     const isCurrentParams = Object.keys(params || [])
@@ -17,8 +22,7 @@ function MainMenuItem({menuItem, onClose, child, childCount, childIndex}) {
     const isCurrentRoute = isCurrentPath && isCurrentParams
 
     const openInNewTab = (url) => {
-        const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
-        if (newWindow) newWindow.opener = null
+        window.open(url, '_blank', 'noopener,noreferrer')
     }
 
     const handleClick = useCallback(() => {
@@ -38,11 +42,11 @@ function MainMenuItem({menuItem, onClose, child, childCount, childIndex}) {
 
     const color = isCurrentRoute
         ? '#18aa18'
-        : userClaims?.includes('admin') || admin
-            ? '#0484d4'
-            : null
+        : allowedRoles
+            ? theme.roles?.[accessInfo.highestRole] ?? theme.menu?.blueLight
+            : 'inherit'
 
-    const adminStyle = userClaims?.includes('admin') || admin
+    const adminStyle = allowedRoles?.includes('admin') || admin
         ? {fontStyle: 'italic'}
         : {}
 
@@ -81,6 +85,7 @@ function MainMenuItem({menuItem, onClose, child, childCount, childIndex}) {
                         style={style}
                         childCount={numChildren}
                         childIndex={childIndex}
+                        allowedRoles={allowedRoles}
                     />
             )}
         </React.Fragment>

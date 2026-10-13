@@ -57,7 +57,7 @@ async function processData(sheetId) {
     const sheetData = await readData(sheetId)
 
     const rowData = sheetData.rows.reduce((acc, row) => {
-        const [_changeDate, make, model, version, entryId, _ranking, nameLink, _type, ...voteRanks] = row.cells
+        const [_changeDate, _make, _model, _version, entryId, _ranking, _nameLink, _type, ...voteRanks] = row.cells
         const allRowNotes = sheetData.notes.filter(note => note.sheetRow === row.sheetRow)
 
         const knownVoters = [...voters, ...votersNotOnSite]

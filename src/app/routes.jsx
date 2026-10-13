@@ -47,13 +47,7 @@ export default [
         handle: {route: 'classification'},
         lazy: async () => {
             const {default: ClassificationParentRoute} = await import('../classification/ClassificationParentRoute.jsx')
-            return {
-                element: (
-                    <RequireRoles roles={['admin', 'classificationAdmin', 'lpuMod', 'classificationTeam']}>
-                        <ClassificationParentRoute/>
-                    </RequireRoles>
-                )
-            }
+            return {element: (<ClassificationParentRoute/>)}
         },
         children: [
             {
@@ -218,7 +212,11 @@ export default [
         path: '/admin',
         lazy: async () => {
             const {default: AdminRoute} = await import('../admin/AdminRoute')
-            return {element: <AdminRoute/>}
+            return {element:
+                    <RequireRoles roles={['admin']}>
+                        <AdminRoute/>
+                    </RequireRoles>
+            }
         },
         children: [
             {

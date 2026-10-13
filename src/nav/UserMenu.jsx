@@ -24,11 +24,12 @@ import DBContext from '../app/DBContext'
 import {useNavigate} from 'react-router-dom'
 import {useAccess} from '../app/AccessContext.jsx'
 import BoltIcon from '@mui/icons-material/Bolt'
-import {Collapse} from '@mui/material'
+import {Collapse, useTheme} from '@mui/material'
 import ExpandButton from '../misc/ExpandButton.jsx'
 
 function UserMenu() {
     const navigate = useNavigate()
+    const theme = useTheme()
     const {isLoggedIn, user, logout} = useContext(AuthContext)
     const {accessInfo, setAccessPreview, toggleRoleEnabled} = useAccess()
     const {lockCollection} = useContext(DBContext)
@@ -67,7 +68,7 @@ function UserMenu() {
                                 width: 36,
                                 height: 36,
                                 margin: '4px',
-                                backgroundColor: roleColors[accessInfo.activeRole] || 'inherit'
+                                backgroundColor: theme.roles?.[accessInfo.highestRole] || 'inherit'
                             }}>
                     {
                         isLoggedIn
@@ -139,21 +140,33 @@ function UserMenu() {
                             <>
                                 <Divider/>
                                 <MenuItem aria-expanded={previewOpen} onClick={() => setPreviewOpen(!previewOpen)}>
-                                    <ListItemText sx={{'& .MuiListItemText-primary':
-                                            {mb: 0.5, color: accessInfo.previewRole ? '#42d736' : 'inherit', fontStyle: 'italic'}}}>
+                                    <ListItemText sx={{
+                                        '& .MuiListItemText-primary':
+                                            {
+                                                mb: 0.5,
+                                                color: accessInfo.previewRole ? theme.roles?.[accessInfo.highestRole] : 'inherit',
+                                                fontStyle: 'italic'
+                                            }
+                                    }}>
                                         UI Role Preview
                                     </ListItemText>
                                     <ExpandButton expanded={previewOpen}
                                                   onChange={setPreviewOpen}
                                                   small={true}
-                                                  color={accessInfo.previewRole ? '#42d736' : 'inherit'}
+                                                  color={accessInfo.previewRole ? theme.roles?.[accessInfo.highestRole] : 'inherit'}
                                     />
                                 </MenuItem>
                                 <Collapse in={previewOpen}>
                                     <Divider/>
                                     <MenuItem sx={{fontWeight: 600}} selected={!accessInfo.previewRole}
                                               onClick={() => setAccessPreview(null)}>
-                                        <ListItemText sx={{'& .MuiListItemText-primary': {paddingLeft: 1, fontWeight: 'bold'}}}>
+                                        <ListItemText sx={{
+                                            '& .MuiListItemText-primary': {
+                                                paddingLeft: 1,
+                                                fontWeight: 'bold',
+                                                fontStyle: 'italic'
+                                            }
+                                        }}>
                                             Actual access
                                         </ListItemText>
                                     </MenuItem>
@@ -161,14 +174,25 @@ function UserMenu() {
                                         <MenuItem key={role} selected={accessInfo.previewRole === role}
                                                   onClick={() => setAccessPreview(role)}>
                                             <ListItemText
-                                                sx={{'& .MuiListItemText-primary': {paddingLeft: 1, color: accessInfo.previewRole === role ? '#42d736' : 'inherit'}}}>
+                                                sx={{
+                                                    '& .MuiListItemText-primary': {
+                                                        paddingLeft: 1,
+                                                        color: accessInfo.previewRole === role ? theme.roles?.[accessInfo.previewRole] : 'inherit',
+                                                        fontStyle: 'italic'
+                                                    }
+                                                }}>
                                                 {previewRoleLabels[role] ?? '[role]'}
                                             </ListItemText>
                                         </MenuItem>
                                     )}
                                     <MenuItem selected={accessInfo.previewRole === 'none'}
                                               onClick={() => setAccessPreview('none')}
-                                              sx={{'& .MuiListItemText-primary': {paddingLeft: 1, color: accessInfo.previewRole === 'none' ? '#42d736' : 'inherit'}}}>
+                                              sx={{
+                                                  '& .MuiListItemText-primary': {
+                                                      paddingLeft: 1,
+                                                      color: accessInfo.previewRole === 'none' ? theme.menu?.blue : 'inherit'
+                                                  }
+                                              }}>
                                         <ListItemText>None</ListItemText>
                                     </MenuItem>
 
@@ -260,12 +284,6 @@ function UserMenu() {
             </Menu>
         </React.Fragment>
     )
-}
-
-const roleColors = {
-    admin: 'success.main',
-    lpuMod: 'warning.main',
-    qaUser: 'info.main'
 }
 
 const previewRoleLabels = {

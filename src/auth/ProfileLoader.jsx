@@ -17,13 +17,9 @@ export default function ProfileLoader({loading, dialogText = 'to continue', requ
             overflow: 'hidden',
             isolation: 'isolate'
         }}>
-
-
             <SignInDetect required={required} dialog={false} linkText={`You must be signed in ${dialogText}.`}
                           containerRef={containerRef}/>
-
             {(loading || !authLoaded) && <LoadingDisplay/>}
-
         </Box>
 
     )

@@ -30,6 +30,7 @@ const getActiveRole = enabledRoles => Object.entries(roleLevels)
     .filter(([role]) => enabledRoles[role])
     .sort(([, firstLevel], [, secondLevel]) => secondLevel - firstLevel)[0]?.[0] || null
 
+
 const isEnabledToday = enabledAt => {
     const enabledDate = dayjs(enabledAt)
     return enabledDate.isValid() && enabledDate.isSame(dayjs(), 'day')
@@ -107,8 +108,15 @@ export function AccessProvider({children}) {
         return () => window.clearTimeout(timeout)
     }, [dailyRoleExpiration])
 
+    const getHighestRole = useCallback((roles) => Object.entries(roleLevels)
+            .filter(([role]) => roles[role])
+            .sort(([, firstLevel], [, secondLevel]) => secondLevel - firstLevel)[0]?.[0] || null,
+        []
+    )
+
     const accessInfo = useMemo(() => ({
         roles: roles ?? {},
+        highestRole: getHighestRole(roles),
         enabledRoles: enabledRoles ?? {},
         features: features ?? {},
         level: getHighestRoleLevel(roles),
@@ -118,7 +126,7 @@ export function AccessProvider({children}) {
         availablePreviewRoles: import.meta.env.DEV && isLoggedIn
             ? Object.keys(roleLevels).filter(role => claimedRoles[role])
             : []
-    }), [claimedRoles, enabledRoles, features, isLoggedIn, previewRole, roles])
+    }), [claimedRoles, enabledRoles, features, getHighestRole, isLoggedIn, previewRole, roles])
 
     const setAccessPreview = useCallback(role => {
         if (!import.meta.env.DEV || !isLoggedIn || !user?.uid) return

@@ -4,7 +4,6 @@ import dayjs from 'dayjs'
 import AuthContext from '../app/AuthContext.jsx'
 import Tooltip from '@mui/material/Tooltip'
 import useWindowSize from '../util/useWindowSize.jsx'
-import ScheduleIcon from '@mui/icons-material/Schedule'
 import {darken} from '@mui/material/styles'
 
 export default function DisplayClassificationVotes({votes, style = {}}) {
@@ -19,7 +18,7 @@ export default function DisplayClassificationVotes({votes, style = {}}) {
     })
 
     const previousColors = Object.entries(belts).reduce((acc, [belt, info]) => {
-        acc[belt] = !belt.includes('Black') ? darken(info.color, 0.4) : '#666'
+        acc[belt] = !belt.includes('Black') ? darken(info.color, 0.3) : '#444'
         return acc
     }, {})
 
@@ -48,7 +47,12 @@ export default function DisplayClassificationVotes({votes, style = {}}) {
 
                         }}>
                             {vote.previous &&
-                                <ScheduleIcon style={{color: previousColors[vote.votedBelt]}} fontSize='inherit'/>
+                                <div style={{
+                                    height: 10,
+                                    width: 10,
+                                    borderRadius: '50%',
+                                    backgroundColor: previousColors[vote.votedBelt]
+                                }}></div>
                             }
                             <div style={{
                                 color: '#ddd',

@@ -6,7 +6,7 @@ import useWindowSize from '../util/useWindowSize.jsx'
 import IconButton from '@mui/material/IconButton'
 import MenuIcon from '@mui/icons-material/Menu'
 
-export default function LoadingDisplayNav() {
+export default function LoadingDisplayNav({children}) {
     const {isMobile, width} = useWindowSize()
     const smallWidth = width <= 500
     const spacer = isMobile ? 6 : 0
@@ -56,6 +56,7 @@ export default function LoadingDisplayNav() {
             }
             <Toolbar style={{backgroundColor: 'rgba(255, 255, 255, 0.09)', marginTop: spacer}}/>
 
+            {children}
 
         </React.Fragment>
     )

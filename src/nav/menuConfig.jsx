@@ -106,7 +106,13 @@ export default [
     {
         title: 'Master\'s Projects',
         icon: <ConstructionIcon fontSize='small'/>,
-        path: '/projects'
+        path: '/projects',
+    },
+    {
+        title: 'Classification',
+        icon: <HowToVoteIcon fontSize='small'/>,
+        path: '/classification',
+        allowedRoles: ['admin', 'classificationAdmin', 'lpuMod', 'classificationTeam', 'blackBelt'],
     },
     {
         title: 'Stats & Insights',
@@ -145,28 +151,22 @@ export default [
         path: '/about'
     },
     {
-        title: 'Classification',
-        icon: <HowToVoteIcon fontSize='small'/>,
-        path: '/classification',
-        userClaims: ['admin', 'classificationAdmin', 'lpuMod', 'classificationTeam', 'blackBelt'],
-    },
-    {
         title: 'Server Status',
         icon: <MonitorHeartIcon fontSize='small'/>,
         path: '/tools/serverinfo',
-        userClaims: ['admin', 'lpuAdmin'],
+        allowedRoles: ['admin'],
     },
     {
         title: 'Admin Tools',
         icon: <BuildIcon fontSize='small'/>,
         path: '/tools',
-        userClaims: ['admin', 'lpuAdmin'],
+        allowedRoles: ['admin'],
     },
     {
         title: 'Reports',
         icon: <AssessmentIcon fontSize='small'/>,
         path: '/admin',
-        userClaims: ['admin', 'lpuAdmin'],
+        allowedRoles: ['admin', 'lpuMod'],
         children: [
             {
                 admin: true,
@@ -199,7 +199,7 @@ export default [
         title: 'System Message Admin',
         icon: <CampaignIcon fontSize='small'/>,
         path: '/admin/systemMessages',
-        admin: true,
+        allowedRoles: ['admin'],
     },
     {
         title: 'More from LPUlocks.com',

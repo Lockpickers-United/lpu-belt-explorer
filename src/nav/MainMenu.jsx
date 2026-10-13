@@ -14,8 +14,11 @@ import MainMenuItem from './MainMenuItem'
 import menuConfig from './menuConfig'
 import lpuHeaderSmall from '../resources/LPU-header-small.png'
 import AuthContext from '../app/AuthContext.jsx'
+import {useAccess} from '../app/AccessContext.jsx'
 
 function MainMenu() {
+    const {accessInfo = {}} = useAccess()
+    console.log(accessInfo)
     const {beta} = useContext(AppContext)
     const {adminRole} = useContext(DBContext)
     const {userClaims} = useContext(AuthContext)
@@ -75,6 +78,9 @@ function MainMenu() {
                         .filter(menuItem => !menuItem.hidden)
                         .filter(menuItem =>
                             !(menuItem.userClaims && !menuItem.userClaims.some(claim => userClaims.includes(claim)))
+                        )
+                        .filter(menuItem =>
+                            !(menuItem.allowedRoles && !menuItem.allowedRoles.some(role => accessInfo.roles?.[role]))
                         )
                         .map((menuItem, index) =>
                             <React.Fragment key={index}>

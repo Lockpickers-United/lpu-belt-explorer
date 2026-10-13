@@ -29,6 +29,20 @@ export const darkTheme = createTheme({
             '#004a00',
             '#003f00']
     },
+    menu: {
+        blue: '#1596e7',
+        blueLight: '#7ec6f5',
+        orange: '#e7a515',
+        green: '#00bb00'
+    },
+    roles: {
+        admin: '#1596e7',
+        lpuMod: '#e7e41a',
+        classificationAdmin: '#d38bfd',
+        blackBelt: '#e7a515',
+        classificationTeam: '#efc370',
+        qaUser: '#7ec6f5'
+    },
     components: {
         MuiLink: {
             styleOverrides: {

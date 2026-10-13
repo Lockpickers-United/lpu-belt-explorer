@@ -12,8 +12,10 @@ import DBContext from '../app/DBContext.jsx'
 import useWindowSize from '../util/useWindowSize.jsx'
 import SortIcon from '@mui/icons-material/Sort'
 import AuthContext from '../app/AuthContext.jsx'
+import {ThemeContext} from '@emotion/react'
 
 function SortTextButton({sortValues, compactMode, expandAll}) {
+    const theme = useContext(ThemeContext)
     const [anchorEl, setAnchorEl] = useState(null)
     const open = Boolean(anchorEl)
     const handleOpen = useCallback(event => setAnchorEl(event.currentTarget), [])
@@ -68,7 +70,7 @@ function SortTextButton({sortValues, compactMode, expandAll}) {
                 <div style={{marginLeft: 5, padding: 5, fontWeight: 700}}>SORT BY</div>
                 {sortValues.map(({label, value, admin}) => {
                     const adminStyle = isAuthorized && admin
-                        ? {fontStyle: 'italic', color: '#0484d4'}
+                        ? {fontStyle: 'italic', color: theme.menu?.admin}
                         : {}
                     return <MenuItem
                             key={label}
