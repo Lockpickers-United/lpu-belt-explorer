@@ -59,12 +59,24 @@ describe('EntryClassificationVote', () => {
         expect(screen.queryByRole('button', {name: 'CHECK FOR HISTORICAL VOTES'})).not.toBeInTheDocument()
     })
 
-    it('shows previous modern votes on the lock route', () => {
-        const createdAt = '2026-09-01T00:00:00Z'
-        renderClassification(entryFor([{...previousVote, updatedAt: undefined, createdAt}]), '/locks')
+    it('shows another current vote without a duplicate current-votes summary on Classification', () => {
+        renderClassification({
+            ...entryFor([]),
+            currentVotes: [{...previousVote, id: 'current-modern-vote', comment: 'Current round'}]
+        })
 
-        expect(screen.getByRole('group', {name: 'Previous votes'})).toBeInTheDocument()
-        expect(screen.getByText(`Previous round (${new Date(createdAt).toLocaleDateString()})`)).toBeInTheDocument()
-        expect(screen.queryByRole('group', {name: 'Historical votes'})).not.toBeInTheDocument()
+        expect(screen.getByText(/Modern Reviewer:/)).toBeInTheDocument()
+        expect(screen.queryByText('current votes')).not.toBeInTheDocument()
+    })
+
+    it('hides other current and previous votes on the lock route', () => {
+        renderClassification({
+            ...entryFor([previousVote]),
+            currentVotes: [{...previousVote, id: 'current-modern-vote', comment: 'Current round'}]
+        }, '/locks')
+
+        expect(screen.queryByText(/Modern Reviewer:/)).not.toBeInTheDocument()
+        expect(screen.queryByRole('group', {name: 'Previous votes'})).not.toBeInTheDocument()
+        expect(screen.queryByText('current votes')).not.toBeInTheDocument()
     })
 })

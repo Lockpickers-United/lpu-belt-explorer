@@ -286,7 +286,7 @@ export default function EntryClassificationAdmin({entry, handleToggle}) {
             </div>
             <div style={{marginTop: 24}}/>
 
-            <EntryClassificationVote entry={entry} showCurrentVotes={false}/>
+            <EntryClassificationVote entry={entry}/>
 
         </div>
     )
