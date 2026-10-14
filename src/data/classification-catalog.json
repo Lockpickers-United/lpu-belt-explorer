@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": "sha256:d65e48f71f7e0d1195ecfe6691ef0acb81d15e7e3a1eda13f06a8e8674b65be7",
-  "generatedAt": "2026-10-14T06:41:04.769Z",
+  "catalogVersion": "sha256:41a7fcebdfeeef9c19c8953df065bab497e342ead4f22473dce2b71fb694b9d8",
+  "generatedAt": "2026-10-14T14:49:36.351Z",
   "entries": [
     {
       "id": "0082fa4c",
@@ -7705,7 +7705,7 @@
     },
     {
       "id": "fa0b5d10",
-      "name": "Mul-T-Lock MT5+ Short KIK",
+      "name": "Mul-T-Lock MT5+ Short",
       "version": "4 drivers, 4 sliders",
       "belt": "Red",
       "currentBeltDate": "2026-08-30T12:00:00.000Z"
