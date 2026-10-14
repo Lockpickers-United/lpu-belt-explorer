@@ -1,0 +1,105 @@
+name: Publish Classification catalog to development
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: development-classification-catalog
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      deployment: false
+    env:
+      SFTP_HOST: ${{ vars.SFTP_HOST }}
+      SFTP_PORT: ${{ vars.SFTP_PORT }}
+      SFTP_USER: ${{ vars.SFTP_USER }}
+      DEV_CATALOG_DIR: /home/lpubelts_api/apps/api-server-dev/shared/snapshots
+    steps:
+      - name: Require main branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ "$GITHUB_REF" != 'refs/heads/main' ]]; then
+            echo 'Development catalog publishing must run from main.' >&2
+            exit 1
+          fi
+
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Verify paired catalog artifacts
+        run: node scripts/validateClassificationCatalog.js src/data/data.json src/data/classification-catalog.json
+
+      - name: Validate SSH configuration
+        shell: bash
+        env:
+          SFTP_PRIVATE_KEY: ${{ secrets.SFTP_PRIVATE_KEY }}
+          SFTP_KNOWN_HOSTS: ${{ secrets.SFTP_KNOWN_HOSTS }}
+        run: |
+          set -euo pipefail
+          for variable in SFTP_HOST SFTP_PORT SFTP_USER SFTP_PRIVATE_KEY SFTP_KNOWN_HOSTS; do
+            if [[ -z "${!variable:-}" ]]; then
+              echo "Missing github-pages environment value: $variable" >&2
+              exit 1
+            fi
+          done
+          [[ "$SFTP_HOST" =~ ^[a-zA-Z0-9._-]+$ ]] || exit 1
+          [[ "$SFTP_PORT" =~ ^[0-9]+$ ]] || exit 1
+          [[ "$SFTP_USER" =~ ^[a-zA-Z0-9._-]+$ ]] || exit 1
+          umask 077
+          install -d "$RUNNER_TEMP/catalog-ssh"
+          printf '%s\n' "$SFTP_PRIVATE_KEY" > "$RUNNER_TEMP/catalog-ssh/private_key"
+          printf '%s\n' "$SFTP_KNOWN_HOSTS" > "$RUNNER_TEMP/catalog-ssh/known_hosts"
+
+      - name: Prepare development catalog directory
+        shell: bash
+        run: |
+          set -euo pipefail
+          ssh -i "$RUNNER_TEMP/catalog-ssh/private_key" -p "$SFTP_PORT" \
+            -o BatchMode=yes -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes \
+            -o "UserKnownHostsFile=$RUNNER_TEMP/catalog-ssh/known_hosts" \
+            "$SFTP_USER@$SFTP_HOST" "mkdir -p '$DEV_CATALOG_DIR'"
+
+      - name: Upload development catalog
+        shell: bash
+        run: |
+          set -euo pipefail
+          temporary_name=".classification-catalog.json.$GITHUB_RUN_ID.$GITHUB_RUN_ATTEMPT.tmp"
+          printf 'put "%s" "%s"\n' \
+            "$PWD/src/data/classification-catalog.json" \
+            "$DEV_CATALOG_DIR/$temporary_name" > "$RUNNER_TEMP/catalog-sftp-batch"
+          sftp -b "$RUNNER_TEMP/catalog-sftp-batch" \
+            -i "$RUNNER_TEMP/catalog-ssh/private_key" -P "$SFTP_PORT" \
+            -o BatchMode=yes -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes \
+            -o "UserKnownHostsFile=$RUNNER_TEMP/catalog-ssh/known_hosts" \
+            "$SFTP_USER@$SFTP_HOST"
+
+      - name: Verify and activate development catalog
+        shell: bash
+        run: |
+          set -euo pipefail
+          temporary_name=".classification-catalog.json.$GITHUB_RUN_ID.$GITHUB_RUN_ATTEMPT.tmp"
+          expected_sha=$(sha256sum src/data/classification-catalog.json)
+          expected_sha=${expected_sha%% *}
+          ssh -i "$RUNNER_TEMP/catalog-ssh/private_key" -p "$SFTP_PORT" \
+            -o BatchMode=yes -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes \
+            -o "UserKnownHostsFile=$RUNNER_TEMP/catalog-ssh/known_hosts" \
+            "$SFTP_USER@$SFTP_HOST" \
+            "bash -s -- '$DEV_CATALOG_DIR' '$temporary_name' '$expected_sha'" \
+            < scripts/activateClassificationCatalog.sh

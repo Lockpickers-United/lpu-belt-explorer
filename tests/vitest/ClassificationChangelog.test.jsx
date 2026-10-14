@@ -13,6 +13,15 @@ import changelogs from '../../src/data/classification-samples-changelog.json'
 import allEntries from '../../src/data/data.json'
 import download from '../../src/util/download.js'
 
+vi.mock('../../src/data/classification-samples-admin.json', async () => {
+    const {default: fixtures} = await import('../fixtures/classification-test-data.json')
+    return {default: fixtures.adminActions}
+})
+vi.mock('../../src/data/classification-samples-changelog.json', async () => {
+    const {default: fixtures} = await import('../fixtures/classification-test-data.json')
+    return {default: fixtures.changelogs}
+})
+
 vi.mock('../../src/util/download.js', () => ({default: vi.fn()}))
 vi.mock('notistack', async importOriginal => ({
     ...await importOriginal(),

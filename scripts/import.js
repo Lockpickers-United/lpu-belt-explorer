@@ -21,6 +21,7 @@ import {allBelts, beltSort} from '../src/data/belts.js'
 import fetch from 'node-fetch'
 import validate from './validate.js'
 import entryName from '../src/entries/entryName.js'
+import {createClassificationCatalog} from './classificationCatalog.js'
 import {saveLockStats} from './saveLockStats.js'
 import {setDeepUnique, setDeepPush} from '../src/util/setDeep.js'
 import flickrReport from '../src/data/flickr-replacement-unique-ids.json' with {type: 'json'}
@@ -422,7 +423,11 @@ function keyAttributes(entry) {
 
 // Write out to src location for usage
 console.log('Writing data.json...')
-fs.writeFileSync('./src/data/data.json', JSON.stringify(jsonData, null, 2))
+const dataJson = JSON.stringify(jsonData, null, 2)
+const classificationCatalog = createClassificationCatalog(dataJson)
+fs.writeFileSync('./src/data/data.json', dataJson)
+console.log('Writing classification-catalog.json...')
+fs.writeFileSync('./src/data/classification-catalog.json', JSON.stringify(classificationCatalog, null, 2))
 
 // Glossary Data
 console.log('Processing glossary data...')

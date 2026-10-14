@@ -1,5 +1,5 @@
 import React from 'react'
-import {describe, expect, it} from 'vitest'
+import {describe, expect, it, vi} from 'vitest'
 import {screen} from '@testing-library/react'
 import {userEvent} from '@testing-library/user-event'
 import {createMemoryRouter, RouterProvider} from 'react-router-dom'
@@ -10,6 +10,11 @@ import VoteDisplay from '../../src/classification/VoteDisplay.jsx'
 import EntryClassificationAdmin from '../../src/classification/EntryClassificationAdmin.jsx'
 import EntryActionBarWrapped from '../../src/entries/EntryActionBarWrapped.jsx'
 import allEntries from '../../src/data/data.json'
+
+vi.mock('../../src/data/classification-samples-admin.json', async () => {
+    const {default: fixtures} = await import('../fixtures/classification-test-data.json')
+    return {default: fixtures.adminActions}
+})
 
 describe('classification previews', () => {
     it('opens and cancels a vote preview without offering a save action', async () => {
@@ -81,8 +86,8 @@ describe('classification previews', () => {
     })
 
     it.each([
-        {actionId: 'a_e2fd1000', status: 'Pending', saveLabel: 'Save'},
-        {actionId: 'a_e2fd1519', status: 'Re-opened', saveLabel: 'Save Changes'}
+        {actionId: 'a_t_e2fd1000', status: 'Pending', saveLabel: 'Save'},
+        {actionId: 'a_t_e2fd1519', status: 'Re-opened', saveLabel: 'Save Changes'}
     ])('prefills only an unpublished context-selected action: $actionId', ({actionId, status, saveLabel}) => {
         const entry = {
             ...allEntries.find(item => item.id === 'e2fd1519'),

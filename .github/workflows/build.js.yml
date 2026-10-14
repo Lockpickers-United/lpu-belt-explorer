@@ -1,5 +1,9 @@
 name: Build-N-Deploy
 
+concurrency:
+  group: site-and-classification-catalog
+  cancel-in-progress: false
+
 on:
   push:
     branches: [ "main" ]
@@ -38,6 +42,27 @@ jobs:
   
       - name: Install dependencies
         run: npm ci
+      - name: Validate catalog deployment configuration
+        shell: bash
+        env:
+          SFTP_HOST: ${{ vars.SFTP_HOST }}
+          SFTP_PORT: ${{ vars.SFTP_PORT }}
+          SFTP_USER: ${{ vars.SFTP_USER }}
+          DEPLOY_ROOT: ${{ vars.DEPLOY_ROOT }}
+          SFTP_PRIVATE_KEY: ${{ secrets.SFTP_PRIVATE_KEY }}
+          SFTP_KNOWN_HOSTS: ${{ secrets.SFTP_KNOWN_HOSTS }}
+        run: |
+          set -euo pipefail
+          for variable in SFTP_HOST SFTP_PORT SFTP_USER DEPLOY_ROOT SFTP_PRIVATE_KEY SFTP_KNOWN_HOSTS; do
+            if [[ -z "${!variable:-}" ]]; then
+              echo "Missing github-pages environment value: $variable" >&2
+              exit 1
+            fi
+          done
+          [[ "$SFTP_HOST" =~ ^[a-zA-Z0-9._-]+$ ]] || exit 1
+          [[ "$SFTP_PORT" =~ ^[0-9]+$ ]] || exit 1
+          [[ "$SFTP_USER" =~ ^[a-zA-Z0-9._-]+$ ]] || exit 1
+          [[ "$DEPLOY_ROOT" =~ ^/[a-zA-Z0-9._/-]+$ && "$DEPLOY_ROOT" != *".."* ]] || exit 1
 # disbabled, runs pre-commit
 #      - name: Run tests
 #        run: npm run test:ci
@@ -48,9 +73,76 @@ jobs:
           VITE_DISCORD_CLIENT_SECRET: ${{ vars.VITE_DISCORD_CLIENT_SECRET }}
           VITE_REDDIT_CLIENT_SECRET: ${{ vars.VITE_REDDIT_CLIENT_SECRET }}
 
+      - name: Verify paired catalog artifacts
+        run: node scripts/validateClassificationCatalog.js dist/data.json dist/classification-catalog.json
+
+      - name: Configure catalog SSH host verification
+        shell: bash
+        env:
+          SFTP_PRIVATE_KEY: ${{ secrets.SFTP_PRIVATE_KEY }}
+          SFTP_KNOWN_HOSTS: ${{ secrets.SFTP_KNOWN_HOSTS }}
+        run: |
+          set -euo pipefail
+          umask 077
+          install -d "$RUNNER_TEMP/catalog-ssh"
+          printf '%s\n' "$SFTP_PRIVATE_KEY" > "$RUNNER_TEMP/catalog-ssh/private_key"
+          printf '%s\n' "$SFTP_KNOWN_HOSTS" > "$RUNNER_TEMP/catalog-ssh/known_hosts"
+
+      - name: Prepare remote catalog directory
+        shell: bash
+        env:
+          SFTP_HOST: ${{ vars.SFTP_HOST }}
+          SFTP_PORT: ${{ vars.SFTP_PORT }}
+          SFTP_USER: ${{ vars.SFTP_USER }}
+          DEPLOY_ROOT: ${{ vars.DEPLOY_ROOT }}
+        run: |
+          set -euo pipefail
+          ssh -i "$RUNNER_TEMP/catalog-ssh/private_key" -p "$SFTP_PORT" \
+            -o BatchMode=yes -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes \
+            -o "UserKnownHostsFile=$RUNNER_TEMP/catalog-ssh/known_hosts" \
+            "$SFTP_USER@$SFTP_HOST" "mkdir -p '$DEPLOY_ROOT/shared/snapshots'"
+
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
+
+      - name: Upload Classification catalog
+        shell: bash
+        env:
+          SFTP_HOST: ${{ vars.SFTP_HOST }}
+          SFTP_PORT: ${{ vars.SFTP_PORT }}
+          SFTP_USER: ${{ vars.SFTP_USER }}
+          DEPLOY_ROOT: ${{ vars.DEPLOY_ROOT }}
+        run: |
+          set -euo pipefail
+          temporary_name=".classification-catalog.json.$GITHUB_RUN_ID.$GITHUB_RUN_ATTEMPT.tmp"
+          printf 'put "%s" "%s"\n' \
+            "$PWD/dist/classification-catalog.json" \
+            "$DEPLOY_ROOT/shared/snapshots/$temporary_name" > "$RUNNER_TEMP/catalog-sftp-batch"
+          sftp -b "$RUNNER_TEMP/catalog-sftp-batch" \
+            -i "$RUNNER_TEMP/catalog-ssh/private_key" -P "$SFTP_PORT" \
+            -o BatchMode=yes -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes \
+            -o "UserKnownHostsFile=$RUNNER_TEMP/catalog-ssh/known_hosts" \
+            "$SFTP_USER@$SFTP_HOST"
+
+      - name: Verify and activate Classification catalog
+        shell: bash
+        env:
+          SFTP_HOST: ${{ vars.SFTP_HOST }}
+          SFTP_PORT: ${{ vars.SFTP_PORT }}
+          SFTP_USER: ${{ vars.SFTP_USER }}
+          DEPLOY_ROOT: ${{ vars.DEPLOY_ROOT }}
+        run: |
+          set -euo pipefail
+          temporary_name=".classification-catalog.json.$GITHUB_RUN_ID.$GITHUB_RUN_ATTEMPT.tmp"
+          expected_sha=$(sha256sum dist/classification-catalog.json)
+          expected_sha=${expected_sha%% *}
+          ssh -i "$RUNNER_TEMP/catalog-ssh/private_key" -p "$SFTP_PORT" \
+            -o BatchMode=yes -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes \
+            -o "UserKnownHostsFile=$RUNNER_TEMP/catalog-ssh/known_hosts" \
+            "$SFTP_USER@$SFTP_HOST" \
+            "bash -s -- '$DEPLOY_ROOT/shared/snapshots' '$temporary_name' '$expected_sha'" \
+            < scripts/activateClassificationCatalog.sh
           

@@ -1,6 +1,6 @@
 import React, {useContext} from 'react'
 import {createMemoryRouter, Outlet, RouterProvider} from 'react-router-dom'
-import {describe, expect, it} from 'vitest'
+import {describe, expect, it, vi} from 'vitest'
 import {screen, waitFor, within} from '@testing-library/react'
 import {userEvent} from '@testing-library/user-event'
 import {renderWithProviders} from '../../src/test/render.jsx'
@@ -15,6 +15,17 @@ import allEntries from '../../src/data/data.json'
 import modernVotes from '../../src/data/classification-samples.json'
 import adminActions from '../../src/data/classification-samples-admin.json'
 import DataContext from '../../src/context/DataContext.jsx'
+
+vi.mock('../../src/data/classification-samples.json', async importOriginal => {
+    const original = await importOriginal()
+    const {default: fixtures} = await import('../fixtures/classification-test-data.json')
+    return {default: [...original.default, ...fixtures.votes]}
+})
+vi.mock('../../src/data/classification-samples-admin.json', async () => {
+    const {adminActionsForVotes} = await import('../fixtures/classificationSampleData.js')
+    const {default: realVotes} = await vi.importActual('../../src/data/classification-samples.json')
+    return {default: adminActionsForVotes(realVotes)}
+})
 
 const mixedVoteEntryName = /^Ikon SK6 Radienprofil Extra Code/
 const mixedVoteEntry = allEntries.find(entry => entry.id === 'ca9828d7')
@@ -160,7 +171,7 @@ describe('ClassificationDataProvider', () => {
         expect(screen.getByLabelText('Greenish')).toBeInTheDocument()
         expect(screen.getByLabelText('Crispix')).toBeInTheDocument()
         expect(screen.getByLabelText('PeaceWeapon (previous)')).toBeInTheDocument()
-        expect(screen.getByLabelText('Sidepicks')).toBeInTheDocument()
+        expect(screen.getByLabelText('Reinder')).toBeInTheDocument()
         expect(screen.getByLabelText('yabende (previous)')).toBeInTheDocument()
     })
 

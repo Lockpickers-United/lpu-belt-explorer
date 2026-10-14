@@ -6,7 +6,7 @@ import fs from 'fs'
 import {findLastMentionedVoter} from './classificationNoteMatcher.js'
 
 const refreshData = false
-const historical = true
+const historical = false
 
 const CREDENTIALS_PATH = new URL('../keys/google-credentials.json', import.meta.url)
 const OUTPUT_DIR = new URL('../src/data/classification/', import.meta.url)
@@ -79,7 +79,7 @@ async function processData(sheetId) {
 
             votes.forEach((vote, index) => {
             const voteData = {
-                id: 'v_' + genHexString(8),
+                id: `v_${entryId}_${vote.userId}`,
                 type: historical ? 'historicalVote' : 'vote',
                 //sheetRow: row.sheetRow,
                 //lockname: `${make} ${model} ${version}`,

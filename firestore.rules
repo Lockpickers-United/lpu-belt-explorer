@@ -1,0 +1,148 @@
+// Classification additions are a prototype merged with the deployed 2026-10-13 baseline.
+// classificationVotes: server-owned modern vote; userId identifies its owner.
+// classificationEntries: server-owned eligible-reader summary with vote chips, no comments.
+// classificationEntryStates: server-owned minimal state with voterIds for owner matching.
+// classificationActions, classificationPublications, classificationOperations: server-only.
+// The Firebase Admin SDK performs all writes; browser writes to these paths are denied.
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function classificationReader() {
+      return request.auth != null &&
+        (request.auth.token.admin == true ||
+         request.auth.token.classificationAdmin == true ||
+         request.auth.token.lpuMod == true ||
+         request.auth.token.classificationTeam == true ||
+         request.auth.token.blackBelt == true);
+    }
+
+    match /classificationVotes/{voteId} {
+      allow get, list: if classificationReader() &&
+        resource.data.userId == request.auth.uid;
+      allow create, update, delete: if false;
+    }
+
+    match /classificationEntryStates/{entryId} {
+      allow get, list: if classificationReader() &&
+        request.auth.uid in resource.data.voterIds;
+      allow create, update, delete: if false;
+    }
+
+    match /classificationEntries/{entryId} {
+      allow get, list: if classificationReader();
+      allow create, update, delete: if false;
+    }
+
+    match /classificationActions/{actionId} {
+      allow read, write: if false;
+    }
+
+    match /classificationPublications/{publicationId} {
+      allow read, write: if false;
+    }
+
+    match /classificationOperations/{operationId} {
+      allow read, write: if false;
+    }
+
+    match /lockcollections/{userId} {
+      allow get: if request.auth != null &&
+        (request.auth.uid == userId ||
+         request.auth.token.admin == true);
+      allow list: if request.auth != null &&
+        (request.auth.token.admin == true);
+      allow delete: if request.auth != null &&
+        (request.auth.uid == userId ||
+         request.auth.token.admin == true);
+      allow create: if request.auth != null &&
+        !request.resource.data.keys().hasAny(['admin']) && request.auth.uid == userId;
+      allow update: if request.auth != null &&
+        (request.auth.uid == userId ||
+         request.auth.token.admin == true) &&
+         !request.resource.data.diff(resource.data)
+           .affectedKeys()
+           .hasAny(['admin']);
+    }
+
+    match /evidence/{evid} {
+      allow read: if true
+      allow create: if request.auth != null &&
+        (request.auth.uid == request.resource.data.userId || request.auth.token.admin == true);
+      allow update: if request.auth != null &&
+        ((request.auth.uid == resource.data.userId &&
+          request.resource.data.userId == resource.data.userId) ||
+         ('admin' in request.auth.token && request.auth.token.admin == true));
+      allow delete: if request.auth != null &&
+        (request.auth.uid == resource.data.userId ||
+         ('admin' in request.auth.token && request.auth.token.admin == true));
+    }
+
+    match /awards/{awid} {
+      allow read: if true
+      allow create: if request.auth != null &&
+        (request.auth.uid == request.resource.data.userId || request.auth.token.admin == true);
+      allow update: if request.auth != null &&
+        ((request.auth.uid == resource.data.userId &&
+          request.resource.data.userId == resource.data.userId) ||
+         ('admin' in request.auth.token && request.auth.token.admin == true));
+      allow delete: if request.auth != null &&
+        (request.auth.uid == resource.data.userId ||
+         ('admin' in request.auth.token && request.auth.token.admin == true));
+    }
+
+    match/awards-discord/{awid} {
+      allow read: if request.auth != null
+      allow write: if false
+    }
+
+    match /unclaimed-evidence/{evid} {
+      allow read: if request.auth != null;
+      allow write: if false;
+    }
+
+    match /unclaimed-blackbelts/{tabname} {
+      allow read: if request.auth != null;
+      allow write: if false;
+    }
+
+    match /query-cache/{query} {
+      allow read: if true;
+      allow write: if true;
+    }
+
+    match /system-messages/{query} {
+      allow read: if true;
+      allow write: if request.auth != null && request.auth.token.admin == true;
+    }
+
+    match /ranking-requests/{req} {
+      allow read: if true
+      allow create: if request.auth != null;
+      allow update, delete: if request.auth != null &&
+                  (request.auth.token.requestAdmin == true || request.auth.token.admin == true);
+    }
+
+    match /raffle-entries/{query} {
+      allow create: if request.auth != null;
+      allow read, update, delete: if request.auth != null &&
+                  (request.auth.token.raflAdmin == true || request.auth.token.admin == true);
+    }
+
+    match /data-cache/{query} {
+      allow read: if true;
+      allow write: if request.auth != null &&
+        (request.auth.token.dataAdmin == true ||
+         request.auth.token.raflAdmin == true ||
+         request.auth.token.admin == true);
+    }
+
+    match /user-claims-info/{user} {
+      allow read, write: if false;
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

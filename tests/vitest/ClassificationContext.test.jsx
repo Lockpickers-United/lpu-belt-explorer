@@ -1,5 +1,5 @@
 import React, {useContext} from 'react'
-import {describe, expect, it} from 'vitest'
+import {describe, expect, it, vi} from 'vitest'
 import {renderWithProviders} from '../../src/test/render.jsx'
 import ClassificationContext, {ClassificationProvider} from '../../src/app/ClassificationContext.jsx'
 import allEntries from '../../src/data/data.json'
@@ -7,6 +7,21 @@ import votes from '../../src/data/classification-samples.json'
 import historicalVotes from '../../src/data/classification-votes-historical.json'
 import adminActions from '../../src/data/classification-samples-admin.json'
 import changelogs from '../../src/data/classification-samples-changelog.json'
+
+vi.mock('../../src/data/classification-samples.json', async importOriginal => {
+    const original = await importOriginal()
+    const {default: fixtures} = await import('../fixtures/classification-test-data.json')
+    return {default: [...original.default, ...fixtures.votes]}
+})
+vi.mock('../../src/data/classification-samples-admin.json', async () => {
+    const {adminActionsForVotes} = await import('../fixtures/classificationSampleData.js')
+    const {default: realVotes} = await vi.importActual('../../src/data/classification-samples.json')
+    return {default: adminActionsForVotes(realVotes)}
+})
+vi.mock('../../src/data/classification-samples-changelog.json', async () => {
+    const {default: fixtures} = await import('../fixtures/classification-test-data.json')
+    return {default: fixtures.changelogs}
+})
 
 const voteTime = vote => Date.parse(vote.updatedAt ?? vote.createdAt)
 

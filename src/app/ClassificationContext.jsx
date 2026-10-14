@@ -1,10 +1,10 @@
 import React, {useCallback, useContext, useMemo} from 'react'
 import AuthContext from './AuthContext.jsx'
+import dayjs from 'dayjs'
+import ClassificationContext from './classificationContextValue.js'
 import modernVotes from '../data/classification-samples.json'
 import classificationAdminActions from '../data/classification-samples-admin.json'
 import classificationChangelogs from '../data/classification-samples-changelog.json'
-import dayjs from 'dayjs'
-import ClassificationContext from './classificationContextValue.js'
 
 const voteTime = vote => dayjs(vote.updatedAt ?? vote.createdAt).valueOf()
 const newestFirst = (a, b) => voteTime(b) - voteTime(a)
@@ -21,7 +21,8 @@ function groupByEntry(records) {
 }
 
 const allVotes = modernVotes
-const allAdminActions = classificationAdminActions || []
+const allAdminActions = classificationAdminActions
+const allChangelogs = classificationChangelogs
 const votesByEntry = groupByEntry(allVotes)
 const actionsByEntry = groupByEntry(allAdminActions)
 
@@ -97,7 +98,7 @@ export function ClassificationProvider({children}) {
         getCurrentVotes,
         getPreviousVotes,
         isActive,
-        previousChangelogs: classificationChangelogs
+        previousChangelogs: allChangelogs
             .filter(log => log.changes.length > 0)
             .sort((a, b) => dayjs(b.lastPublishedAt).valueOf() - dayjs(a.lastPublishedAt))
     }), [loggedInUserVotes, getUserVote, getAdminAction, getLatestMilestone, getAdminActionStatus, getCurrentVotes, getPreviousVotes, isActive])
