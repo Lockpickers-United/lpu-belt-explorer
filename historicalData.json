@@ -2479,10 +2479,10 @@
     ],
     "name": "ABUS 55/30",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 398,
+    "views": 399,
     "lastUpdated": "2025-03-19T15:44:57.277Z",
     "modelNum": "55.3",
-    "popularityIndex": 398,
+    "popularityIndex": 399,
     "scorecardCount": 53
   },
   "693abee0": {
@@ -13057,7 +13057,7 @@
     "name": "Elca",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "lastUpdated": "2025-03-19T15:44:57.284Z",
-    "views": 10,
+    "views": 9,
     "media": [
       {
         "title": "By: Luboš Čech",
@@ -13076,7 +13076,7 @@
         "url": "https://www.catalocks.eu/ELCA/ELCA_496.html"
       }
     ],
-    "popularityIndex": 10
+    "popularityIndex": 9
   },
   "9bf13231": {
     "id": "9bf13231",
@@ -13304,7 +13304,7 @@
     ],
     "name": "EVVA Standardcylinder (Normalprofil)",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 28,
+    "views": 27,
     "lastUpdated": "2025-03-19T15:44:57.284Z",
     "media": [
       {
@@ -13335,7 +13335,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53155984510_9989e452b8_o.jpg"
       }
     ],
-    "popularityIndex": 28,
+    "popularityIndex": 27,
     "scorecardCount": 1
   },
   "9406020f": {
@@ -13584,7 +13584,7 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "views": 16,
+    "views": 15,
     "lastUpdated": "2025-03-19T15:44:57.285Z",
     "media": [
       {
@@ -13627,7 +13627,7 @@
     "relatedIds": [
       "d1896bf9"
     ],
-    "popularityIndex": 16
+    "popularityIndex": 15
   },
   "f8254416": {
     "id": "f8254416",
@@ -16678,7 +16678,7 @@
     ],
     "name": "ABUS E20, E30, E60, E70, NP (6-pin)",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 113,
+    "views": 112,
     "lastUpdated": "2025-03-19T01:20:51.365Z",
     "media": [
       {
@@ -16738,7 +16738,7 @@
       }
     ],
     "notes": "Randomized pinning",
-    "popularityIndex": 113,
+    "popularityIndex": 112,
     "scorecardCount": 20
   },
   "3515caae": {
@@ -18336,7 +18336,7 @@
     ],
     "name": "DOM R Plus",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 17,
+    "views": 16,
     "lastUpdated": "2025-03-19T01:20:51.367Z",
     "media": [
       {
@@ -18405,7 +18405,7 @@
         "url": "https://www.catalocks.eu/DOM/DOM%20RPLUS_1020.html"
       }
     ],
-    "popularityIndex": 17,
+    "popularityIndex": 16,
     "scorecardCount": 4
   },
   "1dd28bf9": {
@@ -31878,9 +31878,9 @@
     ],
     "name": "FAB Dynamic",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 15,
+    "views": 16,
     "lastUpdated": "2025-03-19T15:44:57.303Z",
-    "popularityIndex": 15,
+    "popularityIndex": 16,
     "scorecardCount": 12,
     "features": [
       "Flickr Update"
@@ -50396,7 +50396,7 @@
     ],
     "name": "Kromer Novum",
     "dateAdded": "2023-03-02T19:05:25.000Z",
-    "views": 11,
+    "views": 12,
     "lastUpdated": "2025-03-19T01:20:51.387Z",
     "media": [
       {
@@ -50445,7 +50445,7 @@
     "lockingMechanisms": [
       "Lever"
     ],
-    "popularityIndex": 11,
+    "popularityIndex": 12,
     "scorecardCount": 2,
     "version": "8 levers"
   },
@@ -52088,7 +52088,7 @@
     "lockingMechanisms": [
       "Dimple"
     ],
-    "views": 14,
+    "views": 15,
     "lastUpdated": "2025-03-18T23:29:31.279Z",
     "features": [
       "Opposing overset stacks",
@@ -52123,7 +52123,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53956592426_65ae324317_o.jpg"
       }
     ],
-    "popularityIndex": 14,
+    "popularityIndex": 15,
     "scorecardCount": 9
   },
   "9a99a0a7": {
@@ -53043,14 +53043,14 @@
     "lastUpdated": "2025-03-19T15:44:57.322Z",
     "name": "ISEO F6 extra",
     "dateAdded": "2023-04-18T00:07:14.000Z",
-    "views": 29,
+    "views": 28,
     "features": [
       "Under Review ⚑"
     ],
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "popularityIndex": 29,
+    "popularityIndex": 28,
     "scorecardCount": 4
   },
   "2d1adbaf": {
@@ -63995,7 +63995,7 @@
     "makeModels": [
       {
         "make": "Mul-T-Lock",
-        "model": "MT5+ Short KIK"
+        "model": "MT5+ Short"
       }
     ],
     "version": "4 drivers, 4 sliders",
@@ -64006,7 +64006,7 @@
       "Pin-in-pin",
       "Latest Changelog"
     ],
-    "name": "Mul-T-Lock MT5+ Short KIK",
+    "name": "Mul-T-Lock MT5+ Short",
     "dateAdded": "2026-09-01T00:58:56.482Z",
     "scorecardCount": 3,
     "popularityIndex": 3,

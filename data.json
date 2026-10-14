@@ -1262,9 +1262,9 @@
       "Unguttable"
     ],
     "modelNum": "55.3",
-    "popularityIndex": 398,
+    "popularityIndex": 399,
     "scorecardCount": 53,
-    "views": 398,
+    "views": 399,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -15862,8 +15862,8 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "popularityIndex": 10,
-    "views": 10,
+    "popularityIndex": 9,
+    "views": 9,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -16135,9 +16135,9 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "popularityIndex": 28,
+    "popularityIndex": 27,
     "scorecardCount": 1,
-    "views": 28,
+    "views": 27,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -17178,8 +17178,8 @@
       "Pin-tumbler"
     ],
     "notes": "IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",
-    "popularityIndex": 16,
-    "views": 16,
+    "popularityIndex": 15,
+    "views": 15,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -21552,9 +21552,9 @@
       "Pin-tumbler"
     ],
     "notes": "Randomized pinning",
-    "popularityIndex": 113,
+    "popularityIndex": 112,
     "scorecardCount": 20,
-    "views": 113,
+    "views": 112,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -24873,9 +24873,9 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "popularityIndex": 17,
+    "popularityIndex": 16,
     "scorecardCount": 4,
-    "views": 17,
+    "views": 16,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -36494,9 +36494,9 @@
     "features": [
       "Under Review ⚑"
     ],
-    "popularityIndex": 29,
+    "popularityIndex": 28,
     "scorecardCount": 4,
-    "views": 29,
+    "views": 28,
     "dateAdded": "2023-04-18T00:07:14.000Z",
     "media": [
       {
@@ -44568,9 +44568,9 @@
     "features": [
       "Flickr Update"
     ],
-    "popularityIndex": 15,
+    "popularityIndex": 16,
     "scorecardCount": 12,
-    "views": 15,
+    "views": 16,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -47841,9 +47841,9 @@
       "Interactive element"
     ],
     "notes": "5 pins on main row similar to T60, 5 opposing pins, overlift at rest, 1 interactive on T-12",
-    "popularityIndex": 14,
+    "popularityIndex": 15,
     "scorecardCount": 9,
-    "views": 14,
+    "views": 15,
     "dateAdded": "2023-03-02T19:05:25.000Z",
     "media": [
       {
@@ -52215,9 +52215,9 @@
       "False gates",
       "Additional control lever"
     ],
-    "popularityIndex": 11,
+    "popularityIndex": 12,
     "scorecardCount": 2,
-    "views": 11,
+    "views": 12,
     "dateAdded": "2023-03-02T19:05:25.000Z",
     "media": [
       {
@@ -53386,7 +53386,7 @@
     "makeModels": [
       {
         "make": "Mul-T-Lock",
-        "model": "MT5+ Short KIK"
+        "model": "MT5+ Short"
       }
     ],
     "version": "4 drivers, 4 sliders",
@@ -53424,7 +53424,7 @@
         "imageTitle": "Mul-T-Lock MT5+ Short KIK"
       }
     ],
-    "lastUpdated": "2026-09-18T17:33:33.533Z"
+    "lastUpdated": "2026-10-14T14:49:36.331Z"
   },
   {
     "id": "9c5f4539",

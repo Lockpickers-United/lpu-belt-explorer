@@ -1110,7 +1110,7 @@ Ultra-high security is your middle name. Your lock collection is worth more than
 - [MIWA/Anker 3800](https://lpubelts.com/#/locks?id=cc8cfd45)
 - [Mottura 52](https://lpubelts.com/#/locks?id=5e090448) (7 lever)
 - [Mottura Champions C55 / Mottura Champions CP6](https://lpubelts.com/#/locks?id=3daff112)
-- [Mul-T-Lock MT5+ Short KIK](https://lpubelts.com/#/locks?id=fa0b5d10) (4 drivers, 4 sliders)
+- [Mul-T-Lock MT5+ Short](https://lpubelts.com/#/locks?id=fa0b5d10) (4 drivers, 4 sliders)
 - [Picard Vigie / Heracles Pericles](https://lpubelts.com/#/locks?id=9c5f4539) (7 pins, euro profile)
 - [Robur 2391 Safe Deposit Lock](https://lpubelts.com/#/locks?id=9da7a5f2) (barrels &ge; 3 chambers with matched milling)
 - [Robur 2391 Safe Deposit Lock](https://lpubelts.com/#/locks?id=112d0034) (gins &ge; 3 chambers with matched milling)
