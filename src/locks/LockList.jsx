@@ -17,7 +17,7 @@ import AppBar from '@mui/material/AppBar'
 function LockList() {
     const {isMobile} = useWindowSize()
     const {lockCollection, adminRole} = useContext(DBContext)
-    const {visibleBeltEntries = []} = useContext(DataContext)
+    const {visibleBeltEntries = [], classificationFeatureError} = useContext(DataContext)
     const {isLoggedIn, user, userClaims} = useContext(AuthContext)
     const {tab, setTab} = useContext(LockListContext)
 
@@ -45,6 +45,8 @@ function LockList() {
                 <BeltToolbar tab={tab} setTab={setTab}/>
             </AppBar>
             <SearchDidYouMeanBar/>
+
+            {classificationFeatureError && <div role='alert'>Classification filter may be out of date.</div>}
 
             <Entries profile={lockCollection} advancedEnabled={true}/>
 
