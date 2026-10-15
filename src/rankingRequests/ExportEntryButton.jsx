@@ -11,6 +11,7 @@ import ListItemIcon from '@mui/material/ListItemIcon'
 import ListItemText from '@mui/material/ListItemText'
 import Menu from '@mui/material/Menu'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy'
+import SystemUpdateAltIcon from '@mui/icons-material/SystemUpdateAlt'
 
 export default function ExportEntryButton({entry, textButton = false, color = 'info'}) {
     const [anchorEl, setAnchorEl] = useState(null)
@@ -77,13 +78,13 @@ export default function ExportEntryButton({entry, textButton = false, color = 'i
             {textButton
                 ? <Tooltip title='Export Entry' arrow disableFocusListener>
                     <Button variant='outlined' size='small' onClick={handleOpen} color={color}
-                            style={{}} startIcon={<FileDownloadIcon color={color}/>}>
+                            style={{}} startIcon={<SystemUpdateAltIcon color={color}/>}>
                         Export Entry
                     </Button>
                 </Tooltip>
                 : <Tooltip title='Export Entry' arrow disableFocusListener>
                     <IconButton onClick={handleOpen} color={color}>
-                        <FileDownloadIcon/>
+                        <SystemUpdateAltIcon/>
                     </IconButton>
                 </Tooltip>
             }
@@ -103,14 +104,14 @@ export default function ExportEntryButton({entry, textButton = false, color = 'i
                     <ListItemIcon>
                         <ContentCopyIcon fontSize='small'/>
                     </ListItemIcon>
-                    <ListItemText>Copy to clipboard</ListItemText>
+                    <ListItemText>Copy entry data to clipboard</ListItemText>
                 </MenuItem>
 
                 <MenuItem onClick={handleExportClipboardMedia}>
                     <ListItemIcon>
                         <ContentCopyIcon fontSize='small'/>
                     </ListItemIcon>
-                    <ListItemText>Copy to media data to clipboard</ListItemText>
+                    <ListItemText>Copy media data to clipboard</ListItemText>
                 </MenuItem>
 
             </Menu>
