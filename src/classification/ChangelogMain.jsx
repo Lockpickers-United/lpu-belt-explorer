@@ -23,6 +23,8 @@ import MenuItem from '@mui/material/MenuItem'
 import Menu from '@mui/material/Menu'
 import classificationCatalog from '../data/classification-catalog.json'
 import reconcileClassificationAction from './reconcileClassificationAction.js'
+import LoadingDisplay from '../misc/LoadingDisplay.jsx'
+import ErrorMessage from '../misc/ErrorMessage.jsx'
 
 const catalogById = new Map(classificationCatalog.entries.map(entry => [entry.id, entry]))
 
@@ -204,12 +206,12 @@ export default function ChangelogMain() {
         ? dayjs(selectedChangelog.lastPublishedAt).format('MMMM D, YYYY').toUpperCase()
         : accessInfo.roles.classificationAdmin ? 'STAGED CHANGES' : 'APPROVED CHANGES'
 
+    // TODO - fix loading/error/etc display
+
     return (
         <React.Fragment>
             <Nav title='Changelog' extras={extras}/>
             <ClassificationToolbar/>
-            {changelogLoading && <div role='status' style={style}>Loading classification changes…</div>}
-            {changelogError && <div role='alert' style={style}>Could not load classification changes: {changelogError.message}</div>}
             {selectedPublication &&
                 <Paper style={{...style, padding: 16}}>
                     <div>Compared with bundled catalog {classificationCatalog.catalogVersion}.</div>
