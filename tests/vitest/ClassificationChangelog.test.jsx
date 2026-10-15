@@ -4,23 +4,13 @@ import {describe, expect, it, vi} from 'vitest'
 import {screen} from '@testing-library/react'
 import {userEvent} from '@testing-library/user-event'
 import {defaultTestContextValues, renderWithProviders} from '../../src/test/render.jsx'
-import ClassificationContext, {ClassificationProvider} from '../../src/app/ClassificationContext.jsx'
+import ClassificationContext from '../../src/app/ClassificationContext.jsx'
 import DataContext from '../../src/context/DataContext.jsx'
 import ChangelogMain from '../../src/classification/ChangelogMain.jsx'
 import changelogEntryFormat from '../../src/classification/changelogEntryFormat.js'
-import adminActions from '../../src/data/classification-samples-admin.json'
-import changelogs from '../../src/data/classification-samples-changelog.json'
+import fixtures from '../fixtures/classification-test-data.json'
 import allEntries from '../../src/data/data.json'
 import download from '../../src/util/download.js'
-
-vi.mock('../../src/data/classification-samples-admin.json', async () => {
-    const {default: fixtures} = await import('../fixtures/classification-test-data.json')
-    return {default: fixtures.adminActions}
-})
-vi.mock('../../src/data/classification-samples-changelog.json', async () => {
-    const {default: fixtures} = await import('../fixtures/classification-test-data.json')
-    return {default: fixtures.changelogs}
-})
 
 vi.mock('../../src/util/download.js', () => ({default: vi.fn()}))
 vi.mock('notistack', async importOriginal => ({
@@ -28,8 +18,13 @@ vi.mock('notistack', async importOriginal => ({
     enqueueSnackbar: vi.fn()
 }))
 
-const samelineAction = adminActions.find(action => action.action === 'Sameline')
-const deleteAction = adminActions.find(action => action.action === 'Delete')
+const samelineAction = fixtures.adminActions.find(action => action.action === 'Sameline')
+const deleteAction = fixtures.adminActions.find(action => action.action === 'Delete')
+const changelogs = fixtures.changelogs
+const classification = {
+    getAdminAction: entry => fixtures.adminActions.find(action => action.entryId === entry.id) ?? null,
+    previousChangelogs: changelogs
+}
 const samelineEntry = allEntries.find(entry => entry.id === samelineAction.entryId)
 const deleteEntry = allEntries.find(entry => entry.id === deleteAction.entryId)
 const targetLock = allEntries.find(entry => entry.id === samelineAction.samelineLock.lockId)
@@ -69,12 +64,12 @@ describe('classification changelog', () => {
                 getLockFromId: id => allEntries.find(entry => entry.id === id)
             }
             return (
-                <ClassificationProvider>
+                <ClassificationContext.Provider value={classification}>
                     <DataContext.Provider value={data}>
                         <button onClick={() => setShowSameline(false)}>Filter Sameline</button>
                         <ChangelogMain/>
                     </DataContext.Provider>
-                </ClassificationProvider>
+                </ClassificationContext.Provider>
             )
         }
         const router = createMemoryRouter([{
@@ -134,7 +129,6 @@ describe('classification changelog', () => {
             getLockFromId: id => id === snapshot.entryId ? undefined : allEntries.find(entry => entry.id === id)
         }
         function HistoricalHarness() {
-            const classification = useContext(ClassificationContext)
             return (
                 <ClassificationContext.Provider value={{...classification, previousChangelogs: [publishedLog]}}>
                     <DataContext.Provider value={data}>
@@ -147,9 +141,9 @@ describe('classification changelog', () => {
             path: '/classification/changelog',
             handle: {route: 'changelog'},
             element: (
-                <ClassificationProvider>
+                <ClassificationContext.Provider value={classification}>
                     <HistoricalHarness/>
-                </ClassificationProvider>
+                </ClassificationContext.Provider>
             )
         }], {initialEntries: ['/classification/changelog']})
 

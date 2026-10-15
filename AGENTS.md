@@ -58,6 +58,15 @@ There is no repository-wide autoformatter; preserve local formatting where it di
 - Ask only when a missing choice materially changes behavior, security, scope, or external effects; otherwise state a reasonable assumption and proceed.
 - Never weaken assertions, disable tests, or hide warnings to make checks pass.
 
+## User input requests
+
+When user input is required, make a clear request in the WebStorm AI Chat window as soon as the need is known. Use the available input-request tool when one is provided. Start with `**User input required**`, state exactly what information, decision, or approval is needed and why, and offer to provide more information about the request. End the request with exactly one status line:
+
+- `**Waiting for imput before continuing**` when the task cannot proceed without the response.
+- `Coninuing with current task, please respond when possible.` when independent work can continue while awaiting the response.
+
+Keep the request visible and distinct from routine progress updates. Continue authorized independent work while waiting; do not treat silence as an answer or approval.
+
 ## Safety invariants
 
 - Production deployments and every live-data script run are approval-gated, including read-only exports. Editing such code does not authorize executing it.

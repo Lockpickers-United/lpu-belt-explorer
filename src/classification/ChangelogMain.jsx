@@ -21,12 +21,17 @@ import changelogEntryFormat from './changelogEntryFormat.js'
 import Paper from '@mui/material/Paper'
 import MenuItem from '@mui/material/MenuItem'
 import Menu from '@mui/material/Menu'
+import classificationCatalog from '../data/classification-catalog.json'
+import reconcileClassificationAction from './reconcileClassificationAction.js'
+
+const catalogById = new Map(classificationCatalog.entries.map(entry => [entry.id, entry]))
 
 export default function ChangelogMain() {
     usePageTitle('Changelog')
 
     const {accessInfo} = useAccess()
-    const {getAdminAction, previousChangelogs} = useContext(ClassificationContext)
+    const {getAdminAction, previousChangelogs, selectedPublication,
+        changelogLoading, changelogError} = useContext(ClassificationContext)
     const [searchParams, setSearchParams] = useSearchParams()
 
     const {getLockFromId, visibleChangelogEntries = []} = useContext(DataContext)
@@ -48,7 +53,7 @@ export default function ChangelogMain() {
         return visibleChangelogEntries.map(entry => ({
             ...entry,
             adminAction: getAdminAction(entry)
-        }))
+        })).filter(entry => entry.adminAction)
     }, [getAdminAction, getLockFromId, selectedChangelog, visibleChangelogEntries])
 
     const groupedEntries = currentChangelogEntries.reduce((acc, entry) => {
@@ -84,8 +89,8 @@ export default function ChangelogMain() {
                     groupedEntries[key]
                         .map(entry => {
                             const {adminAction = {}} = entry
-                            const targetLock = !selectedChangelog && adminAction.samelineLock
-                                ? getLockFromId(adminAction.samelineLock.lockId) : null
+                            const targetId = adminAction.samelineTargetId ?? adminAction.samelineLock?.lockId
+                            const targetLock = !selectedChangelog && targetId ? getLockFromId(targetId) : null
                             return changelogEntryFormat({entry, adminAction, targetLock, historical: Boolean(selectedChangelog)})
                         }).join('\n')
                 }\n\n`
@@ -99,22 +104,24 @@ export default function ChangelogMain() {
                 const version = entry.version
 
                 const {adminAction = {}} = entry
-                const {id, action, samelineLock, note, adminNote} = adminAction
+                const {id, actionId, action, samelineLock, samelineTargetId, samelineTargetName,
+                    note, adminNote} = adminAction
 
-                const lock = samelineLock && !selectedChangelog ? getLockFromId(samelineLock.lockId) : null
-                const belt = adminAction.updatedBelt || samelineLock?.belt ||
+                const lock = !selectedChangelog && (samelineTargetId ?? samelineLock?.lockId)
+                    ? getLockFromId(samelineTargetId ?? samelineLock.lockId) : null
+                const belt = adminAction.updatedBelt || lock?.belt || samelineLock?.belt ||
                     (selectedChangelog ? adminAction.previousBelt ?? entry.belt : entry.belt) || null
 
                 acc.push({
                     name,
                     version,
                     id: entry.id,
-                    adminActionId: id,
+                    adminActionId: id ?? actionId,
                     action,
                     change: key.replace(/s$/, ''),
                     belt,
-                    samelineTargetId: lock?.id ?? samelineLock?.lockId ?? null,
-                    samelineTargetName: lock ? entryName(lock, 'short', {includeVersion: true}) : samelineLock?.lockFullName ?? null,
+                    samelineTargetId: lock?.id ?? samelineTargetId ?? samelineLock?.lockId ?? null,
+                    samelineTargetName: lock ? entryName(lock, 'short', {includeVersion: true}) : samelineTargetName ?? samelineLock?.lockFullName ?? null,
                     samelineTargetBelt: lock?.belt ?? samelineLock?.belt ?? null,
                     note,
                     adminNote
@@ -201,6 +208,20 @@ export default function ChangelogMain() {
         <React.Fragment>
             <Nav title='Changelog' extras={extras}/>
             <ClassificationToolbar/>
+            {changelogLoading && <div role='status' style={style}>Loading classification changes…</div>}
+            {changelogError && <div role='alert' style={style}>Could not load classification changes: {changelogError.message}</div>}
+            {selectedPublication &&
+                <Paper style={{...style, padding: 16}}>
+                    <div>Compared with bundled catalog {classificationCatalog.catalogVersion}.</div>
+                    {selectedPublication.catalogFingerprint &&
+                        <div>Publication catalog: {selectedPublication.catalogFingerprint}</div>}
+                    {selectedPublication.actions.map(action => {
+                        const result = reconcileClassificationAction(action, catalogById)
+                        return <div key={action.actionId}>
+                            {action.entryName ?? action.entryId}: {result.status} — {result.detail}
+                        </div>
+                    })}
+                </Paper>}
             <Paper style={{...style, display: 'flex', justifyContent: 'space-between', padding: 8, gap: 8}}>
                 <div style={{fontSize: '1.3rem', fontWeight: 600, marginTop: 3}}>{title}</div>
                 <div>
@@ -245,7 +266,7 @@ export default function ChangelogMain() {
                                     minWidth: '20px',
                                     color: selectedChangelog?.id === entry.id ? '#42d736' : '#aaa',
                                     textAlign: 'center'
-                                }}>{entry.changes.length}</div>
+                                }}>{entry.actionCount ?? entry.changes.length}</div>
                             </MenuItem>
                         ))}
                     </Menu>

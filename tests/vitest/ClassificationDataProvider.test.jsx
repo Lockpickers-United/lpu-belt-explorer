@@ -1,224 +1,83 @@
 import React, {useContext} from 'react'
 import {createMemoryRouter, Outlet, RouterProvider} from 'react-router-dom'
-import {describe, expect, it, vi} from 'vitest'
-import {screen, waitFor, within} from '@testing-library/react'
-import {userEvent} from '@testing-library/user-event'
+import {describe, expect, it} from 'vitest'
 import {renderWithProviders} from '../../src/test/render.jsx'
 import {FilterProvider} from '../../src/context/FilterContext.jsx'
 import {classificationFilterFields} from '../../src/data/filterFields.js'
-import {ClassificationProvider} from '../../src/app/ClassificationContext.jsx'
+import ClassificationContext from '../../src/app/ClassificationContext.jsx'
 import {ClassificationDataProvider} from '../../src/classification/ClassificationDataProvider.jsx'
-import AdvancedFilterDrawerButton from '../../src/filters/AdvancedFilterDrawerButton.jsx'
-import ClassificationEntries from '../../src/classification/ClassificationEntries.jsx'
-import LockListContext from '../../src/locks/LockListContext.jsx'
-import allEntries from '../../src/data/data.json'
-import modernVotes from '../../src/data/classification-samples.json'
-import adminActions from '../../src/data/classification-samples-admin.json'
 import DataContext from '../../src/context/DataContext.jsx'
+import allEntries from '../../src/data/data.json'
 
-vi.mock('../../src/data/classification-samples.json', async importOriginal => {
-    const original = await importOriginal()
-    const {default: fixtures} = await import('../fixtures/classification-test-data.json')
-    return {default: [...original.default, ...fixtures.votes]}
-})
-vi.mock('../../src/data/classification-samples-admin.json', async () => {
-    const {adminActionsForVotes} = await import('../fixtures/classificationSampleData.js')
-    const {default: realVotes} = await vi.importActual('../../src/data/classification-samples.json')
-    return {default: adminActionsForVotes(realVotes)}
-})
-
-const mixedVoteEntryName = /^Ikon SK6 Radienprofil Extra Code/
-const mixedVoteEntry = allEntries.find(entry => entry.id === 'ca9828d7')
-
-function VoteCount() {
-    const {getEntryFromId} = useContext(DataContext)
-    return <output data-testid='vote-count'>{getEntryFromId(mixedVoteEntry.id).voteCount}</output>
+const byId = id => allEntries.find(entry => entry.id === id)
+const unranked = byId('3b7643da')
+const ranked = {...byId('ca9828d7'), belt: 'Blue'}
+const reopened = {...byId('e2fd1519'), belt: 'Blue'}
+const staged = {...byId('18ecc45b'), belt: 'Orange'}
+const previous = {...byId('fe9889e2'), belt: 'Green'}
+const entries = [unranked, ranked, reopened, staged, previous]
+const chip = (id, displayName, votedBelt) => ({id, displayName, votedBelt,
+    updatedAt: '2026-10-01T00:00:00Z', userId: id})
+const summaries = new Map([
+    [unranked.id, {current: [chip('v1', 'Reviewer A', 'Blue')]}],
+    [ranked.id, {current: [chip('v2', 'Reviewer B', 'Green')]}],
+    [reopened.id, {status: 'Re-opened', current: [chip('v3', 'Reviewer C', 'Blue')]}],
+    [staged.id, {status: 'Staged', current: [chip('v4', 'Reviewer D', 'Orange')]}],
+    [previous.id, {previous: [chip('v5', 'Reviewer E', 'Green')]}]
+])
+const classification = {
+    getCurrentVotes: entry => summaries.get(entry.id)?.current ?? [],
+    getPreviousVotes: entry => summaries.get(entry.id)?.previous ?? [],
+    getAdminActionStatus: entry => summaries.get(entry.id)?.status ??
+        (summaries.get(entry.id)?.current?.length ? 'Has Votes' : 'No Votes'),
+    isActive: entry => entry.belt === 'Unranked' ||
+        ['Re-opened', 'Staged'].includes(summaries.get(entry.id)?.status),
+    stagedByEntry: new Map([[staged.id, {id: 'action-1'}]])
 }
 
-describe('ClassificationDataProvider', () => {
-    it('keeps the active worklist and changelog scoped to active locks', () => {
-        let classificationData
-        function CaptureData() {
-            classificationData = useContext(DataContext)
-            return null
-        }
+function renderData(path, onData) {
+    function Capture() {
+        onData(useContext(DataContext))
+        return null
+    }
+    const child = (
+        <ClassificationContext.Provider value={classification}>
+            <FilterProvider filterFields={classificationFilterFields}>
+                <ClassificationDataProvider allEntries={entries}><Capture/></ClassificationDataProvider>
+            </FilterProvider>
+        </ClassificationContext.Provider>
+    )
+    const router = createMemoryRouter([{
+        path: '/classification', handle: {route: 'classification'}, element: <Outlet/>,
+        children: [
+            {index: true, element: child},
+            {path: 'ranked', handle: {route: 'ranked'}, element: child}
+        ]
+    }], {initialEntries: [path]})
+    renderWithProviders(<RouterProvider router={router}/>)
+}
 
-        const voteOnlyRecord = modernVotes.find(vote => vote.type === 'vote' &&
-            allEntries.some(entry => entry.id === vote.entryId) &&
-            !adminActions.some(action => action.entryId === vote.entryId))
-        const reopenedAction = adminActions.find(action => action.status === 'Re-opened' &&
-            allEntries.some(entry => entry.id === action.entryId && entry.belt !== 'Unranked'))
-        const rankedStagedAction = adminActions.find(action => action.status === 'Staged' &&
-            allEntries.some(entry => entry.id === action.entryId && entry.belt !== 'Unranked'))
-        const unrankedStagedAction = adminActions.find(action => action.status === 'Staged' &&
-            allEntries.some(entry => entry.id === action.entryId && entry.belt === 'Unranked'))
-        const samelineAction = adminActions.find(action => action.status === 'Staged' && action.action === 'Sameline')
-        const deleteAction = adminActions.find(action => action.status === 'Staged' && action.action === 'Delete')
-        expect(voteOnlyRecord).toBeDefined()
-        expect(reopenedAction).toBeDefined()
-        expect(rankedStagedAction).toBeDefined()
-        expect(unrankedStagedAction).toBeDefined()
-        expect(samelineAction).toBeDefined()
-        expect(deleteAction).toBeDefined()
-
-        const rankedVoteEntry = {
-            ...allEntries.find(entry => entry.id === voteOnlyRecord.entryId),
-            belt: 'Orange',
-            currentBeltDate: undefined
-        }
-        const rankedReopenedEntry = {
-            ...allEntries.find(entry => entry.id === reopenedAction.entryId),
-            currentBeltDate: undefined
-        }
-        const rankedStagedEntry = {
-            ...allEntries.find(entry => entry.id === rankedStagedAction.entryId),
-            currentBeltDate: undefined
-        }
-        const unrankedStagedEntry = allEntries.find(entry => entry.id === unrankedStagedAction.entryId)
-        const samelineEntry = allEntries.find(entry => entry.id === samelineAction.entryId)
-        const deleteEntry = allEntries.find(entry => entry.id === deleteAction.entryId)
-
-        const router = createMemoryRouter([{
-            path: '/classification',
-            handle: {route: 'classification'},
-            element: (
-                <FilterProvider filterFields={classificationFilterFields}>
-                    <ClassificationProvider>
-                        <ClassificationDataProvider allEntries={[
-                            rankedVoteEntry, rankedReopenedEntry, rankedStagedEntry, unrankedStagedEntry,
-                            samelineEntry, deleteEntry
-                        ]}>
-                            <CaptureData/>
-                        </ClassificationDataProvider>
-                    </ClassificationProvider>
-                </FilterProvider>
-            )
-        }], {initialEntries: ['/classification']})
-
-        renderWithProviders(
-            <RouterProvider router={router}/>,
-            {auth: {user: {uid: 'test-user'}}}
-        )
-
-        expect(classificationData.getEntryFromId(rankedVoteEntry.id).classificationStatus).toBe('Has Votes')
-        expect(classificationData.getEntryFromId(rankedReopenedEntry.id).voteCount).toBe(2)
-        expect(classificationData.getEntryFromId(rankedReopenedEntry.id).previousVotes).toEqual([])
-        expect(classificationData.visibleEntries.map(entry => entry.id)).toEqual(expect.arrayContaining([
-            rankedReopenedEntry.id, rankedStagedEntry.id, unrankedStagedEntry.id,
-            samelineEntry.id, deleteEntry.id
-        ]))
-        expect(classificationData.visibleEntries.map(entry => entry.id)).not.toContain(rankedVoteEntry.id)
-        expect(classificationData.visibleChangelogEntries.map(entry => entry.id)).toEqual(expect.arrayContaining([
-            rankedStagedEntry.id, unrankedStagedEntry.id, samelineEntry.id, deleteEntry.id
-        ]))
-        expect(classificationData.visibleChangelogEntries).toHaveLength(4)
+describe('ClassificationDataProvider live summaries', () => {
+    it('keeps unranked, reopened, and staged locks in the active worklist', () => {
+        let data
+        renderData('/classification', value => { data = value })
+        expect(data.visibleEntries.map(entry => entry.id).sort()).toEqual([unranked.id, reopened.id, staged.id].sort())
+        expect(data.getEntryFromId(ranked.id).voteCount).toBe(1)
+        expect(data.getEntryFromId(reopened.id).classificationStatus).toBe('Re-opened')
     })
 
-    it('shows voted ranked locks except active locks that are not reopened', () => {
-        let classificationData
-        function CaptureData() {
-            classificationData = useContext(DataContext)
-            return null
-        }
-
-        const rankedCurrentEntry = allEntries.find(entry => entry.id === '8d4632d9')
-        const rankedPreviousEntry = allEntries.find(entry => entry.id === 'fe9889e2')
-        const unrankedEntry = allEntries.find(entry => entry.id === '3b7643da')
-        const reopenedEntry = allEntries.find(entry => entry.id === 'e2fd1519')
-        const stagedEntry = allEntries.find(entry => entry.id === '18ecc45b')
-        const rankedNoVoteEntry = allEntries.find(entry => entry.belt !== 'Unranked' &&
-            !modernVotes.some(vote => vote.entryId === entry.id))
-
-        const router = createMemoryRouter([{
-            path: '/classification',
-            handle: {route: 'classification'},
-            element: <Outlet/>,
-            children: [{
-                path: 'ranked',
-                handle: {route: 'ranked'},
-                element: (
-                    <FilterProvider filterFields={classificationFilterFields}>
-                        <ClassificationProvider>
-                            <ClassificationDataProvider allEntries={[
-                                rankedCurrentEntry, rankedPreviousEntry, reopenedEntry, stagedEntry,
-                                unrankedEntry, rankedNoVoteEntry
-                            ]}>
-                                <LockListContext.Provider value={{tab: 'search'}}>
-                                    <CaptureData/>
-                                    <ClassificationEntries/>
-                                </LockListContext.Provider>
-                            </ClassificationDataProvider>
-                        </ClassificationProvider>
-                    </FilterProvider>
-                )
-            }]
-        }], {initialEntries: ['/classification/ranked']})
-
-        renderWithProviders(
-            <RouterProvider router={router}/>,
-            {auth: {user: {uid: 'test-user'}}}
-        )
-
-        expect(classificationData.getEntryFromId(rankedPreviousEntry.id).voteCount).toBe(0)
-        expect(classificationData.getEntryFromId(rankedPreviousEntry.id).previousVotes.length).toBeGreaterThan(0)
-        expect(classificationData.getEntryFromId(reopenedEntry.id).voteCount).toBe(2)
-        expect(classificationData.getEntryFromId(reopenedEntry.id).previousVotes).toEqual([])
-        expect(classificationData.visibleEntries.map(entry => entry.id)).toEqual(expect.arrayContaining([
-            rankedCurrentEntry.id, rankedPreviousEntry.id, reopenedEntry.id
-        ]))
-        expect(classificationData.visibleEntries.map(entry => entry.id)).not.toContain(stagedEntry.id)
-        expect(classificationData.visibleEntries).toHaveLength(3)
-        expect(screen.getByLabelText('Greenish')).toBeInTheDocument()
-        expect(screen.getByLabelText('Crispix')).toBeInTheDocument()
-        expect(screen.getByLabelText('PeaceWeapon (previous)')).toBeInTheDocument()
-        expect(screen.getByLabelText('Reinder')).toBeInTheDocument()
-        expect(screen.getByLabelText('yabende (previous)')).toBeInTheDocument()
+    it('includes current and previous voted ranked locks, except staged work', () => {
+        let data
+        renderData('/classification/ranked', value => { data = value })
+        expect(data.visibleEntries.map(entry => entry.id).sort()).toEqual([ranked.id, reopened.id, previous.id].sort())
+        expect(data.getEntryFromId(previous.id).voteCount).toBe(0)
+        expect(data.getEntryFromId(previous.id).previousVotes).toHaveLength(1)
     })
 
-    it('updates nested vote entries when a voter filter is applied', async () => {
-        const user = userEvent.setup()
-
-        const router = createMemoryRouter([{
-            path: '/classification',
-            handle: {route: 'classification'},
-            element: (
-                <FilterProvider filterFields={classificationFilterFields}>
-                    <ClassificationProvider>
-                        <ClassificationDataProvider allEntries={[mixedVoteEntry]}>
-                            <LockListContext.Provider value={{tab: 'search'}}>
-                                <VoteCount/>
-                                <AdvancedFilterDrawerButton/>
-                                <ClassificationEntries/>
-                            </LockListContext.Provider>
-                        </ClassificationDataProvider>
-                    </ClassificationProvider>
-                </FilterProvider>
-            )
-        }], {initialEntries: ['/classification']})
-
-        renderWithProviders(<RouterProvider router={router}/>, {
-            auth: {user: {uid: 'test-user'}}
-        })
-
-        const entry = screen.getByRole('listitem', {name: mixedVoteEntryName})
-        const fullVoteCount = screen.getByTestId('vote-count').textContent
-        expect(within(entry).getByLabelText('Georgia Jim')).toBeInTheDocument()
-        expect(within(entry).getByLabelText('Alpama')).toBeInTheDocument()
-        expect(within(entry).getByLabelText('yabende')).toBeInTheDocument()
-        expect(within(entry).getByLabelText('Sidepicks')).toBeInTheDocument()
-
-        await user.click(screen.getByRole('button', {name: 'Filter'}))
-        await user.click(await screen.findByRole('combobox', {name: 'Vote From'}))
-        await user.click(await screen.findByRole('option', {name: /Georgia Jim/}))
-        await user.click(screen.getByRole('button', {name: 'Close'}))
-
-        await waitFor(() => {
-            const filteredEntry = screen.getByRole('listitem', {name: mixedVoteEntryName})
-            expect(within(filteredEntry).getByLabelText('Georgia Jim')).toBeInTheDocument()
-            expect(within(filteredEntry).queryByLabelText('Alpama')).not.toBeInTheDocument()
-            expect(within(filteredEntry).queryByLabelText('yabende')).not.toBeInTheDocument()
-            expect(within(filteredEntry).queryByLabelText('Sidepicks')).not.toBeInTheDocument()
-            expect(screen.getByTestId('vote-count')).toHaveTextContent(fullVoteCount)
-        })
+    it('uses the staged API projection for changelog membership', () => {
+        let data
+        renderData('/classification', value => { data = value })
+        expect(data.visibleChangelogEntries.map(entry => entry.id)).toEqual([staged.id])
+        expect(data.getEntryFromId(unranked.id).displayName).toEqual(['Reviewer A'])
     })
 })

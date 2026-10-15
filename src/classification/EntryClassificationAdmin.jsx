@@ -13,19 +13,67 @@ import {Collapse} from '@mui/material'
 import EntryClassificationVote from './EntryClassificationVote.jsx'
 import ChangelogPreviewButton from './ChangelogPreviewButton.jsx'
 import DataContext from '../context/DataContext.jsx'
+import APIContext from '../app/APIContext.jsx'
+import AuthContext from '../app/AuthContext.jsx'
 
 const statuses = ['Draft', 'Pending', 'Staged', 'Published', 'Re-opened', 'Settled']
 const actions = ['Belt Change', 'Sameline', 'Delete']
 
 export default function EntryClassificationAdmin({entry, handleToggle}) {
-    const {accessInfo} = useAccess()
     const {getAdminAction} = useContext(ClassificationContext)
+    const {fetchClassificationAction} = useContext(APIContext)
+    const {userClaims = []} = useContext(AuthContext)
+    const summaryAction = getAdminAction(entry)
+    const needsFetch = summaryAction?.action === undefined &&
+        userClaims.some(claim => ['admin', 'classificationAdmin'].includes(claim))
+    const [loadedAction, setLoadedAction] = useState(null)
+    const [actionLoading, setActionLoading] = useState(needsFetch)
+    const [actionError, setActionError] = useState(null)
+
+    useEffect(() => {
+        if (!needsFetch) return
+        let active = true
+        setLoadedAction(null)
+        setActionLoading(true)
+        setActionError(null)
+        fetchClassificationAction(entry.id).then(action => {
+            if (active) {
+                if (summaryAction?.id && !action) {
+                    setActionError(new Error('Current action changed'))
+                } else {
+                    setLoadedAction(action)
+                }
+                setActionLoading(false)
+            }
+        }).catch(error => {
+            if (active) {
+                setActionError(error)
+                setActionLoading(false)
+            }
+        })
+        return () => { active = false }
+    }, [entry.id, summaryAction?.id, needsFetch, fetchClassificationAction])
+
+    if (actionError) return <div role='alert'>Could not load the current classification action.</div>
+    if (actionLoading) {
+        return <div role='status'>Loading classification action…</div>
+    }
+    const action = loadedAction ?? summaryAction
+    return <EntryClassificationAdminForm key={action?.id ?? 'new'} entry={entry}
+                                         handleToggle={handleToggle} action={action}/>
+}
+
+function EntryClassificationAdminForm({entry, handleToggle, action}) {
+    const {accessInfo} = useAccess()
     const {allEntries} = useContext(DataContext)
 
     const adminAction = useMemo(() => {
-        const action = getAdminAction(entry)
-        return action && action.status !== 'Published' ? action : {status: 'Pending'}
-    }, [getAdminAction, entry])
+        if (!action || action.status === 'Published') return {status: 'Pending'}
+        const target = action.samelineTargetId && allEntries.find(entry => entry.id === action.samelineTargetId)
+        return target ? {...action, samelineLock: {
+            lockId: target.id, belt: target.belt, lockFullName: action.samelineTargetName
+        }} : action
+    }, [action, allEntries])
 
     let form
     const baseForm = adminAction

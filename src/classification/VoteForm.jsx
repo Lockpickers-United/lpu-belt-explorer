@@ -21,7 +21,7 @@ export default function VoteForm({entry, vote, handleActive, owner}) {
     const hasLock = profile?.recordedLocks?.includes(entry.id)
 
     const url = `${apiServerUrl}/api/v1/locks/${entry.id}/videos`
-    const response = useGetRequest({user, url, enabled: hasLock && accessInfo.features.scorecardVideos})
+    const response = useGetRequest({user, url, enabled: Boolean(hasLock && accessInfo.features.scorecardVideos)})
     const videos = response?.data?.data?.videos ?? []
     const scorecardVideo = videos.find(video => video.userId === user.uid) ?? null
 

@@ -4,7 +4,7 @@ import VoteView from './VoteView.jsx'
 import VoteForm from './VoteForm.jsx'
 import Button from '@mui/material/Button'
 
-export default function VoteDisplay({vote = {}, owner, entry, previous = false}) {
+export default function VoteDisplay({vote = {}, formVote = vote, owner, entry, previous = false}) {
     const [editing, setEditing] = useState(false)
     const handleActive = type => setEditing(type === 'voteForm')
 
@@ -25,7 +25,7 @@ export default function VoteDisplay({vote = {}, owner, entry, previous = false})
                 <VoteView vote={vote} handleActive={handleActive} owner={owner} previous={previous}/>
             </Collapse>
             <Collapse in={editing}>
-                {editing && <VoteForm entry={entry} vote={vote} handleActive={handleActive} owner={owner}/>}
+                {editing && <VoteForm entry={entry} vote={formVote} handleActive={handleActive} owner={owner}/>}
             </Collapse>
         </div>
     )

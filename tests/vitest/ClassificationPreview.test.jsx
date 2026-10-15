@@ -5,16 +5,20 @@ import {userEvent} from '@testing-library/user-event'
 import {createMemoryRouter, RouterProvider} from 'react-router-dom'
 import {defaultTestContextValues, renderWithProviders} from '../../src/test/render.jsx'
 import AccessContext from '../../src/app/AccessContext.jsx'
-import {ClassificationProvider} from '../../src/app/ClassificationContext.jsx'
+import ClassificationContext from '../../src/app/ClassificationContext.jsx'
 import VoteDisplay from '../../src/classification/VoteDisplay.jsx'
 import EntryClassificationAdmin from '../../src/classification/EntryClassificationAdmin.jsx'
 import EntryActionBarWrapped from '../../src/entries/EntryActionBarWrapped.jsx'
 import allEntries from '../../src/data/data.json'
 
-vi.mock('../../src/data/classification-samples-admin.json', async () => {
-    const {default: fixtures} = await import('../fixtures/classification-test-data.json')
-    return {default: fixtures.adminActions}
-})
+import fixtures from '../fixtures/classification-test-data.json'
+
+const emptyClassification = {
+    getAdminAction: () => null,
+    getCurrentUserVote: () => null,
+    getUserVote: () => null,
+    getAdminActionStatus: () => 'No Votes'
+}
 
 describe('classification previews', () => {
     it('opens and cancels a vote preview without offering a save action', async () => {
@@ -63,9 +67,9 @@ describe('classification previews', () => {
             path: '/classification',
             handle: {route: 'classification'},
             element: (
-                <ClassificationProvider>
+                <ClassificationContext.Provider value={emptyClassification}>
                     <EntryClassificationAdmin entry={entry}/>
-                </ClassificationProvider>
+                </ClassificationContext.Provider>
             )
         }], {initialEntries: ['/classification']})
         const adminPreview = allowed => (
@@ -100,7 +104,10 @@ describe('classification previews', () => {
             path: '/classification',
             handle: {route: 'classification'},
             element: (
-                <ClassificationProvider><EntryClassificationAdmin entry={entry}/></ClassificationProvider>
+                <ClassificationContext.Provider value={{...emptyClassification,
+                    getAdminAction: () => fixtures.adminActions.find(action => action.id === actionId)}}>
+                    <EntryClassificationAdmin entry={entry}/>
+                </ClassificationContext.Provider>
             )
         }], {initialEntries: ['/classification']})
 
@@ -119,11 +126,37 @@ describe('classification previews', () => {
         expect(screen.getByRole('button', {name: saveLabel})).toBeDisabled()
     })
 
+    it('loads the current admin action only when its panel opens', async () => {
+        const entry = allEntries.find(item => item.id === 'e2fd1519')
+        const fetchClassificationAction = vi.fn(async () => ({
+            id: 'action-live', entryId: entry.id, status: 'Staged', action: 'Delete', note: 'Live note'
+        }))
+        const baseAccessInfo = defaultTestContextValues.access.accessInfo
+        const router = createMemoryRouter([{
+            path: '/classification', handle: {route: 'classification'},
+            element: <ClassificationContext.Provider value={{...emptyClassification,
+                getAdminAction: () => ({id: 'action-live', status: 'Staged'})}}>
+                <EntryClassificationAdmin entry={entry}/>
+            </ClassificationContext.Provider>
+        }], {initialEntries: ['/classification']})
+        renderWithProviders(<RouterProvider router={router}/>, {
+            auth: {user: {uid: 'admin-user'}, userClaims: ['classificationAdmin']},
+            access: {accessInfo: {...baseAccessInfo,
+                roles: {...baseAccessInfo.roles, classificationAdmin: true}}},
+            api: {fetchClassificationAction}
+        })
+        expect(await screen.findByText('Preview only — admin changes are unavailable.')).toBeInTheDocument()
+        expect(fetchClassificationAction).toHaveBeenCalledExactlyOnceWith(entry.id)
+        expect(screen.getByDisplayValue('Live note')).toBeInTheDocument()
+    })
+
     it('keeps the vote action available on a scorecard row', () => {
         const router = createMemoryRouter([{
             path: '/scorecard',
             handle: {route: 'scorecard'},
-            element: <EntryActionBarWrapped entry={allEntries.find(entry => entry.id === 'f72085d2')}/>
+            element: <ClassificationContext.Provider value={emptyClassification}>
+                <EntryActionBarWrapped entry={allEntries.find(entry => entry.id === 'f72085d2')}/>
+            </ClassificationContext.Provider>
         }], {initialEntries: ['/scorecard']})
         const baseAccessInfo = defaultTestContextValues.access.accessInfo
 

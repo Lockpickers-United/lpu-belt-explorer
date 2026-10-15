@@ -11,7 +11,9 @@ Firebase CLI aliases are:
 - `default`: `lputest`
 - `prod`: `lpu-belt-explorer`
 
-No Firestore rules file is currently declared in `firebase.json`. Do not imply that client-side checks enforce security; deployed Firestore rules and trusted server code must enforce access.
+`firebase.json` declares `firestore.rules` for both the `(default)` and `lpubelts-dev` Firestore databases. This configuration does not establish which rules are deployed. Do not imply that client-side checks enforce security; deployed Firestore rules and trusted server code must enforce access.
+
+`firestore.indexes.json` is attached only to the `lpubelts-dev` entry in `firebase.json`. It retains the existing `awards-discord` composite index alongside Classification indexes and the `classificationOperations.expiresAt` TTL override. For a named-development-only release, use the explicit project and database selector: `firebase deploy --only firestore:lpubelts-dev --project lpu-belt-explorer`. `--only firestore` includes all configured databases and is not a development-only selector. Verify the default and named rules release IDs and the named index inventory after deployment.
 
 ## Approval boundary
 

@@ -12,7 +12,7 @@ const app = initializeApp({
 // change to (default) and true for production
 // const db = getFirestore(app, 'lpubelts-dev')
 
-const db = getFirestore(app)
+const db = getFirestore(app, 'lpubelts-dev')
 
 const WRITE_TO_DB = false
 
@@ -29,15 +29,17 @@ const _allClaims = {
 }
 //const newClaims = {raflAdmin:true, dataAdmin:true, admin: true}
 const newClaims = {}
-const removeClaims = ['blackBelt']
+const removeClaims = []
 
 const users = [
-    {uid: 'GGplAdctTfVDLVvYsfIADJmfp8f2', name: 'mgsecure'},
+    {uid: 'DQlzrseJbXR5Sw9eBKpmePfSCpk2', name: 'LpuBelts'},
 ]
 
-const _allUsers = [
+const _Allusers = [
     {uid: 'GGplAdctTfVDLVvYsfIADJmfp8f2', name: 'mgsecure'},
     {uid: '4qqxB0nW8dczUws5XuAyhEkgZEj2', name: 'mgtest'},
+    {uid: 'DQlzrseJbXR5Sw9eBKpmePfSCpk2', name: 'LpuBelts'},
+    {uid: 'rbeLhuQ49TT4ICbKVHjVTVz1O0q2', name: 'Jaye'},
     {uid: 'WMSvvuutyShfvBBYB3PmDe4fmeS2', name: 'NiXXeD'},
     {uid: 'Mwbvdkq1QtWu2zLwEaj3imULSry1', name: 'decoder'},
     {uid: 'BJyWOIOsqmRDkgHZBqIEGbGnVSA3', name: 'tonysansan'},
@@ -51,6 +53,7 @@ const _allUsers = [
     {uid: 'f2yySWbxUBXF8k3HgorYhrm76gx2', name: 'Rein'},
     {uid: '8PKfUHTiafgObsQQr162dQRlBCo1', name: 'GravityKarma'},
     {uid: 'pzSak8xusHdeNlD0JmTru5kMrww2', name: 'Sidepicks'},
+    {uid: 'A7MNzg6jrNUIgfEkk8U0JzZndcx2', name: 'amvgaert'},
 
 ]
 
@@ -78,8 +81,8 @@ async function updateCustomClaimsForUsers() {
     process.exit(0)
 }
 
-async function getCustomClaimsForUsers() {
-    for (const user of users) {
+async function getCustomClaimsForUsers(userList) {
+    for (const user of userList) {
         const {uid, name} = user
         await getAuth().getUser(uid)
             .then(userRecord => {
@@ -93,8 +96,8 @@ async function getCustomClaimsForUsers() {
     process.exit(0)
 }
 
-await updateCustomClaimsForUsers().then(() => {
-    getCustomClaimsForUsers().then()
+await updateCustomClaimsForUsers(users).then(() => {
+    getCustomClaimsForUsers(users).then()
 })
 
 

@@ -50,12 +50,42 @@ export function APIProvider({children}) {
         }
     }, [user])
 
+    const fetchClassification = useCallback(async (path, params) => {
+        const response = await getData({
+            user,
+            url: `${apiServerUrl}/api/v1/classification/${path}`,
+            json: params,
+            snackBars: false,
+            timeoutDuration: 10000,
+            cacheBust: false
+        })
+        return response.data
+    }, [user])
+
+    const fetchClassificationEntryVotes = useCallback((entryId, cursor) =>
+        fetchClassification(`entries/${encodeURIComponent(entryId)}/votes`, {limit: 100, ...(cursor && {cursor})}),
+    [fetchClassification])
+    const fetchClassificationAction = useCallback(entryId =>
+        fetchClassification(`entries/${encodeURIComponent(entryId)}/action`), [fetchClassification])
+    const fetchClassificationStaged = useCallback(() =>
+        fetchClassification('actions/staged', {limit: 100}), [fetchClassification])
+    const fetchClassificationPublications = useCallback(cursor =>
+        fetchClassification('publications', {limit: 100, ...(cursor && {cursor})}), [fetchClassification])
+    const fetchClassificationPublication = useCallback(id =>
+        fetchClassification(`publications/${encodeURIComponent(id)}`), [fetchClassification])
+
 
     const value = useMemo(() => ({
         fetchProfileSummary,
-        fetchProfileFull
+        fetchProfileFull,
+        fetchClassificationEntryVotes,
+        fetchClassificationAction,
+        fetchClassificationStaged,
+        fetchClassificationPublications,
+        fetchClassificationPublication
     }), [fetchProfileFull,
-        fetchProfileSummary
+        fetchProfileSummary, fetchClassificationEntryVotes, fetchClassificationAction,
+        fetchClassificationStaged, fetchClassificationPublications, fetchClassificationPublication
     ])
 
     return (
