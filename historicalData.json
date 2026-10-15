@@ -10,7 +10,7 @@
     ],
     "name": "Wilka Primus VX",
     "dateAdded": "2023-03-02T19:05:25.000Z",
-    "views": 2,
+    "views": 3,
     "lastUpdated": "2025-03-18T23:29:31.287Z",
     "media": [
       {
@@ -83,7 +83,7 @@
     "features": [
       "Under Review ⚑"
     ],
-    "popularityIndex": 2,
+    "popularityIndex": 3,
     "scorecardCount": 1
   },
   "19573781": {
@@ -270,7 +270,7 @@
     ],
     "name": "Befa",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 3,
+    "views": 4,
     "lastUpdated": "2025-03-19T01:20:51.354Z",
     "media": [
       {
@@ -300,7 +300,7 @@
         "url": "https://www.catalocks.eu/BEFA/BEFA_93.html"
       }
     ],
-    "popularityIndex": 3
+    "popularityIndex": 4
   },
   "33588917": {
     "id": "33588917",
@@ -371,7 +371,9 @@
     "name": "CES UDM+5",
     "dateAdded": "2026-09-01T00:58:56.478Z",
     "scorecardCount": 1,
-    "currentBeltDate": "2026-08-30T12:00:00.000Z"
+    "currentBeltDate": "2026-08-30T12:00:00.000Z",
+    "popularityIndex": 1,
+    "views": 1
   },
   "54087329": {
     "id": "54087329",
@@ -960,9 +962,9 @@
     ],
     "name": "ABUS 24/70 Diskus",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 87,
+    "views": 88,
     "lastUpdated": "2025-03-19T15:44:57.279Z",
-    "popularityIndex": 87,
+    "popularityIndex": 88,
     "scorecardCount": 16
   },
   "81338028": {
@@ -6033,13 +6035,13 @@
     ],
     "name": "ABUS 83/40",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 209,
+    "views": 210,
     "lastUpdated": "2025-03-19T01:20:51.356Z",
     "modelNum": "83.4",
     "features": [
       "Latest Changelog"
     ],
-    "popularityIndex": 209,
+    "popularityIndex": 210,
     "scorecardCount": 32,
     "currentBeltDate": "2026-08-30T12:00:00.000Z"
   },
@@ -7951,10 +7953,10 @@
     ],
     "name": "Master Lock 150, 160, 9150 EURD",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 691,
+    "views": 692,
     "lastUpdated": "2025-03-19T15:44:57.280Z",
     "modelNum": "150",
-    "popularityIndex": 691,
+    "popularityIndex": 692,
     "scorecardCount": 88,
     "currentBeltDate": "2026-08-30T12:00:00.000Z"
   },
@@ -8565,12 +8567,12 @@
     ],
     "name": "Urbis",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 1,
+    "views": 2,
     "lastUpdated": "2024-01-13T16:01:18.293Z",
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "popularityIndex": 1
+    "popularityIndex": 2
   },
   "e524ce27": {
     "id": "e524ce27",
@@ -9570,9 +9572,9 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/52831916101_b7e644d143_o.jpg"
       }
     ],
-    "views": 56,
+    "views": 57,
     "lastUpdated": "2025-03-19T01:20:51.359Z",
-    "popularityIndex": 56,
+    "popularityIndex": 57,
     "scorecardCount": 16
   },
   "e1625c4d": {
@@ -10877,12 +10879,12 @@
     ],
     "name": "American Lock 1100 / A1100",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 1447,
+    "views": 1448,
     "lastUpdated": "2025-03-19T01:20:51.360Z",
     "relatedIds": [
       "1ae40987"
     ],
-    "popularityIndex": 1447,
+    "popularityIndex": 1448,
     "scorecardCount": 278
   },
   "b16ffe3f": {
@@ -10982,13 +10984,13 @@
     ],
     "name": "American Lock 5200",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 261,
+    "views": 262,
     "lastUpdated": "2025-03-19T15:44:57.282Z",
     "notes": "The standard, non-bumpstop model of the American Lock 5200 can be distinguished by the angular shape of the bow of its key, compared to the rounded shape of the bumpstop keybow.",
     "relatedIds": [
       "a0d1bf97"
     ],
-    "popularityIndex": 261,
+    "popularityIndex": 262,
     "scorecardCount": 34
   },
   "b3af5e62": {
@@ -11384,7 +11386,7 @@
     ],
     "name": "IKON K2 (with IKON Core)",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 3,
+    "views": 4,
     "lastUpdated": "2025-03-19T01:20:51.362Z",
     "media": [
       {
@@ -11424,7 +11426,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53361133875_ea75939b48_o.jpg"
       }
     ],
-    "popularityIndex": 3,
+    "popularityIndex": 4,
     "scorecardCount": 1
   },
   "bfc7c700": {
@@ -15928,9 +15930,9 @@
     ],
     "name": "Winkhaus RAP",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 1,
+    "views": 2,
     "lastUpdated": "2023-03-23T03:24:22.388Z",
-    "popularityIndex": 1
+    "popularityIndex": 2
   },
   "574e9854": {
     "id": "574e9854",
@@ -26073,9 +26075,9 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/52734113020_7c480fd340_o.jpg"
       }
     ],
-    "views": 9,
+    "views": 10,
     "lastUpdated": "2025-03-19T01:20:51.375Z",
-    "popularityIndex": 9,
+    "popularityIndex": 10,
     "scorecardCount": 5
   },
   "07bc680a": {
@@ -27747,7 +27749,7 @@
     ],
     "name": "M&C Matrix",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 18,
+    "views": 19,
     "lastUpdated": "2025-03-19T15:44:57.298Z",
     "media": [
       {
@@ -27826,7 +27828,7 @@
     "relatedIds": [
       "bc6f6e7c"
     ],
-    "popularityIndex": 18,
+    "popularityIndex": 19,
     "scorecardCount": 20
   },
   "c9fc823c": {
@@ -31740,7 +31742,7 @@
     "views": 34,
     "lastUpdated": "2025-03-19T01:20:51.381Z",
     "popularityIndex": 34,
-    "scorecardCount": 22
+    "scorecardCount": 23
   },
   "87ee7a61": {
     "id": "87ee7a61",
@@ -32967,12 +32969,12 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/52756321080_9cf6b968a9_o.jpg"
       }
     ],
-    "views": 5,
+    "views": 6,
     "lastUpdated": "2025-03-19T01:20:51.382Z",
     "relatedIds": [
       "c4484574"
     ],
-    "popularityIndex": 5,
+    "popularityIndex": 6,
     "scorecardCount": 1
   },
   "9375df98": {
@@ -33784,9 +33786,9 @@
     "name": "Medeco Duracam",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "version": "***",
-    "views": 62,
+    "views": 61,
     "lastUpdated": "2025-03-19T15:44:57.305Z",
-    "popularityIndex": 62,
+    "popularityIndex": 61,
     "scorecardCount": 23
   },
   "540a14c0": {
@@ -34488,10 +34490,10 @@
       "Undercut milling",
       "Flickr Update"
     ],
-    "views": 53,
+    "views": 55,
     "lastUpdated": "2025-03-19T01:20:51.384Z",
-    "popularityIndex": 53,
-    "scorecardCount": 29
+    "popularityIndex": 55,
+    "scorecardCount": 30
   },
   "b91890bf": {
     "id": "b91890bf",
@@ -38001,12 +38003,12 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/52756396658_662a0d7cc8_o.jpg"
       }
     ],
-    "views": 11,
+    "views": 12,
     "lastUpdated": "2025-03-19T15:44:57.308Z",
     "relatedIds": [
       "2efc9257"
     ],
-    "popularityIndex": 11,
+    "popularityIndex": 12,
     "scorecardCount": 12
   },
   "e3081fd3": {
@@ -39185,7 +39187,7 @@
       "Flickr Update"
     ],
     "notes": "Hard to navigate and manipulate and often poor feedback",
-    "views": 20,
+    "views": 21,
     "lastUpdated": "2025-03-19T01:20:51.389Z",
     "links": [
       {
@@ -39197,7 +39199,7 @@
         "url": "https://youtu.be/XuHCrqNRHlI"
       }
     ],
-    "popularityIndex": 20,
+    "popularityIndex": 21,
     "scorecardCount": 2
   },
   "63a9a2b1": {
@@ -39230,7 +39232,7 @@
     ],
     "name": "Ruko Combi 2, Garant 10 / FAB Variant",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 32,
+    "views": 33,
     "lastUpdated": "2025-03-19T01:20:51.396Z",
     "media": [
       {
@@ -39326,7 +39328,7 @@
         "url": "https://www.catalocks.eu/RUKO/RUKO%20COMBI%202_265.html"
       }
     ],
-    "popularityIndex": 32,
+    "popularityIndex": 33,
     "scorecardCount": 13
   },
   "2ff8a738": {
@@ -39409,7 +39411,7 @@
     "searchKeywords": "Sargent & Greenleaf",
     "notes": "Sargent & Greenleaf lever lock",
     "popularityIndex": 35,
-    "scorecardCount": 10
+    "scorecardCount": 11
   },
   "cf76cfde": {
     "id": "cf76cfde",
@@ -40744,9 +40746,9 @@
     ],
     "name": "ASSA dp4400, dp11 / TrioVing dp / Ruko Garant+",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 62,
+    "views": 63,
     "lastUpdated": "2025-03-19T15:44:57.311Z",
-    "popularityIndex": 62,
+    "popularityIndex": 63,
     "scorecardCount": 19
   },
   "104776ef": {
@@ -42954,13 +42956,13 @@
     ],
     "name": "EVVA Dual",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 28,
+    "views": 29,
     "lastUpdated": "2025-03-19T01:20:51.392Z",
     "relatedIds": [
       "00b569f2",
       "1e197456"
     ],
-    "popularityIndex": 28,
+    "popularityIndex": 29,
     "scorecardCount": 24
   },
   "db749615": {
@@ -43154,13 +43156,13 @@
     ],
     "name": "EVVA ICS",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 56,
+    "views": 55,
     "lastUpdated": "2025-03-19T15:44:57.313Z",
     "relatedIds": [
       "6852489f",
       "db749615"
     ],
-    "popularityIndex": 56,
+    "popularityIndex": 55,
     "scorecardCount": 29
   },
   "5ab25363": {
@@ -48389,7 +48391,7 @@
     "lockingMechanisms": [
       "Dimple"
     ],
-    "views": 4,
+    "views": 5,
     "lastUpdated": "2025-03-19T15:44:57.319Z",
     "media": [
       {
@@ -48415,7 +48417,7 @@
       "Under Review ⚑",
       "Flickr Update"
     ],
-    "popularityIndex": 4,
+    "popularityIndex": 5,
     "scorecardCount": 1
   },
   "c9d6d06d": {
@@ -50314,7 +50316,7 @@
     "name": "iNAHO Tierkey",
     "dateAdded": "2023-03-02T19:05:25.000Z",
     "lastUpdated": "2025-03-19T15:44:57.291Z",
-    "views": 3,
+    "views": 4,
     "media": [
       {
         "title": "By: Yabende",
@@ -50359,7 +50361,7 @@
     "relatedIds": [
       "9659ad59"
     ],
-    "popularityIndex": 3,
+    "popularityIndex": 4,
     "scorecardCount": 6
   },
   "a7d98df3": {
@@ -50779,7 +50781,7 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "views": 72,
+    "views": 71,
     "lastUpdated": "2025-03-19T15:44:57.280Z",
     "media": [
       {
@@ -50802,7 +50804,7 @@
       }
     ],
     "modelNum": "1921",
-    "popularityIndex": 72,
+    "popularityIndex": 71,
     "scorecardCount": 15
   },
   "237f29c9": {
@@ -61829,9 +61831,9 @@
     "lastUpdated": "2025-03-19T15:44:57.320Z",
     "name": "Bovii LOTO",
     "dateAdded": "2025-03-06T02:11:05.000Z",
-    "popularityIndex": 27,
+    "popularityIndex": 28,
     "scorecardCount": 7,
-    "views": 27
+    "views": 28
   },
   "b1949215": {
     "id": "b1949215",
@@ -63149,8 +63151,8 @@
     "notes": "Old pinning",
     "name": "GTV 5 Pin",
     "dateAdded": "2026-08-06T03:59:39.967Z",
-    "popularityIndex": 1,
-    "views": 1
+    "popularityIndex": 2,
+    "views": 2
   },
   "d04696c1": {
     "id": "d04696c1",
@@ -63308,9 +63310,9 @@
     ],
     "name": "MIWA VM88",
     "dateAdded": "2026-08-06T03:59:39.972Z",
-    "popularityIndex": 4,
+    "popularityIndex": 3,
     "scorecardCount": 1,
-    "views": 4
+    "views": 3
   },
   "6033c67a": {
     "id": "6033c67a",
@@ -63479,8 +63481,8 @@
     ],
     "name": "GEGE AP1000, AP2000, AP3000",
     "dateAdded": "2026-08-07T15:07:44.520Z",
-    "popularityIndex": 2,
-    "views": 2,
+    "popularityIndex": 3,
+    "views": 3,
     "features": [
       "Flickr Update"
     ]
@@ -63934,8 +63936,8 @@
     "name": "CES WD5",
     "dateAdded": "2026-09-01T00:58:56.480Z",
     "scorecardCount": 2,
-    "popularityIndex": 1,
-    "views": 1,
+    "popularityIndex": 2,
+    "views": 2,
     "currentBeltDate": "2026-08-30T12:00:00.000Z"
   },
   "2b235299": {
@@ -64113,7 +64115,9 @@
     "version": "4 fingerpins",
     "name": "Ikon SK6 Radienprofil Extra Code",
     "dateAdded": "2026-10-03T22:57:35.086Z",
-    "scorecardCount": 1
+    "scorecardCount": 1,
+    "popularityIndex": 1,
+    "views": 1
   },
   "ad46dc5a": {
     "id": "ad46dc5a",
@@ -65687,7 +65691,8 @@
     ],
     "name": "Mottura Champions Pro",
     "currentBeltDate": "2026-10-12T23:33:54.102Z",
-    "dateAdded": "2026-10-12T23:33:54.102Z"
+    "dateAdded": "2026-10-12T23:33:54.102Z",
+    "scorecardCount": 1
   },
   "33b738f8": {
     "id": "33b738f8",
@@ -66240,7 +66245,10 @@
     ],
     "name": "Standers 6-Pin Dimple Lock",
     "currentBeltDate": "2026-10-12T23:33:54.103Z",
-    "dateAdded": "2026-10-12T23:33:54.103Z"
+    "dateAdded": "2026-10-12T23:33:54.103Z",
+    "popularityIndex": 1,
+    "scorecardCount": 1,
+    "views": 1
   },
   "723977f4": {
     "id": "723977f4",
@@ -66570,5 +66578,21 @@
     "name": "Yale Multipin",
     "currentBeltDate": "2026-10-12T23:33:54.104Z",
     "dateAdded": "2026-10-12T23:33:54.104Z"
+  },
+  "6f9e0f94": {
+    "id": "6f9e0f94",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Mighty Lock",
+        "model": "MTL C series clone"
+      }
+    ],
+    "lockingMechanisms": [
+      "Dimple"
+    ],
+    "name": "Mighty Lock MTL C series clone",
+    "currentBeltDate": "2026-10-15T03:01:31.129Z",
+    "dateAdded": "2026-10-15T03:01:31.129Z"
   }
 }
