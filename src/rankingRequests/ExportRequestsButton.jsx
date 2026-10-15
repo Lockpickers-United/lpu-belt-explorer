@@ -14,6 +14,36 @@ import ContentCopyIcon from '@mui/icons-material/ContentCopy'
 import download from '../util/download'
 import Button from '@mui/material/Button'
 
+export function getExportData(entry) {
+    return {
+        id: entry.id,
+        belt: entry.belt ?? '',
+        make: entry.makeModels.map(e => e.make).join(','),
+        model: entry.makeModels.map(e => e.model).join(','),
+        lockingMechanism: entry.lockingMechanisms[0],
+        requestedBy: entry.requestedBy[0].discordUsername,
+        name: entryName(entry),
+        dateRequested: entry.dateRequested,
+        requestStatus: entry.requestStatus
+    }
+}
+
+export function getMediaData(entry) {
+    return entry.media?.map(media => ({
+        id: entry.id,
+        label: media.label,
+        sequenceId: media.sequenceId,
+        imageTitle: entryName(entry),
+        title: media.title,
+        subtitle: media.subtitle,
+        subtitleUrl: media.subtitleUrl,
+        thumbnailUrl: media.thumbnailUrl,
+        fullUrl: media.fullUrl,
+        max: '',
+        fullSizeUrl: media.fullSizeUrl
+    })) ?? []
+}
+
 function ExportRequestsButton({text, entries}) {
     const [anchorEl, setAnchorEl] = useState(null)
     const open = Boolean(anchorEl)
@@ -24,17 +54,13 @@ function ExportRequestsButton({text, entries}) {
         return Array.isArray(entries) ? entries.slice() : []
     }, [entries])
 
-    const data = exportEntries.map(datum => ({
-        id: datum.id,
-        make: datum.makeModels.map(e => e.make).join(','),
-        model: datum.makeModels.map(e => e.model).join(','),
-        lockingMechanism: datum.lockingMechanisms[0],
-        requestedBy: datum.requestedBy[0].discordUsername,
-        name: entryName(datum),
-        dateRequested: datum.dateRequested,
-        belt: datum.belt,
-        requestStatus: datum.requestStatus,
-    }))
+    const data = exportEntries.map(entry => getExportData(entry))
+
+    // Unique ID	Label	Sequence ID	Image Title	Title	Subtitle	Subtitle URL	Thumbnail URL	Full URL	max	Full Image Direct URL
+    const mediaData = exportEntries.reduce((acc, entry) => {
+        acc.push(...getMediaData(entry))
+        return acc
+    }, [])
 
     const handleExportJson = useCallback(() => {
         const data = JSON.stringify(exportEntries)
@@ -44,7 +70,6 @@ function ExportRequestsButton({text, entries}) {
     }, [handleClose, exportEntries])
 
     const handleExportClipboard = useCallback(() => {
-
         const mechanisms = {
             'Dimple': 'D',
             'Disc detainer': 'DD',
@@ -55,16 +80,15 @@ function ExportRequestsButton({text, entries}) {
             'Slider': 'S',
             'Wafer': 'W'
         }
-
-        const clipboardText = data.map(datum => {
-            const safeName = datum.name.replace(/[\s/]/g, '_').replace(/\W/g, '')
-            const mech = mechanisms[datum.lockingMechanism] ? `\t${mechanisms[datum.lockingMechanism]}` : ''
-            const requestStatus = datum.requestStatus && datum.belt
-                ? `\t${datum.requestStatus} (${datum.belt})`
-                : datum.requestStatus && datum.requestStatus !== 'Submitted'
-                    ? `\t${datum.requestStatus}`
+        const clipboardText = data.map(entry => {
+            const safeName = entry.name.replace(/[\s/]/g, '_').replace(/\W/g, '')
+            const mech = mechanisms[entry.lockingMechanism] ? `\t${mechanisms[entry.lockingMechanism]}` : ''
+            const requestStatus = entry.requestStatus && entry.belt
+                ? `\t${entry.requestStatus} (${entry.belt})`
+                : entry.requestStatus && entry.requestStatus !== 'Submitted'
+                    ? `\t${entry.requestStatus}`
                     : '\t'
-            return `${datum.name}${requestStatus}\thttps://lpubelts.com/#/rankingrequests/view?id=${datum.id}&name=${safeName}${mech}`
+            return `${entry.name}${requestStatus}\thttps://lpubelts.com/#/rankingrequests/view?id=${entry.id}&name=${safeName}${mech}`
         }).join('\n')
 
         handleClose()
@@ -73,14 +97,14 @@ function ExportRequestsButton({text, entries}) {
     }, [data, handleClose])
 
     const handleExportCsv = useCallback(() => {
-        const csvColumns = ['id', 'make', 'model', 'version', 'lockingMechanism']
+        const csvColumns = ['id', 'belt', 'make', 'model', 'version', 'lockingMechanism']
         const headers = csvColumns.join(',')
-        const csvData = data.map(datum => {
+        const csvData = data.map(entry => {
             return csvColumns
-                .map(header => datum[header])
+                .map(header => entry[header])
                 .map(value => {
                     const newValue = `${value ?? ''}`.replace(/"/g, '""')
-                    return /(\s|,|")/.test(newValue) ? `"${newValue}"` : newValue
+                    return /([\s,"])/.test(newValue) ? `"${newValue}"` : newValue
                 })
                 .join(',')
         }).join('\n')
@@ -89,6 +113,37 @@ function ExportRequestsButton({text, entries}) {
         download('lockrequestdata.csv', csvFile)
         enqueueSnackbar('Current lock requests downloaded as lockrequestdata.csv')
     }, [data, handleClose])
+
+    const handleExportMediaCsv = useCallback(() => {
+        const csvColumns = [
+            'id',
+            'label',
+            'sequenceId',
+            'imageTitle',
+            'title',
+            'subtitle',
+            'subtitleUrl',
+            'thumbnailUrl',
+            'fullUrl',
+            'max',
+            'fullSizeUrl'
+        ]
+
+        const headers = csvColumns.join(',')
+        const csvData = mediaData.map(entry => {
+            return csvColumns
+                .map(header => entry[header])
+                .map(value => {
+                    const newValue = `${value ?? ''}`.replace(/"/g, '""')
+                    return /([\s,"])/.test(newValue) ? `"${newValue}"` : newValue
+                })
+                .join(',')
+        }).join('\n')
+        const csvFile = `${headers}\n${csvData}`
+        handleClose()
+        download('lockrequestmedia.csv', csvFile)
+        enqueueSnackbar('Current lock requests downloaded as lockrequestmedia.csv')
+    }, [handleClose, mediaData])
 
     return (
         <React.Fragment>
@@ -128,7 +183,13 @@ function ExportRequestsButton({text, entries}) {
                     <ListItemIcon>
                         <ListIcon fontSize='small'/>
                     </ListItemIcon>
-                    <ListItemText>CSV</ListItemText>
+                    <ListItemText>CSV (entry data)</ListItemText>
+                </MenuItem>
+                <MenuItem onClick={handleExportMediaCsv}>
+                    <ListItemIcon>
+                        <ListIcon fontSize='small'/>
+                    </ListItemIcon>
+                    <ListItemText>CSV (media data)</ListItemText>
                 </MenuItem>
                 <MenuItem onClick={handleExportJson}>
                     <ListItemIcon>

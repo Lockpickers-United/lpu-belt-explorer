@@ -1,4 +1,4 @@
-import React, {useCallback, useContext, useEffect, useMemo, useRef, useState} from 'react'
+import React, {useCallback, useContext, useEffect, useRef, useState} from 'react'
 import FieldValue from '../entries/FieldValue.jsx'
 import LockImageGallery from '../entries/LockImageGallery.jsx'
 import ListItemText from '@mui/material/ListItemText'
@@ -27,7 +27,7 @@ import {postData} from '../formUtils/postData.jsx'
 import {enqueueSnackbar} from 'notistack'
 import {nodeServerUrl} from '../data/dataUrls'
 import SearchedLockEntries from './SearchedLockEntries.jsx'
-import DownloadZipButton from '../misc/DownloadZipButton.jsx'
+import ExportEntryButton from './ExportEntryButton.jsx'
 import LogEntryButton from '../entries/LogEntryButton.jsx'
 
 /**
@@ -59,17 +59,6 @@ function LockRequestEntry({entry, expanded, onExpand, requestMod}) {
     )
     const {requestedBy = []} = entry
     const upvotes = requestedBy.filter(req => !req.owner)
-
-    const fileData = useMemo(() => {
-        return entry.media?.map?.(file => {
-            const filename = new URL(file.fullUrl).pathname.split('/').pop()
-            const parts = new URL(file.fullUrl).pathname.split('/')
-            const dirname = parts[parts.indexOf('requestedLocks') + 1]
-            return filename.length
-                ? {url: file.fullUrl, name: filename, dirname}
-                : null
-        }).filter(file => file)
-    }, [entry.media])
 
     useEffect(() => {
         setTimeout(() => {
@@ -284,8 +273,8 @@ function LockRequestEntry({entry, expanded, onExpand, requestMod}) {
                         <AccordionActions disableSpacing>
                             <div style={{display: 'flex', width: '100%'}}>
                                 <div style={{flexGrow: 1, justifyItems: 'left'}}>
-                                    {requestMod && fileData?.length &&
-                                        <DownloadZipButton fileData={fileData}/>
+                                    {requestMod &&
+                                        <ExportEntryButton entry={entry}/>
                                     }
                                     <LogEntryButton entry={entry}/>
                                 </div>

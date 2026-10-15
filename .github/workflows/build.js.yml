@@ -49,11 +49,12 @@ jobs:
           SFTP_PORT: ${{ vars.SFTP_PORT }}
           SFTP_USER: ${{ vars.SFTP_USER }}
           DEPLOY_ROOT: ${{ vars.DEPLOY_ROOT }}
+          DEPLOY_ROOT_DEV: ${{ vars.DEPLOY_ROOT_DEV }}
           SFTP_PRIVATE_KEY: ${{ secrets.SFTP_PRIVATE_KEY }}
           SFTP_KNOWN_HOSTS: ${{ secrets.SFTP_KNOWN_HOSTS }}
         run: |
           set -euo pipefail
-          for variable in SFTP_HOST SFTP_PORT SFTP_USER DEPLOY_ROOT SFTP_PRIVATE_KEY SFTP_KNOWN_HOSTS; do
+          for variable in SFTP_HOST SFTP_PORT SFTP_USER DEPLOY_ROOT DEPLOY_ROOT_DEV SFTP_PRIVATE_KEY SFTP_KNOWN_HOSTS; do
             if [[ -z "${!variable:-}" ]]; then
               echo "Missing github-pages environment value: $variable" >&2
               exit 1
@@ -63,6 +64,8 @@ jobs:
           [[ "$SFTP_PORT" =~ ^[0-9]+$ ]] || exit 1
           [[ "$SFTP_USER" =~ ^[a-zA-Z0-9._-]+$ ]] || exit 1
           [[ "$DEPLOY_ROOT" =~ ^/[a-zA-Z0-9._/-]+$ && "$DEPLOY_ROOT" != *".."* ]] || exit 1
+          [[ "$DEPLOY_ROOT_DEV" =~ ^/[a-zA-Z0-9._/-]+$ && "$DEPLOY_ROOT_DEV" != *".."* ]] || exit 1
+          [[ "$DEPLOY_ROOT" != "$DEPLOY_ROOT_DEV" ]] || exit 1
 # disbabled, runs pre-commit
 #      - name: Run tests
 #        run: npm run test:ci
@@ -95,12 +98,15 @@ jobs:
           SFTP_PORT: ${{ vars.SFTP_PORT }}
           SFTP_USER: ${{ vars.SFTP_USER }}
           DEPLOY_ROOT: ${{ vars.DEPLOY_ROOT }}
+          DEPLOY_ROOT_DEV: ${{ vars.DEPLOY_ROOT_DEV }}
         run: |
           set -euo pipefail
-          ssh -i "$RUNNER_TEMP/catalog-ssh/private_key" -p "$SFTP_PORT" \
-            -o BatchMode=yes -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes \
-            -o "UserKnownHostsFile=$RUNNER_TEMP/catalog-ssh/known_hosts" \
-            "$SFTP_USER@$SFTP_HOST" "mkdir -p '$DEPLOY_ROOT/shared/snapshots'"
+          for deploy_root in "$DEPLOY_ROOT" "$DEPLOY_ROOT_DEV"; do
+            ssh -i "$RUNNER_TEMP/catalog-ssh/private_key" -p "$SFTP_PORT" \
+              -o BatchMode=yes -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes \
+              -o "UserKnownHostsFile=$RUNNER_TEMP/catalog-ssh/known_hosts" \
+              "$SFTP_USER@$SFTP_HOST" "mkdir -p '$deploy_root/shared/snapshots'"
+          done
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
@@ -108,41 +114,59 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
 
-      - name: Upload Classification catalog
+      - name: Upload catalog snapshots
         shell: bash
         env:
           SFTP_HOST: ${{ vars.SFTP_HOST }}
           SFTP_PORT: ${{ vars.SFTP_PORT }}
           SFTP_USER: ${{ vars.SFTP_USER }}
           DEPLOY_ROOT: ${{ vars.DEPLOY_ROOT }}
+          DEPLOY_ROOT_DEV: ${{ vars.DEPLOY_ROOT_DEV }}
         run: |
           set -euo pipefail
-          temporary_name=".classification-catalog.json.$GITHUB_RUN_ID.$GITHUB_RUN_ATTEMPT.tmp"
-          printf 'put "%s" "%s"\n' \
-            "$PWD/dist/classification-catalog.json" \
-            "$DEPLOY_ROOT/shared/snapshots/$temporary_name" > "$RUNNER_TEMP/catalog-sftp-batch"
+          for deploy_root in "$DEPLOY_ROOT" "$DEPLOY_ROOT_DEV"; do
+            for filename in awards.json data.json safelocks.json glossary.json projects.json rafl.json classification-catalog.json; do
+              temporary_name=".$filename.$GITHUB_RUN_ID.$GITHUB_RUN_ATTEMPT.tmp"
+              source_file="dist/$filename"
+              if [[ "$filename" == safelocks.json ]]; then
+                source_file=src/data/safelocks.json
+              fi
+              printf 'put "%s" "%s"\n' \
+                "$PWD/$source_file" \
+                "$deploy_root/shared/snapshots/$temporary_name"
+            done
+          done > "$RUNNER_TEMP/catalog-sftp-batch"
           sftp -b "$RUNNER_TEMP/catalog-sftp-batch" \
             -i "$RUNNER_TEMP/catalog-ssh/private_key" -P "$SFTP_PORT" \
             -o BatchMode=yes -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes \
             -o "UserKnownHostsFile=$RUNNER_TEMP/catalog-ssh/known_hosts" \
             "$SFTP_USER@$SFTP_HOST"
 
-      - name: Verify and activate Classification catalog
+      - name: Verify and activate catalog snapshots
         shell: bash
         env:
           SFTP_HOST: ${{ vars.SFTP_HOST }}
           SFTP_PORT: ${{ vars.SFTP_PORT }}
           SFTP_USER: ${{ vars.SFTP_USER }}
           DEPLOY_ROOT: ${{ vars.DEPLOY_ROOT }}
+          DEPLOY_ROOT_DEV: ${{ vars.DEPLOY_ROOT_DEV }}
         run: |
           set -euo pipefail
-          temporary_name=".classification-catalog.json.$GITHUB_RUN_ID.$GITHUB_RUN_ATTEMPT.tmp"
-          expected_sha=$(sha256sum dist/classification-catalog.json)
-          expected_sha=${expected_sha%% *}
-          ssh -i "$RUNNER_TEMP/catalog-ssh/private_key" -p "$SFTP_PORT" \
-            -o BatchMode=yes -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes \
-            -o "UserKnownHostsFile=$RUNNER_TEMP/catalog-ssh/known_hosts" \
-            "$SFTP_USER@$SFTP_HOST" \
-            "bash -s -- '$DEPLOY_ROOT/shared/snapshots' '$temporary_name' '$expected_sha'" \
-            < scripts/activateClassificationCatalog.sh
+          for deploy_root in "$DEPLOY_ROOT" "$DEPLOY_ROOT_DEV"; do
+            for filename in awards.json data.json safelocks.json glossary.json projects.json rafl.json classification-catalog.json; do
+              temporary_name=".$filename.$GITHUB_RUN_ID.$GITHUB_RUN_ATTEMPT.tmp"
+              source_file="dist/$filename"
+              if [[ "$filename" == safelocks.json ]]; then
+                source_file=src/data/safelocks.json
+              fi
+              expected_sha=$(sha256sum "$source_file")
+              expected_sha=${expected_sha%% *}
+              ssh -i "$RUNNER_TEMP/catalog-ssh/private_key" -p "$SFTP_PORT" \
+                -o BatchMode=yes -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes \
+                -o "UserKnownHostsFile=$RUNNER_TEMP/catalog-ssh/known_hosts" \
+                "$SFTP_USER@$SFTP_HOST" \
+                "bash -s -- '$deploy_root/shared/snapshots' '$temporary_name' '$expected_sha'" \
+                < scripts/activateClassificationCatalog.sh
+            done
+          done
           
