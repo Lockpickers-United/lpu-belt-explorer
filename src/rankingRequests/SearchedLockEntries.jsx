@@ -4,6 +4,7 @@ import entryName from '../entries/entryName'
 import DataContext from '../context/DataContext.jsx'
 import {useNavigate} from 'react-router-dom'
 import Link from '@mui/material/Link'
+import CopyEntryTextButtonAdmin from '../entries/CopyEntryTextButtonAdmin.jsx'
 
 export default function SearchedLockEntries({entry, requestMod}) {
 
@@ -26,14 +27,14 @@ export default function SearchedLockEntries({entry, requestMod}) {
 
     if (!searchedEntries.length) return null
 
-    const lockLinks = searchedEntries.map(lock => {
+    const lockLinks = searchedEntries.map((lock, idx) => {
         const name = entryName(lock)
         const safeName = name.replace(/[\s/]/g, '_').replace(/\W/g, '')
         const link = `/locks?tab=search&search=${lock.id}&id=${lock.id}&name=${safeName}`
-        return <div key={lock.id}>• <Link
+        return <div key={`${lock.id}-${idx}`}>• <Link
             onClick={(e) => handleClick(e, link)}
             style={{textDecoration: 'none', color: (entry.requestStatus === 'Ranked') ? '#aaa' : '#ddf'}}>
-            {name} || {lock.belt}</Link></div>
+            {name} || {lock.belt}</Link> <CopyEntryTextButtonAdmin entry={lock}/></div>
     })
 
     return <div style={{

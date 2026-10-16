@@ -16,7 +16,7 @@ export default function CopyEntryTextButtonAdmin({entry}) {
         enqueueSnackbar('Lock data copied to clipboard.')
     }, [entry])
 
-    if (!accessInfo.roles.classificationAdmin) return null
+    if (!accessInfo.roles.classificationTeam) return null
 
     return (
         <Tooltip title='Copy Lock Data' arrow disableFocusListener>
