@@ -29,8 +29,24 @@ and non-secret FTP settings without contacting FTP or catalog services.
 
 Development catalog snapshots live at
 `/home/lpubelts_api/apps/api-server-dev/shared/snapshots`. Configure that absolute
-path as `LPU_CATALOG_DIR`; the optional catalog refresh job writes there before
-the combined runner's export jobs begin.
+path as `LPU_CATALOG_DIR`; the optional catalog refresh job writes the older
+array-format catalogs there before the combined runner's export jobs begin.
+For the Classification API, set `CLASSIFICATION_CATALOG_PATH` to the absolute
+`shared/snapshots/classification-catalog.json` file. The frontend repository's
+manual `Publish Classification catalog to development` workflow validates the
+reviewed `main` compact file against `data.json`, uploads it with the
+configured SSH credentials, verifies its checksum, and atomically replaces the
+file at that path. The API loader detects subsequent replacements without a
+restart. An initial `.env.development` or API-code update still requires the
+normal development PM2 restart below.
+
+`CLASSIFICATION_WRITE_STAGE` defaults to `read`. After the API version with this
+gate is uploaded and restarted, promote the protected development setting through
+`vote`, `action`, and `publish` only after the preceding stage's checks pass; restart
+the development PM2 process after each setting change. Promote the frontend's
+`VITE_CLASSIFICATION_WRITE_STAGE` build setting only after its matching server
+stage is verified. The frontend build workflow reads that value from the
+`github-pages` environment variable; an unset or invalid value stays read-only.
 
 Use a manual PM2 restart after an upload:
 

@@ -9,6 +9,8 @@ servers:
   - url: https://api.lpubelts.com/api/v1
     description: Production
 tags:
+  - name: Classification
+    description: Authenticated modern votes, decisions, and publication history.
   - name: Collection Stats
     description: Public generated-summary collection statistics.
   - name: Locks
@@ -243,6 +245,218 @@ paths:
           $ref: '#/components/responses/Error'
         '500':
           $ref: '#/components/responses/Error'
+  /classification/entries/{entryId}/votes:
+    get:
+      tags: [Classification]
+      summary: Page modern votes for one expanded Classification lock
+      security: [{firebaseBearerAuth: []}]
+      parameters:
+        - $ref: '#/components/parameters/ClassificationEntryId'
+        - $ref: '#/components/parameters/ClassificationLimit'
+        - $ref: '#/components/parameters/ClassificationCursor'
+      responses:
+        '200': {$ref: '#/components/responses/ClassificationSuccess'}
+        '400': {$ref: '#/components/responses/Error'}
+        '401': {$ref: '#/components/responses/Error'}
+        '403': {$ref: '#/components/responses/Error'}
+        '409': {$ref: '#/components/responses/Error'}
+  /classification/entries/{entryId}/action:
+    get:
+      tags: [Classification]
+      summary: Get the current editable action for an admin
+      security: [{firebaseBearerAuth: []}]
+      parameters: [{$ref: '#/components/parameters/ClassificationEntryId'}]
+      responses:
+        '200': {$ref: '#/components/responses/ClassificationSuccess'}
+        '401': {$ref: '#/components/responses/Error'}
+        '403': {$ref: '#/components/responses/Error'}
+  /classification/actions/staged:
+    get:
+      tags: [Classification]
+      summary: List included staged actions without admin notes
+      security: [{firebaseBearerAuth: []}]
+      parameters: [{$ref: '#/components/parameters/ClassificationLimit'}]
+      responses:
+        '200': {$ref: '#/components/responses/ClassificationSuccess'}
+        '401': {$ref: '#/components/responses/Error'}
+        '403': {$ref: '#/components/responses/Error'}
+  /classification/publications:
+    get:
+      tags: [Classification]
+      summary: Page immutable publication headers
+      security: [{firebaseBearerAuth: []}]
+      parameters:
+        - $ref: '#/components/parameters/ClassificationLimit'
+        - $ref: '#/components/parameters/ClassificationCursor'
+      responses:
+        '200': {$ref: '#/components/responses/ClassificationSuccess'}
+        '400': {$ref: '#/components/responses/Error'}
+        '401': {$ref: '#/components/responses/Error'}
+        '403': {$ref: '#/components/responses/Error'}
+    post:
+      tags: [Classification]
+      summary: Publish an ordered batch of up to 50 included Staged actions
+      security: [{firebaseBearerAuth: []}]
+      parameters: [{$ref: '#/components/parameters/ClassificationIdempotencyKey'}]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {$ref: '#/components/schemas/ClassificationBatchRequest'}
+      responses:
+        '201': {$ref: '#/components/responses/ClassificationSuccess'}
+        '400': {$ref: '#/components/responses/Error'}
+        '401': {$ref: '#/components/responses/Error'}
+        '403': {$ref: '#/components/responses/Error'}
+        '409': {$ref: '#/components/responses/Error'}
+        '503': {$ref: '#/components/responses/Error'}
+  /classification/publications/single:
+    post:
+      tags: [Classification]
+      summary: Save and publish one form decision without other staged actions
+      security: [{firebaseBearerAuth: []}]
+      parameters: [{$ref: '#/components/parameters/ClassificationIdempotencyKey'}]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {$ref: '#/components/schemas/ClassificationSingleRequest'}
+      responses:
+        '201': {$ref: '#/components/responses/ClassificationSuccess'}
+        '400': {$ref: '#/components/responses/Error'}
+        '401': {$ref: '#/components/responses/Error'}
+        '403': {$ref: '#/components/responses/Error'}
+        '409': {$ref: '#/components/responses/Error'}
+        '503': {$ref: '#/components/responses/Error'}
+  /classification/publications/{publicationId}:
+    get:
+      tags: [Classification]
+      summary: Get one immutable publication snapshot
+      security: [{firebaseBearerAuth: []}]
+      parameters: [{$ref: '#/components/parameters/ClassificationPublicationId'}]
+      responses:
+        '200': {$ref: '#/components/responses/ClassificationSuccess'}
+        '401': {$ref: '#/components/responses/Error'}
+        '403': {$ref: '#/components/responses/Error'}
+        '404': {$ref: '#/components/responses/Error'}
+  /classification/votes:
+    post:
+      tags: [Classification]
+      summary: Create the signed-in writer's one vote for a lock
+      security: [{firebaseBearerAuth: []}]
+      parameters: [{$ref: '#/components/parameters/ClassificationIdempotencyKey'}]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {$ref: '#/components/schemas/ClassificationVoteCreate'}
+      responses:
+        '201': {$ref: '#/components/responses/ClassificationSuccess'}
+        '400': {$ref: '#/components/responses/Error'}
+        '401': {$ref: '#/components/responses/Error'}
+        '403': {$ref: '#/components/responses/Error'}
+        '409': {$ref: '#/components/responses/Error'}
+        '503': {$ref: '#/components/responses/Error'}
+  /classification/votes/{voteId}:
+    patch:
+      tags: [Classification]
+      summary: Edit a vote with its expected revision
+      security: [{firebaseBearerAuth: []}]
+      parameters:
+        - $ref: '#/components/parameters/ClassificationVoteId'
+        - $ref: '#/components/parameters/ClassificationIdempotencyKey'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {$ref: '#/components/schemas/ClassificationVoteEdit'}
+      responses:
+        '200': {$ref: '#/components/responses/ClassificationSuccess'}
+        '400': {$ref: '#/components/responses/Error'}
+        '401': {$ref: '#/components/responses/Error'}
+        '403': {$ref: '#/components/responses/Error'}
+        '404': {$ref: '#/components/responses/Error'}
+        '409': {$ref: '#/components/responses/Error'}
+        '503': {$ref: '#/components/responses/Error'}
+    delete:
+      tags: [Classification]
+      summary: Delete an owned vote or delete as classification admin
+      security: [{firebaseBearerAuth: []}]
+      parameters:
+        - $ref: '#/components/parameters/ClassificationVoteId'
+        - $ref: '#/components/parameters/ClassificationIdempotencyKey'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {$ref: '#/components/schemas/ClassificationRevision'}
+      responses:
+        '200': {$ref: '#/components/responses/ClassificationSuccess'}
+        '400': {$ref: '#/components/responses/Error'}
+        '401': {$ref: '#/components/responses/Error'}
+        '403': {$ref: '#/components/responses/Error'}
+        '404': {$ref: '#/components/responses/Error'}
+        '409': {$ref: '#/components/responses/Error'}
+        '503': {$ref: '#/components/responses/Error'}
+  /classification/actions:
+    post:
+      tags: [Classification]
+      summary: Create one editable admin action for a lock
+      security: [{firebaseBearerAuth: []}]
+      parameters: [{$ref: '#/components/parameters/ClassificationIdempotencyKey'}]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {$ref: '#/components/schemas/ClassificationActionCreate'}
+      responses:
+        '201': {$ref: '#/components/responses/ClassificationSuccess'}
+        '400': {$ref: '#/components/responses/Error'}
+        '401': {$ref: '#/components/responses/Error'}
+        '403': {$ref: '#/components/responses/Error'}
+        '409': {$ref: '#/components/responses/Error'}
+        '503': {$ref: '#/components/responses/Error'}
+  /classification/actions/{actionId}:
+    patch:
+      tags: [Classification]
+      summary: Edit a nonpublished action
+      security: [{firebaseBearerAuth: []}]
+      parameters:
+        - $ref: '#/components/parameters/ClassificationActionId'
+        - $ref: '#/components/parameters/ClassificationIdempotencyKey'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {$ref: '#/components/schemas/ClassificationActionEdit'}
+      responses:
+        '200': {$ref: '#/components/responses/ClassificationSuccess'}
+        '400': {$ref: '#/components/responses/Error'}
+        '401': {$ref: '#/components/responses/Error'}
+        '403': {$ref: '#/components/responses/Error'}
+        '404': {$ref: '#/components/responses/Error'}
+        '409': {$ref: '#/components/responses/Error'}
+        '503': {$ref: '#/components/responses/Error'}
+    delete:
+      tags: [Classification]
+      summary: Delete a nonpublished action
+      security: [{firebaseBearerAuth: []}]
+      parameters:
+        - $ref: '#/components/parameters/ClassificationActionId'
+        - $ref: '#/components/parameters/ClassificationIdempotencyKey'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {$ref: '#/components/schemas/ClassificationRevision'}
+      responses:
+        '200': {$ref: '#/components/responses/ClassificationSuccess'}
+        '400': {$ref: '#/components/responses/Error'}
+        '401': {$ref: '#/components/responses/Error'}
+        '403': {$ref: '#/components/responses/Error'}
+        '404': {$ref: '#/components/responses/Error'}
+        '409': {$ref: '#/components/responses/Error'}
+        '503': {$ref: '#/components/responses/Error'}
 components:
   securitySchemes:
     firebaseBearerAuth:
@@ -271,7 +485,48 @@ components:
         minLength: 1
         maxLength: 128
       example: GGplAdctTfVDLVvYsfIADJmfp8f2
+    ClassificationEntryId:
+      name: entryId
+      in: path
+      required: true
+      schema: {type: string, minLength: 1, maxLength: 128}
+    ClassificationVoteId:
+      name: voteId
+      in: path
+      required: true
+      schema: {type: string, minLength: 1, maxLength: 128}
+    ClassificationActionId:
+      name: actionId
+      in: path
+      required: true
+      schema: {type: string, minLength: 1, maxLength: 128}
+    ClassificationPublicationId:
+      name: publicationId
+      in: path
+      required: true
+      schema: {type: string, minLength: 1, maxLength: 128}
+    ClassificationLimit:
+      name: limit
+      in: query
+      schema: {type: integer, minimum: 1, maximum: 100, default: 25}
+    ClassificationCursor:
+      name: cursor
+      in: query
+      schema: {type: string, maxLength: 512}
+    ClassificationIdempotencyKey:
+      name: Idempotency-Key
+      in: header
+      required: true
+      schema: {type: string, minLength: 8, maxLength: 128}
   responses:
+    ClassificationSuccess:
+      description: Firebase-backed Classification response; see the route descriptions for data shape.
+      headers:
+        Cache-Control:
+          schema: {type: string, const: 'private, no-store'}
+      content:
+        application/json:
+          schema: {$ref: '#/components/schemas/ClassificationResponse'}
     Error:
       description: Error response.
       content:
@@ -279,6 +534,101 @@ components:
           schema:
             $ref: '#/components/schemas/ErrorResponse'
   schemas:
+    ClassificationResponse:
+      type: object
+      required: [metadata, data]
+      properties:
+        metadata: {$ref: '#/components/schemas/FirebaseMetadata'}
+        data:
+          description: Route-specific vote, action, or publication data described in the Classification API documentation.
+    ClassificationRevision:
+      type: object
+      additionalProperties: false
+      required: [expectedRevision]
+      properties:
+        expectedRevision: {type: integer, minimum: 1}
+    ClassificationVoteCreate:
+      type: object
+      additionalProperties: false
+      required: [entryId, votedBelt]
+      properties:
+        entryId: {type: string, minLength: 1, maxLength: 128}
+        votedBelt: {$ref: '#/components/schemas/ClassificationBelt'}
+        comment: {type: [string, 'null'], maxLength: 2000}
+        mediaUrl: {type: [string, 'null'], maxLength: 2048, format: uri}
+    ClassificationVoteEdit:
+      type: object
+      additionalProperties: false
+      required: [expectedRevision, votedBelt]
+      properties:
+        expectedRevision: {type: integer, minimum: 1}
+        votedBelt: {$ref: '#/components/schemas/ClassificationBelt'}
+        comment: {type: [string, 'null'], maxLength: 2000}
+        mediaUrl: {type: [string, 'null'], maxLength: 2048, format: uri}
+    ClassificationActionCreate:
+      type: object
+      additionalProperties: false
+      required: [entryId, status]
+      properties:
+        entryId: {type: string, minLength: 1, maxLength: 128}
+        status: {type: string, enum: [Draft, Pending, Staged, Re-opened, Settled]}
+        action: {type: [string, 'null'], enum: [Belt Change, Sameline, Delete, null]}
+        updatedBelt: {$ref: '#/components/schemas/ClassificationNullableBelt'}
+        samelineTargetId: {type: [string, 'null'], maxLength: 128}
+        note: {type: [string, 'null'], maxLength: 4000}
+        adminNote: {type: [string, 'null'], maxLength: 4000}
+        omitChangelog: {type: boolean}
+    ClassificationActionEdit:
+      type: object
+      additionalProperties: false
+      required: [expectedRevision, status]
+      properties:
+        expectedRevision: {type: integer, minimum: 1}
+        status: {type: string, enum: [Draft, Pending, Staged, Re-opened, Settled]}
+        action: {type: [string, 'null'], enum: [Belt Change, Sameline, Delete, null]}
+        updatedBelt: {$ref: '#/components/schemas/ClassificationNullableBelt'}
+        samelineTargetId: {type: [string, 'null'], maxLength: 128}
+        note: {type: [string, 'null'], maxLength: 4000}
+        adminNote: {type: [string, 'null'], maxLength: 4000}
+        omitChangelog: {type: boolean}
+    ClassificationBatchRequest:
+      type: object
+      additionalProperties: false
+      required: [actions]
+      properties:
+        actions:
+          type: array
+          minItems: 1
+          maxItems: 50
+          items:
+            type: object
+            additionalProperties: false
+            required: [actionId, expectedRevision]
+            properties:
+              actionId: {type: string, minLength: 1, maxLength: 128}
+              expectedRevision: {type: integer, minimum: 1}
+    ClassificationSingleRequest:
+      type: object
+      additionalProperties: false
+      required: [entryId, expectedRevision, action, omitChangelog]
+      properties:
+        entryId: {type: string, minLength: 1, maxLength: 128}
+        actionId: {type: [string, 'null'], maxLength: 128}
+        expectedRevision: {type: [integer, 'null'], minimum: 1}
+        action: {type: string, enum: [Belt Change, Sameline, Delete]}
+        updatedBelt: {$ref: '#/components/schemas/ClassificationNullableBelt'}
+        samelineTargetId: {type: [string, 'null'], maxLength: 128}
+        note: {type: [string, 'null'], maxLength: 4000}
+        adminNote: {type: [string, 'null'], maxLength: 4000}
+        omitChangelog: {type: boolean, const: false}
+    ClassificationBelt:
+      type: string
+      enum: [White, Yellow, Orange, Green, Blue, Purple, Brown, Red,
+        Black 1, Black 2, Black 3, Black 4, Black 5]
+    ClassificationNullableBelt:
+      type: [string, 'null']
+      enum: [White, Yellow, Orange, Green, Blue, Purple, Brown, Red,
+        Black 1, Black 2, Black 3, Black 4, Black 5, null]
     ApiMetadata:
       type: object
       additionalProperties: true

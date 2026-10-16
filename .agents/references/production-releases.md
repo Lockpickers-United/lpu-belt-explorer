@@ -4,6 +4,11 @@
 
 Production deploys, PM2 starts or restarts, and live-data jobs require explicit user approval under the root `AGENTS.md`. Preparing or reviewing workflow files, release configuration, commands, and documentation does not deploy them.
 
+Keep `CLASSIFICATION_WRITE_STAGE=read` in the protected production environment
+until the separate Classification authorization and rollout gates are complete.
+Later stage changes require the same approved release process and coordinated
+frontend `VITE_CLASSIFICATION_WRITE_STAGE` builds.
+
 ## Deployment workflow
 
 `.github/workflows/deploy-production.yml` is the production path. It is manually dispatched, accepts only the `main` branch, and uses the GitHub `production` environment so one reviewer can approve deployment.

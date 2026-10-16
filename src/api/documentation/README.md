@@ -90,6 +90,53 @@ Currently, `GET /users/{id}/profile` allows:
 
 ## Endpoints
 
+### Classification API prototype
+
+`/classification` is an authenticated Firebase-backed API. Eligible readers have a verified
+`admin`, `classificationAdmin`, `lpuMod`, `classificationTeam`, or `blackBelt` claim.
+Any of these claims permits vote creation and editing/deletion of the caller's own vote;
+only `admin` or `classificationAdmin` may edit/delete another member's vote.
+Admin action and publication writes also require `admin` or `classificationAdmin`. Every
+Classification response uses `Cache-Control: private, no-store`.
+
+The server's protected `CLASSIFICATION_WRITE_STAGE` setting is an additional rollout gate:
+`read` (the default, including missing or invalid values) rejects every mutation;
+`vote` permits vote writes; `action` also permits admin draft/stage/settle writes; and
+`publish` also permits both publication routes. A closed stage returns `503
+writes_disabled`. Claims and record ownership checks still apply at every stage.
+Promote the server stage before the frontend's matching
+`VITE_CLASSIFICATION_WRITE_STAGE` build setting, and verify each stage in development.
+
+| Route | Access | Data |
+| --- | --- | --- |
+| `GET /classification/entries/{entryId}/votes` | Eligible reader | One lock's paged modern votes, current/previous flags, entry revision and next cursor. |
+| `GET /classification/entries/{entryId}/action` | Admin | Current editable action or `null`, including internal `adminNote`. |
+| `GET /classification/actions/staged` | Eligible reader | Included staged actions, without `adminNote`. |
+| `GET /classification/publications` | Eligible reader | Paged immutable publication headers. |
+| `GET /classification/publications/{publicationId}` | Eligible reader | One immutable publication and its ordered action snapshots. |
+| `POST /classification/votes`; `PATCH/DELETE /classification/votes/{voteId}` | Voting claim; owner or admin for edit/delete | Canonical vote changes and resulting entry revision. |
+| `POST /classification/actions`; `PATCH/DELETE /classification/actions/{actionId}` | Admin | Editable decision changes and resulting entry revision. |
+| `POST /classification/publications` | Admin | Batch publication of 1–50 included Staged actions. |
+| `POST /classification/publications/single` | Admin | Save and publish one form decision, leaving other staged actions alone. |
+
+Mutations require an `Idempotency-Key` of 8–128 characters. Operation results are stored
+with a seven-day expiration timestamp; the planned Firestore TTL policy removes expired
+records asynchronously. Vote creates use a deterministic `(entryId, userId)` ID, and edits
+require `expectedRevision`. A duplicate vote or stale revision returns `409` with a safe
+`error.recovery.current` record. Other stable errors include `invalid_request`,
+`invalid_cursor`, `forbidden`, `action_not_publishable`, and `idempotency_conflict`.
+
+Vote comments are limited to 2,000 characters, media URLs to 2,048 HTTP(S) URL
+characters, and changelog/admin notes to 4,000 characters. Paged reads default to 25
+and accept at most 100 records. Publication batches accept at most 50 actions. The Node
+runtime reads the compact v1 catalog from the absolute `CLASSIFICATION_CATALOG_PATH`
+file to validate IDs and snapshot names and belts. The production frontend workflow
+publishes the verified file atomically; the API reloads a replaced file on its next
+lookup without a restart. Configure the path and release the API loader before enabling
+these endpoints. `openapi.yaml` records request schemas and
+response status classes, while the [frontend recommendation](../../../../lpu-belt-explorer/internal-docs/classification-public-data-recommendation.md)
+records the full logical response shape.
+
 ### GET `/locks/{lockId}/videos`
 
 Returns the public YouTube evidence videos indexed for a lock. A lock ID with no

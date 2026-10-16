@@ -128,11 +128,18 @@ app.use((err, req, res, next) => {
         path: req.originalUrl || req.url,
         method: req.method
     }
+    const responseBase = {
+        ...base,
+        recovery: ['revision_conflict', 'duplicate_vote'].includes(err?.code)
+            ? err?.recovery : undefined
+    }
     const payload = isDev
-        ? { ...base, stack: typeof err?.stack === 'string' ? err.stack : undefined, details: err?.details }
-        : base
+        ? { ...responseBase, stack: typeof err?.stack === 'string' ? err.stack : undefined,
+            details: err?.details }
+        : responseBase
     const cleanErr = {...err}
     delete cleanErr.stack
+    delete cleanErr.recovery
     try { logger.error({ err: cleanErr, status, ...base }, 'request error') } catch {
         console.error('request error', err)
     }

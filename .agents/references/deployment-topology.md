@@ -67,6 +67,20 @@ directory. The collection processors and API share
 never silently uses the checked-in fixtures. Readiness requires both files to be
 readable.
 
+The Classification API reads the frontend's compact v1
+`classification-catalog.json` from the absolute `CLASSIFICATION_CATALOG_PATH`.
+The production path is
+`/home/lpubelts_api/apps/api-server-prod/shared/snapshots/classification-catalog.json`.
+The frontend build workflow verifies this artifact against `data.json`, uploads
+it to a temporary path in that directory, checks its SHA-256 remotely, and
+atomically replaces the active file after Pages deployment. The API opens the
+catalog on each lookup and reloads when its file identity changes; no restart is
+needed for later catalog updates. Configure the production path once in the
+protected environment file and deploy the updated API loader separately.
+Development needs its own verified local compact snapshot and absolute path.
+Invalid, missing, or unset catalog files fail Classification requests with 503;
+never fall back to test fixtures or a live URL fetch.
+
 Each environment has one protected `.env.<environment>` file linked at the repository root. It contains server and command-line job settings, including `COLLECTION_*`; do not create component-specific environment files inside `src/projects`.
 
 Do not reorganize the repository into a shared application directory. Sharing source files, manifests, or dependencies between releases defeats immutable deployment and can make the previous release unusable after an update.
