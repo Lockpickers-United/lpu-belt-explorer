@@ -60,3 +60,7 @@ Profile reads are centralized in `ProfileContext`:
 - Render private fields only when `isFullProfile` and the relevant role/ownership condition permit it.
 
 When changing a context value, search every `useContext(...)` consumer and update `src/test/setupTests.js` plus feature-specific provider mocks.
+
+## Scorecard activity cache
+
+Other members' scorecards may read the public `activity-cache` document keyed as `activity: userId == <uid>`. `DBContext` accepts only version 2 cache payloads there and falls back to direct `evidence` and `awards` queries when it is absent. The owner loads the source records directly so imported Discord awards and profile statistics use current activity. The tracked rules deny browser writes to both `activity-cache` and the legacy `query-cache`; these rules and the matching Functions/frontend are deployed only in development so far. Legacy `query-cache` remains publicly readable but is never trusted by the new frontend because its old rule allowed arbitrary writes. Functions triggered by evidence and award changes rebuild the new public payload in the matching Firestore database. A cache write is eventually consistent with its source change, and unchanged users need a separately authorized trusted backfill before every scorecard benefits from the cache.
