@@ -239,7 +239,6 @@ export default function ChangelogMain() {
             {pending && <div role='status'>Publishing classification changes…</div>}
             {publishError && <div role='alert'>Could not publish classification changes: {publishError.message}
                 {publishError.status === 409 && ' Reload the staged changes before trying again.'}</div>}
-            {changelogLoading && <LoadingDisplay message='Loading changelog'/>}
             {changelogError && <ErrorMessage errorMessage='Could not load the classification changelog.'/>}
             {selectedPublication &&
                 <Paper style={{...style, padding: 16}}>

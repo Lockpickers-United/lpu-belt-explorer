@@ -302,8 +302,8 @@ function Entry({entry, expanded, onExpand, scorecardId}) {
                         {accessInfo.features.entryActionBar && !isHistorical &&
                             <div style={{margin: !isMobile ? '24px 0px 20px 6px' : '24px 0px 20px 0px'}}>
                                 {!isClassification
-                                    ? <EntryActionBarWrapped entry={entry} openAdminForm={openAdminForm}/>
-                                    : <EntryActionBar entry={entry} openAdminForm={openAdminForm}/>
+                                    ? <EntryActionBarWrapped entry={entry} openAdminForm={openAdminForm} entryRef={ref}/>
+                                    : <EntryActionBar entry={entry} openAdminForm={openAdminForm} entryRef={ref}/>
                                 }
                             </div>
                         }

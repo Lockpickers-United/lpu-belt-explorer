@@ -17,11 +17,16 @@ import APIContext from '../app/APIContext.jsx'
 import AuthContext from '../app/AuthContext.jsx'
 import useClassificationCommand from './useClassificationCommand.js'
 import {canWriteActions, canPublishClassification} from './writeStage.js'
+import LoadingDisplay from '../misc/LoadingDisplay.jsx'
+import DeleteButton from '../misc/DeleteButton.jsx'
+import LogEntryButton from '../entries/LogEntryButton.jsx'
+import {enqueueSnackbar} from 'notistack'
+import scrollRefToTop from '../util/scrollRefToTop.js'
 
 const statuses = ['Draft', 'Pending', 'Staged', 'Re-opened', 'Settled']
 const actions = ['Belt Change', 'Sameline', 'Delete']
 
-export default function EntryClassificationAdmin({entry, handleToggle}) {
+export default function EntryClassificationAdmin({entry, handleToggle, entryRef}) {
     const {getAdminAction} = useContext(ClassificationContext)
     const {fetchClassificationAction} = useContext(APIContext)
     const {userClaims = []} = useContext(AuthContext)
@@ -53,30 +58,38 @@ export default function EntryClassificationAdmin({entry, handleToggle}) {
                 setActionLoading(false)
             }
         })
-        return () => { active = false }
+        return () => {
+            active = false
+        }
     }, [entry.id, summaryAction?.id, needsFetch, fetchClassificationAction])
 
     if (actionError) return <div role='alert'>Could not load the current classification action.</div>
     if (actionLoading) {
-        return <div role='status'>Loading classification action…</div>
+        return <div role='status' aria-label='Loading classification action'
+                    style={{width: '100%', textAlign: 'center', marginTop: 8}}>
+            <LoadingDisplay size={22} thickness={5} style={{marginTop: 8}}/>
+        </div>
     }
     const action = loadedAction ?? summaryAction
-    return <EntryClassificationAdminForm key={action?.id ?? 'new'} entry={entry}
+    return <EntryClassificationAdminForm key={action?.id ?? 'new'} entry={entry} entryRef={entryRef}
                                          handleToggle={handleToggle} action={action}
                                          onActionChange={setLoadedAction}/>
 }
 
-function EntryClassificationAdminForm({entry, handleToggle, action, onActionChange}) {
+function EntryClassificationAdminForm({entry, handleToggle, action, onActionChange, entryRef}) {
     const {accessInfo} = useAccess()
     const {allEntries} = useContext(DataContext)
     const {run, pending, error} = useClassificationCommand()
+    const {isMobile} = useWindowSize()
 
     const adminAction = useMemo(() => {
-        if (!action || action.status === 'Published') return {status: 'Pending'}
+        if (!action || action.status === 'Published') return {status: 'Draft'}
         const target = action.samelineTargetId && allEntries.find(entry => entry.id === action.samelineTargetId)
-        return target ? {...action, samelineLock: {
-            lockId: target.id, belt: target.belt, lockFullName: action.samelineTargetName
-        }} : action
+        return target ? {
+            ...action, samelineLock: {
+                lockId: target.id, belt: target.belt, lockFullName: action.samelineTargetName
+            }
+        } : action
     }, [action, allEntries])
 
     let form
@@ -101,7 +114,8 @@ function EntryClassificationAdminForm({entry, handleToggle, action, onActionChan
     const handleCancel = useCallback(() => {
         form.reload()
         handleToggle && handleToggle()
-    }, [form, handleToggle])
+        scrollRefToTop(entryRef)
+    }, [entryRef, form, handleToggle])
 
     form = useForm({baseForm, processChange})
 
@@ -122,7 +136,6 @@ function EntryClassificationAdminForm({entry, handleToggle, action, onActionChan
     const showVotes = true
     const [showPreviousVotes, setShowPreviousVotes] = useState(!entry.currentVotes?.length)
 
-    const {isMobile} = useWindowSize()
     const padding = !isMobile ? '0 20px 0 8px' : '0 0px 0 0'
     const rows = !isMobile ? 4 : 6
     const buttonText = adminAction.id
@@ -154,6 +167,8 @@ function EntryClassificationAdminForm({entry, handleToggle, action, onActionChan
                 })
                 : await run('post', 'actions', {entryId: entry.id, ...fields})
             onActionChange(result.action)
+            enqueueSnackbar('Changes saved.')
+            scrollRefToTop(entryRef)
             handleToggle?.()
         } catch {
             // Keep current fields for correction or retry.
@@ -161,7 +176,6 @@ function EntryClassificationAdminForm({entry, handleToggle, action, onActionChan
     }
 
     const handleDelete = async () => {
-        if (!window.confirm('Delete this classification action?')) return
         try {
             await run('delete', `actions/${encodeURIComponent(adminAction.id)}`, {
                 expectedRevision: adminAction.revision
@@ -169,7 +183,7 @@ function EntryClassificationAdminForm({entry, handleToggle, action, onActionChan
             onActionChange(null)
             handleToggle?.()
         } catch {
-            // Show the API error below the form.
+            // Show the API error.
         }
     }
 
@@ -193,7 +207,6 @@ function EntryClassificationAdminForm({entry, handleToggle, action, onActionChan
             // Keep current fields and retry key for an uncertain response.
         }
     }
-
     if (!accessInfo.roles.classificationAdmin) return null
 
     return (
@@ -253,20 +266,23 @@ function EntryClassificationAdminForm({entry, handleToggle, action, onActionChan
                                 <div style={{fontSize: '1.0rem', fontWeight: 600, margin: '0px 0px 2px 0px'}}>
                                     Action
                                 </div>
-                                <FormElement fieldType={'SelectBox'} fieldName={'action'}
+                                <FormElement fieldType={'SelectBox'}
+                                             fieldName={'action'}
                                              options={actions}
                                              fieldSettings={{
                                                  inputWidth: !isMobile ? 170 : 160,
                                                  inputSize: 'small'
                                              }}
-                                             form={form} formDefaults={formDefaults}/>
+                                             form={form}
+                                             formDefaults={formDefaults}/>
                             </div>
                             {form.form?.action === 'Belt Change' &&
                                 <div>
                                     <div style={{fontSize: '1.0rem', fontWeight: 600, margin: '0px 0px 2px 0px'}}>
                                         New Belt
                                     </div>
-                                    <FormElement fieldType={'SelectBox'} fieldName={'updatedBelt'}
+                                    <FormElement fieldType={'SelectBox'}
+                                                 fieldName={'updatedBelt'}
                                                  options={danBelts.slice(0, 13)}
                                                  fieldSettings={{
                                                      inputWidth: !isMobile ? 140 : 100,
@@ -280,7 +296,8 @@ function EntryClassificationAdminForm({entry, handleToggle, action, onActionChan
                                     <div style={{fontSize: '1.0rem', fontWeight: 600, margin: '0px 0px 2px 0px'}}>
                                         Sameline With
                                     </div>
-                                    <FormElement fieldType={'LockEntrySearchBox'} fieldName={'samelineLock'}
+                                    <FormElement fieldType={'LockEntrySearchBox'}
+                                                 fieldName={'samelineLock'}
                                                  options={allEntries}
                                                  fieldSettings={{
                                                      margin: '6px 0px 0px 0px',
@@ -289,7 +306,8 @@ function EntryClassificationAdminForm({entry, handleToggle, action, onActionChan
                                                      inputSize: 'small',
                                                      lock: form.form.samelineLock
                                                  }}
-                                                 form={form} formDefaults={formDefaults}/>
+                                                 form={form}
+                                                 formDefaults={formDefaults}/>
                                 </div>
                             }
                         </div>
@@ -364,6 +382,11 @@ function EntryClassificationAdminForm({entry, handleToggle, action, onActionChan
                     <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center'}}>
                         <ChangelogPreviewButton entry={entry} currentAction={currentAction}/>
                     </div>
+
+                    {pending && <div role='status' style={{width: '100%', textAlign: 'center', marginTop: 8}}>
+                        <LoadingDisplay size={22} thickness={5} style={{marginTop: 8}}/>
+                    </div>}
+
                     <div style={{
                         display: 'flex',
                         flexGrow: 1,
@@ -373,8 +396,9 @@ function EntryClassificationAdminForm({entry, handleToggle, action, onActionChan
                         gap: 10
                     }}>
                         {adminAction.id &&
-                            <Button variant='text' size='small' color='error' disabled={pending || !canWriteActions}
-                                    onClick={handleDelete}>Delete</Button>
+                            <DeleteButton variant='text' size='small' color='error'
+                                          disabled={pending || !canWriteActions}
+                                          onClick={handleDelete}>Delete</DeleteButton>
                         }
                         <div style={{flexGrow: 1}}/>
                         <div style={{
@@ -402,14 +426,15 @@ function EntryClassificationAdminForm({entry, handleToggle, action, onActionChan
                                     color='success' style={{whiteSpace: 'nowrap'}}>Publish Now</Button>
                         </div>
                     </div>
-                    {pending && <div role='status'>Saving classification decision…</div>}
                     {!canWriteActions && <div role='status'>Classification action writes are not enabled yet.</div>}
-                    {error && <div role='alert'>Could not save classification decision: {error.message}
+                    {error && <div role='alert'>Could not save: {error.message}
                         {error.status === 409 && ' Reload this lock before trying again.'}</div>}
 
                 </div>
             </div>
-            <div style={{marginTop: 24}}/>
+            <div style={{margin: '12px 0', textAlign: 'center'}}>
+                <LogEntryButton entry={adminAction}/>
+            </div>
 
             <EntryClassificationVote entry={entry}/>
 

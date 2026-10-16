@@ -6,13 +6,13 @@ import {circularProgressClasses} from '@mui/material'
 function LoadingDisplay({message = undefined, size = 60, thickness = 4, style = {}}) {
     return (
         <React.Fragment>
-            <div style={{
+            <div aria-label={'Loading'} style={{
                 display: 'flex',
                 flexDirection: 'column',
                 placeItems: 'center',
                 width: '100%',
                 alignItems: 'center',
-                height: 200,
+                height: size,
                 marginRight: 'auto',
                 marginLeft: 'auto',
                 ...style

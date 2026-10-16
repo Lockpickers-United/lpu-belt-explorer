@@ -4,10 +4,12 @@ import VoteView from './VoteView.jsx'
 import VoteForm from './VoteForm.jsx'
 import Button from '@mui/material/Button'
 import {canWriteVotes} from './writeStage.js'
+import LoadingDisplay from '../misc/LoadingDisplay.jsx'
 
-export default function VoteDisplay({vote = {}, formVote = vote, owner, entry, previous = false}) {
+export default function VoteDisplay({vote = {}, formVote = vote, owner, entry, previous = false, entryRef}) {
     const [editing, setEditing] = useState(false)
     const [awaitingRefresh, setAwaitingRefresh] = useState(null)
+
     useEffect(() => {
         if (awaitingRefresh && (formVote?.id !== awaitingRefresh.id ||
             formVote?.revision !== awaitingRefresh.revision)) {
@@ -21,9 +23,15 @@ export default function VoteDisplay({vote = {}, formVote = vote, owner, entry, p
         setEditing(type === 'voteForm')
     }
 
+    const showLoading = false
+
     return (
         <div style={{marginBottom: owner ? 24 : 8}}>
-            {awaitingRefresh && <div role='status'>Vote saved. Waiting for the updated record…</div>}
+            {awaitingRefresh && showLoading &&
+                <div role='status' style={{width: '100%', textAlign: 'center', marginTop: 8}}>
+                    <LoadingDisplay size={22} thickness={5} style={{marginTop: 8}}/>
+                </div>
+            }
             <Collapse in={!vote?.id && !editing && !awaitingRefresh}>
                 {entry.classificationStatus !== 'Settled'
                     ? < div style={{width: '100%', display: 'flex', justifyContent: 'center', marginTop: 16}}>
@@ -36,11 +44,11 @@ export default function VoteDisplay({vote = {}, formVote = vote, owner, entry, p
                     </div>
                 }
             </Collapse>
-            <Collapse in={Boolean(vote?.id) && !editing && !awaitingRefresh}>
+            <Collapse in={Boolean(vote?.id) && !editing && !awaitingRefresh} unmountOnExit>
                 <VoteView vote={vote} handleActive={handleActive} owner={owner} previous={previous}/>
             </Collapse>
-            <Collapse in={editing}>
-                {editing && <VoteForm entry={entry} vote={formVote} handleActive={handleActive} owner={owner}/>}
+            <Collapse in={editing} unmountOnExit>
+                <VoteForm entry={entry} vote={formVote} handleActive={handleActive} owner={owner} entryRef={entryRef}/>
             </Collapse>
         </div>
     )

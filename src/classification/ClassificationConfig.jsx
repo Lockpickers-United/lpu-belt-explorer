@@ -19,11 +19,11 @@ export const classificationStatuses = {
     },
     'Draft': {
         color: '#319431',
-        Icon: PrivacyTipIcon
+        Icon: GppGoodIcon
     },
     Pending: {
         color: '#1aa41a',
-        Icon: GppGoodIcon
+        Icon: PrivacyTipIcon
     },
     Staged: {
         color: '#0d0',

@@ -1,6 +1,6 @@
 import React from 'react'
 import {describe, expect, it, vi} from 'vitest'
-import {screen} from '@testing-library/react'
+import {act, screen, waitFor, within} from '@testing-library/react'
 import {userEvent} from '@testing-library/user-event'
 import {createMemoryRouter, RouterProvider} from 'react-router-dom'
 import {defaultTestContextValues, renderWithProviders} from '../../src/test/render.jsx'
@@ -63,13 +63,12 @@ describe('classification previews', () => {
         expect(classificationCommand).toHaveBeenCalledWith('patch', 'votes/vote-1', {
             expectedRevision: 3, votedBelt: 'Green', comment: null, mediaUrl: null
         }, expect.any(String))
-        expect(screen.getByRole('status')).toHaveTextContent('Waiting for the updated record')
+        await waitFor(() => expect(screen.queryByRole('button', {name: 'Save'})).not.toBeInTheDocument())
     })
 
     it('deletes a previous vote only after confirmation', async () => {
         const user = userEvent.setup()
         const classificationCommand = vi.fn(async () => ({}))
-        const confirm = vi.spyOn(window, 'confirm').mockReturnValue(true)
         const vote = {id: 'vote-1', revision: 3, votedBelt: 'Blue', userId: 'test-user'}
         const router = createMemoryRouter([{
             path: '/classification', handle: {route: 'classification'},
@@ -80,11 +79,17 @@ describe('classification previews', () => {
         })
         await user.click(screen.getByRole('button', {name: 'Edit Your Belt Ranking Vote'}))
         await user.click(screen.getByRole('button', {name: 'Delete'}))
-        expect(confirm).toHaveBeenCalledOnce()
+        expect(screen.getByRole('menu')).toHaveTextContent('Are you sure?')
+        expect(classificationCommand).not.toHaveBeenCalled()
+        await user.keyboard('{Escape}')
+        await waitFor(() => expect(screen.queryByRole('menu')).not.toBeInTheDocument())
+        expect(classificationCommand).not.toHaveBeenCalled()
+
+        await user.click(screen.getByRole('button', {name: 'Delete'}))
+        await user.click(within(screen.getByRole('menu')).getByRole('button', {name: 'Delete'}))
         expect(classificationCommand).toHaveBeenCalledWith('delete', 'votes/vote-1', {
             expectedRevision: 3
         }, expect.any(String))
-        confirm.mockRestore()
     })
 
     it('shows votes without an edit control on the changelog route', () => {
@@ -137,7 +142,7 @@ describe('classification previews', () => {
     })
 
     it.each([
-        {actionId: 'a_t_e2fd1000', status: 'Pending', saveLabel: 'Save'},
+        {actionId: 'a_t_e2fd1000', status: 'Draft', saveLabel: 'Save'},
         {actionId: 'a_t_e2fd1519', status: 'Re-opened', saveLabel: 'Save Changes'}
     ])('prefills only an unpublished context-selected action: $actionId', ({actionId, status, saveLabel}) => {
         const entry = {
@@ -175,8 +180,9 @@ describe('classification previews', () => {
 
     it('loads the current admin action only when its panel opens', async () => {
         const entry = allEntries.find(item => item.id === 'e2fd1519')
-        const fetchClassificationAction = vi.fn(async () => ({
-            id: 'action-live', entryId: entry.id, status: 'Staged', action: 'Delete', note: 'Live note'
+        let resolveAction
+        const fetchClassificationAction = vi.fn(() => new Promise(resolve => {
+            resolveAction = resolve
         }))
         const baseAccessInfo = defaultTestContextValues.access.accessInfo
         const router = createMemoryRouter([{
@@ -192,8 +198,14 @@ describe('classification previews', () => {
                 roles: {...baseAccessInfo.roles, classificationAdmin: true}}},
             api: {fetchClassificationAction}
         })
-        expect(await screen.findByText('Set Status')).toBeInTheDocument()
         expect(fetchClassificationAction).toHaveBeenCalledExactlyOnceWith(entry.id)
+        expect(screen.queryByText('Set Status')).not.toBeInTheDocument()
+        await act(async () => resolveAction({
+            id: 'action-live', entryId: entry.id, status: 'Staged', action: 'Delete', note: 'Live note'
+        }))
+        expect(screen.getByText('Set Status')).toBeInTheDocument()
+        expect(screen.getAllByRole('combobox')[0]).toHaveTextContent('Staged')
+        expect(screen.getAllByRole('combobox')[1]).toHaveTextContent('Delete')
         expect(screen.getByDisplayValue('Live note')).toBeInTheDocument()
     })
 
