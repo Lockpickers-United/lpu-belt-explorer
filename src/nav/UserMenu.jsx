@@ -68,7 +68,7 @@ function UserMenu() {
                                 width: 36,
                                 height: 36,
                                 margin: '4px',
-                                backgroundColor: theme.roles?.[accessInfo.highestRole] || 'inherit'
+                                backgroundColor: accessInfo.previewRole ? theme.roles?.[accessInfo.highestRole] : 'inherit'
                             }}>
                     {
                         isLoggedIn
