@@ -22,6 +22,7 @@ import DeleteButton from '../misc/DeleteButton.jsx'
 import LogEntryButton from '../entries/LogEntryButton.jsx'
 import {enqueueSnackbar} from 'notistack'
 import scrollRefToTop from '../util/scrollRefToTop.js'
+import ConfirmButton from '../misc/ConfirmButton.jsx'
 
 const statuses = ['Draft', 'Pending', 'Staged', 'Re-opened', 'Settled']
 const actions = ['Belt Change', 'Sameline', 'Delete']
@@ -189,7 +190,6 @@ function EntryClassificationAdminForm({entry, handleToggle, action, onActionChan
 
     const handlePublish = async () => {
         const fields = actionFields()
-        if (!window.confirm('Publish this classification decision now? This creates a permanent changelog event.')) return
         try {
             await run('post', 'publications/single', {
                 entryId: entry.id,
@@ -202,6 +202,7 @@ function EntryClassificationAdminForm({entry, handleToggle, action, onActionChan
                 adminNote: fields.adminNote,
                 omitChangelog: false
             })
+            enqueueSnackbar('Changes published.', {variant: 'success'})
             handleToggle?.()
         } catch {
             // Keep current fields and retry key for an uncertain response.
@@ -420,10 +421,14 @@ function EntryClassificationAdminForm({entry, handleToggle, action, onActionChan
                                     disabled={pending || !canWriteActions || !form.changed || !validDecision(actionFields()) ||
                                         !validTarget(actionFields())}
                                     color='success' style={{whiteSpace: 'nowrap'}}>{buttonText}</Button>
-                            <Button variant='text' size='small' onClick={handlePublish}
-                                    disabled={pending || !canPublishClassification || !actionFields().action || !validTarget(actionFields()) ||
-                                        Boolean(actionFields().omitChangelog)}
-                                    color='success' style={{whiteSpace: 'nowrap'}}>Publish Now</Button>
+                            <ConfirmButton variant='text' size='small' color='success'
+                                           message={'About to publish this change'}
+                                           disabled={pending || !canPublishClassification || !actionFields().action || !validTarget(actionFields()) ||
+                                               Boolean(actionFields().omitChangelog)}
+                                           style={{height: 32, marginLeft: 16}}
+                                           onClick={handlePublish}>
+                                Publish Now
+                            </ConfirmButton>
                         </div>
                     </div>
                     {!canWriteActions && <div role='status'>Classification action writes are not enabled yet.</div>}

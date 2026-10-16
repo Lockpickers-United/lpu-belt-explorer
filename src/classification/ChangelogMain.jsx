@@ -23,10 +23,12 @@ import MenuItem from '@mui/material/MenuItem'
 import Menu from '@mui/material/Menu'
 import classificationCatalog from '../data/classification-catalog.json'
 import reconcileClassificationAction from './reconcileClassificationAction.js'
-import LoadingDisplay from '../misc/LoadingDisplay.jsx'
 import ErrorMessage from '../misc/ErrorMessage.jsx'
 import useClassificationCommand from './useClassificationCommand.js'
 import {canPublishClassification} from './writeStage.js'
+import ConfirmButton from '../misc/ConfirmButton.jsx'
+import {pluralize} from '../util/stringUtils.js'
+import {enqueueSnackbar} from 'notistack'
 
 const catalogById = new Map(classificationCatalog.entries.map(entry => [entry.id, entry]))
 
@@ -34,8 +36,14 @@ export default function ChangelogMain() {
     usePageTitle('Changelog')
 
     const {accessInfo} = useAccess()
-    const {getAdminAction, previousChangelogs, selectedPublication, stagedActions = [],
-        changelogLoading, changelogError, reloadChangelog} = useContext(ClassificationContext)
+    const {
+        getAdminAction,
+        previousChangelogs,
+        selectedPublication,
+        stagedActions = [],
+        changelogError,
+        reloadChangelog
+    } = useContext(ClassificationContext)
     const {run, pending, error: publishError} = useClassificationCommand()
     const [searchParams, setSearchParams] = useSearchParams()
 
@@ -96,7 +104,12 @@ export default function ChangelogMain() {
                             const {adminAction = {}} = entry
                             const targetId = adminAction.samelineTargetId ?? adminAction.samelineLock?.lockId
                             const targetLock = !selectedChangelog && targetId ? getLockFromId(targetId) : null
-                            return changelogEntryFormat({entry, adminAction, targetLock, historical: Boolean(selectedChangelog)})
+                            return changelogEntryFormat({
+                                entry,
+                                adminAction,
+                                targetLock,
+                                historical: Boolean(selectedChangelog)
+                            })
                         }).join('\n')
                 }\n\n`
         }
@@ -109,8 +122,10 @@ export default function ChangelogMain() {
                 const version = entry.version
 
                 const {adminAction = {}} = entry
-                const {id, actionId, action, samelineLock, samelineTargetId, samelineTargetName,
-                    note, adminNote} = adminAction
+                const {
+                    id, actionId, action, samelineLock, samelineTargetId, samelineTargetName,
+                    note, adminNote
+                } = adminAction
 
                 const lock = !selectedChangelog && (samelineTargetId ?? samelineLock?.lockId)
                     ? getLockFromId(samelineTargetId ?? samelineLock.lockId) : null
@@ -165,12 +180,12 @@ export default function ChangelogMain() {
 
     const publishable = stagedActions.filter(action => action.status === 'Staged' && !action.omitChangelog)
     const publishBatch = async () => {
-        const actions = publishable.slice(0, 25).map(action => ({
+        const actions = publishable.slice(0, 50).map(action => ({
             actionId: action.id, expectedRevision: action.revision
         }))
-        if (!window.confirm(`Publish ${actions.length} staged classification changes? This creates a permanent changelog event.`)) return
         try {
             const result = await run('post', 'publications', {actions})
+            enqueueSnackbar('Changes published.', {variant: 'success'})
             reloadChangelog?.()
             setSearchParams(params => {
                 params.set('id', result.publication.id)
@@ -187,12 +202,15 @@ export default function ChangelogMain() {
             {accessInfo.roles.classificationAdmin &&
                 <>
                     <ExportButtonGeneric exportData={exportData} clipboardContent={clipboardText}/>
-                    <Tooltip title={publishable.length > 25 ? 'Publishes the first 25 included staged actions' : ''}
+                    <Tooltip title={publishable.length > 50 ? 'Publish the first 50 staged changes' : 'Publish staged changes'}
                              arrow disableFocusListener>
-                        <Button variant='contained' color='success' size='small'
-                                disabled={!canPublishClassification || Boolean(selectedChangelog) || !publishable.length || pending}
-                                onClick={publishBatch}
-                                style={{height: 32, marginLeft: 16}}>Publish{publishable.length > 25 ? ' first 25' : ''}</Button>
+                        <ConfirmButton variant='outlined' size='small' color='success'
+                                       message={`About to publish ${publishable.length > 50 ? 'first 50' : publishable.length} ${pluralize('change', publishable.length)}.`}
+                                       disabled={!canPublishClassification || Boolean(selectedChangelog) || !publishable.length || pending}
+                                       style={{height: 32, marginLeft: 16}}
+                                       onClick={publishBatch}>
+                            Publish{publishable.length > 50 ? ' first 50' : ''}
+                        </ConfirmButton>
                     </Tooltip>
                 </>
             }
@@ -240,18 +258,6 @@ export default function ChangelogMain() {
             {publishError && <div role='alert'>Could not publish classification changes: {publishError.message}
                 {publishError.status === 409 && ' Reload the staged changes before trying again.'}</div>}
             {changelogError && <ErrorMessage errorMessage='Could not load the classification changelog.'/>}
-            {selectedPublication &&
-                <Paper style={{...style, padding: 16}}>
-                    <div>Compared with bundled catalog {classificationCatalog.catalogVersion}.</div>
-                    {selectedPublication.catalogFingerprint &&
-                        <div>Publication catalog: {selectedPublication.catalogFingerprint}</div>}
-                    {selectedPublication.actions.map(action => {
-                        const result = reconcileClassificationAction(action, catalogById)
-                        return <div key={action.actionId}>
-                            {action.entryName ?? action.entryId}: {result.status} — {result.detail}
-                        </div>
-                    })}
-                </Paper>}
             <Paper style={{...style, display: 'flex', justifyContent: 'space-between', padding: 8, gap: 8}}>
                 <div style={{fontSize: '1.3rem', fontWeight: 600, marginTop: 3}}>{title}</div>
                 <div>
@@ -322,6 +328,19 @@ export default function ChangelogMain() {
                     )}
                 </div>
             )}
+
+            {selectedPublication &&
+                <Paper style={{...style, padding: 16, fontSize: '0.9rem'}}>
+                    <div>Compared with bundled catalog {classificationCatalog.catalogVersion}.</div>
+                    {selectedPublication.catalogFingerprint &&
+                        <div>Publication catalog: {selectedPublication.catalogFingerprint}</div>}
+                    {selectedPublication.actions.map(action => {
+                        const result = reconcileClassificationAction(action, catalogById)
+                        return <div key={action.actionId}>
+                            {action.entryName ?? action.entryId}: {result.status} — {result.detail}
+                        </div>
+                    })}
+                </Paper>}
 
             <Footer extras={null} before={null} style={{marginTop: 40}}/>
             <Tracker feature='changelog'/>

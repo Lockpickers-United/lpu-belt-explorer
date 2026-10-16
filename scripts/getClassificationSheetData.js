@@ -6,7 +6,7 @@ import fs from 'fs'
 import {findLastMentionedVoter} from './classificationNoteMatcher.js'
 
 const refreshData = false
-const historical = false
+const historical = true
 
 const CREDENTIALS_PATH = new URL('../keys/google-credentials.json', import.meta.url)
 const OUTPUT_DIR = new URL('../src/data/classification/', import.meta.url)
@@ -74,8 +74,8 @@ async function processData(sheetId) {
             return {votedBelt, comment: note?.note, userId, displayName}
         })
 
-        //const dateString = '2026-10-01T01:01:01.001Z'
-        const dateString = dayjs().toISOString()
+        const dateString = '2026-10-01T01:01:01.001Z'
+        //const dateString = dayjs().toISOString()
 
             votes.forEach((vote, index) => {
             const voteData = {

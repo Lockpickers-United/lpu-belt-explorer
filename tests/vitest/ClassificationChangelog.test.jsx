@@ -1,7 +1,7 @@
 import React, {useContext, useState} from 'react'
 import {createMemoryRouter, RouterProvider} from 'react-router-dom'
 import {describe, expect, it, vi} from 'vitest'
-import {screen} from '@testing-library/react'
+import {screen, within} from '@testing-library/react'
 import {userEvent} from '@testing-library/user-event'
 import {defaultTestContextValues, renderWithProviders} from '../../src/test/render.jsx'
 import ClassificationContext from '../../src/app/ClassificationContext.jsx'
@@ -32,7 +32,7 @@ const targetLock = allEntries.find(entry => entry.id === samelineAction.sameline
 describe('classification changelog', () => {
     it('publishes only included staged actions with their current revisions', async () => {
         const user = userEvent.setup()
-        const confirm = vi.spyOn(window, 'confirm').mockReturnValue(true)
+        const confirm = vi.spyOn(window, 'confirm').mockReturnValue(false)
         const classificationCommand = vi.fn(async () => ({publication: {id: 'published-batch'}}))
         const reloadChangelog = vi.fn()
         const stagedActions = [
@@ -57,13 +57,48 @@ describe('classification changelog', () => {
         })
 
         await user.click(screen.getByRole('button', {name: 'Publish'}))
-        expect(confirm).toHaveBeenCalledOnce()
+        expect(screen.getByText(/About to publish 1 change\./)).toBeInTheDocument()
+        expect(classificationCommand).not.toHaveBeenCalled()
+        await user.click(within(screen.getByRole('menu')).getByRole('button', {name: 'Publish'}))
+        expect(confirm).not.toHaveBeenCalled()
         expect(classificationCommand).toHaveBeenCalledWith('post', 'publications', {
             actions: [{actionId: 'included', expectedRevision: 4}]
         }, expect.any(String))
         expect(reloadChangelog).toHaveBeenCalledOnce()
         expect(router.state.location.search).toBe('?id=published-batch')
         confirm.mockRestore()
+    })
+
+    it('publishes at most the first 50 included staged actions', async () => {
+        const user = userEvent.setup()
+        const classificationCommand = vi.fn(async () => ({publication: {id: 'published-batch'}}))
+        const stagedActions = Array.from({length: 51}, (_, index) => ({
+            id: `action-${index}`, entryId: `entry-${index}`, status: 'Staged', revision: 1,
+            action: 'Delete', omitChangelog: false
+        }))
+        const router = createMemoryRouter([{
+            path: '/classification/changelog', handle: {route: 'classification'},
+            element: <ClassificationContext.Provider value={{...classification, stagedActions}}>
+                <DataContext.Provider value={{visibleChangelogEntries: [], getLockFromId: () => null}}>
+                    <ChangelogMain/>
+                </DataContext.Provider>
+            </ClassificationContext.Provider>
+        }], {initialEntries: ['/classification/changelog']})
+        renderWithProviders(<RouterProvider router={router}/>, {
+            auth: {user: {uid: 'admin-user'}},
+            access: {accessInfo: {...defaultTestContextValues.access.accessInfo,
+                roles: {...defaultTestContextValues.access.accessInfo.roles, classificationAdmin: true}}},
+            api: {classificationCommand}
+        })
+
+        await user.click(screen.getByRole('button', {name: 'Publish first 50'}))
+        expect(screen.getByText(/About to publish first 50 changes\./)).toBeInTheDocument()
+        expect(classificationCommand).not.toHaveBeenCalled()
+        await user.click(within(screen.getByRole('menu')).getByRole('button', {name: 'Publish first 50'}))
+        const actions = classificationCommand.mock.calls[0][2].actions
+        expect(actions).toHaveLength(50)
+        expect(actions[0]).toEqual({actionId: 'action-0', expectedRevision: 1})
+        expect(actions[49]).toEqual({actionId: 'action-49', expectedRevision: 1})
     })
 
     it('formats Sameline and Delete actions with their target and original belt', () => {

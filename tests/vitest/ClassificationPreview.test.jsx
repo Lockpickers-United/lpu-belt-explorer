@@ -243,7 +243,7 @@ describe('classification previews', () => {
 
     it('creates a staged admin action and publishes one decision through separate commands', async () => {
         const user = userEvent.setup()
-        const confirm = vi.spyOn(window, 'confirm').mockReturnValue(true)
+        const confirm = vi.spyOn(window, 'confirm').mockReturnValue(false)
         const classificationCommand = vi.fn(async (_method, path) => path === 'actions'
             ? {action: {id: 'action-new', revision: 1, status: 'Staged', action: 'Delete'}}
             : {publication: {id: 'publication-new'}})
@@ -273,7 +273,11 @@ describe('classification previews', () => {
         }), expect.any(String))
 
         await user.click(screen.getByRole('button', {name: 'Publish Now'}))
-        expect(confirm).toHaveBeenCalledOnce()
+        expect(screen.getByText(/About to publish this change/)).toBeInTheDocument()
+        expect(classificationCommand).not.toHaveBeenCalledWith('post', 'publications/single',
+            expect.anything(), expect.anything())
+        await user.click(within(screen.getByRole('menu')).getByRole('button', {name: 'Publish Now'}))
+        expect(confirm).not.toHaveBeenCalled()
         expect(classificationCommand).toHaveBeenCalledWith('post', 'publications/single', expect.objectContaining({
             entryId: entry.id, actionId: 'action-new', expectedRevision: 1,
             action: 'Delete', omitChangelog: false
