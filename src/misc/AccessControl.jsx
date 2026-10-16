@@ -12,6 +12,7 @@ export default function AccessControl({
                                           signInRequired = false,
                                           requiredRoles = [],
                                           allowedRoles = [],
+                                          denyAccess = false,
                                           signInText = 'to continue',
                                           dialogContent,
                                           continueTo,
@@ -57,7 +58,7 @@ export default function AccessControl({
         return <Navigate to='/locks' replace/>
     }
 
-    if (allowedRoles.length && !allowedRoles.some(role => accessInfo.roles[role])) {
+    if ((allowedRoles.length && !allowedRoles.some(role => accessInfo.roles[role])) || denyAccess) {
         return (
             <LoadingDisplayNav>
                 <ScopedDialog

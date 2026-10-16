@@ -25,8 +25,9 @@ Read this reference for provider, route, context, authentication, role, or profi
 5. `AppProvider`
 6. `SystemMessageProvider`
 7. `ScoringProvider`
+8. `ClassificationProvider`
 
-`ProfileProvider` is route-scoped where profile data is needed. Preserve provider ordering when adding dependencies, and update test render helpers/mocks when a context contract changes.
+`ProfileProvider` is route-scoped where profile data is needed. The app-level `ClassificationProvider` depends on `AccessProvider` and subscribes to the eligible signed-in member's own votes and matching entry states. `ClassificationParentRoute` mounts `ClassificationSummaryProvider` for modern Classification paths; `/classification/past` uses the historical archive without a modern summary listener. The parent route renders authorization, loading, and read-error messages from context state. Preserve provider ordering when adding dependencies, and update test render helpers/mocks when a context contract changes.
 
 Routes use `createHashRouter` and are declared from `src/app/routes`. Keep route-specific providers in parent routes when several children share state.
 
@@ -39,7 +40,7 @@ Authorization and optional UI modes are separate:
 - `AuthContext.userClaims` is the source for authenticated roles such as `admin`, `lpuAdmin`, `qaUser`, and `blackBelt`.
 - `AccessContext` derives claimed and user-enabled UI roles from the authenticated user. Consumers use `useAccess()` and distinguish `level` from `enabledLevel`. `highestRole` is the highest effective claimed or preview role used for navigation colors; it does not depend on an enabled UI mode.
 - Main menu entries with `allowedRoles` are shown when any role in `AccessContext.accessInfo.roles` matches. Menu visibility is a display choice; each route still needs its own access check. Reports and the `/admin` route require `admin`; Admin Tools and Server Status are also shown only to admins.
-- In the classification project, a `blackBelt` claim grants the `classificationTeam` access role. The classification route and menu use these derived roles; the profile's `blackBeltAwardedAt` does not grant classification access. Other profile-based black-belt features still use profile data. The classification parent route waits for authentication, prompts anonymous visitors to sign in, and shows an access dialog with a link back to Locks for signed-in users without a qualifying role.
+- In the classification project, a `blackBelt` claim grants the `classificationTeam` access role. The Classification readers, route, and menu use these derived roles; the profile's `blackBeltAwardedAt` does not grant classification access. Other profile-based black-belt features still use profile data. The classification parent route waits for authentication, prompts anonymous visitors to sign in, and shows an access dialog with a link back to Locks for signed-in users without a qualifying role.
 - `DBContext.adminRole` and `DBContext.qaUserRole` derive role status from authentication and claims.
 - `AccessContext.accessInfo.enabledRoles` contains user-controlled UI/development modes. These modes must never grant data access or permit writes.
 - In development, the account menu can preview a subset of the signed-in account's roles, or a member view. This preview only restricts `AccessContext` roles and features; it does not change Firebase claims, `DBContext` authorization, profile subscriptions, or server/rules access. It resets on reload and cannot test backend permissions.
@@ -59,3 +60,7 @@ Profile reads are centralized in `ProfileContext`:
 - Render private fields only when `isFullProfile` and the relevant role/ownership condition permit it.
 
 When changing a context value, search every `useContext(...)` consumer and update `src/test/setupTests.js` plus feature-specific provider mocks.
+
+## Scorecard activity cache
+
+Other members' scorecards may read the public `activity-cache` document keyed as `activity: userId == <uid>`. `DBContext` accepts only version 2 cache payloads there and falls back to direct `evidence` and `awards` queries when it is absent. The owner loads the source records directly so imported Discord awards and profile statistics use current activity. The final tracked rules deny browser writes to both `activity-cache` and the legacy `query-cache`; matching Functions and rules are deployed in development. Production has the Functions and transition rules, which preserve legacy `query-cache` writes until the no-write frontend is live and the final rules are separately approved. The new frontend never trusts legacy `query-cache` because its old rule allowed arbitrary writes. Functions triggered by evidence and award changes rebuild the new public payload in the matching Firestore database. A cache write is eventually consistent with its source change, and unchanged users need a separately authorized trusted backfill before every scorecard benefits from the cache.

@@ -12,6 +12,7 @@ import {SystemMessageProvider} from '../systemMessage/SystemMessageContext.jsx'
 import {APIProvider} from './APIContext.jsx'
 import {AccessProvider} from './AccessContext.jsx'
 import {darkTheme} from './Theme.jsx'
+import {ClassificationProvider} from './ClassificationContext.jsx'
 
 initializeLocales()
 
@@ -30,7 +31,9 @@ function App() {
                                 <AppProvider>
                                     <SystemMessageProvider>
                                         <ScoringProvider>
+                                            <ClassificationProvider>
                                                 <AppRoutes/>
+                                            </ClassificationProvider>
                                         </ScoringProvider>
                                     </SystemMessageProvider>
                                 </AppProvider>

@@ -1,4 +1,4 @@
-import {useCallback, useContext, useEffect, useMemo} from 'react'
+import React, {useCallback, useContext, useEffect, useMemo, useState} from 'react'
 import BeltStripeMini from '../entries/BeltStripeMini.jsx'
 import FormElement from '../formUtils/FormElement.jsx'
 import {danBelts} from '../data/belts.js'
@@ -12,16 +12,23 @@ import useGetRequest from '../util/useGetRequest.jsx'
 import AuthContext from '../app/AuthContext.jsx'
 import {useAccess} from '../app/AccessContext.jsx'
 import DBContext from '../app/DBContext.jsx'
+import useClassificationCommand from './useClassificationCommand.js'
+import {canWriteVotes} from './writeStage.js'
+import DeleteButton from '../misc/DeleteButton.jsx'
+import LoadingDisplay from '../misc/LoadingDisplay.jsx'
+import {enqueueSnackbar} from 'notistack'
+import scrollRefToTop from '../util/scrollRefToTop.js'
 
-export default function VoteForm({entry, vote, handleActive, owner}) {
+export default function VoteForm({entry, vote, handleActive, owner, entryRef}) {
     const {user} = useContext(AuthContext)
     const {profile} = useContext(DBContext)
     const {accessInfo} = useAccess()
-
+    const {run, pending, error} = useClassificationCommand()
+    const [saving, setSaving] = useState(false)
     const hasLock = profile?.recordedLocks?.includes(entry.id)
 
     const url = `${apiServerUrl}/api/v1/locks/${entry.id}/videos`
-    const response = useGetRequest({user, url, enabled: hasLock && accessInfo.features.scorecardVideos})
+    const response = useGetRequest({user, url, enabled: Boolean(hasLock && accessInfo.features.scorecardVideos)})
     const videos = response?.data?.data?.videos ?? []
     const scorecardVideo = videos.find(video => video.userId === user.uid) ?? null
 
@@ -30,8 +37,9 @@ export default function VoteForm({entry, vote, handleActive, owner}) {
 
     const handleCancel = useCallback(() => {
         form.reload()
+        scrollRefToTop(entryRef)
         handleActive && handleActive()
-    }, [form, handleActive])
+    }, [entryRef, form, handleActive])
 
     form = useForm({baseForm})
     useEffect(() => {
@@ -50,8 +58,43 @@ export default function VoteForm({entry, vote, handleActive, owner}) {
     }, [form])
 
     const checkValidUrl = useCallback(value => {
-        return isValidUrl(value)
+        return !value || isValidUrl(value)
     }, [])
+
+    const handleSave = async () => {
+        setSaving(true)
+        const fields = {
+            votedBelt: form.form.votedBelt,
+            comment: form.form.comment || null,
+            mediaUrl: form.form.mediaUrl || null
+        }
+        try {
+            if (vote.id) {
+                await run('patch', `votes/${encodeURIComponent(vote.id)}`, {
+                    ...fields, expectedRevision: vote.revision
+                })
+            } else {
+                await run('post', 'votes', {entryId: entry.id, ...fields})
+            }
+            scrollRefToTop(entryRef)
+            handleActive?.('saved')
+            enqueueSnackbar('Changes saved.')
+        } catch {
+            setSaving(false)
+            // Keep the form and idempotency key available for a safe retry.
+        }
+    }
+
+    const handleDelete = async () => {
+        try {
+            await run('delete', `votes/${encodeURIComponent(vote.id)}`, {
+                expectedRevision: vote.revision
+            })
+            handleActive?.('saved')
+        } catch {
+            // Show the API error next to the form.
+        }
+    }
 
 
     const {isMobile} = useWindowSize()
@@ -120,20 +163,34 @@ export default function VoteForm({entry, vote, handleActive, owner}) {
                          color={'info'}
                          checkValid={checkValidUrl}
                          errorMessage={(form.form.mediaUrl && !checkValidUrl(form.form.mediaUrl)) ? 'A valid link is required' : undefined}
-                         after={ scorecardVideo &&
-                             <Link sx={linkSx} onClick={() => fillScorecardLink(scorecardVideo.url)}>Fill in link from scorecard</Link>
+                         after={scorecardVideo &&
+                             <Link sx={linkSx} onClick={() => fillScorecardLink(scorecardVideo.url)}>Fill in link from
+                                 scorecard</Link>
                          }
             />
 
-            <div style={{display: 'flex', flexGrow: 1, justifyContent: 'right', marginTop: 16, gap: 10}}>
-                <Button variant='text' size='small' style={{color: '#aaa'}}
-                        onClick={handleCancel}>Cancel</Button>
-                <Button variant='text' size='small' disabled
-                        color='success' style={{whiteSpace: 'nowrap'}}>{buttonText}</Button>
-            </div>
-            <div role='status' style={{color: '#aaa', fontSize: '0.85rem', textAlign: 'right'}}>
-                Preview only — vote saving is unavailable.
-            </div>
+            {(pending || saving)
+                ? <div role='status' style={{width: '100%', textAlign: 'center', marginTop: 8}}>
+                    <LoadingDisplay size={22} thickness={5} style={{marginTop: 8}}/>
+                </div>
+
+                : <div style={{display: 'flex', flexGrow: 1, justifyContent: 'right', marginTop: 16, gap: 10}}>
+                    {vote.id &&
+                        <DeleteButton variant='text' size='small' color='error' disabled={pending || !canWriteVotes}
+                                      onClick={handleDelete}>Delete</DeleteButton>}
+                    <Button variant='text' size='small' style={{color: '#aaa'}}
+                            onClick={handleCancel} disabled={pending}>Cancel</Button>
+                    <Button variant='text' size='small'
+                            onClick={handleSave}
+                            disabled={pending || !canWriteVotes || !form.form.votedBelt || !checkValidUrl(form.form.mediaUrl) ||
+                                (Boolean(vote.id) && !form.changed)}
+                            color='success' style={{whiteSpace: 'nowrap'}}>{buttonText}</Button>
+                </div>
+            }
+
+            {!canWriteVotes && <div role='status'>Classification vote writes are not enabled yet.</div>}
+            {error && <div role='alert'>Could not save classification vote: {error.message}
+                {error.status === 409 && ' Reload this lock before trying again.'}</div>}
 
         </div>
     </div>

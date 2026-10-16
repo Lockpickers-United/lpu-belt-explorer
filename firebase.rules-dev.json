@@ -1,0 +1,8 @@
+{
+  "firestore": [
+    {
+      "database": "lpubelts-dev",
+      "rules": "firestore.rules"
+    }
+  ]
+}

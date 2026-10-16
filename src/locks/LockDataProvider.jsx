@@ -13,9 +13,6 @@ import {setDeepUnique} from '../util/setDeep'
 import {isValidRegex} from '../util/stringUtils'
 import entryName from '../entries/entryName'
 import {getLockSortComparator} from './lockSortComparators'
-import sampleData from '../data/classification-samples.json'
-
-// TODO: need to get classification flag from JSON
 
 export function DataProvider({children, allEntries, profile}) {
 
@@ -44,11 +41,8 @@ export function DataProvider({children, allEntries, profile}) {
                     return m
                 })
 
-                const classification = sampleData.find(c => c.entryId === entry.id)
-
                 return {
                     ...entry,
-                    features: classification ? [...(entry.features || []), 'Classification'] : entry.features,
                     media: newMedia,
                     makes: entry.makeModels[0].make ? entry.makeModels.map(({make}) => make) : entry.makeModels[0].model,
                     fuzzy: removeAccents(

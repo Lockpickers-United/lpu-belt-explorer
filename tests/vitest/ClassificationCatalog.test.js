@@ -1,5 +1,7 @@
 import {describe, expect, it} from 'vitest'
 import {createClassificationCatalog, validateClassificationCatalog} from '../../scripts/classificationCatalog.js'
+import {readFileSync} from 'node:fs'
+import bundledCatalog from '../../src/data/classification-catalog.json'
 
 const source = [
     {id: 'b', makeModels: [{make: 'Any', model: 'Lock B'}], belt: 'Unranked'},
@@ -9,6 +11,11 @@ const source = [
 const dataJson = JSON.stringify(source, null, 2)
 
 describe('Classification catalog artifact', () => {
+    it('identifies the exact full catalog bundled for reconciliation', () => {
+        const fullData = readFileSync('src/data/data.json', 'utf8')
+        expect(() => validateClassificationCatalog(fullData, bundledCatalog)).not.toThrow()
+    })
+
     it('projects all locks in ID order and verifies the exact source bytes', () => {
         const catalog = createClassificationCatalog(dataJson, new Date('2026-01-01T00:00:00.000Z'))
         expect(catalog.schemaVersion).toBe(1)

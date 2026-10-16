@@ -20,7 +20,8 @@ export function ClassificationDataProvider({children, allEntries}) {
         getAdminActionStatus,
         getCurrentVotes,
         getPreviousVotes,
-        isActive
+        isActive,
+        stagedByEntry
     } = useContext(ClassificationContext)
     const isRanked = useMatches().some(match => match.handle?.route === 'ranked')
 
@@ -106,7 +107,8 @@ export function ClassificationDataProvider({children, allEntries}) {
             : searched
     }, [activeFilterGroups, routeEntries, search, sort])
 
-    const visibleChangelogEntries = useMemo(() => visibleEntries.filter(entry => entry.classificationStatus === 'Staged'), [visibleEntries])
+    const visibleChangelogEntries = useMemo(() => visibleEntries.filter(entry =>
+        stagedByEntry?.has(entry.id) ?? entry.classificationStatus === 'Staged'), [visibleEntries, stagedByEntry])
 
     const getEntryFromId = useCallback(id => {
         return mappedEntries.find(e => e.id === id)

@@ -1,6 +1,16 @@
 {
   "indexes": [
     {
+      "collectionGroup": "awards-discord",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {"fieldPath": "discordUserId", "order": "ASCENDING"},
+        {"fieldPath": "awardCreatedAt", "order": "ASCENDING"},
+        {"fieldPath": "__name__", "order": "ASCENDING"}
+      ],
+      "density": "SPARSE_ALL"
+    },
+    {
       "collectionGroup": "classificationVotes",
       "queryScope": "COLLECTION",
       "fields": [
