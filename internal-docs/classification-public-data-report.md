@@ -4,6 +4,27 @@ Status: Phase 5 write controls and server/client rollout gates are implemented a
 
 Current source update (2026-10-15): The Classification **lock feature filter** has been removed. `LockDataProvider` no longer adds the feature or subscribes to `classificationFeatureEntries`; the compact `classification-feature-ids.json` seed, lock-page warning, tracked Firestore allow rule, and sibling API projection write are removed. `hasModernVotes` remains in the role-gated Classification summary for its worklist. The historical deployment and rehearsal observations below describe the earlier implementation, not current guidance. Existing development Firestore documents and deployed rules/API/frontend remain until separately authorized release or cleanup; no live data was changed by this source update. The companion [recommendation](./classification-public-data-recommendation.md) reflects the new design.
 
+## Phase 6 — Release authorization and observe
+
+Sequential checklist (`[x]` complete, `[ ]` pending; numbers remain explicit across both sections; **User activity/input** marks a decision, approval, credentialed check, or manual operation):
+
+### Pre-launch
+
+- [x] **1.** Review the Phase 6 recommendation, prior release evidence, repository safety boundaries, and current working trees; record this release checklist before implementation.
+- [ ] **2.** Inventory the legitimate cache, profile, evidence, award, ranking-request, and raffle write paths; harden their rules and trusted writers with synthetic emulator checks while preserving the activity-cache UX. This production rules work does not establish award-based claim grants.
+- [ ] **3.** Finish focused unit, rules-emulator, and browser checks for the changed paths; run the full suite once as the final local gate. Verify claim-only reader and own-vote access, admin denials, the shared Auth scope across both databases, projection agreement, subscription/read costs, write-failure fallback, and the manual publication/reconciliation path in development. **User activity/input:** perform any authenticated browser or live development checks the agent cannot access; each live-data script requires separate approval.
+- [ ] **4.** Freeze a production candidate and release runbook: verify manually set initial production claims, source and compact catalog parity, rules/indexes, named-database/API/frontend configuration, backup and rollback, final vote-source identity reconciliation, and manual Sheet/Import/announcement steps. **User activity/input:** verify the initial claims through an approved, credentialed procedure; supply the final source export and approve each live export/inspection, backup, migration, deployment, and publication action before it runs.
+- [ ] **5.** Release production dependencies in order: hardened rules/indexes and API at `read`, then verified claims and migrated data, then the read-only frontend. Check each boundary before promoting the next. **User activity/input:** explicitly authorize the production release steps and perform any owner-held deployment or credentialed checks.
+- [ ] **6.** After read-only access passes, promote server write stages before matching frontend stages (`vote`, `action`, `publish`) with claim/owner/admin and recovery checks at each stage. **User activity/input:** separately authorize each production stage promotion and any real vote, action, or publication trial.
+
+### Post-launch
+
+- [ ] **7.** Observe initial listener reads and latency, denied reads, API errors, summary rebuild mismatches, and catalog/publication reconciliation against agreed thresholds; retain the ability to return both stages to `read` if writes fail. **User activity/input:** provide access to operational metrics or run credentialed observations where required.
+- [ ] **8.** Complete the first real publication operator cycle: export and announce its immutable snapshot, update the Sheet, run GitHub Import and catalog/site deployment, then verify reconciliation and delayed-import behavior. **User activity/input:** approve and perform the announcement, Sheet, Import, and deployment operations.
+- [ ] **9.** Document the manual `blackBelt: false` revocation procedure and observed stale-token behavior; define audit-tool requirements, reconcile all Auth claims with `user-claims-info`, add audit reporting and token refresh, and test manual revocation and unrelated-claim preservation. **User activity/input:** the owner reports that revocation is manual, has occurred once in six years, and has no set maximum stale-token delay; decide the audit scope and whether further revocation controls are warranted.
+- [ ] **10.** Before adding any automated award-to-claim mechanism, establish a trusted Black Belt eligibility source, reconcile its provenance, and design grants that preserve explicit `blackBelt: false` and unrelated claims. **User activity/input:** the owner has completed a manual review of existing awards and confirms there is currently no automated award-based claim grant; confirm the future award approval authority when automation is designed.
+- [ ] **11.** Record measured results, incidents, remaining risks, and final release state in this report and update source documentation where findings change the plan. **User activity/input:** confirm acceptance of the observed production behavior and any follow-up owner decisions.
+
 ## Phase 5 — Enable writes and publish in stages
 
 Sequential checklist (`[x]` complete, `[ ]` pending; **User activity/input** marks an owner decision, approval, or manual operation):

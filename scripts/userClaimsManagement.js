@@ -2,6 +2,7 @@ import fs from 'fs'
 import {initializeApp, cert} from 'firebase-admin/app'
 import {getFirestore} from 'firebase-admin/firestore'
 import {getAuth} from 'firebase-admin/auth'
+import {setDeepAdd} from '../src/util/setDeep.js'
 
 const serviceAccount = JSON.parse(fs.readFileSync('../keys/lpu-belt-explorer-firebase-adminsdk.json').toString())
 const app = initializeApp({
@@ -12,9 +13,14 @@ const app = initializeApp({
 // change to (default) and true for production
 // const db = getFirestore(app, 'lpubelts-dev')
 
-const db = getFirestore(app, 'lpubelts-dev')
+const db = getFirestore(app)
+
+// TODO: always write to both databases
 
 const WRITE_TO_DB = false
+
+const AUDIT = true
+const UPDATE = true
 
 // Custom claims to set
 const _allClaims = {
@@ -25,14 +31,14 @@ const _allClaims = {
     dataAdmin: true,    // can write to firebase: data-cache
     classificationAdmin: true,
     classificationTeam: true,
-    blackBelt: true,
+    blackBelt: true
 }
 //const newClaims = {raflAdmin:true, dataAdmin:true, admin: true}
-const newClaims = {classificationTeam: true}
+const newClaims = {blackBelt: true}
 const removeClaims = []
 
 const users = [
-    {uid: 'DQlzrseJbXR5Sw9eBKpmePfSCpk2', name: 'LpuBelts'},
+    {uid: 'stQnC996GjdWVNnHjLMVZjWuQF23', name: 'mgsecure'}
 ]
 
 const _Allusers = [
@@ -53,7 +59,7 @@ const _Allusers = [
     {uid: 'f2yySWbxUBXF8k3HgorYhrm76gx2', name: 'Rein'},
     {uid: '8PKfUHTiafgObsQQr162dQRlBCo1', name: 'GravityKarma'},
     {uid: 'pzSak8xusHdeNlD0JmTru5kMrww2', name: 'Sidepicks'},
-    {uid: 'A7MNzg6jrNUIgfEkk8U0JzZndcx2', name: 'amvgaert'},
+    {uid: 'A7MNzg6jrNUIgfEkk8U0JzZndcx2', name: 'amvgaert'}
 
 ]
 
@@ -81,6 +87,18 @@ async function updateCustomClaimsForUsers() {
     process.exit(0)
 }
 
+async function _getCustomClaimsForUser(uid) {
+    await getAuth().getUser(uid)
+        .then(userRecord => {
+            console.log('Custom claims for user', uid, `(${name})`, userRecord.customClaims)
+            return userRecord.customClaims
+        })
+        .catch(error => {
+            console.error('Error fetching user data:', error)
+        })
+
+}
+
 async function getCustomClaimsForUsers(userList) {
     for (const user of userList) {
         const {uid, name} = user
@@ -96,8 +114,101 @@ async function getCustomClaimsForUsers(userList) {
     process.exit(0)
 }
 
-await updateCustomClaimsForUsers(users).then(() => {
-    getCustomClaimsForUsers(users).then()
-})
+async function getAllUsersWithClaims() {
+    const usersWithClaims = []
+    let nextPageToken
+
+    try {
+        do {
+            const listUsersResult = await getAuth().listUsers(1000, nextPageToken)
+
+            for (const userRecord of listUsersResult.users) {
+
+                const claims = userRecord.customClaims
+                const ref = db.doc(`/user-claims-info/${userRecord.uid}`)
+                const cacheClaims = claims ? await ref.get() : null
+
+                let issues = []
+                claims && Object.entries(claims).forEach(([key, value]) => {
+                    if (cacheClaims && cacheClaims.data()?.[key] !== value) {
+                        issues.push({ key, claim: value, cache: cacheClaims.data()?.[key] ?? 'no value' })
+                    }
+                })
+
+                const issuesList = issues.length ? {issues} : {}
+
+                claims && usersWithClaims.push({
+                    uid: userRecord.uid,
+                    email: userRecord.email,
+                    displayName: userRecord.displayName,
+                    claims,
+                    cacheClaims: cacheClaims ? cacheClaims.data() : null,
+                    ...issuesList
+                })
+            }
+
+            nextPageToken = listUsersResult.pageToken
+        } while (nextPageToken)
+
+        return usersWithClaims
+    } catch (error) {
+        console.error('Error listing users:', error)
+        throw error
+    }
+}
+
+if (AUDIT) {
+
+    const claimsAudit = await getAllUsersWithClaims()
+    const issues = claimsAudit.filter(user => user.issues && user.issues.length > 0)
+    console.log('issues:', issues)
+
+    const claimCounts = claimsAudit.reduce((acc, user) => {
+        Object.keys(user.claims).forEach(claim => {
+            setDeepAdd(acc, [claim], 1)
+        })
+        return acc
+    }, {})
+
+    fs.writeFile('./claimsAudit.json', JSON.stringify({issues, claimCounts, claimsAudit}, null, 2), function (err) {
+        if (err) {
+            console.error('save claimsAudit.json error:', err)
+            return (`save claimsAudit.json error: ${err}`)
+        } else {
+            console.log('claimsAudit.json saved')
+            return ('claimsAudit.json saved')
+        }
+    })
+
+    if (issues.length > 0 && UPDATE) {
+
+        for (const userRecord of issues) {
+
+            const cache = db.doc(`/user-claims-info/${userRecord.uid}`)
+            const cacheClaims = await cache.get()
+
+            let name
+            if (cacheClaims.exists) {
+                name = cacheClaims.data().name
+            } else {
+                const profileDoc = db.doc(`/lockcollections/${userRecord.uid}`)
+                const profile = await profileDoc.get()
+                name = profile.data().displayName || `${cacheClaims.data().displayName} (real name)`
+            }
+            const updatedClaims = {name, ...userRecord.claims}
+            if (WRITE_TO_DB) {
+                await cache.set({...updatedClaims, name})
+            }
+            console.log(`write to db is ${WRITE_TO_DB ? 'ON: updated' : 'OFF: did not update'} cache for user:`, userRecord.uid)
+        }
+    }
+
+} else {
+
+    await updateCustomClaimsForUsers(users).then(() => {
+        getCustomClaimsForUsers(users).then()
+    })
+
+}
 
 

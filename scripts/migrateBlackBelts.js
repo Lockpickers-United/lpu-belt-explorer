@@ -12,11 +12,11 @@ const app = initializeApp({
 // change to (default) and true for production
 // const db = getFirestore(app, 'lpubelts-dev')
 
-const db = getFirestore(app, 'lpubelts-dev')
+const db = getFirestore(app)
 const blackBeltAwardId = 'da7759a9'
 
 const WRITE_TO_DB = false
-const TEST_IDS = [] //['GGplAdctTfVDLVvYsfIADJmfp8f2']
+const TEST_IDS = ['GGplAdctTfVDLVvYsfIADJmfp8f2']
 const DEBUG = false
 const CHECK_PROFILES = false
 
@@ -45,7 +45,6 @@ async function getProfiles(userIds) {
 async function _getBlackBeltClaimUsers() {
     // not supported
 }
-
 
 async function updateBlackBeltClaims(users) {
 
