@@ -15,8 +15,10 @@ import ChangelogPreviewButton from './ChangelogPreviewButton.jsx'
 import DataContext from '../context/DataContext.jsx'
 import APIContext from '../app/APIContext.jsx'
 import AuthContext from '../app/AuthContext.jsx'
+import useClassificationCommand from './useClassificationCommand.js'
+import {canWriteActions, canPublishClassification} from './writeStage.js'
 
-const statuses = ['Draft', 'Pending', 'Staged', 'Published', 'Re-opened', 'Settled']
+const statuses = ['Draft', 'Pending', 'Staged', 'Re-opened', 'Settled']
 const actions = ['Belt Change', 'Sameline', 'Delete']
 
 export default function EntryClassificationAdmin({entry, handleToggle}) {
@@ -60,12 +62,14 @@ export default function EntryClassificationAdmin({entry, handleToggle}) {
     }
     const action = loadedAction ?? summaryAction
     return <EntryClassificationAdminForm key={action?.id ?? 'new'} entry={entry}
-                                         handleToggle={handleToggle} action={action}/>
+                                         handleToggle={handleToggle} action={action}
+                                         onActionChange={setLoadedAction}/>
 }
 
-function EntryClassificationAdminForm({entry, handleToggle, action}) {
+function EntryClassificationAdminForm({entry, handleToggle, action, onActionChange}) {
     const {accessInfo} = useAccess()
     const {allEntries} = useContext(DataContext)
+    const {run, pending, error} = useClassificationCommand()
 
     const adminAction = useMemo(() => {
         if (!action || action.status === 'Published') return {status: 'Pending'}
@@ -88,6 +92,9 @@ function EntryClassificationAdminForm({entry, handleToggle, action}) {
             changelogFields.forEach((fieldName) => {
                 events.push({target: {name: fieldName, action: 'delete'}})
             })
+        }
+        if (name === 'status' && ['Settled', 'Re-opened'].includes(value)) {
+            events.push({target: {name: 'action', action: 'delete'}})
         }
         return events
     }, [])
@@ -122,6 +129,70 @@ function EntryClassificationAdminForm({entry, handleToggle, action}) {
         ? 'Save Changes'
         : 'Save'
     const noteColor = form.form.omitChangelog ? '#999' : '#fff'
+
+    const actionFields = () => ({
+        status: form.form.status,
+        action: form.form.action || null,
+        updatedBelt: form.form.action === 'Belt Change' ? form.form.updatedBelt || null : null,
+        samelineTargetId: form.form.action === 'Sameline'
+            ? form.form.samelineLock?.lockId ?? form.form.samelineTargetId ?? null : null,
+        note: form.form.note || null,
+        adminNote: form.form.adminNote || null,
+        omitChangelog: Boolean(form.form.omitChangelog)
+    })
+
+    const validDecision = fields => !['Staged'].includes(fields.status) || Boolean(fields.action)
+    const validTarget = fields => (fields.action !== 'Belt Change' || Boolean(fields.updatedBelt))
+        && (fields.action !== 'Sameline' || Boolean(fields.samelineTargetId))
+
+    const handleSave = async () => {
+        const fields = actionFields()
+        try {
+            const result = adminAction.id
+                ? await run('patch', `actions/${encodeURIComponent(adminAction.id)}`, {
+                    ...fields, expectedRevision: adminAction.revision
+                })
+                : await run('post', 'actions', {entryId: entry.id, ...fields})
+            onActionChange(result.action)
+            handleToggle?.()
+        } catch {
+            // Keep current fields for correction or retry.
+        }
+    }
+
+    const handleDelete = async () => {
+        if (!window.confirm('Delete this classification action?')) return
+        try {
+            await run('delete', `actions/${encodeURIComponent(adminAction.id)}`, {
+                expectedRevision: adminAction.revision
+            })
+            onActionChange(null)
+            handleToggle?.()
+        } catch {
+            // Show the API error below the form.
+        }
+    }
+
+    const handlePublish = async () => {
+        const fields = actionFields()
+        if (!window.confirm('Publish this classification decision now? This creates a permanent changelog event.')) return
+        try {
+            await run('post', 'publications/single', {
+                entryId: entry.id,
+                actionId: adminAction.id ?? null,
+                expectedRevision: adminAction.id ? adminAction.revision : null,
+                action: fields.action,
+                updatedBelt: fields.updatedBelt,
+                samelineTargetId: fields.samelineTargetId,
+                note: fields.note,
+                adminNote: fields.adminNote,
+                omitChangelog: false
+            })
+            handleToggle?.()
+        } catch {
+            // Keep current fields and retry key for an uncertain response.
+        }
+    }
 
     if (!accessInfo.roles.classificationAdmin) return null
 
@@ -302,7 +373,8 @@ function EntryClassificationAdminForm({entry, handleToggle, action}) {
                         gap: 10
                     }}>
                         {adminAction.id &&
-                            <Button variant='text' size='small' style={{color: '#e12121'}} disabled>Delete</Button>
+                            <Button variant='text' size='small' color='error' disabled={pending || !canWriteActions}
+                                    onClick={handleDelete}>Delete</Button>
                         }
                         <div style={{flexGrow: 1}}/>
                         <div style={{
@@ -312,7 +384,7 @@ function EntryClassificationAdminForm({entry, handleToggle, action}) {
                             gap: 16
                         }}>
                             <Button variant='text' size='small' style={{color: '#aaa'}}
-                                    onClick={handleCancel}>Cancel</Button>
+                                    onClick={handleCancel} disabled={pending}>Cancel</Button>
                         </div>
                         <div style={{
                             display: 'flex',
@@ -320,15 +392,20 @@ function EntryClassificationAdminForm({entry, handleToggle, action}) {
                             justifyContent: 'right',
                             gap: 16
                         }}>
-                            <Button variant='text' size='small' disabled
+                            <Button variant='text' size='small' onClick={handleSave}
+                                    disabled={pending || !canWriteActions || !form.changed || !validDecision(actionFields()) ||
+                                        !validTarget(actionFields())}
                                     color='success' style={{whiteSpace: 'nowrap'}}>{buttonText}</Button>
-                            <Button variant='text' size='small' disabled
+                            <Button variant='text' size='small' onClick={handlePublish}
+                                    disabled={pending || !canPublishClassification || !actionFields().action || !validTarget(actionFields()) ||
+                                        Boolean(actionFields().omitChangelog)}
                                     color='success' style={{whiteSpace: 'nowrap'}}>Publish Now</Button>
                         </div>
                     </div>
-                    <div role='status' style={{color: '#aaa', fontSize: '0.85rem', textAlign: 'right'}}>
-                        Preview only — admin changes are unavailable.
-                    </div>
+                    {pending && <div role='status'>Saving classification decision…</div>}
+                    {!canWriteActions && <div role='status'>Classification action writes are not enabled yet.</div>}
+                    {error && <div role='alert'>Could not save classification decision: {error.message}
+                        {error.status === 409 && ' Reload this lock before trying again.'}</div>}
 
                 </div>
             </div>

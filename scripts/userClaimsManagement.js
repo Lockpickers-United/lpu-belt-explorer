@@ -28,7 +28,7 @@ const _allClaims = {
     blackBelt: true,
 }
 //const newClaims = {raflAdmin:true, dataAdmin:true, admin: true}
-const newClaims = {}
+const newClaims = {classificationTeam: true}
 const removeClaims = []
 
 const users = [

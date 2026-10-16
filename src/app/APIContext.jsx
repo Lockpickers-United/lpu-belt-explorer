@@ -5,6 +5,7 @@ import AuthContext from './AuthContext.jsx'
 import {getData} from '../formUtils/getData.jsx'
 import dayjs from 'dayjs'
 import utc from 'dayjs/plugin/utc'
+import axios from 'axios'
 dayjs.extend(utc)
 
 const APIContext = React.createContext({})
@@ -74,6 +75,30 @@ export function APIProvider({children}) {
     const fetchClassificationPublication = useCallback(id =>
         fetchClassification(`publications/${encodeURIComponent(id)}`), [fetchClassification])
 
+    const classificationCommand = useCallback(async (method, path, body, idempotencyKey) => {
+        const token = await user.getIdToken()
+        try {
+            const response = await axios({
+                method,
+                url: `${apiServerUrl}/api/v1/classification/${path}`,
+                data: body,
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                    'Idempotency-Key': idempotencyKey
+                },
+                timeout: 15000
+            })
+            return response.data.data
+        } catch (error) {
+            const message = error.response?.data?.error?.message ?? error.message
+            throw Object.assign(new Error(message), {
+                status: error.response?.status,
+                code: error.response?.data?.error?.code,
+                recovery: error.response?.data?.error?.recovery
+            })
+        }
+    }, [user])
+
 
     const value = useMemo(() => ({
         fetchProfileSummary,
@@ -82,10 +107,12 @@ export function APIProvider({children}) {
         fetchClassificationAction,
         fetchClassificationStaged,
         fetchClassificationPublications,
-        fetchClassificationPublication
+        fetchClassificationPublication,
+        classificationCommand
     }), [fetchProfileFull,
         fetchProfileSummary, fetchClassificationEntryVotes, fetchClassificationAction,
-        fetchClassificationStaged, fetchClassificationPublications, fetchClassificationPublication
+        fetchClassificationStaged, fetchClassificationPublications, fetchClassificationPublication,
+        classificationCommand
     ])
 
     return (

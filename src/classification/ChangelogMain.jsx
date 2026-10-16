@@ -25,6 +25,8 @@ import classificationCatalog from '../data/classification-catalog.json'
 import reconcileClassificationAction from './reconcileClassificationAction.js'
 import LoadingDisplay from '../misc/LoadingDisplay.jsx'
 import ErrorMessage from '../misc/ErrorMessage.jsx'
+import useClassificationCommand from './useClassificationCommand.js'
+import {canPublishClassification} from './writeStage.js'
 
 const catalogById = new Map(classificationCatalog.entries.map(entry => [entry.id, entry]))
 
@@ -32,8 +34,9 @@ export default function ChangelogMain() {
     usePageTitle('Changelog')
 
     const {accessInfo} = useAccess()
-    const {getAdminAction, previousChangelogs, selectedPublication,
-        changelogLoading, changelogError} = useContext(ClassificationContext)
+    const {getAdminAction, previousChangelogs, selectedPublication, stagedActions = [],
+        changelogLoading, changelogError, reloadChangelog} = useContext(ClassificationContext)
+    const {run, pending, error: publishError} = useClassificationCommand()
     const [searchParams, setSearchParams] = useSearchParams()
 
     const {getLockFromId, visibleChangelogEntries = []} = useContext(DataContext)
@@ -160,15 +163,36 @@ export default function ChangelogMain() {
         }
     }, [clipboardText, exportDate, isMobile, rows])
 
+    const publishable = stagedActions.filter(action => action.status === 'Staged' && !action.omitChangelog)
+    const publishBatch = async () => {
+        const actions = publishable.slice(0, 25).map(action => ({
+            actionId: action.id, expectedRevision: action.revision
+        }))
+        if (!window.confirm(`Publish ${actions.length} staged classification changes? This creates a permanent changelog event.`)) return
+        try {
+            const result = await run('post', 'publications', {actions})
+            reloadChangelog?.()
+            setSearchParams(params => {
+                params.set('id', result.publication.id)
+                return params
+            })
+        } catch {
+            // Keep the selected action revisions and retry key available.
+        }
+    }
+
     const extras = (
         <div style={{display: 'flex', marginTop: 6, alignItems: 'center', marginRight: 24}}>
             <div style={{flexGrow: 1, minWidth: !isMobile ? 10 : 0}}/>
             {accessInfo.roles.classificationAdmin &&
                 <>
                     <ExportButtonGeneric exportData={exportData} clipboardContent={clipboardText}/>
-                    <Tooltip title={'Publish coming soon'} arrow disableFocusListener>
+                    <Tooltip title={publishable.length > 25 ? 'Publishes the first 25 included staged actions' : ''}
+                             arrow disableFocusListener>
                         <Button variant='contained' color='success' size='small'
-                                style={{height: 32, marginLeft: 16}}>Publish</Button>
+                                disabled={!canPublishClassification || Boolean(selectedChangelog) || !publishable.length || pending}
+                                onClick={publishBatch}
+                                style={{height: 32, marginLeft: 16}}>Publish{publishable.length > 25 ? ' first 25' : ''}</Button>
                     </Tooltip>
                 </>
             }
@@ -212,6 +236,11 @@ export default function ChangelogMain() {
         <React.Fragment>
             <Nav title='Changelog' extras={extras}/>
             <ClassificationToolbar/>
+            {pending && <div role='status'>Publishing classification changes…</div>}
+            {publishError && <div role='alert'>Could not publish classification changes: {publishError.message}
+                {publishError.status === 409 && ' Reload the staged changes before trying again.'}</div>}
+            {changelogLoading && <LoadingDisplay message='Loading changelog'/>}
+            {changelogError && <ErrorMessage errorMessage='Could not load the classification changelog.'/>}
             {selectedPublication &&
                 <Paper style={{...style, padding: 16}}>
                     <div>Compared with bundled catalog {classificationCatalog.catalogVersion}.</div>

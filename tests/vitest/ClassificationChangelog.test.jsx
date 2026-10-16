@@ -30,6 +30,42 @@ const deleteEntry = allEntries.find(entry => entry.id === deleteAction.entryId)
 const targetLock = allEntries.find(entry => entry.id === samelineAction.samelineLock.lockId)
 
 describe('classification changelog', () => {
+    it('publishes only included staged actions with their current revisions', async () => {
+        const user = userEvent.setup()
+        const confirm = vi.spyOn(window, 'confirm').mockReturnValue(true)
+        const classificationCommand = vi.fn(async () => ({publication: {id: 'published-batch'}}))
+        const reloadChangelog = vi.fn()
+        const stagedActions = [
+            {id: 'included', entryId: samelineEntry.id, status: 'Staged', revision: 4,
+                action: 'Sameline', omitChangelog: false},
+            {id: 'omitted', entryId: deleteEntry.id, status: 'Staged', revision: 2,
+                action: 'Delete', omitChangelog: true}
+        ]
+        const data = {visibleChangelogEntries: [], getLockFromId: id => allEntries.find(entry => entry.id === id)}
+        const router = createMemoryRouter([{
+            path: '/classification/changelog', handle: {route: 'classification'},
+            element: <ClassificationContext.Provider value={{...classification, stagedActions,
+                reloadChangelog}}>
+                <DataContext.Provider value={data}><ChangelogMain/></DataContext.Provider>
+            </ClassificationContext.Provider>
+        }], {initialEntries: ['/classification/changelog']})
+        renderWithProviders(<RouterProvider router={router}/>, {
+            auth: {user: {uid: 'admin-user'}},
+            access: {accessInfo: {...defaultTestContextValues.access.accessInfo,
+                roles: {...defaultTestContextValues.access.accessInfo.roles, classificationAdmin: true}}},
+            api: {classificationCommand}
+        })
+
+        await user.click(screen.getByRole('button', {name: 'Publish'}))
+        expect(confirm).toHaveBeenCalledOnce()
+        expect(classificationCommand).toHaveBeenCalledWith('post', 'publications', {
+            actions: [{actionId: 'included', expectedRevision: 4}]
+        }, expect.any(String))
+        expect(reloadChangelog).toHaveBeenCalledOnce()
+        expect(router.state.location.search).toBe('?id=published-batch')
+        confirm.mockRestore()
+    })
+
     it('formats Sameline and Delete actions with their target and original belt', () => {
         expect(targetLock).toBeDefined()
         expect(changelogEntryFormat({

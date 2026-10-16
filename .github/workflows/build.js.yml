@@ -75,6 +75,7 @@ jobs:
           VITE_FIREBASE_API_KEY: ${{ vars.VITE_FIREBASE_API_KEY }}
           VITE_DISCORD_CLIENT_SECRET: ${{ vars.VITE_DISCORD_CLIENT_SECRET }}
           VITE_REDDIT_CLIENT_SECRET: ${{ vars.VITE_REDDIT_CLIENT_SECRET }}
+          VITE_CLASSIFICATION_WRITE_STAGE: ${{ vars.VITE_CLASSIFICATION_WRITE_STAGE }}
 
       - name: Verify paired catalog artifacts
         run: node scripts/validateClassificationCatalog.js dist/data.json dist/classification-catalog.json

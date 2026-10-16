@@ -16,10 +16,14 @@ export default function ClassificationChangelogProvider({children}) {
     const [error, setError] = useState(null)
     const [detailLoading, setDetailLoading] = useState(false)
     const [detailError, setDetailError] = useState(null)
+    const [refresh, setRefresh] = useState(0)
+    const reloadChangelog = useCallback(() => setRefresh(value => value + 1), [])
 
     useEffect(() => {
         let active = true
         async function load() {
+            setLoading(true)
+            setError(null)
             try {
                 const staged = await fetchClassificationStaged()
                 let cursor = null
@@ -43,7 +47,7 @@ export default function ClassificationChangelogProvider({children}) {
         }
         load()
         return () => { active = false }
-    }, [fetchClassificationStaged, fetchClassificationPublications])
+    }, [fetchClassificationStaged, fetchClassificationPublications, refresh])
 
     useEffect(() => {
         if (!publicationId) return
@@ -84,9 +88,10 @@ export default function ClassificationChangelogProvider({children}) {
         selectedPublication,
         changelogLoading: loading || detailLoading,
         changelogError: error || detailError,
+        reloadChangelog,
         getAdminAction
     }), [parent, stagedActions, stagedByEntry, previousChangelogs, selectedPublication,
-        loading, detailLoading, error, detailError, getAdminAction])
+        loading, detailLoading, error, detailError, reloadChangelog, getAdminAction])
 
     return <ClassificationContext.Provider value={value}>{children}</ClassificationContext.Provider>
 }

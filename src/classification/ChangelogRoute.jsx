@@ -8,14 +8,11 @@ import ClassificationChangelogProvider from './ClassificationChangelogProvider.j
 import LoadingDisplayNav from '../nav/LoadingDisplayNav.jsx'
 import ErrorMessage from '../misc/ErrorMessage.jsx'
 import LoadingDisplay from '../misc/LoadingDisplay.jsx'
-import {useAccess} from '../app/AccessContext.jsx'
 import ClassificationContext from '../app/ClassificationContext.jsx'
 
 export default function ChangelogRoute() {
     const {allEntries} = useOutletContext()
-    const {accessInfo} = useAccess()
-    const {getAdminAction, previousChangelogs, selectedPublication,
-        changelogLoading, changelogError} = useContext(ClassificationContext)
+    const {changelogLoading, changelogError} = useContext(ClassificationContext)
 
     if (changelogError) return (
         <LoadingDisplayNav>

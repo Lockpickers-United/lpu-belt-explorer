@@ -12,11 +12,14 @@ import useGetRequest from '../util/useGetRequest.jsx'
 import AuthContext from '../app/AuthContext.jsx'
 import {useAccess} from '../app/AccessContext.jsx'
 import DBContext from '../app/DBContext.jsx'
+import useClassificationCommand from './useClassificationCommand.js'
+import {canWriteVotes} from './writeStage.js'
 
 export default function VoteForm({entry, vote, handleActive, owner}) {
     const {user} = useContext(AuthContext)
     const {profile} = useContext(DBContext)
     const {accessInfo} = useAccess()
+    const {run, pending, error} = useClassificationCommand()
 
     const hasLock = profile?.recordedLocks?.includes(entry.id)
 
@@ -50,8 +53,40 @@ export default function VoteForm({entry, vote, handleActive, owner}) {
     }, [form])
 
     const checkValidUrl = useCallback(value => {
-        return isValidUrl(value)
+        return !value || isValidUrl(value)
     }, [])
+
+    const handleSave = async () => {
+        const fields = {
+            votedBelt: form.form.votedBelt,
+            comment: form.form.comment || null,
+            mediaUrl: form.form.mediaUrl || null
+        }
+        try {
+            if (vote.id) {
+                await run('patch', `votes/${encodeURIComponent(vote.id)}`, {
+                    ...fields, expectedRevision: vote.revision
+                })
+            } else {
+                await run('post', 'votes', {entryId: entry.id, ...fields})
+            }
+            handleActive?.('saved')
+        } catch {
+            // Keep the form and idempotency key available for a safe retry.
+        }
+    }
+
+    const handleDelete = async () => {
+        if (!window.confirm('Delete this classification vote?')) return
+        try {
+            await run('delete', `votes/${encodeURIComponent(vote.id)}`, {
+                expectedRevision: vote.revision
+            })
+            handleActive?.('saved')
+        } catch {
+            // Show the API error next to the form.
+        }
+    }
 
 
     const {isMobile} = useWindowSize()
@@ -126,14 +161,20 @@ export default function VoteForm({entry, vote, handleActive, owner}) {
             />
 
             <div style={{display: 'flex', flexGrow: 1, justifyContent: 'right', marginTop: 16, gap: 10}}>
+                {vote.id && <Button variant='text' size='small' color='error' disabled={pending || !canWriteVotes}
+                                    onClick={handleDelete}>Delete</Button>}
                 <Button variant='text' size='small' style={{color: '#aaa'}}
-                        onClick={handleCancel}>Cancel</Button>
-                <Button variant='text' size='small' disabled
+                        onClick={handleCancel} disabled={pending}>Cancel</Button>
+                <Button variant='text' size='small'
+                        onClick={handleSave}
+                        disabled={pending || !canWriteVotes || !form.form.votedBelt || !checkValidUrl(form.form.mediaUrl) ||
+                            (Boolean(vote.id) && !form.changed)}
                         color='success' style={{whiteSpace: 'nowrap'}}>{buttonText}</Button>
             </div>
-            <div role='status' style={{color: '#aaa', fontSize: '0.85rem', textAlign: 'right'}}>
-                Preview only — vote saving is unavailable.
-            </div>
+            {pending && <div role='status'>Saving classification vote…</div>}
+            {!canWriteVotes && <div role='status'>Classification vote writes are not enabled yet.</div>}
+            {error && <div role='alert'>Could not save classification vote: {error.message}
+                {error.status === 409 && ' Reload this lock before trying again.'}</div>}
 
         </div>
     </div>
