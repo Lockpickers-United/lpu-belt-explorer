@@ -93,7 +93,7 @@ function LockEntrySearchBox({handleChangeLock, lockId, allEntries, disabled, res
                 fullWidth
                 style={style}
                 options={options}
-                value={currentLock}
+                value={currentLock || null}
                 onChange={handleChange}
                 renderInput={(params) =>
                     <TextField
