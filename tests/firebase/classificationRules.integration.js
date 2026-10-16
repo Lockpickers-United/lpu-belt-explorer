@@ -5,8 +5,8 @@ import {getAuth as getAdminAuth} from 'firebase-admin/auth'
 import {getFirestore as getAdminFirestore} from 'firebase-admin/firestore'
 import {deleteApp, initializeApp} from 'firebase/app'
 import {connectAuthEmulator, getAuth, signInWithEmailAndPassword} from 'firebase/auth'
-import {connectFirestoreEmulator, collection, deleteDoc, doc, getDoc, getDocs, getFirestore,
-    query, setDoc, updateDoc, where} from 'firebase/firestore'
+import {connectFirestoreEmulator, collection, doc, getDoc, getDocs, getFirestore,
+    query, setDoc, where} from 'firebase/firestore'
 
 const projectId = process.env.GCLOUD_PROJECT
 const authHost = process.env.FIREBASE_AUTH_EMULATOR_HOST
@@ -66,21 +66,8 @@ try {
     await adminDb.collection('classificationEntryStates').doc(otherEntryId).set({
         entryId: otherEntryId, voterIds: [other.uid]
     })
-    await adminDb.collection('classificationFeatureEntries').doc(entryId).set({
-        entryId, hasModernVotes: true
-    })
-
-    assert.equal((await getDocs(collection(ordinary.db, 'classificationFeatureEntries'))).size, 1)
-    await assert.rejects(getDocs(collection(guestDb, 'classificationFeatureEntries')), denied)
-    await assert.rejects(getDoc(doc(guestDb, 'classificationFeatureEntries', entryId)), denied)
-    await assert.rejects(setDoc(doc(ordinary.db, 'classificationFeatureEntries', otherEntryId), {
-        entryId: otherEntryId, hasModernVotes: false
-    }), denied)
-    await assert.rejects(updateDoc(doc(ordinary.db, 'classificationFeatureEntries', entryId), {
-        hasModernVotes: false
-    }), denied)
-    await assert.rejects(deleteDoc(doc(ordinary.db, 'classificationFeatureEntries', entryId)), denied)
-
+    await assert.rejects(getDocs(collection(ordinary.db, 'classificationFeatureEntries')), denied)
+    await assert.rejects(getDocs(collection(owner.db, 'classificationFeatureEntries')), denied)
     await assert.rejects(getDoc(doc(ordinary.db, 'classificationEntries', entryId)), denied)
     await assert.rejects(getDoc(doc(ordinary.db, 'classificationVotes', voteId)), denied)
     assert.equal((await getDoc(doc(owner.db, 'classificationEntries', entryId))).exists(), true)

@@ -1,4 +1,4 @@
-import React, {useCallback, useContext, useEffect, useMemo, useState} from 'react'
+import React, {useCallback, useContext, useMemo, useState} from 'react'
 import fuzzysort from 'fuzzysort'
 import DataContext from '../context/DataContext'
 import FilterContext from '../context/FilterContext'
@@ -13,29 +13,8 @@ import {setDeepUnique} from '../util/setDeep'
 import {isValidRegex} from '../util/stringUtils'
 import entryName from '../entries/entryName'
 import {getLockSortComparator} from './lockSortComparators'
-import classificationFeatureIds from '../data/classification-feature-ids.json'
-import {collection, onSnapshot} from 'firebase/firestore'
-import {db} from '../auth/firebase.js'
-import AuthContext from '../app/AuthContext.jsx'
-
-const classificationFeatures = new Set(classificationFeatureIds)
 
 export function DataProvider({children, allEntries, profile}) {
-
-    const {user} = useContext(AuthContext)
-    const [classificationFeatureOverrides, setClassificationFeatureOverrides] = useState(new Map())
-    const [classificationFeatureError, setClassificationFeatureError] = useState(null)
-    useEffect(() => {
-        setClassificationFeatureOverrides(new Map())
-        setClassificationFeatureError(null)
-        if (!user?.uid) return
-        return onSnapshot(collection(db, 'classificationFeatureEntries'), snapshot => {
-            setClassificationFeatureOverrides(new Map(snapshot.docs.map(doc => [
-                doc.id, doc.data().hasModernVotes === true
-            ])))
-            setClassificationFeatureError(null)
-        }, setClassificationFeatureError)
-    }, [user?.uid])
 
     const {filters: allFilters, activeFilterGroups} = useContext(FilterContext)
     const {search, tab, sort, expandAll} = allFilters
@@ -64,10 +43,6 @@ export function DataProvider({children, allEntries, profile}) {
 
                 return {
                     ...entry,
-                    features: user?.uid && (classificationFeatureOverrides.get(entry.id)
-                        ?? classificationFeatures.has(entry.id))
-                        ? [...new Set([...(entry.features || []), 'Classification'])]
-                        : entry.features?.filter(feature => feature !== 'Classification'),
                     media: newMedia,
                     makes: entry.makeModels[0].make ? entry.makeModels.map(({make}) => make) : entry.makeModels[0].model,
                     fuzzy: removeAccents(
@@ -111,7 +86,7 @@ export function DataProvider({children, allEntries, profile}) {
                     photographers: photographers?.names,
                 }
             })
-    }, [allEntries, classificationFeatureOverrides, profile, user?.uid])
+    }, [allEntries, profile])
 
     const allMakes = useMemo(() => {
         return allEntries.reduce((acc, entry) => {
@@ -242,7 +217,6 @@ export function DataProvider({children, allEntries, profile}) {
         expandAll,
         profile,
         blackBeltUser,
-        classificationFeatureError,
         lockbazzarAvailable,
         searchCutoff, setSearchCutoff,
         searchVariant, setSearchVariant
@@ -257,7 +231,6 @@ export function DataProvider({children, allEntries, profile}) {
         expandAll,
         profile,
         blackBeltUser,
-        classificationFeatureError,
         lockbazzarAvailable,
         searchCutoff, setSearchCutoff,
         searchVariant, setSearchVariant

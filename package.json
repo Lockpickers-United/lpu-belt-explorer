@@ -41,6 +41,7 @@
     "test:ci": "vitest run",
     "test:coverage": "vitest run --coverage",
     "test:firebase:web-sdk": "npx --yes firebase-tools@15.30.0 emulators:exec --config tests/firebase/firebaseWebSdk.firebase.json --only auth,firestore --project demo-lpubelts \"node tests/firebase/firebaseWebSdk.integration.js\"",
+    "test:classification:rules": "npx --yes firebase-tools@15.30.0 emulators:exec --config classificationRules.firebase.json --only auth,firestore --project demo-lpubelts \"node tests/firebase/classificationRules.integration.js\"",
     "test:functions:integration": "npx --yes firebase-tools@15.30.0 emulators:exec --only functions,firestore --project demo-lpubelts \"node tests/firebase/changeTrackers.integration.js\"",
     "test:ui": "vitest --ui",
     "e2e": "playwright test",

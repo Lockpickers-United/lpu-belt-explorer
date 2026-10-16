@@ -2,8 +2,6 @@
 // classificationVotes: server-owned modern vote; userId identifies its owner.
 // classificationEntries: server-owned eligible-reader summary with vote chips, no comments.
 // classificationEntryStates: server-owned minimal state with voterIds for owner matching.
-// classificationFeatureEntries: server-owned entryId and hasModernVotes only;
-// signed-in lock browsers may list it for the Classification feature filter.
 // classificationActions, classificationPublications, classificationOperations: server-only.
 // The Firebase Admin SDK performs all writes; browser writes to these paths are denied.
 rules_version = '2';
@@ -33,11 +31,6 @@ service cloud.firestore {
 
     match /classificationEntries/{entryId} {
       allow get, list: if classificationReader();
-      allow create, update, delete: if false;
-    }
-
-    match /classificationFeatureEntries/{entryId} {
-      allow get, list: if request.auth != null;
       allow create, update, delete: if false;
     }
 

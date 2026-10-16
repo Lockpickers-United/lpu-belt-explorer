@@ -13,13 +13,11 @@ import SearchDidYouMeanBar from '../filters/SearchDidYouMeanBar.jsx'
 import AuthContext from '../app/AuthContext.jsx'
 import LockListContext from './LockListContext.jsx'
 import AppBar from '@mui/material/AppBar'
-import {useAccess} from '../app/AccessContext.jsx'
 
 function LockList() {
-    const {accessInfo} = useAccess()
     const {isMobile} = useWindowSize()
     const {lockCollection, adminRole} = useContext(DBContext)
-    const {visibleBeltEntries = [], classificationFeatureError} = useContext(DataContext)
+    const {visibleBeltEntries = []} = useContext(DataContext)
     const {isLoggedIn, user, userClaims} = useContext(AuthContext)
     const {tab, setTab} = useContext(LockListContext)
 
@@ -47,10 +45,6 @@ function LockList() {
                 <BeltToolbar tab={tab} setTab={setTab}/>
             </AppBar>
             <SearchDidYouMeanBar/>
-
-            {classificationFeatureError && accessInfo.roles.admin &&
-                <div role='alert'>Classification filter may be out of date.</div>
-            }
 
             <Entries profile={lockCollection} advancedEnabled={true}/>
 
