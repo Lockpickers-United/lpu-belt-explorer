@@ -7,6 +7,7 @@ import Button from '@mui/material/Button'
 import AttachmentIcon from '@mui/icons-material/Attachment'
 import {useAccess} from '../app/AccessContext.jsx'
 import {useMatches} from 'react-router-dom'
+import {canWriteVotes} from './writeStage.js'
 
 export default function VoteView({vote = {}, handleActive, owner}) {
     const {accessInfo} = useAccess()
@@ -61,7 +62,7 @@ export default function VoteView({vote = {}, handleActive, owner}) {
                     </div>
                 }
 
-                {(owner || accessInfo.roles.classificationAdmin) && !isChangelog && !isHistorical &&
+                {canWriteVotes && (owner || accessInfo.roles.classificationAdmin) && !isChangelog && !isHistorical &&
                     <div style={{width: '100%', display: 'flex', justifyContent: 'flex-end', marginTop: 4}}>
                         <Button onClick={() => handleActive('voteForm')} variant='text' size='small'
                                 style={{color: buttonColor}}>Edit</Button>

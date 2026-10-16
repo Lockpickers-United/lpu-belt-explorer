@@ -7,11 +7,11 @@ import ClassificationContext from '../app/ClassificationContext.jsx'
 
 export default function UserClassificationButton({entry, handleToggle}) {
     const {accessInfo} = useAccess()
-    const {getUserVote, getAdminActionStatus} = useContext(ClassificationContext)
+    const {getCurrentUserVote, getAdminActionStatus} = useContext(ClassificationContext)
 
     if (!accessInfo?.features?.classificationVote) return null
 
-    const currentUserVote = getUserVote(entry)
+    const currentUserVote = getCurrentUserVote(entry)
     const status = getAdminActionStatus(entry)
 
     const iconText = status === 'Settled'

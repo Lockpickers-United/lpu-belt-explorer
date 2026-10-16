@@ -1,107 +1,162 @@
-import React, {useCallback, useContext, useMemo} from 'react'
+import React, {useCallback, useContext, useEffect, useMemo, useState} from 'react'
+import {collection, onSnapshot, query, where} from 'firebase/firestore'
+import {db} from '../auth/firebase.js'
 import AuthContext from './AuthContext.jsx'
-import dayjs from 'dayjs'
 import ClassificationContext from './classificationContextValue.js'
-import modernVotes from '../data/classification-samples.json'
-import classificationAdminActions from '../data/classification-samples-admin.json'
-import classificationChangelogs from '../data/classification-samples-changelog.json'
+import {useAccess} from './AccessContext.jsx'
 
-const voteTime = vote => dayjs(vote.updatedAt ?? vote.createdAt).valueOf()
-const newestFirst = (a, b) => voteTime(b) - voteTime(a)
+const allowedRoles = ['admin', 'classificationAdmin', 'lpuMod', 'classificationTeam']
 
-function groupByEntry(records) {
-    const grouped = new Map()
-    records.forEach(record => {
-        const entryRecords = grouped.get(record.entryId) ?? []
-        entryRecords.push(record)
-        grouped.set(record.entryId, entryRecords)
-    })
-    grouped.forEach(entryRecords => entryRecords.sort(newestFirst))
-    return grouped
+function iso(value) {
+    return value?.toDate?.().toISOString() ?? value ?? null
 }
 
-const allVotes = modernVotes
-const allAdminActions = classificationAdminActions
-const allChangelogs = classificationChangelogs
-const votesByEntry = groupByEntry(allVotes)
-const actionsByEntry = groupByEntry(allAdminActions)
+function snapshotRecords(snapshot) {
+    return snapshot.docs.map(doc => {
+        const record = doc.data()
+        return {
+            id: doc.id,
+            ...record,
+            createdAt: iso(record.createdAt),
+            updatedAt: iso(record.updatedAt),
+            decisionMilestoneAt: iso(record.decisionMilestoneAt),
+            latestVoteAt: iso(record.latestVoteAt),
+            currentVoteChips: record.currentVoteChips?.map(chip => ({...chip, updatedAt: iso(chip.updatedAt)})),
+            previousVoteChips: record.previousVoteChips?.map(chip => ({...chip, updatedAt: iso(chip.updatedAt)}))
+        }
+    })
+}
+
+function currentVote(vote, state) {
+    if (state?.reopened) return true
+    const milestone = iso(state?.decisionMilestoneAt)
+    return !milestone || new Date(iso(vote.updatedAt ?? vote.createdAt)).getTime() >= new Date(milestone).getTime()
+}
 
 export function ClassificationProvider({children}) {
     const {user} = useContext(AuthContext)
+    const {accessInfo} = useAccess()
+    const uid = user?.uid
+    const mayRead = Boolean(uid && allowedRoles.some(role => accessInfo.roles?.[role]))
+    const [ownerVotes, setOwnerVotes] = useState([])
+    const [matchingStates, setMatchingStates] = useState([])
+    const [ownerError, setOwnerError] = useState(null)
+    const [votesLoaded, setVotesLoaded] = useState(false)
+    const [statesLoaded, setStatesLoaded] = useState(false)
+    const ownerLoading = Boolean(mayRead && !ownerError && (!votesLoaded || !statesLoaded))
 
-    const getLatestMilestone = useCallback((entry) => {
-        const publishDateValues = (actionsByEntry.get(entry.id) ?? [])
-            .filter(action => ['Published', 'Settled'].includes(action.status))
-            .map(action => dayjs(action.updatedAt).valueOf())
-        const currentBeltDate = entry.belt !== 'Unranked' && entry.currentBeltDate
-            ? dayjs(entry.currentBeltDate) : null
-        const beltDateValue = currentBeltDate?.isValid() ? currentBeltDate.valueOf() : 0
-        return dayjs(Math.max(0, ...publishDateValues, beltDateValue))
-    }, [])
+    useEffect(() => {
+        if (!mayRead) return
+        const votesQuery = query(collection(db, 'classificationVotes'), where('userId', '==', uid))
+        const statesQuery = query(collection(db, 'classificationEntryStates'), where('voterIds', 'array-contains', uid))
+        const onError = error => {
+            setOwnerError(error)
+        }
+        setOwnerVotes([])
+        setMatchingStates([])
+        setOwnerError(null)
+        setVotesLoaded(false)
+        setStatesLoaded(false)
+        const unsubscribeVotes = onSnapshot(votesQuery, snapshot => {
+            setOwnerVotes(snapshotRecords(snapshot))
+            setVotesLoaded(true)
+        }, onError)
+        const unsubscribeStates = onSnapshot(statesQuery, snapshot => {
+            setMatchingStates(snapshotRecords(snapshot))
+            setStatesLoaded(true)
+        }, onError)
+        return () => {
+            unsubscribeVotes()
+            unsubscribeStates()
+        }
+    }, [mayRead, uid])
 
-    const getAdminAction = useCallback((entry) => {
-        if (entry.adminActionId) return allAdminActions.find(action => action.id === entry.adminActionId)
-        const milestone = getLatestMilestone(entry).valueOf()
-        return (actionsByEntry.get(entry?.id) ?? [])
-            .find(action => dayjs(action.updatedAt).valueOf() >= milestone) ?? null
-    }, [getLatestMilestone])
-
-    const loggedInUserVotes = useMemo(() => {
-        return allVotes
-            .filter(vote => vote.userId === user?.uid)
-            .sort(newestFirst)
-    }, [user?.uid])
-
-    const getCurrentVotes = useCallback((entry) => {
-        const reopened = getAdminAction(entry)?.status === 'Re-opened'
-        const milestone = getLatestMilestone(entry).valueOf()
-        return (votesByEntry.get(entry.id) ?? [])
-            .filter(vote => vote.type === 'vote' &&
-                (reopened || voteTime(vote) >= milestone))
-    }, [getAdminAction, getLatestMilestone])
-
-    const getPreviousVotes = useCallback((entry) => {
-        if (getAdminAction(entry)?.status === 'Re-opened') return []
-        const milestone = getLatestMilestone(entry).valueOf()
-        return (votesByEntry.get(entry.id) ?? [])
-            .filter(vote => vote.type === 'vote' && voteTime(vote) < milestone)
-    }, [getAdminAction, getLatestMilestone])
-
-    const getUserVote = useCallback((entry) => {
-        if (!user?.uid) return null
-        return getCurrentVotes(entry).find(vote => vote.userId === user.uid) ?? null
-    }, [getCurrentVotes, user?.uid])
-
-    const getAdminActionStatus = useCallback((entry) => {
-        const action = getAdminAction(entry)
-        const votes = getCurrentVotes(entry)
-        return action?.status
-            ? action?.status
-            : votes?.length > 0
-                ? 'Has Votes'
-                : 'No Votes'
-    }, [getCurrentVotes, getAdminAction])
-
-    const isActive = useCallback((entry) => {
-        return entry.belt === 'Unranked' ||
-            ['Re-opened', 'Pending', 'Staged'].includes(getAdminAction(entry)?.status)
-    }, [getAdminAction])
+    const visibleVotes = useMemo(() => mayRead ? ownerVotes.filter(vote => vote.userId === uid) : [],
+        [mayRead, ownerVotes, uid])
+    const visibleStates = useMemo(() => mayRead
+        ? matchingStates.filter(state => state.voterIds?.includes(uid)) : [], [mayRead, matchingStates, uid])
+    const votesByEntry = useMemo(() => new Map(visibleVotes.map(vote => [vote.entryId, vote])), [visibleVotes])
+    const statesByEntry = useMemo(() => new Map(visibleStates.map(state => [state.entryId, state])), [visibleStates])
+    const getUserVote = useCallback(entry => votesByEntry.get(entry.id) ?? null, [votesByEntry])
+    const getCurrentUserVote = useCallback(entry => {
+        if (!statesLoaded) return null
+        const vote = votesByEntry.get(entry.id)
+        const state = statesByEntry.get(entry.id)
+        return vote && state && currentVote(vote, state) ? vote : null
+    }, [statesByEntry, statesLoaded, votesByEntry])
 
     const value = useMemo(() => ({
-        allVotes,
-        allAdminActions,
-        loggedInUserVotes,
+        mayRead,
+        ownerVotes: visibleVotes,
+        ownerLoading,
+        ownerError,
+        matchingStates: visibleStates,
         getUserVote,
-        getAdminAction,
-        getLatestMilestone,
-        getAdminActionStatus,
+        getCurrentUserVote,
+        getAdminAction: () => null,
+        getAdminActionStatus: () => 'No Votes',
+        getCurrentVotes: () => [],
+        getPreviousVotes: () => [],
+        isActive: entry => entry.belt === 'Unranked',
+        previousChangelogs: []
+    }), [mayRead, visibleVotes, ownerLoading, ownerError, visibleStates, getUserVote, getCurrentUserVote])
+
+    return <ClassificationContext.Provider value={value}>{children}</ClassificationContext.Provider>
+}
+
+export function ClassificationSummaryProvider({children}) {
+    const parent = useContext(ClassificationContext)
+    const {accessInfo} = useAccess()
+    const {user} = useContext(AuthContext)
+    const uid = user?.uid
+    const mayRead = Boolean(uid && allowedRoles.some(role => accessInfo.roles?.[role]))
+    const [summaries, setSummaries] = useState([])
+    const [summaryLoading, setSummaryLoading] = useState(true)
+    const [summaryError, setSummaryError] = useState(null)
+
+    useEffect(() => {
+        if (!mayRead) return
+        setSummaries([])
+        setSummaryLoading(true)
+        setSummaryError(null)
+        return onSnapshot(collection(db, 'classificationEntries'), snapshot => {
+            setSummaries(snapshotRecords(snapshot))
+            setSummaryLoading(false)
+        }, error => {
+            setSummaryError(error)
+            setSummaryLoading(false)
+        })
+    }, [mayRead, uid])
+
+    const summariesByEntry = useMemo(() => new Map(summaries.map(summary => [summary.entryId, summary])), [summaries])
+    const getSummary = useCallback(entry => summariesByEntry.get(entry.id) ?? null, [summariesByEntry])
+    const getCurrentVotes = useCallback(entry => getSummary(entry)?.currentVoteChips ?? [], [getSummary])
+    const getPreviousVotes = useCallback(entry => getSummary(entry)?.previousVoteChips ?? [], [getSummary])
+    const getAdminAction = useCallback(entry => {
+        const summary = getSummary(entry)
+        return summary?.currentActionId
+            ? {id: summary.currentActionId, status: summary.currentActionStatus} : null
+    }, [getSummary])
+    const getAdminActionStatus = useCallback(entry => {
+        const summary = getSummary(entry)
+        return summary?.currentActionStatus ?? (summary?.currentVoteCount ? 'Has Votes' : 'No Votes')
+    }, [getSummary])
+    const isActive = useCallback(entry => entry.belt === 'Unranked' ||
+        ['Re-opened', 'Pending', 'Staged'].includes(getSummary(entry)?.currentActionStatus), [getSummary])
+
+    const value = useMemo(() => ({
+        ...parent,
+        mayRead,
+        summaries,
+        summaryLoading,
+        summaryError,
+        getSummary,
         getCurrentVotes,
         getPreviousVotes,
-        isActive,
-        previousChangelogs: allChangelogs
-            .filter(log => log.changes.length > 0)
-            .sort((a, b) => dayjs(b.lastPublishedAt).valueOf() - dayjs(a.lastPublishedAt))
-    }), [loggedInUserVotes, getUserVote, getAdminAction, getLatestMilestone, getAdminActionStatus, getCurrentVotes, getPreviousVotes, isActive])
+        getAdminAction,
+        getAdminActionStatus,
+        isActive
+    }), [parent, mayRead, summaries, summaryLoading, summaryError, getSummary, getCurrentVotes, getPreviousVotes, getAdminAction, getAdminActionStatus, isActive])
 
     return (
         <ClassificationContext.Provider value={value}>

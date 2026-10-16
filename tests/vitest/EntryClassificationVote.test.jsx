@@ -1,82 +1,74 @@
 import React from 'react'
-import {describe, expect, it} from 'vitest'
+import {describe, expect, it, vi} from 'vitest'
 import {screen, within} from '@testing-library/react'
 import {createMemoryRouter, RouterProvider} from 'react-router-dom'
 import {renderWithProviders, defaultTestContextValues} from '../../src/test/render.jsx'
-import {ClassificationProvider} from '../../src/app/ClassificationContext.jsx'
+import ClassificationContext from '../../src/app/ClassificationContext.jsx'
 import EntryClassificationVote from '../../src/classification/EntryClassificationVote.jsx'
+
 const previousVote = {
-    id: 'previous-modern-vote',
-    type: 'vote',
-    entryId: 'test-lock',
-    votedBelt: 'Blue',
-    userId: 'modern-reviewer',
-    displayName: 'Modern Reviewer',
-    comment: 'Previous round',
+    id: 'previous-vote', entryId: 'test-lock', votedBelt: 'Blue', userId: 'reviewer',
+    displayName: 'Modern Reviewer', comment: 'Previous round', isCurrent: false,
     updatedAt: '2026-09-01T00:00:00Z'
 }
+const currentVote = {...previousVote, id: 'current-vote', comment: 'Current round', isCurrent: true}
+const entry = {id: 'test-lock', belt: 'Blue', classificationStatus: 'Settled'}
+const classification = {
+    getUserVote: () => null,
+    getCurrentUserVote: () => null,
+    getSummary: () => ({revision: 1})
+}
 
-function renderClassification(entry, route = '/classification') {
+function renderVote(route, votes) {
+    const fetchClassificationEntryVotes = vi.fn(async () => ({votes, nextCursor: null}))
     const accessInfo = {
         ...defaultTestContextValues.access.accessInfo,
-        features: {
-            ...defaultTestContextValues.access.accessInfo.features,
-            classificationVote: true
-        }
+        features: {...defaultTestContextValues.access.accessInfo.features, classificationVote: true}
     }
     const router = createMemoryRouter([{
         path: route,
         handle: {route: route === '/classification' ? 'classification' : 'locks'},
-        element: (
-            <ClassificationProvider>
-                <EntryClassificationVote entry={entry}/>
-            </ClassificationProvider>
-        )
+        element: <ClassificationContext.Provider value={classification}>
+            <EntryClassificationVote entry={entry}/>
+        </ClassificationContext.Provider>
     }], {initialEntries: [route]})
-    return renderWithProviders(<RouterProvider router={router}/>, {
-        auth: {user: {uid: 'viewer'}},
-        access: {accessInfo}
+    renderWithProviders(<RouterProvider router={router}/>, {
+        auth: {user: {uid: 'viewer'}}, access: {accessInfo},
+        api: {fetchClassificationEntryVotes}
     })
-}
-
-function entryFor(previousVotes) {
-    return {
-        id: 'test-lock',
-        belt: 'Blue',
-        currentVotes: [],
-        previousVotes,
-        classificationStatus: 'Settled'
-    }
+    return fetchClassificationEntryVotes
 }
 
 describe('EntryClassificationVote', () => {
-    it('shows previous modern votes without a historical section', () => {
-        renderClassification(entryFor([previousVote]))
-
+    it('loads other votes only in an expanded Classification panel', async () => {
+        const fetchVotes = renderVote('/classification', [currentVote, previousVote])
+        expect(await screen.findAllByText(/Modern Reviewer:/)).toHaveLength(2)
+        expect(fetchVotes).toHaveBeenCalledWith('test-lock', null)
         const previous = screen.getByRole('group', {name: 'Previous votes'})
-        expect(within(previous).getByText(/Modern Reviewer:/)).toBeInTheDocument()
+        expect(within(previous).getByText(/Previous round/)).toBeInTheDocument()
         expect(screen.queryByRole('group', {name: 'Historical votes'})).not.toBeInTheDocument()
-        expect(screen.queryByRole('button', {name: 'CHECK FOR HISTORICAL VOTES'})).not.toBeInTheDocument()
     })
 
-    it('shows another current vote without a duplicate current-votes summary on Classification', () => {
-        renderClassification({
-            ...entryFor([]),
-            currentVotes: [{...previousVote, id: 'current-modern-vote', comment: 'Current round'}]
+    it('shows a scoped loading error when detail fails', async () => {
+        const fetchClassificationEntryVotes = vi.fn(async () => { throw new Error('unavailable') })
+        const router = createMemoryRouter([{
+            path: '/classification', handle: {route: 'classification'},
+            element: <ClassificationContext.Provider value={classification}>
+                <EntryClassificationVote entry={entry}/>
+            </ClassificationContext.Provider>
+        }], {initialEntries: ['/classification']})
+        const accessInfo = {...defaultTestContextValues.access.accessInfo,
+            features: {...defaultTestContextValues.access.accessInfo.features, classificationVote: true}}
+        renderWithProviders(<RouterProvider router={router}/>, {
+            auth: {user: {uid: 'viewer'}}, access: {accessInfo}, api: {fetchClassificationEntryVotes}
         })
-
-        expect(screen.getByText(/Modern Reviewer:/)).toBeInTheDocument()
-        expect(screen.queryByText('current votes')).not.toBeInTheDocument()
+        expect(await screen.findByRole('alert')).toHaveTextContent('Could not load classification votes')
     })
 
-    it('hides other current and previous votes on the lock route', () => {
-        renderClassification({
-            ...entryFor([previousVote]),
-            currentVotes: [{...previousVote, id: 'current-modern-vote', comment: 'Current round'}]
-        }, '/locks')
-
+    it('never requests other votes on the lock route', () => {
+        const fetchVotes = renderVote('/locks', [currentVote, previousVote])
+        expect(fetchVotes).not.toHaveBeenCalled()
         expect(screen.queryByText(/Modern Reviewer:/)).not.toBeInTheDocument()
         expect(screen.queryByRole('group', {name: 'Previous votes'})).not.toBeInTheDocument()
-        expect(screen.queryByText('current votes')).not.toBeInTheDocument()
     })
 })

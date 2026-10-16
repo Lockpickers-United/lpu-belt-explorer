@@ -159,6 +159,48 @@ describe('DBContext', () => {
         )
     })
 
+    it('uses trusted cache for another scorecard and source records for the owner or legacy cache', async () => {
+        const cachedActivity = [{id: 'evidence-1', userId: 'other', collectionDB: 'evidence'}]
+        firestoreHarness.getDoc.mockResolvedValue({
+            exists: () => true,
+            data: () => ({version: 2, payload: JSON.stringify(cachedActivity)})
+        })
+        render(
+            <AuthContext.Provider value={signedInAuth}>
+                <DBProvider><DBState/></DBProvider>
+            </AuthContext.Provider>
+        )
+
+        await waitFor(() => expect(firestoreHarness.setDoc).toHaveBeenCalled())
+        firestoreHarness.getDoc.mockClear()
+        firestoreHarness.getDocs.mockClear()
+
+        expect(await currentDBContext.getPickerActivity('other')).toEqual(cachedActivity)
+        expect(firestoreHarness.getDoc).toHaveBeenCalledWith({
+            kind: 'doc', path: 'activity-cache/activity: userId == other'
+        })
+        expect(firestoreHarness.getDocs).not.toHaveBeenCalled()
+
+        await currentDBContext.getPickerActivity('owner')
+        expect(firestoreHarness.getDocs).toHaveBeenCalledTimes(4)
+        expect(firestoreHarness.getDoc).toHaveBeenCalledTimes(2)
+
+        firestoreHarness.getDocs.mockClear()
+        firestoreHarness.getDoc.mockResolvedValue({
+            exists: () => true,
+            data: () => ({payload: JSON.stringify(cachedActivity)})
+        })
+        expect(await currentDBContext.getPickerActivity('other')).toEqual([])
+        expect(firestoreHarness.getDocs).toHaveBeenCalledTimes(2)
+
+        firestoreHarness.getDocs.mockClear()
+        const consoleWarn = vi.spyOn(console, 'warn').mockImplementation(() => {})
+        firestoreHarness.getDoc.mockRejectedValueOnce({code: 'permission-denied'})
+        expect(await currentDBContext.getPickerActivity('other')).toEqual([])
+        expect(firestoreHarness.getDocs).toHaveBeenCalledTimes(2)
+        consoleWarn.mockRestore()
+    })
+
     it('surfaces subscription permission failures through the recoverable notification', async () => {
         const consoleError = vi.spyOn(console, 'error').mockImplementation(() => {})
         render(

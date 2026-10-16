@@ -8,7 +8,8 @@ const appendCacheBuster = (url, rand) => {
     return `${base}${sep}${rand}${hash ? '#' + hash : ''}`
 }
 
-export const getData = async ({user, url, baseHeaders = {}, formData, json, snackBars, timeoutDuration = 15000}) => {
+export const getData = async ({user, url, baseHeaders = {}, formData, json, snackBars,
+    timeoutDuration = 15000, cacheBust = true}) => {
 
     const controller = new AbortController()
     const timeout = setTimeout(() => {
@@ -38,7 +39,7 @@ export const getData = async ({user, url, baseHeaders = {}, formData, json, snac
     try {
         // Use GET and pass params; cache-bust with rand
         const response = await axios.get(
-            appendCacheBuster(url, rand),
+            cacheBust ? appendCacheBuster(url, rand) : url,
             {
                 headers,
                 signal: controller.signal, // Link the abort controller

@@ -18,14 +18,14 @@ function ChangelogEntry({entry, historical = false}) {
     const {getLockFromId} = useContext(DataContext)
 
     const adminAction = entry.adminAction ?? getAdminAction(entry)
-    const targetLock = !historical && adminAction.samelineLock
-        ? getLockFromId(adminAction.samelineLock.lockId) : null
+    const targetId = adminAction?.samelineTargetId ?? adminAction?.samelineLock?.lockId
+    const targetLock = !historical && targetId ? getLockFromId(targetId) : null
 
     const [showEdit, setShowEdit] = useState(false)
 
     // sameline with Gera 3000 on BLUE
     const name = historical ? adminAction.entryName ?? entryName(entry, 'short') : entryName(entry, 'short')
-    const belt = adminAction.updatedBelt || adminAction.samelineLock?.belt ||
+    const belt = adminAction.updatedBelt || targetLock?.belt || adminAction.samelineLock?.belt ||
         (historical ? adminAction.previousBelt ?? entry.belt : entry.belt)
 
     const style = {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto', backgroundColor: '#222'}

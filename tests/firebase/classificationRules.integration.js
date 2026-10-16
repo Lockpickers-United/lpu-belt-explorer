@@ -5,8 +5,8 @@ import {getAuth as getAdminAuth} from 'firebase-admin/auth'
 import {getFirestore as getAdminFirestore} from 'firebase-admin/firestore'
 import {deleteApp, initializeApp} from 'firebase/app'
 import {connectAuthEmulator, getAuth, signInWithEmailAndPassword} from 'firebase/auth'
-import {connectFirestoreEmulator, collection, doc, getDoc, getDocs, getFirestore,
-    query, setDoc, where} from 'firebase/firestore'
+import {connectFirestoreEmulator, collection, deleteDoc, doc, getDoc, getDocs,
+    getFirestore, query, setDoc, updateDoc, where} from 'firebase/firestore'
 
 const projectId = process.env.GCLOUD_PROJECT
 const authHost = process.env.FIREBASE_AUTH_EMULATOR_HOST
@@ -45,6 +45,12 @@ try {
     const owner = await client('owner', {classificationTeam: true})
     const other = await client('other', {blackBelt: true})
     const ordinary = await client('ordinary', {})
+    const guestApp = initializeApp({apiKey: 'test-only-api-key', projectId,
+        authDomain: `${projectId}.firebaseapp.com`}, `classification-guest-${suffix}`)
+    apps.push(guestApp)
+    const guestDb = getFirestore(guestApp)
+    const [guestHost, guestPort] = firestoreHost.split(':')
+    connectFirestoreEmulator(guestDb, guestHost, Number(guestPort))
     const voteId = `vote-${suffix}`
     const entryId = `entry-${suffix}`
     const otherEntryId = `other-${suffix}`
@@ -60,7 +66,8 @@ try {
     await adminDb.collection('classificationEntryStates').doc(otherEntryId).set({
         entryId: otherEntryId, voterIds: [other.uid]
     })
-
+    await assert.rejects(getDocs(collection(ordinary.db, 'classificationFeatureEntries')), denied)
+    await assert.rejects(getDocs(collection(owner.db, 'classificationFeatureEntries')), denied)
     await assert.rejects(getDoc(doc(ordinary.db, 'classificationEntries', entryId)), denied)
     await assert.rejects(getDoc(doc(ordinary.db, 'classificationVotes', voteId)), denied)
     assert.equal((await getDoc(doc(owner.db, 'classificationEntries', entryId))).exists(), true)
@@ -83,6 +90,29 @@ try {
     }), denied)
     await assert.rejects(setDoc(doc(other.db, 'classificationEntries', entryId), {entryId}), denied)
     await assert.rejects(getDoc(doc(owner.db, 'classificationActions', `action-${suffix}`)), denied)
+    const cacheId = `activity: userId == ${owner.uid}`
+    const cacheRef = doc(owner.db, 'query-cache', cacheId)
+    await adminDb.collection('query-cache').doc(cacheId).set({
+        version: 2, payload: '[]'
+    })
+    assert.equal((await getDoc(cacheRef)).data().payload, '[]')
+    assert.equal((await getDoc(doc(guestDb, 'query-cache', cacheId))).data().payload, '[]')
+    await assert.rejects(setDoc(cacheRef, {version: 2, payload: '[]'}), denied)
+    await assert.rejects(updateDoc(doc(other.db, 'query-cache', cacheId), {
+        payload: '[{"forged":true}]'
+    }), denied)
+    await assert.rejects(deleteDoc(doc(guestDb, 'query-cache', cacheId)), denied)
+    const trustedCacheRef = doc(owner.db, 'activity-cache', cacheId)
+    await adminDb.collection('activity-cache').doc(cacheId).set({
+        version: 2, payload: '[]'
+    })
+    assert.equal((await getDoc(trustedCacheRef)).data().payload, '[]')
+    assert.equal((await getDoc(doc(guestDb, 'activity-cache', cacheId))).data().payload, '[]')
+    await assert.rejects(setDoc(trustedCacheRef, {version: 2, payload: '[]'}), denied)
+    await assert.rejects(updateDoc(doc(other.db, 'activity-cache', cacheId), {
+        payload: '[{"forged":true}]'
+    }), denied)
+    await assert.rejects(deleteDoc(doc(guestDb, 'activity-cache', cacheId)), denied)
     console.log('Classification rules emulator checks passed.')
 } finally {
     await Promise.all(apps.map(app => deleteApp(app)))

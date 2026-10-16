@@ -11,7 +11,9 @@ Firebase CLI aliases are:
 - `default`: `lputest`
 - `prod`: `lpu-belt-explorer`
 
-No Firestore rules file is currently declared in `firebase.json`. Do not imply that client-side checks enforce security; deployed Firestore rules and trusted server code must enforce access.
+`firebase.json` declares `firestore.rules` for both the `(default)` and `lpubelts-dev` Firestore databases. This configuration does not establish which rules are deployed. Do not imply that client-side checks enforce security; deployed Firestore rules and trusted server code must enforce access.
+
+`firestore.indexes.json` is attached only to the `lpubelts-dev` entry in `firebase.json`. It retains the existing `awards-discord` composite index alongside Classification indexes and the `classificationOperations.expiresAt` TTL override. A full named-database deploy with `--only firestore:lpubelts-dev` also reconciles those indexes. For a development **rules-only** release, use `firebase deploy --config firebase.rules-dev.json --only firestore:lpubelts-dev --project lpu-belt-explorer`; the dedicated config names only the development database and omits indexes. The Classification production [transition](../../firebase.prod-transition.json) config names only `(default)` and attaches that index file; its 2026-10-16 release added the two Classification indexes and TTL while preserving the existing `awards-discord` index. The [final](../../firebase.prod-final.json) config names only `(default)` and omits indexes for a rules-only cache-write cutover. The deployed transition rules preserve legacy `query-cache` writes until a no-write client is live. `--only firestore:rules` with the main config would select rules for both databases. Verify the default and named rules release IDs after deployment.
 
 ## Approval boundary
 

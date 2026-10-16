@@ -11,7 +11,7 @@ import DataContext from '../../src/context/DataContext.jsx'
 import LockListContext from '../../src/locks/LockListContext.jsx'
 import allEntries from '../../src/data/data.json'
 import historicalVotes from '../../src/data/classification-votes-historical.json'
-import modernVotes from '../../src/data/classification-samples.json'
+import modernVotes from './classification-samples.json'
 
 const historicalVotesByEntry = new Map()
 historicalVotes.forEach(vote => {

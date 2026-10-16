@@ -30,7 +30,7 @@ const roleDisplay = {
     }
 }
 
-export default function EntryActionBar({entry, style = {}, openAdminForm=true}) {
+export default function EntryActionBar({entry, style = {}, openAdminForm=true, entryRef}) {
     const {accessInfo} = useAccess()
     const isClassification = useMatches().some(match => match.handle?.route === 'classification')
     const theme = useTheme()
@@ -112,7 +112,7 @@ export default function EntryActionBar({entry, style = {}, openAdminForm=true}) 
             <Collapse in={showFeature.classification}>
                 {showFeature.classification &&
                     <div style={{margin: '6px 0px 20px 0px'}}>
-                        <EntryClassificationVote entry={entry}/>
+                        <EntryClassificationVote entry={entry} entryRef={entryRef}/>
                     </div>
                 }
             </Collapse>
@@ -120,7 +120,8 @@ export default function EntryActionBar({entry, style = {}, openAdminForm=true}) 
                 {showFeature.classificationAdmin &&
                     <div style={{margin: '6px 0px 20px 0px'}}>
                         <EntryClassificationAdmin entry={entry}
-                                                  handleToggle={() => handleToggle('classificationAdmin')}/>
+                                                  handleToggle={() => handleToggle('classificationAdmin')}
+                                                  entryRef={entryRef}/>
                     </div>
                 }
             </Collapse>

@@ -55,5 +55,7 @@ tests-results/*
 /.claude/*
 !/.claude/settings.json
 /.claude/settings.local.json
+/.local/classification-phase3/
+/.local/classification-phase6/
 /src/data/classification
 /src/data/classification

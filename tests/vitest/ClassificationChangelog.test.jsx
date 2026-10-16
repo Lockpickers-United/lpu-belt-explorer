@@ -1,26 +1,16 @@
 import React, {useContext, useState} from 'react'
 import {createMemoryRouter, RouterProvider} from 'react-router-dom'
 import {describe, expect, it, vi} from 'vitest'
-import {screen} from '@testing-library/react'
+import {screen, within} from '@testing-library/react'
 import {userEvent} from '@testing-library/user-event'
 import {defaultTestContextValues, renderWithProviders} from '../../src/test/render.jsx'
-import ClassificationContext, {ClassificationProvider} from '../../src/app/ClassificationContext.jsx'
+import ClassificationContext from '../../src/app/ClassificationContext.jsx'
 import DataContext from '../../src/context/DataContext.jsx'
 import ChangelogMain from '../../src/classification/ChangelogMain.jsx'
 import changelogEntryFormat from '../../src/classification/changelogEntryFormat.js'
-import adminActions from '../../src/data/classification-samples-admin.json'
-import changelogs from '../../src/data/classification-samples-changelog.json'
+import fixtures from '../fixtures/classification-test-data.json'
 import allEntries from '../../src/data/data.json'
 import download from '../../src/util/download.js'
-
-vi.mock('../../src/data/classification-samples-admin.json', async () => {
-    const {default: fixtures} = await import('../fixtures/classification-test-data.json')
-    return {default: fixtures.adminActions}
-})
-vi.mock('../../src/data/classification-samples-changelog.json', async () => {
-    const {default: fixtures} = await import('../fixtures/classification-test-data.json')
-    return {default: fixtures.changelogs}
-})
 
 vi.mock('../../src/util/download.js', () => ({default: vi.fn()}))
 vi.mock('notistack', async importOriginal => ({
@@ -28,13 +18,89 @@ vi.mock('notistack', async importOriginal => ({
     enqueueSnackbar: vi.fn()
 }))
 
-const samelineAction = adminActions.find(action => action.action === 'Sameline')
-const deleteAction = adminActions.find(action => action.action === 'Delete')
+const samelineAction = fixtures.adminActions.find(action => action.action === 'Sameline')
+const deleteAction = fixtures.adminActions.find(action => action.action === 'Delete')
+const changelogs = fixtures.changelogs
+const classification = {
+    getAdminAction: entry => fixtures.adminActions.find(action => action.entryId === entry.id) ?? null,
+    previousChangelogs: changelogs
+}
 const samelineEntry = allEntries.find(entry => entry.id === samelineAction.entryId)
 const deleteEntry = allEntries.find(entry => entry.id === deleteAction.entryId)
 const targetLock = allEntries.find(entry => entry.id === samelineAction.samelineLock.lockId)
 
 describe('classification changelog', () => {
+    it('publishes only included staged actions with their current revisions', async () => {
+        const user = userEvent.setup()
+        const confirm = vi.spyOn(window, 'confirm').mockReturnValue(false)
+        const classificationCommand = vi.fn(async () => ({publication: {id: 'published-batch'}}))
+        const reloadChangelog = vi.fn()
+        const stagedActions = [
+            {id: 'included', entryId: samelineEntry.id, status: 'Staged', revision: 4,
+                action: 'Sameline', omitChangelog: false},
+            {id: 'omitted', entryId: deleteEntry.id, status: 'Staged', revision: 2,
+                action: 'Delete', omitChangelog: true}
+        ]
+        const data = {visibleChangelogEntries: [], getLockFromId: id => allEntries.find(entry => entry.id === id)}
+        const router = createMemoryRouter([{
+            path: '/classification/changelog', handle: {route: 'classification'},
+            element: <ClassificationContext.Provider value={{...classification, stagedActions,
+                reloadChangelog}}>
+                <DataContext.Provider value={data}><ChangelogMain/></DataContext.Provider>
+            </ClassificationContext.Provider>
+        }], {initialEntries: ['/classification/changelog']})
+        renderWithProviders(<RouterProvider router={router}/>, {
+            auth: {user: {uid: 'admin-user'}},
+            access: {accessInfo: {...defaultTestContextValues.access.accessInfo,
+                roles: {...defaultTestContextValues.access.accessInfo.roles, classificationAdmin: true}}},
+            api: {classificationCommand}
+        })
+
+        await user.click(screen.getByRole('button', {name: 'Publish'}))
+        expect(screen.getByText(/About to publish 1 change\./)).toBeInTheDocument()
+        expect(classificationCommand).not.toHaveBeenCalled()
+        await user.click(within(screen.getByRole('menu')).getByRole('button', {name: 'Publish'}))
+        expect(confirm).not.toHaveBeenCalled()
+        expect(classificationCommand).toHaveBeenCalledWith('post', 'publications', {
+            actions: [{actionId: 'included', expectedRevision: 4}]
+        }, expect.any(String))
+        expect(reloadChangelog).toHaveBeenCalledOnce()
+        expect(router.state.location.search).toBe('?id=published-batch')
+        confirm.mockRestore()
+    })
+
+    it('publishes at most the first 50 included staged actions', async () => {
+        const user = userEvent.setup()
+        const classificationCommand = vi.fn(async () => ({publication: {id: 'published-batch'}}))
+        const stagedActions = Array.from({length: 51}, (_, index) => ({
+            id: `action-${index}`, entryId: `entry-${index}`, status: 'Staged', revision: 1,
+            action: 'Delete', omitChangelog: false
+        }))
+        const router = createMemoryRouter([{
+            path: '/classification/changelog', handle: {route: 'classification'},
+            element: <ClassificationContext.Provider value={{...classification, stagedActions}}>
+                <DataContext.Provider value={{visibleChangelogEntries: [], getLockFromId: () => null}}>
+                    <ChangelogMain/>
+                </DataContext.Provider>
+            </ClassificationContext.Provider>
+        }], {initialEntries: ['/classification/changelog']})
+        renderWithProviders(<RouterProvider router={router}/>, {
+            auth: {user: {uid: 'admin-user'}},
+            access: {accessInfo: {...defaultTestContextValues.access.accessInfo,
+                roles: {...defaultTestContextValues.access.accessInfo.roles, classificationAdmin: true}}},
+            api: {classificationCommand}
+        })
+
+        await user.click(screen.getByRole('button', {name: 'Publish first 50'}))
+        expect(screen.getByText(/About to publish first 50 changes\./)).toBeInTheDocument()
+        expect(classificationCommand).not.toHaveBeenCalled()
+        await user.click(within(screen.getByRole('menu')).getByRole('button', {name: 'Publish first 50'}))
+        const actions = classificationCommand.mock.calls[0][2].actions
+        expect(actions).toHaveLength(50)
+        expect(actions[0]).toEqual({actionId: 'action-0', expectedRevision: 1})
+        expect(actions[49]).toEqual({actionId: 'action-49', expectedRevision: 1})
+    })
+
     it('formats Sameline and Delete actions with their target and original belt', () => {
         expect(targetLock).toBeDefined()
         expect(changelogEntryFormat({
@@ -69,12 +135,12 @@ describe('classification changelog', () => {
                 getLockFromId: id => allEntries.find(entry => entry.id === id)
             }
             return (
-                <ClassificationProvider>
+                <ClassificationContext.Provider value={classification}>
                     <DataContext.Provider value={data}>
                         <button onClick={() => setShowSameline(false)}>Filter Sameline</button>
                         <ChangelogMain/>
                     </DataContext.Provider>
-                </ClassificationProvider>
+                </ClassificationContext.Provider>
             )
         }
         const router = createMemoryRouter([{
@@ -134,7 +200,6 @@ describe('classification changelog', () => {
             getLockFromId: id => id === snapshot.entryId ? undefined : allEntries.find(entry => entry.id === id)
         }
         function HistoricalHarness() {
-            const classification = useContext(ClassificationContext)
             return (
                 <ClassificationContext.Provider value={{...classification, previousChangelogs: [publishedLog]}}>
                     <DataContext.Provider value={data}>
@@ -147,9 +212,9 @@ describe('classification changelog', () => {
             path: '/classification/changelog',
             handle: {route: 'changelog'},
             element: (
-                <ClassificationProvider>
+                <ClassificationContext.Provider value={classification}>
                     <HistoricalHarness/>
-                </ClassificationProvider>
+                </ClassificationContext.Provider>
             )
         }], {initialEntries: ['/classification/changelog']})
 

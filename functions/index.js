@@ -34,6 +34,7 @@ setGlobalOptions({maxInstances: 10});
 const {initializeApp} = require("firebase-admin/app");
 const {getFirestore, FieldValue} = require("firebase-admin/firestore");
 const {onDocumentWritten} = require("firebase-functions/v2/firestore");
+const {createActivityCacheTrigger} = require("./activityCache");
 
 initializeApp();
 
@@ -96,6 +97,13 @@ exports.trackEvidenceChange = createChangeTracker(
     "evidenceChangeIndex",
 );
 
+exports.refreshActivityCacheOnEvidenceChange = createActivityCacheTrigger(
+    "evidence",
+);
+exports.refreshActivityCacheOnAwardChange = createActivityCacheTrigger(
+    "awards",
+);
+
 const devDatabaseId = "lpubelts-dev";
 
 exports.trackDevLockcollectionChange = createChangeTracker(
@@ -113,5 +121,14 @@ exports.trackDevAwardChange = createChangeTracker(
 exports.trackDevEvidenceChange = createChangeTracker(
     "evidence",
     "evidenceChangeIndex",
+    devDatabaseId,
+);
+
+exports.refreshDevActivityCacheOnEvidenceChange = createActivityCacheTrigger(
+    "evidence",
+    devDatabaseId,
+);
+exports.refreshDevActivityCacheOnAwardChange = createActivityCacheTrigger(
+    "awards",
     devDatabaseId,
 );

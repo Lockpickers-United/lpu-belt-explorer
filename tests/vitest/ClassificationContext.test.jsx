@@ -1,240 +1,177 @@
 import React, {useContext} from 'react'
-import {describe, expect, it, vi} from 'vitest'
-import {renderWithProviders} from '../../src/test/render.jsx'
-import ClassificationContext, {ClassificationProvider} from '../../src/app/ClassificationContext.jsx'
-import allEntries from '../../src/data/data.json'
-import votes from '../../src/data/classification-samples.json'
-import historicalVotes from '../../src/data/classification-votes-historical.json'
-import adminActions from '../../src/data/classification-samples-admin.json'
-import changelogs from '../../src/data/classification-samples-changelog.json'
+import {act, screen, waitFor} from '@testing-library/react'
+import {createMemoryRouter, Outlet, RouterProvider, useNavigate} from 'react-router-dom'
+import {userEvent} from '@testing-library/user-event'
+import {beforeEach, describe, expect, it, vi} from 'vitest'
+import {defaultTestContextValues, renderWithProviders} from '../../src/test/render.jsx'
+import ClassificationContext, {
+    ClassificationProvider, ClassificationSummaryProvider
+} from '../../src/app/ClassificationContext.jsx'
+import EntryClassificationVote from '../../src/classification/EntryClassificationVote.jsx'
 
-vi.mock('../../src/data/classification-samples.json', async importOriginal => {
-    const original = await importOriginal()
-    const {default: fixtures} = await import('../fixtures/classification-test-data.json')
-    return {default: [...original.default, ...fixtures.votes]}
-})
-vi.mock('../../src/data/classification-samples-admin.json', async () => {
-    const {adminActionsForVotes} = await import('../fixtures/classificationSampleData.js')
-    const {default: realVotes} = await vi.importActual('../../src/data/classification-samples.json')
-    return {default: adminActionsForVotes(realVotes)}
-})
-vi.mock('../../src/data/classification-samples-changelog.json', async () => {
-    const {default: fixtures} = await import('../fixtures/classification-test-data.json')
-    return {default: fixtures.changelogs}
-})
+const firestore = vi.hoisted(() => ({listeners: []}))
+vi.mock('firebase/firestore', async importOriginal => ({
+    ...await importOriginal(),
+    collection: (_db, name) => ({name}),
+    where: (field, operator, value) => ({field, operator, value}),
+    query: (source, filter) => ({...source, filter}),
+    onSnapshot: (source, next, error) => {
+        const unsubscribe = vi.fn()
+        firestore.listeners.push({source, next, error, unsubscribe})
+        return unsubscribe
+    }
+}))
 
-const voteTime = vote => Date.parse(vote.updatedAt ?? vote.createdAt)
+const reader = {user: {uid: 'owner'}, userClaims: ['classificationTeam']}
+const readerAccess = {accessInfo: {...defaultTestContextValues.access.accessInfo,
+    roles: {...defaultTestContextValues.access.accessInfo.roles, classificationTeam: true}}}
+const entry = {id: 'lock-a', belt: 'Blue'}
+const vote = {
+    id: 'vote-a', entryId: 'lock-a', userId: 'owner', votedBelt: 'Green',
+    createdAt: '2026-09-01T00:00:00Z', updatedAt: '2026-09-01T00:00:00Z'
+}
+const milestone = '2026-09-10T00:00:00Z'
+const emit = (listener, records) => act(() => listener.next({docs: records.map(record => ({
+    id: record.id, data: () => record
+}))}))
 
-describe('ClassificationProvider', () => {
-    it('keeps votes current for unranked entries despite a later belt date', () => {
-        let classification
-        function CaptureContext() {
-            classification = useContext(ClassificationContext)
+describe('Classification readers', () => {
+    beforeEach(() => { firestore.listeners.length = 0 })
+
+    it('subscribes once to the owner vote and matching state, without a full summary', () => {
+        let value
+        function Capture() {
+            value = useContext(ClassificationContext)
             return null
         }
-
-        renderWithProviders(<ClassificationProvider><CaptureContext/></ClassificationProvider>)
-
-        const vote = votes.find(record => record.type === 'vote' && !record.updatedAt &&
-            allEntries.some(entry => entry.id === record.entryId && entry.belt === 'Unranked') &&
-            !adminActions.some(action => action.entryId === record.entryId))
-        expect(vote).toBeDefined()
-        const entry = {
-            ...allEntries.find(item => item.id === vote.entryId),
-            currentBeltDate: new Date(voteTime(vote) + 1).toISOString()
-        }
-        const rankedEntry = {...entry, belt: 'Orange'}
-
-        expect(classification.getLatestMilestone(entry).valueOf()).toBe(0)
-        expect(classification.getLatestMilestone(rankedEntry).valueOf()).toBe(Date.parse(entry.currentBeltDate))
-        expect(classification.getCurrentVotes(entry)).toContainEqual(vote)
-        expect(classification.getPreviousVotes(entry)).not.toContainEqual(vote)
-        expect(classification.getAdminActionStatus(entry)).toBe('Has Votes')
-        expect(classification.getCurrentVotes(rankedEntry)).not.toContainEqual(vote)
-        expect(classification.getPreviousVotes(rankedEntry)).toContainEqual(vote)
+        const {unmount} = renderWithProviders(<ClassificationProvider><Capture/></ClassificationProvider>,
+            {auth: reader, access: readerAccess})
+        expect(firestore.listeners.map(listener => listener.source)).toEqual([
+            {name: 'classificationVotes', filter: {field: 'userId', operator: '==', value: 'owner'}},
+            {name: 'classificationEntryStates', filter: {field: 'voterIds', operator: 'array-contains', value: 'owner'}}
+        ])
+        expect(value.getUserVote(entry)).toBeNull()
+        unmount()
+        expect(firestore.listeners.every(listener => listener.unsubscribe.mock.calls.length === 1)).toBe(true)
     })
 
-    it('keeps votes and admin actions visible when an entry has no current belt date', () => {
-        let classification
-        function CaptureContext() {
-            classification = useContext(ClassificationContext)
+    it('keeps the effective owner vote while hiding its previous chip', () => {
+        let value
+        function Capture() {
+            value = useContext(ClassificationContext)
             return null
         }
-
-        renderWithProviders(<ClassificationProvider><CaptureContext/></ClassificationProvider>)
-
-        const stagedAction = adminActions.find(action => action.status === 'Staged' &&
-            allEntries.some(entry => entry.id === action.entryId && entry.belt !== 'Unranked') &&
-            votes.some(vote => vote.entryId === action.entryId))
-        expect(stagedAction).toBeDefined()
-        const stagedEntry = allEntries.find(entry => entry.id === stagedAction.entryId)
-        const entryVotes = votes.filter(record => record.entryId === stagedEntry.id)
-        const entryActions = adminActions.filter(action => action.entryId === stagedEntry.id)
-        const vote = entryVotes[0]
-        const entryWithoutBeltDate = {...stagedEntry, currentBeltDate: undefined}
-
-        expect(classification.getLatestMilestone(entryWithoutBeltDate).valueOf()).toBe(0)
-        expect(classification.getCurrentVotes(entryWithoutBeltDate)).toContainEqual(vote)
-        expect(classification.getAdminAction(entryWithoutBeltDate)).toEqual(stagedAction)
-        expect(classification.getAdminActionStatus(entryWithoutBeltDate)).toBe('Staged')
-        expect(classification.isActive(entryWithoutBeltDate)).toBe(true)
-
-        const latestRecordTime = Math.max(
-            ...entryVotes.map(voteTime),
-            ...entryActions.map(action => Date.parse(action.updatedAt))
-        )
-        const laterBeltDate = {
-            ...stagedEntry,
-            currentBeltDate: new Date(latestRecordTime + 1).toISOString()
-        }
-        expect(classification.getCurrentVotes(laterBeltDate)).toEqual([])
-        expect(classification.getPreviousVotes(laterBeltDate)).toContainEqual(vote)
-        expect(classification.getAdminAction(laterBeltDate)).toBeNull()
-        expect(classification.isActive(laterBeltDate)).toBe(false)
-
-        const voteWithoutAction = votes.find(record => record.type === 'vote' &&
-            allEntries.some(entry => entry.id === record.entryId) &&
-            !adminActions.some(action => action.entryId === record.entryId))
-        expect(voteWithoutAction).toBeDefined()
-        const rankedVoteEntry = {
-            ...allEntries.find(entry => entry.id === voteWithoutAction.entryId),
-            belt: 'Orange',
-            currentBeltDate: undefined
-        }
-        expect(classification.getAdminActionStatus(rankedVoteEntry)).toBe('Has Votes')
-        expect(classification.isActive(rankedVoteEntry)).toBe(false)
-        expect(classification.isActive({...rankedVoteEntry, belt: 'Unranked'})).toBe(true)
-
-        const reopenedAction = adminActions.find(action => action.status === 'Re-opened')
-        expect(reopenedAction).toBeDefined()
-        const reopenedEntry = {
-            ...allEntries.find(entry => entry.id === reopenedAction.entryId),
-            currentBeltDate: undefined
-        }
-        expect(classification.getAdminActionStatus(reopenedEntry)).toBe('Re-opened')
-        expect(classification.isActive(reopenedEntry)).toBe(true)
+        renderWithProviders(<ClassificationProvider><Capture/></ClassificationProvider>,
+            {auth: reader, access: readerAccess})
+        emit(firestore.listeners[0], [vote])
+        emit(firestore.listeners[1], [{id: 'lock-a', entryId: 'lock-a', voterIds: ['owner'],
+            decisionMilestoneAt: milestone, reopened: false}])
+        expect(value.getUserVote(entry)).toMatchObject(vote)
+        expect(value.getCurrentUserVote(entry)).toBeNull()
+        emit(firestore.listeners[1], [{id: 'lock-a', entryId: 'lock-a', voterIds: ['owner'],
+            decisionMilestoneAt: milestone, reopened: true}])
+        expect(value.getCurrentUserVote(entry)).toMatchObject(vote)
     })
 
-    it('uses a published changelog as the boundary between previous and current votes', () => {
-        let classification
-        function CaptureContext() {
-            classification = useContext(ClassificationContext)
-            return null
-        }
-
-        renderWithProviders(<ClassificationProvider><CaptureContext/></ClassificationProvider>)
-
-        const publishedAction = adminActions.find(action => action.status === 'Published' &&
-            changelogs.some(changelog => changelog.changes.some(change => change.id === action.id)))
-        expect(publishedAction).toBeDefined()
-        const changelog = changelogs.find(record => record.changes.some(change =>
-            change.id === publishedAction.id))
-        const entry = allEntries.find(item => item.id === publishedAction.entryId)
-        const previousVote = votes.find(vote => vote.entryId === entry.id &&
-            voteTime(vote) < Date.parse(changelog.lastPublishedAt))
-        const currentVote = votes.find(vote => vote.entryId === entry.id &&
-            voteTime(vote) > Date.parse(changelog.lastPublishedAt))
-
-        expect(previousVote).toBeDefined()
-        expect(currentVote).toBeDefined()
-        expect(publishedAction.updatedAt).toBe(changelog.lastPublishedAt)
-        expect(publishedAction.lastPublishedAt).toBe(changelog.lastPublishedAt)
-        expect(changelog.changes).toContainEqual(expect.objectContaining({
-            id: publishedAction.id,
-            entryId: entry.id,
-            updatedBelt: publishedAction.updatedBelt,
-            previousBelt: 'Blue'
-        }))
-        expect(classification.previousChangelogs).toContain(changelog)
-        expect(classification.allAdminActions.every(action => action.type === 'adminAction')).toBe(true)
-        expect(classification.getLatestMilestone(entry).valueOf()).toBe(Date.parse(changelog.lastPublishedAt))
-        expect(classification.getAdminAction(entry)).toEqual(publishedAction)
-        expect(classification.getPreviousVotes(entry)).toContainEqual(previousVote)
-        expect(classification.getPreviousVotes(entry)).not.toContainEqual(currentVote)
-        expect(classification.getCurrentVotes(entry)).toContainEqual(currentVote)
-        expect(classification.getCurrentVotes(entry)).not.toContainEqual(previousVote)
-    })
-
-    it('returns every modern vote as current when a ranked lock is reopened', () => {
-        let classification
-        function CaptureContext() {
-            classification = useContext(ClassificationContext)
-            return null
-        }
-
-        const reopenedAction = adminActions.find(action => action.status === 'Re-opened')
-        const entry = allEntries.find(item => item.id === reopenedAction.entryId)
-        const previousVote = votes.find(vote => vote.entryId === entry.id &&
-            voteTime(vote) < Date.parse(reopenedAction.updatedAt))
-        const laterVote = votes.find(vote => vote.entryId === entry.id &&
-            voteTime(vote) > Date.parse(reopenedAction.updatedAt))
-        expect(previousVote).toBeDefined()
-        expect(laterVote).toBeDefined()
-
-        renderWithProviders(<ClassificationProvider><CaptureContext/></ClassificationProvider>, {
-            auth: {user: {uid: previousVote.userId}}
+    it('does not subscribe when AccessContext has no eligible reader role', () => {
+        renderWithProviders(<ClassificationProvider><span>public</span></ClassificationProvider>, {
+            auth: reader
         })
-
-        expect(classification.getAdminActionStatus(entry)).toBe('Re-opened')
-        expect(classification.getCurrentVotes(entry)).toEqual(expect.arrayContaining([previousVote, laterVote]))
-        expect(classification.getPreviousVotes(entry)).toEqual([])
-        expect(classification.getUserVote(entry)).toEqual(previousVote)
+        expect(firestore.listeners).toHaveLength(0)
     })
 
-    it('uses a settled action as a boundary for previous votes', () => {
-        let classification
-        function CaptureContext() {
-            classification = useContext(ClassificationContext)
+    it('mounts one full summary listener when the modern route installs its summary provider', () => {
+        let value
+        function Capture() {
+            value = useContext(ClassificationContext)
             return null
         }
-
-        const settledAction = adminActions.find(action => action.status === 'Settled')
-        const entry = allEntries.find(item => item.id === settledAction.entryId)
-        const earlierVotes = votes.filter(vote => vote.entryId === entry.id &&
-            voteTime(vote) < Date.parse(settledAction.updatedAt))
-        expect(earlierVotes.length).toBeGreaterThan(0)
-
-        renderWithProviders(<ClassificationProvider><CaptureContext/></ClassificationProvider>)
-
-        expect(classification.getLatestMilestone(entry).valueOf()).toBe(Date.parse(settledAction.updatedAt))
-        expect(classification.getCurrentVotes(entry)).toEqual([])
-        expect(classification.getPreviousVotes(entry)).toHaveLength(earlierVotes.length)
-        expect(classification.getPreviousVotes(entry)).toEqual(expect.arrayContaining(earlierVotes))
-    })
-
-    it('exposes only modern votes, including in previous and user vote lookups', () => {
-        const contexts = []
-        const historicalVote = historicalVotes.find(record => !votes.some(vote =>
-            vote.entryId === record.entryId && vote.userId === record.userId))
-        const entry = {id: historicalVote.entryId, currentBeltDate: undefined}
-        const modernVote = votes[0]
-        const modernEntry = {id: modernVote.entryId, currentBeltDate: undefined}
-
-        function CaptureContext({index}) {
-            contexts[index] = useContext(ClassificationContext)
-            return null
-        }
-
-        renderWithProviders(
-            <>
-                <ClassificationProvider>
-                    <CaptureContext index={0}/>
-                </ClassificationProvider>
-                <ClassificationProvider>
-                    <CaptureContext index={1}/>
-                </ClassificationProvider>
-            </>,
-            {auth: {user: {uid: modernVote.userId}}}
+        const {unmount} = renderWithProviders(
+            <ClassificationProvider><ClassificationSummaryProvider><Capture/></ClassificationSummaryProvider></ClassificationProvider>,
+            {auth: reader, access: readerAccess}
         )
+        expect(firestore.listeners.map(listener => listener.source.name).sort()).toEqual([
+            'classificationVotes', 'classificationEntryStates', 'classificationEntries'
+        ].sort())
+        const summaryListener = firestore.listeners.find(listener => listener.source.name === 'classificationEntries')
+        emit(summaryListener, [{
+            id: 'lock-a', entryId: 'lock-a', revision: 3,
+            currentVoteChips: [{id: 'current', userId: 'other', votedBelt: 'Blue'}],
+            previousVoteChips: [{id: 'previous', userId: 'owner', votedBelt: 'Green'}],
+            currentVoteCount: 1, currentActionId: 'action-a', currentActionStatus: 'Re-opened'
+        }])
+        expect(value.getCurrentVotes(entry)).toHaveLength(1)
+        expect(value.getPreviousVotes(entry)).toHaveLength(1)
+        expect(value.getAdminAction(entry)).toEqual({id: 'action-a', status: 'Re-opened'})
+        expect(value.isActive(entry)).toBe(true)
+        unmount()
+        expect(summaryListener.unsubscribe).toHaveBeenCalledOnce()
+    })
 
-        expect(contexts[0].allVotes).toHaveLength(votes.length)
-        expect(contexts[1].allVotes).toBe(contexts[0].allVotes)
-        expect(contexts[0].allVotes).not.toContainEqual(historicalVote)
-        expect(contexts[0].loggedInUserVotes).toContainEqual(modernVote)
-        expect(contexts[0].loggedInUserVotes.every(vote => vote.type === 'vote')).toBe(true)
-        expect(contexts[0].getPreviousVotes(entry)).not.toContainEqual(historicalVote)
-        expect(contexts[0].getCurrentVotes(entry)).not.toContainEqual(historicalVote)
-        expect(contexts[0].getCurrentVotes(modernEntry)).toContainEqual(modernVote)
-        expect(contexts[0].getUserVote(modernEntry)).toEqual(modernVote)
+    it('exposes summary read failures to the route while leaving rendering to its consumer', () => {
+        let value
+        function Capture() {
+            value = useContext(ClassificationContext)
+            return <span>worklist</span>
+        }
+        renderWithProviders(
+            <ClassificationProvider><ClassificationSummaryProvider><Capture/></ClassificationSummaryProvider></ClassificationProvider>,
+            {auth: reader, access: readerAccess}
+        )
+        const summaryListener = firestore.listeners.find(listener => listener.source.name === 'classificationEntries')
+        act(() => summaryListener.error(new Error('permission denied')))
+        expect(value.summaryLoading).toBe(false)
+        expect(value.summaryError).toEqual(new Error('permission denied'))
+        expect(screen.getByText('worklist')).toBeInTheDocument()
+    })
+
+    it('keeps lock and scorecard routes on owner reads and releases summary/detail after Classification', async () => {
+        const fetchClassificationEntryVotes = vi.fn(async () => ({votes: [], nextCursor: null}))
+        const accessInfo = {...readerAccess.accessInfo,
+            features: {...defaultTestContextValues.access.accessInfo.features, classificationVote: true}}
+        function Navigation() {
+            const navigate = useNavigate()
+            return <nav>
+                <button onClick={() => navigate('/profile/scorecard')}>Scorecard</button>
+                <button onClick={() => navigate('/classification')}>Classification</button>
+                <button onClick={() => navigate('/classification/past')}>Past</button>
+            </nav>
+        }
+        const ownerPanel = <EntryClassificationVote entry={{...entry, classificationStatus: 'No Votes'}}/>
+        const router = createMemoryRouter([{
+            path: '/',
+            element: <ClassificationProvider><Navigation/><Outlet/></ClassificationProvider>,
+            children: [
+                {path: 'locks', element: ownerPanel},
+                {path: 'profile/scorecard', element: ownerPanel},
+                {path: 'classification', handle: {route: 'classification'}, element: <Outlet/>, children: [
+                    {index: true, element: <ClassificationSummaryProvider>{ownerPanel}</ClassificationSummaryProvider>},
+                    {path: 'past', element: <div>Static historical archive</div>}
+                ]}
+            ]
+        }], {initialEntries: ['/locks']})
+        renderWithProviders(<RouterProvider router={router}/>, {
+            auth: reader, access: {accessInfo}, api: {fetchClassificationEntryVotes}
+        })
+        expect(firestore.listeners.map(listener => listener.source.name).sort()).toEqual([
+            'classificationVotes', 'classificationEntryStates'
+        ].sort())
+        expect(fetchClassificationEntryVotes).not.toHaveBeenCalled()
+
+        const user = userEvent.setup()
+        await user.click(screen.getByRole('button', {name: 'Scorecard'}))
+        expect(firestore.listeners).toHaveLength(2)
+        expect(fetchClassificationEntryVotes).not.toHaveBeenCalled()
+
+        await user.click(screen.getByRole('button', {name: 'Classification'}))
+        const summaryListener = firestore.listeners.find(listener => listener.source.name === 'classificationEntries')
+        expect(summaryListener).toBeDefined()
+        emit(summaryListener, [])
+        await waitFor(() => expect(fetchClassificationEntryVotes).toHaveBeenCalledWith('lock-a', null))
+
+        await user.click(screen.getByRole('button', {name: 'Past'}))
+        expect(screen.getByText('Static historical archive')).toBeInTheDocument()
+        expect(summaryListener.unsubscribe).toHaveBeenCalledOnce()
+        expect(fetchClassificationEntryVotes).toHaveBeenCalledTimes(1)
     })
 })
