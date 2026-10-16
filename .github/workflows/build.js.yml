@@ -21,6 +21,15 @@ on:
     types:
       - completed
   workflow_dispatch:
+    inputs:
+      classification_write_stage:
+        description: Classification frontend write stage for this manual release
+        required: true
+        type: choice
+        default: read
+        options:
+          - read
+          - publish
 
 jobs:
   deploy:
@@ -75,7 +84,8 @@ jobs:
           VITE_FIREBASE_API_KEY: ${{ vars.VITE_FIREBASE_API_KEY }}
           VITE_DISCORD_CLIENT_SECRET: ${{ vars.VITE_DISCORD_CLIENT_SECRET }}
           VITE_REDDIT_CLIENT_SECRET: ${{ vars.VITE_REDDIT_CLIENT_SECRET }}
-          VITE_CLASSIFICATION_WRITE_STAGE: ${{ vars.VITE_CLASSIFICATION_WRITE_STAGE || 'read' }}
+          # Manual releases choose their stage; automatic releases retain the environment setting.
+          VITE_CLASSIFICATION_WRITE_STAGE: ${{ github.event_name == 'workflow_dispatch' && inputs.classification_write_stage || vars.VITE_CLASSIFICATION_WRITE_STAGE || 'read' }}
 
       - name: Verify paired catalog artifacts
         run: node scripts/validateClassificationCatalog.js dist/data.json dist/classification-catalog.json
