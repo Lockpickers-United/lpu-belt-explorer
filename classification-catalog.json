@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": "sha256:094da826dc82f23d0cbf0e8f9219549b1589a14a468843fe46b20223dfe08288",
-  "generatedAt": "2026-10-15T03:01:31.448Z",
+  "catalogVersion": "sha256:a1404c9ea4d6e1d3ffd338a84801ec0b1d2908582e529a1f861c3776288b0cac",
+  "generatedAt": "2026-10-16T23:19:22.493Z",
   "entries": [
     {
       "id": "0082fa4c",
@@ -4466,8 +4466,8 @@
       "id": "90b4ade7",
       "name": "Voga X18",
       "version": null,
-      "belt": "Unranked",
-      "currentBeltDate": null
+      "belt": "Black 5",
+      "currentBeltDate": "2026-10-16T23:19:22.238Z"
     },
     {
       "id": "90e4bcc1",
