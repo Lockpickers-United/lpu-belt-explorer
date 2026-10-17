@@ -844,7 +844,6 @@ Red,Yanai,"R 2200M","<14 pins",Dimple,"High pin count,Flickr Update",,5eac6a29
 "Black 1",UrbanAlps,"Stealth Key SK1",,Lever/sidebar,"Partial gut",,e4bb0668
 "Black 2",UrbanAlps,"Stealth Key SK2",,Lever/sidebar,"Partial gut,Flickr Update",,284bf0b0
 "Black 1","Vachette,Vachette,Vachette,Vachette,Vachette","Radial NT,Radial NT+,Radial,Radial S,Radial SI","≥ 18 pins",Dimple,"High pin count",,5def87d0
-"Black 5",Voga,X18,,,,,90b4ade7
 "Black 2",WEST,917,,Dimple,"High pin count",,23437955
 "Black 3",WEST,941,,Dimple,"High pin count",,ca6c2e4c
 "Black 5","Western Electric",30B,,Lever,"Cabinet lock,Flat steel key,Curtain,False gates",,e718b140
@@ -1110,6 +1109,7 @@ Unranked,"Union,Union","2134,2234","5 lever",Lever,"Under Review ⚑,Curtain","(
 Unranked,Union,2134e,"5 lever",Lever,"Pin key,False gates",,45cadc22
 Unranked,Vachette,Velix,,Dimple,,,160ef1d4
 Unranked,Vachette,Volt+,,Dimple,,,f16d49e9
+Unranked,Voga,X18,,,,,90b4ade7
 Unranked,West,6,,Pin-tumbler,,,6d53f529
 Unranked,"Western Electric",30A,"Very similar to 30B, but can't tension plug",Lever,,,89c7446c
 Unranked,Wilka,3700,,,"Under Review ⚑",,288c8f6e

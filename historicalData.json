@@ -52250,7 +52250,7 @@
   },
   "90b4ade7": {
     "id": "90b4ade7",
-    "belt": "Black 5",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "Voga",
@@ -52260,7 +52260,7 @@
     "name": "Voga X18",
     "dateAdded": "2023-03-02T19:05:25.000Z",
     "lastUpdated": "2023-08-03T13:21:20.110Z",
-    "currentBeltDate": "2026-10-16T23:19:22.238Z"
+    "currentBeltDate": "2026-10-17T00:51:57.355Z"
   },
   "fa9fb7e1": {
     "id": "fa9fb7e1",
@@ -66607,6 +66607,7 @@
     ],
     "name": "Mighty Lock MTL C series clone",
     "currentBeltDate": "2026-10-15T03:01:31.129Z",
-    "dateAdded": "2026-10-15T03:01:31.129Z"
+    "dateAdded": "2026-10-15T03:01:31.129Z",
+    "scorecardCount": 1
   }
 }

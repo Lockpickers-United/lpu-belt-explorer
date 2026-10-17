@@ -64108,19 +64108,6 @@
     "lastUpdated": "2026-08-08T17:47:20.461Z"
   },
   {
-    "id": "90b4ade7",
-    "belt": "Black 5",
-    "makeModels": [
-      {
-        "make": "Voga",
-        "model": "X18"
-      }
-    ],
-    "currentBeltDate": "2026-10-16T23:19:22.238Z",
-    "dateAdded": "2023-03-02T19:05:25.000Z",
-    "lastUpdated": "2026-10-16T23:19:22.482Z"
-  },
-  {
     "id": "23437955",
     "belt": "Black 2",
     "makeModels": [
@@ -69568,6 +69555,7 @@
     "lockingMechanisms": [
       "Dimple"
     ],
+    "scorecardCount": 1,
     "currentBeltDate": "2026-10-15T03:01:31.129Z",
     "dateAdded": "2026-10-15T03:01:31.129Z",
     "media": [
@@ -73193,6 +73181,19 @@
     "currentBeltDate": "2026-10-12T23:33:54.104Z",
     "dateAdded": "2026-10-12T23:33:54.104Z",
     "lastUpdated": "2026-10-12T23:33:54.547Z"
+  },
+  {
+    "id": "90b4ade7",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Voga",
+        "model": "X18"
+      }
+    ],
+    "currentBeltDate": "2026-10-17T00:51:57.355Z",
+    "dateAdded": "2023-03-02T19:05:25.000Z",
+    "lastUpdated": "2026-10-17T00:51:57.782Z"
   },
   {
     "id": "6d53f529",
