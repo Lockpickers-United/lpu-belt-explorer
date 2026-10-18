@@ -7,11 +7,11 @@
         "label": "Ranked"
       },
       {
-        "value": 1127,
+        "value": 1128,
         "label": "All"
       },
       {
-        "value": 273,
+        "value": 274,
         "label": "Unranked"
       }
     ]
@@ -20,61 +20,61 @@
     {
       "belt": "White",
       "count": 18,
-      "value": 0.015971606033717833,
+      "value": 0.015957446808510637,
       "id": "White"
     },
     {
       "belt": "Yellow",
       "count": 71,
-      "value": 0.06299911268855368,
+      "value": 0.06294326241134751,
       "id": "Yellow"
     },
     {
       "belt": "Orange",
       "count": 84,
-      "value": 0.07453416149068323,
+      "value": 0.07446808510638298,
       "id": "Orange"
     },
     {
       "belt": "Green",
       "count": 159,
-      "value": 0.14108251996450755,
+      "value": 0.14095744680851063,
       "id": "Green"
     },
     {
       "belt": "Blue",
       "count": 141,
-      "value": 0.1251109139307897,
+      "value": 0.125,
       "id": "Blue"
     },
     {
       "belt": "Purple",
       "count": 121,
-      "value": 0.10736468500443656,
+      "value": 0.10726950354609929,
       "id": "Purple"
     },
     {
       "belt": "Brown",
       "count": 85,
-      "value": 0.07542147293700088,
+      "value": 0.07535460992907801,
       "id": "Brown"
     },
     {
       "belt": "Red",
       "count": 74,
-      "value": 0.06566104702750665,
+      "value": 0.06560283687943262,
       "id": "Red"
     },
     {
       "belt": "Black",
       "count": 101,
-      "value": 0.08961845607808341,
+      "value": 0.08953900709219859,
       "id": "Black"
     },
     {
       "belt": "Unranked",
-      "count": 273,
-      "value": 0.2422360248447205,
+      "count": 274,
+      "value": 0.2429078014184397,
       "id": "Unranked"
     }
   ],
@@ -131,7 +131,7 @@
     },
     {
       "label": "PT+",
-      "value": 7,
+      "value": 8,
       "id": "pt+"
     },
     {
@@ -516,14 +516,14 @@
         "id": "disc-detainer"
       },
       {
+        "label": "PT+",
+        "value": 8,
+        "id": "pt+"
+      },
+      {
         "label": "Wafer",
         "value": 8,
         "id": "wafer"
-      },
-      {
-        "label": "PT+",
-        "value": 7,
-        "id": "pt+"
       },
       {
         "label": "Slider",
@@ -563,12 +563,12 @@
       },
       {
         "segment": "All locks",
-        "count": 1127,
-        "media": 919,
+        "count": 1128,
+        "media": 920,
         "coverage": "81%"
       }
     ],
-    "uniqueImages": 4823,
+    "uniqueImages": 4825,
     "contributors": 322,
     "topPhotographers": [
       {
@@ -593,7 +593,7 @@
       },
       {
         "contributor": "Sidepicks",
-        "images": 152
+        "images": 154
       },
       {
         "contributor": "Ben-on-reddit",
@@ -20792,37 +20792,37 @@
           "label": "Green",
           "id": "Green",
           "count": 2,
-          "value": 0.111
+          "value": 0.105
         },
         {
           "label": "Blue",
           "id": "Blue",
           "count": 2,
-          "value": 0.111
+          "value": 0.105
         },
         {
           "label": "Purple",
           "id": "Purple",
           "count": 3,
-          "value": 0.167
+          "value": 0.158
         },
         {
           "label": "Brown",
           "id": "Brown",
           "count": 2,
-          "value": 0.111
+          "value": 0.105
         },
         {
           "label": "Red",
           "id": "Red",
           "count": 3,
-          "value": 0.167
+          "value": 0.158
         },
         {
           "label": "Black",
           "id": "Black",
           "count": 5,
-          "value": 0.278
+          "value": 0.263
         }
       ],
       "mechanisms": [
@@ -20830,13 +20830,19 @@
           "label": "Pin-tumbler",
           "id": "Pin-tumbler",
           "count": 12,
-          "value": 0.667
+          "value": 0.632
         },
         {
           "label": "Multiple",
           "id": "Multiple",
           "count": 6,
-          "value": 0.333
+          "value": 0.316
+        },
+        {
+          "label": "PT+",
+          "id": "PT+",
+          "count": 1,
+          "value": 0.053
         }
       ]
     },
@@ -26525,6 +26531,6 @@
   },
   "metadata": {
     "source": "import-data",
-    "updatedDateTime": "2026-10-17 00:52"
+    "updatedDateTime": "2026-10-18 20:40"
   }
 }

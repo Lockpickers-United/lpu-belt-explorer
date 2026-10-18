@@ -1432,9 +1432,9 @@
     ],
     "name": "Any Acrylic Padlock",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 1481,
+    "views": 1482,
     "lastUpdated": "2025-03-18T23:29:31.267Z",
-    "popularityIndex": 1481,
+    "popularityIndex": 1482,
     "scorecardCount": 107
   },
   "3ac43ea8": {
@@ -1586,7 +1586,7 @@
     ],
     "name": "ABUS 45",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 82,
+    "views": 83,
     "lastUpdated": "2025-03-19T01:20:51.353Z",
     "media": [
       {
@@ -1618,7 +1618,7 @@
       }
     ],
     "modelNum": "45",
-    "popularityIndex": 82,
+    "popularityIndex": 83,
     "scorecardCount": 11
   },
   "a8c9aa08": {
@@ -1738,7 +1738,7 @@
     ],
     "name": "Master Lock #2",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 51,
+    "views": 52,
     "lastUpdated": "2025-03-19T01:20:51.353Z",
     "media": [
       {
@@ -1797,7 +1797,7 @@
       }
     ],
     "modelNum": "2",
-    "popularityIndex": 51,
+    "popularityIndex": 52,
     "scorecardCount": 5
   },
   "562e964e": {
@@ -1933,10 +1933,10 @@
     ],
     "name": "Master Lock #3",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 1509,
+    "views": 1510,
     "lastUpdated": "2025-03-19T01:20:51.353Z",
     "modelNum": "3",
-    "popularityIndex": 1509,
+    "popularityIndex": 1510,
     "scorecardCount": 172
   },
   "dff62f52": {
@@ -2609,10 +2609,10 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/54258829473_6c39feeed0_o.jpg"
       }
     ],
-    "views": 100,
+    "views": 101,
     "lastUpdated": "2025-03-18T23:29:31.268Z",
     "modelNum": "65.35",
-    "popularityIndex": 100,
+    "popularityIndex": 101,
     "scorecardCount": 14
   },
   "805fc883": {
@@ -4581,12 +4581,12 @@
     ],
     "name": "Master Lock 140 Series, 9140 EURD",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 1889,
+    "views": 1890,
     "lastUpdated": "2025-03-19T01:20:51.355Z",
     "modelNum": "140",
     "version": "Ex: 140, 141, 142, etc.",
-    "popularityIndex": 1889,
-    "scorecardCount": 251
+    "popularityIndex": 1890,
+    "scorecardCount": 252
   },
   "6af6f704": {
     "id": "6af6f704",
@@ -4849,9 +4849,9 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/54108366688_cdeac847da_o.jpg"
       }
     ],
-    "views": 456,
+    "views": 458,
     "lastUpdated": "2025-03-19T15:44:57.278Z",
-    "popularityIndex": 456,
+    "popularityIndex": 458,
     "scorecardCount": 59
   },
   "2936bb00": {
@@ -5141,9 +5141,9 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53955594897_4a6354e9d3_o.jpg"
       }
     ],
-    "views": 265,
+    "views": 266,
     "lastUpdated": "2025-03-19T01:20:51.356Z",
-    "popularityIndex": 265,
+    "popularityIndex": 266,
     "scorecardCount": 24
   },
   "d4299b24": {
@@ -6035,13 +6035,13 @@
     ],
     "name": "ABUS 83/40",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 210,
+    "views": 209,
     "lastUpdated": "2025-03-19T01:20:51.356Z",
     "modelNum": "83.4",
     "features": [
       "Latest Changelog"
     ],
-    "popularityIndex": 210,
+    "popularityIndex": 209,
     "scorecardCount": 32,
     "currentBeltDate": "2026-08-30T12:00:00.000Z"
   },
@@ -7953,10 +7953,10 @@
     ],
     "name": "Master Lock 150, 160, 9150 EURD",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 692,
+    "views": 691,
     "lastUpdated": "2025-03-19T15:44:57.280Z",
     "modelNum": "150",
-    "popularityIndex": 692,
+    "popularityIndex": 691,
     "scorecardCount": 88,
     "currentBeltDate": "2026-08-30T12:00:00.000Z"
   },
@@ -9296,14 +9296,14 @@
     ],
     "name": "ABUS 72/40, 34CS55 Platinum",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 1049,
+    "views": 1052,
     "lastUpdated": "2025-03-19T15:44:57.281Z",
     "features": [
       "Picking Risk"
     ],
     "notes": "Due to unbalanced pin stacks, drivers in max lift chambers will rest below shear. This risks spring damage if the driver is not picked.",
     "version": "Guttable version",
-    "popularityIndex": 1049,
+    "popularityIndex": 1052,
     "scorecardCount": 147
   },
   "e42853c7": {
@@ -14384,10 +14384,10 @@
     ],
     "name": "Master Lock 410 LOTO (Lockout Tagout)",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 875,
+    "views": 876,
     "lastUpdated": "2025-03-19T15:44:57.286Z",
     "modelNum": "410",
-    "popularityIndex": 875,
+    "popularityIndex": 876,
     "scorecardCount": 106
   },
   "366d5f50": {
@@ -15441,9 +15441,9 @@
     ],
     "name": "Schlage Everest",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 151,
+    "views": 152,
     "lastUpdated": "2025-03-19T15:44:57.286Z",
-    "popularityIndex": 151,
+    "popularityIndex": 152,
     "scorecardCount": 37
   },
   "44bdfa06": {
@@ -15570,7 +15570,7 @@
       "Pin-tumbler"
     ],
     "lastUpdated": "2025-03-19T01:20:51.364Z",
-    "views": 26,
+    "views": 25,
     "media": [
       {
         "title": "By: Hunson",
@@ -15618,7 +15618,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53658475166_10fa4b5cb3_o.jpg"
       }
     ],
-    "popularityIndex": 26,
+    "popularityIndex": 25,
     "scorecardCount": 4
   },
   "ba627c40": {
@@ -21554,9 +21554,9 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53880309782_17ae6b095d_o.jpg"
       }
     ],
-    "views": 816,
+    "views": 818,
     "lastUpdated": "2025-03-19T15:44:57.293Z",
-    "popularityIndex": 816,
+    "popularityIndex": 818,
     "scorecardCount": 227
   },
   "74c225d1": {
@@ -22920,7 +22920,7 @@
       }
     ],
     "popularityIndex": 206,
-    "scorecardCount": 30
+    "scorecardCount": 31
   },
   "96fd610e": {
     "id": "96fd610e",
@@ -26177,9 +26177,9 @@
     "features": [
       "Some formats guttable"
     ],
-    "views": 114,
+    "views": 115,
     "lastUpdated": "2025-03-18T23:29:31.276Z",
-    "popularityIndex": 114,
+    "popularityIndex": 115,
     "scorecardCount": 49
   },
   "c11aca1a": {
@@ -26781,10 +26781,10 @@
     ],
     "name": "Kale Kilit 164 BNE",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 24,
+    "views": 25,
     "lastUpdated": "2025-03-19T15:44:57.298Z",
-    "popularityIndex": 24,
-    "scorecardCount": 12
+    "popularityIndex": 25,
+    "scorecardCount": 13
   },
   "304f5471": {
     "id": "304f5471",
@@ -28126,7 +28126,7 @@
     "views": 323,
     "lastUpdated": "2025-03-19T15:44:57.299Z",
     "popularityIndex": 323,
-    "scorecardCount": 89
+    "scorecardCount": 90
   },
   "58f2eac0": {
     "id": "58f2eac0",
@@ -29512,7 +29512,7 @@
     ],
     "name": "Yale 5000",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 10,
+    "views": 11,
     "lastUpdated": "2025-03-18T23:29:31.277Z",
     "media": [
       {
@@ -29606,7 +29606,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/52856022078_4a93e2e27e_o.jpg"
       }
     ],
-    "popularityIndex": 10,
+    "popularityIndex": 11,
     "scorecardCount": 6
   },
   "ebe9ee59": {
@@ -34490,9 +34490,9 @@
       "Undercut milling",
       "Flickr Update"
     ],
-    "views": 55,
+    "views": 56,
     "lastUpdated": "2025-03-19T01:20:51.384Z",
-    "popularityIndex": 55,
+    "popularityIndex": 56,
     "scorecardCount": 30
   },
   "b91890bf": {
@@ -35531,7 +35531,7 @@
     ],
     "name": "ASSA 700",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 30,
+    "views": 29,
     "lastUpdated": "2025-03-19T15:44:57.306Z",
     "relatedIds": [
       "d08aa492",
@@ -35539,7 +35539,7 @@
       "ef4e0295",
       "f133510b"
     ],
-    "popularityIndex": 30,
+    "popularityIndex": 29,
     "scorecardCount": 9
   },
   "75fb1e5c": {
@@ -40630,7 +40630,7 @@
     ],
     "name": "ASSA 700",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 205,
+    "views": 204,
     "lastUpdated": "2025-03-19T15:44:57.311Z",
     "relatedIds": [
       "d08aa492",
@@ -40638,7 +40638,7 @@
       "ef4e0295",
       "e3bd3faf"
     ],
-    "popularityIndex": 205,
+    "popularityIndex": 204,
     "scorecardCount": 94
   },
   "6e59ba12": {
@@ -47630,7 +47630,7 @@
       "Magnet",
       "Pump/push"
     ],
-    "views": 2,
+    "views": 3,
     "lastUpdated": "2025-03-19T15:44:57.307Z",
     "media": [
       {
@@ -47661,7 +47661,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/52702297092_8f0b634bea_o.jpg"
       }
     ],
-    "popularityIndex": 2,
+    "popularityIndex": 3,
     "scorecardCount": 1
   },
   "fb51b475": {
@@ -48704,7 +48704,7 @@
     "name": "An Jia Bao padlock / HPP padlock / Ming Gao padlock",
     "dateAdded": "2023-03-02T19:05:25.000Z",
     "lastUpdated": "2025-03-19T15:44:57.282Z",
-    "views": 100,
+    "views": 101,
     "version": "5-6 disc generic disc detainer padlock with same style keybow",
     "lockingMechanisms": [
       "Disc detainer"
@@ -48747,7 +48747,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53168633320_2f2f5fc32f_o.jpg"
       }
     ],
-    "popularityIndex": 100,
+    "popularityIndex": 101,
     "scorecardCount": 17
   },
   "fd93632b": {
@@ -55101,7 +55101,7 @@
     ],
     "views": 4,
     "popularityIndex": 4,
-    "scorecardCount": 2
+    "scorecardCount": 3
   },
   "61a01892": {
     "id": "61a01892",
@@ -59612,7 +59612,7 @@
     "lockingMechanisms": [
       "Dimple"
     ],
-    "views": 24,
+    "views": 25,
     "media": [
       {
         "title": "By: Wyte",
@@ -59660,7 +59660,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/54368127414_a952640ef3_o.jpg"
       }
     ],
-    "popularityIndex": 24,
+    "popularityIndex": 25,
     "scorecardCount": 12
   },
   "a0ec1618": {
@@ -59871,9 +59871,9 @@
       }
     ],
     "version": "without overmilling",
-    "popularityIndex": 47,
+    "popularityIndex": 48,
     "scorecardCount": 13,
-    "views": 47
+    "views": 48
   },
   "bf8970de": {
     "id": "bf8970de",
@@ -62421,7 +62421,7 @@
     "name": "Yanai R 2200M",
     "dateAdded": "2025-08-15T19:23:33.243Z",
     "popularityIndex": 5,
-    "scorecardCount": 3,
+    "scorecardCount": 4,
     "views": 5
   },
   "8b3a89ec": {
@@ -62863,9 +62863,9 @@
     "notes": "****** **Special Picking Requirement:** Prior to picking, operate the lock with the key or rake pins to reset rotational orientation.",
     "name": "Medeco Original, Biaxial, M3 / Chubb Biaxial",
     "dateAdded": "2025-12-28T18:08:44.771Z",
-    "popularityIndex": 57,
+    "popularityIndex": 58,
     "scorecardCount": 14,
-    "views": 57
+    "views": 58
   },
   "c1026783": {
     "id": "c1026783",
@@ -62886,7 +62886,7 @@
     "name": "ALPHA Frost",
     "dateAdded": "2025-12-28T18:08:44.772Z",
     "popularityIndex": 5,
-    "scorecardCount": 6,
+    "scorecardCount": 7,
     "views": 5
   },
   "b89d9e11": {
@@ -63450,8 +63450,8 @@
     ],
     "name": "GEGE AP1000, AP2000, AP3000",
     "dateAdded": "2026-08-07T15:07:44.518Z",
-    "popularityIndex": 6,
-    "views": 6,
+    "popularityIndex": 7,
+    "views": 7,
     "features": [
       "Flickr Update"
     ]
@@ -63479,8 +63479,8 @@
     ],
     "name": "GEGE AP1000, AP2000, AP3000",
     "dateAdded": "2026-08-07T15:07:44.520Z",
-    "popularityIndex": 3,
-    "views": 3,
+    "popularityIndex": 2,
+    "views": 2,
     "features": [
       "Flickr Update"
     ]
@@ -64200,7 +64200,9 @@
     ],
     "name": "ABUS Diskus 20/80",
     "currentBeltDate": "2026-10-09T16:14:03.523Z",
-    "dateAdded": "2026-10-09T16:14:03.523Z"
+    "dateAdded": "2026-10-09T16:14:03.523Z",
+    "popularityIndex": 1,
+    "views": 1
   },
   "8182fee6": {
     "id": "8182fee6",
@@ -64254,7 +64256,9 @@
     "version": "4 levers, pipe key",
     "name": "Ace 910-8186",
     "currentBeltDate": "2026-10-09T16:14:03.523Z",
-    "dateAdded": "2026-10-09T16:14:03.523Z"
+    "dateAdded": "2026-10-09T16:14:03.523Z",
+    "popularityIndex": 1,
+    "views": 1
   },
   "343d6402": {
     "id": "343d6402",
@@ -64880,7 +64884,8 @@
     "currentBeltDate": "2026-10-12T23:33:54.099Z",
     "dateAdded": "2026-10-12T23:33:54.099Z",
     "popularityIndex": 1,
-    "views": 1
+    "views": 1,
+    "scorecardCount": 1
   },
   "0f9616db": {
     "id": "0f9616db",
@@ -66609,5 +66614,21 @@
     "currentBeltDate": "2026-10-15T03:01:31.129Z",
     "dateAdded": "2026-10-15T03:01:31.129Z",
     "scorecardCount": 1
+  },
+  "8d7e0751": {
+    "id": "8d7e0751",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Ruko",
+        "model": "Patent"
+      }
+    ],
+    "lockingMechanisms": [
+      "PT+"
+    ],
+    "name": "Ruko Patent",
+    "currentBeltDate": "2026-10-18T20:40:29.058Z",
+    "dateAdded": "2026-10-18T20:40:29.058Z"
   }
 }
