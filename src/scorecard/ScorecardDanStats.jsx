@@ -46,7 +46,7 @@ export default function ScorecardDanStats({profile, owner}) {
         : ''
 
     const copyRequest = useCallback(async () => {
-        const link = `@LPUBeltBot request ${addOrdinal(cardEligibleDan)} Dan https://lpubelts.com/#/profile/${userId || user?.uid}/scorecard?name=${safeName}`
+        const link = `@LockyJr request ${addOrdinal(cardEligibleDan)} Dan https://lpubelts.com/#/profile/${userId || user?.uid}/scorecard?name=${safeName}`
         await navigator.clipboard.writeText(link)
         enqueueSnackbar('Request copied to clipboard. Take it over to #belt-requests!')
     }, [cardEligibleDan, safeName, user?.uid, userId])

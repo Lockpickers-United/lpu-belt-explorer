@@ -34,7 +34,7 @@ Well… It’s built on the foundation of lpubelts.com.
 
 Yes. Simply include a link to your scorecard in a standard Dan Level request. Paste this link into #belt-requests, so your post should look something like this:
 
-`@LPUBeltBot request 8th Dan https://lpubelts.com/#/profile/[YourID]/scorecard`
+`@LockyJr request 8th Dan https://lpubelts.com/#/profile/[YourID]/scorecard`
 
 The mods will receive your request, reviewing your Scorecard similar to how they previously reviewed your Google dan sheet. And they will respond just as before, in #belt-requests.
 

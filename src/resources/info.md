@@ -62,7 +62,7 @@ Q: **Do I have to submit for my belt on Discord and Reddit if I use both?**
 > A: Please only submit your request on one platform and ask for your belt to be sync'd to the other platform by
 providing your username there. E.g. if you have a belt on Reddit you'd like sync'd to Discord, provide your Discord
 username via modmail. If you have a belt on Discord you'd like sync'd to Reddit, provide your Reddit username via
-@LPUBeltBot in #belt-requests.
+@LockyJr in #belt-requests.
 
 Q: **I asked for special consideration on something and I don't agree with your decision on the matter.**
 

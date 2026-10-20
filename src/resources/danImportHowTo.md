@@ -92,7 +92,7 @@ For new projects, go to the top of your Scorecard and click on the “Add Projec
 
 A: First, add all of your locks and projects to your Scorecard, so that it is up-to-date. We are still using **#belt-requests** on discord, and for the moment there is no way within lpubelts.com to request your belt. However, when you are ready for your next dan, then you can copy a link to your scorecard by clicking the link icon just to the right of the “Scorecard” title at the top. Then paste this link into #belt-requests, so your post should look something like this:
 
-`@LPUBeltBot request 8th Dan https://lpubelts.com/#/profile/[YourID]/scorecard`
+`@LockyJr request 8th Dan https://lpubelts.com/#/profile/[YourID]/scorecard`
 
 The mods will receive your request, reviewing your Scorecard similar to how they previously reviewed your Google dan sheet. And they will respond just as before, in #belt-requests.
 

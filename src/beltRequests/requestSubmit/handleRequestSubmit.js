@@ -19,7 +19,7 @@ export function formatDiscordRequest(form) {
 
     let syncMessage = ''
     if (sync) syncMessage = ` sync to ${sync.includes('u/') ? sync : 'u/' + sync}`
-    let message = `@LPUBeltBot request ${requestBelt.replace(' Belt', '')}${syncMessage}\n\n`
+    let message = `@LockyJr request ${requestBelt.replace(' Belt', '')}${syncMessage}\n\n`
 
     if (requestBelt.includes('Belt')) {
         entries.forEach(entry => {
