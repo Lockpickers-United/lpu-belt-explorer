@@ -12,12 +12,13 @@ const app = initializeApp({
 // change to (default) and true for production
 // const db = getFirestore(app, 'lpubelts-dev')
 
-const db = getFirestore(app, 'lpubelts-dev')
+const db = getFirestore(app)
 const blackBeltAwardId = 'da7759a9'
 
 const WRITE_TO_DB = false
-const TEST_IDS = [] //['GGplAdctTfVDLVvYsfIADJmfp8f2']
-const DEBUG = false
+const TEST_IDS = [] //['T8ZIBbRo2pXkxzybohOPf7McW532']
+
+const DEBUG = true
 const CHECK_PROFILES = false
 
 ////////////////////////////////////////////////
@@ -121,6 +122,8 @@ async function checkBlackBeltProfiles(userIds) {
 
 const blackBeltUserIds = TEST_IDS.length ? TEST_IDS : await getBlackBeltAwardIds()
 
+DEBUG && console.log('blackBeltUserIds', blackBeltUserIds)
+
 CHECK_PROFILES && await checkBlackBeltProfiles(blackBeltUserIds).then(console.log)
 
 const blackBeltProfiles = await getProfiles(blackBeltUserIds)
@@ -129,6 +132,6 @@ const blackBeltUsers = blackBeltUserIds.map(uid => {
 })
 
 await updateBlackBeltClaims(blackBeltUsers).then(res => {
-    console.log(res, res[0]?.cacheIssues)
+    console.log('results', JSON.stringify(res, null, 2), res[0]?.cacheIssues)
     !WRITE_TO_DB && console.log('WRITE_TO_DB is false, no changes written')
 })

@@ -25,14 +25,15 @@ const _allClaims = {
     dataAdmin: true,    // can write to firebase: data-cache
     classificationAdmin: true,
     classificationTeam: true,
+    requestAdmin: true,
     blackBelt: true,
 }
 //const newClaims = {raflAdmin:true, dataAdmin:true, admin: true}
-const newClaims = {}
-const removeClaims = ['blackBelt']
+const newClaims = {requestAdmin: true,}
+const removeClaims = []
 
 const users = [
-    {uid: 'GGplAdctTfVDLVvYsfIADJmfp8f2', name: 'mgsecure'},
+    {uid: 'pzSak8xusHdeNlD0JmTru5kMrww2', name: 'Sidepicks'},
 ]
 
 const _allUsers = [
@@ -40,6 +41,7 @@ const _allUsers = [
     {uid: '4qqxB0nW8dczUws5XuAyhEkgZEj2', name: 'mgtest'},
     {uid: 'WMSvvuutyShfvBBYB3PmDe4fmeS2', name: 'NiXXeD'},
     {uid: 'Mwbvdkq1QtWu2zLwEaj3imULSry1', name: 'decoder'},
+    {uid: 'pzSak8xusHdeNlD0JmTru5kMrww2', name: 'Sidepicks'},
     {uid: 'BJyWOIOsqmRDkgHZBqIEGbGnVSA3', name: 'tonysansan'},
     {uid: 'mZyfQIARjCP1uJJJc7ioMAALV9v2', name: 'peace'},
     {uid: 'XoUDXU5McjTuVnPA1xfmzytcKuy2', name: 'Red Wanderer'},
@@ -50,7 +52,7 @@ const _allUsers = [
     {uid: 'XKPQaAR525XV2JsqGn12eEKwxD62', name: 'dnd'},
     {uid: 'f2yySWbxUBXF8k3HgorYhrm76gx2', name: 'Rein'},
     {uid: '8PKfUHTiafgObsQQr162dQRlBCo1', name: 'GravityKarma'},
-    {uid: 'pzSak8xusHdeNlD0JmTru5kMrww2', name: 'Sidepicks'},
+    {uid: 'T8ZIBbRo2pXkxzybohOPf7McW532', name: 'Spacecadet'},
 
 ]
 

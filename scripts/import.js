@@ -59,7 +59,7 @@ const importValidate = async (tab, schema) => {
 }
 
 console.log('Fetching collection data...')
-const collectionStatsUrl = 'https://explore.lpubelts.com/services/api/v1/stats/collections/locks'
+const collectionStatsUrl = 'https://api.lpubelts.com/api/v1/stats/collections/locks'
 const collectionStatsData = await (await fetch(collectionStatsUrl)).json()
 
 // Load all 3 data files (LOL)
