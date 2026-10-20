@@ -18,11 +18,16 @@ import DeleteButton from '../misc/DeleteButton.jsx'
 import LoadingDisplay from '../misc/LoadingDisplay.jsx'
 import {enqueueSnackbar} from 'notistack'
 import scrollRefToTop from '../util/scrollRefToTop.js'
+import ReassignVoteButton from './ReassignVoteButton.jsx'
+import DataContext from '../context/DataContext.jsx'
+import {useNavigate} from 'react-router-dom'
 
 export default function VoteForm({entry, vote, handleActive, owner, entryRef}) {
     const {user} = useContext(AuthContext)
     const {profile} = useContext(DBContext)
     const {accessInfo} = useAccess()
+    const {getEntryFromId} = useContext(DataContext)
+    const navigate = useNavigate()
     const {run, pending, error} = useClassificationCommand()
     const [saving, setSaving] = useState(false)
     const hasLock = profile?.recordedLocks?.includes(entry.id)
@@ -96,6 +101,16 @@ export default function VoteForm({entry, vote, handleActive, owner, entryRef}) {
         }
     }
 
+    const handleMoveVote = async (id) => {
+        const target = getEntryFromId(id)
+        if (!target) throw new Error('Lock ID was not found.')
+        if (id === entry.id) throw new Error('This vote is already on that lock.')
+        await run('post', `votes/${encodeURIComponent(vote.id)}/move`, {
+            entryId: id, expectedRevision: vote.revision
+        })
+        enqueueSnackbar('Vote moved.')
+        navigate(`${target.classificationActive ? '/classification' : '/classification/ranked'}?id=${encodeURIComponent(id)}`)
+    }
 
     const {isMobile} = useWindowSize()
     const rows = !isMobile ? 5 : 8
@@ -118,19 +133,31 @@ export default function VoteForm({entry, vote, handleActive, owner, entryRef}) {
         <BeltStripeMini value={form.form.votedBelt} width={6} offset={26}
                         style={{position: 'absolute', top: 0, left: 0, bottom: 0}}/>
         <div style={{margin: '0px 0 0 16px', width: '100%'}}>
-            <div style={{fontSize: '1.0rem', fontWeight: 600, margin: '0px 0px 2px 0px'}}>
-                {owner ? 'My Vote' : vote.displayName}
-            </div>
-            <FormElement fieldType={'SelectBox'}
-                         fieldName={'votedBelt'}
-                         options={danBelts.slice(0, 13)}
-                         fieldSettings={{
-                             inputWidth: 140,
-                             inputSize: 'small'
-                         }}
-                         form={form}
-                         formDefaults={formDefaults}/>
+            <div style={{
+                display: 'flex',
+                flexDirection: 'row',
+                alignItems: 'flex-start',
+                justifyContent: 'space-between'
+            }}>
 
+                <div>
+                    <div style={{fontSize: '1.0rem', fontWeight: 600, margin: '0px 0px 2px 0px'}}>
+                        {owner ? 'My Vote' : vote.displayName}
+                    </div>
+                    <FormElement fieldType={'SelectBox'}
+                                 fieldName={'votedBelt'}
+                                 options={danBelts.slice(0, 13)}
+                                 fieldSettings={{
+                                     inputWidth: 140,
+                                     inputSize: 'small'
+                                 }}
+                                 form={form}
+                                 formDefaults={formDefaults}/>
+                </div>
+                {vote.id && <ReassignVoteButton handleMoveVote={handleMoveVote} pending={pending}
+                                                disabled={!canWriteVotes} currentEntryId={entry.id}
+                                                hasUnsavedEdits={form.changed}/>}
+            </div>
             <FormElement fieldType={'TextField'}
                          fieldName={'comment'}
                          label={'Comment'}
