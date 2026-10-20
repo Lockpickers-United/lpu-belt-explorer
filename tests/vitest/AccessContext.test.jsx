@@ -84,8 +84,8 @@ describe('AccessContext', () => {
         }
         const {rerender} = renderAccess(adminAuth)
 
-        expect(screen.getByText('Level: 100')).toBeInTheDocument()
-        expect(screen.getByText('Enabled level: 100')).toBeInTheDocument()
+        expect(screen.getByText('Level: 99')).toBeInTheDocument()
+        expect(screen.getByText('Enabled level: 99')).toBeInTheDocument()
 
         rerender(
             <AuthContext.Provider value={regularAuth}>
@@ -101,7 +101,7 @@ describe('AccessContext', () => {
     })
 
     it.each([
-        ['admin', 100, {entryActionBar: true, classificationVote: true, scorecardVideos: true, manageRequests: true}],
+        ['admin', 99, {entryActionBar: true, classificationVote: true, scorecardVideos: true, manageRequests: true}],
         ['lpuMod', 90, {entryActionBar: true, classificationVote: true, scorecardVideos: true, manageRequests: false}],
         ['classificationAdmin', 95, {entryActionBar: true, classificationVote: true, scorecardVideos: false, manageRequests: true}],
         ['blackBelt', 70, {entryActionBar: true, classificationVote: true, scorecardVideos: false, manageRequests: false}],
@@ -241,7 +241,7 @@ describe('AccessContext', () => {
 
         fireEvent.click(screen.getByRole('button', {name: 'Preview admin'}))
         expect(screen.getByText('Preview role: admin')).toBeInTheDocument()
-        expect(screen.getByText('Level: 100')).toBeInTheDocument()
+        expect(screen.getByText('Level: 99')).toBeInTheDocument()
         expect(screen.getByText('Highest role: admin')).toBeInTheDocument()
         expect(screen.getByText(/Roles:.*lpuMod.*true/)).toBeInTheDocument()
         expect(screen.getByText(/Roles:.*classificationTeam.*true/)).toBeInTheDocument()
@@ -262,7 +262,7 @@ describe('AccessContext', () => {
 
         fireEvent.click(screen.getByRole('button', {name: 'Clear preview'}))
         expect(screen.getByText('Preview role: actual')).toBeInTheDocument()
-        expect(screen.getByText('Level: 100')).toBeInTheDocument()
+        expect(screen.getByText('Level: 99')).toBeInTheDocument()
     })
 
     it('ignores preview requests outside development mode', () => {
@@ -276,7 +276,7 @@ describe('AccessContext', () => {
 
         fireEvent.click(screen.getByRole('button', {name: 'Preview none'}))
         expect(screen.getByText('Preview role: actual')).toBeInTheDocument()
-        expect(screen.getByText('Level: 100')).toBeInTheDocument()
+        expect(screen.getByText('Level: 99')).toBeInTheDocument()
     })
 })
 

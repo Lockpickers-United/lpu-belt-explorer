@@ -26,6 +26,10 @@ import {useAccess} from '../app/AccessContext.jsx'
 import BoltIcon from '@mui/icons-material/Bolt'
 import {Collapse, useTheme} from '@mui/material'
 import ExpandButton from '../misc/ExpandButton.jsx'
+import FlareIcon from '@mui/icons-material/Flare'
+import EmojiEmotionsIcon from '@mui/icons-material/EmojiEmotions'
+import EggIcon from '@mui/icons-material/Egg'
+import OutletIcon from '@mui/icons-material/Outlet'
 
 function UserMenu() {
     const navigate = useNavigate()
@@ -37,6 +41,8 @@ function UserMenu() {
     const open = Boolean(anchorEl)
     const handleOpen = useCallback(event => setAnchorEl(event.currentTarget), [])
     const handleClose = useCallback(() => setAnchorEl(null), [])
+
+    console.log('accessInfo', accessInfo)
 
     const safeName = lockCollection.displayName && !lockCollection.privacyAnonymous
         ? lockCollection.displayName.replace(/\s/g, '_')
@@ -60,10 +66,12 @@ function UserMenu() {
 
     const [previewOpen, setPreviewOpen] = useState(false)
 
+    const ownerIcon = (import.meta.env.DEV && accessInfo.previewRole === 'admin')
+
     return (
         <React.Fragment>
             <Tooltip title={accountTooltip} arrow disableFocusListener>
-                <IconButton color='info' onClick={handleOpen} edge='end'
+                <IconButton onClick={handleOpen} edge='end'
                             sx={{
                                 width: 36,
                                 height: 36,
@@ -71,13 +79,15 @@ function UserMenu() {
                                 backgroundColor: accessInfo.previewRole ? theme.roles?.[accessInfo.highestRole] : 'inherit'
                             }}>
                     {
-                        isLoggedIn
+                        (isLoggedIn && !ownerIcon)
                             ? <Avatar
                                 alt={displayName}
                                 src={user.photoURL}
                                 sx={{width: 32, height: 32}}
                             />
-                            : <AccountCircleIcon/>
+                            : !ownerIcon
+                                ? <AccountCircleIcon/>
+                                : <OutletIcon style={{color: '#4c5e75', fontSize: '32px'}}/>
                     }
                 </IconButton>
             </Tooltip>
@@ -288,6 +298,7 @@ function UserMenu() {
 
 const previewRoleLabels = {
     none: 'None',
+    owner: 'Owner',
     admin: 'Admin',
     classificationAdmin: 'Classification Admin',
     lpuMod: 'LPU Moderator',

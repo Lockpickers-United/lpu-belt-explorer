@@ -9,15 +9,16 @@ const app = initializeApp({
     databaseURL: 'https://lpu-belt-explorer.firebaseio.com'
 })
 
-// change to (default) and true for production
-// const db = getFirestore(app, 'lpubelts-dev')
-
-const db = getFirestore(app)
+const databases = [
+    {name: '(default)', db: getFirestore(app)},
+    {name: 'lpubelts-dev', db: getFirestore(app, 'lpubelts-dev')}
+]
 
 const WRITE_TO_DB = false
 
 // Custom claims to set
 const _allClaims = {
+    owner: true,
     admin: true,
     raflAdmin: true,
     qaUser: true,
@@ -29,11 +30,11 @@ const _allClaims = {
     blackBelt: true,
 }
 //const newClaims = {raflAdmin:true, dataAdmin:true, admin: true}
-const newClaims = {requestAdmin: true,}
+const newClaims = {owner: true}
 const removeClaims = []
 
 const users = [
-    {uid: 'pzSak8xusHdeNlD0JmTru5kMrww2', name: 'Sidepicks'},
+    {uid: 'GGplAdctTfVDLVvYsfIADJmfp8f2', name: 'mgsecure'},
 ]
 
 const _allUsers = [
@@ -57,6 +58,7 @@ const _allUsers = [
 ]
 
 async function updateCustomClaimsForUsers() {
+    let failed = false
     for (const user of users) {
         const {uid, name} = user
         try {
@@ -68,16 +70,23 @@ async function updateCustomClaimsForUsers() {
             const updatedClaims = {...currentClaims, ...newClaims}
             if (WRITE_TO_DB) await getAuth().setCustomUserClaims(uid, updatedClaims)
 
-            const ref = db.doc(`/user-claims-info/${uid}`)
-            if (WRITE_TO_DB) await ref.set({...updatedClaims, name})
+            if (WRITE_TO_DB) {
+                const results = await Promise.allSettled(databases.map(({db}) =>
+                    db.doc(`/user-claims-info/${uid}`).set({...updatedClaims, name})))
+                const failures = results.flatMap((result, index) => result.status === 'rejected'
+                    ? [`${databases[index].name}: ${result.reason}`]
+                    : [])
+                if (failures.length) throw new Error(`Failed to update user-claims-info for ${uid}: ${failures.join('; ')}`)
+            }
 
             console.log(`${WRITE_TO_DB ? 'Updated' : 'WRITE_TO_DB is off, not saving'} custom claims for user ${uid} (${userRecord.displayName})`, updatedClaims)
         } catch (error) {
+            failed = true
             console.error(`Error updating custom claims for user ${uid}:`, error)
         }
     }
     console.log('Finished updating custom claims for all users.')
-    process.exit(0)
+    process.exit(failed ? 1 : 0)
 }
 
 async function getCustomClaimsForUsers() {
@@ -98,5 +107,4 @@ async function getCustomClaimsForUsers() {
 await updateCustomClaimsForUsers().then(() => {
     getCustomClaimsForUsers().then()
 })
-
 

@@ -6,7 +6,8 @@ import AuthContext from './AuthContext.jsx'
 const AccessContext = React.createContext(undefined)
 
 const roleLevels = {
-    admin: 100,
+    owner: 100,
+    admin: 99,
     classificationAdmin: 95,
     lpuMod: 90,
     blackBelt: 70,
@@ -48,11 +49,12 @@ export function AccessProvider({children}) {
 
         const claims = new Set(userClaims)
         return {
+            owner: claims.has('owner'),
             admin: claims.has('admin'),
-            classificationAdmin: claims.has('classificationAdmin') || claims.has('admin'),
+            classificationAdmin: claims.has('classificationAdmin') || claims.has('admin') || claims.has('owner'),
             lpuMod: claims.has('lpuMod') || claims.has('admin'),
             blackBelt: claims.has('blackBelt') || claims.has('admin'),
-            classificationTeam: claims.has('blackBelt') || claims.has('classificationTeam') || claims.has('admin'),
+            classificationTeam: claims.has('blackBelt') || claims.has('classificationTeam') || claims.has('admin') || claims.has('owner'),
             qaUser: claims.has('qaUser') || claims.has('admin')
         }
     }, [authLoaded, isLoggedIn, user?.uid, userClaims])
@@ -87,8 +89,8 @@ export function AccessProvider({children}) {
     const features = useMemo(() => {
         return {
             entryActionBar: getHighestRoleLevel(roles) >= 50,
-            classificationVote: ['admin', 'classificationAdmin', 'lpuMod', 'classificationTeam'].some(role => roles[role]),
-            classificationAdmin: ['admin', 'classificationAdmin'].some(role => roles[role]),
+            classificationVote: ['admin', 'classificationAdmin', 'lpuMod', 'classificationTeam', 'owner'].some(role => roles[role]),
+            classificationAdmin: ['admin', 'classificationAdmin', 'owner'].some(role => roles[role]),
             scorecardVideos: ['admin', 'lpuMod'].some(role => roles[role]),
             manageRequests: ['admin', 'classificationAdmin'].some(role => roles[role]),
             qaTools: enabledRoles.qaUser || roles.admin
