@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": "sha256:c82b1a0d2089a2188743861da6c4a6a5582599326bb88200806b424df7f26462",
-  "generatedAt": "2026-10-18T20:40:29.501Z",
+  "catalogVersion": "sha256:25ff96cdbd599d2663c642ad2670c56a2498c7294a59a7aafa32e93efb66a1d5",
+  "generatedAt": "2026-10-20T14:45:33.475Z",
   "entries": [
     {
       "id": "0082fa4c",
@@ -1724,13 +1724,6 @@
       "version": "Korean Spinny Key, 11 pins",
       "belt": "Unranked",
       "currentBeltDate": "2026-10-09T16:14:03.523Z"
-    },
-    {
-      "id": "3440f169",
-      "name": "Maglok",
-      "version": null,
-      "belt": "Unranked",
-      "currentBeltDate": "2026-10-12T23:33:54.101Z"
     },
     {
       "id": "34532c45",

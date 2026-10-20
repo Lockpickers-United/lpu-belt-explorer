@@ -7,11 +7,11 @@
         "label": "Ranked"
       },
       {
-        "value": 1128,
+        "value": 1127,
         "label": "All"
       },
       {
-        "value": 274,
+        "value": 273,
         "label": "Unranked"
       }
     ]
@@ -20,61 +20,61 @@
     {
       "belt": "White",
       "count": 18,
-      "value": 0.015957446808510637,
+      "value": 0.015971606033717833,
       "id": "White"
     },
     {
       "belt": "Yellow",
       "count": 71,
-      "value": 0.06294326241134751,
+      "value": 0.06299911268855368,
       "id": "Yellow"
     },
     {
       "belt": "Orange",
       "count": 84,
-      "value": 0.07446808510638298,
+      "value": 0.07453416149068323,
       "id": "Orange"
     },
     {
       "belt": "Green",
       "count": 159,
-      "value": 0.14095744680851063,
+      "value": 0.14108251996450755,
       "id": "Green"
     },
     {
       "belt": "Blue",
       "count": 141,
-      "value": 0.125,
+      "value": 0.1251109139307897,
       "id": "Blue"
     },
     {
       "belt": "Purple",
       "count": 121,
-      "value": 0.10726950354609929,
+      "value": 0.10736468500443656,
       "id": "Purple"
     },
     {
       "belt": "Brown",
       "count": 85,
-      "value": 0.07535460992907801,
+      "value": 0.07542147293700088,
       "id": "Brown"
     },
     {
       "belt": "Red",
       "count": 74,
-      "value": 0.06560283687943262,
+      "value": 0.06566104702750665,
       "id": "Red"
     },
     {
       "belt": "Black",
       "count": 101,
-      "value": 0.08953900709219859,
+      "value": 0.08961845607808341,
       "id": "Black"
     },
     {
       "belt": "Unranked",
-      "count": 274,
-      "value": 0.2429078014184397,
+      "count": 273,
+      "value": 0.2422360248447205,
       "id": "Unranked"
     }
   ],
@@ -563,7 +563,7 @@
       },
       {
         "segment": "All locks",
-        "count": 1128,
+        "count": 1127,
         "media": 920,
         "coverage": "81%"
       }
@@ -17192,7 +17192,7 @@
           "label": "Red",
           "id": "Red",
           "count": 1,
-          "value": 0.5
+          "value": 1
         },
         {
           "label": "Black",
@@ -17206,13 +17206,7 @@
           "label": "Magnet",
           "id": "Magnet",
           "count": 1,
-          "value": 0.5
-        },
-        {
-          "label": "unknown",
-          "id": "unknown",
-          "count": 1,
-          "value": 0.5
+          "value": 1
         }
       ]
     },
@@ -26531,6 +26525,6 @@
   },
   "metadata": {
     "source": "import-data",
-    "updatedDateTime": "2026-10-18 20:40"
+    "updatedDateTime": "2026-10-20 14:45"
   }
 }

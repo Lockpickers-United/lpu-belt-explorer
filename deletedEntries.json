@@ -3184,5 +3184,18 @@
     "currentBeltDate": "2026-10-09T23:22:45.036Z",
     "dateAdded": "2026-10-09T23:22:45.036Z",
     "dateDeleted": "2026-10-12T23:33:54.112Z"
+  },
+  {
+    "id": "3440f169",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "model": "Maglok"
+      }
+    ],
+    "name": "Maglok",
+    "currentBeltDate": "2026-10-12T23:33:54.101Z",
+    "dateAdded": "2026-10-12T23:33:54.101Z",
+    "dateDeleted": "2026-10-20T14:45:33.043Z"
   }
 ]
