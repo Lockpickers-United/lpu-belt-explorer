@@ -36,9 +36,52 @@ describe('OAuth callback route compatibility', () => {
 
         renderWithRouter(<AuthDiscordRoute/>, {route: '/auth/discord'})
 
-        await waitFor(() => expect(screen.getByText('Status: data_failed')).toBeInTheDocument())
+        await waitFor(() => expect(screen.getByText('Status: access_denied')).toBeInTheDocument())
         expect(screen.getByText('Service: Discord')).toBeInTheDocument()
         expect(fetch).not.toHaveBeenCalled()
+    })
+
+    describe('Discord award sync', () => {
+        const award = (discordAwardName) => ({
+            discordAwardName,
+            awardCreatedAt: {toDate: () => new Date('2024-01-01T00:00:00Z')},
+            awardUrl: 'https://discord.com/award'
+        })
+
+        beforeEach(() => {
+            window.history.replaceState({}, '', '/?code=abc&iss=https%3A%2F%2Fdiscord.com#/auth/discord')
+            fetch
+                .mockResolvedValueOnce({status: 200, json: async () => ({access_token: 'tok', token_type: 'Bearer'})})
+                .mockResolvedValueOnce({status: 200, json: async () => ({id: 'd1', username: 'picker'})})
+        })
+
+        it('skips awards that do not match a known belt', async () => {
+            const setDiscordUserInfo = vi.fn(async () => {})
+            const peekAtDiscordAwards = vi.fn(async () => [award('Yellow Belt'), award('Mystery Award')])
+
+            renderWithRouter(<AuthDiscordRoute/>, {
+                route: '/auth/discord',
+                db: {setDiscordUserInfo, peekAtDiscordAwards}
+            })
+
+            await waitFor(() => expect(screen.getByText('Status: complete')).toBeInTheDocument())
+            expect(setDiscordUserInfo).toHaveBeenCalledWith('d1', 'picker')
+        })
+
+        it('reports data_failed when award lookup throws', async () => {
+            const setDiscordUserInfo = vi.fn(async () => {})
+            const peekAtDiscordAwards = vi.fn(async () => {
+                throw new Error('firestore unavailable')
+            })
+
+            renderWithRouter(<AuthDiscordRoute/>, {
+                route: '/auth/discord',
+                db: {setDiscordUserInfo, peekAtDiscordAwards}
+            })
+
+            await waitFor(() => expect(screen.getByText('Status: data_failed')).toBeInTheDocument())
+            expect(setDiscordUserInfo).not.toHaveBeenCalled()
+        })
     })
 
     it('renders a denied Reddit callback without contacting Reddit', async () => {

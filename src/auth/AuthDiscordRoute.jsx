@@ -7,11 +7,11 @@ import {ProfileProvider} from '../app/ProfileContext.jsx'
 function AuthDiscordRoute() {
     const {setDiscordUserInfo, peekAtDiscordAwards} = useContext(DBContext)
     const {VITE_DISCORD_CLIENT_ID: clientId, VITE_DISCORD_CLIENT_SECRET: clientSecret} = import.meta.env
-    const code = URL.parse(window.location.href).searchParams.get('code')
-    const iss = URL.parse(window.location.href).searchParams.get('iss')
+    const searchParams = URL.parse(window.location.href).searchParams
+    const urlError = searchParams.get('error')
+    const code = searchParams.get('code')
+    const iss = searchParams.get('iss')
     const urlCode = iss === 'https://discord.com' ? code : 'failed-to-get-code'
-    const urlMatchError = window.location.href.match(/\?error=([^&]+)&error_description/)
-    const urlError = urlMatchError ? urlMatchError[1] : null
 
     const [credentials, setCredentials] = useState(null)
     const [syncResult, setSyncResult] = useState({})
@@ -50,15 +50,15 @@ function AuthDiscordRoute() {
             }
         }
 
-        if (urlCode && !usedCode.current) {
+        if (urlError) {
+            setSyncException('access_denied')
+        } else if (urlCode && !usedCode.current) {
             if (urlCode === 'failed-to-get-code') {
                 setSyncException('data_failed')
                 return
             }
             usedCode.current = true
             getAccessToken()
-        } else if (urlError) {
-            setSyncException('access_denied')
         }
     }, [urlCode, urlError, clientId, clientSecret])
 
@@ -73,17 +73,21 @@ function AuthDiscordRoute() {
                 setSyncException('data_failed')
                 return
             }
-            if (200 === resp.status) {
+            if (200 !== resp.status) {
+                setSyncException('data_failed')
+                return
+            }
+            try {
                 const data = await resp.json()
                 const awardDocs = await peekAtDiscordAwards(data.id)
                 const awards = awardDocs.map(aw => {
                     const entry = lookupAwardByBelt(aw.discordAwardName.match(/^(\w+) Belt/)?.[1], aw.discordAwardName.match(/^(\d+)/)?.[1], aw.discordAwardName)
-                    return {
+                    return entry && {
                         matchId: entry.id,
                         awardedAt: aw.awardCreatedAt.toDate().toUTCString(),
                         link: aw.awardUrl
                     }
-                })
+                }).filter(Boolean)
                 if (awards.length > 0) {
                     const dedupAwards = Object.values(
                         awards.reduce((acc, msg) => {
@@ -98,7 +102,7 @@ function AuthDiscordRoute() {
                 } else {
                     setSyncException('none_found')
                 }
-            } else {
+            } catch (_error) {
                 setSyncException('data_failed')
             }
         }
