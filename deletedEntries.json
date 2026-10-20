@@ -3171,6 +3171,36 @@
     "dateDeleted": "2026-09-01T11:52:06.295Z"
   },
   {
+    "id": "2ae59863",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Clavis",
+        "model": "Q18 Clone"
+      }
+    ],
+    "lockingMechanisms": [
+      "Dimple"
+    ],
+    "name": "Clavis Q18 Clone",
+    "dateAdded": "2026-10-03T22:57:35.085Z",
+    "dateDeleted": "2026-10-20T16:44:52.293Z"
+  },
+  {
+    "id": "d5080254",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Alfa",
+        "model": "6-7 pin"
+      }
+    ],
+    "name": "Alfa 6-7 pin",
+    "currentBeltDate": "2026-10-09T16:14:03.523Z",
+    "dateAdded": "2026-10-09T16:14:03.523Z",
+    "dateDeleted": "2026-10-20T16:44:52.292Z"
+  },
+  {
     "id": "80a13301",
     "belt": "Unranked",
     "makeModels": [
@@ -3184,6 +3214,24 @@
     "currentBeltDate": "2026-10-09T23:22:45.036Z",
     "dateAdded": "2026-10-09T23:22:45.036Z",
     "dateDeleted": "2026-10-12T23:33:54.112Z"
+  },
+  {
+    "id": "61160e55",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Illinois",
+        "model": "Duo"
+      }
+    ],
+    "version": "10-wafer",
+    "lockingMechanisms": [
+      "Wafer"
+    ],
+    "name": "Illinois Duo",
+    "currentBeltDate": "2026-10-12T23:33:54.100Z",
+    "dateAdded": "2026-10-12T23:33:54.100Z",
+    "dateDeleted": "2026-10-20T16:44:52.293Z"
   },
   {
     "id": "3440f169",

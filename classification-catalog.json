@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": "sha256:25ff96cdbd599d2663c642ad2670c56a2498c7294a59a7aafa32e93efb66a1d5",
-  "generatedAt": "2026-10-20T14:45:33.475Z",
+  "catalogVersion": "sha256:63a5c88d6fc31c7e3380c34ed96c151f31e5ee13be107021eadb34301cbefe36",
+  "generatedAt": "2026-10-20T16:44:52.553Z",
   "entries": [
     {
       "id": "0082fa4c",
@@ -1380,13 +1380,6 @@
       "name": "American Lock 1100 / A1100",
       "version": null,
       "belt": "Green",
-      "currentBeltDate": null
-    },
-    {
-      "id": "2ae59863",
-      "name": "Clavis Q18 Clone",
-      "version": null,
-      "belt": "Unranked",
       "currentBeltDate": null
     },
     {
@@ -3040,13 +3033,6 @@
       "version": "all standards",
       "belt": "Blue",
       "currentBeltDate": null
-    },
-    {
-      "id": "61160e55",
-      "name": "Illinois Duo",
-      "version": "10-wafer",
-      "belt": "Unranked",
-      "currentBeltDate": "2026-10-12T23:33:54.100Z"
     },
     {
       "id": "61247b32",
@@ -6575,13 +6561,6 @@
       "version": null,
       "belt": "Yellow",
       "currentBeltDate": null
-    },
-    {
-      "id": "d5080254",
-      "name": "Alfa 6-7 pin",
-      "version": null,
-      "belt": "Unranked",
-      "currentBeltDate": "2026-10-09T16:14:03.523Z"
     },
     {
       "id": "d54a6b5f",

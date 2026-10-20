@@ -7,11 +7,11 @@
         "label": "Ranked"
       },
       {
-        "value": 1127,
+        "value": 1124,
         "label": "All"
       },
       {
-        "value": 273,
+        "value": 270,
         "label": "Unranked"
       }
     ]
@@ -20,61 +20,61 @@
     {
       "belt": "White",
       "count": 18,
-      "value": 0.015971606033717833,
+      "value": 0.01601423487544484,
       "id": "White"
     },
     {
       "belt": "Yellow",
       "count": 71,
-      "value": 0.06299911268855368,
+      "value": 0.06316725978647687,
       "id": "Yellow"
     },
     {
       "belt": "Orange",
       "count": 84,
-      "value": 0.07453416149068323,
+      "value": 0.07473309608540925,
       "id": "Orange"
     },
     {
       "belt": "Green",
       "count": 159,
-      "value": 0.14108251996450755,
+      "value": 0.14145907473309607,
       "id": "Green"
     },
     {
       "belt": "Blue",
       "count": 141,
-      "value": 0.1251109139307897,
+      "value": 0.12544483985765126,
       "id": "Blue"
     },
     {
       "belt": "Purple",
       "count": 121,
-      "value": 0.10736468500443656,
+      "value": 0.10765124555160142,
       "id": "Purple"
     },
     {
       "belt": "Brown",
       "count": 85,
-      "value": 0.07542147293700088,
+      "value": 0.07562277580071175,
       "id": "Brown"
     },
     {
       "belt": "Red",
       "count": 74,
-      "value": 0.06566104702750665,
+      "value": 0.06583629893238434,
       "id": "Red"
     },
     {
       "belt": "Black",
       "count": 101,
-      "value": 0.08961845607808341,
+      "value": 0.0898576512455516,
       "id": "Black"
     },
     {
       "belt": "Unranked",
-      "count": 273,
-      "value": 0.2422360248447205,
+      "count": 270,
+      "value": 0.2402135231316726,
       "id": "Unranked"
     }
   ],
@@ -86,7 +86,7 @@
     },
     {
       "label": "Dimple",
-      "value": 266,
+      "value": 265,
       "id": "dimple"
     },
     {
@@ -116,7 +116,7 @@
     },
     {
       "label": "Wafer",
-      "value": 24,
+      "value": 23,
       "id": "wafer"
     },
     {
@@ -492,7 +492,7 @@
     "Unranked": [
       {
         "label": "Dimple",
-        "value": 63,
+        "value": 62,
         "id": "dimple"
       },
       {
@@ -522,7 +522,7 @@
       },
       {
         "label": "Wafer",
-        "value": 8,
+        "value": 7,
         "id": "wafer"
       },
       {
@@ -563,7 +563,7 @@
       },
       {
         "segment": "All locks",
-        "count": 1127,
+        "count": 1124,
         "media": 920,
         "coverage": "81%"
       }
@@ -3020,13 +3020,13 @@
           "label": "Blue",
           "id": "Blue",
           "count": 1,
-          "value": 0.333
+          "value": 0.5
         },
         {
           "label": "Purple",
           "id": "Purple",
           "count": 1,
-          "value": 0.333
+          "value": 0.5
         },
         {
           "label": "Brown",
@@ -3052,13 +3052,7 @@
           "label": "Pin-tumbler",
           "id": "Pin-tumbler",
           "count": 2,
-          "value": 0.667
-        },
-        {
-          "label": "unknown",
-          "id": "unknown",
-          "count": 1,
-          "value": 0.333
+          "value": 1
         }
       ]
     },
@@ -7202,32 +7196,32 @@
           "label": "Purple",
           "id": "Purple",
           "count": 1,
-          "value": 0.143
+          "value": 0.167
         },
         {
           "label": "Brown",
           "id": "Brown",
           "count": 1,
-          "value": 0.143
+          "value": 0.167
         },
         {
           "label": "Red",
           "id": "Red",
           "count": 1,
-          "value": 0.143
+          "value": 0.167
         },
         {
           "label": "Black",
           "id": "Black",
           "count": 3,
-          "value": 0.429
+          "value": 0.5
         }
       ],
       "mechanisms": [
         {
           "label": "Dimple",
           "id": "Dimple",
-          "count": 7,
+          "count": 6,
           "value": 1
         }
       ]
@@ -13610,7 +13604,7 @@
           "label": "Purple",
           "id": "Purple",
           "count": 1,
-          "value": 0.333
+          "value": 0.5
         },
         {
           "label": "Brown",
@@ -13635,7 +13629,7 @@
         {
           "label": "Wafer",
           "id": "Wafer",
-          "count": 3,
+          "count": 2,
           "value": 1
         }
       ]
@@ -26525,6 +26519,6 @@
   },
   "metadata": {
     "source": "import-data",
-    "updatedDateTime": "2026-10-20 14:45"
+    "updatedDateTime": "2026-10-20 16:44"
   }
 }
