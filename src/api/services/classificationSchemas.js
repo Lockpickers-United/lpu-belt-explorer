@@ -26,6 +26,11 @@ export const voteEditSchema = z.strictObject({
     mediaUrl
 })
 
+export const voteMoveSchema = z.strictObject({
+    entryId: id,
+    expectedRevision: revision
+})
+
 export const revisionSchema = z.strictObject({expectedRevision: revision})
 
 const actionFields = {

@@ -195,6 +195,57 @@ export function createClassificationService({db, getCatalogEntry, clock = () => 
         })
     }
 
+    async function moveVote(actor, key, voteId, input) {
+        return command('vote.move', actor, key, {voteId, input}, async (tx, now) => {
+            const sourceRef = votesRef.doc(voteId)
+            const existing = await tx.get(sourceRef)
+            if (!existing.exists) throw apiError(404, 'vote_not_found', 'Vote not found')
+            const old = existing.data()
+            requireRevision(old, input.expectedRevision, asVote(old))
+            if (old.entryId === input.entryId) {
+                throw apiError(400, 'same_entry', 'Vote is already on this lock')
+            }
+            catalogEntry(input.entryId)
+
+            const destinationRef = votesRef.doc(voteIdFor(input.entryId, old.userId))
+            const [destination, sourceEntry, destinationEntry, sourceVotes, destinationVotes] =
+                await Promise.all([
+                    tx.get(destinationRef), tx.get(entriesRef.doc(old.entryId)),
+                    tx.get(entriesRef.doc(input.entryId)), readEntryVotes(tx, old.entryId),
+                    readEntryVotes(tx, input.entryId)
+                ])
+            if (destination.exists) {
+                throw apiError(409, 'duplicate_vote', 'This member already voted on the target lock',
+                    {current: asVote(destination.data())})
+            }
+            const sourcePrevious = sourceEntry.data() ?? {}
+            const destinationPrevious = destinationEntry.data() ?? {}
+            if (destinationPrevious.lastDecisionStatus === 'Settled' && !destinationPrevious.reopened) {
+                throw apiError(409, 'entry_settled', 'New votes are closed for this lock')
+            }
+
+            const vote = {
+                ...old,
+                id: destinationRef.id,
+                entryId: input.entryId,
+                updatedAt: now,
+                revision: 1
+            }
+            const sourceSummary = writeProjections(tx, old.entryId,
+                sourceVotes.filter(item => item.id !== voteId), sourcePrevious,
+                activeAction(sourcePrevious), now)
+            const destinationSummary = writeProjections(tx, input.entryId,
+                [...destinationVotes, vote], destinationPrevious,
+                activeAction(destinationPrevious), now)
+            tx.delete(sourceRef)
+            tx.create(destinationRef, vote)
+            return {
+                vote: asVote(vote), sourceEntryRevision: sourceSummary.revision,
+                entryRevision: destinationSummary.revision
+            }
+        })
+    }
+
     async function deleteVote(actor, key, voteId, expectedRevision, isAdmin) {
         return command('vote.delete', actor, key, {voteId, expectedRevision}, async (tx, now) => {
             const voteRef = votesRef.doc(voteId)
@@ -528,6 +579,7 @@ export function createClassificationService({db, getCatalogEntry, clock = () => 
     return {
         createVote,
         editVote,
+        moveVote,
         deleteVote,
         createAction,
         editAction,

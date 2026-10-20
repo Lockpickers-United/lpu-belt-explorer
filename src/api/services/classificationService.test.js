@@ -157,6 +157,49 @@ describe('classification service', () => {
             .rejects.toMatchObject({code: 'revision_conflict'})
     })
 
+    it('moves a vote atomically and recomputes both lock summaries', async () => {
+        const {service, records} = fixture()
+        const created = await service.createVote(voter, 'move-create',
+            {entryId: 'lock-a', votedBelt: 'Blue', comment: 'Original vote'})
+        const createdAt = records.get(`classificationVotes/${created.vote.id}`).createdAt
+        const moved = await service.moveVote(admin, 'move-command', created.vote.id,
+            {entryId: 'lock-b', expectedRevision: 1})
+        const targetId = voteIdFor('lock-b', voter.uid)
+
+        expect(moved.vote).toMatchObject({id: targetId, entryId: 'lock-b', userId: voter.uid,
+            votedBelt: 'Blue', comment: 'Original vote', revision: 1})
+        expect(records.has(`classificationVotes/${created.vote.id}`)).toBe(false)
+        expect(records.get(`classificationVotes/${targetId}`).createdAt).toEqual(createdAt)
+        expect(records.get('classificationEntries/lock-a').currentVoteCount).toBe(0)
+        expect(records.get('classificationEntries/lock-a').hasModernVotes).toBe(false)
+        expect(records.get('classificationEntryStates/lock-a').voterIds).toEqual([])
+        expect(records.get('classificationEntries/lock-b').currentBeltCounts).toEqual({Blue: 1})
+        expect(records.get('classificationEntryStates/lock-b').voterIds).toEqual([voter.uid])
+        expect(await service.moveVote(admin, 'move-command', created.vote.id,
+            {entryId: 'lock-b', expectedRevision: 1})).toEqual(moved)
+    })
+
+    it('rejects stale moves, duplicate target votes, and settled targets without changing either lock', async () => {
+        const {service, records} = fixture()
+        const first = await service.createVote(voter, 'move-conflict-first',
+            {entryId: 'lock-a', votedBelt: 'Blue'})
+        await expect(service.moveVote(admin, 'move-conflict-stale', first.vote.id,
+            {entryId: 'lock-b', expectedRevision: 2})).rejects.toMatchObject({code: 'revision_conflict'})
+
+        const second = await service.createVote(voter, 'move-conflict-second',
+            {entryId: 'lock-b', votedBelt: 'Green'})
+        await expect(service.moveVote(admin, 'move-conflict-duplicate', first.vote.id,
+            {entryId: 'lock-b', expectedRevision: 1})).rejects.toMatchObject({code: 'duplicate_vote'})
+        expect(records.get('classificationEntries/lock-a').currentVoteCount).toBe(1)
+        expect(records.get('classificationEntries/lock-b').currentBeltCounts).toEqual({Green: 1})
+
+        await service.deleteVote(voter, 'move-conflict-delete', second.vote.id, 1, false)
+        records.set('classificationEntries/lock-b', {lastDecisionStatus: 'Settled'})
+        await expect(service.moveVote(admin, 'move-conflict-settled', first.vote.id,
+            {entryId: 'lock-b', expectedRevision: 1})).rejects.toMatchObject({code: 'entry_settled'})
+        expect(records.has(`classificationVotes/${first.vote.id}`)).toBe(true)
+    })
+
     it('lets only one simultaneous edit of a vote revision succeed', async () => {
         const {service, records} = fixture()
         const created = await service.createVote(voter, 'concurrent-vote-create',

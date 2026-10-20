@@ -357,6 +357,27 @@ paths:
         '403': {$ref: '#/components/responses/Error'}
         '409': {$ref: '#/components/responses/Error'}
         '503': {$ref: '#/components/responses/Error'}
+  /classification/votes/{voteId}/move:
+    post:
+      tags: [Classification]
+      summary: Move a vote to another lock as a classification admin
+      security: [{firebaseBearerAuth: []}]
+      parameters:
+        - $ref: '#/components/parameters/ClassificationVoteId'
+        - $ref: '#/components/parameters/ClassificationIdempotencyKey'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {$ref: '#/components/schemas/ClassificationVoteMove'}
+      responses:
+        '200': {$ref: '#/components/responses/ClassificationSuccess'}
+        '400': {$ref: '#/components/responses/Error'}
+        '401': {$ref: '#/components/responses/Error'}
+        '403': {$ref: '#/components/responses/Error'}
+        '404': {$ref: '#/components/responses/Error'}
+        '409': {$ref: '#/components/responses/Error'}
+        '503': {$ref: '#/components/responses/Error'}
   /classification/votes/{voteId}:
     patch:
       tags: [Classification]
@@ -565,6 +586,13 @@ components:
         votedBelt: {$ref: '#/components/schemas/ClassificationBelt'}
         comment: {type: [string, 'null'], maxLength: 2000}
         mediaUrl: {type: [string, 'null'], maxLength: 2048, format: uri}
+    ClassificationVoteMove:
+      type: object
+      additionalProperties: false
+      required: [entryId, expectedRevision]
+      properties:
+        entryId: {type: string, minLength: 1, maxLength: 128}
+        expectedRevision: {type: integer, minimum: 1}
     ClassificationActionCreate:
       type: object
       additionalProperties: false

@@ -4,7 +4,8 @@ import requireAuth from '../middleware/requireAuth.js'
 import {createClassificationService} from '../services/classificationService.js'
 import {
     actionCreateSchema, actionEditSchema, actionFieldsSchema, batchPublishSchema, entryIdSchema,
-    resourceIdSchema, revisionSchema, singlePublishSchema, voteCreateSchema, voteEditSchema
+    resourceIdSchema, revisionSchema, singlePublishSchema, voteCreateSchema, voteEditSchema,
+    voteMoveSchema
 } from '../services/classificationSchemas.js'
 import {getFirestoreDb} from '../services/firebaseAdmin.js'
 import {getCatalogEntry} from '../services/classificationCatalog.js'
@@ -116,6 +117,12 @@ router.patch('/votes/:voteId', requireClaims(writerClaims), requireWriteStage('v
     const input = parse(voteEditSchema, req.body)
     respond(res, await (await service()).editVote(req.user, idempotencyKey(req), id, input,
         isAdmin(req.user)))
+})
+
+router.post('/votes/:voteId/move', requireClaims(adminClaims), requireWriteStage('vote'), async (req, res) => {
+    const id = parse(resourceIdSchema, req.params.voteId)
+    const input = parse(voteMoveSchema, req.body)
+    respond(res, await (await service()).moveVote(req.user, idempotencyKey(req), id, input))
 })
 
 router.delete('/votes/:voteId', requireClaims(writerClaims), requireWriteStage('vote'), async (req, res) => {

@@ -115,6 +115,7 @@ Promote the server stage before the frontend's matching
 | `GET /classification/publications` | Eligible reader | Paged immutable publication headers. |
 | `GET /classification/publications/{publicationId}` | Eligible reader | One immutable publication and its ordered action snapshots. |
 | `POST /classification/votes`; `PATCH/DELETE /classification/votes/{voteId}` | Voting claim; owner or admin for edit/delete | Canonical vote changes and resulting entry revision. |
+| `POST /classification/votes/{voteId}/move` | Admin | Move a vote to another lock and update both lock summaries atomically. |
 | `POST /classification/actions`; `PATCH/DELETE /classification/actions/{actionId}` | Admin | Editable decision changes and resulting entry revision. |
 | `POST /classification/publications` | Admin | Batch publication of 1–50 included Staged actions. |
 | `POST /classification/publications/single` | Admin | Save and publish one form decision, leaving other staged actions alone. |
@@ -125,6 +126,9 @@ records asynchronously. Vote creates use a deterministic `(entryId, userId)` ID,
 require `expectedRevision`. A duplicate vote or stale revision returns `409` with a safe
 `error.recovery.current` record. Other stable errors include `invalid_request`,
 `invalid_cursor`, `forbidden`, `action_not_publishable`, and `idempotency_conflict`.
+Vote moves require the target `entryId` and `expectedRevision`; the moved vote gets the
+target lock's deterministic ID. A move rejects an existing vote by that member on the
+target lock or a target closed to new votes.
 
 Vote comments are limited to 2,000 characters, media URLs to 2,048 HTTP(S) URL
 characters, and changelog/admin notes to 4,000 characters. Paged reads default to 25

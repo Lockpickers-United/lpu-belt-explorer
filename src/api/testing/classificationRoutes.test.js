@@ -10,6 +10,7 @@ const mocks = vi.hoisted(() => ({
     getEntryVotes: vi.fn(),
     createVote: vi.fn(),
     editVote: vi.fn(),
+    moveVote: vi.fn(),
     deleteVote: vi.fn(),
     createAction: vi.fn(),
     publishBatch: vi.fn()
@@ -39,6 +40,7 @@ beforeEach(() => {
     mocks.verifyFirebaseIdToken.mockImplementation(async token => {
         if (token === 'blackbelt') return {uid: 'blackbelt', blackBelt: true}
         if (token === 'admin') return {uid: 'admin', admin: true}
+        if (token === 'classification-admin') return {uid: 'classification-admin', classificationAdmin: true}
         if (token === 'voter') return {uid: 'voter', classificationTeam: true}
         return {uid: 'ordinary'}
     })
@@ -47,6 +49,7 @@ beforeEach(() => {
         getEntryVotes: mocks.getEntryVotes,
         createVote: mocks.createVote,
         editVote: mocks.editVote,
+        moveVote: mocks.moveVote,
         deleteVote: mocks.deleteVote,
         createAction: mocks.createAction,
         publishBatch: mocks.publishBatch
@@ -54,6 +57,8 @@ beforeEach(() => {
     mocks.getEntryVotes.mockResolvedValue({entryId: 'lock-a', votes: [], nextCursor: null})
     mocks.createVote.mockResolvedValue({vote: {id: 'vote-a'}, entryRevision: 1})
     mocks.editVote.mockResolvedValue({vote: {id: 'vote-a'}, entryRevision: 2})
+    mocks.moveVote.mockResolvedValue({vote: {id: 'vote-b'}, entryRevision: 1,
+        sourceEntryRevision: 2})
     mocks.deleteVote.mockResolvedValue({voteId: 'vote-a', entryRevision: 3})
     mocks.createAction.mockResolvedValue({action: {id: 'action-a'}, entryRevision: 1})
     mocks.publishBatch.mockResolvedValue({publication: {id: 'publication-a'}})
@@ -158,6 +163,28 @@ describe('classification routes', () => {
             .set('Authorization', 'Bearer blackbelt').set('Idempotency-Key', 'blackbelt-publish')
             .send({})
         expect(publication.status).toBe(403)
+    })
+
+    it('allows only admins to move a vote and validates its target and revision', async () => {
+        const body = {entryId: 'lock-b', expectedRevision: 2}
+        const move = token => request(app).post('/api/v1/classification/votes/vote-a/move')
+            .set('Authorization', `Bearer ${token}`).set('Idempotency-Key', 'move-vote-key')
+
+        expect((await move('blackbelt').send(body)).status).toBe(403)
+        expect((await move('admin').send({entryId: 'lock-b', expectedRevision: 0})).status).toBe(400)
+        expect((await move('admin').send({...body, votedBelt: 'Blue'})).status).toBe(400)
+        expect(mocks.moveVote).not.toHaveBeenCalled()
+
+        const moved = await move('admin').send(body)
+        expect(moved.status).toBe(200)
+        expect(moved.body.data.vote.id).toBe('vote-b')
+        expect(mocks.moveVote).toHaveBeenCalledWith({uid: 'admin', admin: true},
+            'move-vote-key', 'vote-a', body)
+
+        expect((await move('classification-admin').send(body)).status).toBe(200)
+        expect(mocks.moveVote).toHaveBeenCalledWith(
+            {uid: 'classification-admin', classificationAdmin: true},
+            'move-vote-key', 'vote-a', body)
     })
 
     it('allows publication only to admins with a bounded action list', async () => {
