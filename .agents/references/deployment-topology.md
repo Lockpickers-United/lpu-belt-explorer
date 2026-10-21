@@ -51,7 +51,7 @@ It must never point to the `releases` directory itself. The specific target make
 
 ## Release and shared boundaries
 
-Each production release contains the tracked source, `package.json`, `yarn.lock`, Yarn configuration, runtime configuration, and its own installed dependencies. Keeping `node_modules` with its matching source and lockfile makes a rollback internally consistent.
+Each production release contains the tracked source, `package.json`, `yarn.lock`, Yarn configuration, runtime configuration, and its own production dependencies installed on the Linux x64 GitHub runner. Keeping `node_modules` with its matching source and lockfile makes a rollback internally consistent. The deployment checks the production host's platform and loads Sharp before activation.
 
 The `shared` directory is for state that must survive release changes and must not be committed:
 

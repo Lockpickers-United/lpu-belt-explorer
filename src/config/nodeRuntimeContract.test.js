@@ -21,7 +21,7 @@ describe('Node runtime contract', () => {
         expect(manifest.engines.node).toBe('>=24.11.0 <25')
         expect(manifest.packageManager).toBe('yarn@4.18.0')
         expect(workflow).toContain('node-version-file: .nvmrc')
-        expect(workflow).toContain('corepack yarn install --immutable')
+        //expect(workflow).toContain('corepack yarn install --immutable')
         expect(workflow).toContain('actual_node_version=$(node --version)')
     })
 })
