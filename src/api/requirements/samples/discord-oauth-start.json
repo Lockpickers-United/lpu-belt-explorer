@@ -1,0 +1,10 @@
+{
+  "metadata": {
+    "source": "firebase",
+    "fetchedDateTime": "2026-10-20T12:00:00.000Z"
+  },
+  "data": {
+    "state": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+    "authorizeUrl": "https://discord.com/oauth2/authorize?client_id=example-app-id&response_type=code&redirect_uri=https%3A%2F%2Flpubelts.com%2F%23%2Fauth%2Fdiscord&scope=identify&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+  }
+}

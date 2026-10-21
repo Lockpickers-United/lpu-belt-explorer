@@ -9,6 +9,8 @@ servers:
   - url: https://api.lpubelts.com/api/v1
     description: Production
 tags:
+  - name: Discord
+    description: Authenticated, short-lived Discord OAuth identity for award import or one belt request.
   - name: Classification
     description: Authenticated modern votes, decisions, and publication history.
   - name: Collection Stats
@@ -18,6 +20,62 @@ tags:
   - name: Users
     description: Firebase-backed user profile data.
 paths:
+  /discord/oauth/start:
+    post:
+      tags: [Discord]
+      summary: Start a browser-bound Discord authorization
+      description: Requires a Firebase ID token. The redirect URI must exactly match a server-configured allowlist entry. State expires after 10 minutes and can be exchanged once.
+      operationId: startDiscordOAuth
+      security: [{firebaseBearerAuth: []}]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {$ref: '#/components/schemas/DiscordOAuthStart'}
+      responses:
+        '200': {$ref: '#/components/responses/DiscordOAuthStartSuccess'}
+        '400': {$ref: '#/components/responses/Error'}
+        '401': {$ref: '#/components/responses/Error'}
+        '503': {$ref: '#/components/responses/Error'}
+  /discord/oauth/exchange:
+    post:
+      tags: [Discord]
+      summary: Exchange Discord code for verified identity
+      description: Consumes the state bound to the Firebase UID and initiating browser nonce before contacting Discord. A beltRequest exchange creates a one-use posting grant valid for 15 minutes; import creates no grant.
+      operationId: exchangeDiscordOAuth
+      security: [{firebaseBearerAuth: []}]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {$ref: '#/components/schemas/DiscordOAuthExchange'}
+      responses:
+        '200': {$ref: '#/components/responses/DiscordOAuthExchangeSuccess'}
+        '400': {$ref: '#/components/responses/Error'}
+        '401': {$ref: '#/components/responses/Error'}
+        '502': {$ref: '#/components/responses/Error'}
+        '503': {$ref: '#/components/responses/Error'}
+  /belt-requests/discord:
+    post:
+      tags: [Discord]
+      summary: Post one belt request through the configured Discord webhook
+      description: Requires a Firebase ID token and a one-use posting grant from a beltRequest OAuth exchange. The server derives userId and userName from that grant, formats the final embed, and consumes the grant before one webhook attempt. Success confirms webhook delivery, not LockyJr acceptance. Posting is disabled until a target is explicitly configured.
+      operationId: postDiscordBeltRequest
+      security: [{firebaseBearerAuth: []}]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {$ref: '#/components/schemas/DiscordBeltRequestPost'}
+      responses:
+        '200': {$ref: '#/components/responses/DiscordBeltRequestPostSuccess'}
+        '400': {$ref: '#/components/responses/Error'}
+        '401': {$ref: '#/components/responses/Error'}
+        '403': {$ref: '#/components/responses/Error'}
+        '429': {$ref: '#/components/responses/Error'}
+        '502': {$ref: '#/components/responses/Error'}
+        '503': {$ref: '#/components/responses/Error'}
+        '504': {$ref: '#/components/responses/Error'}
   /locks/{lockId}/videos:
     get:
       tags:
@@ -540,6 +598,30 @@ components:
       required: true
       schema: {type: string, minLength: 8, maxLength: 128}
   responses:
+    DiscordOAuthStartSuccess:
+      description: Private OAuth authorization URL and opaque state.
+      headers:
+        Cache-Control:
+          schema: {type: string, const: 'private, no-store'}
+      content:
+        application/json:
+          schema: {$ref: '#/components/schemas/DiscordOAuthStartResponse'}
+    DiscordOAuthExchangeSuccess:
+      description: Private verified Discord identity and optional one-use posting grant.
+      headers:
+        Cache-Control:
+          schema: {type: string, const: 'private, no-store'}
+      content:
+        application/json:
+          schema: {$ref: '#/components/schemas/DiscordOAuthExchangeResponse'}
+    DiscordBeltRequestPostSuccess:
+      description: The Discord webhook created a message in the configured target channel.
+      headers:
+        Cache-Control:
+          schema: {type: string, const: 'private, no-store'}
+      content:
+        application/json:
+          schema: {$ref: '#/components/schemas/DiscordBeltRequestPostResponse'}
     ClassificationSuccess:
       description: Firebase-backed Classification response; see the route descriptions for data shape.
       headers:
@@ -555,6 +637,109 @@ components:
           schema:
             $ref: '#/components/schemas/ErrorResponse'
   schemas:
+    DiscordOAuthStart:
+      type: object
+      additionalProperties: false
+      required: [purpose, nonce, redirectUri]
+      properties:
+        purpose: {type: string, enum: [import, beltRequest]}
+        returnTo: {type: [string, 'null'], enum: [/beltRequests, null], description: Required as /beltRequests for beltRequest; omitted or null for import.}
+        nonce: {type: string, pattern: '^[a-f0-9]{32}$'}
+        redirectUri: {type: string, format: uri, maxLength: 512}
+    DiscordOAuthExchange:
+      type: object
+      additionalProperties: false
+      required: [code, state, nonce]
+      properties:
+        code: {type: string, minLength: 1, maxLength: 2048}
+        state: {type: string, pattern: '^[A-Za-z0-9_-]{43}$'}
+        nonce: {type: string, pattern: '^[a-f0-9]{32}$'}
+    DiscordIdentity:
+      type: object
+      required: [discordId, username, avatarUrl, verifiedAt]
+      properties:
+        discordId: {type: string}
+        username: {type: string}
+        avatarUrl: {type: [string, 'null'], format: uri}
+        verifiedAt: {type: string, format: date-time}
+    DiscordOAuthStartResponse:
+      type: object
+      required: [metadata, data]
+      properties:
+        metadata: {$ref: '#/components/schemas/FirebaseMetadata'}
+        data:
+          type: object
+          required: [state, authorizeUrl]
+          properties:
+            state: {type: string}
+            authorizeUrl: {type: string, format: uri}
+    DiscordOAuthExchangeResponse:
+      type: object
+      required: [metadata, data]
+      properties:
+        metadata: {$ref: '#/components/schemas/FirebaseMetadata'}
+        data:
+          type: object
+          required: [purpose, returnTo, identity]
+          properties:
+            purpose: {type: string, enum: [import, beltRequest]}
+            returnTo: {type: [string, 'null']}
+            identity: {$ref: '#/components/schemas/DiscordIdentity'}
+            postingGrant: {type: string, description: Only present for beltRequest; send once to the posting endpoint.}
+    DiscordBeltRequestPost:
+      type: object
+      additionalProperties: false
+      required: [postingGrant, request]
+      properties:
+        postingGrant: {type: string, pattern: '^[A-Za-z0-9_-]{43}$'}
+        request:
+          type: object
+          additionalProperties: false
+          required: [requestBelt, entries, quests]
+          properties:
+            requestBelt: {type: string, maxLength: 32}
+            entries:
+              type: array
+              maxItems: 6
+              items:
+                type: object
+                additionalProperties: false
+                required: [lockName, belt, link]
+                properties:
+                  lockId: {type: string, maxLength: 128}
+                  matchId: {type: string, maxLength: 128}
+                  lockName: {type: string, maxLength: 160}
+                  belt: {type: string, maxLength: 32}
+                  link: {type: string, format: uri, maxLength: 2048, description: HTTP(S) evidence URL.}
+            quests:
+              type: array
+              maxItems: 2
+              items:
+                type: object
+                additionalProperties: false
+                required: [discipline, tier, details]
+                properties:
+                  discipline: {type: string, maxLength: 100}
+                  tier: {type: string, maxLength: 50}
+                  details: {type: string, maxLength: 500}
+            danRequestEvidence: {type: string, format: uri, maxLength: 2048, description: Required for Dan requests and must use HTTP(S).}
+            blueBeltProjectInfo: {type: string, maxLength: 1000}
+            blackBeltMentoringInfo: {type: string, maxLength: 1000}
+            notes: {type: string, maxLength: 1000}
+            redditUsername: {type: string, pattern: '^[A-Za-z0-9_-]{3,20}$'}
+    DiscordBeltRequestPostResponse:
+      type: object
+      required: [metadata, data]
+      properties:
+        metadata: {$ref: '#/components/schemas/DiscordMetadata'}
+        data:
+          type: object
+          required: [messageId, channelId, guildId, messageUrl]
+          properties:
+            messageId: {type: string}
+            channelId: {type: string}
+            guildId: {type: string}
+            messageUrl: {type: string, format: uri}
     ClassificationResponse:
       type: object
       required: [metadata, data]
@@ -685,6 +870,14 @@ components:
             updatedDateTime:
               type: string
               format: date-time
+    DiscordMetadata:
+      allOf:
+        - $ref: '#/components/schemas/ApiMetadata'
+        - type: object
+          required: [source, fetchedDateTime]
+          properties:
+            source: {const: discord}
+            fetchedDateTime: {type: string, format: date-time}
     FirebaseMetadata:
       allOf:
         - $ref: '#/components/schemas/ApiMetadata'

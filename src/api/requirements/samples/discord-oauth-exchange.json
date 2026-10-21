@@ -1,0 +1,17 @@
+{
+  "metadata": {
+    "source": "firebase",
+    "fetchedDateTime": "2026-10-20T12:00:00.000Z"
+  },
+  "data": {
+    "purpose": "beltRequest",
+    "returnTo": "/beltRequests",
+    "identity": {
+      "discordId": "123456789012345678",
+      "username": "example-picker",
+      "avatarUrl": null,
+      "verifiedAt": "2026-10-20T12:00:00.000Z"
+    },
+    "postingGrant": "synthetic-one-use-posting-grant"
+  }
+}
