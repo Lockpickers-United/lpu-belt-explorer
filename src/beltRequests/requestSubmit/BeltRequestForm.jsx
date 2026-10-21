@@ -1,4 +1,4 @@
-import React, {useCallback, useContext, useEffect, useMemo, useState} from 'react'
+import React, {useCallback, useContext, useEffect, useMemo, useRef, useState} from 'react'
 import Button from '@mui/material/Button'
 import Collapse from '@mui/material/Collapse'
 import Dialog from '@mui/material/Dialog'
@@ -13,9 +13,17 @@ import Paper from '@mui/material/Paper'
 import ScorecardDataContext from '../../scorecard/ScorecardDataProvider.jsx'
 import BeltRequestEntrySelect from './BeltRequestEntrySelect.jsx'
 import AuthContext from '../../app/AuthContext.jsx'
+import APIContext from '../../app/APIContext.jsx'
+import {enqueueSnackbar} from 'notistack'
+import {useLocation, useNavigate} from 'react-router-dom'
+import {peekDiscordPostingGrant, startDiscordAuth, takeDiscordPostingGrant} from '../../auth/discordAuth.js'
 import handleRequestSubmit from './handleRequestSubmit'
 import isValidUrl from '../../util/isValidUrl'
 import BeltRequestEpicQuest from './BeltRequestEpicQuest.jsx'
+import {buildDiscordBeltRequest, clearDiscordBeltRequestDraft, readDiscordBeltRequestDraft,
+    saveDiscordBeltRequestDraft} from './discordBeltRequest.js'
+
+const beltRequestsChannelUrl = 'https://discord.com/channels/140129091796992000/282173282546089985'
 
 /**
  * @prop requestBelt
@@ -25,10 +33,11 @@ import BeltRequestEpicQuest from './BeltRequestEpicQuest.jsx'
  */
 
 export default function BeltRequestForm() {
-    const isDev = process.env.NODE_ENV === 'development'
-
     const {profile} = useContext(ScorecardDataContext)
     const {user} = useContext(AuthContext)
+    const {startDiscordOAuth, postDiscordBeltRequest} = useContext(APIContext)
+    const location = useLocation()
+    const navigate = useNavigate()
     const userId = user?.uid
     const {
         visibleEntries = []
@@ -44,6 +53,12 @@ export default function BeltRequestForm() {
     let questFieldNames
     const [lockCount, setLockCount] = useState(0)
     const [questCount, setQuestCount] = useState(0)
+    const [sending, setSending] = useState(false)
+    const [delivery, setDelivery] = useState(null)
+    const [draftRestored, setDraftRestored] = useState(false)
+    const sendingRef = useRef(false)
+    const restoredFor = useRef(null)
+    const autoPostHandled = useRef(false)
 
     const processChange = useCallback((event) => {
         const {name, value} = event.target
@@ -88,7 +103,6 @@ export default function BeltRequestForm() {
     }, [])
 
     const processSubmit = useCallback((form) => {
-        console.log('processSubmit called')
         handleRequestSubmit(form)
         const newForm = {...form}
         // pre-process
@@ -96,11 +110,22 @@ export default function BeltRequestForm() {
     }, [])
 
     const handleSubmit = useCallback((_form) => {
-        console.log('handleSubmit called')
         //    const {saveSurveySubmission} = useContext(DBContext)
     }, [])
 
     form = useForm({baseForm, processChange, processSubmit, handleSubmit})
+    const restoreForm = form.restore
+
+    useEffect(() => {
+        if (!userId || restoredFor.current === userId) return
+        restoredFor.current = userId
+        const draft = readDiscordBeltRequestDraft(userId)
+        if (!draft) return
+        restoreForm(draft.form)
+        setLockCount(draft.lockCount)
+        setQuestCount(draft.questCount)
+        setDraftRestored(true)
+    }, [userId, restoreForm])
 
     useEffect(() => {
         if (!form.intialized) {
@@ -110,8 +135,6 @@ export default function BeltRequestForm() {
             })
         }
     }, [form])
-
-    isDev && console.log('dev log: form', form)
 
     const beltIndex = useMemo(() => beltRoles.indexOf(form.form.requestBelt), [form])
 
@@ -167,6 +190,106 @@ export default function BeltRequestForm() {
 
     const sectionCount = 4
 
+    const hasPostingGrant = Boolean(userId && peekDiscordPostingGrant(userId))
+    const postingStatus = sending
+        ? 'Sending your request to Discord...'
+        : delivery
+            ? 'Your request was delivered to Discord.'
+            : hasPostingGrant
+                ? 'Discord is authorized. Your request is ready to send.'
+                : draftRestored
+                    ? 'Your draft was restored. Click Post to Discord to authorize again.'
+                    : ''
+
+    const sendDiscordRequest = useCallback(async (request) => {
+        if (sendingRef.current) return
+        const postingGrant = takeDiscordPostingGrant(userId)
+        if (!postingGrant) {
+            enqueueSnackbar('Discord authorization expired. Click Post to Discord to authorize again.',
+                {variant: 'warning'})
+            return
+        }
+        sendingRef.current = true
+        setSending(true)
+        try {
+            const result = await postDiscordBeltRequest({postingGrant, request})
+            clearDiscordBeltRequestDraft()
+            setDelivery(result)
+            setDraftRestored(false)
+        } catch (error) {
+            if (['discord_grant_invalid', 'discord_grant_expired', 'discord_grant_forbidden'].includes(error.code)) {
+                enqueueSnackbar('Discord authorization expired or was used. Click Post to Discord to authorize again.',
+                    {variant: 'warning'})
+            } else if (error.code === 'discord_send_uncertain') {
+                enqueueSnackbar('Delivery could not be confirmed. Check the Discord channel before trying again.',
+                    {variant: 'warning'})
+            } else if (error.code === 'discord_rate_limited') {
+                enqueueSnackbar(`Discord is rate limiting requests. Wait ${error.retryAfter || 'a while'} seconds before trying again.`,
+                    {variant: 'warning'})
+            } else if (error.code === 'belt_request_posting_disabled') {
+                enqueueSnackbar('Discord posting is disabled on the API server. Your draft is saved; try again after the test webhook is configured.',
+                    {variant: 'warning'})
+            } else {
+                enqueueSnackbar(`Could not post to Discord: ${error.message}`, {variant: 'error'})
+            }
+        } finally {
+            sendingRef.current = false
+            setSending(false)
+        }
+    }, [userId, postDiscordBeltRequest])
+
+    useEffect(() => {
+        if (!location.state?.discordAutoPost || !userId || autoPostHandled.current) return
+        autoPostHandled.current = true
+        navigate(location.pathname, {replace: true, state: null})
+        const draft = readDiscordBeltRequestDraft(userId)
+        if (!draft || !peekDiscordPostingGrant(userId)) {
+            enqueueSnackbar('Your Discord request could not be resumed. Review your draft and try again.',
+                {variant: 'warning'})
+            return
+        }
+        try {
+            sendDiscordRequest(buildDiscordBeltRequest(draft.form))
+        } catch (error) {
+            enqueueSnackbar(error.message, {variant: 'error'})
+        }
+    }, [location.state, location.pathname, userId, navigate, sendDiscordRequest])
+
+    const handleDiscordPost = useCallback(async () => {
+        if (!userId) {
+            enqueueSnackbar('Sign in to post a belt request to Discord.', {variant: 'warning'})
+            return
+        }
+        if (!form.canSave || sendingRef.current) return
+        let request
+        try {
+            request = buildDiscordBeltRequest(form.form)
+        } catch (error) {
+            enqueueSnackbar(error.message, {variant: 'error'})
+            return
+        }
+        try {
+            saveDiscordBeltRequestDraft({uid: userId, form: form.form, lockCount, questCount})
+        } catch {
+            enqueueSnackbar('Could not save your request draft for Discord authorization.', {variant: 'error'})
+            return
+        }
+        if (!peekDiscordPostingGrant(userId)) {
+            sendingRef.current = true
+            setSending(true)
+            try {
+                await startDiscordAuth({startDiscordOAuth, purpose: 'beltRequest', returnTo: '/beltRequests'})
+            } catch (error) {
+                enqueueSnackbar(`Could not connect Discord: ${error.message}`, {variant: 'error'})
+            } finally {
+                sendingRef.current = false
+                setSending(false)
+            }
+            return
+        }
+        await sendDiscordRequest(request)
+    }, [userId, form.canSave, form.form, lockCount, questCount, startDiscordOAuth, sendDiscordRequest])
+
     return (
 
         <div style={{
@@ -178,7 +301,8 @@ export default function BeltRequestForm() {
                 This form makes it easy to compose your belt request to be clear and
                 easy for moderators to review. Simply select the belt you&#39;re requesting
                 and complete each of the steps that follow. <strong>Once you&#39;re done,
-                click the &#34;Copy Request&#34; button and paste it into the platform of you prefer</strong>. Please
+                click &#34;Copy Request&#34; to paste it yourself, or choose Discord Post and use
+                &#34;Post to Discord&#34; to authorize and send it.</strong> Please
                 note: incomplete requests &mdash; or those which do not meet the belt
                 requirements &mdash; may be rejected without review.
             </div>
@@ -395,15 +519,37 @@ export default function BeltRequestForm() {
                 }
             </Collapse>
 
-            <div style={{display: 'flex', justifyContent: 'center', marginTop: 24, marginBottom: 16}}>
+            <div style={{display: 'flex', justifyContent: 'center', marginTop: 32, marginBottom: 16}}>
                 <Button onClick={form.submit} variant='contained' color='info'
-                        disabled={!form.canSave} style={{boxShadow: 'none'}}>
-                    {form.updating
+                        disabled={!form.canSave || form.submitting || sending}
+                        style={{boxShadow: 'none', margin: '0 10px'}}>
+                    {form.submitting
                         ? <LoadingDisplayWhiteSmall size={'small'}/>
                         : 'Copy Request'
                     }
                 </Button>
+                <Button onClick={handleDiscordPost} variant='contained' color='info'
+                        aria-label='Post to Discord'
+                        disabled={!form.canSave || form.submitting || sending ||
+                            form.form.requestPlatform !== 'Discord Post'}
+                        style={{boxShadow: 'none', margin: '0 10px'}}>
+                    {sending
+                        ? <LoadingDisplayWhiteSmall size={'small'}/>
+                        : 'Post to Discord'
+                    }
+                </Button>
             </div>
+
+            {form.form.requestPlatform === 'Discord Post' &&
+                <Typography sx={{textAlign: 'center', marginBottom: 2}}>
+                    {postingStatus}
+                </Typography>
+            }
+            {location.state?.discordAuthError &&
+                <Typography color='error' sx={{textAlign: 'center', marginBottom: 2}}>
+                    {location.state.discordAuthError}
+                </Typography>
+            }
 
 
             <Dialog open={form.submitted} slotProps={{
@@ -419,6 +565,10 @@ export default function BeltRequestForm() {
                         }}>Request Copied to Clipboard
                         </Typography>
                         <div style={{width: '100%', textAlign: 'center'}}>
+                            <Button href={beltRequestsChannelUrl} target='_blank' rel='noopener noreferrer'
+                                    variant='outlined' color='info' sx={{marginRight: 2}}>
+                                Open #belt-requests
+                            </Button>
                             <Button onClick={form.clearSubmit} variant='contained' color='success'
                                     style={{marginLeft: 'auto', marginRight: 'auto'}}>
                                 OK
@@ -426,6 +576,25 @@ export default function BeltRequestForm() {
                         </div>
                     </Paper>
                 </div>
+            </Dialog>
+
+            <Dialog open={Boolean(delivery)} onClose={() => setDelivery(null)} slotProps={{
+                backdrop: {style: {backgroundColor: '#000', opacity: 0.8}}
+            }}>
+                <Paper sx={{padding: '40px', textAlign: 'center'}}>
+                    <Typography sx={{fontSize: '1.5rem', fontWeight: 500, marginBottom: 2}}>
+                        Request sent to Discord
+                    </Typography>
+                    <Typography sx={{marginBottom: 4}}>
+                        LockyJr is processing it now!
+                    </Typography>
+
+                    <Button href={beltRequestsChannelUrl} target='_blank' rel='noopener noreferrer'
+                            variant='outlined' color='info' sx={{marginRight: 2}}>
+                        Open #belt-requests
+                    </Button>
+                    <Button onClick={() => setDelivery(null)} variant='outlined' color='success'>Thanks</Button>
+                </Paper>
             </Dialog>
 
             <Tracker feature='beltRequest'/>

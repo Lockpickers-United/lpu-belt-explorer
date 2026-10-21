@@ -15,7 +15,7 @@ const app = initializeApp({
 const db = getFirestore(app)
 const blackBeltAwardId = 'da7759a9'
 
-const WRITE_TO_DB = false
+const WRITE_TO_DB = true
 const TEST_IDS = [] //['T8ZIBbRo2pXkxzybohOPf7McW532']
 
 const DEBUG = true

@@ -65,6 +65,12 @@ export default function useForm({baseForm, processChange, processSubmit, handleS
         //setTimeout(() => {window.scrollTo({left: 0, top: 0, behavior: 'smooth'})}, 100)
     }, [baseForm])
 
+    const restore = useCallback((savedForm) => {
+        setForm(savedForm)
+        setChanged(true)
+        setSubmitted(false)
+    }, [])
+
     const clearSubmit = useCallback(() => {
         setSubmitted(false)
         setTimeout(() => {
@@ -113,6 +119,7 @@ export default function useForm({baseForm, processChange, processSubmit, handleS
         clearOnSumbit,
         clearSubmit,
         reload,
+        restore,
         error
     }
 }

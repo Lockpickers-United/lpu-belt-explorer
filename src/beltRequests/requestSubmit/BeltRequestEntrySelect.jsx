@@ -29,6 +29,10 @@ export default function BeltRequestEntrySelect({
         : 'selectLock', [isLoggedIn])
 
     const [source, setSource] = useState(defaultEntryType)
+    useEffect(() => {
+        const entry = form.form?.[fieldName]
+        if (entry) setSource(entry.lockId ? 'selectLock' : 'scorecard')
+    }, [fieldName, form.form])
     const handleChangeSource = useCallback((option) => {
         setSource(option.value)
         form.update({target: {name: fieldName, action: 'delete'}})
@@ -133,7 +137,8 @@ export default function BeltRequestEntrySelect({
                     {source === 'scorecard' && scorecardEntries.length > 0 &&
                         <>
                             <ScorecardEntrySearchBox handleChangeScorecardEntry={handleChangeEntry}
-                                                     scorecardEntries={scorecardEntries}/>
+                                                     scorecardEntries={scorecardEntries}
+                                                     selectedEntry={form.form?.[fieldName]}/>
                             <div style={{display: 'flex', alignItems: 'center', marginTop: 10, height: 32}}>
                                 {form.form?.[fieldName] &&
                                     form.form[fieldName].link
@@ -176,7 +181,7 @@ export default function BeltRequestEntrySelect({
 
                         <div>
                             <LockEntrySearchBox handleChangeLock={handleChangeEntry} allEntries={lockEntries}
-                                                lockIndex={0}/>
+                                                lockId={form.form?.[fieldName]?.lockId} lockIndex={0}/>
                             <div style={{marginTop: 10}}>
                                 Link to evidence
                                 <TextField type='text'

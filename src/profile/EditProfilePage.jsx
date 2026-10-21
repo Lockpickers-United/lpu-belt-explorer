@@ -8,6 +8,8 @@ import Button from '@mui/material/Button'
 import Menu from '@mui/material/Menu'
 import LoadingDisplay from '../misc/LoadingDisplay'
 import useWindowSize from '../util/useWindowSize.jsx'
+import APIContext from '../app/APIContext.jsx'
+import {startDiscordAuth} from '../auth/discordAuth.js'
 
 function EditProfilePage() {
     const {
@@ -26,6 +28,7 @@ function EditProfilePage() {
     const [deletingData, setDeletingData] = useState(false)
     const navigate = useNavigate()
     const {user} = useContext(AuthContext)
+    const {startDiscordOAuth} = useContext(APIContext)
     const {isMobile} = useWindowSize()
 
     const handleChange = useCallback(event => {
@@ -72,14 +75,13 @@ function EditProfilePage() {
         enqueueSnackbar(`${service} account removed.`)
     }, [removeServiceAuth])
 
-    const handleDiscordAuth = useCallback(() => {
-        const {VITE_DISCORD_CLIENT_ID: clientId} = import.meta.env
-        const scope = encodeURIComponent('identify')
-        const redirectUri = encodeURIComponent(`${location.origin}/#/auth/discord`)
-
-        const url = `https://discord.com/oauth2/authorize?client_id=${clientId}&response_type=code&redirect_uri=${redirectUri}&scope=${scope}`
-        window.location.assign(url)
-    }, [])
+    const handleDiscordAuth = useCallback(async () => {
+        try {
+            await startDiscordAuth({startDiscordOAuth, purpose: 'import'})
+        } catch (error) {
+            enqueueSnackbar(`Could not connect Discord: ${error.message}`, {variant: 'error'})
+        }
+    }, [startDiscordOAuth])
 
     const handleRedditAuth = useCallback(async () => {
         const {VITE_REDDIT_CLIENT_ID: clientId} = import.meta.env

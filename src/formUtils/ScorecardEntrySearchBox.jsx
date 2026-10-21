@@ -11,6 +11,7 @@ import BeltStripeMini from '../entries/BeltStripeMini.jsx'
 export default function ScorecardEntrySearchBox({
                                                     handleChangeScorecardEntry,
                                                     scorecardEntries = [],
+                                                    selectedEntry,
                                                     disabled,
                                                     reset = false,
                                                 }) {
@@ -44,6 +45,10 @@ export default function ScorecardEntrySearchBox({
 
         return {label: lockName, id, matchId, lockName, belt, link}
     })
+    const selectedOption = selectedEntry
+        ? options.find(option => option.matchId === selectedEntry.matchId &&
+            option.id === selectedEntry.id) || null
+        : null
 
     const handleChange = useCallback((_event, value) => {
         if (!value) {
@@ -67,8 +72,8 @@ export default function ScorecardEntrySearchBox({
                 fullWidth
                 style={style}
                 options={options}
+                value={selectedOption}
                 onChange={handleChange}
-                onInputChange={handleChange}
                 renderInput={(params) =>
                     <TextField
                         {...params}

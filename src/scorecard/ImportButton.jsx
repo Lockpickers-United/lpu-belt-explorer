@@ -13,11 +13,15 @@ import DBContext from '../app/DBContext.jsx'
 import useWindowSize from '../util/useWindowSize.jsx'
 import Link from '@mui/material/Link'
 import {Collapse} from '@mui/material'
+import {enqueueSnackbar} from 'notistack'
+import APIContext from '../app/APIContext.jsx'
+import {startDiscordAuth} from '../auth/discordAuth.js'
 
 function ImportButton({profile}) {
     const {isMobile} = useWindowSize()
     const {user} = useContext(AuthContext)
     const {oauthState} = useContext(DBContext)
+    const {startDiscordOAuth} = useContext(APIContext)
     const danSheetImported = profile?.blackBeltAwardedAt > 0
 
     const [danImportOpen, setDanImportOpen] = useState(false)
@@ -36,14 +40,13 @@ function ImportButton({profile}) {
         setOpen(true)
     }
 
-    const handleDiscordAuth = useCallback(() => {
-        const {VITE_DISCORD_CLIENT_ID: clientId} = import.meta.env
-        const scope = encodeURIComponent('identify')
-        const redirectUri = encodeURIComponent(`${location.origin}/#/auth/discord`)
-
-        const url = `https://discord.com/oauth2/authorize?client_id=${clientId}&response_type=code&redirect_uri=${redirectUri}&scope=${scope}`
-        window.location.assign(url)
-    }, [])
+    const handleDiscordAuth = useCallback(async () => {
+        try {
+            await startDiscordAuth({startDiscordOAuth, purpose: 'import'})
+        } catch (error) {
+            enqueueSnackbar(`Could not connect Discord: ${error.message}`, {variant: 'error'})
+        }
+    }, [startDiscordOAuth])
 
     const handleRedditAuth = useCallback(async () => {
         const {VITE_REDDIT_CLIENT_ID: clientId} = import.meta.env

@@ -99,6 +99,51 @@ export function APIProvider({children}) {
         }
     }, [user])
 
+    const discordCommand = useCallback(async (method, path, body) => {
+        if (!user?.getIdToken) throw new Error('Sign in to connect Discord')
+        const token = await user.getIdToken()
+        try {
+            const response = await axios({
+                method,
+                url: `${apiServerUrl}/api/v1/discord/${path}`,
+                data: body,
+                headers: {Authorization: `Bearer ${token}`},
+                timeout: 15000
+            })
+            return response.data.data
+        } catch (error) {
+            const message = error.response?.data?.error?.message ?? error.message
+            throw Object.assign(new Error(message), {
+                status: error.response?.status,
+                code: error.response?.data?.error?.code
+            })
+        }
+    }, [user])
+
+    const startDiscordOAuth = useCallback(input =>
+        discordCommand('post', 'oauth/start', input), [discordCommand])
+    const exchangeDiscordOAuth = useCallback(input =>
+        discordCommand('post', 'oauth/exchange', input), [discordCommand])
+    const postDiscordBeltRequest = useCallback(async input => {
+        if (!user?.getIdToken) throw new Error('Sign in to post to Discord')
+        const token = await user.getIdToken()
+        try {
+            const response = await axios({method: 'post',
+                url: `${apiServerUrl}/api/v1/belt-requests/discord`,
+                data: input,
+                headers: {Authorization: `Bearer ${token}`},
+                timeout: 15000
+            })
+            return response.data.data
+        } catch (error) {
+            const message = error.response?.data?.error?.message ?? error.message
+            throw Object.assign(new Error(message), {
+                status: error.response?.status,
+                code: error.response?.data?.error?.code,
+                retryAfter: error.response?.headers?.['retry-after']
+            })
+        }
+    }, [user])
 
     const value = useMemo(() => ({
         fetchProfileSummary,
@@ -108,11 +153,14 @@ export function APIProvider({children}) {
         fetchClassificationStaged,
         fetchClassificationPublications,
         fetchClassificationPublication,
-        classificationCommand
+        classificationCommand,
+        startDiscordOAuth,
+        exchangeDiscordOAuth,
+        postDiscordBeltRequest
     }), [fetchProfileFull,
         fetchProfileSummary, fetchClassificationEntryVotes, fetchClassificationAction,
         fetchClassificationStaged, fetchClassificationPublications, fetchClassificationPublication,
-        classificationCommand
+        classificationCommand, startDiscordOAuth, exchangeDiscordOAuth, postDiscordBeltRequest
     ])
 
     return (

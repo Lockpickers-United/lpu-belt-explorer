@@ -2,6 +2,7 @@ import fs from 'fs'
 import {initializeApp, cert} from 'firebase-admin/app'
 import {getFirestore} from 'firebase-admin/firestore'
 import {getAuth} from 'firebase-admin/auth'
+import dayjs from 'dayjs'
 
 const serviceAccount = JSON.parse(fs.readFileSync('../keys/lpu-belt-explorer-firebase-adminsdk.json').toString())
 const app = initializeApp({
@@ -59,6 +60,8 @@ const _allUsers = [
 
 async function updateCustomClaimsForUsers() {
     let failed = false
+    const updatedAt = dayjs().toISOString()
+
     for (const user of users) {
         const {uid, name} = user
         try {
@@ -72,7 +75,7 @@ async function updateCustomClaimsForUsers() {
 
             if (WRITE_TO_DB) {
                 const results = await Promise.allSettled(databases.map(({db}) =>
-                    db.doc(`/user-claims-info/${uid}`).set({...updatedClaims, name})))
+                    db.doc(`/user-claims-info/${uid}`).set({...updatedClaims, name, uid, updatedAt})))
                 const failures = results.flatMap((result, index) => result.status === 'rejected'
                     ? [`${databases[index].name}: ${result.reason}`]
                     : [])

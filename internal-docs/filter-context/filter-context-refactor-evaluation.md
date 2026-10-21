@@ -9,7 +9,7 @@ The useful change is the separation between:
 - committed filters, parsed from the URL and used by data providers; and
 - local advanced-filter rows, which may include incomplete UI drafts that must not filter data.
 
-That separation fixes a real defect in `lpu-belt-explorer`: its URL reconciliation preserves old local groups that are absent from a newly visited filtered URL, and its data providers use those local groups as active filters. For example, navigating from a URL filtered by field A to one filtered only by field B can leave A in `advancedGroups`; the data layer then applies A and B even though the URL contains only B (`src/context/FilterContext.jsx`, current lines 281-324).
+That separation fixes a real defect in `lpu-belt-explorer`: its URL reconciliation preserves old local groups that are absent from a newly visited filtered URL, and its data providers use those local groups as active filters. For example, navigating from a URL filtered by field A to one filtered only by field B can leave A in `advancedGroups`; the data layer then applies A and B even though the URL contains only B (`../../src/context/FilterContext.jsx`, current lines 281-324).
 
 The `something.coffee` version makes the URL authoritative through `activeFilterGroups()`, which is the right contract. Its synchronization code still has several correctness problems, so the recommended implementation is a hardened common core with thin project-specific adapters.
 
@@ -93,18 +93,18 @@ The `something.coffee` version makes the URL authoritative through `activeFilter
 
 The ten LPU data-provider paths that need the committed selector are:
 
-- `src/classification/ClassificationDataProvider.jsx`
-- `src/locks/LockDataProvider.jsx`
-- `src/projectsQuests/ProjectsDataProvider.jsx`
-- `src/rafl/RaffleCharitiesProvider.jsx`
-- `src/rafl/RaffleDataProvider.jsx`
-- `src/rafl/admin/RaffleAdminDataProviderEntries.jsx`
-- `src/rafl/admin/RaffleAdminDataProviderPots.jsx`
-- `src/rankingRequests/LockRequestsDataProvider.jsx`
-- `src/safelocks/SafelocksDataProvider.jsx`
-- `src/scorecard/ScorecardDataProvider.jsx`
+- `../../src/classification/ClassificationDataProvider.jsx`
+- `../../src/locks/LockDataProvider.jsx`
+- `../../src/projectsQuests/ProjectsDataProvider.jsx`
+- `../../src/rafl/RaffleCharitiesProvider.jsx`
+- `../../src/rafl/RaffleDataProvider.jsx`
+- `../../src/rafl/admin/RaffleAdminDataProviderEntries.jsx`
+- `../../src/rafl/admin/RaffleAdminDataProviderPots.jsx`
+- `../../src/rankingRequests/LockRequestsDataProvider.jsx`
+- `../../src/safelocks/SafelocksDataProvider.jsx`
+- `../../src/scorecard/ScorecardDataProvider.jsx`
 
-`src/filters/AdvancedFilterByField.jsx` should continue to use the UI rows when it calculates progressive option counts, but that use needs explicit tests because it intentionally differs from the data-provider contract.
+`../../src/filters/AdvancedFilterByField.jsx` should continue to use the UI rows when it calculates progressive option counts, but that use needs explicit tests because it intentionally differs from the data-provider contract.
 
 ## Target design
 
@@ -348,7 +348,7 @@ active-plus-draft edits, empty value slots, external and browser-history navigat
 deletion, default-filter precedence, and a real lock-provider field-A-to-field-B route
 transition. The full LPU unit suite, test build, focused browser filter journeys, and
 cross-repository pure-file comparisons pass. The only full-lint diagnostic is the
-pre-existing unused `detailsWidth` warning in `src/entries/Entry.jsx`.
+pre-existing unused `detailsWidth` warning in `../../src/entries/Entry.jsx`.
 
 ### URL-key inventory: `lpu-belt-explorer`
 
@@ -567,8 +567,8 @@ Apply these fixes to `something.coffee` first because its current implementation
 Completed on 2026-10-03. All eight integration steps below are implemented and covered
 by the Phase 3 findings and verification log in the implementation report.
 
-1. Add the shared pure modules and context tests under `tests/vitest`.
-2. Replace the embedded codec in `src/context/FilterContext.jsx` with the shared helpers and expose committed and UI selectors separately.
+1. Add the shared pure modules and context tests under `../../tests/vitest`.
+2. Replace the embedded codec in `../../src/context/FilterContext.jsx` with the shared helpers and expose committed and UI selectors separately.
 3. Audit route-control keys and pass the LPU extension list. At minimum, verify `uid`, `belt`, `hours`, `photographers`, `preview`, `dataset`, `scorecardId`, and all currently listed keys by behavior rather than name alone.
 4. Migrate the ten data-provider paths above to the committed selector in the same change. Leaving any provider on draft rows would preserve inconsistent behavior between routes.
 5. Move `AdvancedFilters` row operations to the corrected shared hook, retaining LPU-specific field visibility and layout.
@@ -597,7 +597,7 @@ Roll out without changing the existing URL syntax. Before merge, manually compar
 
 - Both working trees had no tracked modifications at the start of this documentation pass. The supplied evaluation document was untracked in LPU.
 - The LPU focused route baseline passed: 3 test files and 16 tests (`LockListRoute`, `SafelocksRoute`, and `ContentRoutes`).
-- Focused ESLint passed for `src/data/filterFields.js` and `src/classification/ClassificationDataProvider.jsx` after the `assignedBelt` rename.
+- Focused ESLint passed for `../../src/data/filterFields.js` and `src/classification/ClassificationDataProvider.jsx` after the `assignedBelt` rename.
 - The `something.coffee` focused filter suite passed: 4 test files and 12 tests (`filterUrlState`, `FilterContext`, `AdvancedSelect`, and `filterEntriesAdvanced`).
 - A direct serializer check demonstrated that two same-field groups reduce to the last group.
 - A direct parser check demonstrated that compatible repeated scalar parameters become one AND group, while mixed-sign repetitions become two groups and then reserialize to only the last group.

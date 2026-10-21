@@ -82,7 +82,6 @@ jobs:
         run: npm run ci-build
         env:
           VITE_FIREBASE_API_KEY: ${{ vars.VITE_FIREBASE_API_KEY }}
-          VITE_DISCORD_CLIENT_SECRET: ${{ vars.VITE_DISCORD_CLIENT_SECRET }}
           VITE_REDDIT_CLIENT_SECRET: ${{ vars.VITE_REDDIT_CLIENT_SECRET }}
           # Manual releases choose their stage; automatic releases retain the environment setting.
           VITE_CLASSIFICATION_WRITE_STAGE: ${{ github.event_name == 'workflow_dispatch' && inputs.classification_write_stage || vars.VITE_CLASSIFICATION_WRITE_STAGE || 'read' }}

@@ -1,120 +1,116 @@
-import React, {useState, useContext, useEffect, useRef} from 'react'
-import DBContext from '../app/DBContext'
+import React, {useContext, useEffect, useRef, useState} from 'react'
+import {useNavigate} from 'react-router-dom'
+import AuthContext from '../app/AuthContext.jsx'
+import APIContext from '../app/APIContext.jsx'
+import DBContext from '../app/DBContext.jsx'
 import {lookupAwardByBelt} from '../entries/entryutils'
 import ImportPreview from '../scorecard/ImportPreview.jsx'
 import {ProfileProvider} from '../app/ProfileContext.jsx'
+import {
+    clearDiscordAuthSession, clearDiscordCallbackQuery, peekDiscordAuthSession, storeDiscordPostingGrant,
+    takeDiscordAuthNonce
+} from './discordAuth.js'
+
+function mapAwards(awardDocs) {
+    const awards = awardDocs.map(award => {
+        const entry = lookupAwardByBelt(
+            award.discordAwardName.match(/^(\w+) Belt/)?.[1],
+            award.discordAwardName.match(/^(\d+)/)?.[1],
+            award.discordAwardName
+        )
+        return entry && {
+            matchId: entry.id,
+            awardedAt: award.awardCreatedAt.toDate().toUTCString(),
+            link: award.awardUrl
+        }
+    }).filter(Boolean)
+    return Object.values(awards.reduce((result, award) => {
+        if (!result[award.matchId] ||
+            new Date(award.awardedAt) < new Date(result[award.matchId].awardedAt)) {
+            result[award.matchId] = award
+        }
+        return result
+    }, {}))
+}
 
 function AuthDiscordRoute() {
+    const {authLoaded, user} = useContext(AuthContext)
+    const {exchangeDiscordOAuth} = useContext(APIContext)
     const {setDiscordUserInfo, peekAtDiscordAwards} = useContext(DBContext)
-    const {VITE_DISCORD_CLIENT_ID: clientId, VITE_DISCORD_CLIENT_SECRET: clientSecret} = import.meta.env
-    const searchParams = URL.parse(window.location.href).searchParams
-    const urlError = searchParams.get('error')
-    const code = searchParams.get('code')
-    const iss = searchParams.get('iss')
-    const urlCode = iss === 'https://discord.com' ? code : 'failed-to-get-code'
-
-    const [credentials, setCredentials] = useState(null)
-    const [syncResult, setSyncResult] = useState({})
+    const navigate = useNavigate()
+    const params = new URL(window.location.href).searchParams
+    const code = params.get('code')
+    const state = params.get('state')
+    const issuer = params.get('iss')
+    const urlError = params.get('error')
+    const pending = peekDiscordAuthSession()
+    const pendingBeltRequest = pending?.purpose === 'beltRequest' && pending?.returnTo === '/beltRequests'
+    const [syncResult, setSyncResult] = useState(null)
     const [syncException, setSyncException] = useState(null)
     const usedCode = useRef(false)
 
-    const syncStatus = syncException || (Object.keys(syncResult).length > 0 ? 'complete' : false)
-
     useEffect(() => {
-        async function getAccessToken() {
-            let resp = null
-            try {
-                resp = await fetch('https://discord.com/api/oauth2/token', {
-                    method: 'POST',
-                    body: new URLSearchParams({
-                        grant_type: 'authorization_code',
-                        code: urlCode,
-                        redirect_uri: `${location.origin}/#/auth/discord`
-                    }).toString(),
-                    headers: {
-                        'Authorization': 'Basic ' + btoa(clientId + ':' + clientSecret),
-                        'Content-Type': 'application/x-www-form-urlencoded'
-                    }
-                })
-            } catch (_error) {
-                setSyncException('token_failed')
-                return
-            }
-            if (200 === resp.status) {
-                const data = await resp.json()
-                setCredentials({token: data.access_token, type: data.token_type})
-            } else if (400 === resp.status) {
-                setSyncException('token_expired')
+        if (!authLoaded || usedCode.current) return
+        usedCode.current = true
+        clearDiscordCallbackQuery()
+
+        const showError = (status, beltMessage) => {
+            if (pendingBeltRequest) {
+                navigate('/beltRequests', {replace: true, state: {discordAuthError: beltMessage}})
             } else {
-                setSyncException('token_failed')
+                setSyncException(status)
             }
         }
 
         if (urlError) {
-            setSyncException('access_denied')
-        } else if (urlCode && !usedCode.current) {
-            if (urlCode === 'failed-to-get-code') {
-                setSyncException('data_failed')
-                return
-            }
-            usedCode.current = true
-            getAccessToken()
+            clearDiscordAuthSession()
+            showError('access_denied', 'Discord authorization was canceled. Your request draft is still available.')
+            return
         }
-    }, [urlCode, urlError, clientId, clientSecret])
+        if (!user?.uid || !code || !state || (issuer && issuer !== 'https://discord.com')) {
+            showError('data_failed', 'Discord authorization could not be completed. Please try again.')
+            return
+        }
+        const nonce = takeDiscordAuthNonce(state)
+        if (!nonce) {
+            showError('data_failed', 'Discord authorization could not be completed. Please try again.')
+            return
+        }
 
-    useEffect(() => {
-        async function syncDiscordUsername(type, token) {
-            let resp = null
+        async function completeDiscordAuth() {
             try {
-                resp = await fetch('https://discord.com/api/users/@me', {
-                    headers: {authorization: `${type} ${token}`}
-                })
-            } catch (_error) {
-                setSyncException('data_failed')
-                return
-            }
-            if (200 !== resp.status) {
-                setSyncException('data_failed')
-                return
-            }
-            try {
-                const data = await resp.json()
-                const awardDocs = await peekAtDiscordAwards(data.id)
-                const awards = awardDocs.map(aw => {
-                    const entry = lookupAwardByBelt(aw.discordAwardName.match(/^(\w+) Belt/)?.[1], aw.discordAwardName.match(/^(\d+)/)?.[1], aw.discordAwardName)
-                    return entry && {
-                        matchId: entry.id,
-                        awardedAt: aw.awardCreatedAt.toDate().toUTCString(),
-                        link: aw.awardUrl
-                    }
-                }).filter(Boolean)
-                if (awards.length > 0) {
-                    const dedupAwards = Object.values(
-                        awards.reduce((acc, msg) => {
-                            if (!acc[msg.matchId] || new Date(msg.awardedAt) < new Date(acc[msg.matchId].awardedAt)) {
-                                acc[msg.matchId] = msg
-                            }
-                            return acc
-                        }, {})
-                    )
-                    await setDiscordUserInfo(data.id, data.username)
-                    setSyncResult({id: data.id, username: data.username, awards: dedupAwards})
-                } else {
-                    setSyncException('none_found')
+                const result = await exchangeDiscordOAuth({code, state, nonce})
+                if (result.purpose === 'beltRequest' && result.returnTo === '/beltRequests'
+                    && result.postingGrant) {
+                    storeDiscordPostingGrant(result.postingGrant, user.uid)
+                    navigate(result.returnTo, {replace: true, state: {discordAutoPost: true}})
+                    return
                 }
-            } catch (_error) {
-                setSyncException('data_failed')
+                if (result.purpose !== 'import') throw new Error('Invalid Discord auth purpose')
+
+                const {discordId, username} = result.identity
+                await setDiscordUserInfo(discordId, username)
+                const awardDocs = await peekAtDiscordAwards(discordId)
+                setSyncResult({id: discordId, username, awards: mapAwards(awardDocs)})
+            } catch (error) {
+                if (error.code === 'discord_state_expired') {
+                    showError('token_expired', 'Discord authorization expired. Please try again.')
+                } else if (error.code === 'discord_exchange_failed') {
+                    showError('token_failed', 'Discord authorization failed. Please try again.')
+                } else {
+                    showError('data_failed', 'Discord authorization could not be completed. Please try again.')
+                }
             }
         }
+        completeDiscordAuth()
+    }, [authLoaded, code, state, issuer, urlError, user, pendingBeltRequest, exchangeDiscordOAuth,
+        setDiscordUserInfo, peekAtDiscordAwards, navigate])
 
-        if (credentials) {
-            syncDiscordUsername(credentials.type, credentials.token)
-        }
-    }, [credentials, setDiscordUserInfo, peekAtDiscordAwards])
+    const syncStatus = syncException || (syncResult ? 'complete' : false)
 
     return (
         <ProfileProvider>
-            <ImportPreview syncStatus={syncStatus} syncResult={syncResult} service={'Discord'}/>
+            <ImportPreview syncStatus={syncStatus} syncResult={syncResult || {}} service={'Discord'}/>
         </ProfileProvider>
     )
 }

@@ -26,9 +26,6 @@ import {useAccess} from '../app/AccessContext.jsx'
 import BoltIcon from '@mui/icons-material/Bolt'
 import {Collapse, useTheme} from '@mui/material'
 import ExpandButton from '../misc/ExpandButton.jsx'
-import FlareIcon from '@mui/icons-material/Flare'
-import EmojiEmotionsIcon from '@mui/icons-material/EmojiEmotions'
-import EggIcon from '@mui/icons-material/Egg'
 import OutletIcon from '@mui/icons-material/Outlet'
 
 function UserMenu() {
@@ -41,8 +38,6 @@ function UserMenu() {
     const open = Boolean(anchorEl)
     const handleOpen = useCallback(event => setAnchorEl(event.currentTarget), [])
     const handleClose = useCallback(() => setAnchorEl(null), [])
-
-    console.log('accessInfo', accessInfo)
 
     const safeName = lockCollection.displayName && !lockCollection.privacyAnonymous
         ? lockCollection.displayName.replace(/\s/g, '_')

@@ -37,7 +37,7 @@ changes remain outside Phase 3.
 - [x] Locate the LPU filter context, filter definitions, URL consumers, data-provider
   consumers, and existing route/browser tests.
 - [x] Inspect the current `something.coffee` filter codec, context, display, row hook,
-  and focused tests. That repository has no `AGENTS.md` and its working tree was clean.
+  and focused tests. That repository has no `../../AGENTS.md` and its working tree was clean.
 - [x] Complete and verify the URL-key inventory for both projects.
 - [x] Record contract decisions and canonical URL examples.
 - [x] Record representative compatibility URLs from checked-in sources.
