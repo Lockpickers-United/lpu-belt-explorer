@@ -56,7 +56,7 @@ jobs:
   deploy:
     name: Upload and activate release
     needs: verify
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     timeout-minutes: 20
     environment:
       name: production
@@ -107,6 +107,22 @@ jobs:
           [[ "$REMOTE_NODE_BIN" != "/" && "$REMOTE_NODE_BIN" != *".."* ]] || exit 1
           [[ "$HEALTHCHECK_URL" =~ ^https://[a-zA-Z0-9._:-]+/[a-zA-Z0-9._/-]*$ ]] || exit 1
 
+      - name: Set up Node.js for the release package
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version-file: .nvmrc
+          package-manager-cache: false
+
+      - name: Install production dependencies on the runner
+        shell: bash
+        env:
+          YARN_ENABLE_IMMUTABLE_INSTALLS: 'true'
+        run: |
+          set -euo pipefail
+          corepack enable
+          yarn workspaces focus --production
+          node -e "import('sharp')"
+
       - name: Configure SSH host verification
         shell: bash
         run: |
@@ -121,7 +137,10 @@ jobs:
         run: |
           set -euo pipefail
           archive="$RUNNER_TEMP/$RELEASE_ID.tar.gz"
-          git archive --format=tar.gz --output="$archive" "$GITHUB_SHA"
+          uncompressed_archive="$RUNNER_TEMP/$RELEASE_ID.tar"
+          git archive --format=tar --output="$uncompressed_archive" "$GITHUB_SHA"
+          tar --append --file="$uncompressed_archive" node_modules
+          gzip "$uncompressed_archive"
           sha256sum "$archive" | awk '{print $1}' > "$archive.sha256"
 
       - name: Prepare remote upload directory
@@ -209,7 +228,6 @@ jobs:
 
           export PATH="$node_bin:$PATH"
           command -v node >/dev/null
-          command -v corepack >/dev/null
           command -v pm2 >/dev/null
           command -v curl >/dev/null
           pm2 describe "$pm2_app_name" >/dev/null
@@ -221,7 +239,11 @@ jobs:
             echo "REMOTE_NODE_BIN provides $actual_node_version; expected v$required_node_version" >&2
             exit 1
           fi
-          corepack yarn install --immutable
+          if [[ "$(uname -s)" != "Linux" || "$(uname -m)" != "x86_64" ]]; then
+            echo "Release dependencies require a Linux x86_64 host" >&2
+            exit 1
+          fi
+          node -e "import('sharp')"
           node --check src/lpubeltsApiServer.js
 
           previous_release=$(readlink "$current_link")

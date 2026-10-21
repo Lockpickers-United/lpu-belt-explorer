@@ -19,12 +19,12 @@ The workflow:
 2. uses the Node patch pinned in `.nvmrc` and the pinned Yarn version.
 3. installs dependencies with the immutable lockfile.
 4. runs the shared `yarn validate` command (lint and the complete test suite).
-5. creates a Git archive and checksum.
+5. installs production dependencies on the Linux x64 deployment runner, then creates a Git archive with that `node_modules` tree and a checksum.
 6. uploads them over SFTP to `incoming`.
 7. connects over SSH and verifies the checksum.
 8. expands a new immutable release.
 9. links the shared production environment file and writes the release identity.
-10. installs the locked dependencies and checks `src/lpubeltsApiServer.js` syntax.
+10. confirms the production host is Linux x64, loads the packaged native Sharp dependency, and checks `src/lpubeltsApiServer.js` syntax without installing packages on the host.
 11. atomically switches `current` to the new release.
 12. reloads the named PM2 application, requires the HTTPS readiness response to identify the exact activated release, and smoke-tests the public collection-statistics endpoint.
 13. switches `current` back to the previous target and reloads PM2 if the readiness check fails.
@@ -48,7 +48,7 @@ It needs these secrets:
 
 Expected values include `DEPLOY_ROOT=/home/lpubelts_api/apps/api-server-prod` and `HEALTHCHECK_URL=https://api.lpubelts.com/ready`. Do not put secret values in repository files or agent references.
 
-Before the first dependency-upgrade deployment and whenever `.nvmrc` changes, verify on the production host that `REMOTE_NODE_BIN` provides the exact `.nvmrc` version. The deployment workflow repeats this check before installing dependencies and exits before changing the `current` release if the versions differ.
+Before the first dependency-upgrade deployment and whenever `.nvmrc` changes, verify on the production host that `REMOTE_NODE_BIN` provides the exact `.nvmrc` version. The deployment workflow repeats this check before activating the packaged release and exits before changing the `current` release if the versions differ.
 
 ## Production cron commands
 
