@@ -8,17 +8,23 @@
 
 ## Checkpoint
 
-- **Phase / task:** Phase 5 is complete after owner-confirmed one-click submission; Phase 6 release preparation follows.
-- **State:** After an initial `503 belt_request_posting_disabled`, the owner confirmed the earlier two-click development-browser OAuth and post flow. The supplied screenshot shows LockyJr thanking `@mgsecure` for a White Belt request and saying it replaced the previous White Belt request. The owner subsequently confirmed that the revised one-click path submits after OAuth.
-- **Resume with:** Review production webhook and deployed bot configuration, outstanding browser copy checks, and release order. Production deployment and sends remain approval-gated.
-- **Watch out for:** The posting grant is single-use and expires after 15 minutes. A send timeout is uncertain, so ask the member to check the channel before retrying with fresh OAuth. Do not trust `lockcollections.discordId`, print secrets, or send to a live webhook without approval. Server configuration and secret rotation must precede the frontend release.
+- **Phase / task:** Phase 6 is complete by owner confirmation; production monitoring is underway.
+- **State:** The owner reports that all release checks are complete and the API, bot, and frontend are in production. The earlier development-browser result showed LockyJr processing a request and replacing a prior request for the same belt. Production check artifacts and configuration were not independently inspected for this update.
+- **Resume with:** Continue production monitoring and the post-launch work to surface LockyJr's resulting post and acceptance status in the site.
+- **Watch out for:** The posting grant is single-use and expires after 15 minutes. A send timeout is uncertain, so ask the member to check the channel before retrying with fresh OAuth. Do not trust `lockcollections.discordId` or print secrets.
 
 ## Cross-phase reference
 
-- **Repositories affected:** `lpu-belt-explorer` (frontend and documents) and `../explore-lpubelts-com-node` (OAuth and posting API, tests, and API documentation). Bot-owner work in `../lpu-discord-utils-bot` is in progress.
-- **Approval-gated actions:** Production deployments, production webhook sends, and live-data scripts. Secret rotation and server configuration need owner coordination. No external action was performed for this report.
+- **Repositories affected:** `lpu-belt-explorer` (frontend and documents), `../explore-lpubelts-com-node` (OAuth and posting API, tests, and API documentation), and `../lpu-discord-utils-bot` (bot handling). The owner reports all three production components are deployed.
+- **Approval-gated actions:** Production deployments, production webhook sends, and live-data scripts require approval. This documentation update performed no external action.
 - **Environment notes:** Frontend uses npm/Node 24; the server uses Yarn/Node 24.21.0. OAuth and posting tests mock Discord and Firebase. No live credentials were used.
 - **Baseline metrics:** No test or build baseline was measured during the initial documentation-only handoff. Focused Phase 1 results are recorded below.
+
+## Phase 6: Integration and release
+
+- **Status:** Complete by owner confirmation on 2026-10-21. The API, bot, and frontend are in production and being monitored.
+- **Release checks:** The owner reports all Phase 6 checks complete, including the production rollout. Exact check commands, artifacts, configuration values, deployment timestamps, and smoke-test results were not supplied or independently inspected for this update.
+- **Follow-up:** Continue monitoring. The site still needs the planned post-launch status and resulting-post link for LockyJr acceptance; a webhook message link confirms delivery only.
 
 ## Phase 1: Verified Discord identity
 

@@ -76,7 +76,7 @@ describe('Classification access', () => {
         const adminRoute = routes.find(route => route.path === '/admin')
         const {element} = await adminRoute.lazy()
 
-        expect(element.props.roles).toEqual(['admin'])
+        expect(element.props.roles).toEqual(['admin', 'lpuMod'])
     })
 
     it('admits a signed-in user with a black-belt claim before their profile loads', () => {

@@ -1,6 +1,6 @@
 # Discord belt request posting — implementation plan and progress
 
-- Status: In progress
+- Status: Complete; production monitoring
 - Last updated: 2026-10-21
 - Project definition: [Posting Belt Requests to Discord](./discord-belt-request-posting-plan.md)
 - Developer report: [Discord belt request posting developer report](./discord-belt-request-posting-developer-report.md)
@@ -8,9 +8,9 @@
 ## Project snapshot
 
 - **Outcome:** A signed-in member can authenticate with Discord for each belt request and post to #belt-requests, with the existing form and copy flow available.
-- **Current phase:** Phase 5 is complete. The owner confirmed the one-click submission after Discord OAuth; the earlier development-browser test also showed LockyJr processing and same-belt replacement.
-- **Next action:** Begin Phase 6 release preparation. Production deployment and sends remain approval-gated.
-- **Overall blocker:** Production webhook configuration, Discord secret rotation, and production server configuration remain release work. The exact development environment values were not inspected.
+- **Current phase:** Phase 6 is complete by owner confirmation. The API, bot, and frontend are in production and being monitored.
+- **Next action:** Continue production monitoring and track the post-launch bot-outcome confirmation work below.
+- **Overall blocker:** None reported. Production configuration, check results, and deployment details were not independently inspected for this documentation update.
 
 | Phase | Status | Completed |
 | --- | --- | --- |
@@ -19,7 +19,7 @@
 | Phase 3: Trusted posting API | Complete | 2026-10-20 |
 | Phase 4: Validate existing Discord linking and awards | Complete | 2026-10-20 |
 | Phase 5: Form and callback experience | Complete | 2026-10-21 |
-| Phase 6: Integration and release | Not started | — |
+| Phase 6: Integration and release | Complete | 2026-10-21 |
 
 Use **Not started**, **In progress**, **Blocked**, or **Complete** consistently. Enter a completion date only after the phase exit criteria are met.
 
@@ -219,31 +219,32 @@ Add a signed-in posting action for Discord requests while keeping Copy Request a
 
 ## Phase 6: Integration and release
 
-- **Status:** Not started
-- **Completed:** —
+- **Status:** Complete
+- **Completed:** 2026-10-21 (owner-reported completion; exact deployment dates were not supplied)
 - **Start when:** Phase 5's development-browser send and bot acceptance pass. Production deployment and production sends require explicit approval.
 
 ### Summary
 
-Use the Phase 5 test-target results to coordinate the bot, server, and frontend release. Production deployment and sends remain approval-gated.
+Use the Phase 5 test-target results to coordinate the bot, server, and frontend release. The owner reports that all release checks are complete and the API, bot, and frontend are in production and being monitored.
 
 ### Findings
 
-- The supplied test webhook URL is a secret. The owner confirmed Phase 5's browser journey and LockyJr result; the exact deployed test URL was not inspected. Production target and bot version still need release review.
+- The supplied test webhook URL is a secret. The owner confirmed Phase 5's browser journey and LockyJr result; the exact deployed test URL was not inspected.
+- The owner reports completion of all Phase 6 checks and production rollout of the API, bot, and frontend. This update records that report; check artifacts, production configuration values, deployment order and timestamps, and smoke-test results were not independently inspected.
 
 ### Tasks
 
-- [ ] Review the cross-repository contract, server-only environment configuration, and release order with the bot/server owners.
-- [ ] Review Phase 5's browser test-target results and run any remaining frontend/server release checks; record exact results.
-- [ ] Confirm the approved production webhook and deployed bot use the expected IDs, guild, and channel before release.
-- [ ] Check Copy Request in a browser for both Discord and Reddit platform choices; the existing copy path and focused tests were retained in Phase 5.
-- [ ] After separate production approval, rotate the exposed Discord client secret, deploy compatible bot/server/frontend changes in order, and run an approved smoke test. Confirm the obsolete CI variable has been removed from settings; its workflow mapping is already removed.
-- [ ] Record the observed bot outcome and any limitations in the developer report; update phase statuses.
+- [x] Review the cross-repository contract, server-only environment configuration, and release order with the bot/server owners (owner-reported complete).
+- [x] Review Phase 5's browser test-target results and complete the remaining frontend/server release checks (owner-reported complete; exact results were not supplied for this update).
+- [x] Confirm the approved production webhook and deployed bot use the expected IDs, guild, and channel before release (owner-reported complete; configuration values were not inspected).
+- [x] Check Copy Request in a browser for both Discord and Reddit platform choices (owner-reported complete).
+- [x] Complete the approved secret rotation, coordinated bot/server/frontend deployment, production smoke test, and obsolete CI variable removal check (owner-reported complete; no secrets or settings were inspected).
+- [x] Record the owner-reported release outcome and verification limits in the developer report; update the phase status.
 
 ### Exit criteria
 
-- [ ] A signed-in member can authenticate with Discord for a request, post, and open the confirmed channel message; LockyJr processes it under the verified requester ID in the approved target.
-- [ ] No browser bundle includes the Discord client secret, no webhook URL appears in source or logs, and all required tests and approved live checks have recorded outcomes.
+- [x] A signed-in member can authenticate with Discord for a request, post, and open the confirmed channel message; LockyJr processes it under the verified requester ID in the approved target (owner-reported production check).
+- [x] No browser bundle includes the Discord client secret, no webhook URL appears in source or logs, and required tests and approved live checks are complete (owner-reported; exact artifacts were not supplied for independent review).
 
 ### Open issues for next phase
 

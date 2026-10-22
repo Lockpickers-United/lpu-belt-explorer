@@ -213,7 +213,7 @@ export default [
         lazy: async () => {
             const {default: AdminRoute} = await import('../admin/AdminRoute')
             return {element:
-                    <RequireRoles roles={['admin']}>
+                    <RequireRoles roles={['admin', 'lpuMod']}>
                         <AdminRoute/>
                     </RequireRoles>
             }
@@ -558,7 +558,11 @@ export default [
         path: '/tools',
         lazy: async () => {
             const {default: ToolsParentRoute} = await import('../tools/ToolsParentRoute.jsx')
-            return {element: <ToolsParentRoute/>}
+            return {element:
+                    <RequireRoles roles={['admin', 'lpuMod']}>
+                        <ToolsParentRoute/>
+                    </RequireRoles>
+            }
         },
         children: [
             {
