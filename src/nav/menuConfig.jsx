@@ -154,19 +154,19 @@ export default [
         title: 'Server Status',
         icon: <MonitorHeartIcon fontSize='small'/>,
         path: '/tools/serverinfo',
-        allowedRoles: ['admin'],
+        allowedRoles: ['admin', 'lpuMod'],
     },
     {
         title: 'Admin Tools',
         icon: <BuildIcon fontSize='small'/>,
         path: '/tools',
-        allowedRoles: ['admin'],
+        allowedRoles: ['admin', 'lpuMod'],
     },
     {
         title: 'Reports',
         icon: <AssessmentIcon fontSize='small'/>,
         path: '/admin',
-        allowedRoles: ['admin'],
+        allowedRoles: ['admin', 'lpuMod'],
         children: [
             {
                 admin: true,

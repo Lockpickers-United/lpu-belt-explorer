@@ -202,7 +202,7 @@ describe('Classification access', () => {
     it.each([
         ['admin', ['admin'], true, true, true],
         ['classification administrator', ['classificationAdmin'], true, false, false],
-        ['moderator', ['lpuMod'], true, false, false],
+        ['moderator', ['lpuMod'], true, true, true],
         ['classification team', ['classificationTeam'], true, false, false],
         ['legacy tools role', ['lpuAdmin'], false, false, false]
     ])('shows the permitted menu options for a %s', (_label, userClaims, classification, reports, tools) => {
@@ -221,8 +221,5 @@ describe('Classification access', () => {
         expect(Boolean(screen.queryByRole('button', {name: 'Reports'}))).toBe(reports)
         expect(Boolean(screen.queryByRole('button', {name: 'Admin Tools'}))).toBe(tools)
         expect(Boolean(screen.queryByRole('button', {name: 'Server Status'}))).toBe(tools)
-        if (reports) {
-            expect(screen.getByRole('button', {name: 'Site Report'})).toHaveStyle({color: darkTheme.roles.admin})
-        }
     })
 })

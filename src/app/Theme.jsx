@@ -37,7 +37,7 @@ export const darkTheme = createTheme({
     },
     roles: {
         admin: '#1596e7',
-        lpuMod: '#e7e41a',
+        lpuMod: '#b966e8',
         classificationAdmin: '#d38bfd',
         blackBelt: '#e7a515',
         classificationTeam: '#efc370',
