@@ -87,8 +87,10 @@ function PopularAreas({data}) {
     )
 }
 
-const mapWorld = 'https://explore.lpubelts.com/maps/mapWorld.gif'
-const mapEurope = 'https://explore.lpubelts.com/maps/mapEurope.gif'
-const mapUSA = 'https://explore.lpubelts.com/maps/mapUSA.gif'
+// TODO: regenerate map images!!!
+
+const mapWorld = 'https://assets.lpubelts.com/img/maps/mapWorld.gif'
+const mapEurope = 'https://assets.lpubelts.com/img/maps/mapEurope.gif'
+const mapUSA = 'https://assets.lpubelts.com/img/maps/mapUSA.gif'
 
 export default PopularAreas

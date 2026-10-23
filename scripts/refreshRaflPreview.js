@@ -1,6 +1,7 @@
 import fetch from 'node-fetch'
+import {apiServerUrl} from '../src/data/dataUrls.js'
 
-const url = 'https://explore.lpubelts.com/services/refresh-preview'
+const url = `${apiServerUrl}/refresh-preview`
 const idToken = process.env.RAFL_ADMIN_ID_TOKEN?.trim()
 if (!idToken) throw new Error('RAFL_ADMIN_ID_TOKEN is required')
 

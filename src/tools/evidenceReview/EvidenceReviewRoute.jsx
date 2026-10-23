@@ -5,11 +5,12 @@ import usePageTitle from '../../util/usePageTitle.jsx'
 import EvidenceReviewPage from './EvidenceReviewPage.jsx'
 import useData from '../../util/useData.jsx'
 import LoadingDisplay from '../../misc/LoadingDisplay.jsx'
+import {allProjects} from '../../data/dataUrls.js'
 
 function EvidenceReviewRoute() {
     usePageTitle('All Projects')
 
-    const {data, loading, error} = useData({url})
+    const {data, loading, error} = useData({url: allProjects})
 
     const nav = (
         <React.Fragment></React.Fragment>
@@ -34,4 +35,3 @@ function EvidenceReviewRoute() {
 
 export default EvidenceReviewRoute
 
-const url = 'https://explore.lpubelts.com/data/allProjects.json'

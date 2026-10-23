@@ -38,7 +38,7 @@ describe('assertSafeTestEnvironment', () => {
     it('rejects live service URLs', () => {
         expect(() => assertSafeTestEnvironment({
             ...safeEnvironment,
-            VITE_API_SERVER_URL: 'https://explore.lpubelts.com/services'
+            VITE_API_SERVER_URL: 'https://api.lpubelts.com'
         })).toThrow('relative or use a loopback host')
     })
 })

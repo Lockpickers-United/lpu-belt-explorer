@@ -578,12 +578,6 @@ export default [
                     return {element: <FlickrInfoRoute/>}
                 }
             }, {
-                path: '/tools/rafl-charities',
-                lazy: async () => {
-                    const {default: RaflCharitiesRoute} = await import('../tools/raflCharities/RaflCharitiesRoute.jsx')
-                    return {element: <RaflCharitiesRoute/>}
-                }
-            }, {
                 path: '/tools/testpage',
                 lazy: async () => {
                     const {default: TestPageRoute} = await import('../tools/testPage/TestPageRoute.jsx')
