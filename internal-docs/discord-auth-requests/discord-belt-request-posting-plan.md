@@ -3,7 +3,7 @@
 Status: in progress, 2026-10-20. The OAuth identity and posting APIs are
 implemented locally; LockyJr verification and the lpubelts.com form flow remain
 in progress. The posting API's webhook target is disabled by default.
-See the [implementation plan](./discord-belt-request-posting-implementation-plan.md)
+See the [implementation plan](discord-belt-request-posting-implementation-plan.md)
 for current phase status.
 
 ## Goal
@@ -87,7 +87,7 @@ changes on 2026-10-20 and must be checked again against the version actually
 deployed. The owner reports that one simulated payload posted successfully;
 this does not establish duplicate behavior or live webhook delivery.
 
-## Reuse of `src/auth/AuthDiscordRoute.jsx`
+## Reuse of `../../src/auth/AuthDiscordRoute.jsx`
 
 The current flow can be reused in part, but it is not usable as-is:
 

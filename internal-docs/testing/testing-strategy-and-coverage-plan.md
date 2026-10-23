@@ -3,7 +3,7 @@
 Status: active; Phase 0 completed  
 Last updated: 2026-09-15
 
-Implementation findings and progress are recorded in `internal-docs/testing-implementation-report.md`.
+Implementation findings and progress are recorded in `testing-implementation-report.md`.
 
 ## Purpose
 
@@ -20,7 +20,7 @@ The repository already has useful testing building blocks:
 - Playwright for browser tests
 - A shared Vitest setup and route-rendering helper
 - A Vitest configuration that scopes collection to project tests and excludes nested dependencies, Functions, server code, and end-to-end tests
-- Coverage thresholds declared in `vitest.config.js`
+- Coverage thresholds declared in `../../vitest.config.js`
 
 As of major-upgrade Phase 9 on 2026-09-15, `npm run test:ci` passes under Vitest 5.0.0, Vite 8.3.0, React 19.3.0, Material UI 9.4.0, and Firebase 12.19.0:
 
@@ -333,7 +333,7 @@ Add explicit scripts with narrow responsibilities:
   "test:unit": "vitest run --project unit",
   "test:integration": "vitest run --project integration",
   "test:coverage": "vitest run --coverage",
-  "test:functions": "npm --prefix functions test",
+  "test:functions": "npm --prefix firebase/functions test",
   "test:rules": "firebase emulators:exec --only firestore 'vitest run --project firebase'",
   "test:e2e": "playwright test",
   "test:ci": "npm run test:unit && npm run test:integration && npm run test:functions && npm run test:rules"

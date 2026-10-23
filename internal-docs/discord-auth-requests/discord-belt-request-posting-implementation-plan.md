@@ -2,8 +2,8 @@
 
 - Status: Complete; production monitoring
 - Last updated: 2026-10-21
-- Project definition: [Posting Belt Requests to Discord](./discord-belt-request-posting-plan.md)
-- Developer report: [Discord belt request posting developer report](./discord-belt-request-posting-developer-report.md)
+- Project definition: [Posting Belt Requests to Discord](discord-belt-request-posting-plan.md)
+- Developer report: [Discord belt request posting developer report](discord-belt-request-posting-developer-report.md)
 
 ## Project snapshot
 

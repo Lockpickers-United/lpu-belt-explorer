@@ -17,7 +17,7 @@ export default defineConfig({
       'tests/e2e/**',
       '**/node_modules/**',
       '**/dist/**',
-      'functions/**',
+      'firebase/functions/**',
       'server/**'
     ],
     coverage: {

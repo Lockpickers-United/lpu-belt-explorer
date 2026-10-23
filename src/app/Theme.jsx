@@ -36,11 +36,12 @@ export const darkTheme = createTheme({
         green: '#00bb00'
     },
     roles: {
-        admin: '#1596e7',
-        lpuMod: '#b966e8',
-        classificationAdmin: '#d38bfd',
+        owner: '#1385cc',
+        admin: '#1385cc',
+        lpuMod: '#af58de',
+        classificationAdmin: '#e7e41a',
         blackBelt: '#e7a515',
-        classificationTeam: '#efc370',
+        classificationTeam: '#d9c297',
         qaUser: '#7ec6f5'
     },
     components: {

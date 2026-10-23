@@ -37,7 +37,7 @@ Plan: `internal-docs/<project>-plan.md`
 
 <!-- Stable context that applies to every phase. Remove items that don't apply. -->
 
-- **Repositories affected:** <lpu-belt-explorer, ../explore-lpubelts-com-node, functions/>
+- **Repositories affected:** <lpu-belt-explorer, ../explore-lpubelts-com-node, firebase/functions/>
 - **Approval-gated actions:** <deployments, live-data scripts, production switches — and approval status>
 - **Environment notes:** <Node/tool versions, emulators, required local installs>
 - **Baseline metrics:** <coverage, bundle size, test counts, etc. with date measured>

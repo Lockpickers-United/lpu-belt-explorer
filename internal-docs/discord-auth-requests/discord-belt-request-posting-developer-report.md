@@ -1,10 +1,10 @@
 # Discord belt request posting — developer implementation report
 
-> Companion to [the implementation plan](./discord-belt-request-posting-implementation-plan.md). The [project definition](./discord-belt-request-posting-plan.md) holds the original feasibility and integration analysis.
+> Companion to [the implementation plan](discord-belt-request-posting-implementation-plan.md). The [project definition](discord-belt-request-posting-plan.md) holds the original feasibility and integration analysis.
 
 - Last updated: 2026-10-21
 - Implementation report: `internal-docs/discord-belt-request-posting-developer-report.md`
-- Plan: `internal-docs/discord-belt-request-posting-implementation-plan.md`
+- Plan: `discord-belt-request-posting-implementation-plan.md`
 
 ## Checkpoint
 
@@ -128,8 +128,8 @@
 
 #### Planning documents
 
-- Created the template-based [implementation plan](./discord-belt-request-posting-implementation-plan.md) with observable exits and explicit release gates. It now has six phases after adding the existing-flow validation gate.
-- Created this initial report to preserve source findings and a resumable Phase 1 starting point. Updated the existing [project definition](./discord-belt-request-posting-plan.md) to keep validation and error handling proportionate to the low-risk posting flow.
+- Created the template-based [implementation plan](discord-belt-request-posting-implementation-plan.md) with observable exits and explicit release gates. It now has six phases after adding the existing-flow validation gate.
+- Created this initial report to preserve source findings and a resumable Phase 1 starting point. Updated the existing [project definition](discord-belt-request-posting-plan.md) to keep validation and error handling proportionate to the low-risk posting flow.
 
 ### Decisions
 
@@ -156,8 +156,8 @@
 
 ### Environment and tooling notes
 
-- `src/auth/AuthDiscordRoute.jsx` exchanges an OAuth code with `VITE_DISCORD_CLIENT_SECRET` and calls Discord `/users/@me` from the browser. `ImportButton.jsx` and `EditProfilePage.jsx` omit OAuth `state`. The callback only saves legacy profile Discord fields if matching awards exist.
-- `firestore.rules` permits owner writes to `lockcollections` except `admin`. `src/app/DBContext.jsx` stores and removes Discord profile fields there. Those fields remain award-import data only; posting identity comes from a server-only one-use grant.
+- `../../src/auth/AuthDiscordRoute.jsx` exchanges an OAuth code with `VITE_DISCORD_CLIENT_SECRET` and calls Discord `/users/@me` from the browser. `ImportButton.jsx` and `EditProfilePage.jsx` omit OAuth `state`. The callback only saves legacy profile Discord fields if matching awards exist.
+- `firestore.rules` permits owner writes to `lockcollections` except `admin`. `../../src/app/DBContext.jsx` stores and removes Discord profile fields there. Those fields remain award-import data only; posting identity comes from a server-only one-use grant.
 - The server already provides `/api/v1` routing, `requireAuth`, Firebase Admin access, route tests, and service tests. Its `sendToDiscord.js` escapes HTML and swallows send failures, so a posting sender must report confirmed message IDs and errors.
 - At initial source review, `messageCreate.js` dispatched `New Belt Request` embeds authored by the bot itself. The owner subsequently changed the local check to webhook ID `1562162476009660489` and changed the embed field contract as recorded in Phase 2. Check the deployed bot version during Phase 6 acceptance.
 - At initial source review, the test webhook's channel and whether LockyJr watched it were unverified. The owner later confirmed the channel and reported a successful simulation, as recorded in Phase 2. Keep the webhook URL out of source, tests, reports, and output.
@@ -166,9 +166,9 @@
 
 | File | Change |
 | --- | --- |
-| `internal-docs/discord-belt-request-posting-implementation-plan.md` | Added — phased implementation and progress tracker. |
+| `discord-belt-request-posting-implementation-plan.md` | Added — phased implementation and progress tracker. |
 | `internal-docs/discord-belt-request-posting-developer-report.md` | Added — initial findings, decisions, and checkpoint. |
-| `internal-docs/discord-belt-request-posting-plan.md` | Modified — retained the user's existing contract corrections and simplified posting/recovery requirements. |
+| `discord-belt-request-posting-plan.md` | Modified — retained the user's existing contract corrections and simplified posting/recovery requirements. |
 
 ### Manual review needed
 

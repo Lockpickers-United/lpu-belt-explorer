@@ -1,9 +1,0 @@
-{
-  "firestore": [
-    {
-      "database": "(default)",
-      "rules": "firestore.rules-prod-transition",
-      "indexes": "firestore.indexes.json"
-    }
-  ]
-}

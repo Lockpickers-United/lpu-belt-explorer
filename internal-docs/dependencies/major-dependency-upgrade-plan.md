@@ -3,7 +3,7 @@
 Status: active; Phases 0–4 completed  
 Created: 2026-09-14
 
-Implementation results are recorded in `internal-docs/major-dependency-upgrade-implementation-report.md`.
+Implementation results are recorded in `major-dependency-upgrade-implementation-report.md`.
 
 ## Executive recommendation
 
@@ -138,7 +138,7 @@ When an accessibility-oriented MUI change breaks a role or focus assertion, revi
    npm run e2e
    npm run test:functions:integration
    npm run build
-   npm --prefix functions run lint
+   npm --prefix firebase/functions run lint
    ```
 
 4. Capture the production build's total output size and existing large-chunk warnings for comparison.
@@ -156,8 +156,8 @@ Exit criteria:
 Node 24 is the common baseline for local development, CI, frontend tooling, and the next Firebase Functions deployment. It avoids establishing a short-lived Node 22 baseline immediately before the remaining major upgrades. Node 24.11.0 is the first Node 24 LTS release, and Node 24 remains supported through April 2028.
 
 1. Pin the tested local release, Node 24.15.0, in `.nvmrc`.
-2. Require `>=24.11.0 <25` in the root `package.json`, allowing supported Node 24 LTS patches while rejecting older and future major versions.
-3. Select Firebase's `nodejs24` runtime through `"engines": {"node": "24"}` in `functions/package.json`.
+2. Require `>=24.11.0 <25` in the root `../../package.json`, allowing supported Node 24 LTS patches while rejecting older and future major versions.
+3. Select Firebase's `nodejs24` runtime through `"engines": {"node": "24"}` in `../../firebase/functions/package.json`.
 4. Make every GitHub workflow read `.nvmrc` through `actions/setup-node` instead of independently naming a Node major.
 5. Update contributor and agent documentation to require the project-pinned Node release.
 6. Reinstall and verify the frontend and Functions dependencies under Node 24, then run the complete Phase 0 suite.
@@ -180,7 +180,7 @@ References: [Node 22 to 24 migration](https://nodejs.org/en/blog/migrations/v22-
 Do this before large source migrations so lint remains a trustworthy feedback loop.
 
 1. Inventory the compatibility of `eslint-plugin-import`, `eslint-plugin-react`, `eslint-plugin-react-hooks`, and `eslint-config-google` with ESLint 10.
-2. Upgrade root ESLint to the latest 9.x and migrate `.eslintrc.cjs` to `eslint.config.js` flat config.
+2. Upgrade root ESLint to the latest 9.x and migrate `.eslintrc.cjs` to `../../eslint.config.js` flat config.
 3. Preserve current source globs, ignored generated files, warning/error levels, JSX handling, and import-extension conventions.
 4. Run the old and new configurations against the same commit and reconcile differences deliberately.
 5. Migrate the separate Functions configuration independently. If `eslint-config-google` is not compatible, encode the small required Functions style rules directly or adopt a maintained equivalent rather than forcing peer dependencies.
@@ -191,7 +191,7 @@ Verification:
 
 ```bash
 npm run lint
-npm --prefix functions run lint
+npm --prefix firebase/functions run lint
 npm run ci-pr
 ```
 
@@ -441,7 +441,7 @@ Add these according to the affected boundary:
 - `npm run e2e` for React, Router, MUI, Firebase, and Vite
 - `npm run build` for every package or bundler migration
 - `npm run test:functions:integration` for Firebase or Functions-adjacent changes
-- `npm --prefix functions run lint` for the Functions ESLint migration
+- `npm --prefix firebase/functions run lint` for the Functions ESLint migration
 - `npm audit` and `npm outdated` after each lockfile change
 
 Do not use `--force` or `--legacy-peer-deps` to make an incompatible dependency tree install. Resolve or defer the incompatible package.

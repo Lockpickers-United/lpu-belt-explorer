@@ -9,7 +9,7 @@ Read this reference for provider, route, context, authentication, role, or profi
 - Feature directories under `src/`: domain-specific routes and supporting UI.
 - `src/data/`: application data, schemas, mappings, and generated/imported JSON.
 - `scripts/`: imports, exports, migrations, generators, and administrative utilities.
-- `functions/`: separately packaged Firebase Cloud Functions project.
+- `firebase/functions/`: separately packaged Firebase Cloud Functions project.
 - `tests/vitest/`: Vitest, Testing Library, and MSW component/route tests.
 - `tests/e2e/`: Playwright browser journeys.
 - `public/`: static assets and generated public data.

@@ -3,7 +3,7 @@
 Status: Phases 0–9 and post-upgrade audit remediation complete; Node 24 Functions production rollout pending approval  
 Last updated: 2026-09-15
 
-This report tracks implementation of `internal-docs/major-dependency-upgrade-plan.md`. It should be extended after each major-upgrade phase with the versions changed, migration decisions, failures encountered, verification performed, and any deferred work.
+This report tracks implementation of `major-dependency-upgrade-plan.md`. It should be extended after each major-upgrade phase with the versions changed, migration decisions, failures encountered, verification performed, and any deferred work.
 
 ## Progress
 
@@ -63,7 +63,7 @@ No automatic audit fix was applied. Security remediation should be handled delib
 
 #### Configurable render harness
 
-`src/test/render.jsx` now provides production-order context wrappers with explicit per-test overrides for Auth, DB, API, App, and Scoring state. Anonymous-safe defaults remain available, and router helpers accept route/history and provider options. Test routers opt into the React Router 7 transition and relative-splat compatibility flags so current tests exercise those upcoming semantics.
+`../../src/test/render.jsx` now provides production-order context wrappers with explicit per-test overrides for Auth, DB, API, App, and Scoring state. Anonymous-safe defaults remain available, and router helpers accept route/history and provider options. Test routers opt into the React Router 7 transition and relative-splat compatibility flags so current tests exercise those upcoming semantics.
 
 Vitest now explicitly sets `clearMocks: true`. Running the complete suite with this setting did not expose unresolved test-order dependencies. The jsdom bootstrap provides a stable `window.scrollTo` implementation so delayed navigation and expansion callbacks do not leak false console errors into later tests.
 
@@ -76,7 +76,7 @@ New provider tests cover:
 - DBContext listener behavior under Strict Mode, final cleanup, a representative Firestore transaction, and recoverable permission errors
 - Firebase config defaults, development database selection, and emulator endpoint parsing through pure initialization helpers
 
-Extracting Firebase option derivation into `src/auth/firebaseConfig.js` made initialization branches directly testable while leaving the runtime initialization module thin.
+Extracting Firebase option derivation into `../../src/auth/firebaseConfig.js` made initialization branches directly testable while leaving the runtime initialization module thin.
 
 #### Router and callback contracts
 
@@ -120,11 +120,11 @@ Remediation was test-specific:
 
 - tracking renders nothing in Vite `test` mode
 - the Playwright build sets `VITE_DISABLE_FIRESTORE_SUBSCRIPTIONS=true`; DBContext honors it only in `test` mode and leaves production behavior unchanged
-- a deterministic empty LockBazaar fixture is served from `public/test-data`
+- a deterministic empty LockBazaar fixture is served from `../../public/test-data`
 - Google Fonts CSS and external image requests are fulfilled locally by Playwright without contacting those hosts
 - every other non-loopback request is aborted; resulting console errors fail the test
 
-An Auth emulator port was added to `firebase.json` to match `.env.test` and make future Auth emulator work explicit. The current anonymous browser journeys do not need a running Firebase emulator because all Firestore subscriptions are disabled in their test-only build.
+An Auth emulator port was added to `../../firebase/firebase.json` to match `.env.test` and make future Auth emulator work explicit. The current anonymous browser journeys do not need a running Firebase emulator because all Firestore subscriptions are disabled in their test-only build.
 
 ### Verification results
 
@@ -152,7 +152,7 @@ Coverage remains informational; the existing testing strategy intentionally defe
 
 ### Production build baseline
 
-The production build occupies approximately 20,904 KiB on disk, including copied public data and assets. `dist/assets` occupies approximately 10,404 KiB.
+The production build occupies approximately 20,904 KiB on disk, including copied public data and assets. `../../dist/assets` occupies approximately 10,404 KiB.
 
 The build emits the existing Vite warning for chunks larger than 500 kB. The three largest minified JavaScript chunks are:
 
@@ -166,7 +166,7 @@ These values are comparison points, not assertions tied to hashed filenames. Bun
 
 ### Findings and deferred work
 
-- At the Phase 0 checkpoint, the local shell used Node 24.15.0 while `package.json` declared Node 22 and the Functions emulator requested Node 22. The Functions emulator therefore warned and used host Node 24. Phase 1 resolved this configuration mismatch by adopting Node 24 throughout the project.
+- At the Phase 0 checkpoint, the local shell used Node 24.15.0 while `../../package.json` declared Node 22 and the Functions emulator requested Node 22. The Functions emulator therefore warned and used host Node 24. Phase 1 resolved this configuration mismatch by adopting Node 24 throughout the project.
 - The Functions integration suite warns that no Firestore rules file is configured and therefore runs with open emulator rules. Trigger wiring is validated, but authorization is not. Rules source control and authorization matrices remain in testing Phase 2.
 - The current Playwright suite is intentionally anonymous and narrow. Authenticated/admin browser journeys still require explicit emulator fixtures in later testing phases.
 - Root and Functions ESLint still use legacy configuration. That remains Phase 2 of the major-upgrade plan.
@@ -204,11 +204,11 @@ No application dependencies were upgraded in this phase. No production deploymen
 | Import workflow | Independently specified Node 22 | Reads `.nvmrc` |
 | Contributor/agent guidance | Required Node 22 | Requires the Node 24 release pinned in `.nvmrc` |
 
-The root engine begins at Node 24.11.0 because that is the first Node 24 LTS release. It is bounded below Node 25 so unsupported odd or future majors do not silently satisfy the project requirement. Firebase's Functions runtime selector accepts a major version, so `functions/package.json` intentionally uses `"24"` rather than the frontend range.
+The root engine begins at Node 24.11.0 because that is the first Node 24 LTS release. It is bounded below Node 25 so unsupported odd or future majors do not silently satisfy the project requirement. Firebase's Functions runtime selector accepts a major version, so `../../firebase/functions/package.json` intentionally uses `"24"` rather than the frontend range.
 
 All workflows use `node-version-file: '.nvmrc'`, eliminating three duplicated version declarations. The build workflow's path filter now includes `.nvmrc`, ensuring that a future runtime-only change triggers the normal build workflow.
 
-`README.md` and `AGENTS.md` were updated with the same requirement. npm itself was not separately pinned: pinning the complete Node distribution in CI supplies a consistent bundled npm, while the recorded local npm version remains 11.12.1.
+`../../README.md` and `AGENTS.md` were updated with the same requirement. npm itself was not separately pinned: pinning the complete Node distribution in CI supplies a consistent bundled npm, while the recorded local npm version remains 11.12.1.
 
 ### Installation and dependency findings
 
@@ -248,10 +248,10 @@ The Functions emulator explicitly reported `Using node@24 from host`; the Phase 
 ### Remaining risks and manual actions
 
 - Production Functions continue using their currently deployed runtime until an explicitly approved deployment applies `nodejs24`. That deployment was intentionally not performed.
-- The ignored local WebStorm workspace still records a Node 22.15 interpreter/npm path. Because `.idea/workspace.xml` is machine-specific and not source controlled, it was not edited automatically. Select Node 24.15.0—or configure WebStorm to follow `.nvmrc`—before running ESLint or scripts through the IDE.
+- The ignored local WebStorm workspace still records a Node 22.15 interpreter/npm path. Because `../../.idea/workspace.xml` is machine-specific and not source controlled, it was not edited automatically. Select Node 24.15.0—or configure WebStorm to follow `.nvmrc`—before running ESLint or scripts through the IDE.
 - Firebase's general Functions management guide still lists Node 20 and 22, despite Firebase CLI release notes explicitly adding `nodejs24` deployment support and Google Cloud listing Node 24 as GA for second-generation functions. Reconfirm those sources before the eventual production deployment.
 - The Firestore emulator still warns that no rules file is configured and therefore uses open rules. This is unchanged from Phase 0 and does not affect the trigger event contract tested here.
-- The Functions `package-lock.json` is tracked and supports reproducible `npm ci` installs, even though the repository's current ignore patterns would ignore a newly created lockfile. This phase did not change that policy.
+- The Functions `../../package-lock.json` is tracked and supports reproducible `npm ci` installs, even though the repository's current ignore patterns would ignore a newly created lockfile. This phase did not change that policy.
 
 ### Phase 1 exit criteria
 
@@ -268,7 +268,7 @@ The Functions emulator explicitly reported `Using node@24 from host`; the Phase 
 
 Phase 2 migrated both lint targets from legacy eslintrc configuration to native ESLint 10 flat configuration. The migration passed through an ESLint 9.39.5 checkpoint first, where the root and Functions configurations were converted and linted successfully before advancing to ESLint 10.10.0.
 
-The frontend now uses `eslint.config.js`; Functions uses its independent `functions/eslint.config.js`. The three legacy config files were removed. Both npm lint commands retain their existing scope: the root checks `src/` and `scripts/`, while the Functions package checks its complete JavaScript package.
+The frontend now uses `../../eslint.config.js`; Functions uses its independent `firebase/functions/eslint.config.js`. The three legacy config files were removed. Both npm lint commands retain their existing scope: the root checks `src/` and `scripts/`, while the Functions package checks its complete JavaScript package.
 
 No compatibility flag, forced install, legacy peer-dependency mode, deployment, or live-data operation was used.
 
@@ -293,7 +293,7 @@ The root lockfile and the separately tracked Functions lockfile were regenerated
 
 The root flat configuration preserves:
 
-- the explicit `src/` and `scripts/` lint scope
+- the explicit `../../src` and `scripts/` lint scope
 - browser, Node, and ES globals
 - latest ECMAScript module parsing with JSX
 - current warning levels for quotes, semicolons, strict equality, import extensions, unused values, and Hook dependencies
@@ -331,8 +331,8 @@ ESLint 9 and 10 promoted additional correctness rules that identify pre-existing
 | Deferred rule | Existing findings observed during migration |
 | --- | --- |
 | `no-constant-binary-expression` | Constant-truthy `||` expressions in `DataTableSort.jsx` and `RaffleReportsPotTable.jsx` |
-| `no-useless-assignment` | Overwritten assignments in `scripts/importDan.js`, `AuthDiscordRoute.jsx`, and `AuthRedditRoute.jsx` |
-| `preserve-caught-error` | A replacement error without `cause` in `src/util/datetime.js` |
+| `no-useless-assignment` | Overwritten assignments in `../../scripts/importDan.js`, `AuthDiscordRoute.jsx`, and `AuthRedditRoute.jsx` |
+| `preserve-caught-error` | A replacement error without `cause` in `../../src/util/datetime.js` |
 
 These should be reviewed, corrected where appropriate, and enabled in a focused lint-hardening change. They were not auto-fixed or hidden through inline suppressions.
 
@@ -396,7 +396,7 @@ Before installation, the suite and configuration were checked for each relevant 
 - The single fake-timer suite restores real timers after each test and does not depend on changed wall-clock or `Temporal` behavior.
 - The project does not use Vitest projects/workspaces, browser mode, custom environments, custom reporters, benchmark APIs, or glob-specific coverage thresholds affected by other Vitest 5 changes.
 
-`clearMocks: true` remains explicit in `vitest.config.js`, even though it is now the Vitest 5 default. This keeps the suite's test-isolation contract visible and avoids changing behavior if defaults change again.
+`clearMocks: true` remains explicit in `../../vitest.config.js`, even though it is now the Vitest 5 default. This keeps the suite's test-isolation contract visible and avoids changing behavior if defaults change again.
 
 ### Coverage comparison
 
@@ -900,7 +900,7 @@ No production deployment or live-data operation was performed.
 
 ### Compatibility and test changes
 
-`tests/vitest/firebaseInitialization.test.js` now verifies the actual initialization module wiring. It covers the default Firestore database without emulator connections and the named `lpubelts-dev` database with loopback Auth and Firestore emulator connections. The existing safety tests continue to reject deployable Firebase project IDs, non-loopback emulator hosts, and live service URLs.
+`../../tests/vitest/firebaseInitialization.test.js` now verifies the actual initialization module wiring. It covers the default Firestore database without emulator connections and the named `lpubelts-dev` database with loopback Auth and Firestore emulator connections. The existing safety tests continue to reject deployable Firebase project IDs, non-loopback emulator hosts, and live service URLs.
 
 A new `npm run test:firebase:web-sdk` contract starts isolated Auth and Firestore emulators with project ID `demo-lpubelts`. It signs in a synthetic anonymous user through the Firebase 12 web Auth SDK and exercises a live Firestore subscription, document create/update/delete, a transaction, and a permission-denied read. Its dedicated test rules grant only the synthetic authenticated test collection and deny the permission-error collection. These rules are test fixtures and do not represent or alter deployed application rules.
 
@@ -966,9 +966,9 @@ No production deployment or live-data operation was performed.
 
 ### Compatibility and test changes
 
-`tests/e2e/viteBundle.spec.js` now inspects the fresh test build, confirms representative award and Markdown lazy-route chunks are emitted, and requests every emitted JavaScript asset from the preview server. The final build contains 401 JavaScript assets, all of which returned successfully in the focused and full Playwright runs.
+`../../tests/e2e/viteBundle.spec.js` now inspects the fresh test build, confirms representative award and Markdown lazy-route chunks are emitted, and requests every emitted JavaScript asset from the preview server. The final build contains 401 JavaScript assets, all of which returned successfully in the focused and full Playwright runs.
 
-The final Vite 8 development server started in 115 ms. Direct requests verified the React entry transform, CSS transform, PNG asset, and raw Markdown asset. Development transforms retain inline source maps; production and test builds retain the existing default of no emitted `.map` files. Test mode continues to omit `.env.keysNew` loading and the visualizer, while development/production modes retain their previous loading behavior.
+The final Vite 8 development server started in 115 ms. Direct requests verified the React entry transform, CSS transform, PNG asset, and raw Markdown asset. Development transforms retain inline source maps; production and test builds retain the existing default of no emitted `.map` files. Test mode continues to omit `../../.env.keysNew` loading and the visualizer, while development/production modes retain their previous loading behavior.
 
 The Vite 7 `ci-pr` checkpoint was run once and passed in the ambient Node 23 agent shell before that shell mismatch was detected. All subsequent bridge checks and every final Vite 8 verification ran under the repository's pinned Node 24.15.0 runtime. The intermediate Vite 7 state is not shipped.
 

@@ -166,7 +166,7 @@ Example starting point:
       "Bash(npm run build:test)",
       "Bash(npm run ci-pr)",
       "Bash(npm run e2e)",
-      "Bash(npm --prefix functions run lint)",
+      "Bash(npm --prefix firebase/functions run lint)",
       "Bash(npx eslint *)",
       "Bash(npx vitest *)",
       "Bash(npx playwright test *)"

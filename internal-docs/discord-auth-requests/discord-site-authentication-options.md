@@ -1,0 +1,46 @@
+# Discord sign-in for site and Firebase access
+
+This overview treats Discord as an **additional sign-in method** for authenticated features. Discord accounts can receive Firebase custom claims and use claim-gated features when they qualify; withholding claims is an optional policy, not a technical requirement of Discord sign-in. Requiring membership in a particular Discord server would be a separate access policy that needs its own verification and renewal rules.
+
+## What is involved
+
+The site currently signs users into Firebase through Google in [`AuthContext`](../../src/app/AuthContext.jsx); [`SignInButton`](../../src/auth/SignInButton.jsx) exposes that single choice. Firebase identity then supplies the UID used by profiles, awards, and Firestore rules, while custom claims supply privileged roles. Discord login must end with a **Firebase session for the right UID**: an existing UID when explicitly linked, or a new one otherwise. A Discord access token by itself cannot authorize Firestore or the existing API.
+
+Discord documents an [OAuth2 authorization-code flow](https://docs.discord.com/developers/topics/oauth2) and an `identify` scope for retrieving the user's Discord ID. The server must complete that flow, resolve the verified Discord ID to a Firebase UID, and return a Firebase sign-in credential. It must also handle first-time account creation, account linking, recovery, and login errors. Access checks should continue to use Firebase UID and trusted claims where applicable.
+
+## Approaches
+
+| Approach | Advantages | Drawbacks |
+| --- | --- | --- |
+| **A. Server-verified Discord OAuth + Firebase custom token** | Fits the existing Discord API and Firebase Admin stack; a verified link can sign into an existing Google account's UID and preserve its profile and claims. [Firebase supports custom-token sign-in](https://firebase.google.com/docs/auth/web/custom-auth). | We own the trusted Discord ID-to-UID mapping, collision handling, login security, and recovery. Custom-token login is not a native Firebase Discord provider link. |
+| **B. OIDC identity broker + Firebase Authentication with Identity Platform** | A broker could present Discord as an OIDC provider and handle part of the sign-in flow; less custom token issuance code. [Firebase's OIDC support](https://firebase.google.com/docs/auth/web/openid-connect) covers this path. | Adds a broker, operational dependency, and possible cost; requires upgrading Firebase Authentication to Identity Platform. Discord's documented OAuth2 flow does not itself supply the OIDC discovery document and ID tokens this Firebase feature requires, so direct `OAuthProvider('discord')` configuration is not an available shortcut. Account separation or linking still needs a decision. |
+| **C. Keep Google sign-in; use Discord only as a connected identity** | Smallest change; current award import and Discord posting already work this way. | Does not let someone access their Firebase account using Discord alone, so it does not meet the sign-in goal. |
+
+## Relationship to today's Discord support
+
+[`AuthDiscordRoute`](../../src/auth/AuthDiscordRoute.jsx) and `../explore-lpubelts-com-node/src/api/services/discordIdentityService.js` already exchange a Discord code on the server and verify `/users/@me` for award import or a one-use belt-request posting grant. Both `/discord/oauth/start` and `/discord/oauth/exchange` currently require an **existing Firebase ID token**. The import flow writes `discordId` and `discordUsername` to `lockcollections`; those fields are owner-writable under current [`firestore.rules`](../../firebase/firestore.rules), so they cannot establish login ownership. The posting grant is short lived and bound to the current Firebase UID, not a reusable sign-in credential.
+
+The OAuth exchange, state handling, Discord configuration, and callback experience offer reusable patterns. A login flow needs separate pre-sign-in endpoints, a server-owned Discord ID-to-UID mapping, and a custom-token response. Existing import/profile fields may remain display and import data; they must not be silently promoted into login credentials.
+
+## Linking an existing account
+
+Your proposed starting point is appropriate: while signed in with Google, the member chooses **Connect Discord for sign-in** and completes a fresh Discord authorization, much like today's award import or request posting. Give this a distinct OAuth purpose. The server verifies the Firebase ID token and Google sign-in method at start and exchange, binds one-time state to that UID and browser session, exchanges the Discord code, and reads Discord's stable user ID. Require recent Google authentication for this account-access change, prompting reauthentication if the session is old; Firebase documents [checking `auth_time`](https://firebase.google.com/docs/auth/admin/manage-cookies).
+
+The server then records a **unique, server-owned** Discord ID-to-Firebase UID link, checking in a transaction that neither identity is linked to another account. A later signed-out **Sign in with Discord** flow verifies Discord again, looks up this link, and mints a Firebase custom token for the *existing* UID. The user gets the same profile, awards, and claims as with Google sign-in. That privilege continuity is intentional and makes link creation an account-access decision. This is application-managed linking; Discord is not a native Firebase provider that can be attached with `linkWithPopup`. [Firebase custom tokens select the account by UID](https://firebase.google.com/docs/auth/admin/create-custom-tokens).
+
+An existing `lockcollections.discordId` is not proof of a login link because the owner can edit it. Require fresh OAuth even if award import was completed before. If the Discord ID already belongs to another linked UID or to a standalone Discord account, stop and offer a verified recovery/merge process; never silently reassign it or combine profiles and claims. Keep login unlinking separate from today's **Remove Discord account** import-field action. Google remains a recovery method for linked accounts; do not let a standalone Discord account remove its only sign-in method without another recovery path.
+
+## Recommendation
+
+Use **approach A with a link-first rollout**. Keep Google sign-in and first let existing members connect Discord from their signed-in session. Then enable signed-out Discord sign-in: resolve linked IDs to their existing UIDs and issue custom tokens for those accounts. For an unlinked Discord ID, clearly offer **Sign in with Google to connect an existing account** before creating a standalone Firebase account and registering its UID in the same trusted mapping. This reduces accidental duplicate profiles; do not infer a link from a username, email, or profile `discordId`. A standalone account can receive its own claims but cannot access a separate Google profile. The browser calls `signInWithCustomToken` in either case.
+
+**Allow claims for eligible accounts.** [Firebase custom claims attach to a UID and appear in its ID tokens](https://firebase.google.com/docs/auth/admin/custom-claims), so a linked Discord sign-in receives the existing account's claims; a standalone Discord UID can receive its own claims through trusted grant workflows. The current claim-based Firestore rules, API checks, and site roles can use them. Audit award-derived grants, including Black Belt, for new standalone accounts. The main added complexity is securely choosing and maintaining the UID, not implementing claims again.
+
+## Main risks and next steps
+
+- **Link takeover:** A bad link could let a Discord account access an existing member's private profile and every claim on that UID. Require the authenticated linking session, fresh Discord proof, unique server-owned mapping, and recent Google authentication; never trust the owner-writable profile fields.
+- **Duplicate accounts:** An existing Google user who starts with signed-out Discord sign-in before linking could create a second profile and scorecard. Explain the choice before account creation. A Discord-only account that already has data cannot be linked to a different UID without an explicit recovery/merge design.
+- **New public login endpoint:** The existing OAuth endpoints require Firebase authentication. A new pre-sign-in flow needs allowlisted redirect URIs, one-time expiring state bound to the initiating browser, replay protection, rate limits, safe logging, and server-only secrets. Test these controls before rollout.
+- **Access expectations:** Discord users qualify for rules and API actions open to all signed-in users, their own UID, or claims they have actually been granted. A verified Discord ID does not itself justify privileged claims or prove LPU guild membership. UI hiding alone does not enforce access restrictions.
+
+Next, define link/unlink and collision recovery behavior; extend the authenticated OAuth flow for login linking; build and test the server-owned unique mapping; add signed-out Discord OAuth and custom-token issuance; introduce the link-first UI; audit claim-grant workflows; then test existing-UID and claim continuity, standalone signup, duplicate-link rejection, denied/replayed callbacks, and Firestore/API access in a non-production environment. Review operational and security behavior before an approved release.

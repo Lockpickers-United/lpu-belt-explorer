@@ -2,7 +2,7 @@
 
 Read this reference for Firestore change trackers, their emulator tests, or incremental exporters in either repository.
 
-`functions/index.js` maintains these mappings:
+`firebase/functions/index.js` maintains these mappings:
 
 | Source collection | Change-index collection | Default database function | `lpubelts-dev` function |
 | --- | --- | --- | --- |

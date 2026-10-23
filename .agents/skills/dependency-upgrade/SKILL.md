@@ -37,7 +37,7 @@ Check all applicable items:
 
 - Node and npm compatibility against `.nvmrc`, `engines`, CI setup, and deployment runtime.
 - Peer-dependency compatibility across the complete package family. Do not bypass conflicts with `--force` or `--legacy-peer-deps`.
-- ESM/CommonJS and package-export changes against this repository's ESM frontend, CommonJS `functions/` package, scripts, and configuration files.
+- ESM/CommonJS and package-export changes against this repository's ESM frontend, CommonJS `firebase/functions/` package, scripts, and configuration files.
 - React compatibility, including hooks, Strict Mode, rendering behavior, refs, and test utilities.
 - Browser support, CSS or visual defaults, accessibility behavior, bundle behavior, and SSR or global-object access where relevant.
 - Configuration schema, command-line flags, environment variables, generated output, and CI workflow changes.

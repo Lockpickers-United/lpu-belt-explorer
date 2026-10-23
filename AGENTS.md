@@ -26,7 +26,7 @@ Read every relevant reference before editing or executing commands for that area
 - Test/production builds: `npm run build:test` and `npm run build`
 - PR-equivalent checks: `npm run ci-pr`
 - Browser tests: `npm run e2e`; focused: `npx playwright test tests/e2e/example.spec.js`
-- Functions lint: `npm --prefix functions run lint`
+- Functions lint: `npm --prefix firebase/functions run lint`
 - Change-tracker integration: `npm run test:functions:integration`
 
 Use focused checks while iterating and the smallest broader check justified before handoff. Do not use `npm run ci-build` as a validation shortcut; it invokes generators and exporters.
@@ -47,7 +47,7 @@ Frontend and scripts follow `eslint.config.js` and nearby style:
 
 There is no repository-wide autoformatter; preserve local formatting where it differs.
 
-`functions/` is a separate CommonJS package using `functions/eslint.config.js` and Google style: `require()`/`exports`, two-space indentation, double quotes, semicolons, and Firebase Functions v2 APIs. Do not apply frontend formatting rules there.
+`firebase/functions/` is a separate CommonJS package using `firebase/functions/eslint.config.js` and Google style: `require()`/`exports`, two-space indentation, double quotes, semicolons, and Firebase Functions v2 APIs. Do not apply frontend formatting rules there.
 
 ## Implementation rules
 

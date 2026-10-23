@@ -1,6 +1,6 @@
 # Testing Implementation Report
 
-This document tracks implementation of `internal-docs/testing-strategy-and-coverage-plan.md`. Update the applicable phase with its summary, findings, changes, verification, and remaining work whenever a phase is completed.
+This document tracks implementation of `testing-strategy-and-coverage-plan.md`. Update the applicable phase with its summary, findings, changes, verification, and remaining work whenever a phase is completed.
 
 Last updated: 2026-09-14
 
@@ -29,7 +29,7 @@ The fast frontend suite now contains 10 files and 32 passing tests. The repaired
 
 #### Unit tests were silently using live services
 
-The original Vitest configuration loaded `.env.keysNew`, placing real local credentials in the test process even though the suite did not need them.
+The original Vitest configuration loaded `../../.env.keysNew`, placing real local credentials in the test process even though the suite did not need them.
 
 After production URLs were replaced with test-only URLs, six existing route tests failed. This demonstrated that the tests had been passing by downloading current JSON from `explore.lpubelts.com`. Their assertions included current production usernames, so they were neither offline nor stable.
 
@@ -41,7 +41,7 @@ MSW already rejected unhandled requests, which is the correct default. It had on
 
 #### Coverage was configured but unavailable
 
-`vitest.config.js` declared global 70% line/function/statement and 60% branch thresholds, but neither supported Vitest coverage provider was installed. Therefore no baseline could be generated and the thresholds had never acted as a usable gate.
+`../../vitest.config.js` declared global 70% line/function/statement and 60% branch thresholds, but neither supported Vitest coverage provider was installed. Therefore no baseline could be generated and the thresholds had never acted as a usable gate.
 
 With broad `src/**/*.{js,jsx}` collection and only test support/entry bootstrap excluded, the first working baseline is:
 
@@ -75,7 +75,7 @@ The pull-request workflow ran lint and build only. The main deployment workflow 
 
 #### Safe test environment
 
-- Added a committed `.env.test` containing synthetic Firebase identifiers, loopback emulator addresses, relative data/API paths, and no real secrets.
+- Added a committed `../../.env.test` containing synthetic Firebase identifiers, loopback emulator addresses, relative data/API paths, and no real secrets.
 - Added `assertSafeTestEnvironment`, which rejects:
   - execution outside Vite test mode
   - a Firebase API key other than the test sentinel
@@ -87,7 +87,7 @@ The pull-request workflow ran lint and build only. The main deployment workflow 
 - Made the Firebase project/config fields environment-selectable while preserving existing production defaults.
 - Connected Auth and Firestore to the configured loopback emulators whenever `VITE_USE_FIREBASE_EMULATORS=true`.
 - Made data, LockBazaar, Node service, and API base URLs environment-selectable. Local data now uses same-origin `/data` rather than a hard-coded development port.
-- Prevented Vitest and test-mode Vite builds from loading `.env.keysNew`. Non-test Vite builds retain the existing local behavior for compatibility.
+- Prevented Vitest and test-mode Vite builds from loading `../../.env.keysNew`. Non-test Vite builds retain the existing local behavior for compatibility.
 
 #### Deterministic Vitest suite
 
@@ -103,13 +103,13 @@ The pull-request workflow ran lint and build only. The main deployment workflow 
 
 - Added exact-version `@vitest/coverage-v8` 4.1.8 to match Vitest 4.1.8.
 - Added `npm run test:coverage`.
-- Configured V8 text, HTML, and LCOV reports under ignored `coverage/`.
+- Configured V8 text, HTML, and LCOV reports under ignored `../../coverage`.
 - Removed unenforceable global thresholds pending a measured ratchet. No coverage gate is active yet.
 - Included untested frontend JavaScript/JSX in the baseline so the number reflects the application rather than only modules imported by the current tests.
 
 #### Safe commands and CI
 
-- Added `npm run build:test`, which builds with `.env.test` and does not load `.env.keysNew`.
+- Added `npm run build:test`, which builds with `../../.env.test` and does not load `.env.keysNew`.
 - Added `npm run test:ci` as the non-watch CI frontend command.
 - Changed `npm run ci-pr` to run lint, frontend tests, and the isolated test-mode build.
 - Added `npm run test:ci` before the main deployment workflow's build/deploy step.
@@ -128,7 +128,7 @@ The pull-request workflow ran lint and build only. The main deployment workflow 
 
 #### Contributor guidance
 
-- Updated `AGENTS.md` with coverage, isolated-build, PR-equivalent, browser-install, and test-safety instructions.
+- Updated `../../AGENTS.md` with coverage, isolated-build, PR-equivalent, browser-install, and test-safety instructions.
 - Added this implementation report and linked it from the strategy document.
 
 ### Verification
@@ -153,7 +153,7 @@ The first isolated Vitest run and first coverage run failed during migration and
 - [x] A clean install has one documented fast command: `npm run test:ci`.
 - [x] PR-equivalent validation is documented and available as `npm run ci-pr`.
 - [x] Frontend tests do not require production credentials or external network access.
-- [x] Test imports no longer load `.env.keysNew`.
+- [x] Test imports no longer load `../../.env.keysNew`.
 - [x] Firebase and API configuration fail closed in test mode.
 - [x] Tests are scoped away from dependencies, build output, Functions, and sibling repositories.
 - [x] Coverage can be collected and an honest baseline is recorded.
@@ -178,7 +178,7 @@ The configurable core provider/router render harness was implemented as part of 
 
 ### Findings
 
-The provider work was sufficient for compatibility tests, but global context mocks in `src/test/setupTests.js` remain broad. Domain factories, feature-specific providers, and expanded MSW handlers are still needed before this testing phase is complete.
+The provider work was sufficient for compatibility tests, but global context mocks in `../../src/test/setupTests.js` remain broad. Domain factories, feature-specific providers, and expanded MSW handlers are still needed before this testing phase is complete.
 
 ### Changes
 
