@@ -1280,6 +1280,7 @@ is required to gut.
 - [Western Electric 30B](https://lpubelts.com/#/locks?id=e718b140)
 - [Western Electric 30C](https://lpubelts.com/#/locks?id=5a4310d5)
 - [Winkhaus X-Tra](https://lpubelts.com/#/locks?id=d1a5cd90) (&ge;13 pins)
+- [WittKopp cawi Optima 2648](https://lpubelts.com/#/locks?id=6ebce16f)
 - [Yanai R 2200M](https://lpubelts.com/#/locks?id=a8e79394) (&gt;= 17 pins)
 - [Yanai R 2200M](https://lpubelts.com/#/locks?id=a974eb0c) (14-16 pins)
 - [Yuema 750 series / Forte Enigma](https://lpubelts.com/#/locks?id=0b604114)
