@@ -25,7 +25,7 @@ import scrollRefToTop from '../util/scrollRefToTop.js'
 import ConfirmButton from '../misc/ConfirmButton.jsx'
 
 const statuses = ['Draft', 'Pending', 'Staged', 'Re-opened', 'Settled']
-const actions = ['Belt Change', 'Sameline', 'Delete']
+const actions = ['Belt Change', 'Sameline', 'Delete', 'Other']
 
 export default function EntryClassificationAdmin({entry, handleToggle, entryRef}) {
     const {getAdminAction} = useContext(ClassificationContext)

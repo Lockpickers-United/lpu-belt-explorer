@@ -20,5 +20,8 @@ export default function changelogEntryFormat({entry, adminAction, targetLock, li
     if (action === 'Delete') {
         entryText = `- **${name}**${version}${separator}${historical ? previousBelt ?? entry.belt : entry.belt}. ${note ?? ''}`
     }
+    if (action === 'Other') {
+        entryText = `- **${name}**${version}${separator}${historical ? previousBelt ?? entry.belt : entry.belt}. ${note ?? ''}`
+    }
     return entryText
 }

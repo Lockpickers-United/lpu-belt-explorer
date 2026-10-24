@@ -241,11 +241,11 @@ describe('classification previews', () => {
                 updatedBelt: null, samelineTargetId: null}), expect.any(String))
     })
 
-    it('creates a staged admin action and publishes one decision through separate commands', async () => {
+    it.each(['Delete', 'Other'])('creates a staged %s action and publishes it through separate commands', async action => {
         const user = userEvent.setup()
         const confirm = vi.spyOn(window, 'confirm').mockReturnValue(false)
         const classificationCommand = vi.fn(async (_method, path) => path === 'actions'
-            ? {action: {id: 'action-new', revision: 1, status: 'Staged', action: 'Delete'}}
+            ? {action: {id: 'action-new', revision: 1, status: 'Staged', action}}
             : {publication: {id: 'publication-new'}})
         const entry = {...allEntries.find(item => item.id === 'e2fd1519'),
             currentVotes: [], previousVotes: []}
@@ -266,10 +266,11 @@ describe('classification previews', () => {
         await user.click(screen.getAllByRole('combobox')[0])
         await user.click(screen.getByRole('option', {name: 'Staged'}))
         await user.click(screen.getAllByRole('combobox')[1])
-        await user.click(screen.getByRole('option', {name: 'Delete'}))
+        await user.click(screen.getByRole('option', {name: action}))
         await user.click(screen.getByRole('button', {name: 'Save'}))
         expect(classificationCommand).toHaveBeenCalledWith('post', 'actions', expect.objectContaining({
-            entryId: entry.id, status: 'Staged', action: 'Delete'
+            entryId: entry.id, status: 'Staged', action,
+            updatedBelt: null, samelineTargetId: null
         }), expect.any(String))
 
         await user.click(screen.getByRole('button', {name: 'Publish Now'}))
@@ -280,7 +281,7 @@ describe('classification previews', () => {
         expect(confirm).not.toHaveBeenCalled()
         expect(classificationCommand).toHaveBeenCalledWith('post', 'publications/single', expect.objectContaining({
             entryId: entry.id, actionId: 'action-new', expectedRevision: 1,
-            action: 'Delete', omitChangelog: false
+            action, updatedBelt: null, samelineTargetId: null, omitChangelog: false
         }), expect.any(String))
         confirm.mockRestore()
     })

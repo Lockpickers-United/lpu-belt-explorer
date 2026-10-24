@@ -77,6 +77,8 @@ export default function ChangelogMain() {
             setDeepPush(acc, ['New Additions'], entry)
         } else if (adminAction.action === 'Sameline') {
             setDeepPush(acc, ['Samelines'], entry)
+        } else if (adminAction.action === 'Other') {
+            setDeepPush(acc, ['Other'], entry)
         } else if (compareBelts(adminAction.previousBelt ?? entry.belt, adminAction.updatedBelt) === 1) {
             setDeepPush(acc, ['Downgrades'], entry)
         } else if (compareBelts(adminAction.previousBelt ?? entry.belt, adminAction.updatedBelt) === -1) {

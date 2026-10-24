@@ -21,5 +21,8 @@ export default function reconcileClassificationAction(action, catalogById) {
             ? {status: 'Awaiting import', detail: `Source remains; retained target is ${target.belt}`}
             : {status: 'Matches catalog', detail: `Source is absent; retained target is ${target.belt}`}
     }
+    if (action.action === 'Other') {
+        return {status: 'Needs review', detail: 'Other change'}
+    }
     return {status: 'Needs review', detail: 'Unknown action type'}
 }

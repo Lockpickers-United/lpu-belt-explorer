@@ -55,5 +55,7 @@ describe('live changelog reads', () => {
             .detail).toContain('retained target is Blue')
         expect(reconcileClassificationAction({...snapshot, action: 'Sameline', samelineTargetId: 'missing'}, catalog)
             .status).toBe('Needs review')
+        expect(reconcileClassificationAction({...snapshot, action: 'Other', updatedBelt: null}, catalog))
+            .toEqual({status: 'Needs review', detail: 'Other change'})
     })
 })

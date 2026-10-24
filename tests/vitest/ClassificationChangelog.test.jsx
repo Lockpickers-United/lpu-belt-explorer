@@ -37,7 +37,7 @@ describe('classification changelog', () => {
         const reloadChangelog = vi.fn()
         const stagedActions = [
             {id: 'included', entryId: samelineEntry.id, status: 'Staged', revision: 4,
-                action: 'Sameline', omitChangelog: false},
+                action: 'Other', omitChangelog: false},
             {id: 'omitted', entryId: deleteEntry.id, status: 'Staged', revision: 2,
                 action: 'Delete', omitChangelog: true}
         ]
@@ -124,6 +124,50 @@ describe('classification changelog', () => {
             adminAction: {...samelineAction, samelineLock: {...samelineAction.samelineLock, belt: 'Purple'}},
             historical: true
         })).toContain('at PURPLE.')
+    })
+
+    it('formats an Other action using the original belt in published history', () => {
+        const action = {action: 'Other', note: 'Updated lock details', previousBelt: 'Blue'}
+        expect(changelogEntryFormat({entry: samelineEntry, adminAction: action}))
+            .toContain(`${samelineEntry.belt}. Updated lock details`)
+        expect(changelogEntryFormat({entry: samelineEntry, adminAction: action, historical: true}))
+            .toContain('Blue. Updated lock details')
+    })
+
+    it('groups an Other action and exports its unchanged belt and note', async () => {
+        const user = userEvent.setup()
+        const action = {id: 'action-other', entryId: samelineEntry.id, status: 'Staged',
+            action: 'Other', updatedBelt: null, note: 'Updated lock details'}
+        const data = {
+            visibleChangelogEntries: [samelineEntry],
+            getLockFromId: id => allEntries.find(entry => entry.id === id)
+        }
+        const router = createMemoryRouter([{
+            path: '/classification/changelog', handle: {route: 'classification'},
+            element: <ClassificationContext.Provider value={{
+                ...classification, getAdminAction: () => action
+            }}>
+                <DataContext.Provider value={data}><ChangelogMain/></DataContext.Provider>
+            </ClassificationContext.Provider>
+        }], {initialEntries: ['/classification/changelog']})
+        renderWithProviders(<RouterProvider router={router}/>, {
+            access: {accessInfo: {...defaultTestContextValues.access.accessInfo,
+                roles: {...defaultTestContextValues.access.accessInfo.roles, classificationAdmin: true}}}
+        })
+
+        expect(screen.getByText('Other')).toBeInTheDocument()
+        expect(screen.queryByText('Downgrades')).not.toBeInTheDocument()
+        expect(screen.getByText(/Updated lock details/)).toBeInTheDocument()
+
+        await user.click(screen.getByRole('button', {name: 'Export'}))
+        await user.click(screen.getByRole('menuitem', {name: 'JSON'}))
+        expect(JSON.parse(vi.mocked(download).mock.lastCall[1])).toContainEqual(expect.objectContaining({
+            id: samelineEntry.id,
+            action: 'Other',
+            change: 'Other',
+            belt: samelineEntry.belt,
+            note: 'Updated lock details'
+        }))
     })
 
     it('shows staged Sameline and Delete sections as the visible actions change', async () => {
