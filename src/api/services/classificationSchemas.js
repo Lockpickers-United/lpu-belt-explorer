@@ -35,7 +35,7 @@ export const revisionSchema = z.strictObject({expectedRevision: revision})
 
 const actionFields = {
     status: z.enum(['Draft', 'Pending', 'Staged', 'Re-opened', 'Settled']),
-    action: z.enum(['Belt Change', 'Sameline', 'Delete']).nullable().optional(),
+    action: z.enum(['Belt Change', 'Sameline', 'Delete', 'Other']).nullable().optional(),
     updatedBelt: z.enum(voteBelts).nullable().optional(),
     samelineTargetId: id.nullable().optional(),
     note: optionalText(4000),
@@ -85,7 +85,7 @@ export const singlePublishSchema = z.strictObject({
     entryId: id,
     actionId: id.nullable().optional(),
     expectedRevision: revision.nullable(),
-    action: z.enum(['Belt Change', 'Sameline', 'Delete']),
+    action: z.enum(['Belt Change', 'Sameline', 'Delete', 'Other']),
     updatedBelt: z.enum(voteBelts).nullable().optional(),
     samelineTargetId: id.nullable().optional(),
     note: optionalText(4000),

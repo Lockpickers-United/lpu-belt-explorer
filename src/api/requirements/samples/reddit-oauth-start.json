@@ -1,0 +1,7 @@
+{
+  "metadata": {"source": "firebase", "fetchedDateTime": "2026-10-23T12:00:00.000Z"},
+  "data": {
+    "state": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+    "authorizeUrl": "https://www.reddit.com/api/v1/authorize?client_id=synthetic-client&response_type=code&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA&redirect_uri=https%3A%2F%2Fdev.lpubelts.com%2F&duration=temporary&scope=identity+flair+privatemessages"
+  }
+}

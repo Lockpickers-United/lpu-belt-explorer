@@ -13,7 +13,9 @@ const mocks = vi.hoisted(() => ({
     moveVote: vi.fn(),
     deleteVote: vi.fn(),
     createAction: vi.fn(),
-    publishBatch: vi.fn()
+    editAction: vi.fn(),
+    publishBatch: vi.fn(),
+    publishSingle: vi.fn()
 }))
 
 vi.mock('../services/firebaseAdmin.js', () => ({
@@ -52,7 +54,9 @@ beforeEach(() => {
         moveVote: mocks.moveVote,
         deleteVote: mocks.deleteVote,
         createAction: mocks.createAction,
-        publishBatch: mocks.publishBatch
+        editAction: mocks.editAction,
+        publishBatch: mocks.publishBatch,
+        publishSingle: mocks.publishSingle
     })
     mocks.getEntryVotes.mockResolvedValue({entryId: 'lock-a', votes: [], nextCursor: null})
     mocks.createVote.mockResolvedValue({vote: {id: 'vote-a'}, entryRevision: 1})
@@ -61,7 +65,9 @@ beforeEach(() => {
         sourceEntryRevision: 2})
     mocks.deleteVote.mockResolvedValue({voteId: 'vote-a', entryRevision: 3})
     mocks.createAction.mockResolvedValue({action: {id: 'action-a'}, entryRevision: 1})
+    mocks.editAction.mockResolvedValue({action: {id: 'action-a'}, entryRevision: 2})
     mocks.publishBatch.mockResolvedValue({publication: {id: 'publication-a'}})
+    mocks.publishSingle.mockResolvedValue({publication: {id: 'publication-single'}})
 })
 
 afterEach(() => vi.unstubAllEnvs())
@@ -185,6 +191,40 @@ describe('classification routes', () => {
         expect(mocks.moveVote).toHaveBeenCalledWith(
             {uid: 'classification-admin', classificationAdmin: true},
             'move-vote-key', 'vote-a', body)
+    })
+
+    it('accepts Other for admin saves and direct publication without belt or target', async () => {
+        const actor = {uid: 'admin', admin: true}
+        const action = {status: 'Staged', action: 'Other', updatedBelt: null,
+            samelineTargetId: null, note: 'Updated lock details'}
+        const createBody = {entryId: 'lock-a', ...action}
+        const created = await request(app).post('/api/v1/classification/actions')
+            .set('Authorization', 'Bearer admin').set('Idempotency-Key', 'other-create')
+            .send(createBody)
+        expect(created.status).toBe(201)
+        expect(mocks.createAction).toHaveBeenCalledWith(actor, 'other-create', createBody)
+
+        const editBody = {expectedRevision: 1, ...action}
+        const edited = await request(app).patch('/api/v1/classification/actions/action-a')
+            .set('Authorization', 'Bearer admin').set('Idempotency-Key', 'other-edit')
+            .send(editBody)
+        expect(edited.status).toBe(200)
+        expect(mocks.editAction).toHaveBeenCalledWith(actor, 'other-edit', 'action-a', editBody)
+
+        const publishBody = {entryId: 'lock-a', actionId: null, expectedRevision: null,
+            action: 'Other', updatedBelt: null, samelineTargetId: null,
+            note: 'Updated lock details', omitChangelog: false}
+        const published = await request(app).post('/api/v1/classification/publications/single')
+            .set('Authorization', 'Bearer admin').set('Idempotency-Key', 'other-publish')
+            .send(publishBody)
+        expect(published.status).toBe(201)
+        expect(mocks.publishSingle).toHaveBeenCalledWith(actor, 'other-publish', publishBody)
+
+        const invalid = await request(app).post('/api/v1/classification/publications/single')
+            .set('Authorization', 'Bearer admin').set('Idempotency-Key', 'other-invalid')
+            .send({...publishBody, updatedBelt: 'Blue'})
+        expect(invalid.status).toBe(400)
+        expect(mocks.publishSingle).toHaveBeenCalledTimes(1)
     })
 
     it('allows publication only to admins with a bounded action list', async () => {

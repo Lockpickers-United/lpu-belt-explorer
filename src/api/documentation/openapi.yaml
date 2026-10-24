@@ -9,6 +9,8 @@ servers:
   - url: https://api.lpubelts.com/api/v1
     description: Production
 tags:
+  - name: Reddit
+    description: Authenticated temporary Reddit OAuth and member inbox import.
   - name: Discord
     description: Authenticated, short-lived Discord OAuth identity for award import or one belt request.
   - name: Classification
@@ -20,6 +22,44 @@ tags:
   - name: Users
     description: Firebase-backed user profile data.
 paths:
+  /reddit/oauth/start:
+    post:
+      tags: [Reddit]
+      summary: Start a browser-bound Reddit import authorization
+      description: Requires a Firebase ID token. The redirect URI must exactly equal the configured root callback. State expires after 10 minutes and can be exchanged once.
+      operationId: startRedditOAuth
+      security: [{firebaseBearerAuth: []}]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {$ref: '#/components/schemas/RedditOAuthStart'}
+      responses:
+        '200': {$ref: '#/components/responses/RedditOAuthStartSuccess'}
+        '400': {$ref: '#/components/responses/Error'}
+        '401': {$ref: '#/components/responses/Error'}
+        '503': {$ref: '#/components/responses/Error'}
+  /reddit/oauth/exchange:
+    post:
+      tags: [Reddit]
+      summary: Exchange a Reddit code and read import inputs
+      description: Consumes UID- and nonce-bound state before contacting Reddit. Reads the verified identity, flair, and relevant moderator inbox messages, then attempts token revocation. An oversized or failed scan returns an error with no partial import data or bookmark update.
+      operationId: exchangeRedditOAuth
+      security: [{firebaseBearerAuth: []}]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {$ref: '#/components/schemas/RedditOAuthExchange'}
+      responses:
+        '200': {$ref: '#/components/responses/RedditOAuthExchangeSuccess'}
+        '400': {$ref: '#/components/responses/Error'}
+        '401': {$ref: '#/components/responses/Error'}
+        '413': {$ref: '#/components/responses/Error'}
+        '429': {$ref: '#/components/responses/Error'}
+        '502': {$ref: '#/components/responses/Error'}
+        '503': {$ref: '#/components/responses/Error'}
+        '504': {$ref: '#/components/responses/Error'}
   /discord/oauth/start:
     post:
       tags: [Discord]
@@ -598,6 +638,22 @@ components:
       required: true
       schema: {type: string, minLength: 8, maxLength: 128}
   responses:
+    RedditOAuthStartSuccess:
+      description: Private Reddit authorization URL and opaque state.
+      headers:
+        Cache-Control:
+          schema: {type: string, const: 'private, no-store'}
+      content:
+        application/json:
+          schema: {$ref: '#/components/schemas/RedditOAuthStartResponse'}
+    RedditOAuthExchangeSuccess:
+      description: Private verified Reddit identity and bounded import inputs.
+      headers:
+        Cache-Control:
+          schema: {type: string, const: 'private, no-store'}
+      content:
+        application/json:
+          schema: {$ref: '#/components/schemas/RedditOAuthExchangeResponse'}
     DiscordOAuthStartSuccess:
       description: Private OAuth authorization URL and opaque state.
       headers:
@@ -637,6 +693,57 @@ components:
           schema:
             $ref: '#/components/schemas/ErrorResponse'
   schemas:
+    RedditOAuthStart:
+      type: object
+      additionalProperties: false
+      required: [purpose, nonce, redirectUri]
+      properties:
+        purpose: {type: string, enum: [import, debugImport]}
+        nonce: {type: string, pattern: '^[a-f0-9]{32}$'}
+        redirectUri: {type: string, format: uri, maxLength: 512}
+    RedditOAuthExchange:
+      type: object
+      additionalProperties: false
+      required: [code, state, nonce]
+      properties:
+        code: {type: string, minLength: 1, maxLength: 2048}
+        state: {type: string, pattern: '^[A-Za-z0-9_-]{43}$'}
+        nonce: {type: string, pattern: '^[a-f0-9]{32}$'}
+    RedditOAuthStartResponse:
+      type: object
+      required: [metadata, data]
+      properties:
+        metadata: {$ref: '#/components/schemas/FirebaseMetadata'}
+        data:
+          type: object
+          required: [state, authorizeUrl]
+          properties:
+            state: {type: string}
+            authorizeUrl: {type: string, format: uri}
+    RedditOAuthExchangeResponse:
+      type: object
+      required: [metadata, data]
+      properties:
+        metadata: {$ref: '#/components/schemas/FirebaseMetadata'}
+        data:
+          type: object
+          required: [purpose, username, flairText, bookmark, nextBookmark, messages]
+          properties:
+            purpose: {type: string, enum: [import, debugImport]}
+            username: {type: string, pattern: '^[A-Za-z0-9_-]{3,20}$'}
+            flairText: {type: [string, 'null']}
+            bookmark: {type: [string, 'null'], description: Existing bookmark only when linked username matches verified Reddit identity.}
+            nextBookmark: {type: [string, 'null'], description: Persist only after the complete import succeeds.}
+            messages:
+              type: array
+              items:
+                type: object
+                required: [id, subject, body, createdUtc]
+                properties:
+                  id: {type: string}
+                  subject: {type: string}
+                  body: {type: string}
+                  createdUtc: {type: number}
     DiscordOAuthStart:
       type: object
       additionalProperties: false
@@ -785,7 +892,7 @@ components:
       properties:
         entryId: {type: string, minLength: 1, maxLength: 128}
         status: {type: string, enum: [Draft, Pending, Staged, Re-opened, Settled]}
-        action: {type: [string, 'null'], enum: [Belt Change, Sameline, Delete, null]}
+        action: {type: [string, 'null'], enum: [Belt Change, Sameline, Delete, Other, null]}
         updatedBelt: {$ref: '#/components/schemas/ClassificationNullableBelt'}
         samelineTargetId: {type: [string, 'null'], maxLength: 128}
         note: {type: [string, 'null'], maxLength: 4000}
@@ -798,7 +905,7 @@ components:
       properties:
         expectedRevision: {type: integer, minimum: 1}
         status: {type: string, enum: [Draft, Pending, Staged, Re-opened, Settled]}
-        action: {type: [string, 'null'], enum: [Belt Change, Sameline, Delete, null]}
+        action: {type: [string, 'null'], enum: [Belt Change, Sameline, Delete, Other, null]}
         updatedBelt: {$ref: '#/components/schemas/ClassificationNullableBelt'}
         samelineTargetId: {type: [string, 'null'], maxLength: 128}
         note: {type: [string, 'null'], maxLength: 4000}
@@ -828,7 +935,7 @@ components:
         entryId: {type: string, minLength: 1, maxLength: 128}
         actionId: {type: [string, 'null'], maxLength: 128}
         expectedRevision: {type: [integer, 'null'], minimum: 1}
-        action: {type: string, enum: [Belt Change, Sameline, Delete]}
+        action: {type: string, enum: [Belt Change, Sameline, Delete, Other]}
         updatedBelt: {$ref: '#/components/schemas/ClassificationNullableBelt'}
         samelineTargetId: {type: [string, 'null'], maxLength: 128}
         note: {type: [string, 'null'], maxLength: 4000}

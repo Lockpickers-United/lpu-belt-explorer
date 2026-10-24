@@ -264,6 +264,44 @@ describe('classification service', () => {
         expect(records.get(`classificationVotes/${vote.vote.id}`).revision).toBe(1)
     })
 
+    it('saves and batch publishes an Other action with its original belt snapshot', async () => {
+        const {service, records} = fixture()
+        const created = await service.createAction(admin, 'other-action', {
+            entryId: 'lock-a', status: 'Staged', action: 'Other',
+            note: 'Updated lock details', updatedBelt: null, samelineTargetId: null
+        })
+        expect(created.action).toMatchObject({
+            action: 'Other', updatedBelt: null, samelineTargetId: null
+        })
+        expect(await service.getStagedActions()).toContainEqual(expect.objectContaining({
+            id: created.action.id, action: 'Other'
+        }))
+
+        const published = await service.publishBatch(admin, 'other-batch', {
+            actions: [{actionId: created.action.id, expectedRevision: 1}]
+        })
+        expect(published.publication.actions).toMatchObject([{
+            action: 'Other', entryId: 'lock-a', previousBelt: 'White',
+            updatedBelt: null, samelineTargetId: null, note: 'Updated lock details'
+        }])
+        expect(records.get(`classificationActions/${created.action.id}`).status).toBe('Published')
+    })
+
+    it('directly publishes an Other action without a belt or sameline target', async () => {
+        const {service} = fixture()
+        const published = await service.publishSingle(admin, 'other-single', {
+            entryId: 'lock-b', actionId: null, expectedRevision: null,
+            action: 'Other', updatedBelt: null, samelineTargetId: null,
+            note: 'Updated lock details', omitChangelog: false
+        })
+        expect(published.publication.actions).toMatchObject([{
+            action: 'Other', entryId: 'lock-b', previousBelt: 'Yellow',
+            updatedBelt: null, samelineTargetId: null, note: 'Updated lock details'
+        }])
+        expect((await service.getPublication(published.publication.id)).actions)
+            .toEqual(published.publication.actions)
+    })
+
     it('publishes one saved form decision without changing unrelated staged work', async () => {
         const {service, records} = fixture()
         const staged = await service.createAction(admin, 'action-key-c', {
