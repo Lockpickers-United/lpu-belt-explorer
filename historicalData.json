@@ -13577,11 +13577,11 @@
     "makeModels": [
       {
         "make": "IKON",
-        "model": "P031"
+        "model": "P0"
       }
     ],
     "notes": "IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",
-    "name": "IKON P031",
+    "name": "IKON P0",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "lockingMechanisms": [
       "Pin-tumbler"
@@ -26442,7 +26442,7 @@
     ],
     "name": "Securemme K5",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 2,
+    "views": 3,
     "lastUpdated": "2025-03-19T01:20:51.378Z",
     "media": [
       {
@@ -26464,7 +26464,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53178422404_30cb29014f_o.jpg"
       }
     ],
-    "popularityIndex": 2,
+    "popularityIndex": 3,
     "scorecardCount": 6
   },
   "4cd09b3b": {
@@ -28539,7 +28539,7 @@
     ],
     "name": "Nagasawa Kodai KCY-31",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 5,
+    "views": 6,
     "lastUpdated": "2025-03-19T01:20:51.377Z",
     "media": [
       {
@@ -28570,7 +28570,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53093920516_6daa8661b6_o.jpg"
       }
     ],
-    "popularityIndex": 5,
+    "popularityIndex": 6,
     "scorecardCount": 7
   },
   "94466c21": {
@@ -30272,12 +30272,12 @@
       "High pin count",
       "Flickr Update"
     ],
-    "views": 18,
+    "views": 19,
     "lastUpdated": "2025-03-18T23:29:31.277Z",
     "relatedIds": [
       "4223eb26"
     ],
-    "popularityIndex": 18,
+    "popularityIndex": 19,
     "scorecardCount": 4
   },
   "2c58f220": {
@@ -32403,9 +32403,9 @@
     ],
     "name": "GOAL D9",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 162,
+    "views": 163,
     "lastUpdated": "2025-03-19T15:44:57.303Z",
-    "popularityIndex": 162,
+    "popularityIndex": 163,
     "scorecardCount": 93
   },
   "a1233156": {
@@ -37209,12 +37209,12 @@
     ],
     "name": "GOAL Z",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 44,
+    "views": 45,
     "lastUpdated": "2025-03-19T15:44:57.308Z",
     "relatedIds": [
       "5103e650"
     ],
-    "popularityIndex": 44,
+    "popularityIndex": 45,
     "scorecardCount": 13
   },
   "34d27803": {
@@ -38439,14 +38439,14 @@
         "subtitleUrl": "https://www.youtube.com/watch?v=Tdga3yS1M3Y&list=PLd05gZIjxH9umy3x7FYq1HCUlvUNhcBwO&index=3&pp=iAQB"
       }
     ],
-    "views": 48,
+    "views": 49,
     "lastUpdated": "2025-03-19T15:44:57.309Z",
     "relatedIds": [
       "d0c510c5",
       "21b61a85",
       "91f40022"
     ],
-    "popularityIndex": 48,
+    "popularityIndex": 49,
     "scorecardCount": 6
   },
   "550a0c9d": {
@@ -42221,9 +42221,9 @@
     ],
     "name": "Clavis F-22",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 40,
+    "views": 41,
     "lastUpdated": "2025-03-18T23:29:31.283Z",
-    "popularityIndex": 40,
+    "popularityIndex": 41,
     "scorecardCount": 18
   },
   "7ea33803": {
@@ -44075,13 +44075,13 @@
     ],
     "name": "GOAL V18, GP",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 74,
+    "views": 75,
     "lastUpdated": "2025-03-19T01:20:51.393Z",
     "relatedIds": [
       "9f613c4a",
       "109531f4"
     ],
-    "popularityIndex": 74,
+    "popularityIndex": 75,
     "scorecardCount": 20
   },
   "109531f4": {
@@ -44290,12 +44290,12 @@
     ],
     "name": "GOAL Z",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 111,
+    "views": 112,
     "lastUpdated": "2025-03-19T01:20:51.393Z",
     "relatedIds": [
       "937eb7a8"
     ],
-    "popularityIndex": 111,
+    "popularityIndex": 112,
     "scorecardCount": 61
   },
   "e8c7dd5b": {
@@ -46434,9 +46434,9 @@
     ],
     "name": "Opnus Memolis",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 38,
+    "views": 39,
     "lastUpdated": "2025-03-19T01:20:51.396Z",
-    "popularityIndex": 38,
+    "popularityIndex": 39,
     "scorecardCount": 9
   },
   "e151c916": {
@@ -46506,9 +46506,9 @@
     ],
     "name": "Opnus MMXII",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 58,
+    "views": 59,
     "lastUpdated": "2025-03-19T15:44:57.318Z",
-    "popularityIndex": 58,
+    "popularityIndex": 59,
     "scorecardCount": 10
   },
   "5cba063b": {
@@ -52321,7 +52321,7 @@
     ],
     "name": "WEST YKK AP",
     "dateAdded": "2023-03-02T19:05:25.000Z",
-    "views": 3,
+    "views": 4,
     "lastUpdated": "2025-03-18T23:29:31.277Z",
     "media": [
       {
@@ -52367,7 +52367,7 @@
     "lockingMechanisms": [
       "Dimple"
     ],
-    "popularityIndex": 3,
+    "popularityIndex": 4,
     "scorecardCount": 8
   },
   "288c8f6e": {
@@ -59612,7 +59612,7 @@
     "lockingMechanisms": [
       "Dimple"
     ],
-    "views": 25,
+    "views": 26,
     "media": [
       {
         "title": "By: Wyte",
@@ -59660,7 +59660,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/54368127414_a952640ef3_o.jpg"
       }
     ],
-    "popularityIndex": 25,
+    "popularityIndex": 26,
     "scorecardCount": 12
   },
   "a0ec1618": {
@@ -62302,9 +62302,9 @@
     ],
     "name": "Jixin Z03 / Jasafe Z03",
     "dateAdded": "2025-06-10T16:49:06.288Z",
-    "popularityIndex": 1,
+    "popularityIndex": 2,
     "scorecardCount": 2,
-    "views": 1
+    "views": 2
   },
   "3b374cfc": {
     "id": "3b374cfc",
@@ -64011,8 +64011,8 @@
     "name": "Mul-T-Lock MT5+ Short",
     "dateAdded": "2026-09-01T00:58:56.482Z",
     "scorecardCount": 4,
-    "popularityIndex": 3,
-    "views": 3,
+    "popularityIndex": 4,
+    "views": 4,
     "currentBeltDate": "2026-08-30T12:00:00.000Z"
   },
   "096ded99": {
