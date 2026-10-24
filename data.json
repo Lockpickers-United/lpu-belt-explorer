@@ -827,9 +827,9 @@
       "Unguttable"
     ],
     "modelNum": "5",
-    "popularityIndex": 508,
-    "scorecardCount": 54,
-    "views": 508,
+    "popularityIndex": 507,
+    "scorecardCount": 53,
+    "views": 507,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -66931,7 +66931,7 @@
     "belt": "Unranked",
     "makeModels": [
       {
-        "make": "Cisa",
+        "make": "CISA",
         "model": "OTSP"
       }
     ],
@@ -66940,7 +66940,7 @@
     ],
     "currentBeltDate": "2026-10-24T05:11:57.627Z",
     "dateAdded": "2026-10-24T05:11:57.627Z",
-    "lastUpdated": "2026-10-24T05:11:58.071Z"
+    "lastUpdated": "2026-10-24T06:10:39.444Z"
   },
   {
     "id": "cbbe5ae1",
@@ -66960,7 +66960,7 @@
     "belt": "Unranked",
     "makeModels": [
       {
-        "make": "Cisa",
+        "make": "CISA",
         "model": "Vighi"
       }
     ],
@@ -66969,7 +66969,7 @@
     ],
     "currentBeltDate": "2026-10-24T05:11:57.627Z",
     "dateAdded": "2026-10-24T05:11:57.627Z",
-    "lastUpdated": "2026-10-24T05:11:58.071Z"
+    "lastUpdated": "2026-10-24T06:10:39.444Z"
   },
   {
     "id": "45bb95df",

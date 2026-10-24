@@ -2092,11 +2092,11 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53956921290_091b54de78_o.jpg"
       }
     ],
-    "views": 508,
+    "views": 507,
     "lastUpdated": "2025-03-19T15:44:57.277Z",
     "modelNum": "5",
-    "popularityIndex": 508,
-    "scorecardCount": 54
+    "popularityIndex": 507,
+    "scorecardCount": 53
   },
   "f10deed6": {
     "id": "f10deed6",
@@ -66712,14 +66712,14 @@
     "belt": "Unranked",
     "makeModels": [
       {
-        "make": "Cisa",
+        "make": "CISA",
         "model": "OTSP"
       }
     ],
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "name": "Cisa OTSP",
+    "name": "CISA OTSP",
     "currentBeltDate": "2026-10-24T05:11:57.627Z",
     "dateAdded": "2026-10-24T05:11:57.627Z"
   },
@@ -66728,14 +66728,14 @@
     "belt": "Unranked",
     "makeModels": [
       {
-        "make": "Cisa",
+        "make": "CISA",
         "model": "Vighi"
       }
     ],
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "name": "Cisa Vighi",
+    "name": "CISA Vighi",
     "currentBeltDate": "2026-10-24T05:11:57.627Z",
     "dateAdded": "2026-10-24T05:11:57.627Z"
   },
