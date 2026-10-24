@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": "sha256:b44a595a5551eebb22b27be8a9a956bdd8d56b3b28916c0cf330d10c8311adb0",
-  "generatedAt": "2026-10-24T05:11:58.089Z",
+  "catalogVersion": "sha256:b0600a8b0e5596a720f9e301ca8b65a2e0b4d7daba8812904b092e18549c8cb6",
+  "generatedAt": "2026-10-24T06:10:39.454Z",
   "entries": [
     {
       "id": "0082fa4c",
@@ -1034,7 +1034,7 @@
     },
     {
       "id": "1fcb7a29",
-      "name": "Cisa OTSP",
+      "name": "CISA OTSP",
       "version": null,
       "belt": "Unranked",
       "currentBeltDate": "2026-10-24T05:11:57.627Z"
@@ -2287,7 +2287,7 @@
     },
     {
       "id": "4875d4f7",
-      "name": "Cisa Vighi",
+      "name": "CISA Vighi",
       "version": null,
       "belt": "Unranked",
       "currentBeltDate": "2026-10-24T05:11:57.627Z"
