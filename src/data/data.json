@@ -17171,7 +17171,7 @@
     "makeModels": [
       {
         "make": "IKON",
-        "model": "P031"
+        "model": "P0"
       }
     ],
     "lockingMechanisms": [
@@ -17252,7 +17252,7 @@
     "relatedIds": [
       "d1896bf9"
     ],
-    "lastUpdated": "2026-09-22T01:32:01.203Z"
+    "lastUpdated": "2026-10-24T20:20:19.179Z"
   },
   {
     "id": "f8254416",
@@ -22834,9 +22834,9 @@
     "lockingMechanisms": [
       "Dimple"
     ],
-    "popularityIndex": 25,
+    "popularityIndex": 26,
     "scorecardCount": 12,
-    "views": 25,
+    "views": 26,
     "dateAdded": "2024-03-29T20:52:00.000Z",
     "media": [
       {
@@ -36741,9 +36741,9 @@
       "Pin-tumbler",
       "Sidepins"
     ],
-    "popularityIndex": 1,
+    "popularityIndex": 2,
     "scorecardCount": 2,
-    "views": 1,
+    "views": 2,
     "dateAdded": "2025-06-10T16:49:06.288Z",
     "media": [
       {
@@ -39986,9 +39986,9 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "popularityIndex": 5,
+    "popularityIndex": 6,
     "scorecardCount": 7,
-    "views": 5,
+    "views": 6,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -40734,9 +40734,9 @@
     "lockingMechanisms": [
       "Dimple"
     ],
-    "popularityIndex": 2,
+    "popularityIndex": 3,
     "scorecardCount": 6,
-    "views": 2,
+    "views": 3,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -41246,9 +41246,9 @@
     "features": [
       "High pin count"
     ],
-    "popularityIndex": 3,
+    "popularityIndex": 4,
     "scorecardCount": 8,
-    "views": 3,
+    "views": 4,
     "dateAdded": "2023-03-02T19:05:25.000Z",
     "media": [
       {
@@ -42568,9 +42568,9 @@
       "High pin count",
       "Flickr Update"
     ],
-    "popularityIndex": 18,
+    "popularityIndex": 19,
     "scorecardCount": 4,
-    "views": 18,
+    "views": 19,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -45322,9 +45322,9 @@
       "High pin count",
       "Flickr Update"
     ],
-    "popularityIndex": 162,
+    "popularityIndex": 163,
     "scorecardCount": 93,
-    "views": 162,
+    "views": 163,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -51053,9 +51053,9 @@
       "Overmilling",
       "Undercut milling"
     ],
-    "popularityIndex": 44,
+    "popularityIndex": 45,
     "scorecardCount": 13,
-    "views": 44,
+    "views": 45,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -52700,9 +52700,9 @@
       "Partial gut",
       "Flickr Update"
     ],
-    "popularityIndex": 48,
+    "popularityIndex": 49,
     "scorecardCount": 6,
-    "views": 48,
+    "views": 49,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -53401,9 +53401,9 @@
       "Pin-in-pin",
       "Latest Changelog"
     ],
-    "popularityIndex": 3,
+    "popularityIndex": 4,
     "scorecardCount": 4,
-    "views": 3,
+    "views": 4,
     "currentBeltDate": "2026-08-30T12:00:00.000Z",
     "dateAdded": "2026-09-01T00:58:56.482Z",
     "media": [
@@ -57645,9 +57645,9 @@
     "lockingMechanisms": [
       "Dimple"
     ],
-    "popularityIndex": 40,
+    "popularityIndex": 41,
     "scorecardCount": 18,
-    "views": 40,
+    "views": 41,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -59747,9 +59747,9 @@
       "High pin count",
       "Torpedo keypins"
     ],
-    "popularityIndex": 74,
+    "popularityIndex": 75,
     "scorecardCount": 20,
-    "views": 74,
+    "views": 75,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -60041,9 +60041,9 @@
       "Undercut milling",
       "Flickr Update"
     ],
-    "popularityIndex": 111,
+    "popularityIndex": 112,
     "scorecardCount": 61,
-    "views": 111,
+    "views": 112,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -63119,9 +63119,9 @@
     "lockingMechanisms": [
       "Lever/sidebar"
     ],
-    "popularityIndex": 38,
+    "popularityIndex": 39,
     "scorecardCount": 9,
-    "views": 38,
+    "views": 39,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -63219,9 +63219,9 @@
     "lockingMechanisms": [
       "Lever/sidebar"
     ],
-    "popularityIndex": 58,
+    "popularityIndex": 59,
     "scorecardCount": 10,
-    "views": 58,
+    "views": 59,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
