@@ -46,7 +46,8 @@ describe('live changelog reads', () => {
     })
 
     it('compares publication intent to a retained catalog state', () => {
-        const catalog = new Map([['lock-a', {belt: 'Green'}], ['lock-b', {belt: 'Blue'}]])
+        const catalog = new Map([['lock-a', {name: 'Lock A', belt: 'Green'}],
+            ['lock-b', {name: 'Lock B', belt: 'Blue'}]])
         expect(reconcileClassificationAction(snapshot, catalog)).toEqual({
             status: 'Awaiting import', detail: 'Current belt: Green; intended: Blue'
         })
@@ -57,5 +58,11 @@ describe('live changelog reads', () => {
             .status).toBe('Needs review')
         expect(reconcileClassificationAction({...snapshot, action: 'Other', updatedBelt: null}, catalog))
             .toEqual({status: 'Needs review', detail: 'Other change'})
+        expect(reconcileClassificationAction({...snapshot, action: 'Add New Sameline',
+            newSamelineName: 'New Lock Name'}, catalog)).toEqual({
+            status: 'Needs review', detail: 'Verify New Lock Name was added to Lock A'
+        })
+        expect(reconcileClassificationAction({...snapshot, action: 'Add New Sameline',
+            newSamelineName: 'New Lock Name', entryId: 'missing'}, catalog).status).toBe('Needs review')
     })
 })

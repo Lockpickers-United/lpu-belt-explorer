@@ -286,6 +286,60 @@ describe('classification previews', () => {
         confirm.mockRestore()
     })
 
+    it('requires a new sameline name and sends it for save and direct publication', async () => {
+        const user = userEvent.setup()
+        const classificationCommand = vi.fn(async (_method, path, fields) => path === 'actions'
+            ? {action: {id: 'action-new', revision: 1, ...fields}}
+            : {publication: {id: 'publication-new'}})
+        const entry = {...allEntries.find(item => item.id === 'e2fd1519'),
+            currentVotes: [], previousVotes: []}
+        const baseAccessInfo = defaultTestContextValues.access.accessInfo
+        const router = createMemoryRouter([{
+            path: '/classification', handle: {route: 'classification'},
+            element: <ClassificationContext.Provider value={emptyClassification}>
+                <EntryClassificationAdmin entry={entry}/>
+            </ClassificationContext.Provider>
+        }], {initialEntries: ['/classification']})
+        renderWithProviders(<RouterProvider router={router}/>, {
+            auth: {user: {uid: 'admin-user'}},
+            access: {accessInfo: {...baseAccessInfo,
+                roles: {...baseAccessInfo.roles, classificationAdmin: true}}},
+            api: {classificationCommand}
+        })
+
+        await user.click(screen.getAllByRole('combobox')[0])
+        await user.click(screen.getByRole('option', {name: 'Staged'}))
+        await user.click(screen.getAllByRole('combobox')[1])
+        await user.click(screen.getByRole('option', {name: 'Add New Sameline'}))
+        expect(screen.getByRole('button', {name: 'Save'})).toBeDisabled()
+        expect(screen.getByRole('button', {name: 'Publish Now'})).toBeDisabled()
+
+        await user.type(screen.getByPlaceholderText('New Name to Sameline'), 'Stale Name')
+        await user.click(screen.getAllByRole('combobox')[1])
+        await user.click(screen.getByRole('option', {name: 'Delete'}))
+        await user.click(screen.getAllByRole('combobox')[1])
+        await user.click(screen.getByRole('option', {name: 'Add New Sameline'}))
+        const name = screen.getByPlaceholderText('New Name to Sameline')
+        expect(name).toHaveValue('')
+        expect(screen.getByRole('button', {name: 'Save'})).toBeDisabled()
+        await user.type(name, '   ')
+        expect(screen.getByRole('button', {name: 'Save'})).toBeDisabled()
+        await user.type(name, '  New Lock Name  ')
+        await user.click(screen.getByRole('button', {name: 'Save'}))
+        expect(classificationCommand).toHaveBeenCalledWith('post', 'actions', expect.objectContaining({
+            entryId: entry.id, status: 'Staged', action: 'Add New Sameline',
+            newSamelineName: 'New Lock Name', updatedBelt: null, samelineTargetId: null
+        }), expect.any(String))
+
+        await user.click(screen.getByRole('button', {name: 'Publish Now'}))
+        await user.click(within(screen.getByRole('menu')).getByRole('button', {name: 'Publish Now'}))
+        expect(classificationCommand).toHaveBeenCalledWith('post', 'publications/single', expect.objectContaining({
+            entryId: entry.id, actionId: 'action-new', expectedRevision: 1,
+            action: 'Add New Sameline', newSamelineName: 'New Lock Name',
+            updatedBelt: null, samelineTargetId: null
+        }), expect.any(String))
+    })
+
     it('keeps the vote action available on a scorecard row', () => {
         const router = createMemoryRouter([{
             path: '/scorecard',

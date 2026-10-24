@@ -21,6 +21,12 @@ export default function reconcileClassificationAction(action, catalogById) {
             ? {status: 'Awaiting import', detail: `Source remains; retained target is ${target.belt}`}
             : {status: 'Matches catalog', detail: `Source is absent; retained target is ${target.belt}`}
     }
+    if (action.action === 'Add New Sameline') {
+        if (!action.newSamelineName || !source) {
+            return {status: 'Needs review', detail: 'New sameline name or existing lock is missing'}
+        }
+        return {status: 'Needs review', detail: `Verify ${action.newSamelineName} was added to ${source.name}`}
+    }
     if (action.action === 'Other') {
         return {status: 'Needs review', detail: 'Other change'}
     }

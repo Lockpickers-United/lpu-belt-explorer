@@ -25,7 +25,7 @@ import scrollRefToTop from '../util/scrollRefToTop.js'
 import ConfirmButton from '../misc/ConfirmButton.jsx'
 
 const statuses = ['Draft', 'Pending', 'Staged', 'Re-opened', 'Settled']
-const actions = ['Belt Change', 'Sameline', 'Delete', 'Other']
+const actions = ['Belt Change', 'Sameline', 'Add New Sameline', 'Delete', 'Other']
 
 export default function EntryClassificationAdmin({entry, handleToggle, entryRef}) {
     const {getAdminAction} = useContext(ClassificationContext)
@@ -101,7 +101,7 @@ function EntryClassificationAdminForm({entry, handleToggle, action, onActionChan
         //const cleanValue = sanitizeValues(value, {profanityOK: false, urlsOK: true})
         let events = [event]
 
-        const changelogFields = ['updatedBelt', 'samelineLock']
+        const changelogFields = ['updatedBelt', 'samelineLock', 'newSamelineName']
         if ((name === 'status' && ['Settled', 'Re-opened'].includes(value)) || name === 'action') {
             changelogFields.forEach((fieldName) => {
                 events.push({target: {name: fieldName, action: 'delete'}})
@@ -150,6 +150,8 @@ function EntryClassificationAdminForm({entry, handleToggle, action, onActionChan
         updatedBelt: form.form.action === 'Belt Change' ? form.form.updatedBelt || null : null,
         samelineTargetId: form.form.action === 'Sameline'
             ? form.form.samelineLock?.lockId ?? form.form.samelineTargetId ?? null : null,
+        newSamelineName: form.form.action === 'Add New Sameline'
+            ? form.form.newSamelineName?.trim() || null : null,
         note: form.form.note || null,
         adminNote: form.form.adminNote || null,
         omitChangelog: Boolean(form.form.omitChangelog)
@@ -158,6 +160,7 @@ function EntryClassificationAdminForm({entry, handleToggle, action, onActionChan
     const validDecision = fields => !['Staged'].includes(fields.status) || Boolean(fields.action)
     const validTarget = fields => (fields.action !== 'Belt Change' || Boolean(fields.updatedBelt))
         && (fields.action !== 'Sameline' || Boolean(fields.samelineTargetId))
+        && (fields.action !== 'Add New Sameline' || Boolean(fields.newSamelineName))
 
     const handleSave = async () => {
         const fields = actionFields()
@@ -198,6 +201,7 @@ function EntryClassificationAdminForm({entry, handleToggle, action, onActionChan
                 action: fields.action,
                 updatedBelt: fields.updatedBelt,
                 samelineTargetId: fields.samelineTargetId,
+                newSamelineName: fields.newSamelineName,
                 note: fields.note,
                 adminNote: fields.adminNote,
                 omitChangelog: false
@@ -309,6 +313,33 @@ function EntryClassificationAdminForm({entry, handleToggle, action, onActionChan
                                                  }}
                                                  form={form}
                                                  formDefaults={formDefaults}/>
+                                </div>
+                            }
+                            {form.form?.action === 'Add New Sameline' &&
+                                <div>
+                                    <div style={{fontSize: '1.0rem', fontWeight: 600, margin: '0px 0px 2px 0px', width: '100%'}}>
+                                        Add New Lock Name to Sameline
+                                    </div>
+                                    <FormElement fieldType={'TextField'} fieldName={'newSamelineName'}
+                                                 fieldSettings={{
+                                                     placeholder: 'New Name to Sameline',
+                                                     margin: '0 0 16px 0',
+                                                     inputWidth: '100%',
+                                                     style: {width: '100%'},
+                                                     slotProps: {
+                                                         htmlInput: {
+                                                             style: {
+                                                                 fontSize: '0.9rem', color: noteColor
+                                                             },
+                                                             maxLength: 256
+                                                         }
+                                                     }
+                                                 }}
+                                                 fullWidth
+                                                 color={'info'}
+                                                 form={form} formDefaults={formDefaults}
+                                    />
+
                                 </div>
                             }
                         </div>

@@ -75,7 +75,7 @@ export default function ChangelogMain() {
             setDeepPush(acc, ['Deleted'], entry)
         } else if ((adminAction.previousBelt ?? entry.belt) === 'Unranked' && adminAction.action === 'Belt Change') {
             setDeepPush(acc, ['New Additions'], entry)
-        } else if (adminAction.action === 'Sameline') {
+        } else if (['Sameline', 'Add New Sameline'].includes(adminAction.action)) {
             setDeepPush(acc, ['Samelines'], entry)
         } else if (adminAction.action === 'Other') {
             setDeepPush(acc, ['Other'], entry)
@@ -125,7 +125,7 @@ export default function ChangelogMain() {
 
                 const {adminAction = {}} = entry
                 const {
-                    id, actionId, action, samelineLock, samelineTargetId, samelineTargetName,
+                    id, actionId, action, samelineLock, samelineTargetId, samelineTargetName, newSamelineName,
                     note, adminNote
                 } = adminAction
 
@@ -140,11 +140,12 @@ export default function ChangelogMain() {
                     id: entry.id,
                     adminActionId: id ?? actionId,
                     action,
-                    change: key.replace(/s$/, ''),
+                    change: action === 'Add New Sameline' ? action : key.replace(/s$/, ''),
                     belt,
                     samelineTargetId: lock?.id ?? samelineTargetId ?? samelineLock?.lockId ?? null,
                     samelineTargetName: lock ? entryName(lock, 'short', {includeVersion: true}) : samelineTargetName ?? samelineLock?.lockFullName ?? null,
                     samelineTargetBelt: lock?.belt ?? samelineLock?.belt ?? null,
+                    newSamelineName: newSamelineName ?? null,
                     note,
                     adminNote
                 })
@@ -162,6 +163,7 @@ export default function ChangelogMain() {
             {belt: 'Belt'},
             {samelineTargetName: 'Sameline Target'},
             {samelineTargetId: 'Sameline Target ID'},
+            {newSamelineName: 'New Sameline Name'},
             {note: 'Note'}
         ]
 

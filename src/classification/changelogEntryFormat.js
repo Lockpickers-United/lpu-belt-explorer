@@ -1,7 +1,7 @@
 import entryName from '../entries/entryName.js'
 
 export default function changelogEntryFormat({entry, adminAction, targetLock, linebreak, historical = false}) {
-    const {action, samelineLock, samelineTargetName, updatedBelt, previousBelt, note} = adminAction
+    const {action, samelineLock, samelineTargetName, newSamelineName, updatedBelt, previousBelt, note} = adminAction
 
     const targetName = targetLock
         ? entryName(targetLock, 'short', {includeVersion: true})
@@ -16,6 +16,10 @@ export default function changelogEntryFormat({entry, adminAction, targetLock, li
 
     if (action === 'Sameline') {
         entryText = `- **${name}**${version}${separator}sameline with **${targetName}**${targetBelt ? ` at ${targetBelt.toUpperCase()}` : ''}. ${note ?? ''}`
+    }
+    if (action === 'Add New Sameline') {
+        const belt = historical ? previousBelt ?? entry.belt : entry.belt
+        entryText = `- **${newSamelineName}**${separator}sameline with **${name}**${version}${belt ? ` at ${belt.toUpperCase()}` : ''}. ${note ?? ''}`
     }
     if (action === 'Delete') {
         entryText = `- **${name}**${version}${separator}${historical ? previousBelt ?? entry.belt : entry.belt}. ${note ?? ''}`

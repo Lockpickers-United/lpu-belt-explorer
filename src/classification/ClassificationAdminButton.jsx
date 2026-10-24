@@ -9,11 +9,11 @@ import {useMatches} from 'react-router-dom'
 
 export default function ClassificationAdminButton({entry, handleToggle, style, flag = false}) {
     const {accessInfo} = useAccess()
-    const isClassification = useMatches().some(match => match.handle?.route === 'classification')
+    //const isClassification = useMatches().some(match => match.handle?.route === 'classification')
     const {getAdminActionStatus} = useContext(ClassificationContext)
 
     if (!accessInfo?.features?.classificationVote) return null
-    if (!isClassification) return null
+    //if (!isClassification) return null
 
     const status = getAdminActionStatus(entry) ?? 'No Votes'
     if (flag && !flagStatuses.includes(status)) return null

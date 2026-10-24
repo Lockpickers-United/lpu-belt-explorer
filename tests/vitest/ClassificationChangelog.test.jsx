@@ -134,6 +134,55 @@ describe('classification changelog', () => {
             .toContain('Blue. Updated lock details')
     })
 
+    it('formats a new sameline name for staged and published changelogs', () => {
+        const action = {action: 'Add New Sameline', newSamelineName: 'New Lock Name',
+            note: 'Same mechanism', previousBelt: 'Blue'}
+        expect(changelogEntryFormat({entry: samelineEntry, adminAction: action}))
+            .toContain(`at ${samelineEntry.belt.toUpperCase()}. Same mechanism`)
+        expect(changelogEntryFormat({entry: samelineEntry, adminAction: action, historical: true}))
+            .toContain('at BLUE. Same mechanism')
+    })
+
+    it('groups a new sameline with samelines and exports its name', async () => {
+        const user = userEvent.setup()
+        const action = {id: 'action-new-sameline', entryId: samelineEntry.id, status: 'Staged',
+            action: 'Add New Sameline', newSamelineName: 'New Lock Name', note: 'Same mechanism'}
+        const data = {
+            visibleChangelogEntries: [samelineEntry],
+            getLockFromId: id => allEntries.find(entry => entry.id === id)
+        }
+        const router = createMemoryRouter([{
+            path: '/classification/changelog', handle: {route: 'classification'},
+            element: <ClassificationContext.Provider value={{
+                ...classification, getAdminAction: () => action
+            }}>
+                <DataContext.Provider value={data}><ChangelogMain/></DataContext.Provider>
+            </ClassificationContext.Provider>
+        }], {initialEntries: ['/classification/changelog']})
+        renderWithProviders(<RouterProvider router={router}/>, {
+            access: {accessInfo: {...defaultTestContextValues.access.accessInfo,
+                roles: {...defaultTestContextValues.access.accessInfo.roles, classificationAdmin: true}}}
+        })
+
+        expect(screen.getByText('Samelines')).toBeInTheDocument()
+        expect(screen.queryByText('Downgrades')).not.toBeInTheDocument()
+        expect(screen.getByText(/New Lock Name/)).toBeInTheDocument()
+        await user.click(screen.getByRole('button', {name: 'Export'}))
+        await user.click(screen.getByRole('menuitem', {name: 'JSON'}))
+        expect(JSON.parse(vi.mocked(download).mock.lastCall[1])).toContainEqual(expect.objectContaining({
+            id: samelineEntry.id,
+            action: 'Add New Sameline',
+            change: 'Add New Sameline',
+            belt: samelineEntry.belt,
+            newSamelineName: 'New Lock Name'
+        }))
+        await user.click(screen.getByRole('button', {name: 'Export'}))
+        await user.click(screen.getByRole('menuitem', {name: 'CSV'}))
+        expect(vi.mocked(download).mock.lastCall[1]).toContain('Add New Sameline')
+        expect(vi.mocked(download).mock.lastCall[1]).toContain('New Sameline Name')
+        expect(vi.mocked(download).mock.lastCall[1]).toContain('New Lock Name')
+    })
+
     it('groups an Other action and exports its unchanged belt and note', async () => {
         const user = userEvent.setup()
         const action = {id: 'action-other', entryId: samelineEntry.id, status: 'Staged',
