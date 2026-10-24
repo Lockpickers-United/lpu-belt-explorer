@@ -227,6 +227,47 @@ describe('classification routes', () => {
         expect(mocks.publishSingle).toHaveBeenCalledTimes(1)
     })
 
+    it('validates the new sameline name on save and direct publication', async () => {
+        const actor = {uid: 'admin', admin: true}
+        const action = {status: 'Staged', action: 'Add New Sameline',
+            newSamelineName: 'New Lock Name', updatedBelt: null, samelineTargetId: null}
+        const createBody = {entryId: 'lock-a', ...action}
+        const created = await request(app).post('/api/v1/classification/actions')
+            .set('Authorization', 'Bearer admin').set('Idempotency-Key', 'new-sameline-create')
+            .send(createBody)
+        expect(created.status).toBe(201)
+        expect(mocks.createAction).toHaveBeenCalledWith(actor, 'new-sameline-create', createBody)
+
+        const editBody = {expectedRevision: 1, ...action}
+        const edited = await request(app).patch('/api/v1/classification/actions/action-a')
+            .set('Authorization', 'Bearer admin').set('Idempotency-Key', 'new-sameline-edit')
+            .send(editBody)
+        expect(edited.status).toBe(200)
+        expect(mocks.editAction).toHaveBeenCalledWith(actor, 'new-sameline-edit', 'action-a', editBody)
+
+        const publishBody = {entryId: 'lock-a', actionId: null, expectedRevision: null,
+            action: 'Add New Sameline', newSamelineName: 'New Lock Name',
+            updatedBelt: null, samelineTargetId: null, omitChangelog: false}
+        const published = await request(app).post('/api/v1/classification/publications/single')
+            .set('Authorization', 'Bearer admin').set('Idempotency-Key', 'new-sameline-publish')
+            .send(publishBody)
+        expect(published.status).toBe(201)
+        expect(mocks.publishSingle).toHaveBeenCalledWith(actor, 'new-sameline-publish', publishBody)
+
+        for (const newSamelineName of [null, '   ']) {
+            const invalid = await request(app).post('/api/v1/classification/actions')
+                .set('Authorization', 'Bearer admin').set('Idempotency-Key', 'invalid-name')
+                .send({...createBody, newSamelineName})
+            expect(invalid.status).toBe(400)
+        }
+        const unrelated = await request(app).post('/api/v1/classification/publications/single')
+            .set('Authorization', 'Bearer admin').set('Idempotency-Key', 'unexpected-name')
+            .send({...publishBody, action: 'Other'})
+        expect(unrelated.status).toBe(400)
+        expect(mocks.createAction).toHaveBeenCalledTimes(1)
+        expect(mocks.publishSingle).toHaveBeenCalledTimes(1)
+    })
+
     it('allows publication only to admins with a bounded action list', async () => {
         const body = {actions: [{actionId: 'action-a', expectedRevision: 1}]}
         const voter = await request(app).post('/api/v1/classification/publications')

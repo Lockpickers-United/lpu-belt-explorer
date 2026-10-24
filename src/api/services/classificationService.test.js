@@ -302,6 +302,46 @@ describe('classification service', () => {
             .toEqual(published.publication.actions)
     })
 
+    it('saves, edits, and batch publishes a new sameline name', async () => {
+        const {service, records} = fixture()
+        const draft = await service.createAction(admin, 'new-sameline-draft', {
+            entryId: 'lock-a', status: 'Draft', action: 'Add New Sameline',
+            newSamelineName: '  Initial Name  '
+        })
+        expect(draft.action.newSamelineName).toBe('Initial Name')
+        const staged = await service.editAction(admin, 'new-sameline-stage', draft.action.id, {
+            expectedRevision: 1, status: 'Staged', action: 'Add New Sameline',
+            newSamelineName: '  New Lock Name  '
+        })
+        expect(staged.action.newSamelineName).toBe('New Lock Name')
+        expect(await service.getStagedActions()).toContainEqual(expect.objectContaining({
+            id: draft.action.id, newSamelineName: 'New Lock Name'
+        }))
+        const published = await service.publishBatch(admin, 'new-sameline-batch', {
+            actions: [{actionId: draft.action.id, expectedRevision: 2}]
+        })
+        expect(published.publication.actions).toMatchObject([{
+            action: 'Add New Sameline', entryId: 'lock-a', previousBelt: 'White',
+            newSamelineName: 'New Lock Name', updatedBelt: null, samelineTargetId: null
+        }])
+        expect(records.get(`classificationActions/${draft.action.id}`).status).toBe('Published')
+    })
+
+    it('directly publishes a new sameline name in an immutable snapshot', async () => {
+        const {service} = fixture()
+        const published = await service.publishSingle(admin, 'new-sameline-single', {
+            entryId: 'lock-b', actionId: null, expectedRevision: null,
+            action: 'Add New Sameline', newSamelineName: '  New Lock Name  ',
+            updatedBelt: null, samelineTargetId: null, omitChangelog: false
+        })
+        expect(published.publication.actions).toMatchObject([{
+            action: 'Add New Sameline', entryId: 'lock-b', previousBelt: 'Yellow',
+            newSamelineName: 'New Lock Name', updatedBelt: null, samelineTargetId: null
+        }])
+        expect((await service.getPublication(published.publication.id)).actions)
+            .toEqual(published.publication.actions)
+    })
+
     it('publishes one saved form decision without changing unrelated staged work', async () => {
         const {service, records} = fixture()
         const staged = await service.createAction(admin, 'action-key-c', {

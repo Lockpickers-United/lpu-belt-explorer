@@ -61,6 +61,8 @@ function cleanActionInput(value) {
         action: value.action ?? null,
         updatedBelt: value.updatedBelt ?? null,
         samelineTargetId: value.samelineTargetId ?? null,
+        newSamelineName: value.action === 'Add New Sameline'
+            ? value.newSamelineName?.trim() ?? null : null,
         note: value.note ?? null,
         adminNote: value.adminNote ?? null,
         omitChangelog: value.omitChangelog ?? false
@@ -380,6 +382,7 @@ export function createClassificationService({db, getCatalogEntry, clock = () => 
             updatedBelt: action.updatedBelt,
             samelineTargetId: action.samelineTargetId,
             samelineTargetName: target?.name ?? null,
+            newSamelineName: action.newSamelineName ?? null,
             note: action.note
         }
     }

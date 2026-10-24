@@ -146,6 +146,14 @@ Promote the server stage before the frontend's matching
 | `POST /classification/publications` | Admin | Batch publication of 1–50 included Staged actions. |
 | `POST /classification/publications/single` | Admin | Save and publish one form decision, leaving other staged actions alone. |
 
+`Add New Sameline` adds a named lock to an existing catalog entry. Its
+`newSamelineName` must contain non-whitespace text (at most 256 characters); it has
+no belt change or sameline target ID. The name is stored on the editable action
+and its immutable publication snapshot. Publishing records the decision; the
+catalog still needs the normal Sheet import, and this change requires manual
+review during reconciliation because the compact catalog contains only a
+combined display name.
+
 Mutations require an `Idempotency-Key` of 8–128 characters. Operation results are stored
 with a seven-day expiration timestamp; the planned Firestore TTL policy removes expired
 records asynchronously. Vote creates use a deterministic `(entryId, userId)` ID, and edits

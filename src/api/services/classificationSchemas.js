@@ -35,16 +35,17 @@ export const revisionSchema = z.strictObject({expectedRevision: revision})
 
 const actionFields = {
     status: z.enum(['Draft', 'Pending', 'Staged', 'Re-opened', 'Settled']),
-    action: z.enum(['Belt Change', 'Sameline', 'Delete', 'Other']).nullable().optional(),
+    action: z.enum(['Belt Change', 'Sameline', 'Add New Sameline', 'Delete', 'Other']).nullable().optional(),
     updatedBelt: z.enum(voteBelts).nullable().optional(),
     samelineTargetId: id.nullable().optional(),
+    newSamelineName: optionalText(256),
     note: optionalText(4000),
     adminNote: optionalText(4000),
     omitChangelog: z.boolean().optional()
 }
 
 function validateActionFields(value, context) {
-    const {action, updatedBelt, samelineTargetId, status} = value
+    const {action, updatedBelt, samelineTargetId, newSamelineName, status} = value
     if (status === 'Staged' && !action) {
         context.addIssue({code: 'custom', path: ['action'], message: 'A staged action needs a decision'})
     }
@@ -59,6 +60,12 @@ function validateActionFields(value, context) {
     }
     if (action !== 'Sameline' && samelineTargetId) {
         context.addIssue({code: 'custom', path: ['samelineTargetId'], message: 'Unexpected sameline target'})
+    }
+    if (action === 'Add New Sameline' && !newSamelineName?.trim()) {
+        context.addIssue({code: 'custom', path: ['newSamelineName'], message: 'A new sameline needs a name'})
+    }
+    if (action !== 'Add New Sameline' && newSamelineName !== null && newSamelineName !== undefined) {
+        context.addIssue({code: 'custom', path: ['newSamelineName'], message: 'Unexpected new sameline name'})
     }
     if (status === 'Re-opened' && action) {
         context.addIssue({code: 'custom', path: ['action'], message: 'Re-opened has no decision'})
@@ -85,9 +92,10 @@ export const singlePublishSchema = z.strictObject({
     entryId: id,
     actionId: id.nullable().optional(),
     expectedRevision: revision.nullable(),
-    action: z.enum(['Belt Change', 'Sameline', 'Delete', 'Other']),
+    action: z.enum(['Belt Change', 'Sameline', 'Add New Sameline', 'Delete', 'Other']),
     updatedBelt: z.enum(voteBelts).nullable().optional(),
     samelineTargetId: id.nullable().optional(),
+    newSamelineName: optionalText(256),
     note: optionalText(4000),
     adminNote: optionalText(4000),
     omitChangelog: z.literal(false)

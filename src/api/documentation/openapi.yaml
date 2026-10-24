@@ -892,9 +892,10 @@ components:
       properties:
         entryId: {type: string, minLength: 1, maxLength: 128}
         status: {type: string, enum: [Draft, Pending, Staged, Re-opened, Settled]}
-        action: {type: [string, 'null'], enum: [Belt Change, Sameline, Delete, Other, null]}
+        action: {type: [string, 'null'], enum: [Belt Change, Sameline, Add New Sameline, Delete, Other, null]}
         updatedBelt: {$ref: '#/components/schemas/ClassificationNullableBelt'}
         samelineTargetId: {type: [string, 'null'], maxLength: 128}
+        newSamelineName: {type: [string, 'null'], maxLength: 256, description: Required for Add New Sameline; the lock name to add to the existing entry.}
         note: {type: [string, 'null'], maxLength: 4000}
         adminNote: {type: [string, 'null'], maxLength: 4000}
         omitChangelog: {type: boolean}
@@ -905,9 +906,10 @@ components:
       properties:
         expectedRevision: {type: integer, minimum: 1}
         status: {type: string, enum: [Draft, Pending, Staged, Re-opened, Settled]}
-        action: {type: [string, 'null'], enum: [Belt Change, Sameline, Delete, Other, null]}
+        action: {type: [string, 'null'], enum: [Belt Change, Sameline, Add New Sameline, Delete, Other, null]}
         updatedBelt: {$ref: '#/components/schemas/ClassificationNullableBelt'}
         samelineTargetId: {type: [string, 'null'], maxLength: 128}
+        newSamelineName: {type: [string, 'null'], maxLength: 256, description: Required for Add New Sameline; the lock name to add to the existing entry.}
         note: {type: [string, 'null'], maxLength: 4000}
         adminNote: {type: [string, 'null'], maxLength: 4000}
         omitChangelog: {type: boolean}
@@ -935,9 +937,10 @@ components:
         entryId: {type: string, minLength: 1, maxLength: 128}
         actionId: {type: [string, 'null'], maxLength: 128}
         expectedRevision: {type: [integer, 'null'], minimum: 1}
-        action: {type: string, enum: [Belt Change, Sameline, Delete, Other]}
+        action: {type: string, enum: [Belt Change, Sameline, Add New Sameline, Delete, Other]}
         updatedBelt: {$ref: '#/components/schemas/ClassificationNullableBelt'}
         samelineTargetId: {type: [string, 'null'], maxLength: 128}
+        newSamelineName: {type: [string, 'null'], maxLength: 256, description: Required for Add New Sameline; the lock name to add to the existing entry.}
         note: {type: [string, 'null'], maxLength: 4000}
         adminNote: {type: [string, 'null'], maxLength: 4000}
         omitChangelog: {type: boolean, const: false}

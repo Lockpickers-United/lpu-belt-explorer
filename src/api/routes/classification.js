@@ -162,6 +162,7 @@ router.post('/publications/single', requireClaims(adminClaims), requireWriteStag
         action: input.action,
         updatedBelt: input.updatedBelt,
         samelineTargetId: input.samelineTargetId,
+        newSamelineName: input.newSamelineName,
         note: input.note,
         adminNote: input.adminNote,
         omitChangelog: input.omitChangelog
