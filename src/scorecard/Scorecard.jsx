@@ -219,7 +219,9 @@ function Scorecard({owner, profile, adminAction, popular}) {
                                                 onClick={() => handleOpenControls('lock')}>
                                             ADD LOCK
                                         </Button>
+
                                         <ImportButton profile={profile}/>
+
                                         <Button variant='outlined' color='secondary' size='small'
                                                 style={{lineHeight: '1.2rem', marginLeft: 6}}
                                                 onClick={() => handleOpenControls('project')}>
