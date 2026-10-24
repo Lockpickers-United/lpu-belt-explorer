@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": "sha256:63a5c88d6fc31c7e3380c34ed96c151f31e5ee13be107021eadb34301cbefe36",
-  "generatedAt": "2026-10-20T16:44:52.553Z",
+  "catalogVersion": "sha256:b44a595a5551eebb22b27be8a9a956bdd8d56b3b28916c0cf330d10c8311adb0",
+  "generatedAt": "2026-10-24T05:11:58.089Z",
   "entries": [
     {
       "id": "0082fa4c",
@@ -1031,6 +1031,13 @@
       "version": null,
       "belt": "Green",
       "currentBeltDate": null
+    },
+    {
+      "id": "1fcb7a29",
+      "name": "Cisa OTSP",
+      "version": null,
+      "belt": "Unranked",
+      "currentBeltDate": "2026-10-24T05:11:57.627Z"
     },
     {
       "id": "1fe0ba0d",
@@ -2277,6 +2284,13 @@
       "version": "4 pins, 4 serrated drivers",
       "belt": "Purple",
       "currentBeltDate": null
+    },
+    {
+      "id": "4875d4f7",
+      "name": "Cisa Vighi",
+      "version": null,
+      "belt": "Unranked",
+      "currentBeltDate": "2026-10-24T05:11:57.627Z"
     },
     {
       "id": "48cf387f",
@@ -3539,6 +3553,13 @@
       "currentBeltDate": "2026-10-15T03:01:31.129Z"
     },
     {
+      "id": "7128b1da",
+      "name": "ISEO F6",
+      "version": null,
+      "belt": "Unranked",
+      "currentBeltDate": "2026-10-24T05:11:57.628Z"
+    },
+    {
       "id": "7130d7c3",
       "name": "ABUS EC550, EC660",
       "version": null,
@@ -3901,6 +3922,13 @@
       "version": "pin-in-pin, 4 pins",
       "belt": "Green",
       "currentBeltDate": null
+    },
+    {
+      "id": "7f0799ab",
+      "name": "ABUS 60/30",
+      "version": "4 pins",
+      "belt": "Unranked",
+      "currentBeltDate": "2026-10-24T05:11:57.626Z"
     },
     {
       "id": "7f56acb9",
@@ -6645,6 +6673,13 @@
       "version": "5 pins, all standard",
       "belt": "Unranked",
       "currentBeltDate": null
+    },
+    {
+      "id": "d8aaab3f",
+      "name": "EVVA DPI, DPS, EPS",
+      "version": "Non-active sidebar",
+      "belt": "Unranked",
+      "currentBeltDate": "2026-10-24T05:11:57.627Z"
     },
     {
       "id": "d8abe040",
