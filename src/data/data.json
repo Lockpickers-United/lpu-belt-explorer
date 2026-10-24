@@ -1262,9 +1262,9 @@
       "Unguttable"
     ],
     "modelNum": "55.3",
-    "popularityIndex": 397,
+    "popularityIndex": 398,
     "scorecardCount": 52,
-    "views": 397,
+    "views": 398,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -2308,9 +2308,9 @@
     "features": [
       "Unguttable"
     ],
-    "popularityIndex": 355,
+    "popularityIndex": 356,
     "scorecardCount": 60,
-    "views": 355,
+    "views": 356,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -5552,9 +5552,9 @@
       "Unguttable"
     ],
     "modelNum": "55.4",
-    "popularityIndex": 1080,
+    "popularityIndex": 1081,
     "scorecardCount": 150,
-    "views": 1080,
+    "views": 1081,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -10783,9 +10783,9 @@
     "features": [
       "Unguttable"
     ],
-    "popularityIndex": 425,
-    "scorecardCount": 55,
-    "views": 425,
+    "popularityIndex": 426,
+    "scorecardCount": 56,
+    "views": 426,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -12430,7 +12430,7 @@
       "Pin-tumbler"
     ],
     "popularityIndex": 1445,
-    "scorecardCount": 277,
+    "scorecardCount": 278,
     "views": 1445,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
@@ -25866,9 +25866,9 @@
       "Flickr Update"
     ],
     "notes": "Requires 360° picking: these locks have traps that require some work to pick",
-    "popularityIndex": 61,
+    "popularityIndex": 62,
     "scorecardCount": 25,
-    "views": 61,
+    "views": 62,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -29869,7 +29869,7 @@
       "Pin-tumbler"
     ],
     "popularityIndex": 814,
-    "scorecardCount": 225,
+    "scorecardCount": 226,
     "views": 814,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
@@ -47387,7 +47387,7 @@
     ],
     "searchKeywords": "multilock, mtl",
     "popularityIndex": 155,
-    "scorecardCount": 79,
+    "scorecardCount": 80,
     "views": 155,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
@@ -53598,9 +53598,9 @@
       "Sidepins",
       "Active sidebar"
     ],
-    "popularityIndex": 71,
+    "popularityIndex": 72,
     "scorecardCount": 41,
-    "views": 71,
+    "views": 72,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -62436,9 +62436,9 @@
       "Partial gut",
       "Flickr Update"
     ],
-    "popularityIndex": 123,
+    "popularityIndex": 124,
     "scorecardCount": 45,
-    "views": 123,
+    "views": 124,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -64615,6 +64615,22 @@
       "131732a0"
     ],
     "lastUpdated": "2025-12-02T23:39:17.963Z"
+  },
+  {
+    "id": "6ebce16f",
+    "belt": "Black 5",
+    "makeModels": [
+      {
+        "make": "WittKopp cawi",
+        "model": "Optima 2648"
+      }
+    ],
+    "lockingMechanisms": [
+      "Lever"
+    ],
+    "currentBeltDate": "2026-10-24T19:38:00.867Z",
+    "dateAdded": "2026-10-12T23:33:54.104Z",
+    "lastUpdated": "2026-10-24T19:38:01.315Z"
   },
   {
     "id": "a8e79394",
@@ -67234,6 +67250,8 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
+    "popularityIndex": 1,
+    "views": 1,
     "currentBeltDate": "2026-10-12T23:33:54.099Z",
     "dateAdded": "2026-10-12T23:33:54.099Z",
     "lastUpdated": "2026-10-12T23:33:54.536Z"
@@ -67283,6 +67301,8 @@
     "lockingMechanisms": [
       "Dimple"
     ],
+    "popularityIndex": 1,
+    "views": 1,
     "currentBeltDate": "2026-10-12T23:33:54.099Z",
     "dateAdded": "2026-10-12T23:33:54.099Z",
     "lastUpdated": "2026-10-12T23:33:54.537Z"
@@ -67688,6 +67708,8 @@
     "lockingMechanisms": [
       "Disc detainer"
     ],
+    "popularityIndex": 1,
+    "views": 1,
     "currentBeltDate": "2026-10-12T23:33:54.100Z",
     "dateAdded": "2026-10-12T23:33:54.100Z",
     "lastUpdated": "2026-10-12T23:33:54.537Z"
@@ -69377,6 +69399,8 @@
     "lockingMechanisms": [
       "PT+"
     ],
+    "popularityIndex": 1,
+    "views": 1,
     "currentBeltDate": "2026-10-12T23:33:54.101Z",
     "dateAdded": "2026-10-12T23:33:54.101Z",
     "lastUpdated": "2026-10-12T23:33:54.541Z"
@@ -69875,8 +69899,8 @@
     "lockingMechanisms": [
       "Magnet"
     ],
-    "popularityIndex": 1,
-    "views": 1,
+    "popularityIndex": 2,
+    "views": 2,
     "currentBeltDate": "2026-10-12T23:33:54.102Z",
     "dateAdded": "2026-10-12T23:33:54.102Z",
     "lastUpdated": "2026-10-12T23:33:54.542Z"
@@ -73032,6 +73056,8 @@
     "lockingMechanisms": [
       "Wafer"
     ],
+    "popularityIndex": 1,
+    "views": 1,
     "currentBeltDate": "2026-10-12T23:33:54.104Z",
     "dateAdded": "2026-10-12T23:33:54.104Z",
     "lastUpdated": "2026-10-12T23:33:54.547Z"
@@ -73334,8 +73360,8 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "popularityIndex": 1,
-    "views": 1,
+    "popularityIndex": 2,
+    "views": 2,
     "currentBeltDate": "2026-10-12T23:33:54.104Z",
     "dateAdded": "2026-10-12T23:33:54.104Z",
     "lastUpdated": "2026-10-12T23:33:54.547Z"
@@ -73628,22 +73654,6 @@
     "version": "mirrored normal profile",
     "lockingMechanisms": [
       "Pin-tumbler"
-    ],
-    "currentBeltDate": "2026-10-12T23:33:54.104Z",
-    "dateAdded": "2026-10-12T23:33:54.104Z",
-    "lastUpdated": "2026-10-12T23:33:54.548Z"
-  },
-  {
-    "id": "6ebce16f",
-    "belt": "Unranked",
-    "makeModels": [
-      {
-        "make": "WittKopp cawi",
-        "model": "Optima 2648"
-      }
-    ],
-    "lockingMechanisms": [
-      "Lever"
     ],
     "currentBeltDate": "2026-10-12T23:33:54.104Z",
     "dateAdded": "2026-10-12T23:33:54.104Z",

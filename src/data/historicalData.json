@@ -2481,10 +2481,10 @@
     ],
     "name": "ABUS 55/30",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 397,
+    "views": 398,
     "lastUpdated": "2025-03-19T15:44:57.277Z",
     "modelNum": "55.3",
-    "popularityIndex": 397,
+    "popularityIndex": 398,
     "scorecardCount": 52
   },
   "693abee0": {
@@ -5809,10 +5809,10 @@
     ],
     "name": "ABUS 55/40",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 1080,
+    "views": 1081,
     "lastUpdated": "2025-03-19T01:20:51.356Z",
     "modelNum": "55.4",
-    "popularityIndex": 1080,
+    "popularityIndex": 1081,
     "scorecardCount": 150
   },
   "d7188e81": {
@@ -6542,7 +6542,7 @@
     ],
     "name": "Brinks Laminated Padlock",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 355,
+    "views": 356,
     "lastUpdated": "2025-03-19T15:44:57.277Z",
     "media": [
       {
@@ -6601,7 +6601,7 @@
       }
     ],
     "version": "Pin-Tumbler only, 40mm or larger, Weatherproof or not",
-    "popularityIndex": 355,
+    "popularityIndex": 356,
     "scorecardCount": 60
   },
   "171f76e9": {
@@ -9647,10 +9647,10 @@
     ],
     "name": "ABUS 80TI Titalium",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 425,
+    "views": 426,
     "lastUpdated": "2025-03-19T15:44:57.281Z",
-    "popularityIndex": 425,
-    "scorecardCount": 55
+    "popularityIndex": 426,
+    "scorecardCount": 56
   },
   "9da8ebe0": {
     "id": "9da8ebe0",
@@ -10885,7 +10885,7 @@
       "1ae40987"
     ],
     "popularityIndex": 1445,
-    "scorecardCount": 277
+    "scorecardCount": 278
   },
   "b16ffe3f": {
     "id": "b16ffe3f",
@@ -18864,10 +18864,10 @@
       "Trap element",
       "Flickr Update"
     ],
-    "views": 61,
+    "views": 62,
     "lastUpdated": "2025-03-18T23:29:31.273Z",
     "notes": "Requires 360° picking: these locks have traps that require some work to pick",
-    "popularityIndex": 61,
+    "popularityIndex": 62,
     "scorecardCount": 25
   },
   "da54208c": {
@@ -21557,7 +21557,7 @@
     "views": 814,
     "lastUpdated": "2025-03-19T15:44:57.293Z",
     "popularityIndex": 814,
-    "scorecardCount": 225
+    "scorecardCount": 226
   },
   "74c225d1": {
     "id": "74c225d1",
@@ -34044,7 +34044,7 @@
     ],
     "searchKeywords": "multilock, mtl",
     "popularityIndex": 155,
-    "scorecardCount": 79
+    "scorecardCount": 80
   },
   "0ae75ea0": {
     "id": "0ae75ea0",
@@ -39066,7 +39066,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/52668193453_d9f40bdcdc_o.jpg"
       }
     ],
-    "views": 71,
+    "views": 72,
     "lastUpdated": "2025-03-18T23:29:31.280Z",
     "links": [
       {
@@ -39078,7 +39078,7 @@
       "94ee12b7",
       "9da7a5f2"
     ],
-    "popularityIndex": 71,
+    "popularityIndex": 72,
     "scorecardCount": 41
   },
   "4a7db3c6": {
@@ -46014,12 +46014,12 @@
         "subtitleUrl": "https://www.youtube.com/watch?v=8QjTX3m0M2E"
       }
     ],
-    "views": 123,
+    "views": 124,
     "lastUpdated": "2025-03-19T15:44:57.317Z",
     "relatedIds": [
       "71c7270b"
     ],
-    "popularityIndex": 123,
+    "popularityIndex": 124,
     "scorecardCount": 45
   },
   "649eaebc": {
@@ -64752,7 +64752,9 @@
     ],
     "name": "Emhart Cam Lock",
     "currentBeltDate": "2026-10-12T23:33:54.099Z",
-    "dateAdded": "2026-10-12T23:33:54.099Z"
+    "dateAdded": "2026-10-12T23:33:54.099Z",
+    "popularityIndex": 1,
+    "views": 1
   },
   "2693d016": {
     "id": "2693d016",
@@ -64801,7 +64803,9 @@
     ],
     "name": "EVVA Akura 44",
     "currentBeltDate": "2026-10-12T23:33:54.099Z",
-    "dateAdded": "2026-10-12T23:33:54.099Z"
+    "dateAdded": "2026-10-12T23:33:54.099Z",
+    "popularityIndex": 1,
+    "views": 1
   },
   "d5f5ab98": {
     "id": "d5f5ab98",
@@ -64967,7 +64971,9 @@
     ],
     "name": "Fortress Interlock",
     "currentBeltDate": "2026-10-12T23:33:54.100Z",
-    "dateAdded": "2026-10-12T23:33:54.100Z"
+    "dateAdded": "2026-10-12T23:33:54.100Z",
+    "popularityIndex": 1,
+    "views": 1
   },
   "52745f24": {
     "id": "52745f24",
@@ -65503,7 +65509,9 @@
     ],
     "name": "Mauer DT1",
     "currentBeltDate": "2026-10-12T23:33:54.101Z",
-    "dateAdded": "2026-10-12T23:33:54.101Z"
+    "dateAdded": "2026-10-12T23:33:54.101Z",
+    "popularityIndex": 1,
+    "views": 1
   },
   "62bffe18": {
     "id": "62bffe18",
@@ -65702,8 +65710,8 @@
     "name": "MIWA VM99",
     "currentBeltDate": "2026-10-12T23:33:54.102Z",
     "dateAdded": "2026-10-12T23:33:54.102Z",
-    "popularityIndex": 1,
-    "views": 1
+    "popularityIndex": 2,
+    "views": 2
   },
   "a666771a": {
     "id": "a666771a",
@@ -66485,7 +66493,9 @@
     ],
     "name": "Tostem / Lixil / U-Shin Showa WS",
     "currentBeltDate": "2026-10-12T23:33:54.104Z",
-    "dateAdded": "2026-10-12T23:33:54.104Z"
+    "dateAdded": "2026-10-12T23:33:54.104Z",
+    "popularityIndex": 1,
+    "views": 1
   },
   "1333f3ac": {
     "id": "1333f3ac",
@@ -66569,8 +66579,8 @@
     "name": "West 6",
     "currentBeltDate": "2026-10-12T23:33:54.104Z",
     "dateAdded": "2026-10-12T23:33:54.104Z",
-    "popularityIndex": 1,
-    "views": 1
+    "popularityIndex": 2,
+    "views": 2
   },
   "89c7446c": {
     "id": "89c7446c",
@@ -66627,7 +66637,7 @@
   },
   "6ebce16f": {
     "id": "6ebce16f",
-    "belt": "Unranked",
+    "belt": "Black 5",
     "makeModels": [
       {
         "make": "WittKopp cawi",
@@ -66638,7 +66648,7 @@
       "Lever"
     ],
     "name": "WittKopp cawi Optima 2648",
-    "currentBeltDate": "2026-10-12T23:33:54.104Z",
+    "currentBeltDate": "2026-10-24T19:38:00.867Z",
     "dateAdded": "2026-10-12T23:33:54.104Z"
   },
   "7bc9de2d": {
