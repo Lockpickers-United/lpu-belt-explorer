@@ -11306,14 +11306,14 @@
     "belt": "Green",
     "makeModels": [
       {
-        "make": "Bab IKON",
+        "make": "BAB IKON",
         "model": "DS"
       }
     ],
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "name": "Bab IKON DS",
+    "name": "BAB IKON DS",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "views": 3,
     "lastUpdated": "2025-03-19T15:44:57.282Z",
@@ -11434,14 +11434,14 @@
     "belt": "Green",
     "makeModels": [
       {
-        "make": "Bab IKON",
-        "model": "P031"
+        "make": "BAB IKON",
+        "model": "P0"
       }
     ],
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "name": "Bab IKON P031",
+    "name": "BAB IKON P0",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "views": 18,
     "lastUpdated": "2025-03-19T15:44:57.283Z",
@@ -19279,20 +19279,19 @@
     "makeModels": [
       {
         "make": "IKON",
-        "model": "P031 N6"
+        "model": "P0 N6"
       },
       {
         "make": "IKON",
-        "model": "P031 AEP10"
+        "model": "P0 AEP10"
       }
     ],
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
     "notes": "IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",
-    "name": "IKON P031 N6, P031 AEP10",
+    "name": "IKON P0 N6, P0 AEP10",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "version": "N6 or AEP10 profile",
     "views": 20,
     "lastUpdated": "2025-03-19T15:44:57.291Z",
     "media": [
@@ -26032,7 +26031,7 @@
     "makeModels": [
       {
         "make": "IKON",
-        "model": "sk6 vectorprofil rib extra"
+        "model": "SK6 vectorprofil rib extra"
       }
     ],
     "version": "5 sliders",
@@ -26041,7 +26040,7 @@
       "Slider"
     ],
     "notes": "IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",
-    "name": "IKON sk6 vectorprofil rib extra",
+    "name": "IKON SK6 vectorprofil rib extra",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "features": [
       "Sprung sliders",
@@ -32484,7 +32483,7 @@
     "makeModels": [
       {
         "make": "IKON",
-        "model": "tk5 sperwellenprofil"
+        "model": "TK5 sperwellenprofil"
       }
     ],
     "version": "with smooth fingerpins",
@@ -32537,7 +32536,7 @@
         "url": "http://lockwiki.com/index.php/IKON_TK5"
       }
     ],
-    "name": "IKON tk5 sperwellenprofil",
+    "name": "IKON TK5 sperwellenprofil",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "views": 27,
     "lastUpdated": "2025-03-19T15:44:57.303Z",
@@ -37224,7 +37223,7 @@
     "makeModels": [
       {
         "make": "IKON",
-        "model": "tk5 sperwellenprofil"
+        "model": "TK5 sperwellenprofil"
       }
     ],
     "version": "with serrated fingerpins",
@@ -37304,7 +37303,7 @@
         "url": "http://lockwiki.com/index.php/IKON_TK5"
       }
     ],
-    "name": "IKON tk5 sperwellenprofil",
+    "name": "IKON TK5 sperwellenprofil",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "views": 12,
     "lastUpdated": "2025-03-19T01:20:51.387Z",
@@ -64110,12 +64109,12 @@
     "belt": "Unranked",
     "makeModels": [
       {
-        "make": "Ikon",
+        "make": "IKON",
         "model": "SK6 Radienprofil Extra Code"
       }
     ],
     "version": "4 fingerpins",
-    "name": "Ikon SK6 Radienprofil Extra Code",
+    "name": "IKON SK6 Radienprofil Extra Code",
     "dateAdded": "2026-10-03T22:57:35.086Z",
     "scorecardCount": 1,
     "popularityIndex": 2,

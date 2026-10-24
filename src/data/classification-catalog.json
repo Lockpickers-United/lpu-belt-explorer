@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": "sha256:264f7e3309e66e4d841becbd3994d0bc8fe64557387869fc7a3e05c5a30e8dad",
-  "generatedAt": "2026-10-24T19:38:01.335Z",
+  "catalogVersion": "sha256:b87dfdb87c873a7dc3922aa288dd32d9559799d72b3d50a3d319069c0cd97fa9",
+  "generatedAt": "2026-10-24T20:03:10.071Z",
   "entries": [
     {
       "id": "0082fa4c",
@@ -1741,7 +1741,7 @@
     },
     {
       "id": "34d27803",
-      "name": "IKON tk5 sperwellenprofil",
+      "name": "IKON TK5 sperwellenprofil",
       "version": "with serrated fingerpins",
       "belt": "Red",
       "currentBeltDate": null
@@ -2504,7 +2504,7 @@
     },
     {
       "id": "4ffe03a9",
-      "name": "IKON sk6 vectorprofil rib extra",
+      "name": "IKON SK6 vectorprofil rib extra",
       "version": "5 sliders",
       "belt": "Purple",
       "currentBeltDate": null
@@ -5962,7 +5962,7 @@
     },
     {
       "id": "bfc7c700",
-      "name": "Bab IKON P031",
+      "name": "BAB IKON P0",
       "version": null,
       "belt": "Green",
       "currentBeltDate": null
@@ -6291,7 +6291,7 @@
     },
     {
       "id": "ca6ce763",
-      "name": "Bab IKON DS",
+      "name": "BAB IKON DS",
       "version": null,
       "belt": "Green",
       "currentBeltDate": null
@@ -6305,7 +6305,7 @@
     },
     {
       "id": "ca9828d7",
-      "name": "Ikon SK6 Radienprofil Extra Code",
+      "name": "IKON SK6 Radienprofil Extra Code",
       "version": "4 fingerpins",
       "belt": "Unranked",
       "currentBeltDate": null
@@ -6501,8 +6501,8 @@
     },
     {
       "id": "d1896bf9",
-      "name": "IKON P031 N6, P031 AEP10",
-      "version": "N6 or AEP10 profile",
+      "name": "IKON P0 N6, P0 AEP10",
+      "version": null,
       "belt": "Blue",
       "currentBeltDate": null
     },
@@ -7502,7 +7502,7 @@
     },
     {
       "id": "f38cafca",
-      "name": "IKON tk5 sperwellenprofil",
+      "name": "IKON TK5 sperwellenprofil",
       "version": "with smooth fingerpins",
       "belt": "Brown",
       "currentBeltDate": null
