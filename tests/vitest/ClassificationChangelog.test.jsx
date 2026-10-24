@@ -30,6 +30,32 @@ const deleteEntry = allEntries.find(entry => entry.id === deleteAction.entryId)
 const targetLock = allEntries.find(entry => entry.id === samelineAction.samelineLock.lockId)
 
 describe('classification changelog', () => {
+    it('shows loading until the changelog fetch completes, then shows the empty state', async () => {
+        const user = userEvent.setup()
+        function ChangelogHarness() {
+            const [changelogLoading, setChangelogLoading] = useState(true)
+            return (
+                <ClassificationContext.Provider value={{...classification, changelogLoading}}>
+                    <DataContext.Provider value={{visibleChangelogEntries: [], getLockFromId: () => null}}>
+                        <button onClick={() => setChangelogLoading(false)}>Finish loading</button>
+                        <ChangelogMain/>
+                    </DataContext.Provider>
+                </ClassificationContext.Provider>
+            )
+        }
+        const router = createMemoryRouter([{
+            path: '/classification/changelog', element: <ChangelogHarness/>
+        }], {initialEntries: ['/classification/changelog']})
+        renderWithProviders(<RouterProvider router={router}/>)
+
+        expect(screen.getByText('Loading classification changes')).toBeInTheDocument()
+        expect(screen.queryByText(/No changes found/)).not.toBeInTheDocument()
+
+        await user.click(screen.getByRole('button', {name: 'Finish loading'}))
+        expect(screen.queryByText('Loading classification changes')).not.toBeInTheDocument()
+        expect(screen.getByText(/No changes found/)).toBeInTheDocument()
+    })
+
     it('publishes only included staged actions with their current revisions', async () => {
         const user = userEvent.setup()
         const confirm = vi.spyOn(window, 'confirm').mockReturnValue(false)

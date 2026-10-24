@@ -13,7 +13,7 @@ export const lockSortComparators = Object.freeze({
     beltAscending: (a, b) => beltSort(a.belt, b.belt),
     beltDescending: (a, b) => {
         return beltSortReverse(a.belt, b.belt)
-            || a.fuzzy.localeCompare(b.fuzzy)
+            || a.fuzzy?.localeCompare(b.fuzzy)
     },
     alphaAscending: (a, b) => a.fuzzy.localeCompare(b.fuzzy),
     alphaDescending: (a, b) => b.fuzzy.localeCompare(a.fuzzy),

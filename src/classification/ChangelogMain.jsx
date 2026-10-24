@@ -24,11 +24,13 @@ import Menu from '@mui/material/Menu'
 import classificationCatalog from '../data/classification-catalog.json'
 import reconcileClassificationAction from './reconcileClassificationAction.js'
 import ErrorMessage from '../misc/ErrorMessage.jsx'
+import LoadingDisplay from '../misc/LoadingDisplay.jsx'
 import useClassificationCommand from './useClassificationCommand.js'
 import {canPublishClassification} from './writeStage.js'
-import ConfirmButton from '../misc/ConfirmButton.jsx'
-import {pluralize} from '../util/stringUtils.js'
+import {getLockSortComparator} from '../locks/lockSortComparators.js'
 import {enqueueSnackbar} from 'notistack'
+import {pluralize} from '../util/stringUtils.js'
+import ConfirmButton from '../misc/ConfirmButton.jsx'
 
 const catalogById = new Map(classificationCatalog.entries.map(entry => [entry.id, entry]))
 
@@ -41,6 +43,7 @@ export default function ChangelogMain() {
         previousChangelogs,
         selectedPublication,
         stagedActions = [],
+        changelogLoading,
         changelogError,
         reloadChangelog
     } = useContext(ClassificationContext)
@@ -58,16 +61,24 @@ export default function ChangelogMain() {
                 return {
                     ...lock,
                     id: action.entryId,
-                    belt: lock?.belt ?? action.previousBelt,
+                    belt: action.updatedBelt ?? lock?.belt ?? action.previousBelt,
                     adminAction: action
                 }
             })
         }
-        return visibleChangelogEntries.map(entry => ({
-            ...entry,
-            adminAction: getAdminAction(entry)
-        })).filter(entry => entry.adminAction)
+        return visibleChangelogEntries.map(entry => {
+            const adminAction = getAdminAction(entry) ?? {}
+            const targetLock = getLockFromId(adminAction.samelineTargetId)
+            return {
+                ...entry,
+                belt: targetLock?.belt ?? adminAction?.updatedBelt ?? entry?.belt ?? entry.previousBelt,
+                adminAction: getAdminAction(entry)
+            }
+        })
+            .filter(entry => entry.adminAction)
     }, [getAdminAction, getLockFromId, selectedChangelog, visibleChangelogEntries])
+
+    console.log('currentChangelogEntries', currentChangelogEntries.sort(getLockSortComparator('beltDescending')))
 
     const groupedEntries = currentChangelogEntries.reduce((acc, entry) => {
         const {adminAction = {}} = entry
@@ -206,8 +217,9 @@ export default function ChangelogMain() {
             {accessInfo.roles.classificationAdmin &&
                 <>
                     <ExportButtonGeneric exportData={exportData} clipboardContent={clipboardText}/>
-                    <Tooltip title={publishable.length > 50 ? 'Publish the first 50 staged changes' : 'Publish staged changes'}
-                             arrow disableFocusListener>
+                    <Tooltip
+                        title={publishable.length > 50 ? 'Publish the first 50 staged changes' : 'Publish staged changes'}
+                        arrow disableFocusListener>
                         <ConfirmButton variant='outlined' size='small' color='success'
                                        message={`About to publish ${publishable.length > 50 ? 'first 50' : publishable.length} ${pluralize('change', publishable.length)}.`}
                                        disabled={!canPublishClassification || Boolean(selectedChangelog) || !publishable.length || pending}
@@ -251,8 +263,6 @@ export default function ChangelogMain() {
     const title = selectedChangelog
         ? dayjs(selectedChangelog.lastPublishedAt).format('MMMM D, YYYY').toUpperCase()
         : accessInfo.roles.classificationAdmin ? 'STAGED CHANGES' : 'APPROVED CHANGES'
-
-    // TODO - fix loading/error/etc display
 
     return (
         <React.Fragment>
@@ -313,14 +323,18 @@ export default function ChangelogMain() {
                 </div>
             </Paper>
 
-            {currentChangelogEntries.length === 0 &&
+            {changelogLoading &&
+                <LoadingDisplay message='Loading classification changes' style={{margin: '30px 0 100px'}}/>
+            }
+
+            {!changelogLoading && !changelogError && currentChangelogEntries.length === 0 &&
                 <Paper style={{...style, marginTop: 8, display: 'flex', justifyContent: 'space-between', padding: 16}}>
                     No changes found. Admins will stage updates here as they are approved.
                     Use the "View Previous Changelogs" button to see past changes.
                 </Paper>
             }
 
-            {sections.map((key) => groupedEntries[key]?.length &&
+            {!changelogLoading && sections.map((key) => groupedEntries[key]?.length &&
                 <div key={key} style={style}>
                     <div style={{fontSize: '1.3rem', fontWeight: 700}}>{key}</div>
                     {groupedEntries[key].map((entry) =>
