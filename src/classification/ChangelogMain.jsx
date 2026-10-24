@@ -84,7 +84,7 @@ export default function ChangelogMain() {
         const {adminAction = {}} = entry
         if (adminAction.action === 'Delete') {
             setDeepPush(acc, ['Deleted'], entry)
-        } else if ((adminAction.previousBelt ?? entry.belt) === 'Unranked' && adminAction.action === 'Belt Change') {
+        } else if ([adminAction.previousBelt, entry.belt, entry.assignedBelt].some(belt => belt === 'Unranked') && adminAction.action === 'Belt Change') {
             setDeepPush(acc, ['New Additions'], entry)
         } else if (['Sameline', 'Add New Sameline'].includes(adminAction.action)) {
             setDeepPush(acc, ['Samelines'], entry)
