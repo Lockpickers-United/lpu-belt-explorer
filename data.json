@@ -13164,7 +13164,7 @@
     "belt": "Green",
     "makeModels": [
       {
-        "make": "Bab IKON",
+        "make": "BAB IKON",
         "model": "DS"
       }
     ],
@@ -13227,15 +13227,15 @@
         "url": "https://wiki.koksa.org/BAB_DS_103"
       }
     ],
-    "lastUpdated": "2025-12-02T23:39:17.934Z"
+    "lastUpdated": "2026-10-24T20:03:10.040Z"
   },
   {
     "id": "bfc7c700",
     "belt": "Green",
     "makeModels": [
       {
-        "make": "Bab IKON",
-        "model": "P031"
+        "make": "BAB IKON",
+        "model": "P0"
       }
     ],
     "lockingMechanisms": [
@@ -13284,7 +13284,7 @@
         "imageTitle": "Bab IKON P031"
       }
     ],
-    "lastUpdated": "2025-12-02T23:39:17.934Z"
+    "lastUpdated": "2026-10-24T20:03:10.040Z"
   },
   {
     "id": "bea71188",
@@ -26913,14 +26913,13 @@
     "makeModels": [
       {
         "make": "IKON",
-        "model": "P031 N6"
+        "model": "P0 N6"
       },
       {
         "make": "IKON",
-        "model": "P031 AEP10"
+        "model": "P0 AEP10"
       }
     ],
-    "version": "N6 or AEP10 profile",
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
@@ -26982,7 +26981,7 @@
     "relatedIds": [
       "9a972905"
     ],
-    "lastUpdated": "2026-08-12T21:24:16.697Z"
+    "lastUpdated": "2026-10-24T20:03:10.043Z"
   },
   {
     "id": "bc6c2d51",
@@ -36239,7 +36238,7 @@
     "makeModels": [
       {
         "make": "IKON",
-        "model": "sk6 vectorprofil rib extra"
+        "model": "SK6 vectorprofil rib extra"
       }
     ],
     "version": "5 sliders",
@@ -36285,7 +36284,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/52734113020_7c480fd340_o.jpg"
       }
     ],
-    "lastUpdated": "2025-12-02T23:39:17.945Z"
+    "lastUpdated": "2026-10-24T20:03:10.044Z"
   },
   {
     "id": "07bc680a",
@@ -45510,7 +45509,7 @@
     "makeModels": [
       {
         "make": "IKON",
-        "model": "tk5 sperwellenprofil"
+        "model": "TK5 sperwellenprofil"
       }
     ],
     "version": "with smooth fingerpins",
@@ -45573,7 +45572,7 @@
     "relatedIds": [
       "34d27803"
     ],
-    "lastUpdated": "2025-12-02T23:39:17.951Z"
+    "lastUpdated": "2026-10-24T20:03:10.046Z"
   },
   {
     "id": "9659ad59",
@@ -51320,7 +51319,7 @@
     "makeModels": [
       {
         "make": "IKON",
-        "model": "tk5 sperwellenprofil"
+        "model": "TK5 sperwellenprofil"
       }
     ],
     "version": "with serrated fingerpins",
@@ -51410,7 +51409,7 @@
     "relatedIds": [
       "f38cafca"
     ],
-    "lastUpdated": "2025-12-02T23:39:17.955Z"
+    "lastUpdated": "2026-10-24T20:03:10.048Z"
   },
   {
     "id": "843896be",
@@ -68413,7 +68412,7 @@
     "belt": "Unranked",
     "makeModels": [
       {
-        "make": "Ikon",
+        "make": "IKON",
         "model": "SK6 Radienprofil Extra Code"
       }
     ],
@@ -68422,7 +68421,7 @@
     "scorecardCount": 1,
     "views": 2,
     "dateAdded": "2026-10-03T22:57:35.086Z",
-    "lastUpdated": "2026-10-03T22:57:35.475Z"
+    "lastUpdated": "2026-10-24T20:03:10.054Z"
   },
   {
     "id": "3184aca4",

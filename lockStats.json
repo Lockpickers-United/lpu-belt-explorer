@@ -4280,6 +4280,72 @@
         }
       ]
     },
+    "BAB IKON": {
+      "belts": [
+        {
+          "label": "White",
+          "id": "White",
+          "count": 0,
+          "value": 0
+        },
+        {
+          "label": "Yellow",
+          "id": "Yellow",
+          "count": 0,
+          "value": 0
+        },
+        {
+          "label": "Orange",
+          "id": "Orange",
+          "count": 0,
+          "value": 0
+        },
+        {
+          "label": "Green",
+          "id": "Green",
+          "count": 2,
+          "value": 1
+        },
+        {
+          "label": "Blue",
+          "id": "Blue",
+          "count": 0,
+          "value": 0
+        },
+        {
+          "label": "Purple",
+          "id": "Purple",
+          "count": 0,
+          "value": 0
+        },
+        {
+          "label": "Brown",
+          "id": "Brown",
+          "count": 0,
+          "value": 0
+        },
+        {
+          "label": "Red",
+          "id": "Red",
+          "count": 0,
+          "value": 0
+        },
+        {
+          "label": "Black",
+          "id": "Black",
+          "count": 0,
+          "value": 0
+        }
+      ],
+      "mechanisms": [
+        {
+          "label": "Pin-tumbler",
+          "id": "Pin-tumbler",
+          "count": 2,
+          "value": 1
+        }
+      ]
+    },
     "BASI": {
       "belts": [
         {
@@ -4570,72 +4636,6 @@
           "label": "Pin-tumbler",
           "id": "Pin-tumbler",
           "count": 1,
-          "value": 1
-        }
-      ]
-    },
-    "Bab IKON": {
-      "belts": [
-        {
-          "label": "White",
-          "id": "White",
-          "count": 0,
-          "value": 0
-        },
-        {
-          "label": "Yellow",
-          "id": "Yellow",
-          "count": 0,
-          "value": 0
-        },
-        {
-          "label": "Orange",
-          "id": "Orange",
-          "count": 0,
-          "value": 0
-        },
-        {
-          "label": "Green",
-          "id": "Green",
-          "count": 2,
-          "value": 1
-        },
-        {
-          "label": "Blue",
-          "id": "Blue",
-          "count": 0,
-          "value": 0
-        },
-        {
-          "label": "Purple",
-          "id": "Purple",
-          "count": 0,
-          "value": 0
-        },
-        {
-          "label": "Brown",
-          "id": "Brown",
-          "count": 0,
-          "value": 0
-        },
-        {
-          "label": "Red",
-          "id": "Red",
-          "count": 0,
-          "value": 0
-        },
-        {
-          "label": "Black",
-          "id": "Black",
-          "count": 0,
-          "value": 0
-        }
-      ],
-      "mechanisms": [
-        {
-          "label": "Pin-tumbler",
-          "id": "Pin-tumbler",
-          "count": 2,
           "value": 1
         }
       ]
@@ -13280,43 +13280,43 @@
           "label": "Orange",
           "id": "Orange",
           "count": 1,
-          "value": 0.05
+          "value": 0.048
         },
         {
           "label": "Green",
           "id": "Green",
           "count": 3,
-          "value": 0.15
+          "value": 0.143
         },
         {
           "label": "Blue",
           "id": "Blue",
           "count": 6,
-          "value": 0.3
+          "value": 0.286
         },
         {
           "label": "Purple",
           "id": "Purple",
           "count": 1,
-          "value": 0.05
+          "value": 0.048
         },
         {
           "label": "Brown",
           "id": "Brown",
           "count": 1,
-          "value": 0.05
+          "value": 0.048
         },
         {
           "label": "Red",
           "id": "Red",
           "count": 3,
-          "value": 0.15
+          "value": 0.143
         },
         {
           "label": "Black",
           "id": "Black",
           "count": 5,
-          "value": 0.25
+          "value": 0.238
         }
       ],
       "mechanisms": [
@@ -13324,25 +13324,31 @@
           "label": "Pin-tumbler",
           "id": "Pin-tumbler",
           "count": 8,
-          "value": 0.4
+          "value": 0.381
         },
         {
           "label": "Dimple",
           "id": "Dimple",
           "count": 1,
-          "value": 0.05
+          "value": 0.048
         },
         {
           "label": "Multiple",
           "id": "Multiple",
           "count": 10,
-          "value": 0.5
+          "value": 0.476
         },
         {
           "label": "Slider",
           "id": "Slider",
           "count": 1,
-          "value": 0.05
+          "value": 0.048
+        },
+        {
+          "label": "unknown",
+          "id": "unknown",
+          "count": 1,
+          "value": 0.048
         }
       ]
     },
@@ -13499,72 +13505,6 @@
           "id": "unknown",
           "count": 1,
           "value": 0.083
-        }
-      ]
-    },
-    "Ikon": {
-      "belts": [
-        {
-          "label": "White",
-          "id": "White",
-          "count": 0,
-          "value": 0
-        },
-        {
-          "label": "Yellow",
-          "id": "Yellow",
-          "count": 0,
-          "value": 0
-        },
-        {
-          "label": "Orange",
-          "id": "Orange",
-          "count": 0,
-          "value": 0
-        },
-        {
-          "label": "Green",
-          "id": "Green",
-          "count": 0,
-          "value": 0
-        },
-        {
-          "label": "Blue",
-          "id": "Blue",
-          "count": 0,
-          "value": 0
-        },
-        {
-          "label": "Purple",
-          "id": "Purple",
-          "count": 0,
-          "value": 0
-        },
-        {
-          "label": "Brown",
-          "id": "Brown",
-          "count": 0,
-          "value": 0
-        },
-        {
-          "label": "Red",
-          "id": "Red",
-          "count": 0,
-          "value": 0
-        },
-        {
-          "label": "Black",
-          "id": "Black",
-          "count": 0,
-          "value": 0
-        }
-      ],
-      "mechanisms": [
-        {
-          "label": "unknown",
-          "id": "unknown",
-          "count": 1,
-          "value": 1
         }
       ]
     },
@@ -26513,6 +26453,6 @@
   },
   "metadata": {
     "source": "import-data",
-    "updatedDateTime": "2026-10-24 19:38"
+    "updatedDateTime": "2026-10-24 20:03"
   }
 }
