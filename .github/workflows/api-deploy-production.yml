@@ -1,4 +1,4 @@
-name: Deploy production
+name: API deploy production (migration hold)
 
 on:
   workflow_dispatch:
@@ -14,8 +14,12 @@ permissions:
   contents: read
 
 concurrency:
-  group: production-deploy
+  group: api-production-deploy
   cancel-in-progress: false
+
+defaults:
+  run:
+    working-directory: apps/api
 
 jobs:
   verify:
@@ -24,6 +28,7 @@ jobs:
     timeout-minutes: 15
     steps:
       - name: Require the main branch
+        working-directory: ${{ runner.temp }}
         shell: bash
         run: |
           set -euo pipefail
@@ -40,7 +45,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
-          node-version-file: .nvmrc
+          node-version-file: apps/api/.nvmrc
           package-manager-cache: false
 
       - name: Install dependencies
@@ -54,6 +59,8 @@ jobs:
         run: yarn validate
 
   deploy:
+    # Phase 5 must explicitly remove this hold after old release authority is disabled.
+    if: ${{ false }}
     name: Upload and activate release
     needs: verify
     runs-on: ubuntu-22.04
@@ -110,7 +117,7 @@ jobs:
       - name: Set up Node.js for the release package
         uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
-          node-version-file: .nvmrc
+          node-version-file: apps/api/.nvmrc
           package-manager-cache: false
 
       - name: Install production dependencies on the runner
@@ -137,11 +144,8 @@ jobs:
         run: |
           set -euo pipefail
           archive="$RUNNER_TEMP/$RELEASE_ID.tar.gz"
-          uncompressed_archive="$RUNNER_TEMP/$RELEASE_ID.tar"
-          git archive --format=tar --output="$uncompressed_archive" "$GITHUB_SHA"
-          tar --append --file="$uncompressed_archive" node_modules
-          gzip "$uncompressed_archive"
-          sha256sum "$archive" | awk '{print $1}' > "$archive.sha256"
+          node scripts/releaseArtifact.js create "$GITHUB_SHA" "$archive"
+          node scripts/releaseArtifact.js inspect "$archive"
 
       - name: Prepare remote upload directory
         shell: bash

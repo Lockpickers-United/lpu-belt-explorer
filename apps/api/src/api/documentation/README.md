@@ -179,7 +179,7 @@ file to validate IDs and snapshot names and belts. The production frontend workf
 publishes the verified file atomically; the API reloads a replaced file on its next
 lookup without a restart. Configure the path and release the API loader before enabling
 these endpoints. `openapi.yaml` records request schemas and
-response status classes, while the [frontend recommendation](../../../../lpu-belt-explorer/internal-docs/classification-public-data-recommendation.md)
+response status classes, while the [frontend recommendation](../../../../../internal-docs/classification-public-data-recommendation.md)
 records the full logical response shape.
 
 ### GET `/locks/{lockId}/videos`

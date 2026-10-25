@@ -11,7 +11,7 @@ frontend `VITE_CLASSIFICATION_WRITE_STAGE` builds.
 
 ## Deployment workflow
 
-`.github/workflows/deploy-production.yml` is the production path. It is manually dispatched, accepts only the `main` branch, and uses the GitHub `production` environment so one reviewer can approve deployment.
+The monorepo candidate path is root `.github/workflows/api-deploy-production.yml`. Its deploy job has an unconditional `if: ${{ false }}` migration hold. The frozen original API repository remains the only production release authority through Phase 4. Remove that hold only in an explicitly approved Phase 5 change after disabling old dispatch authority and checking in-flight runs. The candidate workflow is manually dispatched, accepts only the `main` branch, and uses the GitHub `production` environment for approval; effective reviewers and allowed branches still require owner verification.
 
 The workflow:
 
@@ -19,7 +19,7 @@ The workflow:
 2. uses the Node patch pinned in `.nvmrc` and the pinned Yarn version.
 3. installs dependencies with the immutable lockfile.
 4. runs the shared `yarn validate` command (lint and the complete test suite).
-5. installs production dependencies on the Linux x64 deployment runner, then creates a Git archive with that `node_modules` tree and a checksum.
+5. installs production dependencies on the Linux x64 deployment runner, then archives `COMMIT:apps/api` with that package’s `node_modules` tree and a checksum using `scripts/releaseArtifact.js`. The archive root is the API package; `apps/api` is not a host directory.
 6. uploads them over SFTP to `incoming`.
 7. connects over SSH and verifies the checksum.
 8. expands a new immutable release.
@@ -107,3 +107,15 @@ process error, and the PM2 definition allows 12 seconds before forced terminatio
 ## Parallel rollout and frontend cutover
 
 Setup time is not a constraint. Fully configure and test the new production service before changing the frontend. The frontend API base URL change is the public cutover point. Keep the previous backend available until the new path has completed normal traffic and operational cycles, and verify there are no duplicate scheduled jobs while both are running.
+
+## Offline artifact gate
+
+Root `api-ci.yml` installs immutable Yarn dependencies under `apps/api`, runs validation, focuses production dependencies on Ubuntu 22.04 x64, loads Sharp, and invokes `node scripts/releaseArtifact.js create "$GITHUB_SHA" "$RUNNER_TEMP/api.tar.gz"`. The builder pairs committed dependency inputs with installed inputs. It validates member paths and links before extraction, package identity, PM2 entry points and required source/job files. `inspect` repeats archive validation. CI extracts to a temporary directory and checks server/job syntax and Sharp loading from the extracted package. No SSH, secrets, PM2 process or exporter runs in that job.
+
+The creation command requires an exact committed monorepo revision. Uncommitted implementation changes must be committed by the owner before CI can certify the final artifact. macOS structural/unit checks do not certify Linux native modules. Keep the artifact and checksum together; readiness later identifies the same monorepo SHA via `.release.json`.
+
+## Monorepo switch and rollback
+
+Production PM2, `current/scripts/...` cron commands, environment symlink, shared snapshots/data/logs and rollback targets keep their existing host paths because the archive contains API package contents directly. Do not add `/apps/api` beneath host `current`. During the approved switch, verify the pinned host Node, PM2 cwd/script, existing cron command fields and shared paths; retain one schedule per job. Do not manually execute cron as a preflight. If activation fails, the existing workflow restores the previous `current` target and reloads PM2. A later rollback uses the retained pre-monorepo release and the same readiness/API checks.
+
+For the initial Phase 1 check, API CI also accepts pushes to the exact `monorepo/phase1-api` branch with the same API path scope. This allows CI on a reviewed branch without a default-branch merge, PR creation or manual dispatch of an unavailable workflow. Pushing that branch still requires explicit authorization. Production deployment remains unconditionally disabled.

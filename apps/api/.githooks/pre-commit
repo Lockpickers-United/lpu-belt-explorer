@@ -2,7 +2,7 @@
 set -eu
 
 repository_root=$(git rev-parse --show-toplevel)
-cd "$repository_root"
+cd "$repository_root/apps/api"
 
 git diff --cached --check
 corepack yarn validate

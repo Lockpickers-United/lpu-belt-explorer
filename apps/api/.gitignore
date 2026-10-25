@@ -50,3 +50,6 @@ src/data/linkCache.json
 .env.production
 .env.development
 /shared/credentials/
+
+!scripts/releaseArtifact.js
+!scripts/releaseArtifact.test.js

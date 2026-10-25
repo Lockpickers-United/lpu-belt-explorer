@@ -55,4 +55,4 @@ Common generated or ignored outputs include `dist/`, `public/data/`, version/sit
 
 ## Sibling server repository
 
-`../explore-lpubelts-com-node` owns server exports and API services. Cross-repository edits are authorized when required by the current task, but executing its exporters remains live-data approval-gated. Read its `AGENTS.md`, inspect its status, and validate it independently before handoff.
+`apps/api` contains the imported server exports and API services; read its `AGENTS.md` and operational references. `../explore-lpubelts-com-node` remains frozen and owns production releases until Phase 5. Do not edit that source during the freeze. Cross-repository edits are authorized when required by the current task, but executing its exporters remains live-data approval-gated. Read its `AGENTS.md`, inspect its status, and validate it independently before handoff.

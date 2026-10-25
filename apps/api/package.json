@@ -6,9 +6,9 @@
   "type": "module",
   "scripts": {
     "test": "vitest",
-    "lint": "eslint \"./src/**\" \"./scripts/runCollectionExportAnalysis.js\" \"./scripts/runCollectionExportAnalysis.test.js\" \"./scripts/runFetchAnalyzeLogs.js\" \"./scripts/runFetchAnalyzeLogs.test.js\"",
+    "lint": "eslint \"./src/**\" \"./scripts/runCollectionExportAnalysis.js\" \"./scripts/runCollectionExportAnalysis.test.js\" \"./scripts/runFetchAnalyzeLogs.js\" \"./scripts/runFetchAnalyzeLogs.test.js\" \"./scripts/releaseArtifact.js\" \"./scripts/releaseArtifact.test.js\"",
     "validate": "yarn lint && yarn test --run",
-    "hooks:install": "git config core.hooksPath .githooks",
+    "hooks:install": "node -e \"throw new Error('Use the monorepo root hook; see CONTRIBUTING.md')\"",
     "security:scan": "node scripts/security-scan.js",
     "collections:dev": "NODE_ENV=development node ./scripts/runCollectionExportAnalysis.js",
     "collections:prod": "NODE_ENV=production node ./scripts/runCollectionExportAnalysis.js",

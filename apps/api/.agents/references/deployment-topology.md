@@ -1,5 +1,9 @@
 # Deployment Topology
 
+## Monorepo boundary
+
+Source now lives at `<monorepo>/apps/api`. Release archives and development SFTP mappings place that package’s contents directly at the existing application roots. Host `current`, `current-dev`, PM2 entry points and shared state paths stay stable. The original API repository remains the release authority until the approved Phase 5 transfer.
+
 ## Confirmed environment map
 
 Development and production run on the same DreamHost Managed VPS under the `lpubelts_api` shell account. They remain separate through hostnames, ports, PM2 process names, environment files, Firebase database IDs, and deployment directories.

@@ -6,7 +6,7 @@ This file applies to the entire `lpu-belt-explorer` repository and is the canoni
 
 `lpu-belt-explorer` is the React/Vite application behind [lpubelts.com](https://lpubelts.com). It combines static belt-ranking data with authenticated Firebase features. Use JavaScript, npm, and the Node 24 LTS release pinned in `.nvmrc`.
 
-The sibling `../explore-lpubelts-com-node` repository owns server-side exports and API services. Agents may edit it automatically when an in-scope change spans both repositories. Inspect its working tree and applicable `AGENTS.md` first, preserve unrelated work, and validate each repository by its own conventions.
+The imported `apps/api` package owns server-side exports and API services; read `apps/api/AGENTS.md` and its operational references before editing it. It remains an independent Yarn 4.18.0 package pinned to Node 24.21.0 during Phase 1. Run API commands from `apps/api`; the root web package remains npm/Node 24.15.0. The sibling `../explore-lpubelts-com-node` repository remains the frozen production release authority until Phase 5. Do not edit that frozen source during migration. Validate web and API independently with their pinned tools.
 
 ## Task-specific references
 

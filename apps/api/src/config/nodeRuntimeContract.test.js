@@ -13,15 +13,15 @@ describe('Node runtime contract', () => {
         const [nvmrc, packageJson, workflow] = await Promise.all([
             readRootFile('.nvmrc'),
             readRootFile('package.json'),
-            readRootFile('.github/workflows/deploy-production.yml')
+            readRootFile('../../.github/workflows/api-deploy-production.yml')
         ])
         const manifest = JSON.parse(packageJson)
 
         expect(nvmrc.trim()).toBe('24.21.0')
         expect(manifest.engines.node).toBe('>=24.11.0 <25')
         expect(manifest.packageManager).toBe('yarn@4.18.0')
-        expect(workflow).toContain('node-version-file: .nvmrc')
-        //expect(workflow).toContain('corepack yarn install --immutable')
+        expect(workflow).toContain('node-version-file: apps/api/.nvmrc')
+        expect(workflow).toContain('if: ${{ false }}')
         expect(workflow).toContain('actual_node_version=$(node --version)')
     })
 })

@@ -1,6 +1,6 @@
 # AGENTS.md
 
-This file applies to the entire `explore-lpubelts-com-node` repository. It is guidance for automated coding agents and should be updated when the architecture, deployment model, or data pipelines change. If older local guidance conflicts with this file, verify the current behavior in `package.json`, tests, and source code and follow this file.
+This file applies to `apps/api` in the `lpu-belt-explorer` monorepo, in addition to the root `AGENTS.md`. Paths below are relative to this package unless identified as monorepo paths. It is guidance for automated coding agents and should be updated when the architecture, deployment model, or data pipelines change. If older local guidance conflicts with this file, verify the current behavior in `package.json`, tests, and source code and follow this file.
 
 ## Project overview
 
@@ -18,7 +18,7 @@ The main areas are:
 - `src/testing/`, `src/api/testing/`, and `src/logger/*.test.js`: Vitest and Supertest coverage.
 - `src/data/`: checked-in data used by API services and tests.
 
-The sibling repository `../lpu-belt-explorer` owns the React frontend and Firebase Cloud Functions. Agents are authorized to edit that sibling automatically when an in-scope change spans both repositories; no separate permission is needed for those code edits. Inspect its working tree and applicable `AGENTS.md` first, preserve unrelated changes, and validate each repository according to its own conventions.
+The monorepo root currently owns the React frontend; `../../firebase/functions` owns Firebase Cloud Functions. The frozen original API repository remains production release authority until Phase 5. Do not edit it during migration. Run API Yarn commands from `apps/api`; never replace the monorepo root hook with the imported API hook.
 
 ## Agent references
 
@@ -42,7 +42,7 @@ The index at `.agents/references/README.md` describes their scope. Update the re
 Common root commands:
 
 - Install dependencies: `yarn install`
-- Install the tracked pre-commit hook: `yarn hooks:install`
+- Use the monorepo root Husky hook; `yarn hooks:install` is disabled to prevent replacing it.
 - Run lint and all tests once: `yarn validate`
 - Run all tests interactively: `yarn test`
 - Run all tests once: `yarn test --run`
@@ -106,7 +106,7 @@ When an API contract changes, update all applicable artifacts:
 - `src/api/documentation/README.md`
 - `src/api/requirements/samples/`
 - API/service tests
-- The consuming code in `../lpu-belt-explorer`
+- The consuming web code in `../../src`
 
 Preserve documented cache behavior unless the task changes it. Public summaries currently use public cache headers, while authenticated full-profile responses use `private, no-store`.
 
@@ -161,7 +161,7 @@ The active incremental exporters are:
 
 Their explicit runtime configuration is defined by `src/projects/collections/exportJobConfig.js`, their lazy named Firebase clients are created by `src/projects/collections/exportFirebase.js`, and operational setup is documented in `src/projects/collections/README.md`.
 
-They depend on change-index documents written by Firebase Functions in `../lpu-belt-explorer/functions/index.js`:
+They depend on change-index documents written by Firebase Functions in `../../firebase/functions/index.js`:
 
 | Source collection | Change-index collection | Firebase Function |
 | --- | --- | --- |

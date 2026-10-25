@@ -1,52 +1,9 @@
-# Contributing
+# Contributing to the API
 
-## Local setup
+From the monorepo root, enter `apps/api`, select Node 24.21.0 from its `.nvmrc`, then run `corepack yarn install --immutable`. Yarn 4.18.0 and `yarn.lock` remain authoritative until Phase 3. The root npm lockfile does not install API dependencies.
 
-Use Node 24.21.0 from `.nvmrc` and Yarn 4.18.0 from the `packageManager`
-declaration in `package.json`:
+Run `corepack yarn validate` from `apps/api` for lint and the complete API unit suite. During implementation, run only directly affected unit tests; reserve full validation for the phase gate. The monorepo root Husky hook validates the web and additionally validates the API when staged API files change. Do not run the former `yarn hooks:install`: it is disabled so it cannot replace the root hook.
 
-```sh
-nvm use
-corepack enable
-yarn install --immutable
-yarn hooks:install
-```
+Root `.github/workflows/api-ci.yml` validates API changes and constructs the standalone Linux release artifact. Root `.github/workflows/api-deploy-production.yml` is the manual candidate release path; its deploy job is unconditionally disabled until approved Phase 5 transfer. The original API repository remains the sole production release authority. See `.agents/references/production-releases.md` for packaging and release boundaries.
 
-`yarn hooks:install` configures this checkout to use the tracked hooks in
-`.githooks`. Git configuration is local to the checkout, so run it once after
-cloning. Confirm the setting with:
-
-```sh
-git config --get core.hooksPath
-```
-
-It should print `.githooks`.
-
-## Validation
-
-Run the complete local validation directly with:
-
-```sh
-yarn validate
-```
-
-This runs ESLint followed by the complete Vitest suite. The pre-commit hook runs
-the same command and also rejects whitespace errors in staged changes with
-`git diff --cached --check`. A failed check blocks the commit; correct the failure
-and commit again.
-
-The hook validates the current working tree, including unstaged changes. Stage a
-coherent change before committing and avoid keeping unrelated failing edits in the
-working tree.
-
-## Pull requests
-
-`.github/workflows/pull-request-ci.yml` runs automatically for every pull request.
-It checks out the proposed revision without persisted credentials, selects the
-Node version from `.nvmrc`, installs the lockfile with `yarn install --immutable`,
-and runs `yarn validate`. No repository or production secrets are provided to the
-job.
-
-The production deployment workflow runs the same validation command before its
-approval-gated deployment job, so pull request, local, and deployment checks stay
-aligned.
+For the initial Phase 1 check, API CI also accepts pushes to the exact `monorepo/phase1-api` branch with the same API path scope. This allows CI on a reviewed branch without a default-branch merge, PR creation or manual dispatch of an unavailable workflow. Pushing that branch still requires explicit authorization. Production deployment remains unconditionally disabled.

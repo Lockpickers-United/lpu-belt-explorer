@@ -2,7 +2,7 @@
 
 ## Update model
 
-WebStorm uploads changed files over SFTP into:
+After the approved development switch, WebStorm’s local deployment root is `<monorepo>/apps/api`, mapped directly to the existing remote root below. Do not map the monorepo root or upload an `apps/api` directory beneath `current-dev`. Existing source-repository mappings stay in effect until that switch. WebStorm uploads changed files over SFTP into:
 
 ```text
 /home/lpubelts_api/apps/api-server-dev/current-dev
@@ -136,3 +136,7 @@ If direct execution works but PM2 does not:
 ## Optional local development
 
 The server can also run locally. The default environment is `local`, which reads `.env.local`. A local process should still target the development Firebase database with production-job permission disabled unless it is explicitly configured for Firebase emulators.
+
+## Mapping switch review
+
+Neal must review the local source root, unchanged remote `current-dev` root, `.env*`/credential/dependency/runtime excludes, and manual restart policy before enabling uploads. Disable the old mapping before enabling the new one. Roll back by disabling the monorepo mapping and restoring the original source mapping; restore a complete known-good development upload and dependencies before the approved restart. No IDE settings or host files are changed by this documentation.
