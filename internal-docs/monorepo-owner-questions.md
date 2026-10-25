@@ -110,3 +110,26 @@ Question 7’s approved commit/push completed: implementation `22ec5c9fef8871aef
 **Status:** Complete; no owner response is needed. Routine path decisions preserved root environment/credential ownership and unchanged Firebase/Functions roots, kept API on Yarn, and used a web-only root npm workspace. Candidate live publication/import/upload jobs remain held. All local phase gates passed; the clean-worktree browser fixture gap and correction are recorded in the developer report.
 
 Phase 2 implementation/evidence is staged on `monorepo/phase2-web`. No Phase 2 commit, push, PR or hosted CI was requested or performed; earlier approvals apply only to Phase 1. Further publication or release actions retain the repository’s explicit authorization requirement.
+
+# Phase 3: npm workspaces and Node alignment
+
+## 8. Confirm API host Node availability
+
+**Resolved.** The existing API pin, cron documentation and successful Linux CI artifact use Node 24.21.0; the web/root currently uses 24.15.0. Proposed common runtime: **24.21.0**, preserving the API host’s documented target and avoiding a speculative host upgrade. Pinned npm candidate: **11.19.0**, verified with the existing Node 24.21.0 installation; the previous web toolchain used npm 12.0.2. No global npm update is needed.
+
+Please confirm the `node --version` supplied by the development and production `REMOTE_NODE_BIN` directories (version output only; no secrets or environment dumps). If both provide v24.21.0, that satisfies the Phase 3 host-availability gate. No host access, binary installation, restart, deployment or live job is requested here. Local graph/package work continues with 24.21.0 as a provisional candidate; the phase cannot claim host verification from local/CI evidence alone.
+
+**Owner answer:** “For owner question **8. Confirm API host Node availability**, the API host reports `node --version v24.21.0`.”
+
+Node 24.21.0 availability is confirmed by the owner. Select it as the common pin with npm 11.19.0. No host change or connection was performed. The existing exact `REMOTE_NODE_BIN` runtime check remains required before deployment activation.
+
+
+## 9. Publish the Phase 3 candidate for Linux artifact CI
+
+**Approved.** Question 8 is resolved and local Phase 3 checks pass: root clean install, web/API lint and 758 combined unit tests, ten browser checks, separate Functions install/lint and standalone production packaging with Sharp. The remaining phase gate is the exact committed Linux artifact, using the prepared CI-only branch trigger.
+
+Please authorize two local implementation commits (the saved Phase 2 relocation tree, then the reviewed Phase 3 npm/Node conversion) and a push of **only `monorepo/phase3-npm` to `origin` (`mgsecure/lpu-belt-explorer`)** to run API CI. Separate commits preserve the planned review boundary between moving files and converting dependencies. The local candidate is `/private/tmp/lpu-monorepo-phase3.OS5o0i/worktree`; the saved Phase 2 tree is `1a144beadad25f36f76f5d25a0ce3b41f5094c5e` and its original worktree is preserved.
+
+Root `AGENTS.md` explicitly says “Never commit, push, deploy, or open a PR unless asked.” Question 7 covered only Phase 1, so this needs a new authorization. This request excludes main/upstream/tag pushes, PRs, merges, deployment, live-data jobs and release-hold removal. CI installs/tests and constructs an offline archive on a Linux runner; it does not connect to the API host. More detail is available in the developer report and Phase 3 verification metadata.
+
+**Owner answer:** “I authorize two local implementation commits and push to `origin`.” Authorized scope is the two Phase 2/3 implementation commits and only `monorepo/phase3-npm` publication described above. No other branch, PR, merge, deployment or live job is authorized.

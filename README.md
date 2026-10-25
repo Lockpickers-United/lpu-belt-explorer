@@ -32,14 +32,14 @@ An interactive web app for exploring the Lockpickers United belt ranking system.
 
 ## Run locally
 * On initial setup and package.json changes
-    - Run `npm ci` from the repository root; this installs the `apps/web` workspace and root tooling. The API and Functions retain separate installations.
+    - Run `npm ci` from the repository root; this installs the `apps/web` and `apps/api` workspaces plus root tooling. Functions retains its separate installation.
 * To stand up locally
     - Run `npm run dev`
 
 ## Package layout
 
 - `apps/web`: React/Vite source, public assets, tests, scripts and app config. Root npm commands delegate here; build output is `apps/web/dist`.
-- `apps/api`: independent Yarn package during Phase 2, with its own Node pin and lockfile. Follow its `AGENTS.md`.
+- `apps/api`: API npm workspace. Web/API share the root lockfile, Node 24.21.0 and npm 11.19.0; run `npm ci` at root. Nested installs preserve standalone API packaging. Follow its `AGENTS.md`.
 - `firebase`: unchanged CLI configs, rules and separately installed `firebase/functions` package.
 - Root `.env.*`, ignored key files and credentials keep their existing locations. Vite and Vitest explicitly load env files from the root; do not copy secrets into app directories.
 

@@ -8,7 +8,7 @@ After the approved development switch, WebStorm’s local deployment root is `<m
 /home/lpubelts_api/apps/api-server-dev/current-dev
 ```
 
-Exclude `.env*`, credentials, `node_modules`, logs, uploads, and generated runtime data from automatic uploads. Install dependencies on the server when `package.json` or `yarn.lock` changes.
+Exclude `.env*`, credentials, `node_modules`, logs, uploads, and generated runtime data from automatic uploads. When workspace dependency inputs change, prepare a verified standalone npm release package; do not upload only the workspace manifest and run a separate resolution.
 
 The server and command-line jobs validate `NODE_ENV` as `local`, `development`, or `production` and load the matching file from the repository root. This single file contains the API, integration, `COLLECTION_*`, and `LOG_ANALYSIS_*` job settings. Link that path to the protected shared file once during setup:
 
@@ -101,19 +101,12 @@ Before Phase 1 begins and whenever `.nvmrc` changes, verify that the development
 cd /home/lpubelts_api/apps/api-server-dev/current-dev
 export PATH="/absolute/path/from/the/server/REMOTE_NODE_BIN:$PATH"
 test "$(node --version)" = "v$(tr -d '[:space:]' < .nvmrc)"
-corepack yarn --version
+npm --version # expected 11.19.0
 ```
 
 Use the development host's actual protected binary directory in place of the placeholder. Do not infer it from a developer workstation or a legacy script path.
 
-When a development upload changes dependency declarations, run the repository's pinned Node and Yarn versions on the server before restarting:
-
-```sh
-cd /home/lpubelts_api/apps/api-server-dev/current-dev
-corepack yarn install --immutable
-pm2 restart lpubelts-api-server-dev
-curl --fail http://127.0.0.1:10081/ready
-```
+When dependency declarations change, prepare the standalone package from the exact monorepo commit on a matching Linux x64 runner. The builder derives API-local manifest/lock inputs from the shared graph. Inspect and extract it in a staging directory and check Sharp before an approved development activation. Do not run `npm ci` against the workspace manifest alone on the API host: that would omit effective root overrides and the shared lock. Existing production release authority remains unchanged until Phase 5; Phase 4 rehearses development installation and activation.
 
 ## Direct execution and logging
 

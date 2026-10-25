@@ -4,9 +4,9 @@ This file applies to the entire `lpu-belt-explorer` repository and is the canoni
 
 ## Project essentials
 
-`lpu-belt-explorer` is the monorepo behind [lpubelts.com](https://lpubelts.com). The React/Vite app lives in `apps/web`; the private root npm coordinator installs only that workspace. Firebase configs and the independent Functions package remain in `firebase/`. Root npm scripts forward web commands with `apps/web` as the working directory. Use JavaScript, npm, and the Node 24 LTS release pinned in `.nvmrc`.
+`lpu-belt-explorer` is the monorepo behind [lpubelts.com](https://lpubelts.com). The React/Vite app lives in `apps/web`; the private root npm coordinator installs both web and API workspaces. Firebase configs and the independent Functions package remain in `firebase/`. Root npm scripts forward web commands with `apps/web` as the working directory. Use JavaScript, npm, and the Node 24 LTS release pinned in `.nvmrc`.
 
-The imported `apps/api` package owns server-side exports and API services; read `apps/api/AGENTS.md` and its operational references before editing it. It remains an independent Yarn 4.18.0 package pinned to Node 24.21.0 during Phases 1–2. Run API commands from `apps/api`; the web workspace remains npm/Node 24.15.0. Do not add the API or Functions package to root npm workspaces before their planned migration. The sibling `../explore-lpubelts-com-node` repository remains the frozen production release authority until Phase 5. Do not edit that frozen source during migration. Validate web and API independently with their pinned tools.
+The imported `apps/api` workspace owns server-side exports and API services; read `apps/api/AGENTS.md` and its operational references before editing it. Web and API use the root npm lockfile, Node 24.21.0 and npm 11.19.0. Root `.npmrc` uses nested installs to keep each app self-contained. Functions retains its independent npm package and lockfile. The sibling `../explore-lpubelts-com-node` repository remains the frozen production release authority until Phase 5. Do not edit that frozen source during migration.
 
 ## Task-specific references
 
@@ -26,6 +26,7 @@ Read every relevant reference before editing or executing commands for that area
 - Test/production builds: `npm run build:test` and `npm run build`
 - PR-equivalent checks: `npm run ci-pr`
 - Browser tests: `npm run e2e`; focused: `npm run e2e -- tests/e2e/example.spec.js`
+- API lint/tests: `npm run validate:api`; API focused tests: `npm run test:api -- --run path/to/test.js`
 - Functions lint: `npm --prefix firebase/functions run lint`
 - Change-tracker integration: `npm run test:functions:integration`
 

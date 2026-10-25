@@ -1,14 +1,16 @@
 import {execFileSync} from 'node:child_process'
 import {createHash} from 'node:crypto'
-import {readFileSync, writeFileSync, mkdtempSync, rmSync, realpathSync} from 'node:fs'
+import {readFileSync, writeFileSync, mkdtempSync, rmSync, realpathSync, mkdirSync, cpSync, readdirSync} from 'node:fs'
 import {tmpdir} from 'node:os'
 import path from 'node:path'
 import {fileURLToPath} from 'node:url'
 import {gunzipSync, gzipSync} from 'node:zlib'
+import {isDeepStrictEqual} from 'node:util'
+import {createReleaseInputs, resolvePackage} from './releaseInputs.js'
 
 const apiRoot = fileURLToPath(new URL('../', import.meta.url))
 const required = [
-    'package.json', 'yarn.lock', '.yarnrc.yml', '.nvmrc',
+    'package.json', 'package-lock.json', '.npmrc', '.nvmrc', '.release-inputs.json',
     'src/lpubeltsApiServer.js', 'ecosystem.prod.json', 'ecosystem.dev.json',
     'scripts/runCollectionExportAnalysis.js', 'scripts/runFetchAnalyzeLogs.js'
 ]
@@ -26,7 +28,7 @@ export function validatePath(name) {
     if (parts.some(part => ['.git', 'keys', 'credentials'].includes(part)) ||
         ['apps', 'shared', 'logs'].includes(parts[0]) ||
         (parts[0].startsWith('.env') && name !== '.env.example') ||
-        name === '.release.json' || name === '.yarn/install-state.gz') {
+        name === '.release.json' || name === '.yarn/install-state.gz' || name === 'yarn.lock' || name === '.yarnrc.yml') {
         fail(`Excluded runtime or repository state: ${name}`)
     }
 }
@@ -119,7 +121,31 @@ export function inspectTar(buffer, {dependencies = true} = {}) {
             : '/home/lpubelts_api/apps/api-server-dev/current-dev'
         if (!config.apps.some(app => app.cwd === expectedRoot && app.script === `${expectedRoot}/src/lpubeltsApiServer.js`)) fail('Wrong PM2 entry point')
     }
-    if (dependencies && ![...members.keys()].some(name => name.startsWith('node_modules/sharp/'))) fail('Missing Sharp dependency')
+    const lock = JSON.parse(members.get('package-lock.json').data)
+    if (lock.name !== manifest.name || !isDeepStrictEqual(lock.packages?.['']?.dependencies, manifest.dependencies)) fail('Release lock does not match the API manifest')
+    const identity = JSON.parse(members.get('.release-inputs.json').data)
+    if (!/^[0-9a-f]{40}$/.test(identity.monorepoCommit || '') || !/^[0-9a-f]{64}$/.test(identity.monorepoLockSha256 || '')) fail('Missing monorepo release identity')
+    if (dependencies) {
+        if (!members.has('node_modules/sharp/package.json')) fail('Missing Sharp dependency')
+        const installed = new Map()
+        for (const [name, member] of members) {
+            if (!name.startsWith('node_modules/') || !name.endsWith('/package.json') || member.type !== '0') continue
+            const parts = name.split('/')
+            const tail = parts.slice(parts.lastIndexOf('node_modules') + 1)
+            if (!(tail.length === 2 && !tail[0].startsWith('@')) && !(tail.length === 3 && tail[0].startsWith('@'))) continue
+            const location = name.slice(0, -'/package.json'.length)
+            const entry = lock.packages[location]
+            const actual = JSON.parse(member.data)
+            if (!entry || entry.version !== actual.version || entry.dev) fail(`Unmatched production dependency: ${location}`)
+            installed.set(location, actual)
+        }
+        for (const [location, actual] of [['', manifest], ...installed]) {
+            for (const name of Object.keys(actual.dependencies || {})) {
+                if (name in (actual.optionalDependencies || {})) continue
+                if (!resolvePackage(location, name, installed)) fail(`Missing production dependency: ${name}`)
+            }
+        }
+    }
     return members
 }
 
@@ -129,16 +155,41 @@ function createArtifact(commit, output) {
     execFileSync('git', ['rev-parse', '--verify', `${commit}^{commit}`], {cwd: repository})
     const prefix = path.relative(repository, apiRoot).split(path.sep).join('/')
     if (prefix !== 'apps/api') fail('Expected apps/api package boundary')
-    // Installed dependencies must be paired with the archived lock and manifest.
-    for (const filename of ['package.json', 'yarn.lock', '.yarnrc.yml', '.nvmrc']) {
-        const committed = execFileSync('git', ['show', `${commit}:apps/api/${filename}`], {cwd: repository})
-        if (!committed.equals(readFileSync(path.join(apiRoot, filename)))) fail(`Uncommitted dependency input: ${filename}`)
+    // Verify every install input against the exact source revision. No server install is needed.
+    for (const filename of ['package.json', 'package-lock.json', '.npmrc', '.nvmrc', 'apps/api/package.json', 'apps/api/.nvmrc']) {
+        const committed = execFileSync('git', ['show', `${commit}:${filename}`], {cwd: repository})
+        if (!committed.equals(readFileSync(path.join(repository, filename)))) fail(`Uncommitted dependency input: ${filename}`)
     }
+    const rootManifest = JSON.parse(readFileSync(path.join(repository, 'package.json')))
+    const sharedLockBytes = readFileSync(path.join(repository, 'package-lock.json'))
+    const apiManifest = JSON.parse(readFileSync(path.join(apiRoot, 'package.json')))
+    const projected = createReleaseInputs(rootManifest, JSON.parse(sharedLockBytes), apiManifest)
+    const requiredNode = readFileSync(path.join(repository, '.nvmrc'), 'utf8').trim().replace(/^v/, '')
+    if (readFileSync(path.join(apiRoot, '.nvmrc'), 'utf8').trim().replace(/^v/, '') !== requiredNode || process.version !== `v${requiredNode}`) fail('Release Node does not match the common pin')
+    const npmVersion = execFileSync('npm', ['--version'], {cwd: repository, encoding: 'utf8'}).trim()
+    if (`npm@${npmVersion}` !== rootManifest.packageManager) fail('Release npm does not match the common pin')
     const temporary = mkdtempSync(path.join(tmpdir(), 'lpu-api-artifact-'))
     try {
         const archive = path.join(temporary, 'release.tar')
-        execFileSync('git', ['archive', '--format=tar', `--output=${archive}`, `${commit}:apps/api`], {cwd: repository})
-        execFileSync('tar', ['--append', '--file', archive, 'node_modules'], {cwd: apiRoot})
+        const source = path.join(temporary, 'source.tar')
+        const stage = path.join(temporary, 'package')
+        mkdirSync(stage)
+        execFileSync('git', ['archive', '--format=tar', `--output=${source}`, `${commit}:apps/api`], {cwd: repository})
+        execFileSync('tar', ['-xf', source, '-C', stage])
+        writeFileSync(path.join(stage, 'package.json'), `${JSON.stringify(projected.manifest, null, 2)}\n`)
+        writeFileSync(path.join(stage, 'package-lock.json'), `${JSON.stringify(projected.lock, null, 2)}\n`)
+        writeFileSync(path.join(stage, '.npmrc'), 'install-strategy=nested\n')
+        writeFileSync(path.join(stage, '.release-inputs.json'), `${JSON.stringify({
+            monorepoCommit: commit,
+            monorepoLockSha256: createHash('sha256').update(sharedLockBytes).digest('hex'),
+            sourceApiManifestSha256: createHash('sha256').update(readFileSync(path.join(apiRoot, 'package.json'))).digest('hex'),
+            nodeVersion: requiredNode,
+            npmVersion,
+            installStrategy: 'nested'
+        }, null, 2)}\n`)
+        cpSync(path.join(apiRoot, 'node_modules'), path.join(stage, 'node_modules'), {recursive: true, verbatimSymlinks: true})
+        rmSync(path.join(stage, 'node_modules', '.package-lock.json'), {force: true})
+        execFileSync('tar', ['-cf', archive, '-C', stage, '--', ...readdirSync(stage).sort()])
         const buffer = readFileSync(archive)
         inspectTar(buffer)
         const compressed = gzipSync(buffer)

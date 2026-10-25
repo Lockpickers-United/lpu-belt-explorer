@@ -53,3 +53,9 @@ src/data/linkCache.json
 
 !scripts/releaseArtifact.js
 !scripts/releaseArtifact.test.js
+
+!scripts/releaseInputs.js
+!scripts/releaseInputs.test.js
+
+!scripts/security-scan.test.js
+!scripts/security-scan.js

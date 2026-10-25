@@ -31,7 +31,9 @@ jobs:
 
       - name: Install dependencies
         working-directory: .
-        run: npm ci
+        run: |
+          npm install --global npm@11.19.0 --ignore-scripts
+          npm ci
 
       - name: Import
         run: npm run import

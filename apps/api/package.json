@@ -6,8 +6,8 @@
   "type": "module",
   "scripts": {
     "test": "vitest",
-    "lint": "eslint \"./src/**\" \"./scripts/runCollectionExportAnalysis.js\" \"./scripts/runCollectionExportAnalysis.test.js\" \"./scripts/runFetchAnalyzeLogs.js\" \"./scripts/runFetchAnalyzeLogs.test.js\" \"./scripts/releaseArtifact.js\" \"./scripts/releaseArtifact.test.js\"",
-    "validate": "yarn lint && yarn test --run",
+    "lint": "eslint \"./src/**\" \"./scripts/runCollectionExportAnalysis.js\" \"./scripts/runCollectionExportAnalysis.test.js\" \"./scripts/runFetchAnalyzeLogs.js\" \"./scripts/runFetchAnalyzeLogs.test.js\" \"./scripts/releaseArtifact.js\" \"./scripts/releaseArtifact.test.js\" \"./scripts/releaseInputs.js\" \"./scripts/releaseInputs.test.js\" \"./scripts/security-scan.js\" \"./scripts/security-scan.test.js\"",
+    "validate": "npm run lint && npm run test -- --run",
     "hooks:install": "node -e \"throw new Error('Use the monorepo root hook; see CONTRIBUTING.md')\"",
     "security:scan": "node scripts/security-scan.js",
     "collections:dev": "NODE_ENV=development node ./scripts/runCollectionExportAnalysis.js",
@@ -19,7 +19,8 @@
   "author": "mgsecure",
   "license": "MIT",
   "engines": {
-    "node": ">=24.11.0 <25"
+    "node": ">=24.11.0 <25",
+    "npm": "11.19.0"
   },
   "dependencies": {
     "@google-cloud/local-auth": "^3.0.1",
@@ -59,8 +60,5 @@
     "vite": "^8.3.0",
     "vitest": "5.0.1"
   },
-  "resolutions": {
-    "gaxios@npm:6.7.1/uuid": "npm:11.1.1"
-  },
-  "packageManager": "yarn@4.18.0"
+  "packageManager": "npm@11.19.0"
 }

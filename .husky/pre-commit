@@ -6,15 +6,6 @@ fi
 
 npm run test:ci
 
-if git diff --cached --name-only | grep -q '^apps/api/'; then
-    (
-        cd apps/api || exit 1
-        if command -v nvm >/dev/null 2>&1; then
-            nvm use --silent || exit 1
-        elif [ "$(node --version)" != "v$(cat .nvmrc)" ]; then
-            echo 'Select the Node version pinned in apps/api/.nvmrc before API validation.' >&2
-            exit 1
-        fi
-        corepack yarn validate
-    )
+if git diff --cached --name-only | grep -Eq '^(apps/api/|package(-lock)?\.json$|\.npmrc$|\.nvmrc$)'; then
+    npm run validate:api
 fi

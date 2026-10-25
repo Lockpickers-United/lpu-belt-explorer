@@ -1,6 +1,6 @@
 # LPU monorepo — implementation plan and progress
 
-Status: In progress (Phase 2 complete; Phase 3 not started)  
+Status: In progress (Phase 3 npm workspace conversion and Node alignment)  
 Last updated: 2026-10-25  
 Project definition: [Monorepo overview and migration plan](monorepo-plan.md)  
 Developer report: [Monorepo developer report](monorepo-developer-report.md)
@@ -8,16 +8,16 @@ Developer report: [Monorepo developer report](monorepo-developer-report.md)
 ## Project snapshot
 
 **Outcome:** The active web client and API share the `lpu-belt-explorer` repository with independent, verified releases and room for Devvit and LockyJr.  
-**Current phase:** Phase 2 complete — web workspace/path repair, release holds, clean install, full unit/build/browser gates and Firebase path verification passed; Phase 3 not started.
-**Next action:** Review the staged `monorepo/phase2-web` move and verification evidence. Preserve root env/credential ownership, Firebase/Functions boundaries, API freeze and release holds. Phase 3 can begin when requested; no Phase 2 publication is authorized.
-**Overall blocker:** None for completed Phase 2. All local phase gates passed. Production cutover, release-hold removal, host settings, live-data jobs and later API workspace conversion retain their separate review/approval gates.
+**Current phase:** Phase 3 in progress — npm conversion, standalone production packaging and Node alignment; Phase 2 remains complete.
+**Next action:** Review owner question 9 for separate Phase 2/3 implementation commits and publication of only the Phase 3 branch for Linux API CI. Local npm, lint/test/build/browser and standalone packaging checks pass.
+**Overall blocker:** Linux artifact CI awaits explicit candidate commit/push authorization. Production cutover, release-hold removal, host settings and live-data jobs retain separate review/approval gates.
 
 | Phase | Status | Completed |
 | --- | --- | --- |
 | Phase 0: Baseline and migration decisions | Complete | 2026-10-25 |
 | Phase 1: Import the active API and prepare its release artifact | Complete | 2026-10-25 |
 | Phase 2: Move the web app and repair web/Firebase paths | Complete | 2026-10-25 |
-| Phase 3: Adopt npm workspaces and align Node | Not started | — |
+| Phase 3: Adopt npm workspaces and align Node | In progress | — |
 | Phase 4: Integrated validation and development rehearsal | Not started | — |
 | Phase 5: Production cutover and old-source retirement | Not started | — |
 | Phase 6: Future Devvit and LockyJr onboarding | Not started | — |
@@ -151,7 +151,7 @@ Move the web package to `apps/web` and add a private root coordinator. The API r
 
 ## Phase 3: Adopt npm workspaces and align Node
 
-**Status:** Not started  
+**Status:** In progress  
 **Completed:** —  
 **Start when:** Phase 2 paths and independent checks are stable.
 
@@ -161,18 +161,18 @@ Add `apps/api` to the root npm workspace and pin a common Node 24 patch. Change 
 
 ### Findings
 
-- None yet.
+- Selected common Node is the API’s existing 24.21.0; npm 11.19.0 is installed with it. Owner question 8 confirms the API host provides v24.21.0. Preserve the existing production versions while converting Yarn to npm, and retain a self-contained API package despite workspace dependency layout.
 
 ### Tasks
 
-- [ ] Verify the API host's available Node patch, choose a supported Node 24 patch for root/CI/PM2/cron, and pin the npm release used by CI. Update docs and host-path checks together.
-- [ ] Convert the API Yarn graph to the root `package-lock.json`; move required Yarn `resolutions` to root npm `overrides`. Review hoisting, peer dependencies, native Sharp resolution, package scripts, and the complete lockfile diff. Remove API Yarn files only after reproducible installs pass.
-- [ ] Use root `npm ci` and app-targeted scripts in CI while keeping Functions on its own lockfile. Ensure API production packaging includes only needed runtime files and dependencies and still supports rollback.
+- [x] Verify the API host's available Node patch, choose a supported Node 24 patch for root/CI/PM2/cron, and pin the npm release used by CI. Update docs and host-path checks together.
+- [x] Convert the API Yarn graph to the root `package-lock.json`; move required Yarn `resolutions` to root npm `overrides`. Review hoisting, peer dependencies, native Sharp resolution, package scripts, and the complete lockfile diff. Remove API Yarn files only after reproducible installs pass.
+- [x] Use root `npm ci` and app-targeted scripts in CI while keeping Functions on its own lockfile. Ensure API production packaging includes only needed runtime files and dependencies and still supports rollback.
 - [ ] Run full web/API lint and tests, web test build, relevant browser checks, and offline Linux API artifact validation; compare the resolved production dependency tree with the prior Yarn artifact.
 
 ### Exit criteria
 
-- [ ] A clean checkout with the pinned Node/npm completes root `npm ci` and app-targeted validation; separate Functions install/lint remains valid.
+- [x] A clean checkout with the pinned Node/npm completes root `npm ci` and app-targeted validation; separate Functions install/lint remains valid.
 - [ ] API native dependencies load in the release artifact on the target platform, and the artifact remains self-contained under the existing runtime directory contract.
 - [ ] The developer report records material dependency changes and their checks; no unreviewed lockfile or runtime drift remains.
 

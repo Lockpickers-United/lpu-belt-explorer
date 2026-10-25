@@ -18,7 +18,7 @@ The main areas are:
 - `src/testing/`, `src/api/testing/`, and `src/logger/*.test.js`: Vitest and Supertest coverage.
 - `src/data/`: checked-in data used by API services and tests.
 
-The `../web` workspace owns the React frontend; `../../firebase/functions` owns Firebase Cloud Functions. The frozen original API repository remains production release authority until Phase 5. Do not edit it during migration. Run API Yarn commands from `apps/api`; never replace the monorepo root hook with the imported API hook.
+The `../web` workspace owns the React frontend; `../../firebase/functions` owns Firebase Cloud Functions. The frozen original API repository remains production release authority until Phase 5. Do not edit it during migration. Run installs from the monorepo root and API scripts with `--workspace=apps/api`; never replace the monorepo root hook with the imported API hook.
 
 ## Agent references
 
@@ -36,21 +36,21 @@ The index at `.agents/references/README.md` describes their scope. Update the re
 - Use JavaScript only. Do not introduce TypeScript or a type-checking toolchain unless the user explicitly requests that migration.
 - The root package is ES-module based (`"type": "module"`). Use `import`/`export` and explicit local file extensions. Configuration files that are intentionally `.cjs` remain CommonJS. Use JSON for PM2 process declarations in this repository; see `.agents/references/development-operations.md`.
 - Use the Node 24.21.0 release pinned in `.nvmrc`. `package.json` accepts supported Node releases from 24.11.0 up to, but not including, Node 25; local and CI validation should use the pinned patch. Modern ESM, top-level `await`, and global web APIs are assumed.
-- Use Yarn. `package.json` declares Yarn 4.18.0, `.yarnrc.yml` uses the `node-modules` linker, and `yarn.lock` is authoritative.
-- This is not declared as a Yarn workspace. Directories with their own `package.json`/lockfile are separate package boundaries; follow the nearest package configuration when working in one.
+- Use Node 24.21.0 and npm 11.19.0. The root `package-lock.json` and `.npmrc` nested install strategy are authoritative.
+- Web and API are root npm workspaces. Firebase Functions remains a separate package with its own lockfile. Do not create an API-local lockfile in source; standalone release inputs are derived by the release builder.
 
 Common root commands:
 
-- Install dependencies: `yarn install`
-- Use the monorepo root Husky hook; `yarn hooks:install` is disabled to prevent replacing it.
-- Run lint and all tests once: `yarn validate`
-- Run all tests interactively: `yarn test`
-- Run all tests once: `yarn test --run`
-- Run one test file: `yarn vitest run src/api/testing/apiRoutes.test.js`
-- Run the full lint: `yarn lint`
-- Lint touched files: `yarn eslint path/to/file.js ...`
+- Install dependencies: `npm ci` from the monorepo root
+- Use the monorepo root Husky hook; `npm run hooks:install` is disabled to prevent replacing it.
+- Run lint and all tests once: `npm run validate:api` from the monorepo root
+- Run all tests interactively: `npm run test:api` from the monorepo root
+- Run all tests once: `npm run test:api -- --run` from the monorepo root
+- Run one test file: `npm run test:api -- --run src/api/testing/apiRoutes.test.js` from the monorepo root
+- Run the full lint: `npm run lint:api` from the monorepo root
+- Lint touched files: `npm exec --workspace=apps/api -- eslint path/to/file.js ...` from the monorepo root
 - Check syntax without executing a script: `node --check path/to/file.js`
-- Run the dependency audit/report generator: `yarn security:scan`
+- Run the dependency audit/report generator: `npm run security:scan --workspace=apps/api` from the monorepo root
 
 There is no root build or type-check script. Do not invent one in completion reports. The security scan accesses the package registry and writes reports under `logs/`; run it when dependency/security work calls for it, not as routine validation for unrelated changes.
 
@@ -206,10 +206,10 @@ The repository has active Vitest coverage despite older guidance that may say no
 Minimum handoff checks by change type:
 
 - Small utility/project edit: targeted ESLint, `node --check` when useful, and the closest focused test.
-- API, middleware, auth, or service edit: focused tests plus `yarn test --run` when practical.
+- API, middleware, auth, or service edit: focused tests plus `npm run test:api -- --run` from the monorepo root when practical.
 - Logging edit: relevant logger/HTTP logger tests plus lint.
 - Export/cron edit: lint and syntax checks; execute only with explicit live-data approval.
-- Dependency edit: full tests and lint; run `yarn security:scan` when its network access/report output is appropriate.
+- Dependency edit: full tests and lint; run `npm run security:scan --workspace=apps/api` from the monorepo root when its network access/report output is appropriate.
 
 Never claim a lint, test, syntax check, security scan, server run, or live job succeeded unless it was actually executed. If a relevant check cannot be run safely, state why in the handoff.
 

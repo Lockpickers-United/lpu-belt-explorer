@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// ESM script to run Yarn's npm audit and produce a summarized report + JSON artifact
+// ESM script to run the API workspace's npm audit and produce a summarized report + JSON artifact
 import {execFile as _execFile} from 'node:child_process'
 import {promisify} from 'node:util'
 import {mkdir, writeFile} from 'node:fs/promises'
@@ -28,11 +28,43 @@ function nowTs() {
   )
 }
 
-function summarizeAuditJson(jsonLines) {
+export function summarizeAuditJson(jsonLines) {
   // Yarn 4 returns an NDJSON stream with one registry finding per line. Retain
   // support for Yarn 1 output so older raw reports can still be summarized.
   const advisories = []
   let summary = null
+  const raw = Array.isArray(jsonLines) ? jsonLines.join('\n') : jsonLines
+  try {
+    const report = JSON.parse(raw)
+    if (report.error) throw new Error(report.error.summary || 'npm audit failed')
+    if (report.auditReportVersion === 2 && report.vulnerabilities && report.metadata) {
+      for (const finding of Object.values(report.vulnerabilities)) {
+        for (const via of finding.via.filter(value => typeof value === 'object')) {
+          advisories.push({
+            id: via.source,
+            module_name: finding.name,
+            severity: via.severity,
+            title: via.title,
+            vulnerable_versions: via.range,
+            path: finding.nodes.join(', '),
+            url: via.url,
+            github_advisory_id: via.url?.match(/GHSA-[\w-]+/)?.[0] ?? ''
+          })
+        }
+      }
+      summary = {
+        totalDependencies: report.metadata.dependencies?.total,
+        vulnerabilities: report.metadata.vulnerabilities
+      }
+      advisories.sort((a, b) => ['critical', 'high', 'moderate', 'low', 'info'].indexOf(a.severity)
+        - ['critical', 'high', 'moderate', 'low', 'info'].indexOf(b.severity))
+      return {advisories, summary}
+    }
+  } catch (error) {
+    if (!Array.isArray(jsonLines)) throw error
+  }
+  if (!Array.isArray(jsonLines)) throw new Error('Unrecognized npm audit report')
+  jsonLines = Array.isArray(jsonLines) ? jsonLines : raw.split(/\r?\n/)
   for (const line of jsonLines) {
     if (!line) continue
     try {
@@ -140,44 +172,43 @@ function buildMarkdown(ts, summary, advisories) {
 async function run() {
   await mkdir(logsDir, { recursive: true })
   const ts = nowTs()
-  const jsonFile = path.resolve(logsDir, `security-audit-${ts}.jsonl`)
+  const jsonFile = path.resolve(logsDir, `security-audit-${ts}.json`)
   const mdFile = path.resolve(logsDir, `security-audit-${ts}.md`)
 
-  console.log('Running yarn npm audit --all --recursive --json ...')
-  let stdout = ''
-  let stderr = ''
+  console.log('Running npm audit --workspace=apps/api --json ...')
+  let stdout
+  let stderr
   let nonZeroExit = false
   try {
-    const res = await execFile('yarn', ['npm', 'audit', '--all', '--recursive', '--json'], {
-      cwd: repoRoot,
+    const res = await execFile('npm', ['audit', '--workspace=apps/api', '--json'], {
+      cwd: path.resolve(repoRoot, '../..'),
       maxBuffer: 1024 * 1024 * 20
     })
     stdout = res.stdout || ''
     stderr = res.stderr || ''
   } catch (err) {
-    // Yarn returns non-zero when findings exist; the output is still a valid report.
+    // npm returns non-zero when findings exist; the output is still a valid report.
     nonZeroExit = true
     stdout = err?.stdout || ''
     stderr = err?.stderr || ''
     if (err?.code !== null && err?.code !== undefined) {
-      console.error(`yarn npm audit exited with code ${err.code}; attempting to summarize results...`)
+      console.error(`npm audit exited with code ${err.code}; attempting to summarize results...`)
     }
   }
   if (stderr && stderr.trim()) {
-    // Yarn may print progress or warnings to stderr; not necessarily an error
+    // npm may print progress or warnings to stderr; not necessarily an error
     console.error(stderr)
   }
 
   // Write raw JSON lines for full detail (even on failure if any stdout exists)
   try {
     await writeFile(jsonFile, stdout ?? '', 'utf8')
-    console.log(`\nRaw JSON lines written to: ${jsonFile}`)
+    console.log(`\nRaw JSON written to: ${jsonFile}`)
   } catch (e) {
     console.error('Failed to write audit output file:', e)
   }
 
-  const lines = (stdout || '').split(/\r?\n/)
-  const {advisories, summary} = summarizeAuditJson(lines)
+  const {advisories, summary} = summarizeAuditJson(stdout)
 
   // Build and write Markdown report
   try {
@@ -196,7 +227,7 @@ async function run() {
   } else if (advisories.length) {
     console.log(`- Findings: ${formatCounts(advisories)}`)
   } else if (nonZeroExit && !stdout) {
-    console.log('- No output received from yarn npm audit')
+    console.log('- No output received from npm audit')
   } else {
     console.log(`- Findings: ${formatCounts(advisories)}`)
   }
@@ -216,7 +247,7 @@ async function run() {
     console.log('No advisories reported.')
   }
 
-  console.log('For full details, open that file or run `yarn npm audit --all --recursive` directly.')
+  console.log('For full details, open that file or run `npm audit --workspace=apps/api` directly.')
 
   // Exit code policy:
   // - 1 if advisories found (expected when vulnerabilities exist)
@@ -228,7 +259,9 @@ async function run() {
   process.exit(2)
 }
 
-run().catch((err) => {
-  console.error('security scan failed:', err)
-  process.exit(2)
-})
+if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+  run().catch((err) => {
+    console.error('security scan failed:', err)
+    process.exit(2)
+  })
+}

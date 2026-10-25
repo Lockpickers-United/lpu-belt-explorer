@@ -60,7 +60,3 @@ updates:
         dependency-type: 'production'
         update-types:
           - 'patch'
-  - package-ecosystem: 'npm'
-    directory: '/apps/api'
-    schedule:
-      interval: 'weekly'

@@ -1,0 +1,77 @@
+{
+  "phase": 3,
+  "status": "local checks passed; Linux CI pending authorization",
+  "date": "2026-10-25",
+  "branch": "monorepo/phase3-npm",
+  "worktree": "/private/tmp/lpu-monorepo-phase3.OS5o0i/worktree",
+  "baseCommit": "22ec5c9fef8871aefa678eefe9bbedb0d695285a",
+  "phase2BaselineTree": "1a144beadad25f36f76f5d25a0ce3b41f5094c5e",
+  "node": "24.21.0",
+  "npm": "11.19.0",
+  "hostNodeAvailability": "owner confirmed v24.21.0; no host connection",
+  "installStrategy": "nested",
+  "workspaces": [
+    "apps/web",
+    "apps/api"
+  ],
+  "functionsSeparate": true,
+  "rootLockSha256": "e77fbfa67cbef1c1f0fbb1b3b2c6b9ca59449abdd6b0ea8d8a446975b388bfeb",
+  "dependencyReview": {
+    "existingWebVersionsChanged": 0,
+    "existingApiVersionsChanged": 0,
+    "priorYarnProductionPackages": 386,
+    "priorYarnProductionVersionsChanged": 0,
+    "priorYarnProductionPackagesMissingFromLock": 0,
+    "apiLockPackageEntries": 578,
+    "unusedBuildInfrastructurePruned": [
+      "@isaacs/fs-minipass@4.0.1",
+      "abbrev@5.0.0",
+      "chownr@3.0.0",
+      "env-paths@2.2.1",
+      "exponential-backoff@3.1.3",
+      "graceful-fs@4.2.11",
+      "minizlib@3.1.0",
+      "node-gyp@13.0.2",
+      "isexe@4.0.0",
+      "which@7.0.0",
+      "nopt@10.0.1",
+      "proc-log@7.0.0",
+      "tar@7.5.22",
+      "undici@8.10.2",
+      "yallist@5.0.0"
+    ],
+    "additionalFrozenOptionalPlatformLockEntries": 75,
+    "localProductionPackages": 386,
+    "localVsPriorLinuxGraph": "same versions; two Darwin arm64 Sharp packages replace their Linux x64 equivalents"
+  },
+  "checks": {
+    "rootNpmCi": "passed; 1472 packages; standard prepare hook enabled",
+    "focusedApi": "4 files / 35 tests passed",
+    "webCiPr": "lint, 52 files / 280 tests, test build passed",
+    "apiValidate": "lint, 92 files / 478 tests passed with local socket access",
+    "browser": "10 tests passed; loopback-only fixture",
+    "functions": "separate npm ci --ignore-scripts, 335 packages; lint passed",
+    "productionProfile": "root workspace-filtered production npm ci passed, 387 packages including workspace link",
+    "localPackage": "15114 tar members inspected; Sharp 0.35.4 loaded; synthetic identity, not an exact committed release",
+    "webBuildComparison": "475 files byte-identical to Phase 2 when using the same test-build flags",
+    "linuxArtifact": "pending",
+    "workflowYaml": "all six parse",
+    "hookSyntax": "passed",
+    "standaloneNpmCi": "passed; derived standalone lock, 386 production packages",
+    "finalRootNpmCi": "passed offline after optional-platform completion; 1472 packages"
+  },
+  "sourceSafety": {
+    "envChanged": false,
+    "firebaseConfigOrFunctionsChanged": false,
+    "apiRuntimeSourceChanged": false,
+    "deploymentHoldsRetained": true,
+    "liveDataJobsRun": false,
+    "deploymentPerformed": false,
+    "committed": false,
+    "pushed": false
+  },
+  "primaryReferences": [
+    "https://docs.npmjs.com/cli/v11/commands/npm-ci/",
+    "https://docs.npmjs.com/cli/v11/commands/npm-install/"
+  ]
+}

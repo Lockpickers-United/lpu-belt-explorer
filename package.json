@@ -4,7 +4,8 @@
   "private": true,
   "type": "module",
   "workspaces": [
-    "apps/web"
+    "apps/web",
+    "apps/api"
   ],
   "scripts": {
     "dev": "npm run dev --workspace=apps/web --",
@@ -48,15 +49,23 @@
     "e2e:report": "npm run e2e:report --workspace=apps/web --",
     "codegen": "npm run codegen --workspace=apps/web --",
     "allure": "npm run allure --workspace=apps/web --",
-    "prepare": "husky"
+    "prepare": "husky",
+    "lint:api": "npm run lint --workspace=apps/api --",
+    "test:api": "npm run test --workspace=apps/api --",
+    "validate:api": "npm run validate --workspace=apps/api --",
+    "validate:all": "npm run ci-pr && npm run validate:api"
   },
   "engines": {
-    "node": ">=24.11.0 <25"
+    "node": ">=24.11.0 <25",
+    "npm": "11.19.0"
   },
   "devDependencies": {
     "husky": "^9.1.7"
   },
   "overrides": {
+    "gaxios@6.7.1": {
+      "uuid": "11.1.1"
+    },
     "react-is": "^19.3.0",
     "gaxios": {
       "uuid": "^11.1.1"
@@ -68,5 +77,6 @@
     "fsevents@2.3.3": true,
     "@firebase/util": false,
     "msw": false
-  }
+  },
+  "packageManager": "npm@11.19.0"
 }

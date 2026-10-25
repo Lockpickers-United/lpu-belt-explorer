@@ -82,7 +82,7 @@ tests-results/*
 /apps/web/scripts/*.json
 /apps/web/scripts/*.md
 
-# Retired generated web Yarn state; API keeps its own Yarn boundary.
+# Retired generated Yarn state; web and API now share npm.
 /.pnp.cjs
 /.pnp.loader.mjs
 /.yarn/
