@@ -1,0 +1,28 @@
+{
+  "metadata": {
+    "source": "firebase",
+    "fetchedDateTime": "2026-10-13T12:00:00.000Z"
+  },
+  "data": {
+    "entryId": "example-lock",
+    "entryRevision": 2,
+    "decisionMilestoneAt": null,
+    "reopened": false,
+    "votes": [
+      {
+        "id": "v_d8559ca8549f5c0ae7632cac5f74d1439bcb4bc82743be56c4f787663f7a2138",
+        "entryId": "example-lock",
+        "userId": "example-user",
+        "displayName": "Example Voter",
+        "votedBelt": "Blue",
+        "comment": "Synthetic example vote",
+        "mediaUrl": null,
+        "createdAt": "2026-10-13T11:00:00.000Z",
+        "updatedAt": "2026-10-13T11:00:00.000Z",
+        "revision": 1,
+        "isCurrent": true
+      }
+    ],
+    "nextCursor": null
+  }
+}

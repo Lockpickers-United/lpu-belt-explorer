@@ -1,0 +1,141 @@
+import entryName from './entryName.js'
+import {loadCatalogArray} from './catalogData.js'
+
+let allMedia = []
+
+export async function lockDetails(options) {
+    const lockData = await loadCatalogArray('data.json', options)
+
+    let allSamelineNames = {}
+    return lockData.reduce((acc, item) => {
+
+        //TODO entries with no make, only model
+        const lockName = entryName(item, 'short').replaceAll('"', '\'')
+        const lockFullName = entryName(item, 'short', {includeVersion: true}).replaceAll('"', '\'')
+
+        const [belt, rank] = /(.*)\s(.*)/.exec(item.belt)
+            ? [/(.*)\s(.*)/.exec(item.belt)[1], /(.*)\s(.*)/.exec(item.belt)[2]]
+            : [item.belt, null]
+
+        // sameline names
+        allSamelineNames[item.id] = lockName
+
+        const allBrands = item.makeModels.reduce((acc, makeModel) => {
+            acc.push(makeModel.make ? makeModel.make : makeModel.model)
+            return acc
+        }, [])
+        const lockBrands = [...new Set(allBrands)]
+
+        const samelineNames = item.makeModels.reduce((acc, makeModel, index) => {
+            const samelineName = makeModel.model ? `${makeModel.make} ${makeModel.model}` : makeModel.model
+            acc.push(samelineName)
+            const samelineId = item.id + '-' + (index + 1)
+            allSamelineNames[samelineId] = samelineName
+            return acc
+        }, [])
+
+        allMedia = item.media ? [...allMedia, ...item.media] : allMedia
+
+        acc[item.id] = {
+            ...item,
+            shortName: lockName,
+            lockName: lockName,
+            lockFullName: lockFullName,
+            itemName: lockName,
+            fullBelt: ucfirst(item.belt),
+            belt: ucfirst(belt),
+            rank: rank,
+            mediaCount: item.media?.length,
+            lockViewCount: item.views,
+            lockBrands: lockBrands,
+            samelineNames: samelineNames,
+            type: 'lock'
+        }
+        return acc
+    }, {})
+
+
+    //lockDetails.allSamelineNames = new Map([...lockDetails.allSamelineNames, ...allSamelineNames])
+    //allSamelineNames.forEach((value, key) => lockDetails.allSamelineNames.set(key, value));
+    // jsonIt('allSamelineNames', allSamelineNames)
+
+}
+
+export async function potDetails(options) {
+    const raflData = await loadCatalogArray('rafl.json', options)
+    return raflData.reduce((acc, item) => {
+        acc[item.id] = {...item,
+            shortName: item.title,
+            potName: item.title,
+            fullName: item.title,
+            itemName: item.title,
+            type: 'raflPot'}
+        return acc
+    }, {})
+}
+
+export async function safelockDetails(options) {
+    const safelockData = await loadCatalogArray('dials.json', options)
+    return safelockData.reduce((acc, item) => {
+        const sep = item.make ? ' ' : ''
+        acc[item.id] = {...item, shortName: `${item.make}${sep}${item.model}`, itemName: `${item.make}${sep}${item.model}`, type: 'safelock'}
+        return acc
+    }, {})
+}
+
+export async function projectDetails(options) {
+    const projectData = await loadCatalogArray('projects.json', options)
+    return projectData.reduce((acc, item) => {
+        acc[item.id] = {
+            ...item,
+            fullName: item.name,
+            shortName: item.name,
+            projectName: item.name,
+            itemName: item.name,
+            fullBelt: item.belt,
+            rank: item.tier.charAt(item.tier.length - 1),
+            type: 'project'
+        }
+        return acc
+    }, {})
+}
+
+export async function awardDetails(options) {
+    const awardData = await loadCatalogArray('awards.json', options)
+    return awardData.reduce((acc, item, index) => {
+        acc[item.id] = {
+            ...item,
+            shortName: item.name,
+            awardName: item.name,
+            fullBelt: item.belt,
+            fullName: item.makeModels[0].model,
+            absRank: index,
+            awardType: item.awardType,
+            type: 'award'
+        }
+        return acc
+    }, {})
+}
+
+export async function glossaryDetails(options) {
+    const glossaryData = await loadCatalogArray('glossary.json', options)
+    return glossaryData.reduce((acc, item) => {
+        allMedia.push(item.media)
+        acc[item.term] = {...item, shortName: item.term, itemName: item.term, type: 'glossary', media: item.media ? [item.media] : undefined}
+        return acc
+    }, {})
+}
+
+export async function itemDetails(options) {
+    return {
+        ...await lockDetails(options),
+        ...await safelockDetails(options),
+        ...await projectDetails(options),
+        ...await awardDetails(options),
+        ...await glossaryDetails(options)
+    }
+}
+
+function ucfirst(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1)
+}

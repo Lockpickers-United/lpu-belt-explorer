@@ -1,0 +1,32 @@
+{
+  "metadata": {
+    "source": "generated-summary",
+    "fetchedDateTime": "2026-09-28T22:15:46.730Z"
+  },
+  "data": {
+    "lockId": "19573781",
+    "videos": [
+      {
+        "userId": "NdkmYGydSHfPTcj5xuqjwSyJJI42",
+        "pickerName": "Greenish",
+        "pickerIsBlackBelt": true,
+        "url": "https://youtu.be/ENKxPd9X5qQ",
+        "date": "2024-05-15"
+      },
+      {
+        "userId": "SuYwnEUvOSbAPCb6xcFwiYTjAze2",
+        "pickerName": "Armlock",
+        "pickerIsBlackBelt": true,
+        "url": "https://youtu.be/NZpatx2bmBo",
+        "date": "2024-06-01"
+      },
+      {
+        "userId": "WMSvvuutyShfvBBYB3PmDe4fmeS2",
+        "pickerName": "NiXXeD",
+        "pickerIsBlackBelt": true,
+        "url": "https://www.youtube.com/watch?v=mr49f5m2Ewk",
+        "date": "2024-06-12"
+      }
+    ]
+  }
+}

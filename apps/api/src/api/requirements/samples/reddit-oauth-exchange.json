@@ -1,0 +1,18 @@
+{
+  "metadata": {"source": "firebase", "fetchedDateTime": "2026-10-23T12:00:01.000Z"},
+  "data": {
+    "purpose": "import",
+    "username": "example_picker",
+    "flairText": "Blue Belt",
+    "bookmark": "t4_abc123",
+    "nextBookmark": "t4_def456",
+    "messages": [
+      {
+        "id": "def456",
+        "subject": "Blue Belt",
+        "body": "Your Blue Belt was approved.",
+        "createdUtc": 1792756800
+      }
+    ]
+  }
+}
