@@ -14,7 +14,7 @@ import download from '../util/download'
 import Button from '@mui/material/Button'
 import {json2csv} from 'json-2-csv'
 
-export default function ExportButtonGeneric({exportData}) {
+export default function ExportButtonGeneric({exportData, clipboardExtra}) {
     const [anchorEl, setAnchorEl] = useState(null)
     const open = Boolean(anchorEl)
     const handleOpen = useCallback(event => setAnchorEl(event.currentTarget), [])
@@ -27,7 +27,7 @@ export default function ExportButtonGeneric({exportData}) {
         clipboardFormat,
         filename = 'export',
         textButton = false,
-        formats = ['clipboard', 'csv', 'json']
+        formats = ['clipboard', 'csv', 'json'],
     } = exportData
 
     const handleExportJson = useCallback(() => {
@@ -38,9 +38,10 @@ export default function ExportButtonGeneric({exportData}) {
     }, [data, filename, handleClose])
 
 
+
+
     const handleExportClipboard = useCallback(() => {
         const exportHeaders = clipboardHeaders || csvHeaders
-
         const headerRow = exportHeaders?.reduce((acc, col) => {
             Object.keys(col).forEach(key => {
                 acc[key] = col[key].trim().toUpperCase()
@@ -67,7 +68,13 @@ export default function ExportButtonGeneric({exportData}) {
         enqueueSnackbar('Export copied to clipboard.')
     }, [clipboardContent, clipboardFormat, clipboardHeaders, csvHeaders, data, handleClose])
 
-    const handleExportCsv = useCallback(() => {
+    const handleClipboardExtra = useCallback(() => {
+        navigator.clipboard.writeText(clipboardExtra?.content).then()
+        enqueueSnackbar(`${clipboardExtra?.name} copied to clipboard.`)
+    },[clipboardExtra])
+
+
+        const handleExportCsv = useCallback(() => {
         const csvData = data.map(datum => {
             return csvHeaders.reduce((acc, header) => {
                 Object.entries(header).forEach(([key, value]) => {
@@ -131,6 +138,14 @@ export default function ExportButtonGeneric({exportData}) {
                             <CodeIcon fontSize='small'/>
                         </ListItemIcon>
                         <ListItemText>JSON</ListItemText>
+                    </MenuItem>
+                }
+                {clipboardExtra &&
+                    <MenuItem onClick={handleClipboardExtra}>
+                        <ListItemIcon>
+                            <ContentCopyIcon fontSize='small'/>
+                        </ListItemIcon>
+                        <ListItemText style={{fontStyle: 'italic'}}>{clipboardExtra?.name}</ListItemText>
                     </MenuItem>
                 }
             </Menu>

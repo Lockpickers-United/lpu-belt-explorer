@@ -31,6 +31,7 @@ import {getLockSortComparator} from '../locks/lockSortComparators.js'
 import {enqueueSnackbar} from 'notistack'
 import {pluralize} from '../util/stringUtils.js'
 import ConfirmButton from '../misc/ConfirmButton.jsx'
+import stringifyObject from 'stringify-object'
 
 const catalogById = new Map(classificationCatalog.entries.map(entry => [entry.id, entry]))
 
@@ -66,6 +67,32 @@ export default function ChangelogMain() {
         }, {})
         : {}
     , [selectedPublication])
+
+    console.log('publishedActions', publishedActions)
+
+    const changes = selectedPublication?.actions?.filter(action => action.action === 'Sameline')
+        .map(action => ({
+            approved: action.approved ?? false,
+            from: action.entryId,
+            fromName: action.entryName,
+            to: action.samelineTargetId,
+            toName: action.samelineTargetName
+        }))
+
+    const deletions = selectedPublication?.actions?.filter(action => action.action === 'Delete')
+        .map(action => ({
+            approved: action.approved ?? false,
+            id: action.entryId,
+            name: action.entryName,
+        }))
+
+    const clipboardExtra = {
+        name: 'process change data',
+        content: 'const updates = ' + stringifyObject({changes, deletions}, {
+            indent: '  ',
+            singleQuotes: true
+        })
+    }
 
     const currentChangelogEntries = useMemo(() => {
         if (selectedChangelog) {
@@ -172,7 +199,8 @@ export default function ChangelogMain() {
                     samelineTargetBelt: lock?.belt ?? samelineLock?.belt ?? null,
                     newSamelineName: newSamelineName ?? null,
                     note,
-                    adminNote
+                    adminNote,
+                    approved: entry.publishedAction?.approved ?? false
                 })
             })
         }
@@ -230,7 +258,7 @@ export default function ChangelogMain() {
             <div style={{flexGrow: 1, minWidth: !isMobile ? 10 : 0}}/>
             {accessInfo.roles.classificationAdmin &&
                 <>
-                    <ExportButtonGeneric exportData={exportData} clipboardContent={clipboardText}/>
+                    <ExportButtonGeneric exportData={exportData} clipboardContent={clipboardText} clipboardExtra={clipboardExtra}/>
                     <Tooltip
                         title={publishable.length > 50 ? 'Publish the first 50 staged changes' : 'Publish staged changes'}
                         arrow disableFocusListener>
