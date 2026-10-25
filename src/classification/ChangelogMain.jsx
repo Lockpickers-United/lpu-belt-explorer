@@ -56,19 +56,17 @@ export default function ChangelogMain() {
     const selectedChangelog = previousChangelogs.find(log => log.id === searchParams.get('id'))
 
     const publishedActions = useMemo(() => selectedPublication
-        ? selectedPublication.actions.reduce((acc, action) => {
-            const result = reconcileClassificationAction(action, catalogById) ?? {}
-            acc[action.entryId] = {
-                ...action,
-                status: result.status,
-                result
-            }
-            return acc
-        }, {})
-        : {}
-    , [selectedPublication])
-
-    console.log('publishedActions', publishedActions)
+            ? selectedPublication.actions.reduce((acc, action) => {
+                const result = reconcileClassificationAction(action, catalogById) ?? {}
+                acc[action.entryId] = {
+                    ...action,
+                    status: result.status,
+                    result
+                }
+                return acc
+            }, {})
+            : {}
+        , [selectedPublication])
 
     const changes = selectedPublication?.actions?.filter(action => action.action === 'Sameline')
         .map(action => ({
@@ -83,16 +81,18 @@ export default function ChangelogMain() {
         .map(action => ({
             approved: action.approved ?? false,
             id: action.entryId,
-            name: action.entryName,
+            name: action.entryName
         }))
 
-    const clipboardExtra = {
-        name: 'process change data',
-        content: 'const updates = ' + stringifyObject({changes, deletions}, {
-            indent: '  ',
-            singleQuotes: true
-        })
-    }
+    const clipboardExtra = selectedPublication?.actions
+        ? {
+            name: 'process change data',
+            content: 'const updates = ' + stringifyObject({changes, deletions}, {
+                indent: '  ',
+                singleQuotes: true
+            })
+        }
+        : undefined
 
     const currentChangelogEntries = useMemo(() => {
         if (selectedChangelog) {
@@ -258,7 +258,8 @@ export default function ChangelogMain() {
             <div style={{flexGrow: 1, minWidth: !isMobile ? 10 : 0}}/>
             {accessInfo.roles.classificationAdmin &&
                 <>
-                    <ExportButtonGeneric exportData={exportData} clipboardContent={clipboardText} clipboardExtra={clipboardExtra}/>
+                    <ExportButtonGeneric exportData={exportData} clipboardContent={clipboardText}
+                                         clipboardExtra={clipboardExtra}/>
                     <Tooltip
                         title={publishable.length > 50 ? 'Publish the first 50 staged changes' : 'Publish staged changes'}
                         arrow disableFocusListener>
