@@ -3,17 +3,18 @@ import {initializeApp, cert, deleteApp} from 'firebase-admin/app'
 import {getFirestore} from 'firebase-admin/firestore'
 import {collectionPatch, collectionTypes, prepareUpdates} from './processChangelogPlan.js'
 
+///////////////////////////////////////////////////////////////////////////
+//   '--database=dev' | '--database=prod' // '--dry-run' | '--write'    //
+
+let localArgs = undefined
+localArgs = ['--database=dev', '--dry-run']
+
 /////////////////////////////////////////////////////////////////////////////
 //  Paste the "process change data" export from the Changelog page here.  //
 //
 //  const updates = { changes: [], deletions: [] }
 
 const updates = { changes: [], deletions: [] }
-
-///////////////////////////////////////////////////////////////////////////
-//   '--database=dev' | '--database=prod' // '--dry-run' | '--write'    //
-
-const localArgs = ['--database=dev', '--dry-run']
 
 
 // Every run, including a dry run, reads live Firestore and requires approval.
@@ -89,7 +90,7 @@ async function applyCollections(db, documents, plan) {
 }
 
 async function main() {
-    const options = parseOptions(localArgs ?? process.argv.slice(2))
+    const options = parseOptions(process.argv.slice(2)?.length ? process.argv.slice(2) : localArgs)
     const plan = prepareUpdates(updates)
     if (plan.targetIds.length === 0) {
         console.log('No approved changes or deletions to process')
