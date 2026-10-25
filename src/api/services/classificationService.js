@@ -383,8 +383,24 @@ export function createClassificationService({db, getCatalogEntry, clock = () => 
             samelineTargetId: action.samelineTargetId,
             samelineTargetName: target?.name ?? null,
             newSamelineName: action.newSamelineName ?? null,
-            note: action.note
+            note: action.note,
+            approved: false
         }
+    }
+
+    async function setPublicationApproval(actor, key, publicationId, actionId, input) {
+        return command('publication.approval', actor, key, {publicationId, actionId, input}, async tx => {
+            const publicationRef = publicationsRef.doc(publicationId)
+            const snapshot = await tx.get(publicationRef)
+            if (!snapshot.exists) throw apiError(404, 'publication_not_found', 'Publication not found')
+            const publication = snapshot.data()
+            const actionIndex = publication.actions.findIndex(action => action.actionId === actionId)
+            if (actionIndex < 0) throw apiError(404, 'published_action_not_found', 'Published action not found')
+            const actions = publication.actions.map((action, index) => index === actionIndex
+                ? {...action, approved: input.approved} : action)
+            tx.set(publicationRef, {...publication, actions})
+            return {publicationId, actionId, approved: input.approved}
+        })
     }
 
     async function publish(actor, key, request, kind) {
@@ -589,6 +605,7 @@ export function createClassificationService({db, getCatalogEntry, clock = () => 
         deleteAction,
         publishBatch: (actor, key, input) => publish(actor, key, input, 'batch'),
         publishSingle: (actor, key, input) => publish(actor, key, input, 'single'),
+        setPublicationApproval,
         getEntryVotes,
         getCurrentAction,
         getStagedActions,

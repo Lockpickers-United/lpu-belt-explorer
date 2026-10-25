@@ -380,6 +380,41 @@ describe('classification service', () => {
         expect(await service.getPublication(result.publication.id)).toEqual(beforeImport)
     })
 
+    it('updates approval only on the selected published snapshot and supports clearing it', async () => {
+        const {service, records} = fixture()
+        const first = await service.createAction(admin, 'approval-first', {
+            entryId: 'lock-a', status: 'Staged', action: 'Belt Change', updatedBelt: 'Blue'
+        })
+        const second = await service.createAction(admin, 'approval-second', {
+            entryId: 'lock-b', status: 'Staged', action: 'Delete'
+        })
+        const {publication} = await service.publishBatch(admin, 'approval-publish', {actions: [
+            {actionId: first.action.id, expectedRevision: 1},
+            {actionId: second.action.id, expectedRevision: 1}
+        ]})
+        const [firstSnapshot, secondSnapshot] = publication.actions
+        expect(firstSnapshot.approved).toBe(false)
+        expect(secondSnapshot.approved).toBe(false)
+
+        const result = await service.setPublicationApproval(admin, 'approval-set', publication.id,
+            firstSnapshot.actionId, {approved: true})
+        expect(result).toEqual({publicationId: publication.id, actionId: firstSnapshot.actionId, approved: true})
+        expect(await service.setPublicationApproval(admin, 'approval-set', publication.id,
+            firstSnapshot.actionId, {approved: true})).toEqual(result)
+        expect((await service.getPublication(publication.id)).actions).toEqual([
+            {...firstSnapshot, approved: true}, secondSnapshot
+        ])
+        expect(records.get(`classificationActions/${first.action.id}`)).not.toHaveProperty('approved')
+
+        await service.setPublicationApproval(admin, 'approval-clear', publication.id,
+            firstSnapshot.actionId, {approved: false})
+        expect((await service.getPublication(publication.id)).actions[0].approved).toBe(false)
+        await expect(service.setPublicationApproval(admin, 'approval-missing-action', publication.id,
+            'missing', {approved: true})).rejects.toMatchObject({code: 'published_action_not_found'})
+        await expect(service.setPublicationApproval(admin, 'approval-missing-publication', 'missing',
+            firstSnapshot.actionId, {approved: true})).rejects.toMatchObject({code: 'publication_not_found'})
+    })
+
     it('rejects stale publication revisions after a simultaneous admin edit', async () => {
         const {service, records} = fixture()
         const staged = await service.createAction(admin, 'concurrent-action', {

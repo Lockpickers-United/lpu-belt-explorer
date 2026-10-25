@@ -15,7 +15,8 @@ const mocks = vi.hoisted(() => ({
     createAction: vi.fn(),
     editAction: vi.fn(),
     publishBatch: vi.fn(),
-    publishSingle: vi.fn()
+    publishSingle: vi.fn(),
+    setPublicationApproval: vi.fn()
 }))
 
 vi.mock('../services/firebaseAdmin.js', () => ({
@@ -56,7 +57,8 @@ beforeEach(() => {
         createAction: mocks.createAction,
         editAction: mocks.editAction,
         publishBatch: mocks.publishBatch,
-        publishSingle: mocks.publishSingle
+        publishSingle: mocks.publishSingle,
+        setPublicationApproval: mocks.setPublicationApproval
     })
     mocks.getEntryVotes.mockResolvedValue({entryId: 'lock-a', votes: [], nextCursor: null})
     mocks.createVote.mockResolvedValue({vote: {id: 'vote-a'}, entryRevision: 1})
@@ -68,11 +70,32 @@ beforeEach(() => {
     mocks.editAction.mockResolvedValue({action: {id: 'action-a'}, entryRevision: 2})
     mocks.publishBatch.mockResolvedValue({publication: {id: 'publication-a'}})
     mocks.publishSingle.mockResolvedValue({publication: {id: 'publication-single'}})
+    mocks.setPublicationApproval.mockResolvedValue({publicationId: 'publication-a',
+        actionId: 'action-a', approved: true})
 })
 
 afterEach(() => vi.unstubAllEnvs())
 
 describe('classification routes', () => {
+    it('allows only admins to set a published action approval with a boolean', async () => {
+        const patchApproval = token => request(app)
+            .patch('/api/v1/classification/publications/publication-a/actions/action-a/approval')
+            .set('Authorization', `Bearer ${token}`).set('Idempotency-Key', 'approval-key')
+
+        expect((await patchApproval('voter').send({approved: true})).status).toBe(403)
+        expect((await patchApproval('admin').send({approved: 'true'})).status).toBe(400)
+        expect((await patchApproval('admin').send({approved: true, status: 'Published'})).status).toBe(400)
+        expect(mocks.setPublicationApproval).not.toHaveBeenCalled()
+        vi.stubEnv('CLASSIFICATION_WRITE_STAGE', 'action')
+        expect((await patchApproval('admin').send({approved: true})).status).toBe(503)
+        vi.stubEnv('CLASSIFICATION_WRITE_STAGE', 'publish')
+
+        const response = await patchApproval('classification-admin').send({approved: true})
+        expect(response.status).toBe(200)
+        expect(mocks.setPublicationApproval).toHaveBeenCalledWith(
+            {uid: 'classification-admin', classificationAdmin: true}, 'approval-key',
+            'publication-a', 'action-a', {approved: true})
+    })
     it('keeps writes closed by default and promotes vote, action, and publication stages separately', async () => {
         const vote = {entryId: 'lock-a', votedBelt: 'Blue'}
         const sendVote = () => request(app).post('/api/v1/classification/votes')

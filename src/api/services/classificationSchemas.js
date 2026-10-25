@@ -88,6 +88,8 @@ export const batchPublishSchema = z.strictObject({
     actions: z.array(z.strictObject({actionId: id, expectedRevision: revision})).min(1).max(50)
 })
 
+export const publicationApprovalSchema = z.strictObject({approved: z.boolean()})
+
 export const singlePublishSchema = z.strictObject({
     entryId: id,
     actionId: id.nullable().optional(),

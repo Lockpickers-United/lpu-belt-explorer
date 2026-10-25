@@ -128,7 +128,7 @@ Classification response uses `Cache-Control: private, no-store`.
 The server's protected `CLASSIFICATION_WRITE_STAGE` setting is an additional rollout gate:
 `read` (the default, including missing or invalid values) rejects every mutation;
 `vote` permits vote writes; `action` also permits admin draft/stage/settle writes; and
-`publish` also permits both publication routes. A closed stage returns `503
+`publish` also permits publication and approval updates. A closed stage returns `503
 writes_disabled`. Claims and record ownership checks still apply at every stage.
 Promote the server stage before the frontend's matching
 `VITE_CLASSIFICATION_WRITE_STAGE` build setting, and verify each stage in development.
@@ -139,17 +139,24 @@ Promote the server stage before the frontend's matching
 | `GET /classification/entries/{entryId}/action` | Admin | Current editable action or `null`, including internal `adminNote`. |
 | `GET /classification/actions/staged` | Eligible reader | Included staged actions, without `adminNote`. |
 | `GET /classification/publications` | Eligible reader | Paged immutable publication headers. |
-| `GET /classification/publications/{publicationId}` | Eligible reader | One immutable publication and its ordered action snapshots. |
+| `GET /classification/publications/{publicationId}` | Eligible reader | One publication and its ordered action snapshots, each with manual `approved` verification. |
 | `POST /classification/votes`; `PATCH/DELETE /classification/votes/{voteId}` | Voting claim; owner or admin for edit/delete | Canonical vote changes and resulting entry revision. |
 | `POST /classification/votes/{voteId}/move` | Admin | Move a vote to another lock and update both lock summaries atomically. |
 | `POST /classification/actions`; `PATCH/DELETE /classification/actions/{actionId}` | Admin | Editable decision changes and resulting entry revision. |
 | `POST /classification/publications` | Admin | Batch publication of 1–50 included Staged actions. |
 | `POST /classification/publications/single` | Admin | Save and publish one form decision, leaving other staged actions alone. |
+| `PATCH /classification/publications/{publicationId}/actions/{actionId}/approval` | Admin | Set or clear the manual `approved` boolean on one published action snapshot. |
+
+Publication action intent and catalog details remain fixed after publishing. The `approved`
+boolean starts false and is the only editable field on a published snapshot. Older snapshots
+without the field are treated as unapproved by the frontend. Approval records the catalog
+manager's production-site verification; it does not change the calculated catalog
+reconciliation status or the underlying `classificationActions` record.
 
 `Add New Sameline` adds a named lock to an existing catalog entry. Its
 `newSamelineName` must contain non-whitespace text (at most 256 characters); it has
 no belt change or sameline target ID. The name is stored on the editable action
-and its immutable publication snapshot. Publishing records the decision; the
+and its publication action snapshot. Publishing records the decision; the
 catalog still needs the normal Sheet import, and this change requires manual
 review during reconciliation because the compact catalog contains only a
 combined display name.

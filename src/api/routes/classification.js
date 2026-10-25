@@ -4,7 +4,7 @@ import requireAuth from '../middleware/requireAuth.js'
 import {createClassificationService} from '../services/classificationService.js'
 import {
     actionCreateSchema, actionEditSchema, actionFieldsSchema, batchPublishSchema, entryIdSchema,
-    resourceIdSchema, revisionSchema, singlePublishSchema, voteCreateSchema, voteEditSchema,
+    publicationApprovalSchema, resourceIdSchema, revisionSchema, singlePublishSchema, voteCreateSchema, voteEditSchema,
     voteMoveSchema
 } from '../services/classificationSchemas.js'
 import {getFirestoreDb} from '../services/firebaseAdmin.js'
@@ -173,5 +173,14 @@ router.post('/publications/single', requireClaims(adminClaims), requireWriteStag
     }
     respond(res, await (await service()).publishSingle(req.user, idempotencyKey(req), input), 201)
 })
+
+router.patch('/publications/:publicationId/actions/:actionId/approval',
+    requireClaims(adminClaims), requireWriteStage('publish'), async (req, res) => {
+        const publicationId = parse(resourceIdSchema, req.params.publicationId)
+        const actionId = parse(resourceIdSchema, req.params.actionId)
+        const input = parse(publicationApprovalSchema, req.body)
+        respond(res, await (await service()).setPublicationApproval(req.user, idempotencyKey(req),
+            publicationId, actionId, input))
+    })
 
 export default router

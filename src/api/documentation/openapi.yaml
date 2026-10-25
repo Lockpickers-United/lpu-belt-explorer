@@ -429,7 +429,7 @@ paths:
   /classification/publications/{publicationId}:
     get:
       tags: [Classification]
-      summary: Get one immutable publication snapshot
+      summary: Get one publication with fixed action intent and manual approval flags
       security: [{firebaseBearerAuth: []}]
       parameters: [{$ref: '#/components/parameters/ClassificationPublicationId'}]
       responses:
@@ -437,6 +437,36 @@ paths:
         '401': {$ref: '#/components/responses/Error'}
         '403': {$ref: '#/components/responses/Error'}
         '404': {$ref: '#/components/responses/Error'}
+  /classification/publications/{publicationId}/actions/{actionId}/approval:
+    patch:
+      tags: [Classification]
+      summary: Set manual production-site approval for one published action
+      security: [{firebaseBearerAuth: []}]
+      parameters:
+        - $ref: '#/components/parameters/ClassificationPublicationId'
+        - name: actionId
+          in: path
+          required: true
+          schema: {type: string, minLength: 1, maxLength: 128}
+        - $ref: '#/components/parameters/ClassificationIdempotencyKey'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              required: [approved]
+              properties:
+                approved: {type: boolean}
+      responses:
+        '200': {$ref: '#/components/responses/ClassificationSuccess'}
+        '400': {$ref: '#/components/responses/Error'}
+        '401': {$ref: '#/components/responses/Error'}
+        '403': {$ref: '#/components/responses/Error'}
+        '404': {$ref: '#/components/responses/Error'}
+        '409': {$ref: '#/components/responses/Error'}
+        '503': {$ref: '#/components/responses/Error'}
   /classification/votes:
     post:
       tags: [Classification]
