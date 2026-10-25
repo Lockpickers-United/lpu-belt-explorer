@@ -8,10 +8,13 @@ on:
   push:
     branches: [ "main" ]
     paths:
-      - 'src/**'
-      - 'public/**'
-      - 'scripts/**'
-      - 'index.html'
+      - 'apps/web/src/**'
+      - 'apps/web/public/**'
+      - 'apps/web/scripts/**'
+      - 'apps/web/index.html'
+      - 'apps/web/package.json'
+      - 'apps/web/vite.config.js'
+      - '.env.*'
       - 'package.json'
       - 'package-lock.json'
       - '.nvmrc'
@@ -31,9 +34,15 @@ on:
           - read
           - publish
 
+defaults:
+  run:
+    working-directory: apps/web
+
 jobs:
   deploy:
-    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
+    # Migration hold: Phase 5 must restore a main-only release condition,
+    # accepting workflow_run only after a successful main-branch Import.
+    if: ${{ false }}
     name: Build-N-Deploy
     environment: github-pages
     permissions:
@@ -43,6 +52,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v7
+        with:
+          ref: ${{ github.event_name == 'workflow_run' && github.event.workflow_run.head_sha || github.sha }}
 
       - name: Set up Node.js
         uses: actions/setup-node@v7
@@ -50,6 +61,7 @@ jobs:
           node-version-file: '.nvmrc'
   
       - name: Install dependencies
+        working-directory: .
         run: npm ci
       - name: Validate catalog deployment configuration
         shell: bash
@@ -122,7 +134,7 @@ jobs:
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          publish_dir: ./apps/web/dist
 
       - name: Upload catalog snapshots
         shell: bash

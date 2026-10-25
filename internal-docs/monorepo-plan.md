@@ -1,6 +1,6 @@
 # LPU monorepo overview and migration plan
 
-Status: Phase 0 complete (2026-10-25); no repository migration started. This document defines the target and tooling migration; it does not authorize a deployment, live-data job, or service cutover.
+Status: Phases 0–2 complete locally (2026-10-25); Phase 3 not started. Phase 1 is published on its approved migration branch; Phase 2 is staged in an isolated worktree and is not committed or merged. This document defines the target and tooling migration; it does not authorize a deployment, live-data job, or service cutover.
 
 Execution tracking: [implementation plan](monorepo-implementation-plan.md) and [developer report](monorepo-developer-report.md).
 
@@ -10,9 +10,13 @@ Use `lpu-belt-explorer` as the long-term repository for the web client and the a
 
 The objective is one source and review location, not one runtime. The site, API, Firebase Functions, Devvit app, and bot retain distinct credentials, data access, release approvals, and rollback paths.
 
-## What exists today
+## Current candidate
 
-| Component | Current boundary | Migration consequence |
+The reviewed candidate now contains `apps/api` and `apps/web`. Root npm is a private coordinator with only the web workspace; API Yarn/Node and Functions npm remain separate. Firebase configs and environment/credential ownership stay at root. Candidate publish/import/catalog-upload/deployment jobs have unconditional holds, while deployed workflows and the original API release authority remain unchanged. Phase 2 checks passed: web lint/280 tests/build, API lint/464 tests, ten browser checks, Functions lint and isolated Web SDK emulators. See the execution documents for exact evidence and the staged worktree location.
+
+## Phase 0 starting point
+
+| Component | Phase 0 boundary | Migration consequence |
 | --- | --- | --- |
 | Web client | This repository's root React/Vite package uses npm, `package-lock.json`, Node `v24.15.0`, GitHub Pages, and root-relative scripts and workflows. | Moving it changes Vite, test, import, generated-data, Pages, and workflow paths. The `Build-N-Deploy` workflow also uploads catalog snapshots to both API environments. |
 | Active API and exporters | Sibling Node repository uses Yarn 4.18.0, Node 24.21.0, Express, and a production workflow that archives the whole repository plus Linux `node_modules` into an immutable DreamHost/PM2 release. Development uses WebStorm SFTP uploads. | Import its history and app files; rework CI, release packaging, PM2 working directory, SFTP mappings, cron paths, and root-relative configuration. Preserve the existing `current`/`releases`/`shared` runtime boundary. |

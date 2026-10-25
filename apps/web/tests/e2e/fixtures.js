@@ -13,6 +13,17 @@ export const test = base.extend({
             const hostname = new URL(request.url()).hostname
 
             if (loopbackHosts.has(hostname)) {
+                if (new URL(request.url()).pathname === '/version.json') {
+                    await route.fulfill({
+                        status: 200,
+                        contentType: 'application/json',
+                        body: JSON.stringify({
+                            version: '2026-01-01T00:00:00.000Z',
+                            minVersion: '2024-01-01T00:00:00.000Z'
+                        })
+                    })
+                    return
+                }
                 await route.continue()
                 return
             }

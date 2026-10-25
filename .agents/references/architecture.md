@@ -4,19 +4,19 @@ Read this reference for provider, route, context, authentication, role, or profi
 
 ## Repository structure
 
-- `src/`: React application built with Vite.
-- `src/app/`: top-level providers, routing, authentication, API access, and Firestore access.
-- Feature directories under `src/`: domain-specific routes and supporting UI.
-- `src/data/`: application data, schemas, mappings, and generated/imported JSON.
-- `scripts/`: imports, exports, migrations, generators, and administrative utilities.
+- `apps/web/src/`: React application built with Vite.
+- `apps/web/src/app/`: top-level providers, routing, authentication, API access, and Firestore access.
+- Feature directories under `apps/web/src/`: domain-specific routes and supporting UI.
+- `apps/web/src/data/`: application data, schemas, mappings, and generated/imported JSON.
+- `apps/web/scripts/`: imports, exports, migrations, generators, and administrative utilities.
 - `firebase/functions/`: separately packaged Firebase Cloud Functions project.
-- `tests/vitest/`: Vitest, Testing Library, and MSW component/route tests.
-- `tests/e2e/`: Playwright browser journeys.
-- `public/`: static assets and generated public data.
+- `apps/web/tests/vitest/`: Vitest, Testing Library, and MSW component/route tests.
+- `apps/web/tests/e2e/`: Playwright browser journeys.
+- `apps/web/public/`: static assets and generated public data.
 
 ## Providers and routes
 
-`src/app/App.jsx` establishes this provider dependency order:
+`apps/web/src/app/App.jsx` establishes this provider dependency order:
 
 1. `AuthProvider`
 2. `AccessProvider`
@@ -29,7 +29,7 @@ Read this reference for provider, route, context, authentication, role, or profi
 
 `ProfileProvider` is route-scoped where profile data is needed. The app-level `ClassificationProvider` depends on `AccessProvider` and subscribes to the eligible signed-in member's own votes and matching entry states. `ClassificationParentRoute` mounts `ClassificationSummaryProvider` for modern Classification paths; `/classification/past` uses the historical archive without a modern summary listener. The parent route renders authorization, loading, and read-error messages from context state. Preserve provider ordering when adding dependencies, and update test render helpers/mocks when a context contract changes.
 
-Routes use `createHashRouter` and are declared from `src/app/routes`. Keep route-specific providers in parent routes when several children share state.
+Routes use `createHashRouter` and are declared from `apps/web/src/app/routes`. Keep route-specific providers in parent routes when several children share state.
 
 Before adding a fetch, subscription, or context, identify the existing owner. Shared state should have one source rather than parallel subscriptions in multiple route components.
 
@@ -59,7 +59,7 @@ Profile reads are centralized in `ProfileContext`:
 - Do not add arbitrary-user `getDoc()` calls or collection queries against `lockcollections` in components. Extend `ProfileContext`, `DBContext`, or the API contract.
 - Render private fields only when `isFullProfile` and the relevant role/ownership condition permit it.
 
-When changing a context value, search every `useContext(...)` consumer and update `src/test/setupTests.js` plus feature-specific provider mocks.
+When changing a context value, search every `useContext(...)` consumer and update `apps/web/src/test/setupTests.js` plus feature-specific provider mocks.
 
 ## Scorecard activity cache
 

@@ -91,7 +91,7 @@ The prepared root `api-ci.yml` already supplies the Linux x64 runner. A separate
 
 **Owner follow-up:** “For question 6, no changes have been made to the api repo, is that check really neccessary?”
 
-**Disposition:** Local work is ready for review; clean-checkout/Linux artifact execution remains pending CI evidence, rather than a missing owner response. Phase 1 is not yet marked complete.
+**Disposition:** The environment-choice request was withdrawn. The owner subsequently authorized CI and branch publication in question 7. Linux API CI and fresh web checkout gates passed; Phase 1 is complete. No owner response remains pending.
 
 ## 7. Publish the exact candidate branch for authorized CI
 
@@ -100,3 +100,13 @@ The prepared root `api-ci.yml` already supplies the Linux x64 runner. A separate
 May I create one implementation commit from the reviewed staged Phase 1 candidate and push only `monorepo/phase1-api` to `origin` (`mgsecure/lpu-belt-explorer`) to run API CI? AGENTS.md explicitly requires authorization for commits and pushes; question 5 authorized only the local import merge. This request excludes pushes to main/upstream, tags, merges, PRs, deployments and live-data jobs. The new API production deploy job remains unconditionally disabled.
 
 **Owner answer:** “I approve” in response to question 7. Authorized: commit the staged Phase 1 implementation and push only `monorepo/phase1-api` to `origin` to trigger API CI. No main/upstream/tag push, merge, PR, deployment or live-data job is authorized.
+
+## Phase 1 outcome
+
+Question 7’s approved commit/push completed: implementation `22ec5c9fef8871aefa678eefe9bbedb0d695285a` is on `origin/monorepo/phase1-api`. [API CI passed](https://github.com/mgsecure/lpu-belt-explorer/actions/runs/40212524559), including Linux packaging and extracted Sharp loading. Fresh web checkout validation also passed. No main/upstream/tag push, PR, merge, deployment or live-data action occurred. Phase 1 is complete and no owner question is pending. Final completion evidence is staged locally; no additional commit/push was made beyond the approved candidate publication.
+
+# Phase 2: Web relocation and path repair
+
+**Status:** Complete; no owner response is needed. Routine path decisions preserved root environment/credential ownership and unchanged Firebase/Functions roots, kept API on Yarn, and used a web-only root npm workspace. Candidate live publication/import/upload jobs remain held. All local phase gates passed; the clean-worktree browser fixture gap and correction are recorded in the developer report.
+
+Phase 2 implementation/evidence is staged on `monorepo/phase2-web`. No Phase 2 commit, push, PR or hosted CI was requested or performed; earlier approvals apply only to Phase 1. Further publication or release actions retain the repository’s explicit authorization requirement.

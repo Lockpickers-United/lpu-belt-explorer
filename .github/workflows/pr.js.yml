@@ -2,9 +2,18 @@ name: PR Check
 
 on:
   pull_request:
+    paths:
+      - 'apps/web/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.nvmrc'
+      - '.env.*'
+      - 'AGENTS.md'
+      - '.github/workflows/pr.js.yml'
+      - 'firebase/**'
 
 jobs:
-  deploy:
+  validate:
     name: PR Check
     permissions:
       contents: read

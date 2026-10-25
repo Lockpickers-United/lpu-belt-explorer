@@ -98,7 +98,7 @@ async function main() {
     }
 
     // Resolve relative to this script, independent of the caller's working directory.
-    const serviceAccount = JSON.parse(fs.readFileSync(new URL('../keys/lpu-belt-explorer-firebase-adminsdk.json', import.meta.url), 'utf8'))
+    const serviceAccount = JSON.parse(fs.readFileSync(new URL('../../../keys/lpu-belt-explorer-firebase-adminsdk.json', import.meta.url), 'utf8'))
     if (serviceAccount.project_id !== 'lpu-belt-explorer') throw new Error('Unexpected service account project')
     const app = initializeApp({credential: cert(serviceAccount)})
 

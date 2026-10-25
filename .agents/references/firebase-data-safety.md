@@ -2,9 +2,13 @@
 
 Read this reference before changing or running Firebase, Functions, external-service, import/export, migration, administrative, or generated-data workflows.
 
+## Web workspace paths
+
+Root npm commands delegate to `apps/web`. Tracked `.env.*`, ignored `.env.keysNew` and credential files remain in their existing root/sibling locations; Vite/Vitest explicitly use the root env directory. Do not copy or change these files during the web move. Candidate Build-N-Deploy, Import and development-catalog publish jobs are unconditionally disabled until approved release transfer; their app-local steps use `apps/web`, while npm install and GitHub action paths stay rooted at the monorepo.
+
 ## Environment selection
 
-Client Firebase initialization lives in `src/auth/firebase.js`. `VITE_DEV_FIRESTORE=true` selects the `lpubelts-dev` Firestore database; `import.meta.env.DEV` alone does not change databases.
+Client Firebase initialization lives in `apps/web/src/auth/firebase.js`. `VITE_DEV_FIRESTORE=true` selects the `lpubelts-dev` Firestore database; `import.meta.env.DEV` alone does not change databases.
 
 Firebase CLI configuration and aliases live under `firebase/`. From the repository root, pass `--config firebase/firebase.json` for the main configuration (or another explicit `firebase/*.json` config). Paths within each config resolve from `firebase/`. CLI aliases are:
 
@@ -30,7 +34,7 @@ Do not treat prior approval for a different operation as continuing authorizatio
 
 ## Script inspection
 
-Files under `scripts/` may initialize `firebase-admin`, call external APIs, read credentials, or rewrite large datasets. Before running one:
+Files under `apps/web/scripts/` may initialize `firebase-admin`, call external APIs, read credentials, or rewrite large datasets. Before running one:
 
 1. Read it and identify data sources, credentials, external calls, and outputs.
 2. Determine whether it performs external writes or accesses live data.
@@ -47,11 +51,11 @@ Do not add credentials to agent settings, reports, fixtures, command output, or 
 
 ## Generated artifacts
 
-Many `src/data/*.json` files are maintained by import/generation scripts. Build workflows also copy data into `public/` or `dist/`. Before editing an artifact, identify its owning script and decide whether the source or generated output should change.
+Many `apps/web/src/data/*.json` files are maintained by import/generation scripts. Build workflows also copy data into `apps/web/public/` or `apps/web/dist/`. Before editing an artifact, identify its owning script and decide whether the source or generated output should change.
 
 The deployed `Build-N-Deploy` workflow offers `read` or `publish` for manual dispatches. Automatic push and Import builds use the `github-pages` environment value of `VITE_CLASSIFICATION_WRITE_STAGE`, falling back to `read` if it is unset. The owner reports configuring that value as `publish`, and the automatic build for PR #316 was verified publicly with `publish` compiled into its Classification chunk. Every workflow run publishes the site and uploads seven snapshot files to both production and development APIs, including files outside Classification. Review their source hashes and obtain approval for those external effects before merging or dispatching the workflow. GitHub `Import` reads multiple Sheet tabs, rewrites generated files, and commits them automatically, so preview its full diff before a Classification-only Sheet change is imported. If a future automatic build compiles `read`, verify the environment setting and use a separately approved manual `publish` dispatch from the imported commit after catalog verification.
 
-Common generated or ignored outputs include `dist/`, `public/data/`, version/sitemap files, Playwright/Allure output, coverage, and local caches. Do not commit them unless explicitly required, and do not broadly clean these directories when they may contain unrelated user work.
+Common generated or ignored outputs include `apps/web/dist/`, `apps/web/public/data/`, version/sitemap files, Playwright/Allure output, coverage, and local caches. Do not commit them unless explicitly required, and do not broadly clean these directories when they may contain unrelated user work.
 
 ## Sibling server repository
 

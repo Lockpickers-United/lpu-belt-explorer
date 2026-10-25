@@ -10,8 +10,14 @@ concurrency:
   group: development-classification-catalog
   cancel-in-progress: false
 
+defaults:
+  run:
+    working-directory: apps/web
+
 jobs:
   publish:
+    # Migration hold: live import/upload requires a separately approved release.
+    if: ${{ false }}
     runs-on: ubuntu-latest
     environment:
       name: github-pages
@@ -23,6 +29,7 @@ jobs:
       DEV_CATALOG_DIR: /home/lpubelts_api/apps/api-server-dev/shared/snapshots
     steps:
       - name: Require main branch
+        working-directory: ${{ runner.temp }}
         shell: bash
         run: |
           set -euo pipefail
@@ -41,6 +48,7 @@ jobs:
           cache: npm
 
       - name: Install dependencies
+        working-directory: .
         run: npm ci
 
       - name: Verify paired catalog artifacts

@@ -1,6 +1,6 @@
 import {createGoogleSheetsClient} from '../src/data/googleSheetsClient.js'
-import {sheetConfig} from '../keys/classificationSheetDetails.js'
-import {voters, votersNotOnSite} from '../keys/classificationVoters.js'
+import {sheetConfig} from '../../../keys/classificationSheetDetails.js'
+import {voters, votersNotOnSite} from '../../../keys/classificationVoters.js'
 import dayjs from 'dayjs'
 import fs from 'fs'
 import {findLastMentionedVoter} from './classificationNoteMatcher.js'
@@ -8,7 +8,7 @@ import {findLastMentionedVoter} from './classificationNoteMatcher.js'
 const refreshData = false
 const historical = false
 
-const CREDENTIALS_PATH = new URL('../keys/google-credentials.json', import.meta.url)
+const CREDENTIALS_PATH = new URL('../../../keys/google-credentials.json', import.meta.url)
 const OUTPUT_DIR = new URL('../src/data/classification/', import.meta.url)
 const DATA_DIR = new URL('../src/data/classification/', import.meta.url)
 

@@ -1,6 +1,6 @@
 # LPU monorepo — implementation plan and progress
 
-Status: In progress (Phase 1 import and release preparation implemented; Linux gate pending)  
+Status: In progress (Phase 2 complete; Phase 3 not started)  
 Last updated: 2026-10-25  
 Project definition: [Monorepo overview and migration plan](monorepo-plan.md)  
 Developer report: [Monorepo developer report](monorepo-developer-report.md)
@@ -8,15 +8,15 @@ Developer report: [Monorepo developer report](monorepo-developer-report.md)
 ## Project snapshot
 
 **Outcome:** The active web client and API share the `lpu-belt-explorer` repository with independent, verified releases and room for Devvit and LockyJr.  
-**Current phase:** Phase 1 in progress — sanitized import and local validation passed; final Linux artifact/clean-checkout gate pending.  
-**Next action:** Review the isolated `monorepo/phase1-api` worktree. CI execution is authorized. Review owner question 7 for the required implementation commit and migration-branch push, then run the prepared Linux API CI gate; no separate Linux environment decision is needed. Preserve the frozen source and existing release authority.  
-**Overall blocker:** Phase 1 local work passed; Linux x64 artifact and clean-checkout evidence remains pending. API import used verified sanitized history. The baseline exposed an intermittent API multipart cleanup failure; the isolated test and full confirmation run passed, and all attempts are recorded in the developer report. Production releases and live-data jobs require separate approval; future Devvit integration retains its separate review gates.
+**Current phase:** Phase 2 complete — web workspace/path repair, release holds, clean install, full unit/build/browser gates and Firebase path verification passed; Phase 3 not started.
+**Next action:** Review the staged `monorepo/phase2-web` move and verification evidence. Preserve root env/credential ownership, Firebase/Functions boundaries, API freeze and release holds. Phase 3 can begin when requested; no Phase 2 publication is authorized.
+**Overall blocker:** None for completed Phase 2. All local phase gates passed. Production cutover, release-hold removal, host settings, live-data jobs and later API workspace conversion retain their separate review/approval gates.
 
 | Phase | Status | Completed |
 | --- | --- | --- |
 | Phase 0: Baseline and migration decisions | Complete | 2026-10-25 |
-| Phase 1: Import the active API and prepare its release artifact | In progress | — |
-| Phase 2: Move the web app and repair web/Firebase paths | Not started | — |
+| Phase 1: Import the active API and prepare its release artifact | Complete | 2026-10-25 |
+| Phase 2: Move the web app and repair web/Firebase paths | Complete | 2026-10-25 |
 | Phase 3: Adopt npm workspaces and align Node | Not started | — |
 | Phase 4: Integrated validation and development rehearsal | Not started | — |
 | Phase 5: Production cutover and old-source retirement | Not started | — |
@@ -73,8 +73,8 @@ Establish a reproducible starting point and a complete migration map before chan
 
 ## Phase 1: Import the active API and prepare its release artifact
 
-**Status:** In progress  
-**Completed:** —  
+**Status:** Complete  
+**Completed:** 2026-10-25  
 **Start when:** Phase 0 exit criteria pass, the frozen source SHA is verified, and the owner-directed sanitation rules are ready for implementation. Import itself additionally requires verification that the four flagged blobs and their sensitive content are absent from candidate reachable history.
 
 ### Summary
@@ -84,20 +84,20 @@ Import the active API under `apps/api` with inspectable history. Keep its Yarn p
 ### Findings
 
 - Imported the verified 176-commit frozen ancestry under `apps/api` on isolated branch `monorepo/phase1-api`, merge `fd2daca185393fe72737ad4083cc398f989c6e84`. Four excluded blobs and their password content are absent from candidate reachable history; the import tree matches frozen source. Metadata and original-to-rewritten map are in `monorepo-api-history-verification.json`.
-- Root API CI, disabled candidate production workflow, app-root artifact tooling, hook/Dependabot routing and operational references are prepared as staged, uncommitted changes in the isolated worktree. The old API repository remains untouched and release authority is unchanged.
-- API full validation passed (90 files / 464 tests); web `npm run ci-pr` passed (52 files / 280 tests, lint and test build). Structural archive inspection passed (18,723 members), extracted entry/job syntax passed and Sharp loaded on macOS. Linux artifact and clean-checkout certification remain pending normal API CI execution; Phase 1 is not complete.
+- Root API CI, disabled candidate production workflow, app-root artifact tooling, hook/Dependabot routing and operational references are committed and published at `22ec5c9fef8871aefa678eefe9bbedb0d695285a` on the isolated migration branch; completion evidence is staged locally after the run. The old API repository remains untouched and release authority is unchanged.
+- API full validation passed (90 files / 464 tests); web `npm run ci-pr` passed (52 files / 280 tests, lint and test build). Structural archive inspection passed (18,723 members), extracted entry/job syntax passed and Sharp loaded on macOS. Final API CI passed on Ubuntu 22.04 with 464 tests, production dependency focus, a 15,163-member artifact and extracted Sharp loading. Its downloaded checksum and all 367 tracked API source files were verified. A fresh web install/checkout also passed `npm run ci-pr` (280 tests, lint and test build). [CI run](https://github.com/mgsecure/lpu-belt-explorer/actions/runs/40212524559). Phase 1 is complete.
 
 ### Tasks
 
 - [x] Perform the reviewed history-preserving import in an isolated worktree; confirm reviewed source commits are reachable and `apps/api` history is traceable. Under the selected sanitized-history plan, these are rewritten commits with an original-to-rewritten map; original sensitive history must not become reachable. Exclude local credentials, environment files, installed dependencies, logs, and runtime state.
 - [x] Update root and API `AGENTS.md`, API operational references, CI, Dependabot, and scripts that assume the API is at Git root. Move active API workflows to root `.github/workflows/`; keep the new production workflow manual and unable to create a duplicate live release before cutover.
-- [ ] Make the API package's path the root of its deploy artifact, retaining matching Linux dependencies, Sharp load check, environment-file link, PM2 entry point, `current`/`releases`/`shared` separation, readiness check, and rollback. Test artifact contents and script syntax offline; do not run export jobs.
+- [x] Make the API package's path the root of its deploy artifact, retaining matching Linux dependencies, Sharp load check, environment-file link, PM2 entry point, `current`/`releases`/`shared` separation, readiness check, and rollback. Test artifact contents and script syntax offline; do not run export jobs.
 - [x] Define WebStorm SFTP and cron path changes for the eventual server switch, with a rollback to the existing release. Compare the API's public routes and checked-in fixtures before/after import.
-- [ ] Run API `yarn validate`, artifact validation, and web `npm run ci-pr` on the imported tree; document any pre-existing versus migration failures.
+- [x] Run API `yarn validate`, artifact validation, and web `npm run ci-pr` on the imported tree; document any pre-existing versus migration failures.
 
 ### Exit criteria
 
-- [ ] A clean checkout validates both apps; API source history and runtime package contents are independently reviewable.
+- [x] A clean checkout validates both apps; API source history and runtime package contents are independently reviewable.
 - [x] The candidate API workflow has equivalent manual approval, exact-commit identity, readiness, and rollback behavior, with no live deployment from this phase.
 - [x] The old API repository still owns production releases, the source freeze is verified, and any owner-approved freeze exception has an explicit review/synchronization disposition.
 
@@ -111,8 +111,8 @@ Import the active API under `apps/api` with inspectable history. Keep its Yarn p
 
 ## Phase 2: Move the web app and repair web/Firebase paths
 
-**Status:** Not started  
-**Completed:** —  
+**Status:** Complete  
+**Completed:** 2026-10-25  
 **Start when:** Phase 1 API import and independent CI/artifact checks pass.
 
 ### Summary
@@ -121,21 +121,25 @@ Move the web package to `apps/web` and add a private root coordinator. The API r
 
 ### Findings
 
-- None yet.
+- Use a private root coordinator with only `apps/web` in npm workspaces; preserve API Yarn and the separate Functions package. Keep tracked environment files at root and configure explicit env-directory resolution, avoiding secret ownership changes. Candidate publishing/import/upload jobs are unconditionally disabled before path edits.
+
+- Root npm clean install and `ci-pr` passed (280 tests, lint/build), API Yarn validation passed (464 tests, lint), Functions lint and relocated Web SDK emulator check passed. Browser checks passed 10/10 after adding a synthetic version fixture for clean worktrees; console/network assertions remain strict.
+- All 475 clean build files match Phase 1 and common Phase 0 hashes; the 24 additional Phase 0 files were untracked local/generated extras. Seven catalog hashes and 11 local copied snapshots match their sources. Dependency graph versions/integrity are unchanged across all 1,020 existing lock entries. See [Phase 2 verification](monorepo-phase2-verification.json).
+- Implementation is staged on isolated `monorepo/phase2-web`, uncommitted/unpushed. Candidate hold/path audit covered pushes, shared lock changes, Import commits/completions and manual dispatch; no deployed workflow changed.
 
 ### Tasks
 
-- [ ] Move web source, public assets, tests, scripts, package/config files, and generated-file ownership with Git history intact. Establish a root npm workspace for web only; update root developer commands and references.
-- [ ] Repair Vite, Vitest, Playwright, Firebase emulator/config, Pages, and catalog path assumptions. Keep Firebase CLI configs at `firebase/` and Functions packaging independent.
-- [ ] Update root workflows for app paths and required shared paths. Prove web moves, root lockfile changes, `Import` commits, and `workflow_run` events cannot silently publish or upload snapshots during migration; preserve the later intended automatic-release behavior.
-- [ ] Compare test build output and catalog artifact hashes with the Phase 0 baseline; validate web/API URL and classification-catalog contracts with synthetic data.
-- [ ] Run `npm run ci-pr` through the new root command, relevant Playwright journeys, and Functions lint plus any emulator checks justified by actual Firebase path changes. Do not dispatch `Import` or a live publish as validation.
+- [x] Move web source, public assets, tests, scripts, package/config files, and generated-file ownership with Git history intact. Establish a root npm workspace for web only; update root developer commands and references.
+- [x] Repair Vite, Vitest, Playwright, Firebase emulator/config, Pages, and catalog path assumptions. Keep Firebase CLI configs at `firebase/` and Functions packaging independent.
+- [x] Update root workflows for app paths and required shared paths. Prove web moves, root lockfile changes, `Import` commits, and `workflow_run` events cannot silently publish or upload snapshots during migration; preserve the later intended automatic-release behavior.
+- [x] Compare test build output and catalog artifact hashes with the Phase 0 baseline; validate web/API URL and classification-catalog contracts with synthetic data.
+- [x] Run `npm run ci-pr` through the new root command, relevant Playwright journeys, and Functions lint plus any emulator checks justified by actual Firebase path changes. Do not dispatch `Import` or a live publish as validation.
 
 ### Exit criteria
 
-- [ ] Clean install, lint, unit tests, test build, and relevant browser tests pass from the documented new paths.
-- [ ] Workflow/path review establishes that the web release will occur only under the intended approval and trigger conditions; catalog uploads still use verified artifacts for each API environment.
-- [ ] API Yarn validation and Firebase Functions lint still pass independently.
+- [x] Clean install, lint, unit tests, test build, and relevant browser tests pass from the documented new paths.
+- [x] Workflow/path review establishes that the web release will occur only under the intended approval and trigger conditions; catalog uploads still use verified artifacts for each API environment.
+- [x] API Yarn validation and Firebase Functions lint still pass independently.
 
 ### Open issues for next phase
 

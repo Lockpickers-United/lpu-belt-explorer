@@ -4,9 +4,9 @@ This file applies to the entire `lpu-belt-explorer` repository and is the canoni
 
 ## Project essentials
 
-`lpu-belt-explorer` is the React/Vite application behind [lpubelts.com](https://lpubelts.com). It combines static belt-ranking data with authenticated Firebase features. Use JavaScript, npm, and the Node 24 LTS release pinned in `.nvmrc`.
+`lpu-belt-explorer` is the monorepo behind [lpubelts.com](https://lpubelts.com). The React/Vite app lives in `apps/web`; the private root npm coordinator installs only that workspace. Firebase configs and the independent Functions package remain in `firebase/`. Root npm scripts forward web commands with `apps/web` as the working directory. Use JavaScript, npm, and the Node 24 LTS release pinned in `.nvmrc`.
 
-The imported `apps/api` package owns server-side exports and API services; read `apps/api/AGENTS.md` and its operational references before editing it. It remains an independent Yarn 4.18.0 package pinned to Node 24.21.0 during Phase 1. Run API commands from `apps/api`; the root web package remains npm/Node 24.15.0. The sibling `../explore-lpubelts-com-node` repository remains the frozen production release authority until Phase 5. Do not edit that frozen source during migration. Validate web and API independently with their pinned tools.
+The imported `apps/api` package owns server-side exports and API services; read `apps/api/AGENTS.md` and its operational references before editing it. It remains an independent Yarn 4.18.0 package pinned to Node 24.21.0 during Phases 1–2. Run API commands from `apps/api`; the web workspace remains npm/Node 24.15.0. Do not add the API or Functions package to root npm workspaces before their planned migration. The sibling `../explore-lpubelts-com-node` repository remains the frozen production release authority until Phase 5. Do not edit that frozen source during migration. Validate web and API independently with their pinned tools.
 
 ## Task-specific references
 
@@ -20,12 +20,12 @@ Read every relevant reference before editing or executing commands for that area
 ## Commands
 
 - Development: `npm run dev` (normally port 3000)
-- Frontend lint: `npm run lint`; focused lint: `npx eslint path/to/file.jsx ...`
-- Unit tests: `npm run test:run`; focused: `npx vitest run tests/vitest/SomeRoute.test.jsx`
+- Frontend lint: `npm run lint`; focused lint: `(cd apps/web && npx eslint src/path/to/file.jsx ...)`
+- Unit tests: `npm run test:run`; focused: `npm run test:run -- tests/vitest/SomeRoute.test.jsx`
 - Coverage: `npm run test:coverage`
 - Test/production builds: `npm run build:test` and `npm run build`
 - PR-equivalent checks: `npm run ci-pr`
-- Browser tests: `npm run e2e`; focused: `npx playwright test tests/e2e/example.spec.js`
+- Browser tests: `npm run e2e`; focused: `npm run e2e -- tests/e2e/example.spec.js`
 - Functions lint: `npm --prefix firebase/functions run lint`
 - Change-tracker integration: `npm run test:functions:integration`
 
@@ -33,7 +33,7 @@ Use focused checks while iterating and the smallest broader check justified befo
 
 ## Code conventions
 
-Frontend and scripts follow `eslint.config.js` and nearby style:
+Frontend and web scripts follow `apps/web/eslint.config.js` and nearby style:
 
 - JavaScript only unless the user explicitly requests TypeScript.
 - ES modules and functional React components.
@@ -71,6 +71,7 @@ Keep the request visible and distinct from routine progress updates. Continue au
 
 - Production deployments and every live-data script run are approval-gated, including read-only exports. Editing such code does not authorize executing it.
 - Do not deploy, switch to production, migrate/import live data, publish, push, or open a pull request unless explicitly requested and authorized.
+- Candidate web publication, Import, development-catalog upload and API deployment jobs have unconditional migration holds. Do not remove them before the approved release transfer; local changes do not alter deployed workflows.
 - Never print, commit, or modify secrets in `.env*`, `keys/`, service-account files, OAuth credentials, or CI variables.
 - Authorization must derive from authenticated claims and server/rules enforcement. UI mode flags such as `adminEnabled` and `qaUserEnabled` never grant access.
 - Read `.agents/references/firebase-data-safety.md` before touching Firebase, external-service, script, or generated-data workflows.

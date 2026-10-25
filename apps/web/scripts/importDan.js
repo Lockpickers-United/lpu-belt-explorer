@@ -7,7 +7,7 @@ import masterIndex, {lockById, projectById, normalizeCodeword} from './lpuBeltIn
 import admin from 'firebase-admin'
 import {getFirestore} from 'firebase-admin/firestore'
 
-const serviceAccount = JSON.parse(fs.readFileSync('../keys/lpu-belt-explorer-firebase-adminsdk.json'))
+const serviceAccount = JSON.parse(fs.readFileSync('../../../keys/lpu-belt-explorer-firebase-adminsdk.json'))
 const app = admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
     databaseURL: 'https://lpu-belt-explorer.firebaseio.com'

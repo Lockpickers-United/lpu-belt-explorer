@@ -14,7 +14,7 @@ Read this reference when adding tests, modifying test infrastructure, changing c
 
 ## Isolation guarantees
 
-Frontend tests load committed `.env.test` synthetic values. The bootstrap rejects deployable Firebase project IDs, non-loopback emulator hosts, live API/data URLs, and Firebase API keys other than the test sentinel.
+Frontend tests live in `apps/web` and load the unchanged root `.env.test` synthetic values through explicit `envDir`. Root test/e2e commands forward into that workspace; filter paths remain app-relative. The bootstrap rejects deployable Firebase project IDs, non-loopback emulator hosts, live API/data URLs, and Firebase API keys other than the test sentinel.
 
 Vitest tests mock `DBContext`; use the dedicated Firebase emulator suite for change-tracker integration. MSW rejects unhandled frontend HTTP requests. Playwright builds in test mode, blocks non-loopback HTTP requests, and requires a clean browser console.
 
@@ -22,9 +22,9 @@ No automated test may access or mutate production data.
 
 ## Browser tests
 
-Install the pinned browser once with `npx playwright install chromium`. Playwright creates a fresh test-mode build and starts its own preview server; do not substitute an existing development or production server.
+Install the pinned browser once with `npx playwright install chromium`. Playwright creates a fresh test-mode build and starts its own preview server. Its common browser fixture serves a fixed synthetic loopback `/version.json`, so a clean checkout does not depend on ignored release-generator output; do not substitute an existing development or production server.
 
-Use `npm run e2e` for the suite or `npx playwright test path/to/spec.js` for a focused journey. Generated Playwright reports and test results are not source changes and should normally remain ignored.
+Use `npm run e2e` for the suite or `npm run e2e -- tests/e2e/example.spec.js` for a focused journey. Generated Playwright reports and test results are not source changes and should normally remain ignored.
 
 ## Firebase Functions integration
 

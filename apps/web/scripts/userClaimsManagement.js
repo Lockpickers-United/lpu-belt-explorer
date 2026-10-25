@@ -4,7 +4,7 @@ import {getFirestore} from 'firebase-admin/firestore'
 import {getAuth} from 'firebase-admin/auth'
 import dayjs from 'dayjs'
 
-const serviceAccount = JSON.parse(fs.readFileSync('../keys/lpu-belt-explorer-firebase-adminsdk.json').toString())
+const serviceAccount = JSON.parse(fs.readFileSync('../../../keys/lpu-belt-explorer-firebase-adminsdk.json').toString())
 const app = initializeApp({
     credential: cert(serviceAccount),
     databaseURL: 'https://lpu-belt-explorer.firebaseio.com'

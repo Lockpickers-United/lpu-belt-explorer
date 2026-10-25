@@ -2,7 +2,7 @@ import fs from 'fs'
 import {initializeApp, cert} from 'firebase-admin/app'
 import {getFirestore} from 'firebase-admin/firestore'
 
-const serviceAccount = JSON.parse(fs.readFileSync('../keys/lpu-belt-explorer-firebase-adminsdk.json'))
+const serviceAccount = JSON.parse(fs.readFileSync('../../../keys/lpu-belt-explorer-firebase-adminsdk.json'))
 const app = initializeApp({
     credential: cert(serviceAccount),
     databaseURL: 'https://lpu-belt-explorer.firebaseio.com'

@@ -18,7 +18,7 @@ The main areas are:
 - `src/testing/`, `src/api/testing/`, and `src/logger/*.test.js`: Vitest and Supertest coverage.
 - `src/data/`: checked-in data used by API services and tests.
 
-The monorepo root currently owns the React frontend; `../../firebase/functions` owns Firebase Cloud Functions. The frozen original API repository remains production release authority until Phase 5. Do not edit it during migration. Run API Yarn commands from `apps/api`; never replace the monorepo root hook with the imported API hook.
+The `../web` workspace owns the React frontend; `../../firebase/functions` owns Firebase Cloud Functions. The frozen original API repository remains production release authority until Phase 5. Do not edit it during migration. Run API Yarn commands from `apps/api`; never replace the monorepo root hook with the imported API hook.
 
 ## Agent references
 
@@ -106,7 +106,7 @@ When an API contract changes, update all applicable artifacts:
 - `src/api/documentation/README.md`
 - `src/api/requirements/samples/`
 - API/service tests
-- The consuming web code in `../../src`
+- The consuming web code in `../web/src`
 
 Preserve documented cache behavior unless the task changes it. Public summaries currently use public cache headers, while authenticated full-profile responses use `private, no-store`.
 

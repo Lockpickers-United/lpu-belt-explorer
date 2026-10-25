@@ -32,28 +32,39 @@ An interactive web app for exploring the Lockpickers United belt ranking system.
 
 ## Run locally
 * On initial setup and package.json changes
-    - Run `npm install` inside the parent folder 'lpu-belt-explorer'
+    - Run `npm ci` from the repository root; this installs the `apps/web` workspace and root tooling. The API and Functions retain separate installations.
 * To stand up locally
     - Run `npm run dev`
 
+## Package layout
+
+- `apps/web`: React/Vite source, public assets, tests, scripts and app config. Root npm commands delegate here; build output is `apps/web/dist`.
+- `apps/api`: independent Yarn package during Phase 2, with its own Node pin and lockfile. Follow its `AGENTS.md`.
+- `firebase`: unchanged CLI configs, rules and separately installed `firebase/functions` package.
+- Root `.env.*`, ignored key files and credentials keep their existing locations. Vite and Vitest explicitly load env files from the root; do not copy secrets into app directories.
+
+Existing ignored files under the former root `public/`, `src/data/` or `scripts/` are left untouched and remain ignored. Clean checkout tests use tracked synthetic fixtures; review local generated data before relocating it into app-owned paths. Do not copy live exports into test fixtures.
+
+Focused commands from root: `npm run test:run -- tests/vitest/SomeRoute.test.jsx` and `npm run e2e -- tests/e2e/viteBundle.spec.js`. For direct tool commands, enter `apps/web` first. Browser tests build and serve the relocated app with existing loopback-only restrictions.
+
 ## Github Hooks
 * [Build-N-Deploy](/.github/workflows/build.js.yml)
-    * Trigger: On Push to Main
+    * Candidate migration hold: disabled for every event until the approved release transfer. Intended trigger after release: scoped main push, Import completion or manual dispatch.
     * Action(s): Builds application with `npm run ci-build` then kicks off gh page action to deploy
 * [Import](/.github/workflows/import.js.yml)
-    * Trigger: Workflow Dispatch
+    * Candidate migration hold: disabled until the approved live-data/release step; intended trigger is workflow dispatch.
     * Action(s): Runs `npm run import` which updates the data then auto commits back to repository
 * [PR](/.github/workflows/pr.js.yml)
     * Trigger: On Pull Request
     * Action(s): Gets PR ready with `npm run ci-pr` which lints and builds application
 
 ## Build/Deploy
-Several commmands are linked together for this, here is the shortened version 
+Production publication is approval-gated and the candidate workflow is disabled during migration. The release-only command below generates/exports artifacts and is not a validation shortcut:
 * `npm run ci-build`
 
 ## Import/Export data
 
-For import, place a data.csv in the scripts folder and run:
+Live imports/exports and administrative jobs require separate explicit approval. Root npm jobs execute from `apps/web`; standalone legacy routines retain their existing subdirectory/CWD assumptions and require inspection before use. App-owned files use `apps/web/scripts` and `apps/web/src/data`. Preparing this move does not authorize running them. Once approved:
 ```
 npm run import
 ```

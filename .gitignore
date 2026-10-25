@@ -59,3 +59,30 @@ tests-results/*
 /.local/classification-phase6/
 /src/data/classification
 /src/data/classification
+
+# Web workspace outputs; retain legacy root ignores for existing local data.
+/apps/web/stats.html
+/apps/web/public/version.json
+/apps/web/public/sitemap.txt
+/apps/web/public/sitemap.xml
+/apps/web/public/data/*
+/apps/web/public/test
+/apps/web/src/data/dancache/*
+/apps/web/src/data/linkCache.json
+/apps/web/src/data/data.json
+/apps/web/src/data/rafl.json
+/apps/web/src/data/lockStats.json
+/apps/web/src/data/classification
+/apps/web/coverage/
+/apps/web/allure-report/
+/apps/web/allure-results/
+/apps/web/playwright-report/
+/apps/web/tests-results/
+/apps/web/scripts/*.csv
+/apps/web/scripts/*.json
+/apps/web/scripts/*.md
+
+# Retired generated web Yarn state; API keeps its own Yarn boundary.
+/.pnp.cjs
+/.pnp.loader.mjs
+/.yarn/
