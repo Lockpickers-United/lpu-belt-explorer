@@ -49,7 +49,7 @@ describe('live changelog reads', () => {
         const catalog = new Map([['lock-a', {name: 'Lock A', belt: 'Green'}],
             ['lock-b', {name: 'Lock B', belt: 'Blue'}]])
         expect(reconcileClassificationAction(snapshot, catalog)).toEqual({
-            status: 'Awaiting import', detail: 'Current belt: Green; intended: Blue'
+            status: 'Awaiting import', detail: 'Current belt: Green; intended: Blue', mismatch: true
         })
         expect(reconcileClassificationAction({...snapshot, action: 'Delete'}, catalog).status).toBe('Awaiting import')
         expect(reconcileClassificationAction({...snapshot, action: 'Sameline', samelineTargetId: 'lock-b'}, catalog)

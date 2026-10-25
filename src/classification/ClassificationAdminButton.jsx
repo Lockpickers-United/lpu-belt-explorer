@@ -4,12 +4,13 @@ import Tooltip from '@mui/material/Tooltip'
 import {useAccess} from '../app/AccessContext.jsx'
 import {classificationStatuses, flagStatuses} from './ClassificationConfig.jsx'
 import ShieldMoonIcon from '@mui/icons-material/ShieldMoon'
+import PolicyIcon from '@mui/icons-material/Policy'
 import ClassificationContext from '../app/ClassificationContext.jsx'
 import {useMatches} from 'react-router-dom'
 
 export default function ClassificationAdminButton({entry, handleToggle, style, flag = false}) {
     const {accessInfo} = useAccess()
-    //const isClassification = useMatches().some(match => match.handle?.route === 'classification')
+    const isClassification = useMatches().some(match => match.handle?.route === 'classification')
     const {getAdminActionStatus} = useContext(ClassificationContext)
 
     if (!accessInfo?.features?.classificationVote) return null
@@ -19,7 +20,11 @@ export default function ClassificationAdminButton({entry, handleToggle, style, f
     if (flag && !flagStatuses.includes(status)) return null
 
     const color = classificationStatuses[status]?.color ?? '#666'
-    const Icon = classificationStatuses[status]?.Icon ?? ShieldMoonIcon
+    const Icon = classificationStatuses[status]?.Icon
+            ? isClassification
+                ? ShieldMoonIcon
+                : PolicyIcon
+            : ShieldMoonIcon
 
     const fontSize = flag ? '1.4rem' : '1.6rem'
     const buttonStyle = flag ? {padding: 2} : {}

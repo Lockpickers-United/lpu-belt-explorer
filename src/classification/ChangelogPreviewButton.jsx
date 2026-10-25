@@ -10,7 +10,7 @@ import DataContext from '../context/DataContext.jsx'
 export default function ChangelogPreviewButton({entry, currentAction}) {
     const [showPreview, setShowPreview] = useState(false)
     const {getLockFromId} = useContext(DataContext)
-    const targetLock = currentAction.samelineLock
+    const targetLock = currentAction.samelineLock && getLockFromId
         ? getLockFromId(currentAction.samelineLock.lockId) : null
     return (
         <div>

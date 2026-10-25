@@ -54,6 +54,19 @@ export default function ChangelogMain() {
 
     const selectedChangelog = previousChangelogs.find(log => log.id === searchParams.get('id'))
 
+    const publishedActions = useMemo(() => selectedPublication
+        ? selectedPublication.actions.reduce((acc, action) => {
+            const result = reconcileClassificationAction(action, catalogById) ?? {}
+            acc[action.entryId] = {
+                ...action,
+                status: result.status,
+                result
+            }
+            return acc
+        }, {})
+        : {}
+    , [selectedPublication])
+
     const currentChangelogEntries = useMemo(() => {
         if (selectedChangelog) {
             return selectedChangelog.changes.map(action => {
@@ -62,7 +75,8 @@ export default function ChangelogMain() {
                     ...lock,
                     id: action.entryId,
                     belt: action.updatedBelt ?? lock?.belt ?? action.previousBelt,
-                    adminAction: action
+                    adminAction: action,
+                    publishedAction: publishedActions[action.entryId]
                 }
             })
         }
@@ -76,7 +90,7 @@ export default function ChangelogMain() {
             }
         })
             .filter(entry => entry.adminAction)
-    }, [getAdminAction, getLockFromId, selectedChangelog, visibleChangelogEntries])
+    }, [getAdminAction, getLockFromId, publishedActions, selectedChangelog, visibleChangelogEntries])
 
     console.log('currentChangelogEntries', currentChangelogEntries.sort(getLockSortComparator('beltDescending')))
 
@@ -338,27 +352,16 @@ export default function ChangelogMain() {
                 <div key={key} style={style}>
                     <div style={{fontSize: '1.3rem', fontWeight: 700}}>{key}</div>
                     {groupedEntries[key].map((entry) =>
-                        <ChangelogEntry
-                            key={entry.id}
-                            entry={entry}
-                            historical={Boolean(selectedChangelog)}
-                        />
+                        <div key={entry.id}>
+                            <ChangelogEntry
+                                entry={entry}
+                                historical={Boolean(selectedChangelog)}
+                                publishAction={publishedActions[entry.id] ?? null}
+                            />
+                        </div>
                     )}
                 </div>
             )}
-
-            {selectedPublication &&
-                <Paper style={{...style, padding: 16, fontSize: '0.9rem'}}>
-                    <div>Compared with bundled catalog {classificationCatalog.catalogVersion}.</div>
-                    {selectedPublication.catalogFingerprint &&
-                        <div>Publication catalog: {selectedPublication.catalogFingerprint}</div>}
-                    {selectedPublication.actions.map(action => {
-                        const result = reconcileClassificationAction(action, catalogById)
-                        return <div key={action.actionId}>
-                            {action.entryName ?? action.entryId}: {result.status} — {result.detail}
-                        </div>
-                    })}
-                </Paper>}
 
             <Footer extras={null} before={null} style={{marginTop: 40}}/>
             <Tracker feature='changelog'/>

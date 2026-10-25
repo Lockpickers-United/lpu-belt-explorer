@@ -462,7 +462,7 @@ function EntryClassificationAdminForm({entry, handleToggle, action, onActionChan
                             </ConfirmButton>
                         </div>
                     </div>
-                    {!canWriteActions && <div role='status'>Classification action writes are not enabled yet.</div>}
+                    {!canWriteActions && <div role='status'>Classification action writes are not enabled.</div>}
                     {error && <div role='alert'>Could not save: {error.message}
                         {error.status === 409 && ' Reload this lock before trying again.'}</div>}
 
