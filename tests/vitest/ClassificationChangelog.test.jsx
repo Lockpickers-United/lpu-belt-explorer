@@ -30,6 +30,40 @@ const deleteEntry = allEntries.find(entry => entry.id === deleteAction.entryId)
 const targetLock = allEntries.find(entry => entry.id === samelineAction.samelineLock.lockId)
 
 describe('classification changelog', () => {
+    it('shows saved approval independently of reconciliation and updates it for admins', async () => {
+        const user = userEvent.setup()
+        const classificationCommand = vi.fn(async () => ({approved: false}))
+        const reloadChangelog = vi.fn()
+        const publishedAction = {actionId: 'published-action', entryId: samelineEntry.id,
+            action: 'Belt Change', updatedBelt: 'Blue', previousBelt: 'White', approved: true}
+        const selectedPublication = {id: 'publication-a', actions: [publishedAction]}
+        const previousChangelogs = [{id: selectedPublication.id,
+            lastPublishedAt: '2026-10-10T00:00:00Z', changes: [publishedAction]}]
+        const router = createMemoryRouter([{
+            path: '/classification/changelog', handle: {route: 'classification'},
+            element: <ClassificationContext.Provider value={{...classification, previousChangelogs,
+                selectedPublication, reloadChangelog}}>
+                <DataContext.Provider value={{visibleChangelogEntries: [],
+                    getLockFromId: id => allEntries.find(entry => entry.id === id)}}>
+                    <ChangelogMain/>
+                </DataContext.Provider>
+            </ClassificationContext.Provider>
+        }], {initialEntries: ['/classification/changelog?id=publication-a']})
+        renderWithProviders(<RouterProvider router={router}/>, {
+            auth: {user: {uid: 'admin-user'}},
+            access: {accessInfo: {...defaultTestContextValues.access.accessInfo,
+                roles: {...defaultTestContextValues.access.accessInfo.roles, classificationAdmin: true}}},
+            api: {classificationCommand}
+        })
+
+        const checkbox = screen.getByRole('checkbox')
+        expect(checkbox).toBeChecked()
+        expect(screen.getByText(/Awaiting import/)).toBeInTheDocument()
+        await user.click(checkbox)
+        expect(classificationCommand).toHaveBeenCalledWith('patch',
+            'publications/publication-a/actions/published-action/approval', {approved: false}, expect.any(String))
+        expect(reloadChangelog).toHaveBeenCalledOnce()
+    })
     it('shows loading until the changelog fetch completes, then shows the empty state', async () => {
         const user = userEvent.setup()
         function ChangelogHarness() {

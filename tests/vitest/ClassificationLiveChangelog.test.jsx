@@ -20,6 +20,7 @@ function Capture() {
         <output>Publications: {value.previousChangelogs.length}</output>
         <output>Selected actions: {value.selectedPublication?.actions.length ?? 0}</output>
         <button onClick={() => navigate('/classification/changelog?id=publication-a')}>Select date</button>
+        <button onClick={value.reloadChangelog}>Reload</button>
     </div>
 }
 
@@ -43,6 +44,9 @@ describe('live changelog reads', () => {
         await userEvent.setup().click(screen.getByRole('button', {name: 'Select date'}))
         expect(await screen.findByText('Selected actions: 1')).toBeInTheDocument()
         expect(fetchClassificationPublication).toHaveBeenCalledExactlyOnceWith('publication-a')
+        await userEvent.setup().click(screen.getByRole('button', {name: 'Reload'}))
+        await screen.findByText('Selected actions: 1')
+        expect(fetchClassificationPublication).toHaveBeenCalledTimes(2)
     })
 
     it('compares publication intent to a retained catalog state', () => {

@@ -92,7 +92,7 @@ export default function ChangelogMain() {
             .filter(entry => entry.adminAction)
     }, [getAdminAction, getLockFromId, publishedActions, selectedChangelog, visibleChangelogEntries])
 
-    console.log('currentChangelogEntries', currentChangelogEntries.sort(getLockSortComparator('beltDescending')))
+    currentChangelogEntries.sort(getLockSortComparator('beltDescending'))
 
     const groupedEntries = currentChangelogEntries.reduce((acc, entry) => {
         const {adminAction = {}} = entry
@@ -356,7 +356,8 @@ export default function ChangelogMain() {
                             <ChangelogEntry
                                 entry={entry}
                                 historical={Boolean(selectedChangelog)}
-                                publishAction={publishedActions[entry.id] ?? null}
+                                publicationId={selectedPublication?.id}
+                                reloadChangelog={reloadChangelog}
                             />
                         </div>
                     )}

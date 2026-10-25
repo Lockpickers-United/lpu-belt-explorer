@@ -67,7 +67,7 @@ export default function ClassificationChangelogProvider({children}) {
             }
         })
         return () => { active = false }
-    }, [publicationId, fetchClassificationPublication])
+    }, [publicationId, fetchClassificationPublication, refresh])
 
     const stagedByEntry = useMemo(() => new Map(stagedActions.map(action => [action.entryId, action])), [stagedActions])
     const getAdminAction = useCallback(entry => stagedByEntry.get(entry.id) ?? parent.getAdminAction(entry),

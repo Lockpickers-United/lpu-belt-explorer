@@ -1,4 +1,4 @@
-import React, {useCallback, useContext, useState} from 'react'
+import React, {useContext, useState} from 'react'
 import BeltStripe from '../entries/BeltStripe'
 import entryName from '../entries/entryName'
 import ClassificationContext from '../app/ClassificationContext.jsx'
@@ -12,37 +12,50 @@ import {Collapse, useTheme} from '@mui/material'
 import EntryClassificationAdmin from './EntryClassificationAdmin.jsx'
 import {useAccess} from '../app/AccessContext.jsx'
 import Checkbox from '@mui/material/Checkbox'
+import useClassificationCommand from './useClassificationCommand.js'
+import {canPublishClassification} from './writeStage.js'
 
-function ChangelogEntry({entry, historical = false}) {
+function ChangelogEntry({entry, historical = false, publicationId, reloadChangelog}) {
     const theme = useTheme()
     const {accessInfo} = useAccess()
     const {getAdminAction} = useContext(ClassificationContext)
     const {getLockFromId} = useContext(DataContext)
     const [showEdit, setShowEdit] = useState(false)
+    const {run, pending, error} = useClassificationCommand()
 
     const adminAction = entry.adminAction ?? getAdminAction(entry)
     const targetId = adminAction?.samelineTargetId ?? adminAction?.samelineLock?.lockId
     const targetLock = !historical && targetId ? getLockFromId(targetId) : null
 
-    const [approved, setApproved] = useState(false)
-    const toggleApproved = useCallback(() => {
-        setApproved(prev => !prev)
-
-        //TODO: Update 'approved' status on published action && reload
-
-    }, [])
-
     const pub = entry.publishedAction ?? null
+
+    const toggleApproved = async () => {
+        try {
+            await run('patch', `publications/${encodeURIComponent(publicationId)}/actions/${encodeURIComponent(pub.actionId)}/approval`,
+                {approved: !pub.approved})
+            reloadChangelog?.()
+        } catch {
+            // Keep the saved value visible and show the command error below.
+        }
+    }
+
+    const color = pub?.approved
+        ? pub?.result?.mismatch
+            ? theme.palette.warning.light
+            : '#999'
+        : 'inherit'
+
     const actionAudit = pub
         ? <div style={{display: 'flex', alignItems: 'center', gap: 8, marginLeft: 16, paddingBottom: 8}}>
-            <Checkbox size='small' color='info' checked={approved} onClick={toggleApproved}/>
-            <div style={{fontSize: '0.85rem', paddingTop: 3, color: pub.result?.mismatch ? theme.palette.info.light : 'inherit'}}>
+            <Checkbox size='small' color='success'
+                      checked={pub.approved === true} onChange={toggleApproved}
+                      disabled={!accessInfo.roles.classificationAdmin || !canPublishClassification || pending}/>
+            <div style={{fontSize: '0.85rem', paddingTop: 3, color: color}}>
                 {pub.result?.status} — {pub.result?.detail}
             </div>
+            {error && <div role='alert'>Could not update approval: {error.message}</div>}
         </div>
         : null
-
-    console.log('', entry)
 
     const name = historical ? adminAction.entryName ?? entryName(entry, 'short') : entryName(entry, 'short')
     const belt = adminAction.updatedBelt || targetLock?.belt || adminAction.samelineLock?.belt ||
@@ -79,7 +92,7 @@ function ChangelogEntry({entry, historical = false}) {
                                 style={{color: '#e16936'}}>{!showEdit ? 'Edit' : 'Cancel'}</Button>
                     </div>
                 }
-                {actionAudit}
+                {accessInfo.roles.classificationAdmin && actionAudit}
             </div>
             <Collapse in={showEdit && !historical} style={{marginTop: 16, backgroundColor: '#292929'}} unmountOnExit>
                 {showEdit && !historical &&
