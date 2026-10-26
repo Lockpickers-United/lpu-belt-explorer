@@ -1,4 +1,4 @@
-name: API deploy production (migration hold)
+name: API deploy production
 
 on:
   workflow_dispatch:
@@ -61,8 +61,6 @@ jobs:
         run: npm run validate:api
 
   deploy:
-    # Phase 5 must explicitly remove this hold after old release authority is disabled.
-    if: ${{ false }}
     name: Upload and activate release
     needs: verify
     runs-on: ubuntu-22.04
