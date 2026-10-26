@@ -92,8 +92,9 @@ Reference: https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CSP
   referrer behavior.
 - Scope is the React entry document. Generated static HTML pages do not inherit
   its meta tags and need a separate review or a site-wide response-header policy.
-- API source already enables Helmet and disables Express's X-Powered-By header.
-  This is source evidence, not verification of deployed API/proxy headers.
+- API source uses the shared Helmet policy described below and disables
+  Express's X-Powered-By header. This is source evidence, not verification of
+  deployed API/proxy headers.
 - "CMS version exposed: skipped: budget" is inconclusive scanner output. The
   React entry HTML has no generator tag; obtain a concrete affected URL/version
   before treating this as a confirmed exposure.
@@ -103,7 +104,57 @@ Reference: https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CSP
 - No dependency vulnerability evidence was supplied by this report, so no
   package versions or lockfiles were changed for this task.
 
+## API scan and local remediation (2026-10-26)
+
+Report: https://free.pentesttesting.com/report/d5b0a86a-1c8a-4a49-8411-4246ec8667d3
+
+The owner authorized the following local source changes; deployment and live
+verification remain separate:
+
+- Extracted the API landing page's inline styles into `apps/api/public/styles.css`
+  and removed the `BBEdit 14.0` generator meta tag. The tag identifies an editor,
+  not evidence of a running CMS; the scanner's "skipped: budget" result does not
+  establish a CMS vulnerability.
+- Replaced bare Helmet setup with shared security middleware. Its CSP overrides
+  `style-src` and `font-src` to `'self'`, removing broad HTTPS allowances and
+  inline-style permission while preserving Helmet's other defaults. The original
+  inline allowance was for styles, not scripts.
+- Added `Permissions-Policy: camera=(), microphone=(), geolocation=()`.
+- Preserved existing framing, referrer, HSTS, COOP/CORP and script protections.
+  Kept `X-XSS-Protection: 0` to disable obsolete browser XSS filtering. Did not
+  enable COEP or HSTS preload merely to satisfy scanner suggestions.
+- Added offline Supertest coverage for landing-page, JSON and 404 security
+  headers, stylesheet delivery and removal of inline styles/generator metadata.
+  The existing development stack tests now use the same security middleware.
+
+Remaining evidence/actions:
+
+- Obtain the exact disclosed server/version header. Express already disables
+  `X-Powered-By`; suppression of headers added by DreamHost's reverse proxy must
+  happen at that layer or a separately configured edge proxy. The report does
+  not identify the header/value, so no hosting configuration was changed.
+- Obtain the API scanner's exact open-redirect URL and redirect chain. Its
+  "found" result supplies no reproduction and remains unverified.
+- CORS was not evaluated by the scanner. Production source requires explicit
+  configured origins; this does not verify deployed configuration.
+- Verify final headers, landing-page rendering and API behavior after a
+  separately authorized deployment. No production probing or deployment was
+  performed for this patch.
+
 ## Local verification
+
+API patch:
+
+- Targeted ESLint for the middleware, server entry point and affected tests: passed.
+- `npm run validate:api`: passed API lint and 93 test files / 485 tests.
+- The initial focused test run was blocked by sandbox socket restrictions;
+  permitted offline validation ran successfully. The first full run exposed a
+  new test fixture using Express's default HTML 404, which overrides CSP;
+  the fixture now matches production's JSON 404 and asserts its status.
+- Production headers, browser rendering and scanner results remain unverified
+  until a separately authorized deployment and live checks.
+
+Earlier web patch:
 
 - `npm run ci-pr`: passed lint, 53 Vitest files / 284 tests, and the test-mode
   build. The build reported its existing oversized-chunk advisory; no bundle

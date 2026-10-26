@@ -2,7 +2,7 @@ import {describe, it, expect, beforeAll} from 'vitest'
 import request from 'supertest'
 import express from 'express'
 import cors from 'cors'
-import helmet from 'helmet'
+import securityHeaders from '../api/middleware/securityHeaders.js'
 import {httpLogger} from '../logger/httpLogger.js'
 import {requestIdHeader} from '../logger/requestId.js'
 import {registerRoutes} from '../routes.js'
@@ -32,7 +32,7 @@ function createDevLikeApp() {
 
   app.disable('etag')
   app.disable('x-powered-by')
-  app.use(helmet())
+  app.use(securityHeaders)
   app.use(express.json({ limit: '200kb' }))
   app.set('trust proxy', true)
   app.use(httpLogger)

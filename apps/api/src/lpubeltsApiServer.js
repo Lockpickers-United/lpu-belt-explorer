@@ -1,6 +1,6 @@
 import express from 'express'
 import cors from 'cors'
-import helmet from 'helmet'
+import securityHeaders from './api/middleware/securityHeaders.js'
 import {fileURLToPath} from 'node:url'
 import {logger} from './logger/logger.js'
 import {httpLogger} from './logger/httpLogger.js'
@@ -71,7 +71,7 @@ app.use(normalizeRequestUrl)
 
 app.disable('etag')
 app.disable('x-powered-by')
-app.use(helmet())
+app.use(securityHeaders)
 app.use(express.json({limit: '200kb'}))
 app.use((req, _res, next) => {
     req.runtimeProduction = !isDev
