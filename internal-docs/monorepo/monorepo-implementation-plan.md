@@ -36,7 +36,7 @@ Establish a reproducible starting point and a complete migration map before chan
 
 ### Findings
 
-- The web package is npm-based and pins Node `v24.15.0`; the API package uses Yarn 4.18.0 and pins Node 24.21.0. `firebase/functions` has a separate npm lockfile.
+- The web package is npm-based and pins Node `v24.15.0`; the API package uses Yarn 4.18.0 and pins Node 24.21.0. `../../firebase/functions` has a separate npm lockfile.
 - The web `Build-N-Deploy` workflow publishes on selected `main` pushes and after `Import`; it also uploads catalog snapshots. The API's manual production workflow packages a repository-root Git archive and Linux `node_modules` for a PM2 release.
 - The LockyJr repository tracks `data/*.json`; its import needs a private-data and mutable-state review. No Devvit project has been installed as part of this planning work.
 - Local tracked-file inventories and source SHAs for all three repositories, catalog hashes, test-build hashes, and API history triage are captured in [baseline metadata](monorepo-baseline-inventory.json).
@@ -48,9 +48,9 @@ Establish a reproducible starting point and a complete migration map before chan
 ### Tasks
 
 - [x] Record source commit IDs, working-tree state, repository/remotes, tracked-file lists, and release authorities for web, API, and the future bot. Review tracked files and API history for credential or private-data exposure before any history-preserving import; decide how to handle any finding before importing it.
-- [x] Inventory package scripts, local path assumptions, `.gitignore` behavior, API/Firebase/web contracts, generated artifacts, and persistent runtime state. Include Vite, Vitest, Playwright, Firebase CLI, PM2, cron, SFTP, Pages, `Import`, catalog publishing, and GitHub environment settings by **name only**.
+- [x] Inventory package scripts, local path assumptions, `../../.gitignore` behavior, API/Firebase/web contracts, generated artifacts, and persistent runtime state. Include Vite, Vitest, Playwright, Firebase CLI, PM2, cron, SFTP, Pages, `Import`, catalog publishing, and GitHub environment settings by **name only**.
 - [x] Run safe local baselines: `npm run ci-pr` and relevant focused browser checks for web, `yarn validate` for API, and `npm --prefix firebase/functions run lint`; record exact Node/package-manager versions and results. Do not run `ci-build`, exporters, credential-dependent checks, or live services as a baseline shortcut. **2026-10-25 final gate:** explicitly authorized by the owner and executed; exact commands, results, permission retries and the intermittent API failure are recorded in the developer report.
-- [x] Confirm the destination repository, `apps/api` and `apps/web` layout, the source-commit/freeze-or-sync strategy during migration, the API history-import method, and the sequence for transferring release authority. Record decisions and alternatives in the developer report.
+- [x] Confirm the destination repository, `../../apps/api` and `apps/web` layout, the source-commit/freeze-or-sync strategy during migration, the API history-import method, and the sequence for transferring release authority. Record decisions and alternatives in the developer report.
 - [x] Define an offline API artifact inspection and a web publish dry run that cannot publish to Pages or upload snapshots; identify which real development and production checks require separate authorization.
 
 ### Exit criteria
@@ -79,18 +79,18 @@ Establish a reproducible starting point and a complete migration map before chan
 
 ### Summary
 
-Import the active API under `apps/api` with inspectable history. Keep its Yarn package and production behavior intact while changing only the paths and automation needed to validate it from the monorepo. The old repository remains the production release authority during this phase.
+Import the active API under `../../apps/api` with inspectable history. Keep its Yarn package and production behavior intact while changing only the paths and automation needed to validate it from the monorepo. The old repository remains the production release authority during this phase.
 
 ### Findings
 
-- Imported the verified 176-commit frozen ancestry under `apps/api` on isolated branch `monorepo/phase1-api`, merge `fd2daca185393fe72737ad4083cc398f989c6e84`. Four excluded blobs and their password content are absent from candidate reachable history; the import tree matches frozen source. Metadata and original-to-rewritten map are in `monorepo-api-history-verification.json`.
+- Imported the verified 176-commit frozen ancestry under `../../apps/api` on isolated branch `monorepo/phase1-api`, merge `fd2daca185393fe72737ad4083cc398f989c6e84`. Four excluded blobs and their password content are absent from candidate reachable history; the import tree matches frozen source. Metadata and original-to-rewritten map are in `monorepo-api-history-verification.json`.
 - Root API CI, disabled candidate production workflow, app-root artifact tooling, hook/Dependabot routing and operational references are committed and published at `22ec5c9fef8871aefa678eefe9bbedb0d695285a` on the isolated migration branch; completion evidence is staged locally after the run. The old API repository remains untouched and release authority is unchanged.
 - API full validation passed (90 files / 464 tests); web `npm run ci-pr` passed (52 files / 280 tests, lint and test build). Structural archive inspection passed (18,723 members), extracted entry/job syntax passed and Sharp loaded on macOS. Final API CI passed on Ubuntu 22.04 with 464 tests, production dependency focus, a 15,163-member artifact and extracted Sharp loading. Its downloaded checksum and all 367 tracked API source files were verified. A fresh web install/checkout also passed `npm run ci-pr` (280 tests, lint and test build). [CI run](https://github.com/mgsecure/lpu-belt-explorer/actions/runs/40212524559). Phase 1 is complete.
 
 ### Tasks
 
-- [x] Perform the reviewed history-preserving import in an isolated worktree; confirm reviewed source commits are reachable and `apps/api` history is traceable. Under the selected sanitized-history plan, these are rewritten commits with an original-to-rewritten map; original sensitive history must not become reachable. Exclude local credentials, environment files, installed dependencies, logs, and runtime state.
-- [x] Update root and API `AGENTS.md`, API operational references, CI, Dependabot, and scripts that assume the API is at Git root. Move active API workflows to root `.github/workflows/`; keep the new production workflow manual and unable to create a duplicate live release before cutover.
+- [x] Perform the reviewed history-preserving import in an isolated worktree; confirm reviewed source commits are reachable and `../../apps/api` history is traceable. Under the selected sanitized-history plan, these are rewritten commits with an original-to-rewritten map; original sensitive history must not become reachable. Exclude local credentials, environment files, installed dependencies, logs, and runtime state.
+- [x] Update root and API `../../AGENTS.md`, API operational references, CI, Dependabot, and scripts that assume the API is at Git root. Move active API workflows to root `.github/workflows/`; keep the new production workflow manual and unable to create a duplicate live release before cutover.
 - [x] Make the API package's path the root of its deploy artifact, retaining matching Linux dependencies, Sharp load check, environment-file link, PM2 entry point, `current`/`releases`/`shared` separation, readiness check, and rollback. Test artifact contents and script syntax offline; do not run export jobs.
 - [x] Define WebStorm SFTP and cron path changes for the eventual server switch, with a rollback to the existing release. Compare the API's public routes and checked-in fixtures before/after import.
 - [x] Run API `yarn validate`, artifact validation, and web `npm run ci-pr` on the imported tree; document any pre-existing versus migration failures.
@@ -117,11 +117,11 @@ Import the active API under `apps/api` with inspectable history. Keep its Yarn p
 
 ### Summary
 
-Move the web package to `apps/web` and add a private root coordinator. The API remains a separate Yarn installation for now, and `firebase/functions` remains a separate npm package. Keep site output and API catalog inputs equivalent.
+Move the web package to `../../apps/web` and add a private root coordinator. The API remains a separate Yarn installation for now, and `firebase/functions` remains a separate npm package. Keep site output and API catalog inputs equivalent.
 
 ### Findings
 
-- Use a private root coordinator with only `apps/web` in npm workspaces; preserve API Yarn and the separate Functions package. Keep tracked environment files at root and configure explicit env-directory resolution, avoiding secret ownership changes. Candidate publishing/import/upload jobs are unconditionally disabled before path edits.
+- Use a private root coordinator with only `../../apps/web` in npm workspaces; preserve API Yarn and the separate Functions package. Keep tracked environment files at root and configure explicit env-directory resolution, avoiding secret ownership changes. Candidate publishing/import/upload jobs are unconditionally disabled before path edits.
 
 - Root npm clean install and `ci-pr` passed (280 tests, lint/build), API Yarn validation passed (464 tests, lint), Functions lint and relocated Web SDK emulator check passed. Browser checks passed 10/10 after adding a synthetic version fixture for clean worktrees; console/network assertions remain strict.
 - All 475 clean build files match Phase 1 and common Phase 0 hashes; the 24 additional Phase 0 files were untracked local/generated extras. Seven catalog hashes and 11 local copied snapshots match their sources. Dependency graph versions/integrity are unchanged across all 1,020 existing lock entries. See [Phase 2 verification](monorepo-phase2-verification.json).
@@ -130,7 +130,7 @@ Move the web package to `apps/web` and add a private root coordinator. The API r
 ### Tasks
 
 - [x] Move web source, public assets, tests, scripts, package/config files, and generated-file ownership with Git history intact. Establish a root npm workspace for web only; update root developer commands and references.
-- [x] Repair Vite, Vitest, Playwright, Firebase emulator/config, Pages, and catalog path assumptions. Keep Firebase CLI configs at `firebase/` and Functions packaging independent.
+- [x] Repair Vite, Vitest, Playwright, Firebase emulator/config, Pages, and catalog path assumptions. Keep Firebase CLI configs at `../../firebase` and Functions packaging independent.
 - [x] Update root workflows for app paths and required shared paths. Prove web moves, root lockfile changes, `Import` commits, and `workflow_run` events cannot silently publish or upload snapshots during migration; preserve the later intended automatic-release behavior.
 - [x] Compare test build output and catalog artifact hashes with the Phase 0 baseline; validate web/API URL and classification-catalog contracts with synthetic data.
 - [x] Run `npm run ci-pr` through the new root command, relevant Playwright journeys, and Functions lint plus any emulator checks justified by actual Firebase path changes. Do not dispatch `Import` or a live publish as validation.
@@ -157,7 +157,7 @@ Move the web package to `apps/web` and add a private root coordinator. The API r
 
 ### Summary
 
-Add `apps/api` to the root npm workspace and pin a common Node 24 patch. Change dependency management separately from file relocation so lockfile or native-module regressions can be identified.
+Add `../../apps/api` to the root npm workspace and pin a common Node 24 patch. Change dependency management separately from file relocation so lockfile or native-module regressions can be identified.
 
 ### Findings
 
@@ -168,7 +168,7 @@ Add `apps/api` to the root npm workspace and pin a common Node 24 patch. Change 
 ### Tasks
 
 - [x] Verify the API host's available Node patch, choose a supported Node 24 patch for root/CI/PM2/cron, and pin the npm release used by CI. Update docs and host-path checks together.
-- [x] Convert the API Yarn graph to the root `package-lock.json`; move required Yarn `resolutions` to root npm `overrides`. Review hoisting, peer dependencies, native Sharp resolution, package scripts, and the complete lockfile diff. Remove API Yarn files only after reproducible installs pass.
+- [x] Convert the API Yarn graph to the root `../../package-lock.json`; move required Yarn `resolutions` to root npm `overrides`. Review hoisting, peer dependencies, native Sharp resolution, package scripts, and the complete lockfile diff. Remove API Yarn files only after reproducible installs pass.
 - [x] Use root `npm ci` and app-targeted scripts in CI while keeping Functions on its own lockfile. Ensure API production packaging includes only needed runtime files and dependencies and still supports rollback.
 - [x] Run full web/API lint and tests, web test build, relevant browser checks, and offline Linux API artifact validation; compare the resolved production dependency tree with the prior Yarn artifact.
 
@@ -254,7 +254,7 @@ Make the monorepo the sole release source while preserving the current public UR
 - [x] Complete observation: started `2026-10-26T03:18:52Z`; owner explicitly ended it early on 2026-10-26. Original seven-day deadline `2026-11-02T03:18:52Z` is superseded; full-interval health/export/scheduled-job evidence was waived, not collected. No extra live job ran.
 - [x] Keep the previous API release/original source through the observation period. Prior current and both selected complete rollback releases were verified retained at cutover; no rollback was needed. Continue retaining all recovery releases and private Pages/catalog bundles; early observation completion does not authorize pruning or process shutdown.
 - [x] Retire the old source: old API workflow disabled/drained during approved transfer; existing cron paths already have one production owner. Owner reports final old publication/read-only repository. Updated release ownership, setup/agent and operational docs; root Dependabot already covers both workspaces. Preserve existing GitHub protection policy and source/history. No archive API mutation, new schedule, backend shutdown or release deletion performed; subsequent owner archival is independently verified with authenticated GitHub REST (`archived=true`, frozen main unchanged).
-- [x] Implement web-env cleanup: moved the four tracked root `.env.*` files unchanged into `apps/web`; updated Vite/Vitest `envDir`, app-local `.env.keys` lookup (owner-requested rename), workflow filters, ignore rules and setup/agent docs. Owner privately moved the ignored key file; filename-only rename preserved its contents/permissions. API runtime files remain separate. Synthetic development/dev/test/production configuration tests, web CI, isolated browser checks and synthetic-key production build pass. Subsequent question 23 publication is verified below.
+- [x] Implement web-env cleanup: moved the four tracked root `.env.*` files unchanged into `../../apps/web`; updated Vite/Vitest `envDir`, app-local `.env.keys` lookup (owner-requested rename), workflow filters, ignore rules and setup/agent docs. Owner privately moved the ignored key file; filename-only rename preserved its contents/permissions. API runtime files remain separate. Synthetic development/dev/test/production configuration tests, web CI, isolated browser checks and synthetic-key production build pass. Subsequent question 23 publication is verified below.
 - [x] Restore the two manual-only/main-only Import/development-catalog workflows under approved question 23 via PR #335. Contract tests and published source controls pass; neither job was dispatched.
 - [x] Execute question 23: normal-merged PR #335 as `bef3de9b684acf5f2f8e15fd7d24533cc9e33d10`; automatic run 40371531547 published verified Pages and all 14 catalogs. Production settings, public/browser checks and unchanged API pass; 69 evidence/recovery files retained privately and hash-verified. No recovery required.
 
@@ -288,8 +288,8 @@ Add the planned apps as isolated build and release units. Their repository place
 
 ### Tasks
 
-- [ ] Create `apps/devvit` with its project-local `devvit.json`, CLI, build artifact, tests, and scoped CI. Complete the bounded Reddit-native proof of concept and the policy/coverage gates in the [Devvit review](devvit-belt-request-plan-review.md) before LPU account-link integration.
-- [ ] Audit LockyJr's tracked files and Git history, runtime version, mixed module usage, untracked `keys/` and config requirements, mutable `data/`, and deployment process. Import under `apps/discord-bot` only with an explicit private-state layout and validation baseline.
+- [ ] Create `apps/devvit` with its project-local `devvit.json`, CLI, build artifact, tests, and scoped CI. Complete the bounded Reddit-native proof of concept and the policy/coverage gates in the [Devvit review](../devvit-belt-request-plan-review.md) before LPU account-link integration.
+- [ ] Audit LockyJr's tracked files and Git history, runtime version, mixed module usage, untracked `../../keys` and config requirements, mutable `data/`, and deployment process. Import under `apps/discord-bot` only with an explicit private-state layout and validation baseline.
 - [ ] Decide separately whether either app benefits from npm workspace membership or a pure shared `packages/award-domain` contract. Keep app credentials, CI triggers, and publish approvals independent.
 
 ### Exit criteria

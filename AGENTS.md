@@ -4,7 +4,7 @@ This file applies to the entire `lpu-belt-explorer` repository and is the canoni
 
 ## Project essentials
 
-`lpu-belt-explorer` is the monorepo behind [lpubelts.com](https://lpubelts.com). The React/Vite app lives in `apps/web`; the private root npm coordinator installs both web and API workspaces. Firebase configs and the independent Functions package remain in `firebase/`. Root npm scripts forward web commands with `apps/web` as the working directory. Use JavaScript, npm, and the Node 24 LTS release pinned in `.nvmrc`.
+`lpu-belt-explorer` is the monorepo behind [lpubelts.com](https://lpubelts.com). The React/Vite app lives in `apps/web`; the private root npm coordinator installs both web and API workspaces. Firebase configs and the independent Functions package remain in `firebase/`. Root npm scripts retain common development and verification shortcuts with `apps/web` as the working directory. Specialized web scripts run directly via `npm run <script> --workspace=apps/web -- <args>` from root, or from within `apps/web`. Use JavaScript, npm, and the Node 24 LTS release pinned in `.nvmrc`.
 
 The imported `apps/api` workspace owns server-side exports and API services; read `apps/api/AGENTS.md` and its operational references before editing it. Web and API use the root npm lockfile, Node 24.21.0 and npm 11.19.0. Root `.npmrc` uses nested installs to keep each app self-contained. Functions retains its independent npm package and lockfile. Production web/API release authority now belongs to this monorepo. The owner has marked the old API publication final and archived `../explore-lpubelts-com-node` on GitHub (authenticated `archived=true` verified); preserve that historical source and do not edit it. Web env files belong in `apps/web`, including owner-managed ignored `.env.keys`; API runtime configuration remains separate.
 
@@ -30,7 +30,7 @@ Read every relevant reference before editing or executing commands for that area
 - Functions lint: `npm --prefix firebase/functions run lint`
 - Change-tracker integration: `npm run test:functions:integration`
 
-Use focused checks while iterating and the smallest broader check justified before handoff. Do not use `npm run ci-build` as a validation shortcut; it invokes generators and exporters.
+Use focused checks while iterating and the smallest broader check justified before handoff. Do not use `npm run ci-build --workspace=apps/web` as a validation shortcut; it invokes generators and exporters.
 
 ## Code conventions
 

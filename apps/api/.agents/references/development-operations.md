@@ -137,7 +137,7 @@ Neal must review the local source root, unchanged remote `current-dev` root, `.e
 
 ## Rehearsal findings (2026-10-25)
 
-The monorepo artifact was activated and rolled back successfully using the existing mutable `current-dev`, port 10081 and `lpubelts-api-server-dev`. The original development arrangement was restored. Owner authorization permits development interruptions for this project's replacement/rollback rehearsals; production and live-job gates remain separate. See the root `internal-docs/monorepo-phase4-runbook.md` and developer report for the exact evidence and remaining review.
+The monorepo artifact was activated and rolled back successfully using the existing mutable `current-dev`, port 10081 and `lpubelts-api-server-dev`. The original development arrangement was restored. Owner authorization permits development interruptions for this project's replacement/rollback rehearsals; production and live-job gates remain separate. See the root `../../../../internal-docs/monorepo/monorepo-phase4-runbook.md` and developer report for the exact evidence and remaining review.
 
 Health checks must use the configured listening address. This host's development listener was bound to its host IPv4 address, so do not assume the loopback example above is reachable; verify binding without silently changing `HOST`.
 

@@ -1,0 +1,121 @@
+# Security audit: owner questions and actions
+
+Report: https://free.pentesttesting.com/report/ceb76037-00b4-41b4-9e8c-9561f47a31e4
+
+Updated: 2026-10-26. Review needed. Record answers below; no hosting change,
+production test, deployment, DNS change, or preload submission is authorized by this document.
+
+## 1. Choose a response-header strategy
+
+**Owner decision needed:** Should we prepare a move from GitHub Pages to Firebase
+Hosting, retain Pages behind a header-configurable edge proxy, or retain Pages
+and document its remaining limitations?
+
+Recommendation: evaluate Firebase Hosting first because the app already uses
+Firebase. Its custom response headers can be managed in version control. Confirm
+bandwidth/storage costs against actual traffic before selecting it. This is a
+recommendation to prepare a migration, not authorization to deploy or change DNS.
+
+Owner answer:
+
+Owner action: select an option and identify who manages DNS and hosting access.
+Do not put credentials in this file. A migration must preserve the custom domain,
+static exports, OAuth callbacks, cache behavior, rollback, and the existing web
+workflow's separate API snapshot uploads. Moving hosting alone does not fix an
+application vulnerability.
+
+Remaining header work: framing protection (`frame-ancestors`, with
+`X-Frame-Options` where appropriate), `X-Content-Type-Options: nosniff`, a tailored
+Permissions-Policy, and HSTS management. Review COOP/COEP/CORP for compatibility
+and actual need rather than enabling all three just to satisfy a scanner.
+
+Reference: https://firebase.google.com/docs/hosting/full-config#headers
+
+## 2. Obtain evidence for the open-redirect claim
+
+**Owner information needed:** Provide the scanner's exact request URL, redirect
+chain/Location headers or browser reproduction, and expected versus observed
+destination. The public report says only "Open redirect: found" and supplies no
+payload. Request this evidence from the scanner vendor if unavailable.
+
+Owner answer / evidence:
+
+Local review found fixed internal React route redirects and allowlisted Discord
+callback destinations; it did not establish a reproduction of the reported
+issue. External links are not by themselves an open redirect. The claim remains
+unverified, not closed. No production probing was performed.
+
+## 3. Inventory subdomains before strengthening HSTS
+
+**Owner information needed:** List active subdomains (including third-party
+services and any HTTP-only hosts) and their HTTPS support. The report's existing
+`max-age=31556952` already exceeds one year; its duration does not need increasing
+to meet the stated one-year minimum.
+
+Owner answer:
+
+Owner action: confirm HTTPS coverage before enabling `includeSubDomains` on a
+header-capable host. Treat browser preload submission as a separate explicit
+decision after checking eligibility and rollback implications. HTML meta tags
+cannot configure HSTS.
+
+Reference: https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Strict-Transport-Security
+
+## 4. Arrange authentication and deployment verification
+
+**Owner action needed before release:** Arrange a controlled preview smoke test
+for Google sign-in, Discord/Reddit callbacks, photo/HEIC uploads, native forms,
+and embedded content. Actual account/service interactions require separately
+authorized testing; automated browser tests here remain offline.
+
+Owner answer / tester:
+
+The current meta policy deliberately does not add `script-src`, `default-src`,
+`connect-src`, or style/image/frame allowlists. It blocks inline event-handler
+attributes but does not prevent injected script elements or `eval`. A full
+script-source policy needs Firebase/Google authentication compatibility testing;
+the SDK dynamically loads Google's API script, and Vite development injects an
+inline refresh script. Prefer report-only testing on the chosen header-capable
+host before enforcement. Meta CSP cannot run in report-only mode or enforce
+`frame-ancestors`. Keep the policy ahead of resource loads.
+
+Reference: https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CSP
+
+## Current local remediation and audit status
+
+- Preserved the owner's existing early meta referrer policy and baseline CSP in
+  `apps/web/index.html`.
+- Extended that CSP with `form-action 'self'` and `script-src-attr 'none'`.
+  Native cross-origin form submissions and inline event attributes are blocked;
+  React handlers and fetch-based uploads use separate mechanisms.
+- Added offline browser checks for real CSP enforcement and cross-origin
+  referrer behavior.
+- Scope is the React entry document. Generated static HTML pages do not inherit
+  its meta tags and need a separate review or a site-wide response-header policy.
+- API source already enables Helmet and disables Express's X-Powered-By header.
+  This is source evidence, not verification of deployed API/proxy headers.
+- "CMS version exposed: skipped: budget" is inconclusive scanner output. The
+  React entry HTML has no generator tag; obtain a concrete affected URL/version
+  before treating this as a confirmed exposure.
+- Server/version header suppression is hosting/proxy-controlled. Retest after a
+  separately approved release, retain response/browser evidence, validate TLS
+  (the scanner could not fully validate it), and document provider limitations.
+- No dependency vulnerability evidence was supplied by this report, so no
+  package versions or lockfiles were changed for this task.
+
+## Local verification
+
+- `npm run ci-pr`: passed lint, 53 Vitest files / 284 tests, and the test-mode
+  build. The build reported its existing oversized-chunk advisory; no bundle
+  configuration was changed.
+- `npm run e2e -- tests/e2e/securityPolicy.spec.js tests/e2e/locks.spec.js tests/e2e/contentRoutes.spec.js`:
+  11 passed. Includes policy enforcement, referrer behavior, desktop/mobile
+  browsing, filters, hash navigation and the anonymous sign-in prompt.
+- `node --check apps/web/tests/e2e/securityPolicy.spec.js`: passed.
+- The first browser invocation could not bind the loopback preview server in
+  the sandbox; the permitted rerun used the same offline fixtures. The initial
+  security test then exposed Playwright waiting for a navigation commit after a
+  CSP-blocked form submission. The test now verifies the live document URL
+  directly after observing the violation. The complete selected suite passed.
+- Live sign-in, live service submissions, TLS checks and production rescanning
+  were not run. No publication or hosting/DNS changes were made.
