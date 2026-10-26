@@ -1,4 +1,4 @@
-name: API deploy production
+name: API - Deploy Production
 
 on:
   workflow_dispatch:

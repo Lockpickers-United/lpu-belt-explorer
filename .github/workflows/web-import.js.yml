@@ -1,4 +1,4 @@
-name: Import
+name: Web - Import
 
 on:
   workflow_dispatch:

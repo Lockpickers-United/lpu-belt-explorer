@@ -1,6 +1,6 @@
 # Production deployment
 
-Phase 1 candidate only: root `.github/workflows/api-deploy-production.yml` is manual and its deploy job is unconditionally disabled. The original API repository remains production release authority. Do not dispatch the candidate as a deployment or remove the hold before the approved Phase 5 transfer. Root `api-ci.yml` builds and inspects an offline Linux artifact without host access. Package contents are rooted at the API boundary, so host PM2, cron and shared paths below remain unchanged. See [production references](../.agents/references/production-releases.md).
+Phase 1 candidate only: root `.github/workflows/api-deploy-production.yml` is manual and its deploy job is unconditionally disabled. The original API repository remains production release authority. Do not dispatch the candidate as a deployment or remove the hold before the approved Phase 5 transfer. Root `api-pr.js.yml` builds and inspects an offline Linux artifact without host access. Package contents are rooted at the API boundary, so host PM2, cron and shared paths below remain unchanged. See [production references](../.agents/references/production-releases.md).
 
 The candidate `API deploy production (migration hold)` workflow validates the selected `main` commit, uploads a tracked-files-only archive over SFTP, and activates an immutable release over SSH. It is manual-only and uses the GitHub `production` environment.
 
@@ -110,7 +110,7 @@ Before enabling the workflow, manually verify that:
 
 ## Deployment and rollback
 
-After the approved Phase 5 authority transfer and removal of the hold, run **Actions → API deploy production → Run workflow** from `main`. The workflow requires the explicit `deploy-production` selection and serializes deployments so two releases cannot activate concurrently.
+After the approved Phase 5 authority transfer and removal of the hold, run **Actions → API - Deploy Production → Run workflow** from `main`. The workflow requires the explicit `deploy-production` selection and serializes deployments so two releases cannot activate concurrently.
 
 The remote activation verifies the uploaded archive checksum and the Node version from `.nvmrc`, writes `.release.json`, checks that the host is Linux x64 and can load the packaged Sharp dependency, checks server syntax, switches `current`, reloads PM2, and calls the readiness endpoint. The response must be ready and identify the exact release just activated. It then performs a bounded request to the public collection-statistics endpoint. If PM2 reload or either check fails, `current` is restored to its previous target and PM2 is reloaded again.
 

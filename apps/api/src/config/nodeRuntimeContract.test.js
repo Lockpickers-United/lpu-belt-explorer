@@ -41,8 +41,7 @@ describe('Node runtime contract', () => {
     })
 
     it.each([
-        'import.js.yml',
-        'publish-classification-catalog-dev.yml'
+        'web-import.js.yml'
     ])('keeps %s manual and restricted to main after migration', async filename => {
         const workflow = await readRootFile(`../../.github/workflows/${filename}`)
 
@@ -53,11 +52,11 @@ describe('Node runtime contract', () => {
     })
 
     it('publishes web only from main and successful same-repository main Import completion', async () => {
-        const workflow = await readRootFile('../../.github/workflows/build.js.yml')
+        const workflow = await readRootFile('../../.github/workflows/web-build.js.yml')
         const condition = workflow.match(/^ {4}if: >-\n((?: {6}.+\n)+)/m)?.[1]
 
         expect(condition).toBeDefined()
-        expect(workflow).toContain('workflows: [Import]')
+        expect(workflow).toContain("workflows: ['Web - Import']")
         const expression = condition.trim().replace(/^\$\{\{\s*/, '').replace(/\s*\}\}$/, '')
         const permits = new Function('github', `return (${expression})`)
         const repository = 'Lockpickers-United/lpu-belt-explorer'

@@ -50,18 +50,18 @@ Existing ignored files under the former root `public/`, `src/data/` or `scripts/
 Focused commands from root: `npm run test:run -- tests/vitest/SomeRoute.test.jsx` and `npm run e2e -- tests/e2e/viteBundle.spec.js`. For direct tool commands, enter `apps/web` first. Browser tests build and serve the relocated app with existing loopback-only restrictions.
 
 ## Github Hooks
-* [Build-N-Deploy](/.github/workflows/build.js.yml)
+* [Web - Build & Deploy](/.github/workflows/web-build.js.yml)
     * Enabled by Phase 5: scoped main push, successful same-repository main Import completion or manual main dispatch. A merge matching its path filters publishes Pages and uploads seven catalogs to both API environments; obtain approval for those effects.
     * Action(s): Builds application with `npm run ci-build` then kicks off gh page action to deploy
-* [Import](/.github/workflows/import.js.yml)
+* [Web - Import](/.github/workflows/web-import.js.yml)
     * Manual dispatch on main only, restored under question 23. Obtain separate approval before a live import; its successful completion triggers the existing Pages/catalog release.
     * Action(s): Runs `npm run import` which updates the data then auto commits back to repository
-* [PR](/.github/workflows/pr.js.yml)
+* [Web - PR Check](/.github/workflows/web-pr.js.yml)
     * Trigger: On Pull Request
     * Action(s): Gets PR ready with `npm run ci-pr` which lints and builds application
 
 ## Build/Deploy
-Production publication is approval-gated. Web publication is enabled; API production deployment is manual, confirmed and main-only through `.github/workflows/api-deploy-production.yml` and the `api-production` environment. Import and the development-only catalog uploader are manual-only/main-only; each actual dispatch still requires separate approval. The release-only command below generates/exports artifacts and is not a validation shortcut:
+Production publication is approval-gated. Web publication is enabled; API production deployment is manual, confirmed and main-only through `.github/workflows/api-deploy-production.yml` and the `api-production` environment. Web - Import is manual-only/main-only; each actual dispatch still requires separate approval. The development-only catalog uploader workflow has been removed. The release-only command below generates/exports artifacts and is not a validation shortcut:
 * `npm run ci-build`
 
 ## Import/Export data

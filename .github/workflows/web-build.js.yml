@@ -1,4 +1,4 @@
-name: Build-N-Deploy
+name: Web - Build & Deploy
 
 concurrency:
   group: site-and-classification-catalog
@@ -19,9 +19,9 @@ on:
       - 'package-lock.json'
       - '.nvmrc'
       - '.npmrc'
-      - '.github/workflows/build.js.yml'
+      - '.github/workflows/web-build.js.yml'
   workflow_run:
-    workflows: [Import]
+    workflows: ['Web - Import']
     types:
       - completed
   workflow_dispatch:

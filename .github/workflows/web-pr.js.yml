@@ -1,4 +1,4 @@
-name: PR Check
+name: Web - PR Check
 
 on:
   pull_request:
@@ -9,7 +9,7 @@ on:
       - '.nvmrc'
       - '.npmrc'
       - 'AGENTS.md'
-      - '.github/workflows/pr.js.yml'
+      - '.github/workflows/web-pr.js.yml'
       - 'firebase/**'
 
 jobs:
