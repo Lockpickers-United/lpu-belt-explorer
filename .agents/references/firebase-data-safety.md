@@ -4,11 +4,11 @@ Read this reference before changing or running Firebase, Functions, external-ser
 
 ## Web workspace paths
 
-Root npm commands delegate to `apps/web`. Tracked `.env.*`, ignored `.env.keysNew` and credential files remain in their existing root/sibling locations; Vite/Vitest explicitly use the root env directory. Do not copy or change these files during the web move. Candidate Build-N-Deploy, Import and development-catalog publish jobs are unconditionally disabled until approved release transfer; their app-local steps use `apps/web`, while npm install and GitHub action paths stay rooted at the monorepo.
+Root npm commands delegate to `apps/web`. Web `.env.*` defaults and the owner-managed ignored `.env.keys` now live in `apps/web`; Vite/Vitest explicitly use that app-local directory. Preserve mode/local-file and shell-variable precedence. API runtime files remain separate. Phase 5 enabled Build-N-Deploy and manual API deployment; question 23 restores Import and development-catalog publish jobs as manual-only/main-only. Enabling dispatch does not authorize running either live job. Their app-local steps use `apps/web`, while npm install and GitHub action paths stay rooted at the monorepo.
 
 ## Ignored local environment files after migration
 
-Ignored secret-bearing files are intentionally absent from a new worktree or Git import. Local web non-test setup uses the monorepo-root `.env.keysNew`; local API setup uses `apps/api/.env.local`. Owner-managed copies may be needed for those local runtimes; preserve original copies and check path references privately. Do not overwrite tracked root web environment files, commit credentials, or copy production secrets merely for tests. Server runtime environment files remain protected under each host's `shared` directory and are linked into the application at activation. GitHub deployment environment variables/secrets are separate from those runtime files. Agent secret-file restrictions above still apply.
+Ignored secret-bearing files are intentionally absent from a new worktree or Git import. Local web non-test setup uses `apps/web/.env.keys`; local API setup uses `apps/api/.env.local`. The owner privately moved the web key file during Phase 5 and requested its filename change from `.env.keysNew` to `.env.keys`; the rename preserved its inode, size and permissions without reading contents. Owner-managed setup is needed for new local runtimes. Do not overwrite tracked web environment files, commit credentials, or copy production secrets merely for tests. Server runtime environment files remain protected under each host's `shared` directory and are linked into the application at activation. GitHub deployment environment variables/secrets are separate from those runtime files. Agent secret-file restrictions above still apply.
 
 ## Environment selection
 
@@ -63,4 +63,4 @@ Common generated or ignored outputs include `apps/web/dist/`, `apps/web/public/d
 
 ## Sibling server repository
 
-`apps/api` contains the imported server exports and API services; read its `AGENTS.md` and operational references. `../explore-lpubelts-com-node` remains frozen and owns production releases until Phase 5. Do not edit that source during the freeze. Cross-repository edits are authorized when required by the current task, but executing its exporters remains live-data approval-gated. Read its `AGENTS.md`, inspect its status, and validate it independently before handoff.
+`apps/api` contains the server exports and API services and now owns production releases; read its `AGENTS.md` and operational references. The owner marked the last old API publication final and made `../explore-lpubelts-com-node` read-only. Preserve it as history; make ongoing fixes in the monorepo. Executing any exporter remains live-data approval-gated. Source retirement does not authorize stopping host processes, deleting releases, changing schedules or removing protected shared state.

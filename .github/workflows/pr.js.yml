@@ -8,7 +8,6 @@ on:
       - 'package-lock.json'
       - '.nvmrc'
       - '.npmrc'
-      - '.env.*'
       - 'AGENTS.md'
       - '.github/workflows/pr.js.yml'
       - 'firebase/**'

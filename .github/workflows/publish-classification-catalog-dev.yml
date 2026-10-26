@@ -16,8 +16,8 @@ defaults:
 
 jobs:
   publish:
-    # Migration hold: live import/upload requires a separately approved release.
-    if: ${{ false }}
+    # Restore manual dispatch on main after the approved Phase 5 transfer.
+    if: ${{ github.ref == 'refs/heads/main' }}
     runs-on: ubuntu-latest
     environment:
       name: github-pages

@@ -43,10 +43,13 @@ describe('Node runtime contract', () => {
     it.each([
         'import.js.yml',
         'publish-classification-catalog-dev.yml'
-    ])('retains the migration hold in %s during API-only authority transfer', async filename => {
+    ])('keeps %s manual and restricted to main after migration', async filename => {
         const workflow = await readRootFile(`../../.github/workflows/${filename}`)
 
-        expect(workflow).toMatch(/^ {4}if: \$\{\{ false \}\}$/m)
+        expect(workflow).toMatch(/^on:\n {2}workflow_dispatch:/m)
+        expect(workflow).not.toMatch(/^ {2}(push|pull_request|workflow_run|schedule):/m)
+        expect(workflow).toContain("if: ${{ github.ref == 'refs/heads/main' }}")
+        expect(workflow).not.toContain('if: ${{ false }}')
     })
 
     it('publishes web only from main and successful same-repository main Import completion', async () => {

@@ -14,7 +14,7 @@ Read this reference when adding tests, modifying test infrastructure, changing c
 
 ## Isolation guarantees
 
-Frontend tests live in `apps/web` and load the unchanged root `.env.test` synthetic values through explicit `envDir`. Root test/e2e commands forward into that workspace; filter paths remain app-relative. The bootstrap rejects deployable Firebase project IDs, non-loopback emulator hosts, live API/data URLs, and Firebase API keys other than the test sentinel.
+Frontend tests live in `apps/web` and load its `.env.test` synthetic values through explicit app-local `envDir`. Root test/e2e commands forward into that workspace; filter paths remain app-relative. Vite test mode excludes `.env.keys`. The environment configuration test uses temporary synthetic fixtures to verify mode/local-file and shell precedence without loading private keys. The bootstrap rejects deployable Firebase project IDs, non-loopback emulator hosts, live API/data URLs, and Firebase API keys other than the test sentinel.
 
 Vitest tests mock `DBContext`; use the dedicated Firebase emulator suite for change-tracker integration. MSW rejects unhandled frontend HTTP requests. Playwright builds in test mode, blocks non-loopback HTTP requests, and requires a clean browser console.
 

@@ -4,7 +4,7 @@ This file applies to `apps/api` in the `lpu-belt-explorer` monorepo, in addition
 
 ## Project overview
 
-`explore-lpubelts-com-node` is the Node.js service and processing repository that supports [lpubelts.com](https://lpubelts.com). It provides Express API endpoints, legacy service routes, Firebase-backed profile access, logging and rate limiting, and cron/one-off jobs that create data consumed by the frontend.
+`apps/api` is the Node.js service and processing workspace that supports [lpubelts.com](https://lpubelts.com), imported from the retired `explore-lpubelts-com-node` source repository. It provides Express API endpoints, legacy service routes, Firebase-backed profile access, logging and rate limiting, and cron/one-off jobs that create data consumed by the frontend.
 
 The main areas are:
 
@@ -18,7 +18,7 @@ The main areas are:
 - `src/testing/`, `src/api/testing/`, and `src/logger/*.test.js`: Vitest and Supertest coverage.
 - `src/data/`: checked-in data used by API services and tests.
 
-The `../web` workspace owns the React frontend; `../../firebase/functions` owns Firebase Cloud Functions. The frozen original API repository remains production release authority until Phase 5. Do not edit it during migration. Run installs from the monorepo root and API scripts with `--workspace=apps/api`; never replace the monorepo root hook with the imported API hook.
+The `../web` workspace owns the React frontend; `../../firebase/functions` owns Firebase Cloud Functions. This monorepo owns production API release authority. The owner marked the old repository's last publication final and subsequently archived it on GitHub (`archived=true` verified); preserve it for history and do not edit it. Run installs from the monorepo root and API scripts with `--workspace=apps/api`; never replace the monorepo root hook with the imported API hook.
 
 ## Agent references
 

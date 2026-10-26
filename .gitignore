@@ -39,6 +39,7 @@ src/data/lockStats.json
 /.env.keys
 .env.keysNew
 /.env.keysNew
+**/.env.*.local
 allure-report/*
 allure-results/*
 playwright-report/*
