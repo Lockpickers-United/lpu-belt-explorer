@@ -1,6 +1,6 @@
 # LPU monorepo — implementation plan and progress
 
-Status: Phase 5 in progress — production preflight
+Status: Phase 5 in progress — production cutover verified; observation underway
 Last updated: 2026-10-25  
 Project definition: [Monorepo overview and migration plan](monorepo-plan.md)  
 Developer report: [Monorepo developer report](monorepo-developer-report.md)
@@ -8,9 +8,9 @@ Developer report: [Monorepo developer report](monorepo-developer-report.md)
 ## Project snapshot
 
 **Outcome:** The active web client and API share the `lpu-belt-explorer` repository with independent, verified releases and room for Devvit and LockyJr.  
-**Current phase:** Phase 5 in progress — production-mode output equivalence and hosted-control inspection completed; owner provisioned `api-production` and required setting names/protections are verified. Question 13 is resolved.
-**Next action:** Prepare the exact final held candidate for authorized publication/CI, certify release artifacts, and complete scoped external-action authorization. Follow the [Phase 5 ledger](monorepo-phase5-runbook.md); preserve migration holds until approved transfer.
-**Overall blocker:** No environment-provisioning blocker remains: question 13 is resolved. Exact final candidate/artifact and private target/recovery checks remain before release. Production release, hold removal, authority transfer, live-data work and retirement remain separately gated. Offline preparation can continue.
+**Current phase:** Phase 5 in progress — API and web/catalog production cutover verified. Seven-day observation started `2026-10-26T03:18:52Z`; earliest retirement review `2026-11-02T03:18:52Z`.
+**Next action:** Review owner question 20 for prepared web-control/test patch and its automatic Pages/seven-catalog publication to both APIs. API activation/verification is complete (questions 17–19); main `44026a8c1c71ee361caf3ab43913361502f97bf7` still has three holds.
+**Overall blocker:** Initial production release gates passed. Seven-day operating/job observation and separately authorized retirement remain; Import/development-catalog holds remain.
 
 | Phase | Status | Completed |
 | --- | --- | --- |
@@ -239,15 +239,19 @@ Make the monorepo the sole release source while preserving the current public UR
 
 ### Findings
 
-- Production-mode relocation comparison passes: 2,754 identical files and seven matching catalog hashes with Node 24.21.0, `publish`, and synthetic sensitive inputs. Exact hosted release artifacts remain pending.
+- Production-mode relocation comparison passes: 2,754 identical files and seven matching catalog hashes with Node 24.21.0, `publish`, and synthetic sensitive inputs. Actual hosted output now verified under question 20; see the release record below.
 - Effective GitHub controls are recorded in [Phase 5 evidence](monorepo-phase5-verification.json). Owner provisioned destination `api-production`; all seven variable/two secret names and matching protection policy are verified, closing question 13. Old API environment has no reviewer/branch policy.
-- [Cutover/retirement ledger](monorepo-phase5-runbook.md) separates held main adoption, API authority transfer/release, automatic site/catalog release, seven-day observation and retirement. Four candidate holds remain intact.
+- [Cutover/retirement ledger](monorepo-phase5-runbook.md) separates held main adoption, API authority transfer/release, automatic site/catalog release, seven-day observation and retirement. API authority/hold transfer is complete under questions 17/18; web publication is complete under question 20; Import/development-catalog holds remain.
 - Held site workflow now selects current main after successful Import completion and records actual checkout SHA, avoiding publication from Import’s stale starting SHA.
+- Question 14 authorized held candidate commit/push: fork `c5080a5a75` passed Linux API CI and downloaded archive verification (15,161 members; unchanged 386 production dependencies). Question 15 authorized normal-merge PR #326 into organization main as `f7041a5eca`; exact main API CI/archive certification passed with all holds retained. Question 16 authorized/passed live target/recovery preflight: active plus two recovery candidates, production readiness/cron and private durable Pages/14-catalog capture verified. Questions 17/18 subsequently completed API authority transfer/activation.
+
+- API-only authority transfer/activation completed under questions 17/18 via PR #333 and production run 40258859190. Exact runtime/public/deployed-byte and owner-reported authenticated verification pass. Web/catalog release completed under question 20 via PR #334/main `684ea9d9e31884742268fd5ed7c5f6605dea9514` and run 40263182081. Pages/output/browser/14-catalog verification pass. Observation is underway; manual-workflow hold restoration and retirement remain separately gated.
 
 ### Tasks
 
-- [ ] Confirm protected environment reviewers, named settings, exact source SHA, artifact hashes, and approved order. Prevent both repositories from deploying or scheduling the same workload concurrently.
-- [ ] Release the API and site in the approved order. Verify PM2/HTTPS readiness, representative authenticated API behavior, catalog content, Pages output, and a browser journey; monitor exports and scheduled jobs without running an extra live job unless separately approved.
+- [x] Confirm effective environment protection policy, named settings, exact source SHA, artifact hashes, and approved order. Old API workflow disabled/drained; single scheduled owner retained. Existing environment policy has no required reviewers.
+- [x] Release and verify the API then site/catalogs in the approved order: runtime/public/owner-reported authenticated checks, Pages output and public browser journey pass.
+- [ ] Complete seven-day normal health/export/scheduled-job observation without extra live jobs; start `2026-10-26T03:18:52Z`, earliest retirement review `2026-11-02T03:18:52Z`.
 - [ ] Keep the previous API release and original repository available through the agreed observation period. Exercise the written rollback procedure if a gate fails; record the actual release IDs and results.
 - [ ] Once stable, disable old release workflows and duplicate schedules, archive the old source repository as appropriate, and update operational docs, branch protection, Dependabot, ownership, and onboarding.
 

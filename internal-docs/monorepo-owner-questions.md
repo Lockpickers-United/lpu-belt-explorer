@@ -311,3 +311,175 @@ This approval is needed because AGENTS.md Working-tree discipline says: “Never
 **Owner answer:** “You can procede to commit and push the held candidate to the existing CI branch.”
 
 Accepted for the reviewed candidate on `monorepo/phase3-npm` in CI fork `mgsecure/lpu-belt-explorer`. Commit/push and automatic API CI/artifact inspection can proceed. All four live holds remain; production and main-branch actions remain separately scoped. **Question 14 is resolved.**
+
+
+## 15. Adopt the held candidate into the production repository
+
+**User input required**
+
+Approve opening a PR from `mgsecure/lpu-belt-explorer:monorepo/phase3-npm` at `c5080a5a75a8074e19e2beb64e74b33ff56a6d98` into `Lockpickers-United/lpu-belt-explorer:main`, then merging that same held candidate after required/available PR checks pass? The destination main was rechecked at `0e3dcba14fef65af722e4499272271639a6ddff5`; recheck before execution and stop for review if either source or destination drifts. Preserve imported sanitized history with a normal merge; do not squash the migration history.
+
+The full adoption contains the reviewed Phase 1 API history import, Phase 2 web relocation, Phase 3 npm/Node alignment and the Phase 4–5 held workflow/documentation updates. All four live-job holds remain unconditional. PR CI runs tests/builds and offline API packaging; held main adoption leaves Pages, Import, development-catalog uploads and monorepo API deployment disabled. Old API source/release authority remains intact. No settings/protection changes or new authorization procedure is proposed. The PR description will document the intended release pause while the held code is on main and the separate API-first activation sequence.
+
+The fork API CI passed for this exact commit: [run 40254583475](https://github.com/mgsecure/lpu-belt-explorer/actions/runs/40254583475). Downloaded archive SHA-256 is `26c3b29f224453005dd36bec1bca51ffb027d81776ea5f0b417a910c98555363`; embedded commit/lock/tool identities, all 15,161 members and the unchanged 386 production dependency locations/versions are verified. A main merge will create a new commit identity; its exact artifact must be recertified before any activation. Fork success is not production-release certification.
+
+AGENTS.md Safety invariants and Working-tree discipline require explicit authorization before opening a PR or publishing/merging. Question 14 authorized only the fork-branch commit/push. Approval here covers held source adoption; authority transfer, hold removal, production deployment, Pages/catalog publication, live-data recovery capture and retirement remain later scoped actions. No PR or main merge has occurred. The agent can provide the full migration diff or draft PR description if useful.
+
+**Status:** Awaiting owner authorization.
+
+**Waiting for input before continuing**
+
+
+### Question 15 — owner authorization received
+
+**Owner answer:** “You have my approval for adoption into the organization repository’s main branch with all holds retained.”
+
+Accepted for the exact held candidate `c5080a5a75a8074e19e2beb64e74b33ff56a6d98` via PR and normal merge into `Lockpickers-United/lpu-belt-explorer:main`, after passing validation and drift checks. Retain all four live holds and old API release authority. Exact resulting main commit and artifact validation remain agent work. **Question 15 is resolved; no further owner answer is needed for held adoption.** This does not authorize production activation or release-control removal.
+
+
+## 16. Production target and recovery preflight before authority transfer
+
+**User input required**
+
+Approve the read-only target/recovery inspection in the Phase 5 runbook's **Next execution scope** for adopted main `f7041a5eca486da7b1a71e133febf060a54d9ba3`? This covers the existing API production host and both configured catalog destinations, plus the currently served Pages tree. Compare existing destination settings privately; read filtered release/PM2/Node/path/cron metadata and readiness identity; verify active plus two complete API recovery candidates; download the prior Pages output and seven existing catalog snapshots from each API environment to private local recovery storage. Retain hashes/identities in the report and keep payloads outside Git. No secret/environment-file content or complete PM2 environment will be printed/copied.
+
+The exact adopted-main Linux API artifact is certified: [CI 40255215188](https://github.com/Lockpickers-United/lpu-belt-explorer/actions/runs/40255215188), archive SHA-256 `98e0d7e5242f977f83bce4d4834978c29c44ff3b11d6f18a7d68ee09632b4073`. All four main holds are independently verified; automatic Build-N-Deploy skipped publication. No production process/workflow/settings change, activation, restart, uploader/exporter, cron execution or retirement is included. Missing recovery material will be reported for a separately reviewed remedy.
+
+This approval is required by [AGENTS.md](../AGENTS.md), Safety invariants: “Production deployments and every live-data script run are approval-gated, including read-only exports.” The [data-safety reference](../.agents/references/firebase-data-safety.md#approval-boundary) likewise requires explicit approval for live read-only exports. The completed held-main adoption does not include live recovery capture. This applies the existing repository policy; it adds no new operational approval mechanism. The agent can provide further command/data-scope details if useful.
+
+**Status:** Awaiting owner authorization; no production host inspection or snapshot capture has run in this turn.
+
+**Waiting for input before continuing**
+
+
+### Question 16 — owner authorization received
+
+**Owner answer:** “I Approve the read-only target/recovery inspection in the Phase 5 runbook's Next execution scope.”
+
+Approved filtered production target/release/PM2/Node/path/cron/readiness inspection, active-plus-two recovery verification, and private local copies of the existing Pages output and seven catalog snapshots from each API environment. No workflow disablement, hold removal, host write, restart, deployment, uploader/exporter/cron execution or retirement is authorized. **Question 16 is resolved; execution results remain to be recorded.**
+
+
+### Question 16 — execution complete
+
+Read-only target/recovery preflight passed. All seven variable values/target controls match; active and selected two rollback release structures/provenance pass; actual-listener/HTTPS readiness identify the frozen release; one cron owner per runner; current Pages and 14 catalogs retained/hash-verified in private durable local storage. No remote mutation or production-control change occurred. Question 17 below presents the next concrete authority-control patch for review.
+
+
+## 17. Transfer API dispatch authority and prepare the API-only control commit
+
+**User input required**
+
+Approve these concrete next actions, based on adopted main `f7041a5eca486da7b1a71e133febf060a54d9ba3` and the passed question 16 preflight?
+
+1. Recheck source/main/target/recovery identities and all pages of old/new API deployment runs immediately before transfer. Stop on drift or unresolved deployment activity.
+2. Disable only old API deployment workflow **`357527280`** in **`Lockpickers-United/explore-lpubelts-com-node`**, then confirm disabled and drained. Preserve its repository, settings, releases, process, runtime data and cron schedules. Do not archive or shut down anything.
+3. Only after that gate, apply the one-file API control patch below on a new `monorepo/phase5-api-authority` branch from the confirmed organization main, commit/push it to the existing CI fork, open its PR to organization main, run validation and normal-merge after checks pass. Keep the web, Import and development-catalog holds. Certify the resulting exact main API artifact through offline API CI.
+
+```diff
+--- a/.github/workflows/api-deploy-production.yml
++++ b/.github/workflows/api-deploy-production.yml
+@@ -1,4 +1,4 @@
+-name: API deploy production (migration hold)
++name: API deploy production
+
+ on:
+   workflow_dispatch:
+@@ -61,8 +61,6 @@
+         run: npm run validate:api
+
+   deploy:
+-    # Phase 5 must explicitly remove this hold after old release authority is disabled.
+-    if: ${{ false }}
+     name: Upload and activate release
+     needs: verify
+     runs-on: ubuntu-22.04
+```
+
+Patch SHA-256: `c203a742d86e62aacd032a14432be582f7fad9dd431cee1a8b9299116df700db`. Proposed YAML and all **10 Bash blocks** pass syntax validation; manual confirmation/main-only guard, `api-production`, concurrency and the other three live holds remain unchanged. The patch is prepared outside the working tree and has **not** been applied. This enables manual API dispatch authority only; **do not dispatch production deployment** under this approval. Present the resulting exact control commit/artifact and recovery identities for activation approval afterward.
+
+Recovery preflight passed: production current is `2fa33cfbe0ba5376ca0ad503bc528164ebf33194-40152214333-1`; selected complete rollback releases are `1346063b1b95ff07e0e5cc82079a4712ee55af3f-40103339171-1` and `4fe7280771588098afd3624813a9f5d25769aad9-40053388046-1`, each with successful prior deployment provenance. All 14 live catalogs and the 2,755-file current Pages tree are retained in private durable local storage, with hashes in Phase 5 evidence. One older incomplete API release is explicitly excluded; nothing was deleted. The current listener and public HTTPS readiness both identify the frozen production release; cron has one owner per runner.
+
+This approval is required by [AGENTS.md](../AGENTS.md), Safety invariants/Working-tree discipline, which require explicit authorization for external publication/PR and production-control changes. Question 16 authorized inspection/capture only. This follows the previously accepted no-overlap sequence and existing manual release procedure; it adds no authorization policy. If control preparation fails after old dispatch is disabled, leave the service running and report the state; do not re-enable an overlapping authority or deploy as an unapproved recovery action. The agent can provide more detail if useful.
+
+**Status:** Awaiting owner authorization; all four holds and old dispatch authority remain intact.
+
+**Waiting for input before continuing**
+
+
+### Question 17 — owner authorization received
+
+**Owner answer:** “For owner question Transfer API dispatch authority and prepare the API-only control commit: You have approval to procede.”
+
+Approved the reviewed freshness checks, old workflow 357527280 disable/drain, exact API-only patch on a new branch, fork publication/PR/normal merge after passing checks and exact resulting main artifact certification. Preserve the other three holds, running production service, settings, schedules, recovery releases and original source. **Question 17 is resolved. Production deployment remains excluded and requires its exact commit/artifact approval afterward.**
+
+
+### Question 17 — necessary contract-test scope extension approved
+
+Initial PR #333 API CI failed one of 478 tests: `apps/api/src/config/nodeRuntimeContract.test.js` still asserted the API migration hold that question 17 removes. The owner answered: “You have approval for a small scope extension.”
+
+Approved adding the focused contract-test update alongside the reviewed workflow patch. Keep all Node/runtime assertions; replace the obsolete hold expectation with checks for manual confirmation, main-only deployment, `api-production`, enabled API job and each of the other three workflow holds. Targeted lint and all five focused test cases pass. This is a two-file PR with no additional runtime/dependency/authorization-policy change; production deployment remains excluded.
+
+
+### Question 17 — authority transfer and certification complete
+
+PR #333 normal-merged as `44026a8c1c71ee361caf3ab43913361502f97bf7` after corrected API CI passed. Old API workflow remains disabled/drained; three other holds remain. Exact-main offline API CI 40258112958 and downloaded artifact verification passed (archive SHA-256 `93d55afd88e7f188b22bd8a7efe1c3823d2ef3feef0e5651f4dc6e75fc12008c`, 15,161 members, all 386 prior dependency versions/locations unchanged). API dispatch authority is transferred; no deployment occurred under question 17 approval.
+
+## 18. API-only production activation — owner approval received
+
+**Owner answer:** “I approve the commit for API-only activation.”
+
+Accepted for exact main `44026a8c1c71ee361caf3ab43913361502f97bf7`, the commit just presented with successful exact-main certification. Use only existing `API deploy production` workflow 396550668 in `Lockpickers-United/lpu-belt-explorer`, `main`, confirmation `deploy-production`, existing `api-production` targets and PM2/current/shared arrangement. Recheck source/target/recovery/run freshness, then activate API only and verify readiness/release/Git identity/public behavior; use the reviewed API rollback if activation fails and verify recovery. Preserve web/Import/development-catalog holds and old workflow disablement. No Pages/catalog publication, extra live job, Firebase deployment or retirement is authorized. **Question 18 is resolved; production execution and results are pending.**
+
+The existing deployment workflow rebuilds its archive from the exact approved source/lock and performs packaging/checksum/host validation. Its runtime archive checksum will be recorded separately; the certified CI archive hash is provenance and is not assumed identical to a rebuilt archive.
+
+## 19. Authenticated owner/admin verification method
+
+**User input required**
+
+For the required authenticated owner/admin API checks after activation, will the owner perform them in an existing signed-in production session, or should the agent use an existing authenticated browser session? Verify an owner read of their own `/api/v1/users/:id/profile` and admin access handling through a deliberately nonexistent synthetic profile ID (expected not-found after passing admin authorization), without copying response bodies or credentials. Do not create users, change claims, bypass authentication, or write user data. Existing public/anonymous denial checks remain agent work.
+
+Activation approval in question 18 remains valid; independent deployment preparation/public checks continue. This requests a verification method/access clarification, not another deployment approval or a new authorization policy. The agent can provide exact read-only steps if useful.
+
+Coninuing with current task, please respond when possible.
+
+
+### Question 18 — API-only activation completed
+
+Production run [40258859190](https://github.com/Lockpickers-United/lpu-belt-explorer/actions/runs/40258859190) succeeded for approved `44026a8c1c71ee361caf3ab43913361502f97bf7`; active release `44026a8c1c71ee361caf3ab43913361502f97bf7-40258859190-1`, activation step completed `2026-10-26T02:25:13Z`. Independent runtime/readiness/public/anonymous checks pass; all 13,175 comparable deployed records match the certified artifact. Catalogs/Pages/schedules and previous recovery releases remain intact. Three holds and old API workflow disablement remain. No rollback was needed. The existing workflow verified upload integrity but removed the physical runtime archive/checksum before its hash value could be captured; CI gzip hash is not presented as that runtime gzip hash.
+
+**Question 19 remains pending:** authenticated owner/admin verification method/access has not been answered. No further deployment approval is requested for the completed API activation. Web/catalog publication and full-cutover observation remain future steps.
+
+
+### Question 19 — owner verification complete
+
+**Owner answer:** “I have verified an owner read of my own /api/v1/users/:id/profile and admin access handling through a deliberately nonexistent synthetic profile ID. Various other read-only scenarios returned expected results.”
+
+**Question 19 is resolved.** Authenticated owner/admin reads pass based on the owner's report; the agent did not observe the session or capture tokens/private responses. No additional HTTP codes are invented. Together with independent runtime/public/anonymous checks, this closes the API verification gate. No extra API deployment or authentication/claim change is required. Web/catalog release remains separately authorized.
+
+
+## 20. Web control release, automatic Pages publication and both catalog targets
+
+**Owner approved**
+
+Approve this concrete release from current main **`44026a8c1c71ee361caf3ab43913361502f97bf7`**, now that API activation and authenticated verification are complete?
+
+1. Recheck source/main, approved API release `44026a8c1c71ee361caf3ab43913361502f97bf7-40258859190-1`, target settings, release queues, retained Pages `a22c44cb301eb3df5a33f8cb940c7494da5cfc97`, all 14 catalog recovery hashes and required API recovery releases. Stop on drift or unresolved conflicting publication/deployment activity.
+2. Apply the prepared **two-file** web-control/test patch on isolated `monorepo/phase5-web-release`, commit/push to the existing CI fork, open its PR to organization main, validate and normal-merge after checks pass. Patch SHA-256: **`33929439c5e1c59eec5882d1a9d69f1d35af2c8082ace0f25009d33e0265fad8`**. Full machine-applicable diff and expected seven catalog hashes are in `monorepo-phase5-verification.json` → `webControlReview`.
+3. **That merge itself triggers automatic `Build-N-Deploy`:** compile the web production release using unchanged `github-pages` settings (`publish` stage), publish Pages, then replace **seven snapshots in each API environment (14 writes total)** using the existing verified/atomic upload procedure. Approval must cover all these existing effects, even though the snapshot content hashes are expected to remain identical. Record actual checkout/source SHA, workflow run, Pages commit/output and catalog hashes; verify compiled production API URL/stage and public/browser/read-only behavior. No new live exporter or Sheet import is included; `ci-build` here is the existing release workflow's inspected local static-generation/build/copy sequence.
+4. If release verification fails, restore the retained previous Pages tree through an ordinary recovery publication and the exact prior catalog snapshots in both targets as needed; verify that recovery. This authorization concerns Pages/catalog recovery, not another API deployment or API authority re-enable. Preserve the active API and selected rollback releases. Keep Import and development-catalog jobs held. Do not dispatch Import, an uploader job, cron/export, Firebase deployment or retirement.
+
+The workflow condition restores main-only push/manual publication and permits `workflow_run` only for successful main Import completion whose head repository matches the organization repository. Existing current-main checkout/actual-SHA recording, manual stage selection, Pages-first/catalog-second ordering, target paths/settings and API manual controls remain unchanged. The contract test retains runtime/API assertions, replaces its obsolete web-hold assertion with **12 event/branch/repository cases**, and retains the Import/development-catalog hold assertions. No application runtime, dependency, auth/rules, target-setting or generated catalog-data change is proposed.
+
+Preparation passed in an isolated preview: targeted ESLint, five focused cases (including the 12-scenario web guard), four YAML documents and 28 Bash blocks. Neither source working tree nor live hold has been changed. Web sources/manifests/root lock/Node/env inputs have **zero changes** since the earlier pinned production comparison; its seven catalog hashes match every current retained live snapshot. That comparison used synthetic sensitive inputs and is historical; actual hosted release output must be verified during this approved publication. The existing API remains deployed from `44026a8c…` even though the subsequent independent web release has a new main SHA.
+
+[AGENTS.md](../AGENTS.md) Safety invariants and the [data-safety reference](../.agents/references/firebase-data-safety.md#generated-artifacts) require explicit authorization for this publication and both catalog destinations. Question 18 authorized API-only activation; questions 17–19 do not authorize this web merge/publication. This request preserves the previously accepted release procedure and sequence; it adds no authorization policy. The agent can show any part of the two-file diff or hash table if useful.
+
+**Owner answer:** “I approve the concrete release from current main 44026a8c1c71ee361caf3ab43913361502f97bf7.”
+
+**Status:** Question 20 resolved. Approved two-file commit/push/PR/merge, automatic Pages and both catalog-target publication, verification and scoped recovery. Execution pending; all other holds remain.
+
+Execution proceeding under the recorded approval.
+
+
+### Question 20 execution result
+
+**Resolved and executed.** PR #334 merged as `684ea9d9e31884742268fd5ed7c5f6605dea9514`; production web run 40263182081 succeeded. Actual Pages `8c30aacf36a6d0d656dd18105541c3ca57647282`, compiled production settings, browser checks, all 14 catalog hashes and unchanged approved API release verified. No recovery needed. Observation began `2026-10-26T03:18:52Z`, earliest retirement review `2026-11-02T03:18:52Z`. Import/development-catalog holds remain. No further input is needed for this completed release; restoring those held workflows and eventual retirement still require separate authorization. See the runbook/report/Phase 5 JSON for full evidence.

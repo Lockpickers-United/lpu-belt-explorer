@@ -2,7 +2,7 @@
 
 ## Monorepo boundary
 
-Source now lives at `<monorepo>/apps/api`. Release archives and development SFTP mappings place that package’s contents directly at the existing application roots. Host `current`, `current-dev`, PM2 entry points and shared state paths stay stable. The original API repository remains the release authority until the approved Phase 5 transfer.
+Source now lives at `<monorepo>/apps/api`. Release archives and development SFTP mappings place that package’s contents directly at the existing application roots. Host `current`, `current-dev`, PM2 entry points and shared state paths stay stable. Manual API release authority transferred to the monorepo in approved Phase 5 PR #333 after disabling/draining the original API workflow. The original repository remains frozen and retained for recovery. API-only activation is recorded in the root Phase 5 runbook; this does not authorize web/catalog publication or retirement.
 
 ## Confirmed environment map
 
@@ -97,3 +97,6 @@ exist and retain it after cutover. Once the new hostname is healthy and verified
 change the frontend API base URL to `https://api.lpubelts.com`.
 
 For the monorepo cutover, the owner approved a seven-day observation interval after cutover. Keep the previous backend available throughout; retirement still requires separate authorization and recorded health/job evidence. Confirm that running both versions does not duplicate cron jobs, exports, emails, or other scheduled side effects.
+
+
+Monorepo cutover verified on 2026-10-26 UTC: API release `44026a8c1c71ee361caf3ab43913361502f97bf7-40258859190-1` remains active; web source `684ea9d9e31884742268fd5ed7c5f6605dea9514` published through run 40263182081. Production URLs, shared paths, PM2 name, pinned Node and single-owner schedules remain unchanged. Old API workflow is disabled; Import/development-catalog jobs remain held. Observation starts `2026-10-26T03:18:52Z`, earliest retirement review `2026-11-02T03:18:52Z`; previous backend/recovery artifacts remain available and retirement requires separate approval.

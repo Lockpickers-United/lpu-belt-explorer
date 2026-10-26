@@ -1,10 +1,10 @@
 {
   "phase": 5,
-  "status": "in_progress",
+  "status": "in_progress_observation",
   "date": "2026-10-25",
-  "candidateCommit": "2725290cb7ddfa284113f7bb570992e9986fe6b0",
-  "productionCutoverExecuted": false,
-  "observationStartedAt": null,
+  "candidateCommit": "44026a8c1c71ee361caf3ab43913361502f97bf7",
+  "productionCutoverExecuted": true,
+  "observationStartedAt": "2026-10-26T03:18:52Z",
   "retirementExecuted": false,
   "productionBuildComparison": {
     "result": "passed",
@@ -468,7 +468,7 @@
       }
     }
   },
-  "ownerQuestion": 13,
+  "ownerQuestion": null,
   "validation": {
     "workflow": {
       "result": "passed",
@@ -559,7 +559,7 @@
     "present": true,
     "passed": true
   },
-  "ownerQuestionStatus": "resolved",
+  "ownerQuestionStatus": "Question 20 approved and executed; no pending release question",
   "heldCandidateReview": {
     "baseCommit": "2725290cb7ddfa284113f7bb570992e9986fe6b0",
     "branch": "monorepo/phase3-npm",
@@ -600,8 +600,1750 @@
     "frozenApiLocalHead": "2fa33cfbe0ba5376ca0ad503bc528164ebf33194",
     "frozenApiLocalTrackedAndUntrackedClean": true,
     "publicationAuthorized": true,
-    "finalCommit": null,
-    "exactFinalLinuxArtifact": null,
+    "finalCommit": "c5080a5a75a8074e19e2beb64e74b33ff56a6d98",
+    "exactFinalLinuxArtifact": {
+      "scope": "Exact held fork candidate, not a future main merge or deployed release",
+      "runId": 40254583475,
+      "runUrl": "https://github.com/mgsecure/lpu-belt-explorer/actions/runs/40254583475",
+      "conclusion": "success",
+      "artifactId": 12622225851,
+      "zipSha256": "0ff6bb235c80357d10dc4a81bee8312f407145157a9f7a9a6b2c089a7c98f18c",
+      "validatedArchiveMembers": 15161,
+      "comparison": {
+        "archiveSha256": "26c3b29f224453005dd36bec1bca51ffb027d81776ea5f0b417a910c98555363",
+        "identity": {
+          "monorepoCommit": "c5080a5a75a8074e19e2beb64e74b33ff56a6d98",
+          "monorepoLockSha256": "e77fbfa67cbef1c1f0fbb1b3b2c6b9ca59449abdd6b0ea8d8a446975b388bfeb",
+          "sourceApiManifestSha256": "8e807c20258944087999acc87bd3b55140f86e2d95e56f643e2cfceb76f325f0",
+          "nodeVersion": "24.21.0",
+          "npmVersion": "11.19.0",
+          "installStrategy": "nested"
+        },
+        "priorYarnProductionCount": 386,
+        "npmProductionCount": 386,
+        "missing": [],
+        "added": [],
+        "changedVersions": [],
+        "nativeSharp": [
+          {
+            "path": "node_modules/@img/sharp-linux-x64/lib/sharp-linux-x64-0.35.4.node",
+            "elfMagic": true,
+            "bits": 64,
+            "machine": 62
+          }
+        ]
+      }
+    },
     "authorization": "Owner explicitly authorized committing and pushing the held candidate to the existing CI branch; question 14 resolved."
-  }
+  },
+  "heldCandidatePublication": {
+    "commit": "c5080a5a75a8074e19e2beb64e74b33ff56a6d98",
+    "repository": "mgsecure/lpu-belt-explorer",
+    "branch": "monorepo/phase3-npm",
+    "push": "passed",
+    "commitHooks": {
+      "webTestFiles": 52,
+      "webTests": 280,
+      "apiLint": "passed",
+      "apiTestFiles": 92,
+      "apiTests": 478
+    },
+    "destinationMainObserved": "0e3dcba14fef65af722e4499272271639a6ddff5",
+    "productionMainAdoptionExecuted": true,
+    "ownerQuestion14": "resolved",
+    "ownerQuestion15": "resolved; owner approved held main adoption",
+    "postPublicationDocumentation": "uncommitted local progress updates"
+  },
+  "mainAdoption": {
+    "authorization": "Owner approved adoption into organization main with all holds retained; question 15 resolved",
+    "pr": 326,
+    "prUrl": "https://github.com/Lockpickers-United/lpu-belt-explorer/pull/326",
+    "mergeCommit": "f7041a5eca486da7b1a71e133febf060a54d9ba3",
+    "previousMain": "0e3dcba14fef65af722e4499272271639a6ddff5",
+    "sourceCommit": "c5080a5a75a8074e19e2beb64e74b33ff56a6d98",
+    "tree": "d88646bae24077caaf9ab05a1f1a56754927184b",
+    "sourceTreeMatches": true,
+    "mergeAncestryVerified": true,
+    "unconditionalLiveHolds": 4,
+    "apiEnvironment": "api-production",
+    "webPrCheck": {
+      "runId": 40254993618,
+      "conclusion": "success"
+    },
+    "apiPrCheck": {
+      "runId": 40254993636,
+      "conclusion": "success"
+    },
+    "heldWebPush": {
+      "runId": 40255201268,
+      "conclusion": "skipped"
+    },
+    "mainApiCi": {
+      "runId": 40255215188,
+      "event": "workflow_dispatch",
+      "conclusion": "success",
+      "artifactId": 12622287416,
+      "zipSha256": "36a27795ade6fe40cfd5b8c06b12506c78992715e5c0d84071a83dcec76dfe99",
+      "validatedMembers": 15161,
+      "comparison": {
+        "archiveSha256": "98e0d7e5242f977f83bce4d4834978c29c44ff3b11d6f18a7d68ee09632b4073",
+        "identity": {
+          "monorepoCommit": "f7041a5eca486da7b1a71e133febf060a54d9ba3",
+          "monorepoLockSha256": "e77fbfa67cbef1c1f0fbb1b3b2c6b9ca59449abdd6b0ea8d8a446975b388bfeb",
+          "sourceApiManifestSha256": "8e807c20258944087999acc87bd3b55140f86e2d95e56f643e2cfceb76f325f0",
+          "nodeVersion": "24.21.0",
+          "npmVersion": "11.19.0",
+          "installStrategy": "nested"
+        },
+        "priorYarnProductionCount": 386,
+        "npmProductionCount": 386,
+        "missing": [],
+        "added": [],
+        "changedVersions": [],
+        "nativeSharp": [
+          {
+            "path": "node_modules/@img/sharp-linux-x64/lib/sharp-linux-x64-0.35.4.node",
+            "elfMagic": true,
+            "bits": 64,
+            "machine": 62
+          }
+        ]
+      }
+    },
+    "dependabotUpdateFailuresObserved": [
+      {
+        "id": 40255223273,
+        "name": "npm_and_yarn in /. for proxy-addr - Update #1652511251",
+        "status": "completed",
+        "conclusion": "failure",
+        "event": "dynamic",
+        "sha": "f7041a5eca486da7b1a71e133febf060a54d9ba3",
+        "url": "https://github.com/Lockpickers-United/lpu-belt-explorer/actions/runs/40255223273"
+      },
+      {
+        "id": 40255223185,
+        "name": "npm_and_yarn in /. for @fastify/busboy - Update #1652511253",
+        "status": "completed",
+        "conclusion": "failure",
+        "event": "dynamic",
+        "sha": "f7041a5eca486da7b1a71e133febf060a54d9ba3",
+        "url": "https://github.com/Lockpickers-United/lpu-belt-explorer/actions/runs/40255223185"
+      },
+      {
+        "id": 40255221512,
+        "name": "npm_and_yarn in /. for body-parser - Update #1652511237",
+        "status": "completed",
+        "conclusion": "failure",
+        "event": "dynamic",
+        "sha": "f7041a5eca486da7b1a71e133febf060a54d9ba3",
+        "url": "https://github.com/Lockpickers-United/lpu-belt-explorer/actions/runs/40255221512"
+      },
+      {
+        "id": 40255221548,
+        "name": "npm_and_yarn in /. for ip-address - Update #1652511236",
+        "status": "completed",
+        "conclusion": "failure",
+        "event": "dynamic",
+        "sha": "f7041a5eca486da7b1a71e133febf060a54d9ba3",
+        "url": "https://github.com/Lockpickers-United/lpu-belt-explorer/actions/runs/40255221548"
+      }
+    ],
+    "localMainReconciled": false,
+    "liveAuthorityTransferred": false,
+    "nextOwnerQuestion": 17
+  },
+  "recoveryPreflight": {
+    "authorization": "Owner question 16 explicitly approved read-only target/recovery inspection",
+    "result": "passed",
+    "capturedAt": "2026-10-26T01:50:56.449Z",
+    "captureCompletedAt": "2026-10-26T01:51:13.816Z",
+    "readinessVerifiedAt": "2026-10-26T01:53:23.592Z",
+    "workflowInventoryAt": "2026-10-26T01:54:22.704Z",
+    "privateRecoveryDirectory": "/Users/nealbayless/LOCAL/monorepo-recovery/phase5-20261026T015056Z",
+    "durableFilesVerified": 26,
+    "localPermissions": {
+      "directories": "0700",
+      "files": "0600"
+    },
+    "targetSettings": {
+      "variables": [
+        {
+          "name": "SFTP_HOST",
+          "presentInSource": true,
+          "presentInDestination": true,
+          "valuesMatch": true
+        },
+        {
+          "name": "SFTP_PORT",
+          "presentInSource": true,
+          "presentInDestination": true,
+          "valuesMatch": true
+        },
+        {
+          "name": "SFTP_USER",
+          "presentInSource": true,
+          "presentInDestination": true,
+          "valuesMatch": true
+        },
+        {
+          "name": "DEPLOY_ROOT",
+          "presentInSource": true,
+          "presentInDestination": true,
+          "valuesMatch": true
+        },
+        {
+          "name": "REMOTE_NODE_BIN",
+          "presentInSource": true,
+          "presentInDestination": true,
+          "valuesMatch": true
+        },
+        {
+          "name": "PM2_APP_NAME",
+          "presentInSource": true,
+          "presentInDestination": true,
+          "valuesMatch": true
+        },
+        {
+          "name": "HEALTHCHECK_URL",
+          "presentInSource": true,
+          "presentInDestination": true,
+          "valuesMatch": true
+        }
+      ],
+      "requiredSecretNames": [
+        {
+          "name": "SFTP_PRIVATE_KEY",
+          "inSource": true,
+          "inDestination": true
+        },
+        {
+          "name": "SFTP_KNOWN_HOSTS",
+          "inSource": true,
+          "inDestination": true
+        }
+      ],
+      "protectionPolicyMatches": true,
+      "secretValuesCompared": false,
+      "expected": {
+        "productionRoot": true,
+        "pinnedNode": true,
+        "process": true,
+        "publicReadiness": true,
+        "webProductionRoot": true,
+        "webDevelopmentRoot": true,
+        "webStagePublish": true,
+        "webSshTargetMatches": true,
+        "existingSshAliasMatches": true
+      },
+      "passed": true,
+      "safeReadOnlyTarget": true
+    },
+    "sources": {
+      "main": "f7041a5eca486da7b1a71e133febf060a54d9ba3",
+      "frozenApi": "2fa33cfbe0ba5376ca0ad503bc528164ebf33194",
+      "mainMatches": true,
+      "frozenMatches": true
+    },
+    "current": {
+      "target": "/home/lpubelts_api/apps/api-server-prod/releases/2fa33cfbe0ba5376ca0ad503bc528164ebf33194-40152214333-1",
+      "process": {
+        "name": "lpubelts-api-server-prod-next",
+        "status": "online",
+        "cwd": "/home/lpubelts_api/apps/api-server-prod/current",
+        "script": "/home/lpubelts_api/apps/api-server-prod/current/src/lpubeltsApiServer.js",
+        "nodeVersion": "24.21.0",
+        "interpreter": "node",
+        "releaseId": "2fa33cfbe0ba5376ca0ad503bc528164ebf33194-40152214333-1",
+        "gitSha": "2fa33cfbe0ba5376ca0ad503bc528164ebf33194",
+        "nodeEnv": "production"
+      },
+      "configuredNode": {
+        "present": true,
+        "resolvesToPinnedBinary": true,
+        "version": "v24.21.0"
+      },
+      "checks": {
+        "configuredNodeProvidesPinnedPatch": true,
+        "currentIsSpecificRelease": true,
+        "pinnedLinuxNode": true,
+        "sharedOutsideRelease": true,
+        "productionOnline": true,
+        "processStablePaths": true,
+        "productionEnvironment": true,
+        "runtimePathsSeparated": true,
+        "activeReleaseComplete": true,
+        "twoCompleteRollbackCandidates": true,
+        "singleScheduledOwner": true
+      },
+      "runtimePaths": {
+        "catalogSettingPresent": true,
+        "collectionDataSettingPresent": true,
+        "catalogWithinShared": true,
+        "collectionDataWithinShared": true,
+        "catalogReadable": true,
+        "requiredGeneratedFilesPresent": true
+      }
+    },
+    "readiness": {
+      "observedAt": "2026-10-26T01:53:23.592Z",
+      "checks": {
+        "actualListenerReadyIdentity": true,
+        "publicHttpsReadyIdentity": true,
+        "productionMetadataFrozenIdentity": true
+      },
+      "errors": [],
+      "listener": {
+        "metadataAvailable": true,
+        "matchingProductionListeners": 1,
+        "configuredHostContainsOuterWhitespace": false,
+        "configuredPortContainsOuterWhitespace": false,
+        "binding": "specific-host-address",
+        "matchesTrimmedConfiguredHost": false,
+        "nodeFetchRejectedBadPort": true,
+        "readinessClient": "node:http"
+      },
+      "actualListener": {
+        "status": 200,
+        "ready": true,
+        "environment": "production",
+        "releaseId": "2fa33cfbe0ba5376ca0ad503bc528164ebf33194-40152214333-1",
+        "gitSha": "2fa33cfbe0ba5376ca0ad503bc528164ebf33194"
+      },
+      "publicHttps": {
+        "status": 200,
+        "ready": true,
+        "environment": "production",
+        "releaseId": "2fa33cfbe0ba5376ca0ad503bc528164ebf33194-40152214333-1",
+        "gitSha": "2fa33cfbe0ba5376ca0ad503bc528164ebf33194"
+      }
+    },
+    "cron": [
+      {
+        "job": "runFetchAnalyzeLogs.js",
+        "totalEntries": 1,
+        "productionEntries": 1,
+        "developmentEntries": 0,
+        "pinnedNodeAndProduction": true,
+        "cronArgument": true
+      },
+      {
+        "job": "runCollectionExportAnalysis.js",
+        "totalEntries": 1,
+        "productionEntries": 1,
+        "developmentEntries": 0,
+        "pinnedNodeAndProduction": true,
+        "cronArgument": true
+      }
+    ],
+    "releaseInventory": {
+      "total": 15,
+      "structurallyComplete": 14,
+      "selectedRollbackCandidates": [
+        {
+          "releaseId": "1346063b1b95ff07e0e5cc82079a4712ee55af3f-40103339171-1",
+          "runId": 40103339171,
+          "sha": "1346063b1b95ff07e0e5cc82079a4712ee55af3f",
+          "conclusion": "success",
+          "workflowHeadMatches": true,
+          "url": "https://github.com/Lockpickers-United/explore-lpubelts-com-node/actions/runs/40103339171",
+          "hostVerification": {
+            "name": "1346063b1b95ff07e0e5cc82079a4712ee55af3f-40103339171-1",
+            "active": false,
+            "releaseId": "1346063b1b95ff07e0e5cc82079a4712ee55af3f-40103339171-1",
+            "gitSha": "1346063b1b95ff07e0e5cc82079a4712ee55af3f",
+            "monorepoCommit": null,
+            "checks": {
+              "apiManifest": true,
+              "entryPresent": true,
+              "jobFilesPresent": true,
+              "productionDependencies": true,
+              "sharpManifestPresent": true,
+              "dependencyTreeNotShared": true,
+              "lockPresent": true,
+              "requiredDependencyManifestsPresent": true,
+              "entryJobSyntax": true,
+              "sharedEnvironmentLink": true
+            },
+            "packageCount": 386,
+            "missingRequiredDependencies": [],
+            "syntax": [
+              {
+                "file": "src/lpubeltsApiServer.js",
+                "passed": true
+              },
+              {
+                "file": "scripts/runFetchAnalyzeLogs.js",
+                "passed": true
+              },
+              {
+                "file": "scripts/runCollectionExportAnalysis.js",
+                "passed": true
+              }
+            ],
+            "manifestSha256": "23139a27bf2867f108e0fec61bfaa9fdcd4ecfc61d0ffdcf84fb4cb5128b3a63",
+            "entrySha256": "6da98e371f4cf0ffd9a7983b03180e70d8181eac0c84cc8afec44518835d307a",
+            "complete": true
+          }
+        },
+        {
+          "releaseId": "4fe7280771588098afd3624813a9f5d25769aad9-40053388046-1",
+          "runId": 40053388046,
+          "sha": "4fe7280771588098afd3624813a9f5d25769aad9",
+          "conclusion": "success",
+          "workflowHeadMatches": true,
+          "url": "https://github.com/Lockpickers-United/explore-lpubelts-com-node/actions/runs/40053388046",
+          "hostVerification": {
+            "name": "4fe7280771588098afd3624813a9f5d25769aad9-40053388046-1",
+            "active": false,
+            "releaseId": "4fe7280771588098afd3624813a9f5d25769aad9-40053388046-1",
+            "gitSha": "4fe7280771588098afd3624813a9f5d25769aad9",
+            "monorepoCommit": null,
+            "checks": {
+              "apiManifest": true,
+              "entryPresent": true,
+              "jobFilesPresent": true,
+              "productionDependencies": true,
+              "sharpManifestPresent": true,
+              "dependencyTreeNotShared": true,
+              "lockPresent": true,
+              "requiredDependencyManifestsPresent": true,
+              "entryJobSyntax": true,
+              "sharedEnvironmentLink": true
+            },
+            "packageCount": 386,
+            "missingRequiredDependencies": [],
+            "syntax": [
+              {
+                "file": "src/lpubeltsApiServer.js",
+                "passed": true
+              },
+              {
+                "file": "scripts/runFetchAnalyzeLogs.js",
+                "passed": true
+              },
+              {
+                "file": "scripts/runCollectionExportAnalysis.js",
+                "passed": true
+              }
+            ],
+            "manifestSha256": "23139a27bf2867f108e0fec61bfaa9fdcd4ecfc61d0ffdcf84fb4cb5128b3a63",
+            "entrySha256": "6da98e371f4cf0ffd9a7983b03180e70d8181eac0c84cc8afec44518835d307a",
+            "complete": true
+          }
+        }
+      ],
+      "excludedIncomplete": [
+        {
+          "releaseId": "3656c924298d05ee21ffa34098f38ec821e5cf89-39672912437-1",
+          "failedChecks": [
+            "sharpManifestPresent",
+            "requiredDependencyManifestsPresent"
+          ],
+          "excludedFromRecoverySelection": true
+        }
+      ],
+      "nativeReactivationTestPerformed": false,
+      "structuralVerificationScope": "API/job source and syntax; local production dependency trees; required dependency manifests; Sharp manifest; lockfile presence; shared environment symlink. No dependency version/lock re-resolution, native execution or recovery activation."
+    },
+    "catalogSnapshots": [
+      {
+        "environment": "production",
+        "name": "awards.json",
+        "present": true,
+        "bytes": 8227,
+        "sha256": "944941583443048560ff7622754101e1e93947551337300cf102f7e1e5822e65",
+        "matchesObservedRemote": true,
+        "jsonValid": true,
+        "remoteUnchangedAfterCopy": true
+      },
+      {
+        "environment": "production",
+        "name": "data.json",
+        "present": true,
+        "bytes": 2838590,
+        "sha256": "869e864b97bb3481116c53711f826427016842b60f74674e31a9668c42cd5365",
+        "matchesObservedRemote": true,
+        "jsonValid": true,
+        "remoteUnchangedAfterCopy": true
+      },
+      {
+        "environment": "production",
+        "name": "safelocks.json",
+        "present": true,
+        "bytes": 99684,
+        "sha256": "1fca7751ed5dcc4c774e07c49cccccddc7c53468f3126069f18a949515f7728a",
+        "matchesObservedRemote": true,
+        "jsonValid": true,
+        "remoteUnchangedAfterCopy": true
+      },
+      {
+        "environment": "production",
+        "name": "glossary.json",
+        "present": true,
+        "bytes": 145218,
+        "sha256": "57bcac6a4b084330781266437fb3cca3bf9bcfb27bc894d1843f8d09dcc42b61",
+        "matchesObservedRemote": true,
+        "jsonValid": true,
+        "remoteUnchangedAfterCopy": true
+      },
+      {
+        "environment": "production",
+        "name": "projects.json",
+        "present": true,
+        "bytes": 16755,
+        "sha256": "84bef237fc14e22d5d2c9bca04c7cb5fb2b295bcd999bd9597b6f166f78f8cf2",
+        "matchesObservedRemote": true,
+        "jsonValid": true,
+        "remoteUnchangedAfterCopy": true
+      },
+      {
+        "environment": "production",
+        "name": "rafl.json",
+        "present": true,
+        "bytes": 132707,
+        "sha256": "ed7d3c8080c2d03f8097a45ba7eb889dd7be221e0e13036dbdb04b851a04731b",
+        "matchesObservedRemote": true,
+        "jsonValid": true,
+        "remoteUnchangedAfterCopy": true
+      },
+      {
+        "environment": "production",
+        "name": "classification-catalog.json",
+        "present": true,
+        "bytes": 180783,
+        "sha256": "40bb57e1b7ba643da852c0d5871bed5029b0a62777d7889203e53c431ea81b59",
+        "matchesObservedRemote": true,
+        "jsonValid": true,
+        "remoteUnchangedAfterCopy": true
+      },
+      {
+        "environment": "development",
+        "name": "awards.json",
+        "present": true,
+        "bytes": 8227,
+        "sha256": "944941583443048560ff7622754101e1e93947551337300cf102f7e1e5822e65",
+        "matchesObservedRemote": true,
+        "jsonValid": true,
+        "remoteUnchangedAfterCopy": true
+      },
+      {
+        "environment": "development",
+        "name": "data.json",
+        "present": true,
+        "bytes": 2838590,
+        "sha256": "869e864b97bb3481116c53711f826427016842b60f74674e31a9668c42cd5365",
+        "matchesObservedRemote": true,
+        "jsonValid": true,
+        "remoteUnchangedAfterCopy": true
+      },
+      {
+        "environment": "development",
+        "name": "safelocks.json",
+        "present": true,
+        "bytes": 99684,
+        "sha256": "1fca7751ed5dcc4c774e07c49cccccddc7c53468f3126069f18a949515f7728a",
+        "matchesObservedRemote": true,
+        "jsonValid": true,
+        "remoteUnchangedAfterCopy": true
+      },
+      {
+        "environment": "development",
+        "name": "glossary.json",
+        "present": true,
+        "bytes": 145218,
+        "sha256": "57bcac6a4b084330781266437fb3cca3bf9bcfb27bc894d1843f8d09dcc42b61",
+        "matchesObservedRemote": true,
+        "jsonValid": true,
+        "remoteUnchangedAfterCopy": true
+      },
+      {
+        "environment": "development",
+        "name": "projects.json",
+        "present": true,
+        "bytes": 16755,
+        "sha256": "84bef237fc14e22d5d2c9bca04c7cb5fb2b295bcd999bd9597b6f166f78f8cf2",
+        "matchesObservedRemote": true,
+        "jsonValid": true,
+        "remoteUnchangedAfterCopy": true
+      },
+      {
+        "environment": "development",
+        "name": "rafl.json",
+        "present": true,
+        "bytes": 132707,
+        "sha256": "ed7d3c8080c2d03f8097a45ba7eb889dd7be221e0e13036dbdb04b851a04731b",
+        "matchesObservedRemote": true,
+        "jsonValid": true,
+        "remoteUnchangedAfterCopy": true
+      },
+      {
+        "environment": "development",
+        "name": "classification-catalog.json",
+        "present": true,
+        "bytes": 180783,
+        "sha256": "40bb57e1b7ba643da852c0d5871bed5029b0a62777d7889203e53c431ea81b59",
+        "matchesObservedRemote": true,
+        "jsonValid": true,
+        "remoteUnchangedAfterCopy": true
+      }
+    ],
+    "allFourteenCatalogsRetained": true,
+    "catalogPairValidation": [
+      {
+        "environment": "production",
+        "pairedCatalogValidation": "passed"
+      },
+      {
+        "environment": "development",
+        "pairedCatalogValidation": "passed"
+      }
+    ],
+    "pages": {
+      "commit": "a22c44cb301eb3df5a33f8cb940c7494da5cfc97",
+      "branchUnchangedDuringCapture": true,
+      "cname": "lpubelts.com",
+      "source": {
+        "branch": "gh-pages",
+        "path": "/"
+      },
+      "httpsEnforced": true,
+      "archiveSha256": "a1b5840a6db96a7faf5f1b2851822e39ba319483a693bb5b39a4f11924211b7c",
+      "archiveBytes": 15329077,
+      "servedIndexStatus": 200,
+      "servedIndexSha256": "266fe39e7d34bebc163d7ecf7924fdd67357a7f4f13e3844d11751ebdbc0aebb",
+      "files": 2755,
+      "archiveSafePaths": true,
+      "servedIndexMatchesRetainedTree": true,
+      "indexSha256": "266fe39e7d34bebc163d7ecf7924fdd67357a7f4f13e3844d11751ebdbc0aebb"
+    },
+    "releaseAuthorities": [
+      {
+        "repo": "Lockpickers-United/explore-lpubelts-com-node",
+        "workflowId": 357527280,
+        "name": "Deploy production",
+        "state": "active",
+        "activeDeployRuns": [],
+        "pagesInspected": 1,
+        "fullyEnumerated": true
+      },
+      {
+        "repo": "Lockpickers-United/lpu-belt-explorer",
+        "workflowId": 396550668,
+        "name": "API deploy production (migration hold)",
+        "state": "active",
+        "activeDeployRuns": [],
+        "pagesInspected": 1,
+        "fullyEnumerated": true
+      }
+    ],
+    "mainControls": {
+      "main": "f7041a5eca486da7b1a71e133febf060a54d9ba3",
+      "tree": "d88646bae24077caaf9ab05a1f1a56754927184b",
+      "sourceTreeMatches": true,
+      "unconditionalLiveHolds": 4
+    },
+    "resolvedHarnessDiagnostics": [
+      "REMOTE_NODE_BIN is a bin directory; normalize its allowed trailing slash, not a node executable path. Two preliminary captures saved Pages only before the corrected host gate.",
+      "Node Fetch rejected production port 10080 as bad port. node:http passed at the actual production listener; HTTPS passed. Listener uses a specific host address; no binding changed."
+    ],
+    "remoteWritePerformed": false,
+    "authorityTransferExecuted": false,
+    "productionDeploymentExecuted": false,
+    "nextOwnerQuestion": 17
+  },
+  "nextApiControlReview": {
+    "baseMain": "f7041a5eca486da7b1a71e133febf060a54d9ba3",
+    "file": ".github/workflows/api-deploy-production.yml",
+    "patchSha256": "c203a742d86e62aacd032a14432be582f7fad9dd431cee1a8b9299116df700db",
+    "patch": "--- a/.github/workflows/api-deploy-production.yml\n+++ b/.github/workflows/api-deploy-production.yml\n@@ -1,4 +1,4 @@\n-name: API deploy production (migration hold)\n+name: API deploy production\n \n on:\n   workflow_dispatch:\n@@ -61,8 +61,6 @@\n         run: npm run validate:api\n \n   deploy:\n-    # Phase 5 must explicitly remove this hold after old release authority is disabled.\n-    if: ${{ false }}\n     name: Upload and activate release\n     needs: verify\n     runs-on: ubuntu-22.04\n",
+    "applied": false,
+    "authorityTransferExecuted": false,
+    "productionDeploymentAuthorized": false,
+    "oldWorkflowId": 357527280,
+    "oldRepository": "Lockpickers-United/explore-lpubelts-com-node",
+    "proposedBranch": "monorepo/phase5-api-authority",
+    "preservedControls": [
+      "manual dispatch",
+      "main-only verification",
+      "api-production environment",
+      "existing concurrency",
+      "web/Import/development-catalog holds"
+    ],
+    "preparationChecks": {
+      "yaml": "passed",
+      "bashBlocks": 10,
+      "otherThreeHolds": "retained",
+      "mainAndManualGuards": "retained",
+      "appliedToWorkingTree": false
+    }
+  },
+  "authorityTransfer": {
+    "mainCommit": "44026a8c1c71ee361caf3ab43913361502f97bf7",
+    "tree": "72e2fddbe5071d2c4a3b3c2e3ca56d4f55125bd5",
+    "candidateCommit": "af971df5ef14f0f8cc6fe8f90c9e372102621c44",
+    "pr": 333,
+    "prUrl": "https://github.com/Lockpickers-United/lpu-belt-explorer/pull/333",
+    "finalScope": [
+      ".github/workflows/api-deploy-production.yml",
+      "apps/api/src/config/nodeRuntimeContract.test.js"
+    ],
+    "contractTestScopeExtension": "Owner explicitly approved",
+    "finalScopePatchSha256": "5f26c9bf9925438945050c0d2d1b022186f50ef9ae253ab3637609278738c267",
+    "oldAuthority": {
+      "workflowId": 357527280,
+      "state": "disabled_manually"
+    },
+    "remainingHolds": 3,
+    "productionDeploymentRuns": 0,
+    "productionDeploymentAuthorized": false,
+    "mainCi": {
+      "runId": 40258112958,
+      "url": "https://github.com/Lockpickers-United/lpu-belt-explorer/actions/runs/40258112958",
+      "conclusion": "success",
+      "artifactId": 12623363043,
+      "zipSha256": "ab28ae74bd82824d2d4916c1a5b7283ffe23564826a88c37efb4997a9d2b359c"
+    },
+    "archiveComparison": {
+      "archiveSha256": "93d55afd88e7f188b22bd8a7efe1c3823d2ef3feef0e5651f4dc6e75fc12008c",
+      "identity": {
+        "monorepoCommit": "44026a8c1c71ee361caf3ab43913361502f97bf7",
+        "monorepoLockSha256": "e77fbfa67cbef1c1f0fbb1b3b2c6b9ca59449abdd6b0ea8d8a446975b388bfeb",
+        "sourceApiManifestSha256": "8e807c20258944087999acc87bd3b55140f86e2d95e56f643e2cfceb76f325f0",
+        "nodeVersion": "24.21.0",
+        "npmVersion": "11.19.0",
+        "installStrategy": "nested"
+      },
+      "priorYarnProductionCount": 386,
+      "npmProductionCount": 386,
+      "missing": [],
+      "added": [],
+      "changedVersions": [],
+      "nativeSharp": [
+        {
+          "path": "node_modules/@img/sharp-linux-x64/lib/sharp-linux-x64-0.35.4.node",
+          "elfMagic": true,
+          "bits": 64,
+          "machine": 62
+        }
+      ]
+    },
+    "artifactMembersValidated": 15161,
+    "localChecks": {
+      "ciPr": "passed (lint, 280 web tests, test build)",
+      "commitHooks": "passed (280 web tests, API lint, 482 API tests)",
+      "focusedContractTest": "passed (5 cases)",
+      "workflowSyntax": {
+        "result": "passed",
+        "yamlFiles": 4,
+        "bashBlocks": 28,
+        "unconditionalLiveHolds": 3,
+        "apiManualMainConfirmationAndEnvironment": "retained",
+        "deploymentDispatched": false
+      }
+    },
+    "initialPrCi": {
+      "runId": 40257499357,
+      "conclusion": "failure",
+      "reason": "obsolete API migration-hold assertion; 477/478 tests passed"
+    },
+    "correctedPrCi": {
+      "runId": 40257918896,
+      "conclusion": "success"
+    },
+    "freshRecoveryDirectory": "/private/tmp/lpu-monorepo-phase5/recovery-MIAoP0",
+    "durablePreTransferRecoveryDirectory": "/Users/nealbayless/LOCAL/monorepo-recovery/phase5-20261026T015056Z",
+    "productionReadinessAfterTransfer": {
+      "observedAt": "2026-10-26T02:16:56.424Z",
+      "checks": {
+        "actualListenerReadyIdentity": true,
+        "publicHttpsReadyIdentity": true,
+        "productionMetadataFrozenIdentity": true
+      },
+      "errors": [],
+      "listener": {
+        "metadataAvailable": true,
+        "matchingProductionListeners": 1,
+        "configuredHostContainsOuterWhitespace": false,
+        "configuredPortContainsOuterWhitespace": false,
+        "binding": "specific-host-address",
+        "matchesTrimmedConfiguredHost": false,
+        "nodeFetchRejectedBadPort": true,
+        "readinessClient": "node:http"
+      },
+      "actualListener": {
+        "status": 200,
+        "ready": true,
+        "environment": "production",
+        "releaseId": "2fa33cfbe0ba5376ca0ad503bc528164ebf33194-40152214333-1",
+        "gitSha": "2fa33cfbe0ba5376ca0ad503bc528164ebf33194"
+      },
+      "publicHttps": {
+        "status": 200,
+        "ready": true,
+        "environment": "production",
+        "releaseId": "2fa33cfbe0ba5376ca0ad503bc528164ebf33194-40152214333-1",
+        "gitSha": "2fa33cfbe0ba5376ca0ad503bc528164ebf33194"
+      }
+    },
+    "authorityLedger": {
+      "authorization": "Owner question 17",
+      "events": [
+        {
+          "at": "2026-10-26T02:05:07.818Z",
+          "event": "pre-disable gates passed",
+          "base": "f7041a5eca486da7b1a71e133febf060a54d9ba3",
+          "frozen": "2fa33cfbe0ba5376ca0ad503bc528164ebf33194",
+          "freshRecovery": "/private/tmp/lpu-monorepo-phase5/recovery-MIAoP0",
+          "oldWorkflowState": "active",
+          "oldRuns": {
+            "active": [],
+            "pages": 1,
+            "complete": true
+          },
+          "newRuns": {
+            "active": [],
+            "pages": 1,
+            "complete": true
+          }
+        },
+        {
+          "at": "2026-10-26T02:05:08.767Z",
+          "event": "old API workflow disable accepted",
+          "repository": "Lockpickers-United/explore-lpubelts-com-node",
+          "workflowId": 357527280
+        },
+        {
+          "at": "2026-10-26T02:05:09.523Z",
+          "event": "old API workflow confirmed disabled/drained",
+          "workflowId": 357527280,
+          "state": "disabled_manually",
+          "runs": {
+            "active": [],
+            "pages": 1,
+            "complete": true
+          }
+        },
+        {
+          "at": "2026-10-26T02:07:04.578Z",
+          "event": "API-only control PR created",
+          "number": 333,
+          "url": "https://github.com/Lockpickers-United/lpu-belt-explorer/pull/333",
+          "head": "b5e4eb50dce057f94329123b9bcea06756ac415e",
+          "base": "f7041a5eca486da7b1a71e133febf060a54d9ba3"
+        },
+        {
+          "at": "2026-10-26T02:12:17.479Z",
+          "event": "approved contract-test extension reflected in PR",
+          "pr": 333,
+          "head": "af971df5ef14f0f8cc6fe8f90c9e372102621c44"
+        },
+        {
+          "at": "2026-10-26T02:14:06.341Z",
+          "event": "pre-merge no-overlap/scope/check gates passed",
+          "oldAuthority": {
+            "workflowId": 357527280,
+            "state": "disabled_manually",
+            "runs": {
+              "active": [],
+              "pages": 1,
+              "complete": true
+            }
+          },
+          "newRuns": {
+            "active": [],
+            "pages": 1,
+            "complete": true
+          },
+          "head": "af971df5ef14f0f8cc6fe8f90c9e372102621c44",
+          "base": "f7041a5eca486da7b1a71e133febf060a54d9ba3"
+        },
+        {
+          "at": "2026-10-26T02:14:09.410Z",
+          "event": "API-only control normal merge accepted",
+          "sha": "44026a8c1c71ee361caf3ab43913361502f97bf7",
+          "merged": true,
+          "message": "Pull Request successfully merged",
+          "pr": 333,
+          "url": "https://github.com/Lockpickers-United/lpu-belt-explorer/pull/333",
+          "head": "af971df5ef14f0f8cc6fe8f90c9e372102621c44",
+          "base": "f7041a5eca486da7b1a71e133febf060a54d9ba3"
+        }
+      ]
+    },
+    "status": "complete",
+    "authorityTransferred": true,
+    "durableCertificateDirectory": "/Users/nealbayless/LOCAL/monorepo-recovery/phase5-api-authority-44026a8c",
+    "productionDeploymentAuthorizedSeparately": true
+  },
+  "apiActivation": {
+    "authorization": "Owner: I approve the commit for API-only activation (question 18)",
+    "approvedCommit": "44026a8c1c71ee361caf3ab43913361502f97bf7",
+    "status": "activated; independent runtime/public and owner-reported authenticated verification passed",
+    "workflowId": 396550668,
+    "run": {
+      "id": 40258859190,
+      "url": "https://github.com/Lockpickers-United/lpu-belt-explorer/actions/runs/40258859190",
+      "sha": "44026a8c1c71ee361caf3ab43913361502f97bf7",
+      "event": "workflow_dispatch",
+      "status": "completed",
+      "conclusion": "success",
+      "createdAt": "2026-10-26T02:23:30Z",
+      "updatedAt": "2026-10-26T02:25:16Z",
+      "attempt": 1
+    },
+    "releaseId": "44026a8c1c71ee361caf3ab43913361502f97bf7-40258859190-1",
+    "activationStep": {
+      "name": "Activate release and reload PM2",
+      "status": "completed",
+      "conclusion": "success",
+      "startedAt": "2026-10-26T02:25:05Z",
+      "completedAt": "2026-10-26T02:25:13Z"
+    },
+    "ledger": {
+      "authorization": "Owner question 18: I approve the commit for API-only activation",
+      "approvedCommit": "44026a8c1c71ee361caf3ab43913361502f97bf7",
+      "events": [
+        {
+          "at": "2026-10-26T02:23:29.450Z",
+          "event": "pre-dispatch source/target/recovery/queue gates passed",
+          "main": "44026a8c1c71ee361caf3ab43913361502f97bf7",
+          "priorRelease": "2fa33cfbe0ba5376ca0ad503bc528164ebf33194-40152214333-1",
+          "capture": "/private/tmp/lpu-monorepo-phase5/recovery-YVJI9B",
+          "oldRuns": {
+            "active": [],
+            "pages": 1,
+            "complete": true
+          },
+          "newRuns": {
+            "active": [],
+            "pages": 1,
+            "complete": true
+          }
+        },
+        {
+          "at": "2026-10-26T02:23:29.455Z",
+          "event": "production dispatch intent recorded",
+          "workflowId": 396550668,
+          "ref": "main",
+          "confirmation": "deploy-production",
+          "expectedCommit": "44026a8c1c71ee361caf3ab43913361502f97bf7"
+        },
+        {
+          "at": "2026-10-26T02:23:30.565Z",
+          "event": "production API-only dispatch accepted",
+          "workflowId": 396550668,
+          "expectedCommit": "44026a8c1c71ee361caf3ab43913361502f97bf7"
+        }
+      ]
+    },
+    "verification": {
+      "result": "passed",
+      "observedAt": "2026-10-26T02:28:24.769Z",
+      "completedAt": "2026-10-26T02:28:31.229Z",
+      "checks": {
+        "configuredNodeProvidesPinnedPatch": true,
+        "currentIsSpecificRelease": true,
+        "pinnedLinuxNode": true,
+        "sharedOutsideRelease": true,
+        "productionOnline": true,
+        "processStablePaths": true,
+        "productionEnvironment": true,
+        "runtimePathsSeparated": true,
+        "activeReleaseComplete": true,
+        "twoCompleteRollbackCandidates": true,
+        "singleScheduledOwner": true,
+        "approvedRuntimeCommit": true,
+        "runtimeLockMatchesCertified": true,
+        "exactWorkflowCurrent": true,
+        "previousCurrentRetained": true,
+        "nativeSharpCurrent": true,
+        "namedRollbackCandidatesRetained": true,
+        "catalogsUnchanged": true,
+        "actualListenerReadyIdentity": true,
+        "publicHttpsReadyIdentity": true,
+        "productionMetadataApprovedIdentity": true,
+        "exactApprovedRelease": true,
+        "public_collection_stats": true,
+        "anonymous_private_profile_denied": true,
+        "designated_public_profile": true
+      },
+      "publicRoutes": [
+        {
+          "name": "public_collection_stats",
+          "status": 200,
+          "expectedStatus": 200,
+          "passed": true,
+          "publicLockCount": 1399
+        },
+        {
+          "name": "anonymous_private_profile_denied",
+          "status": 401,
+          "expectedStatus": 401,
+          "passed": true
+        },
+        {
+          "name": "designated_public_profile",
+          "status": 200,
+          "expectedStatus": 200,
+          "passed": true
+        }
+      ],
+      "runtimeInputs": {
+        "monorepoCommit": "44026a8c1c71ee361caf3ab43913361502f97bf7",
+        "monorepoLockSha256": "e77fbfa67cbef1c1f0fbb1b3b2c6b9ca59449abdd6b0ea8d8a446975b388bfeb",
+        "sourceApiManifestSha256": "8e807c20258944087999acc87bd3b55140f86e2d95e56f643e2cfceb76f325f0",
+        "nodeVersion": "24.21.0",
+        "npmVersion": "11.19.0"
+      },
+      "nativeSharp": {
+        "loaded": true,
+        "version": "0.35.4"
+      },
+      "readiness": {
+        "observedAt": "2026-10-26T02:27:13.286Z",
+        "checks": {
+          "actualListenerReadyIdentity": true,
+          "publicHttpsReadyIdentity": true,
+          "productionMetadataApprovedIdentity": true,
+          "exactApprovedRelease": true
+        },
+        "errors": [],
+        "listener": {
+          "metadataAvailable": true,
+          "matchingProductionListeners": 1,
+          "configuredHostContainsOuterWhitespace": false,
+          "configuredPortContainsOuterWhitespace": false,
+          "binding": "specific-host-address",
+          "matchesTrimmedConfiguredHost": false,
+          "nodeFetchRejectedBadPort": true,
+          "readinessClient": "node:http"
+        },
+        "actualListener": {
+          "status": 200,
+          "ready": true,
+          "environment": "production",
+          "releaseId": "44026a8c1c71ee361caf3ab43913361502f97bf7-40258859190-1",
+          "gitSha": "44026a8c1c71ee361caf3ab43913361502f97bf7"
+        },
+        "publicHttps": {
+          "status": 200,
+          "ready": true,
+          "environment": "production",
+          "releaseId": "44026a8c1c71ee361caf3ab43913361502f97bf7-40258859190-1",
+          "gitSha": "44026a8c1c71ee361caf3ab43913361502f97bf7"
+        }
+      },
+      "catalogHashesUnchanged": true,
+      "cron": [
+        {
+          "job": "runFetchAnalyzeLogs.js",
+          "totalEntries": 1,
+          "productionEntries": 1,
+          "developmentEntries": 0,
+          "pinnedNodeAndProduction": true,
+          "cronArgument": true
+        },
+        {
+          "job": "runCollectionExportAnalysis.js",
+          "totalEntries": 1,
+          "productionEntries": 1,
+          "developmentEntries": 0,
+          "pinnedNodeAndProduction": true,
+          "cronArgument": true
+        }
+      ],
+      "currentTarget": "/home/lpubelts_api/apps/api-server-prod/releases/44026a8c1c71ee361caf3ab43913361502f97bf7-40258859190-1"
+    },
+    "deployedArtifactComparison": {
+      "releaseId": "44026a8c1c71ee361caf3ab43913361502f97bf7-40258859190-1",
+      "comparedRecords": 13175,
+      "actualRecords": 13175,
+      "missing": [],
+      "extra": [],
+      "changed": [],
+      "deployedTreeSha256": "306485549a53584570065ac6a1b960ba13ef637d4ae57b0f8ca19215d3d85627",
+      "ciArchiveSha256": "93d55afd88e7f188b22bd8a7efe1c3823d2ef3feef0e5651f4dc6e75fc12008c",
+      "runtimeArchiveChecksumCaptured": false,
+      "excludedRuntimeState": [
+        ".release.json",
+        ".env*",
+        ".git",
+        "keys",
+        "credentials",
+        "shared",
+        "logs"
+      ],
+      "result": "passed"
+    },
+    "runtimeArchiveChecksum": {
+      "releaseId": "44026a8c1c71ee361caf3ab43913361502f97bf7-40258859190-1",
+      "checksumCaptured": false
+    },
+    "runtimeArchiveChecksumLimit": "Existing workflow verified upload checksum then deleted incoming archive/checksum before the value could be captured; certified CI gzip hash is provenance only. All comparable deployed file/link hashes independently match the certified artifact.",
+    "oldAuthority": {
+      "workflowId": 357527280,
+      "state": "disabled_manually"
+    },
+    "remainingHolds": 3,
+    "pagesCommit": "a22c44cb301eb3df5a33f8cb940c7494da5cfc97",
+    "rollbackRequired": false,
+    "previousReleaseRetained": "2fa33cfbe0ba5376ca0ad503bc528164ebf33194-40152214333-1",
+    "authenticatedChecks": {
+      "status": "passed",
+      "evidenceType": "owner-reported; not independently observed by agent",
+      "ownerStatement": "I have verified an owner read of my own /api/v1/users/:id/profile and admin access handling through a deliberately nonexistent synthetic profile ID. Various other read-only scenarios returned expected results.",
+      "ownerQuestion": 19,
+      "responseStatuses": "not separately reported; no invented codes",
+      "privateResponsesOrTokensRecorded": false
+    },
+    "webCatalogReleaseExecuted": false,
+    "fullCutoverObservationStarted": false,
+    "retirementExecuted": false,
+    "durableEvidenceDirectory": "/Users/nealbayless/LOCAL/monorepo-recovery/phase5-api-activation-40258859190",
+    "nextOwnerQuestion": 20
+  },
+  "apiOnlyProductionActivationExecuted": true,
+  "webControlReview": {
+    "baseMain": "44026a8c1c71ee361caf3ab43913361502f97bf7",
+    "files": [
+      ".github/workflows/build.js.yml",
+      "apps/api/src/config/nodeRuntimeContract.test.js"
+    ],
+    "patchSha256": "33929439c5e1c59eec5882d1a9d69f1d35af2c8082ace0f25009d33e0265fad8",
+    "patch": "--- a/.github/workflows/build.js.yml\n+++ b/.github/workflows/build.js.yml\n@@ -41,9 +41,22 @@\n \n jobs:\n   deploy:\n-    # Migration hold: Phase 5 must restore a main-only release condition,\n-    # accepting workflow_run only after a successful main-branch Import.\n-    if: ${{ false }}\n+    # Publish main only; Import completion must be successful and from this repository.\n+    if: >-\n+      ${{\n+        github.ref == 'refs/heads/main' &&\n+        (\n+          github.event_name == 'push' ||\n+          github.event_name == 'workflow_dispatch' ||\n+          (\n+            github.event_name == 'workflow_run' &&\n+            github.event.workflow_run.conclusion == 'success' &&\n+            github.event.workflow_run.head_branch == 'main' &&\n+            github.event.workflow_run.head_repository &&\n+            github.event.workflow_run.head_repository.full_name == github.repository\n+          )\n+        )\n+      }}\n     name: Build-N-Deploy\n     environment: github-pages\n     permissions:\n--- a/apps/api/src/config/nodeRuntimeContract.test.js\n+++ b/apps/api/src/config/nodeRuntimeContract.test.js\n@@ -41,7 +41,6 @@\n     })\n \n     it.each([\n-        'build.js.yml',\n         'import.js.yml',\n         'publish-classification-catalog-dev.yml'\n     ])('retains the migration hold in %s during API-only authority transfer', async filename => {\n@@ -49,4 +48,38 @@\n \n         expect(workflow).toMatch(/^ {4}if: \\$\\{\\{ false \\}\\}$/m)\n     })\n+\n+    it('publishes web only from main and successful same-repository main Import completion', async () => {\n+        const workflow = await readRootFile('../../.github/workflows/build.js.yml')\n+        const condition = workflow.match(/^ {4}if: >-\\n((?: {6}.+\\n)+)/m)?.[1]\n+\n+        expect(condition).toBeDefined()\n+        expect(workflow).toContain('workflows: [Import]')\n+        const expression = condition.trim().replace(/^\\$\\{\\{\\s*/, '').replace(/\\s*\\}\\}$/, '')\n+        const permits = new Function('github', `return (${expression})`)\n+        const repository = 'Lockpickers-United/lpu-belt-explorer'\n+        const successfulImport = {\n+            conclusion: 'success',\n+            head_branch: 'main',\n+            head_repository: {full_name: repository}\n+        }\n+        const cases = [\n+            ['main push', 'push', 'refs/heads/main', null, true],\n+            ['main dispatch', 'workflow_dispatch', 'refs/heads/main', null, true],\n+            ['feature push', 'push', 'refs/heads/feature', null, false],\n+            ['feature dispatch', 'workflow_dispatch', 'refs/heads/feature', null, false],\n+            ['successful main Import', 'workflow_run', 'refs/heads/main', successfulImport, true],\n+            ['failed Import', 'workflow_run', 'refs/heads/main', {...successfulImport, conclusion: 'failure'}, false],\n+            ['cancelled Import', 'workflow_run', 'refs/heads/main', {...successfulImport, conclusion: 'cancelled'}, false],\n+            ['feature Import', 'workflow_run', 'refs/heads/main', {...successfulImport, head_branch: 'feature'}, false],\n+            ['fork Import', 'workflow_run', 'refs/heads/main', {...successfulImport, head_repository: {full_name: 'fork/repository'}}, false],\n+            ['missing source repository', 'workflow_run', 'refs/heads/main', {...successfulImport, head_repository: null}, false],\n+            ['non-main workflow ref', 'workflow_run', 'refs/heads/feature', successfulImport, false],\n+            ['unrelated event', 'pull_request', 'refs/heads/main', null, false]\n+        ]\n+\n+        for (const [name, event, ref, run, expected] of cases) {\n+            expect(Boolean(permits({repository, ref, event_name: event, event: {workflow_run: run}})), name).toBe(expected)\n+        }\n+    })\n })\n",
+    "previewDirectory": "/private/tmp/lpu-monorepo-phase5/web-control-preview",
+    "applied": true,
+    "publicationAuthorized": true,
+    "mainMergeAutomaticallyPublishes": true,
+    "catalogDestinations": [
+      "production",
+      "development"
+    ],
+    "catalogFiles": {
+      "awards.json": "944941583443048560ff7622754101e1e93947551337300cf102f7e1e5822e65",
+      "data.json": "869e864b97bb3481116c53711f826427016842b60f74674e31a9668c42cd5365",
+      "safelocks.json": "1fca7751ed5dcc4c774e07c49cccccddc7c53468f3126069f18a949515f7728a",
+      "glossary.json": "57bcac6a4b084330781266437fb3cca3bf9bcfb27bc894d1843f8d09dcc42b61",
+      "projects.json": "84bef237fc14e22d5d2c9bca04c7cb5fb2b295bcd999bd9597b6f166f78f8cf2",
+      "rafl.json": "ed7d3c8080c2d03f8097a45ba7eb889dd7be221e0e13036dbdb04b851a04731b",
+      "classification-catalog.json": "40bb57e1b7ba643da852c0d5871bed5029b0a62777d7889203e53c431ea81b59"
+    },
+    "webBuildInputsUnchangedSinceCertifiedProductionComparison": true,
+    "webInputDriftPaths": [],
+    "expectedCatalogsEqualAllLiveRecoveryCopies": true,
+    "preservedControls": [
+      "manual main-only API deployment",
+      "old API workflow disabled",
+      "Import migration hold",
+      "development-catalog migration hold",
+      "github-pages settings/policy",
+      "existing Pages-first/catalog-second ordering",
+      "post-Import checkout of current main with actual SHA recorded"
+    ],
+    "generatedCatalogDataChanged": false,
+    "productionCompilationEvidence": "Historical pinned production equivalence; unchanged web inputs; live hosted output must be verified on actual release",
+    "sourceBranchProposed": "monorepo/phase5-web-release",
+    "preparationChecks": {
+      "yamlFiles": 4,
+      "bashBlocks": 28,
+      "remainingHolds": 2,
+      "focusedContractTests": 5,
+      "webTriggerBehaviorCases": 12,
+      "targetedLint": "passed",
+      "previewVitest": "passed",
+      "apiAndOtherManualControls": "preserved",
+      "sourceOrWorkflowWorkingTreeModified": false
+    },
+    "ownerApproval": "I approve the concrete release from current main 44026a8c1c71ee361caf3ab43913361502f97bf7",
+    "candidateCommit": "0e5084a246abf7fe55cce629242f201a0b625d66",
+    "pullRequest": "https://github.com/Lockpickers-United/lpu-belt-explorer/pull/334",
+    "localValidation": {
+      "ci-pr": "passed: lint, 280 tests, test build",
+      "apiHook": "passed: lint, 482 tests",
+      "focusedContractTests": 5,
+      "playwright": "9 passed: locks.spec.js/contentRoutes.spec.js",
+      "workflowYaml": 4,
+      "bashBlocks": 28
+    }
+  },
+  "webRelease": {
+    "status": "passed",
+    "ownerQuestion": 20,
+    "baseMain": "44026a8c1c71ee361caf3ab43913361502f97bf7",
+    "candidateCommit": "0e5084a246abf7fe55cce629242f201a0b625d66",
+    "merge": {
+      "sha": "684ea9d9e31884742268fd5ed7c5f6605dea9514",
+      "merged": true,
+      "message": "Pull Request successfully merged",
+      "pr": 334,
+      "url": "https://github.com/Lockpickers-United/lpu-belt-explorer/pull/334",
+      "head": "0e5084a246abf7fe55cce629242f201a0b625d66",
+      "base": "44026a8c1c71ee361caf3ab43913361502f97bf7"
+    },
+    "run": {
+      "id": 40263182081,
+      "url": "https://github.com/Lockpickers-United/lpu-belt-explorer/actions/runs/40263182081",
+      "event": "push",
+      "conclusion": "success",
+      "steps": [
+        {
+          "id": 121379745394,
+          "name": "Build-N-Deploy",
+          "status": "completed",
+          "conclusion": "success",
+          "startedAt": "2026-10-26T03:15:39Z",
+          "completedAt": "2026-10-26T03:16:57Z",
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "startedAt": "2026-10-26T03:15:40Z",
+              "completedAt": "2026-10-26T03:15:42Z"
+            },
+            {
+              "name": "Checkout",
+              "status": "completed",
+              "conclusion": "success",
+              "startedAt": "2026-10-26T03:15:42Z",
+              "completedAt": "2026-10-26T03:15:44Z"
+            },
+            {
+              "name": "Record checked-out release source",
+              "status": "completed",
+              "conclusion": "success",
+              "startedAt": "2026-10-26T03:15:44Z",
+              "completedAt": "2026-10-26T03:15:45Z"
+            },
+            {
+              "name": "Set up Node.js",
+              "status": "completed",
+              "conclusion": "success",
+              "startedAt": "2026-10-26T03:15:45Z",
+              "completedAt": "2026-10-26T03:15:46Z"
+            },
+            {
+              "name": "Install dependencies",
+              "status": "completed",
+              "conclusion": "success",
+              "startedAt": "2026-10-26T03:15:46Z",
+              "completedAt": "2026-10-26T03:16:23Z"
+            },
+            {
+              "name": "Validate catalog deployment configuration",
+              "status": "completed",
+              "conclusion": "success",
+              "startedAt": "2026-10-26T03:16:23Z",
+              "completedAt": "2026-10-26T03:16:23Z"
+            },
+            {
+              "name": "Build and Deploy",
+              "status": "completed",
+              "conclusion": "success",
+              "startedAt": "2026-10-26T03:16:23Z",
+              "completedAt": "2026-10-26T03:16:29Z"
+            },
+            {
+              "name": "Verify paired catalog artifacts",
+              "status": "completed",
+              "conclusion": "success",
+              "startedAt": "2026-10-26T03:16:29Z",
+              "completedAt": "2026-10-26T03:16:29Z"
+            },
+            {
+              "name": "Configure catalog SSH host verification",
+              "status": "completed",
+              "conclusion": "success",
+              "startedAt": "2026-10-26T03:16:29Z",
+              "completedAt": "2026-10-26T03:16:29Z"
+            },
+            {
+              "name": "Prepare remote catalog directory",
+              "status": "completed",
+              "conclusion": "success",
+              "startedAt": "2026-10-26T03:16:29Z",
+              "completedAt": "2026-10-26T03:16:31Z"
+            },
+            {
+              "name": "Deploy",
+              "status": "completed",
+              "conclusion": "success",
+              "startedAt": "2026-10-26T03:16:31Z",
+              "completedAt": "2026-10-26T03:16:37Z"
+            },
+            {
+              "name": "Upload catalog snapshots",
+              "status": "completed",
+              "conclusion": "success",
+              "startedAt": "2026-10-26T03:16:37Z",
+              "completedAt": "2026-10-26T03:16:40Z"
+            },
+            {
+              "name": "Verify and activate catalog snapshots",
+              "status": "completed",
+              "conclusion": "success",
+              "startedAt": "2026-10-26T03:16:40Z",
+              "completedAt": "2026-10-26T03:16:52Z"
+            },
+            {
+              "name": "Post Set up Node.js",
+              "status": "completed",
+              "conclusion": "success",
+              "startedAt": "2026-10-26T03:16:52Z",
+              "completedAt": "2026-10-26T03:16:55Z"
+            },
+            {
+              "name": "Post Checkout",
+              "status": "completed",
+              "conclusion": "success",
+              "startedAt": "2026-10-26T03:16:55Z",
+              "completedAt": "2026-10-26T03:16:55Z"
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "startedAt": "2026-10-26T03:16:55Z",
+              "completedAt": "2026-10-26T03:16:55Z"
+            }
+          ]
+        }
+      ]
+    },
+    "checkoutEvidence": {
+      "expectedSource": "684ea9d9e31884742268fd5ed7c5f6605dea9514",
+      "checkoutContainsExpectedSource": true,
+      "checkoutShaOccurrences": 8,
+      "checkoutLogFiles": [
+        "Build-N-Deploy/2_Checkout.txt",
+        "Build-N-Deploy/3_Record checked-out release source.txt",
+        "Build-N-Deploy/26_Post Checkout.txt"
+      ]
+    },
+    "pages": {
+      "commit": "8c30aacf36a6d0d656dd18105541c3ca57647282",
+      "message": "deploy: 684ea9d9e31884742268fd5ed7c5f6605dea9514",
+      "cname": "lpubelts.com",
+      "source": {
+        "branch": "gh-pages",
+        "path": "/"
+      },
+      "httpsEnforced": true,
+      "archive": "/private/tmp/lpu-monorepo-phase5/published-pages-8c30aacf36a6d0d656dd18105541c3ca57647282.tar.gz",
+      "archiveSha256": "0a5d407acd550168af4beb266b64a4d8280e2e298db09359102800d78b4d4715"
+    },
+    "outputInspection": {
+      "pagesCommit": "8c30aacf36a6d0d656dd18105541c3ca57647282",
+      "fileCount": 2755,
+      "manifestSha256": "68dc9b7f93c25cc65c02a88c1709f719122e4a401d113a45a5d3ac79548e72b1",
+      "checks": {
+        "compiledPublish": true,
+        "productionNodeApi": true,
+        "productionApi": true,
+        "productionDatabase": true,
+        "cname": true
+      },
+      "classification": [
+        {
+          "path": "assets/EntryClassificationAdmin-D_bBzKuv.js",
+          "compiledPublish": true,
+          "sha256": "d90cbd67bd2421d00513f09878176ecd07aae17671e56f937ba65b892fe9afdf"
+        }
+      ],
+      "nonsecretBuildConfiguration": [
+        {
+          "path": "assets/AuthContext-De_JCoSf.js",
+          "key": "VITE_NODE_SERVER_URL",
+          "value": "https://api.lpubelts.com"
+        },
+        {
+          "path": "assets/AuthContext-De_JCoSf.js",
+          "key": "VITE_API_SERVER_URL",
+          "value": "https://api.lpubelts.com"
+        },
+        {
+          "path": "assets/AuthContext-De_JCoSf.js",
+          "key": "VITE_DEV_FIRESTORE",
+          "value": "false"
+        },
+        {
+          "path": "assets/dataUrls-DuhdqAFA.js",
+          "key": "VITE_NODE_SERVER_URL",
+          "value": "https://api.lpubelts.com"
+        },
+        {
+          "path": "assets/dataUrls-DuhdqAFA.js",
+          "key": "VITE_API_SERVER_URL",
+          "value": "https://api.lpubelts.com"
+        },
+        {
+          "path": "assets/dataUrls-DuhdqAFA.js",
+          "key": "VITE_DEV_FIRESTORE",
+          "value": "false"
+        }
+      ],
+      "catalogs": [
+        {
+          "name": "awards.json",
+          "presentInPages": true,
+          "sha256": "944941583443048560ff7622754101e1e93947551337300cf102f7e1e5822e65",
+          "matchesExpected": true
+        },
+        {
+          "name": "data.json",
+          "presentInPages": true,
+          "sha256": "869e864b97bb3481116c53711f826427016842b60f74674e31a9668c42cd5365",
+          "matchesExpected": true
+        },
+        {
+          "name": "safelocks.json",
+          "presentInPages": false,
+          "sha256": null,
+          "matchesExpected": null
+        },
+        {
+          "name": "glossary.json",
+          "presentInPages": true,
+          "sha256": "57bcac6a4b084330781266437fb3cca3bf9bcfb27bc894d1843f8d09dcc42b61",
+          "matchesExpected": true
+        },
+        {
+          "name": "projects.json",
+          "presentInPages": true,
+          "sha256": "84bef237fc14e22d5d2c9bca04c7cb5fb2b295bcd999bd9597b6f166f78f8cf2",
+          "matchesExpected": true
+        },
+        {
+          "name": "rafl.json",
+          "presentInPages": true,
+          "sha256": "ed7d3c8080c2d03f8097a45ba7eb889dd7be221e0e13036dbdb04b851a04731b",
+          "matchesExpected": true
+        },
+        {
+          "name": "classification-catalog.json",
+          "presentInPages": true,
+          "sha256": "40bb57e1b7ba643da852c0d5871bed5029b0a62777d7889203e53c431ea81b59",
+          "matchesExpected": true
+        }
+      ],
+      "publicProbeFiles": [
+        "index.html",
+        "version.json",
+        "assets/EntryClassificationAdmin-D_bBzKuv.js",
+        "assets/AuthContext-De_JCoSf.js",
+        "assets/dataUrls-DuhdqAFA.js"
+      ]
+    },
+    "priorPagesComparison": {
+      "priorCommit": "a22c44cb301eb3df5a33f8cb940c7494da5cfc97",
+      "currentCommit": "8c30aacf36a6d0d656dd18105541c3ca57647282",
+      "priorFiles": 2755,
+      "currentFiles": 2755,
+      "added": [],
+      "removed": [],
+      "changed": [
+        "sitemap.xml",
+        "version.json"
+      ]
+    },
+    "publicProbes": {
+      "observedAt": "2026-10-26T03:17:20.077Z",
+      "pagesCommit": "8c30aacf36a6d0d656dd18105541c3ca57647282",
+      "files": [
+        {
+          "path": "index.html",
+          "status": 200,
+          "sha256": "266fe39e7d34bebc163d7ecf7924fdd67357a7f4f13e3844d11751ebdbc0aebb",
+          "matchesPublishedTree": true
+        },
+        {
+          "path": "version.json",
+          "status": 200,
+          "sha256": "4325b1a5d1e65bd0cdca7fad69c728bc3ba1066f4ae8e21e625f777f034e8392",
+          "matchesPublishedTree": true
+        },
+        {
+          "path": "assets/EntryClassificationAdmin-D_bBzKuv.js",
+          "status": 200,
+          "sha256": "d90cbd67bd2421d00513f09878176ecd07aae17671e56f937ba65b892fe9afdf",
+          "matchesPublishedTree": true
+        },
+        {
+          "path": "assets/AuthContext-De_JCoSf.js",
+          "status": 200,
+          "sha256": "4470e8e295b3dbc04f40bfdd751a73caa3a3ca7a51a51997e2fd358e44e8886e",
+          "matchesPublishedTree": true
+        },
+        {
+          "path": "assets/dataUrls-DuhdqAFA.js",
+          "status": 200,
+          "sha256": "fce258802924e369b262022ff4dd4771cd189e3cad81666564af43a0e7461e56",
+          "matchesPublishedTree": true
+        }
+      ],
+      "errors": [],
+      "version": {
+        "version": "2026-10-26T03:16:24.034Z",
+        "minVersion": "2024-01-01T00:00:00.867Z"
+      },
+      "passed": true,
+      "completedAt": "2026-10-26T03:17:20.808Z"
+    },
+    "catalogs": [
+      {
+        "environment": "production",
+        "name": "awards.json",
+        "present": true,
+        "bytes": 8227,
+        "sha256": "944941583443048560ff7622754101e1e93947551337300cf102f7e1e5822e65",
+        "matchesObservedRemote": true,
+        "jsonValid": true,
+        "remoteUnchangedAfterCopy": true
+      },
+      {
+        "environment": "production",
+        "name": "data.json",
+        "present": true,
+        "bytes": 2838590,
+        "sha256": "869e864b97bb3481116c53711f826427016842b60f74674e31a9668c42cd5365",
+        "matchesObservedRemote": true,
+        "jsonValid": true,
+        "remoteUnchangedAfterCopy": true
+      },
+      {
+        "environment": "production",
+        "name": "safelocks.json",
+        "present": true,
+        "bytes": 99684,
+        "sha256": "1fca7751ed5dcc4c774e07c49cccccddc7c53468f3126069f18a949515f7728a",
+        "matchesObservedRemote": true,
+        "jsonValid": true,
+        "remoteUnchangedAfterCopy": true
+      },
+      {
+        "environment": "production",
+        "name": "glossary.json",
+        "present": true,
+        "bytes": 145218,
+        "sha256": "57bcac6a4b084330781266437fb3cca3bf9bcfb27bc894d1843f8d09dcc42b61",
+        "matchesObservedRemote": true,
+        "jsonValid": true,
+        "remoteUnchangedAfterCopy": true
+      },
+      {
+        "environment": "production",
+        "name": "projects.json",
+        "present": true,
+        "bytes": 16755,
+        "sha256": "84bef237fc14e22d5d2c9bca04c7cb5fb2b295bcd999bd9597b6f166f78f8cf2",
+        "matchesObservedRemote": true,
+        "jsonValid": true,
+        "remoteUnchangedAfterCopy": true
+      },
+      {
+        "environment": "production",
+        "name": "rafl.json",
+        "present": true,
+        "bytes": 132707,
+        "sha256": "ed7d3c8080c2d03f8097a45ba7eb889dd7be221e0e13036dbdb04b851a04731b",
+        "matchesObservedRemote": true,
+        "jsonValid": true,
+        "remoteUnchangedAfterCopy": true
+      },
+      {
+        "environment": "production",
+        "name": "classification-catalog.json",
+        "present": true,
+        "bytes": 180783,
+        "sha256": "40bb57e1b7ba643da852c0d5871bed5029b0a62777d7889203e53c431ea81b59",
+        "matchesObservedRemote": true,
+        "jsonValid": true,
+        "remoteUnchangedAfterCopy": true
+      },
+      {
+        "environment": "development",
+        "name": "awards.json",
+        "present": true,
+        "bytes": 8227,
+        "sha256": "944941583443048560ff7622754101e1e93947551337300cf102f7e1e5822e65",
+        "matchesObservedRemote": true,
+        "jsonValid": true,
+        "remoteUnchangedAfterCopy": true
+      },
+      {
+        "environment": "development",
+        "name": "data.json",
+        "present": true,
+        "bytes": 2838590,
+        "sha256": "869e864b97bb3481116c53711f826427016842b60f74674e31a9668c42cd5365",
+        "matchesObservedRemote": true,
+        "jsonValid": true,
+        "remoteUnchangedAfterCopy": true
+      },
+      {
+        "environment": "development",
+        "name": "safelocks.json",
+        "present": true,
+        "bytes": 99684,
+        "sha256": "1fca7751ed5dcc4c774e07c49cccccddc7c53468f3126069f18a949515f7728a",
+        "matchesObservedRemote": true,
+        "jsonValid": true,
+        "remoteUnchangedAfterCopy": true
+      },
+      {
+        "environment": "development",
+        "name": "glossary.json",
+        "present": true,
+        "bytes": 145218,
+        "sha256": "57bcac6a4b084330781266437fb3cca3bf9bcfb27bc894d1843f8d09dcc42b61",
+        "matchesObservedRemote": true,
+        "jsonValid": true,
+        "remoteUnchangedAfterCopy": true
+      },
+      {
+        "environment": "development",
+        "name": "projects.json",
+        "present": true,
+        "bytes": 16755,
+        "sha256": "84bef237fc14e22d5d2c9bca04c7cb5fb2b295bcd999bd9597b6f166f78f8cf2",
+        "matchesObservedRemote": true,
+        "jsonValid": true,
+        "remoteUnchangedAfterCopy": true
+      },
+      {
+        "environment": "development",
+        "name": "rafl.json",
+        "present": true,
+        "bytes": 132707,
+        "sha256": "ed7d3c8080c2d03f8097a45ba7eb889dd7be221e0e13036dbdb04b851a04731b",
+        "matchesObservedRemote": true,
+        "jsonValid": true,
+        "remoteUnchangedAfterCopy": true
+      },
+      {
+        "environment": "development",
+        "name": "classification-catalog.json",
+        "present": true,
+        "bytes": 180783,
+        "sha256": "40bb57e1b7ba643da852c0d5871bed5029b0a62777d7889203e53c431ea81b59",
+        "matchesObservedRemote": true,
+        "jsonValid": true,
+        "remoteUnchangedAfterCopy": true
+      }
+    ],
+    "browser": {
+      "observedBefore": "2026-10-26T03:18:52Z",
+      "skill": "chrome-devtools-cli",
+      "context": "isolated anonymous phase5-release",
+      "checks": {
+        "locksRendered": true,
+        "abus45DetailsExpanded": true,
+        "classificationSignInRequired": true,
+        "googleSignInOffered": true,
+        "designatedPublicProfileRendered": true,
+        "publicProfileProductionApi200": true,
+        "noConsoleErrorsReported": true
+      },
+      "authenticatedChecks": "Prior question 19 owner-reported pass; not repeated by browser agent",
+      "writes": "No login, profile edits, votes, publishes, or claim changes"
+    },
+    "apiVerification": {
+      "result": "passed",
+      "release": "44026a8c1c71ee361caf3ab43913361502f97bf7-40258859190-1",
+      "observedAt": "2026-10-26T03:17:43.701Z",
+      "checks": {
+        "configuredNodeProvidesPinnedPatch": true,
+        "currentIsSpecificRelease": true,
+        "pinnedLinuxNode": true,
+        "sharedOutsideRelease": true,
+        "productionOnline": true,
+        "processStablePaths": true,
+        "productionEnvironment": true,
+        "runtimePathsSeparated": true,
+        "activeReleaseComplete": true,
+        "twoCompleteRollbackCandidates": true,
+        "singleScheduledOwner": true,
+        "approvedRuntimeCommit": true,
+        "runtimeLockMatchesCertified": true,
+        "exactWorkflowCurrent": true,
+        "previousCurrentRetained": true,
+        "nativeSharpCurrent": true,
+        "namedRollbackCandidatesRetained": true,
+        "catalogsUnchanged": true,
+        "actualListenerReadyIdentity": true,
+        "publicHttpsReadyIdentity": true,
+        "productionMetadataApprovedIdentity": true,
+        "exactApprovedRelease": true,
+        "public_collection_stats": true,
+        "anonymous_private_profile_denied": true,
+        "designated_public_profile": true
+      }
+    },
+    "controls": {
+      "mainMatches": true,
+      "oldApiDisabled": true,
+      "importHeld": true,
+      "devCatalogHeld": true,
+      "apiManualOnly": true
+    },
+    "durableEvidence": "/Users/nealbayless/LOCAL/monorepo-recovery/phase5-web-release-40263182081",
+    "observation": {
+      "startedAt": "2026-10-26T03:18:52Z",
+      "earliestRetirementReviewAt": "2026-11-02T03:18:52Z",
+      "durationDays": 7,
+      "retirementAuthorized": false,
+      "scheduledJobObservation": "Pending normal operating evidence; no extra job or live log/export inspection run"
+    },
+    "recoveryRequired": false,
+    "remainingHolds": [
+      "Import",
+      "Publish Classification catalog to development"
+    ],
+    "unrelatedWorkflowFailures": [
+      {
+        "id": 40263195746,
+        "name": "npm_and_yarn in /. for body-parser - Update #1652808966",
+        "status": "completed",
+        "conclusion": "failure",
+        "event": "dynamic",
+        "sha": "684ea9d9e31884742268fd5ed7c5f6605dea9514",
+        "url": "https://github.com/Lockpickers-United/lpu-belt-explorer/actions/runs/40263195746"
+      },
+      {
+        "id": 40263195736,
+        "name": "npm_and_yarn in /. for @fastify/busboy - Update #1652808987",
+        "status": "completed",
+        "conclusion": "failure",
+        "event": "dynamic",
+        "sha": "684ea9d9e31884742268fd5ed7c5f6605dea9514",
+        "url": "https://github.com/Lockpickers-United/lpu-belt-explorer/actions/runs/40263195736"
+      },
+      {
+        "id": 40263195471,
+        "name": "npm_and_yarn in /. for ip-address - Update #1652808998",
+        "status": "completed",
+        "conclusion": "failure",
+        "event": "dynamic",
+        "sha": "684ea9d9e31884742268fd5ed7c5f6605dea9514",
+        "url": "https://github.com/Lockpickers-United/lpu-belt-explorer/actions/runs/40263195471"
+      },
+      {
+        "id": 40263196230,
+        "name": "npm_and_yarn in /. for proxy-addr - Update #1652809005",
+        "status": "completed",
+        "conclusion": "failure",
+        "event": "dynamic",
+        "sha": "684ea9d9e31884742268fd5ed7c5f6605dea9514",
+        "url": "https://github.com/Lockpickers-United/lpu-belt-explorer/actions/runs/40263196230"
+      }
+    ],
+    "pairedCatalogValidation": {
+      "production": "passed",
+      "development": "passed",
+      "inputs": "post-publication retained live copies",
+      "command": "node scripts/validateClassificationCatalog.js <data.json> <classification-catalog.json>"
+    },
+    "durableBundleVerifiedFiles": 60
+  },
+  "earliestRetirementReviewAt": "2026-11-02T03:18:52Z"
 }
