@@ -1,6 +1,6 @@
 {
   "phase": 3,
-  "status": "local checks passed; Linux CI pending authorization",
+  "status": "complete",
   "date": "2026-10-25",
   "branch": "monorepo/phase3-npm",
   "worktree": "/private/tmp/lpu-monorepo-phase3.OS5o0i/worktree",
@@ -54,11 +54,12 @@
     "productionProfile": "root workspace-filtered production npm ci passed, 387 packages including workspace link",
     "localPackage": "15114 tar members inspected; Sharp 0.35.4 loaded; synthetic identity, not an exact committed release",
     "webBuildComparison": "475 files byte-identical to Phase 2 when using the same test-build flags",
-    "linuxArtifact": "pending",
+    "linuxArtifact": "passed: successful CI and downloaded artifact inspection/checksum/identity/dependency comparison",
     "workflowYaml": "all six parse",
     "hookSyntax": "passed",
     "standaloneNpmCi": "passed; derived standalone lock, 386 production packages",
-    "finalRootNpmCi": "passed offline after optional-platform completion; 1472 packages"
+    "finalRootNpmCi": "passed offline after optional-platform completion; 1472 packages",
+    "exactCommitLocalArtifact": "clean detached checkout production install, real builder, 15161-member inspection, extracted Sharp and server/two-runner syntax passed"
   },
   "sourceSafety": {
     "envChanged": false,
@@ -67,11 +68,64 @@
     "deploymentHoldsRetained": true,
     "liveDataJobsRun": false,
     "deploymentPerformed": false,
-    "committed": false,
-    "pushed": false
+    "committed": true,
+    "pushed": true
   },
   "primaryReferences": [
     "https://docs.npmjs.com/cli/v11/commands/npm-ci/",
     "https://docs.npmjs.com/cli/v11/commands/npm-install/"
-  ]
+  ],
+  "phase2Commit": "f64e7fc73672e014cff9227b9ecf841b02f05cba",
+  "phase2Tree": "1a144beadad25f36f76f5d25a0ce3b41f5094c5e",
+  "phase3Commit": "2725290cb7ddfa284113f7bb570992e9986fe6b0",
+  "phase3Tree": "3f30b7bfd5934bd009d13c75cb82691bb4956180",
+  "ci": {
+    "runId": 40230235649,
+    "jobId": 121280184505,
+    "url": "https://github.com/mgsecure/lpu-belt-explorer/actions/runs/40230235649",
+    "headSha": "2725290cb7ddfa284113f7bb570992e9986fe6b0",
+    "result": "success",
+    "platform": "Ubuntu 22.04 Linux x64",
+    "node": "24.21.0",
+    "npm": "11.19.0",
+    "fullInstallPackages": 1473,
+    "apiTestFiles": 92,
+    "apiTests": 478,
+    "productionInstallPackagesIncludingWorkspaceLink": 387,
+    "artifactMemberCount": 15161,
+    "extractedSharpLoad": "passed",
+    "serverAndJobSyntax": "passed"
+  },
+  "artifact": {
+    "id": 12612639490,
+    "name": "api-2725290cb7ddfa284113f7bb570992e9986fe6b0",
+    "retentionDays": 7,
+    "zipBytes": 89193360,
+    "zipSha256": "9d27d9ebb6afa704eeeddb513be666484000b3b54e71a3699f0b374032198f5a",
+    "archiveSha256": "8af03b10d7ed883ec08391e0b191c4f589229186874eeb41cc9c85c79c0a3206",
+    "identity": {
+      "monorepoCommit": "2725290cb7ddfa284113f7bb570992e9986fe6b0",
+      "monorepoLockSha256": "e77fbfa67cbef1c1f0fbb1b3b2c6b9ca59449abdd6b0ea8d8a446975b388bfeb",
+      "sourceApiManifestSha256": "8e807c20258944087999acc87bd3b55140f86e2d95e56f643e2cfceb76f325f0",
+      "nodeVersion": "24.21.0",
+      "npmVersion": "11.19.0",
+      "installStrategy": "nested"
+    },
+    "priorYarnProductionCount": 386,
+    "npmProductionCount": 386,
+    "missing": [],
+    "added": [],
+    "changedVersions": [],
+    "nativeSharp": [
+      {
+        "path": "node_modules/@img/sharp-linux-x64/lib/sharp-linux-x64-0.35.4.node",
+        "elfMagic": true,
+        "bits": 64,
+        "machine": 62
+      }
+    ],
+    "localArchive": "/private/tmp/lpu-monorepo-phase3.OS5o0i/linux-artifact/api.tar.gz"
+  },
+  "publishedRef": "origin/monorepo/phase3-npm",
+  "completionEvidence": "staged locally after the authorized two commits; not an additional commit or push"
 }

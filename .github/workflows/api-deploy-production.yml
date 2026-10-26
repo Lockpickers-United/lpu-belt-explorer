@@ -68,7 +68,7 @@ jobs:
     runs-on: ubuntu-22.04
     timeout-minutes: 20
     environment:
-      name: production
+      name: api-production
       url: ${{ vars.HEALTHCHECK_URL }}
     env:
       SFTP_HOST: ${{ vars.SFTP_HOST }}
@@ -97,7 +97,7 @@ jobs:
           )
           for variable in "${required[@]}"; do
             if [[ -z "${!variable:-}" ]]; then
-              echo "Missing GitHub production environment value: $variable" >&2
+              echo "Missing GitHub api-production environment value: $variable" >&2
               exit 1
             fi
           done

@@ -1,6 +1,6 @@
 # LPU monorepo — implementation plan and progress
 
-Status: In progress (Phase 3 npm workspace conversion and Node alignment)  
+Status: Phase 5 in progress — production preflight
 Last updated: 2026-10-25  
 Project definition: [Monorepo overview and migration plan](monorepo-plan.md)  
 Developer report: [Monorepo developer report](monorepo-developer-report.md)
@@ -8,18 +8,18 @@ Developer report: [Monorepo developer report](monorepo-developer-report.md)
 ## Project snapshot
 
 **Outcome:** The active web client and API share the `lpu-belt-explorer` repository with independent, verified releases and room for Devvit and LockyJr.  
-**Current phase:** Phase 3 in progress — npm conversion, standalone production packaging and Node alignment; Phase 2 remains complete.
-**Next action:** Review owner question 9 for separate Phase 2/3 implementation commits and publication of only the Phase 3 branch for Linux API CI. Local npm, lint/test/build/browser and standalone packaging checks pass.
-**Overall blocker:** Linux artifact CI awaits explicit candidate commit/push authorization. Production cutover, release-hold removal, host settings and live-data jobs retain separate review/approval gates.
+**Current phase:** Phase 5 in progress — production-mode output equivalence and hosted-control inspection completed; owner provisioned `api-production` and required setting names/protections are verified. Question 13 is resolved.
+**Next action:** Prepare the exact final held candidate for authorized publication/CI, certify release artifacts, and complete scoped external-action authorization. Follow the [Phase 5 ledger](monorepo-phase5-runbook.md); preserve migration holds until approved transfer.
+**Overall blocker:** No environment-provisioning blocker remains: question 13 is resolved. Exact final candidate/artifact and private target/recovery checks remain before release. Production release, hold removal, authority transfer, live-data work and retirement remain separately gated. Offline preparation can continue.
 
 | Phase | Status | Completed |
 | --- | --- | --- |
 | Phase 0: Baseline and migration decisions | Complete | 2026-10-25 |
 | Phase 1: Import the active API and prepare its release artifact | Complete | 2026-10-25 |
 | Phase 2: Move the web app and repair web/Firebase paths | Complete | 2026-10-25 |
-| Phase 3: Adopt npm workspaces and align Node | In progress | — |
-| Phase 4: Integrated validation and development rehearsal | Not started | — |
-| Phase 5: Production cutover and old-source retirement | Not started | — |
+| Phase 3: Adopt npm workspaces and align Node | Complete | 2026-10-25 |
+| Phase 4: Integrated validation and development rehearsal | Complete | 2026-10-25 |
+| Phase 5: Production cutover and old-source retirement | In progress | — |
 | Phase 6: Future Devvit and LockyJr onboarding | Not started | — |
 
 Use **Not started**, **In progress**, **Blocked**, or **Complete** for phase status. Mark a phase complete only when its exit criteria have evidence in the developer report. Keep source moves, dependency conversion, and production cutover separately reviewable.
@@ -151,8 +151,8 @@ Move the web package to `apps/web` and add a private root coordinator. The API r
 
 ## Phase 3: Adopt npm workspaces and align Node
 
-**Status:** In progress  
-**Completed:** —  
+**Status:** Complete  
+**Completed:** 2026-10-25  
 **Start when:** Phase 2 paths and independent checks are stable.
 
 ### Summary
@@ -163,18 +163,20 @@ Add `apps/api` to the root npm workspace and pin a common Node 24 patch. Change 
 
 - Selected common Node is the API’s existing 24.21.0; npm 11.19.0 is installed with it. Owner question 8 confirms the API host provides v24.21.0. Preserve the existing production versions while converting Yarn to npm, and retain a self-contained API package despite workspace dependency layout.
 
+- Authorized two commits are published only on `origin/monorepo/phase3-npm`. [Linux API CI passed](https://github.com/mgsecure/lpu-belt-explorer/actions/runs/40230235649) for `2725290cb7ddfa284113f7bb570992e9986fe6b0`; the downloaded artifact preserves all 386 prior production dependency locations/versions and loads Sharp on Linux. Local web/API/Functions/browser and exact-commit packaging checks pass. Completion evidence is in the developer report and Phase 3 metadata; no owner response remains pending.
+
 ### Tasks
 
 - [x] Verify the API host's available Node patch, choose a supported Node 24 patch for root/CI/PM2/cron, and pin the npm release used by CI. Update docs and host-path checks together.
 - [x] Convert the API Yarn graph to the root `package-lock.json`; move required Yarn `resolutions` to root npm `overrides`. Review hoisting, peer dependencies, native Sharp resolution, package scripts, and the complete lockfile diff. Remove API Yarn files only after reproducible installs pass.
 - [x] Use root `npm ci` and app-targeted scripts in CI while keeping Functions on its own lockfile. Ensure API production packaging includes only needed runtime files and dependencies and still supports rollback.
-- [ ] Run full web/API lint and tests, web test build, relevant browser checks, and offline Linux API artifact validation; compare the resolved production dependency tree with the prior Yarn artifact.
+- [x] Run full web/API lint and tests, web test build, relevant browser checks, and offline Linux API artifact validation; compare the resolved production dependency tree with the prior Yarn artifact.
 
 ### Exit criteria
 
 - [x] A clean checkout with the pinned Node/npm completes root `npm ci` and app-targeted validation; separate Functions install/lint remains valid.
-- [ ] API native dependencies load in the release artifact on the target platform, and the artifact remains self-contained under the existing runtime directory contract.
-- [ ] The developer report records material dependency changes and their checks; no unreviewed lockfile or runtime drift remains.
+- [x] API native dependencies load in the release artifact on the target platform, and the artifact remains self-contained under the existing runtime directory contract.
+- [x] The developer report records material dependency changes and their checks; no unreviewed lockfile or runtime drift remains.
 
 ### Open issues for next phase
 
@@ -186,8 +188,8 @@ Add `apps/api` to the root npm workspace and pin a common Node 24 patch. Change 
 
 ## Phase 4: Integrated validation and development rehearsal
 
-**Status:** Not started  
-**Completed:** —  
+**Status:** Complete
+**Completed:** 2026-10-25
 **Start when:** Phase 3 clean installs and CI pass; development deployment inputs and permission are available.
 
 ### Summary
@@ -196,24 +198,30 @@ Prove that the monorepo can build, package, and operate each component without c
 
 ### Findings
 
-- None yet.
+- Clean candidate passed web lint/280 tests/build, API lint/478 tests, Functions install/lint, ten restricted browser journeys and nine default-database change-tracker emulator operations. All 475 clean build files and seven catalog hashes match baseline.
+- Exact artifact activation on Linux api-dev, readiness/HTTPS identity, public API/auth denial, deliberately wrong identity rejection and real PM2/directory rollback pass (25 gates). Prior development service/source/settings restored; selected protected shared files unchanged. Linux Bash rejects checksum mismatch. Earlier harness/restoration failures and corrections remain in the report.
+- [Runbook](monorepo-phase4-runbook.md) and [verification metadata](monorepo-phase4-verification.json) were reviewed by the owner. Development uses mutable `current-dev`; production activation must not be applied unchanged. Questions 10/11 selected and authorized existing api-dev rehearsal. Question 12 supplied mgsecure; the real public-profile browser journey passed. Owner confirms unchanged operational/settings intent, destination API setting-name availability, and approves the sequence/seven-day observation. Effective hosted metadata remains a Phase 5 preflight check.
+
+- Owner-designated mgsecure public-profile browser journey passed on the exact candidate, followed by successful identity-failure rollback (28 host gates). Local generator comparison passed: 2,275 dist files plus three version/sitemap files identical before/after relocation under a fixed clock. Production-mode release settings still need validation before cutover.
 
 ### Tasks
 
-- [ ] Run web/API/Functions checks from a clean checkout and contract tests for `/api/v1`, catalog loading, and Firestore change-index consumers using mocks or emulators. Run relevant Playwright journeys under the test-mode network restrictions.
-- [ ] Exercise API artifact construction, checksum, PM2 readiness, failure rollback, and cron command/path preflight against an authorized development target; keep development shared data outside releases. Confirm no duplicate scheduled job runs.
-- [ ] Verify web build and catalog outputs without invoking the production `Build-N-Deploy` or `Import` workflows. Rehearse release ordering, exact commit mapping, environment settings by name, and rollback steps.
-- [ ] Record the development evidence, gaps, and final production runbook in the developer report; obtain human review of workflow triggers, protected environments, and external data effects.
+- [x] Run web/API/Functions checks from a clean checkout and contract tests for `/api/v1`, catalog loading, and Firestore change-index consumers using mocks or emulators. Run relevant Playwright journeys under the test-mode network restrictions.
+- [x] Exercise API artifact construction, checksum, PM2 readiness, failure rollback, and cron command/path preflight against an authorized development target; keep development shared data outside releases. Confirm no duplicate scheduled job runs.
+- [x] Verify web build and catalog outputs without invoking the production `Build-N-Deploy` or `Import` workflows. Rehearse release ordering, exact commit mapping, environment settings by name, and rollback steps.
+- [x] Record the development evidence, gaps, and final production runbook in the developer report; obtain human review of workflow triggers, protected environments, and external data effects.
 
 ### Exit criteria
 
-- [ ] Development API health and a representative web/API journey pass on the monorepo artifact; API rollback is demonstrated or an explicitly reviewed equivalent rehearsal is documented.
-- [ ] CI checks are green, release contents and catalog hashes are recorded, and a production cutover/rollback runbook is reviewable.
-- [ ] No production release or live-data exporter was used as a test shortcut.
+- [x] Development API health and a representative web/API journey pass on the monorepo artifact; API rollback is demonstrated or an explicitly reviewed equivalent rehearsal is documented.
+- [x] CI checks are green, release contents and catalog hashes are recorded, and a production cutover/rollback runbook is reviewable.
+- [x] No production release or live-data exporter was used as a test shortcut.
 
 ### Open issues for next phase
 
-- Obtain explicit approval for each production deployment, automatic site publish path, live-data action, and production cutover step before execution.
+- Complete production-mode compilation with intended release settings, fresh exact-release artifact/identity checks and effective hosted-control/target verification before execution.
+- Obtain explicit authorization for concrete production deployment/publication, hold-removal/authority-transfer, live-data and retirement actions. Runbook approval alone authorizes none of them.
+- Observe for the approved seven days after cutover; keep active plus two API rollback releases and the previous backend available. Retirement remains separately authorized.
 
 ### Open issues for later phases
 
@@ -221,9 +229,9 @@ Prove that the monorepo can build, package, and operate each component without c
 
 ## Phase 5: Production cutover and old-source retirement
 
-**Status:** Not started  
+**Status:** In progress
 **Completed:** —  
-**Start when:** Phase 4 exit criteria pass and the exact external actions have the required approval.
+**Start when:** Phase 4 exit criteria pass and Phase 5 is requested. Offline/read-only preflight can begin; each exact external action still requires its own approval.
 
 ### Summary
 
@@ -231,7 +239,10 @@ Make the monorepo the sole release source while preserving the current public UR
 
 ### Findings
 
-- None yet.
+- Production-mode relocation comparison passes: 2,754 identical files and seven matching catalog hashes with Node 24.21.0, `publish`, and synthetic sensitive inputs. Exact hosted release artifacts remain pending.
+- Effective GitHub controls are recorded in [Phase 5 evidence](monorepo-phase5-verification.json). Owner provisioned destination `api-production`; all seven variable/two secret names and matching protection policy are verified, closing question 13. Old API environment has no reviewer/branch policy.
+- [Cutover/retirement ledger](monorepo-phase5-runbook.md) separates held main adoption, API authority transfer/release, automatic site/catalog release, seven-day observation and retirement. Four candidate holds remain intact.
+- Held site workflow now selects current main after successful Import completion and records actual checkout SHA, avoiding publication from Import’s stale starting SHA.
 
 ### Tasks
 

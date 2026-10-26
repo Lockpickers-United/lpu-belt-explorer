@@ -96,4 +96,4 @@ the tracked `lpubelts-api-server-prod-next` PM2 process name while both processe
 exist and retain it after cutover. Once the new hostname is healthy and verified,
 change the frontend API base URL to `https://api.lpubelts.com`.
 
-Keep the old backend available through at least one normal operating cycle, preferably a week, before retirement. Confirm that running both versions does not duplicate cron jobs, exports, emails, or other scheduled side effects.
+For the monorepo cutover, the owner approved a seven-day observation interval after cutover. Keep the previous backend available throughout; retirement still requires separate authorization and recorded health/job evidence. Confirm that running both versions does not duplicate cron jobs, exports, emails, or other scheduled side effects.

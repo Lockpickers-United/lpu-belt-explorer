@@ -1,6 +1,6 @@
 # LPU monorepo overview and migration plan
 
-Status: Phases 0–2 complete locally (2026-10-25); Phase 3 not started. Phase 1 is published on its approved migration branch; Phase 2 is staged in an isolated worktree and is not committed or merged. This document defines the target and tooling migration; it does not authorize a deployment, live-data job, or service cutover.
+Status: Phases 0–4 complete; Phase 5 production preflight in progress (2026-10-25). Development validation/rehearsal and owner runbook review are complete, including the approved seven-day post-cutover observation interval. Actual production actions remain separately gated.
 
 Execution tracking: [implementation plan](monorepo-implementation-plan.md) and [developer report](monorepo-developer-report.md).
 
@@ -12,7 +12,7 @@ The objective is one source and review location, not one runtime. The site, API,
 
 ## Current candidate
 
-The reviewed candidate now contains `apps/api` and `apps/web`. Root npm now coordinates both web and API with Node 24.21.0/npm 11.19.0 and nested app-local dependencies; Functions npm remains separate. Phase 3 local checks pass; Linux artifact CI awaits explicit candidate publication approval. Firebase configs and environment/credential ownership stay at root. Candidate publish/import/catalog-upload/deployment jobs have unconditional holds, while deployed workflows and the original API release authority remain unchanged. Phase 2 checks passed: web lint/280 tests/build, API lint/464 tests, ten browser checks, Functions lint and isolated Web SDK emulators. See the execution documents for exact evidence and the staged worktree location.
+The reviewed candidate contains `apps/api` and `apps/web`, coordinated by root npm with Node 24.21.0/npm 11.19.0 and nested app-local dependencies; Functions npm remains separate. Phase 3 exact-commit Linux CI/artifact validation passed. Phase 4 clean-checkout checks, browser journeys, change-tracker emulators and build/catalog comparisons pass. The owner authorized ongoing use/interruption of the existing api-dev directory/port. Real Linux artifact activation, exact readiness, public API checks and rollback pass; the previous development arrangement is restored. Owner question 12 supplied the mgsecure fixture; its real public-profile browser/API journey passed and the prior service was restored. Local generated-output equivalence also passed. Owner runbook review is complete; unchanged operations/settings intent and destination API setting-name availability are confirmed. The seven-day post-cutover observation is approved. Phase 5 production-mode relocation output matches across 2,754 files with synthetic sensitive inputs and `publish`; effective GitHub metadata is now recorded. Owner provisioned the API environment as `api-production`; seven required variable/two secret names and unchanged effective protection policy are independently verified, resolving question 13. Exact final release artifacts/hosted build settings remain pre-execution gates. See the [Phase 5 cutover ledger](monorepo-phase5-runbook.md). See the [rehearsal and cutover runbook](monorepo-phase4-runbook.md). Environment/credential ownership stays at root. Candidate live-job holds remain unconditional; the original API retains production release authority.
 
 ## Phase 0 starting point
 

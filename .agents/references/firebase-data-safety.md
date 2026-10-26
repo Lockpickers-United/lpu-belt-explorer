@@ -6,6 +6,10 @@ Read this reference before changing or running Firebase, Functions, external-ser
 
 Root npm commands delegate to `apps/web`. Tracked `.env.*`, ignored `.env.keysNew` and credential files remain in their existing root/sibling locations; Vite/Vitest explicitly use the root env directory. Do not copy or change these files during the web move. Candidate Build-N-Deploy, Import and development-catalog publish jobs are unconditionally disabled until approved release transfer; their app-local steps use `apps/web`, while npm install and GitHub action paths stay rooted at the monorepo.
 
+## Ignored local environment files after migration
+
+Ignored secret-bearing files are intentionally absent from a new worktree or Git import. Local web non-test setup uses the monorepo-root `.env.keysNew`; local API setup uses `apps/api/.env.local`. Owner-managed copies may be needed for those local runtimes; preserve original copies and check path references privately. Do not overwrite tracked root web environment files, commit credentials, or copy production secrets merely for tests. Server runtime environment files remain protected under each host's `shared` directory and are linked into the application at activation. GitHub deployment environment variables/secrets are separate from those runtime files. Agent secret-file restrictions above still apply.
+
 ## Environment selection
 
 Client Firebase initialization lives in `apps/web/src/auth/firebase.js`. `VITE_DEV_FIRESTORE=true` selects the `lpubelts-dev` Firestore database; `import.meta.env.DEV` alone does not change databases.

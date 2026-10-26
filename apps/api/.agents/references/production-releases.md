@@ -11,7 +11,7 @@ frontend `VITE_CLASSIFICATION_WRITE_STAGE` builds.
 
 ## Deployment workflow
 
-The monorepo candidate path is root `.github/workflows/api-deploy-production.yml`. Its deploy job has an unconditional `if: ${{ false }}` migration hold. The frozen original API repository remains the only production release authority through Phase 4. Remove that hold only in an explicitly approved Phase 5 change after disabling old dispatch authority and checking in-flight runs. The candidate workflow is manually dispatched, accepts only the `main` branch, and uses the GitHub `production` environment for approval; effective reviewers and allowed branches still require owner verification.
+The monorepo candidate path is root `.github/workflows/api-deploy-production.yml`. Its deploy job has an unconditional `if: ${{ false }}` migration hold. The frozen original API repository remains the only production release authority through Phase 4. Remove that hold only in an explicitly approved Phase 5 change after disabling old dispatch authority and checking in-flight runs. The candidate workflow is manually dispatched, accepts only the `main` branch, and binds to the GitHub `api-production` environment; main-only deployment is enforced by workflow code. Phase 5 hosted inspection verified destination `api-production` with all seven variable names/two secret names and no required reviewers or branch policy, matching the old API environment. Owner question 13 is resolved; private value/target checks remain required before transfer. An environment name alone does not establish reviewer approval.
 
 The workflow:
 
@@ -31,7 +31,7 @@ The workflow:
 
 ## GitHub configuration
 
-The `production` GitHub environment needs these variables:
+The destination `api-production` GitHub environment needs these variables:
 
 - `SFTP_HOST`
 - `SFTP_PORT`
@@ -91,7 +91,7 @@ unintended inherited values before saving the process list.
 
 ## Retention and rollback
 
-Retain three production releases: the active release and two rollback candidates. The current workflow does not prune old releases, so cleanup remains a separate maintenance action after verifying the active target. Never remove the target of `current` or either rollback candidate.
+Retain three production releases: the active release and two rollback candidates. The monorepo cutover runbook has an owner-approved seven-day post-cutover observation interval; keep recovery candidates and the previous backend available throughout. Expiry does not automatically authorize retirement. The current workflow does not prune old releases, so cleanup remains a separate maintenance action after verifying the active target. Never remove the target of `current` or either rollback candidate.
 
 The automated rollback covers failures during deployment activation and the readiness check. Readiness remains unavailable during startup and shutdown, verifies that the configured collection-statistics and lock-video files are readable, and reports the release ID written by the workflow. For a later manual rollback:
 
@@ -125,3 +125,14 @@ For the initial Phase 1 check, API CI also accepts pushes to the exact `monorepo
 The root lockfile is authoritative. The release builder verifies committed root/API manifests, lockfile, npm configuration and Node pins. It derives an API-root `package.json` with effective root overrides and a package-local `package-lock.json`, copies only the API production dependency tree, and records the exact commit, root-lock SHA-256 and tool versions in `.release-inputs.json`. The standalone lock is generated in temporary staging, never maintained alongside the workspace source. Inspection rejects missing dependencies, development packages and versions absent from that lock. The remote activation check also verifies the recorded commit before changing `current`.
 
 Node 24.21.0 availability was confirmed by the owner for question 8. This does not replace the activation check that `REMOTE_NODE_BIN` supplies that exact patch. Candidate production deployment remains unconditionally held until Phase 5.
+
+
+## Phase 5 effective controls and retirement
+
+Read [the cutover ledger](../../../../internal-docs/monorepo-phase5-runbook.md) before proposing an external action. As verified on 2026-10-25, Pages is owned by `Lockpickers-United/lpu-belt-explorer`, which has web `github-pages` and the provisioned API `api-production` environment. The frozen old API repository retains its `production` environment and release authority until the approved transfer. Do not use the CI fork as evidence of production settings. No required reviewer or environment branch restriction was present on old API `production`; preserve the existing policy without inventing or silently changing it.
+
+Adopt the held monorepo on the confirmed destination before transferring release authority. Disable/quiesce old API dispatch before enabling the monorepo API job, retain the web/Import/development-catalog holds during API verification, and separately authorize the site-control merge because it triggers Pages plus catalog uploads. No authority transfer has occurred. Keep the old repository/backend and active plus two complete recovery releases through seven days after actual cutover; retirement requires separate authorization and operating evidence. Cron continues through stable host `current/scripts` paths and needs no duplicate schedule. Existing automated rollback suppresses PM2 reload errors; verify the restored service identity explicitly.
+
+The owner selected `api-production` as the destination GitHub environment name for clarity. Populate it with the same settings and protections as the old repository’s `production`; leave the source environment unchanged. This name is a GitHub deployment binding only: runtime `NODE_ENV=production`, protected `.env.production`, host paths, PM2 names and release procedures stay unchanged. Web continues to use `github-pages`.
+
+Provisioning confirmed on 2026-10-25: destination `api-production` now has all seven required variable names/two secret names, no required reviewers and no deployment branch policy, matching the previously inspected source environment. Question 13 is resolved. Earlier missing-environment findings are historical; normal private value/target checks remain required before activation. No release authority or live-job hold has changed.

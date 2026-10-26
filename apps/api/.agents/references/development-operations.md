@@ -133,3 +133,14 @@ The server can also run locally. The default environment is `local`, which reads
 ## Mapping switch review
 
 Neal must review the local source root, unchanged remote `current-dev` root, `.env*`/credential/dependency/runtime excludes, and manual restart policy before enabling uploads. Disable the old mapping before enabling the new one. Roll back by disabling the monorepo mapping and restoring the original source mapping; restore a complete known-good development upload and dependencies before the approved restart. No IDE settings or host files are changed by this documentation.
+
+
+## Rehearsal findings (2026-10-25)
+
+The monorepo artifact was activated and rolled back successfully using the existing mutable `current-dev`, port 10081 and `lpubelts-api-server-dev`. The original development arrangement was restored. Owner authorization permits development interruptions for this project's replacement/rollback rehearsals; production and live-job gates remain separate. See the root `internal-docs/monorepo-phase4-runbook.md` and developer report for the exact evidence and remaining review.
+
+Health checks must use the configured listening address. This host's development listener was bound to its host IPv4 address, so do not assume the loopback example above is reachable; verify binding without silently changing `HOST`.
+
+Preserve effective release identity and integration flags on restoration. `APP_RELEASE_ID`/`APP_GIT_SHA` may be supplied by the protected environment file; setting them to empty strings in the PM2 environment masks dotenv defaults and changes readiness identity. Require the original exact readiness identity after rollback, not merely an online process. Do not print complete PM2 environments or credentials while diagnosing.
+
+Run full archive inspection in CI/local validation and pair its evidence with the exact checksum before host extraction. Repeated full inspection terminated abnormally on this VPS; host checksum, embedded commit/lock, syntax and Sharp checks passed. Keep protected environment/catalog/generated data outside staged releases and retain complete previous source/dependencies until recovery verification. Rehearsal copies/logs remain outside source control.
