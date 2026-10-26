@@ -1,0 +1,85 @@
+[
+  {
+    "pattern": "Googlebot\\/",
+    "url": "http://www.google.com/bot.html",
+    "instances": [
+		"Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; Googlebot/2.1; +http://www.google.com/bot.html) Chrome/111.0.5563.64 Safari/537.36",
+		"Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.5563.64 Mobile Safari/537.36 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"
+    ]
+  }
+  ,
+  {
+    "pattern": "Google-InspectionTool",
+    "url": "http://www.google.com/bot.html",
+    "instances": [
+		"Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.5845.179 Mobile Safari/537.36 (compatible; Google-InspectionTool/1.0)",
+		"Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.5938.149 Mobile Safari/537.36 (compatible; Google-InspectionTool/1.0)",
+		"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.5845.179 Safari/537.36 (compatible; Google-InspectionTool/1.0)",
+		"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.5938.149 Safari/537.36 (compatible; Google-InspectionTool/1.0)",
+		"Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.5993.70 Mobile Safari/537.36 (compatible; Google-InspectionTool/1.0)",
+		"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.5993.70 Safari/537.36 (compatible; Google-InspectionTool/1.0)",
+		"Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.5993.88 Mobile Safari/537.36 (compatible; Google-InspectionTool/1.0)",
+		"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.5993.88 Safari/537.36 (compatible; Google-InspectionTool/1.0)",
+		"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.5993.117 Safari/537.36 (compatible; Google-InspectionTool/1.0)",
+		"Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.5993.117 Mobile Safari/537.36 (compatible; Google-InspectionTool/1.0)",
+		"Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.6045.105 Mobile Safari/537.36 (compatible; Google-InspectionTool/1.0)",
+		"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.6045.105 Safari/537.36 (compatible; Google-InspectionTool/1.0)",
+		"Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.6045.123 Mobile Safari/537.36 (compatible; Google-InspectionTool/1.0)",
+		"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.6045.123 Safari/537.36 (compatible; Google-InspectionTool/1.0)"
+    ]
+  }
+  ,
+  {
+    "pattern": "Google-Structured-Data-Testing-Tool",
+    "url": "http://www.google.com/bot.html",
+    "instances": [
+		"Mozilla/5.0 (compatible; Google-Structured-Data-Testing-Tool +https://search.google.com/structured-data/testing-tool)"
+    ]
+  }
+  ,
+  {
+    "pattern": "Google-Misc",
+    "url": "http://www.google.com/bot.html",
+    "instances": [
+		"Mozilla/5.0 (en-us) AppleWebKit/537.36 (KHTML, like Gecko; Google PP Default) Chrome/117.0.5938.149 Safari/537.36",
+		"Mozilla/5.0 (Linux; Android 13; SM-S918U Build/TP1A.220624.014; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/115.0.5790.168 Mobile Safari/537.36 musical_ly_2023009040 JsSdk/1.0 NetType/MOBILE Channel/googleplay AppName/musical_ly app_version/30.9.4 ByteLocale/en ByteFullLocale/en Region/US Spark/1.3.9.3-bugfix AppVersion/30.9.4 BytedanceWebview/d8a21c6",
+		"Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko Firefox/11.0 (via ggpht.com GoogleImageProxy)",
+		"Mozilla/5.0 (Linux; Android 13; Pixel 7 Pro Build/TQ3A.230605.012; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/109.0.5414.123 Mobile Safari/537.36 Instagram 264.0.0.22.106 Android (33/13; 420dpi; 1080x2106; Google/google; Pixel 7 Pro; cheetah; cheetah; en_US; 430370706)"
+    ]
+  }
+  ,
+  {
+    "pattern": "Ahrefs-Bot",
+    "instances": [
+      "Mozilla/5.0 (compatible; AhrefsBot/7.0; +http://ahrefs.com/robot/)",
+	  "Mozilla/5.0 (compatible; AhrefsSiteAudit/6.1; +http://ahrefs.com/robot/site-audit)"
+    ]
+  }
+  ,
+  {
+    "pattern": "Facebook-ExternalHit",
+    "instances": [
+      "facebookexternalhit/1.0 (+http://www.facebook.com/externalhit_uatext.php)",
+	  "facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)"
+    ]
+  }
+  ,
+  {
+    "pattern": "Amazon-Kendra-AI",
+    "instances": [
+      "amazon-kendra"
+    ]
+  }
+  ,
+  {
+    "pattern": "UNKNOWN-Bot",
+    "instances": [
+      "Chrome"
+    ]
+  }
+]
+
+
+
+
+

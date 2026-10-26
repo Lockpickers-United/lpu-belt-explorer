@@ -1,0 +1,4634 @@
+{
+  "evidence": [
+    {
+      "userId": "rObW64u9RbNPAnjRVpUSNV7FaMZ2",
+      "evidenceUrl": "https://docs.google.com/document/d/1UN__bPJcqGUdcP1Ygcw3uwJyHqBjGnDpqwYefH3Fdi0/edit?usp=sharing",
+      "modifier": "",
+      "projectId": "5a0aa3e0",
+      "evidenceCreatedAt": {
+        "_seconds": 1786981496,
+        "_nanoseconds": 214000000
+      },
+      "id": "0LOXlpPFl1acQ1iOKYQT",
+      "discipline": "Cutaway Making",
+      "tier": "T2",
+      "displayName": "William",
+      "date": "2026-08-17"
+    },
+    {
+      "userId": "FEXES4MpCQYAhsYIB2gBvQZAsQs2",
+      "evidenceUrl": "https://fys.ucdavis.edu/schedule",
+      "evidenceNotes": "I teach a locksport class at the University of California Davis (Fall 2024, Winter 2025, Spring 2025)",
+      "modifier": "",
+      "projectId": "e9c16310",
+      "evidenceCreatedAt": {
+        "_seconds": 1739247349,
+        "_nanoseconds": 971000000
+      },
+      "id": "0OS4Xf4vqFT7SmJFfXiO",
+      "discipline": "Picking Instruction",
+      "tier": "T1",
+      "displayName": "drKorf",
+      "date": "2025-02-10"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/946082204826603561/1112335101318135908",
+      "evidenceCreatedAt": {
+        "_seconds": 1685264400,
+        "_nanoseconds": 0
+      },
+      "modifier": "",
+      "userId": "SSSCOJVF5YOpuzkAifuROB6xPxx1",
+      "projectId": "ee1c082f",
+      "evidenceNotes": "Tier 2 Project impressioning",
+      "id": "0TjLHwB9dTIJR0YpkG4w",
+      "discipline": "Impressioning",
+      "tier": "T2",
+      "displayName": "Lady Locks",
+      "tabClaimed": "Ladylocks",
+      "date": "2023-05-28"
+    },
+    {
+      "userId": "A7dMVjo593RrfUpmyIHpAw66oRC2",
+      "evidenceUrl": "https://ibb.co/album/VY2j6m",
+      "evidenceNotes": "",
+      "modifier": "",
+      "projectId": "93a61f11",
+      "evidenceCreatedAt": {
+        "_seconds": 1737373690,
+        "_nanoseconds": 0
+      },
+      "id": "0YpPqh50Ka4JN08WiJnQ",
+      "discipline": "Challenge Locks",
+      "tier": "T1",
+      "displayName": "Ragnar",
+      "date": "2025-01-20"
+    },
+    {
+      "userId": "WMSvvuutyShfvBBYB3PmDe4fmeS2",
+      "evidenceUrl": "https://drive.google.com/file/d/13D5Lp-EDRXZvoK7kDuQNVf0KDqnWyd6G/view?usp=drive_link",
+      "evidenceNotes": "Tier 2 Project safecracking",
+      "modifier": "",
+      "projectId": "c53d56b1",
+      "evidenceCreatedAt": {
+        "_seconds": 1697041750,
+        "_nanoseconds": 778000000
+      },
+      "id": "0fe0uQMqON8TUKF5s4o8",
+      "discipline": "Safe Lock Manipulation",
+      "tier": "T2",
+      "displayName": "NiXXeD",
+      "tabClaimed": "NiXXeD",
+      "date": "2023-10-11"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/282173282546089985/992324864553799710",
+      "evidenceCreatedAt": {
+        "_seconds": 1656650846,
+        "_nanoseconds": 0
+      },
+      "modifier": "",
+      "userId": "e5DBapQylbWfts6DJo6rH4Zi1Mp2",
+      "projectId": "ee1c082f",
+      "evidenceNotes": "Tier 2 Project impressioning",
+      "id": "0vbdFOEiMW4oMEr2OO88",
+      "discipline": "Impressioning",
+      "tier": "T2",
+      "displayName": "Mick Emhurt",
+      "tabClaimed": "Mick Emhurt",
+      "date": "2022-06-30"
+    },
+    {
+      "userId": "vlnzckpCZrWlbm9gJkyulCUstR23",
+      "evidenceUrl": "https://lpulocks.com/#/challengelocks?maker=Storm+Crow",
+      "modifier": "",
+      "projectId": "76fee3b3",
+      "evidenceCreatedAt": {
+        "_seconds": 1786039687,
+        "_nanoseconds": 993000000
+      },
+      "id": "14pr3UKxMWnk9hpJyTCA",
+      "discipline": "Challenge Locks",
+      "tier": "T4",
+      "displayName": "storm crow",
+      "date": "2026-08-06"
+    },
+    {
+      "userId": "gnlv0NRTsCWnPzEaQO0e95wllHC3",
+      "evidenceUrl": "https://docs.google.com/document/d/12-GJrEjdQqBaPanYJGin9u9-wU9rt_4zbfUJqqslDkk/edit?usp=sharing",
+      "evidenceNotes": "Submission for BB",
+      "modifier": "",
+      "projectId": "c2e1c952",
+      "evidenceCreatedAt": {
+        "_seconds": 1743782071,
+        "_nanoseconds": 612000000
+      },
+      "id": "1DfJ1K2NU1TLiDZ1BqkL",
+      "discipline": "Pick Making",
+      "tier": "T2",
+      "displayName": "Hyperion",
+      "date": "2025-04-04"
+    },
+    {
+      "userId": "kr75vfctGiQw1vveSLZYcPN4W2v2",
+      "evidenceUrl": "https://docs.google.com/document/d/e/2PACX-1vSUIqVuqGVaCX-EFqc52NkIgVJ__-T9LPzYbL3SBqbqdJ__vNLIxwQkwCbEThHUEbACHkTl64bPd9uV/pub#h.7l4x2vh3e5ks",
+      "evidenceNotes": "",
+      "modifier": "",
+      "projectId": "79147d28",
+      "evidenceCreatedAt": {
+        "_seconds": 1743975940,
+        "_nanoseconds": 805000000
+      },
+      "id": "1KDQehDrzDX3aUY8lswl",
+      "discipline": "Lock Design",
+      "tier": "T2",
+      "displayName": "Ekvivokk",
+      "date": "2025-04-06"
+    },
+    {
+      "userId": "A7dMVjo593RrfUpmyIHpAw66oRC2",
+      "evidenceUrl": "https://maciej-iwanczews.imgbb.com/?page=2&seek=GvTXhfmS",
+      "evidenceNotes": "Magnetic pick's ",
+      "modifier": "",
+      "projectId": "630d0229",
+      "evidenceCreatedAt": {
+        "_seconds": 1737845329,
+        "_nanoseconds": 19000000
+      },
+      "id": "1ezCiNAFaGXhr0n3zt7D",
+      "discipline": "Pick Making",
+      "tier": "T1",
+      "displayName": "Ragnar",
+      "date": "2025-01-25"
+    },
+    {
+      "userId": "D8RchvJyRuepbqMgeKmc6yNpoko2",
+      "evidenceUrl": "https://youtu.be/Vp2HeTnrT0I",
+      "evidenceNotes": "",
+      "modifier": "",
+      "projectId": "ee1c082f",
+      "evidenceCreatedAt": {
+        "_seconds": 1569174051,
+        "_nanoseconds": 0
+      },
+      "id": "2YflgfUM29otmeby6RSD",
+      "discipline": "Impressioning",
+      "tier": "T2",
+      "displayName": "Priest",
+      "tabClaimed": "Priest",
+      "date": "2019-09-22"
+    },
+    {
+      "userId": "DPTRBzqHEMhwtJSiTe3MByIF8nq2",
+      "evidenceUrl": "https://youtu.be/OioxWWg7wuQ",
+      "modifier": "",
+      "projectId": "93a61f11",
+      "evidenceCreatedAt": {
+        "_seconds": 1762833463,
+        "_nanoseconds": 436000000
+      },
+      "id": "2l1b6cqjJAojSbrZS3SR",
+      "discipline": "Challenge Locks",
+      "tier": "T1",
+      "displayName": "the-cloven-gallows",
+      "date": "2025-11-10"
+    },
+    {
+      "userId": "YNzCmVUJe7SIEo323Y1nevcShyf2",
+      "evidenceUrl": "https://imgur.com/smvoo8M",
+      "evidenceNotes": "",
+      "modifier": "",
+      "projectId": "8b65f1db",
+      "evidenceCreatedAt": {
+        "_seconds": 1624792005,
+        "_nanoseconds": 0
+      },
+      "id": "2nt6JH9ZlwWE6nNz58Wm",
+      "discipline": "Cutaway Making",
+      "tier": "T5",
+      "displayName": "SasPes",
+      "tabClaimed": "SasPes",
+      "date": "2021-06-27"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/946082204826603561/981313543188131920",
+      "evidenceCreatedAt": {
+        "_seconds": 1653987600,
+        "_nanoseconds": 0
+      },
+      "modifier": "",
+      "userId": "OlCHC00OrRY0MOqWv7ShjP18cKr2",
+      "projectId": "e2c0342e",
+      "evidenceNotes": "Tier 3 Project Challenge locks",
+      "id": "2rzPk5uQ4GMcI6hlROjR",
+      "discipline": "Challenge Locks",
+      "tier": "T3",
+      "displayName": "HVLogic",
+      "tabClaimed": "HVLogic",
+      "date": "2022-05-31"
+    },
+    {
+      "userId": "f6fzVfSIHKU8BQzETo8wymnaUhz1",
+      "evidenceUrl": "https://imgur.com/TGm0U63",
+      "modifier": "",
+      "projectId": "28ebf3b8",
+      "evidenceCreatedAt": {
+        "_seconds": 1593179679,
+        "_nanoseconds": 377000000
+      },
+      "id": "2yJIPs98GWCEvKNGtwMm",
+      "discipline": "Other Master's Project",
+      "tier": "T2",
+      "displayName": "Culper Woodhull",
+      "tabClaimed": "Culper",
+      "date": "2020-06-26"
+    },
+    {
+      "userId": "ohnGCeCEgIOk9KzmxWcsWmGM0nM2",
+      "evidenceUrl": "https://www.steelcon.info/2025-steelcon/2025-friday-workshops/",
+      "evidenceNotes": "",
+      "modifier": "",
+      "projectId": "faa80f3b",
+      "evidenceCreatedAt": {
+        "_seconds": 1752214459,
+        "_nanoseconds": 0
+      },
+      "id": "32yHy75LAiOjl7q0915h",
+      "discipline": "Dan Points",
+      "tier": "T11",
+      "displayName": "7woz3ro51x",
+      "tabClaimed": "Two06",
+      "date": "2025-07-10"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/946082204826603561/1004142037295181885",
+      "evidenceCreatedAt": {
+        "_seconds": 1659430800,
+        "_nanoseconds": 0
+      },
+      "modifier": "",
+      "userId": "xgLiygoN7Rch7gtlhyNCCcWypxj2",
+      "projectId": "c09036aa",
+      "evidenceNotes": "Tier 3 Project safecracking",
+      "id": "4C3vLEvLK7bVBxRiVDLe",
+      "discipline": "Safe Lock Manipulation",
+      "tier": "T3",
+      "displayName": "_least",
+      "tabClaimed": "_least",
+      "date": "2022-08-02"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/1165059432389030009",
+      "evidenceCreatedAt": {
+        "_seconds": 1697792400,
+        "_nanoseconds": 0
+      },
+      "modifier": "",
+      "userId": "SW6Z2ZqK2JZqdOdcJZYf0vj1QPj1",
+      "projectId": "ee1c082f",
+      "evidenceNotes": "Tier 2 Project impressioning",
+      "id": "6CMGUCc8rjbFpuMTvnQ3",
+      "discipline": "Impressioning",
+      "tier": "T2",
+      "displayName": "Wyte",
+      "tabClaimed": "wyte",
+      "date": "2023-10-20"
+    },
+    {
+      "userId": "pa0Fe38BgdV9fcL5PPNToNd7NVU2",
+      "evidenceUrl": "http://TheMedecult.com",
+      "evidenceNotes": "used for BB.",
+      "modifier": "",
+      "projectId": "619d41e1",
+      "evidenceCreatedAt": {
+        "_seconds": 1751572392,
+        "_nanoseconds": 0
+      },
+      "id": "6x0xL3sqvu8V5RXCVmbt",
+      "discipline": "Picking Instruction",
+      "tier": "T2",
+      "displayName": "OnlyPins",
+      "date": "2025-07-03"
+    },
+    {
+      "userId": "CqfosXk500QwUCnIHYgIg2PYSgf1",
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/282173282546089985/1469026291729829999",
+      "modifier": "",
+      "projectId": "c2e1c952",
+      "evidenceCreatedAt": {
+        "_seconds": 1770662770,
+        "_nanoseconds": 468000000
+      },
+      "id": "734ZXoK8nDchRoRdb5Vp",
+      "discipline": "Pick Making",
+      "tier": "T2",
+      "displayName": "Andrex66IT",
+      "date": "2026-02-09"
+    },
+    {
+      "userId": "ohnGCeCEgIOk9KzmxWcsWmGM0nM2",
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/1338421340037971979/1338421340037971979",
+      "evidenceNotes": "",
+      "modifier": "",
+      "projectId": "6b36ece2",
+      "evidenceCreatedAt": {
+        "_seconds": 1739393223,
+        "_nanoseconds": 505000000
+      },
+      "id": "7GuH5KMvCjpoNcswyhU0",
+      "discipline": "Other Master's Project",
+      "tier": "T3",
+      "displayName": "7woz3ro51x",
+      "tabClaimed": "Two06",
+      "date": "2025-02-12"
+    },
+    {
+      "evidenceUrl": "https://www.printables.com/model/55025-9-wheel-kryptex",
+      "evidenceCreatedAt": {
+        "_seconds": 1712939809,
+        "_nanoseconds": 0
+      },
+      "modifier": "",
+      "userId": "DdWCTG3deVO0zSEsJP40RxnaL5g1",
+      "projectId": "395c53b8",
+      "evidenceNotes": "A container with integral 9-dial combination lock, resulting in a keyspace of 10^9.",
+      "id": "7HUsEZwyfdQ6Dgf4HduC",
+      "discipline": "Lock Design",
+      "tier": "T1",
+      "displayName": "Jeremy Reeder",
+      "date": "2024-04-12"
+    },
+    {
+      "userId": "LLjtYlaWHSgEli4Dhg7mDv0EcGh1",
+      "evidenceUrl": "https://youtu.be/qb8hxINaRPw?si=LcCx09TnOu1_EfIL",
+      "modifier": "",
+      "projectId": "e48dabec",
+      "evidenceCreatedAt": {
+        "_seconds": 1761502285,
+        "_nanoseconds": 870000000
+      },
+      "id": "7XbLs7ihS992YQrQiQJi",
+      "discipline": "Safe Lock Manipulation",
+      "tier": "T1",
+      "displayName": "dseifrit",
+      "date": "2025-10-26"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/1164965415240339617/1164965415240339617",
+      "evidenceCreatedAt": {
+        "_seconds": 1697792400,
+        "_nanoseconds": 0
+      },
+      "modifier": "",
+      "userId": "tbaq0CWuDTXerA0eUi0kGASVb1Z2",
+      "projectId": "8a994627",
+      "evidenceNotes": "Tier 3 Project Tool making",
+      "id": "7ksdwZzO5PpgvXGwQMqV",
+      "discipline": "Tool Making",
+      "tier": "T3",
+      "displayName": "Clefmentine",
+      "tabClaimed": "Clefmentine",
+      "date": "2023-10-20"
+    },
+    {
+      "userId": "TCJdRC4peLQkzxu3LRswcBs0MqH3",
+      "evidenceUrl": "https://youtu.be/YBBrV8fT4O8?feature=shared",
+      "evidenceNotes": "Master Lock Combination Cutaway",
+      "modifier": "",
+      "projectId": "e3211470",
+      "evidenceCreatedAt": {
+        "_seconds": 1744153473,
+        "_nanoseconds": 284000000
+      },
+      "id": "8PHmJbBIiOP4kILvfAsV",
+      "discipline": "Cutaway Making",
+      "tier": "T1",
+      "displayName": "RodeoLime",
+      "date": "2025-04-08"
+    },
+    {
+      "userId": "ohnGCeCEgIOk9KzmxWcsWmGM0nM2",
+      "evidenceUrl": "https://hackertracker.app/event/?conf=DEFCON33&event=62310",
+      "evidenceNotes": "",
+      "modifier": "",
+      "projectId": "faa80f3b",
+      "evidenceCreatedAt": {
+        "_seconds": 1754691966,
+        "_nanoseconds": 326000000
+      },
+      "id": "8e2CRdtHOJukQXWSAAjT",
+      "discipline": "Dan Points",
+      "tier": "T11",
+      "displayName": "7woz3ro51x",
+      "tabClaimed": "Two06",
+      "date": "2025-08-08"
+    },
+    {
+      "userId": "Dmd9rZ7qWORduI0Vbsv9F3URevt1",
+      "evidenceUrl": "https://docs.google.com/document/d/e/2PACX-1vR5LzSA6oOpbLjwFFcoAiezUdj0FnEPr57QLph_mtUY4GJIoq_41phbMsR-I055wT7mdNMJ054_LAuA/pub",
+      "modifier": "",
+      "projectId": "ee1c082f",
+      "evidenceCreatedAt": {
+        "_seconds": 1778474593,
+        "_nanoseconds": 101000000
+      },
+      "id": "8fdVlk2F1VtS9dJV2D8b",
+      "discipline": "Impressioning",
+      "tier": "T2",
+      "displayName": "Archwild",
+      "date": "2026-05-10"
+    },
+    {
+      "userId": "m0bVcnq29dbLKjs554RcvGmh7Ia2",
+      "evidenceUrl": "https://www.youtube.com/watch?v=PpTF6XCVEXY",
+      "evidenceNotes": "",
+      "modifier": "",
+      "projectId": "ed62f676",
+      "evidenceCreatedAt": {
+        "_seconds": 1742897136,
+        "_nanoseconds": 0
+      },
+      "id": "9B0lIraWBGUfOfNeRmmY",
+      "discipline": "Other Master's Project",
+      "tier": "T5",
+      "displayName": "abrasive",
+      "date": "2025-03-25"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/1242845508410671188",
+      "evidenceCreatedAt": {
+        "_seconds": 1716368400,
+        "_nanoseconds": 0
+      },
+      "modifier": "",
+      "userId": "sonfRlSVkWf7WmfctVxKh7awxu93",
+      "projectId": "c2e1c952",
+      "evidenceNotes": "Tier 2 Project Pickmaking",
+      "id": "9IVCeTfznHUVoHwhki3R",
+      "discipline": "Pick Making",
+      "tier": "T2",
+      "displayName": "Chevy",
+      "tabClaimed": "Rusted Chevy",
+      "date": "2024-05-22"
+    },
+    {
+      "userId": "BuX3JAgrlzUW6Vz0L4W3YZK9iNw1",
+      "evidenceUrl": "https://docs.google.com/document/d/1dVxthvEjeQpAF7IzX-FhuCB6OzEnQKEWuXHKTDl57TM/edit?usp=sharing0",
+      "evidenceNotes": "",
+      "modifier": "",
+      "projectId": "c53d56b1",
+      "evidenceCreatedAt": {
+        "_seconds": 1736901579,
+        "_nanoseconds": 0
+      },
+      "id": "9ofj89EVemL0hYKTRt6U",
+      "discipline": "Safe Lock Manipulation",
+      "tier": "T2",
+      "displayName": "LockChuck ",
+      "tabClaimed": "LockChuck",
+      "date": "2025-01-14"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/946082204826603561/952208306120835073",
+      "evidenceCreatedAt": {
+        "_seconds": 1647075600,
+        "_nanoseconds": 0
+      },
+      "modifier": "",
+      "userId": "mZyfQIARjCP1uJJJc7ioMAALV9v2",
+      "projectId": "ee1c082f",
+      "evidenceNotes": "Tier 2 Project impressioning",
+      "id": "9vBRje45lzoAq09g0dOM",
+      "discipline": "Impressioning",
+      "tier": "T2",
+      "displayName": "PeaceWeapon",
+      "tabClaimed": "PeaceWeapon",
+      "date": "2022-03-12"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/946082204826603561/950507745570869289",
+      "evidenceCreatedAt": {
+        "_seconds": 1646643600,
+        "_nanoseconds": 0
+      },
+      "modifier": "",
+      "userId": "XKPQaAR525XV2JsqGn12eEKwxD62",
+      "projectId": "ee1c082f",
+      "evidenceNotes": "Tier 2 Project impressioning",
+      "id": "9vqfIn9gtqoxg3EPzveW",
+      "discipline": "Impressioning",
+      "tier": "T2",
+      "displayName": "DoNotDuplicate",
+      "tabClaimed": "DoNotDuplicate",
+      "date": "2022-03-07"
+    },
+    {
+      "evidenceUrl": "https://docs.google.com/presentation/d/1Y7PGX88xdMlEWOWhMb7oRjJ1FBs62NNrCkwEJ0bjM5Q/edit?usp=drive_link",
+      "evidenceCreatedAt": {
+        "_seconds": 1689930000,
+        "_nanoseconds": 0
+      },
+      "modifier": "",
+      "userId": "y5acMzkHgYR3jNCkjpWxa9Ul6Rw1",
+      "projectId": "5a0aa3e0",
+      "evidenceNotes": "Tier 2 Project Cutaways",
+      "id": "9w9DEAe6ZH6sWHpJEflT",
+      "discipline": "Cutaway Making",
+      "tier": "T2",
+      "displayName": "Loose-Shirt",
+      "tabClaimed": "Loose-Shirt",
+      "date": "2023-07-21"
+    },
+    {
+      "evidenceUrl": "https://youtu.be/wjKKZCOdXSE",
+      "evidenceCreatedAt": {
+        "_seconds": 1653256044,
+        "_nanoseconds": 0
+      },
+      "modifier": "",
+      "userId": "Gg9KxwHOwBf03QAIdOgZbfW3hRo1",
+      "projectId": "5bbc0602",
+      "evidenceNotes": "Tier 3 Project Pickmaking",
+      "id": "AWgudTgxigjYRGDPGsfw",
+      "discipline": "Pick Making",
+      "tier": "T3",
+      "displayName": "yabende",
+      "tabClaimed": "Yabende",
+      "date": "2022-05-22"
+    },
+    {
+      "evidenceUrl": "http://youtube.com/post/UgkxwkzoUD8W3I-0sENDUHZ-bcJVUkAUvss3?si=V731WY32UGK9iO1Z",
+      "evidenceCreatedAt": {
+        "_seconds": 1726333723,
+        "_nanoseconds": 496000000
+      },
+      "modifier": "",
+      "userId": "rDbJ98L27POGbz6jqvYBgHsbC602",
+      "projectId": "630d0229",
+      "evidenceNotes": "First pick grind and polish ",
+      "id": "AXezOxHdbixLT6hXnxCY",
+      "discipline": "Pick Making",
+      "tier": "T1",
+      "displayName": "SWIZZLE",
+      "date": "2024-09-14"
+    },
+    {
+      "evidenceUrl": "http://as",
+      "evidenceCreatedAt": {
+        "_seconds": 1724786158,
+        "_nanoseconds": 468000000
+      },
+      "modifier": "",
+      "userId": "4qqxB0nW8dczUws5XuAyhEkgZEj2",
+      "projectId": "93a61f11",
+      "evidenceNotes": "",
+      "id": "Ab5CHCvpuLO00rKAv4sE",
+      "discipline": "Challenge Locks",
+      "tier": "T1",
+      "displayName": "mgtest",
+      "date": "2024-08-27"
+    },
+    {
+      "userId": "fYIm37wqWVWpbkQJAbmib3WhMww2",
+      "evidenceUrl": "https://youtu.be/XX-g9I9kZNo?si=W7kSeq0824PfwFmc",
+      "evidenceNotes": "BlueWhaleLocksport Challenge",
+      "modifier": "",
+      "projectId": "db448561",
+      "evidenceCreatedAt": {
+        "_seconds": 1704526878,
+        "_nanoseconds": 113000000
+      },
+      "id": "AdVANUR0RK4Ey9KGJvBy",
+      "discipline": "Community Involvement",
+      "tier": "T1",
+      "displayName": "Banditobrandino07",
+      "date": "2024-01-05"
+    },
+    {
+      "userId": "WMSvvuutyShfvBBYB3PmDe4fmeS2",
+      "evidenceUrl": "https://github.com/Lockpickers-United/lpu-belt-explorer",
+      "evidenceNotes": "Tier 5 Project Community",
+      "modifier": "",
+      "projectId": "f475c0f2",
+      "evidenceCreatedAt": {
+        "_seconds": 1697041741,
+        "_nanoseconds": 56000000
+      },
+      "id": "ApdFm6sS7UzENFyWyuaw",
+      "discipline": "Community Involvement",
+      "tier": "T5",
+      "displayName": "NiXXeD",
+      "tabClaimed": "NiXXeD",
+      "date": "2023-10-11"
+    },
+    {
+      "modifier": "",
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/946082204826603561/957681633471909958",
+      "projectId": "76fee3b3",
+      "evidenceCreatedAt": {
+        "_seconds": 1648371600,
+        "_nanoseconds": 0
+      },
+      "evidenceNotes": "Tier 4 Project Challenge locks",
+      "userId": "8PKfUHTiafgObsQQr162dQRlBCo1",
+      "id": "AyFenQHPLH8oA5jddEAJ",
+      "discipline": "Challenge Locks",
+      "tier": "T4",
+      "displayName": "GravityKarma",
+      "tabClaimed": "GravityKarma",
+      "date": "2022-03-27"
+    },
+    {
+      "userId": "S131zvhcryUvHckhdkVboIDRQnF3",
+      "evidenceUrl": "https://docs.google.com/document/d/1zeIHad0mrGN2IsGUp6EPSv0jcDvUbpppdBmwnxsTi_8/edit?usp=sharing",
+      "modifier": "",
+      "projectId": "5a0aa3e0",
+      "evidenceCreatedAt": {
+        "_seconds": 1781210467,
+        "_nanoseconds": 554000000
+      },
+      "id": "BSgRCVIYwlWvjq0tYZQd",
+      "discipline": "Cutaway Making",
+      "tier": "T2",
+      "displayName": "Ferf",
+      "date": "2026-06-11"
+    },
+    {
+      "userId": "fYIm37wqWVWpbkQJAbmib3WhMww2",
+      "evidenceUrl": "https://youtu.be/6kWebVegpZU?si=BvFqYCYpeYwk6TsA",
+      "evidenceNotes": "Made instructional video series for making ABLOY Classic tool",
+      "modifier": "",
+      "projectId": "409f8d0a",
+      "evidenceCreatedAt": {
+        "_seconds": 1704527287,
+        "_nanoseconds": 924000000
+      },
+      "id": "BpWeH5elt2aqQ6fB1o7J",
+      "discipline": "Disc Detainer Pick Making",
+      "tier": "T2",
+      "displayName": "Banditobrandino07",
+      "date": "2024-01-05"
+    },
+    {
+      "evidenceUrl": "https://cdn.discordapp.com/attachments/282173282546089985/1241010111997153310/SkylerMiner_SafeCracking.pdf?ex=66567bfb&is=66552a7b&hm=7910928a35b853cb2f9f17880fba66d7249158a13e096ea3c6a71151aa43f4a5&",
+      "evidenceCreatedAt": {
+        "_seconds": 1713393339,
+        "_nanoseconds": 0
+      },
+      "modifier": "",
+      "userId": "UmiZk3RyFGfOESVzLa0cJMU33f13",
+      "projectId": "c53d56b1",
+      "evidenceNotes": "Tier 2 Project safecracking",
+      "id": "C7MQnL4Bht7lB16vGZHy",
+      "discipline": "Safe Lock Manipulation",
+      "tier": "T2",
+      "displayName": "SkylerMiner",
+      "tabClaimed": "Skylerminer",
+      "date": "2024-04-17"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/946082204826603561/952329566939131924",
+      "evidenceCreatedAt": {
+        "_seconds": 1647075600,
+        "_nanoseconds": 0
+      },
+      "modifier": "",
+      "userId": "OlCHC00OrRY0MOqWv7ShjP18cKr2",
+      "projectId": "17bc33c4",
+      "evidenceNotes": "Tier 4 Project Community",
+      "id": "CP1W6eJYBOdd9ro6hfQA",
+      "discipline": "Community Involvement",
+      "tier": "T4",
+      "displayName": "HVLogic",
+      "tabClaimed": "HVLogic",
+      "date": "2022-03-12"
+    },
+    {
+      "evidenceCreatedAt": {
+        "_seconds": 1648371600,
+        "_nanoseconds": 0
+      },
+      "projectId": "c53d56b1",
+      "modifier": "",
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/946082204826603561/957686540455260241",
+      "evidenceNotes": "Tier 2 Project safecracking",
+      "userId": "8PKfUHTiafgObsQQr162dQRlBCo1",
+      "id": "CR87Vjgg9306w7wvHPqn",
+      "discipline": "Safe Lock Manipulation",
+      "tier": "T2",
+      "displayName": "GravityKarma",
+      "tabClaimed": "GravityKarma",
+      "date": "2022-03-27"
+    },
+    {
+      "userId": "P4PJXOyWwIPQS5dlf4VLHfZsmNi1",
+      "evidenceUrl": "https://docs.google.com/document/d/108RjU2lWBFum5c_3Cnz7ZqP1xQHFUevqgG3N5Fp3vpk/edit?usp=drivesdk",
+      "modifier": "",
+      "projectId": "c53d56b1",
+      "evidenceCreatedAt": {
+        "_seconds": 1774657731,
+        "_nanoseconds": 970000000
+      },
+      "id": "D3wfcgi2IeV9dHrsBlGX",
+      "discipline": "Safe Lock Manipulation",
+      "tier": "T2",
+      "displayName": "QPix_Locksport",
+      "date": "2026-03-27"
+    },
+    {
+      "userId": "zknSa6jFFBhBQgQ1sKU4V5afbUi2",
+      "evidenceUrl": "https://ibb.co/album/sdDBLP",
+      "evidenceNotes": "",
+      "modifier": "",
+      "projectId": "5a0aa3e0",
+      "evidenceCreatedAt": {
+        "_seconds": 1753082308,
+        "_nanoseconds": 747000000
+      },
+      "id": "D4uli1JrKj0aSvS9txaP",
+      "discipline": "Cutaway Making",
+      "tier": "T2",
+      "displayName": "Siedem50",
+      "date": "2025-07-21"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/946082204826603561/1131568096663064637",
+      "evidenceCreatedAt": {
+        "_seconds": 1689843600,
+        "_nanoseconds": 0
+      },
+      "modifier": "",
+      "userId": "GGplAdctTfVDLVvYsfIADJmfp8f2",
+      "projectId": "3b90ab9b",
+      "evidenceNotes": "Tier 2 Project Challenge locks",
+      "id": "DCnXfGp9bHkTtPmkXqlU",
+      "discipline": "Challenge Locks",
+      "tier": "T2",
+      "displayName": "mgsecure",
+      "tabClaimed": "MGsecure",
+      "date": "2023-07-20"
+    },
+    {
+      "evidenceUrl": "https://drive.google.com/drive/folders/1zu4Y7TebzGTZ9QzCP4fmZnQJoeP17-w3",
+      "evidenceCreatedAt": {
+        "_seconds": 1726321448,
+        "_nanoseconds": 648000000
+      },
+      "modifier": "",
+      "userId": "yBn09b92sJY9G7x1tjDIZEDBsiH3",
+      "projectId": "c2e1c952",
+      "evidenceNotes": "",
+      "id": "DTdf0vZqZK5FmHf706M9",
+      "discipline": "Pick Making",
+      "tier": "T2",
+      "displayName": "Thegamingbug",
+      "tabClaimed": "(new bb: yBn09b92sJY9G7x1tjDIZEDBsiH3)",
+      "date": "2024-09-14"
+    },
+    {
+      "userId": "6dSEXTn8flPPg4EV5IlSQWGVT983",
+      "evidenceUrl": "https://1drv.ms/w/c/2900c82d9f4283bd/EfsJoGXCiKdGmT-IgrxyeI8BHme6QL6cMg2NSLA3ULf7fA?e=rQc684",
+      "modifier": "",
+      "projectId": "ee1c082f",
+      "evidenceCreatedAt": {
+        "_seconds": 1759436330,
+        "_nanoseconds": 0
+      },
+      "id": "Dvrp7rML9OwpVCDdeXDL",
+      "discipline": "Impressioning",
+      "tier": "T2",
+      "displayName": "VectorPotential",
+      "date": "2025-10-02"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/1285618079023501334/1286484075112304660",
+      "evidenceCreatedAt": {
+        "_seconds": 1726775790,
+        "_nanoseconds": 0
+      },
+      "modifier": "",
+      "userId": "JLW4kHgTCySF0BtIgzAe1CyqVt42",
+      "projectId": "8a994627",
+      "evidenceNotes": "3d printed tools",
+      "id": "EBAeySto73fRTeVm4vzj",
+      "discipline": "Tool Making",
+      "tier": "T3",
+      "displayName": "TypeRegal",
+      "tabClaimed": "TypeRegal",
+      "date": "2024-09-19"
+    },
+    {
+      "userId": "OfmHEAnCCpM0ZXZWrvFm7SAdfqk1",
+      "evidenceUrl": "https://dc702.space",
+      "evidenceNotes": "Co-founder of DC702, C2Society, and the Las Vegas TOOOL Chapter. Active since 2020. Through the various groups, I have hosted many events that introduced lockpicking to a wide range of people. This spans multiple government agencies, the armed forces, local police, schools, and other various organizations.",
+      "modifier": "",
+      "projectId": "f475c0f2",
+      "evidenceCreatedAt": {
+        "_seconds": 1739742268,
+        "_nanoseconds": 985000000
+      },
+      "id": "EFdOjiA3m2qZdEdFTmoD",
+      "discipline": "Community Involvement",
+      "tier": "T5",
+      "displayName": "isaidnocookies",
+      "date": "2025-02-16"
+    },
+    {
+      "userId": "eHeOYYmKTCXeoQrM2EfL4ywUSCd2",
+      "evidenceUrl": "https://docs.google.com/document/u/1/d/1jnUjVB-euDIXBvjjigXyya9mawgxVcvmL3anXzW4Lyc/mobilebasic",
+      "evidenceNotes": "",
+      "modifier": "",
+      "projectId": "93a61f11",
+      "evidenceCreatedAt": {
+        "_seconds": 1751116325,
+        "_nanoseconds": 786000000
+      },
+      "id": "EUCeKBU3qQc30M4j5mpW",
+      "discipline": "Challenge Locks",
+      "tier": "T1",
+      "displayName": "LockpickingEngineer",
+      "date": "2025-06-28"
+    },
+    {
+      "evidenceUrl": "https://docs.google.com/document/d/13x5nrp-lp000imsQjlzoXfiATs8fwbFqK-RXC7o-mxY/edit?usp=sharing",
+      "evidenceCreatedAt": {
+        "_seconds": 1728786533,
+        "_nanoseconds": 0
+      },
+      "modifier": "",
+      "userId": "vOi8rfTRluYlcVizuVvX9PWFJdn2",
+      "projectId": "c53d56b1",
+      "evidenceNotes": "",
+      "id": "F7J6NAOPofvTYi0PlCLF",
+      "discipline": "Safe Lock Manipulation",
+      "tier": "T2",
+      "displayName": "Dynamic",
+      "date": "2024-10-12"
+    },
+    {
+      "userId": "ogrEbc6fjmVOKtvfZ7vENh6oX072",
+      "evidenceUrl": "https://imgur.com/a/d6kzGRi",
+      "evidenceNotes": "Tier 2 Project Challenge locks",
+      "modifier": "",
+      "projectId": "3b90ab9b",
+      "evidenceCreatedAt": {
+        "_seconds": 1722335973,
+        "_nanoseconds": 0
+      },
+      "id": "FEySwyqMNCd95pPKLIG4",
+      "discipline": "Challenge Locks",
+      "tier": "T2",
+      "displayName": "Burnetb1",
+      "tabClaimed": "Burnetb1",
+      "date": "2024-07-30"
+    },
+    {
+      "userId": "mOGsJGzWyae3lvqGCtI7bOyEOke2",
+      "evidenceUrl": "https://docs.google.com/document/d/1BjAWEDIPtHmMVGj04ZViGXjZWgvT28ytxJvMTC7hYjo/edit?usp=sharing",
+      "evidenceNotes": "",
+      "modifier": "",
+      "projectId": "3b90ab9b",
+      "evidenceCreatedAt": {
+        "_seconds": 1740512690,
+        "_nanoseconds": 112000000
+      },
+      "id": "FJwLx3rZ9q4NgmS9k12T",
+      "discipline": "Challenge Locks",
+      "tier": "T2",
+      "displayName": "DocExMachina",
+      "date": "2025-02-25"
+    },
+    {
+      "evidenceUrl": "https://docs.google.com/document/d/1Z6LL6xVwaI1xyTsCE1N6cEDO7AEOL5lcyAUSSoG4Zqk/edit?usp=share_link",
+      "evidenceCreatedAt": {
+        "_seconds": 1647680400,
+        "_nanoseconds": 0
+      },
+      "modifier": "",
+      "userId": "hJ8wy3LzFBbuuQ8y9sHFWctczbw1",
+      "projectId": "17bc33c4",
+      "evidenceNotes": "Tier 4 Project Community",
+      "id": "FZ2qv9F61IVaxeHLuor0",
+      "discipline": "Community Involvement",
+      "tier": "T4",
+      "displayName": "PickSmith ",
+      "tabClaimed": "Picksmith",
+      "date": "2022-03-19"
+    },
+    {
+      "evidenceUrl": "https://drive.google.com/drive/folders/1ASKinHC4e6plyPZ4vuajedpqIN_AMhFo?usp=sharing",
+      "evidenceCreatedAt": {
+        "_seconds": 1724233289,
+        "_nanoseconds": 0
+      },
+      "modifier": "",
+      "userId": "dlPpljxEAqYVts2VP0UOL8gGIQG3",
+      "projectId": "28ebf3b8",
+      "evidenceNotes": "3D Design & Printing",
+      "id": "FtOZaJm0WDAyoAZHAzXE",
+      "discipline": "Other Master's Project",
+      "tier": "T2",
+      "displayName": "Erik Weisz",
+      "date": "2024-08-21"
+    },
+    {
+      "userId": "tUMX51TojfWcZxzqpiPYKTnOnQg1",
+      "evidenceUrl": "https://docs.google.com/document/d/1MMTlsi47Y0thP6viV8OLKd_bifWIOvJxUCdXeJ4UJf8/edit?usp=drivesdk",
+      "modifier": "",
+      "projectId": "5a0aa3e0",
+      "evidenceCreatedAt": {
+        "_seconds": 1781828943,
+        "_nanoseconds": 985000000
+      },
+      "id": "G2EgHlH7TA4ILXHE0T08",
+      "discipline": "Cutaway Making",
+      "tier": "T2",
+      "displayName": "BrianBreaksShit ",
+      "date": "2026-06-18"
+    },
+    {
+      "userId": "B85IAqqL31byHyeELVTaqHifbLP2",
+      "evidenceUrl": "https://youtu.be/isPjVBEhmTk?si=aT6oXpU03udKJaVk",
+      "evidenceNotes": "Documented in spreadsheet, better vid to follow",
+      "modifier": "",
+      "projectId": "c53d56b1",
+      "evidenceCreatedAt": {
+        "_seconds": 1736310566,
+        "_nanoseconds": 648000000
+      },
+      "id": "GQsJb9k235daTs5ea88b",
+      "discipline": "Safe Lock Manipulation",
+      "tier": "T2",
+      "displayName": "Lock_Picker",
+      "date": "2025-01-07"
+    },
+    {
+      "userId": "1SqcRKce18boUZBtOHWSenGAI202",
+      "evidenceUrl": "https://docs.google.com/document/d/11fQVihBq336sm-xGJCgg9L_I4gme2Z30QLcRz_Inp5Y/edit?usp=drivesdk",
+      "modifier": "",
+      "projectId": "ee1c082f",
+      "evidenceCreatedAt": {
+        "_seconds": 1776046284,
+        "_nanoseconds": 453000000
+      },
+      "id": "H5MutV9SSrDDsLPCQLYk",
+      "discipline": "Impressioning",
+      "tier": "T2",
+      "displayName": "Zehkar",
+      "date": "2026-04-12"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/282173282546089985/1243222754568831048",
+      "evidenceCreatedAt": {
+        "_seconds": 1716504664,
+        "_nanoseconds": 0
+      },
+      "modifier": "",
+      "userId": "e2RNiz570rWqYYxDSDn6Y0uhgA43",
+      "projectId": "5a0aa3e0",
+      "evidenceNotes": "Used for black belt submission",
+      "id": "HCU1Zb3ErjiWc9J0KRsG",
+      "discipline": "Cutaway Making",
+      "tier": "T2",
+      "displayName": "Marson",
+      "tabClaimed": "Marson",
+      "date": "2024-05-23"
+    },
+    {
+      "userId": "aI3JDm2fLFWvxq2eQnCBO5KzLaF2",
+      "projectId": "ee1c082f",
+      "evidenceNotes": "",
+      "evidenceUrl": "https://youtu.be/k97xMO4PZDY?si=jC1MnU_Cy8emOmpf",
+      "evidenceCreatedAt": {
+        "_seconds": 1729765215,
+        "_nanoseconds": 0
+      },
+      "modifier": "",
+      "id": "ICCEq5n0NGDLTOn0Xid1",
+      "discipline": "Impressioning",
+      "tier": "T2",
+      "displayName": "NICVT_locks",
+      "date": "2024-10-24"
+    },
+    {
+      "userId": "HMM6Puk2CoflIJ3suuN1tyaJeDd2",
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/282173282546089985/1358226497755811960",
+      "evidenceNotes": "Modular tray system, from black belt submission",
+      "modifier": "",
+      "projectId": "28ebf3b8",
+      "evidenceCreatedAt": {
+        "_seconds": 1745360059,
+        "_nanoseconds": 371000000
+      },
+      "id": "IEFnIL8ZLOmipwwnfTQT",
+      "discipline": "Other Master's Project",
+      "tier": "T2",
+      "displayName": "drZongo",
+      "date": "2025-04-22"
+    },
+    {
+      "userId": "SyjMMYh9rYPI0lrxAWu5z5rrawx2",
+      "evidenceUrl": "https://docs.google.com/document/d/e/2PACX-1vQc2iMv-kgclDQvZxuarq6aiVQaAUYtelPGXVE5sN4hlJ9puJy10nz-06yHCiZNYnsNZZwgJOqp9snC/pub",
+      "evidenceNotes": "",
+      "modifier": "",
+      "projectId": "399daa10",
+      "evidenceCreatedAt": {
+        "_seconds": 1738102897,
+        "_nanoseconds": 441000000
+      },
+      "id": "IEkHOYOv36Kr40LR4CRg",
+      "discipline": "Pick Making",
+      "tier": "T4",
+      "displayName": "Lock Picking Paul",
+      "date": "2025-01-28"
+    },
+    {
+      "userId": "wGZjaPNOuzgv39gAmL4WcZh2nlB3",
+      "evidenceUrl": "https://youtu.be/OM2du8ENdZU",
+      "modifier": "",
+      "projectId": "db448561",
+      "evidenceCreatedAt": {
+        "_seconds": 1778205121,
+        "_nanoseconds": 479000000
+      },
+      "id": "Iab6wgrEKFomHvq8jwxk",
+      "discipline": "Community Involvement",
+      "tier": "T1",
+      "displayName": "Jadedargyle333",
+      "date": "2026-05-07"
+    },
+    {
+      "userId": "TCJdRC4peLQkzxu3LRswcBs0MqH3",
+      "evidenceUrl": "https://youtu.be/w18Ndz1m9_c?si=Fvn9JtIzuXsc7eEd",
+      "evidenceNotes": "@NCR picks & guts my first Challenge Lock",
+      "projectId": "93a61f11",
+      "evidenceCreatedAt": {
+        "_seconds": 1740840396,
+        "_nanoseconds": 0
+      },
+      "id": "IfKuusb0MSQ6lcXFh8gy",
+      "discipline": "Challenge Locks",
+      "tier": "T1",
+      "displayName": "RodeoLime",
+      "date": "2025-03-01"
+    },
+    {
+      "evidenceUrl": "https://docs.google.com/document/d/1ulM2FEwM_8YmcNge095SNfMV9adD9bXHCJHPeEQflN8/edit?usp=sharing",
+      "evidenceCreatedAt": {
+        "_seconds": 1723926783,
+        "_nanoseconds": 579000000
+      },
+      "modifier": "",
+      "userId": "2wcd3lv1Q6XrikNpgak8aPAWIWJ3",
+      "projectId": "ed62f676",
+      "evidenceNotes": "Leather Case Maker",
+      "id": "IpzUxW6OqL7bWdlFfeS9",
+      "discipline": "Other Master's Project",
+      "tier": "T5",
+      "displayName": "Hammer",
+      "tabClaimed": "deadhammer",
+      "date": "2024-08-17"
+    },
+    {
+      "userId": "mOGsJGzWyae3lvqGCtI7bOyEOke2",
+      "evidenceUrl": "https://docs.google.com/document/d/1BjAWEDIPtHmMVGj04ZViGXjZWgvT28ytxJvMTC7hYjo/edit?usp=sharing",
+      "evidenceNotes": "",
+      "modifier": "",
+      "projectId": "c53d56b1",
+      "evidenceCreatedAt": {
+        "_seconds": 1740512763,
+        "_nanoseconds": 984000000
+      },
+      "id": "JZsd0Wyqqtim2lDtbl2I",
+      "discipline": "Safe Lock Manipulation",
+      "tier": "T2",
+      "displayName": "DocExMachina",
+      "date": "2025-02-25"
+    },
+    {
+      "userId": "ogrEbc6fjmVOKtvfZ7vENh6oX072",
+      "evidenceUrl": "https://imgur.com/a/EOG4EEu",
+      "evidenceNotes": "Tier 2 Project Pickmaking",
+      "modifier": "",
+      "projectId": "c2e1c952",
+      "evidenceCreatedAt": {
+        "_seconds": 1722336002,
+        "_nanoseconds": 0
+      },
+      "id": "JaIKhaoelw2uH3WsoEXL",
+      "discipline": "Pick Making",
+      "tier": "T2",
+      "displayName": "Burnetb1",
+      "tabClaimed": "Burnetb1",
+      "date": "2024-07-30"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/946082204826603561/952327913586429972",
+      "evidenceCreatedAt": {
+        "_seconds": 1647075600,
+        "_nanoseconds": 0
+      },
+      "modifier": "",
+      "userId": "OlCHC00OrRY0MOqWv7ShjP18cKr2",
+      "projectId": "c09036aa",
+      "evidenceNotes": "Tier 3 Project safecracking",
+      "id": "Jxm4LQ7wxfs4wENTHo52",
+      "discipline": "Safe Lock Manipulation",
+      "tier": "T3",
+      "displayName": "HVLogic",
+      "tabClaimed": "HVLogic",
+      "date": "2022-03-12"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/946082204826603561/1126116063487197325",
+      "evidenceCreatedAt": {
+        "_seconds": 1688547600,
+        "_nanoseconds": 0
+      },
+      "modifier": "",
+      "userId": "xgLiygoN7Rch7gtlhyNCCcWypxj2",
+      "projectId": "72971f6c",
+      "evidenceNotes": "Tier 4 Project impressioning",
+      "id": "KBadtcEpMj6Pr2ugLdkv",
+      "discipline": "Impressioning",
+      "tier": "T4",
+      "displayName": "_least",
+      "tabClaimed": "_least",
+      "date": "2023-07-05"
+    },
+    {
+      "userId": "s5iyDrszY4Nc3zR7rILCQLO7I8v2",
+      "evidenceUrl": "https://youtu.be/THXR9IlVWMk",
+      "evidenceNotes": "",
+      "modifier": "",
+      "projectId": "ee1c082f",
+      "evidenceCreatedAt": {
+        "_seconds": 1599331365,
+        "_nanoseconds": 145000000
+      },
+      "id": "KWWX3R4DqP1oLXygx2I8",
+      "discipline": "Impressioning",
+      "tier": "T2",
+      "displayName": "Norlin",
+      "date": "2020-09-05"
+    },
+    {
+      "evidenceUrl": "https://youtu.be/UhnT1OPhkco",
+      "evidenceCreatedAt": {
+        "_seconds": 1683189810,
+        "_nanoseconds": 0
+      },
+      "modifier": "",
+      "userId": "gWoqbd0FOsglFD5boH96NAtJ7DE3",
+      "projectId": "ee1c082f",
+      "evidenceNotes": "Tier 2 Project impressioning",
+      "id": "Kl7HutqsiRfJg9KTqSdc",
+      "discipline": "Impressioning",
+      "tier": "T2",
+      "displayName": "LockFumbler",
+      "tabClaimed": "LockFumbler",
+      "date": "2023-05-04"
+    },
+    {
+      "userId": "SyjMMYh9rYPI0lrxAWu5z5rrawx2",
+      "evidenceUrl": "https://docs.google.com/document/d/e/2PACX-1vRU6x-kpIEo34lQilFxZTUjOfKaBM2bAKrznRrIbuxfr5Ia5C68RzkBBbNbV6Ta4ACbW7pZtHUdk6tU/pub",
+      "evidenceNotes": "Fortress Interlock Documentation",
+      "modifier": "",
+      "projectId": "28ebf3b8",
+      "evidenceCreatedAt": {
+        "_seconds": 1742846048,
+        "_nanoseconds": 22000000
+      },
+      "id": "Kmk7F4HD1uMOW6QQxh22",
+      "discipline": "Other Master's Project",
+      "tier": "T2",
+      "displayName": "Lock Picking Paul",
+      "date": "2025-03-24"
+    },
+    {
+      "userId": "OfmHEAnCCpM0ZXZWrvFm7SAdfqk1",
+      "evidenceUrl": "https://toool.us/meetings/",
+      "evidenceNotes": "President of Las Vegas TOOOL Chapter since 2020. Founded local chapter and have hosted meetups weekly since starting the chapter.",
+      "modifier": "",
+      "projectId": "ed62f676",
+      "evidenceCreatedAt": {
+        "_seconds": 1739742378,
+        "_nanoseconds": 490000000
+      },
+      "id": "L9L7ms2EggCgsVuFPGRY",
+      "discipline": "Other Master's Project",
+      "tier": "T5",
+      "displayName": "isaidnocookies",
+      "date": "2025-02-16"
+    },
+    {
+      "userId": "MQjjZuVVGbMNyBGwiBtThhtrgJ43",
+      "evidenceUrl": "https://docs.google.com/document/d/1BjAWEDIPtHmMVGj04ZViGXjZWgvT28ytxJvMTC7hYjo/edit?usp=sharing",
+      "evidenceNotes": "3/5 complete",
+      "modifier": "",
+      "projectId": "3b90ab9b",
+      "evidenceCreatedAt": {
+        "_seconds": 1739731067,
+        "_nanoseconds": 981000000
+      },
+      "id": "LB9rE3G1tCO3SPSLDhO9",
+      "discipline": "Challenge Locks",
+      "tier": "T2",
+      "displayName": "DocMachina",
+      "date": "2025-02-16"
+    },
+    {
+      "evidenceUrl": "https://docs.google.com/document/d/1dleNUluRXHfhc0zVP-8EOpR6N1mUiZOmj8vhVwusccQ/edit?usp=sharing",
+      "evidenceCreatedAt": {
+        "_seconds": 1691917200,
+        "_nanoseconds": 0
+      },
+      "modifier": "",
+      "userId": "BuX3JAgrlzUW6Vz0L4W3YZK9iNw1",
+      "projectId": "8a994627",
+      "evidenceNotes": "Tier 3 Project Tool making",
+      "id": "LSmc3GRVb1eiE2VUuLA7",
+      "discipline": "Tool Making",
+      "tier": "T3",
+      "displayName": "LockChuck ",
+      "tabClaimed": "LockChuck",
+      "date": "2023-08-13"
+    },
+    {
+      "userId": "kr75vfctGiQw1vveSLZYcPN4W2v2",
+      "evidenceUrl": "https://docs.google.com/document/d/e/2PACX-1vSUIqVuqGVaCX-EFqc52NkIgVJ__-T9LPzYbL3SBqbqdJ__vNLIxwQkwCbEThHUEbACHkTl64bPd9uV/pub#h.964hjjt78lyg",
+      "evidenceNotes": "",
+      "modifier": "",
+      "projectId": "c53d56b1",
+      "evidenceCreatedAt": {
+        "_seconds": 1743975859,
+        "_nanoseconds": 487000000
+      },
+      "id": "LXUSyvBpfItAENBWiFZf",
+      "discipline": "Safe Lock Manipulation",
+      "tier": "T2",
+      "displayName": "Ekvivokk",
+      "date": "2025-04-06"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/946082204826603561/1108124986943746108",
+      "evidenceCreatedAt": {
+        "_seconds": 1684227600,
+        "_nanoseconds": 0
+      },
+      "modifier": "",
+      "userId": "qXhqtUdEVFfrajxqblKl8bqQqXM2",
+      "projectId": "e2c0342e",
+      "evidenceNotes": "Tier 3 Project Challenge locks",
+      "id": "LtG1dNGS2vbhbd2OLo6D",
+      "discipline": "Challenge Locks",
+      "tier": "T3",
+      "displayName": "DQ",
+      "tabClaimed": "DQ",
+      "date": "2023-05-16"
+    },
+    {
+      "evidenceUrl": "https://photos.app.goo.gl/QVu71Min8aDZwr639",
+      "evidenceCreatedAt": {
+        "_seconds": 1688893200,
+        "_nanoseconds": 0
+      },
+      "modifier": "",
+      "userId": "BuX3JAgrlzUW6Vz0L4W3YZK9iNw1",
+      "projectId": "ee1c082f",
+      "evidenceNotes": "Tier 2 Project impressioning",
+      "id": "M2IKnCT1uZW64jg8ehTf",
+      "discipline": "Impressioning",
+      "tier": "T2",
+      "displayName": "LockChuck ",
+      "tabClaimed": "LockChuck",
+      "date": "2023-07-09"
+    },
+    {
+      "evidenceUrl": "https://drive.google.com/drive/folders/1wamq5_HRm7WdxtCedL5ojy4K5O_wnGY6?usp=sharing",
+      "evidenceCreatedAt": {
+        "_seconds": 1724230411,
+        "_nanoseconds": 0
+      },
+      "modifier": "",
+      "userId": "dlPpljxEAqYVts2VP0UOL8gGIQG3",
+      "projectId": "5a0aa3e0",
+      "evidenceNotes": "",
+      "id": "McLJmpeaJy0f9NcnHJFY",
+      "discipline": "Cutaway Making",
+      "tier": "T2",
+      "displayName": "Erik Weisz",
+      "date": "2024-08-21"
+    },
+    {
+      "userId": "vzFUFVwPLsdLPSeNwMAZFYSpwX62",
+      "evidenceUrl": "https://docs.google.com/document/d/1WKnNnV1julz8ZQlfEaN3AS6lwcGobn9aOuliRsngyDE/edit?usp=sharing",
+      "evidenceNotes": "",
+      "modifier": "",
+      "projectId": "c53d56b1",
+      "evidenceCreatedAt": {
+        "_seconds": 1750730358,
+        "_nanoseconds": 926000000
+      },
+      "id": "MhrxNukVoJELW1gYBRmB",
+      "discipline": "Safe Lock Manipulation",
+      "tier": "T2",
+      "displayName": "ChumiG",
+      "date": "2025-06-23"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/1242844938622734437",
+      "evidenceCreatedAt": {
+        "_seconds": 1716368400,
+        "_nanoseconds": 0
+      },
+      "modifier": "",
+      "userId": "sonfRlSVkWf7WmfctVxKh7awxu93",
+      "projectId": "ee1c082f",
+      "evidenceNotes": "Tier 2 Project impressioning",
+      "id": "MyLGsOITIcNQbeCxbs0o",
+      "discipline": "Impressioning",
+      "tier": "T2",
+      "displayName": "Chevy",
+      "tabClaimed": "Rusted Chevy",
+      "date": "2024-05-22"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/1190350546108940479/1190350546108940479",
+      "evidenceCreatedAt": {
+        "_seconds": 1703840400,
+        "_nanoseconds": 0
+      },
+      "modifier": "",
+      "userId": "f2yySWbxUBXF8k3HgorYhrm76gx2",
+      "projectId": "c53d56b1",
+      "evidenceNotes": "Tier 2 Project safecracking",
+      "id": "Nkjs8SeMGvpZIuXSjHm9",
+      "discipline": "Safe Lock Manipulation",
+      "tier": "T2",
+      "displayName": "Reinder",
+      "tabClaimed": "Reinder",
+      "date": "2023-12-29"
+    },
+    {
+      "userId": "HMM6Puk2CoflIJ3suuN1tyaJeDd2",
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/282173282546089985/1358226497755811960",
+      "evidenceNotes": "from black belt submission",
+      "modifier": "",
+      "projectId": "409f8d0a",
+      "evidenceCreatedAt": {
+        "_seconds": 1745359937,
+        "_nanoseconds": 263000000
+      },
+      "id": "NlgFnpIUGnz9sfh4nEki",
+      "discipline": "Disc Detainer Pick Making",
+      "tier": "T2",
+      "displayName": "drZongo",
+      "date": "2025-04-22"
+    },
+    {
+      "userId": "nOCg2aCpEgOI5lJOxwyScW9kXFX2",
+      "evidenceUrl": "https://youtu.be/nVEJskTgFKE",
+      "modifier": "",
+      "projectId": "e48dabec",
+      "evidenceCreatedAt": {
+        "_seconds": 1772921004,
+        "_nanoseconds": 391000000
+      },
+      "id": "Nt8qD65eNvwUKgjfj6Pn",
+      "discipline": "Safe Lock Manipulation",
+      "tier": "T1",
+      "displayName": "Klettus",
+      "date": "2026-03-07"
+    },
+    {
+      "userId": "pzfcQjX2h3UaqJDWv5772IpqNj83",
+      "evidenceUrl": "https://www.youtube.com/watch?v=ONukGxpq_lQ",
+      "evidenceNotes": "",
+      "modifier": "",
+      "projectId": "93a61f11",
+      "evidenceCreatedAt": {
+        "_seconds": 1684308260,
+        "_nanoseconds": 0
+      },
+      "id": "O2H4csV5JUcIWL2a4Ns9",
+      "discipline": "Challenge Locks",
+      "tier": "T1",
+      "displayName": "Jabbawingo",
+      "date": "2023-05-17"
+    },
+    {
+      "evidenceUrl": "http://youtube.com/post/UgkxwkzoUD8W3I-0sENDUHZ-bcJVUkAUvss3?si=V731WY32UGK9iO1Z",
+      "evidenceCreatedAt": {
+        "_seconds": 1725339663,
+        "_nanoseconds": 807000000
+      },
+      "modifier": "",
+      "userId": "rDbJ98L27POGbz6jqvYBgHsbC602",
+      "projectId": "64b3ca91",
+      "evidenceNotes": "Impression US lock Yale 1, no key",
+      "id": "O5NtzfQiFyQq2wNKgLPc",
+      "discipline": "Impressioning",
+      "tier": "T1",
+      "displayName": "SWIZZLE",
+      "date": "2024-09-02"
+    },
+    {
+      "userId": "s5iyDrszY4Nc3zR7rILCQLO7I8v2",
+      "evidenceUrl": "https://www.reddit.com/r/lockpicking/comments/ip474k/sg_6741_cutaway_and_mounted/",
+      "evidenceNotes": "",
+      "modifier": "",
+      "projectId": "5a0aa3e0",
+      "evidenceCreatedAt": {
+        "_seconds": 1599596368,
+        "_nanoseconds": 399000000
+      },
+      "id": "OBuzDlSj2oZqCS869JLZ",
+      "discipline": "Cutaway Making",
+      "tier": "T2",
+      "displayName": "Norlin",
+      "date": "2020-09-08"
+    },
+    {
+      "evidenceUrl": "https://imgur.com/4GY73o6",
+      "evidenceCreatedAt": {
+        "_seconds": 1729111060,
+        "_nanoseconds": 853000000
+      },
+      "modifier": "",
+      "userId": "x4AhGGCs7ghbyljEQpnc7M2yvXz1",
+      "projectId": "5a0aa3e0",
+      "evidenceNotes": "",
+      "id": "OeEEfTuUlyXwfytZSDRj",
+      "discipline": "Cutaway Making",
+      "tier": "T2",
+      "displayName": "GEXPRO",
+      "date": "2024-10-16"
+    },
+    {
+      "userId": "1Zfde1GZOncdUhL3y32WkTmGaVs2",
+      "evidenceUrl": "https://docs.google.com/document/d/1-7Kr638lk-xziyDwoGgqCet5nJhX9dGrLDK1RG7AB1k/edit?usp=drivesdk",
+      "modifier": "",
+      "projectId": "ee1c082f",
+      "evidenceCreatedAt": {
+        "_seconds": 1773262294,
+        "_nanoseconds": 186000000
+      },
+      "id": "Ouv73gBaQXp4x5J4dTTE",
+      "discipline": "Impressioning",
+      "tier": "T2",
+      "displayName": "Quin",
+      "date": "2026-03-11"
+    },
+    {
+      "userId": "Dmd9rZ7qWORduI0Vbsv9F3URevt1",
+      "evidenceUrl": "https://youtu.be/R8oVWcH01E8?si=UnMl5x4nWBWkvmpF",
+      "evidenceNotes": "Master Lock 875 decoded via shimming and separately tensioning",
+      "modifier": "",
+      "projectId": "e48dabec",
+      "evidenceCreatedAt": {
+        "_seconds": 1755692734,
+        "_nanoseconds": 0
+      },
+      "id": "PSJqgrtDGicRlZVWBNTg",
+      "discipline": "Safe Lock Manipulation",
+      "tier": "T1",
+      "displayName": "Archwild",
+      "date": "2025-08-20"
+    },
+    {
+      "userId": "zknSa6jFFBhBQgQ1sKU4V5afbUi2",
+      "evidenceUrl": "https://ibb.co/album/vCfG0h",
+      "evidenceNotes": "",
+      "modifier": "",
+      "projectId": "c2e1c952",
+      "evidenceCreatedAt": {
+        "_seconds": 1752842476,
+        "_nanoseconds": 0
+      },
+      "id": "Po6XkEylkpgqSExjDk8U",
+      "discipline": "Pick Making",
+      "tier": "T2",
+      "displayName": "Siedem50",
+      "date": "2025-07-18"
+    },
+    {
+      "userId": "A7dMVjo593RrfUpmyIHpAw66oRC2",
+      "evidenceUrl": "https://ibb.co/d0S6XfMB",
+      "evidenceNotes": "https://ibb.co/XZ1nGMTW",
+      "modifier": "",
+      "projectId": "409f8d0a",
+      "evidenceCreatedAt": {
+        "_seconds": 1743979330,
+        "_nanoseconds": 739000000
+      },
+      "id": "PvQ38ucDePs0E5KbR4z6",
+      "discipline": "Disc Detainer Pick Making",
+      "tier": "T2",
+      "displayName": "Ragnar",
+      "date": "2025-04-06"
+    },
+    {
+      "userId": "DdWCTG3deVO0zSEsJP40RxnaL5g1",
+      "evidenceUrl": "https://www.gridscout.net/locksport/training-children-to-defeat-locks.pdf",
+      "modifier": "",
+      "projectId": "9042214a",
+      "evidenceCreatedAt": {
+        "_seconds": 1770514519,
+        "_nanoseconds": 879000000
+      },
+      "id": "Pz8zsaEeiII5EQ7cFxqD",
+      "discipline": "Picking Instruction",
+      "tier": "T3",
+      "displayName": "Jeremy Reeder",
+      "date": "2026-02-07"
+    },
+    {
+      "userId": "GGplAdctTfVDLVvYsfIADJmfp8f2",
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/1293936010601697342/1294370725213503579",
+      "modifier": "",
+      "projectId": "f475c0f2",
+      "evidenceCreatedAt": {
+        "_seconds": 1728672551,
+        "_nanoseconds": 147000000
+      },
+      "id": "QSK4vsSZrlK9vfvUPQuY",
+      "discipline": "Community Involvement",
+      "tier": "T5",
+      "displayName": "mgsecure",
+      "tabClaimed": "MGsecure",
+      "date": "2024-10-11"
+    },
+    {
+      "userId": "CqfosXk500QwUCnIHYgIg2PYSgf1",
+      "evidenceUrl": "https://www.youtube.com/watch?v=6vnBpAjRFpY",
+      "modifier": "",
+      "projectId": "e3211470",
+      "evidenceCreatedAt": {
+        "_seconds": 1760118323,
+        "_nanoseconds": 0
+      },
+      "id": "QSMuJenURGaRngdz4SFa",
+      "discipline": "Cutaway Making",
+      "tier": "T1",
+      "displayName": "Andrex66IT",
+      "date": "2025-10-10"
+    },
+    {
+      "evidenceCreatedAt": {
+        "_seconds": 1654938000,
+        "_nanoseconds": 0
+      },
+      "modifier": "",
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/946082204826603561/985295424262926386",
+      "evidenceNotes": "Tier 2 Project safecracking",
+      "projectId": "c53d56b1",
+      "userId": "ohnGCeCEgIOk9KzmxWcsWmGM0nM2",
+      "id": "R6OLj3qYHXVF4fteijT1",
+      "discipline": "Safe Lock Manipulation",
+      "tier": "T2",
+      "displayName": "7woz3ro51x",
+      "tabClaimed": "Two06",
+      "date": "2022-06-11"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/946082204826603561/952328636961280010",
+      "evidenceCreatedAt": {
+        "_seconds": 1647075600,
+        "_nanoseconds": 0
+      },
+      "modifier": "",
+      "userId": "OlCHC00OrRY0MOqWv7ShjP18cKr2",
+      "projectId": "5a0aa3e0",
+      "evidenceNotes": "Tier 2 Project Cutaways",
+      "id": "R7NpZrrMEGxXAHYvLfGy",
+      "discipline": "Cutaway Making",
+      "tier": "T2",
+      "displayName": "HVLogic",
+      "tabClaimed": "HVLogic",
+      "date": "2022-03-12"
+    },
+    {
+      "userId": "pOZ58IFOJVhc5t1Nrco5HGTeant2",
+      "evidenceUrl": "https://drive.google.com/file/d/1-F7tLF7HWnUAHcGBt1Vf1Auq4lucxQ1U/view",
+      "evidenceNotes": "https://drive.google.com/file/d/1qwV-z6-fgm_A_nu4JblY7M1UgUIo4FpK/view",
+      "modifier": "",
+      "projectId": "c53d56b1",
+      "evidenceCreatedAt": {
+        "_seconds": 1734364977,
+        "_nanoseconds": 0
+      },
+      "id": "R8rEkQW7SzDvfAHWOHiV",
+      "discipline": "Safe Lock Manipulation",
+      "tier": "T2",
+      "displayName": "Millizard",
+      "date": "2024-12-16"
+    },
+    {
+      "userId": "zDLkYoBjvbQvM1IKdPlAqOyzPIf2",
+      "evidenceUrl": "https://docs.google.com/document/d/1UUMOgrnNUHLszI-me7QjF5DUeWkJr_IXNXSg1rRF81w",
+      "modifier": "",
+      "projectId": "c53d56b1",
+      "evidenceCreatedAt": {
+        "_seconds": 1764110943,
+        "_nanoseconds": 0
+      },
+      "id": "RdXnec0V6RN81piSq1TP",
+      "discipline": "Safe Lock Manipulation",
+      "tier": "T2",
+      "displayName": "NoodleThumb",
+      "date": "2025-11-25"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/946082204826603561/1065179362552459304",
+      "evidenceCreatedAt": {
+        "_seconds": 1674032400,
+        "_nanoseconds": 0
+      },
+      "modifier": "",
+      "userId": "qXhqtUdEVFfrajxqblKl8bqQqXM2",
+      "projectId": "ee1c082f",
+      "evidenceNotes": "Tier 2 Project impressioning",
+      "id": "RoYiXQyc1pb6mxlzFdXt",
+      "discipline": "Impressioning",
+      "tier": "T2",
+      "displayName": "DQ",
+      "tabClaimed": "DQ",
+      "date": "2023-01-18"
+    },
+    {
+      "userId": "qXhqtUdEVFfrajxqblKl8bqQqXM2",
+      "projectId": "e3211470",
+      "evidenceNotes": "",
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/1291747788203491472/1291747788203491472",
+      "evidenceCreatedAt": {
+        "_seconds": 1729235754,
+        "_nanoseconds": 35000000
+      },
+      "modifier": "",
+      "id": "RzhyhqKhervP5T3QvOlT",
+      "discipline": "Cutaway Making",
+      "tier": "T1",
+      "displayName": "DQ",
+      "tabClaimed": "DQ",
+      "date": "2024-10-18"
+    },
+    {
+      "userId": "dlPpljxEAqYVts2VP0UOL8gGIQG3",
+      "evidenceUrl": "https://drive.google.com/file/d/1TAB36Mhup0Tfc9kGLUNWigub2mygnz-R/view?usp=drivesdk",
+      "modifier": "",
+      "projectId": "599feff0",
+      "evidenceCreatedAt": {
+        "_seconds": 1766219016,
+        "_nanoseconds": 0
+      },
+      "id": "SDFrLezsFi57DYJwvBrp",
+      "discipline": "Disc Detainer Pick Making",
+      "tier": "T4",
+      "displayName": "Erik Weisz",
+      "date": "2025-12-20"
+    },
+    {
+      "userId": "vOi8rfTRluYlcVizuVvX9PWFJdn2",
+      "evidenceUrl": "https://www.youtube.com/watch?v=8QjTX3m0M2E",
+      "evidenceNotes": "A Study of the Miwa U9",
+      "modifier": "",
+      "projectId": "9bc3714a",
+      "evidenceCreatedAt": {
+        "_seconds": 1738722498,
+        "_nanoseconds": 108000000
+      },
+      "id": "ShaiYKCewN0vftALmLh9",
+      "discipline": "Other Master's Project",
+      "tier": "T1",
+      "displayName": "Dynamic",
+      "date": "2025-02-04"
+    },
+    {
+      "userId": "05sD0oWnI7QpcVeBgQvMm4O2TWD3",
+      "evidenceUrl": "https://www.healthy-insect-1447.com/hi-001",
+      "evidenceNotes": "",
+      "modifier": "",
+      "projectId": "93a61f11",
+      "evidenceCreatedAt": {
+        "_seconds": 1739043984,
+        "_nanoseconds": 0
+      },
+      "id": "SyINGcUgVfxaWpthxWsC",
+      "discipline": "Challenge Locks",
+      "tier": "T1",
+      "displayName": "Healthy-Insect-1447",
+      "date": "2025-02-08"
+    },
+    {
+      "userId": "qtp7IM8d9sawUEAKsM0vwMITexR2",
+      "evidenceUrl": "https://drive.google.com/file/d/1_xY-d5bvEfWJ2woLkVFAF_DLG4BMUsqJ/view?usp=sharing",
+      "modifier": "",
+      "projectId": "ee1c082f",
+      "evidenceCreatedAt": {
+        "_seconds": 1777057938,
+        "_nanoseconds": 933000000
+      },
+      "id": "TSF5c4sbfuRJHk5RcDW1",
+      "discipline": "Impressioning",
+      "tier": "T2",
+      "displayName": "Bugasu",
+      "date": "2026-04-24"
+    },
+    {
+      "userId": "A7dMVjo593RrfUpmyIHpAw66oRC2",
+      "evidenceUrl": "https://ibb.co/RpJkcn88",
+      "evidenceNotes": "https://ibb.co/HpxJpkNj",
+      "modifier": "",
+      "projectId": "28ebf3b8",
+      "evidenceCreatedAt": {
+        "_seconds": 1743979383,
+        "_nanoseconds": 569000000
+      },
+      "id": "TmHRf6JL65K60UZfd5yP",
+      "discipline": "Other Master's Project",
+      "tier": "T2",
+      "displayName": "Ragnar",
+      "date": "2025-04-06"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/946082204826603561/952688727396872192",
+      "evidenceCreatedAt": {
+        "_seconds": 1647162000,
+        "_nanoseconds": 0
+      },
+      "modifier": "",
+      "userId": "JLW4kHgTCySF0BtIgzAe1CyqVt42",
+      "projectId": "c09036aa",
+      "evidenceNotes": "Tier 3 Project safecracking",
+      "id": "U01zBF0RFd3DipcVMP72",
+      "discipline": "Safe Lock Manipulation",
+      "tier": "T3",
+      "displayName": "TypeRegal",
+      "tabClaimed": "TypeRegal",
+      "date": "2022-03-13"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/1169284671864053760/1169284774209265806",
+      "evidenceCreatedAt": {
+        "_seconds": 1698829200,
+        "_nanoseconds": 0
+      },
+      "modifier": "",
+      "userId": "FGhShmNkxTXC9vwmZwWylOvU8K72",
+      "projectId": "ee1c082f",
+      "evidenceNotes": "Tier 2 Project impressioning",
+      "id": "UYQbEeITu2WtvguQFeRV",
+      "discipline": "Impressioning",
+      "tier": "T2",
+      "displayName": "Alpama",
+      "tabClaimed": "Alpama",
+      "date": "2023-11-01"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/282173282546089985/1243222754568831048",
+      "evidenceCreatedAt": {
+        "_seconds": 1716504733,
+        "_nanoseconds": 0
+      },
+      "modifier": "",
+      "userId": "e2RNiz570rWqYYxDSDn6Y0uhgA43",
+      "projectId": "c53d56b1",
+      "evidenceNotes": "Used for black belt submission",
+      "id": "UjbDzEAbVXwdLGDhY1xG",
+      "discipline": "Safe Lock Manipulation",
+      "tier": "T2",
+      "displayName": "Marson",
+      "tabClaimed": "Marson",
+      "date": "2024-05-23"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/946082204826603561/950506676795105330",
+      "evidenceCreatedAt": {
+        "_seconds": 1646643600,
+        "_nanoseconds": 0
+      },
+      "modifier": "",
+      "userId": "XKPQaAR525XV2JsqGn12eEKwxD62",
+      "projectId": "c09036aa",
+      "evidenceNotes": "Tier 3 Project safecracking",
+      "id": "Uw9ofeRTfvET8kTegZpF",
+      "discipline": "Safe Lock Manipulation",
+      "tier": "T3",
+      "displayName": "DoNotDuplicate",
+      "tabClaimed": "DoNotDuplicate",
+      "date": "2022-03-07"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/946082204826603561/1065141034000076860",
+      "evidenceCreatedAt": {
+        "_seconds": 1673946000,
+        "_nanoseconds": 0
+      },
+      "modifier": "",
+      "userId": "GGplAdctTfVDLVvYsfIADJmfp8f2",
+      "projectId": "c53d56b1",
+      "evidenceNotes": "Tier 2 Project safecracking",
+      "id": "V8OlbwIy2IWql519HPjF",
+      "discipline": "Safe Lock Manipulation",
+      "tier": "T2",
+      "displayName": "mgsecure",
+      "tabClaimed": "MGsecure",
+      "date": "2023-01-17"
+    },
+    {
+      "userId": "Dmd9rZ7qWORduI0Vbsv9F3URevt1",
+      "evidenceUrl": "https://youtu.be/0Ybu9HaNHSc?si=hyG4vQoZ2ma3TRia",
+      "evidenceNotes": "Master Lock 1506D (unopened) decoded using tensioning and finding resistance points",
+      "modifier": "",
+      "projectId": "e48dabec",
+      "evidenceCreatedAt": {
+        "_seconds": 1755692894,
+        "_nanoseconds": 0
+      },
+      "id": "VYNx5f25IT4KLO8uNwFT",
+      "discipline": "Safe Lock Manipulation",
+      "tier": "T1",
+      "displayName": "Archwild",
+      "date": "2025-08-20"
+    },
+    {
+      "userId": "vMp70yVtGbbSHhGmoOpRIp8OoD83",
+      "evidenceUrl": "https://youtube.com/shorts/SDS1mwI-KAE?feature=share",
+      "modifier": "",
+      "projectId": "93a61f11",
+      "evidenceCreatedAt": {
+        "_seconds": 1758424879,
+        "_nanoseconds": 0
+      },
+      "id": "VmuOoj504bQNnEgICFH4",
+      "discipline": "Challenge Locks",
+      "tier": "T1",
+      "displayName": "BcKsTbR",
+      "date": "2025-09-20"
+    },
+    {
+      "evidenceUrl": "https://youtu.be/dSTNl-br-GI",
+      "evidenceCreatedAt": {
+        "_seconds": 1680184832,
+        "_nanoseconds": 0
+      },
+      "modifier": "",
+      "userId": "gWoqbd0FOsglFD5boH96NAtJ7DE3",
+      "projectId": "c09036aa",
+      "evidenceNotes": "Tier 3 Project safecracking",
+      "id": "Vv8aTr5Mxo6caEyOgrMs",
+      "discipline": "Safe Lock Manipulation",
+      "tier": "T3",
+      "displayName": "LockFumbler",
+      "tabClaimed": "LockFumbler",
+      "date": "2023-03-30"
+    },
+    {
+      "userId": "kBjhBaserkb0dTYBtgzNcLddnyy1",
+      "evidenceUrl": "https://www.reddit.com/u/No_Raccoon5206/s/h3h2o3w0DK",
+      "modifier": "",
+      "projectId": "c3d7c0e3",
+      "evidenceCreatedAt": {
+        "_seconds": 1765475995,
+        "_nanoseconds": 0
+      },
+      "id": "VxsCTjj5wN0v0PBR5tPE",
+      "discipline": "Tool Manufacturing",
+      "tier": "T2",
+      "displayName": "Nightmare",
+      "date": "2025-12-11"
+    },
+    {
+      "userId": "1SqcRKce18boUZBtOHWSenGAI202",
+      "evidenceUrl": "https://docs.google.com/document/d/11hezpqrjaucUvlo1s7H7FBijyRvANG2MbyfUkIB3yh0/edit?usp=drivesdk",
+      "modifier": "",
+      "projectId": "c53d56b1",
+      "evidenceCreatedAt": {
+        "_seconds": 1776046326,
+        "_nanoseconds": 36000000
+      },
+      "id": "WD6ovf5u1pECkdA4gqu3",
+      "discipline": "Safe Lock Manipulation",
+      "tier": "T2",
+      "displayName": "Zehkar",
+      "date": "2026-04-12"
+    },
+    {
+      "userId": "hZEQNtxpQcSMQwnFvJ8o38baS5t1",
+      "evidenceUrl": "https://imgur.com/a/3oYlanF",
+      "evidenceNotes": "",
+      "modifier": "",
+      "projectId": "5a0aa3e0",
+      "evidenceCreatedAt": {
+        "_seconds": 1757392215,
+        "_nanoseconds": 276000000
+      },
+      "id": "WEvHmLHPu70jueNVCQtr",
+      "discipline": "Cutaway Making",
+      "tier": "T2",
+      "displayName": "Jax",
+      "date": "2025-09-08"
+    },
+    {
+      "userId": "tUMX51TojfWcZxzqpiPYKTnOnQg1",
+      "evidenceUrl": "https://docs.google.com/document/d/1nAg_Uuz5uZ8-jV33FJgjrHRH1IJYM8MFCzEeEg_5ifw/edit?usp=drivesdk",
+      "modifier": "",
+      "projectId": "ee1c082f",
+      "evidenceCreatedAt": {
+        "_seconds": 1781569908,
+        "_nanoseconds": 351000000
+      },
+      "id": "WV6W7PtsWbfnUQbBUSlJ",
+      "discipline": "Impressioning",
+      "tier": "T2",
+      "displayName": "BrianBreaksShit ",
+      "date": "2026-06-15"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/1285613951941349539/1287780036321083404",
+      "evidenceCreatedAt": {
+        "_seconds": 1727389819,
+        "_nanoseconds": 773000000
+      },
+      "modifier": "",
+      "userId": "shN5nuq6pfTUTwuKnasLjqoIdHW2",
+      "projectId": "9d206b41",
+      "evidenceNotes": "",
+      "id": "WYVDtWQkCmyWCNjGr7dk",
+      "discipline": "Other Master's Project",
+      "tier": "T4",
+      "displayName": "Pinball",
+      "tabClaimed": "(new bb: shN5nuq6pfTUTwuKnasLjqoIdHW2)",
+      "date": "2024-09-26"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/946082204826603561/1010199862471569590",
+      "evidenceCreatedAt": {
+        "_seconds": 1660899600,
+        "_nanoseconds": 0
+      },
+      "modifier": "",
+      "evidenceNotes": "Tier 5 Project Community",
+      "projectId": "f475c0f2",
+      "userId": "8PKfUHTiafgObsQQr162dQRlBCo1",
+      "id": "WzDWZFvhxynceej5W1nk",
+      "discipline": "Community Involvement",
+      "tier": "T5",
+      "displayName": "GravityKarma",
+      "tabClaimed": "GravityKarma",
+      "date": "2022-08-19"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/1234924490862100577/1234924490862100577",
+      "evidenceCreatedAt": {
+        "_seconds": 1714467600,
+        "_nanoseconds": 0
+      },
+      "modifier": "",
+      "userId": "0oQdsctEO8ZF3V4qPz8QhGAc7qM2",
+      "projectId": "ee1c082f",
+      "evidenceNotes": "Tier 2 Project impressioning",
+      "id": "XQ23cO6c6m2JuMzi5idU",
+      "discipline": "Impressioning",
+      "tier": "T2",
+      "displayName": "Rxpert",
+      "tabClaimed": "Rxpert",
+      "date": "2024-04-30"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/1154425310964617366/1154425310964617366",
+      "evidenceCreatedAt": {
+        "_seconds": 1695328568,
+        "_nanoseconds": 59000000
+      },
+      "modifier": "",
+      "userId": "2wcd3lv1Q6XrikNpgak8aPAWIWJ3",
+      "projectId": "5a0aa3e0",
+      "evidenceNotes": "",
+      "id": "XiRSieW6v5r4eJny2N2i",
+      "discipline": "Cutaway Making",
+      "tier": "T2",
+      "displayName": "Hammer",
+      "tabClaimed": "deadhammer",
+      "date": "2023-09-21"
+    },
+    {
+      "evidenceUrl": "https://docs.google.com/document/d/1lbCsF-ZBrzzwYTAn2zHojSu7lQrGuLtW-UiVqviDJCI/edit#heading=h.dfyeylv5ucj",
+      "evidenceCreatedAt": {
+        "_seconds": 1700038800,
+        "_nanoseconds": 0
+      },
+      "modifier": "",
+      "userId": "mHlFwfstvgSgzUHnBNdKjPVFFgW2",
+      "projectId": "c53d56b1",
+      "evidenceNotes": "Tier 2 Project safecracking",
+      "id": "Xrank4aKH4QS9RIGyxze",
+      "discipline": "Safe Lock Manipulation",
+      "tier": "T2",
+      "displayName": "McBane",
+      "tabClaimed": "EdMcBane",
+      "date": "2023-11-15"
+    },
+    {
+      "userId": "DdWCTG3deVO0zSEsJP40RxnaL5g1",
+      "evidenceUrl": "https://youtu.be/78LlddwX-fM",
+      "modifier": "",
+      "projectId": "5a0aa3e0",
+      "evidenceCreatedAt": {
+        "_seconds": 1079056572,
+        "_nanoseconds": 858000000
+      },
+      "id": "Y11b7PfrOw1MiFKSlCo9",
+      "discipline": "Cutaway Making",
+      "tier": "T2",
+      "displayName": "Jeremy Reeder",
+      "date": "2004-03-11"
+    },
+    {
+      "userId": "YYh4QtNUrba1xOqNm9z2GqG7ssO2",
+      "evidenceUrl": "https://youtu.be/bW-C0l1LFqA",
+      "evidenceNotes": "Picking an Anchor las 810-1 padlock with a custom made DD pick handles, tensioner and picking tip",
+      "modifier": "",
+      "projectId": "409f8d0a",
+      "evidenceCreatedAt": {
+        "_seconds": 1744577423,
+        "_nanoseconds": 493000000
+      },
+      "id": "YBkcfftngCNAiozYi2vz",
+      "discipline": "Disc Detainer Pick Making",
+      "tier": "T2",
+      "displayName": "baikunz",
+      "date": "2025-04-13"
+    },
+    {
+      "userId": "U3wCYsdGwYS8ujsO2K78iD68FMC3",
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/946082204826603561/1121006467001090088",
+      "evidenceNotes": "",
+      "modifier": "",
+      "projectId": "ee1c082f",
+      "evidenceCreatedAt": {
+        "_seconds": 1687382861,
+        "_nanoseconds": 0
+      },
+      "id": "YvuWq11OrP01zs6HH9Vm",
+      "discipline": "Impressioning",
+      "tier": "T2",
+      "displayName": "Dig",
+      "date": "2023-06-21"
+    },
+    {
+      "modifier": "",
+      "evidenceCreatedAt": {
+        "_seconds": 1647248400,
+        "_nanoseconds": 0
+      },
+      "projectId": "c53d56b1",
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/946082204826603561/952996564522115152",
+      "evidenceNotes": "Tier 2 Project safecracking",
+      "userId": "F16dOV2FFmNFzw2HL6UrO5NgyvF2",
+      "id": "YzPX6Jnn8vVmZPfybpWz",
+      "discipline": "Safe Lock Manipulation",
+      "tier": "T2",
+      "displayName": "syotos",
+      "tabClaimed": "Syotos",
+      "date": "2022-03-14"
+    },
+    {
+      "evidenceUrl": "https://youtu.be/SHlCVcDtK2o",
+      "evidenceCreatedAt": {
+        "_seconds": 1610883442,
+        "_nanoseconds": 0
+      },
+      "modifier": "",
+      "userId": "Gg9KxwHOwBf03QAIdOgZbfW3hRo1",
+      "projectId": "5a0aa3e0",
+      "evidenceNotes": "Tier 2 Project Cutaways",
+      "id": "Yzd5FjGKWSaIzP9UEiq6",
+      "discipline": "Cutaway Making",
+      "tier": "T2",
+      "displayName": "yabende",
+      "tabClaimed": "Yabende",
+      "date": "2021-01-17"
+    },
+    {
+      "evidenceUrl": "https://docs.google.com/document/d/1-nOfgkFGDlbsiFMcBTxW-Cd9f2ij1QSwJmH06p_Tq0I/edit?usp=sharing",
+      "evidenceCreatedAt": {
+        "_seconds": 1699261200,
+        "_nanoseconds": 0
+      },
+      "modifier": "",
+      "userId": "tbaq0CWuDTXerA0eUi0kGASVb1Z2",
+      "projectId": "b60f6f7e",
+      "evidenceNotes": "Tier 3 Project impressioning",
+      "id": "Z312IIWLHD4Gg7dMeFCU",
+      "discipline": "Impressioning",
+      "tier": "T3",
+      "displayName": "Clefmentine",
+      "tabClaimed": "Clefmentine",
+      "date": "2023-11-06"
+    },
+    {
+      "userId": "zDLkYoBjvbQvM1IKdPlAqOyzPIf2",
+      "evidenceUrl": "https://youtu.be/q9zPE1BtkGM",
+      "evidenceNotes": "Front tensioning DD pick",
+      "modifier": "",
+      "projectId": "26889b66",
+      "evidenceCreatedAt": {
+        "_seconds": 1754800147,
+        "_nanoseconds": 0
+      },
+      "id": "ZAErgs930ycJLU56MMz8",
+      "discipline": "Disc Detainer Pick Making",
+      "tier": "T1",
+      "displayName": "NoodleThumb",
+      "date": "2025-08-09"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/946082204826603561/952328453259132988",
+      "evidenceCreatedAt": {
+        "_seconds": 1647075600,
+        "_nanoseconds": 0
+      },
+      "modifier": "",
+      "userId": "OlCHC00OrRY0MOqWv7ShjP18cKr2",
+      "projectId": "ee1c082f",
+      "evidenceNotes": "Tier 2 Project impressioning",
+      "id": "ZhSFNrxsU4AWa6Cru8Qo",
+      "discipline": "Impressioning",
+      "tier": "T2",
+      "displayName": "HVLogic",
+      "tabClaimed": "HVLogic",
+      "date": "2022-03-12"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/946082204826603561/946086999394234369",
+      "evidenceCreatedAt": {
+        "_seconds": 1645606800,
+        "_nanoseconds": 0
+      },
+      "modifier": "",
+      "userId": "mZyfQIARjCP1uJJJc7ioMAALV9v2",
+      "projectId": "76fee3b3",
+      "evidenceNotes": "Tier 4 Project Challenge locks",
+      "id": "ZvfmjcSCU42VFUUm034C",
+      "discipline": "Challenge Locks",
+      "tier": "T4",
+      "displayName": "PeaceWeapon",
+      "tabClaimed": "PeaceWeapon",
+      "date": "2022-02-23"
+    },
+    {
+      "userId": "yBn09b92sJY9G7x1tjDIZEDBsiH3",
+      "projectId": "9d206b41",
+      "evidenceNotes": "Leather case quest ",
+      "evidenceUrl": "https://photos.app.goo.gl/GLKy785Gv191UaRf9",
+      "evidenceCreatedAt": {
+        "_seconds": 1729716446,
+        "_nanoseconds": 615000000
+      },
+      "modifier": "",
+      "id": "a96euXoTiAmFG3bADU7D",
+      "discipline": "Other Master's Project",
+      "tier": "T4",
+      "displayName": "Thegamingbug",
+      "tabClaimed": "(new bb: yBn09b92sJY9G7x1tjDIZEDBsiH3)",
+      "date": "2024-10-23"
+    },
+    {
+      "userId": "yBn09b92sJY9G7x1tjDIZEDBsiH3",
+      "evidenceUrl": "https://youtu.be/Ke7TtSC8Lvc?si=IpzHiXvDvrHDYCTU",
+      "evidenceNotes": "Fibre optic torch ",
+      "modifier": "",
+      "projectId": "24df60f0",
+      "evidenceCreatedAt": {
+        "_seconds": 1735018419,
+        "_nanoseconds": 103000000
+      },
+      "id": "aMtpsE4rxO1FT78q6Hab",
+      "discipline": "Tool Making",
+      "tier": "T2",
+      "displayName": "Thegamingbug",
+      "tabClaimed": "(new bb: yBn09b92sJY9G7x1tjDIZEDBsiH3)",
+      "date": "2024-12-23"
+    },
+    {
+      "userId": "D8RchvJyRuepbqMgeKmc6yNpoko2",
+      "evidenceUrl": "https://drive.google.com/file/d/1-tLYaFBNkiYWWdeaM3jGYi3mG3hgXusQ/view?usp=sharing",
+      "evidenceNotes": "",
+      "modifier": "",
+      "projectId": "c53d56b1",
+      "evidenceCreatedAt": {
+        "_seconds": 1570807659,
+        "_nanoseconds": 0
+      },
+      "id": "aZykgSHXb7gxC30DPtjL",
+      "discipline": "Safe Lock Manipulation",
+      "tier": "T2",
+      "displayName": "Priest",
+      "tabClaimed": "Priest",
+      "date": "2019-10-11"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/1256075019994529792/1256075019994529792",
+      "evidenceCreatedAt": {
+        "_seconds": 1719478800,
+        "_nanoseconds": 0
+      },
+      "modifier": "",
+      "userId": "zDpOLv3IAPSdIwPpSPGf8cKQumx2",
+      "projectId": "c53d56b1",
+      "evidenceNotes": "Tier 2 Project safecracking",
+      "id": "bSJQM08LbTDqo4C0Z2Zr",
+      "discipline": "Safe Lock Manipulation",
+      "tier": "T2",
+      "displayName": "Skwiggs",
+      "tabClaimed": "skwiggledork",
+      "date": "2024-06-27"
+    },
+    {
+      "userId": "tuZXiJDTnMbzWpUQKKUNQEeRr1l1",
+      "evidenceUrl": "https://youtu.be/8GGa2LdUYlA?si=nx-n8ihWLdd2Yv--",
+      "modifier": "",
+      "projectId": "93a61f11",
+      "evidenceCreatedAt": {
+        "_seconds": 1761250479,
+        "_nanoseconds": 399000000
+      },
+      "id": "bSzLwUYO6zcPujK16qyI",
+      "discipline": "Challenge Locks",
+      "tier": "T1",
+      "displayName": "Ol TW",
+      "date": "2025-10-23"
+    },
+    {
+      "userId": "aI3JDm2fLFWvxq2eQnCBO5KzLaF2",
+      "evidenceUrl": "https://docs.google.com/document/d/1O2FpS5XOWtaxtbTofFjSEAawcN5ENt417fP9tEfQFis/edit?usp=sharing",
+      "evidenceNotes": "",
+      "modifier": "",
+      "projectId": "76fee3b3",
+      "evidenceCreatedAt": {
+        "_seconds": 1738159079,
+        "_nanoseconds": 666000000
+      },
+      "id": "blBfK5VtsYtmidGMEBTz",
+      "discipline": "Challenge Locks",
+      "tier": "T4",
+      "displayName": "NICVT_locks",
+      "date": "2025-01-29"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/946082204826603561/993631752176291951",
+      "evidenceCreatedAt": {
+        "_seconds": 1656925200,
+        "_nanoseconds": 0
+      },
+      "modifier": "",
+      "userId": "NdkmYGydSHfPTcj5xuqjwSyJJI42",
+      "projectId": "c53d56b1",
+      "evidenceNotes": "Tier 2 Project safecracking",
+      "id": "c99OEJQUMFJjl4iAlSos",
+      "discipline": "Safe Lock Manipulation",
+      "tier": "T2",
+      "displayName": "Greenish",
+      "tabClaimed": "TheGreenishOne",
+      "date": "2022-07-04"
+    },
+    {
+      "evidenceUrl": "https://docs.google.com/document/d/1xyrVUziE0umP-zhbpzN42ZpvexI-JhGwoonjgZTjyiI/edit?usp=sharing",
+      "evidenceCreatedAt": {
+        "_seconds": 1646125200,
+        "_nanoseconds": 0
+      },
+      "modifier": "",
+      "userId": "XoUDXU5McjTuVnPA1xfmzytcKuy2",
+      "projectId": "c53d56b1",
+      "evidenceNotes": "Tier 2 Project safecracking",
+      "id": "cdYobh9IqhovQcHk2g6W",
+      "discipline": "Safe Lock Manipulation",
+      "tier": "T2",
+      "displayName": "Red Wanderer",
+      "tabClaimed": "RedWanderer",
+      "date": "2022-03-01"
+    },
+    {
+      "evidenceUrl": "https://discordapp.com/channels/140129091796992000/946082204826603561/975483664173498418",
+      "evidenceCreatedAt": {
+        "_seconds": 1652605200,
+        "_nanoseconds": 0
+      },
+      "modifier": "",
+      "userId": "qOSRbnEHbjcbQ7pT31Omv16R0NI3",
+      "projectId": "24df60f0",
+      "evidenceNotes": "Tier 2 Project Tool making",
+      "id": "ckvoudDctpgQ6SvUPVPN",
+      "discipline": "Tool Making",
+      "tier": "T2",
+      "displayName": "Plz7 ",
+      "tabClaimed": "Plz7",
+      "date": "2022-05-15"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/946082204826603561/957683734205849695",
+      "evidenceCreatedAt": {
+        "_seconds": 1648371600,
+        "_nanoseconds": 0
+      },
+      "projectId": "5bbc0602",
+      "evidenceNotes": "Tier 3 Project Pickmaking",
+      "modifier": "",
+      "userId": "8PKfUHTiafgObsQQr162dQRlBCo1",
+      "id": "cvg7v9o2Cr6QKzsH19CD",
+      "discipline": "Pick Making",
+      "tier": "T3",
+      "displayName": "GravityKarma",
+      "tabClaimed": "GravityKarma",
+      "date": "2022-03-27"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/946082204826603561/1122897275430113411",
+      "evidenceCreatedAt": {
+        "_seconds": 1687770000,
+        "_nanoseconds": 0
+      },
+      "modifier": "",
+      "userId": "NdkmYGydSHfPTcj5xuqjwSyJJI42",
+      "projectId": "72971f6c",
+      "evidenceNotes": "Tier 4 Project impressioning",
+      "id": "dGixuNqX0Bf4zXHQ4S0W",
+      "discipline": "Impressioning",
+      "tier": "T4",
+      "displayName": "Greenish",
+      "tabClaimed": "TheGreenishOne",
+      "date": "2023-06-26"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/1285613139424968748/1288722959518662678",
+      "evidenceCreatedAt": {
+        "_seconds": 1727389762,
+        "_nanoseconds": 129000000
+      },
+      "modifier": "",
+      "userId": "shN5nuq6pfTUTwuKnasLjqoIdHW2",
+      "projectId": "e2c0342e",
+      "evidenceNotes": "",
+      "id": "eMduF5wC3vL0VNpS9wde",
+      "discipline": "Challenge Locks",
+      "tier": "T3",
+      "displayName": "Pinball",
+      "tabClaimed": "(new bb: shN5nuq6pfTUTwuKnasLjqoIdHW2)",
+      "date": "2024-09-26"
+    },
+    {
+      "userId": "Q9yvEjOuacdsQHMudhTNWEGpkOg1",
+      "evidenceUrl": "https://youtube.com/shorts/aWQq44fLaWc?is=3F7iPOKydB1Nl8sL",
+      "modifier": "",
+      "projectId": "93a61f11",
+      "evidenceCreatedAt": {
+        "_seconds": 1783904112,
+        "_nanoseconds": 108000000
+      },
+      "id": "eabP8VQ8Jkwd8Dd88HF2",
+      "discipline": "Challenge Locks",
+      "tier": "T1",
+      "displayName": "Mike Honcho",
+      "date": "2026-07-12"
+    },
+    {
+      "userId": "VBmk1eBTsyeE3MqvDJMRrWoM3mt1",
+      "evidenceUrl": "https://youtube.com/shorts/pOc5iT5-xfw?si=sr6QV7_JiUzz_SfS",
+      "modifier": "",
+      "projectId": "ee1c082f",
+      "evidenceCreatedAt": {
+        "_seconds": 1767428776,
+        "_nanoseconds": 22000000
+      },
+      "id": "egP0o7ZzjTUpAhMgEmWP",
+      "discipline": "Impressioning",
+      "tier": "T2",
+      "displayName": "Spyc",
+      "date": "2026-01-03"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/946082204826603561/953010901273952306",
+      "evidenceCreatedAt": {
+        "_seconds": 1647248400,
+        "_nanoseconds": 0
+      },
+      "modifier": "",
+      "userId": "mZyfQIARjCP1uJJJc7ioMAALV9v2",
+      "projectId": "84a7f7c6",
+      "evidenceNotes": "Tier 3 Project Community",
+      "id": "fDEU6TC4CMWf3q2V3jmA",
+      "discipline": "Community Involvement",
+      "tier": "T3",
+      "displayName": "PeaceWeapon",
+      "tabClaimed": "PeaceWeapon",
+      "date": "2022-03-14"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/1243570383832223946/1243570383832223946",
+      "evidenceCreatedAt": {
+        "_seconds": 1716842091,
+        "_nanoseconds": 534000000
+      },
+      "modifier": "",
+      "userId": "2wcd3lv1Q6XrikNpgak8aPAWIWJ3",
+      "projectId": "5bbc0602",
+      "evidenceNotes": "",
+      "id": "fRgLBIKqDivq5yJnO1no",
+      "discipline": "Pick Making",
+      "tier": "T3",
+      "displayName": "Hammer",
+      "tabClaimed": "deadhammer",
+      "date": "2024-05-27"
+    },
+    {
+      "userId": "s5iyDrszY4Nc3zR7rILCQLO7I8v2",
+      "evidenceUrl": "https://youtu.be/INFCaPX37fs",
+      "evidenceNotes": "",
+      "modifier": "",
+      "projectId": "e3211470",
+      "evidenceCreatedAt": {
+        "_seconds": 1603306465,
+        "_nanoseconds": 880000000
+      },
+      "id": "fW2aw96leyCtijiIuvsP",
+      "discipline": "Cutaway Making",
+      "tier": "T1",
+      "displayName": "Norlin",
+      "date": "2020-10-21"
+    },
+    {
+      "userId": "pa0Fe38BgdV9fcL5PPNToNd7NVU2",
+      "evidenceUrl": "https://youtu.be/rTORjxQWSBA",
+      "evidenceNotes": "used for bb. second link: https://youtu.be/eYClcFuhYiM",
+      "modifier": "",
+      "projectId": "409f8d0a",
+      "evidenceCreatedAt": {
+        "_seconds": 1751518800,
+        "_nanoseconds": 0
+      },
+      "id": "gQw9FiDzj1MEHfx5xMxh",
+      "discipline": "Disc Detainer Pick Making",
+      "tier": "T2",
+      "displayName": "OnlyPins",
+      "date": "2025-07-02"
+    },
+    {
+      "evidenceUrl": "https://docs.google.com/presentation/d/1gw89CfQCoz3z2AzQ-UugWN5OIUHp2TgrcoUkUDK-sS0/edit?usp=drive_link",
+      "modifier": "",
+      "userId": "y5acMzkHgYR3jNCkjpWxa9Ul6Rw1",
+      "projectId": "ee1c082f",
+      "evidenceNotes": "Tier 2 Project impressioning",
+      "id": "gbCtPl8T3GjTAcPzZI72",
+      "discipline": "Impressioning",
+      "tier": "T2",
+      "displayName": "Loose-Shirt",
+      "tabClaimed": "Loose-Shirt",
+      "date": "2026-09-02"
+    },
+    {
+      "userId": "MQjjZuVVGbMNyBGwiBtThhtrgJ43",
+      "evidenceUrl": "https://docs.google.com/document/d/1BjAWEDIPtHmMVGj04ZViGXjZWgvT28ytxJvMTC7hYjo/edit?usp=sharing",
+      "evidenceNotes": "",
+      "modifier": "",
+      "projectId": "ee1c082f",
+      "evidenceCreatedAt": {
+        "_seconds": 1739731103,
+        "_nanoseconds": 293000000
+      },
+      "id": "ghOrKbGe1TL4rMV14ExX",
+      "discipline": "Impressioning",
+      "tier": "T2",
+      "displayName": "DocMachina",
+      "date": "2025-02-16"
+    },
+    {
+      "userId": "tuZXiJDTnMbzWpUQKKUNQEeRr1l1",
+      "evidenceUrl": "https://youtu.be/8GGa2LdUYlA?si=nx-n8ihWLdd2Yv--",
+      "modifier": "",
+      "projectId": "93a61f11",
+      "evidenceCreatedAt": {
+        "_seconds": 1761250442,
+        "_nanoseconds": 552000000
+      },
+      "id": "gqOs7Rnf6c1Hi5gnnZsK",
+      "discipline": "Challenge Locks",
+      "tier": "T1",
+      "displayName": "Ol TW",
+      "date": "2025-10-23"
+    },
+    {
+      "evidenceUrl": "https://drive.google.com/drive/folders/1cTwleFruWjJcku_c_oauq6WVDro924ZR?usp=sharing",
+      "evidenceCreatedAt": {
+        "_seconds": 1724144301,
+        "_nanoseconds": 0
+      },
+      "modifier": "",
+      "userId": "dlPpljxEAqYVts2VP0UOL8gGIQG3",
+      "projectId": "c53d56b1",
+      "evidenceNotes": "La Gard 3330",
+      "id": "hSE7sZEwpyTuD5lSOSJA",
+      "discipline": "Safe Lock Manipulation",
+      "tier": "T2",
+      "displayName": "Erik Weisz",
+      "date": "2024-08-20"
+    },
+    {
+      "userId": "zDLkYoBjvbQvM1IKdPlAqOyzPIf2",
+      "evidenceUrl": "https://imgur.com/gallery/wb-brass-lock-impressioning-2m8Ujzg",
+      "modifier": "",
+      "projectId": "ee1c082f",
+      "evidenceCreatedAt": {
+        "_seconds": 1764112083,
+        "_nanoseconds": 0
+      },
+      "id": "hmsTkrIJQdGwn51Re76A",
+      "discipline": "Impressioning",
+      "tier": "T2",
+      "displayName": "NoodleThumb",
+      "date": "2025-11-25"
+    },
+    {
+      "userId": "S131zvhcryUvHckhdkVboIDRQnF3",
+      "evidenceUrl": "https://docs.google.com/document/d/1aQrz6NCKgEjNpsVToBzFbYYlWCFJ1FPKoKpBD_1vDZY/edit?usp=sharing",
+      "modifier": "",
+      "projectId": "c53d56b1",
+      "evidenceCreatedAt": {
+        "_seconds": 1781210515,
+        "_nanoseconds": 821000000
+      },
+      "id": "hxsBrhJCJHaoTp6Kg863",
+      "discipline": "Safe Lock Manipulation",
+      "tier": "T2",
+      "displayName": "Ferf",
+      "date": "2026-06-11"
+    },
+    {
+      "userId": "CqfosXk500QwUCnIHYgIg2PYSgf1",
+      "evidenceUrl": "https://www.youtube.com/shorts/-Ckt34JLl68",
+      "modifier": "",
+      "projectId": "5a0aa3e0",
+      "evidenceCreatedAt": {
+        "_seconds": 1770230501,
+        "_nanoseconds": 0
+      },
+      "id": "i2xjxJCfF7nK8fr6qNUf",
+      "discipline": "Cutaway Making",
+      "tier": "T2",
+      "displayName": "Andrex66IT",
+      "date": "2026-02-04"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/1155523586677813446",
+      "evidenceCreatedAt": {
+        "_seconds": 1695546000,
+        "_nanoseconds": 0
+      },
+      "modifier": "",
+      "userId": "NdkmYGydSHfPTcj5xuqjwSyJJI42",
+      "projectId": "5a0aa3e0",
+      "evidenceNotes": "Tier 2 Project Cutaways",
+      "id": "iRFm0uV4wY52KdJFqog6",
+      "discipline": "Cutaway Making",
+      "tier": "T2",
+      "displayName": "Greenish",
+      "tabClaimed": "TheGreenishOne",
+      "date": "2023-09-24"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/946082204826603561/985295424262926386",
+      "projectId": "ee1c082f",
+      "evidenceNotes": "Tier 2 Project impressioning",
+      "modifier": "",
+      "evidenceCreatedAt": {
+        "_seconds": 1654938000,
+        "_nanoseconds": 0
+      },
+      "userId": "ohnGCeCEgIOk9KzmxWcsWmGM0nM2",
+      "id": "iZ12pvqI2G4niHPZaYn3",
+      "discipline": "Impressioning",
+      "tier": "T2",
+      "displayName": "7woz3ro51x",
+      "tabClaimed": "Two06",
+      "date": "2022-06-11"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/946082204826603561/990245402953539624",
+      "evidenceCreatedAt": {
+        "_seconds": 1656147600,
+        "_nanoseconds": 0
+      },
+      "modifier": "",
+      "userId": "SuYwnEUvOSbAPCb6xcFwiYTjAze2",
+      "projectId": "5bbc0602",
+      "evidenceNotes": "Tier 3 Project Pickmaking",
+      "id": "ijStH652djvuvoEmbjyo",
+      "discipline": "Pick Making",
+      "tier": "T3",
+      "displayName": "Armlock",
+      "tabClaimed": "Armlock",
+      "date": "2022-06-25"
+    },
+    {
+      "evidenceUrl": "http://youtube.com/post/UgkxO2pRoo4L6r1IHzXtMBDYNmaUMI2vqI1K?si=NY3q4iDczph2LE15",
+      "modifier": "",
+      "projectId": "c53d56b1",
+      "userId": "Ci8diNTyiyRPdkm6G5LsTD6SwqH2",
+      "evidenceCreatedAt": {
+        "_seconds": 1787929247,
+        "_nanoseconds": 498000000
+      },
+      "id": "jEu1ZG9zHJtlWrNsSr4V",
+      "discipline": "Safe Lock Manipulation",
+      "tier": "T2",
+      "displayName": "Eagle lockpicking",
+      "date": "2026-08-28"
+    },
+    {
+      "userId": "I41rBHaptqhy21ks5keaMSnuCLq1",
+      "evidenceUrl": "https://drive.google.com/file/d/1sLcCx_-Yb6t0-qzxf3_dbuLQOkzE8z_R/view?usp=drive_link",
+      "modifier": "",
+      "projectId": "7c490c64",
+      "evidenceCreatedAt": {
+        "_seconds": 1779393265,
+        "_nanoseconds": 688000000
+      },
+      "id": "jauPHgCnUPpKKz3CDKqf",
+      "discipline": "Community Involvement",
+      "tier": "T2",
+      "displayName": "RG-Actual ",
+      "date": "2026-05-21"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/1285613139424968748/1288722959518662678",
+      "evidenceCreatedAt": {
+        "_seconds": 1727405667,
+        "_nanoseconds": 827000000
+      },
+      "modifier": "",
+      "userId": "shN5nuq6pfTUTwuKnasLjqoIdHW2",
+      "projectId": "98da0c85",
+      "evidenceNotes": "",
+      "id": "jf45zpHwxmB5V7W7lZFo",
+      "discipline": "Lock Manufacturing",
+      "tier": "T4",
+      "displayName": "Pinball",
+      "tabClaimed": "(new bb: shN5nuq6pfTUTwuKnasLjqoIdHW2)",
+      "date": "2024-09-26"
+    },
+    {
+      "evidenceUrl": "https://drive.google.com/drive/folders/1cTwleFruWjJcku_c_oauq6WVDro924ZR?usp=sharing",
+      "evidenceCreatedAt": {
+        "_seconds": 1724144160,
+        "_nanoseconds": 0
+      },
+      "modifier": "",
+      "userId": "dlPpljxEAqYVts2VP0UOL8gGIQG3",
+      "projectId": "c53d56b1",
+      "evidenceNotes": "Big Red CDL-3",
+      "id": "jfabfc4HYO7XKg0hVw9i",
+      "discipline": "Safe Lock Manipulation",
+      "tier": "T2",
+      "displayName": "Erik Weisz",
+      "date": "2024-08-20"
+    },
+    {
+      "userId": "dlPpljxEAqYVts2VP0UOL8gGIQG3",
+      "evidenceUrl": "https://drive.google.com/drive/folders/1g-NLPZpHKH369vrBJ138VRe0ScxoW7dT?usp=sharing",
+      "evidenceNotes": "",
+      "modifier": "",
+      "projectId": "786f1d52",
+      "evidenceCreatedAt": {
+        "_seconds": 1753983277,
+        "_nanoseconds": 742000000
+      },
+      "id": "jjTNjxAFWBM4Hm0d6KT8",
+      "discipline": "Disc Detainer Pick Making",
+      "tier": "T3",
+      "displayName": "Erik Weisz",
+      "date": "2025-07-31"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/1246934877623029953/1246934877623029953",
+      "evidenceCreatedAt": {
+        "_seconds": 1717318800,
+        "_nanoseconds": 0
+      },
+      "modifier": "",
+      "userId": "0oQdsctEO8ZF3V4qPz8QhGAc7qM2",
+      "projectId": "c09036aa",
+      "evidenceNotes": "Tier 3 Project safecracking",
+      "id": "jwRoK1DJOT9d3r69tBJR",
+      "discipline": "Safe Lock Manipulation",
+      "tier": "T3",
+      "displayName": "Rxpert",
+      "tabClaimed": "Rxpert",
+      "date": "2024-06-02"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/1237418483059392542",
+      "evidenceCreatedAt": {
+        "_seconds": 1715072400,
+        "_nanoseconds": 0
+      },
+      "modifier": "",
+      "userId": "DMy0DIdeM1azdNcKhH82FxQt3b32",
+      "projectId": "24df60f0",
+      "evidenceNotes": "Tier 2 Project Tool making",
+      "id": "kcjmImdgtrt13mK7yret",
+      "discipline": "Tool Making",
+      "tier": "T2",
+      "displayName": "CYP",
+      "tabClaimed": "CYP",
+      "date": "2024-05-07"
+    },
+    {
+      "evidenceUrl": "https://docs.google.com/document/d/1s4_4kiB0NynNi7ql1psqmgIv2iZf8XlYHUCSptq3Olo/edit?usp=sharing",
+      "evidenceCreatedAt": {
+        "_seconds": 1699261200,
+        "_nanoseconds": 0
+      },
+      "modifier": "",
+      "userId": "tbaq0CWuDTXerA0eUi0kGASVb1Z2",
+      "projectId": "5a0aa3e0",
+      "evidenceNotes": "Tier 2 Project Cutaways",
+      "id": "kwVxNbK24oZgcVaz96G3",
+      "discipline": "Cutaway Making",
+      "tier": "T2",
+      "displayName": "Clefmentine",
+      "tabClaimed": "Clefmentine",
+      "date": "2023-11-06"
+    },
+    {
+      "userId": "IiZikI9EtzW2ilaRtW8vD9NAg2g1",
+      "evidenceUrl": "https://youtube.com/shorts/2Pc1KQ_wjC4?si=5HvkTHBbtjBgiRgI",
+      "evidenceNotes": "",
+      "modifier": "",
+      "projectId": "93a61f11",
+      "evidenceCreatedAt": {
+        "_seconds": 1750204937,
+        "_nanoseconds": 486000000
+      },
+      "id": "lTElXz8Hj1gutmGP4QO5",
+      "discipline": "Challenge Locks",
+      "tier": "T1",
+      "displayName": "ElroyzToyz",
+      "date": "2025-06-17"
+    },
+    {
+      "userId": "mOGsJGzWyae3lvqGCtI7bOyEOke2",
+      "evidenceUrl": "https://docs.google.com/document/d/1BjAWEDIPtHmMVGj04ZViGXjZWgvT28ytxJvMTC7hYjo/edit?usp=sharing",
+      "evidenceNotes": "",
+      "modifier": "",
+      "projectId": "ee1c082f",
+      "evidenceCreatedAt": {
+        "_seconds": 1740512754,
+        "_nanoseconds": 221000000
+      },
+      "id": "lgMUhnznwryenOSStTYl",
+      "discipline": "Impressioning",
+      "tier": "T2",
+      "displayName": "DocExMachina",
+      "date": "2025-02-25"
+    },
+    {
+      "evidenceUrl": "https://imgur.com/HC57w4i",
+      "evidenceCreatedAt": {
+        "_seconds": 1729111118,
+        "_nanoseconds": 919000000
+      },
+      "modifier": "",
+      "userId": "x4AhGGCs7ghbyljEQpnc7M2yvXz1",
+      "projectId": "c2e1c952",
+      "evidenceNotes": "",
+      "id": "lxTxem5uWlwnP4NlLTIA",
+      "discipline": "Pick Making",
+      "tier": "T2",
+      "displayName": "GEXPRO",
+      "date": "2024-10-16"
+    },
+    {
+      "userId": "eHeOYYmKTCXeoQrM2EfL4ywUSCd2",
+      "evidenceUrl": "https://docs.google.com/document/u/1/d/1jnUjVB-euDIXBvjjigXyya9mawgxVcvmL3anXzW4Lyc/mobilebasic",
+      "evidenceNotes": "",
+      "modifier": "",
+      "projectId": "3b90ab9b",
+      "evidenceCreatedAt": {
+        "_seconds": 1751317097,
+        "_nanoseconds": 126000000
+      },
+      "id": "m04bZHCb4Y82mHq4C89C",
+      "discipline": "Challenge Locks",
+      "tier": "T2",
+      "displayName": "LockpickingEngineer",
+      "date": "2025-06-30"
+    },
+    {
+      "userId": "UZlSvlsoMDa550hteRtW9TLr6Bk2",
+      "evidenceUrl": "https://youtu.be/QzCMnhaeP_Y?si=tHYgwQeVAThiNvhh",
+      "modifier": "",
+      "projectId": "e48dabec",
+      "evidenceCreatedAt": {
+        "_seconds": 1759701916,
+        "_nanoseconds": 929000000
+      },
+      "id": "mOTlF3yF65uuJIakdQbs",
+      "discipline": "Safe Lock Manipulation",
+      "tier": "T1",
+      "displayName": "Lanciferous",
+      "date": "2025-10-05"
+    },
+    {
+      "userId": "vOi8rfTRluYlcVizuVvX9PWFJdn2",
+      "projectId": "ee1c082f",
+      "evidenceNotes": "",
+      "evidenceUrl": "https://docs.google.com/document/d/1lPIbF80-vZ6rDF-tT1xyDFc65Ck7RbioGQY9Z6Z1Sp0/edit?usp=sharing",
+      "evidenceCreatedAt": {
+        "_seconds": 1729847552,
+        "_nanoseconds": 973000000
+      },
+      "modifier": "",
+      "id": "mP8qDfZo80fkwLg0CbF9",
+      "discipline": "Impressioning",
+      "tier": "T2",
+      "displayName": "Dynamic",
+      "date": "2024-10-25"
+    },
+    {
+      "userId": "EpxqrzkXGgS99HG9gAiyyYWJpD22",
+      "evidenceUrl": "https://imageshack.com/a/ZLh17/1",
+      "evidenceNotes": "",
+      "modifier": "",
+      "projectId": "409f8d0a",
+      "evidenceCreatedAt": {
+        "_seconds": 1745752515,
+        "_nanoseconds": 207000000
+      },
+      "id": "mXCqrVnKaZsHWARBfziT",
+      "discipline": "Disc Detainer Pick Making",
+      "tier": "T2",
+      "displayName": "Bez Klucza ",
+      "date": "2025-04-27"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/352915817031270413/1279984850643849297",
+      "evidenceCreatedAt": {
+        "_seconds": 1725242942,
+        "_nanoseconds": 978000000
+      },
+      "modifier": "",
+      "userId": "e5DBapQylbWfts6DJo6rH4Zi1Mp2",
+      "projectId": "c09036aa",
+      "evidenceNotes": "",
+      "id": "nDhuLUxON7HID2r24XAC",
+      "discipline": "Safe Lock Manipulation",
+      "tier": "T3",
+      "displayName": "Mick Emhurt",
+      "tabClaimed": "Mick Emhurt",
+      "date": "2024-09-01"
+    },
+    {
+      "userId": "Dmd9rZ7qWORduI0Vbsv9F3URevt1",
+      "evidenceUrl": "https://docs.google.com/document/d/e/2PACX-1vSj3nLsQyj8ToelyYQt5gJCZ7CZ9AXGA9NS8JIyBrC3DhPU0CkWDvD81MHBcxq0trCb19QL3M23Dlxt/pub",
+      "modifier": "",
+      "projectId": "c53d56b1",
+      "evidenceCreatedAt": {
+        "_seconds": 1773807881,
+        "_nanoseconds": 769000000
+      },
+      "id": "nHHiJmSKoUUULPHVS6jZ",
+      "discipline": "Safe Lock Manipulation",
+      "tier": "T2",
+      "displayName": "Archwild",
+      "date": "2026-03-17"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/1169285362280046622/1169285421994360942",
+      "evidenceCreatedAt": {
+        "_seconds": 1698829200,
+        "_nanoseconds": 0
+      },
+      "modifier": "",
+      "userId": "FGhShmNkxTXC9vwmZwWylOvU8K72",
+      "projectId": "c53d56b1",
+      "evidenceNotes": "Tier 2 Project safecracking",
+      "id": "nN6uSOKigfodlaLymmVw",
+      "discipline": "Safe Lock Manipulation",
+      "tier": "T2",
+      "displayName": "Alpama",
+      "tabClaimed": "Alpama",
+      "date": "2023-11-01"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/946082204826603561/991964540080234548",
+      "evidenceCreatedAt": {
+        "_seconds": 1656579600,
+        "_nanoseconds": 0
+      },
+      "modifier": "",
+      "userId": "e5DBapQylbWfts6DJo6rH4Zi1Mp2",
+      "projectId": "c53d56b1",
+      "evidenceNotes": "Tier 2 Project safecracking",
+      "id": "nPDLb2Y0f3kAjxZYOnFr",
+      "discipline": "Safe Lock Manipulation",
+      "tier": "T2",
+      "displayName": "Mick Emhurt",
+      "tabClaimed": "Mick Emhurt",
+      "date": "2022-06-30"
+    },
+    {
+      "userId": "wGZjaPNOuzgv39gAmL4WcZh2nlB3",
+      "evidenceUrl": "https://youtube.com/shorts/g2JpmLRawOg?feature=share",
+      "modifier": "",
+      "projectId": "e3211470",
+      "evidenceCreatedAt": {
+        "_seconds": 1765066124,
+        "_nanoseconds": 0
+      },
+      "id": "o78Y7b35c6uS2VQ10TQC",
+      "discipline": "Cutaway Making",
+      "tier": "T1",
+      "displayName": "Jadedargyle333",
+      "date": "2025-12-06"
+    },
+    {
+      "userId": "wGZjaPNOuzgv39gAmL4WcZh2nlB3",
+      "evidenceUrl": "https://youtu.be/awKdvG2HmDM",
+      "modifier": "",
+      "projectId": "ee1c082f",
+      "evidenceCreatedAt": {
+        "_seconds": 1779151326,
+        "_nanoseconds": 506000000
+      },
+      "id": "oK9PYEuQ1ROw1zv37Qod",
+      "discipline": "Impressioning",
+      "tier": "T2",
+      "displayName": "Jadedargyle333",
+      "date": "2026-05-18"
+    },
+    {
+      "userId": "SyjMMYh9rYPI0lrxAWu5z5rrawx2",
+      "evidenceUrl": "https://docs.google.com/document/d/e/2PACX-1vQc2iMv-kgclDQvZxuarq6aiVQaAUYtelPGXVE5sN4hlJ9puJy10nz-06yHCiZNYnsNZZwgJOqp9snC/pub",
+      "evidenceNotes": "",
+      "modifier": "",
+      "projectId": "786f1d52",
+      "evidenceCreatedAt": {
+        "_seconds": 1738102943,
+        "_nanoseconds": 428000000
+      },
+      "id": "oclsh6feLAgUmQ9QnkhT",
+      "discipline": "Disc Detainer Pick Making",
+      "tier": "T3",
+      "displayName": "Lock Picking Paul",
+      "date": "2025-01-28"
+    },
+    {
+      "projectId": "9bc3714a",
+      "modifier": "",
+      "evidenceCreatedAt": {
+        "_seconds": 1709110800,
+        "_nanoseconds": 0
+      },
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/1212494928324726864",
+      "evidenceNotes": "Tier 1 Project Other",
+      "userId": "ohnGCeCEgIOk9KzmxWcsWmGM0nM2",
+      "id": "ozrzGmwya8Dh2XaliPxu",
+      "discipline": "Other Master's Project",
+      "tier": "T1",
+      "displayName": "7woz3ro51x",
+      "tabClaimed": "Two06",
+      "date": "2024-02-28"
+    },
+    {
+      "userId": "YSqjj6w7Q4YOkpGEmr6hwEJWap73",
+      "evidenceUrl": " https://drive.google.com/file/d/1ihIyaJEWLSmrzm1usQM5w75DBEZrnChk/view?usp=drivesdk",
+      "evidenceNotes": "",
+      "modifier": "",
+      "projectId": "26889b66",
+      "evidenceCreatedAt": {
+        "_seconds": 1740018947,
+        "_nanoseconds": 842000000
+      },
+      "id": "p00atJwn51I1HrjrlZya",
+      "discipline": "Disc Detainer Pick Making",
+      "tier": "T1",
+      "displayName": "TeddyLockSpin",
+      "date": "2025-02-19"
+    },
+    {
+      "evidenceUrl": "https://docs.google.com/document/d/179q0iMFgGdABGeMLYKP_7OSxDISF735TQbd8KS4GJxs/edit?usp=share_link",
+      "evidenceCreatedAt": {
+        "_seconds": 1669539600,
+        "_nanoseconds": 0
+      },
+      "modifier": "",
+      "userId": "hJ8wy3LzFBbuuQ8y9sHFWctczbw1",
+      "projectId": "ee1c082f",
+      "evidenceNotes": "Tier 2 Project impressioning",
+      "id": "pJR5XouE2vLkWtqNY3ND",
+      "discipline": "Impressioning",
+      "tier": "T2",
+      "displayName": "PickSmith ",
+      "tabClaimed": "Picksmith",
+      "date": "2022-11-27"
+    },
+    {
+      "evidenceUrl": "https://youtu.be/dj4ZDNp0Ywc",
+      "evidenceCreatedAt": {
+        "_seconds": 1640726072,
+        "_nanoseconds": 0
+      },
+      "modifier": "",
+      "userId": "XoUDXU5McjTuVnPA1xfmzytcKuy2",
+      "projectId": "ee1c082f",
+      "evidenceNotes": "Tier 2 Project impressioning",
+      "id": "pME1NaHOtPhVC0mFgjWQ",
+      "discipline": "Impressioning",
+      "tier": "T2",
+      "displayName": "Red Wanderer",
+      "tabClaimed": "RedWanderer",
+      "date": "2021-12-28"
+    },
+    {
+      "userId": "e34lNNt1E9Qo5gyiALfqzTuTbNH3",
+      "evidenceUrl": "https://youtu.be/vXYrC34ahgk?si=1KjmBvEjH5Iqx8Mf",
+      "evidenceNotes": "",
+      "modifier": "",
+      "projectId": "ee1c082f",
+      "evidenceCreatedAt": {
+        "_seconds": 1740879317,
+        "_nanoseconds": 106000000
+      },
+      "id": "pa69GaPgtsxRXDrFbrLF",
+      "discipline": "Impressioning",
+      "tier": "T2",
+      "displayName": "Trucking Lock",
+      "date": "2025-03-01"
+    },
+    {
+      "userId": "I41rBHaptqhy21ks5keaMSnuCLq1",
+      "evidenceUrl": "https://docs.google.com/document/d/1sAGm9Pr4oJ0JhzeH8sLqF-RhJmDKcVlV/edit?usp=drive_link&ouid=101349907409788068144&rtpof=true&sd=true",
+      "modifier": "",
+      "projectId": "c53d56b1",
+      "evidenceCreatedAt": {
+        "_seconds": 1779393228,
+        "_nanoseconds": 257000000
+      },
+      "id": "pbyQ4nqeLfhdSi72KQOJ",
+      "discipline": "Safe Lock Manipulation",
+      "tier": "T2",
+      "displayName": "RG-Actual ",
+      "date": "2026-05-21"
+    },
+    {
+      "userId": "EpxqrzkXGgS99HG9gAiyyYWJpD22",
+      "evidenceUrl": "https://imageshack.com/a/7vh17/1",
+      "evidenceNotes": "",
+      "modifier": "",
+      "projectId": "24df60f0",
+      "evidenceCreatedAt": {
+        "_seconds": 1745752587,
+        "_nanoseconds": 233000000
+      },
+      "id": "pnn3YIXQq77CbMeVRL2S",
+      "discipline": "Tool Making",
+      "tier": "T2",
+      "displayName": "Bez Klucza ",
+      "date": "2025-04-27"
+    },
+    {
+      "userId": "f6fzVfSIHKU8BQzETo8wymnaUhz1",
+      "evidenceUrl": "https://docs.google.com/document/d/1KtPOCm4GXwVAe2JQrJqkVSLnMwvvT7eVEB3Vulg8i0I/edit?pli=1",
+      "modifier": "",
+      "projectId": "ed62f676",
+      "evidenceCreatedAt": {
+        "_seconds": 1690323433,
+        "_nanoseconds": 871000000
+      },
+      "id": "q5h8pndGNZEAwqdSQAE0",
+      "discipline": "Other Master's Project",
+      "tier": "T5",
+      "displayName": "Culper Woodhull",
+      "tabClaimed": "Culper",
+      "date": "2023-07-25"
+    },
+    {
+      "evidenceUrl": "https://docs.google.com/document/d/12NLBtZm_0NEJyp0dfbIs3hwsG-ZL5HgWxfp5unzJdMM/edit?usp=sharing",
+      "evidenceCreatedAt": {
+        "_seconds": 1688547600,
+        "_nanoseconds": 0
+      },
+      "modifier": "",
+      "userId": "BuX3JAgrlzUW6Vz0L4W3YZK9iNw1",
+      "projectId": "3b90ab9b",
+      "evidenceNotes": "Tier 2 Project Challenge locks",
+      "id": "qEQ6RGWJv5EBnecFkGBP",
+      "discipline": "Challenge Locks",
+      "tier": "T2",
+      "displayName": "LockChuck ",
+      "tabClaimed": "LockChuck",
+      "date": "2023-07-05"
+    },
+    {
+      "userId": "9SMnlNI97bekbK3woaWxT6PoLr83",
+      "evidenceUrl": "https://imgur.com/a/custom-lockpicks-FjjmqYM",
+      "evidenceNotes": "",
+      "modifier": "",
+      "projectId": "5bbc0602",
+      "evidenceCreatedAt": {
+        "_seconds": 1741891553,
+        "_nanoseconds": 168000000
+      },
+      "id": "r9ZZe7kVNIOvBVCA29jL",
+      "discipline": "Pick Making",
+      "tier": "T3",
+      "displayName": "John_doe_osint",
+      "date": "2025-03-13"
+    },
+    {
+      "userId": "tbaq0CWuDTXerA0eUi0kGASVb1Z2",
+      "evidenceUrl": "https://docs.google.com/document/d/1FBB2phD86WAqvHYZD3WJWDdZQUheH6ajdEf_ELEV5ac/edit?usp=drive_link",
+      "evidenceNotes": "",
+      "modifier": "",
+      "projectId": "913a4de9",
+      "evidenceCreatedAt": {
+        "_seconds": 1742641185,
+        "_nanoseconds": 562000000
+      },
+      "id": "rGPfcE36njK2T6iiFPuU",
+      "discipline": "Tool Manufacturing",
+      "tier": "T4",
+      "displayName": "Clefmentine",
+      "tabClaimed": "Clefmentine",
+      "date": "2025-03-22"
+    },
+    {
+      "userId": "gnlv0NRTsCWnPzEaQO0e95wllHC3",
+      "evidenceUrl": "https://docs.google.com/document/d/1D1WSm26DkIig-3Q2C3At281bAq-RfWINAAULSgfTXTI/edit?usp=sharing",
+      "evidenceNotes": "For BB submission",
+      "modifier": "",
+      "projectId": "3b90ab9b",
+      "evidenceCreatedAt": {
+        "_seconds": 1743782035,
+        "_nanoseconds": 824000000
+      },
+      "id": "rPbks6OxG2OnQ0AAl7e0",
+      "discipline": "Challenge Locks",
+      "tier": "T2",
+      "displayName": "Hyperion",
+      "date": "2025-04-04"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/946082204826603561/1098230321574588596",
+      "evidenceCreatedAt": {
+        "_seconds": 1681894800,
+        "_nanoseconds": 0
+      },
+      "modifier": "",
+      "userId": "JLW4kHgTCySF0BtIgzAe1CyqVt42",
+      "projectId": "3b90ab9b",
+      "evidenceNotes": "Tier 2 Project Challenge locks",
+      "id": "rSnCcI27SpODDa4OBr5X",
+      "discipline": "Challenge Locks",
+      "tier": "T2",
+      "displayName": "TypeRegal",
+      "tabClaimed": "TypeRegal",
+      "date": "2023-04-19"
+    },
+    {
+      "userId": "A7dMVjo593RrfUpmyIHpAw66oRC2",
+      "evidenceUrl": "https://ibb.co/album/847qYV",
+      "evidenceNotes": "",
+      "modifier": "",
+      "projectId": "ca930fed",
+      "evidenceCreatedAt": {
+        "_seconds": 1744236857,
+        "_nanoseconds": 703000000
+      },
+      "id": "rgj96LySNpwS3MBKOK7z",
+      "discipline": "Case Making",
+      "tier": "T2",
+      "displayName": "Ragnar",
+      "date": "2025-04-09"
+    },
+    {
+      "userId": "wGZjaPNOuzgv39gAmL4WcZh2nlB3",
+      "evidenceUrl": "https://youtu.be/JJ1yCgoqnOs",
+      "modifier": "",
+      "projectId": "7c490c64",
+      "evidenceCreatedAt": {
+        "_seconds": 1778205045,
+        "_nanoseconds": 174000000
+      },
+      "id": "s6OYtH0sCIZt6jO7c8sP",
+      "discipline": "Community Involvement",
+      "tier": "T2",
+      "displayName": "Jadedargyle333",
+      "date": "2026-05-07"
+    },
+    {
+      "userId": "86eQGNi5FqYcaYQg5rbXhPcFf0k1",
+      "evidenceUrl": "https://youtu.be/sqhyutXOBpg?si=mHDiGYhPLNrgvG-1",
+      "modifier": "",
+      "projectId": "b60f6f7e",
+      "evidenceCreatedAt": {
+        "_seconds": 1764034538,
+        "_nanoseconds": 298000000
+      },
+      "id": "sANVMxKvPNejdbserIjI",
+      "discipline": "Impressioning",
+      "tier": "T3",
+      "displayName": "Pudes",
+      "date": "2025-11-24"
+    },
+    {
+      "userId": "U3wCYsdGwYS8ujsO2K78iD68FMC3",
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/946082204826603561/1121005821317349416",
+      "evidenceNotes": "",
+      "modifier": "",
+      "projectId": "c09036aa",
+      "evidenceCreatedAt": {
+        "_seconds": 1687382541,
+        "_nanoseconds": 0
+      },
+      "id": "sPbpGgIVTYbyY4BS2Tm1",
+      "discipline": "Safe Lock Manipulation",
+      "tier": "T3",
+      "displayName": "Dig",
+      "date": "2023-06-21"
+    },
+    {
+      "evidenceUrl": "https://www.gridscout.net/2024/09/09/simplified-manipulation-of-sg-r6730.html",
+      "evidenceCreatedAt": {
+        "_seconds": 1725919243,
+        "_nanoseconds": 530000000
+      },
+      "modifier": "",
+      "userId": "DdWCTG3deVO0zSEsJP40RxnaL5g1",
+      "projectId": "c09036aa",
+      "evidenceNotes": "",
+      "id": "sgHA8w2ddIF05lydNMQo",
+      "discipline": "Safe Lock Manipulation",
+      "tier": "T3",
+      "displayName": "Jeremy Reeder",
+      "date": "2024-09-09"
+    },
+    {
+      "userId": "FEXES4MpCQYAhsYIB2gBvQZAsQs2",
+      "evidenceUrl": "https://fys.ucdavis.edu/schedule",
+      "evidenceNotes": "I teach a locksport class at the University of California Davis (Fall 2024, Winter 2025, Spring 2025)",
+      "modifier": "",
+      "projectId": "db448561",
+      "evidenceCreatedAt": {
+        "_seconds": 1739247091,
+        "_nanoseconds": 514000000
+      },
+      "id": "t2dQnVR3KQjsUD7Rw6qu",
+      "discipline": "Community Involvement",
+      "tier": "T1",
+      "displayName": "drKorf",
+      "date": "2025-02-10"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/946082204826603561/1079958301653078086",
+      "evidenceCreatedAt": {
+        "_seconds": 1675760400,
+        "_nanoseconds": 0
+      },
+      "modifier": "",
+      "userId": "SuYwnEUvOSbAPCb6xcFwiYTjAze2",
+      "projectId": "b60f6f7e",
+      "evidenceNotes": "Tier 3 Project impressioning",
+      "id": "tLVwCSe95dma7K3d41Zd",
+      "discipline": "Impressioning",
+      "tier": "T3",
+      "displayName": "Armlock",
+      "tabClaimed": "Armlock",
+      "date": "2023-02-07"
+    },
+    {
+      "userId": "9dkDWIYuavaUTC2O2VRCGcbDF2o1",
+      "evidenceUrl": "https://docs.google.com/document/d/19OvjDqhdTIsWm8n4FgoMsEwRMCKHr-rTO6R8pod15J4/edit?usp=sharing",
+      "modifier": "",
+      "projectId": "c53d56b1",
+      "evidenceCreatedAt": {
+        "_seconds": 1786051751,
+        "_nanoseconds": 771000000
+      },
+      "id": "tvoUIfb9oxAlyb7O5SQw",
+      "discipline": "Safe Lock Manipulation",
+      "tier": "T2",
+      "displayName": "sirEgghead",
+      "date": "2026-08-06"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/1281995759893348473",
+      "evidenceCreatedAt": {
+        "_seconds": 1726694875,
+        "_nanoseconds": 215000000
+      },
+      "modifier": "",
+      "userId": "V7Hb0ChoMkQDN5VSokfFBU9d5Zp1",
+      "projectId": "ed62f676",
+      "evidenceNotes": "",
+      "id": "u6ClXnYtEXgr2DkZdvxm",
+      "discipline": "Other Master's Project",
+      "tier": "T5",
+      "displayName": "eschlenz",
+      "tabClaimed": "(new bb: V7Hb0ChoMkQDN5VSokfFBU9d5Zp1)",
+      "date": "2024-09-18"
+    },
+    {
+      "userId": "e34lNNt1E9Qo5gyiALfqzTuTbNH3",
+      "evidenceUrl": "https://docs.google.com/spreadsheets/d/1B7nWNQ4RrwH9vhrDFdsURPfDas4G-toxM8b0XwJeO9Q/edit?usp=drivesdk",
+      "evidenceNotes": "",
+      "modifier": "",
+      "projectId": "3b90ab9b",
+      "evidenceCreatedAt": {
+        "_seconds": 1740879252,
+        "_nanoseconds": 237000000
+      },
+      "id": "uSBK5VJUYZVPjbd5sP41",
+      "discipline": "Challenge Locks",
+      "tier": "T2",
+      "displayName": "Trucking Lock",
+      "date": "2025-03-01"
+    },
+    {
+      "userId": "MQjjZuVVGbMNyBGwiBtThhtrgJ43",
+      "evidenceUrl": "https://docs.google.com/document/d/1BjAWEDIPtHmMVGj04ZViGXjZWgvT28ytxJvMTC7hYjo/edit?usp=sharing",
+      "evidenceNotes": "",
+      "modifier": "",
+      "projectId": "c53d56b1",
+      "evidenceCreatedAt": {
+        "_seconds": 1739731130,
+        "_nanoseconds": 546000000
+      },
+      "id": "uZgABoIZOyMLLB2k2anQ",
+      "discipline": "Safe Lock Manipulation",
+      "tier": "T2",
+      "displayName": "DocMachina",
+      "date": "2025-02-16"
+    },
+    {
+      "userId": "NdkmYGydSHfPTcj5xuqjwSyJJI42",
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/1522268673669337168",
+      "modifier": "",
+      "projectId": "5dccbb32",
+      "evidenceCreatedAt": {
+        "_seconds": 1783104277,
+        "_nanoseconds": 406000000
+      },
+      "id": "ubiP2n17h2nEQVKfLnwz",
+      "discipline": "Impressioning",
+      "tier": "T5",
+      "displayName": "Greenish",
+      "tabClaimed": "TheGreenishOne",
+      "date": "2026-07-03"
+    },
+    {
+      "userId": "sonfRlSVkWf7WmfctVxKh7awxu93",
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/1306282557276553246",
+      "evidenceNotes": "",
+      "modifier": "",
+      "projectId": "399daa10",
+      "evidenceCreatedAt": {
+        "_seconds": 1731844597,
+        "_nanoseconds": 32000000
+      },
+      "id": "udGc3WYEzh6aX9JsKwWL",
+      "discipline": "Pick Making",
+      "tier": "T4",
+      "displayName": "Chevy",
+      "tabClaimed": "Rusted Chevy",
+      "date": "2024-11-17"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/946082204826603561/953207522368552970",
+      "evidenceCreatedAt": {
+        "_seconds": 1647334800,
+        "_nanoseconds": 0
+      },
+      "modifier": "",
+      "userId": "JLW4kHgTCySF0BtIgzAe1CyqVt42",
+      "projectId": "505bc312",
+      "evidenceNotes": "Tier 3 Project Cutaways",
+      "id": "ufVZAyC5rVB9qOjKMps4",
+      "discipline": "Cutaway Making",
+      "tier": "T3",
+      "displayName": "TypeRegal",
+      "tabClaimed": "TypeRegal",
+      "date": "2022-03-15"
+    },
+    {
+      "evidenceUrl": "https://docs.google.com/document/d/12PvwvAOtikzY97C0U8_AsPS5bz1WHDp5C1Cwpq_qG9g/edit?usp=drivesdk",
+      "evidenceCreatedAt": {
+        "_seconds": 1680858000,
+        "_nanoseconds": 0
+      },
+      "modifier": "",
+      "userId": "SSSCOJVF5YOpuzkAifuROB6xPxx1",
+      "projectId": "84a7f7c6",
+      "evidenceNotes": "Tier 3 Project Community",
+      "id": "ufd25mLC3jgAT8lBedd8",
+      "discipline": "Community Involvement",
+      "tier": "T3",
+      "displayName": "Lady Locks",
+      "tabClaimed": "Ladylocks",
+      "date": "2023-04-07"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/1285612702013722694/1287779957279293512",
+      "evidenceCreatedAt": {
+        "_seconds": 1727389728,
+        "_nanoseconds": 538000000
+      },
+      "modifier": "",
+      "userId": "shN5nuq6pfTUTwuKnasLjqoIdHW2",
+      "projectId": "c53d56b1",
+      "evidenceNotes": "",
+      "id": "v4NDuT408Mbl7otwVRpg",
+      "discipline": "Safe Lock Manipulation",
+      "tier": "T2",
+      "displayName": "Pinball",
+      "tabClaimed": "(new bb: shN5nuq6pfTUTwuKnasLjqoIdHW2)",
+      "date": "2024-09-26"
+    },
+    {
+      "userId": "6dSEXTn8flPPg4EV5IlSQWGVT983",
+      "evidenceUrl": "https://1drv.ms/w/c/2900c82d9f4283bd/EQwPvtSStM9Om1CHjPknpJMB-wG79kdPEgZCAJd0XmbYqA?e=2y78BO",
+      "modifier": "",
+      "projectId": "7c490c64",
+      "evidenceCreatedAt": {
+        "_seconds": 1759522826,
+        "_nanoseconds": 0
+      },
+      "id": "vmA7Rspp5B2PxynSgx9Z",
+      "discipline": "Community Involvement",
+      "tier": "T2",
+      "displayName": "VectorPotential",
+      "date": "2025-10-03"
+    },
+    {
+      "userId": "shN5nuq6pfTUTwuKnasLjqoIdHW2",
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/1335130510858387547/1335130658095366145",
+      "evidenceNotes": "",
+      "modifier": "",
+      "projectId": "ee1c082f",
+      "evidenceCreatedAt": {
+        "_seconds": 1738693741,
+        "_nanoseconds": 287000000
+      },
+      "id": "w6QTkA9CXBcx3m7EYEjd",
+      "discipline": "Impressioning",
+      "tier": "T2",
+      "displayName": "Pinball",
+      "tabClaimed": "(new bb: shN5nuq6pfTUTwuKnasLjqoIdHW2)",
+      "date": "2025-02-04"
+    },
+    {
+      "userId": "fYIm37wqWVWpbkQJAbmib3WhMww2",
+      "evidenceUrl": "https://youtu.be/b5vfMNO2Hmo?si=1Z3kO-vMPsvyFZVm",
+      "evidenceNotes": "",
+      "modifier": "",
+      "projectId": "e2c0342e",
+      "evidenceCreatedAt": {
+        "_seconds": 1704527158,
+        "_nanoseconds": 964000000
+      },
+      "id": "wCRt1bTPcf7K4YLprX8y",
+      "discipline": "Challenge Locks",
+      "tier": "T3",
+      "displayName": "Banditobrandino07",
+      "date": "2024-01-05"
+    },
+    {
+      "userId": "EWFgRnugE2bbD8h8ZLUJVd30G4Q2",
+      "evidenceUrl": "https://drive.google.com/file/d/11k_fJlZlalbNbZKfxSomSDCwLuwRefog/view?usp=sharing",
+      "modifier": "",
+      "projectId": "c2e1c952",
+      "evidenceCreatedAt": {
+        "_seconds": 1774014814,
+        "_nanoseconds": 846000000
+      },
+      "id": "wGCockt95z69gyTV6qLy",
+      "discipline": "Pick Making",
+      "tier": "T2",
+      "displayName": "Mole Locks",
+      "date": "2026-03-20"
+    },
+    {
+      "userId": "A7dMVjo593RrfUpmyIHpAw66oRC2",
+      "evidenceUrl": "https://ibb.co/KpvMy13q",
+      "evidenceNotes": "https://ibb.co/album/7bfxdf",
+      "modifier": "",
+      "projectId": "5e59cacb",
+      "evidenceCreatedAt": {
+        "_seconds": 1743979293,
+        "_nanoseconds": 5000000
+      },
+      "id": "wYb2ghFl7EUui6xHJ1DD",
+      "discipline": "Case Making",
+      "tier": "T1",
+      "displayName": "Ragnar",
+      "date": "2025-04-06"
+    },
+    {
+      "userId": "bJeldJCw3NgOjrKc0sv8uVlR6Uj1",
+      "evidenceUrl": "https://youtu.be/VI9RziMlWfU?is=XqGXOCCJivlVPjjG",
+      "modifier": "",
+      "projectId": "93a61f11",
+      "evidenceCreatedAt": {
+        "_seconds": 1787694055,
+        "_nanoseconds": 885000000
+      },
+      "id": "wcBuaAVK3tVvLw6tMeCz",
+      "discipline": "Challenge Locks",
+      "tier": "T1",
+      "displayName": "DanDiggler ",
+      "date": "2026-08-25"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/946082204826603561/1010145938599329924",
+      "evidenceCreatedAt": {
+        "_seconds": 1660906331,
+        "_nanoseconds": 0
+      },
+      "modifier": "",
+      "userId": "JLW4kHgTCySF0BtIgzAe1CyqVt42",
+      "projectId": "786f1d52",
+      "evidenceNotes": "",
+      "id": "wcVNtcd8oXIq9GdlnEC4",
+      "discipline": "Disc Detainer Pick Making",
+      "tier": "T3",
+      "displayName": "TypeRegal",
+      "tabClaimed": "TypeRegal",
+      "date": "2022-08-19"
+    },
+    {
+      "userId": "Kvf5QQTos8OCbgr8AkULzkWjVqr1",
+      "evidenceUrl": "https://docs.google.com/document/d/1WkjjjZKqYi-QBrCzF8QeYX8WptSusP31vPUnc931Y_M/edit?usp=drivesdk",
+      "evidenceNotes": "",
+      "modifier": "",
+      "projectId": "505bc312",
+      "evidenceCreatedAt": {
+        "_seconds": 1747964478,
+        "_nanoseconds": 646000000
+      },
+      "id": "wfbFmQh0YBYKK6YRPmwX",
+      "discipline": "Cutaway Making",
+      "tier": "T3",
+      "displayName": "MasterLockSux",
+      "date": "2025-05-22"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/1165058940699164672",
+      "evidenceCreatedAt": {
+        "_seconds": 1697792400,
+        "_nanoseconds": 0
+      },
+      "modifier": "",
+      "userId": "SW6Z2ZqK2JZqdOdcJZYf0vj1QPj1",
+      "projectId": "c53d56b1",
+      "evidenceNotes": "Tier 2 Project safecracking",
+      "id": "wwodOVLtDTMAPIOvf3om",
+      "discipline": "Safe Lock Manipulation",
+      "tier": "T2",
+      "displayName": "Wyte",
+      "tabClaimed": "wyte",
+      "date": "2023-10-20"
+    },
+    {
+      "evidenceUrl": "https://docs.google.com/document/d/1--msOwI79MdeQtB2DiBxB5z8hx7ub8jPFamt4FeWauw/edit?usp=share_link",
+      "evidenceCreatedAt": {
+        "_seconds": 1665219600,
+        "_nanoseconds": 0
+      },
+      "modifier": "",
+      "userId": "hJ8wy3LzFBbuuQ8y9sHFWctczbw1",
+      "projectId": "24272bae",
+      "evidenceNotes": "Tier 5 Project Pickmaking",
+      "id": "wwvTpA2BL6iGmyFW2fua",
+      "discipline": "Pick Making",
+      "tier": "T5",
+      "displayName": "PickSmith ",
+      "tabClaimed": "Picksmith",
+      "date": "2022-10-08"
+    },
+    {
+      "userId": "dlPpljxEAqYVts2VP0UOL8gGIQG3",
+      "evidenceUrl": "https://drive.google.com/file/d/1aN6CGYLzIsCk_7RDj_dIsdvsyCwEtHuW/view?usp=drive_link",
+      "evidenceNotes": "",
+      "modifier": "",
+      "projectId": "505bc312",
+      "evidenceCreatedAt": {
+        "_seconds": 1743690836,
+        "_nanoseconds": 0
+      },
+      "id": "xR8UXfyg4R7L5HRO73EE",
+      "discipline": "Cutaway Making",
+      "tier": "T3",
+      "displayName": "Erik Weisz",
+      "date": "2025-04-03"
+    },
+    {
+      "userId": "qtp7IM8d9sawUEAKsM0vwMITexR2",
+      "evidenceUrl": "https://github.com/smgoldade/realkey",
+      "modifier": "",
+      "projectId": "28ebf3b8",
+      "evidenceCreatedAt": {
+        "_seconds": 1777088977,
+        "_nanoseconds": 385000000
+      },
+      "id": "xRMOTpqgMf2Z98PP4Xdo",
+      "discipline": "Other Master's Project",
+      "tier": "T2",
+      "displayName": "Bugasu",
+      "date": "2026-04-24"
+    },
+    {
+      "evidenceUrl": "https://docs.google.com/document/d/1dGdnfVNQgcWqbZuIjyUI4Nht4yktvMR63DUhIaQumdY/edit?usp=share_link",
+      "evidenceCreatedAt": {
+        "_seconds": 1674032400,
+        "_nanoseconds": 0
+      },
+      "modifier": "",
+      "userId": "hJ8wy3LzFBbuuQ8y9sHFWctczbw1",
+      "projectId": "76fee3b3",
+      "evidenceNotes": "Tier 4 Project Challenge locks",
+      "id": "xXKMnC7lFoFU5x7niAks",
+      "discipline": "Challenge Locks",
+      "tier": "T4",
+      "displayName": "PickSmith ",
+      "tabClaimed": "Picksmith",
+      "date": "2023-01-18"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/946082204826603561/1065141353006252083",
+      "evidenceCreatedAt": {
+        "_seconds": 1705482000,
+        "_nanoseconds": 0
+      },
+      "modifier": "",
+      "userId": "GGplAdctTfVDLVvYsfIADJmfp8f2",
+      "projectId": "84a7f7c6",
+      "evidenceNotes": "Tier 3 Project Community",
+      "id": "xjGpoFSwQMNAINwqu0yk",
+      "discipline": "Community Involvement",
+      "tier": "T3",
+      "displayName": "mgsecure",
+      "tabClaimed": "MGsecure",
+      "date": "2024-01-17"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/946082204826603561/1120659913757163581",
+      "evidenceCreatedAt": {
+        "_seconds": 1687251600,
+        "_nanoseconds": 0
+      },
+      "modifier": "",
+      "userId": "BJyWOIOsqmRDkgHZBqIEGbGnVSA3",
+      "projectId": "c53d56b1",
+      "evidenceNotes": "Tier 2 Project safecracking",
+      "id": "xyJNeWt5E2jOJAf4MQqP",
+      "discipline": "Safe Lock Manipulation",
+      "tier": "T2",
+      "displayName": "Tony",
+      "tabClaimed": "Tonysansan",
+      "date": "2023-06-20"
+    },
+    {
+      "userId": "GGplAdctTfVDLVvYsfIADJmfp8f2",
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/1349848364606296285/1350843314236166269",
+      "modifier": "",
+      "projectId": "acc12555",
+      "evidenceCreatedAt": {
+        "_seconds": 1742139333,
+        "_nanoseconds": 419000000
+      },
+      "id": "y9lCP6R8oet3YoJXONbn",
+      "discipline": "Case Making",
+      "tier": "T3",
+      "displayName": "mgsecure",
+      "tabClaimed": "MGsecure",
+      "date": "2025-03-16"
+    },
+    {
+      "userId": "ueQz7zhel1eaHtro9N8TpuKHNzJ3",
+      "evidenceUrl": "https://youtu.be/gptRr4ThSEI?si=KJRh44Fv3E_cWpgm",
+      "modifier": "",
+      "projectId": "630d0229",
+      "evidenceCreatedAt": {
+        "_seconds": 1773002404,
+        "_nanoseconds": 961000000
+      },
+      "id": "yHfOYVLTnIz006VYKPtI",
+      "discipline": "Pick Making",
+      "tier": "T1",
+      "displayName": "ShiinGuzen",
+      "date": "2026-03-08"
+    },
+    {
+      "userId": "pOZ58IFOJVhc5t1Nrco5HGTeant2",
+      "evidenceUrl": "https://drive.google.com/file/d/1-M2P8MUssDpViJHRulM9ESnzA5kECnzJ/view",
+      "evidenceNotes": "https://youtu.be/c8XlxMdYJ9Y",
+      "modifier": "",
+      "projectId": "5a0aa3e0",
+      "evidenceCreatedAt": {
+        "_seconds": 1734655713,
+        "_nanoseconds": 84000000
+      },
+      "id": "yhpbflPRlEN0FrTDUsoh",
+      "discipline": "Cutaway Making",
+      "tier": "T2",
+      "displayName": "Millizard",
+      "date": "2024-12-19"
+    },
+    {
+      "userId": "YNzCmVUJe7SIEo323Y1nevcShyf2",
+      "evidenceUrl": "https://www.thingiverse.com/saspes/designs",
+      "evidenceNotes": "https://www.youtube.com/watch?v=ORtii6iv3PE",
+      "modifier": "",
+      "projectId": "ed62f676",
+      "evidenceCreatedAt": {
+        "_seconds": 1559819437,
+        "_nanoseconds": 0
+      },
+      "id": "yiP4sGe1CXfgYRdhOXf8",
+      "discipline": "Other Master's Project",
+      "tier": "T5",
+      "displayName": "SasPes",
+      "tabClaimed": "SasPes",
+      "date": "2019-06-06"
+    },
+    {
+      "evidenceUrl": "https://docs.google.com/document/d/1P4_g_a7UTF8b4JAEVaH3lBL_dvT4-eRvFT_Jh-bx1lA/edit#heading=h.dr8tsim7cma",
+      "evidenceCreatedAt": {
+        "_seconds": 1726107719,
+        "_nanoseconds": 888000000
+      },
+      "modifier": "",
+      "userId": "N5L5K9XMwjTKrwThTpWOMxTXzOP2",
+      "projectId": "7c490c64",
+      "evidenceNotes": "",
+      "id": "yp0Q1mjl8sTCR5QKf6fU",
+      "discipline": "Community Involvement",
+      "tier": "T2",
+      "displayName": "Spoon",
+      "tabClaimed": "(new bb: N5L5K9XMwjTKrwThTpWOMxTXzOP2)",
+      "date": "2024-09-11"
+    },
+    {
+      "userId": "nOCg2aCpEgOI5lJOxwyScW9kXFX2",
+      "evidenceUrl": "https://drive.google.com/file/d/1cjt-K_ee1b7lJU57EaC2GN057I3UU_ar/view?usp=drive_link",
+      "modifier": "",
+      "projectId": "c53d56b1",
+      "evidenceCreatedAt": {
+        "_seconds": 1772834544,
+        "_nanoseconds": 5000000
+      },
+      "id": "yqLrmR30kh4oGS0REF1p",
+      "discipline": "Safe Lock Manipulation",
+      "tier": "T2",
+      "displayName": "Klettus",
+      "date": "2026-03-06"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/946082204826603561/991641030204076112",
+      "evidenceCreatedAt": {
+        "_seconds": 1656493200,
+        "_nanoseconds": 0
+      },
+      "modifier": "",
+      "userId": "e5DBapQylbWfts6DJo6rH4Zi1Mp2",
+      "projectId": "98da0c85",
+      "evidenceNotes": "Tier 4 Project Lock Manufacturing",
+      "id": "zZApDy8xKSYXelR2IKVd",
+      "discipline": "Lock Manufacturing",
+      "tier": "T4",
+      "displayName": "Mick Emhurt",
+      "tabClaimed": "Mick Emhurt",
+      "date": "2022-06-29"
+    },
+    {
+      "evidenceUrl": "https://youtu.be/b5vfMNO2Hmo?si=gjdOsvVETOe6hYht",
+      "tabName": "BanditoBrandino",
+      "evidenceCreatedAt": "2023-09-14T20:57:13-07:00",
+      "modifier": "",
+      "projectId": "e2c0342e",
+      "evidenceNotes": "Tier 3 Project Challenge locks",
+      "id": "0R9FuVXITEof5czOP7hc",
+      "unclaimed": true,
+      "discipline": "Challenge Locks",
+      "tier": "T3",
+      "date": "2023-09-14"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/946082204826603561/1121006467001090088",
+      "tabName": "DigPicks",
+      "evidenceCreatedAt": "2023-06-21T00:00:00-09:00",
+      "modifier": "",
+      "projectId": "ee1c082f",
+      "evidenceNotes": "Tier 2 Project impressioning",
+      "id": "1hH2XTGTYV2n19M5MilY",
+      "unclaimed": true,
+      "discipline": "Impressioning",
+      "tier": "T2",
+      "date": "2023-06-21"
+    },
+    {
+      "evidenceUrl": "https://imgur.com/a/kcP2qUN",
+      "tabName": "GilliGainz",
+      "evidenceCreatedAt": "2021-12-23T00:00:00-09:00",
+      "modifier": "",
+      "projectId": "ee1c082f",
+      "evidenceNotes": "Tier 2 Project impressioning",
+      "id": "2HBSjbuctF6h7LfLisY0",
+      "unclaimed": true,
+      "discipline": "Impressioning",
+      "tier": "T2",
+      "date": "2021-12-23"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/946082204826603561/984815356730277958",
+      "tabName": "regen",
+      "evidenceCreatedAt": "2022-06-10T00:00:00-09:00",
+      "modifier": "",
+      "projectId": "c53d56b1",
+      "evidenceNotes": "Tier 2 Project safecracking",
+      "id": "2HgxJXf4yqtcDDUEC6nu",
+      "unclaimed": true,
+      "discipline": "Safe Lock Manipulation",
+      "tier": "T2",
+      "date": "2022-06-10"
+    },
+    {
+      "evidenceUrl": "https://speedlocks.org",
+      "tabName": "pandafrog",
+      "modifier": "",
+      "projectId": "17bc33c4",
+      "evidenceNotes": "Tier 4 Project Community",
+      "id": "4Bqoo3uuxZdh1y3USnb4",
+      "unclaimed": true,
+      "discipline": "Community Involvement",
+      "tier": "T4",
+      "date": "2026-09-02"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/282173282546089985/1011292147019948083",
+      "tabName": "Craig3.0",
+      "evidenceCreatedAt": "2022-08-22T00:00:00-09:00",
+      "modifier": "",
+      "projectId": "c2e1c952",
+      "evidenceNotes": "Tier 2 Project Pickmaking",
+      "id": "4cXOr6SN34cngtwrR2LW",
+      "unclaimed": true,
+      "discipline": "Pick Making",
+      "tier": "T2",
+      "date": "2022-08-22"
+    },
+    {
+      "evidenceUrl": "in summit",
+      "tabName": "Birdie",
+      "modifier": "",
+      "projectId": "24df60f0",
+      "evidenceNotes": "Tier 2 Project Tool making",
+      "id": "5Zvpu9TVfl4LMhazgnTK",
+      "unclaimed": true,
+      "discipline": "Tool Making",
+      "tier": "T2",
+      "date": "2026-09-02"
+    },
+    {
+      "evidenceUrl": "https://youtube.com/watch?v=NWfle86S6oQ&feature=share8",
+      "tabName": "Cajunlockpick",
+      "evidenceCreatedAt": "2023-03-13T16:24:48-07:00",
+      "modifier": "",
+      "projectId": "ee1c082f",
+      "evidenceNotes": "Tier 2 Project impressioning",
+      "id": "7B038mieN4q6cCqBFspC",
+      "unclaimed": true,
+      "discipline": "Impressioning",
+      "tier": "T2",
+      "date": "2023-03-13"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/946082204826603561/971380133246152735",
+      "tabName": "Roo1",
+      "evidenceCreatedAt": "2022-05-04T00:00:00-09:00",
+      "modifier": "",
+      "projectId": "c53d56b1",
+      "evidenceNotes": "Tier 2 Project safecracking",
+      "id": "7ggLEm1DDAAgah8KxEDX",
+      "unclaimed": true,
+      "discipline": "Safe Lock Manipulation",
+      "tier": "T2",
+      "date": "2022-05-04"
+    },
+    {
+      "evidenceUrl": "https://assamow.com/abloysim/",
+      "tabName": "Mow",
+      "evidenceCreatedAt": "2023-06-15T00:00:00-09:00",
+      "modifier": "",
+      "projectId": "f6c8bf2c",
+      "evidenceNotes": "Tier 4 Project Picking Instruction",
+      "id": "8eNoNt3rzTeJYtMLJIGc",
+      "unclaimed": true,
+      "discipline": "Picking Instruction",
+      "tier": "T4",
+      "date": "2023-06-15"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/946082204826603561/964789510141513758",
+      "tabName": "Den Brass",
+      "evidenceCreatedAt": "2022-04-16T00:00:00-09:00",
+      "modifier": "",
+      "projectId": "e3211470",
+      "evidenceNotes": "Tier 1 Project Cutaways",
+      "id": "9QLF3zlq4Hby9QnM9eJa",
+      "unclaimed": true,
+      "discipline": "Cutaway Making",
+      "tier": "T1",
+      "date": "2022-04-16"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/946082204826603561/947415060597338132",
+      "tabName": "IonaWest",
+      "evidenceCreatedAt": "2022-02-27T00:00:00-09:00",
+      "modifier": "",
+      "projectId": "ee1c082f",
+      "evidenceNotes": "Tier 2 Project impressioning",
+      "id": "9QTgLunLiCDIt4MfEYs5",
+      "unclaimed": true,
+      "discipline": "Impressioning",
+      "tier": "T2",
+      "date": "2022-02-27"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/946082204826603561/971381000087158855",
+      "tabName": "Roo1",
+      "evidenceCreatedAt": "2022-05-04T00:00:00-09:00",
+      "modifier": "",
+      "projectId": "24272bae",
+      "evidenceNotes": "Tier 5 Project Pickmaking",
+      "id": "AUkzDCPYQeOvmwrqlmVD",
+      "unclaimed": true,
+      "discipline": "Pick Making",
+      "tier": "T5",
+      "date": "2022-05-04"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/946082204826603561/947125014677831730",
+      "tabName": "L0ckJockey",
+      "evidenceCreatedAt": "2022-02-26T00:00:00-09:00",
+      "modifier": "",
+      "projectId": "e3211470",
+      "evidenceNotes": "Tier 1 Project Cutaways",
+      "id": "ClalfL4aSzWqFvgaEJit",
+      "unclaimed": true,
+      "discipline": "Cutaway Making",
+      "tier": "T1",
+      "date": "2022-02-26"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/946082204826603561/1022962163234648114",
+      "tabName": "IonaWest",
+      "evidenceCreatedAt": "2022-09-23T00:00:00-09:00",
+      "modifier": "",
+      "projectId": "f6c8bf2c",
+      "evidenceNotes": "Tier 4 Project Picking Instruction",
+      "id": "ClcDITvFABF0dgX6GkrC",
+      "unclaimed": true,
+      "discipline": "Picking Instruction",
+      "tier": "T4",
+      "date": "2022-09-23"
+    },
+    {
+      "evidenceUrl": "https://i.imgur.com/IBemcTW.jpg",
+      "tabName": "Mow",
+      "evidenceCreatedAt": "2022-08-26T00:00:00-09:00",
+      "modifier": "",
+      "projectId": "8113bb34",
+      "evidenceNotes": "Tier 5 Project Tool Manufacturing",
+      "id": "EYhH9mtKTkLpJyuJojPF",
+      "unclaimed": true,
+      "discipline": "Tool Manufacturing",
+      "tier": "T5",
+      "date": "2022-08-26"
+    },
+    {
+      "evidenceUrl": "https://docs.google.com/document/d/1jI-YdAyGnsKl6tVNR6HI3MlLFrixFIL79mnGW7rJSZA/edit?usp=drivesdk",
+      "tabName": "Cajunlockpick",
+      "evidenceCreatedAt": "2023-03-08T00:00:00-09:00",
+      "modifier": "",
+      "projectId": "c2e1c952",
+      "evidenceNotes": "Tier 2 Project Pickmaking",
+      "id": "HGkWBLmBSaiRmu97mXXy",
+      "unclaimed": true,
+      "discipline": "Pick Making",
+      "tier": "T2",
+      "date": "2023-03-08"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/946082204826603561/984815721634758726",
+      "tabName": "regen",
+      "evidenceCreatedAt": "2022-06-10T00:00:00-09:00",
+      "modifier": "",
+      "projectId": "5a0aa3e0",
+      "evidenceNotes": "Tier 2 Project Cutaways",
+      "id": "HyyliRxITWAGdzyuP2sh",
+      "unclaimed": true,
+      "discipline": "Cutaway Making",
+      "tier": "T2",
+      "date": "2022-06-10"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/946082204826603561/1134469009622958090",
+      "tabName": "retep",
+      "evidenceCreatedAt": "2023-07-28T00:00:00-09:00",
+      "modifier": "",
+      "projectId": "399daa10",
+      "evidenceNotes": "Tier 4 Project Pickmaking",
+      "id": "IPKyEtoad0SjzBRzcCua",
+      "unclaimed": true,
+      "discipline": "Pick Making",
+      "tier": "T4",
+      "date": "2023-07-28"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/946082204826603561/1103333472346591283",
+      "tabName": "MGsecure",
+      "evidenceCreatedAt": "2023-05-03T00:00:00-09:00",
+      "modifier": "",
+      "projectId": "24df60f0",
+      "evidenceNotes": "Tier 2 Project Tool making",
+      "id": "JS1bSLVhCXZhBloJxuV3",
+      "unclaimed": true,
+      "discipline": "Tool Making",
+      "tier": "T2",
+      "date": "2023-05-03"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/946082204826603561/964788667170308146",
+      "tabName": "Den Brass",
+      "evidenceCreatedAt": "2022-04-16T00:00:00-09:00",
+      "modifier": "",
+      "projectId": "35946aab",
+      "evidenceNotes": "Tier 5 Project Challenge locks",
+      "id": "KQMe7ca2vtkChJhMNHVU",
+      "unclaimed": true,
+      "discipline": "Challenge Locks",
+      "tier": "T5",
+      "date": "2022-04-16"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/946082204826603561/950462511336030228",
+      "tabName": "Angryducc",
+      "evidenceCreatedAt": "2022-03-07T00:00:00-09:00",
+      "modifier": "",
+      "projectId": "76fee3b3",
+      "evidenceNotes": "Tier 4 Project Challenge locks",
+      "id": "KlXIk1LuncWxn8KVaCb3",
+      "unclaimed": true,
+      "discipline": "Challenge Locks",
+      "tier": "T4",
+      "date": "2022-03-07"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/1168560100181544991",
+      "tabName": "Chestnut",
+      "evidenceCreatedAt": "2023-10-30T00:00:00-09:00",
+      "modifier": "",
+      "projectId": "7c490c64",
+      "evidenceNotes": "Tier 2 Project Community",
+      "id": "LHGcNQ01P86V5tlqsOrD",
+      "unclaimed": true,
+      "discipline": "Community Involvement",
+      "tier": "T2",
+      "date": "2023-10-30"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/946082204826603561/985778623028015104",
+      "tabName": "LockNoob",
+      "evidenceCreatedAt": "2022-06-12T00:00:00-09:00",
+      "modifier": "",
+      "projectId": "c2e1c952",
+      "evidenceNotes": "Tier 2 Project Pickmaking",
+      "id": "NiKu0x8Z99FYK3aJuV1m",
+      "unclaimed": true,
+      "discipline": "Pick Making",
+      "tier": "T2",
+      "date": "2022-06-12"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/946082204826603561/1110117483232366622",
+      "tabName": "Vinsanity0",
+      "evidenceCreatedAt": "2023-05-22T00:00:00-09:00",
+      "modifier": "",
+      "projectId": "ee1c082f",
+      "evidenceNotes": "Tier 2 Project impressioning",
+      "id": "P12OZCfnrtdQzlZV0gSP",
+      "unclaimed": true,
+      "discipline": "Impressioning",
+      "tier": "T2",
+      "date": "2023-05-22"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/282173282546089985/1011292147019948083",
+      "tabName": "Craig3.0",
+      "evidenceCreatedAt": "2022-08-22T00:00:00-09:00",
+      "modifier": "",
+      "projectId": "c53d56b1",
+      "evidenceNotes": "Tier 2 Project safecracking",
+      "id": "PwtmNulXVIcpHsT6WLJm",
+      "unclaimed": true,
+      "discipline": "Safe Lock Manipulation",
+      "tier": "T2",
+      "date": "2022-08-22"
+    },
+    {
+      "evidenceUrl": "https://www.youtube.com/watch?v=1ySCfKCvlGY",
+      "tabName": "Boro",
+      "evidenceCreatedAt": "2022-03-07T18:44:32-08:00",
+      "modifier": "",
+      "projectId": "7afa1ef9",
+      "evidenceNotes": "Tier 5 Project safecracking",
+      "id": "Q9tXRE7Pow6ciq4KMdCX",
+      "unclaimed": true,
+      "discipline": "Safe Lock Manipulation",
+      "tier": "T5",
+      "date": "2022-03-07"
+    },
+    {
+      "evidenceUrl": "https://youtube.com/watch?v=KNnIDl4X1Ec&feature=share8",
+      "tabName": "Cajunlockpick",
+      "evidenceCreatedAt": "2022-10-10T10:27:00-07:00",
+      "modifier": "",
+      "projectId": "c53d56b1",
+      "evidenceNotes": "Tier 2 Project safecracking",
+      "id": "RJ2TsCW1TQAGrGzhMOed",
+      "unclaimed": true,
+      "discipline": "Safe Lock Manipulation",
+      "tier": "T2",
+      "date": "2022-10-10"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/946082204826603561/1052875247247958086",
+      "tabName": "m.c.",
+      "evidenceCreatedAt": "2022-12-15T00:00:00-09:00",
+      "modifier": "",
+      "projectId": "db448561",
+      "evidenceNotes": "Tier 1 Project Community",
+      "id": "SMwUwylyrX1mldqXE0ra",
+      "unclaimed": true,
+      "discipline": "Community Involvement",
+      "tier": "T1",
+      "date": "2022-12-15"
+    },
+    {
+      "evidenceUrl": "https://imgur.com/a/ieBewqr",
+      "tabName": "Gas Station Hotdog",
+      "evidenceCreatedAt": "2024-06-09T00:00:00-09:00",
+      "modifier": "",
+      "projectId": "c2e1c952",
+      "evidenceNotes": "Tier 2 Project Pickmaking",
+      "id": "VmG0qRW22W2Uk1sj5H7u",
+      "unclaimed": true,
+      "discipline": "Pick Making",
+      "tier": "T2",
+      "date": "2024-06-09"
+    },
+    {
+      "evidenceUrl": "https://imgur.com/HC57w4i",
+      "tabName": "Gexpro",
+      "evidenceCreatedAt": "2023-11-10T00:00:00-09:00",
+      "modifier": "",
+      "projectId": "c2e1c952",
+      "evidenceNotes": "Tier 2 Project Pickmaking",
+      "id": "WTzE8C5AdmE7Pr4z8PHo",
+      "unclaimed": true,
+      "discipline": "Pick Making",
+      "tier": "T2",
+      "date": "2023-11-10"
+    },
+    {
+      "evidenceUrl": "https://drive.google.com/file/d/1Q1AQechVsIYpEP0Lr4_uYQ_v8IqHOQWs/view?usp=drivesdk",
+      "tabName": "Seb",
+      "evidenceCreatedAt": "2024-02-17T00:00:00-09:00",
+      "modifier": "",
+      "projectId": "c09036aa",
+      "evidenceNotes": "Tier 3 Project safecracking",
+      "id": "Wi0pQ13x3z7N6ib3RClY",
+      "unclaimed": true,
+      "discipline": "Safe Lock Manipulation",
+      "tier": "T3",
+      "date": "2024-02-17"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/946082204826603561/979291493191811082",
+      "tabName": "Lemon",
+      "evidenceCreatedAt": "2022-05-26T00:00:00-09:00",
+      "modifier": "",
+      "projectId": "e9c16310",
+      "evidenceNotes": "Tier 1 Project Picking Instruction",
+      "id": "XvpANpkFh9NWkcxsdetF",
+      "unclaimed": true,
+      "discipline": "Picking Instruction",
+      "tier": "T1",
+      "date": "2022-05-26"
+    },
+    {
+      "evidenceUrl": "https://imgur.com/a/0royR7b",
+      "tabName": "GilliGainz",
+      "evidenceCreatedAt": "2022-06-02T00:00:00-09:00",
+      "modifier": "",
+      "projectId": "c2e1c952",
+      "evidenceNotes": "Tier 2 Project Pickmaking",
+      "id": "Y3rKIViiGTbcbk6GZWWa",
+      "unclaimed": true,
+      "discipline": "Pick Making",
+      "tier": "T2",
+      "date": "2022-06-02"
+    },
+    {
+      "evidenceUrl": "https://youtu.be/XX-g9I9kZNo?si=kZ-pnOD2v0i80SPB",
+      "tabName": "BanditoBrandino",
+      "evidenceCreatedAt": "2023-05-16T22:28:35-07:00",
+      "modifier": "",
+      "projectId": "db448561",
+      "evidenceNotes": "Tier 1 Project Community",
+      "id": "Y6Bjmgcr27fojDxLPOxE",
+      "unclaimed": true,
+      "discipline": "Community Involvement",
+      "tier": "T1",
+      "date": "2023-05-16"
+    },
+    {
+      "evidenceUrl": "https://youtu.be/ERQfQVgGIIU",
+      "tabName": "pandafrog",
+      "evidenceCreatedAt": "2020-10-10T12:00:12-07:00",
+      "modifier": "",
+      "projectId": "ee1c082f",
+      "evidenceNotes": "Tier 2 Project impressioning",
+      "id": "bDawFH7LQyZoxPDeLxOR",
+      "unclaimed": true,
+      "discipline": "Impressioning",
+      "tier": "T2",
+      "date": "2020-10-10"
+    },
+    {
+      "evidenceUrl": "https://docs.google.com/document/d/1jI-YdAyGnsKl6tVNR6HI3MlLFrixFIL79mnGW7rJSZA/edit?usp=drivesdk",
+      "tabName": "Cajunlockpick",
+      "evidenceCreatedAt": "2023-03-08T00:00:00-09:00",
+      "modifier": "",
+      "projectId": "3b90ab9b",
+      "evidenceNotes": "Tier 2 Project Challenge locks",
+      "id": "bgXXtSFc4Nt8MX9p4bmx",
+      "unclaimed": true,
+      "discipline": "Challenge Locks",
+      "tier": "T2",
+      "date": "2023-03-08"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/1165041892380119080",
+      "tabName": "decent picker dude",
+      "evidenceCreatedAt": "2023-10-20T00:00:00-09:00",
+      "modifier": "",
+      "projectId": "c2e1c952",
+      "evidenceNotes": "Tier 2 Project Pickmaking",
+      "id": "bpFuUEr4mwOIwwWrRiQ4",
+      "unclaimed": true,
+      "discipline": "Pick Making",
+      "tier": "T2",
+      "date": "2023-10-20"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/946082204826603561/1010145938599329924",
+      "tabName": "TypeRegal",
+      "evidenceCreatedAt": "2022-08-19T00:00:00-09:00",
+      "modifier": "",
+      "projectId": "5bbc0602",
+      "evidenceNotes": "Tier 3 Project Pickmaking",
+      "id": "dmpSUuCT6gyli3NXLPSN",
+      "unclaimed": true,
+      "discipline": "Pick Making",
+      "tier": "T3",
+      "date": "2022-08-19"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/946082204826603561/978944919546757171",
+      "tabName": "retep",
+      "evidenceCreatedAt": "2022-05-25T00:00:00-09:00",
+      "modifier": "",
+      "projectId": "8a994627",
+      "evidenceNotes": "Tier 3 Project Tool making",
+      "id": "dzjpoQyhwpKxxdkXtR23",
+      "unclaimed": true,
+      "discipline": "Tool Making",
+      "tier": "T3",
+      "date": "2022-05-25"
+    },
+    {
+      "evidenceUrl": "https://docs.google.com/spreadsheets/d/1B7nWNQ4RrwH9vhrDFdsURPfDas4G-toxM8b0XwJeO9Q/edit?usp=drivesdk",
+      "tabName": "TruckingLock",
+      "evidenceCreatedAt": "2024-01-29T00:00:00-09:00",
+      "modifier": "",
+      "projectId": "3b90ab9b",
+      "evidenceNotes": "Tier 2 Project Challenge locks",
+      "id": "eIR6y7jFhCbRzJtHbO3U",
+      "unclaimed": true,
+      "discipline": "Challenge Locks",
+      "tier": "T2",
+      "date": "2024-01-29"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/946082204826603561/978709097383862374",
+      "tabName": "Lemon",
+      "evidenceCreatedAt": "2022-05-24T00:00:00-09:00",
+      "modifier": "",
+      "projectId": "c09036aa",
+      "evidenceNotes": "Tier 3 Project safecracking",
+      "id": "eMNpTU6Eah5pM8rhNPbT",
+      "unclaimed": true,
+      "discipline": "Safe Lock Manipulation",
+      "tier": "T3",
+      "date": "2022-05-24"
+    },
+    {
+      "evidenceUrl": "https://youtu.be/jp4mN5ZDHgg",
+      "tabName": "m.c.",
+      "evidenceCreatedAt": "2022-12-14T08:48:55-08:00",
+      "modifier": "",
+      "projectId": "5a0aa3e0",
+      "evidenceNotes": "Tier 2 Project Cutaways",
+      "id": "eWinWIgOy3OvmPPgt2m0",
+      "unclaimed": true,
+      "discipline": "Cutaway Making",
+      "tier": "T2",
+      "date": "2022-12-14"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/946082204826603561/1005563506906644490",
+      "tabName": "L0ckJockey",
+      "evidenceCreatedAt": "2022-08-06T00:00:00-09:00",
+      "modifier": "",
+      "projectId": "c53d56b1",
+      "evidenceNotes": "Tier 2 Project safecracking",
+      "id": "fo1jaJfH9RnH08lVJ93y",
+      "unclaimed": true,
+      "discipline": "Safe Lock Manipulation",
+      "tier": "T2",
+      "date": "2022-08-06"
+    },
+    {
+      "evidenceUrl": "https://assamow.com",
+      "tabName": "Mow",
+      "modifier": "",
+      "projectId": "f475c0f2",
+      "evidenceNotes": "Tier 5 Project Community",
+      "id": "gHlmXDnOxqH5QTf7B0HJ",
+      "unclaimed": true,
+      "discipline": "Community Involvement",
+      "tier": "T5",
+      "date": "2026-09-02"
+    },
+    {
+      "evidenceUrl": "https://imgur.com/4GY73o6",
+      "tabName": "Gexpro",
+      "evidenceCreatedAt": "2023-11-04T00:00:00-09:00",
+      "modifier": "",
+      "projectId": "5a0aa3e0",
+      "evidenceNotes": "Tier 2 Project Cutaways",
+      "id": "h7E3vnU85jXD3OHw4fCV",
+      "unclaimed": true,
+      "discipline": "Cutaway Making",
+      "tier": "T2",
+      "date": "2023-11-04"
+    },
+    {
+      "evidenceUrl": "https://youtu.be/6kWebVegpZU?si=TW0VSAP8WNxU0Ulq",
+      "tabName": "BanditoBrandino",
+      "evidenceCreatedAt": "2023-09-30T17:15:45-07:00",
+      "modifier": "",
+      "projectId": "24df60f0",
+      "evidenceNotes": "Tier 2 Project Tool making",
+      "id": "jqkA8QnIZ0LTxjsTYPUc",
+      "unclaimed": true,
+      "discipline": "Tool Making",
+      "tier": "T2",
+      "date": "2023-09-30"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/946082204826603561/1121005821317349416",
+      "tabName": "DigPicks",
+      "evidenceCreatedAt": "2023-06-21T00:00:00-09:00",
+      "modifier": "",
+      "projectId": "c09036aa",
+      "evidenceNotes": "Tier 3 Project safecracking",
+      "id": "kBkSmMsfSQwYNCj5V1rT",
+      "unclaimed": true,
+      "discipline": "Safe Lock Manipulation",
+      "tier": "T3",
+      "date": "2023-06-21"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/946082204826603561/1110117483232366622",
+      "tabName": "Vinsanity0",
+      "evidenceCreatedAt": "2023-05-22T00:00:00-09:00",
+      "modifier": "",
+      "projectId": "c53d56b1",
+      "evidenceNotes": "Tier 2 Project safecracking",
+      "id": "lAP5qH6BWzBMre5hxaAf",
+      "unclaimed": true,
+      "discipline": "Safe Lock Manipulation",
+      "tier": "T2",
+      "date": "2023-05-22"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/946082204826603561/1134468970330738839",
+      "tabName": "retep",
+      "evidenceCreatedAt": "2023-07-28T00:00:00-09:00",
+      "modifier": "",
+      "projectId": "b46b119a",
+      "evidenceNotes": "Tier 4 Project Cutaways",
+      "id": "mRNnYgwR3k9V9w5XviUq",
+      "unclaimed": true,
+      "discipline": "Cutaway Making",
+      "tier": "T4",
+      "date": "2023-07-28"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/946082204826603561/947125309159927828",
+      "tabName": "L0ckJockey",
+      "evidenceCreatedAt": "2022-02-26T00:00:00-09:00",
+      "modifier": "",
+      "projectId": "64b3ca91",
+      "evidenceNotes": "Tier 1 Project impressioning",
+      "id": "mm91RIj18JxILmug6USi",
+      "unclaimed": true,
+      "discipline": "Impressioning",
+      "tier": "T1",
+      "date": "2022-02-26"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/946082204826603561/947415246950256680",
+      "tabName": "IonaWest",
+      "evidenceCreatedAt": "2022-02-27T00:00:00-09:00",
+      "modifier": "",
+      "projectId": "c53d56b1",
+      "evidenceNotes": "Tier 2 Project safecracking",
+      "id": "nLawpgvBA6G9RmFtJ8On",
+      "unclaimed": true,
+      "discipline": "Safe Lock Manipulation",
+      "tier": "T2",
+      "date": "2022-02-27"
+    },
+    {
+      "evidenceUrl": "https://youtube.com/shorts/JeG5tNIhvVI?si=ryy9fHTw9ILTeCSp",
+      "tabName": "TruckingLock",
+      "evidenceCreatedAt": "2024-05-23T20:12:07-07:00",
+      "modifier": "",
+      "projectId": "ee1c082f",
+      "evidenceNotes": "Tier 2 Project impressioning",
+      "id": "nMXTTMmSnqLXNbhPOCBW",
+      "unclaimed": true,
+      "discipline": "Impressioning",
+      "tier": "T2",
+      "date": "2024-05-23"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/946082204826603561/955815303567249429",
+      "tabName": "IonaWest",
+      "evidenceCreatedAt": "2022-03-22T00:00:00-09:00",
+      "modifier": "",
+      "projectId": "5a0aa3e0",
+      "evidenceNotes": "Tier 2 Project Cutaways",
+      "id": "nmW52opMjMXg8KcUGpt5",
+      "unclaimed": true,
+      "discipline": "Cutaway Making",
+      "tier": "T2",
+      "date": "2022-03-22"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/946082204826603561/964788903070556181",
+      "tabName": "Den Brass",
+      "evidenceCreatedAt": "2022-04-16T00:00:00-09:00",
+      "modifier": "",
+      "projectId": "c53d56b1",
+      "evidenceNotes": "Tier 2 Project safecracking",
+      "id": "piSy8xzVjAQgJ67lLBS4",
+      "unclaimed": true,
+      "discipline": "Safe Lock Manipulation",
+      "tier": "T2",
+      "date": "2022-04-16"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/946082204826603561/1002132749391507466",
+      "tabName": "m0g",
+      "evidenceCreatedAt": "2022-07-28T00:00:00-09:00",
+      "modifier": "",
+      "projectId": "c53d56b1",
+      "evidenceNotes": "Tier 2 Project safecracking",
+      "id": "pvtK4zkRYI9Pibxc1PGQ",
+      "unclaimed": true,
+      "discipline": "Safe Lock Manipulation",
+      "tier": "T2",
+      "date": "2022-07-28"
+    },
+    {
+      "evidenceUrl": "https://challenge-lock.com/",
+      "tabName": "pandafrog",
+      "modifier": "",
+      "projectId": "93a61f11",
+      "evidenceNotes": "Tier 1 Project Challenge locks",
+      "id": "q85nbHxQreWtZP7Af8k8",
+      "unclaimed": true,
+      "discipline": "Challenge Locks",
+      "tier": "T1",
+      "date": "2026-09-02"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/1165041546438127616",
+      "tabName": "decent picker dude",
+      "evidenceCreatedAt": "2023-10-20T00:00:00-09:00",
+      "modifier": "",
+      "projectId": "5a0aa3e0",
+      "evidenceNotes": "Tier 2 Project Cutaways",
+      "id": "qKxlm0GNYEGKp2bfHm57",
+      "unclaimed": true,
+      "discipline": "Cutaway Making",
+      "tier": "T2",
+      "date": "2023-10-20"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/946082204826603561/985778623028015104",
+      "tabName": "LockNoob",
+      "evidenceCreatedAt": "2022-06-12T00:00:00-09:00",
+      "modifier": "",
+      "projectId": "84a7f7c6",
+      "evidenceNotes": "Tier 3 Project Community",
+      "id": "rT4TKxgwIijHkgzqxkUn",
+      "unclaimed": true,
+      "discipline": "Community Involvement",
+      "tier": "T3",
+      "date": "2022-06-12"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/1015052239519371404/1048643843333042206",
+      "tabName": "Mow",
+      "evidenceCreatedAt": "2022-09-01T00:00:00-09:00",
+      "modifier": "",
+      "projectId": "24272bae",
+      "evidenceNotes": "Tier 5 Project Pickmaking",
+      "id": "sCMlN4nK7EJvWwVbpEWX",
+      "unclaimed": true,
+      "discipline": "Pick Making",
+      "tier": "T5",
+      "date": "2022-09-01"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/946082204826603561/946086418881609739",
+      "tabName": "IonaWest",
+      "evidenceCreatedAt": "2022-02-23T00:00:00-09:00",
+      "modifier": "",
+      "projectId": "399daa10",
+      "evidenceNotes": "Tier 4 Project Pickmaking",
+      "id": "sPIlUgbxLeJ3DNaLwUcf",
+      "unclaimed": true,
+      "discipline": "Pick Making",
+      "tier": "T4",
+      "date": "2022-02-23"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/282173282546089985/1078002986812457090",
+      "tabName": "m.c.",
+      "evidenceCreatedAt": "2023-02-22T00:00:00-09:00",
+      "modifier": "",
+      "projectId": "c53d56b1",
+      "evidenceNotes": "Tier 2 Project safecracking",
+      "id": "sdA5Wez5PnCAyudxaXic",
+      "unclaimed": true,
+      "discipline": "Safe Lock Manipulation",
+      "tier": "T2",
+      "date": "2023-02-22"
+    },
+    {
+      "evidenceUrl": "https://discord.com/channels/140129091796992000/946082204826603561/985778623028015104",
+      "tabName": "LockNoob",
+      "evidenceCreatedAt": "2022-06-12T00:00:00-09:00",
+      "modifier": "",
+      "projectId": "72971f6c",
+      "evidenceNotes": "Tier 4 Project impressioning",
+      "id": "yZ9UdMyNBsaMnDrlho7s",
+      "unclaimed": true,
+      "discipline": "Impressioning",
+      "tier": "T4",
+      "date": "2022-06-12"
+    }
+  ],
+  "metadata": {
+    "updatedDateTime": "2026-09-02 15:00"
+  }
+}

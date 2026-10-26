@@ -1,0 +1,480 @@
+{
+  "phase": 4,
+  "status": "complete",
+  "date": "2026-10-25",
+  "candidateCommit": "2725290cb7ddfa284113f7bb570992e9986fe6b0",
+  "cleanCheckout": "/private/tmp/lpu-monorepo-phase3.OS5o0i/clean-checkout",
+  "node": "24.21.0",
+  "npm": "11.19.0",
+  "checks": {
+    "install": {
+      "command": "npm ci --cache /private/tmp/lpu-monorepo-phase4/npm-cache --no-audit --no-fund",
+      "result": "passed",
+      "packages": 1472
+    },
+    "web": {
+      "command": "npm run ci-pr",
+      "result": "passed",
+      "testFiles": 52,
+      "tests": 280
+    },
+    "api": {
+      "command": "npm run validate:api",
+      "result": "passed with local socket access",
+      "testFiles": 92,
+      "tests": 478,
+      "initialSandboxFailures": {
+        "files": 18,
+        "tests": 97,
+        "reason": "Local Supertest listener restrictions; unchanged rerun passed"
+      }
+    },
+    "functions": {
+      "commands": [
+        "npm ci --prefix firebase/functions --ignore-scripts --cache /private/tmp/lpu-monorepo-phase4/npm-cache --no-audit --no-fund",
+        "npm --prefix firebase/functions run lint"
+      ],
+      "packages": 335,
+      "result": "passed"
+    },
+    "browser": {
+      "command": "npm run e2e -- tests/e2e/viteBundle.spec.js tests/e2e/contentRoutes.spec.js tests/e2e/locks.spec.js",
+      "tests": 10,
+      "result": "passed"
+    },
+    "changeTrackers": {
+      "command": "firebase-tools 15.30.0 emulators:exec --config ../../firebase/firebase.json --only functions,firestore --project demo-lpubelts \"node tests/firebase/changeTrackers.integration.js\"",
+      "result": "passed",
+      "database": "(default) emulator",
+      "mappings": 3,
+      "operationsPerMapping": [
+        "create",
+        "update",
+        "delete"
+      ]
+    },
+    "catalogValidator": {
+      "command": "node apps/web/scripts/validateClassificationCatalog.js apps/web/src/data/data.json apps/web/src/data/classification-catalog.json",
+      "result": "passed"
+    },
+    "buildComparison": {
+      "files": 475,
+      "baselineCommonFiles": 475,
+      "byteDifferences": 0,
+      "baselineLocalExtras": 24,
+      "comparedBeforePlaywrightFlagBuild": true
+    }
+  },
+  "catalogSourceSha256": {
+    "src/data/awards.json": "944941583443048560ff7622754101e1e93947551337300cf102f7e1e5822e65",
+    "src/data/data.json": "869e864b97bb3481116c53711f826427016842b60f74674e31a9668c42cd5365",
+    "src/data/safelocks.json": "1fca7751ed5dcc4c774e07c49cccccddc7c53468f3126069f18a949515f7728a",
+    "src/data/glossary.json": "57bcac6a4b084330781266437fb3cca3bf9bcfb27bc894d1843f8d09dcc42b61",
+    "src/data/projects.json": "84bef237fc14e22d5d2c9bca04c7cb5fb2b295bcd999bd9597b6f166f78f8cf2",
+    "src/data/rafl.json": "ed7d3c8080c2d03f8097a45ba7eb889dd7be221e0e13036dbdb04b851a04731b",
+    "src/data/classification-catalog.json": "40bb57e1b7ba643da852c0d5871bed5029b0a62777d7889203e53c431ea81b59"
+  },
+  "artifacts": {
+    "macOS": {
+      "sha256": "b34a85dd687cdf0a743717ba551ecc8ed9c2931cd7840cc437c979dca7744af5",
+      "members": 15161,
+      "exactCommitBuilder": true,
+      "extractedServerAndRunnerSyntax": "passed",
+      "extractedSharp": "0.35.4 loaded",
+      "filteredProductionPackagesIncludingWorkspaceLink": 387
+    },
+    "linux": {
+      "sha256": "8af03b10d7ed883ec08391e0b191c4f589229186874eeb41cc9c85c79c0a3206",
+      "members": 15161,
+      "checksumAndInspection": "passed again",
+      "priorCiRun": "40230235649",
+      "newLinuxExecution": false
+    }
+  },
+  "workflowReview": {
+    "build.js.yml": {
+      "unconditionalHold": true,
+      "variables": [
+        "DEPLOY_ROOT",
+        "DEPLOY_ROOT_DEV",
+        "SFTP_HOST",
+        "SFTP_PORT",
+        "SFTP_USER",
+        "VITE_CLASSIFICATION_WRITE_STAGE",
+        "VITE_FIREBASE_API_KEY",
+        "VITE_REDDIT_CLIENT_SECRET"
+      ],
+      "secrets": [
+        "GITHUB_TOKEN",
+        "SFTP_KNOWN_HOSTS",
+        "SFTP_PRIVATE_KEY"
+      ]
+    },
+    "import.js.yml": {
+      "unconditionalHold": true,
+      "variables": [
+        "GOOGLE_SHEET_ID",
+        "RAFL_SHEET_ID"
+      ],
+      "secrets": []
+    },
+    "publish-classification-catalog-dev.yml": {
+      "unconditionalHold": true,
+      "variables": [
+        "SFTP_HOST",
+        "SFTP_PORT",
+        "SFTP_USER"
+      ],
+      "secrets": [
+        "SFTP_KNOWN_HOSTS",
+        "SFTP_PRIVATE_KEY"
+      ]
+    },
+    "api-deploy-production.yml": {
+      "unconditionalHold": true,
+      "variables": [
+        "DEPLOY_ROOT",
+        "HEALTHCHECK_URL",
+        "PM2_APP_NAME",
+        "REMOTE_NODE_BIN",
+        "SFTP_HOST",
+        "SFTP_PORT",
+        "SFTP_USER"
+      ],
+      "secrets": [
+        "SFTP_KNOWN_HOSTS",
+        "SFTP_PRIVATE_KEY"
+      ]
+    }
+  },
+  "shellSimulation": {
+    "scope": "Exact workflow shell block with synthetic archive; PM2, curl, Linux platform, mv, checksum command and Sharp load stubbed. No real service or host activation.",
+    "cases": [
+      {
+        "scenario": "success",
+        "exitCode": 0,
+        "currentTargetCorrect": true,
+        "sharedMarkerPreserved": true,
+        "reloadCalls": 1
+      },
+      {
+        "scenario": "node-version-failure",
+        "exitCode": 1,
+        "currentTargetCorrect": true,
+        "sharedMarkerPreserved": true,
+        "reloadCalls": 0
+      },
+      {
+        "scenario": "commit-identity-failure",
+        "exitCode": 1,
+        "currentTargetCorrect": true,
+        "sharedMarkerPreserved": true,
+        "reloadCalls": 0
+      },
+      {
+        "scenario": "reload-failure",
+        "exitCode": 1,
+        "currentTargetCorrect": true,
+        "sharedMarkerPreserved": true,
+        "reloadCalls": 2
+      },
+      {
+        "scenario": "readiness-http-failure",
+        "exitCode": 1,
+        "currentTargetCorrect": true,
+        "sharedMarkerPreserved": true,
+        "reloadCalls": 2
+      },
+      {
+        "scenario": "readiness-identity-failure",
+        "exitCode": 1,
+        "currentTargetCorrect": true,
+        "sharedMarkerPreserved": true,
+        "reloadCalls": 2
+      },
+      {
+        "scenario": "public-smoke-failure",
+        "exitCode": 1,
+        "currentTargetCorrect": true,
+        "sharedMarkerPreserved": true,
+        "reloadCalls": 2
+      }
+    ]
+  },
+  "checksumRejectionSimulation": {
+    "result": "failed on macOS Bash 3.2.57",
+    "observation": "Standalone [[ equality ]] under set -e continued after mismatch; minimal reproduction confirms local shell behavior.",
+    "disposition": "Repeat on supported Linux Bash; no workflow change. Seven other cases are separate stubbed control-flow evidence, not actual deployment.",
+    "linuxHostFollowup": "Passed on Bash 5.1.16; initial macOS failure retained as historical limitation"
+  },
+  "pending": [],
+  "externalEffects": "Authorized development artifact upload/extraction, process interruptions/restarts, temporary PM2 integration disables, directory replacement and rollback, development readiness/public API/anonymous-denial requests, read-only cron inventory. Original service/source and integration settings restored; selected protected shared-file hashes unchanged. Rehearsal archives/extracted directories/evidence retained under development rehearsal/2725290-phase4-20261025. No production changes, cron execution, live exporters, PM2 save, site/catalog publish, commit or push. Owner-designated mgsecure public-summary reads through the candidate API, temporary read-only loopback bridge/demo emulators, and another authorized development activation/rollback cycle completed; original service restored again. No public-profile response bodies saved. Local-only generator outputs written in disposable source snapshots.",
+  "developmentTarget": {
+    "ownerQuestion10": "Resolved: existing api-dev directory and port selected",
+    "root": "/home/lpubelts_api/apps/api-server-dev",
+    "current": "current-dev",
+    "port": 10081,
+    "process": "lpubelts-api-server-dev",
+    "readOnlyPreflight": {
+      "platform": "Linux",
+      "architecture": "x86_64",
+      "node": "v24.21.0",
+      "directoriesExist": true,
+      "developmentEnvironmentAndDeclarationReadable": true,
+      "portListening": true,
+      "listenerBinding": "host IPv4 address",
+      "pm2Status": "online",
+      "cwdAndScriptMatch": true
+    },
+    "activationPerformed": true,
+    "nextGate": "Question 11: confirm replacement of running development process",
+    "ownerQuestion11": "Approved: continuing authorization for project development interruptions/replacement/rollback"
+  },
+  "developmentRehearsal": {
+    "candidateCommit": "2725290cb7ddfa284113f7bb570992e9986fe6b0",
+    "releaseId": "2725290cb7ddfa284113f7bb570992e9986fe6b0-phase4-20261025",
+    "startedAt": "2026-10-25T20:45:27.476Z",
+    "checks": [
+      "existing_dev_process_online",
+      "expected_existing_paths",
+      "development_database_only",
+      "expected_port",
+      "shared_paths_outside_release",
+      "env_is_shared_symlink",
+      "REQUESTED_LOCKS_UPLOAD_DIR_already_exists",
+      "CONTENT_UPLOAD_DIR_already_exists",
+      "new_rehearsal_destinations",
+      "linux_artifact_checksum",
+      "linux_bash_rejects_checksum_mismatch",
+      "embedded_exact_commit",
+      "embedded_root_lock",
+      "linux_archive_syntax_and_sharp",
+      "baseline_development_health",
+      "candidate_exact_identity_and_health",
+      "development_https_identity",
+      "public_collection_stats_contract",
+      "anonymous_private_profile_denied",
+      "deliberate_identity_failure_detected",
+      "previous_release_health_restored",
+      "previous_source_restored",
+      "restored_https_identity",
+      "restored_public_api",
+      "protected_shared_files_unchanged"
+    ],
+    "originalSourceSha256": [
+      "23139a27bf2867f108e0fec61bfaa9fdcd4ecfc61d0ffdcf84fb4cb5128b3a63",
+      "6da98e371f4cf0ffd9a7983b03180e70d8181eac0c84cc8afec44518835d307a"
+    ],
+    "previousReady": {
+      "ready": true,
+      "releaseId": "local-development",
+      "gitSha": "0000000000000000000000000000000000000000",
+      "environment": "development"
+    },
+    "candidateReady": {
+      "ready": true,
+      "releaseId": "2725290cb7ddfa284113f7bb570992e9986fe6b0-phase4-20261025",
+      "gitSha": "2725290cb7ddfa284113f7bb570992e9986fe6b0",
+      "environment": "development"
+    },
+    "publicStatsCount": 1234,
+    "restoredReady": {
+      "ready": true,
+      "releaseId": "local-development",
+      "gitSha": "0000000000000000000000000000000000000000",
+      "environment": "development"
+    },
+    "result": "passed",
+    "completedAt": "2026-10-25T20:45:36.334Z",
+    "restoredPrevious": true,
+    "scope": "Real Linux API artifact and existing development process; complete directory rename/restore, process-level integration disables, no protected environment edit"
+  },
+  "postRehearsalVerification": {
+    "developmentProcess": "online",
+    "developmentFlagsRestored": true,
+    "cronJobs": [
+      {
+        "job": "runFetchAnalyzeLogs.js",
+        "totalEntries": 1,
+        "productionEntries": 1,
+        "developmentEntries": 0,
+        "absolutePinnedNodeAndStablePath": true
+      },
+      {
+        "job": "runCollectionExportAnalysis.js",
+        "totalEntries": 1,
+        "productionEntries": 1,
+        "developmentEntries": 0,
+        "absolutePinnedNodeAndStablePath": true
+      }
+    ]
+  },
+  "profileBrowserJourney": {
+    "startedAt": "2026-10-25T22:35:28.060Z",
+    "userId": "GGplAdctTfVDLVvYsfIADJmfp8f2",
+    "expectedDisplayName": "mgsecure",
+    "checks": [
+      "exact_candidate_ready_before_browser",
+      "api_summary_expected_name",
+      "real_public_summary_rendered_in_profile",
+      "profile_document_title",
+      "profile_safes_navigation",
+      "profile_collection_return_navigation",
+      "api_summary_expected_name",
+      "profile_reload",
+      "no_browser_warnings_or_errors",
+      "no_failed_javascript_modules",
+      "anonymous_private_profile_denied",
+      "candidate_identity_stable_after_browser"
+    ],
+    "apiRequests": [
+      {
+        "path": "/api/v1/users/GGplAdctTfVDLVvYsfIADJmfp8f2/summary",
+        "status": 200
+      },
+      {
+        "path": "/api/v1/users/GGplAdctTfVDLVvYsfIADJmfp8f2/summary",
+        "status": 200
+      }
+    ],
+    "candidateReady": {
+      "ready": true,
+      "releaseId": "2725290cb7ddfa284113f7bb570992e9986fe6b0-phase4-profile-browser",
+      "gitSha": "2725290cb7ddfa284113f7bb570992e9986fe6b0",
+      "environment": "development"
+    },
+    "result": "passed",
+    "completedAt": "2026-10-25T22:35:30.576Z"
+  },
+  "profileBrowserHostCycle": {
+    "candidateCommit": "2725290cb7ddfa284113f7bb570992e9986fe6b0",
+    "releaseId": "2725290cb7ddfa284113f7bb570992e9986fe6b0-phase4-profile-browser",
+    "startedAt": "2026-10-25T22:35:15.101Z",
+    "checks": [
+      "existing_dev_process_online",
+      "expected_existing_paths",
+      "development_database_only",
+      "expected_port",
+      "shared_paths_outside_release",
+      "env_is_shared_symlink",
+      "REQUESTED_LOCKS_UPLOAD_DIR_already_exists",
+      "CONTENT_UPLOAD_DIR_already_exists",
+      "new_rehearsal_destinations",
+      "linux_artifact_checksum",
+      "linux_bash_rejects_checksum_mismatch",
+      "embedded_exact_commit",
+      "embedded_root_lock",
+      "linux_archive_syntax_and_sharp",
+      "baseline_development_health",
+      "candidate_exact_identity_and_health",
+      "development_https_identity",
+      "public_collection_stats_contract",
+      "anonymous_private_profile_denied",
+      "designated_development_public_profile",
+      "browser_result_received",
+      "real_profile_browser_journey",
+      "deliberate_identity_failure_detected",
+      "previous_release_health_restored",
+      "previous_source_restored",
+      "restored_https_identity",
+      "restored_public_api",
+      "protected_shared_files_unchanged"
+    ],
+    "originalSourceSha256": [
+      "23139a27bf2867f108e0fec61bfaa9fdcd4ecfc61d0ffdcf84fb4cb5128b3a63",
+      "6da98e371f4cf0ffd9a7983b03180e70d8181eac0c84cc8afec44518835d307a"
+    ],
+    "previousReady": {
+      "ready": true,
+      "releaseId": "local-development",
+      "gitSha": "0000000000000000000000000000000000000000",
+      "environment": "development"
+    },
+    "candidateReady": {
+      "ready": true,
+      "releaseId": "2725290cb7ddfa284113f7bb570992e9986fe6b0-phase4-profile-browser",
+      "gitSha": "2725290cb7ddfa284113f7bb570992e9986fe6b0",
+      "environment": "development"
+    },
+    "publicStatsCount": 1234,
+    "restoredReady": {
+      "ready": true,
+      "releaseId": "local-development",
+      "gitSha": "0000000000000000000000000000000000000000",
+      "environment": "development"
+    },
+    "result": "passed",
+    "completedAt": "2026-10-25T22:35:45.189Z",
+    "restoredPrevious": true
+  },
+  "postProfileBrowserVerification": {
+    "developmentProcess": "online",
+    "developmentFlagsRestored": true,
+    "cronJobs": [
+      {
+        "job": "runFetchAnalyzeLogs.js",
+        "totalEntries": 1,
+        "productionEntries": 1,
+        "developmentEntries": 0,
+        "absolutePinnedNodeAndStablePath": true
+      },
+      {
+        "job": "runCollectionExportAnalysis.js",
+        "totalEntries": 1,
+        "productionEntries": 1,
+        "developmentEntries": 0,
+        "absolutePinnedNodeAndStablePath": true
+      }
+    ]
+  },
+  "generatedOutputComparison": {
+    "result": "passed",
+    "sourceBefore": "22ec5c9fef8871aefa678eefe9bbedb0d695285a",
+    "sourceAfter": "2725290cb7ddfa284113f7bb570992e9986fe6b0",
+    "scripts": [
+      "version.js",
+      "generateSitemap.js",
+      "generateSitemap-xml.js",
+      "exportMarkdown.js",
+      "exportCsv.js",
+      "exportHtml.js",
+      "copyFiles.js"
+    ],
+    "generatedDistFiles": 2275,
+    "generatedPublicFiles": 3,
+    "clock": "2026-10-25T12:00:00.000Z",
+    "allHashesIdentical": true,
+    "scope": "Local-only generators from committed source snapshots, same dependencies and fixed clock. No Vite production-mode compilation or hosted settings certification."
+  },
+  "ownerSettingsConfirmations": {
+    "environmentProtection": "Preserve existing ops procedures; no change requested",
+    "apiDeploymentSettingNames": "Owner confirms names exist in destination production environment",
+    "webImportSettings": "No changes requested",
+    "effectiveGitHubMetadataIndependentlyQueried": false
+  },
+  "localEnvironmentFileReview": {
+    "method": "Filename presence, tracked status and ignore rules only; no secret contents",
+    "webIgnoredFile": "Root .env.keysNew exists in original main checkout, absent from candidate worktree",
+    "apiIgnoredFiles": "Original API .env.local/.env.production excluded from import",
+    "localSetup": "Owner may copy web .env.keysNew to migrated root and API .env.local to apps/api for local use; preserve originals and validate relative references",
+    "hostRuntime": "Protected shared env files remain on host and are linked by deployment",
+    "secretFilesModified": false
+  },
+  "completedDate": "2026-10-25",
+  "ownerFinalReview": {
+    "question": 12,
+    "status": "approved",
+    "answer": "I confirm and approve the sequence and seven-day observation interval",
+    "observationDays": 7,
+    "observationStarts": "actual production cutover, not rehearsal or review approval",
+    "apiReleaseRetention": "active plus two rollback candidates; previous backend retained through observation",
+    "executionAuthorization": false,
+    "retirementAutomaticallyAuthorized": false
+  },
+  "phase5PreExecutionGates": [
+    "Production-mode compilation with intended effective release settings",
+    "Exact final commit/artifact/hash/target checks and effective GitHub protection verification",
+    "Separate authorization for actual merge/publication/deployment/hold-removal/authority-transfer/live-job/retirement actions",
+    "Seven-day post-cutover observation and verified recovery candidates before separately approved retirement"
+  ]
+}

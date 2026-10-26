@@ -1,0 +1,89 @@
+name: API CI
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - 'monorepo/phase3-npm'
+    paths:
+      - 'apps/api/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.npmrc'
+      - '.nvmrc'
+      - 'apps/web/package.json'
+      - '.github/workflows/api-*.yml'
+      - 'AGENTS.md'
+  pull_request:
+    paths:
+      - 'apps/api/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.npmrc'
+      - '.nvmrc'
+      - 'apps/web/package.json'
+      - '.github/workflows/api-*.yml'
+      - 'AGENTS.md'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: api-ci-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+defaults:
+  run:
+    working-directory: .
+
+jobs:
+  validate:
+    name: Validate pull request
+    runs-on: ubuntu-22.04
+    timeout-minutes: 15
+    steps:
+      - name: Check out source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version-file: .nvmrc
+          package-manager-cache: false
+
+      - name: Install dependencies
+        shell: bash
+        run: |
+          set -euo pipefail
+          npm install --global npm@11.19.0 --ignore-scripts
+          npm ci --ignore-scripts
+
+      - name: Run validation
+        run: npm run validate:api
+
+      - name: Install production dependencies and build standalone artifact
+        run: |
+          set -euo pipefail
+          npm ci --workspace=apps/api --omit=dev --include-workspace-root=false --ignore-scripts
+          cd apps/api
+          node -e "import('sharp')"
+          node scripts/releaseArtifact.js create "$GITHUB_SHA" "$RUNNER_TEMP/api.tar.gz"
+          node scripts/releaseArtifact.js inspect "$RUNNER_TEMP/api.tar.gz"
+          mkdir "$RUNNER_TEMP/api-release"
+          tar -xzf "$RUNNER_TEMP/api.tar.gz" -C "$RUNNER_TEMP/api-release"
+          cd "$RUNNER_TEMP/api-release"
+          node --check src/lpubeltsApiServer.js
+          node --check scripts/runCollectionExportAnalysis.js
+          node --check scripts/runFetchAnalyzeLogs.js
+          node -e "import('sharp')"
+
+      - name: Retain offline release candidate
+        uses: actions/upload-artifact@v4
+        with:
+          name: api-${{ github.sha }}
+          path: |
+            ${{ runner.temp }}/api.tar.gz
+            ${{ runner.temp }}/api.tar.gz.sha256
+          retention-days: 7

@@ -5,3 +5,7 @@ if [ "${CI:-}" != "true" ] && [ -s "$HOME/.nvm/nvm.sh" ]; then
 fi
 
 npm run test:ci
+
+if git diff --cached --name-only | grep -Eq '^(apps/api/|package(-lock)?\.json$|\.npmrc$|\.nvmrc$)'; then
+    npm run validate:api
+fi

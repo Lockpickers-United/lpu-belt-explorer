@@ -1,0 +1,607 @@
+{
+  "phase": 5,
+  "status": "in_progress",
+  "date": "2026-10-25",
+  "candidateCommit": "2725290cb7ddfa284113f7bb570992e9986fe6b0",
+  "productionCutoverExecuted": false,
+  "observationStartedAt": null,
+  "retirementExecuted": false,
+  "productionBuildComparison": {
+    "result": "passed",
+    "commits": {
+      "before": "22ec5c9fef8871aefa678eefe9bbedb0d695285a",
+      "after": "2725290cb7ddfa284113f7bb570992e9986fe6b0"
+    },
+    "node": "v24.21.0",
+    "classificationStage": "publish",
+    "sensitiveBuildInputs": "same synthetic placeholders; no hosted secret values",
+    "environment": "Same tracked production defaults loaded in memory; no environment files copied/modified; no browser/server/live service",
+    "fixedGeneratorClock": "2026-10-25T12:00:00.000Z",
+    "beforeFiles": 2754,
+    "afterFiles": 2754,
+    "changedFiles": [],
+    "catalogs": {
+      "awards.json": "944941583443048560ff7622754101e1e93947551337300cf102f7e1e5822e65",
+      "data.json": "869e864b97bb3481116c53711f826427016842b60f74674e31a9668c42cd5365",
+      "safelocks.json": "1fca7751ed5dcc4c774e07c49cccccddc7c53468f3126069f18a949515f7728a",
+      "glossary.json": "57bcac6a4b084330781266437fb3cca3bf9bcfb27bc894d1843f8d09dcc42b61",
+      "projects.json": "84bef237fc14e22d5d2c9bca04c7cb5fb2b295bcd999bd9597b6f166f78f8cf2",
+      "rafl.json": "ed7d3c8080c2d03f8097a45ba7eb889dd7be221e0e13036dbdb04b851a04731b",
+      "classification-catalog.json": "40bb57e1b7ba643da852c0d5871bed5029b0a62777d7889203e53c431ea81b59"
+    },
+    "exactHostedReleaseCertified": false
+  },
+  "hostedInspection": {
+    "queriedAt": "2026-10-25T23:03:52.818Z",
+    "method": "Read-only GitHub REST; variables/secrets names only except non-secret Classification stage; credentials used only in memory",
+    "repositories": {
+      "mgsecure/lpu-belt-explorer": {
+        "repository": {
+          "defaultBranch": "main",
+          "archived": false,
+          "fork": true,
+          "parent": "Lockpickers-United/lpu-belt-explorer"
+        },
+        "/branches/main": {
+          "sha": "3b0a7869988fb141c35be83eea2127a9ec3aca03",
+          "protected": false
+        },
+        "/environments": {
+          "environments": []
+        },
+        "/environments/production/variables": {
+          "httpStatus": 404
+        },
+        "/environments/production/secrets": {
+          "httpStatus": 404
+        },
+        "/environments/production/deployment-branch-policies": {
+          "httpStatus": 404
+        },
+        "/environments/github-pages/variables": {
+          "httpStatus": 404
+        },
+        "/environments/github-pages/secrets": {
+          "httpStatus": 404
+        },
+        "/pages": {
+          "httpStatus": 404
+        },
+        "/branches/main/protection": {
+          "httpStatus": 404
+        },
+        "/actions/workflows": {
+          "workflows": [
+            {
+              "id": 396170670,
+              "name": "API CI",
+              "path": ".github/workflows/api-ci.yml",
+              "state": "active"
+            },
+            {
+              "id": 80561627,
+              "name": "Build-N-Deploy",
+              "path": ".github/workflows/build.js.yml",
+              "state": "active"
+            },
+            {
+              "id": 113640744,
+              "name": "Import",
+              "path": ".github/workflows/import.js.yml",
+              "state": "active"
+            },
+            {
+              "id": 113640745,
+              "name": "PR Check",
+              "path": ".github/workflows/pr.js.yml",
+              "state": "active"
+            }
+          ]
+        },
+        "/environments/github-pages/deployment-branch-policies": {
+          "httpStatus": 404
+        },
+        "/actions/permissions/workflow": {
+          "metadata": {
+            "default_workflow_permissions": "write",
+            "can_approve_pull_request_reviews": true
+          }
+        },
+        "/rulesets?includes_parents=true": {
+          "metadata": []
+        },
+        "/actions/runs?status=in_progress&per_page=100": {
+          "runs": []
+        },
+        "/actions/runs?status=queued&per_page=100": {
+          "runs": []
+        },
+        "/actions/runs?status=waiting&per_page=100": {
+          "runs": []
+        },
+        "/branches/gh-pages": {
+          "sha": "af126f70d765915664e2970ab9b7345de5d6ed31",
+          "protected": false
+        },
+        "latestCompletedReleaseRuns": []
+      },
+      "Lockpickers-United/lpu-belt-explorer": {
+        "repository": {
+          "defaultBranch": "main",
+          "archived": false,
+          "fork": false,
+          "permissions": {
+            "admin": true,
+            "maintain": true,
+            "push": true,
+            "triage": true,
+            "pull": true
+          }
+        },
+        "/branches/main": {
+          "sha": "0e3dcba14fef65af722e4499272271639a6ddff5",
+          "protected": true
+        },
+        "/environments": {
+          "environments": [
+            {
+              "name": "github-pages",
+              "protectionRules": [
+                {
+                  "id": 1221678,
+                  "node_id": "GA_kwDOH7beQs4AEqQu",
+                  "type": "branch_policy"
+                }
+              ],
+              "branchPolicy": {
+                "protected_branches": false,
+                "custom_branch_policies": true
+              }
+            }
+          ]
+        },
+        "/environments/production/variables": {
+          "httpStatus": 404
+        },
+        "/environments/production/secrets": {
+          "httpStatus": 404
+        },
+        "/environments/production/deployment-branch-policies": {
+          "httpStatus": 404
+        },
+        "/environments/github-pages/variables": {
+          "names": [
+            "DEPLOY_ROOT",
+            "DEPLOY_ROOT_DEV",
+            "SFTP_HOST",
+            "SFTP_PORT",
+            "SFTP_USER",
+            "VITE_CLASSIFICATION_WRITE_STAGE",
+            "VITE_DISCORD_CLIENT_SECRET",
+            "VITE_FIREBASE_API_KEY",
+            "VITE_REDDIT_CLIENT_SECRET"
+          ],
+          "total": 9,
+          "classificationStage": "publish"
+        },
+        "/environments/github-pages/secrets": {
+          "names": [
+            "SFTP_KNOWN_HOSTS",
+            "SFTP_PRIVATE_KEY"
+          ],
+          "total": 2
+        },
+        "/pages": {
+          "cname": "lpubelts.com",
+          "source": {
+            "branch": "gh-pages",
+            "path": "/"
+          },
+          "buildType": "legacy",
+          "httpsEnforced": true,
+          "url": "https://lpubelts.com/"
+        },
+        "/branches/main/protection": {
+          "checks": null,
+          "review": null,
+          "enforceAdmins": {
+            "url": "https://api.github.com/repos/Lockpickers-United/lpu-belt-explorer/branches/main/protection/enforce_admins",
+            "enabled": false
+          },
+          "restrictions": null
+        },
+        "/actions/workflows": {
+          "workflows": [
+            {
+              "id": 48885378,
+              "name": "Build-N-Deploy",
+              "path": ".github/workflows/build.js.yml",
+              "state": "active"
+            },
+            {
+              "id": 48898694,
+              "name": "Import",
+              "path": ".github/workflows/import.js.yml",
+              "state": "active"
+            },
+            {
+              "id": 84984509,
+              "name": "PR Check",
+              "path": ".github/workflows/pr.js.yml",
+              "state": "active"
+            },
+            {
+              "id": 384019632,
+              "name": "Publish Classification catalog to development",
+              "path": ".github/workflows/publish-classification-catalog-dev.yml",
+              "state": "active"
+            },
+            {
+              "id": 161476229,
+              "name": "Dependabot Updates",
+              "path": "dynamic/dependabot/dependabot-updates",
+              "state": "active"
+            },
+            {
+              "id": 33937785,
+              "name": "pages-build-deployment",
+              "path": "dynamic/pages/pages-build-deployment",
+              "state": "active"
+            }
+          ]
+        },
+        "/environments/github-pages/deployment-branch-policies": {
+          "policies": [
+            {
+              "id": 971528,
+              "node_id": "MDE2OkdhdGVCcmFuY2hQb2xpY3k5NzE1Mjg=",
+              "name": "gh-pages",
+              "type": "branch"
+            },
+            {
+              "id": 4922326,
+              "node_id": "MDE2OkdhdGVCcmFuY2hQb2xpY3k0OTIyMzI2",
+              "name": "main",
+              "type": "branch"
+            }
+          ]
+        },
+        "/actions/permissions/workflow": {
+          "metadata": {
+            "default_workflow_permissions": "read",
+            "can_approve_pull_request_reviews": false
+          }
+        },
+        "/rulesets?includes_parents=true": {
+          "metadata": []
+        },
+        "/actions/runs?status=in_progress&per_page=100": {
+          "runs": []
+        },
+        "/actions/runs?status=queued&per_page=100": {
+          "runs": []
+        },
+        "/actions/runs?status=waiting&per_page=100": {
+          "runs": []
+        },
+        "/branches/gh-pages": {
+          "sha": "a22c44cb301eb3df5a33f8cb940c7494da5cfc97",
+          "protected": false
+        },
+        "latestCompletedReleaseRuns": [
+          {
+            "id": 40203075584,
+            "name": "pages build and deployment",
+            "status": "completed",
+            "conclusion": "success",
+            "sha": "a22c44cb301eb3df5a33f8cb940c7494da5cfc97",
+            "branch": "gh-pages",
+            "event": "dynamic",
+            "createdAt": "2026-10-25T14:37:04Z",
+            "url": "https://github.com/Lockpickers-United/lpu-belt-explorer/actions/runs/40203075584"
+          },
+          {
+            "id": 40202993451,
+            "name": "Build-N-Deploy",
+            "status": "completed",
+            "conclusion": "success",
+            "sha": "0e3dcba14fef65af722e4499272271639a6ddff5",
+            "branch": "main",
+            "event": "push",
+            "createdAt": "2026-10-25T14:36:00Z",
+            "url": "https://github.com/Lockpickers-United/lpu-belt-explorer/actions/runs/40202993451"
+          },
+          {
+            "id": 40164859331,
+            "name": "pages build and deployment",
+            "status": "completed",
+            "conclusion": "success",
+            "sha": "4fbd54c632255a04637ce2e875bfea8899507e38",
+            "branch": "gh-pages",
+            "event": "dynamic",
+            "createdAt": "2026-10-25T05:15:19Z",
+            "url": "https://github.com/Lockpickers-United/lpu-belt-explorer/actions/runs/40164859331"
+          }
+        ]
+      },
+      "Lockpickers-United/explore-lpubelts-com-node": {
+        "repository": {
+          "defaultBranch": "main",
+          "archived": false,
+          "fork": false,
+          "permissions": {
+            "admin": true,
+            "maintain": true,
+            "push": true,
+            "triage": true,
+            "pull": true
+          }
+        },
+        "/branches/main": {
+          "sha": "2fa33cfbe0ba5376ca0ad503bc528164ebf33194",
+          "protected": false
+        },
+        "/environments": {
+          "environments": [
+            {
+              "name": "production",
+              "protectionRules": [],
+              "branchPolicy": null
+            }
+          ]
+        },
+        "/environments/production/variables": {
+          "names": [
+            "DEPLOY_ROOT",
+            "HEALTHCHECK_URL",
+            "PM2_APP_NAME",
+            "REMOTE_NODE_BIN",
+            "SFTP_HOST",
+            "SFTP_PORT",
+            "SFTP_USER"
+          ],
+          "total": 7
+        },
+        "/environments/production/secrets": {
+          "names": [
+            "SFTP_KNOWN_HOSTS",
+            "SFTP_PRIVATE_KEY"
+          ],
+          "total": 2
+        },
+        "/environments/production/deployment-branch-policies": {
+          "httpStatus": 404
+        },
+        "/environments/github-pages/variables": {
+          "httpStatus": 404
+        },
+        "/environments/github-pages/secrets": {
+          "httpStatus": 404
+        },
+        "/pages": {
+          "httpStatus": 404
+        },
+        "/branches/main/protection": {
+          "httpStatus": 403
+        },
+        "/actions/workflows": {
+          "workflows": [
+            {
+              "id": 357527280,
+              "name": "Deploy production",
+              "path": ".github/workflows/deploy-production.yml",
+              "state": "active"
+            },
+            {
+              "id": 369295104,
+              "name": "Pull request CI",
+              "path": ".github/workflows/pull-request-ci.yml",
+              "state": "active"
+            },
+            {
+              "id": 161750153,
+              "name": "Dependabot Updates",
+              "path": "dynamic/dependabot/dependabot-updates",
+              "state": "active"
+            }
+          ]
+        },
+        "/environments/github-pages/deployment-branch-policies": {
+          "httpStatus": 404
+        },
+        "/actions/permissions/workflow": {
+          "metadata": {
+            "default_workflow_permissions": "read",
+            "can_approve_pull_request_reviews": false
+          }
+        },
+        "/rulesets?includes_parents=true": {
+          "httpStatus": 403
+        },
+        "/actions/runs?status=in_progress&per_page=100": {
+          "runs": []
+        },
+        "/actions/runs?status=queued&per_page=100": {
+          "runs": []
+        },
+        "/actions/runs?status=waiting&per_page=100": {
+          "runs": []
+        },
+        "/branches/gh-pages": {
+          "httpStatus": 404
+        },
+        "latestCompletedReleaseRuns": [
+          {
+            "id": 40152214333,
+            "name": "Deploy production",
+            "status": "completed",
+            "conclusion": "success",
+            "sha": "2fa33cfbe0ba5376ca0ad503bc528164ebf33194",
+            "branch": "main",
+            "event": "workflow_dispatch",
+            "createdAt": "2026-10-25T01:51:02Z",
+            "url": "https://github.com/Lockpickers-United/explore-lpubelts-com-node/actions/runs/40152214333"
+          },
+          {
+            "id": 40103339171,
+            "name": "Deploy production",
+            "status": "completed",
+            "conclusion": "success",
+            "sha": "1346063b1b95ff07e0e5cc82079a4712ee55af3f",
+            "branch": "main",
+            "event": "workflow_dispatch",
+            "createdAt": "2026-10-24T14:37:40Z",
+            "url": "https://github.com/Lockpickers-United/explore-lpubelts-com-node/actions/runs/40103339171"
+          },
+          {
+            "id": 40053388046,
+            "name": "Deploy production",
+            "status": "completed",
+            "conclusion": "success",
+            "sha": "4fe7280771588098afd3624813a9f5d25769aad9",
+            "branch": "main",
+            "event": "workflow_dispatch",
+            "createdAt": "2026-10-24T02:15:09Z",
+            "url": "https://github.com/Lockpickers-United/explore-lpubelts-com-node/actions/runs/40053388046"
+          }
+        ]
+      }
+    }
+  },
+  "ownerQuestion": 13,
+  "validation": {
+    "workflow": {
+      "result": "passed",
+      "yamlFiles": 4,
+      "bashBlocks": 28,
+      "unconditionalLiveHolds": 4,
+      "checkoutCases": 3,
+      "scope": "YAML parsing, bash -n for all workflow run blocks, retained holds and event-specific checkout selection. No workflow dispatch or host connection."
+    },
+    "ciPr": {
+      "command": "npm run ci-pr",
+      "cwd": "Phase 3 implementation worktree",
+      "node": "v24.21.0",
+      "exitCode": 0,
+      "lint": "passed",
+      "testFiles": 52,
+      "tests": 280,
+      "build": "test mode passed",
+      "warning": "Existing chunk-size warning retained"
+    },
+    "playwright": {
+      "command": "npm run e2e -- tests/e2e/locks.spec.js tests/e2e/safelocks.spec.js",
+      "exitCode": 0,
+      "passed": 5,
+      "sandboxFirstAttempt": "Preview listen EPERM; no browser assertions ran",
+      "retry": "Passed with loopback/browser execution permission"
+    },
+    "diffCheck": "Unstaged git diff --check passed in both trees; full cached check retains pre-existing implementation-plan Markdown trailing spaces; focused new Phase 5 cached files pass"
+  },
+  "externalEffects": "Read-only GitHub metadata requests only. No setting changes, deployment, publication, live-data jobs, commit, push, PR, authority transfer or retirement.",
+  "destinationEnvironmentDecision": {
+    "web": "github-pages",
+    "api": "api-production",
+    "oldApi": "production",
+    "provisioningVerified": true,
+    "authorizationOrOperationsPolicyChanges": false,
+    "candidateWorkflowBindingUpdated": true
+  },
+  "destinationEnvironmentVerification": {
+    "queriedAt": "2026-10-25T23:25:33.150Z",
+    "method": "Read-only GitHub REST; setting names only, no values recorded",
+    "repo": "Lockpickers-United/lpu-belt-explorer",
+    "environment": "api-production",
+    "/environments": {
+      "environments": [
+        {
+          "name": "api-production",
+          "protectionRules": [],
+          "branchPolicy": null
+        },
+        {
+          "name": "github-pages",
+          "protectionRules": [
+            {
+              "id": 1221678,
+              "node_id": "GA_kwDOH7beQs4AEqQu",
+              "type": "branch_policy"
+            }
+          ],
+          "branchPolicy": {
+            "protected_branches": false,
+            "custom_branch_policies": true
+          }
+        }
+      ]
+    },
+    "/environments/api-production/variables": {
+      "names": [
+        "DEPLOY_ROOT",
+        "HEALTHCHECK_URL",
+        "PM2_APP_NAME",
+        "REMOTE_NODE_BIN",
+        "SFTP_HOST",
+        "SFTP_PORT",
+        "SFTP_USER"
+      ],
+      "total": 7
+    },
+    "/environments/api-production/secrets": {
+      "names": [
+        "SFTP_KNOWN_HOSTS",
+        "SFTP_PRIVATE_KEY"
+      ],
+      "total": 2
+    },
+    "missingVariables": [],
+    "missingSecrets": [],
+    "present": true,
+    "passed": true
+  },
+  "ownerQuestionStatus": "resolved",
+  "heldCandidateReview": {
+    "baseCommit": "2725290cb7ddfa284113f7bb570992e9986fe6b0",
+    "branch": "monorepo/phase3-npm",
+    "publicationRepository": "mgsecure/lpu-belt-explorer",
+    "proposedCommitPaths": [
+      ".agents/references/firebase-data-safety.md",
+      ".github/workflows/api-deploy-production.yml",
+      ".github/workflows/build.js.yml",
+      "apps/api/.agents/references/deployment-topology.md",
+      "apps/api/.agents/references/development-operations.md",
+      "apps/api/.agents/references/production-releases.md",
+      "internal-docs/monorepo-developer-report.md",
+      "internal-docs/monorepo-implementation-plan.md",
+      "internal-docs/monorepo-owner-questions.md",
+      "internal-docs/monorepo-phase3-verification.json",
+      "internal-docs/monorepo-phase4-runbook.md",
+      "internal-docs/monorepo-phase4-verification.json",
+      "internal-docs/monorepo-phase5-runbook.md",
+      "internal-docs/monorepo-phase5-verification.json",
+      "internal-docs/monorepo-plan.md"
+    ],
+    "nonInternalDocsPatchSha256": "8e18303d6ba60500d3c338dd46d71fa1615dc06cf18a00fd028d49df9bb69807",
+    "nonInternalDocsFiles": {
+      ".agents/references/firebase-data-safety.md": "2346dbc1b4920ae54d068292493105138c1091ab54e25b33c1b70896f0611d47",
+      ".github/workflows/api-deploy-production.yml": "9a93fbd8b798a33abbf410edf2288ebded12c66a8f556ccbc5bfb973a4a8e72f",
+      ".github/workflows/build.js.yml": "cb3d49b2a09b40921f757370b960c12b2d3944055cfa5bdb6fa35a4aa0259180",
+      "apps/api/.agents/references/deployment-topology.md": "de8080df5ff5502667b260fd2cb3ab9807ff47cbf34d41eb88cf468b5792a646",
+      "apps/api/.agents/references/development-operations.md": "0b5697075fa636df112970a0811dee35a189c822f3600b55aed8f08b67319aa3",
+      "apps/api/.agents/references/production-releases.md": "26b971189caa0146645c8fcbb22aef2f519f4d1a002a3bc7ad69b18747807cfe"
+    },
+    "checks": {
+      "workflowYamlFiles": 4,
+      "bashSyntaxBlocks": 28,
+      "unconditionalLiveHolds": 4,
+      "checkoutCases": 3,
+      "result": "passed"
+    },
+    "frozenApiLocalHead": "2fa33cfbe0ba5376ca0ad503bc528164ebf33194",
+    "frozenApiLocalTrackedAndUntrackedClean": true,
+    "publicationAuthorized": true,
+    "finalCommit": null,
+    "exactFinalLinuxArtifact": null,
+    "authorization": "Owner explicitly authorized committing and pushing the held candidate to the existing CI branch; question 14 resolved."
+  }
+}

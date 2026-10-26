@@ -8,13 +8,17 @@ on:
   push:
     branches: [ "main" ]
     paths:
-      - 'src/**'
-      - 'public/**'
-      - 'scripts/**'
-      - 'index.html'
+      - 'apps/web/src/**'
+      - 'apps/web/public/**'
+      - 'apps/web/scripts/**'
+      - 'apps/web/index.html'
+      - 'apps/web/package.json'
+      - 'apps/web/vite.config.js'
+      - '.env.*'
       - 'package.json'
       - 'package-lock.json'
       - '.nvmrc'
+      - '.npmrc'
       - '.github/workflows/build.js.yml'
   workflow_run:
     workflows: [Import]
@@ -31,9 +35,15 @@ on:
           - read
           - publish
 
+defaults:
+  run:
+    working-directory: apps/web
+
 jobs:
   deploy:
-    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
+    # Migration hold: Phase 5 must restore a main-only release condition,
+    # accepting workflow_run only after a successful main-branch Import.
+    if: ${{ false }}
     name: Build-N-Deploy
     environment: github-pages
     permissions:
@@ -43,6 +53,17 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v7
+        with:
+          # Import commits generated data after its starting SHA. Preserve the
+          # existing successful-Import behavior by building the current main.
+          ref: ${{ github.event_name == 'workflow_run' && 'main' || github.sha }}
+
+      - name: Record checked-out release source
+        working-directory: .
+        shell: bash
+        run: |
+          set -euo pipefail
+          printf 'Web release source: `%s`\n' "$(git rev-parse HEAD)" >> "$GITHUB_STEP_SUMMARY"
 
       - name: Set up Node.js
         uses: actions/setup-node@v7
@@ -50,7 +71,10 @@ jobs:
           node-version-file: '.nvmrc'
   
       - name: Install dependencies
-        run: npm ci
+        working-directory: .
+        run: |
+          npm install --global npm@11.19.0 --ignore-scripts
+          npm ci
       - name: Validate catalog deployment configuration
         shell: bash
         env:
@@ -122,7 +146,7 @@ jobs:
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          publish_dir: ./apps/web/dist
 
       - name: Upload catalog snapshots
         shell: bash

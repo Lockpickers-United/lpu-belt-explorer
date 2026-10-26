@@ -6,8 +6,14 @@ env:
   GOOGLE_SHEET_ID: ${{ vars.GOOGLE_SHEET_ID }}
   RAFL_SHEET_ID: ${{ vars.RAFL_SHEET_ID }}
   
+defaults:
+  run:
+    working-directory: apps/web
+
 jobs:
   deploy:
+    # Migration hold: live import/upload requires a separately approved release.
+    if: ${{ false }}
     name: Import
     permissions:
       contents: write
@@ -24,7 +30,10 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm ci
+        working-directory: .
+        run: |
+          npm install --global npm@11.19.0 --ignore-scripts
+          npm ci
 
       - name: Import
         run: npm run import
@@ -35,4 +44,5 @@ jobs:
         with:
           commit_message: "Automated commit after import"
           commit_options: '--no-verify'
+          file_pattern: 'apps/web/src/data/*'
 

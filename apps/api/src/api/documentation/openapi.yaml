@@ -1,0 +1,1307 @@
+openapi: 3.1.0
+info:
+  title: LPU Belts API
+  version: 1.0.0
+  description: Versioned API for public collection stats and Firebase-backed user data.
+servers:
+  - url: http://localhost:8081/api/v1
+    description: Local development
+  - url: https://api.lpubelts.com/api/v1
+    description: Production
+tags:
+  - name: Reddit
+    description: Authenticated temporary Reddit OAuth and member inbox import.
+  - name: Discord
+    description: Authenticated, short-lived Discord OAuth identity for award import or one belt request.
+  - name: Classification
+    description: Authenticated modern votes, decisions, and publication history.
+  - name: Collection Stats
+    description: Public generated-summary collection statistics.
+  - name: Locks
+    description: Public lock-specific data generated from Firebase evidence.
+  - name: Users
+    description: Firebase-backed user profile data.
+paths:
+  /reddit/oauth/start:
+    post:
+      tags: [Reddit]
+      summary: Start a browser-bound Reddit import authorization
+      description: Requires a Firebase ID token. The redirect URI must exactly equal the configured root callback. State expires after 10 minutes and can be exchanged once.
+      operationId: startRedditOAuth
+      security: [{firebaseBearerAuth: []}]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {$ref: '#/components/schemas/RedditOAuthStart'}
+      responses:
+        '200': {$ref: '#/components/responses/RedditOAuthStartSuccess'}
+        '400': {$ref: '#/components/responses/Error'}
+        '401': {$ref: '#/components/responses/Error'}
+        '503': {$ref: '#/components/responses/Error'}
+  /reddit/oauth/exchange:
+    post:
+      tags: [Reddit]
+      summary: Exchange a Reddit code and read import inputs
+      description: Consumes UID- and nonce-bound state before contacting Reddit. Reads the verified identity, flair, and relevant moderator inbox messages, then attempts token revocation. An oversized or failed scan returns an error with no partial import data or bookmark update.
+      operationId: exchangeRedditOAuth
+      security: [{firebaseBearerAuth: []}]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {$ref: '#/components/schemas/RedditOAuthExchange'}
+      responses:
+        '200': {$ref: '#/components/responses/RedditOAuthExchangeSuccess'}
+        '400': {$ref: '#/components/responses/Error'}
+        '401': {$ref: '#/components/responses/Error'}
+        '413': {$ref: '#/components/responses/Error'}
+        '429': {$ref: '#/components/responses/Error'}
+        '502': {$ref: '#/components/responses/Error'}
+        '503': {$ref: '#/components/responses/Error'}
+        '504': {$ref: '#/components/responses/Error'}
+  /discord/oauth/start:
+    post:
+      tags: [Discord]
+      summary: Start a browser-bound Discord authorization
+      description: Requires a Firebase ID token. The redirect URI must exactly match a server-configured allowlist entry. State expires after 10 minutes and can be exchanged once.
+      operationId: startDiscordOAuth
+      security: [{firebaseBearerAuth: []}]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {$ref: '#/components/schemas/DiscordOAuthStart'}
+      responses:
+        '200': {$ref: '#/components/responses/DiscordOAuthStartSuccess'}
+        '400': {$ref: '#/components/responses/Error'}
+        '401': {$ref: '#/components/responses/Error'}
+        '503': {$ref: '#/components/responses/Error'}
+  /discord/oauth/exchange:
+    post:
+      tags: [Discord]
+      summary: Exchange Discord code for verified identity
+      description: Consumes the state bound to the Firebase UID and initiating browser nonce before contacting Discord. A beltRequest exchange creates a one-use posting grant valid for 15 minutes; import creates no grant.
+      operationId: exchangeDiscordOAuth
+      security: [{firebaseBearerAuth: []}]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {$ref: '#/components/schemas/DiscordOAuthExchange'}
+      responses:
+        '200': {$ref: '#/components/responses/DiscordOAuthExchangeSuccess'}
+        '400': {$ref: '#/components/responses/Error'}
+        '401': {$ref: '#/components/responses/Error'}
+        '502': {$ref: '#/components/responses/Error'}
+        '503': {$ref: '#/components/responses/Error'}
+  /belt-requests/discord:
+    post:
+      tags: [Discord]
+      summary: Post one belt request through the configured Discord webhook
+      description: Requires a Firebase ID token and a one-use posting grant from a beltRequest OAuth exchange. The server derives userId and userName from that grant, formats the final embed, and consumes the grant before one webhook attempt. Success confirms webhook delivery, not LockyJr acceptance. Posting is disabled until a target is explicitly configured.
+      operationId: postDiscordBeltRequest
+      security: [{firebaseBearerAuth: []}]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {$ref: '#/components/schemas/DiscordBeltRequestPost'}
+      responses:
+        '200': {$ref: '#/components/responses/DiscordBeltRequestPostSuccess'}
+        '400': {$ref: '#/components/responses/Error'}
+        '401': {$ref: '#/components/responses/Error'}
+        '403': {$ref: '#/components/responses/Error'}
+        '429': {$ref: '#/components/responses/Error'}
+        '502': {$ref: '#/components/responses/Error'}
+        '503': {$ref: '#/components/responses/Error'}
+        '504': {$ref: '#/components/responses/Error'}
+  /locks/{lockId}/videos:
+    get:
+      tags:
+        - Locks
+      summary: Get evidence videos for a lock
+      description: Returns public YouTube evidence details for a lock from the generated lock-video index.
+      operationId: getLockVideos
+      security: []
+      parameters:
+        - $ref: '#/components/parameters/LockId'
+      responses:
+        '200':
+          description: Public evidence videos for the lock.
+          headers:
+            Cache-Control:
+              schema:
+                type: string
+              example: public, max-age=300
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LockVideosResponse'
+        '400':
+          $ref: '#/components/responses/Error'
+        '404':
+          $ref: '#/components/responses/Error'
+        '429':
+          $ref: '#/components/responses/Error'
+        '500':
+          $ref: '#/components/responses/Error'
+  /stats/collections/locks:
+    get:
+      tags:
+        - Collection Stats
+      summary: Get aggregate lock collection stats
+      description: Returns aggregate lock save, ownership, and scorecard counts from a generated JSON summary.
+      operationId: getCollectionLockStats
+      security: []
+      responses:
+        '200':
+          description: Aggregate lock collection stats.
+          headers:
+            Cache-Control:
+              schema:
+                type: string
+              example: public, max-age=300
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LockStatsResponse'
+        '429':
+          $ref: '#/components/responses/Error'
+        '500':
+          $ref: '#/components/responses/Error'
+  /stats/collections/locks/own:
+    get:
+      tags:
+        - Collection Stats
+      summary: Get aggregate lock ownership counts
+      description: Returns only lock ID, name, and ownership count from the generated collection stats summary.
+      operationId: getCollectionLockOwnStats
+      security: []
+      responses:
+        '200':
+          description: Aggregate lock ownership counts.
+          headers:
+            Cache-Control:
+              schema:
+                type: string
+              example: public, max-age=300
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LockOwnStatsResponse'
+        '429':
+          $ref: '#/components/responses/Error'
+        '500':
+          $ref: '#/components/responses/Error'
+  /stats/collections/locks/scorecard:
+    get:
+      tags:
+        - Collection Stats
+      summary: Get aggregate lock scorecard counts
+      description: Returns only lock ID, name, and scorecard count from the generated collection stats summary.
+      operationId: getCollectionLockScorecardStats
+      security: []
+      responses:
+        '200':
+          description: Aggregate lock scorecard counts.
+          headers:
+            Cache-Control:
+              schema:
+                type: string
+              example: public, max-age=300
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LockScorecardStatsResponse'
+        '429':
+          $ref: '#/components/responses/Error'
+        '500':
+          $ref: '#/components/responses/Error'
+  /users/{id}/summary:
+    get:
+      tags:
+        - Users
+      summary: Get public user collection summary
+      description: Returns allowlisted public collection arrays for a Firebase user profile.
+      operationId: getUserSummary
+      security: []
+      parameters:
+        - $ref: '#/components/parameters/UserId'
+      responses:
+        '200':
+          description: Public user collection summary.
+          headers:
+            Cache-Control:
+              schema:
+                type: string
+              example: public, max-age=60
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserSummaryResponse'
+        '400':
+          $ref: '#/components/responses/Error'
+        '404':
+          $ref: '#/components/responses/Error'
+        '429':
+          $ref: '#/components/responses/Error'
+        '500':
+          $ref: '#/components/responses/Error'
+  /users/{id}:
+    get:
+      tags:
+        - Users
+      summary: Get public user collection summary
+      description: Alias for /users/{id}/summary.
+      operationId: getUserSummaryAlias
+      security: []
+      parameters:
+        - $ref: '#/components/parameters/UserId'
+      responses:
+        '200':
+          description: Public user collection summary.
+          headers:
+            Cache-Control:
+              schema:
+                type: string
+              example: public, max-age=60
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserSummaryResponse'
+        '400':
+          $ref: '#/components/responses/Error'
+        '404':
+          $ref: '#/components/responses/Error'
+        '429':
+          $ref: '#/components/responses/Error'
+        '500':
+          $ref: '#/components/responses/Error'
+  /users/{id}/wishlist:
+    get:
+      tags:
+        - Users
+      summary: Get public user wishlist
+      description: Returns the public wishlist array for a Firebase user profile.
+      operationId: getUserWishlist
+      security: []
+      parameters:
+        - $ref: '#/components/parameters/UserId'
+      responses:
+        '200':
+          description: Public user wishlist.
+          headers:
+            Cache-Control:
+              schema:
+                type: string
+              example: public, max-age=60
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserWishlistResponse'
+        '400':
+          $ref: '#/components/responses/Error'
+        '404':
+          $ref: '#/components/responses/Error'
+        '429':
+          $ref: '#/components/responses/Error'
+        '500':
+          $ref: '#/components/responses/Error'
+  /users/{id}/profile:
+    get:
+      tags:
+        - Users
+      summary: Get authenticated user profile
+      description: Returns the Firebase user profile for the matching authenticated user, or for admin callers.
+      operationId: getUserProfile
+      security:
+        - firebaseBearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/UserId'
+      responses:
+        '200':
+          description: Authenticated user profile.
+          headers:
+            Cache-Control:
+              schema:
+                type: string
+              example: private, no-store
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserProfileResponse'
+        '400':
+          $ref: '#/components/responses/Error'
+        '401':
+          $ref: '#/components/responses/Error'
+        '403':
+          $ref: '#/components/responses/Error'
+        '404':
+          $ref: '#/components/responses/Error'
+        '429':
+          $ref: '#/components/responses/Error'
+        '500':
+          $ref: '#/components/responses/Error'
+  /classification/entries/{entryId}/votes:
+    get:
+      tags: [Classification]
+      summary: Page modern votes for one expanded Classification lock
+      security: [{firebaseBearerAuth: []}]
+      parameters:
+        - $ref: '#/components/parameters/ClassificationEntryId'
+        - $ref: '#/components/parameters/ClassificationLimit'
+        - $ref: '#/components/parameters/ClassificationCursor'
+      responses:
+        '200': {$ref: '#/components/responses/ClassificationSuccess'}
+        '400': {$ref: '#/components/responses/Error'}
+        '401': {$ref: '#/components/responses/Error'}
+        '403': {$ref: '#/components/responses/Error'}
+        '409': {$ref: '#/components/responses/Error'}
+  /classification/entries/{entryId}/action:
+    get:
+      tags: [Classification]
+      summary: Get the current editable action for an admin
+      security: [{firebaseBearerAuth: []}]
+      parameters: [{$ref: '#/components/parameters/ClassificationEntryId'}]
+      responses:
+        '200': {$ref: '#/components/responses/ClassificationSuccess'}
+        '401': {$ref: '#/components/responses/Error'}
+        '403': {$ref: '#/components/responses/Error'}
+  /classification/actions/staged:
+    get:
+      tags: [Classification]
+      summary: List included staged actions without admin notes
+      security: [{firebaseBearerAuth: []}]
+      parameters: [{$ref: '#/components/parameters/ClassificationLimit'}]
+      responses:
+        '200': {$ref: '#/components/responses/ClassificationSuccess'}
+        '401': {$ref: '#/components/responses/Error'}
+        '403': {$ref: '#/components/responses/Error'}
+  /classification/publications:
+    get:
+      tags: [Classification]
+      summary: Page immutable publication headers
+      security: [{firebaseBearerAuth: []}]
+      parameters:
+        - $ref: '#/components/parameters/ClassificationLimit'
+        - $ref: '#/components/parameters/ClassificationCursor'
+      responses:
+        '200': {$ref: '#/components/responses/ClassificationSuccess'}
+        '400': {$ref: '#/components/responses/Error'}
+        '401': {$ref: '#/components/responses/Error'}
+        '403': {$ref: '#/components/responses/Error'}
+    post:
+      tags: [Classification]
+      summary: Publish an ordered batch of up to 50 included Staged actions
+      security: [{firebaseBearerAuth: []}]
+      parameters: [{$ref: '#/components/parameters/ClassificationIdempotencyKey'}]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {$ref: '#/components/schemas/ClassificationBatchRequest'}
+      responses:
+        '201': {$ref: '#/components/responses/ClassificationSuccess'}
+        '400': {$ref: '#/components/responses/Error'}
+        '401': {$ref: '#/components/responses/Error'}
+        '403': {$ref: '#/components/responses/Error'}
+        '409': {$ref: '#/components/responses/Error'}
+        '503': {$ref: '#/components/responses/Error'}
+  /classification/publications/single:
+    post:
+      tags: [Classification]
+      summary: Save and publish one form decision without other staged actions
+      security: [{firebaseBearerAuth: []}]
+      parameters: [{$ref: '#/components/parameters/ClassificationIdempotencyKey'}]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {$ref: '#/components/schemas/ClassificationSingleRequest'}
+      responses:
+        '201': {$ref: '#/components/responses/ClassificationSuccess'}
+        '400': {$ref: '#/components/responses/Error'}
+        '401': {$ref: '#/components/responses/Error'}
+        '403': {$ref: '#/components/responses/Error'}
+        '409': {$ref: '#/components/responses/Error'}
+        '503': {$ref: '#/components/responses/Error'}
+  /classification/publications/{publicationId}:
+    get:
+      tags: [Classification]
+      summary: Get one publication with fixed action intent and manual approval flags
+      security: [{firebaseBearerAuth: []}]
+      parameters: [{$ref: '#/components/parameters/ClassificationPublicationId'}]
+      responses:
+        '200': {$ref: '#/components/responses/ClassificationSuccess'}
+        '401': {$ref: '#/components/responses/Error'}
+        '403': {$ref: '#/components/responses/Error'}
+        '404': {$ref: '#/components/responses/Error'}
+  /classification/publications/{publicationId}/actions/{actionId}/approval:
+    patch:
+      tags: [Classification]
+      summary: Set manual production-site approval for one published action
+      security: [{firebaseBearerAuth: []}]
+      parameters:
+        - $ref: '#/components/parameters/ClassificationPublicationId'
+        - name: actionId
+          in: path
+          required: true
+          schema: {type: string, minLength: 1, maxLength: 128}
+        - $ref: '#/components/parameters/ClassificationIdempotencyKey'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              required: [approved]
+              properties:
+                approved: {type: boolean}
+      responses:
+        '200': {$ref: '#/components/responses/ClassificationSuccess'}
+        '400': {$ref: '#/components/responses/Error'}
+        '401': {$ref: '#/components/responses/Error'}
+        '403': {$ref: '#/components/responses/Error'}
+        '404': {$ref: '#/components/responses/Error'}
+        '409': {$ref: '#/components/responses/Error'}
+        '503': {$ref: '#/components/responses/Error'}
+  /classification/votes:
+    post:
+      tags: [Classification]
+      summary: Create the signed-in writer's one vote for a lock
+      security: [{firebaseBearerAuth: []}]
+      parameters: [{$ref: '#/components/parameters/ClassificationIdempotencyKey'}]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {$ref: '#/components/schemas/ClassificationVoteCreate'}
+      responses:
+        '201': {$ref: '#/components/responses/ClassificationSuccess'}
+        '400': {$ref: '#/components/responses/Error'}
+        '401': {$ref: '#/components/responses/Error'}
+        '403': {$ref: '#/components/responses/Error'}
+        '409': {$ref: '#/components/responses/Error'}
+        '503': {$ref: '#/components/responses/Error'}
+  /classification/votes/{voteId}/move:
+    post:
+      tags: [Classification]
+      summary: Move a vote to another lock as a classification admin
+      security: [{firebaseBearerAuth: []}]
+      parameters:
+        - $ref: '#/components/parameters/ClassificationVoteId'
+        - $ref: '#/components/parameters/ClassificationIdempotencyKey'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {$ref: '#/components/schemas/ClassificationVoteMove'}
+      responses:
+        '200': {$ref: '#/components/responses/ClassificationSuccess'}
+        '400': {$ref: '#/components/responses/Error'}
+        '401': {$ref: '#/components/responses/Error'}
+        '403': {$ref: '#/components/responses/Error'}
+        '404': {$ref: '#/components/responses/Error'}
+        '409': {$ref: '#/components/responses/Error'}
+        '503': {$ref: '#/components/responses/Error'}
+  /classification/votes/{voteId}:
+    patch:
+      tags: [Classification]
+      summary: Edit a vote with its expected revision
+      security: [{firebaseBearerAuth: []}]
+      parameters:
+        - $ref: '#/components/parameters/ClassificationVoteId'
+        - $ref: '#/components/parameters/ClassificationIdempotencyKey'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {$ref: '#/components/schemas/ClassificationVoteEdit'}
+      responses:
+        '200': {$ref: '#/components/responses/ClassificationSuccess'}
+        '400': {$ref: '#/components/responses/Error'}
+        '401': {$ref: '#/components/responses/Error'}
+        '403': {$ref: '#/components/responses/Error'}
+        '404': {$ref: '#/components/responses/Error'}
+        '409': {$ref: '#/components/responses/Error'}
+        '503': {$ref: '#/components/responses/Error'}
+    delete:
+      tags: [Classification]
+      summary: Delete an owned vote or delete as classification admin
+      security: [{firebaseBearerAuth: []}]
+      parameters:
+        - $ref: '#/components/parameters/ClassificationVoteId'
+        - $ref: '#/components/parameters/ClassificationIdempotencyKey'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {$ref: '#/components/schemas/ClassificationRevision'}
+      responses:
+        '200': {$ref: '#/components/responses/ClassificationSuccess'}
+        '400': {$ref: '#/components/responses/Error'}
+        '401': {$ref: '#/components/responses/Error'}
+        '403': {$ref: '#/components/responses/Error'}
+        '404': {$ref: '#/components/responses/Error'}
+        '409': {$ref: '#/components/responses/Error'}
+        '503': {$ref: '#/components/responses/Error'}
+  /classification/actions:
+    post:
+      tags: [Classification]
+      summary: Create one editable admin action for a lock
+      security: [{firebaseBearerAuth: []}]
+      parameters: [{$ref: '#/components/parameters/ClassificationIdempotencyKey'}]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {$ref: '#/components/schemas/ClassificationActionCreate'}
+      responses:
+        '201': {$ref: '#/components/responses/ClassificationSuccess'}
+        '400': {$ref: '#/components/responses/Error'}
+        '401': {$ref: '#/components/responses/Error'}
+        '403': {$ref: '#/components/responses/Error'}
+        '409': {$ref: '#/components/responses/Error'}
+        '503': {$ref: '#/components/responses/Error'}
+  /classification/actions/{actionId}:
+    patch:
+      tags: [Classification]
+      summary: Edit a nonpublished action
+      security: [{firebaseBearerAuth: []}]
+      parameters:
+        - $ref: '#/components/parameters/ClassificationActionId'
+        - $ref: '#/components/parameters/ClassificationIdempotencyKey'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {$ref: '#/components/schemas/ClassificationActionEdit'}
+      responses:
+        '200': {$ref: '#/components/responses/ClassificationSuccess'}
+        '400': {$ref: '#/components/responses/Error'}
+        '401': {$ref: '#/components/responses/Error'}
+        '403': {$ref: '#/components/responses/Error'}
+        '404': {$ref: '#/components/responses/Error'}
+        '409': {$ref: '#/components/responses/Error'}
+        '503': {$ref: '#/components/responses/Error'}
+    delete:
+      tags: [Classification]
+      summary: Delete a nonpublished action
+      security: [{firebaseBearerAuth: []}]
+      parameters:
+        - $ref: '#/components/parameters/ClassificationActionId'
+        - $ref: '#/components/parameters/ClassificationIdempotencyKey'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {$ref: '#/components/schemas/ClassificationRevision'}
+      responses:
+        '200': {$ref: '#/components/responses/ClassificationSuccess'}
+        '400': {$ref: '#/components/responses/Error'}
+        '401': {$ref: '#/components/responses/Error'}
+        '403': {$ref: '#/components/responses/Error'}
+        '404': {$ref: '#/components/responses/Error'}
+        '409': {$ref: '#/components/responses/Error'}
+        '503': {$ref: '#/components/responses/Error'}
+components:
+  securitySchemes:
+    firebaseBearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: Firebase ID token
+  parameters:
+    LockId:
+      name: lockId
+      in: path
+      required: true
+      description: Lock catalog ID.
+      schema:
+        type: string
+        minLength: 1
+        maxLength: 128
+        pattern: '^[A-Za-z0-9_-]+$'
+      example: '19573781'
+    UserId:
+      name: id
+      in: path
+      required: true
+      description: Firebase user ID.
+      schema:
+        type: string
+        minLength: 1
+        maxLength: 128
+      example: GGplAdctTfVDLVvYsfIADJmfp8f2
+    ClassificationEntryId:
+      name: entryId
+      in: path
+      required: true
+      schema: {type: string, minLength: 1, maxLength: 128}
+    ClassificationVoteId:
+      name: voteId
+      in: path
+      required: true
+      schema: {type: string, minLength: 1, maxLength: 128}
+    ClassificationActionId:
+      name: actionId
+      in: path
+      required: true
+      schema: {type: string, minLength: 1, maxLength: 128}
+    ClassificationPublicationId:
+      name: publicationId
+      in: path
+      required: true
+      schema: {type: string, minLength: 1, maxLength: 128}
+    ClassificationLimit:
+      name: limit
+      in: query
+      schema: {type: integer, minimum: 1, maximum: 100, default: 25}
+    ClassificationCursor:
+      name: cursor
+      in: query
+      schema: {type: string, maxLength: 512}
+    ClassificationIdempotencyKey:
+      name: Idempotency-Key
+      in: header
+      required: true
+      schema: {type: string, minLength: 8, maxLength: 128}
+  responses:
+    RedditOAuthStartSuccess:
+      description: Private Reddit authorization URL and opaque state.
+      headers:
+        Cache-Control:
+          schema: {type: string, const: 'private, no-store'}
+      content:
+        application/json:
+          schema: {$ref: '#/components/schemas/RedditOAuthStartResponse'}
+    RedditOAuthExchangeSuccess:
+      description: Private verified Reddit identity and bounded import inputs.
+      headers:
+        Cache-Control:
+          schema: {type: string, const: 'private, no-store'}
+      content:
+        application/json:
+          schema: {$ref: '#/components/schemas/RedditOAuthExchangeResponse'}
+    DiscordOAuthStartSuccess:
+      description: Private OAuth authorization URL and opaque state.
+      headers:
+        Cache-Control:
+          schema: {type: string, const: 'private, no-store'}
+      content:
+        application/json:
+          schema: {$ref: '#/components/schemas/DiscordOAuthStartResponse'}
+    DiscordOAuthExchangeSuccess:
+      description: Private verified Discord identity and optional one-use posting grant.
+      headers:
+        Cache-Control:
+          schema: {type: string, const: 'private, no-store'}
+      content:
+        application/json:
+          schema: {$ref: '#/components/schemas/DiscordOAuthExchangeResponse'}
+    DiscordBeltRequestPostSuccess:
+      description: The Discord webhook created a message in the configured target channel.
+      headers:
+        Cache-Control:
+          schema: {type: string, const: 'private, no-store'}
+      content:
+        application/json:
+          schema: {$ref: '#/components/schemas/DiscordBeltRequestPostResponse'}
+    ClassificationSuccess:
+      description: Firebase-backed Classification response; see the route descriptions for data shape.
+      headers:
+        Cache-Control:
+          schema: {type: string, const: 'private, no-store'}
+      content:
+        application/json:
+          schema: {$ref: '#/components/schemas/ClassificationResponse'}
+    Error:
+      description: Error response.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+  schemas:
+    RedditOAuthStart:
+      type: object
+      additionalProperties: false
+      required: [purpose, nonce, redirectUri]
+      properties:
+        purpose: {type: string, enum: [import, debugImport]}
+        nonce: {type: string, pattern: '^[a-f0-9]{32}$'}
+        redirectUri: {type: string, format: uri, maxLength: 512}
+    RedditOAuthExchange:
+      type: object
+      additionalProperties: false
+      required: [code, state, nonce]
+      properties:
+        code: {type: string, minLength: 1, maxLength: 2048}
+        state: {type: string, pattern: '^[A-Za-z0-9_-]{43}$'}
+        nonce: {type: string, pattern: '^[a-f0-9]{32}$'}
+    RedditOAuthStartResponse:
+      type: object
+      required: [metadata, data]
+      properties:
+        metadata: {$ref: '#/components/schemas/FirebaseMetadata'}
+        data:
+          type: object
+          required: [state, authorizeUrl]
+          properties:
+            state: {type: string}
+            authorizeUrl: {type: string, format: uri}
+    RedditOAuthExchangeResponse:
+      type: object
+      required: [metadata, data]
+      properties:
+        metadata: {$ref: '#/components/schemas/FirebaseMetadata'}
+        data:
+          type: object
+          required: [purpose, username, flairText, bookmark, nextBookmark, messages]
+          properties:
+            purpose: {type: string, enum: [import, debugImport]}
+            username: {type: string, pattern: '^[A-Za-z0-9_-]{3,20}$'}
+            flairText: {type: [string, 'null']}
+            bookmark: {type: [string, 'null'], description: Existing bookmark only when linked username matches verified Reddit identity.}
+            nextBookmark: {type: [string, 'null'], description: Persist only after the complete import succeeds.}
+            messages:
+              type: array
+              items:
+                type: object
+                required: [id, subject, body, createdUtc]
+                properties:
+                  id: {type: string}
+                  subject: {type: string}
+                  body: {type: string}
+                  createdUtc: {type: number}
+    DiscordOAuthStart:
+      type: object
+      additionalProperties: false
+      required: [purpose, nonce, redirectUri]
+      properties:
+        purpose: {type: string, enum: [import, beltRequest]}
+        returnTo: {type: [string, 'null'], enum: [/beltRequests, null], description: Required as /beltRequests for beltRequest; omitted or null for import.}
+        nonce: {type: string, pattern: '^[a-f0-9]{32}$'}
+        redirectUri: {type: string, format: uri, maxLength: 512}
+    DiscordOAuthExchange:
+      type: object
+      additionalProperties: false
+      required: [code, state, nonce]
+      properties:
+        code: {type: string, minLength: 1, maxLength: 2048}
+        state: {type: string, pattern: '^[A-Za-z0-9_-]{43}$'}
+        nonce: {type: string, pattern: '^[a-f0-9]{32}$'}
+    DiscordIdentity:
+      type: object
+      required: [discordId, username, avatarUrl, verifiedAt]
+      properties:
+        discordId: {type: string}
+        username: {type: string}
+        avatarUrl: {type: [string, 'null'], format: uri}
+        verifiedAt: {type: string, format: date-time}
+    DiscordOAuthStartResponse:
+      type: object
+      required: [metadata, data]
+      properties:
+        metadata: {$ref: '#/components/schemas/FirebaseMetadata'}
+        data:
+          type: object
+          required: [state, authorizeUrl]
+          properties:
+            state: {type: string}
+            authorizeUrl: {type: string, format: uri}
+    DiscordOAuthExchangeResponse:
+      type: object
+      required: [metadata, data]
+      properties:
+        metadata: {$ref: '#/components/schemas/FirebaseMetadata'}
+        data:
+          type: object
+          required: [purpose, returnTo, identity]
+          properties:
+            purpose: {type: string, enum: [import, beltRequest]}
+            returnTo: {type: [string, 'null']}
+            identity: {$ref: '#/components/schemas/DiscordIdentity'}
+            postingGrant: {type: string, description: Only present for beltRequest; send once to the posting endpoint.}
+    DiscordBeltRequestPost:
+      type: object
+      additionalProperties: false
+      required: [postingGrant, request]
+      properties:
+        postingGrant: {type: string, pattern: '^[A-Za-z0-9_-]{43}$'}
+        request:
+          type: object
+          additionalProperties: false
+          required: [requestBelt, entries, quests]
+          properties:
+            requestBelt: {type: string, maxLength: 32}
+            entries:
+              type: array
+              maxItems: 6
+              items:
+                type: object
+                additionalProperties: false
+                required: [lockName, belt, link]
+                properties:
+                  lockId: {type: string, maxLength: 128}
+                  matchId: {type: string, maxLength: 128}
+                  lockName: {type: string, maxLength: 160}
+                  belt: {type: string, maxLength: 32}
+                  link: {type: string, format: uri, maxLength: 2048, description: HTTP(S) evidence URL.}
+            quests:
+              type: array
+              maxItems: 2
+              items:
+                type: object
+                additionalProperties: false
+                required: [discipline, tier, details]
+                properties:
+                  discipline: {type: string, maxLength: 100}
+                  tier: {type: string, maxLength: 50}
+                  details: {type: string, maxLength: 500}
+            danRequestEvidence: {type: string, format: uri, maxLength: 2048, description: Required for Dan requests and must use HTTP(S).}
+            blueBeltProjectInfo: {type: string, maxLength: 1000}
+            blackBeltMentoringInfo: {type: string, maxLength: 1000}
+            notes: {type: string, maxLength: 1000}
+            redditUsername: {type: string, pattern: '^[A-Za-z0-9_-]{3,20}$'}
+    DiscordBeltRequestPostResponse:
+      type: object
+      required: [metadata, data]
+      properties:
+        metadata: {$ref: '#/components/schemas/DiscordMetadata'}
+        data:
+          type: object
+          required: [messageId, channelId, guildId, messageUrl]
+          properties:
+            messageId: {type: string}
+            channelId: {type: string}
+            guildId: {type: string}
+            messageUrl: {type: string, format: uri}
+    ClassificationResponse:
+      type: object
+      required: [metadata, data]
+      properties:
+        metadata: {$ref: '#/components/schemas/FirebaseMetadata'}
+        data:
+          description: Route-specific vote, action, or publication data described in the Classification API documentation.
+    ClassificationRevision:
+      type: object
+      additionalProperties: false
+      required: [expectedRevision]
+      properties:
+        expectedRevision: {type: integer, minimum: 1}
+    ClassificationVoteCreate:
+      type: object
+      additionalProperties: false
+      required: [entryId, votedBelt]
+      properties:
+        entryId: {type: string, minLength: 1, maxLength: 128}
+        votedBelt: {$ref: '#/components/schemas/ClassificationBelt'}
+        comment: {type: [string, 'null'], maxLength: 2000}
+        mediaUrl: {type: [string, 'null'], maxLength: 2048, format: uri}
+    ClassificationVoteEdit:
+      type: object
+      additionalProperties: false
+      required: [expectedRevision, votedBelt]
+      properties:
+        expectedRevision: {type: integer, minimum: 1}
+        votedBelt: {$ref: '#/components/schemas/ClassificationBelt'}
+        comment: {type: [string, 'null'], maxLength: 2000}
+        mediaUrl: {type: [string, 'null'], maxLength: 2048, format: uri}
+    ClassificationVoteMove:
+      type: object
+      additionalProperties: false
+      required: [entryId, expectedRevision]
+      properties:
+        entryId: {type: string, minLength: 1, maxLength: 128}
+        expectedRevision: {type: integer, minimum: 1}
+    ClassificationActionCreate:
+      type: object
+      additionalProperties: false
+      required: [entryId, status]
+      properties:
+        entryId: {type: string, minLength: 1, maxLength: 128}
+        status: {type: string, enum: [Draft, Pending, Staged, Re-opened, Settled]}
+        action: {type: [string, 'null'], enum: [Belt Change, Sameline, Add New Sameline, Delete, Other, null]}
+        updatedBelt: {$ref: '#/components/schemas/ClassificationNullableBelt'}
+        samelineTargetId: {type: [string, 'null'], maxLength: 128}
+        newSamelineName: {type: [string, 'null'], maxLength: 256, description: Required for Add New Sameline; the lock name to add to the existing entry.}
+        note: {type: [string, 'null'], maxLength: 4000}
+        adminNote: {type: [string, 'null'], maxLength: 4000}
+        omitChangelog: {type: boolean}
+    ClassificationActionEdit:
+      type: object
+      additionalProperties: false
+      required: [expectedRevision, status]
+      properties:
+        expectedRevision: {type: integer, minimum: 1}
+        status: {type: string, enum: [Draft, Pending, Staged, Re-opened, Settled]}
+        action: {type: [string, 'null'], enum: [Belt Change, Sameline, Add New Sameline, Delete, Other, null]}
+        updatedBelt: {$ref: '#/components/schemas/ClassificationNullableBelt'}
+        samelineTargetId: {type: [string, 'null'], maxLength: 128}
+        newSamelineName: {type: [string, 'null'], maxLength: 256, description: Required for Add New Sameline; the lock name to add to the existing entry.}
+        note: {type: [string, 'null'], maxLength: 4000}
+        adminNote: {type: [string, 'null'], maxLength: 4000}
+        omitChangelog: {type: boolean}
+    ClassificationBatchRequest:
+      type: object
+      additionalProperties: false
+      required: [actions]
+      properties:
+        actions:
+          type: array
+          minItems: 1
+          maxItems: 50
+          items:
+            type: object
+            additionalProperties: false
+            required: [actionId, expectedRevision]
+            properties:
+              actionId: {type: string, minLength: 1, maxLength: 128}
+              expectedRevision: {type: integer, minimum: 1}
+    ClassificationSingleRequest:
+      type: object
+      additionalProperties: false
+      required: [entryId, expectedRevision, action, omitChangelog]
+      properties:
+        entryId: {type: string, minLength: 1, maxLength: 128}
+        actionId: {type: [string, 'null'], maxLength: 128}
+        expectedRevision: {type: [integer, 'null'], minimum: 1}
+        action: {type: string, enum: [Belt Change, Sameline, Add New Sameline, Delete, Other]}
+        updatedBelt: {$ref: '#/components/schemas/ClassificationNullableBelt'}
+        samelineTargetId: {type: [string, 'null'], maxLength: 128}
+        newSamelineName: {type: [string, 'null'], maxLength: 256, description: Required for Add New Sameline; the lock name to add to the existing entry.}
+        note: {type: [string, 'null'], maxLength: 4000}
+        adminNote: {type: [string, 'null'], maxLength: 4000}
+        omitChangelog: {type: boolean, const: false}
+    ClassificationBelt:
+      type: string
+      enum: [White, Yellow, Orange, Green, Blue, Purple, Brown, Red,
+        Black 1, Black 2, Black 3, Black 4, Black 5]
+    ClassificationNullableBelt:
+      type: [string, 'null']
+      enum: [White, Yellow, Orange, Green, Blue, Purple, Brown, Red,
+        Black 1, Black 2, Black 3, Black 4, Black 5, null]
+    ApiMetadata:
+      type: object
+      additionalProperties: true
+      properties:
+        source:
+          type: string
+          enum:
+            - firebase
+            - generated-summary
+        updatedDateTime:
+          type: string
+          format: date-time
+        fetchedDateTime:
+          type: string
+          format: date-time
+    GeneratedSummaryMetadata:
+      allOf:
+        - $ref: '#/components/schemas/ApiMetadata'
+        - type: object
+          required:
+            - source
+            - updatedDateTime
+          properties:
+            source:
+              const: generated-summary
+            updatedDateTime:
+              type: string
+              format: date-time
+    DiscordMetadata:
+      allOf:
+        - $ref: '#/components/schemas/ApiMetadata'
+        - type: object
+          required: [source, fetchedDateTime]
+          properties:
+            source: {const: discord}
+            fetchedDateTime: {type: string, format: date-time}
+    FirebaseMetadata:
+      allOf:
+        - $ref: '#/components/schemas/ApiMetadata'
+        - type: object
+          required:
+            - source
+            - fetchedDateTime
+          properties:
+            source:
+              const: firebase
+            fetchedDateTime:
+              type: string
+              format: date-time
+    GeneratedSummaryFetchMetadata:
+      allOf:
+        - $ref: '#/components/schemas/ApiMetadata'
+        - type: object
+          required:
+            - source
+            - fetchedDateTime
+          properties:
+            source:
+              const: generated-summary
+            fetchedDateTime:
+              type: string
+              format: date-time
+    LockVideosResponse:
+      type: object
+      required:
+        - metadata
+        - data
+      properties:
+        metadata:
+          $ref: '#/components/schemas/GeneratedSummaryFetchMetadata'
+        data:
+          type: object
+          required:
+            - lockId
+            - videos
+          properties:
+            lockId:
+              type: string
+              example: '19573781'
+            videos:
+              type: array
+              items:
+                $ref: '#/components/schemas/LockVideo'
+    LockVideo:
+      type: object
+      required:
+        - userId
+        - pickerName
+        - pickerIsBlackBelt
+        - url
+        - date
+      properties:
+        userId:
+          type: string
+          example: NdkmYGydSHfPTcj5xuqjwSyJJI42
+        pickerName:
+          type: string
+          example: Greenish
+        pickerIsBlackBelt:
+          type: boolean
+          example: true
+        url:
+          type: string
+          format: uri
+          example: https://youtu.be/ENKxPd9X5qQ
+        date:
+          type: string
+          format: date
+          description: Date associated with the evidence entry.
+          example: '2024-05-15'
+    LockStatsResponse:
+      type: object
+      required:
+        - metadata
+        - data
+      properties:
+        metadata:
+          $ref: '#/components/schemas/GeneratedSummaryMetadata'
+        data:
+          type: object
+          required:
+            - locks
+          properties:
+            locks:
+              type: array
+              items:
+                $ref: '#/components/schemas/LockStats'
+    LockOwnStatsResponse:
+      type: object
+      required:
+        - metadata
+        - data
+      properties:
+        metadata:
+          $ref: '#/components/schemas/GeneratedSummaryMetadata'
+        data:
+          type: object
+          required:
+            - locks
+          properties:
+            locks:
+              type: array
+              items:
+                $ref: '#/components/schemas/LockOwnStats'
+    LockScorecardStatsResponse:
+      type: object
+      required:
+        - metadata
+        - data
+      properties:
+        metadata:
+          $ref: '#/components/schemas/GeneratedSummaryMetadata'
+        data:
+          type: object
+          required:
+            - locks
+          properties:
+            locks:
+              type: array
+              items:
+                $ref: '#/components/schemas/LockScorecardStats'
+    LockStats:
+      type: object
+      required:
+        - id
+        - name
+        - totalSaves
+        - ownCount
+        - scorecardCount
+      properties:
+        id:
+          type: string
+          example: 2455f0ae
+        name:
+          type: string
+          example: Master Lock 140 Series, 9140 EURD
+        totalSaves:
+          type: integer
+          minimum: 0
+          example: 4023
+        ownCount:
+          type: integer
+          minimum: 0
+          example: 1850
+        scorecardCount:
+          type: integer
+          minimum: 0
+          example: 246
+    LockOwnStats:
+      type: object
+      required:
+        - id
+        - name
+        - ownCount
+      properties:
+        id:
+          type: string
+          example: 2455f0ae
+        name:
+          type: string
+          example: Master Lock 140 Series, 9140 EURD
+        ownCount:
+          type: integer
+          minimum: 0
+          example: 1850
+    LockScorecardStats:
+      type: object
+      required:
+        - id
+        - name
+        - scorecardCount
+      properties:
+        id:
+          type: string
+          example: 2455f0ae
+        name:
+          type: string
+          example: Master Lock 140 Series, 9140 EURD
+        scorecardCount:
+          type: integer
+          minimum: 0
+          example: 246
+    UserSummaryResponse:
+      type: object
+      required:
+        - metadata
+        - data
+      properties:
+        metadata:
+          $ref: '#/components/schemas/FirebaseMetadata'
+        data:
+          type: object
+          required:
+            - userId
+            - collections
+          properties:
+            userId:
+              type: string
+              example: GGplAdctTfVDLVvYsfIADJmfp8f2
+            collections:
+              type: object
+              required:
+                - safelocksOwn
+                - scorecard
+                - own
+                - wishlist
+              properties:
+                safelocksOwn:
+                  $ref: '#/components/schemas/IdList'
+                scorecard:
+                  $ref: '#/components/schemas/IdList'
+                own:
+                  $ref: '#/components/schemas/IdList'
+                wishlist:
+                  $ref: '#/components/schemas/IdList'
+    UserWishlistResponse:
+      type: object
+      required:
+        - metadata
+        - data
+      properties:
+        metadata:
+          $ref: '#/components/schemas/FirebaseMetadata'
+        data:
+          type: object
+          required:
+            - userId
+            - wishlist
+          properties:
+            userId:
+              type: string
+              example: GGplAdctTfVDLVvYsfIADJmfp8f2
+            wishlist:
+              $ref: '#/components/schemas/IdList'
+    UserProfileResponse:
+      type: object
+      required:
+        - metadata
+        - data
+      properties:
+        metadata:
+          $ref: '#/components/schemas/FirebaseMetadata'
+        data:
+          type: object
+          required:
+            - userId
+            - profile
+          properties:
+            userId:
+              type: string
+              example: GGplAdctTfVDLVvYsfIADJmfp8f2
+            profile:
+              type: object
+              additionalProperties: true
+              description: Authenticated Firebase profile object. This should be narrowed to an explicit allowlist before broad external use.
+    IdList:
+      type: array
+      items:
+        type: string
+      example:
+        - ab1e901f
+        - 48cf387f
+    ErrorResponse:
+      type: object
+      required:
+        - error
+      properties:
+        error:
+          type: object
+          required:
+            - message
+          additionalProperties: true
+          properties:
+            message:
+              type: string
+            code:
+              type: string
+            requestId:
+              type: string
+            path:
+              type: string
+            method:
+              type: string

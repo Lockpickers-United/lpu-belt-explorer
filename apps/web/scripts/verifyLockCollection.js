@@ -1,0 +1,104 @@
+import fs from 'fs'
+import admin from 'firebase-admin'
+import {getFirestore} from 'firebase-admin/firestore'
+
+const serviceAccount = JSON.parse(fs.readFileSync('../../../keys/lpu-belt-explorer-firebase-adminsdk.json'))
+const app = admin.initializeApp({
+    credential: admin.credential.cert(serviceAccount),
+    databaseURL: 'https://lpu-belt-explorer.firebaseio.com'
+})
+
+const entries = JSON.parse(fs.readFileSync('../src/data/data.json', 'utf8'))
+
+////////////////////////////////////////////////
+// change to (default) and true for production
+
+//const db = getFirestore(app, 'lpubelts-dev')
+const db = getFirestore(app)
+const _WRITE_TO_DB = true
+
+const userId = 'S131zvhcryUvHckhdkVboIDRQnF3'
+
+////////////////////////////////////////////////
+
+const ref = db.doc(`/lockcollections/${userId}`)
+const profile = await ref.get()
+//console.log(profile.data())
+
+//const collectionTypes = ['own', 'picked', 'recorded', 'recordedLocks', 'wishlist']
+const collectionTypes = ['own']
+
+const _badIds = collectionTypes.reduce((acc, collection) => {
+
+    console.log(`user ${userId} collection ${collection} : ${profile.data()[collection].length}`)
+
+    profile.data()[collection].forEach(id => {
+
+        const entry = entries.find(e => e.id === id)
+
+        console.log(`${id} :`, entry.belt)
+
+        if (!entry) {
+            acc.push(id)
+            console.log(`user ${userId} collection ${collection} id ${id} not found`)
+        }
+    })
+
+    return acc
+},[])
+
+
+/*
+// update old => new projectIds in evidence collection 
+
+const evidDocs = await db.collection('evidence').where('projectId', 'in', Object.keys(newIdFromOld)).get()
+let impactedUsers = []
+const evidBatch = db.batch()
+evidDocs.forEach(rec => {
+    const oldId = rec.data().projectId
+    const newId = newIdFromOld[oldId]
+    impactedUsers.push(rec.data().userId)
+    console.log(`user ${rec.data().userId} evidence ${rec.ref.id} projectId: ${oldId} => ${newId}`)
+    evidBatch.update(rec.ref, {projectId: newId})    
+})
+if (WRITE_TO_DB) {
+    await evidBatch.commit()
+}
+
+// clear all impacted users from the query cache
+
+const cacheKeys = [...new Set(impactedUsers)].map(id => `activity: userId == ${id}`)
+const cacheBatch = db.batch()
+cacheKeys.forEach(key => {
+    const ref = db.collection('query-cache').doc(key)
+    console.log(`query-cache clear ${key}`)
+    cacheBatch.delete(ref)
+})
+if (WRITE_TO_DB) {
+    await cacheBatch.commit()
+}
+
+// update old => new projectIds in the various collection arrays
+
+// Note that while it is simple to collapse this loop into a 
+// single query and batch update, firestore has a max limit of 
+// 30 disjunctions. We therefore choose to scale by number of 
+// id changes, rather than collection types x id changes, which 
+// would quickly reach the maximum.
+
+const collectionTypes = ['own', 'picked', 'recorded', 'recordedLocks', 'wishlist']
+for (let idx=0; idx < collectionTypes.length; idx++) {
+    const type = collectionTypes[idx]  
+    const collectDocs = await db.collection('lockcollections').where(type, 'array-contains-any', Object.keys(newIdFromOld)).get()
+    const collectBatch = db.batch()
+    collectDocs.forEach(rec => {
+        const newCollection = rec.data()[type].map(id => newIdFromOld[id] ? newIdFromOld[id] : id)
+        console.log(`lockcollections ${rec.ref.id} ${type} updated`)
+        collectBatch.update(rec.ref, {[type]: newCollection})
+    })
+    if (WRITE_TO_DB) {
+        await collectBatch.commit()
+    }
+}
+
+*/
