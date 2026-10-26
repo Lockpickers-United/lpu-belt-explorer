@@ -503,7 +503,7 @@ The owner confirmed moving `.env.keysNew` into `apps/web`, then asked: “Can yo
 
 ## 23. Publish verified env cleanup and restore the two manual workflows
 
-**Owner approved — execution in progress**
+**Resolved and executed — 2026-10-26**
 
 Approve committing/pushing the concrete local Phase 5 cleanup and the prepared three-file manual-workflow patch to the existing CI fork, opening a PR to `Lockpickers-United/lpu-belt-explorer` main, and normal-merging after fresh PR checks and drift/recovery preflight pass?
 
@@ -518,9 +518,16 @@ This request is required by [AGENTS.md](../AGENTS.md) Safety invariants: “Do n
 
 **Owner answer:** “I approve question 23.”
 
-**Status:** Publication/restoration and scoped verification/recovery authorized. Fresh preflight, normal checks and exact approved scope remain required; neither manual workflow will be dispatched.
+**Status:** Approved publication/restoration executed and verified through PR #335/run 40371531547. Neither manual workflow was dispatched. No owner response remains pending.
 
 
 ### Question 23 execution checkpoint — owner archive verified
 
 Owner reports: “I archived the old repo on github.” Authenticated GitHub REST independently confirms `Lockpickers-United/explore-lpubelts-com-node` has `archived=true`, with main still `2fa33cfbe0ba5376ca0ad503bc528164ebf33194`. This supersedes the earlier unauthenticated metadata limitation. The agent made no archive mutation. Recovery preflight passes: target settings/protections, pinned Linux Node, healthy current API, complete selected recovery releases, one owner per scheduled job, retained current Pages and all 14 matching catalogs. Cleanup/restoration publication remains in progress under the existing question 23 approval.
+
+
+### Question 23 execution result — Phase 5 complete
+
+[PR #335](https://github.com/Lockpickers-United/lpu-belt-explorer/pull/335) normal-merged candidate `56b0a22c8a4f053848c21965bf623f4e815a5571` as main `bef3de9b684acf5f2f8e15fd7d24533cc9e33d10` after both organization PR checks passed. [Build-N-Deploy 40371531547](https://github.com/Lockpickers-United/lpu-belt-explorer/actions/runs/40371531547) succeeded. Pages `df1debe216a4e3fb081c219e513567d9ae9b193b`, exact checkout/compiled production settings, served file hashes, all 14 catalog hashes, API identity and public/browser checks pass. Of 2,755 Pages files, 2,754 are identical to the prior release; only `version.json` changed.
+
+Import and the development catalog workflow are restored as manual-only/main-only. No dispatch, extra API deployment, exporter/cron execution, Firebase deployment, pruning or host shutdown occurred. No rollback was required. Owner archival independently verifies `archived=true` with frozen main unchanged. The private durable bundle at `/Users/nealbayless/LOCAL/monorepo-recovery/phase5-finalize-40371531547` contains 69 byte/hash-verified files. Phase 5 is complete; seven-day operating/job evidence remains explicitly waived by the earlier owner decision. No further owner review is pending for this phase. Final progress/evidence updates remain local/uncommitted to preserve the exact published candidate and existing owner staging.

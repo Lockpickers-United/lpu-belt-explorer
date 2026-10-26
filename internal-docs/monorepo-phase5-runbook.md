@@ -1,6 +1,6 @@
 # Phase 5 production cutover and retirement ledger
 
-Status: **In progress — cutover verified; observation completed early; old source read-only by owner report; cleanup publication/manual-workflow restoration pending** (2026-10-26). Questions 17/18 authorized API transfer/activation and question 20 completed web publication. Owner decisions in questions 21/22 end observation early and relocate/rename the private web key; question 23 covers the remaining concrete publication/restoration review. [Evidence](monorepo-phase5-verification.json), [owner question 16](monorepo-owner-questions.md#16-production-target-and-recovery-preflight-before-authority-transfer), [developer report](monorepo-developer-report.md).
+Status: **Complete — final publication verified; old source archived; manual-only/main-only workflows restored** (2026-10-26). Question 23 executed via PR #335/run 40371531547; observation completed early by owner decision. [Evidence](monorepo-phase5-verification.json), [owner questions](monorepo-owner-questions.md), [developer report](monorepo-developer-report.md). Historical preparation/execution records below preserve the controls and evidence at each earlier stage.
 
 ## Verified starting point
 
@@ -39,7 +39,7 @@ Observation started after verified cutover at `2026-10-26T03:18:52Z`. The owner 
 
 ## Source retirement and retained recovery
 
-The owner reports marking the last old API publication final and making `Lockpickers-United/explore-lpubelts-com-node` read-only. Record source retirement as owner-executed, not an agent archive operation. Public unauthenticated GitHub metadata returned 404 and this session has no GitHub CLI/authenticated connector; no independent `archived=true`, final tag or current workflow-state claim is made. Prior approved transfer disabled/drained old API workflow `357527280`.
+The owner reports marking the last old API publication final and making `Lockpickers-United/explore-lpubelts-com-node` read-only. Record source retirement as owner-executed, not an agent archive operation. An initial unauthenticated GitHub request returned 404. The existing Git credential helper subsequently enabled authenticated inspection: after the owner archived the repository, `archived=true`, unchanged frozen main and the disabled old workflow were independently verified. No final tag name is inferred or agent archive mutation claimed. Prior approved transfer disabled/drained old API workflow `357527280`.
 
 The monorepo is the sole release source. Existing production cron commands follow stable `current/scripts` paths and require no duplicate installation; API/WebStorm mappings remain app-root mappings. Root Dependabot already covers the shared workspace lockfile. Keep the previously verified environment/branch protections unchanged and direct ongoing fixes/reviews here; Neal Bayless remains release/settings coordinator.
 
@@ -58,7 +58,7 @@ Retain historical source, previous current `2fa33cfbe0ba5376ca0ad503bc528164ebf3
 | Authenticated production/browser checks | API public/runtime/anonymous checks pass; question 19 owner confirms authenticated owner/admin read scenarios passed; web release/browser checks pass |
 | Observation | Completed early by owner decision on 2026-10-26; original seven-day evidence waived, not collected |
 | Source retirement | Owner reports final old publication/read-only repository; preserve history and host recovery. No agent archive, shutdown or pruning |
-| Local env cleanup / remaining manual jobs | App-local defaults/configuration and `.env.keys` rename implemented/verified locally. Both jobs remain held; question 23 reviews publication/restoration |
+| Local env cleanup / manual jobs | Question 23 published/verified app-local defaults and `.env.keys` lookup via #335/run 40371531547. Both jobs manual-only/main-only; no dispatch |
 
 
 Provisioning update (`2026-10-25T23:25:33Z`): destination `api-production` is present with all seven required variable names/two secret names and no reviewer/branch policy, matching old API environment protection. Question 13 is closed. Original missing-environment findings above are historical. No secret/value correctness or host-routing certification is implied.
@@ -135,3 +135,14 @@ Independent served index/version/Classification/Auth/data-URL chunk hashes match
 Post-release API verification passes **25 gates** and still identifies approved API release `44026a8c1c71ee361caf3ab43913361502f97bf7-40258859190-1`; Node/PM2/Sharp/readiness/public/anonymous handling/shared boundaries/single-owner cron/recovery releases remain valid. This web release did not redeploy the API. Import and development-catalog holds remain; old API workflow stays disabled. No extra dispatch, import/export/cron execution, Firebase deployment, pruning or retirement occurred. No rollback was needed. Four automatic Dependabot update-generation jobs again failed (body-parser, @fastify/busboy, proxy-addr, ip-address); these are separate from successful release/PR CI and no upgrade was attempted.
 
 **Seven-day observation started `2026-10-26T03:18:52Z`; earliest retirement review `2026-11-02T03:18:52Z`.** Retain the previous backend/frozen repository, previous current and both selected complete API recovery releases, and all private Pages/catalog recovery bundles. Normal scheduled-job/health operating evidence is still required; elapsed time alone authorizes no retirement. Manual Import/development-catalog hold restoration and retirement remain separately gated. Durable release evidence/output is at `/Users/nealbayless/LOCAL/monorepo-recovery/phase5-web-release-40263182081`, outside Git with private permissions. Progress/source-reference documentation remains local/uncommitted; the published PR contains only the approved two files, and existing owner staging is preserved.
+
+
+## Final question 23 publication and Phase 5 completion
+
+PR #335 merged as `bef3de9b684acf5f2f8e15fd7d24533cc9e33d10`; automatic run 40371531547 succeeded. Pages deploy completed `2026-10-26T17:46:17Z`, all 14 catalog snapshots were verified/activated by `17:46:27Z`. Pages commit `df1debe216a4e3fb081c219e513567d9ae9b193b`, archive SHA-256 `c50ca81a7a9ebdecfd8c9a89d58a7daec2e0cac8e45a69f0cc450c9ae25ba5e8`, 2,755 files; manifest SHA-256 `6f9b2434a1cfb6c95dbfac0ca441092f1fcf75ea162e009ba80c000264f7881e`. Prior-release comparison: 2,754 identical files, only `version.json` changed, no additions/removals.
+
+Exact workflow checkout and Pages message identify merged source. Served index/version/Classification/Auth/data-URL chunks match Pages bytes; compiled production API/database and `publish` stage pass. All seven catalog snapshots in both environments match approved/prior hashes; retained pairs pass catalog validation. API/readiness/public/anonymous checks pass on unchanged release `44026a8c1c71ee361caf3ab43913361502f97bf7-40258859190-1`. Anonymous browser verifies lock browsing/expanded details, sign-in boundary, designated public profile and its production API 200, with no console errors. Authenticated owner/admin evidence remains question 19; no authenticated session was reused.
+
+Source Import/development-catalog holds are removed under question 23; both jobs remain manual-only/main-only and neither ran. Old source is GitHub-archived with frozen main unchanged and old API dispatch disabled. Existing settings/protections/cron/shared paths remain. No API/Firebase deployment, extra live job, pruning, backend shutdown or rollback occurred. Observation was completed early by owner decision; full seven-day evidence was waived.
+
+Durable private recovery/evidence bundle: `/Users/nealbayless/LOCAL/monorepo-recovery/phase5-finalize-40371531547` — 69 byte/hash-verified files including current Pages and pre/post catalog copies. Keep this and all earlier recovery bundles/releases until separately authorized maintenance. Phase 5 has no pending owner question; Phase 6 remains not started.

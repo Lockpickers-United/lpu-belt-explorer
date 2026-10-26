@@ -1,6 +1,6 @@
 # LPU monorepo — implementation plan and progress
 
-Status: Phase 5 in progress — observation completed early; old source retired by owner; local cleanup verified
+Status: Phase 5 complete — production release verified; old source archived; manual workflows restored
 Last updated: 2026-10-26
 Project definition: [Monorepo overview and migration plan](monorepo-plan.md)  
 Developer report: [Monorepo developer report](monorepo-developer-report.md)
@@ -8,9 +8,9 @@ Developer report: [Monorepo developer report](monorepo-developer-report.md)
 ## Project snapshot
 
 **Outcome:** The active web client and API share the `lpu-belt-explorer` repository with independent, verified releases and room for Devvit and LockyJr.  
-**Current phase:** Phase 5 in progress — API and web/catalog cutover verified. The owner ended observation early on 2026-10-26 and reports the old API publication final/repository read-only. Seven-day operating evidence is waived, not claimed collected.
-**Next action:** Execute approved question 23: validate the isolated cleanup/restoration candidate, commit/push/PR/merge, and verify automatic Pages/14-catalog publication. Neither manual workflow will be dispatched.
-**Overall blocker:** Question 23 is approved; candidate publication/verification remains in progress because merging the web changes publishes Pages and 14 catalog snapshots. Recovery releases remain retained; no host retirement/pruning is requested.
+**Current phase:** Phase 5 complete (2026-10-26). API/web cutover, owner-shortened observation, verified old-source archival, app-local web configuration and manual-only/main-only workflow restoration are complete. Final release is PR #335/main `bef3de9b684acf5f2f8e15fd7d24533cc9e33d10`, Build-N-Deploy 40371531547.
+**Next action:** Phase 6 remains not started; onboard each future app only after its own feasibility/data review. No Phase 5 owner question remains pending.
+**Overall blocker:** None for Phase 5. Full seven-day operating evidence was waived by the owner; recovery artifacts remain retained and host pruning/shutdown is outside this migration.
 
 | Phase | Status | Completed |
 | --- | --- | --- |
@@ -19,7 +19,7 @@ Developer report: [Monorepo developer report](monorepo-developer-report.md)
 | Phase 2: Move the web app and repair web/Firebase paths | Complete | 2026-10-25 |
 | Phase 3: Adopt npm workspaces and align Node | Complete | 2026-10-25 |
 | Phase 4: Integrated validation and development rehearsal | Complete | 2026-10-25 |
-| Phase 5: Production cutover and old-source retirement | In progress | — |
+| Phase 5: Production cutover and old-source retirement | Complete | 2026-10-26 |
 | Phase 6: Future Devvit and LockyJr onboarding | Not started | — |
 
 Use **Not started**, **In progress**, **Blocked**, or **Complete** for phase status. Mark a phase complete only when its exit criteria have evidence in the developer report. Keep source moves, dependency conversion, and production cutover separately reviewable.
@@ -229,8 +229,8 @@ Prove that the monorepo can build, package, and operate each component without c
 
 ## Phase 5: Production cutover and old-source retirement
 
-**Status:** In progress
-**Completed:** —  
+**Status:** Complete
+**Completed:** 2026-10-26
 **Start when:** Phase 4 exit criteria pass and Phase 5 is requested. Offline/read-only preflight can begin; each exact external action still requires its own approval.
 
 ### Summary
@@ -241,11 +241,11 @@ Make the monorepo the sole release source while preserving the current public UR
 
 - Production-mode relocation comparison passes: 2,754 identical files and seven matching catalog hashes with Node 24.21.0, `publish`, and synthetic sensitive inputs. Actual hosted output now verified under question 20; see the release record below.
 - Effective GitHub controls are recorded in [Phase 5 evidence](monorepo-phase5-verification.json). Owner provisioned destination `api-production`; all seven variable/two secret names and matching protection policy are verified, closing question 13. Old API environment has no reviewer/branch policy.
-- [Cutover/retirement ledger](monorepo-phase5-runbook.md) separates held main adoption, API authority transfer/release, automatic site/catalog release, owner-shortened observation and source retirement. API authority/hold transfer is complete under questions 17/18; web publication is complete under question 20; Import/development-catalog holds remain.
-- Held site workflow now selects current main after successful Import completion and records actual checkout SHA, avoiding publication from Import’s stale starting SHA.
+- [Cutover/retirement ledger](monorepo-phase5-runbook.md) separates held main adoption, API authority transfer/release, automatic site/catalog release, owner-shortened observation and source retirement. API authority/hold transfer is complete under questions 17/18; initial web publication completed under question 20; question 23 restored the manual-only/main-only Import/development-catalog jobs and published the env cleanup.
+- Site workflow selects current main after successful Import completion and records actual checkout SHA, avoiding publication from Import’s stale starting SHA.
 - Question 14 authorized held candidate commit/push: fork `c5080a5a75` passed Linux API CI and downloaded archive verification (15,161 members; unchanged 386 production dependencies). Question 15 authorized normal-merge PR #326 into organization main as `f7041a5eca`; exact main API CI/archive certification passed with all holds retained. Question 16 authorized/passed live target/recovery preflight: active plus two recovery candidates, production readiness/cron and private durable Pages/14-catalog capture verified. Questions 17/18 subsequently completed API authority transfer/activation.
 
-- API-only authority transfer/activation completed under questions 17/18 via PR #333 and production run 40258859190. Exact runtime/public/deployed-byte and owner-reported authenticated verification pass. Web/catalog release completed under question 20 via PR #334/main `684ea9d9e31884742268fd5ed7c5f6605dea9514` and run 40263182081. Pages/output/browser/14-catalog verification pass. Observation is complete early by owner decision (2026-10-26). The owner marked the old API publication final and source repository read-only; hosted archive metadata is not independently verified. Manual-workflow hold restoration and cleanup publication remain separately gated.
+- API-only authority transfer/activation completed under questions 17/18 via PR #333 and production run 40258859190. Exact runtime/public/deployed-byte and owner-reported authenticated verification pass. Web/catalog release completed under question 20 via PR #334/main `684ea9d9e31884742268fd5ed7c5f6605dea9514` and run 40263182081. Pages/output/browser/14-catalog verification pass. Observation is complete early by owner decision (2026-10-26). The owner marked the old API publication final and subsequently archived the source repository; authenticated metadata verifies `archived=true` and unchanged frozen main. Question 23 completed cleanup publication and manual-only/main-only restoration without dispatching either job.
 
 ### Tasks
 
@@ -253,16 +253,16 @@ Make the monorepo the sole release source while preserving the current public UR
 - [x] Release and verify the API then site/catalogs in the approved order: runtime/public/owner-reported authenticated checks, Pages output and public browser journey pass.
 - [x] Complete observation: started `2026-10-26T03:18:52Z`; owner explicitly ended it early on 2026-10-26. Original seven-day deadline `2026-11-02T03:18:52Z` is superseded; full-interval health/export/scheduled-job evidence was waived, not collected. No extra live job ran.
 - [x] Keep the previous API release/original source through the observation period. Prior current and both selected complete rollback releases were verified retained at cutover; no rollback was needed. Continue retaining all recovery releases and private Pages/catalog bundles; early observation completion does not authorize pruning or process shutdown.
-- [x] Retire the old source: old API workflow disabled/drained during approved transfer; existing cron paths already have one production owner. Owner reports final old publication/read-only repository. Updated release ownership, setup/agent and operational docs; root Dependabot already covers both workspaces. Preserve existing GitHub protection policy and source/history. No archive API mutation, new schedule, backend shutdown or release deletion performed; owner-reported read-only status is not an independent `archived=true` check.
-- [x] Implement local web-env cleanup: moved the four tracked root `.env.*` files unchanged into `apps/web`; updated Vite/Vitest `envDir`, app-local `.env.keys` lookup (owner-requested rename), workflow filters, ignore rules and setup/agent docs. Owner privately moved the ignored key file; filename-only rename preserved its contents/permissions. API runtime files remain separate. Synthetic development/dev/test/production configuration tests, web CI, isolated browser checks and synthetic-key production build pass. No publication performed.
-- [ ] Restore the two manual-only Import/development-catalog workflows after question 23 approval; reviewed patch restricts dispatch to main and updates the corresponding contract tests. Both live/source holds remain until approved. Do not dispatch either job as part of restoration.
-- [ ] Obtain question 23 approval before committing/pushing/PR/merging the local cleanup and reviewed restoration. The web config/path changes trigger automatic Pages and seven catalogs to each API environment; certify resulting release output and retain recovery artifacts.
+- [x] Retire the old source: old API workflow disabled/drained during approved transfer; existing cron paths already have one production owner. Owner reports final old publication/read-only repository. Updated release ownership, setup/agent and operational docs; root Dependabot already covers both workspaces. Preserve existing GitHub protection policy and source/history. No archive API mutation, new schedule, backend shutdown or release deletion performed; subsequent owner archival is independently verified with authenticated GitHub REST (`archived=true`, frozen main unchanged).
+- [x] Implement web-env cleanup: moved the four tracked root `.env.*` files unchanged into `apps/web`; updated Vite/Vitest `envDir`, app-local `.env.keys` lookup (owner-requested rename), workflow filters, ignore rules and setup/agent docs. Owner privately moved the ignored key file; filename-only rename preserved its contents/permissions. API runtime files remain separate. Synthetic development/dev/test/production configuration tests, web CI, isolated browser checks and synthetic-key production build pass. Subsequent question 23 publication is verified below.
+- [x] Restore the two manual-only/main-only Import/development-catalog workflows under approved question 23 via PR #335. Contract tests and published source controls pass; neither job was dispatched.
+- [x] Execute question 23: normal-merged PR #335 as `bef3de9b684acf5f2f8e15fd7d24533cc9e33d10`; automatic run 40371531547 published verified Pages and all 14 catalogs. Production settings, public/browser checks and unchanged API pass; 69 evidence/recovery files retained privately and hash-verified. No recovery required.
 
 ### Exit criteria
 
-- [x] One repository owns production releases and scheduled jobs; the last verified API/web versions correspond to reviewed monorepo commits. Old source is read-only by owner report; existing production cron paths follow monorepo releases. Import/development-catalog restoration remains the explicit task above.
-- [x] Existing cutover evidence verifies site/API/catalog and consumer contracts; recovery candidates were retained through the owner-shortened period and remain retained. This turn performs no new live Functions, host, job or data inspection.
-- [x] The report records approvals, exact release evidence, owner-shortened observation, owner-reported source retirement and remaining publication/restoration review. Phase 5 remains in progress until those remaining tasks are resolved.
+- [x] One repository owns production releases and scheduled jobs; the last verified API/web versions correspond to reviewed monorepo commits. Old-source GitHub archival and frozen main are independently verified; existing production cron paths follow monorepo releases. Manual-only/main-only Import/development-catalog restoration is verified; actual dispatches remain separately approval-gated.
+- [x] Existing cutover evidence verifies site/API/catalog and consumer contracts; recovery candidates were retained through the owner-shortened period and remain retained. Question 23 read-only postflight additionally verifies host/readiness/catalog/recovery state; no live Functions test, job execution or extra exporter ran.
+- [x] The report records approvals, exact release evidence, owner-shortened observation, owner-reported source retirement and verified publication/restoration and no outstanding owner questions. Final completion evidence remains local/uncommitted after the published PR, preserving its reviewed release identity and owner staging.
 
 ### Open issues for next phase
 

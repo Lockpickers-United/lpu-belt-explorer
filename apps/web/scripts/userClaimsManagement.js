@@ -31,11 +31,11 @@ const _allClaims = {
     blackBelt: true,
 }
 //const newClaims = {raflAdmin:true, dataAdmin:true, admin: true}
-const newClaims = {owner: true}
+const newClaims = {classificationTeam: true}
 const removeClaims = []
 
 const users = [
-    {uid: 'GGplAdctTfVDLVvYsfIADJmfp8f2', name: 'mgsecure'},
+    {uid: 'yLbxfRWSKyWMZm9r2i2gD19J3Hb2', name: 'septclues'},
 ]
 
 const _allUsers = [
