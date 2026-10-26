@@ -7,11 +7,11 @@
         "label": "Ranked"
       },
       {
-        "value": 1129,
+        "value": 1130,
         "label": "All"
       },
       {
-        "value": 274,
+        "value": 275,
         "label": "Unranked"
       }
     ]
@@ -20,61 +20,61 @@
     {
       "belt": "White",
       "count": 18,
-      "value": 0.015943312666076175,
+      "value": 0.01592920353982301,
       "id": "White"
     },
     {
       "belt": "Yellow",
       "count": 71,
-      "value": 0.06288751107174491,
+      "value": 0.06283185840707965,
       "id": "Yellow"
     },
     {
       "belt": "Orange",
       "count": 84,
-      "value": 0.07440212577502214,
+      "value": 0.0743362831858407,
       "id": "Orange"
     },
     {
       "belt": "Green",
       "count": 159,
-      "value": 0.1408325952170062,
+      "value": 0.1407079646017699,
       "id": "Green"
     },
     {
       "belt": "Blue",
       "count": 141,
-      "value": 0.12488928255093003,
+      "value": 0.12477876106194691,
       "id": "Blue"
     },
     {
       "belt": "Purple",
       "count": 121,
-      "value": 0.10717449069973428,
+      "value": 0.10707964601769912,
       "id": "Purple"
     },
     {
       "belt": "Brown",
       "count": 85,
-      "value": 0.07528786536758193,
+      "value": 0.0752212389380531,
       "id": "Brown"
     },
     {
       "belt": "Red",
       "count": 74,
-      "value": 0.06554472984942426,
+      "value": 0.06548672566371681,
       "id": "Red"
     },
     {
       "belt": "Black",
       "count": 102,
-      "value": 0.09034543844109831,
+      "value": 0.09026548672566372,
       "id": "Black"
     },
     {
       "belt": "Unranked",
-      "count": 274,
-      "value": 0.24269264836138174,
+      "count": 275,
+      "value": 0.24336283185840707,
       "id": "Unranked"
     }
   ],
@@ -86,7 +86,7 @@
     },
     {
       "label": "Dimple",
-      "value": 265,
+      "value": 266,
       "id": "dimple"
     },
     {
@@ -497,7 +497,7 @@
       },
       {
         "label": "Dimple",
-        "value": 62,
+        "value": 63,
         "id": "dimple"
       },
       {
@@ -563,12 +563,12 @@
       },
       {
         "segment": "All locks",
-        "count": 1129,
-        "media": 920,
+        "count": 1130,
+        "media": 921,
         "coverage": "81%"
       }
     ],
-    "uniqueImages": 4825,
+    "uniqueImages": 4828,
     "contributors": 322,
     "topPhotographers": [
       {
@@ -892,6 +892,10 @@
         "images": 11
       },
       {
+        "contributor": "Nightmare",
+        "images": 11
+      },
+      {
         "contributor": "Wyte",
         "images": 11
       },
@@ -1001,10 +1005,6 @@
       },
       {
         "contributor": "MelBrooksKA",
-        "images": 8
-      },
-      {
-        "contributor": "Nightmare",
         "images": 8
       },
       {
@@ -4736,7 +4736,7 @@
           "label": "Blue",
           "id": "Blue",
           "count": 1,
-          "value": 1
+          "value": 0.5
         },
         {
           "label": "Purple",
@@ -4768,7 +4768,13 @@
           "label": "Disc detainer",
           "id": "Disc detainer",
           "count": 1,
-          "value": 1
+          "value": 0.5
+        },
+        {
+          "label": "Dimple",
+          "id": "Dimple",
+          "count": 1,
+          "value": 0.5
         }
       ]
     },
@@ -26453,6 +26459,6 @@
   },
   "metadata": {
     "source": "import-data",
-    "updatedDateTime": "2026-10-24 20:20"
+    "updatedDateTime": "2026-10-26 19:45"
   }
 }

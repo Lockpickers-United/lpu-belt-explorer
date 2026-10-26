@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": "sha256:869e864b97bb3481116c53711f826427016842b60f74674e31a9668c42cd5365",
-  "generatedAt": "2026-10-24T20:20:19.209Z",
+  "catalogVersion": "sha256:8b83384aa0b86155616e47b9b7534b735bcbfcb4c96c47a297359d7207bc2ad9",
+  "generatedAt": "2026-10-26T19:45:46.800Z",
   "entries": [
     {
       "id": "0082fa4c",
@@ -2606,6 +2606,13 @@
       "version": "40mm or larger (≥5 pins)",
       "belt": "Orange",
       "currentBeltDate": null
+    },
+    {
+      "id": "52fefd7e",
+      "name": "Baton 5310",
+      "version": null,
+      "belt": "Unranked",
+      "currentBeltDate": "2026-10-26T19:45:46.477Z"
     },
     {
       "id": "5329b0f3",
