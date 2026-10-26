@@ -6,7 +6,7 @@ This file applies to the entire `lpu-belt-explorer` repository and is the canoni
 
 `lpu-belt-explorer` is the monorepo behind [lpubelts.com](https://lpubelts.com). The React/Vite app lives in `apps/web`; the private root npm coordinator installs both web and API workspaces. Firebase configs and the independent Functions package remain in `firebase/`. Root npm scripts forward web commands with `apps/web` as the working directory. Use JavaScript, npm, and the Node 24 LTS release pinned in `.nvmrc`.
 
-The imported `apps/api` workspace owns server-side exports and API services; read `apps/api/AGENTS.md` and its operational references before editing it. Web and API use the root npm lockfile, Node 24.21.0 and npm 11.19.0. Root `.npmrc` uses nested installs to keep each app self-contained. Functions retains its independent npm package and lockfile. The sibling `../explore-lpubelts-com-node` repository remains the frozen production release authority until Phase 5. Do not edit that frozen source during migration.
+The imported `apps/api` workspace owns server-side exports and API services; read `apps/api/AGENTS.md` and its operational references before editing it. Web and API use the root npm lockfile, Node 24.21.0 and npm 11.19.0. Root `.npmrc` uses nested installs to keep each app self-contained. Functions retains its independent npm package and lockfile. Production web/API release authority now belongs to this monorepo. The owner has marked the old API publication final and archived `../explore-lpubelts-com-node` on GitHub (authenticated `archived=true` verified); preserve that historical source and do not edit it. Web env files belong in `apps/web`, including owner-managed ignored `.env.keys`; API runtime configuration remains separate.
 
 ## Task-specific references
 
@@ -72,7 +72,7 @@ Keep the request visible and distinct from routine progress updates. Continue au
 
 - Production deployments and every live-data script run are approval-gated, including read-only exports. Editing such code does not authorize executing it.
 - Do not deploy, switch to production, migrate/import live data, publish, push, or open a pull request unless explicitly requested and authorized.
-- Candidate web publication, Import, development-catalog upload and API deployment jobs have unconditional migration holds. Do not remove them before the approved release transfer; local changes do not alter deployed workflows.
+- Web publication and manual API deployment were enabled by the approved Phase 5 release transfer. Question 23 authorizes restoring Import and development-catalog upload as manual-only, main-only jobs. Each live dispatch remains separately approval-gated; enabling dispatch does not authorize a job run. Local source changes do not alter deployed workflows until publication.
 - Never print, commit, or modify secrets in `.env*`, `keys/`, service-account files, OAuth credentials, or CI variables.
 - Authorization must derive from authenticated claims and server/rules enforcement. UI mode flags such as `adminEnabled` and `qaUserEnabled` never grant access.
 - Read `.agents/references/firebase-data-safety.md` before touching Firebase, external-service, script, or generated-data workflows.

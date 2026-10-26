@@ -4,16 +4,16 @@ import {visualizer} from 'rollup-plugin-visualizer'
 import dotenv from 'dotenv'
 import {fileURLToPath} from 'node:url'
 
-const repositoryRoot = fileURLToPath(new URL('../../', import.meta.url))
+const webRoot = fileURLToPath(new URL('./', import.meta.url))
 
 // https://vitejs.dev/config/
 export default defineConfig(({mode}) => {
     if (mode !== 'test') {
-        dotenv.config({path: new URL('../../.env.keysNew', import.meta.url), quiet: true})
+        dotenv.config({path: new URL('./.env.keys', import.meta.url), quiet: true})
     }
 
     return {
-        envDir: repositoryRoot,
+        envDir: webRoot,
         server: {
             port: 3000
         },

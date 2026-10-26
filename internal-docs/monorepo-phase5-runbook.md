@@ -1,6 +1,6 @@
 # Phase 5 production cutover and retirement ledger
 
-Status: **In progress — API and web/catalog cutover verified; seven-day observation underway** (2026-10-25 local date). Owner questions 17/18 authorized the completed API authority transfer and API-only activation; later publication/retirement remain separate. [Evidence](monorepo-phase5-verification.json), [owner question 16](monorepo-owner-questions.md#16-production-target-and-recovery-preflight-before-authority-transfer), [developer report](monorepo-developer-report.md).
+Status: **In progress — cutover verified; observation completed early; old source read-only by owner report; cleanup publication/manual-workflow restoration pending** (2026-10-26). Questions 17/18 authorized API transfer/activation and question 20 completed web publication. Owner decisions in questions 21/22 end observation early and relocate/rename the private web key; question 23 covers the remaining concrete publication/restoration review. [Evidence](monorepo-phase5-verification.json), [owner question 16](monorepo-owner-questions.md#16-production-target-and-recovery-preflight-before-authority-transfer), [developer report](monorepo-developer-report.md).
 
 ## Verified starting point
 
@@ -20,7 +20,7 @@ This closes production-mode relocation equivalence. Synthetic placeholders do no
 
 ## Reviewed preparation and release order
 
-Every external mutation below still requires a concrete authorization identifying its repository, exact commit/artifact, target and recovery scope. Owner acceptance of the sequence/seven days remains valid; do not ask for that acceptance again.
+Every external mutation below still requires a concrete authorization identifying its repository, exact commit/artifact, target and recovery scope. Owner acceptance of the release sequence remains valid; the 2026-10-26 owner decision supersedes its seven-day observation interval. Do not ask for the completed decisions again.
 
 1. **Provisioning gate passed:** question 13 is resolved. Owner created destination `api-production`; read-only verification confirms all seven variable/two secret names and protection policy matching old API `production`. Web retains `github-pages`; runtime settings and existing procedures are unchanged. Earlier destination-`production` inspection describes the pre-decision state, not the required new name. Recheck destination names and effective controls without displaying values. Preserve existing policy; do not silently add required reviewers or describe the current environments as reviewer-protected. Verify API target privately using existing preflight, including root, PM2 name, pinned Node and public URL. Confirm owner access for required authenticated owner/admin API checks; never record tokens/private responses.
 2. **Completed under questions 14/15:** published held candidate `c5080a5a75` to the CI fork and normal-merged PR #326 into organization main `f7041a5eca` with all four holds retained. Organization web/API PR checks and manual exact-main Linux API CI/packaging/inspection/Sharp passed; downloaded archive identity/checksum/dependencies verified. This imports the monorepo without releasing it. API CI auto-push scope remains the migration branch; manual offline CI was used for main. Future control commits require their own exact-commit artifact certification.
@@ -35,11 +35,15 @@ Every external mutation below still requires a concrete authorization identifyin
 
 On any failed activation gate, restore the retained exact API `current` target atomically, reload the same PM2 process and verify previous readiness identity/public behavior. Existing workflow rollback suppresses reload errors, so its exit status cannot prove service recovery; operator verification is required. Do not prune releases or copy shared data into a release. If later web/catalog checks fail, separately approved recovery restores retained Pages output and the compatible prior snapshots in both environments; API rollback alone is insufficient. Re-enabling old API workflow authority is another controlled action: first disable/quiesce the new authority to avoid overlap.
 
-Observation starts only after the actual successful cutover. Record UTC start and earliest review (start + seven days); keep the previous backend and active plus two API recovery releases available throughout. Observe normal health/traffic/catalog/auth and scheduled-job completion; any script reading live logs/data or manual job execution requires its own approval. Record failures and recovery outcomes without private payloads. Observation started `2026-10-26T03:18:52Z`; earliest retirement review `2026-11-02T03:18:52Z`. This is a review threshold, not retirement authorization.
+Observation started after verified cutover at `2026-10-26T03:18:52Z`. The owner explicitly ended it early on 2026-10-26 and asked to mark it complete. The original `2026-11-02T03:18:52Z` threshold no longer applies; seven-day normal health/export/job evidence is waived, not claimed passed. No extra live job or log/data inspection was run to substitute for the shortened interval.
 
-## Retirement gate
+## Source retirement and retained recovery
 
-After seven days and recorded normal operating/job evidence, obtain separate retirement authorization. Inventory each old workflow, host process/backend, cron command, IDE mapping and source repository. Existing cron commands already target stable production `current/scripts`; source relocation needs no duplicate cron installation. Distinguish the release-workflow disable required for initial authority transfer from later repository archival/backend shutdown. Preserve frozen source/history and recovery artifacts until the approved retention decision. Update operational docs, ownership/onboarding, Dependabot/required checks to the final repository, and record exact disabled/retained items. Expiry alone authorizes no cleanup, archive, deletion or process stop.
+The owner reports marking the last old API publication final and making `Lockpickers-United/explore-lpubelts-com-node` read-only. Record source retirement as owner-executed, not an agent archive operation. Public unauthenticated GitHub metadata returned 404 and this session has no GitHub CLI/authenticated connector; no independent `archived=true`, final tag or current workflow-state claim is made. Prior approved transfer disabled/drained old API workflow `357527280`.
+
+The monorepo is the sole release source. Existing production cron commands follow stable `current/scripts` paths and require no duplicate installation; API/WebStorm mappings remain app-root mappings. Root Dependabot already covers the shared workspace lockfile. Keep the previously verified environment/branch protections unchanged and direct ongoing fixes/reviews here; Neal Bayless remains release/settings coordinator.
+
+Retain historical source, previous current `2fa33cfbe0ba5376ca0ad503bc528164ebf33194-40152214333-1`, the two selected complete recovery releases and all private Pages/catalog recovery bundles. No backend/process stop, release pruning, shared-state deletion, schedule change, protection mutation or old-source edit is part of this retirement record. Such maintenance requires an identified target and separate authorization. No failed cutover gate required rollback.
 
 ## Execution ledger
 
@@ -52,8 +56,9 @@ After seven days and recorded normal operating/job evidence, obtain separate ret
 | Current host/Pages/catalog recovery artifacts | Question 16 passed: current/selected two rollbacks verified; Pages tree plus all 14 catalogs retained/hash-verified in durable private local storage |
 | Authority transfer/API/site release | API #333/run 40258859190 and web #334/run 40263182081 verified; Import/development-catalog holds retained |
 | Authenticated production/browser checks | API public/runtime/anonymous checks pass; question 19 owner confirms authenticated owner/admin read scenarios passed; web release/browser checks pass |
-| Seven-day observation | Started `2026-10-26T03:18:52Z`; earliest review `2026-11-02T03:18:52Z`; normal operating/job evidence pending |
-| Retirement | Not authorized or executed |
+| Observation | Completed early by owner decision on 2026-10-26; original seven-day evidence waived, not collected |
+| Source retirement | Owner reports final old publication/read-only repository; preserve history and host recovery. No agent archive, shutdown or pruning |
+| Local env cleanup / remaining manual jobs | App-local defaults/configuration and `.env.keys` rename implemented/verified locally. Both jobs remain held; question 23 reviews publication/restoration |
 
 
 Provisioning update (`2026-10-25T23:25:33Z`): destination `api-production` is present with all seven required variable names/two secret names and no reviewer/branch policy, matching old API environment protection. Question 13 is closed. Original missing-environment findings above are historical. No secret/value correctness or host-routing certification is implied.

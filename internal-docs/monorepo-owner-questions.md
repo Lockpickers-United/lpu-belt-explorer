@@ -483,3 +483,44 @@ Execution proceeding under the recorded approval.
 ### Question 20 execution result
 
 **Resolved and executed.** PR #334 merged as `684ea9d9e31884742268fd5ed7c5f6605dea9514`; production web run 40263182081 succeeded. Actual Pages `8c30aacf36a6d0d656dd18105541c3ca57647282`, compiled production settings, browser checks, all 14 catalog hashes and unchanged approved API release verified. No recovery needed. Observation began `2026-10-26T03:18:52Z`, earliest retirement review `2026-11-02T03:18:52Z`. Import/development-catalog holds remain. No further input is needed for this completed release; restoring those held workflows and eventual retirement still require separate authorization. See the runbook/report/Phase 5 JSON for full evidence.
+
+
+## 21. Observation completed early and old source retired
+
+**Resolved — owner decision, 2026-10-26.**
+
+**Owner answer:** “I need to cut the observation period short. Please mark that completed and continue Phase 5.” The owner also reports: “I have marked the last api publish as final and made the repo read-only.”
+
+Observation began `2026-10-26T03:18:52Z` and is now complete by explicit early termination. The originally planned `2026-11-02T03:18:52Z` review threshold is superseded. This waives full-interval operating/job observation; it does not claim seven days of evidence or authorize extra live jobs. The monorepo is the sole release source; old-source retirement is owner-reported, with history preserved. Unauthenticated GitHub metadata returned 404, so no independent `archived=true` or final tag identity is claimed. No owner response is needed to repeat this decision. Retain all previously verified recovery releases/private artifacts; no backend shutdown or pruning is requested or performed.
+
+
+## 22. App-local private web key and filename
+
+**Resolved — owner move and requested rename, 2026-10-26.**
+
+The owner confirmed moving `.env.keysNew` into `apps/web`, then asked: “Can you rename that to just `.env.keys`”. Completed the filename-only rename to `apps/web/.env.keys`; inode, size and permissions were preserved without reading contents. The key remains ignored, and non-test Vite uses that app-local path. All four tracked public/synthetic env defaults moved unchanged to `apps/web`; Vite/Vitest, CI filters, setup and agent docs follow the new location. Synthetic development/dev/test/production precedence cases and isolated web/browser/build checks pass. API runtime configuration remains separate. No further private-file action is needed.
+
+
+## 23. Publish verified env cleanup and restore the two manual workflows
+
+**Owner approved — execution in progress**
+
+Approve committing/pushing the concrete local Phase 5 cleanup and the prepared three-file manual-workflow patch to the existing CI fork, opening a PR to `Lockpickers-United/lpu-belt-explorer` main, and normal-merging after fresh PR checks and drift/recovery preflight pass?
+
+- **Local cleanup:** move `.env.dev`, `.env.local`, `.env.production` and `.env.test` unchanged into `apps/web`; use app-local Vite/Vitest `envDir` and `.env.keys`; add the synthetic configuration test; update `build.js.yml`/`pr.js.yml` path filters, ignore rules, README, root/web/API agent/setup/operational references and the five Phase 5 progress/evidence documents. The private key is excluded from Git. Exclude the owner's unrelated `apps/web/scripts/userClaimsManagement.js` edit. Source fingerprints are in Phase 5 JSON → `webEnvironmentCleanup.sourceSha256` against local HEAD `5d79ae0781`.
+- **Prepared restoration:** replace only the two remaining unconditional holds with main-only job conditions in `import.js.yml` and `publish-classification-catalog-dev.yml`; update their two contract assertions to require manual-only/main-only controls. Preserve API/web controls, targets and existing protection policy. Full patch is embedded in Phase 5 JSON → `manualWorkflowRestorationReview.patch`, SHA-256 **`9263a90c927f3320a96719ed508067f84168fc904bbb801e5f6ee8fad6d3fbf1`**. The patch is not applied to source; both holds remain.
+- **Automatic publication effect:** merging the env/config/path cleanup matches Build-N-Deploy filters and publishes Pages plus seven snapshots to **each** API environment (14 catalog writes). Verify actual checkout, compiled production settings, Pages/browser output, all catalog hashes and unchanged active API identity. Retain/certify recovery artifacts before release. If this publication fails, restore retained Pages output/compatible snapshots through the existing recovery procedure and verify recovery. No new API deployment is included.
+- **Future manual effects:** restoration makes the jobs dispatchable on main; this approval does **not** dispatch either job. A later Import reads Sheets, auto-commits generated data and triggers the existing automatic Pages/catalog release; a later development uploader writes its compact development catalog. Each actual dispatch/live-data action remains separately approved.
+
+Local validation passed: `npm run ci-pr` (lint, **53 files / 284 tests**, test build); focused Playwright (**10 passed**); production build in a temporary snapshot with synthetic Firebase credentials; targeted configuration/test ESLint; current and preview API contract tests (**5 each**), preview test ESLint; **9 workflow YAML documents / 58 Bash blocks**. The existing large-chunk warning remains. Early development of the new fixture needed browser-setup/path normalization corrections; final assertions all pass. No assertion was disabled, and no real key was loaded by these tests/builds.
+
+This request is required by [AGENTS.md](../AGENTS.md) Safety invariants: “Do not deploy, switch to production, migrate/import live data, publish, push, or open a pull request unless explicitly requested and authorized.” The existing Import/development-catalog migration holds also require separate approval before removal. Continuing Phase 5 authorizes the completed local preparation; questions 17–20 authorized their specific earlier releases, not this new publication. I can provide the full local diff or review any publication/recovery detail.
+
+**Owner answer:** “I approve question 23.”
+
+**Status:** Publication/restoration and scoped verification/recovery authorized. Fresh preflight, normal checks and exact approved scope remain required; neither manual workflow will be dispatched.
+
+
+### Question 23 execution checkpoint — owner archive verified
+
+Owner reports: “I archived the old repo on github.” Authenticated GitHub REST independently confirms `Lockpickers-United/explore-lpubelts-com-node` has `archived=true`, with main still `2fa33cfbe0ba5376ca0ad503bc528164ebf33194`. This supersedes the earlier unauthenticated metadata limitation. The agent made no archive mutation. Recovery preflight passes: target settings/protections, pinned Linux Node, healthy current API, complete selected recovery releases, one owner per scheduled job, retained current Pages and all 14 matching catalogs. Cleanup/restoration publication remains in progress under the existing question 23 approval.

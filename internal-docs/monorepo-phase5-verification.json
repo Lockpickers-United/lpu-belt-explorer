@@ -1,11 +1,11 @@
 {
   "phase": 5,
-  "status": "in_progress_observation",
-  "date": "2026-10-25",
+  "status": "in_progress_retirement_followup",
+  "date": "2026-10-26",
   "candidateCommit": "44026a8c1c71ee361caf3ab43913361502f97bf7",
   "productionCutoverExecuted": true,
   "observationStartedAt": "2026-10-26T03:18:52Z",
-  "retirementExecuted": false,
+  "retirementExecuted": true,
   "productionBuildComparison": {
     "result": "passed",
     "commits": {
@@ -2289,10 +2289,14 @@
     "durableEvidence": "/Users/nealbayless/LOCAL/monorepo-recovery/phase5-web-release-40263182081",
     "observation": {
       "startedAt": "2026-10-26T03:18:52Z",
-      "earliestRetirementReviewAt": "2026-11-02T03:18:52Z",
+      "earliestRetirementReviewAt": null,
       "durationDays": 7,
-      "retirementAuthorized": false,
-      "scheduledJobObservation": "Pending normal operating evidence; no extra job or live log/export inspection run"
+      "retirementAuthorized": true,
+      "scheduledJobObservation": "Seven-day evidence waived by owner shortening; no extra job or live log/export inspection run",
+      "status": "completed_early_by_owner",
+      "originalEarliestRetirementReviewAt": "2026-11-02T03:18:52Z",
+      "sourceRetirementOwnerReported": true,
+      "retirementAuthorizationScope": "Owner-executed source retirement only; no host shutdown, release pruning or schedule mutation authorized."
     },
     "recoveryRequired": false,
     "remainingHolds": [
@@ -2345,5 +2349,105 @@
     },
     "durableBundleVerifiedFiles": 60
   },
-  "earliestRetirementReviewAt": "2026-11-02T03:18:52Z"
+  "earliestRetirementReviewAt": null,
+  "observationCompletedByOwnerDecision": true,
+  "sourceRetirement": {
+    "reportedDate": "2026-10-26",
+    "evidenceType": "owner_report",
+    "ownerStatement": "I have marked the last api publish as final and made the repo read-only.",
+    "sourceReleaseAuthority": "Lockpickers-United/lpu-belt-explorer",
+    "oldSource": "Lockpickers-United/explore-lpubelts-com-node",
+    "sourceRetirementComplete": true,
+    "hostedArchiveIndependentlyVerified": true,
+    "verificationLimitation": "Earlier unauthenticated 404 superseded: existing Git credential helper supports authenticated REST, which verified archived=true after owner archival.",
+    "hostProcessesStopped": false,
+    "releasesPruned": false,
+    "schedulesChanged": false,
+    "recoveryRetention": "Preserve previous current, selected two complete rollback releases and all private Pages/catalog bundles until separately authorized maintenance.",
+    "archived": true,
+    "frozenMain": "2fa33cfbe0ba5376ca0ad503bc528164ebf33194"
+  },
+  "observationDecision": {
+    "date": "2026-10-26",
+    "status": "completed_early_by_owner",
+    "startedAt": "2026-10-26T03:18:52Z",
+    "originalEarliestRetirementReviewAt": "2026-11-02T03:18:52Z",
+    "ownerStatement": "I need to cut the observation period short. Please mark that completed and continue Phase 5.",
+    "sevenDayHealthAndScheduledJobEvidence": "Waived by owner shortening; not collected or claimed passed.",
+    "noExtraLiveJobsExecuted": true
+  },
+  "manualWorkflowRestorationReview": {
+    "status": "approved_applied_in_isolated_candidate_pending_publication",
+    "baseCommit": "5d79ae0781f4778afae6eaa279304a791ff0cad9",
+    "scope": [
+      ".github/workflows/import.js.yml",
+      ".github/workflows/publish-classification-catalog-dev.yml",
+      "apps/api/src/config/nodeRuntimeContract.test.js"
+    ],
+    "patchSha256": "9263a90c927f3320a96719ed508067f84168fc904bbb801e5f6ee8fad6d3fbf1",
+    "patch": "--- a/.github/workflows/import.js.yml\n+++ b/.github/workflows/import.js.yml\n@@ -12,8 +12,8 @@\n \n jobs:\n   deploy:\n-    # Migration hold: live import/upload requires a separately approved release.\n-    if: ${{ false }}\n+    # Restore manual dispatch on main after the approved Phase 5 transfer.\n+    if: ${{ github.ref == 'refs/heads/main' }}\n     name: Import\n     permissions:\n       contents: write\n--- a/.github/workflows/publish-classification-catalog-dev.yml\n+++ b/.github/workflows/publish-classification-catalog-dev.yml\n@@ -16,8 +16,8 @@\n \n jobs:\n   publish:\n-    # Migration hold: live import/upload requires a separately approved release.\n-    if: ${{ false }}\n+    # Restore manual dispatch on main after the approved Phase 5 transfer.\n+    if: ${{ github.ref == 'refs/heads/main' }}\n     runs-on: ubuntu-latest\n     environment:\n       name: github-pages\n--- a/apps/api/src/config/nodeRuntimeContract.test.js\n+++ b/apps/api/src/config/nodeRuntimeContract.test.js\n@@ -43,10 +43,13 @@\n     it.each([\n         'import.js.yml',\n         'publish-classification-catalog-dev.yml'\n-    ])('retains the migration hold in %s during API-only authority transfer', async filename => {\n+    ])('keeps %s manual and restricted to main after migration', async filename => {\n         const workflow = await readRootFile(`../../.github/workflows/${filename}`)\n \n-        expect(workflow).toMatch(/^ {4}if: \\$\\{\\{ false \\}\\}$/m)\n+        expect(workflow).toMatch(/^on:\\n {2}workflow_dispatch:/m)\n+        expect(workflow).not.toMatch(/^ {2}(push|pull_request|workflow_run|schedule):/m)\n+        expect(workflow).toContain(\"if: ${{ github.ref == 'refs/heads/main' }}\")\n+        expect(workflow).not.toContain('if: ${{ false }}')\n     })\n \n     it('publishes web only from main and successful same-repository main Import completion', async () => {\n",
+    "behavior": "Manual dispatch only on main; no schedule or automatic job trigger. Import reads Sheets and auto-commits data; successful main Import triggers the existing Pages/14-catalog release. Development catalog dispatch uploads only the development compact catalog.",
+    "previewVerification": "5 focused Node/runtime/release contract tests pass in isolated synthetic preview.",
+    "dispatchAuthorized": false,
+    "productionPublicationAuthorized": true,
+    "ownerApproval": {
+      "question": 23,
+      "answer": "I approve question 23",
+      "date": "2026-10-26"
+    }
+  },
+  "webEnvironmentCleanup": {
+    "status": "implemented_locally_verified_pending_publication_approval",
+    "movedWithoutContentChanges": [
+      ".env.dev",
+      ".env.local",
+      ".env.production",
+      ".env.test"
+    ],
+    "destination": "apps/web",
+    "privateKey": "apps/web/.env.keys",
+    "privateKeyHandling": "Owner moved ignored .env.keysNew; agent performed the explicitly requested filename-only rename to .env.keys; inode/size/permissions unchanged, contents not read.",
+    "test": "EnvConfiguration.test.js covers development/dev/test/production mode selection, local and shell precedence, private-key exclusion in test and unprefixed-key exclusion from client env, all using synthetic fixtures.",
+    "publication": "Question 23 approved commit/push/PR/merge and resulting automatic Pages/14-catalog release with scoped recovery; validation in progress.",
+    "sourceSha256": {
+      "apps/web/.env.dev": "c51580577826a5f4907668ccb46c371de4ff813052be40ac1312b1d8290c3730",
+      "apps/web/.env.local": "6c48b1a2252c2a0407d3cbbe1855d5a3325e0fa9f124e836d3b4541f005cc61e",
+      "apps/web/.env.production": "6f5cd9e6b054eae5a00a24f3bf430e9cfebab6445407194a26284b22dd66ba93",
+      "apps/web/.env.test": "fbca026fdc4a6c7c1aa4e71803d320d4cfc7af5484d2bb6f88e53f2e1eafa38c",
+      "apps/web/vite.config.js": "fd8a1f5c43c52ef956bce382fd60de17d611b4b51cf38d38fb4d77c69287f289",
+      "apps/web/vitest.config.js": "877325c39b2e4a9c48a32600ad60a3c7343babf63decd29ac00d39a6777be961",
+      "apps/web/tests/vitest/EnvConfiguration.test.js": "5f73e0ed28fa4ad5ab32e33385d73ce7c5c2fb1524141aa0d80b0093c82fa61d",
+      ".github/workflows/build.js.yml": "c406fd5a6529e0ce9ab026e052a06c12445e401a5fb93e6d79edb3c4d70bf09b",
+      ".github/workflows/pr.js.yml": "7b97a1639cea75fc76bacfc0213fc49cadf256cfdc21dcdd78530ff9c256d197",
+      ".gitignore": "fe38795d27f498d0718c73243d06e2fb6d53ff237cc59bc2d1ac7c858bf55e95"
+    },
+    "node": "24.21.0",
+    "npm": "11.19.0",
+    "verification": {
+      "npm run ci-pr": "passed: web lint, 53 files / 284 tests, test build",
+      "targetedEslint": "passed: configuration and synthetic test via existing scripts ESLint rules",
+      "npm run e2e -- tests/e2e/viteBundle.spec.js tests/e2e/locks.spec.js tests/e2e/contentRoutes.spec.js": "10 passed; initial sandbox loopback EPERM resolved by approved escalation",
+      "syntheticProductionBuild": {
+        "result": "passed; existing large-chunk warning retained",
+        "directory": "/private/tmp/lpu-phase5-web-build-0gd6nl1w",
+        "command": "VITE_CLASSIFICATION_WRITE_STAGE=publish npm run build",
+        "privateCredentialsRead": false
+      },
+      "npm run test:api -- --run src/config/nodeRuntimeContract.test.js": "5 passed in unchanged actual source; holds retained",
+      "manualRestorationPreview": "5 focused contract tests and targeted API ESLint passed",
+      "yamlAndBash": "9 YAML documents / 58 Bash blocks passed across actual five workflows and preview four workflows"
+    },
+    "allFourDefaultsMatchCommittedRootBytes": true
+  },
+  "retirementExecutionScope": "Owner-reported source repository read-only/final only; no agent hosted archival, backend shutdown, release pruning, schedule or shared-state mutation.",
+  "question23Execution": {
+    "status": "candidate_validation",
+    "authorization": "Owner: I approve question 23",
+    "archiveVerified": true,
+    "preflightDirectory": "/private/tmp/lpu-phase5-final-release/recovery-ulrcBt",
+    "preflightResult": "passed",
+    "localCiPr": "53 files / 284 tests; lint and test build passed",
+    "manualDispatchPerformed": false,
+    "apiDeploymentPerformed": false
+  }
 }

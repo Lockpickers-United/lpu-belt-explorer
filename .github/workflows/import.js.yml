@@ -12,8 +12,8 @@ defaults:
 
 jobs:
   deploy:
-    # Migration hold: live import/upload requires a separately approved release.
-    if: ${{ false }}
+    # Restore manual dispatch on main after the approved Phase 5 transfer.
+    if: ${{ github.ref == 'refs/heads/main' }}
     name: Import
     permissions:
       contents: write

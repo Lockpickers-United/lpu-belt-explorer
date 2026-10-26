@@ -41,7 +41,9 @@ An interactive web app for exploring the Lockpickers United belt ranking system.
 - `apps/web`: React/Vite source, public assets, tests, scripts and app config. Root npm commands delegate here; build output is `apps/web/dist`.
 - `apps/api`: API npm workspace. Web/API share the root lockfile, Node 24.21.0 and npm 11.19.0; run `npm ci` at root. Nested installs preserve standalone API packaging. Follow its `AGENTS.md`.
 - `firebase`: unchanged CLI configs, rules and separately installed `firebase/functions` package.
-- Root `.env.*`, ignored key files and credentials keep their existing locations. Vite and Vitest explicitly load env files from the root; do not copy secrets into app directories.
+- Web `.env.dev`, `.env.local`, `.env.production` and synthetic `.env.test` live in `apps/web`. Vite and Vitest load that directory whether npm is invoked from root or the workspace. For local development, the owner privately supplies ignored `apps/web/.env.keys`; it is excluded in test mode. Shell variables retain precedence, followed by the existing Vite mode/local-file precedence. API local configuration stays in `apps/api/.env.local`; production API settings remain in the host's protected `shared` directory.
+
+The monorepo is the sole web/API release source. The owner marked the last old API publication final and archived `explore-lpubelts-com-node` on GitHub (authenticated `archived=true` verified). Preserve that repository as history; direct API fixes and dependency changes here. Neal Bayless coordinates release/settings changes. API CI and root Dependabot cover the API workspace through the shared lockfile; retain existing GitHub protection policy. See the [Phase 5 ledger](internal-docs/monorepo-phase5-runbook.md) for release identities, retained recovery artifacts and remaining manual-workflow gates.
 
 Existing ignored files under the former root `public/`, `src/data/` or `scripts/` are left untouched and remain ignored. Clean checkout tests use tracked synthetic fixtures; review local generated data before relocating it into app-owned paths. Do not copy live exports into test fixtures.
 
@@ -49,17 +51,17 @@ Focused commands from root: `npm run test:run -- tests/vitest/SomeRoute.test.jsx
 
 ## Github Hooks
 * [Build-N-Deploy](/.github/workflows/build.js.yml)
-    * Candidate migration hold: disabled for every event until the approved release transfer. Intended trigger after release: scoped main push, Import completion or manual dispatch.
+    * Enabled by Phase 5: scoped main push, successful same-repository main Import completion or manual main dispatch. A merge matching its path filters publishes Pages and uploads seven catalogs to both API environments; obtain approval for those effects.
     * Action(s): Builds application with `npm run ci-build` then kicks off gh page action to deploy
 * [Import](/.github/workflows/import.js.yml)
-    * Candidate migration hold: disabled until the approved live-data/release step; intended trigger is workflow dispatch.
+    * Manual dispatch on main only, restored under question 23. Obtain separate approval before a live import; its successful completion triggers the existing Pages/catalog release.
     * Action(s): Runs `npm run import` which updates the data then auto commits back to repository
 * [PR](/.github/workflows/pr.js.yml)
     * Trigger: On Pull Request
     * Action(s): Gets PR ready with `npm run ci-pr` which lints and builds application
 
 ## Build/Deploy
-Production publication is approval-gated and the candidate workflow is disabled during migration. The release-only command below generates/exports artifacts and is not a validation shortcut:
+Production publication is approval-gated. Web publication is enabled; API production deployment is manual, confirmed and main-only through `.github/workflows/api-deploy-production.yml` and the `api-production` environment. Import and the development-only catalog uploader are manual-only/main-only; each actual dispatch still requires separate approval. The release-only command below generates/exports artifacts and is not a validation shortcut:
 * `npm run ci-build`
 
 ## Import/Export data

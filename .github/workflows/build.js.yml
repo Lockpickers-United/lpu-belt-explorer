@@ -14,7 +14,7 @@ on:
       - 'apps/web/index.html'
       - 'apps/web/package.json'
       - 'apps/web/vite.config.js'
-      - '.env.*'
+      - 'apps/web/.env.*'
       - 'package.json'
       - 'package-lock.json'
       - '.nvmrc'
