@@ -41,12 +41,45 @@ describe('Node runtime contract', () => {
     })
 
     it.each([
-        'build.js.yml',
         'import.js.yml',
         'publish-classification-catalog-dev.yml'
     ])('retains the migration hold in %s during API-only authority transfer', async filename => {
         const workflow = await readRootFile(`../../.github/workflows/${filename}`)
 
         expect(workflow).toMatch(/^ {4}if: \$\{\{ false \}\}$/m)
+    })
+
+    it('publishes web only from main and successful same-repository main Import completion', async () => {
+        const workflow = await readRootFile('../../.github/workflows/build.js.yml')
+        const condition = workflow.match(/^ {4}if: >-\n((?: {6}.+\n)+)/m)?.[1]
+
+        expect(condition).toBeDefined()
+        expect(workflow).toContain('workflows: [Import]')
+        const expression = condition.trim().replace(/^\$\{\{\s*/, '').replace(/\s*\}\}$/, '')
+        const permits = new Function('github', `return (${expression})`)
+        const repository = 'Lockpickers-United/lpu-belt-explorer'
+        const successfulImport = {
+            conclusion: 'success',
+            head_branch: 'main',
+            head_repository: {full_name: repository}
+        }
+        const cases = [
+            ['main push', 'push', 'refs/heads/main', null, true],
+            ['main dispatch', 'workflow_dispatch', 'refs/heads/main', null, true],
+            ['feature push', 'push', 'refs/heads/feature', null, false],
+            ['feature dispatch', 'workflow_dispatch', 'refs/heads/feature', null, false],
+            ['successful main Import', 'workflow_run', 'refs/heads/main', successfulImport, true],
+            ['failed Import', 'workflow_run', 'refs/heads/main', {...successfulImport, conclusion: 'failure'}, false],
+            ['cancelled Import', 'workflow_run', 'refs/heads/main', {...successfulImport, conclusion: 'cancelled'}, false],
+            ['feature Import', 'workflow_run', 'refs/heads/main', {...successfulImport, head_branch: 'feature'}, false],
+            ['fork Import', 'workflow_run', 'refs/heads/main', {...successfulImport, head_repository: {full_name: 'fork/repository'}}, false],
+            ['missing source repository', 'workflow_run', 'refs/heads/main', {...successfulImport, head_repository: null}, false],
+            ['non-main workflow ref', 'workflow_run', 'refs/heads/feature', successfulImport, false],
+            ['unrelated event', 'pull_request', 'refs/heads/main', null, false]
+        ]
+
+        for (const [name, event, ref, run, expected] of cases) {
+            expect(Boolean(permits({repository, ref, event_name: event, event: {workflow_run: run}})), name).toBe(expected)
+        }
     })
 })

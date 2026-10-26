@@ -41,9 +41,22 @@ defaults:
 
 jobs:
   deploy:
-    # Migration hold: Phase 5 must restore a main-only release condition,
-    # accepting workflow_run only after a successful main-branch Import.
-    if: ${{ false }}
+    # Publish main only; Import completion must be successful and from this repository.
+    if: >-
+      ${{
+        github.ref == 'refs/heads/main' &&
+        (
+          github.event_name == 'push' ||
+          github.event_name == 'workflow_dispatch' ||
+          (
+            github.event_name == 'workflow_run' &&
+            github.event.workflow_run.conclusion == 'success' &&
+            github.event.workflow_run.head_branch == 'main' &&
+            github.event.workflow_run.head_repository &&
+            github.event.workflow_run.head_repository.full_name == github.repository
+          )
+        )
+      }}
     name: Build-N-Deploy
     environment: github-pages
     permissions:
