@@ -4155,9 +4155,9 @@
       "Unguttable"
     ],
     "modelNum": "130",
-    "popularityIndex": 237,
+    "popularityIndex": 238,
     "scorecardCount": 29,
-    "views": 237,
+    "views": 238,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -4810,9 +4810,9 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "popularityIndex": 266,
+    "popularityIndex": 267,
     "scorecardCount": 24,
-    "views": 266,
+    "views": 267,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -5552,9 +5552,9 @@
       "Unguttable"
     ],
     "modelNum": "55.4",
-    "popularityIndex": 1082,
+    "popularityIndex": 1083,
     "scorecardCount": 150,
-    "views": 1082,
+    "views": 1083,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -10481,9 +10481,9 @@
       "Picking Risk"
     ],
     "notes": "Due to unbalanced pin stacks, drivers in max lift chambers will rest below shear. This risks spring damage if the driver is not picked.",
-    "popularityIndex": 1053,
+    "popularityIndex": 1054,
     "scorecardCount": 146,
-    "views": 1053,
+    "views": 1054,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -12429,9 +12429,9 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "popularityIndex": 1448,
+    "popularityIndex": 1449,
     "scorecardCount": 279,
-    "views": 1448,
+    "views": 1449,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -18155,9 +18155,9 @@
       "Unguttable"
     ],
     "modelNum": "410",
-    "popularityIndex": 876,
+    "popularityIndex": 877,
     "scorecardCount": 107,
-    "views": 876,
+    "views": 877,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -29867,9 +29867,9 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "popularityIndex": 815,
+    "popularityIndex": 816,
     "scorecardCount": 226,
-    "views": 815,
+    "views": 816,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -73412,7 +73412,7 @@
     "belt": "Unranked",
     "makeModels": [
       {
-        "make": "West",
+        "make": "WEST",
         "model": "6"
       }
     ],
@@ -73423,7 +73423,7 @@
     "views": 2,
     "currentBeltDate": "2026-10-12T23:33:54.104Z",
     "dateAdded": "2026-10-12T23:33:54.104Z",
-    "lastUpdated": "2026-10-12T23:33:54.547Z"
+    "lastUpdated": "2026-10-27T04:20:56.175Z"
   },
   {
     "id": "89c7446c",
