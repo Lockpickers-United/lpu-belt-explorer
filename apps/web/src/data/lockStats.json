@@ -3,7 +3,7 @@
     "description": "Locks",
     "data": [
       {
-        "value": 855,
+        "value": 854,
         "label": "Ranked"
       },
       {
@@ -11,7 +11,7 @@
         "label": "All"
       },
       {
-        "value": 275,
+        "value": 276,
         "label": "Unranked"
       }
     ]
@@ -67,14 +67,14 @@
     },
     {
       "belt": "Black",
-      "count": 102,
-      "value": 0.09026548672566372,
+      "count": 101,
+      "value": 0.08938053097345133,
       "id": "Black"
     },
     {
       "belt": "Unranked",
-      "count": 275,
-      "value": 0.24336283185840707,
+      "count": 276,
+      "value": 0.24424778761061947,
       "id": "Unranked"
     }
   ],
@@ -470,7 +470,7 @@
       },
       {
         "label": "Lever",
-        "value": 10,
+        "value": 9,
         "id": "lever"
       },
       {
@@ -502,7 +502,7 @@
       },
       {
         "label": "Lever",
-        "value": 46,
+        "value": 47,
         "id": "lever"
       },
       {
@@ -557,7 +557,7 @@
       },
       {
         "segment": "Ranked locks",
-        "count": 855,
+        "count": 854,
         "media": 827,
         "coverage": "96%"
       },
@@ -25633,8 +25633,8 @@
         {
           "label": "Black",
           "id": "Black",
-          "count": 1,
-          "value": 1
+          "count": 0,
+          "value": 0
         }
       ],
       "mechanisms": [
@@ -26399,6 +26399,6 @@
   },
   "metadata": {
     "source": "import-data",
-    "updatedDateTime": "2026-10-27 04:21"
+    "updatedDateTime": "2026-10-27 05:55"
   }
 }
