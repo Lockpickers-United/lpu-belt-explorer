@@ -4434,10 +4434,10 @@
     ],
     "name": "Master Lock 130, 9130 EURD",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 237,
+    "views": 238,
     "lastUpdated": "2025-03-19T15:44:57.278Z",
     "modelNum": "130",
-    "popularityIndex": 237,
+    "popularityIndex": 238,
     "scorecardCount": 29
   },
   "2455f0ae": {
@@ -5141,9 +5141,9 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53955594897_4a6354e9d3_o.jpg"
       }
     ],
-    "views": 266,
+    "views": 267,
     "lastUpdated": "2025-03-19T01:20:51.356Z",
-    "popularityIndex": 266,
+    "popularityIndex": 267,
     "scorecardCount": 24
   },
   "d4299b24": {
@@ -5809,10 +5809,10 @@
     ],
     "name": "ABUS 55/40",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 1082,
+    "views": 1083,
     "lastUpdated": "2025-03-19T01:20:51.356Z",
     "modelNum": "55.4",
-    "popularityIndex": 1082,
+    "popularityIndex": 1083,
     "scorecardCount": 150
   },
   "d7188e81": {
@@ -9296,14 +9296,14 @@
     ],
     "name": "ABUS 72/40, 34CS55 Platinum",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 1053,
+    "views": 1054,
     "lastUpdated": "2025-03-19T15:44:57.281Z",
     "features": [
       "Picking Risk"
     ],
     "notes": "Due to unbalanced pin stacks, drivers in max lift chambers will rest below shear. This risks spring damage if the driver is not picked.",
     "version": "Guttable version",
-    "popularityIndex": 1053,
+    "popularityIndex": 1054,
     "scorecardCount": 146
   },
   "e42853c7": {
@@ -10879,12 +10879,12 @@
     ],
     "name": "American Lock 1100 / A1100",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 1448,
+    "views": 1449,
     "lastUpdated": "2025-03-19T01:20:51.360Z",
     "relatedIds": [
       "1ae40987"
     ],
-    "popularityIndex": 1448,
+    "popularityIndex": 1449,
     "scorecardCount": 279
   },
   "b16ffe3f": {
@@ -14384,10 +14384,10 @@
     ],
     "name": "Master Lock 410 LOTO (Lockout Tagout)",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 876,
+    "views": 877,
     "lastUpdated": "2025-03-19T15:44:57.286Z",
     "modelNum": "410",
-    "popularityIndex": 876,
+    "popularityIndex": 877,
     "scorecardCount": 107
   },
   "366d5f50": {
@@ -21553,9 +21553,9 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53880309782_17ae6b095d_o.jpg"
       }
     ],
-    "views": 815,
+    "views": 816,
     "lastUpdated": "2025-03-19T15:44:57.293Z",
-    "popularityIndex": 815,
+    "popularityIndex": 816,
     "scorecardCount": 226
   },
   "74c225d1": {
@@ -66577,14 +66577,14 @@
     "belt": "Unranked",
     "makeModels": [
       {
-        "make": "West",
+        "make": "WEST",
         "model": "6"
       }
     ],
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "name": "West 6",
+    "name": "WEST 6",
     "currentBeltDate": "2026-10-12T23:33:54.104Z",
     "dateAdded": "2026-10-12T23:33:54.104Z",
     "popularityIndex": 2,
