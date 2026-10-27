@@ -9879,12 +9879,12 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/52709026203_31fa336a8a_o.jpg"
       }
     ],
-    "views": 134,
+    "views": 135,
     "lastUpdated": "2025-03-19T15:44:57.288Z",
     "relatedIds": [
       "95a9d73c"
     ],
-    "popularityIndex": 134,
+    "popularityIndex": 135,
     "scorecardCount": 32,
     "features": [
       "Flickr Update"
@@ -10879,12 +10879,12 @@
     ],
     "name": "American Lock 1100 / A1100",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 1449,
+    "views": 1450,
     "lastUpdated": "2025-03-19T01:20:51.360Z",
     "relatedIds": [
       "1ae40987"
     ],
-    "popularityIndex": 1449,
+    "popularityIndex": 1450,
     "scorecardCount": 279
   },
   "b16ffe3f": {
@@ -14384,10 +14384,10 @@
     ],
     "name": "Master Lock 410 LOTO (Lockout Tagout)",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 877,
+    "views": 878,
     "lastUpdated": "2025-03-19T15:44:57.286Z",
     "modelNum": "410",
-    "popularityIndex": 877,
+    "popularityIndex": 878,
     "scorecardCount": 107
   },
   "366d5f50": {
@@ -16838,7 +16838,7 @@
     "views": 12,
     "lastUpdated": "2025-03-19T15:44:57.288Z",
     "popularityIndex": 12,
-    "scorecardCount": 3
+    "scorecardCount": 4
   },
   "4382d650": {
     "id": "4382d650",
@@ -19326,11 +19326,11 @@
     "makeModels": [
       {
         "make": "IKON",
-        "model": "Sk6 vector"
+        "model": "SK6"
       }
     ],
     "notes": "IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",
-    "name": "IKON Sk6 vector",
+    "name": "IKON SK6",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "lockingMechanisms": [
       "Pin-tumbler",
@@ -19397,7 +19397,8 @@
       }
     ],
     "popularityIndex": 22,
-    "scorecardCount": 8
+    "scorecardCount": 8,
+    "version": "requires 360° picking"
   },
   "1c38e176": {
     "id": "1c38e176",
@@ -57786,7 +57787,8 @@
       }
     ],
     "popularityIndex": 20,
-    "scorecardCount": 14
+    "scorecardCount": 14,
+    "notes": "IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)"
   },
   "0a2c7044": {
     "id": "0a2c7044",
@@ -62909,7 +62911,7 @@
     "name": "ASSA 500 / Ruko 500",
     "dateAdded": "2026-01-29T04:43:25.089Z",
     "popularityIndex": 15,
-    "scorecardCount": 1,
+    "scorecardCount": 2,
     "views": 15
   },
   "2b5cc5d7": {
