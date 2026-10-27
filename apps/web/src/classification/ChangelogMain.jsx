@@ -146,7 +146,7 @@ export default function ChangelogMain() {
     // CES SP6 - GREEN. This is somewhat similar to the 6-pin PXM but with a different profile.
     // ABUS E100 - sameline with ABUS Ti12 on ORANGE, this is the same lock.
     const {isMobile} = useWindowSize()
-    const style = {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto', marginTop: 24, padding: '0 8px'}
+    const style = {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto', marginTop: 24, padding: '0 8px', borderRadius: 0}
 
     const exportDate = selectedChangelog ? dayjs(selectedChangelog.lastPublishedAt) : dayjs()
     let clipboardText = `**${exportDate.format('MMMM YYYY').toUpperCase()}**\n\n`
@@ -375,6 +375,12 @@ export default function ChangelogMain() {
                     No changes found. Admins will stage updates here as they are approved.
                     Use the "View Previous Changelogs" button to see past changes.
                 </Paper>
+            }
+
+            {!changelogLoading && !changelogError && !selectedChangelog &&
+                <div style={{fontSize: '1.1rem', fontWeight: 600, marginTop: 16, textAlign: 'center'}}>
+                    Preview of Next Changelog
+                </div>
             }
 
             {!changelogLoading && sections.map((key) => groupedEntries[key]?.length &&

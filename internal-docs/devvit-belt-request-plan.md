@@ -1,17 +1,19 @@
-# LPU Reddit Integration — Phased Implementation Plan
+# LPU Reddit Integration — Phased Plan
 
-Technical design and implementation roadmap · Version 1.0 · October 25, 2026
+Technical design and implementation roadmap · Version 1.1 · October 26, 2026
+
+Incorporates the [October 25–26 design and repository review](devvit-belt-request-plan-review.md). Review findings are the planning baseline; recheck official SDK and policy requirements at implementation time. No app installation, live modmail access, or Reddit approval is implied by this document update.
 
 ## 1. Executive summary
 
 ### 1.1 Objective
 
-Develop a Reddit Devvit application for r/lockpicking that supports two complementary workflows for the existing LPU Belt Explorer and related services:
+Deliver a Reddit-native moderator tool for r/lockpicking as the committed first product. LPU account linking and external award transfer are a conditional second product, requiring a written Reddit go/no-go before implementation. The proposed workflows are:
 
-1. Historical award discovery: Identify previously approved belt awards by examining historical Reddit modmail conversations and importing verified results into the user's LPU profile.
-2. Ongoing modmail processing: Detect new belt approvals and other designated messages, extract structured information, and make the results available to authorized LPU services.
+1. Historical award discovery: Test recovery of approved awards in a bounded modmail sample. A persistent historical index requires separate moderator and Reddit approval; importing results into LPU additionally requires external-integration approval.
+2. Ongoing modmail processing: Detect approvals and other agreed moderator messages inside Reddit, with moderator review and diagnostics. Results become available to LPU services only through a separately approved integration.
 
-The solution should also support linking an existing LPU/Firebase account to a verified Reddit identity without requiring users to authorize access to their personal Reddit inbox.
+If Reddit approves the exact protocol and external-service requirements, the second product should support linking an existing LPU/Firebase account to a verified Reddit identity without requiring users to authorize access to their personal Reddit inbox.
 
 The long-term objective is to move away from the existing user-authorized Reddit OAuth inbox-scanning process.
 
@@ -63,7 +65,7 @@ External communication and identity linkage are subject to Reddit's approval. In
 | Retrieve conversation contents            | Documented modmail APIs                                | Low    |
 | Match structured approvals                | Straightforward application logic                      | Low    |
 | Match historical approvals                | Existing regex provides starting point                 | Medium |
-| Retrieve older conversations              | Browser search confirmed conversations back to 2019    | Medium |
+| Retrieve older conversations              | Owner-supplied UI evidence reports 2019 records; API enumeration unverified | High |
 | Complete historical backfill              | API pagination and archive coverage require validation | Medium |
 | Verify Reddit account ownership           | One-time challenge is technically feasible             | Medium |
 | Transfer results to external website      | Requires policy and integration approval               | High   |
@@ -81,7 +83,7 @@ The minimum viable implementation should:
 - Preserve the existing historical matching semantics.
 - Support deterministic matching of new standardized approval messages.
 - Avoid exporting raw modmail contents.
-- Maintain a resumable, queryable historical index.
+- Start with a bounded, time-limited feasibility sample; build a persistent historical index only after scope, retention, deletion, and storage limits are approved.
 - Provide diagnostics for missed messages, parsing failures, and ambiguous awards.
 - Avoid automatically modifying Discord roles, Reddit flair, or existing award records until explicitly enabled.
 
@@ -91,7 +93,7 @@ Out of scope for the first release: automatic belt approval decisions, general-p
 
 ### 2.1 Current historical award-import implementation
 
-The supplied `AuthRedditRoute.jsx` is the reference implementation for historical matching.
+The existing browser implementation, [AuthRedditRoute.jsx](../apps/web/src/auth/AuthRedditRoute.jsx), is the reference for historical matching. The separate API migration is unfinished and must not be treated as the active importer.
 
 Its present workflow is:
 
@@ -106,12 +108,16 @@ Its present workflow is:
 9. Save imported awards and advance the per-user bookmark.
 10. Revoke the temporary OAuth token.
 
-The relevant implementation is in `AuthRedditRoute.jsx`, including `matchToBeltAward()`.&#x20;
+The relevant implementation includes `matchToBeltAward()`. Migration inventory, based on the October 26 repository review:
 
-AuthRedditRoute.jsx
-
-AuthRedditRoute.jsx
-
+| Area | Status and comparison baseline |
+| ---- | ------------------------------ |
+| Browser entry points | [ImportButton.jsx](../apps/web/src/scorecard/ImportButton.jsx) and [EditProfilePage.jsx](../apps/web/src/profile/EditProfilePage.jsx) still request temporary OAuth access with `VITE_REDDIT_CLIENT_ID`, `identity flair privatemessages`, and `${location.origin}/#/auth/reddit`. The callback exchanges the code and reads identity, flair, and inbox messages in the browser. |
+| API migration | [redditImportService.js](../apps/api/src/api/services/redditImportService.js) and [redditImport.js](../apps/api/src/api/routes/redditImport.js) exist. Their five-page, 256 KiB, and 30-second limits apply to that server path. No frontend consumer was found; the [migration checkpoint](reddit-api-auth-developer-report.md#checkpoint) records Phase 1 server work complete and Phase 2 frontend migration pending. |
+| Existing linking | The owner reports existing Reddit linking works and that Reddit would not authorize new apps for API-server redirect URIs. This is an approval constraint on the proposed migration, not evidence that current linking stopped working. |
+| Callback routing | [routes.jsx](../apps/web/src/app/routes.jsx) registers the callback at `/_`, while the buttons request `/auth/reddit`. The discrepancy remains unresolved; deployed routing and a live successful OAuth round trip were not independently verified. |
+| Import confirmation | `advanceBookmarkForRedditUser()` runs before `ImportPreview` renders; [DBContext.jsx](../apps/web/src/app/DBContext.jsx) writes awards during that call. The current preview is a post-write results page. Section 10.5 proposes a new confirmation gate. |
+| Comparison fixtures | Use the current browser matcher and synthetic fixtures first. Real inbox/modmail examples or old/new comparisons require an explicitly authorized source and sanitized, approved fixtures; API limits do not define browser baseline behavior. |
 
 
 ### 2.2 Existing matching behavior
@@ -151,21 +157,18 @@ The earlier `processBeltMessage.js` implements the belt-request lifecycle, inclu
 - Reddit flair synchronization.
 - Request history and status tracking.
 
-Its main value in this project is the established business vocabulary and request lifecycle. It should not be directly ported into Devvit. The Discord bot and the Devvit app have different responsibilities.&#x20;
-
-processBeltMessage.js
-
+Its main value in this project is the established business vocabulary and request lifecycle. It should not be directly ported into Devvit. The Discord bot and the Devvit app have different responsibilities.
 
 
 ### 2.4 Historical data findings
 
-The supplied Reddit ModMail screenshot demonstrates that the search:
+The owner-supplied Reddit ModMail screenshot reportedly shows that the search:
 
 `subreddit:lockpicking participant:mgsecure`
 
 returns conversations from September 2019 through at least October 2022, including Orange, Blue, Purple, and Brown Belt requests.
 
-This is valuable evidence that old conversations are available in modern modmail.
+The screenshot was not included in the repository review. Treat this as reported moderator-UI visibility, not verified Devvit archive coverage or proof of equivalent legacy awards.
 
 It does not yet establish that:
 
@@ -180,14 +183,7 @@ These questions should be settled during the proof-of-concept phase.
 
 Use the current Devvit Web architecture, rather than starting a new project on the deprecated `@devvit/public-api` interface.
 
-Reddit's current documentation recommends `@devvit/web/server` and a `devvit.json` configuration. The legacy public API remains available but is deprecated.&#x20;
-
-[image](https://www.google.com/s2/favicons?domain=https://developers.reddit.com\&sz=32)
-
-Reddit for Developers
-
-+1
-
+Reddit's current documentation recommends `@devvit/web/server` and a `devvit.json` configuration. The legacy public API remains available but is deprecated.
 
 
 | Component             | Proposed technology                         |
@@ -204,7 +200,7 @@ Reddit for Developers
 | Application database  | Existing Firestore                          |
 | Deployment            | Devvit CLI plus existing deployment process |
 
-Devvit's starter tooling may generate TypeScript files. A JavaScript-first codebase is the preferred approach here; validate JS entry-point compatibility with the selected Devvit CLI version before committing to the structure.
+Devvit's starter tooling may generate TypeScript files. Use JavaScript ES module source, but validate the generated starter and build first: Devvit Web requires the server output to be a CommonJS bundle. Verify `devvit.json` entry points, packaged files, and JavaScript compatibility with the pinned local CLI before standardizing the structure. See [Devvit Web configuration](https://developers.reddit.com/docs/capabilities/devvit-web/devvit_web_configuration).
 
 Relevant documentation: [Reddit API](https://developers.reddit.com/docs/capabilities/server/reddit-api?utm_source=chatgpt.com), [Scheduler](https://developers.reddit.com/docs/capabilities/server/scheduler?utm_source=chatgpt.com), and [External Endpoints](https://developers.reddit.com/docs/capabilities/server/external-endpoints?utm_source=chatgpt.com).
 
@@ -240,12 +236,7 @@ const result = await reddit.modMail.getConversation({
 })
 ```
 
-This method is documented, but the exact data shapes should be captured from actual test responses and normalized behind an adapter.&#x20;
-
-[image](https://www.google.com/s2/favicons?domain=https://developers.reddit.com\&sz=32)
-
-Reddit for Developers
-
+This method is documented, but the exact data shapes should be captured from actual test responses and normalized behind an adapter.
 
 
 ### 4.2 Validate archive coverage
@@ -266,12 +257,7 @@ const result = await reddit.modMail.getConversations({
 })
 ```
 
-The documented request type supports `subreddits`, `state`, `sort`, `limit`, and `after`, with a maximum of 100 conversations per request. It does not document a participant filter.&#x20;
-
-[image](https://www.google.com/s2/favicons?domain=https://developers.reddit.com\&sz=32)
-
-Reddit for Developers
-
+The documented request type supports `subreddits`, `state`, `sort`, `limit`, and `after`, with a maximum of 100 conversations per request. It does not document a participant filter.
 
 
 For initial testing, compare the API results with moderator UI searches for several representative usernames.
@@ -282,7 +268,11 @@ Validation criteria:
 - Pagination consistently advances.
 - No unexplained gaps occur in a fixed test window.
 - Historical approvals can be distinguished from ordinary moderator correspondence.
-- The oldest reachable period is documented.
+- The oldest *enumerable* period is documented separately from direct-by-ID retrieval.
+- Several known legacy inbox `t4` approvals are compared with modmail conversation/message IDs, award values, and approval dates, including an old archived case and negative cases.
+- Cursor behavior is recorded when conversations reopen or change order.
+- Recovery is reported as recovered known awards / eligible known awards, with discrepancies explained.
+- Moderators and the product owner set a numeric minimum acceptable coverage before replacement is promised, or approve a manual-evidence fallback for missing history.
 
 If the API cannot enumerate older conversations reliably, investigate a bounded backfill using another approved API mechanism or retain a manual import path.
 
@@ -290,12 +280,7 @@ If the API cannot enumerate older conversations reliably, investigate a bounded 
 
 This is the largest nontechnical dependency.
 
-Reddit's current Devvit Rules require explicit opt-in for account-linked services, a unique opaque linkage ID rather than transmitting Reddit identifiers, and security controls for external services. Those controls include SOC 2 Type II compliance and evidence of a recent third-party penetration test. Exceptions require Reddit's written approval.&#x20;
-
-[image](https://www.google.com/s2/favicons?domain=https://developers.reddit.com\&sz=32)
-
-Reddit for Developers
-
+Reddit's current Devvit Rules require explicit opt-in for account-linked services, a unique opaque linkage ID rather than transmitting Reddit identifiers, and security controls for external services. Those controls include SOC 2 Type II compliance and evidence of a recent third-party penetration test. Exceptions require Reddit's written approval.
 
 
 The proposed LPU integration is an account-linked service because it associates Reddit identities with existing Firebase accounts.
@@ -309,12 +294,16 @@ The team should provide Reddit with:
 - An explanation of why existing Devvit storage is insufficient for the user-facing workflow.
 - Retention, deletion, unlinking, and security policies.
 - A request for any needed security-requirement exceptions.
+- A ruling on read-only OAuth scopes for external accounts and the prohibition on username/password authentication to external services, including how these apply to existing Firebase sign-in methods.
+- The exact challenge protocol, field list, transfer direction, and award payload for approval.
+
+Record a written go/no-go covering the account-linked service requirements, including SOC 2 Type II and a recent qualifying third-party penetration test or an explicit written exception. An opaque link ID alone does not authorize award transfer. Do not start Phases 5–6 on the assumption that an exception will be granted.
 
 An approval to call an external domain does not automatically constitute approval to transfer user-linked data.
 
 ### 4.4 Determine the allowed communication mechanism
 
-Evaluate these options in order:
+Evaluate these separately approved options; neither HTTP Fetch nor External Endpoints is an assumed fallback for the other:
 
 | Option                       | Advantages                          | Limitations                                   |
 | ---------------------------- | ----------------------------------- | --------------------------------------------- |
@@ -323,14 +312,7 @@ Evaluate these options in order:
 | Reddit-only functionality    | Avoids cross-platform data transfer | Cannot automatically update external profiles |
 | Existing approved Reddit API | Could preserve some functionality   | Separate credentials and policy constraints   |
 
-Devvit HTTP Fetch supports HTTPS calls to allow-listed domains, but personal domains generally are not approved without an exception. External Endpoints require separate access approval.&#x20;
-
-[image](https://www.google.com/s2/favicons?domain=https://developers.reddit.com\&sz=32)
-
-Reddit for Developers
-
-+1
-
+Devvit HTTP Fetch supports HTTPS calls to allow-listed domains, but personal domains generally are not approved without an exception. External Endpoints require separate access approval.
 
 
 Recommendation: Request approval for a minimal outbound event mechanism and for External Endpoints, but do not make the Reddit-side proof of concept dependent on either.
@@ -346,7 +328,7 @@ Recommendation: Request approval for a minimal outbound event mechanism and for 
 
 ### Exit criteria
 
-Proceed when both a known old conversation and a current conversation can be read programmatically, and the intended production integration has a clear approval path.
+Proceed with the Reddit-native tool when current and known old conversations can be read, the bounded sample scope is authorized, and coverage limitations are documented. A full-community index additionally requires the privacy and capacity gate in Section 7.9. Phases 5–6 require written approval of the specific external integration; a policy request or a possible approval path is insufficient.
 
 If production account linking is not permitted, the project can still deliver a useful Reddit-native approval index, but it should not be represented as a complete replacement for the existing LPU integration.
 
@@ -356,54 +338,28 @@ Objective: Create a testable application structure with no dependency on the ext
 
 ### 5.1 Suggested repository layout
 
-A standalone repository is preferable initially. It isolates Devvit deployment, permissions, and SDK changes from the Belt Explorer's existing build pipeline.
+The monorepo has already been created: `apps/web/` contains the React/Vite frontend and `apps/api/` contains the Node API. It will also contain the Reddit/Devvit project at `apps/devvit/`; do not create a third permanent repository. The Devvit directory is planned, not an existing implementation.
 
-```
-lpu-devvit/
-├── devvit.json
-├── package.json
-├── README.md
-├── src/
-│   ├── server/
-│   │   ├── index.js
-│   │   ├── triggers/
-│   │   │   └── onModMail.js
-│   │   ├── jobs/
-│   │   │   ├── historicalScan.js
-│   │   │   ├── reconcile.js
-│   │   │   └── cleanup.js
-│   │   └── routes/
-│   │       ├── admin.js
-│   │       └── external.js
-│   ├── core/
-│   │   ├── classifyMessage.js
-│   │   ├── matchHistoricalAward.js
-│   │   ├── matchStructuredAward.js
-│   │   ├── normalizeModmail.js
-│   │   ├── resolveAward.js
-│   │   └── awardRules.js
-│   ├── services/
-│   │   ├── modmailService.js
-│   │   ├── awardIndex.js
-│   │   ├── scanState.js
-│   │   ├── identityLink.js
-│   │   └── resultDelivery.js
-│   └── shared/
-│       ├── belts.js
-│       └── schemas.js
-├── tests/
-│   ├── fixtures/
-│   ├── unit/
-│   ├── integration/
-│   └── regression/
-└── docs/
-    ├── architecture.md
-    ├── privacy.md
-    ├── historical-matching.md
-    └── operations.md
+```text
+apps/web/                    Existing React/Vite frontend
+apps/api/                    Existing Node API
+apps/devvit/                 Planned Reddit/Devvit npm workspace
+    devvit.json              App-local configuration and entry points
+    package.json             Pinned local CLI, build/test/publish scripts
+    src/server/              Triggers, jobs, moderator routes
+    src/core/                Pure matchers, normalization, award rules
+    src/services/            Modmail adapter, index, scan/link/delivery state
+    tests/                   Synthetic fixtures, unit/integration/regression tests
+    docs/                    Architecture, privacy, matching, operations
+firebase/functions/          Existing independent npm package and lockfile
+packages/award-domain/       Optional future pure catalog/mapping package
 ```
 
-The exact CLI-generated entry points should be preserved where required by the selected SDK version.
+Use the existing npm coordinator and root lockfile for web/API and the future Devvit workspace. The repository standard is Node 24.21.0 and npm 11.19.0 with nested installs; the review's earlier Node/Yarn repository-consolidation steps are historical context, not pending work. Keep npm overrides at the root. Firebase Functions retains its independent npm package and lockfile.
+
+Keep `devvit.json` and the project-local CLI dependency inside `apps/devvit/`. Run Devvit CLI commands with that directory as the working directory and validate app-local paths against the generated starter. Give Devvit independent builds, tests, permissions, CI scopes, and publish credentials; preserve existing web/API release pipelines. Devvit publication remains separately approval-gated. Sharing a repository does not grant cross-system data access.
+
+Do not add a shared package until needed. If approved shared source must be packaged from outside the Devvit directory, explicitly configure `additionalSourceRoots` and review the packaged contents. Never package web/API secrets or unrelated source.
 
 ### 5.2 Separate Reddit API access from domain logic
 
@@ -498,7 +454,7 @@ Recommended additional metadata:
 | `evidence`       | Internal audit reference                                  |
 | `supersedes`     | Supports corrections without losing history               |
 
-The current Belt Explorer award dictionary should remain the authority for award names and ordering.
+The current [award dictionary](../apps/web/src/data/awards.json) remains the authority for award IDs, names, and ordering. Slugs such as `blue-belt` in this plan are illustrative internal labels, not production Firestore IDs. Define a versioned mapping from Devvit labels and Dan levels to existing catalog IDs; reject unknown mappings before any write.
 
 Do not maintain independent, diverging belt definitions across the Discord bot, Belt Explorer, and Devvit app.
 
@@ -516,7 +472,7 @@ Preserve the existing `lookupAwardByBelt()` and `awardGreaterThan()` behavior du
 
 ### 5.6 Phase 1 deliverables
 
-- Devvit project skeleton.
+- Devvit project skeleton in `apps/devvit/`, with a pinned project-local CLI and independently scoped CI.
 - Pure JavaScript matching and normalization modules.
 - Shared award data definitions.
 - Versioned internal schemas.
@@ -525,7 +481,7 @@ Preserve the existing `lookupAwardByBelt()` and `awardGreaterThan()` behavior du
 - Local test fixtures.
 - README and operational documentation.
 
-Exit criteria: A normalized message can be classified and converted into a canonical award record without calling Reddit, Discord, or Firebase.
+Exit criteria: A normalized message can be classified and converted into a canonical award record without calling Reddit, Discord, or Firebase. A JavaScript-source build produces the required CommonJS server bundle, and app-local CLI execution resolves the tested `devvit.json` entry points and only approved packaged source.
 
 ## 6. Phase 2 — Historical approval matcher
 
@@ -639,12 +595,7 @@ Validate:
 6. The message represents an actual approval, not a hypothetical, denial, or appeal.
 7. No later correction or revocation invalidates the result.
 
-Moderator identity masking must be accounted for. Devvit does not guarantee all identity fields will be present in every event.&#x20;
-
-[image](https://www.google.com/s2/favicons?domain=https://developers.reddit.com\&sz=32)
-
-Reddit for Developers
-
+Moderator identity masking must be accounted for. Devvit does not guarantee all identity fields will be present in every event.
 
 
 ### 6.5 Build a regression corpus
@@ -668,7 +619,7 @@ Include:
 | Subject identifies belt, body says congratulations | Historical fallback       |
 | Quoted approval from another conversation          | No new award              |
 
-The test corpus should also include real, sanitized cases for unusual historical phrasing.
+The test corpus should also include real, sanitized cases for unusual historical phrasing only from explicitly authorized sources. Do not obtain fixtures through live inbox/modmail reads without the required approval. Record provenance and sanitization; synthetic fixtures remain the default.
 
 ### 6.6 Regression comparison
 
@@ -713,7 +664,7 @@ Objective: Build a resumable, read-only scanner that discovers approved awards i
 
 ### 7.1 Scanning strategy
 
-For an initial backfill, scan conversations by page, rather than issuing a separate full-history scan for each username.
+Start with an approved bounded sample with an explicit time window, conversation limit, and deletion deadline. Measure coverage and storage before proposing a full backfill. If separately approved, scan the wider history by page rather than issuing a full-history scan for each username.
 
 There are two operational modes worth implementing.
 
@@ -790,14 +741,7 @@ Recommendations:
 - Deduplicate by conversation ID and message ID.
 - Run scanning independently from the live-message handler.
 
-Devvit requests have time limits, so historical backfills must be divided into scheduled jobs. Reddit documents this checkpoint-and-resume pattern for larger Redis and scheduler workloads.&#x20;
-
-[image](https://www.google.com/s2/favicons?domain=https://developers.reddit.com\&sz=32)
-
-Reddit for Developers
-
-+1
-
+Devvit requests have time limits, so historical backfills must be divided into scheduled jobs. Reddit documents this checkpoint-and-resume pattern for larger Redis and scheduler workloads.
 
 
 ### 7.5 Pagination and checkpointing
@@ -838,12 +782,7 @@ A scan interruption must never result in an award silently disappearing from the
 
 Use stable, discoverable collections rather than scattered keys that cannot be enumerated.
 
-Devvit Redis supports hashes and sorted sets, but does not support general key enumeration through a global scan.&#x20;
-
-[image](https://www.google.com/s2/favicons?domain=https://developers.reddit.com\&sz=32)
-
-Reddit for Developers
-
+Devvit Redis supports hashes and sorted sets, but does not support general key enumeration through a global scan.
 
 
 Example logical structures:
@@ -868,7 +807,7 @@ Possible semantics:
 | `awards:by-message`         | Hash                | Evidence indexing                |
 | `awards:pending-review`     | Sorted set          | Ambiguous matches                |
 
-These are logical design proposals. Exact storage choices and retention must be evaluated against Reddit policy before implementation.
+These are logical proposals, not unbounded collections. Measure bytes per conversation, participant, evidence record, and retry in the sample; project total installation storage and transaction sizes against current Devvit Redis limits. Choose bounded/sharded collections, expiry, and cleanup indexes before a full scan. General key enumeration is unavailable, so deletion must use maintained indexes.
 
 ### 7.7 Historical evidence and deduplication
 
@@ -909,12 +848,7 @@ A permanent index of every participant's identifiable approval history is not au
 
 For production, prefer the smallest approved scope, potentially indexing only users who have opted in to linking their accounts.
 
-If a community-wide historical scan is approved, store minimal evidence, enforce retention and deletion rules, and do not retain raw message bodies unnecessarily. Reddit's current rules recommend deleting stored user data within 30 days where possible and require account-deletion handling.&#x20;
-
-[image](https://www.google.com/s2/favicons?domain=https://developers.reddit.com\&sz=32)
-
-Reddit for Developers
-
+A community-wide scan indexes people who may never use LPU. Obtain separate moderator and Reddit approval for its scope, size estimate, retained participant/evidence fields, and retention schedule before running it. Specify deletion across participant and evidence indexes, pending review, retries, diagnostics, and any LPU copy. Test account-deletion handling and deletion of linked external data within 30 days of unlinking. If approved, retain only minimal evidence and do not retain raw message bodies unnecessarily. Reddit's current rules recommend deleting stored user data within 30 days where possible and require account-deletion handling.
 
 
 ### 7.10 Phase 3 deliverables
@@ -927,6 +861,7 @@ Reddit for Developers
 - Scan progress diagnostics.
 - Historical comparison report.
 - Coverage and completeness report.
+- Sample size/storage measurements and approved retention/deletion schedule before any persistent full-community index.
 
 Exit criteria: The scanner can locate known approvals, survive interruptions, resume without duplicating awards, and produce an auditable account of which conversations were processed.
 
@@ -952,12 +887,7 @@ Conceptual configuration:
 
 This is an illustrative configuration fragment, not a complete `devvit.json`.
 
-The event contains message metadata, including conversation ID, message ID, author role, and conversation type. It does not contain the message body. The handler must retrieve the conversation to classify its contents.&#x20;
-
-[image](https://www.google.com/s2/favicons?domain=https://developers.reddit.com\&sz=32)
-
-Reddit for Developers
-
+The event contains message metadata, including conversation ID, message ID, author role, and conversation type. It does not contain the message body. The handler must retrieve the conversation to classify its contents.
 
 
 ### 8.2 Trigger processing flow
@@ -967,7 +897,7 @@ Reddit for Developers
 3. Check whether the message has already been processed.
 4. Retrieve the conversation and target message.
 5. Normalize the message and identify its participant.
-6. Run the structured approval matcher.
+6. Apply the moderator workflow contract in Section 8.8: run the structured matcher and queue nonconforming candidate replies for review.
 7. Validate sender role, approval context, and award name.
 8. Write a deduplicated award result.
 9. Queue approved integration delivery if configured.
@@ -977,12 +907,7 @@ Reddit for Developers
 
 Do not assume events are delivered exactly once or in chronological order.
 
-Reddit explicitly documents that triggers may be delivered more than once and that events can arrive after the referenced state changes.&#x20;
-
-[image](https://www.google.com/s2/favicons?domain=https://developers.reddit.com\&sz=32)
-
-Reddit for Developers
-
+Reddit explicitly documents that triggers may be delivered more than once and that events can arrive after the referenced state changes.
 
 
 Use an idempotency key such as:
@@ -1051,6 +976,12 @@ Once the detection system proves reliable, these behaviors can be separately eva
 
 Exit criteria: All messages in a controlled end-to-end test are correctly classified, and duplicate events or transient failures never create duplicate awards.
 
+### 8.8 Moderator workflow contract
+
+Before enabling live classification, agree with moderators on authoritative evidence, exact approval/denial/correction/revocation templates, allowed automation, and an adoption date. Free-form replies will continue until adoption; structured-only processing would silently miss them. Route nonconforming candidate moderator replies to a bounded review queue rather than treating them as confirmed awards or assuming there were no approvals.
+
+Fetch the target message because `onModMail` carries metadata, not a body. Preserve moderator-reply versus internal-note distinctions. Test duplicate and unordered events, late corrections/revocations, free-form replies, and reconciliation across the adoption date. Include the workflow contract and review-queue retention in Phase 4 deliverables and acceptance criteria.
+
 ## 9. Phase 5 — Reddit account linking
 
 Objective: Verify that an authenticated LPU user controls a particular Reddit account without requiring broad Reddit OAuth permissions.
@@ -1059,25 +990,16 @@ Requires Reddit policy approval
 
 ### 9.1 Proposed linking flow
 
-1\. User selects Link Reddit Account
+Candidate protocol, contingent on Reddit approving these exact fields and directions:
 
-Existing Firebase session
+1. The Firebase-authenticated user explicitly opts in. The LPU backend creates a random challenge and random opaque link ID and stores their association with the UID, expiry, consent version, and pending state. Store a challenge hash where practical.
+2. The browser displays the challenge and link ID for the user to send in r/lockpicking modmail. Neither is a Firebase UID or Reddit identifier.
+3. Devvit reads the actual message sender's stable Reddit ID and reserves that identity internally for this attempt. A browser cannot supply or attest the Reddit identity.
+4. Through the approved authenticated server channel, Devvit delivers the challenge, link ID, protocol version, and idempotent attempt ID to LPU. The backend atomically checks ownership of the challenge/link pair, expiry, consent, unused state, and account conflicts, then consumes the challenge and records a pending binding. Devvit cannot establish backend expiry or single-use state from the code alone.
+5. On an authenticated acceptance, Devvit atomically binds the reserved Reddit ID to the link ID, enforcing one active association on both sides. It confirms commitment through the approved channel; LPU marks the link verified only after confirmation. Award transfer remains disabled until both sides agree.
+6. Recover partial completion through idempotent retries and authenticated status reconciliation. This is a two-system state machine, not a distributed transaction.
 
-2\. LPU creates short-lived challenge
-
-Cryptographically random nonce
-
-3\. User sends modmail to r/lockpicking
-
-Challenge code in message body
-
-4\. Devvit validates the challenge
-
-Code, sender identity, expiration and replay state
-
-5\. Account linkage established
-
-Opaque linkage ID, with explicit consent
+No part of this candidate protocol is an authorization to transfer data. If the approved channel cannot support the handshake and its acknowledgements, redesign it and obtain approval before implementation.
 
 ### 9.2 Challenge format
 
@@ -1087,6 +1009,7 @@ Example:
 Subject: LPU Account Verification
 
 LPU-VERIFY 7f49c2e8b0...
+LPU-LINK opaque-random-link-id
 ```
 
 The actual challenge should be cryptographically random, sufficiently long, single-use, and short-lived.
@@ -1133,39 +1056,25 @@ The preferred design is to maintain the Reddit account ID only on the Reddit sid
 
 The Firebase side stores that link ID and associated verification status.
 
-Do not assume that hashing the Reddit username or account ID makes it anonymous. Reddit's rules explicitly limit external identity associations to a unique ID and prohibit re-identification.&#x20;
-
-[image](https://www.google.com/s2/favicons?domain=https://developers.reddit.com\&sz=32)
-
-Reddit for Developers
-
+Do not assume that hashing the Reddit username or account ID makes it anonymous. Reddit's rules explicitly limit external identity associations to a unique ID and prohibit re-identification.
 
 
 ### 9.5 Linkage protocol options
 
-Option A — Devvit-initiated delivery
+Use the end-to-end protocol in Section 9.1 as the candidate design. HTTP Fetch approval must include the authenticated delivery, acknowledgements, and reconciliation operations it needs. A pull-based External Endpoint design is a separate limited-access request and requires a complete equivalent protocol before adoption; it is not an automatic fallback.
 
-The Devvit app validates a challenge and sends an approved result to the Node backend through an allow-listed HTTPS endpoint.
+Required lifecycle behavior on both sides:
 
-Benefits: simple event-driven operation.
+| Case | Required behavior |
+| ---- | ----------------- |
+| Retry or lost acknowledgement | Same attempt ID and payload return the prior outcome; never consume twice or create a second link. |
+| Expired/unissued challenge | Backend rejects without binding. Devvit clears its reservation; the user starts a fresh attempt. |
+| Conflicting claim | Reject an attempt to bind either side to a different active account; do not overwrite an existing link. |
+| Partial completion | Reconcile pending states with authenticated status checks; expire abandoned reservations and prevent award delivery until committed. |
+| Unlink/revocation | Disable transfer immediately, invalidate outstanding challenges and queued deliveries, and propagate idempotent deletion to both stores. Delete linked external data within 30 days. |
+| Re-link | Require fresh consent, challenge, attempt ID, and link ID; never resurrect old queued results or let an earlier acknowledgement restore a revoked association. |
 
-Dependency: outbound HTTP domain and data-sharing approval.
-
-Option B — Backend-initiated query
-
-The Node backend submits an opaque challenge or link ID to an authenticated Devvit External Endpoint and requests its status.
-
-Benefits: query-on-demand, reduced unsolicited outbound traffic.
-
-Dependency: limited-access External Endpoints approval.
-
-Option C — Reddit-native verification with manual confirmation
-
-An internal Devvit workflow displays a verification outcome to an authorized moderator who completes the external linkage through a separately approved mechanism.
-
-Benefits: useful fallback during experimentation.
-
-Limitations: introduces manual work and still requires an appropriate policy basis for connecting identities.
+Manual verification also needs a separately approved policy basis and protocol; it does not bypass external account-linking rules.
 
 ### 9.6 Security safeguards
 
@@ -1291,31 +1200,22 @@ Keep raw evidence identifiers within Devvit unless sharing them is specifically 
 
 ### 10.4 Firestore structure
 
-Illustrative structure:
+Use the current data contract rather than a new nested award store:
 
-```
-users/{firebaseUid}
-    redditIntegration
-        linkId
-        status
-        verifiedAt
-
-users/{firebaseUid}/awardImports/{importId}
-    status
-    startedAt
-    completedAt
-    resultsCount
-    errors
-
-users/{firebaseUid}/awards/{awardId}
+```text
+awards/{documentId}
+    userId
     awardId
-    awardedAt
-    source
-    verificationStatus
-    importedAt
+    awardUrl
+    awardCreatedAt
+
+lockcollections/{existingProfileId}
+    Existing related profile fields
 ```
 
-The final schema should be reconciled with the Belt Explorer's existing award records rather than introduced as a parallel system without migration logic.
+The prior `users/{uid}/awards/{awardId}` proposal was illustrative and does not describe this application. Design pending import/link metadata separately after inspecting existing account and authorization contracts; do not duplicate the authoritative award collection.
+
+Before implementation, version the Devvit-to-catalog ID mapping and timestamp conversion. Decide how an approved result with no externally shareable Reddit message URL is represented in `awardUrl` and displayed; do not fabricate a URL or export evidence IDs to fill it. Check the scorecard and activity-cache consumers and update their refresh/invalidation paths for the approved contract. Preserve existing manual awards and profile fields.
 
 ### 10.5 Importing awards
 
@@ -1331,7 +1231,7 @@ The import operation should:
 8. Return a preview of proposed changes.
 9. Require user confirmation before applying changes, unless an automatic-update policy has been explicitly approved.
 
-For initial deployment, preserve the existing `ImportPreview` UX rather than automatically importing everything.
+For initial deployment, the recommended policy is explicit acceptance before writes. This requires a new backend pending-candidate state and authenticated accept action, plus a preview UI before awards or import bookmarks are changed. Existing `ImportPreview` displays results after writes and cannot supply this gate unchanged. Acceptance must revalidate link status, candidate version, permissions, and concurrent award changes, then commit idempotently. If product policy instead chooses automatic writes, document that decision and call the screen a post-write results page.
 
 ### 10.6 Import reconciliation rules
 
@@ -1372,7 +1272,7 @@ A result should remain recoverable after a temporary Node server outage.
 - Firebase authentication and authorization middleware.
 - Approved result-transfer mechanism.
 - Firestore repository functions.
-- Import preview integration.
+- Pending-candidate storage, pre-write preview, and explicit accept action (subject to the product decision).
 - Reconciliation logic.
 - Idempotent event processing.
 - End-to-end tests with the existing Belt Explorer.
@@ -1501,12 +1401,7 @@ Define written procedures covering:
 - Audit-record retention.
 - User privacy requests.
 
-Reddit's rules require external linked-account data to be deleted within 30 days after unlinking, and deleted Reddit-account identifiers must be removed from applicable stores.&#x20;
-
-[image](https://www.google.com/s2/favicons?domain=https://developers.reddit.com\&sz=32)
-
-Reddit for Developers
-
+Reddit's rules require external linked-account data to be deleted within 30 days after unlinking, and deleted Reddit-account identifiers must be removed from applicable stores.
 
 
 The retention design should be approved before building a persistent full-community index.
@@ -1545,7 +1440,7 @@ Objective: Replace the legacy OAuth inbox importer only after the new workflow d
 
 ### 12.1 Parallel validation period
 
-During an initial pilot, keep the existing importer available where it remains authorized and functional.
+During an initial pilot, keep the existing browser importer available where it remains authorized and functional. The owner reports it works. Do not assume the unfinished API OAuth migration is approved or available, and do not require new API-server redirect clients as a Phase 8 dependency. Resolve the callback routing discrepancy separately before relying on a deployed comparison flow. Use authorized existing exports or sanitized fixtures if a live comparison cannot be approved.
 
 Compare:
 
@@ -1577,7 +1472,7 @@ Do not require every existing user to reprove every previously imported award.
 
 Retire the old importer only when:
 
-- A suitable historical coverage test has passed.
+- The numeric coverage threshold agreed in Phase 0 has passed, or an approved manual-evidence fallback covers missing history, including newly linked users with inbox-only approvals.
 - New approvals are processed correctly.
 - The account-linking path is operational and approved.
 - Existing records remain stable.
@@ -1611,17 +1506,12 @@ const clientSecret =
   import.meta.env.VITE_REDDIT_CLIENT_SECRET
 ```
 
-It subsequently uses that value in the browser to exchange and revoke OAuth tokens.&#x20;
-
-AuthRedditRoute.jsx
-
-AuthRedditRoute.jsx
-
+It subsequently uses that value in the browser to exchange and revoke OAuth tokens.
 
 
 A confidential Reddit OAuth client secret should never be distributed through client-side Vite variables. Values prefixed with `VITE_` are exposed to the client bundle.
 
-If this code is still deployed and uses a confidential client secret, move token exchange to the Node backend and rotate the exposed secret. If it has intentionally been configured as a public OAuth client, review its flow against the applicable Reddit OAuth requirements.
+Check whether a real confidential secret was ever compiled into a deployed artifact through an authorized configuration/artifact audit; do not print secrets. The unexpected callback path does not prevent Vite from bundling configured values. If exposure is confirmed, remove the browser secret flow and rotate the credential through the normal approved release process. The API implementation already keeps its own `REDDIT_CLIENT_SECRET` server-side; moving that secret is not future work. Any frontend migration to it still needs valid Reddit client/redirect authorization. If the browser intentionally uses a public OAuth client, verify that flow against applicable requirements.
 
 This correction should not wait for the Devvit migration.
 
@@ -1660,7 +1550,7 @@ awardRules.test.js
 verificationChallenge.test.js
 ```
 
-Prioritize real historical fixtures, Dan-level parsing, conflicting messages, and negative examples.
+Prioritize authorized sanitized historical fixtures, Dan-level parsing, conflicting messages, and negative examples; use synthetic equivalents when real fixtures are unavailable.
 
 ### 14.2 Integration tests
 
@@ -1676,8 +1566,13 @@ Use mocked or recorded, sanitized Reddit API responses to test:
 - Resume after checkpoint.
 - External delivery retries.
 - Account-link verification and replay prevention.
+- Lost handshake acknowledgements, partial commitment, competing claims, unlink during retries, and fresh re-link attempts.
+- Unordered approval/correction/revocation events and moderator replies versus internal notes.
+- Nonconforming replies before and after template adoption, with review-queue expiry.
+- Catalog mapping, missing shareable evidence URLs, scorecard/activity-cache refresh, and pending imports that write only after acceptance.
+- Deletion across participant/evidence indexes, diagnostics, retries, and approved external copies; storage/transaction bounds.
 
-Use a separate test subreddit for live integration tests.
+Use a separate test subreddit for explicitly authorized live integration tests; default CI uses synthetic data and mocked services.
 
 ### 14.3 End-to-end acceptance tests
 
@@ -1692,7 +1587,7 @@ Use a separate test subreddit for live integration tests.
 | User completes valid challenge               | Account becomes verified                              |
 | Incorrect challenge sent                     | No linkage                                            |
 | Expired challenge sent                       | No linkage                                            |
-| Another account reuses a valid challenge     | Rejected                                              |
+| Another account reuses a consumed challenge or claims an active link | Rejected |
 | External API unavailable                     | Authorized result retained for retry                  |
 | User unlinks account                         | Link invalidated and data deleted according to policy |
 | New matcher version differs from old         | Differences captured before records change            |
@@ -1710,6 +1605,7 @@ Suggested initial release criteria, subject to adjustment based on the historica
 | Historical scan recovery         | Successful across tested interruptions      |
 | Unauthorized data transfer       | Zero                                        |
 | Known unresolved ambiguous cases | Flagged for review, never silently imported |
+| Known historical award recovery | Report numerator/denominator and oldest enumerable period; meet the Phase 0 threshold or approved manual fallback before cutover |
 
 A zero-observed-false-positive result in a limited sample is not a guarantee of zero production errors. The production workflow should retain manual correction capability.
 
@@ -1734,37 +1630,37 @@ The policy and historical-access risks should be treated as go/no-go decisions, 
 
 ## 16. Recommended work breakdown
 
-The phases need not be executed completely sequentially. Some activities can run in parallel once the initial proof of concept succeeds.
+The Reddit-native tool is the committed product; Phases 5–6 and importer retirement remain conditional. Technical work may overlap after the proof of concept, but persistent scanning, external integration, and live publication retain their separate approval gates. Phase 7 operational controls also apply to a Reddit-only release and do not depend on completing external integration.
 
 | Phase                        | Priority | Dependencies               | Main output                   |
 | ---------------------------- | -------- | -------------------------- | ----------------------------- |
 | 0. Feasibility and approvals | P0       | None                       | Validated architecture        |
 | 1. Project foundation        | P0       | SDK selection              | Testable project              |
 | 2. Matching engine           | P0       | Existing code and fixtures | Reusable classifiers          |
-| 3. Historical scanner        | P1       | Phases 0–2                 | Backfilled award index        |
+| 3. Historical scanner        | P1       | Phases 0–2; scan/privacy approval | Bounded sample, conditional index |
 | 4. Live processing           | P1       | Phases 0–2                 | Incoming approval detection   |
 | 5. Account linking           | P1       | Reddit policy approval     | Verified account associations |
 | 6. Backend integration       | P1       | Phases 3–5 and approval    | Award import workflow         |
-| 7. Production operations     | P1       | Phases 3–6                 | Production readiness          |
+| 7. Production operations     | P1       | Phases 3–4; 5–6 if approved | Reddit-native or integrated readiness |
 | 8. Legacy migration          | P2       | Validated replacement      | OAuth importer retirement     |
 
 ### Recommended milestones
 
 Milestone A — Technical feasibility
 
-Retrieve a known 2019 modmail conversation through Devvit and classify its moderator replies with the existing historical matcher.
+In an authorized bounded sample, retrieve and enumerate known old/current conversations, compare legacy award evidence and dates, measure coverage and storage, and classify moderator replies with the existing historical matcher.
 
 Phases 0–2
 
 Milestone B — Reddit-side MVP
 
-Complete historical scanning and live approval processing inside Devvit, with minimal indexing and no external data transfer.
+Deliver moderator-approved live processing and review inside Devvit with no external data transfer. Expand the bounded historical sample to a persistent index only after separate privacy, retention, capacity, and coverage approval.
 
 Phases 3–4
 
 Milestone C — Approved LPU integration
 
-Establish verified account linking and securely expose permitted award results to the Node/Firebase service.
+Only after written approval of the exact linking protocol, external-service compliance or exceptions, channel, and payload, establish verified linking and permitted result transfer. This milestone may be declined without blocking the Reddit-native tool.
 
 Phases 5–6
 
@@ -1780,8 +1676,8 @@ Several product and architecture choices are not determined by the existing code
 
 | Decision                                                   | Recommended default                                                                                 |
 | ---------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
-| Is historical scanning global or user-initiated?           | Build a one-time global scanner for testing; restrict production scope according to Reddit approval |
-| Should historical awards be imported automatically?        | No, preserve ImportPreview                                                                          |
+| Is historical scanning global or user-initiated?           | Begin with a bounded, time-limited approved sample; global indexing needs separate review |
+| Should historical awards be imported automatically?        | Recommend no; add pending candidates and explicit acceptance because current ImportPreview is post-write |
 | Should new structured approvals be added automatically?    | Initially record as verified candidates                                                             |
 | Should current flair limit historical awards?              | Preserve existing behavior for comparison, then reconsider                                          |
 | Should ambiguous historical matches be imported?           | No, require review                                                                                  |
@@ -1793,6 +1689,11 @@ Several product and architecture choices are not determined by the existing code
 | Should Devvit modify Discord roles?                        | Not in the initial release                                                                          |
 | What constitutes authoritative proof of approval?          | Explicit moderator approval in qualifying modmail                                                   |
 | How are corrections or revocations handled?                | Separate, auditable state transitions                                                               |
+| Is LPU linkage approved as a second product? | Written Reddit go/no-go for protocol, fields, channel, Firebase sign-in, and compliance/exception before Phases 5–6 |
+| What coverage allows importer retirement? | Set a numeric threshold from known-case comparisons and approve a manual-evidence fallback before promising replacement |
+| Which moderator formats are authoritative? | Agree approval, denial, correction, revocation templates, adoption date, and a nonconforming-message review queue |
+| What survives a full-community scan? | Approve retained fields, participant indexes, expiry, deletion across all copies, and storage budget before expanding the sample |
+| How is missing external evidence represented? | Approve awardUrl/display semantics and catalog mapping without exporting unapproved evidence IDs |
 
 A specific product decision is needed for users whose current flair has changed or whose historical approvals have no surviving modmail evidence. Those cases should not silently erase previous achievements.
 
@@ -1802,14 +1703,16 @@ The following official documentation should serve as the technical baseline. Rec
 
 | Resource                                                                                                                                 | Purpose                                             |
 | ---------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------- |
+| [Devvit Web configuration](https://developers.reddit.com/docs/capabilities/devvit-web/devvit_web_configuration) | Entry points, CommonJS bundle, additional source roots |
+| [Devvit CLI guide](https://developers.reddit.com/docs/guides/tools/devvit_cli) | Project-local CLI and app working directory |
 | [Devvit Web Overview](https://developers.reddit.com/docs/capabilities/devvit-web/devvit_web_overview?utm_source=chatgpt.com)             | App architecture and deployment model               |
 | [Reddit API Overview](https://developers.reddit.com/docs/capabilities/server/reddit-api?utm_source=chatgpt.com)                          | Reddit access and permissions                       |
 | [ModMailService](https://developers.reddit.com/docs/api/public-api/classes/ModMailService?utm_source=chatgpt.com)                        | Conversation APIs and migration reference           |
 | [Trigger Event Catalog](https://developers.reddit.com/docs/capabilities/server/trigger-events?utm_source=chatgpt.com)                    | `onModMail` event contract                          |
-| [GetConversationsRequest](https://developers.reddit.com/docs/api/public-api/type-aliases/GetConversationsRequest?utm_source=chatgpt.com) | Pagination and filtering options                    |
+| [GetConversationsRequest](https://developers.reddit.com/docs/api/redditapi/models/type-aliases/GetConversationsRequest) | Pagination and filtering options                    |
 | [Devvit Redis](https://developers.reddit.com/docs/capabilities/server/redis?utm_source=chatgpt.com)                                      | Persistence and checkpoints                         |
 | [Devvit Scheduler](https://developers.reddit.com/docs/capabilities/server/scheduler?utm_source=chatgpt.com)                              | Background scanning                                 |
-| [HTTP Fetch](https://developers.reddit.com/docs/capabilities/http-fetch?utm_source=chatgpt.com)                                          | Outbound connectivity and domain approval           |
+| [HTTP Fetch](https://developers.reddit.com/docs/capabilities/server/http-fetch-policy)                                          | Outbound connectivity and domain approval           |
 | [External Endpoints](https://developers.reddit.com/docs/capabilities/server/external-endpoints?utm_source=chatgpt.com)                   | Inbound backend communication                       |
 | [Devvit Rules](https://developers.reddit.com/docs/devvit_rules?utm_source=chatgpt.com)                                                   | Privacy, account linking, data retention and review |
 
@@ -1817,11 +1720,13 @@ Existing project references:
 
 - `AuthRedditRoute.jsx` — Historical message matching, OAuth, user-flair validation, import and bookmarks.
 - `processBeltMessage.js` — Discord-based request lifecycle, approval handling, flair synchronization and request status tracking.
-- Moderator UI screenshot — Confirms the existence of modern r/lockpicking modmail conversations dating back to 2019.
+- Moderator UI screenshot — Reported visibility of 2019 conversations; not included in the repository review and not proof of API enumeration.
+- [Plan review](devvit-belt-request-plan-review.md) — Policy, privacy, migration, schema, and build findings incorporated in this revision.
+- [API migration report](reddit-api-auth-developer-report.md#checkpoint) — Server Phase 1 complete; frontend Phase 2 pending.
 
 ## 19. Final recommendation
 
-Proceed with Milestone A immediately, without committing to the external integration until the required Reddit permissions are confirmed.
+Prepare Milestone A in the existing monorepo, with the future Devvit project at `apps/devvit/`. Run installations or live modmail experiments only after the required explicit authorization. Commit to the Reddit-native moderator tool; treat external LPU integration as a separate product requiring written approval.
 
 The highest-value first technical experiment is quite small: create a Devvit app that retrieves a known archived belt-request conversation, normalizes its messages, and runs the existing historical award matcher against moderator replies.
 

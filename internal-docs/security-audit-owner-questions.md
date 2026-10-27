@@ -47,14 +47,34 @@ unverified, not closed. No production probing was performed.
 
 ## 3. Inventory subdomains before strengthening HSTS
 
-**Owner information needed:** List active subdomains (including third-party
-services and any HTTP-only hosts) and their HTTPS support. The report's existing
+**Inventory received; all listed subdomains support HTTPS per the owner.** The report's existing
 `max-age=31556952` already exceeds one year; its duration does not need increasing
 to meet the stated one-year minimum.
 
-Owner answer:
+Owner answer (2026-10-26): the following known subdomains all support HTTPS,
+as reported by the owner:
 
-Owner action: confirm HTTPS coverage before enabling `includeSubDomains` on a
+- `api-dev.lpubelts.com`
+- `api.lpubelts.com`
+- `assets.lpubelts.com`
+- `beta.lpubelts.com`
+- `content.lpubelts.com`
+- `data.lpubelts.com`
+- `dev.lpubelts.com`
+- `explore.lpubelts.com`
+- `img.lpubelts.com`
+- `share.lpubelts.com`
+- `video.lpubelts.com`
+
+The owner identified `video.lpubelts.com` as a DNS-only entry and subsequently
+confirmed that `https://video.lpubelts.com/` is served over HTTPS. This resolves
+the outstanding HTTPS-support clarification for that entry.
+
+This records owner-provided inventory, not independent DNS/TLS verification.
+No live checks or configuration changes were performed.
+
+Owner action: confirm inventory completeness and HTTPS coverage for any other
+active or nested subdomains before enabling `includeSubDomains` on a
 header-capable host. Treat browser preload submission as a separate explicit
 decision after checking eligibility and rollback implications. HTML meta tags
 cannot configure HSTS.
