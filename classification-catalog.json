@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": "sha256:70673efe6c95b5dad2e1ba1107cf2e772951c64a217c68bb1a737cbc58873167",
-  "generatedAt": "2026-10-27T04:20:56.185Z",
+  "catalogVersion": "sha256:dfb2a05087a72584b7bf67e11f61faa4a1c615d67a4de76ea0adfcdc9b884f9c",
+  "generatedAt": "2026-10-27T05:55:43.316Z",
   "entries": [
     {
       "id": "0082fa4c",
@@ -3514,8 +3514,8 @@
       "id": "6ebce16f",
       "name": "WittKopp cawi Optima 2648",
       "version": null,
-      "belt": "Black 5",
-      "currentBeltDate": "2026-10-24T19:38:00.867Z"
+      "belt": "Unranked",
+      "currentBeltDate": "2026-10-27T05:55:42.869Z"
     },
     {
       "id": "6efe5f67",

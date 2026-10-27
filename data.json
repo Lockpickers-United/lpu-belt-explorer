@@ -11,9 +11,9 @@
     "lockingMechanisms": [
       "Various"
     ],
-    "popularityIndex": 1473,
+    "popularityIndex": 1474,
     "scorecardCount": 107,
-    "views": 1473,
+    "views": 1474,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -620,9 +620,9 @@
       "Unguttable"
     ],
     "modelNum": "3",
-    "popularityIndex": 1508,
+    "popularityIndex": 1509,
     "scorecardCount": 172,
-    "views": 1508,
+    "views": 1509,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -827,9 +827,9 @@
       "Unguttable"
     ],
     "modelNum": "5",
-    "popularityIndex": 508,
+    "popularityIndex": 509,
     "scorecardCount": 53,
-    "views": 508,
+    "views": 509,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -4209,9 +4209,9 @@
       "Unguttable"
     ],
     "modelNum": "140",
-    "popularityIndex": 1884,
+    "popularityIndex": 1885,
     "scorecardCount": 251,
-    "views": 1884,
+    "views": 1885,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -64616,22 +64616,6 @@
     "lastUpdated": "2025-12-02T23:39:17.963Z"
   },
   {
-    "id": "6ebce16f",
-    "belt": "Black 5",
-    "makeModels": [
-      {
-        "make": "WittKopp cawi",
-        "model": "Optima 2648"
-      }
-    ],
-    "lockingMechanisms": [
-      "Lever"
-    ],
-    "currentBeltDate": "2026-10-24T19:38:00.867Z",
-    "dateAdded": "2026-10-12T23:33:54.104Z",
-    "lastUpdated": "2026-10-24T19:38:01.315Z"
-  },
-  {
     "id": "a8e79394",
     "belt": "Black 2",
     "makeModels": [
@@ -73717,6 +73701,22 @@
     "currentBeltDate": "2026-10-12T23:33:54.104Z",
     "dateAdded": "2026-10-12T23:33:54.104Z",
     "lastUpdated": "2026-10-12T23:33:54.548Z"
+  },
+  {
+    "id": "6ebce16f",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "WittKopp cawi",
+        "model": "Optima 2648"
+      }
+    ],
+    "lockingMechanisms": [
+      "Lever"
+    ],
+    "currentBeltDate": "2026-10-27T05:55:42.869Z",
+    "dateAdded": "2026-10-12T23:33:54.104Z",
+    "lastUpdated": "2026-10-27T05:55:43.304Z"
   },
   {
     "id": "e16080de",

@@ -849,7 +849,6 @@ Red,Yanai,"R 2200M","<14 pins",Dimple,"High pin count,Flickr Update",,5eac6a29
 "Black 5","Western Electric",30B,,Lever,"Cabinet lock,Flat steel key,Curtain,False gates",,e718b140
 "Black 5","Western Electric",30C,,Lever,"Cabinet lock,Flat steel key,Curtain",,5a4310d5
 "Black 1",Winkhaus,X-Tra,"≥13 pins",Dimple,"High pin count",,d1a5cd90
-"Black 5","WittKopp cawi","Optima 2648",,Lever,,,6ebce16f
 "Black 2",Yanai,"R 2200M",">= 17 pins",Dimple,"High pin count,Flickr Update",,a8e79394
 "Black 1",Yanai,"R 2200M","14-16 pins",Dimple,"High pin count",,a974eb0c
 "Black 5","Yuema,Forte","750 series,Enigma",,Slider,"Reverse sidebar",,0b604114
@@ -1121,6 +1120,7 @@ Unranked,Wilka,"Primus VX",,,"Under Review ⚑",,10679814
 Unranked,Wilka,STR,"6 pin",Pin-tumbler,,,42d30266
 Unranked,Wilson,"18 Pins",,Pin-tumbler,"Under Review ⚑","Cruciform Lock",c4a2fbe5
 Unranked,Winkhaus,XR,"mirrored normal profile",Pin-tumbler,,,837761db
+Unranked,"WittKopp cawi","Optima 2648",,Lever,,,6ebce16f
 Unranked,Yale,Bicentric,,Pin-tumbler,"Under Review ⚑",,e16080de
 Unranked,Yale,Multipin,,Pin-tumbler,,,7bc9de2d
 Unranked,Yale,YE3B,,Pin-tumbler,"Under Review ⚑",,ad6b0d8f

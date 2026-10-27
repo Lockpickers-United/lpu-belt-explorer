@@ -1432,9 +1432,9 @@
     ],
     "name": "Any Acrylic Padlock",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 1473,
+    "views": 1474,
     "lastUpdated": "2025-03-18T23:29:31.267Z",
-    "popularityIndex": 1473,
+    "popularityIndex": 1474,
     "scorecardCount": 107
   },
   "3ac43ea8": {
@@ -1933,10 +1933,10 @@
     ],
     "name": "Master Lock #3",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 1508,
+    "views": 1509,
     "lastUpdated": "2025-03-19T01:20:51.353Z",
     "modelNum": "3",
-    "popularityIndex": 1508,
+    "popularityIndex": 1509,
     "scorecardCount": 172
   },
   "dff62f52": {
@@ -2092,10 +2092,10 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53956921290_091b54de78_o.jpg"
       }
     ],
-    "views": 508,
+    "views": 509,
     "lastUpdated": "2025-03-19T15:44:57.277Z",
     "modelNum": "5",
-    "popularityIndex": 508,
+    "popularityIndex": 509,
     "scorecardCount": 53
   },
   "f10deed6": {
@@ -4581,11 +4581,11 @@
     ],
     "name": "Master Lock 140 Series, 9140 EURD",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 1884,
+    "views": 1885,
     "lastUpdated": "2025-03-19T01:20:51.355Z",
     "modelNum": "140",
     "version": "Ex: 140, 141, 142, etc.",
-    "popularityIndex": 1884,
+    "popularityIndex": 1885,
     "scorecardCount": 251
   },
   "6af6f704": {
@@ -66645,7 +66645,7 @@
   },
   "6ebce16f": {
     "id": "6ebce16f",
-    "belt": "Black 5",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "WittKopp cawi",
@@ -66656,7 +66656,7 @@
       "Lever"
     ],
     "name": "WittKopp cawi Optima 2648",
-    "currentBeltDate": "2026-10-24T19:38:00.867Z",
+    "currentBeltDate": "2026-10-27T05:55:42.869Z",
     "dateAdded": "2026-10-12T23:33:54.104Z"
   },
   "7bc9de2d": {
