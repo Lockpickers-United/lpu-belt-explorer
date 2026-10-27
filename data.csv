@@ -405,8 +405,8 @@ Blue,"Gera,Gera","3000,3100","6 pin",Pin-tumbler,"Latest Changelog",,8f219086
 Blue,GOAL,S,"5 pins",Pin-tumbler,,,959a6b9d
 Blue,Guard,NVL,,Pin-tumbler,,,62bdbd5e
 Blue,"IKON,IKON","P0 N6,P0 AEP10",,Pin-tumbler,,"IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",d1896bf9
-Blue,IKON,RW6,,Dimple,,,bc6c2d51
-Blue,IKON,"Sk6 vector",,"Pin-tumbler,Sidepins",,"IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",08b5986d
+Blue,IKON,RW6,,Dimple,,"IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",bc6c2d51
+Blue,IKON,SK6,"requires 360° picking","Pin-tumbler,Sidepins",,"IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",08b5986d
 Blue,IKON,SK7,,Pin-tumbler,,"IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",1c38e176
 Blue,IKON,Undercut,,"Pin-tumbler,Sidepins",,"IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",948f9068
 Blue,iNAHO,Tierkey,"3 row, short format",Dimple,,,9b94b1c0

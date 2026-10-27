@@ -672,7 +672,7 @@ To qualify for a Blue Belt, you must also submit a project that demonstrates you
 - [Guard NVL](https://lpubelts.com/#/locks?id=62bdbd5e)
 - [IKON P0 N6 / IKON P0 AEP10](https://lpubelts.com/#/locks?id=d1896bf9)
 - [IKON RW6](https://lpubelts.com/#/locks?id=bc6c2d51)
-- [IKON Sk6 vector](https://lpubelts.com/#/locks?id=08b5986d)
+- [IKON SK6](https://lpubelts.com/#/locks?id=08b5986d) (requires 360&deg; picking)
 - [IKON SK7](https://lpubelts.com/#/locks?id=1c38e176)
 - [IKON Undercut](https://lpubelts.com/#/locks?id=948f9068)
 - [iNAHO Tierkey](https://lpubelts.com/#/locks?id=9b94b1c0) (3 row, short format)

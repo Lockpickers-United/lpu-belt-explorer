@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": "sha256:dfb2a05087a72584b7bf67e11f61faa4a1c615d67a4de76ea0adfcdc9b884f9c",
-  "generatedAt": "2026-10-27T05:55:43.316Z",
+  "catalogVersion": "sha256:d402e99f1ad0698a178412c403417954f11baf521001dccc97cf92bcbc5e2fc7",
+  "generatedAt": "2026-10-27T12:19:15.259Z",
   "entries": [
     {
       "id": "0082fa4c",
@@ -278,8 +278,8 @@
     },
     {
       "id": "08b5986d",
-      "name": "IKON Sk6 vector",
-      "version": null,
+      "name": "IKON SK6",
+      "version": "requires 360° picking",
       "belt": "Blue",
       "currentBeltDate": null
     },

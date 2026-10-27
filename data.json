@@ -12429,9 +12429,9 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "popularityIndex": 1449,
+    "popularityIndex": 1450,
     "scorecardCount": 279,
-    "views": 1449,
+    "views": 1450,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -18155,9 +18155,9 @@
       "Unguttable"
     ],
     "modelNum": "410",
-    "popularityIndex": 877,
+    "popularityIndex": 878,
     "scorecardCount": 107,
-    "views": 877,
+    "views": 878,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -21360,9 +21360,9 @@
     "features": [
       "Flickr Update"
     ],
-    "popularityIndex": 134,
+    "popularityIndex": 135,
     "scorecardCount": 32,
-    "views": 134,
+    "views": 135,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -22305,7 +22305,7 @@
       "Pin-tumbler"
     ],
     "popularityIndex": 12,
-    "scorecardCount": 3,
+    "scorecardCount": 4,
     "views": 12,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
@@ -23054,7 +23054,7 @@
       "Pin-tumbler"
     ],
     "popularityIndex": 15,
-    "scorecardCount": 1,
+    "scorecardCount": 2,
     "views": 15,
     "dateAdded": "2026-01-29T04:43:25.089Z",
     "media": [
@@ -26995,6 +26995,7 @@
     "lockingMechanisms": [
       "Dimple"
     ],
+    "notes": "IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",
     "popularityIndex": 20,
     "scorecardCount": 14,
     "views": 20,
@@ -27059,9 +27060,10 @@
     "makeModels": [
       {
         "make": "IKON",
-        "model": "Sk6 vector"
+        "model": "SK6"
       }
     ],
+    "version": "requires 360° picking",
     "lockingMechanisms": [
       "Pin-tumbler",
       "Sidepins"
@@ -27139,7 +27141,7 @@
         "url": "https://www.catalocks.eu/ZEISS-IKON/ZEISS-IKON%20SK%206%20VECTOR_857.html"
       }
     ],
-    "lastUpdated": "2026-09-22T01:32:01.204Z"
+    "lastUpdated": "2026-10-27T12:19:15.213Z"
   },
   {
     "id": "1c38e176",
