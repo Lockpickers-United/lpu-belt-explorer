@@ -1933,10 +1933,10 @@
     ],
     "name": "Master Lock #3",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 1506,
+    "views": 1508,
     "lastUpdated": "2025-03-19T01:20:51.353Z",
     "modelNum": "3",
-    "popularityIndex": 1506,
+    "popularityIndex": 1508,
     "scorecardCount": 172
   },
   "dff62f52": {
@@ -4581,11 +4581,11 @@
     ],
     "name": "Master Lock 140 Series, 9140 EURD",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 1883,
+    "views": 1884,
     "lastUpdated": "2025-03-19T01:20:51.355Z",
     "modelNum": "140",
     "version": "Ex: 140, 141, 142, etc.",
-    "popularityIndex": 1883,
+    "popularityIndex": 1884,
     "scorecardCount": 251
   },
   "6af6f704": {
@@ -6035,13 +6035,13 @@
     ],
     "name": "ABUS 83/40",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 207,
+    "views": 208,
     "lastUpdated": "2025-03-19T01:20:51.356Z",
     "modelNum": "83.4",
     "features": [
       "Latest Changelog"
     ],
-    "popularityIndex": 207,
+    "popularityIndex": 208,
     "scorecardCount": 32,
     "currentBeltDate": "2026-08-30T12:00:00.000Z"
   },
@@ -10879,12 +10879,12 @@
     ],
     "name": "American Lock 1100 / A1100",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 1447,
+    "views": 1448,
     "lastUpdated": "2025-03-19T01:20:51.360Z",
     "relatedIds": [
       "1ae40987"
     ],
-    "popularityIndex": 1447,
+    "popularityIndex": 1448,
     "scorecardCount": 279
   },
   "b16ffe3f": {
@@ -12993,7 +12993,7 @@
     ],
     "name": "DOM SV",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 9,
+    "views": 8,
     "lastUpdated": "2025-03-19T15:44:57.290Z",
     "media": [
       {
@@ -13042,7 +13042,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53987994162_bd2252b5dc_o.jpg"
       }
     ],
-    "popularityIndex": 9,
+    "popularityIndex": 8,
     "scorecardCount": 1
   },
   "8e18bd5f": {
@@ -18263,7 +18263,7 @@
     ],
     "name": "DOM Plura",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 105,
+    "views": 106,
     "lastUpdated": "2025-03-19T15:44:57.290Z",
     "media": [
       {
@@ -18321,7 +18321,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53718781976_37c7fa0aca_o.jpg"
       }
     ],
-    "popularityIndex": 105,
+    "popularityIndex": 106,
     "scorecardCount": 37
   },
   "2e67118d": {
@@ -30097,7 +30097,7 @@
     "views": 18,
     "lastUpdated": "2025-03-18T23:29:31.277Z",
     "popularityIndex": 18,
-    "scorecardCount": 14
+    "scorecardCount": 15
   },
   "db380ba0": {
     "id": "db380ba0",
@@ -52185,7 +52185,7 @@
     "name": "U-Shin Showa X Key",
     "dateAdded": "2023-03-02T19:05:25.000Z",
     "lastUpdated": "2025-03-19T15:44:57.294Z",
-    "views": 34,
+    "views": 35,
     "lockingMechanisms": [
       "Dimple"
     ],
@@ -52213,7 +52213,7 @@
     "relatedIds": [
       "8307d77f"
     ],
-    "popularityIndex": 34,
+    "popularityIndex": 35,
     "scorecardCount": 15
   },
   "ab1e3974": {
@@ -58861,7 +58861,7 @@
       "Dimple"
     ],
     "popularityIndex": 5,
-    "scorecardCount": 2
+    "scorecardCount": 3
   },
   "45bb95df": {
     "id": "45bb95df",
@@ -64086,7 +64086,8 @@
     ],
     "notes": "High pin count",
     "name": "Kaba Gemini T",
-    "dateAdded": "2026-10-02T02:46:54.246Z"
+    "dateAdded": "2026-10-02T02:46:54.246Z",
+    "scorecardCount": 1
   },
   "2ae59863": {
     "id": "2ae59863",
@@ -64148,7 +64149,7 @@
     "name": "Opel Top Security",
     "dateAdded": "2026-10-03T22:57:35.086Z",
     "popularityIndex": 1,
-    "scorecardCount": 1,
+    "scorecardCount": 2,
     "views": 1
   },
   "f5086cb9": {
@@ -65664,7 +65665,8 @@
     "currentBeltDate": "2026-10-12T23:33:54.101Z",
     "dateAdded": "2026-10-12T23:33:54.101Z",
     "popularityIndex": 1,
-    "views": 1
+    "views": 1,
+    "scorecardCount": 2
   },
   "d1f722e2": {
     "id": "d1f722e2",
@@ -65695,7 +65697,8 @@
     ],
     "name": "MIWA IPL - 5 wafers",
     "currentBeltDate": "2026-10-12T23:33:54.102Z",
-    "dateAdded": "2026-10-12T23:33:54.102Z"
+    "dateAdded": "2026-10-12T23:33:54.102Z",
+    "scorecardCount": 1
   },
   "feb61a7b": {
     "id": "feb61a7b",
@@ -65748,7 +65751,7 @@
     "name": "Mottura Champions Pro",
     "currentBeltDate": "2026-10-12T23:33:54.102Z",
     "dateAdded": "2026-10-12T23:33:54.102Z",
-    "scorecardCount": 1,
+    "scorecardCount": 2,
     "popularityIndex": 1,
     "views": 1
   },
@@ -66087,7 +66090,8 @@
     "currentBeltDate": "2026-10-12T23:33:54.103Z",
     "dateAdded": "2026-10-12T23:33:54.103Z",
     "popularityIndex": 1,
-    "views": 1
+    "views": 1,
+    "scorecardCount": 1
   },
   "39aedf60": {
     "id": "39aedf60",
@@ -66169,7 +66173,8 @@
     "currentBeltDate": "2026-10-12T23:33:54.103Z",
     "dateAdded": "2026-10-12T23:33:54.103Z",
     "popularityIndex": 1,
-    "views": 1
+    "views": 1,
+    "scorecardCount": 1
   },
   "20b7f0a3": {
     "id": "20b7f0a3",
@@ -66188,7 +66193,8 @@
     "currentBeltDate": "2026-10-12T23:33:54.103Z",
     "dateAdded": "2026-10-12T23:33:54.103Z",
     "popularityIndex": 1,
-    "views": 1
+    "views": 1,
+    "scorecardCount": 2
   },
   "0874768d": {
     "id": "0874768d",
@@ -66806,6 +66812,9 @@
     ],
     "name": "Baton 5310",
     "currentBeltDate": "2026-10-26T19:45:46.477Z",
-    "dateAdded": "2026-10-26T19:45:46.477Z"
+    "dateAdded": "2026-10-26T19:45:46.477Z",
+    "popularityIndex": 1,
+    "scorecardCount": 1,
+    "views": 1
   }
 }
