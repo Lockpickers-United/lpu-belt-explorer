@@ -4,6 +4,7 @@ import {mkdirSync, mkdtempSync, readFileSync, rmSync, symlinkSync, writeFileSync
 import {tmpdir} from 'node:os'
 import path from 'node:path'
 import {fileURLToPath} from 'node:url'
+import {gunzipSync} from 'node:zlib'
 import {inspectTar, validatePath, verifyReleaseInput} from './releaseArtifact.js'
 
 const temporary = []
@@ -68,6 +69,64 @@ describe('committed release inputs', () => {
 })
 
 describe('standalone API release archive', () => {
+    it('packages required hoisted dependencies from a synthetic monorepo', () => {
+        const directory = mkdtempSync(path.join(tmpdir(), 'api-release-create-test-'))
+        temporary.push(directory)
+        const archive = path.join(directory, 'fixture.tar')
+        writeFileSync(archive, fixture(source => {
+            writeFileSync(path.join(source, 'node_modules/sharp/package.json'), JSON.stringify({
+                name: 'sharp', version: '0.35.4', dependencies: {long: '^5.3.2'}
+            }))
+        }))
+        const application = path.join(directory, 'apps/api')
+        mkdirSync(application, {recursive: true})
+        execFileSync('tar', ['-xf', archive, '-C', application])
+        for (const filename of ['releaseArtifact.js', 'releaseInputs.js']) {
+            writeFileSync(path.join(application, 'scripts', filename), readFileSync(path.join(apiRoot, 'scripts', filename)))
+        }
+        const manifest = JSON.parse(readFileSync(path.join(application, 'package.json')))
+        manifest.type = 'module'
+        manifest.packageManager = 'npm@11.19.0'
+        writeFileSync(path.join(application, 'package.json'), JSON.stringify(manifest))
+        writeFileSync(path.join(directory, 'package.json'), JSON.stringify({
+            workspaces: ['apps/api'], packageManager: manifest.packageManager
+        }))
+        writeFileSync(path.join(directory, 'package-lock.json'), JSON.stringify({
+            lockfileVersion: 3, packages: {
+                'apps/api': manifest,
+                'apps/api/node_modules/sharp': {version: '0.35.4', dependencies: {long: '^5.3.2'}},
+                'node_modules/long': {version: '5.3.2'}
+            }
+        }))
+        writeFileSync(path.join(directory, '.npmrc'), 'install-strategy=nested\n')
+        writeFileSync(path.join(directory, '.nvmrc'), readFileSync(path.join(application, '.nvmrc')))
+        const dependency = path.join(directory, 'node_modules/long')
+        mkdirSync(dependency, {recursive: true})
+        writeFileSync(path.join(dependency, 'package.json'), '{"name":"long","version":"5.3.2"}')
+        const git = args => execFileSync('git', args, {cwd: directory, encoding: 'utf8'}).trim()
+        git(['init', '--quiet'])
+        git(['add', 'package.json', 'package-lock.json', '.npmrc', '.nvmrc', 'apps/api'])
+        git(['-c', 'user.name=Release Test', '-c', 'user.email=release@example.test',
+            '-c', 'commit.gpgsign=false', 'commit', '--quiet', '-m', 'Synthetic monorepo'])
+        const output = path.join(directory, 'release.tar.gz')
+        // This fixture tests packaging, independently of the developer's installed npm.
+        const bin = path.join(directory, 'bin')
+        mkdirSync(bin)
+        const npm = path.join(bin, 'npm')
+        const npmStub = version => `#!/bin/sh\n[ "$#" -eq 1 ] && [ "$1" = "--version" ] || exit 1\nprintf '%s\\n' '${version}'\n`
+        writeFileSync(npm, npmStub('11.19.0'), {mode: 0o755})
+        const options = {env: {...process.env, PATH: `${bin}${path.delimiter}${process.env.PATH}`}, stdio: 'pipe'}
+        const command = [path.join(application, 'scripts/releaseArtifact.js'),
+            'create', git(['rev-parse', 'HEAD']), output]
+        execFileSync(process.execPath, command, options)
+        const members = inspectTar(gunzipSync(readFileSync(output)))
+        expect(JSON.parse(members.get('node_modules/long/package.json').data).version).toBe('5.3.2')
+        expect(JSON.parse(members.get('package-lock.json').data).packages['node_modules/long'].version).toBe('5.3.2')
+        writeFileSync(npm, npmStub('11.0.0'))
+        expect(() => execFileSync(process.execPath, command, options))
+            .toThrow('Release npm does not match the common pin: expected npm@11.19.0, got npm@11.0.0')
+    })
+
     it('accepts the package-root layout with dependencies and an internal dependency link', () => {
         const members = inspectTar(fixture(source => {
             mkdirSync(path.join(source, 'node_modules/.bin'))

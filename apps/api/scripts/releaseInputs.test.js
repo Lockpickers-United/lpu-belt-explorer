@@ -27,17 +27,54 @@ describe('standalone npm release projection', () => {
         expect(api).not.toHaveProperty('overrides')
     })
 
-    it('rejects a lock that requires a dependency hoisted outside the app', () => {
+    it('includes required root dependencies and their transitive dependencies without unrelated root packages', () => {
         const {api, root, lock} = fixture()
         delete lock.packages['apps/api/node_modules/child']
-        lock.packages['node_modules/child'] = {version: '2.0.0'}
-        expect(() => createReleaseInputs(root, lock, api)).toThrow('hoisted outside the release: child')
+        lock.packages['node_modules/child'] = {version: '2.0.0', dependencies: {grandchild: '1.0.0'}}
+        lock.packages['node_modules/grandchild'] = {version: '1.0.0'}
+        lock.packages['node_modules/unrelated'] = {version: '9.0.0'}
+        const output = createReleaseInputs(root, lock, api)
+        expect(output.hoistedPackages).toEqual(['node_modules/child', 'node_modules/grandchild'])
+        expect(output.lock.packages['node_modules/child']).toEqual(lock.packages['node_modules/child'])
+        expect(output.lock.packages['node_modules/grandchild']).toEqual({version: '1.0.0'})
+        expect(output.lock.packages).not.toHaveProperty('node_modules/unrelated')
     })
 
     it('rejects uncommitted manifest dependency drift', () => {
         const {api, root, lock} = fixture()
         api.dependencies = {example: '^2.0.0'}
         expect(() => createReleaseInputs(root, lock, api)).toThrow('workspace lock mismatch: dependencies')
+    })
+
+    it('preserves nested dependencies inside a required root package', () => {
+        const {api, root, lock} = fixture()
+        delete lock.packages['apps/api/node_modules/child']
+        lock.packages['node_modules/child'] = {version: '2.0.0', dependencies: {nested: '1.0.0'}}
+        lock.packages['node_modules/child/node_modules/nested'] = {version: '1.0.0'}
+        const output = createReleaseInputs(root, lock, api)
+        expect(output.hoistedPackages).toEqual(['node_modules/child'])
+        expect(output.lock.packages['node_modules/child/node_modules/nested']).toEqual({version: '1.0.0'})
+    })
+
+    it('rejects missing required dependencies', () => {
+        const {api, root, lock} = fixture()
+        delete lock.packages['apps/api/node_modules/child']
+        expect(() => createReleaseInputs(root, lock, api)).toThrow('Missing API release dependency: child')
+    })
+
+    it('rejects root workspace links required by the API', () => {
+        const {api, root, lock} = fixture()
+        delete lock.packages['apps/api/node_modules/child']
+        lock.packages['node_modules/child'] = {link: true, resolved: 'apps/web'}
+        expect(() => createReleaseInputs(root, lock, api)).toThrow('must not link outside')
+    })
+
+    it('rejects a root dependency whose resolution would change inside the API release', () => {
+        const {api, root, lock} = fixture()
+        delete lock.packages['apps/api/node_modules/child']
+        lock.packages['node_modules/child'] = {version: '2.0.0', dependencies: {example: '2.0.0'}}
+        lock.packages['node_modules/example'] = {version: '2.0.0'}
+        expect(() => createReleaseInputs(root, lock, api)).toThrow('API release dependency resolution changed: example')
     })
 
     it('rejects workspace links inside runtime dependencies', () => {

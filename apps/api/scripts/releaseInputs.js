@@ -25,22 +25,47 @@ export function createReleaseInputs(rootManifest, sharedLock, apiManifest) {
         }
     }
     const packages = {'': {...workspace}}
+    const sources = new Map([['', 'apps/api']])
     for (const [location, entry] of Object.entries(sharedLock.packages)) {
         if (!location.startsWith('apps/api/node_modules/')) continue
         if (entry.link) throw new Error('API runtime dependencies must not link outside the package')
         packages[location.slice('apps/api/'.length)] = entry
+        sources.set(location.slice('apps/api/'.length), location)
     }
+    const hoistedPackages = new Set()
+    const originalLocations = new Set(Object.keys(sharedLock.packages))
     const locations = new Set(Object.keys(packages))
-    for (const [location, entry] of Object.entries(packages)) {
+    const pending = Object.keys(packages)
+    for (let index = 0; index < pending.length; index++) {
+        const location = pending[index]
+        const entry = packages[location]
         if (entry.dev) continue
-        for (const name of Object.keys(entry.dependencies || {})) {
-            if (name in (entry.optionalDependencies || {})) continue
-            if (!resolvePackage(location, name, locations)) {
-                throw new Error(`API dependency is hoisted outside the release: ${name}`)
+        for (const name of Object.keys({...entry.dependencies, ...entry.optionalDependencies})) {
+            const original = resolvePackage(sources.get(location), name, originalLocations)
+            if (!original) {
+                if (name in (entry.optionalDependencies || {})) continue
+                throw new Error(`Missing API release dependency: ${name}`)
+            }
+            let resolved = resolvePackage(location, name, locations)
+            if (!resolved && original.startsWith('node_modules/')) {
+                hoistedPackages.add(original)
+                for (const [source, dependency] of Object.entries(sharedLock.packages)) {
+                    if (source !== original && !source.startsWith(`${original}/node_modules/`)) continue
+                    if (dependency.link) throw new Error('API runtime dependencies must not link outside the package')
+                    packages[source] = dependency
+                    sources.set(source, source)
+                    locations.add(source)
+                    pending.push(source)
+                }
+                resolved = resolvePackage(location, name, locations)
+            }
+            if (!resolved || sources.get(resolved) !== original) {
+                throw new Error(`API release dependency resolution changed: ${name}`)
             }
         }
     }
     return {
+        hoistedPackages: [...hoistedPackages],
         manifest: {...apiManifest, overrides: rootManifest.overrides || {}},
         lock: {
             name: apiManifest.name,

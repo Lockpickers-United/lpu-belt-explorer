@@ -177,7 +177,9 @@ function createArtifact(commit, output) {
     const requiredNode = readFileSync(path.join(repository, '.nvmrc'), 'utf8').trim().replace(/^v/, '')
     if (readFileSync(path.join(apiRoot, '.nvmrc'), 'utf8').trim().replace(/^v/, '') !== requiredNode || process.version !== `v${requiredNode}`) fail('Release Node does not match the common pin')
     const npmVersion = execFileSync('npm', ['--version'], {cwd: repository, encoding: 'utf8'}).trim()
-    if (`npm@${npmVersion}` !== rootManifest.packageManager) fail('Release npm does not match the common pin')
+    if (`npm@${npmVersion}` !== rootManifest.packageManager) {
+        fail(`Release npm does not match the common pin: expected ${rootManifest.packageManager}, got npm@${npmVersion}`)
+    }
     const temporary = mkdtempSync(path.join(tmpdir(), 'lpu-api-artifact-'))
     try {
         const archive = path.join(temporary, 'release.tar')
@@ -198,6 +200,9 @@ function createArtifact(commit, output) {
             installStrategy: 'nested'
         }, null, 2)}\n`)
         cpSync(path.join(apiRoot, 'node_modules'), path.join(stage, 'node_modules'), {recursive: true, verbatimSymlinks: true})
+        for (const location of projected.hoistedPackages) {
+            cpSync(path.join(repository, location), path.join(stage, location), {recursive: true, verbatimSymlinks: true})
+        }
         rmSync(path.join(stage, 'node_modules', '.package-lock.json'), {force: true})
         execFileSync('tar', ['-cf', archive, '-C', stage, '--', ...readdirSync(stage).sort()])
         const buffer = readFileSync(archive)
