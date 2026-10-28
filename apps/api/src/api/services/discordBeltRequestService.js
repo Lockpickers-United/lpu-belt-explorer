@@ -69,9 +69,12 @@ export function formatBeltRequest(request, identity) {
     }
     const fields = [
         {name: 'userId', value: identity.discordId, inline: true},
-        {name: 'userName', value: safeText(identity.username), inline: true},
-        {name: 'requestedBelt', value: request.requestBelt, inline: true},
-        {name: 'messageContent', value: messageContent, inline: false}
+        {name: 'username', value: safeText(identity.username), inline: true},
+        {name: 'belt', value: request.requestBelt, inline: true},
+        {name: 'source', value: 'Site', inline: true},
+        {name: 'platform', value: 'Discord', inline: true},
+        {name: 'messageContent', value: messageContent, inline: false},
+        {name: 'requestId', value: genHexString(16), inline: true},
     ]
     if (request.redditUsername) {
         fields.push({name: 'redditUsername', value: request.redditUsername, inline: true})
@@ -167,4 +170,13 @@ export function createDiscordBeltRequestService({consumePostingGrant, fetcher = 
             messageUrl: `https://discord.com/channels/${target.guildId}/${target.channelId}/${delivered.id}`}
     }
     return {post}
+}
+
+function genHexString(len) {
+    const hex = '0123456789ABCDEF'
+    let output = ''
+    for (let i = 0; i < len; ++i) {
+        output += hex.charAt(Math.floor(Math.random() * hex.length))
+    }
+    return output.toLowerCase()
 }

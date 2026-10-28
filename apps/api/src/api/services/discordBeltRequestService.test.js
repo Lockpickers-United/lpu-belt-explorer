@@ -41,12 +41,20 @@ describe('Discord belt request posting', () => {
         const payload = JSON.parse(options.body)
         expect(payload.allowed_mentions).toEqual({parse: []})
         expect(payload.embeds[0].fields.map(field => field.name)).toEqual([
-            'userId', 'userName', 'requestedBelt', 'messageContent'
+            'userId', 'username', 'belt', 'source', 'platform', 'messageContent', 'requestId'
         ])
-        expect(payload.embeds[0].fields[0].value).toBe(identity.discordId)
-        expect(payload.embeds[0].fields[3].value).toContain('https://example.test/evidence')
-        expect(payload.embeds[0].fields[3].value).not.toContain('@everyone')
-        expect(payload.embeds[0].fields[3].value).not.toContain('<@&123456789012345678>')
+        const fields = Object.fromEntries(payload.embeds[0].fields.map(field => [field.name, field.value]))
+        expect(fields).toEqual({
+            userId: identity.discordId,
+            username: identity.username,
+            belt: request.requestBelt,
+            source: 'Site',
+            platform: 'Discord',
+            messageContent: expect.stringContaining('https://example.test/evidence'),
+            requestId: expect.stringMatching(/^[a-f0-9]{16}$/)
+        })
+        expect(fields.messageContent).not.toContain('@everyone')
+        expect(fields.messageContent).not.toContain('<@&123456789012345678>')
         expect(options.body).not.toContain('forged')
     })
 
@@ -117,6 +125,7 @@ describe('Discord belt request posting', () => {
     it('keeps the manual Dan evidence path available in the embed', () => {
         const payload = formatBeltRequest({requestBelt: '1st Dan', entries: [], quests: [],
             danRequestEvidence: 'https://example.test/dan'}, identity)
-        expect(payload.embeds[0].fields[3].value).toContain('https://example.test/dan')
+        expect(payload.embeds[0].fields.find(field => field.name === 'messageContent').value)
+            .toContain('https://example.test/dan')
     })
 })

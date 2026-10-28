@@ -21,7 +21,8 @@ Read every relevant reference before editing or executing commands for that area
 
 - Development: `npm run dev` (normally port 3000)
 - Frontend lint: `npm run lint`; focused lint: `(cd apps/web && npx eslint src/path/to/file.jsx ...)`
-- Unit tests: `npm run test:run`; focused: `npm run test:run -- tests/vitest/SomeRoute.test.jsx`
+- Web and API tests: `npm test` (concurrent watch mode), `npm test -- --run` (both once)
+- Web unit tests: `npm run test:run`; focused: `npm run test:run -- tests/vitest/SomeRoute.test.jsx`
 - Coverage: `npm run test:coverage`
 - Test/production builds: `npm run build:test` and `npm run build`
 - PR-equivalent checks: `npm run ci-pr`
