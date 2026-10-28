@@ -77,7 +77,8 @@ export function formatBeltRequest(request, identity) {
         {name: 'requestId', value: genHexString(16), inline: true},
     ]
     if (request.redditUsername) {
-        fields.push({name: 'redditUsername', value: request.redditUsername, inline: true})
+        fields.push({name: 'syncUsername', value: request.redditUsername, inline: true})
+        fields.push({name: 'syncTo', value: 'Reddit', inline: true})
     }
     if (fields.some(field => !field.value || field.value.length > 1024) ||
         fields.reduce((sum, field) => sum + field.name.length + field.value.length, 'New Belt Request'.length) > 6000) {

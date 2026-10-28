@@ -49,7 +49,9 @@ Existing ignored files under the former root `public/`, `src/data/` or `scripts/
 
 The root keeps common development and verification shortcuts plus API/combined checks. Specialized web commands live only in `apps/web/package.json`: run `npm run <script> --workspace=apps/web -- <args>` from root, or enter `apps/web` and use `npm run <script> -- <args>`.
 
-Focused commands from root: `npm run test:run -- tests/vitest/SomeRoute.test.jsx` and `npm run e2e -- tests/e2e/viteBundle.spec.js`. For direct tool commands, enter `apps/web` first. Browser tests build and serve the relocated app with existing loopback-only restrictions.
+`npm test` starts both web and API Vitest suites concurrently in watch mode; `npm test -- --run` runs both once and fails if either suite fails. Arguments are forwarded to both suites, with file filters relative to each app. Use `npm run test --workspace=apps/web` or `npm run test:api` to watch only one app. The `test:run`, `test:ci`, and `test:coverage` root shortcuts remain web-only.
+
+Focused commands from root: `npm run test:run -- tests/vitest/SomeRoute.test.jsx`, `npm run test:api -- --run src/api/services/discordBeltRequestService.test.js`, and `npm run e2e -- tests/e2e/viteBundle.spec.js`. For direct tool commands, enter the relevant workspace first. Browser tests build and serve the relocated app with existing loopback-only restrictions.
 
 ## Github Hooks
 * [Web - Build & Deploy](/.github/workflows/web-build.js.yml)

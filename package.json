@@ -15,7 +15,7 @@
     "preview": "npm run preview --workspace=apps/web --",
     "lint": "npm run lint --workspace=apps/web --",
     "ci-pr": "npm run ci-pr --workspace=apps/web --",
-    "test": "npm run test --workspace=apps/web --",
+    "test": "node scripts/testWorkspaces.js",
     "test:run": "npm run test:run --workspace=apps/web --",
     "test:ci": "npm run test:ci --workspace=apps/web --",
     "test:coverage": "npm run test:coverage --workspace=apps/web --",
