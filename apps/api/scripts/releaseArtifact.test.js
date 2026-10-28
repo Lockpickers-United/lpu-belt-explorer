@@ -4,7 +4,7 @@ import {mkdirSync, mkdtempSync, readFileSync, rmSync, symlinkSync, writeFileSync
 import {tmpdir} from 'node:os'
 import path from 'node:path'
 import {fileURLToPath} from 'node:url'
-import {inspectTar, validatePath} from './releaseArtifact.js'
+import {inspectTar, validatePath, verifyReleaseInput} from './releaseArtifact.js'
 
 const temporary = []
 const apiRoot = fileURLToPath(new URL('../', import.meta.url))
@@ -41,6 +41,30 @@ function fixture(extra) {
 
 afterEach(() => {
     for (const directory of temporary.splice(0)) rmSync(directory, {recursive: true, force: true})
+})
+
+describe('committed release inputs', () => {
+    it('verifies lockfiles larger than the child-process output buffer and rejects byte changes', () => {
+        const directory = mkdtempSync(path.join(tmpdir(), 'api-release-input-test-'))
+        temporary.push(directory)
+        const git = args => execFileSync('git', args, {cwd: directory, encoding: 'utf8'}).trim()
+        git(['init', '--quiet'])
+        const filename = 'package-lock.json'
+        const contents = `${JSON.stringify({lockfileVersion: 3, padding: 'x'.repeat(2 * 1024 * 1024)})}\n`
+        writeFileSync(path.join(directory, filename), contents)
+        git(['add', filename])
+        git(['-c', 'user.name=Release Test', '-c', 'user.email=release@example.test',
+            '-c', 'commit.gpgsign=false', 'commit', '--quiet', '-m', 'Synthetic release input'])
+        const commit = git(['rev-parse', 'HEAD'])
+
+        expect(() => verifyReleaseInput(directory, commit, filename)).not.toThrow()
+        writeFileSync(path.join(directory, filename), contents.replace('xxx', 'xxy'))
+        expect(() => verifyReleaseInput(directory, commit, filename))
+            .toThrow(`Uncommitted dependency input: ${filename}`)
+        writeFileSync(path.join(directory, filename), contents.trimEnd())
+        expect(() => verifyReleaseInput(directory, commit, filename))
+            .toThrow(`Uncommitted dependency input: ${filename}`)
+    })
 })
 
 describe('standalone API release archive', () => {

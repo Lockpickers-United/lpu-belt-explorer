@@ -149,6 +149,17 @@ export function inspectTar(buffer, {dependencies = true} = {}) {
     return members
 }
 
+export function verifyReleaseInput(repository, commit, filename) {
+    const committed = execFileSync('git', ['rev-parse', '--verify', `${commit}:${filename}`], {
+        cwd: repository, encoding: 'utf8'
+    }).trim()
+    // Compare exact blob identities without buffering the committed lockfile on stdout.
+    const working = execFileSync('git', ['hash-object', '--no-filters', '--stdin'], {
+        cwd: repository, encoding: 'utf8', input: readFileSync(path.join(repository, filename))
+    }).trim()
+    if (committed !== working) fail(`Uncommitted dependency input: ${filename}`)
+}
+
 function createArtifact(commit, output) {
     if (!/^[0-9a-f]{40}$/.test(commit || '')) fail('Supply an exact monorepo commit SHA')
     const repository = execFileSync('git', ['rev-parse', '--show-toplevel'], {cwd: apiRoot, encoding: 'utf8'}).trim()
@@ -157,8 +168,7 @@ function createArtifact(commit, output) {
     if (prefix !== 'apps/api') fail('Expected apps/api package boundary')
     // Verify every install input against the exact source revision. No server install is needed.
     for (const filename of ['package.json', 'package-lock.json', '.npmrc', '.nvmrc', 'apps/api/package.json', 'apps/api/.nvmrc']) {
-        const committed = execFileSync('git', ['show', `${commit}:${filename}`], {cwd: repository})
-        if (!committed.equals(readFileSync(path.join(repository, filename)))) fail(`Uncommitted dependency input: ${filename}`)
+        verifyReleaseInput(repository, commit, filename)
     }
     const rootManifest = JSON.parse(readFileSync(path.join(repository, 'package.json')))
     const sharedLockBytes = readFileSync(path.join(repository, 'package-lock.json'))
