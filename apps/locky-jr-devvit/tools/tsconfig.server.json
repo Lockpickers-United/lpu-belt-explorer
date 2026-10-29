@@ -1,0 +1,19 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "allowJs": true,
+    "outDir": "../dist/types/server",
+    "tsBuildInfoFile": "../dist/types/server/tsconfig.tsbuildinfo",
+    "customConditions": [],
+    "types": ["node"],
+    "exactOptionalPropertyTypes": false,
+    "rootDir": "../src"
+  },
+  "include": ["../src/server/**/*", "../src/util/**/*", "../src/keys/**/*"],
+  "exclude": [],
+  "references": [
+    {
+      "path": "./tsconfig.shared.json"
+    }
+  ]
+}

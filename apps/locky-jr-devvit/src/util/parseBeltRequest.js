@@ -43,12 +43,16 @@ export function parseBeltRequest(messageContent) {
         evidence = shortBeltMatch?.[2] ?? null
     }
 
+    const syncUsernameMatch = new RegExp('sync @(\\S*)\\b', 'i').exec(messageContent)
+    const syncMatch = syncUsernameMatch?.[1] ? syncUsernameMatch[1] : null
+
     return {
         action,
         id,
         requestedBelt,
         evidence,
-        notes
+        notes,
+        syncMatch
     }
 
 }

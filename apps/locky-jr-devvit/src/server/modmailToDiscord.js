@@ -1,7 +1,6 @@
-
-import { settings } from '@devvit/web/server'
-import { parseBeltRequest } from '../util/parseBeltRequest.js'
-import { beltDetails } from '../util/belts.js'
+import {settings} from '@devvit/web/server'
+import {parseBeltRequest} from '../util/parseBeltRequest.js'
+import {beltDetails} from '../util/belts.js'
 
 function truncate(string, maxLength = 1024) {
     if (string.length <= maxLength) return string
@@ -63,7 +62,6 @@ export async function sendModMailToWebhook(event, reddit) {
 
     if (onlyModDiscussions && !isModDiscussion) return
 
-
     const normalizeMessageId = id =>
         String(id ?? '').replace(/^ModmailMessage_/, '')
 
@@ -91,7 +89,8 @@ export async function sendModMailToWebhook(event, reddit) {
 
     const {
         requestedBelt,
-        error
+        error,
+        syncMatch
     } = messageData
 
     if (error || !requestedBelt) {
@@ -113,8 +112,15 @@ export async function sendModMailToWebhook(event, reddit) {
     const modmailLink =
         `https://mod.reddit.com/mail/all/${conversationId.replace(/^ModmailConversation_/, '')}`
 
+    const syncFields = syncMatch
+        ? [
+            {name: 'syncUsername', value: syncMatch, inline: true},
+            {name: 'syncTo', value: 'Discord', inline: true},
+        ]
+        : []
+
     const payload = {
-        ...(rolePing ? { content: `<@&${rolePing}>` } : {}),
+        ...(rolePing ? {content: `<@&${rolePing}>`} : {}),
         embeds: [{
             author: {
                 name: authorName,
@@ -123,9 +129,9 @@ export async function sendModMailToWebhook(event, reddit) {
             title: 'New Belt Request',
             url: modmailLink,
             fields: [
-                { name: 'source', value: 'Reddit', inline: true },
-                { name: 'platform', value: 'Reddit', inline: true },
-                { name: 'belt', value: requestedBelt, inline: true },
+                {name: 'source', value: 'Reddit', inline: true},
+                {name: 'platform', value: 'Reddit', inline: true},
+                {name: 'belt', value: requestedBelt, inline: true},
                 {
                     name: 'username',
                     value: conversation?.participant?.name ?? authorName,
@@ -141,15 +147,16 @@ export async function sendModMailToWebhook(event, reddit) {
                     value: conversationId.replace(/^ModmailConversation_/, ''),
                     inline: true
                 },
+                ...syncFields,
                 {
                     name: 'messageContent',
                     value: truncate(body) || '(empty)',
                     inline: false
-                }
+                },
             ],
             color,
             ...(isPrivateNote
-                ? { footer: { text: '(Private Moderator Note)' } }
+                ? {footer: {text: '(Private Moderator Note)'}}
                 : {})
         }]
     }

@@ -14,9 +14,13 @@ import {useAccess} from '../app/AccessContext.jsx'
 import Checkbox from '@mui/material/Checkbox'
 import useClassificationCommand from './useClassificationCommand.js'
 import {canPublishClassification} from './writeStage.js'
+import {useNavigate} from 'react-router-dom'
+import IconButton from '@mui/material/IconButton'
+import OpenInNewIcon from '@mui/icons-material/OpenInNew'
 
 function ChangelogEntry({entry, historical = false, publicationId, reloadChangelog}) {
     const theme = useTheme()
+    const navigate = useNavigate()
     const {accessInfo} = useAccess()
     const {getAdminAction} = useContext(ClassificationContext)
     const {getLockFromId} = useContext(DataContext)
@@ -51,7 +55,7 @@ function ChangelogEntry({entry, historical = false, publicationId, reloadChangel
                       checked={pub.approved === true} onChange={toggleApproved}
                       disabled={!accessInfo.roles.classificationAdmin || !canPublishClassification || pending}/>
             <div style={{fontSize: '0.85rem', paddingTop: 3, color: color}}>
-                {pub.result?.status} — {pub.result?.detail}
+                {pub.result?.status} — {pub.result?.detail} ({entry.id})
             </div>
             {error && <div role='alert'>Could not update approval: {error.message}</div>}
         </div>
@@ -70,21 +74,33 @@ function ChangelogEntry({entry, historical = false, publicationId, reloadChangel
                 <div style={{
                     margin: '8px 16px',
                     padding: '6px 0',
-                    flexShrink: 0,
-                    flexDirection: 'column'
+                    display: 'flex',
+                    flexGrow: 1,
+                    flexDirection: 'row',
+                    alignContent: 'top',
+                    width: '100%'
                 }}>
-                    <ReactMarkdown rehypePlugins={[[rehypeExternalLinks, {target: '_blank'}]]}
-                                   remarkPlugins={[remarkGfm]}
-                                   components={{p: 'div'}}
-                    >
-                        {changelogEntryFormat({
-                            entry,
-                            adminAction,
-                            targetLock,
-                            linebreak: true,
-                            historical
-                        }).replace(/^-/g, '')}
-                    </ReactMarkdown>
+                    <div>
+                        <ReactMarkdown rehypePlugins={[[rehypeExternalLinks, {target: '_blank'}]]}
+                                       remarkPlugins={[remarkGfm]}
+                                       components={{p: 'div'}}
+                        >
+                            {changelogEntryFormat({
+                                entry,
+                                adminAction,
+                                targetLock,
+                                linebreak: true,
+                                historical
+                            }).replace(/^-/g, '')}
+                        </ReactMarkdown>
+                    </div>
+                    <div style={{width: '100%', display: 'flex', justifyContent: 'flex-end', marginRight: 16}}>
+                        <IconButton onClick={() => navigate(`/locks?tab=search&search=${entry.id}&id=${entry.id}`)}
+                                    style={{height: 40, marginRight: 8}}>
+                            <OpenInNewIcon style={{color: '#ccc'}}/>
+                        </IconButton>
+                    </div>
+
                 </div>
                 {accessInfo.roles.classificationAdmin && !historical &&
                     <div style={{width: '100%', display: 'flex', justifyContent: 'flex-end', paddingRight: 16}}>
