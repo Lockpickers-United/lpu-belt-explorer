@@ -13272,7 +13272,7 @@
     ],
     "name": "EVVA FPS",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 19,
+    "views": 20,
     "lastUpdated": "2025-03-19T01:20:51.362Z",
     "media": [
       {
@@ -13294,7 +13294,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53092897046_82d02d0f00_o.jpg"
       }
     ],
-    "popularityIndex": 19,
+    "popularityIndex": 20,
     "scorecardCount": 2
   },
   "b5a5e9a5": {
@@ -18335,7 +18335,7 @@
   },
   "2e67118d": {
     "id": "2e67118d",
-    "belt": "Blue",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "DOM",
@@ -18417,7 +18417,8 @@
       }
     ],
     "popularityIndex": 17,
-    "scorecardCount": 4
+    "scorecardCount": 4,
+    "currentBeltDate": "2026-10-29T17:35:39.784Z"
   },
   "1dd28bf9": {
     "id": "1dd28bf9",
@@ -18514,12 +18515,20 @@
       {
         "make": "DOM",
         "model": "RS5"
+      },
+      {
+        "make": "DOM",
+        "model": "RS5"
+      },
+      {
+        "make": "DOM",
+        "model": "R Plus"
       }
     ],
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "name": "DOM S, S PP1024, RS5",
+    "name": "DOM S, S PP1024, RS5, RS5, R Plus",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -19340,10 +19349,18 @@
       {
         "make": "IKON",
         "model": "SK6"
+      },
+      {
+        "make": "IKON",
+        "model": "SK6 Sperrnocke"
+      },
+      {
+        "make": "IKON",
+        "model": "SK6 Sperrrippe"
       }
     ],
     "notes": "IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",
-    "name": "IKON SK6",
+    "name": "IKON SK6, SK6 Sperrnocke, SK6 Sperrrippe",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "lockingMechanisms": [
       "Pin-tumbler",
@@ -26053,7 +26070,11 @@
     "makeModels": [
       {
         "make": "IKON",
-        "model": "SK6 vectorprofil rib extra"
+        "model": "SK6 Vectorprofil Rib Extra"
+      },
+      {
+        "make": "IKON",
+        "model": "SK6 Radienprofil Extra"
       }
     ],
     "version": "5 sliders",
@@ -26062,7 +26083,7 @@
       "Slider"
     ],
     "notes": "IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",
-    "name": "IKON SK6 vectorprofil rib extra",
+    "name": "IKON SK6 Vectorprofil Rib Extra, SK6 Radienprofil Extra",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "features": [
       "Sprung sliders",
@@ -54730,7 +54751,7 @@
     "lastUpdated": "2025-03-19T15:44:57.290Z",
     "name": "Dorma DC4300 / Elite DC4300",
     "dateAdded": "2023-08-03T13:21:21.000Z",
-    "views": 10,
+    "views": 11,
     "media": [
       {
         "title": "By: PeaceWeapon",
@@ -54791,7 +54812,7 @@
       "Pin-tumbler"
     ],
     "notes": "Dorma DC4300 can be found as Miller's Dorma",
-    "popularityIndex": 10,
+    "popularityIndex": 11,
     "scorecardCount": 1,
     "features": [
       "Flickr Update"
@@ -62673,8 +62694,8 @@
     ],
     "name": "ASSA 8450, 10450",
     "dateAdded": "2025-11-23T19:59:27.060Z",
-    "popularityIndex": 5,
-    "views": 5
+    "popularityIndex": 6,
+    "views": 6
   },
   "7bd9285f": {
     "id": "7bd9285f",

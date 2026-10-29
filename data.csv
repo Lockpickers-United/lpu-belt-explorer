@@ -380,10 +380,9 @@ Blue,Dejo,"7 pin","tapered spools, trees, no milling",Pin-tumbler,"Flickr Update
 Blue,DOM,"ix 5 HT",,Dimple,,,a165bc09
 Blue,DOM,"ix 5KG",,Dimple,"Interactive element,Flickr Update",,eec4bd4a
 Blue,DOM,Plura,,Pin-tumbler,"Magic DOM drivers,Flickr Update",,96591a8f
-Blue,DOM,"R Plus",,Pin-tumbler,,,2e67118d
 Blue,DOM,RN,"standard cylinder",Pin-tumbler,"Flickr Update","At least 3 security pins, 2 of them dumbbell pins, dom barrel pins or rattlesnake pins. Otherwise it's Green Belt.",81338028
 Blue,"DOM,DOM","RS Sigma,RS Sirius",,Pin-tumbler,"Magic DOM drivers,Flickr Update",,1dd28bf9
-Blue,"DOM,DOM,DOM","S,S PP1024,RS5",,Pin-tumbler,,,9aa8821a
+Blue,"DOM,DOM,DOM,DOM,DOM","S,S PP1024,RS5,RS5,R Plus",,Pin-tumbler,,,9aa8821a
 Blue,DOM,SC,,Pin-tumbler,,,05979a42
 Blue,DOM,SV,,Pin-tumbler,,,95b2c7b0
 Blue,Dorma,DC3003,,Pin-tumbler,,,4c544aa2
@@ -409,7 +408,7 @@ Blue,"Gera,Gera","3000,3100","6 pin",Pin-tumbler,"Latest Changelog",,8f219086
 Blue,GOAL,S,"5 pins",Pin-tumbler,,,959a6b9d
 Blue,"IKON,IKON","P0 N6,P0 AEP10",,Pin-tumbler,,"IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",d1896bf9
 Blue,IKON,RW6,,Dimple,,"IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",bc6c2d51
-Blue,IKON,SK6,"requires 360° picking","Pin-tumbler,Sidepins",,"IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",08b5986d
+Blue,"IKON,IKON,IKON","SK6,SK6 Sperrnocke,SK6 Sperrrippe","requires 360° picking","Pin-tumbler,Sidepins",,"IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",08b5986d
 Blue,IKON,SK7,,Pin-tumbler,,"IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",1c38e176
 Blue,IKON,Undercut,,"Pin-tumbler,Sidepins",,"IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",948f9068
 Blue,iNAHO,Tierkey,"3 row, short format",Dimple,,,9b94b1c0
@@ -531,7 +530,7 @@ Purple,Generic/Unknown,"6 or 7 Lever lock",,Lever,,,a6a225e5
 Purple,Godrej,Ultra,"14 pins in 3 rows",Dimple,,,3fbd7b3d
 Purple,GSK,"GSK-301 Rabbit Lock","Dual row, single sidebar","Pin-tumbler,Sidebar",,,6b220699
 Purple,IFAM,WX1000,,Dimple,Pin-in-pin,"16 pins in three rows",3b848976
-Purple,IKON,"SK6 vectorprofil rib extra","5 sliders","Pin-tumbler,Slider","Sprung sliders,Active sidebar","IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",4ffe03a9
+Purple,"IKON,IKON","SK6 Vectorprofil Rib Extra,SK6 Radienprofil Extra","5 sliders","Pin-tumbler,Slider","Sprung sliders,Active sidebar","IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",4ffe03a9
 Purple,Illinois,Duo,,Wafer,"Some formats guttable",,07bc680a
 Purple,Ingersoll,"10 lever padlock",,Lever/sidebar,,,c11aca1a
 Purple,ISEO,"F6 extra",,Pin-tumbler,"Under Review ⚑",,895be796
@@ -924,6 +923,7 @@ Unranked,"Corbin Russwin",Emhart,"Cam Lock - 5 pin",Pin-tumbler,"Under Review �
 Unranked,"Corbin Russwin",Pyramid,,,,,19bfe875
 Unranked,Crown,no.100,"solid brass padlock 5-Pin",,"Under Review ⚑",,4d738de3
 Unranked,"D'Alembert Métal","Serie S","9 pins, 4 sliders","Dimple,Slider","Unsprung sliders,Active sidebar",,aebd0373
+Unranked,DOM,"R Plus",,Pin-tumbler,,,2e67118d
 Unranked,DoubleLock,PadlockX/FalconX,,Dimple,,,30827d9d
 Unranked,DoubleLock,Redhawk,,Slider,,,ea00b1f8
 Unranked,,"Duro Lock",,Slider,,,12cfd459
