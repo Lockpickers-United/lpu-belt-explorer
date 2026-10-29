@@ -1,0 +1,41 @@
+# Dependabot configuration to update npm packages weekly
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/" # Location of your package.json and package-lock.json
+    schedule:
+      interval: "cron"
+      cronjob: "0 17 * * 1,2" # At 5pm on Monday and Tuesday - https://crontab.guru/
+      timezone: "America/New_York"
+    open-pull-requests-limit: 10 # Optional: prevents PR spam by limiting active updates
+    ignore:
+      - dependency-name: "@types/node"
+        update-types: ["version-update:semver-major"]
+    cooldown:
+      exclude:
+        - "devvit"
+        - "@devvit/*"
+    groups:
+      devvit:
+        patterns:
+          - "devvit"
+          - "@devvit/*"
+      eslint:
+        patterns:
+          - "eslint"
+          - "@eslint/*"
+          - "typescript-eslint"
+      vite:
+        patterns:
+          - "vite"
+          - "@vitejs/*"
+      tailwind:
+        patterns:
+          - "tailwindcss"
+          - "@tailwindcss/*"
+      react:
+        patterns:
+          - "react"
+          - "react-dom"
+          - "@types/react"
+          - "@types/react-dom"

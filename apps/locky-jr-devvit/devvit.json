@@ -1,0 +1,7 @@
+{
+  "name": "locky-jr",
+  "blocks": {
+    "entry": "src/modmailToDiscord.jsx",
+    "triggers": ["onModMail"]
+  }
+}

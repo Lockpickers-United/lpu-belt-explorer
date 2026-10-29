@@ -1,0 +1,30 @@
+# https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
+name: CI
+
+on:
+  push:
+    branches: ['main']
+  pull_request:
+    branches: ['main']
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7.0.0
+      - name: Install Node.js
+        uses: actions/setup-node@v6.4.0
+        with:
+          node-version: 24.18.0
+      - name: Install Dependencies
+        run: npm install --no-fund
+      - parallel:
+          - name: Typecheck
+            run: npm run test:types
+          - name: Lint
+            run: npm run lint
+          - name: Unit Test
+            run: npm run test:unit
+          - name: Build
+            run: npm run build
