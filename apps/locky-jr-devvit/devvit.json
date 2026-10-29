@@ -1,7 +1,34 @@
+
 {
+  "$schema": "https://developers.reddit.com/schema/config-file.v1.json",
   "name": "locky-jr",
-  "blocks": {
-    "entry": "src/modmailToDiscord.jsx",
-    "triggers": ["onModMail"]
+  "server": {
+    "dir": "dist/server",
+    "entry": "index.cjs"
+  },
+  "permissions": {
+    "reddit": {
+      "enable": true,
+      "scope": "moderator"
+    },
+    "http": {
+      "enable": true,
+      "domains": ["discord.com"]
+    }
+  },
+  "triggers": {
+    "onModMail": "/internal/triggers/modmail"
+  },
+  "settings": {
+    "global": {
+      "discordWebhookUrl": {
+        "type": "string",
+        "label": "Discord Webhook URL",
+        "isSecret": true
+      }
+    }
+  },
+  "scripts": {
+    "build": "vite build"
   }
 }

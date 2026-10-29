@@ -1,23 +1,35 @@
-import { Hono } from 'hono';
-import { serve } from '@hono/node-server';
-import { createServer, getServerPort } from '@devvit/web/server';
-import { api } from './routes/api';
-import { forms } from './routes/forms';
-import { menu } from './routes/menu';
-import { triggers } from './routes/triggers';
 
-const app = new Hono();
-const internal = new Hono();
+import { Hono } from 'hono'
+import { serve } from '@hono/node-server'
+import {
+  createServer,
+  getServerPort,
+  reddit
+} from '@devvit/web/server'
 
-internal.route('/menu', menu);
-internal.route('/form', forms);
-internal.route('/triggers', triggers);
+import { sendModMailToWebhook } from './modmailToDiscord.js'
 
-app.route('/api', api);
-app.route('/internal', internal);
+const app = new Hono()
+
+app.post('/internal/triggers/modmail', async (c) => {
+  console.log('ModMail endpoint invoked')
+
+  try {
+    const event = await c.req.json()
+
+    console.log('ModMail event:', JSON.stringify(event))
+
+    await sendModMailToWebhook(event, reddit)
+
+    return c.json({ status: 'ok' })
+  } catch (error) {
+    console.error('ModMail processing failed:', error)
+    return c.json({ status: 'error' }, 500)
+  }
+})
 
 serve({
   fetch: app.fetch,
   createServer,
-  port: getServerPort(),
-});
+  port: getServerPort()
+})

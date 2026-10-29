@@ -1,4 +1,4 @@
-import {testDiscordWebhookURL} from '../keys/dataUrls.js'
+import {testDiscordWebhookURL} from '../../keys/dataUrls.js'
 
 const payload = {
     content: undefined,
