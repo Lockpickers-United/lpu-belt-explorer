@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": "sha256:d402e99f1ad0698a178412c403417954f11baf521001dccc97cf92bcbc5e2fc7",
-  "generatedAt": "2026-10-27T12:19:15.259Z",
+  "catalogVersion": "sha256:7497feb77497d7dfa20cfd82976e091c91effb20aa9902c85405af3273f7894f",
+  "generatedAt": "2026-10-29T17:06:32.772Z",
   "entries": [
     {
       "id": "0082fa4c",
@@ -1078,8 +1078,8 @@
       "id": "20b7f0a3",
       "name": "Securemme Evo K75",
       "version": "with false gate sliders",
-      "belt": "Unranked",
-      "currentBeltDate": "2026-10-12T23:33:54.103Z"
+      "belt": "Purple",
+      "currentBeltDate": "2026-10-29T17:06:32.294Z"
     },
     {
       "id": "20f3575c",
@@ -1722,8 +1722,8 @@
       "id": "343d6402",
       "name": "Adamant Adamant",
       "version": "Korean Spinny Key, 11 pins",
-      "belt": "Unranked",
-      "currentBeltDate": "2026-10-09T16:14:03.523Z"
+      "belt": "Blue",
+      "currentBeltDate": "2026-10-29T17:06:32.290Z"
     },
     {
       "id": "34532c45",
@@ -1939,8 +1939,8 @@
       "id": "3bfcd36c",
       "name": "Opel Top Security",
       "version": null,
-      "belt": "Unranked",
-      "currentBeltDate": null
+      "belt": "Blue",
+      "currentBeltDate": "2026-10-29T17:06:32.292Z"
     },
     {
       "id": "3c73c705",
@@ -1958,10 +1958,10 @@
     },
     {
       "id": "3ca24202",
-      "name": "Pollux gm05",
+      "name": "Pollux GM05",
       "version": null,
-      "belt": "Unranked",
-      "currentBeltDate": null
+      "belt": "Purple",
+      "currentBeltDate": "2026-10-29T17:06:32.294Z"
     },
     {
       "id": "3d220fcb",
@@ -3113,7 +3113,7 @@
     },
     {
       "id": "62bdbd5e",
-      "name": "Guard NVL",
+      "name": "EVVA NVL / Guard NVL",
       "version": null,
       "belt": "Blue",
       "currentBeltDate": null
@@ -3563,8 +3563,8 @@
       "id": "7128b1da",
       "name": "ISEO F6",
       "version": null,
-      "belt": "Unranked",
-      "currentBeltDate": "2026-10-24T05:11:57.628Z"
+      "belt": "Blue",
+      "currentBeltDate": "2026-10-29T17:06:32.291Z"
     },
     {
       "id": "7130d7c3",
@@ -3934,8 +3934,8 @@
       "id": "7f0799ab",
       "name": "ABUS 60/30",
       "version": "4 pins",
-      "belt": "Unranked",
-      "currentBeltDate": "2026-10-24T05:11:57.626Z"
+      "belt": "Yellow",
+      "currentBeltDate": "2026-10-29T17:06:32.287Z"
     },
     {
       "id": "7f56acb9",
@@ -4221,8 +4221,8 @@
       "id": "8982fac6",
       "name": "Mottura Champions Pro",
       "version": null,
-      "belt": "Unranked",
-      "currentBeltDate": "2026-10-12T23:33:54.102Z"
+      "belt": "Green",
+      "currentBeltDate": "2026-10-29T17:06:32.289Z"
     },
     {
       "id": "898a7138",
@@ -4417,8 +4417,8 @@
       "id": "8ea6b2be",
       "name": "Chicago Lock Co Tubular UL Ace",
       "version": "7 pin, with 3 pin in pin",
-      "belt": "Unranked",
-      "currentBeltDate": "2026-10-09T23:22:45.036Z"
+      "belt": "Purple",
+      "currentBeltDate": "2026-10-29T17:06:32.292Z"
     },
     {
       "id": "8ee515bb",
@@ -4828,7 +4828,7 @@
     },
     {
       "id": "9a972905",
-      "name": "IKON P0",
+      "name": "IKON P0 / BAB IKON P0",
       "version": null,
       "belt": "Green",
       "currentBeltDate": null
@@ -5110,8 +5110,8 @@
       "id": "a11d67f8",
       "name": "MG Serrature ST",
       "version": null,
-      "belt": "Unranked",
-      "currentBeltDate": "2026-10-12T23:33:54.101Z"
+      "belt": "Blue",
+      "currentBeltDate": "2026-10-29T17:06:32.291Z"
     },
     {
       "id": "a1233156",
@@ -5661,7 +5661,7 @@
     },
     {
       "id": "b25e23fd",
-      "name": "IKON N1",
+      "name": "IKON TK5",
       "version": null,
       "belt": "Green",
       "currentBeltDate": null
@@ -5971,8 +5971,8 @@
       "id": "bfc7c700",
       "name": "BAB IKON P0",
       "version": null,
-      "belt": "Green",
-      "currentBeltDate": null
+      "belt": "Unranked",
+      "currentBeltDate": "2026-10-29T17:06:32.300Z"
     },
     {
       "id": "c0af329b",
@@ -6648,7 +6648,7 @@
     },
     {
       "id": "d7188e81",
-      "name": "ABUS 60/50",
+      "name": "ABUS 60/40, 60/50",
       "version": null,
       "belt": "Orange",
       "currentBeltDate": null
@@ -6685,8 +6685,8 @@
       "id": "d8aaab3f",
       "name": "EVVA DPI, DPS, EPS",
       "version": "Non-active sidebar",
-      "belt": "Unranked",
-      "currentBeltDate": "2026-10-24T05:11:57.627Z"
+      "belt": "Green",
+      "currentBeltDate": "2026-10-29T17:06:32.289Z"
     },
     {
       "id": "d8abe040",
@@ -6844,7 +6844,7 @@
     },
     {
       "id": "dd1dd313",
-      "name": "ABUS XP1, TS5000",
+      "name": "ABUS XP1, TS5000 / CISA OTSP, Vighi",
       "version": null,
       "belt": "Purple",
       "currentBeltDate": null
