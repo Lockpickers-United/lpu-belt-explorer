@@ -445,9 +445,9 @@
     ],
     "name": "ISEO R6",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 56,
+    "views": 57,
     "lastUpdated": "2025-03-19T01:20:51.363Z",
-    "popularityIndex": 56,
+    "popularityIndex": 57,
     "scorecardCount": 6,
     "features": [
       "Flickr Update"
@@ -1372,12 +1372,12 @@
     ],
     "name": "Any lock with any tool",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 548,
+    "views": 550,
     "lastUpdated": "2025-03-19T15:44:57.276Z",
     "lockingMechanisms": [
       "Various"
     ],
-    "popularityIndex": 548,
+    "popularityIndex": 550,
     "scorecardCount": 122
   },
   "07034c0f": {
@@ -1432,9 +1432,9 @@
     ],
     "name": "Any Acrylic Padlock",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 1474,
+    "views": 1475,
     "lastUpdated": "2025-03-18T23:29:31.267Z",
-    "popularityIndex": 1474,
+    "popularityIndex": 1475,
     "scorecardCount": 107
   },
   "3ac43ea8": {
@@ -1586,7 +1586,7 @@
     ],
     "name": "ABUS 45",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 84,
+    "views": 85,
     "lastUpdated": "2025-03-19T01:20:51.353Z",
     "media": [
       {
@@ -1618,7 +1618,7 @@
       }
     ],
     "modelNum": "45",
-    "popularityIndex": 84,
+    "popularityIndex": 85,
     "scorecardCount": 11
   },
   "a8c9aa08": {
@@ -1714,10 +1714,10 @@
     ],
     "name": "Master Lock #1",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 580,
+    "views": 581,
     "lastUpdated": "2025-03-19T01:20:51.353Z",
     "modelNum": "1",
-    "popularityIndex": 580,
+    "popularityIndex": 581,
     "scorecardCount": 69
   },
   "38289b36": {
@@ -1933,10 +1933,10 @@
     ],
     "name": "Master Lock #3",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 1509,
+    "views": 1511,
     "lastUpdated": "2025-03-19T01:20:51.353Z",
     "modelNum": "3",
-    "popularityIndex": 1509,
+    "popularityIndex": 1511,
     "scorecardCount": 172
   },
   "dff62f52": {
@@ -2197,10 +2197,10 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/52728701687_2a2930156c_o.jpg"
       }
     ],
-    "views": 189,
+    "views": 190,
     "lastUpdated": "2025-03-19T01:20:51.354Z",
     "modelNum": "7",
-    "popularityIndex": 189,
+    "popularityIndex": 190,
     "scorecardCount": 13
   },
   "79adf554": {
@@ -2481,10 +2481,10 @@
     ],
     "name": "ABUS 55/30",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 398,
+    "views": 400,
     "lastUpdated": "2025-03-19T15:44:57.277Z",
     "modelNum": "55.3",
-    "popularityIndex": 398,
+    "popularityIndex": 400,
     "scorecardCount": 52
   },
   "693abee0": {
@@ -2998,13 +2998,13 @@
     ],
     "name": "American Lock 5200",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 109,
+    "views": 110,
     "lastUpdated": "2025-03-19T15:44:57.277Z",
     "notes": "The bumpstop model of the American Lock 5200 can be distinguished by the rounded shape of the bow of its key, compared to the angular shape of the non-bumpstop.",
     "relatedIds": [
       "81fbd528"
     ],
-    "popularityIndex": 109,
+    "popularityIndex": 110,
     "scorecardCount": 8
   },
   "a1581afe": {
@@ -3326,12 +3326,12 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53881171826_bd67648fb6_o.jpg"
       }
     ],
-    "views": 102,
+    "views": 103,
     "lastUpdated": "2025-03-19T01:20:51.355Z",
     "features": [
       "Unguttable"
     ],
-    "popularityIndex": 102,
+    "popularityIndex": 103,
     "scorecardCount": 18
   },
   "6ca3420d": {
@@ -4581,11 +4581,11 @@
     ],
     "name": "Master Lock 140 Series, 9140 EURD",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 1885,
+    "views": 1887,
     "lastUpdated": "2025-03-19T01:20:51.355Z",
     "modelNum": "140",
     "version": "Ex: 140, 141, 142, etc.",
-    "popularityIndex": 1885,
+    "popularityIndex": 1887,
     "scorecardCount": 251
   },
   "6af6f704": {
@@ -4634,10 +4634,10 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53881545449_5dfdff324d_o.jpg"
       }
     ],
-    "views": 90,
+    "views": 91,
     "lastUpdated": "2025-03-19T01:20:51.356Z",
     "modelNum": "4140",
-    "popularityIndex": 90,
+    "popularityIndex": 91,
     "scorecardCount": 12
   },
   "759d0d0f": {
@@ -4683,10 +4683,10 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53850900646_7140340801_o.jpg"
       }
     ],
-    "views": 171,
+    "views": 172,
     "lastUpdated": "2025-03-19T15:44:57.278Z",
     "modelNum": "930",
-    "popularityIndex": 171,
+    "popularityIndex": 172,
     "scorecardCount": 17
   },
   "df703850": {
@@ -4849,9 +4849,9 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/54108366688_cdeac847da_o.jpg"
       }
     ],
-    "views": 459,
+    "views": 460,
     "lastUpdated": "2025-03-19T15:44:57.278Z",
-    "popularityIndex": 459,
+    "popularityIndex": 460,
     "scorecardCount": 59
   },
   "2936bb00": {
@@ -5141,9 +5141,9 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53955594897_4a6354e9d3_o.jpg"
       }
     ],
-    "views": 267,
+    "views": 268,
     "lastUpdated": "2025-03-19T01:20:51.356Z",
-    "popularityIndex": 267,
+    "popularityIndex": 268,
     "scorecardCount": 24
   },
   "d4299b24": {
@@ -5809,16 +5809,20 @@
     ],
     "name": "ABUS 55/40",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 1083,
+    "views": 1084,
     "lastUpdated": "2025-03-19T01:20:51.356Z",
     "modelNum": "55.4",
-    "popularityIndex": 1083,
+    "popularityIndex": 1084,
     "scorecardCount": 150
   },
   "d7188e81": {
     "id": "d7188e81",
     "belt": "Orange",
     "makeModels": [
+      {
+        "make": "ABUS",
+        "model": "60/40"
+      },
       {
         "make": "ABUS",
         "model": "60/50"
@@ -5830,7 +5834,7 @@
     "features": [
       "Unguttable"
     ],
-    "name": "ABUS 60/50",
+    "name": "ABUS 60/40, 60/50",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "views": 39,
     "lastUpdated": "2025-03-19T15:44:57.279Z",
@@ -5919,10 +5923,10 @@
     ],
     "name": "ABUS 64Ti Titalium, MyLock T65AL, 70AL45",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 546,
+    "views": 547,
     "lastUpdated": "2025-03-19T01:20:51.356Z",
     "modelNum": "64",
-    "popularityIndex": 546,
+    "popularityIndex": 547,
     "scorecardCount": 45
   },
   "a0e50505": {
@@ -6035,13 +6039,13 @@
     ],
     "name": "ABUS 83/40",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 208,
+    "views": 209,
     "lastUpdated": "2025-03-19T01:20:51.356Z",
     "modelNum": "83.4",
     "features": [
       "Latest Changelog"
     ],
-    "popularityIndex": 208,
+    "popularityIndex": 209,
     "scorecardCount": 32,
     "currentBeltDate": "2026-08-30T12:00:00.000Z"
   },
@@ -6990,7 +6994,7 @@
     ],
     "name": "Corbin Arco Cromato",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 14,
+    "views": 15,
     "lastUpdated": "2025-03-19T15:44:57.280Z",
     "media": [
       {
@@ -7039,7 +7043,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/22842416189_3dfbec03d6_o.jpg"
       }
     ],
-    "popularityIndex": 14,
+    "popularityIndex": 15,
     "scorecardCount": 2
   },
   "eaba4dd9": {
@@ -7781,10 +7785,10 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53356368182_55c1043d27_o.jpg"
       }
     ],
-    "views": 78,
+    "views": 79,
     "lastUpdated": "2025-03-19T15:44:57.280Z",
     "version": "4 or 5 pin",
-    "popularityIndex": 78,
+    "popularityIndex": 79,
     "scorecardCount": 10,
     "features": [
       "Flickr Update"
@@ -8200,11 +8204,11 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/52977757532_f253bac324_o.jpg"
       }
     ],
-    "views": 700,
+    "views": 701,
     "lastUpdated": "2025-03-19T15:44:57.280Z",
     "notes": "Due to unbalanced stacks, drivers may rest below shear, risking damage to the springs if that chamber is not picked.",
     "modelNum": "570",
-    "popularityIndex": 700,
+    "popularityIndex": 701,
     "scorecardCount": 114
   },
   "9f832458": {
@@ -8525,7 +8529,7 @@
     ],
     "name": "Trimas",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 5,
+    "views": 6,
     "lastUpdated": "2025-03-19T15:44:57.281Z",
     "media": [
       {
@@ -8555,7 +8559,7 @@
         "url": "https://www.catalocks.eu/TRIMAS/TRIMAS%203STAR_937.html"
       }
     ],
-    "popularityIndex": 5
+    "popularityIndex": 6
   },
   "1be21a18": {
     "id": "1be21a18",
@@ -9032,10 +9036,10 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/54258988341_bea78956eb_o.jpg"
       }
     ],
-    "views": 110,
+    "views": 112,
     "lastUpdated": "2025-03-19T15:44:57.281Z",
     "version": "all formats 40mm or larger (includes Y113 and Y114, excludes iron body disc detainer Y112)",
-    "popularityIndex": 110,
+    "popularityIndex": 112,
     "scorecardCount": 13
   },
   "b099c88a": {
@@ -10739,7 +10743,7 @@
     ],
     "name": "ACE Laminated padlock",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 142,
+    "views": 143,
     "lastUpdated": "2025-03-18T23:29:31.270Z",
     "media": [
       {
@@ -10782,7 +10786,7 @@
     "relatedIds": [
       "abdf3acd"
     ],
-    "popularityIndex": 142,
+    "popularityIndex": 143,
     "scorecardCount": 22
   },
   "2ae1e0b8": {
@@ -10879,12 +10883,12 @@
     ],
     "name": "American Lock 1100 / A1100",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 1450,
+    "views": 1452,
     "lastUpdated": "2025-03-19T01:20:51.360Z",
     "relatedIds": [
       "1ae40987"
     ],
-    "popularityIndex": 1450,
+    "popularityIndex": 1452,
     "scorecardCount": 279
   },
   "b16ffe3f": {
@@ -11046,7 +11050,7 @@
     ],
     "name": "American Lock 700 / A700",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 103,
+    "views": 104,
     "lastUpdated": "2025-03-19T15:44:57.282Z",
     "media": [
       {
@@ -11059,7 +11063,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/52827104125_5419bd849c_o.jpg"
       }
     ],
-    "popularityIndex": 103,
+    "popularityIndex": 104,
     "scorecardCount": 11
   },
   "5a6170fb": {
@@ -11431,7 +11435,7 @@
   },
   "bfc7c700": {
     "id": "bfc7c700",
-    "belt": "Green",
+    "belt": "Unranked",
     "makeModels": [
       {
         "make": "BAB IKON",
@@ -11475,7 +11479,8 @@
       }
     ],
     "popularityIndex": 18,
-    "scorecardCount": 2
+    "scorecardCount": 2,
+    "currentBeltDate": "2026-10-29T17:06:32.300Z"
   },
   "bea71188": {
     "id": "bea71188",
@@ -12536,9 +12541,9 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53850059742_594de67d1c_o.jpg"
       }
     ],
-    "views": 58,
+    "views": 59,
     "lastUpdated": "2025-03-19T15:44:57.284Z",
-    "popularityIndex": 58,
+    "popularityIndex": 59,
     "scorecardCount": 6,
     "features": [
       "Flickr Update"
@@ -13528,14 +13533,14 @@
     "makeModels": [
       {
         "make": "IKON",
-        "model": "N1"
+        "model": "TK5"
       }
     ],
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
     "notes": "IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",
-    "name": "IKON N1",
+    "name": "IKON TK5",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "views": 15,
     "lastUpdated": "2025-03-19T15:44:57.285Z",
@@ -13578,10 +13583,14 @@
       {
         "make": "IKON",
         "model": "P0"
+      },
+      {
+        "make": "BAB IKON",
+        "model": "P0"
       }
     ],
     "notes": "IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",
-    "name": "IKON P0",
+    "name": "IKON P0 / BAB IKON P0",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "lockingMechanisms": [
       "Pin-tumbler"
@@ -14168,13 +14177,13 @@
     "features": [
       "Tapered drivers"
     ],
-    "views": 52,
+    "views": 53,
     "lastUpdated": "2025-03-19T15:44:57.285Z",
     "relatedIds": [
       "331c9d36"
     ],
-    "popularityIndex": 52,
-    "scorecardCount": 4
+    "popularityIndex": 53,
+    "scorecardCount": 5
   },
   "af98761d": {
     "id": "af98761d",
@@ -14384,10 +14393,10 @@
     ],
     "name": "Master Lock 410 LOTO (Lockout Tagout)",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 878,
+    "views": 879,
     "lastUpdated": "2025-03-19T15:44:57.286Z",
     "modelNum": "410",
-    "popularityIndex": 878,
+    "popularityIndex": 879,
     "scorecardCount": 107
   },
   "366d5f50": {
@@ -17950,7 +17959,7 @@
     ],
     "name": "CISA Astral S",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 28,
+    "views": 27,
     "lastUpdated": "2025-03-18T23:29:31.273Z",
     "media": [
       {
@@ -18009,7 +18018,7 @@
         "url": "https://www.catalocks.eu/CISA%2C/CISA%20ASTRAL%20S_749.html"
       }
     ],
-    "popularityIndex": 28,
+    "popularityIndex": 27,
     "scorecardCount": 2
   },
   "f9aceec0": {
@@ -19224,11 +19233,15 @@
     "belt": "Blue",
     "makeModels": [
       {
+        "make": "EVVA",
+        "model": "NVL"
+      },
+      {
         "make": "Guard",
         "model": "NVL"
       }
     ],
-    "name": "Guard NVL",
+    "name": "EVVA NVL / Guard NVL",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "lockingMechanisms": [
       "Pin-tumbler"
@@ -20110,7 +20123,7 @@
       "Random mid tension"
     ],
     "notes": "Readily picked with front tension and counter-rotation",
-    "views": 87,
+    "views": 88,
     "lastUpdated": "2025-03-19T15:44:57.292Z",
     "links": [
       {
@@ -20142,7 +20155,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/52863602492_e66d5eae21_o.jpg"
       }
     ],
-    "popularityIndex": 87,
+    "popularityIndex": 88,
     "scorecardCount": 19
   },
   "adc2d335": {
@@ -21554,9 +21567,9 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53880309782_17ae6b095d_o.jpg"
       }
     ],
-    "views": 816,
+    "views": 817,
     "lastUpdated": "2025-03-19T15:44:57.293Z",
-    "popularityIndex": 816,
+    "popularityIndex": 817,
     "scorecardCount": 226
   },
   "74c225d1": {
@@ -22986,7 +22999,7 @@
       }
     ],
     "popularityIndex": 23,
-    "scorecardCount": 12
+    "scorecardCount": 13
   },
   "a062f1ee": {
     "id": "a062f1ee",
@@ -23114,12 +23127,20 @@
       {
         "make": "ABUS",
         "model": "TS5000"
+      },
+      {
+        "make": "CISA",
+        "model": "OTSP"
+      },
+      {
+        "make": "CISA",
+        "model": "Vighi"
       }
     ],
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "name": "ABUS XP1, TS5000",
+    "name": "ABUS XP1, TS5000 / CISA OTSP, Vighi",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "views": 62,
     "lastUpdated": "2025-03-19T15:44:57.295Z",
@@ -25402,7 +25423,7 @@
       }
     ],
     "popularityIndex": 70,
-    "scorecardCount": 33
+    "scorecardCount": 34
   },
   "fc4de1ff": {
     "id": "fc4de1ff",
@@ -29962,7 +29983,7 @@
     "views": 179,
     "lastUpdated": "2025-03-19T15:44:57.301Z",
     "popularityIndex": 179,
-    "scorecardCount": 31
+    "scorecardCount": 32
   },
   "b8350900": {
     "id": "b8350900",
@@ -31208,7 +31229,7 @@
       "Interactive element"
     ],
     "popularityIndex": 18,
-    "scorecardCount": 14
+    "scorecardCount": 15
   },
   "de47d600": {
     "id": "de47d600",
@@ -32688,7 +32709,7 @@
     "views": 13,
     "lastUpdated": "2025-03-19T15:44:57.304Z",
     "popularityIndex": 13,
-    "scorecardCount": 14
+    "scorecardCount": 15
   },
   "1ee01369": {
     "id": "1ee01369",
@@ -35281,9 +35302,9 @@
     ],
     "name": "ABUS EC700, EC800",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 45,
+    "views": 46,
     "lastUpdated": "2025-03-19T15:44:57.306Z",
-    "popularityIndex": 45,
+    "popularityIndex": 46,
     "scorecardCount": 20
   },
   "b8350901": {
@@ -36237,9 +36258,9 @@
     ],
     "name": "DOM ix Saturn / INN Key Smart",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 62,
+    "views": 61,
     "lastUpdated": "2025-03-19T01:20:51.386Z",
-    "popularityIndex": 62,
+    "popularityIndex": 61,
     "scorecardCount": 46
   },
   "4993a918": {
@@ -41735,7 +41756,7 @@
     ],
     "notes": "two False gates per pin, staggered rows",
     "popularityIndex": 29,
-    "scorecardCount": 16
+    "scorecardCount": 17
   },
   "6d2555aa": {
     "id": "6d2555aa",
@@ -47896,7 +47917,7 @@
       }
     ],
     "popularityIndex": 14,
-    "scorecardCount": 7
+    "scorecardCount": 8
   },
   "9ae8b650": {
     "id": "9ae8b650",
@@ -48243,7 +48264,7 @@
     ],
     "name": "ABUS 5/45 Silver Rock",
     "dateAdded": "2023-03-02T19:05:25.000Z",
-    "views": 59,
+    "views": 60,
     "lastUpdated": "2025-03-18T23:29:31.269Z",
     "media": [
       {
@@ -48287,7 +48308,7 @@
       "Pin-tumbler"
     ],
     "modelNum": "5.45",
-    "popularityIndex": 59,
+    "popularityIndex": 60,
     "scorecardCount": 10
   },
   "d005e7b8": {
@@ -55084,25 +55105,26 @@
   },
   "3ca24202": {
     "id": "3ca24202",
-    "belt": "Unranked",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "Pollux",
-        "model": "gm05"
+        "model": "GM05"
       }
     ],
     "features": [
       "Under Review ⚑"
     ],
     "lastUpdated": "2024-01-01T20:16:25.001Z",
-    "name": "Pollux gm05",
+    "name": "Pollux GM05",
     "dateAdded": "2023-08-03T13:21:21.000Z",
     "lockingMechanisms": [
       "Pump/push"
     ],
     "views": 4,
     "popularityIndex": 4,
-    "scorecardCount": 3
+    "scorecardCount": 3,
+    "currentBeltDate": "2026-10-29T17:06:32.294Z"
   },
   "61a01892": {
     "id": "61a01892",
@@ -59990,9 +60012,9 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53989117763_cdf71b9b53_o.jpg"
       }
     ],
-    "popularityIndex": 297,
+    "popularityIndex": 299,
     "scorecardCount": 38,
-    "views": 297
+    "views": 299
   },
   "f0e31f32": {
     "id": "f0e31f32",
@@ -63172,8 +63194,8 @@
     ],
     "name": "Kenaurd Dimple Lock",
     "dateAdded": "2026-08-06T03:59:39.967Z",
-    "popularityIndex": 3,
-    "views": 3
+    "popularityIndex": 4,
+    "views": 4
   },
   "787e3de9": {
     "id": "787e3de9",
@@ -63209,9 +63231,9 @@
     ],
     "name": "Reliabilt DD Padlock",
     "dateAdded": "2026-08-06T03:59:39.967Z",
-    "popularityIndex": 3,
-    "scorecardCount": 1,
-    "views": 3
+    "popularityIndex": 4,
+    "scorecardCount": 2,
+    "views": 4
   },
   "ebcb29b9": {
     "id": "ebcb29b9",
@@ -63964,7 +63986,7 @@
       "Slider"
     ],
     "popularityIndex": 4,
-    "scorecardCount": 2,
+    "scorecardCount": 3,
     "views": 4,
     "currentBeltDate": "2026-08-30T12:00:00.000Z"
   },
@@ -64138,7 +64160,7 @@
   },
   "3bfcd36c": {
     "id": "3bfcd36c",
-    "belt": "Unranked",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "Opel",
@@ -64152,7 +64174,8 @@
     "dateAdded": "2026-10-03T22:57:35.086Z",
     "popularityIndex": 1,
     "scorecardCount": 2,
-    "views": 1
+    "views": 1,
+    "currentBeltDate": "2026-10-29T17:06:32.292Z"
   },
   "f5086cb9": {
     "id": "f5086cb9",
@@ -64275,7 +64298,7 @@
   },
   "343d6402": {
     "id": "343d6402",
-    "belt": "Unranked",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "Adamant",
@@ -64284,7 +64307,7 @@
     ],
     "version": "Korean Spinny Key, 11 pins",
     "name": "Adamant Adamant",
-    "currentBeltDate": "2026-10-09T16:14:03.523Z",
+    "currentBeltDate": "2026-10-29T17:06:32.290Z",
     "dateAdded": "2026-10-09T16:14:03.523Z",
     "popularityIndex": 1,
     "views": 1
@@ -64301,8 +64324,9 @@
     "name": "AGB Scudo 9000",
     "currentBeltDate": "2026-10-09T16:14:03.523Z",
     "dateAdded": "2026-10-09T16:14:03.523Z",
-    "popularityIndex": 1,
-    "views": 1
+    "popularityIndex": 2,
+    "views": 2,
+    "scorecardCount": 1
   },
   "d5080254": {
     "id": "d5080254",
@@ -64329,7 +64353,10 @@
     ],
     "name": "Alpha 3-Row Cam Lock",
     "currentBeltDate": "2026-10-09T16:14:03.523Z",
-    "dateAdded": "2026-10-09T16:14:03.523Z"
+    "dateAdded": "2026-10-09T16:14:03.523Z",
+    "popularityIndex": 1,
+    "scorecardCount": 1,
+    "views": 1
   },
   "4cd726f7": {
     "id": "4cd726f7",
@@ -64342,7 +64369,10 @@
     ],
     "name": "Amadeo 3DS Freeflex",
     "currentBeltDate": "2026-10-09T16:14:03.523Z",
-    "dateAdded": "2026-10-09T16:14:03.523Z"
+    "dateAdded": "2026-10-09T16:14:03.523Z",
+    "popularityIndex": 1,
+    "scorecardCount": 1,
+    "views": 1
   },
   "d60750c5": {
     "id": "d60750c5",
@@ -64533,7 +64563,7 @@
   },
   "8ea6b2be": {
     "id": "8ea6b2be",
-    "belt": "Unranked",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "Chicago Lock Co",
@@ -64542,7 +64572,7 @@
     ],
     "version": "7 pin, with 3 pin in pin",
     "name": "Chicago Lock Co Tubular UL Ace",
-    "currentBeltDate": "2026-10-09T23:22:45.036Z",
+    "currentBeltDate": "2026-10-29T17:06:32.292Z",
     "dateAdded": "2026-10-09T23:22:45.036Z",
     "scorecardCount": 1
   },
@@ -65179,7 +65209,9 @@
     ],
     "name": "ISEO City Padlock",
     "currentBeltDate": "2026-10-12T23:33:54.100Z",
-    "dateAdded": "2026-10-12T23:33:54.100Z"
+    "dateAdded": "2026-10-12T23:33:54.100Z",
+    "popularityIndex": 1,
+    "views": 1
   },
   "fe305753": {
     "id": "fe305753",
@@ -65653,7 +65685,7 @@
   },
   "a11d67f8": {
     "id": "a11d67f8",
-    "belt": "Unranked",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "MG Serrature",
@@ -65664,7 +65696,7 @@
       "Dimple"
     ],
     "name": "MG Serrature ST",
-    "currentBeltDate": "2026-10-12T23:33:54.101Z",
+    "currentBeltDate": "2026-10-29T17:06:32.291Z",
     "dateAdded": "2026-10-12T23:33:54.101Z",
     "popularityIndex": 1,
     "views": 1,
@@ -65740,7 +65772,7 @@
   },
   "8982fac6": {
     "id": "8982fac6",
-    "belt": "Unranked",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "Mottura",
@@ -65751,7 +65783,7 @@
       "Dimple"
     ],
     "name": "Mottura Champions Pro",
-    "currentBeltDate": "2026-10-12T23:33:54.102Z",
+    "currentBeltDate": "2026-10-29T17:06:32.289Z",
     "dateAdded": "2026-10-12T23:33:54.102Z",
     "scorecardCount": 2,
     "popularityIndex": 1,
@@ -66180,7 +66212,7 @@
   },
   "20b7f0a3": {
     "id": "20b7f0a3",
-    "belt": "Unranked",
+    "belt": "Purple",
     "makeModels": [
       {
         "make": "Securemme",
@@ -66192,7 +66224,7 @@
       "Dimple"
     ],
     "name": "Securemme Evo K75",
-    "currentBeltDate": "2026-10-12T23:33:54.103Z",
+    "currentBeltDate": "2026-10-29T17:06:32.294Z",
     "dateAdded": "2026-10-12T23:33:54.103Z",
     "popularityIndex": 1,
     "views": 1,
@@ -66659,7 +66691,9 @@
     ],
     "name": "WittKopp cawi Optima 2648",
     "currentBeltDate": "2026-10-27T05:55:42.869Z",
-    "dateAdded": "2026-10-12T23:33:54.104Z"
+    "dateAdded": "2026-10-12T23:33:54.104Z",
+    "popularityIndex": 1,
+    "views": 1
   },
   "7bc9de2d": {
     "id": "7bc9de2d",
@@ -66712,7 +66746,7 @@
   },
   "7f0799ab": {
     "id": "7f0799ab",
-    "belt": "Unranked",
+    "belt": "Yellow",
     "makeModels": [
       {
         "make": "ABUS",
@@ -66724,7 +66758,7 @@
       "Pin-tumbler"
     ],
     "name": "ABUS 60/30",
-    "currentBeltDate": "2026-10-24T05:11:57.626Z",
+    "currentBeltDate": "2026-10-29T17:06:32.287Z",
     "dateAdded": "2026-10-24T05:11:57.626Z"
   },
   "1fcb7a29": {
@@ -66761,7 +66795,7 @@
   },
   "d8aaab3f": {
     "id": "d8aaab3f",
-    "belt": "Unranked",
+    "belt": "Green",
     "makeModels": [
       {
         "make": "EVVA",
@@ -66781,12 +66815,12 @@
       "Pin-tumbler"
     ],
     "name": "EVVA DPI, DPS, EPS",
-    "currentBeltDate": "2026-10-24T05:11:57.627Z",
+    "currentBeltDate": "2026-10-29T17:06:32.289Z",
     "dateAdded": "2026-10-24T05:11:57.627Z"
   },
   "7128b1da": {
     "id": "7128b1da",
-    "belt": "Unranked",
+    "belt": "Blue",
     "makeModels": [
       {
         "make": "ISEO",
@@ -66797,7 +66831,7 @@
       "Pin-tumbler"
     ],
     "name": "ISEO F6",
-    "currentBeltDate": "2026-10-24T05:11:57.628Z",
+    "currentBeltDate": "2026-10-29T17:06:32.291Z",
     "dateAdded": "2026-10-24T05:11:57.628Z"
   },
   "52fefd7e": {
@@ -66815,8 +66849,8 @@
     "name": "Baton 5310",
     "currentBeltDate": "2026-10-26T19:45:46.477Z",
     "dateAdded": "2026-10-26T19:45:46.477Z",
-    "popularityIndex": 1,
-    "scorecardCount": 1,
-    "views": 1
+    "popularityIndex": 2,
+    "scorecardCount": 2,
+    "views": 2
   }
 }

@@ -11,9 +11,9 @@
     "lockingMechanisms": [
       "Various"
     ],
-    "popularityIndex": 1474,
+    "popularityIndex": 1475,
     "scorecardCount": 107,
-    "views": 1474,
+    "views": 1475,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -146,9 +146,9 @@
     "lockingMechanisms": [
       "Various"
     ],
-    "popularityIndex": 548,
+    "popularityIndex": 550,
     "scorecardCount": 122,
-    "views": 548,
+    "views": 550,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -189,9 +189,9 @@
       "Unguttable"
     ],
     "modelNum": "45",
-    "popularityIndex": 84,
+    "popularityIndex": 85,
     "scorecardCount": 11,
-    "views": 84,
+    "views": 85,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -484,9 +484,9 @@
       "Unguttable"
     ],
     "modelNum": "1",
-    "popularityIndex": 580,
+    "popularityIndex": 581,
     "scorecardCount": 69,
-    "views": 580,
+    "views": 581,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -620,9 +620,9 @@
       "Unguttable"
     ],
     "modelNum": "3",
-    "popularityIndex": 1509,
+    "popularityIndex": 1511,
     "scorecardCount": 172,
-    "views": 1509,
+    "views": 1511,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -990,9 +990,9 @@
       "Unguttable"
     ],
     "modelNum": "7",
-    "popularityIndex": 189,
+    "popularityIndex": 190,
     "scorecardCount": 13,
-    "views": 189,
+    "views": 190,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -1262,9 +1262,9 @@
       "Unguttable"
     ],
     "modelNum": "55.3",
-    "popularityIndex": 398,
+    "popularityIndex": 400,
     "scorecardCount": 52,
-    "views": 398,
+    "views": 400,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -1312,6 +1312,23 @@
       }
     ],
     "lastUpdated": "2025-12-02T23:39:17.928Z"
+  },
+  {
+    "id": "7f0799ab",
+    "belt": "Yellow",
+    "makeModels": [
+      {
+        "make": "ABUS",
+        "model": "60/30"
+      }
+    ],
+    "version": "4 pins",
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "currentBeltDate": "2026-10-29T17:06:32.287Z",
+    "dateAdded": "2026-10-24T05:11:57.626Z",
+    "lastUpdated": "2026-10-29T17:06:32.733Z"
   },
   {
     "id": "693abee0",
@@ -1847,9 +1864,9 @@
       "Pin-tumbler"
     ],
     "notes": "The bumpstop model of the American Lock 5200 can be distinguished by the rounded shape of the bow of its key, compared to the angular shape of the non-bumpstop.",
-    "popularityIndex": 109,
+    "popularityIndex": 110,
     "scorecardCount": 8,
-    "views": 109,
+    "views": 110,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -2139,9 +2156,9 @@
     "features": [
       "Unguttable"
     ],
-    "popularityIndex": 297,
+    "popularityIndex": 299,
     "scorecardCount": 38,
-    "views": 297,
+    "views": 299,
     "dateAdded": "2024-08-28T15:54:46.000Z",
     "media": [
       {
@@ -2598,9 +2615,9 @@
     "features": [
       "Unguttable"
     ],
-    "popularityIndex": 102,
+    "popularityIndex": 103,
     "scorecardCount": 18,
-    "views": 102,
+    "views": 103,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -4209,9 +4226,9 @@
       "Unguttable"
     ],
     "modelNum": "140",
-    "popularityIndex": 1885,
+    "popularityIndex": 1887,
     "scorecardCount": 251,
-    "views": 1885,
+    "views": 1887,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -4348,9 +4365,9 @@
       "Pin-tumbler"
     ],
     "modelNum": "930",
-    "popularityIndex": 171,
+    "popularityIndex": 172,
     "scorecardCount": 17,
-    "views": 171,
+    "views": 172,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -4509,9 +4526,9 @@
     "features": [
       "Unguttable"
     ],
-    "popularityIndex": 459,
+    "popularityIndex": 460,
     "scorecardCount": 59,
-    "views": 459,
+    "views": 460,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -4608,9 +4625,9 @@
       "Unguttable"
     ],
     "modelNum": "4140",
-    "popularityIndex": 90,
+    "popularityIndex": 91,
     "scorecardCount": 12,
-    "views": 90,
+    "views": 91,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -4810,9 +4827,9 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "popularityIndex": 267,
+    "popularityIndex": 268,
     "scorecardCount": 24,
-    "views": 267,
+    "views": 268,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -5431,9 +5448,9 @@
       "Pin-tumbler"
     ],
     "modelNum": "5.45",
-    "popularityIndex": 59,
+    "popularityIndex": 60,
     "scorecardCount": 10,
-    "views": 59,
+    "views": 60,
     "dateAdded": "2023-03-02T19:05:25.000Z",
     "media": [
       {
@@ -5552,9 +5569,9 @@
       "Unguttable"
     ],
     "modelNum": "55.4",
-    "popularityIndex": 1083,
+    "popularityIndex": 1084,
     "scorecardCount": 150,
-    "views": 1083,
+    "views": 1084,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -5627,6 +5644,10 @@
     "makeModels": [
       {
         "make": "ABUS",
+        "model": "60/40"
+      },
+      {
+        "make": "ABUS",
         "model": "60/50"
       }
     ],
@@ -5673,7 +5694,7 @@
         "imageTitle": "ABUS 60/50"
       }
     ],
-    "lastUpdated": "2025-12-02T23:39:17.930Z"
+    "lastUpdated": "2026-10-29T17:06:32.734Z"
   },
   {
     "id": "52f1e117",
@@ -5700,9 +5721,9 @@
       "Unguttable"
     ],
     "modelNum": "64",
-    "popularityIndex": 546,
+    "popularityIndex": 547,
     "scorecardCount": 45,
-    "views": 546,
+    "views": 547,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -7366,9 +7387,9 @@
     "features": [
       "Unguttable"
     ],
-    "popularityIndex": 14,
+    "popularityIndex": 15,
     "scorecardCount": 2,
-    "views": 14,
+    "views": 15,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -8123,9 +8144,9 @@
     "features": [
       "Flickr Update"
     ],
-    "popularityIndex": 78,
+    "popularityIndex": 79,
     "scorecardCount": 10,
-    "views": 78,
+    "views": 79,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -8826,9 +8847,9 @@
     ],
     "notes": "Due to unbalanced stacks, drivers may rest below shear, risking damage to the springs if that chamber is not picked.",
     "modelNum": "570",
-    "popularityIndex": 700,
+    "popularityIndex": 701,
     "scorecardCount": 114,
-    "views": 700,
+    "views": 701,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -9645,8 +9666,8 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "popularityIndex": 5,
-    "views": 5,
+    "popularityIndex": 6,
+    "views": 6,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -10301,9 +10322,9 @@
     "features": [
       "Unguttable"
     ],
-    "popularityIndex": 110,
+    "popularityIndex": 112,
     "scorecardCount": 13,
-    "views": 110,
+    "views": 112,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -10859,9 +10880,9 @@
       "Latest Changelog"
     ],
     "modelNum": "83.4",
-    "popularityIndex": 208,
+    "popularityIndex": 209,
     "scorecardCount": 32,
-    "views": 208,
+    "views": 209,
     "currentBeltDate": "2026-08-30T12:00:00.000Z",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
@@ -12370,9 +12391,9 @@
     "features": [
       "Unguttable"
     ],
-    "popularityIndex": 142,
+    "popularityIndex": 143,
     "scorecardCount": 22,
-    "views": 142,
+    "views": 143,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -12429,9 +12450,9 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "popularityIndex": 1450,
+    "popularityIndex": 1452,
     "scorecardCount": 279,
-    "views": 1450,
+    "views": 1452,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -12702,9 +12723,9 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "popularityIndex": 103,
+    "popularityIndex": 104,
     "scorecardCount": 11,
-    "views": 103,
+    "views": 104,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -13225,63 +13246,6 @@
       {
         "title": "KoksaWiki",
         "url": "https://wiki.koksa.org/BAB_DS_103"
-      }
-    ],
-    "lastUpdated": "2026-10-24T20:03:10.040Z"
-  },
-  {
-    "id": "bfc7c700",
-    "belt": "Green",
-    "makeModels": [
-      {
-        "make": "BAB IKON",
-        "model": "P0"
-      }
-    ],
-    "lockingMechanisms": [
-      "Pin-tumbler"
-    ],
-    "popularityIndex": 18,
-    "scorecardCount": 2,
-    "views": 18,
-    "dateAdded": "2023-02-21T23:16:05.000Z",
-    "media": [
-      {
-        "title": "By: Hunson",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52788904435_07f9e8e87a_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52788904435/in/album-72177720307198175/",
-        "sequenceId": 3556,
-        "dateAdded": "2025-12-02T23:39:17.895Z",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/52788904435_72f337e71f_o.jpg"
-      },
-      {
-        "title": "By: Hunson",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52787958947_5e8e16647e_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52787958947/in/album-72177720307198175/",
-        "sequenceId": 3557,
-        "dateAdded": "2025-12-02T23:39:17.895Z",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/52787958947_8cc7d11bd0_o.jpg"
-      },
-      {
-        "title": "By: Jippiedoe",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/53093266705_0384270866_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53093266705/in/album-72177720307198175/",
-        "sequenceId": 3558,
-        "dateAdded": "2025-12-02T23:39:17.895Z",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/53093266705_0c090ea786_o.jpg"
-      },
-      {
-        "title": "By: LockPickingFisherman",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/54660739777_2994e7e7a2_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54660739777/in/album-72177720307198175/",
-        "sequenceId": 3559,
-        "dateAdded": "2025-10-25T18:24:16.771Z",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/54660739777_ace28fb608_o.jpg",
-        "imageTitle": "Bab IKON P031"
       }
     ],
     "lastUpdated": "2026-10-24T20:03:10.040Z"
@@ -15341,9 +15305,9 @@
     "features": [
       "Flickr Update"
     ],
-    "popularityIndex": 58,
+    "popularityIndex": 59,
     "scorecardCount": 6,
-    "views": 58,
+    "views": 59,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -16084,6 +16048,31 @@
       }
     ],
     "lastUpdated": "2025-12-02T23:39:17.935Z"
+  },
+  {
+    "id": "d8aaab3f",
+    "belt": "Green",
+    "makeModels": [
+      {
+        "make": "EVVA",
+        "model": "DPI"
+      },
+      {
+        "make": "EVVA",
+        "model": "DPS"
+      },
+      {
+        "make": "EVVA",
+        "model": "EPS"
+      }
+    ],
+    "version": "Non-active sidebar",
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "currentBeltDate": "2026-10-29T17:06:32.289Z",
+    "dateAdded": "2026-10-24T05:11:57.627Z",
+    "lastUpdated": "2026-10-29T17:06:32.736Z"
   },
   {
     "id": "6a870d80",
@@ -17117,60 +17106,15 @@
     "lastUpdated": "2025-12-02T23:39:17.935Z"
   },
   {
-    "id": "b25e23fd",
-    "belt": "Green",
-    "makeModels": [
-      {
-        "make": "IKON",
-        "model": "N1"
-      }
-    ],
-    "lockingMechanisms": [
-      "Pin-tumbler"
-    ],
-    "notes": "IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",
-    "popularityIndex": 15,
-    "scorecardCount": 3,
-    "views": 15,
-    "dateAdded": "2023-02-21T23:16:05.000Z",
-    "media": [
-      {
-        "title": "By: Hunson",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52788519306_ff497ff648_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52788519306/in/album-72177720307213464/",
-        "sequenceId": 3387,
-        "dateAdded": "2025-12-02T23:39:17.892Z",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/52788519306_390c526f3f_o.jpg"
-      },
-      {
-        "title": "By: Hunson",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52788793305_087f1f6b37_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52788793305/in/album-72177720307213464/",
-        "sequenceId": 3388,
-        "dateAdded": "2025-12-02T23:39:17.892Z",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/52788793305_3df2d87b27_o.jpg"
-      },
-      {
-        "title": "By: decoder",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/54267718912_859ee26bf7_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54267718912/in/album-72177720307213464/",
-        "sequenceId": 3389,
-        "dateAdded": "2025-12-02T23:39:17.892Z",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/54267718912_561db40fd6_o.jpg",
-        "imageTitle": "IKON N1P0 P031"
-      }
-    ],
-    "lastUpdated": "2025-12-02T23:39:17.935Z"
-  },
-  {
     "id": "9a972905",
     "belt": "Green",
     "makeModels": [
       {
         "make": "IKON",
+        "model": "P0"
+      },
+      {
+        "make": "BAB IKON",
         "model": "P0"
       }
     ],
@@ -17252,7 +17196,56 @@
     "relatedIds": [
       "d1896bf9"
     ],
-    "lastUpdated": "2026-10-24T20:20:19.179Z"
+    "lastUpdated": "2026-10-29T17:06:32.736Z"
+  },
+  {
+    "id": "b25e23fd",
+    "belt": "Green",
+    "makeModels": [
+      {
+        "make": "IKON",
+        "model": "TK5"
+      }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "notes": "IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",
+    "popularityIndex": 15,
+    "scorecardCount": 3,
+    "views": 15,
+    "dateAdded": "2023-02-21T23:16:05.000Z",
+    "media": [
+      {
+        "title": "By: Hunson",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52788519306_ff497ff648_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52788519306/in/album-72177720307213464/",
+        "sequenceId": 3387,
+        "dateAdded": "2025-12-02T23:39:17.892Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52788519306_390c526f3f_o.jpg"
+      },
+      {
+        "title": "By: Hunson",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52788793305_087f1f6b37_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52788793305/in/album-72177720307213464/",
+        "sequenceId": 3388,
+        "dateAdded": "2025-12-02T23:39:17.892Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52788793305_3df2d87b27_o.jpg"
+      },
+      {
+        "title": "By: decoder",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54267718912_859ee26bf7_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54267718912/in/album-72177720307213464/",
+        "sequenceId": 3389,
+        "dateAdded": "2025-12-02T23:39:17.892Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54267718912_561db40fd6_o.jpg",
+        "imageTitle": "IKON N1P0 P031"
+      }
+    ],
+    "lastUpdated": "2026-10-29T17:06:32.736Z"
   },
   {
     "id": "f8254416",
@@ -17477,9 +17470,9 @@
     "features": [
       "Flickr Update"
     ],
-    "popularityIndex": 56,
+    "popularityIndex": 57,
     "scorecardCount": 6,
-    "views": 56,
+    "views": 57,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -17732,8 +17725,8 @@
     "features": [
       "Pin-in-pin"
     ],
-    "popularityIndex": 3,
-    "views": 3,
+    "popularityIndex": 4,
+    "views": 4,
     "dateAdded": "2026-08-06T03:59:39.967Z",
     "media": [
       {
@@ -17973,9 +17966,9 @@
     "features": [
       "Tapered drivers"
     ],
-    "popularityIndex": 52,
-    "scorecardCount": 4,
-    "views": 52,
+    "popularityIndex": 53,
+    "scorecardCount": 5,
+    "views": 53,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -18155,9 +18148,9 @@
       "Unguttable"
     ],
     "modelNum": "410",
-    "popularityIndex": 878,
+    "popularityIndex": 879,
     "scorecardCount": 107,
-    "views": 878,
+    "views": 879,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -18997,6 +18990,25 @@
     "lastUpdated": "2025-12-02T23:39:17.936Z"
   },
   {
+    "id": "8982fac6",
+    "belt": "Green",
+    "makeModels": [
+      {
+        "make": "Mottura",
+        "model": "Champions Pro"
+      }
+    ],
+    "lockingMechanisms": [
+      "Dimple"
+    ],
+    "popularityIndex": 1,
+    "scorecardCount": 2,
+    "views": 1,
+    "currentBeltDate": "2026-10-29T17:06:32.289Z",
+    "dateAdded": "2026-10-12T23:33:54.102Z",
+    "lastUpdated": "2026-10-29T17:06:32.737Z"
+  },
+  {
     "id": "abf55188",
     "belt": "Green",
     "makeModels": [
@@ -19467,9 +19479,9 @@
     "lockingMechanisms": [
       "Disc detainer"
     ],
-    "popularityIndex": 3,
-    "scorecardCount": 1,
-    "views": 3,
+    "popularityIndex": 4,
+    "scorecardCount": 2,
+    "views": 4,
     "dateAdded": "2026-08-06T03:59:39.967Z",
     "media": [
       {
@@ -22823,6 +22835,22 @@
     "lastUpdated": "2026-07-24T05:24:55.145Z"
   },
   {
+    "id": "343d6402",
+    "belt": "Blue",
+    "makeModels": [
+      {
+        "make": "Adamant",
+        "model": "Adamant"
+      }
+    ],
+    "version": "Korean Spinny Key, 11 pins",
+    "popularityIndex": 1,
+    "views": 1,
+    "currentBeltDate": "2026-10-29T17:06:32.290Z",
+    "dateAdded": "2026-10-09T16:14:03.523Z",
+    "lastUpdated": "2026-10-29T17:06:32.737Z"
+  },
+  {
     "id": "3ebbc1f4",
     "belt": "Blue",
     "makeModels": [
@@ -24174,9 +24202,9 @@
     "lockingMechanisms": [
       "Dimple"
     ],
-    "popularityIndex": 28,
+    "popularityIndex": 27,
     "scorecardCount": 2,
-    "views": 28,
+    "views": 27,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -26172,6 +26200,65 @@
     "lastUpdated": "2025-12-02T23:39:17.940Z"
   },
   {
+    "id": "62bdbd5e",
+    "belt": "Blue",
+    "makeModels": [
+      {
+        "make": "EVVA",
+        "model": "NVL"
+      },
+      {
+        "make": "Guard",
+        "model": "NVL"
+      }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "popularityIndex": 2,
+    "views": 2,
+    "dateAdded": "2023-02-21T23:16:05.000Z",
+    "media": [
+      {
+        "title": "By: Luboš Čech",
+        "subtitle": "Catalocks",
+        "thumbnailUrl": "https://img.lpubelts.com/i/cl/cl-579_1_tn.jpg",
+        "fullUrl": "https://www.catalocks.eu/photos/579/1.jpg",
+        "sequenceId": 1880,
+        "dateAdded": "2025-12-02T23:39:17.869Z",
+        "subtitleUrl": "https://www.catalocks.eu/GUARD/GUARD%20NVL_579.html",
+        "fullSizeUrl": "https://www.catalocks.eu/photos/579/1.jpg"
+      },
+      {
+        "title": "By: decoder",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54260518728_44bd1243e1_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54260518728/in/album-72177720323125113/",
+        "sequenceId": 1881,
+        "dateAdded": "2025-12-02T23:39:17.869Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54260518728_f6d69a3b7b_o.jpg",
+        "imageTitle": "Guard NVL"
+      },
+      {
+        "title": "By: decoder",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54259401587_5c07594b63_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54259401587/in/album-72177720323125113/",
+        "sequenceId": 1882,
+        "dateAdded": "2025-12-02T23:39:17.869Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54259401587_b7c79018eb_o.jpg",
+        "imageTitle": "Guard NVL"
+      }
+    ],
+    "links": [
+      {
+        "title": "Catalocks",
+        "url": "https://www.catalocks.eu/GUARD/GUARD%20NVL_579.html"
+      }
+    ],
+    "lastUpdated": "2026-10-29T17:06:32.738Z"
+  },
+  {
     "id": "f938f2fe",
     "belt": "Blue",
     "makeModels": [
@@ -26853,61 +26940,6 @@
     "lastUpdated": "2025-12-02T23:39:17.940Z"
   },
   {
-    "id": "62bdbd5e",
-    "belt": "Blue",
-    "makeModels": [
-      {
-        "make": "Guard",
-        "model": "NVL"
-      }
-    ],
-    "lockingMechanisms": [
-      "Pin-tumbler"
-    ],
-    "popularityIndex": 2,
-    "views": 2,
-    "dateAdded": "2023-02-21T23:16:05.000Z",
-    "media": [
-      {
-        "title": "By: Luboš Čech",
-        "subtitle": "Catalocks",
-        "thumbnailUrl": "https://img.lpubelts.com/i/cl/cl-579_1_tn.jpg",
-        "fullUrl": "https://www.catalocks.eu/photos/579/1.jpg",
-        "sequenceId": 1880,
-        "dateAdded": "2025-12-02T23:39:17.869Z",
-        "subtitleUrl": "https://www.catalocks.eu/GUARD/GUARD%20NVL_579.html",
-        "fullSizeUrl": "https://www.catalocks.eu/photos/579/1.jpg"
-      },
-      {
-        "title": "By: decoder",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/54260518728_44bd1243e1_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54260518728/in/album-72177720323125113/",
-        "sequenceId": 1881,
-        "dateAdded": "2025-12-02T23:39:17.869Z",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/54260518728_f6d69a3b7b_o.jpg",
-        "imageTitle": "Guard NVL"
-      },
-      {
-        "title": "By: decoder",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/54259401587_5c07594b63_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54259401587/in/album-72177720323125113/",
-        "sequenceId": 1882,
-        "dateAdded": "2025-12-02T23:39:17.869Z",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/54259401587_b7c79018eb_o.jpg",
-        "imageTitle": "Guard NVL"
-      }
-    ],
-    "links": [
-      {
-        "title": "Catalocks",
-        "url": "https://www.catalocks.eu/GUARD/GUARD%20NVL_579.html"
-      }
-    ],
-    "lastUpdated": "2025-12-02T23:39:17.941Z"
-  },
-  {
     "id": "d1896bf9",
     "belt": "Blue",
     "makeModels": [
@@ -27311,6 +27343,22 @@
       "c11aca1a"
     ],
     "lastUpdated": "2026-09-18T17:33:33.529Z"
+  },
+  {
+    "id": "7128b1da",
+    "belt": "Blue",
+    "makeModels": [
+      {
+        "make": "ISEO",
+        "model": "F6"
+      }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "currentBeltDate": "2026-10-29T17:06:32.291Z",
+    "dateAdded": "2026-10-24T05:11:57.628Z",
+    "lastUpdated": "2026-10-29T17:06:32.738Z"
   },
   {
     "id": "5c2f5101",
@@ -27921,9 +27969,9 @@
       "Random mid tension"
     ],
     "notes": "Readily picked with front tension and counter-rotation",
-    "popularityIndex": 87,
+    "popularityIndex": 88,
     "scorecardCount": 19,
-    "views": 87,
+    "views": 88,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -29104,6 +29152,25 @@
     "lastUpdated": "2025-12-02T23:39:17.942Z"
   },
   {
+    "id": "a11d67f8",
+    "belt": "Blue",
+    "makeModels": [
+      {
+        "make": "MG Serrature",
+        "model": "ST"
+      }
+    ],
+    "lockingMechanisms": [
+      "Dimple"
+    ],
+    "popularityIndex": 1,
+    "scorecardCount": 2,
+    "views": 1,
+    "currentBeltDate": "2026-10-29T17:06:32.291Z",
+    "dateAdded": "2026-10-12T23:33:54.101Z",
+    "lastUpdated": "2026-10-29T17:06:32.739Z"
+  },
+  {
     "id": "c0af329b",
     "belt": "Blue",
     "makeModels": [
@@ -29806,6 +29873,25 @@
     "lastUpdated": "2025-12-02T23:39:17.942Z"
   },
   {
+    "id": "3bfcd36c",
+    "belt": "Blue",
+    "makeModels": [
+      {
+        "make": "Opel",
+        "model": "Top Security"
+      }
+    ],
+    "lockingMechanisms": [
+      "Dimple"
+    ],
+    "popularityIndex": 1,
+    "scorecardCount": 2,
+    "views": 1,
+    "currentBeltDate": "2026-10-29T17:06:32.292Z",
+    "dateAdded": "2026-10-03T22:57:35.086Z",
+    "lastUpdated": "2026-10-29T17:06:32.739Z"
+  },
+  {
     "id": "3af6c54b",
     "belt": "Blue",
     "makeModels": [
@@ -29869,9 +29955,9 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "popularityIndex": 816,
+    "popularityIndex": 817,
     "scorecardCount": 226,
-    "views": 816,
+    "views": 817,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -32116,7 +32202,7 @@
       "Dimple"
     ],
     "popularityIndex": 23,
-    "scorecardCount": 12,
+    "scorecardCount": 13,
     "views": 23,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
@@ -32185,7 +32271,7 @@
       "Pump/push"
     ],
     "popularityIndex": 14,
-    "scorecardCount": 7,
+    "scorecardCount": 8,
     "views": 14,
     "dateAdded": "2023-03-02T19:05:25.000Z",
     "media": [
@@ -32292,6 +32378,14 @@
       {
         "make": "ABUS",
         "model": "TS5000"
+      },
+      {
+        "make": "CISA",
+        "model": "OTSP"
+      },
+      {
+        "make": "CISA",
+        "model": "Vighi"
       }
     ],
     "lockingMechanisms": [
@@ -32444,7 +32538,7 @@
         "url": "https://www.catalocks.eu/ABUS/ABUS%20TS%205000_53.html"
       }
     ],
-    "lastUpdated": "2026-03-10T22:22:09.096Z"
+    "lastUpdated": "2026-10-29T17:06:32.740Z"
   },
   {
     "id": "557b2f45",
@@ -34272,6 +34366,21 @@
     "lastUpdated": "2026-09-02T14:34:33.986Z"
   },
   {
+    "id": "8ea6b2be",
+    "belt": "Purple",
+    "makeModels": [
+      {
+        "make": "Chicago Lock Co",
+        "model": "Tubular UL Ace"
+      }
+    ],
+    "version": "7 pin, with 3 pin in pin",
+    "scorecardCount": 1,
+    "currentBeltDate": "2026-10-29T17:06:32.292Z",
+    "dateAdded": "2026-10-09T23:22:45.036Z",
+    "lastUpdated": "2026-10-29T17:06:32.740Z"
+  },
+  {
     "id": "1f3a8ff9",
     "belt": "Purple",
     "makeModels": [
@@ -35070,7 +35179,7 @@
       "Flickr Update"
     ],
     "popularityIndex": 70,
-    "scorecardCount": 33,
+    "scorecardCount": 34,
     "views": 70,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
@@ -38415,7 +38524,7 @@
       "Latest Changelog"
     ],
     "popularityIndex": 4,
-    "scorecardCount": 2,
+    "scorecardCount": 3,
     "views": 4,
     "currentBeltDate": "2026-08-30T12:00:00.000Z",
     "dateAdded": "2026-09-01T00:58:56.480Z",
@@ -40316,6 +40425,80 @@
     "lastUpdated": "2026-08-26T05:54:31.613Z"
   },
   {
+    "id": "3ca24202",
+    "belt": "Purple",
+    "makeModels": [
+      {
+        "make": "Pollux",
+        "model": "GM05"
+      }
+    ],
+    "lockingMechanisms": [
+      "Pump/push"
+    ],
+    "features": [
+      "Under Review ⚑"
+    ],
+    "popularityIndex": 4,
+    "scorecardCount": 3,
+    "views": 4,
+    "currentBeltDate": "2026-10-29T17:06:32.294Z",
+    "dateAdded": "2023-08-03T13:21:21.000Z",
+    "media": [
+      {
+        "title": "By: Bacon7Pineapple",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/55451604332_837ba1c3ed_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55451604332/in/album-72177720335053856/",
+        "sequenceId": 1184,
+        "dateAdded": "2026-08-09T15:55:06.741Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/55451604332_11c482b33d_o.jpg",
+        "imageTitle": "Pollux gm05"
+      },
+      {
+        "title": "By: Bacon7Pineapple",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/55451604647_6213368ce4_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55451604647/in/album-72177720335053856/",
+        "sequenceId": 1185,
+        "dateAdded": "2026-08-09T15:55:06.741Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/55451604647_68935a00cb_o.jpg",
+        "imageTitle": "Pollux gm05"
+      },
+      {
+        "title": "By: Bacon7Pineapple",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/55451604837_d9742be87d_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55451604837/in/album-72177720335053856/",
+        "sequenceId": 1186,
+        "dateAdded": "2026-08-09T15:55:06.741Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/55451604837_ed1f0b6ab6_o.jpg",
+        "imageTitle": "Pollux gm05"
+      },
+      {
+        "title": "By: Bacon7Pineapple",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/55452698253_09551774b5_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55452698253/in/album-72177720335053856/",
+        "sequenceId": 1187,
+        "dateAdded": "2026-08-09T15:55:06.741Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/55452698253_78270d63c8_o.jpg",
+        "imageTitle": "Pollux gm05"
+      },
+      {
+        "title": "By: Bacon7Pineapple",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/55452698428_4ca6c562f1_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55452698428/in/album-72177720335053856/",
+        "sequenceId": 1188,
+        "dateAdded": "2026-08-09T15:55:06.741Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/55452698428_56ee6dce4a_o.jpg",
+        "imageTitle": "Pollux gm05"
+      }
+    ],
+    "lastUpdated": "2026-10-29T17:06:32.742Z"
+  },
+  {
     "id": "8e81c2c6",
     "belt": "Purple",
     "makeModels": [
@@ -40723,6 +40906,26 @@
       }
     ],
     "lastUpdated": "2026-09-20T19:56:01.553Z"
+  },
+  {
+    "id": "20b7f0a3",
+    "belt": "Purple",
+    "makeModels": [
+      {
+        "make": "Securemme",
+        "model": "Evo K75"
+      }
+    ],
+    "version": "with false gate sliders",
+    "lockingMechanisms": [
+      "Dimple"
+    ],
+    "popularityIndex": 1,
+    "scorecardCount": 2,
+    "views": 1,
+    "currentBeltDate": "2026-10-29T17:06:32.294Z",
+    "dateAdded": "2026-10-12T23:33:54.103Z",
+    "lastUpdated": "2026-10-29T17:06:32.742Z"
   },
   {
     "id": "479f1d73",
@@ -41852,7 +42055,7 @@
     ],
     "notes": "Old models can be front tensioned",
     "popularityIndex": 179,
-    "scorecardCount": 31,
+    "scorecardCount": 32,
     "views": 179,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
@@ -43670,7 +43873,7 @@
       "Interactive element"
     ],
     "popularityIndex": 18,
-    "scorecardCount": 14,
+    "scorecardCount": 15,
     "views": 18,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
@@ -45638,7 +45841,7 @@
       "Pump/push"
     ],
     "popularityIndex": 13,
-    "scorecardCount": 14,
+    "scorecardCount": 15,
     "views": 13,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
@@ -48687,9 +48890,9 @@
     "lockingMechanisms": [
       "Dimple"
     ],
-    "popularityIndex": 45,
+    "popularityIndex": 46,
     "scorecardCount": 20,
-    "views": 45,
+    "views": 46,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -50033,9 +50236,9 @@
       "Shark fin keypins",
       "Flickr Update"
     ],
-    "popularityIndex": 62,
+    "popularityIndex": 61,
     "scorecardCount": 46,
-    "views": 62,
+    "views": 61,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -56840,7 +57043,7 @@
     ],
     "notes": "two False gates per pin, staggered rows",
     "popularityIndex": 29,
-    "scorecardCount": 16,
+    "scorecardCount": 17,
     "views": 29,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
@@ -65102,23 +65305,6 @@
     "lastUpdated": "2026-09-21T23:55:52.824Z"
   },
   {
-    "id": "7f0799ab",
-    "belt": "Unranked",
-    "makeModels": [
-      {
-        "make": "ABUS",
-        "model": "60/30"
-      }
-    ],
-    "version": "4 pins",
-    "lockingMechanisms": [
-      "Pin-tumbler"
-    ],
-    "currentBeltDate": "2026-10-24T05:11:57.626Z",
-    "dateAdded": "2026-10-24T05:11:57.626Z",
-    "lastUpdated": "2026-10-24T05:11:58.069Z"
-  },
-  {
     "id": "fdc8b16e",
     "belt": "Unranked",
     "makeModels": [
@@ -65317,22 +65503,6 @@
     "lastUpdated": "2026-10-09T16:14:04.140Z"
   },
   {
-    "id": "343d6402",
-    "belt": "Unranked",
-    "makeModels": [
-      {
-        "make": "Adamant",
-        "model": "Adamant"
-      }
-    ],
-    "version": "Korean Spinny Key, 11 pins",
-    "popularityIndex": 1,
-    "views": 1,
-    "currentBeltDate": "2026-10-09T16:14:03.523Z",
-    "dateAdded": "2026-10-09T16:14:03.523Z",
-    "lastUpdated": "2026-10-09T16:14:04.140Z"
-  },
-  {
     "id": "5288be2f",
     "belt": "Unranked",
     "makeModels": [
@@ -65341,8 +65511,9 @@
         "model": "Scudo 9000"
       }
     ],
-    "popularityIndex": 1,
-    "views": 1,
+    "popularityIndex": 2,
+    "scorecardCount": 1,
+    "views": 2,
     "currentBeltDate": "2026-10-09T16:14:03.523Z",
     "dateAdded": "2026-10-09T16:14:03.523Z",
     "lastUpdated": "2026-10-09T16:14:04.140Z"
@@ -65356,6 +65527,9 @@
         "model": "3-Row Cam Lock"
       }
     ],
+    "popularityIndex": 1,
+    "scorecardCount": 1,
+    "views": 1,
     "currentBeltDate": "2026-10-09T16:14:03.523Z",
     "dateAdded": "2026-10-09T16:14:03.523Z",
     "lastUpdated": "2026-10-09T16:14:04.140Z"
@@ -65369,6 +65543,9 @@
         "model": "3DS Freeflex"
       }
     ],
+    "popularityIndex": 1,
+    "scorecardCount": 1,
+    "views": 1,
     "currentBeltDate": "2026-10-09T16:14:03.523Z",
     "dateAdded": "2026-10-09T16:14:03.523Z",
     "lastUpdated": "2026-10-09T16:14:04.140Z"
@@ -65687,6 +65864,64 @@
     "lastUpdated": "2026-10-09T23:22:45.343Z"
   },
   {
+    "id": "bfc7c700",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "BAB IKON",
+        "model": "P0"
+      }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "popularityIndex": 18,
+    "scorecardCount": 2,
+    "views": 18,
+    "currentBeltDate": "2026-10-29T17:06:32.300Z",
+    "dateAdded": "2023-02-21T23:16:05.000Z",
+    "media": [
+      {
+        "title": "By: Hunson",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52788904435_07f9e8e87a_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52788904435/in/album-72177720307198175/",
+        "sequenceId": 3556,
+        "dateAdded": "2025-12-02T23:39:17.895Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52788904435_72f337e71f_o.jpg"
+      },
+      {
+        "title": "By: Hunson",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52787958947_5e8e16647e_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52787958947/in/album-72177720307198175/",
+        "sequenceId": 3557,
+        "dateAdded": "2025-12-02T23:39:17.895Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52787958947_8cc7d11bd0_o.jpg"
+      },
+      {
+        "title": "By: Jippiedoe",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53093266705_0384270866_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53093266705/in/album-72177720307198175/",
+        "sequenceId": 3558,
+        "dateAdded": "2025-12-02T23:39:17.895Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53093266705_0c090ea786_o.jpg"
+      },
+      {
+        "title": "By: LockPickingFisherman",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54660739777_2994e7e7a2_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54660739777/in/album-72177720307198175/",
+        "sequenceId": 3559,
+        "dateAdded": "2025-10-25T18:24:16.771Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54660739777_ace28fb608_o.jpg",
+        "imageTitle": "Bab IKON P031"
+      }
+    ],
+    "lastUpdated": "2026-10-29T17:06:32.749Z"
+  },
+  {
     "id": "52fefd7e",
     "belt": "Unranked",
     "makeModels": [
@@ -65698,9 +65933,9 @@
     "lockingMechanisms": [
       "Dimple"
     ],
-    "popularityIndex": 1,
-    "scorecardCount": 1,
-    "views": 1,
+    "popularityIndex": 2,
+    "scorecardCount": 2,
+    "views": 2,
     "currentBeltDate": "2026-10-26T19:45:46.477Z",
     "dateAdded": "2026-10-26T19:45:46.477Z",
     "media": [
@@ -66551,21 +66786,6 @@
     "lastUpdated": "2026-08-14T21:52:46.952Z"
   },
   {
-    "id": "8ea6b2be",
-    "belt": "Unranked",
-    "makeModels": [
-      {
-        "make": "Chicago Lock Co",
-        "model": "Tubular UL Ace"
-      }
-    ],
-    "version": "7 pin, with 3 pin in pin",
-    "scorecardCount": 1,
-    "currentBeltDate": "2026-10-09T23:22:45.036Z",
-    "dateAdded": "2026-10-09T23:22:45.036Z",
-    "lastUpdated": "2026-10-09T23:22:45.344Z"
-  },
-  {
     "id": "267e47c4",
     "belt": "Unranked",
     "makeModels": [
@@ -67342,31 +67562,6 @@
     "currentBeltDate": "2026-10-12T23:33:54.099Z",
     "dateAdded": "2026-10-12T23:33:54.099Z",
     "lastUpdated": "2026-10-12T23:33:54.537Z"
-  },
-  {
-    "id": "d8aaab3f",
-    "belt": "Unranked",
-    "makeModels": [
-      {
-        "make": "EVVA",
-        "model": "DPI"
-      },
-      {
-        "make": "EVVA",
-        "model": "DPS"
-      },
-      {
-        "make": "EVVA",
-        "model": "EPS"
-      }
-    ],
-    "version": "Non-active sidebar",
-    "lockingMechanisms": [
-      "Pin-tumbler"
-    ],
-    "currentBeltDate": "2026-10-24T05:11:57.627Z",
-    "dateAdded": "2026-10-24T05:11:57.627Z",
-    "lastUpdated": "2026-10-24T05:11:58.071Z"
   },
   {
     "id": "d5f5ab98",
@@ -68486,25 +68681,11 @@
         "model": "City Padlock"
       }
     ],
+    "popularityIndex": 1,
+    "views": 1,
     "currentBeltDate": "2026-10-12T23:33:54.100Z",
     "dateAdded": "2026-10-12T23:33:54.100Z",
     "lastUpdated": "2026-10-12T23:33:54.539Z"
-  },
-  {
-    "id": "7128b1da",
-    "belt": "Unranked",
-    "makeModels": [
-      {
-        "make": "ISEO",
-        "model": "F6"
-      }
-    ],
-    "lockingMechanisms": [
-      "Pin-tumbler"
-    ],
-    "currentBeltDate": "2026-10-24T05:11:57.628Z",
-    "dateAdded": "2026-10-24T05:11:57.628Z",
-    "lastUpdated": "2026-10-24T05:11:58.072Z"
   },
   {
     "id": "fe305753",
@@ -69610,25 +69791,6 @@
     "lastUpdated": "2026-10-12T23:33:54.541Z"
   },
   {
-    "id": "a11d67f8",
-    "belt": "Unranked",
-    "makeModels": [
-      {
-        "make": "MG Serrature",
-        "model": "ST"
-      }
-    ],
-    "lockingMechanisms": [
-      "Dimple"
-    ],
-    "popularityIndex": 1,
-    "scorecardCount": 2,
-    "views": 1,
-    "currentBeltDate": "2026-10-12T23:33:54.101Z",
-    "dateAdded": "2026-10-12T23:33:54.101Z",
-    "lastUpdated": "2026-10-12T23:33:54.541Z"
-  },
-  {
     "id": "199e2e7e",
     "belt": "Unranked",
     "makeModels": [
@@ -70057,25 +70219,6 @@
     "lastUpdated": "2026-10-12T23:33:54.542Z"
   },
   {
-    "id": "8982fac6",
-    "belt": "Unranked",
-    "makeModels": [
-      {
-        "make": "Mottura",
-        "model": "Champions Pro"
-      }
-    ],
-    "lockingMechanisms": [
-      "Dimple"
-    ],
-    "popularityIndex": 1,
-    "scorecardCount": 2,
-    "views": 1,
-    "currentBeltDate": "2026-10-12T23:33:54.102Z",
-    "dateAdded": "2026-10-12T23:33:54.102Z",
-    "lastUpdated": "2026-10-12T23:33:54.542Z"
-  },
-  {
     "id": "33b738f8",
     "belt": "Unranked",
     "makeModels": [
@@ -70283,24 +70426,6 @@
     "currentBeltDate": "2026-10-12T23:33:54.102Z",
     "dateAdded": "2026-10-12T23:33:54.102Z",
     "lastUpdated": "2026-10-12T23:33:54.543Z"
-  },
-  {
-    "id": "3bfcd36c",
-    "belt": "Unranked",
-    "makeModels": [
-      {
-        "make": "Opel",
-        "model": "Top Security"
-      }
-    ],
-    "lockingMechanisms": [
-      "Dimple"
-    ],
-    "popularityIndex": 1,
-    "scorecardCount": 2,
-    "views": 1,
-    "dateAdded": "2026-10-03T22:57:35.086Z",
-    "lastUpdated": "2026-10-03T22:57:35.476Z"
   },
   {
     "id": "c6cd3574",
@@ -70702,79 +70827,6 @@
     "views": 1,
     "dateAdded": "2026-10-03T22:57:35.086Z",
     "lastUpdated": "2026-10-03T22:57:35.476Z"
-  },
-  {
-    "id": "3ca24202",
-    "belt": "Unranked",
-    "makeModels": [
-      {
-        "make": "Pollux",
-        "model": "gm05"
-      }
-    ],
-    "lockingMechanisms": [
-      "Pump/push"
-    ],
-    "features": [
-      "Under Review ⚑"
-    ],
-    "popularityIndex": 4,
-    "scorecardCount": 3,
-    "views": 4,
-    "dateAdded": "2023-08-03T13:21:21.000Z",
-    "media": [
-      {
-        "title": "By: Bacon7Pineapple",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/55451604332_837ba1c3ed_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55451604332/in/album-72177720335053856/",
-        "sequenceId": 1184,
-        "dateAdded": "2026-08-09T15:55:06.741Z",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/55451604332_11c482b33d_o.jpg",
-        "imageTitle": "Pollux gm05"
-      },
-      {
-        "title": "By: Bacon7Pineapple",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/55451604647_6213368ce4_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55451604647/in/album-72177720335053856/",
-        "sequenceId": 1185,
-        "dateAdded": "2026-08-09T15:55:06.741Z",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/55451604647_68935a00cb_o.jpg",
-        "imageTitle": "Pollux gm05"
-      },
-      {
-        "title": "By: Bacon7Pineapple",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/55451604837_d9742be87d_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55451604837/in/album-72177720335053856/",
-        "sequenceId": 1186,
-        "dateAdded": "2026-08-09T15:55:06.741Z",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/55451604837_ed1f0b6ab6_o.jpg",
-        "imageTitle": "Pollux gm05"
-      },
-      {
-        "title": "By: Bacon7Pineapple",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/55452698253_09551774b5_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55452698253/in/album-72177720335053856/",
-        "sequenceId": 1187,
-        "dateAdded": "2026-08-09T15:55:06.741Z",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/55452698253_78270d63c8_o.jpg",
-        "imageTitle": "Pollux gm05"
-      },
-      {
-        "title": "By: Bacon7Pineapple",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/55452698428_4ca6c562f1_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55452698428/in/album-72177720335053856/",
-        "sequenceId": 1188,
-        "dateAdded": "2026-08-09T15:55:06.741Z",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/55452698428_56ee6dce4a_o.jpg",
-        "imageTitle": "Pollux gm05"
-      }
-    ],
-    "lastUpdated": "2026-08-09T15:55:06.947Z"
   },
   {
     "id": "4164c937",
@@ -71924,26 +71976,6 @@
     ],
     "popularityIndex": 1,
     "scorecardCount": 1,
-    "views": 1,
-    "currentBeltDate": "2026-10-12T23:33:54.103Z",
-    "dateAdded": "2026-10-12T23:33:54.103Z",
-    "lastUpdated": "2026-10-12T23:33:54.545Z"
-  },
-  {
-    "id": "20b7f0a3",
-    "belt": "Unranked",
-    "makeModels": [
-      {
-        "make": "Securemme",
-        "model": "Evo K75"
-      }
-    ],
-    "version": "with false gate sliders",
-    "lockingMechanisms": [
-      "Dimple"
-    ],
-    "popularityIndex": 1,
-    "scorecardCount": 2,
     "views": 1,
     "currentBeltDate": "2026-10-12T23:33:54.103Z",
     "dateAdded": "2026-10-12T23:33:54.103Z",
@@ -73716,6 +73748,8 @@
     "lockingMechanisms": [
       "Lever"
     ],
+    "popularityIndex": 1,
+    "views": 1,
     "currentBeltDate": "2026-10-27T05:55:42.869Z",
     "dateAdded": "2026-10-12T23:33:54.104Z",
     "lastUpdated": "2026-10-27T05:55:43.304Z"
