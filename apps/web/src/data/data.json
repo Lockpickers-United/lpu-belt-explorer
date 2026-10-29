@@ -1977,8 +1977,8 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "popularityIndex": 5,
-    "views": 5,
+    "popularityIndex": 6,
+    "views": 6,
     "dateAdded": "2025-11-23T19:59:27.060Z",
     "media": [
       {
@@ -16086,9 +16086,9 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "popularityIndex": 19,
+    "popularityIndex": 20,
     "scorecardCount": 2,
-    "views": 19,
+    "views": 20,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -24892,102 +24892,6 @@
     "lastUpdated": "2026-09-02T00:20:11.196Z"
   },
   {
-    "id": "2e67118d",
-    "belt": "Blue",
-    "makeModels": [
-      {
-        "make": "DOM",
-        "model": "R Plus"
-      }
-    ],
-    "lockingMechanisms": [
-      "Pin-tumbler"
-    ],
-    "popularityIndex": 17,
-    "scorecardCount": 4,
-    "views": 17,
-    "dateAdded": "2023-02-21T23:16:05.000Z",
-    "media": [
-      {
-        "title": "By: Luboš Čech",
-        "subtitle": "Catalocks",
-        "thumbnailUrl": "https://img.lpubelts.com/i/cl/cl-1020_1_tn.jpg",
-        "fullUrl": "https://www.catalocks.eu/photos/1020/1.jpg",
-        "sequenceId": 917,
-        "dateAdded": "2025-12-02T23:39:17.853Z",
-        "subtitleUrl": "https://www.catalocks.eu/DOM/DOM%20RPLUS_1020.html",
-        "fullSizeUrl": "https://www.catalocks.eu/photos/1020/1.jpg"
-      },
-      {
-        "title": "By: Luboš Čech",
-        "subtitle": "Catalocks",
-        "thumbnailUrl": "https://img.lpubelts.com/i/cl/cl-1020_2_tn.jpg",
-        "fullUrl": "https://www.catalocks.eu/photos/1020/2.jpg",
-        "sequenceId": 918,
-        "dateAdded": "2025-12-02T23:39:17.853Z",
-        "subtitleUrl": "https://www.catalocks.eu/DOM/DOM%20RPLUS_1020.html",
-        "fullSizeUrl": "https://www.catalocks.eu/photos/1020/2.jpg"
-      },
-      {
-        "title": "By: TGT",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/55503505025_2fdb7423e3_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55503505025/in/album-72177720323093647/",
-        "sequenceId": 919,
-        "dateAdded": "2026-09-02T03:20:33.136Z",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/55503505025_9a4565eac5_o.jpg",
-        "imageTitle": "DOM R Plus"
-      },
-      {
-        "title": "By: Luboš Čech",
-        "subtitle": "Catalocks",
-        "thumbnailUrl": "https://img.lpubelts.com/i/cl/cl-1020_3_tn.jpg",
-        "fullUrl": "https://www.catalocks.eu/photos/1020/3.jpg",
-        "sequenceId": 920,
-        "dateAdded": "2025-12-02T23:39:17.853Z",
-        "subtitleUrl": "https://www.catalocks.eu/DOM/DOM%20RPLUS_1020.html",
-        "fullSizeUrl": "https://www.catalocks.eu/photos/1020/3.jpg"
-      },
-      {
-        "title": "By: Luboš Čech",
-        "subtitle": "Catalocks",
-        "thumbnailUrl": "https://img.lpubelts.com/i/cl/cl-1020_4_tn.jpg",
-        "fullUrl": "https://www.catalocks.eu/photos/1020/4.jpg",
-        "sequenceId": 921,
-        "dateAdded": "2025-12-02T23:39:17.853Z",
-        "subtitleUrl": "https://www.catalocks.eu/DOM/DOM%20RPLUS_1020.html",
-        "fullSizeUrl": "https://www.catalocks.eu/photos/1020/4.jpg"
-      },
-      {
-        "title": "By: Luboš Čech",
-        "subtitle": "Catalocks",
-        "thumbnailUrl": "https://img.lpubelts.com/i/cl/cl-1020_7_tn.jpg",
-        "fullUrl": "https://www.catalocks.eu/photos/1020/7.jpg",
-        "sequenceId": 922,
-        "dateAdded": "2025-12-02T23:39:17.853Z",
-        "subtitleUrl": "https://www.catalocks.eu/DOM/DOM%20RPLUS_1020.html",
-        "fullSizeUrl": "https://www.catalocks.eu/photos/1020/7.jpg"
-      },
-      {
-        "title": "By: LockPickingFisherman",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/54258889899_9c5f71531c_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54258889899/in/album-72177720323093647/",
-        "sequenceId": 923,
-        "dateAdded": "2025-10-25T18:24:16.755Z",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/54258889899_f0d22485f0_o.jpg",
-        "imageTitle": "Dom R Plus"
-      }
-    ],
-    "links": [
-      {
-        "title": "Catalocks",
-        "url": "https://www.catalocks.eu/DOM/DOM%20RPLUS_1020.html"
-      }
-    ],
-    "lastUpdated": "2026-09-02T03:20:33.416Z"
-  },
-  {
     "id": "81338028",
     "belt": "Blue",
     "makeModels": [
@@ -25273,6 +25177,14 @@
       {
         "make": "DOM",
         "model": "RS5"
+      },
+      {
+        "make": "DOM",
+        "model": "RS5"
+      },
+      {
+        "make": "DOM",
+        "model": "R Plus"
       }
     ],
     "lockingMechanisms": [
@@ -25386,7 +25298,7 @@
         "url": "https://www.catalocks.eu/DOM/DOM%20S%2C%20Profile%20Series%20PP1024_717.html"
       }
     ],
-    "lastUpdated": "2026-09-19T21:05:51.999Z"
+    "lastUpdated": "2026-10-29T17:35:40.220Z"
   },
   {
     "id": "05979a42",
@@ -25682,9 +25594,9 @@
       "Flickr Update"
     ],
     "notes": "Dorma DC4300 can be found as Miller's Dorma",
-    "popularityIndex": 10,
+    "popularityIndex": 11,
     "scorecardCount": 1,
-    "views": 10,
+    "views": 11,
     "dateAdded": "2023-08-03T13:21:21.000Z",
     "media": [
       {
@@ -27093,6 +27005,14 @@
       {
         "make": "IKON",
         "model": "SK6"
+      },
+      {
+        "make": "IKON",
+        "model": "SK6 Sperrnocke"
+      },
+      {
+        "make": "IKON",
+        "model": "SK6 Sperrrippe"
       }
     ],
     "version": "requires 360° picking",
@@ -27173,7 +27093,7 @@
         "url": "https://www.catalocks.eu/ZEISS-IKON/ZEISS-IKON%20SK%206%20VECTOR_857.html"
       }
     ],
-    "lastUpdated": "2026-10-27T12:19:15.213Z"
+    "lastUpdated": "2026-10-29T17:35:40.221Z"
   },
   {
     "id": "1c38e176",
@@ -36349,7 +36269,11 @@
     "makeModels": [
       {
         "make": "IKON",
-        "model": "SK6 vectorprofil rib extra"
+        "model": "SK6 Vectorprofil Rib Extra"
+      },
+      {
+        "make": "IKON",
+        "model": "SK6 Radienprofil Extra"
       }
     ],
     "version": "5 sliders",
@@ -36395,7 +36319,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/52734113020_7c480fd340_o.jpg"
       }
     ],
-    "lastUpdated": "2026-10-24T20:03:10.044Z"
+    "lastUpdated": "2026-10-29T17:35:40.222Z"
   },
   {
     "id": "07bc680a",
@@ -67445,6 +67369,103 @@
       }
     ],
     "lastUpdated": "2025-12-02T23:39:17.965Z"
+  },
+  {
+    "id": "2e67118d",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "DOM",
+        "model": "R Plus"
+      }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "popularityIndex": 17,
+    "scorecardCount": 4,
+    "views": 17,
+    "currentBeltDate": "2026-10-29T17:35:39.784Z",
+    "dateAdded": "2023-02-21T23:16:05.000Z",
+    "media": [
+      {
+        "title": "By: Luboš Čech",
+        "subtitle": "Catalocks",
+        "thumbnailUrl": "https://img.lpubelts.com/i/cl/cl-1020_1_tn.jpg",
+        "fullUrl": "https://www.catalocks.eu/photos/1020/1.jpg",
+        "sequenceId": 917,
+        "dateAdded": "2025-12-02T23:39:17.853Z",
+        "subtitleUrl": "https://www.catalocks.eu/DOM/DOM%20RPLUS_1020.html",
+        "fullSizeUrl": "https://www.catalocks.eu/photos/1020/1.jpg"
+      },
+      {
+        "title": "By: Luboš Čech",
+        "subtitle": "Catalocks",
+        "thumbnailUrl": "https://img.lpubelts.com/i/cl/cl-1020_2_tn.jpg",
+        "fullUrl": "https://www.catalocks.eu/photos/1020/2.jpg",
+        "sequenceId": 918,
+        "dateAdded": "2025-12-02T23:39:17.853Z",
+        "subtitleUrl": "https://www.catalocks.eu/DOM/DOM%20RPLUS_1020.html",
+        "fullSizeUrl": "https://www.catalocks.eu/photos/1020/2.jpg"
+      },
+      {
+        "title": "By: TGT",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/55503505025_2fdb7423e3_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55503505025/in/album-72177720323093647/",
+        "sequenceId": 919,
+        "dateAdded": "2026-09-02T03:20:33.136Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/55503505025_9a4565eac5_o.jpg",
+        "imageTitle": "DOM R Plus"
+      },
+      {
+        "title": "By: Luboš Čech",
+        "subtitle": "Catalocks",
+        "thumbnailUrl": "https://img.lpubelts.com/i/cl/cl-1020_3_tn.jpg",
+        "fullUrl": "https://www.catalocks.eu/photos/1020/3.jpg",
+        "sequenceId": 920,
+        "dateAdded": "2025-12-02T23:39:17.853Z",
+        "subtitleUrl": "https://www.catalocks.eu/DOM/DOM%20RPLUS_1020.html",
+        "fullSizeUrl": "https://www.catalocks.eu/photos/1020/3.jpg"
+      },
+      {
+        "title": "By: Luboš Čech",
+        "subtitle": "Catalocks",
+        "thumbnailUrl": "https://img.lpubelts.com/i/cl/cl-1020_4_tn.jpg",
+        "fullUrl": "https://www.catalocks.eu/photos/1020/4.jpg",
+        "sequenceId": 921,
+        "dateAdded": "2025-12-02T23:39:17.853Z",
+        "subtitleUrl": "https://www.catalocks.eu/DOM/DOM%20RPLUS_1020.html",
+        "fullSizeUrl": "https://www.catalocks.eu/photos/1020/4.jpg"
+      },
+      {
+        "title": "By: Luboš Čech",
+        "subtitle": "Catalocks",
+        "thumbnailUrl": "https://img.lpubelts.com/i/cl/cl-1020_7_tn.jpg",
+        "fullUrl": "https://www.catalocks.eu/photos/1020/7.jpg",
+        "sequenceId": 922,
+        "dateAdded": "2025-12-02T23:39:17.853Z",
+        "subtitleUrl": "https://www.catalocks.eu/DOM/DOM%20RPLUS_1020.html",
+        "fullSizeUrl": "https://www.catalocks.eu/photos/1020/7.jpg"
+      },
+      {
+        "title": "By: LockPickingFisherman",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54258889899_9c5f71531c_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54258889899/in/album-72177720323093647/",
+        "sequenceId": 923,
+        "dateAdded": "2025-10-25T18:24:16.755Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54258889899_f0d22485f0_o.jpg",
+        "imageTitle": "Dom R Plus"
+      }
+    ],
+    "links": [
+      {
+        "title": "Catalocks",
+        "url": "https://www.catalocks.eu/DOM/DOM%20RPLUS_1020.html"
+      }
+    ],
+    "lastUpdated": "2026-10-29T17:35:40.231Z"
   },
   {
     "id": "30827d9d",

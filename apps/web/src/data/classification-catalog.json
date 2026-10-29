@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": "sha256:7497feb77497d7dfa20cfd82976e091c91effb20aa9902c85405af3273f7894f",
-  "generatedAt": "2026-10-29T17:06:32.772Z",
+  "catalogVersion": "sha256:13b97a9c1b2a4b9744103bb8b2a4de3ad3f4bc0a6c537f8fe9252f010d0b4024",
+  "generatedAt": "2026-10-29T17:35:40.252Z",
   "entries": [
     {
       "id": "0082fa4c",
@@ -278,7 +278,7 @@
     },
     {
       "id": "08b5986d",
-      "name": "IKON SK6",
+      "name": "IKON SK6, SK6 Sperrnocke, SK6 Sperrrippe",
       "version": "requires 360° picking",
       "belt": "Blue",
       "currentBeltDate": null
@@ -1498,8 +1498,8 @@
       "id": "2e67118d",
       "name": "DOM R Plus",
       "version": null,
-      "belt": "Blue",
-      "currentBeltDate": null
+      "belt": "Unranked",
+      "currentBeltDate": "2026-10-29T17:35:39.784Z"
     },
     {
       "id": "2ec75ab7",
@@ -2504,7 +2504,7 @@
     },
     {
       "id": "4ffe03a9",
-      "name": "IKON SK6 vectorprofil rib extra",
+      "name": "IKON SK6 Vectorprofil Rib Extra, SK6 Radienprofil Extra",
       "version": "5 sliders",
       "belt": "Purple",
       "currentBeltDate": null
@@ -4849,7 +4849,7 @@
     },
     {
       "id": "9aa8821a",
-      "name": "DOM S, S PP1024, RS5",
+      "name": "DOM S, S PP1024, RS5, RS5, R Plus",
       "version": null,
       "belt": "Blue",
       "currentBeltDate": null
