@@ -648,7 +648,7 @@ To qualify for a Blue Belt, you must also submit a project that demonstrates you
 - [DOM Plura](https://lpubelts.com/#/locks?id=96591a8f)
 - [DOM RN](https://lpubelts.com/#/locks?id=81338028) (standard cylinder)
 - [DOM RS Sigma / DOM RS Sirius](https://lpubelts.com/#/locks?id=1dd28bf9)
-- [DOM S / DOM S PP1024 / DOM RS5 / DOM RS5 / DOM R Plus](https://lpubelts.com/#/locks?id=9aa8821a)
+- [DOM S / DOM S PP1024 / DOM RS5 / DOM RS6 / DOM R Plus](https://lpubelts.com/#/locks?id=9aa8821a)
 - [DOM SC](https://lpubelts.com/#/locks?id=05979a42)
 - [DOM SV](https://lpubelts.com/#/locks?id=95b2c7b0)
 - [Dorma DC3003](https://lpubelts.com/#/locks?id=4c544aa2)

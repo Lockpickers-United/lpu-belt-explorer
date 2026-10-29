@@ -18518,7 +18518,7 @@
       },
       {
         "make": "DOM",
-        "model": "RS5"
+        "model": "RS6"
       },
       {
         "make": "DOM",
@@ -18528,7 +18528,7 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "name": "DOM S, S PP1024, RS5, RS5, R Plus",
+    "name": "DOM S, S PP1024, RS5, RS6, R Plus",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
