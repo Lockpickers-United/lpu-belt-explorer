@@ -159,9 +159,9 @@ export default function EvidenceForm({activity, lockId, handleUpdate, handleCanc
             setEntryNotes(entryNotes)
 
             setUpdated(false)
-            handleCancel()
+            handleCancel && handleCancel()
         } else {
-            handleCancel()
+            handleCancel && handleCancel()
         }
     }, [activity, entryNotes, handleCancel, updated])
 
