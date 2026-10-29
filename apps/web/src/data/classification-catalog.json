@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": "sha256:5da669552f2e6b874c9366d4444bd327e6347fedd5eb892b04605961ce51e358",
-  "generatedAt": "2026-10-29T18:18:22.194Z",
+  "catalogVersion": "sha256:0213b53c6cbf248e0d0084b95f07d92170762c494c4426f6c8b8fead3d8d208c",
+  "generatedAt": "2026-10-29T18:22:50.278Z",
   "entries": [
     {
       "id": "0082fa4c",
@@ -4849,7 +4849,7 @@
     },
     {
       "id": "9aa8821a",
-      "name": "DOM S, S PP1024, RS5, RS5, R Plus",
+      "name": "DOM S, S PP1024, RS5, RS6, R Plus",
       "version": null,
       "belt": "Blue",
       "currentBeltDate": null
