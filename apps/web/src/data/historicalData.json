@@ -5826,6 +5826,10 @@
       {
         "make": "ABUS",
         "model": "60/50"
+      },
+      {
+        "make": "ABUS",
+        "model": "70ib45"
       }
     ],
     "lockingMechanisms": [
@@ -5834,7 +5838,7 @@
     "features": [
       "Unguttable"
     ],
-    "name": "ABUS 60/40, 60/50",
+    "name": "ABUS 60/40, 60/50, 70ib45",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "views": 39,
     "lastUpdated": "2025-03-19T15:44:57.279Z",
@@ -24882,7 +24886,7 @@
       }
     ],
     "popularityIndex": 26,
-    "scorecardCount": 13
+    "scorecardCount": 14
   },
   "d78ca1ba": {
     "id": "d78ca1ba",
@@ -64323,12 +64327,11 @@
     "belt": "Blue",
     "makeModels": [
       {
-        "make": "Adamant",
         "model": "Adamant"
       }
     ],
     "version": "Korean Spinny Key, 11 pins",
-    "name": "Adamant Adamant",
+    "name": "Adamant",
     "currentBeltDate": "2026-10-29T17:06:32.290Z",
     "dateAdded": "2026-10-09T16:14:03.523Z",
     "popularityIndex": 1,
@@ -66872,8 +66875,8 @@
     "name": "Baton 5310",
     "currentBeltDate": "2026-10-26T19:45:46.477Z",
     "dateAdded": "2026-10-26T19:45:46.477Z",
-    "popularityIndex": 2,
-    "scorecardCount": 2,
-    "views": 2
+    "popularityIndex": 3,
+    "scorecardCount": 3,
+    "views": 3
   }
 }

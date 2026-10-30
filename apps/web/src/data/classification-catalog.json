@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": "sha256:a5003cf3223ccc0717e4a9c4ee63e4dd778387d70bf495e2bc642c5d4752af1b",
-  "generatedAt": "2026-10-30T01:38:52.279Z",
+  "catalogVersion": "sha256:2d0d3e7f12830a9b4104a45200199509fb09666f9e3be3f3199f107fefee835f",
+  "generatedAt": "2026-10-30T03:08:31.526Z",
   "entries": [
     {
       "id": "0082fa4c",
@@ -1706,7 +1706,7 @@
     },
     {
       "id": "343d6402",
-      "name": "Adamant Adamant",
+      "name": "Adamant",
       "version": "Korean Spinny Key, 11 pins",
       "belt": "Blue",
       "currentBeltDate": "2026-10-29T17:06:32.290Z"
@@ -6613,7 +6613,7 @@
     },
     {
       "id": "d7188e81",
-      "name": "ABUS 60/40, 60/50",
+      "name": "ABUS 60/40, 60/50, 70ib45",
       "version": null,
       "belt": "Orange",
       "currentBeltDate": null
