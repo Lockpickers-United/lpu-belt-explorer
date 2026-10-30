@@ -94,7 +94,7 @@ Orange,ABUS,45/40,"brass body, 40mm or larger",Pin-tumbler,Unguttable,,67b285d9
 Orange,ABUS,"5/45 Silver Rock",,Pin-tumbler,,,0feafca7
 Orange,ABUS,"54TI/50 Titalium",,Pin-tumbler,Unguttable,,16e9d2ab
 Orange,ABUS,55/40,"40mm or larger",Pin-tumbler,Unguttable,,632f4069
-Orange,"ABUS,ABUS","60/40,60/50",,Pin-tumbler,Unguttable,,d7188e81
+Orange,"ABUS,ABUS,ABUS","60/40,60/50,70ib45",,Pin-tumbler,Unguttable,,d7188e81
 Orange,"ABUS,ABUS,ABUS","64Ti Titalium,MyLock T65AL,70AL45","40mm or larger (≥5 pins)",Pin-tumbler,Unguttable,,52f1e117
 Orange,ABUS,65/40,,Pin-tumbler,Unguttable,,a0e50505
 Orange,ABUS,82/63,,Pin-tumbler,,,f6ef12e5
@@ -350,7 +350,7 @@ Blue,ABUS,KW14,"6-pin version with 5 side elements",Pin-tumbler,,,4382d650
 Blue,"ABUS,ABUS,ABUS","Pfaffenhain 410,S6+,Zolit","6 pins",Pin-tumbler,,"requires Pfaffenhain barrel pin, otherwise green",f93c57fc
 Blue,"ABUS,ABUS,ABUS,ABUS,ABUS,ABUS","V14,XV14,Y14,Vitess 1000,Vitess 2000,Vitess 4000","6-pin version with AS pins or Pfaffenhain pins",Pin-tumbler,,"require 360° picking",294807f4
 Blue,"ABUS,ABUS","WavyLine Pro,Pfaffenhain WavyLine Pro","6 pins, 4 side pins + profile check","Pin-tumbler,Sidepins",,"Must be picked 360°",c4130a64
-Blue,Adamant,Adamant,"Korean Spinny Key, 11 pins",,,,343d6402
+Blue,,Adamant,"Korean Spinny Key, 11 pins",,,,343d6402
 Blue,ALPHA,"Z cam lock",,Dimple,,,3ebbc1f4
 Blue,Ankerslot,Infinity,"without magnet",Pin-tumbler,,,d20fb493
 Blue,"ASSA,ASSA","500,Flexcore/Flexcore Plus","5 pin with barrels and matched countermilling",Pin-tumbler,"Barrel drivers,Serrated/threaded milling",,d9e3829f

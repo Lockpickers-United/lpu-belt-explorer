@@ -264,7 +264,7 @@ Those security pins designed to keep you out are powerless against you. You're s
 - [ABUS 5/45 Silver Rock](https://lpubelts.com/#/locks?id=0feafca7)
 - [ABUS 54TI/50 Titalium](https://lpubelts.com/#/locks?id=16e9d2ab)
 - [ABUS 55/40](https://lpubelts.com/#/locks?id=632f4069) (40mm or larger)
-- [ABUS 60/40 / ABUS 60/50](https://lpubelts.com/#/locks?id=d7188e81)
+- [ABUS 60/40 / ABUS 60/50 / ABUS 70ib45](https://lpubelts.com/#/locks?id=d7188e81)
 - [ABUS 64Ti Titalium / ABUS MyLock T65AL / ABUS 70AL45](https://lpubelts.com/#/locks?id=52f1e117) (40mm or larger (&ge;5 pins))
 - [ABUS 65/40](https://lpubelts.com/#/locks?id=a0e50505)
 - [ABUS 82/63](https://lpubelts.com/#/locks?id=f6ef12e5)

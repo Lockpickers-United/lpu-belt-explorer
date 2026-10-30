@@ -5649,6 +5649,10 @@
       {
         "make": "ABUS",
         "model": "60/50"
+      },
+      {
+        "make": "ABUS",
+        "model": "70ib45"
       }
     ],
     "lockingMechanisms": [
@@ -5694,7 +5698,7 @@
         "imageTitle": "ABUS 60/50"
       }
     ],
-    "lastUpdated": "2026-10-29T17:06:32.734Z"
+    "lastUpdated": "2026-10-30T03:08:31.489Z"
   },
   {
     "id": "52f1e117",
@@ -22840,7 +22844,6 @@
     "belt": "Blue",
     "makeModels": [
       {
-        "make": "Adamant",
         "model": "Adamant"
       }
     ],
@@ -22849,7 +22852,7 @@
     "views": 1,
     "currentBeltDate": "2026-10-29T17:06:32.290Z",
     "dateAdded": "2026-10-09T16:14:03.523Z",
-    "lastUpdated": "2026-10-29T17:06:32.737Z"
+    "lastUpdated": "2026-10-30T03:08:31.492Z"
   },
   {
     "id": "3ebbc1f4",
@@ -34322,7 +34325,7 @@
       "False gates"
     ],
     "popularityIndex": 26,
-    "scorecardCount": 13,
+    "scorecardCount": 14,
     "views": 26,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
@@ -65801,9 +65804,9 @@
     "lockingMechanisms": [
       "Dimple"
     ],
-    "popularityIndex": 2,
-    "scorecardCount": 2,
-    "views": 2,
+    "popularityIndex": 3,
+    "scorecardCount": 3,
+    "views": 3,
     "currentBeltDate": "2026-10-26T19:45:46.477Z",
     "dateAdded": "2026-10-26T19:45:46.477Z",
     "media": [
