@@ -13,6 +13,14 @@ export const lockSortFields = [
     {label: 'Date Added', value: 'dateAdded'}
 ]
 
+export const beltRequestSortFields = [
+    {label: 'Default', value: undefined},
+    {label: 'Date Added', value: 'dateAdded'},
+    {label: 'Belt (Ascending)', value: 'beltAscending'},
+    {label: 'Belt (Descending)', value: 'beltDescending'},
+    {label: 'Recently Updated', value: 'recentlyUpdated'},
+]
+
 export const historicalVotesSortFields = [
     {label: 'Belt', value: undefined},
     {label: 'Belt (Descending)', value: 'beltDescending'},

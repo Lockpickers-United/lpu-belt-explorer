@@ -17,7 +17,8 @@ export const mainSchema = Joi.array().items(
                 'Black 3',
                 'Black 4',
                 'Black 5',
-                'Unranked'
+                'Unranked',
+                'DELETED',
             ),
         Make: Joi.string().allow(''),
         Model: Joi.string().min(1),

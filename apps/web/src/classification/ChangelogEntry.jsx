@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react'
+import React, {useCallback, useContext, useState} from 'react'
 import BeltStripe from '../entries/BeltStripe'
 import entryName from '../entries/entryName'
 import ClassificationContext from '../app/ClassificationContext.jsx'
@@ -14,7 +14,7 @@ import {useAccess} from '../app/AccessContext.jsx'
 import Checkbox from '@mui/material/Checkbox'
 import useClassificationCommand from './useClassificationCommand.js'
 import {canPublishClassification} from './writeStage.js'
-import {useNavigate} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 import IconButton from '@mui/material/IconButton'
 import OpenInNewIcon from '@mui/icons-material/OpenInNew'
 
@@ -28,6 +28,9 @@ function ChangelogEntry({entry, historical = false, publicationId, reloadChangel
     const {run, pending, error} = useClassificationCommand()
 
     const adminAction = entry.adminAction ?? getAdminAction(entry)
+
+    console.log('adminAction', adminAction)
+
     const targetId = adminAction?.samelineTargetId ?? adminAction?.samelineLock?.lockId
     const targetLock = !historical && targetId ? getLockFromId(targetId) : null
 
@@ -43,6 +46,18 @@ function ChangelogEntry({entry, historical = false, publicationId, reloadChangel
         }
     }
 
+    const openInNewTab = useCallback((id) => {
+        const link = `https://lpubelts.com/#/locks?tab=search&search=${id}&id=${id}}`
+        const newWindow = window.open(link, '_blank', 'noopener,noreferrer')
+        if (newWindow) newWindow.opener = null
+    }, [])
+
+    const idBlock = adminAction.newSamelineName
+        ? <><span style={{fontWeight: 700}}>new</span> =&gt; <Link onClick={() => openInNewTab(entry.id)} to={null}>{entry.id}</Link></>
+        : adminAction.samelineTargetId
+            ? <><Link onClick={() => openInNewTab(entry.id)} to={null}>{entry.id}</Link> =&gt; <Link onClick={() => openInNewTab(targetId)} to={null}>{targetId}</Link></>
+            : <Link onClick={() => openInNewTab(entry.id)} to={null}>{entry.id}</Link>
+
     const color = pub?.approved
         ? pub?.result?.mismatch
             ? theme.palette.warning.light
@@ -50,12 +65,12 @@ function ChangelogEntry({entry, historical = false, publicationId, reloadChangel
         : 'inherit'
 
     const actionAudit = pub
-        ? <div style={{display: 'flex', alignItems: 'center', gap: 8, marginLeft: 16, paddingBottom: 8}}>
+        ? <div style={{display: 'flex', alignItems: 'center', gap: 1, marginLeft: 16, paddingBottom: 8}}>
             <Checkbox size='small' color='success'
                       checked={pub.approved === true} onChange={toggleApproved}
                       disabled={!accessInfo.roles.classificationAdmin || !canPublishClassification || pending}/>
             <div style={{fontSize: '0.85rem', paddingTop: 3, color: color}}>
-                {pub.result?.status} — {pub.result?.detail} ({entry.id})
+                {pub.result?.status} — {pub.result?.detail} ({idBlock})
             </div>
             {error && <div role='alert'>Could not update approval: {error.message}</div>}
         </div>
@@ -69,18 +84,17 @@ function ChangelogEntry({entry, historical = false, publicationId, reloadChangel
 
     return (
         <div style={style} aria-label={name}>
-            <div style={{alignItems: 'center', position: 'relative', paddingLeft: 12, marginTop: 16}}>
+            <div style={{alignItems: 'center', position: 'relative', paddingLeft: 12, marginTop: 16, width: '100%'}}>
                 <BeltStripe value={belt}/>
                 <div style={{
                     margin: '8px 16px',
                     padding: '6px 0',
                     display: 'flex',
-                    flexGrow: 1,
                     flexDirection: 'row',
                     alignContent: 'top',
                     width: '100%'
                 }}>
-                    <div>
+                    <div style={{width: '100%', flexGrow: 1}}>
                         <ReactMarkdown rehypePlugins={[[rehypeExternalLinks, {target: '_blank'}]]}
                                        remarkPlugins={[remarkGfm]}
                                        components={{p: 'div'}}
@@ -94,7 +108,7 @@ function ChangelogEntry({entry, historical = false, publicationId, reloadChangel
                             }).replace(/^-/g, '')}
                         </ReactMarkdown>
                     </div>
-                    <div style={{width: '100%', display: 'flex', justifyContent: 'flex-end', marginRight: 16}}>
+                    <div style={{display: 'flex', justifyContent: 'flex-end', marginRight: 16}}>
                         <IconButton onClick={() => navigate(`/locks?tab=search&search=${entry.id}&id=${entry.id}`)}
                                     style={{height: 40, marginRight: 8}}>
                             <OpenInNewIcon style={{color: '#ccc'}}/>

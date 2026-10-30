@@ -87,6 +87,7 @@ const originalData = JSON.parse(fs.readFileSync('./src/data/data.json', 'utf8'))
 // Transform fields into internal JSON format
 console.log('Processing main data...')
 const jsonData = mainData
+    .filter(datum => datum.Belt?.toLowerCase() !== 'deleted')
     .map(datum => {
         const id = datum['Unique ID']
         const belt = datum.Belt

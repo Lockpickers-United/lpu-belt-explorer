@@ -5,6 +5,8 @@ function BeltStripe({value = 'Unranked'}) {
 
     if (!value) return null
 
+    value = value?.replace(/\sBelt/g, '').trim()
+
     const bgColor = belts[value]
         ? belts[value].color
         : value?.includes('Dan')

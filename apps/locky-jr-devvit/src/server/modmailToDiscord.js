@@ -40,23 +40,7 @@ export async function sendModMailToWebhook(event, reddit) {
         markRead: false
     })
 
-    const messages = result.conversation?.messages ?? result.messages ?? {}
-
-    console.log('ModMail lookup diagnostics:', JSON.stringify({
-        requestedConversationId: conversationId,
-        requestedMessageId: messageId,
-        resultKeys: Object.keys(result),
-        returnedConversationId: result.conversation?.id,
-        conversationKeys: Object.keys(result.conversation ?? {}),
-        messageCount: Object.keys(messages).length,
-        messages: Object.entries(messages).map(([key, value]) => ({
-            key,
-            id: value?.id,
-            date: value?.date,
-            author: value?.author?.name
-        }))
-    }, null, 2))
-
+    const messages = result.conversation?.messages ?? result?.messages ?? {}
     const conversation = result.conversation
     const isModDiscussion = conversation?.isInternal ?? false
 

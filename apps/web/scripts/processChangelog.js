@@ -7,7 +7,7 @@ import {collectionPatch, collectionTypes, prepareUpdates} from './processChangel
 //   '--database=dev' | '--database=prod' // '--dry-run' | '--write'    //
 
 let localArgs = undefined
-localArgs = ['--database=dev', '--dry-run']
+localArgs = ['--database=prod', '--dry-run']
 
 /////////////////////////////////////////////////////////////////////////////
 //  Paste the "process change data" export from the Changelog page here.  //

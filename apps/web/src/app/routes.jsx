@@ -80,7 +80,7 @@ export default [
                     const {default: ChangelogRoute} = await import('../classification/ChangelogRoute.jsx')
                     return {element: <ChangelogRoute/>}
                 }
-            },
+            }
         ]
     },
     {
@@ -212,7 +212,8 @@ export default [
         path: '/admin',
         lazy: async () => {
             const {default: AdminRoute} = await import('../admin/AdminRoute')
-            return {element:
+            return {
+                element:
                     <RequireRoles roles={['admin', 'lpuMod']}>
                         <AdminRoute/>
                     </RequireRoles>
@@ -421,7 +422,20 @@ export default [
                     const {default: BeltRequestSubmitRoute} = await import('../beltRequests/requestSubmit/BeltRequestSubmitRoute.jsx')
                     return {element: <BeltRequestSubmitRoute/>}
                 }
+            },
+            {
+                path: '/beltRequests/admin',
+                lazy: async () => {
+                    const {default: RequestAdminRoute} = await import('../beltRequests/requestAdmin/RequestAdminRoute.jsx')
+                    return {
+                        element:
+                            <RequireRoles roles={['admin', 'lpuMod']}>
+                                <RequestAdminRoute/>
+                            </RequireRoles>
+                    }
+                }
             }
+
         ]
     },
     {
@@ -558,7 +572,8 @@ export default [
         path: '/tools',
         lazy: async () => {
             const {default: ToolsParentRoute} = await import('../tools/ToolsParentRoute.jsx')
-            return {element:
+            return {
+                element:
                     <RequireRoles roles={['admin', 'lpuMod']}>
                         <ToolsParentRoute/>
                     </RequireRoles>

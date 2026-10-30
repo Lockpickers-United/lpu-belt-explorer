@@ -22,6 +22,11 @@ export const lockFilterFields = [
     {label: 'Collection', fieldName: 'collection', sort: collectionFieldSort, userBased: true}
 ]
 
+export const beltRequestFilterFields = [
+    {label: 'Status', fieldName: 'status'},
+    {label: 'Belt', fieldName: 'belt'},
+]
+
 export const classificationFilterFields = [
     {label: 'Make', fieldName: 'makes'},
     {label: 'Vote From', fieldName: 'displayName'},
