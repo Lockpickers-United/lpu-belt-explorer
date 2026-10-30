@@ -974,6 +974,53 @@
     "dateDeleted": "2025-01-12T17:46:14.000Z"
   },
   {
+    "id": "bfc7c700",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "BAB IKON",
+        "model": "P0"
+      }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "name": "BAB IKON P0",
+    "dateAdded": "2023-02-21T23:16:05.000Z",
+    "lastUpdated": "2025-03-19T15:44:57.283Z",
+    "media": [
+      {
+        "title": "By: Hunson",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52788904435_07f9e8e87a_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52788904435/in/album-72177720307198175/",
+        "sequenceId": 2875,
+        "dateAdded": "2025-03-06T16:00:00.000Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52788904435_72f337e71f_o.jpg"
+      },
+      {
+        "title": "By: Hunson",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/52787958947_5e8e16647e_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52787958947/in/album-72177720307198175/",
+        "sequenceId": 2876,
+        "dateAdded": "2025-03-06T16:00:00.000Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/52787958947_8cc7d11bd0_o.jpg"
+      },
+      {
+        "title": "By: Jippiedoe",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/53093266705_0384270866_w_d.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53093266705/in/album-72177720307198175/",
+        "sequenceId": 2877,
+        "dateAdded": "2025-03-06T16:00:00.000Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/53093266705_0c090ea786_o.jpg"
+      }
+    ],
+    "currentBeltDate": "2026-10-29T17:06:32.300Z",
+    "dateDeleted": "2026-10-30T01:38:51.823Z"
+  },
+  {
     "id": "3129ee7e",
     "belt": "Green",
     "makeModels": [
@@ -1192,6 +1239,94 @@
     "lastUpdated": "2023-05-27T13:08:56.558Z",
     "notes": "(samelined with ASSA 500 - barrels and matched countermilling)",
     "dateDeleted": "2023-05-30T18:50:09.000Z"
+  },
+  {
+    "id": "2e67118d",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "DOM",
+        "model": "R Plus"
+      }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "name": "DOM R Plus",
+    "dateAdded": "2023-02-21T23:16:05.000Z",
+    "views": 17,
+    "lastUpdated": "2025-03-19T01:20:51.367Z",
+    "media": [
+      {
+        "title": "By: Luboš Čech",
+        "subtitle": "Catalocks",
+        "thumbnailUrl": "https://img.lpubelts.com/i/cl/cl-1020_1_tn.jpg",
+        "fullUrl": "https://www.catalocks.eu/photos/1020/1.jpg",
+        "sequenceId": 718,
+        "dateAdded": "2025-03-06T16:00:00.000Z",
+        "subtitleUrl": "https://www.catalocks.eu/DOM/DOM%20RPLUS_1020.html",
+        "fullSizeUrl": "https://www.catalocks.eu/photos/1020/1.jpg"
+      },
+      {
+        "title": "By: Luboš Čech",
+        "subtitle": "Catalocks",
+        "thumbnailUrl": "https://img.lpubelts.com/i/cl/cl-1020_2_tn.jpg",
+        "fullUrl": "https://www.catalocks.eu/photos/1020/2.jpg",
+        "sequenceId": 719,
+        "dateAdded": "2025-03-06T16:00:00.000Z",
+        "subtitleUrl": "https://www.catalocks.eu/DOM/DOM%20RPLUS_1020.html",
+        "fullSizeUrl": "https://www.catalocks.eu/photos/1020/2.jpg"
+      },
+      {
+        "title": "By: Luboš Čech",
+        "subtitle": "Catalocks",
+        "thumbnailUrl": "https://img.lpubelts.com/i/cl/cl-1020_3_tn.jpg",
+        "fullUrl": "https://www.catalocks.eu/photos/1020/3.jpg",
+        "sequenceId": 720,
+        "dateAdded": "2025-03-06T16:00:00.000Z",
+        "subtitleUrl": "https://www.catalocks.eu/DOM/DOM%20RPLUS_1020.html",
+        "fullSizeUrl": "https://www.catalocks.eu/photos/1020/3.jpg"
+      },
+      {
+        "title": "By: Luboš Čech",
+        "subtitle": "Catalocks",
+        "thumbnailUrl": "https://img.lpubelts.com/i/cl/cl-1020_4_tn.jpg",
+        "fullUrl": "https://www.catalocks.eu/photos/1020/4.jpg",
+        "sequenceId": 721,
+        "dateAdded": "2025-03-06T16:00:00.000Z",
+        "subtitleUrl": "https://www.catalocks.eu/DOM/DOM%20RPLUS_1020.html",
+        "fullSizeUrl": "https://www.catalocks.eu/photos/1020/4.jpg"
+      },
+      {
+        "title": "By: Luboš Čech",
+        "subtitle": "Catalocks",
+        "thumbnailUrl": "https://img.lpubelts.com/i/cl/cl-1020_7_tn.jpg",
+        "fullUrl": "https://www.catalocks.eu/photos/1020/7.jpg",
+        "sequenceId": 722,
+        "dateAdded": "2025-03-06T16:00:00.000Z",
+        "subtitleUrl": "https://www.catalocks.eu/DOM/DOM%20RPLUS_1020.html",
+        "fullSizeUrl": "https://www.catalocks.eu/photos/1020/7.jpg"
+      },
+      {
+        "title": "By: LockPickingFisherman",
+        "subtitle": "CC BY-NC-SA 4.0",
+        "thumbnailUrl": "https://live.staticflickr.com/65535/54258889899_9c5f71531c_w.jpg",
+        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54258889899/in/album-72177720323093647/",
+        "sequenceId": 723,
+        "dateAdded": "2025-03-06T16:00:00.000Z",
+        "fullSizeUrl": "https://live.staticflickr.com/65535/54258889899_f0d22485f0_o.jpg"
+      }
+    ],
+    "links": [
+      {
+        "title": "Catalocks",
+        "url": "https://www.catalocks.eu/DOM/DOM%20RPLUS_1020.html"
+      }
+    ],
+    "popularityIndex": 17,
+    "scorecardCount": 4,
+    "currentBeltDate": "2026-10-29T17:35:39.784Z",
+    "dateDeleted": "2026-10-30T01:38:51.824Z"
   },
   {
     "id": "8ad6939a",
@@ -3216,6 +3351,23 @@
     "dateDeleted": "2026-10-12T23:33:54.112Z"
   },
   {
+    "id": "d4f98a26",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "EVVA",
+        "model": "NVL"
+      }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "name": "EVVA NVL",
+    "currentBeltDate": "2026-10-12T23:33:54.099Z",
+    "dateAdded": "2026-10-12T23:33:54.099Z",
+    "dateDeleted": "2026-10-30T01:38:51.824Z"
+  },
+  {
     "id": "61160e55",
     "belt": "Unranked",
     "makeModels": [
@@ -3245,5 +3397,39 @@
     "currentBeltDate": "2026-10-12T23:33:54.101Z",
     "dateAdded": "2026-10-12T23:33:54.101Z",
     "dateDeleted": "2026-10-20T14:45:33.043Z"
+  },
+  {
+    "id": "1fcb7a29",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "CISA",
+        "model": "OTSP"
+      }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "name": "CISA OTSP",
+    "currentBeltDate": "2026-10-24T05:11:57.627Z",
+    "dateAdded": "2026-10-24T05:11:57.627Z",
+    "dateDeleted": "2026-10-30T01:38:51.824Z"
+  },
+  {
+    "id": "4875d4f7",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "CISA",
+        "model": "Vighi"
+      }
+    ],
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "name": "CISA Vighi",
+    "currentBeltDate": "2026-10-24T05:11:57.627Z",
+    "dateAdded": "2026-10-24T05:11:57.627Z",
+    "dateDeleted": "2026-10-30T01:38:51.824Z"
   }
 ]

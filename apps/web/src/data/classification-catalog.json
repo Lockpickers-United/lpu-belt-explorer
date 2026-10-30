@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": "sha256:b36f553e66c38a7001e26f2c966a9eef45b5576da0d92c16f4d0c524fc02aaf3",
-  "generatedAt": "2026-10-30T00:07:26.201Z",
+  "catalogVersion": "sha256:a5003cf3223ccc0717e4a9c4ee63e4dd778387d70bf495e2bc642c5d4752af1b",
+  "generatedAt": "2026-10-30T01:38:52.279Z",
   "entries": [
     {
       "id": "0082fa4c",
@@ -1033,13 +1033,6 @@
       "currentBeltDate": null
     },
     {
-      "id": "1fcb7a29",
-      "name": "CISA OTSP",
-      "version": null,
-      "belt": "Unranked",
-      "currentBeltDate": "2026-10-24T05:11:57.627Z"
-    },
-    {
       "id": "1fe0ba0d",
       "name": "M&C Color, Color Pro, Color+, Minos",
       "version": "<4 sliders",
@@ -1493,13 +1486,6 @@
       "version": null,
       "belt": "Green",
       "currentBeltDate": null
-    },
-    {
-      "id": "2e67118d",
-      "name": "DOM R Plus",
-      "version": null,
-      "belt": "Unranked",
-      "currentBeltDate": "2026-10-29T17:35:39.784Z"
     },
     {
       "id": "2ec75ab7",
@@ -2284,13 +2270,6 @@
       "version": "4 pins, 4 serrated drivers",
       "belt": "Purple",
       "currentBeltDate": null
-    },
-    {
-      "id": "4875d4f7",
-      "name": "CISA Vighi",
-      "version": null,
-      "belt": "Unranked",
-      "currentBeltDate": "2026-10-24T05:11:57.627Z"
     },
     {
       "id": "48cf387f",
@@ -5968,13 +5947,6 @@
       "currentBeltDate": null
     },
     {
-      "id": "bfc7c700",
-      "name": "BAB IKON P0",
-      "version": null,
-      "belt": "Unranked",
-      "currentBeltDate": "2026-10-29T17:06:32.300Z"
-    },
-    {
       "id": "c0af329b",
       "name": "Mindy Pagoda (round key)",
       "version": null,
@@ -6582,13 +6554,6 @@
       "version": null,
       "belt": "Orange",
       "currentBeltDate": null
-    },
-    {
-      "id": "d4f98a26",
-      "name": "EVVA NVL",
-      "version": null,
-      "belt": "Unranked",
-      "currentBeltDate": "2026-10-12T23:33:54.099Z"
     },
     {
       "id": "d5053e6d",
