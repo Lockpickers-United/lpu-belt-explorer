@@ -11477,7 +11477,8 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53093266705_0c090ea786_o.jpg"
       }
     ],
-    "currentBeltDate": "2026-10-29T17:06:32.300Z"
+    "currentBeltDate": "2026-10-29T17:06:32.300Z",
+    "dateDeleted": "2026-10-30T01:38:51.823Z"
   },
   "bea71188": {
     "id": "bea71188",
@@ -16930,7 +16931,7 @@
     ],
     "name": "ABUS Pfaffenhain 410, S6+, Zolit",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 24,
+    "views": 25,
     "lastUpdated": "2025-03-19T15:44:57.288Z",
     "media": [
       {
@@ -16999,7 +17000,7 @@
     ],
     "version": "6 pins",
     "notes": "requires Pfaffenhain barrel pin, otherwise green",
-    "popularityIndex": 24,
+    "popularityIndex": 25,
     "scorecardCount": 10
   },
   "34c0dfe4": {
@@ -18416,7 +18417,8 @@
     ],
     "popularityIndex": 17,
     "scorecardCount": 4,
-    "currentBeltDate": "2026-10-29T17:35:39.784Z"
+    "currentBeltDate": "2026-10-29T17:35:39.784Z",
+    "dateDeleted": "2026-10-30T01:38:51.824Z"
   },
   "1dd28bf9": {
     "id": "1dd28bf9",
@@ -22155,7 +22157,7 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "views": 16,
+    "views": 17,
     "lastUpdated": "2025-03-19T23:43:24.358Z",
     "media": [
       {
@@ -22258,7 +22260,7 @@
         "url": "https://www.catalocks.eu/VACHETTE/VACHETTE%20VIP%2B_768.html"
       }
     ],
-    "popularityIndex": 16,
+    "popularityIndex": 17,
     "scorecardCount": 7
   },
   "97c2b9be": {
@@ -22317,7 +22319,7 @@
     "lockingMechanisms": [
       "Dimple"
     ],
-    "views": 11,
+    "views": 12,
     "lastUpdated": "2025-03-19T01:20:51.372Z",
     "media": [
       {
@@ -22357,7 +22359,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/52896744662_fc6b3f2c06_o.jpg"
       }
     ],
-    "popularityIndex": 11,
+    "popularityIndex": 12,
     "scorecardCount": 6
   },
   "fe088de0": {
@@ -64892,7 +64894,8 @@
     ],
     "name": "EVVA NVL",
     "currentBeltDate": "2026-10-12T23:33:54.099Z",
-    "dateAdded": "2026-10-12T23:33:54.099Z"
+    "dateAdded": "2026-10-12T23:33:54.099Z",
+    "dateDeleted": "2026-10-30T01:38:51.824Z"
   },
   "8aeb75bf": {
     "id": "8aeb75bf",
@@ -66793,7 +66796,8 @@
     ],
     "name": "CISA OTSP",
     "currentBeltDate": "2026-10-24T05:11:57.627Z",
-    "dateAdded": "2026-10-24T05:11:57.627Z"
+    "dateAdded": "2026-10-24T05:11:57.627Z",
+    "dateDeleted": "2026-10-30T01:38:51.824Z"
   },
   "4875d4f7": {
     "id": "4875d4f7",
@@ -66809,7 +66813,8 @@
     ],
     "name": "CISA Vighi",
     "currentBeltDate": "2026-10-24T05:11:57.627Z",
-    "dateAdded": "2026-10-24T05:11:57.627Z"
+    "dateAdded": "2026-10-24T05:11:57.627Z",
+    "dateDeleted": "2026-10-30T01:38:51.824Z"
   },
   "d8aaab3f": {
     "id": "d8aaab3f",

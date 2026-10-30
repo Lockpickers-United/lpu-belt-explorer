@@ -22442,9 +22442,9 @@
       "Pin-tumbler"
     ],
     "notes": "requires Pfaffenhain barrel pin, otherwise green",
-    "popularityIndex": 24,
+    "popularityIndex": 25,
     "scorecardCount": 10,
-    "views": 24,
+    "views": 25,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -30810,9 +30810,9 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "popularityIndex": 16,
+    "popularityIndex": 17,
     "scorecardCount": 7,
-    "views": 16,
+    "views": 17,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -31077,9 +31077,9 @@
     "lockingMechanisms": [
       "Dimple"
     ],
-    "popularityIndex": 11,
+    "popularityIndex": 12,
     "scorecardCount": 6,
-    "views": 11,
+    "views": 12,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -65790,61 +65790,6 @@
     "lastUpdated": "2026-10-09T23:22:45.343Z"
   },
   {
-    "id": "bfc7c700",
-    "belt": "Unranked",
-    "makeModels": [
-      {
-        "make": "BAB IKON",
-        "model": "P0"
-      }
-    ],
-    "lockingMechanisms": [
-      "Pin-tumbler"
-    ],
-    "currentBeltDate": "2026-10-29T17:06:32.300Z",
-    "dateAdded": "2023-02-21T23:16:05.000Z",
-    "media": [
-      {
-        "title": "By: Hunson",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52788904435_07f9e8e87a_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52788904435/in/album-72177720307198175/",
-        "sequenceId": 3556,
-        "dateAdded": "2025-12-02T23:39:17.895Z",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/52788904435_72f337e71f_o.jpg"
-      },
-      {
-        "title": "By: Hunson",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/52787958947_5e8e16647e_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/52787958947/in/album-72177720307198175/",
-        "sequenceId": 3557,
-        "dateAdded": "2025-12-02T23:39:17.895Z",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/52787958947_8cc7d11bd0_o.jpg"
-      },
-      {
-        "title": "By: Jippiedoe",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/53093266705_0384270866_w_d.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/53093266705/in/album-72177720307198175/",
-        "sequenceId": 3558,
-        "dateAdded": "2025-12-02T23:39:17.895Z",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/53093266705_0c090ea786_o.jpg"
-      },
-      {
-        "title": "By: LockPickingFisherman",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/54660739777_2994e7e7a2_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54660739777/in/album-72177720307198175/",
-        "sequenceId": 3559,
-        "dateAdded": "2025-10-25T18:24:16.771Z",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/54660739777_ace28fb608_o.jpg",
-        "imageTitle": "Bab IKON P031"
-      }
-    ],
-    "lastUpdated": "2026-10-29T17:06:32.749Z"
-  },
-  {
     "id": "52fefd7e",
     "belt": "Unranked",
     "makeModels": [
@@ -67122,22 +67067,6 @@
     "lastUpdated": "2026-10-10T01:23:33.879Z"
   },
   {
-    "id": "1fcb7a29",
-    "belt": "Unranked",
-    "makeModels": [
-      {
-        "make": "CISA",
-        "model": "OTSP"
-      }
-    ],
-    "lockingMechanisms": [
-      "Pin-tumbler"
-    ],
-    "currentBeltDate": "2026-10-24T05:11:57.627Z",
-    "dateAdded": "2026-10-24T05:11:57.627Z",
-    "lastUpdated": "2026-10-24T06:10:39.444Z"
-  },
-  {
     "id": "cbbe5ae1",
     "belt": "Unranked",
     "makeModels": [
@@ -67149,22 +67078,6 @@
     "currentBeltDate": "2026-10-10T01:23:33.360Z",
     "dateAdded": "2026-10-10T01:23:33.360Z",
     "lastUpdated": "2026-10-10T01:23:33.879Z"
-  },
-  {
-    "id": "4875d4f7",
-    "belt": "Unranked",
-    "makeModels": [
-      {
-        "make": "CISA",
-        "model": "Vighi"
-      }
-    ],
-    "lockingMechanisms": [
-      "Pin-tumbler"
-    ],
-    "currentBeltDate": "2026-10-24T05:11:57.627Z",
-    "dateAdded": "2026-10-24T05:11:57.627Z",
-    "lastUpdated": "2026-10-24T06:10:39.444Z"
   },
   {
     "id": "45bb95df",
@@ -67370,103 +67283,6 @@
     "lastUpdated": "2025-12-02T23:39:17.965Z"
   },
   {
-    "id": "2e67118d",
-    "belt": "Unranked",
-    "makeModels": [
-      {
-        "make": "DOM",
-        "model": "R Plus"
-      }
-    ],
-    "lockingMechanisms": [
-      "Pin-tumbler"
-    ],
-    "popularityIndex": 17,
-    "scorecardCount": 4,
-    "views": 17,
-    "currentBeltDate": "2026-10-29T17:35:39.784Z",
-    "dateAdded": "2023-02-21T23:16:05.000Z",
-    "media": [
-      {
-        "title": "By: Luboš Čech",
-        "subtitle": "Catalocks",
-        "thumbnailUrl": "https://img.lpubelts.com/i/cl/cl-1020_1_tn.jpg",
-        "fullUrl": "https://www.catalocks.eu/photos/1020/1.jpg",
-        "sequenceId": 917,
-        "dateAdded": "2025-12-02T23:39:17.853Z",
-        "subtitleUrl": "https://www.catalocks.eu/DOM/DOM%20RPLUS_1020.html",
-        "fullSizeUrl": "https://www.catalocks.eu/photos/1020/1.jpg"
-      },
-      {
-        "title": "By: Luboš Čech",
-        "subtitle": "Catalocks",
-        "thumbnailUrl": "https://img.lpubelts.com/i/cl/cl-1020_2_tn.jpg",
-        "fullUrl": "https://www.catalocks.eu/photos/1020/2.jpg",
-        "sequenceId": 918,
-        "dateAdded": "2025-12-02T23:39:17.853Z",
-        "subtitleUrl": "https://www.catalocks.eu/DOM/DOM%20RPLUS_1020.html",
-        "fullSizeUrl": "https://www.catalocks.eu/photos/1020/2.jpg"
-      },
-      {
-        "title": "By: TGT",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/55503505025_2fdb7423e3_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/55503505025/in/album-72177720323093647/",
-        "sequenceId": 919,
-        "dateAdded": "2026-09-02T03:20:33.136Z",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/55503505025_9a4565eac5_o.jpg",
-        "imageTitle": "DOM R Plus"
-      },
-      {
-        "title": "By: Luboš Čech",
-        "subtitle": "Catalocks",
-        "thumbnailUrl": "https://img.lpubelts.com/i/cl/cl-1020_3_tn.jpg",
-        "fullUrl": "https://www.catalocks.eu/photos/1020/3.jpg",
-        "sequenceId": 920,
-        "dateAdded": "2025-12-02T23:39:17.853Z",
-        "subtitleUrl": "https://www.catalocks.eu/DOM/DOM%20RPLUS_1020.html",
-        "fullSizeUrl": "https://www.catalocks.eu/photos/1020/3.jpg"
-      },
-      {
-        "title": "By: Luboš Čech",
-        "subtitle": "Catalocks",
-        "thumbnailUrl": "https://img.lpubelts.com/i/cl/cl-1020_4_tn.jpg",
-        "fullUrl": "https://www.catalocks.eu/photos/1020/4.jpg",
-        "sequenceId": 921,
-        "dateAdded": "2025-12-02T23:39:17.853Z",
-        "subtitleUrl": "https://www.catalocks.eu/DOM/DOM%20RPLUS_1020.html",
-        "fullSizeUrl": "https://www.catalocks.eu/photos/1020/4.jpg"
-      },
-      {
-        "title": "By: Luboš Čech",
-        "subtitle": "Catalocks",
-        "thumbnailUrl": "https://img.lpubelts.com/i/cl/cl-1020_7_tn.jpg",
-        "fullUrl": "https://www.catalocks.eu/photos/1020/7.jpg",
-        "sequenceId": 922,
-        "dateAdded": "2025-12-02T23:39:17.853Z",
-        "subtitleUrl": "https://www.catalocks.eu/DOM/DOM%20RPLUS_1020.html",
-        "fullSizeUrl": "https://www.catalocks.eu/photos/1020/7.jpg"
-      },
-      {
-        "title": "By: LockPickingFisherman",
-        "subtitle": "CC BY-NC-SA 4.0",
-        "thumbnailUrl": "https://live.staticflickr.com/65535/54258889899_9c5f71531c_w.jpg",
-        "fullUrl": "https://www.flickr.com/photos/lpubeltapp/54258889899/in/album-72177720323093647/",
-        "sequenceId": 923,
-        "dateAdded": "2025-10-25T18:24:16.755Z",
-        "fullSizeUrl": "https://live.staticflickr.com/65535/54258889899_f0d22485f0_o.jpg",
-        "imageTitle": "Dom R Plus"
-      }
-    ],
-    "links": [
-      {
-        "title": "Catalocks",
-        "url": "https://www.catalocks.eu/DOM/DOM%20RPLUS_1020.html"
-      }
-    ],
-    "lastUpdated": "2026-10-29T17:35:40.231Z"
-  },
-  {
     "id": "30827d9d",
     "belt": "Unranked",
     "makeModels": [
@@ -67590,22 +67406,6 @@
       {
         "make": "EVVA",
         "model": "Duo Pro"
-      }
-    ],
-    "lockingMechanisms": [
-      "Pin-tumbler"
-    ],
-    "currentBeltDate": "2026-10-12T23:33:54.099Z",
-    "dateAdded": "2026-10-12T23:33:54.099Z",
-    "lastUpdated": "2026-10-12T23:33:54.537Z"
-  },
-  {
-    "id": "d4f98a26",
-    "belt": "Unranked",
-    "makeModels": [
-      {
-        "make": "EVVA",
-        "model": "NVL"
       }
     ],
     "lockingMechanisms": [

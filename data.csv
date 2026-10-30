@@ -887,7 +887,6 @@ Unranked,ASSA,"Twin Combi","Old Trees, 5 Finger Pins",,,,c0d919e8
 Unranked,ASSA,"Twin V10 Cam Lock",,,,,ce9d2399
 Unranked,ASSA,"Twin v10 LFIC",,,,,4dda8329
 Unranked,Atom,TD5S,"10 pin",,,,b192d93f
-Unranked,"BAB IKON",P0,,Pin-tumbler,,,bfc7c700
 Unranked,Baton,5310,,Dimple,,,52fefd7e
 Unranked,Belfry,67,"4 levers, pipe key",,,,29473ee7
 Unranked,Belfry,910-8186,"4 levers, pipe key",,,,c3c7bc69
@@ -915,15 +914,12 @@ Unranked,CISA,810,,Pin-tumbler,"Under Review ⚑",,22d70f2e
 Unranked,CISA,AsixP8,,,,,99311bb8
 Unranked,CISA,C2000,,,,,da1e5052
 Unranked,CISA,"Nexo NI05",,,,,7e59d388
-Unranked,CISA,OTSP,,Pin-tumbler,,,1fcb7a29
 Unranked,CISA,RS5,,,,,cbbe5ae1
-Unranked,CISA,Vighi,,Pin-tumbler,,,4875d4f7
 Unranked,Codkey,"Locksys MME (micro magnetic element)",,"Dimple,Magnet","Under Review ⚑",,45bb95df
 Unranked,"Corbin Russwin",Emhart,"Cam Lock - 5 pin",Pin-tumbler,"Under Review ⚑,Interlocking pins",,bf43348b
 Unranked,"Corbin Russwin",Pyramid,,,,,19bfe875
 Unranked,Crown,no.100,"solid brass padlock 5-Pin",,"Under Review ⚑",,4d738de3
 Unranked,"D'Alembert Métal","Serie S","9 pins, 4 sliders","Dimple,Slider","Unsprung sliders,Active sidebar",,aebd0373
-Unranked,DOM,"R Plus",,Pin-tumbler,,,2e67118d
 Unranked,DoubleLock,PadlockX/FalconX,,Dimple,,,30827d9d
 Unranked,DoubleLock,Redhawk,,Slider,,,ea00b1f8
 Unranked,,"Duro Lock",,Slider,,,12cfd459
@@ -932,7 +928,6 @@ Unranked,Emhart,LFIC,,Pin-tumbler,,,2693d016
 Unranked,,Enclave,"Andrew Magill",Pin-tumbler,,,25809d7e
 Unranked,EVVA,"Akura 44","no magnet",Dimple,,,327ad74d
 Unranked,EVVA,"Duo Pro",,Pin-tumbler,,,d5f5ab98
-Unranked,EVVA,NVL,,Pin-tumbler,,,d4f98a26
 Unranked,EY,Padlock,,PT+,,,8aeb75bf
 Unranked,Ezcurra,DS-10,,Dimple,,,da202edb
 Unranked,FAS,"7 Lever Mortise",,Lever,,,6752c748
