@@ -7064,7 +7064,7 @@
     ],
     "name": "DOM RN, R",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 33,
+    "views": 34,
     "lastUpdated": "2025-03-19T15:44:57.284Z",
     "version": "standard cylinder",
     "media": [
@@ -7110,7 +7110,7 @@
       "2b948dc5",
       "81338028"
     ],
-    "popularityIndex": 33,
+    "popularityIndex": 34,
     "scorecardCount": 2
   },
   "677afce6": {
@@ -7646,7 +7646,7 @@
       }
     ],
     "popularityIndex": 22,
-    "scorecardCount": 3,
+    "scorecardCount": 4,
     "version": "6 pin"
   },
   "836c5ce3": {
@@ -9308,7 +9308,7 @@
     "notes": "Due to unbalanced pin stacks, drivers in max lift chambers will rest below shear. This risks spring damage if the driver is not picked.",
     "version": "Guttable version",
     "popularityIndex": 1054,
-    "scorecardCount": 146
+    "scorecardCount": 147
   },
   "e42853c7": {
     "id": "e42853c7",
@@ -9883,12 +9883,12 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/52709026203_31fa336a8a_o.jpg"
       }
     ],
-    "views": 135,
+    "views": 134,
     "lastUpdated": "2025-03-19T15:44:57.288Z",
     "relatedIds": [
       "95a9d73c"
     ],
-    "popularityIndex": 135,
+    "popularityIndex": 134,
     "scorecardCount": 32,
     "features": [
       "Flickr Update"
@@ -10015,7 +10015,7 @@
     ],
     "name": "ABUS EC750, EC850",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 22,
+    "views": 23,
     "lastUpdated": "2025-03-19T15:44:57.282Z",
     "links": [
       {
@@ -10082,7 +10082,7 @@
     "relatedIds": [
       "3515caae"
     ],
-    "popularityIndex": 22,
+    "popularityIndex": 23,
     "scorecardCount": 3
   },
   "8606220a": {
@@ -10189,7 +10189,7 @@
     ],
     "name": "ABUS Pfaffenhain 310, S5+",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 34,
+    "views": 35,
     "lastUpdated": "2025-03-19T15:44:57.282Z",
     "media": [
       {
@@ -10239,7 +10239,7 @@
     ],
     "notes": "requires Pfaffenhain barrel pin, otherwise orange",
     "version": "5 pins",
-    "popularityIndex": 34,
+    "popularityIndex": 35,
     "scorecardCount": 4
   },
   "bc6837f8": {
@@ -10342,10 +10342,10 @@
     ],
     "name": "ABUS V14, XV14, Y14, Vitess 1000, Vitess 2000, Vitess 4000",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 25,
+    "views": 26,
     "lastUpdated": "2025-03-19T15:44:57.282Z",
     "version": "5-pin version",
-    "popularityIndex": 25,
+    "popularityIndex": 26,
     "scorecardCount": 4
   },
   "304df868": {
@@ -10422,11 +10422,11 @@
     ],
     "name": "ABUS WavyLine Pro, Pfaffenhain WavyLine Pro",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 17,
+    "views": 18,
     "lastUpdated": "2025-03-19T15:44:57.282Z",
     "version": "6 pins, 4 side pins + profile check",
     "notes": "Must be picked 360°",
-    "popularityIndex": 17,
+    "popularityIndex": 18,
     "scorecardCount": 6
   },
   "b0076ed7": {
@@ -10464,9 +10464,9 @@
     ],
     "name": "ABUS WavyLine, Pfaffenhain WavyLine",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 6,
+    "views": 7,
     "lastUpdated": "2025-03-19T15:44:57.282Z",
-    "popularityIndex": 6,
+    "popularityIndex": 7,
     "scorecardCount": 3
   },
   "1b10225b": {
@@ -10483,7 +10483,7 @@
     ],
     "name": "ABUS XD25",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 5,
+    "views": 6,
     "lastUpdated": "2025-03-18T23:29:31.270Z",
     "media": [
       {
@@ -10541,7 +10541,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53210443591_517cb07095_o.jpg"
       }
     ],
-    "popularityIndex": 5
+    "popularityIndex": 6
   },
   "9adbc90f": {
     "id": "9adbc90f",
@@ -10557,7 +10557,7 @@
     ],
     "name": "ABUS Xp10",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 9,
+    "views": 10,
     "lastUpdated": "2025-03-19T15:44:57.282Z",
     "media": [
       {
@@ -10577,7 +10577,7 @@
         "url": "https://www.catalocks.eu/ABUS/ABUS%20XP%2010_298.html"
       }
     ],
-    "popularityIndex": 9,
+    "popularityIndex": 10,
     "scorecardCount": 1
   },
   "3af47daf": {
@@ -10682,7 +10682,7 @@
     ],
     "name": "ACE Brass Padlock",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 377,
+    "views": 378,
     "lastUpdated": "2025-03-18T23:29:31.270Z",
     "media": [
       {
@@ -10722,7 +10722,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53851336065_53c7b1f37e_o.jpg"
       }
     ],
-    "popularityIndex": 377,
+    "popularityIndex": 378,
     "scorecardCount": 38
   },
   "200605b9": {
@@ -10905,7 +10905,7 @@
     ],
     "name": "American Lock 2000 puck lock",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 29,
+    "views": 30,
     "lastUpdated": "2025-03-19T15:44:57.282Z",
     "media": [
       {
@@ -10927,7 +10927,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/52953750104_7ca9ce01fe_o.jpg"
       }
     ],
-    "popularityIndex": 29,
+    "popularityIndex": 30,
     "scorecardCount": 2
   },
   "81fbd528": {
@@ -11447,7 +11447,6 @@
     ],
     "name": "BAB IKON P0",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 18,
     "lastUpdated": "2025-03-19T15:44:57.283Z",
     "media": [
       {
@@ -11478,8 +11477,6 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53093266705_0c090ea786_o.jpg"
       }
     ],
-    "popularityIndex": 18,
-    "scorecardCount": 2,
     "currentBeltDate": "2026-10-29T17:06:32.300Z"
   },
   "bea71188": {
@@ -11619,7 +11616,7 @@
     ],
     "name": "BASI CX6",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 12,
+    "views": 13,
     "lastUpdated": "2025-03-19T15:44:57.283Z",
     "media": [
       {
@@ -11639,7 +11636,7 @@
         "url": "https://www.catalocks.eu/BASI/BASI%20AS%20pro_1001.html"
       }
     ],
-    "popularityIndex": 12,
+    "popularityIndex": 13,
     "scorecardCount": 2
   },
   "569dd487": {
@@ -11660,7 +11657,7 @@
     ],
     "name": "BKS 51 (Livius), 51-SL (Livius)",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 16,
+    "views": 17,
     "lastUpdated": "2025-03-19T01:20:51.360Z",
     "media": [
       {
@@ -11719,7 +11716,7 @@
       }
     ],
     "notes": "The BKS 51-SL is distinguished by a side mechanism",
-    "popularityIndex": 16,
+    "popularityIndex": 17,
     "scorecardCount": 6
   },
   "135ef1c0": {
@@ -11803,7 +11800,7 @@
     ],
     "name": "BKS Detect 3",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 13,
+    "views": 14,
     "lastUpdated": "2025-03-19T15:44:57.283Z",
     "version": "No active sidebar",
     "media": [
@@ -11838,7 +11835,7 @@
     "relatedIds": [
       "29dab5b8"
     ],
-    "popularityIndex": 13,
+    "popularityIndex": 14,
     "scorecardCount": 3
   },
   "4bc2b65a": {
@@ -11855,7 +11852,7 @@
     ],
     "name": "BKS Helius",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 17,
+    "views": 18,
     "lastUpdated": "2025-03-19T01:20:51.361Z",
     "media": [
       {
@@ -11904,7 +11901,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53054152742_d5b78b7f7d_o.jpg"
       }
     ],
-    "popularityIndex": 17,
+    "popularityIndex": 18,
     "scorecardCount": 4
   },
   "3b26e53c": {
@@ -12019,12 +12016,12 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/52727688196_6100d757ae_o.jpg"
       }
     ],
-    "views": 131,
+    "views": 132,
     "lastUpdated": "2025-03-19T01:20:51.366Z",
     "features": [
       "Unguttable"
     ],
-    "popularityIndex": 131,
+    "popularityIndex": 132,
     "scorecardCount": 22
   },
   "bd9dc1e4": {
@@ -12152,10 +12149,10 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/52729225631_5092b67dcd_o.jpg"
       }
     ],
-    "views": 78,
+    "views": 79,
     "lastUpdated": "2025-03-19T15:44:57.283Z",
     "version": "40mm or larger, 5 pins",
-    "popularityIndex": 78,
+    "popularityIndex": 79,
     "scorecardCount": 12
   },
   "83ac6e00": {
@@ -12728,7 +12725,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/54258644961_d34d9fa2bc_o.jpg"
       }
     ],
-    "views": 13,
+    "views": 14,
     "lastUpdated": "2025-03-18T23:29:31.271Z",
     "links": [
       {
@@ -12736,7 +12733,7 @@
         "url": "https://toool.nl/images/c/c0/Dom-ix.pdf"
       }
     ],
-    "popularityIndex": 13,
+    "popularityIndex": 14,
     "scorecardCount": 1
   },
   "a165bc09": {
@@ -12753,7 +12750,7 @@
     ],
     "name": "DOM ix 5 HT",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 23,
+    "views": 24,
     "lastUpdated": "2025-03-19T15:44:57.290Z",
     "media": [
       {
@@ -12799,7 +12796,7 @@
         "url": "https://toool.nl/images/c/c0/Dom-ix.pdf"
       }
     ],
-    "popularityIndex": 23,
+    "popularityIndex": 24,
     "scorecardCount": 3
   },
   "5241369e": {
@@ -13106,7 +13103,7 @@
       "Curtain",
       "False gates"
     ],
-    "views": 9,
+    "views": 10,
     "lastUpdated": "2025-03-19T15:44:57.284Z",
     "notes": "**Not** the pin-tumbler lock of the same name",
     "media": [
@@ -13138,7 +13135,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53173089166_4505085cdd_o.jpg"
       }
     ],
-    "popularityIndex": 9
+    "popularityIndex": 10
   },
   "2ec75ab7": {
     "id": "2ec75ab7",
@@ -13311,7 +13308,7 @@
     ],
     "name": "EVVA Standardcylinder (Normalprofil)",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 29,
+    "views": 30,
     "lastUpdated": "2025-03-19T15:44:57.284Z",
     "media": [
       {
@@ -13342,7 +13339,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53155984510_9989e452b8_o.jpg"
       }
     ],
-    "popularityIndex": 29,
+    "popularityIndex": 30,
     "scorecardCount": 1
   },
   "9406020f": {
@@ -13595,7 +13592,7 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "views": 14,
+    "views": 31,
     "lastUpdated": "2025-03-19T15:44:57.285Z",
     "media": [
       {
@@ -13638,7 +13635,8 @@
     "relatedIds": [
       "d1896bf9"
     ],
-    "popularityIndex": 14
+    "popularityIndex": 31,
+    "scorecardCount": 2
   },
   "f8254416": {
     "id": "f8254416",
@@ -15781,7 +15779,7 @@
     ],
     "name": "Wilka 3600",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 15,
+    "views": 16,
     "lastUpdated": "2025-03-19T15:44:57.287Z",
     "media": [
       {
@@ -15818,7 +15816,7 @@
         "url": "https://wiki.koksa.org/Wilka_W_3600"
       }
     ],
-    "popularityIndex": 15,
+    "popularityIndex": 16,
     "scorecardCount": 1
   },
   "9b275fcc": {
@@ -16247,7 +16245,7 @@
       "Rear tension"
     ],
     "notes": "Can be front tensioned and counterrotated",
-    "views": 164,
+    "views": 165,
     "lastUpdated": "2025-03-19T01:20:51.365Z",
     "links": [
       {
@@ -16259,7 +16257,7 @@
         "url": "https://youtu.be/XuHCrqNRHlI"
       }
     ],
-    "popularityIndex": 164,
+    "popularityIndex": 165,
     "scorecardCount": 25
   },
   "c1d09460": {
@@ -16459,7 +16457,7 @@
     ],
     "name": "ABUS Bravus 1000, Bravus 2000, Bravus 3000",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 31,
+    "views": 32,
     "lastUpdated": "2025-03-19T15:44:57.288Z",
     "media": [
       {
@@ -16566,7 +16564,7 @@
       "Trap element"
     ],
     "notes": "Requires 360° picking: these locks have traps that require some work to pick",
-    "popularityIndex": 31,
+    "popularityIndex": 32,
     "scorecardCount": 7
   },
   "f96de7cc": {
@@ -16583,7 +16581,7 @@
     ],
     "name": "ABUS D10",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 25,
+    "views": 27,
     "lastUpdated": "2025-03-19T15:44:57.288Z",
     "media": [
       {
@@ -16656,7 +16654,7 @@
         "url": "https://www.catalocks.eu/ABUS/ABUS%20D%2010_51.htmll"
       }
     ],
-    "popularityIndex": 25,
+    "popularityIndex": 27,
     "scorecardCount": 10
   },
   "5c0d870b": {
@@ -16771,7 +16769,7 @@
     ],
     "name": "ABUS EC750, EC850",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 17,
+    "views": 18,
     "lastUpdated": "2025-03-19T01:20:51.365Z",
     "links": [
       {
@@ -16802,7 +16800,7 @@
     "relatedIds": [
       "cf5bd73b"
     ],
-    "popularityIndex": 17,
+    "popularityIndex": 18,
     "scorecardCount": 6
   },
   "fe84cc3c": {
@@ -18583,10 +18581,11 @@
         "url": "https://www.catalocks.eu/DOM/DOM%20S%2C%20Profile%20Series%20PP1024_717.html"
       }
     ],
-    "views": 44,
+    "views": 45,
     "lastUpdated": "2025-03-19T15:44:57.290Z",
-    "popularityIndex": 44,
-    "scorecardCount": 13
+    "popularityIndex": 45,
+    "scorecardCount": 13,
+    "notes": "At least 3 security pins, 2 of them being dumbbell pins, DOM barrel pins, or rattlesnake pins"
   },
   "4c544aa2": {
     "id": "4c544aa2",
@@ -19366,7 +19365,7 @@
       "Pin-tumbler",
       "Sidepins"
     ],
-    "views": 22,
+    "views": 23,
     "lastUpdated": "2025-03-18T23:29:31.274Z",
     "media": [
       {
@@ -19426,7 +19425,7 @@
         "url": "https://www.catalocks.eu/ZEISS-IKON/ZEISS-IKON%20SK%206%20VECTOR_857.html"
       }
     ],
-    "popularityIndex": 22,
+    "popularityIndex": 23,
     "scorecardCount": 8,
     "version": "requires 360° picking"
   },
@@ -21787,7 +21786,7 @@
     ],
     "name": "Stanley Vidmar SEA SL-10 / Ezcurra SEA 23, SEA 3 / SEA Locking System (Original)",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 34,
+    "views": 35,
     "lastUpdated": "2025-03-19T15:44:57.293Z",
     "media": [
       {
@@ -21881,7 +21880,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53446319094_9c0241400d_o.jpg"
       }
     ],
-    "popularityIndex": 34,
+    "popularityIndex": 35,
     "scorecardCount": 19,
     "features": [
       "Flickr Update"
@@ -22318,7 +22317,7 @@
     "lockingMechanisms": [
       "Dimple"
     ],
-    "views": 10,
+    "views": 11,
     "lastUpdated": "2025-03-19T01:20:51.372Z",
     "media": [
       {
@@ -22358,7 +22357,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/52896744662_fc6b3f2c06_o.jpg"
       }
     ],
-    "popularityIndex": 10,
+    "popularityIndex": 11,
     "scorecardCount": 6
   },
   "fe088de0": {
@@ -23547,9 +23546,9 @@
       "Front tension",
       "False gates"
     ],
-    "views": 62,
+    "views": 63,
     "lastUpdated": "2025-03-19T15:44:57.295Z",
-    "popularityIndex": 62,
+    "popularityIndex": 63,
     "scorecardCount": 27
   },
   "23919b4e": {
@@ -25354,7 +25353,7 @@
     ],
     "name": "DOM ix 6 sr",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 70,
+    "views": 71,
     "lastUpdated": "2025-03-19T15:44:57.296Z",
     "media": [
       {
@@ -25439,7 +25438,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53961377654_dea5cce76d_o.jpg"
       }
     ],
-    "popularityIndex": 70,
+    "popularityIndex": 71,
     "scorecardCount": 34
   },
   "fc4de1ff": {
@@ -25456,7 +25455,7 @@
     ],
     "name": "DOM ix Twido",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 17,
+    "views": 18,
     "lastUpdated": "2025-03-19T15:44:57.296Z",
     "features": [
       "Torpedo keypins",
@@ -25492,7 +25491,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/52733175382_a5960625d4_o.jpg"
       }
     ],
-    "popularityIndex": 17,
+    "popularityIndex": 18,
     "scorecardCount": 13
   },
   "7b05dccc": {
@@ -25510,7 +25509,7 @@
     ],
     "name": "DOM ix10",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 30,
+    "views": 31,
     "lastUpdated": "2025-03-19T15:44:57.297Z",
     "links": [
       {
@@ -25574,7 +25573,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/54394311440_b84d2f583f_o.jpg"
       }
     ],
-    "popularityIndex": 30,
+    "popularityIndex": 31,
     "scorecardCount": 7
   },
   "e8901d1c": {
@@ -26118,9 +26117,9 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/52734113020_7c480fd340_o.jpg"
       }
     ],
-    "views": 9,
+    "views": 10,
     "lastUpdated": "2025-03-19T01:20:51.375Z",
-    "popularityIndex": 9,
+    "popularityIndex": 10,
     "scorecardCount": 5
   },
   "07bc680a": {
@@ -26463,9 +26462,9 @@
     ],
     "name": "ISEO R50, R7",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 42,
+    "views": 43,
     "lastUpdated": "2025-03-19T01:20:51.375Z",
-    "popularityIndex": 42,
+    "popularityIndex": 43,
     "scorecardCount": 14,
     "features": [
       "Flickr Update"
@@ -26859,7 +26858,7 @@
     ],
     "name": "Keso 10RS, 1000, 2000, 2000S, 4000S (Omega)",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 58,
+    "views": 59,
     "lastUpdated": "2025-03-19T01:20:51.375Z",
     "media": [
       {
@@ -26903,7 +26902,7 @@
       "High pin count"
     ],
     "version": "<13 pins",
-    "popularityIndex": 58,
+    "popularityIndex": 59,
     "scorecardCount": 15
   },
   "06ddb074": {
@@ -26955,13 +26954,13 @@
     ],
     "name": "Kwikset Smartkey (Gen III)",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 163,
+    "views": 164,
     "lastUpdated": "2025-03-18T23:29:31.276Z",
     "features": [
       "Sprung sliders",
       "Reverse sidebar"
     ],
-    "popularityIndex": 163,
+    "popularityIndex": 164,
     "scorecardCount": 39
   },
   "41f9efa2": {
@@ -28790,7 +28789,7 @@
     "lockingMechanisms": [
       "Pump/push"
     ],
-    "views": 14,
+    "views": 15,
     "lastUpdated": "2025-03-19T15:44:57.300Z",
     "media": [
       {
@@ -28854,7 +28853,7 @@
         "url": "http://qikom.free.fr/"
       }
     ],
-    "popularityIndex": 14,
+    "popularityIndex": 15,
     "scorecardCount": 9
   },
   "8e81c2c6": {
@@ -29214,9 +29213,9 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53167747727_b47a8de853_o.jpg"
       }
     ],
-    "views": 82,
+    "views": 84,
     "lastUpdated": "2025-03-19T01:20:51.378Z",
-    "popularityIndex": 82,
+    "popularityIndex": 84,
     "scorecardCount": 35
   },
   "9a9ae8df": {
@@ -29276,9 +29275,9 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/52726453694_68193eac83_o.jpg"
       }
     ],
-    "views": 15,
+    "views": 16,
     "lastUpdated": "2025-03-19T15:44:57.300Z",
-    "popularityIndex": 15,
+    "popularityIndex": 16,
     "scorecardCount": 15
   },
   "e7f6d089": {
@@ -30069,12 +30068,12 @@
       "False gates",
       "Flickr Update"
     ],
-    "views": 84,
+    "views": 85,
     "lastUpdated": "2025-03-19T15:44:57.301Z",
     "relatedIds": [
       "b8350901"
     ],
-    "popularityIndex": 84,
+    "popularityIndex": 85,
     "scorecardCount": 13
   },
   "19fce24d": {
@@ -30660,13 +30659,13 @@
     ],
     "name": "ASSA Desmo",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 153,
+    "views": 154,
     "lastUpdated": "2025-03-18T23:29:31.277Z",
     "relatedIds": [
       "e2742f70",
       "039a239f"
     ],
-    "popularityIndex": 153,
+    "popularityIndex": 154,
     "scorecardCount": 76
   },
   "fd7b514a": {
@@ -31526,7 +31525,7 @@
     ],
     "name": "DOM ix 10 / STS IX",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 96,
+    "views": 97,
     "lastUpdated": "2025-03-19T15:44:57.302Z",
     "links": [
       {
@@ -31590,7 +31589,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/22581920654_6d16a76102_o.jpg"
       }
     ],
-    "popularityIndex": 96,
+    "popularityIndex": 97,
     "scorecardCount": 37
   },
   "dd6a3683": {
@@ -35323,9 +35322,9 @@
     ],
     "name": "ABUS EC700, EC800",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 46,
+    "views": 47,
     "lastUpdated": "2025-03-19T15:44:57.306Z",
-    "popularityIndex": 46,
+    "popularityIndex": 47,
     "scorecardCount": 20
   },
   "b8350901": {
@@ -35382,12 +35381,12 @@
       "False gates",
       "Butterfly discs"
     ],
-    "views": 133,
+    "views": 134,
     "lastUpdated": "2025-03-19T15:44:57.306Z",
     "relatedIds": [
       "b8350900"
     ],
-    "popularityIndex": 133,
+    "popularityIndex": 134,
     "scorecardCount": 41
   },
   "4223eb26": {
@@ -35862,7 +35861,7 @@
     ],
     "name": "BKS Janus",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 43,
+    "views": 44,
     "lastUpdated": "2025-03-19T01:20:51.385Z",
     "media": [
       {
@@ -35904,7 +35903,7 @@
     "relatedIds": [
       "f09ce6b3"
     ],
-    "popularityIndex": 43,
+    "popularityIndex": 44,
     "scorecardCount": 20
   },
   "ab1cdc56": {
@@ -36279,9 +36278,9 @@
     ],
     "name": "DOM ix Saturn / INN Key Smart",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 61,
+    "views": 62,
     "lastUpdated": "2025-03-19T01:20:51.386Z",
-    "popularityIndex": 61,
+    "popularityIndex": 62,
     "scorecardCount": 46
   },
   "4993a918": {
@@ -36544,9 +36543,9 @@
       "Active sidebar",
       "Flickr Update"
     ],
-    "views": 32,
+    "views": 33,
     "lastUpdated": "2025-03-19T01:20:51.386Z",
-    "popularityIndex": 32,
+    "popularityIndex": 33,
     "scorecardCount": 4
   },
   "00b569f2": {
@@ -36990,7 +36989,7 @@
     "lockingMechanisms": [
       "Pump/push"
     ],
-    "views": 17,
+    "views": 18,
     "lastUpdated": "2025-03-18T23:29:31.278Z",
     "media": [
       {
@@ -37045,7 +37044,7 @@
         "url": "http://qikom.free.fr"
       }
     ],
-    "popularityIndex": 17,
+    "popularityIndex": 18,
     "scorecardCount": 14
   },
   "9f613c4a": {
@@ -40008,7 +40007,7 @@
     "features": [
       "High pin count"
     ],
-    "views": 17,
+    "views": 18,
     "lastUpdated": "2025-03-18T23:29:31.281Z",
     "media": [
       {
@@ -40095,7 +40094,7 @@
       "9d865bcd",
       "d1a5cd90"
     ],
-    "popularityIndex": 17,
+    "popularityIndex": 18,
     "scorecardCount": 5
   },
   "6708838f": {
@@ -41876,7 +41875,7 @@
     "features": [
       "High pin count"
     ],
-    "views": 23,
+    "views": 24,
     "lastUpdated": "2025-03-19T15:44:57.312Z",
     "media": [
       {
@@ -41909,7 +41908,7 @@
     "relatedIds": [
       "3af2407a"
     ],
-    "popularityIndex": 23,
+    "popularityIndex": 24,
     "scorecardCount": 10
   },
   "78336fc0": {
@@ -42633,9 +42632,9 @@
     ],
     "name": "DOM ix Twinstar",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 93,
+    "views": 94,
     "lastUpdated": "2025-03-19T01:20:51.392Z",
-    "popularityIndex": 93,
+    "popularityIndex": 94,
     "scorecardCount": 54
   },
   "f7452b9f": {
@@ -43403,10 +43402,10 @@
     "features": [
       "Magnetic rotors"
     ],
-    "views": 39,
+    "views": 40,
     "lastUpdated": "2025-03-19T01:20:51.392Z",
     "version": "with up to 5 additional gates for mastering",
-    "popularityIndex": 39,
+    "popularityIndex": 40,
     "scorecardCount": 7
   },
   "4abcb403": {
@@ -44628,12 +44627,12 @@
       "High pin count",
       "Active sidebar"
     ],
-    "views": 29,
+    "views": 30,
     "lastUpdated": "2025-03-19T15:44:57.314Z",
     "relatedIds": [
       "c9494ee8"
     ],
-    "popularityIndex": 29,
+    "popularityIndex": 30,
     "scorecardCount": 15
   },
   "c9494ee8": {
@@ -44728,12 +44727,12 @@
       "High pin count",
       "Active sidebar"
     ],
-    "views": 39,
+    "views": 40,
     "lastUpdated": "2025-03-19T15:44:57.314Z",
     "relatedIds": [
       "7e967792"
     ],
-    "popularityIndex": 39,
+    "popularityIndex": 40,
     "scorecardCount": 26
   },
   "8f99236e": {
@@ -49295,7 +49294,7 @@
     ],
     "name": "CAVEO TS007",
     "dateAdded": "2023-03-02T19:05:25.000Z",
-    "views": 5,
+    "views": 6,
     "lastUpdated": "2025-03-19T01:20:51.367Z",
     "lockingMechanisms": [
       "Dimple",
@@ -49318,7 +49317,7 @@
     ],
     "notes": "Seven pins with standard drivers, five slider sidebar",
     "version": "all standards",
-    "popularityIndex": 5,
+    "popularityIndex": 6,
     "scorecardCount": 1
   },
   "267e47c4": {
@@ -52550,7 +52549,7 @@
       "Sidebar",
       "Slider"
     ],
-    "views": 13,
+    "views": 14,
     "lastUpdated": "2025-03-19T15:44:57.326Z",
     "media": [
       {
@@ -52563,7 +52562,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53197461328_4bbcb6ebc7_o.jpg"
       }
     ],
-    "popularityIndex": 13,
+    "popularityIndex": 14,
     "scorecardCount": 4
   },
   "7164f69d": {
@@ -53496,7 +53495,7 @@
     "lastUpdated": "2025-03-19T15:44:57.314Z",
     "name": "Kaba Matrix",
     "dateAdded": "2023-05-05T09:34:27.000Z",
-    "views": 17,
+    "views": 18,
     "features": [
       "High pin count"
     ],
@@ -53524,7 +53523,7 @@
       "Dimple"
     ],
     "notes": "High pin count",
-    "popularityIndex": 17,
+    "popularityIndex": 18,
     "scorecardCount": 8
   },
   "ab9df828": {
@@ -56723,11 +56722,11 @@
     "lastUpdated": "2025-03-19T01:20:51.398Z",
     "name": "BKS Detect 3",
     "dateAdded": "2023-08-05T23:32:09.000Z",
-    "views": 9,
+    "views": 10,
     "relatedIds": [
       "ec0a2659"
     ],
-    "popularityIndex": 9,
+    "popularityIndex": 10,
     "scorecardCount": 4,
     "currentBeltDate": "2026-08-30T12:00:00.000Z"
   },
@@ -59031,8 +59030,8 @@
     ],
     "version": "3 points pump lock",
     "scorecardCount": 1,
-    "popularityIndex": 1,
-    "views": 1
+    "popularityIndex": 2,
+    "views": 2
   },
   "6cb514ea": {
     "id": "6cb514ea",
@@ -59775,7 +59774,7 @@
       "Magic DOM drivers",
       "Bottlenose keypins"
     ],
-    "views": 14,
+    "views": 15,
     "media": [
       {
         "title": "By: T02",
@@ -59886,7 +59885,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53956897360_75cfc8687e_o.jpg"
       }
     ],
-    "popularityIndex": 14,
+    "popularityIndex": 15,
     "scorecardCount": 8
   },
   "37951bc4": {
@@ -60651,9 +60650,9 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/54305391516_cf0ba8bb46_o.jpg"
       }
     ],
-    "popularityIndex": 18,
+    "popularityIndex": 19,
     "scorecardCount": 9,
-    "views": 18
+    "views": 19
   },
   "1bba03a6": {
     "id": "1bba03a6",
@@ -60924,9 +60923,9 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53851378815_40d28290e6_o.jpg"
       }
     ],
-    "popularityIndex": 28,
+    "popularityIndex": 29,
     "scorecardCount": 2,
-    "views": 28
+    "views": 29
   },
   "c2125761": {
     "id": "c2125761",
@@ -61252,8 +61251,8 @@
     "features": [
       "Latest Changelog"
     ],
-    "popularityIndex": 4,
-    "views": 4,
+    "popularityIndex": 5,
+    "views": 5,
     "currentBeltDate": "2026-08-30T12:00:00.000Z"
   },
   "f8acc274": {
@@ -61398,9 +61397,9 @@
     "lastUpdated": "2025-02-16T07:00:26.260Z",
     "name": "Wilka PR100 Series, TH6, SI6",
     "dateAdded": "2025-02-16T07:00:27.000Z",
-    "popularityIndex": 8,
+    "popularityIndex": 9,
     "scorecardCount": 3,
-    "views": 8
+    "views": 9
   },
   "a0bfa615": {
     "id": "a0bfa615",
@@ -61457,9 +61456,9 @@
     "name": "ABUS V14, XV14, Y14, Vitess 1000, Vitess 2000, Vitess 4000",
     "dateAdded": "2025-02-16T07:00:27.000Z",
     "notes": "require 360° picking",
-    "popularityIndex": 17,
+    "popularityIndex": 18,
     "scorecardCount": 7,
-    "views": 17
+    "views": 18
   },
   "c643eca2": {
     "id": "c643eca2",
@@ -61476,9 +61475,9 @@
     "lastUpdated": "2025-02-16T07:00:26.266Z",
     "name": "Winkhaus RPE",
     "dateAdded": "2025-02-16T07:00:27.000Z",
-    "popularityIndex": 7,
+    "popularityIndex": 8,
     "scorecardCount": 5,
-    "views": 7
+    "views": 8
   },
   "c92ff501": {
     "id": "c92ff501",
@@ -61580,9 +61579,9 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/54380170266_6f8814e945_o.jpg"
       }
     ],
-    "popularityIndex": 45,
+    "popularityIndex": 46,
     "scorecardCount": 16,
-    "views": 45
+    "views": 46
   },
   "93c49314": {
     "id": "93c49314",
@@ -62065,9 +62064,9 @@
     "lastUpdated": "2025-03-19T23:23:08.540Z",
     "name": "IKON SK6 Sperrwelleprofil",
     "dateAdded": "2025-03-18T02:44:04.000Z",
-    "popularityIndex": 9,
+    "popularityIndex": 10,
     "scorecardCount": 7,
-    "views": 9
+    "views": 10
   },
   "95e779e0": {
     "id": "95e779e0",
@@ -62138,9 +62137,9 @@
       "High pin count",
       "Latest Changelog"
     ],
-    "popularityIndex": 12,
+    "popularityIndex": 13,
     "scorecardCount": 4,
-    "views": 12,
+    "views": 13,
     "currentBeltDate": "2026-08-30T12:00:00.000Z"
   },
   "d54a6b5f": {
@@ -62870,9 +62869,9 @@
     ],
     "name": "ABUS E90",
     "dateAdded": "2025-12-28T18:08:44.766Z",
-    "popularityIndex": 8,
+    "popularityIndex": 9,
     "scorecardCount": 2,
-    "views": 8
+    "views": 9
   },
   "05f9773b": {
     "id": "05f9773b",
@@ -63175,9 +63174,9 @@
     "notes": "6 pins with spool drivers and overmilling. This model does not have the plug centering bearing",
     "name": "GOAL P",
     "dateAdded": "2026-08-06T03:59:39.967Z",
-    "popularityIndex": 3,
+    "popularityIndex": 4,
     "scorecardCount": 1,
-    "views": 3
+    "views": 4
   },
   "04bd0770": {
     "id": "04bd0770",
@@ -63495,8 +63494,8 @@
     ],
     "name": "GEGE AP1000, AP2000, AP3000",
     "dateAdded": "2026-08-07T15:07:44.518Z",
-    "popularityIndex": 7,
-    "views": 7,
+    "popularityIndex": 8,
+    "views": 8,
     "features": [
       "Flickr Update"
     ]
@@ -64694,8 +64693,8 @@
     "name": "Gege ANS-2",
     "currentBeltDate": "2026-10-11T11:34:47.287Z",
     "dateAdded": "2026-10-11T11:34:47.287Z",
-    "popularityIndex": 2,
-    "views": 2
+    "popularityIndex": 3,
+    "views": 3
   },
   "64c6e2d3": {
     "id": "64c6e2d3",
@@ -64893,9 +64892,7 @@
     ],
     "name": "EVVA NVL",
     "currentBeltDate": "2026-10-12T23:33:54.099Z",
-    "dateAdded": "2026-10-12T23:33:54.099Z",
-    "popularityIndex": 1,
-    "views": 1
+    "dateAdded": "2026-10-12T23:33:54.099Z"
   },
   "8aeb75bf": {
     "id": "8aeb75bf",
