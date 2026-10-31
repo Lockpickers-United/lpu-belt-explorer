@@ -14,10 +14,9 @@ export const lockSortFields = [
 ]
 
 export const beltRequestSortFields = [
-    {label: 'Default', value: undefined},
-    {label: 'Date Added', value: 'dateAdded'},
-    {label: 'Belt (Ascending)', value: 'beltAscending'},
-    {label: 'Belt (Descending)', value: 'beltDescending'},
+    {label: 'Date Added', value: undefined},
+    {label: 'Belt (Ascending)', value: 'beltRoleAscending'},
+    {label: 'Belt (Descending)', value: 'beltRoleDescending'},
     {label: 'Recently Updated', value: 'recentlyUpdated'},
 ]
 

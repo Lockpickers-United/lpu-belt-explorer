@@ -16,9 +16,19 @@ export function RequestAdminDataProvider({children, allEntries}) {
     const mappedEntries = useMemo(() => {
         return allEntries
             .map(request => {
+
+                const status = request.status === 'requested'
+                    ? 'Open'
+                    : request.status === 'checked-out'
+                        ? 'Checked Out'
+                        : initialCap(request.status)
+                const filterStatus = status === 'Checked Out'
+                    ? ['Open', 'Checked Out']
+                    : status
                 return {
                     ...request,
-                    status: initialCap(request.status),
+                    status,
+                    filterStatus,
                     fuzzy: removeAccents(
                         [request.username, request.lastUpdateBy]
                             .join(',')

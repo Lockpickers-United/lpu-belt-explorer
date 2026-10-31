@@ -23,7 +23,7 @@ export const lockFilterFields = [
 ]
 
 export const beltRequestFilterFields = [
-    {label: 'Status', fieldName: 'status'},
+    {label: 'Status', fieldName: 'filterStatus'},
     {label: 'Belt', fieldName: 'belt'},
 ]
 

@@ -1,5 +1,5 @@
 import dayjs from 'dayjs'
-import {beltSort, beltSortReverse} from '../data/belts'
+import {beltSort, beltSortReverse, beltRoleSort, beltRoleSortReverse} from '../data/belts'
 
 export const lockSortComparators = Object.freeze({
     popularity: (a, b) => {
@@ -10,9 +10,20 @@ export const lockSortComparators = Object.freeze({
         return b.scorecardCount - a.scorecardCount
             || a.fuzzy.localeCompare(b.fuzzy)
     },
-    beltAscending: (a, b) => beltSort(a.belt.replace(/\sBelt/g, ''), b.belt.replace(/\sBelt/g, '')),
+    beltAscending: (a, b) => {
+        return beltSort(a.belt.replace(/\sBelt/g, ''), b.belt.replace(/\sBelt/g, ''))
+            || a.fuzzy?.localeCompare(b.fuzzy)
+    },
     beltDescending: (a, b) => {
         return beltSortReverse(a.belt.replace(/\sBelt/g, ''), b.belt.replace(/\sBelt/g, ''))
+            || a.fuzzy?.localeCompare(b.fuzzy)
+    },
+    beltRoleAscending: (a, b) => {
+        return beltRoleSort(a.belt, b.belt)
+            || a.fuzzy?.localeCompare(b.fuzzy)
+    },
+    beltRoleDescending: (a, b) => {
+        return beltRoleSortReverse(a.belt, b.belt)
             || a.fuzzy?.localeCompare(b.fuzzy)
     },
     alphaAscending: (a, b) => a.fuzzy.localeCompare(b.fuzzy),

@@ -10,7 +10,7 @@ function BeltStripe({value = 'Unranked'}) {
     const bgColor = belts[value]
         ? belts[value].color
         : value?.includes('Dan')
-            ? '#769e49'
+            ? '#8bbe4d'
             : ''
 
     //const {color: backgroundColor} = belts[value] || {color: '#769e49'}
@@ -23,9 +23,9 @@ function BeltStripe({value = 'Unranked'}) {
         backgroundColor: bgColor
     }
 
-    const {lineColor: stripeColor} = belts[value] || {}
+    const {lineColor: stripeColor} = belts[value] || {lineColor: '#000'}
     const stripes = useMemo(() => {
-        const [stripeValue] = (value.match(/\d/) || [0])
+        const [stripeValue] = (value.match(/\d+/) || [0])
         const stripeCount = +stripeValue
         if (stripeCount > 1) {
             return Array(stripeCount).fill(0)

@@ -4,7 +4,6 @@ import {beltDetails} from '../util/belts.js'
 
 function truncate(string, maxLength = 1024) {
     if (string.length <= maxLength) return string
-
     const indicator = '... (truncated)'
     return string.substring(0, maxLength - indicator.length) + indicator
 }

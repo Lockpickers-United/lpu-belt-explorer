@@ -28,8 +28,8 @@ const belts = {
     'Tier 4': {color: '#000000', lineColor: '#80b535', danPoints: 34},
     'Tier 5': {color: '#000000', lineColor: '#80b535', danPoints: 50},
     'Dan': {color: '#8eb354', lineColor: '#000', danPoints: 50},
-    'Dan 1': {color: '#8eb354', lineColor: '#8eb354', danPoints: 50},
-    'Dan 2': {color: '#8eb354', lineColor: '#8eb354', danPoints: 50},
+    'Dan 1': {color: '#8eb354', lineColor: '#000', danPoints: 50},
+    'Dan 2': {color: '#8eb354', lineColor: '#000', danPoints: 50},
     'Dan 3': {color: '#8eb354', lineColor: '#8eb354', danPoints: 50},
     'Dan 4': {color: '#8eb354', lineColor: '#8eb354', danPoints: 50},
     'Dan 5': {color: '#8eb354', lineColor: '#8eb354', danPoints: 50},
@@ -159,6 +159,13 @@ export const danBeltSort = (a, b) => {
 export const danBeltsFullReverse = moveToLast([...danBeltsFull].reverse(), 'Unranked')
 export const danBeltSortReverse = (a, b) => {
     return danBeltsFullReverse.indexOf(a) - danBeltsFullReverse.indexOf(b)
+}
+export const beltRoleSort = (a, b) => {
+    return beltRoles.indexOf(a) - beltRoles.indexOf(b)
+}
+const beltRolesReverse = [...beltRoles].reverse()
+export const beltRoleSortReverse = (a, b) => {
+    return beltRolesReverse.indexOf(a) - beltRolesReverse.indexOf(b)
 }
 
 export const projectTiers = {

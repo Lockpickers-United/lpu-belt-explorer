@@ -1,5 +1,25 @@
 [
   {
+    "status": "checked-out",
+    "dateAdded": "2026-10-30T15:50:12-07:00",
+    "id": "ff883c31",
+    "messageId": "1565860403617988661",
+    "requestId": "1565860403617988661",
+    "source": "Discord",
+    "platform": "Discord",
+    "userId": "671828049540677682",
+    "username": "mgsecure",
+    "belt": "White Belt",
+    "messageContent": "[me] request white please",
+    "currentBelt": "tk",
+    "syncUsername": null,
+    "lastUpdated": "2026-10-30T16:05:41-07:00",
+    "lastUpdateBy": "mgsecure",
+    "updateMessageId": "1565864297811157169",
+    "reviewerId": "671828049540677682",
+    "reviewerName": "mgsecure"
+  },
+  {
     "status": "requested",
     "dateAdded": "2026-10-29T07:56:48-07:00",
     "id": "692de0bf",
@@ -43,7 +63,7 @@
     "belt": "Brown Belt",
     "messageContent": "@lockyjr request brown please",
     "currentBelt": "unknown",
-    "updatedAt": "2026-10-29T07:58:11-07:00",
+    "lastUpdated": "2026-10-29T07:58:11-07:00",
     "lastUpdateBy": "mgsecure",
     "updateMessageId": "1565379221516451971"
   },
@@ -60,7 +80,7 @@
     "belt": "Blue Belt",
     "messageContent": "@lockyjr request blue please",
     "currentBelt": "unknown",
-    "updatedAt": "2026-10-29T07:58:11-07:00",
+    "lastUpdated": "2026-10-29T07:58:11-07:00",
     "lastUpdateBy": "mgsecure",
     "updateMessageId": "1565379221516451971"
   },
@@ -93,7 +113,7 @@
     "currentBelt": "unknown"
   },
   {
-    "status": "approved",
+    "status": "requested",
     "dateAdded": "2026-10-28T21:29:23-07:00",
     "id": "b79ab08d",
     "messageId": "1565220986901626951",
@@ -102,9 +122,9 @@
     "platform": "Discord",
     "userId": "671828049540677682",
     "username": "mgsecure",
-    "belt": "1st Dan",
+    "belt": "14th Dan",
     "messageContent": "Dan evidence link: https://lpubelts.com/#/profile/GGplAdctTfVDLVvYsfIADJmfp8f2/scorecard?name=mgsecure",
-    "updatedAt": "2026-10-28T21:31:28-07:00",
+    "lastUpdated": "2026-10-28T21:31:28-07:00",
     "lastUpdateBy": "mgsecure",
     "updateMessageId": "1565221507074883613"
   },
@@ -122,7 +142,7 @@
     "messageContent": "[me] request 10th Dan https://lpubelts.com/#/profile/1SqcRKce18boUZBtOHWSenGAI202/scorecard?name=Zehkar",
     "currentBelt": "tk",
     "syncUsername": null,
-    "updatedAt": "2026-10-28T20:27:58-07:00",
+    "lastUpdated": "2026-10-28T20:27:58-07:00",
     "lastUpdateBy": "deynemic",
     "updateMessageId": "1565205522460967034"
   },
@@ -169,7 +189,7 @@
     "belt": "Yellow Belt",
     "messageContent": "@lockyjr request yellow GOAL D9 - https://youtu.be/QkUj0T2PwyA Thank you!!",
     "currentBelt": "unknown",
-    "updatedAt": "2026-10-29T00:29:13.352Z",
+    "lastUpdated": "2026-10-29T00:29:13.352Z",
     "lastUpdateBy": "LockyJr",
     "updateMessageId": "1565160544887906438"
   },
@@ -186,7 +206,7 @@
     "belt": "White Belt",
     "messageContent": "@lockyjr request white GOAL D9 - https://youtu.be/QkUj0T2PwyA Thank you!!",
     "currentBelt": "unknown",
-    "updatedAt": "2026-10-28T18:41:34-07:00",
+    "lastUpdated": "2026-10-28T18:41:34-07:00",
     "lastUpdateBy": "mgsecure",
     "updateMessageId": "1565178745151684609"
   },
@@ -203,7 +223,7 @@
     "belt": "Brown Belt",
     "messageContent": "@lockyjr request brown GOAL D9 (Brown) - https://youtu.be/QkUj0T2PwyA Thank you!!",
     "currentBelt": "unknown",
-    "updatedAt": "2026-10-28T16:54:11-07:00",
+    "lastUpdated": "2026-10-28T16:54:11-07:00",
     "lastUpdateBy": "mgsecure",
     "updateMessageId": "1565151729702543464"
   },
@@ -220,7 +240,7 @@
     "belt": "Red Belt",
     "messageContent": "@lockyjr request red GOAL D9 (Brown) - https://youtu.be/QkUj0T2PwyA Thank you!!",
     "currentBelt": "unknown",
-    "updatedAt": "2026-10-28T16:42:43-07:00",
+    "lastUpdated": "2026-10-28T16:42:43-07:00",
     "lastUpdateBy": "mgsecure",
     "updateMessageId": "1565148835292909640"
   },
@@ -237,7 +257,7 @@
     "belt": "Red Belt",
     "messageContent": "@lockyjr request red GOAL D9 (Brown) - https://youtu.be/QkUj0T2PwyA Thank you!!",
     "currentBelt": "unknown",
-    "updatedAt": "2026-10-28T23:41:02.250Z",
+    "lastUpdated": "2026-10-28T23:41:02.250Z",
     "lastUpdateBy": "LockyJr",
     "updateMessageId": "1565148418979143724"
   },
@@ -254,7 +274,7 @@
     "belt": "Red Belt",
     "messageContent": "@lockyjr request red GOAL D9 (Brown)- [https://youtu.be/QkUj0T2PwyA](https://youtu.be/QkUj0T2PwyA)",
     "currentBelt": "unknown",
-    "updatedAt": "2026-10-28T23:40:43.373Z",
+    "lastUpdated": "2026-10-28T23:40:43.373Z",
     "lastUpdateBy": "LockyJr",
     "updateMessageId": "1565148339845079075"
   },
@@ -271,7 +291,7 @@
     "belt": "Black Belt",
     "messageContent": "@lockyjr request black **GOAL D9** (Brown) - [https://youtu.be/QkUj0T2PwyA\\\\n\\\\nhttps://lpubelts.com/#/locks?tab=search&search=7194cc26](https://youtu.be/QkUj0T2PwyA\\n\\nhttps://lpubelts.com/#/locks?tab=search&search=7194cc26)",
     "currentBelt": "unknown",
-    "updatedAt": "2026-10-28T16:55:41-07:00",
+    "lastUpdated": "2026-10-28T16:55:41-07:00",
     "lastUpdateBy": "mgsecure",
     "updateMessageId": "1565152107915649036"
   },
@@ -290,7 +310,7 @@
     "currentBelt": "tk",
     "syncTo": "Reddit",
     "syncUsername": "Intrepid_Sir_1375",
-    "updatedAt": "2026-10-28T16:37:22-07:00",
+    "lastUpdated": "2026-10-28T16:37:22-07:00",
     "lastUpdateBy": "sidepicks",
     "updateMessageId": "1565147482382401557",
     "result": "Successfully set Reddit flair to Blue"
@@ -308,7 +328,7 @@
     "belt": "Purple Belt",
     "messageContent": "@lockyjr request purple please",
     "currentBelt": "unknown",
-    "updatedAt": "2026-10-28T15:32:20-07:00",
+    "lastUpdated": "2026-10-28T15:32:20-07:00",
     "lastUpdateBy": "mgsecure",
     "updateMessageId": "1565131117160439849"
   },
@@ -326,7 +346,7 @@
     "messageContent": "**GOAL D9** (Brown) - https://youtu.be/QkUj0T2PwyA\n\nhttps://lpubelts.com/#/locks?tab=search&search=7194cc26",
     "syncTo": "Reddit",
     "syncUsername": "mgsecure",
-    "updatedAt": "2026-10-28T12:55:02-07:00",
+    "lastUpdated": "2026-10-28T12:55:02-07:00",
     "lastUpdateBy": "mgsecure",
     "updateMessageId": "1565091535161139291",
     "result": "Successfully set Reddit flair to Green"
@@ -343,7 +363,7 @@
     "username": "mgsecure",
     "belt": "Green Belt",
     "messageContent": "**GOAL D9** (Brown) - https://youtu.be/QkUj0T2PwyA\n\nhttps://lpubelts.com/#/locks?tab=search&search=7194cc26",
-    "updatedAt": "2026-10-28T19:42:51.920Z",
+    "lastUpdated": "2026-10-28T19:42:51.920Z",
     "lastUpdateBy": "LockyJr",
     "updateMessageId": "1565088480726360226"
   },
@@ -358,7 +378,7 @@
     "messageId": "1565037514736144576",
     "userId": "220341721853067265",
     "messageContent": "**ABUS 55/30** (Yellow) - https://imgur.com/a/ZUaBEoj\n\nhttps://lpubelts.com/#/locks?tab=search&search=c7d2eca1",
-    "updatedAt": "2026-10-28T11:31:01-07:00",
+    "lastUpdated": "2026-10-28T11:31:01-07:00",
     "lastUpdateBy": "mgsecure",
     "updateMessageId": "1565070382648655933"
   },
@@ -376,7 +396,7 @@
     "messageContent": "[me] request orange belt Master Lock 570 https://youtu.be/csyYPlzMAjw",
     "currentBelt": "tk",
     "syncUsername": null,
-    "updatedAt": "2026-10-28T12:37:10-07:00",
+    "lastUpdated": "2026-10-28T12:37:10-07:00",
     "lastUpdateBy": "sidepicks",
     "updateMessageId": "1565087045943165009"
   },
@@ -394,7 +414,7 @@
     "messageContent": "[me] request yellow belt Master Lock 140",
     "currentBelt": "tk",
     "syncUsername": null,
-    "updatedAt": "2026-10-28 06:52",
+    "lastUpdated": "2026-10-28 06:52",
     "lastUpdateBy": "sidepicks",
     "updateMessageId": "1565000263373164595"
   },
@@ -413,7 +433,7 @@
     "currentBelt": "tk",
     "syncTo": "Reddit",
     "syncUsername": "mgsecure",
-    "updatedAt": "2026-10-28T19:23:23.915Z",
+    "lastUpdated": "2026-10-28T19:23:23.915Z",
     "lastUpdateBy": "LockyJr",
     "updateMessageId": "1565083581787676758"
   },
@@ -431,7 +451,7 @@
     "messageContent": "[me]  request orange belt Master Lock 150 https://imgur.com/AlC93zV",
     "currentBelt": "tk",
     "syncUsername": null,
-    "updatedAt": "2026-10-28 05:51",
+    "lastUpdated": "2026-10-28 05:51",
     "lastUpdateBy": "alpama",
     "updateMessageId": "1564984945196277932"
   },
@@ -449,7 +469,7 @@
     "messageContent": "[me] request yellow belt pls, thx!\nWolfdog",
     "currentBelt": "tk",
     "syncUsername": null,
-    "updatedAt": "2026-10-28 05:51",
+    "lastUpdated": "2026-10-28 05:51",
     "lastUpdateBy": "mgsecure",
     "updateMessageId": "1564984849083662347"
   },
@@ -467,7 +487,7 @@
     "messageContent": "[me] request red belt pretty please",
     "currentBelt": "tk",
     "syncUsername": null,
-    "updatedAt": "2026-10-27 22:53",
+    "lastUpdated": "2026-10-27 22:53",
     "lastUpdateBy": "mgsecure",
     "updateMessageId": "1564879797820325981"
   },
@@ -484,7 +504,7 @@
     "belt": "Purple Belt",
     "messageContent": "@lockyjr request purple please",
     "currentBelt": "unknown",
-    "updatedAt": "2026-10-27 22:54",
+    "lastUpdated": "2026-10-27 22:54",
     "lastUpdateBy": "mgsecure",
     "updateMessageId": "1564879961758769296"
   },
@@ -493,14 +513,18 @@
     "id": "9ae218f8",
     "belt": "Yellow Belt",
     "error": "Cannot read properties of undefined (reading 'username')",
-    "source": "Reddit"
+    "source": "Reddit",
+    "dateAdded": "2026-10-25 22:54",
+    "lastUpdated": "2026-10-25 22:54"
   },
   {
     "status": "error",
     "id": "730fa16e",
     "belt": "Orange Belt",
     "error": "Cannot read properties of undefined (reading 'username')",
-    "source": "Reddit"
+    "source": "Reddit",
+    "dateAdded": "2026-10-25 22:54",
+    "lastUpdated": "2026-10-25 22:54"
   },
   {
     "status": "error",
@@ -508,7 +532,10 @@
     "userId": "(no userId)",
     "username": "(no username)",
     "belt": "Red Belt",
-    "error": "Invalid Form Body\nuser_id[NUMBER_TYPE_COERCE]: Value \"(no userId)\" is not snowflake."
+    "error": "Invalid Form Body\nuser_id[NUMBER_TYPE_COERCE]: Value \"(no userId)\" is not snowflake.",
+    "dateAdded": "2026-10-25 22:54",
+    "lastUpdated": "2026-10-25 22:54"
+
   },
   {
     "status": "approved",
@@ -518,7 +545,7 @@
     "username": "Thrillhouse",
     "userId": "351771143201488896",
     "messageId": "1564426704804388864",
-    "updatedAt": "2026-10-26 18:19",
+    "lastUpdated": "2026-10-26 18:19",
     "lastUpdateBy": "sidepicks",
     "updateMessageId": "1564448540942401547"
   },
@@ -531,7 +558,7 @@
     "userId": "580133696854818821",
     "redditUsername": "Age_Of_Utopia",
     "messageId": "1564423055873278013",
-    "updatedAt": "2026-10-26 18:14",
+    "lastUpdated": "2026-10-26 18:14",
     "lastUpdateBy": "sidepicks",
     "updateMessageId": "1564447141978574869",
     "redditSynched": "Successfully set Reddit flair"
@@ -545,7 +572,7 @@
     "userId": "580133696854818821",
     "redditUsername": "Age_Of_Utopia",
     "messageId": "1564422691291799652",
-    "updatedAt": "2026-10-26 16:38",
+    "lastUpdated": "2026-10-26 16:38",
     "lastUpdateBy": "LockyJr",
     "updateMessageId": "1564423055873278013"
   },
@@ -558,7 +585,7 @@
     "userId": "194106754768830474",
     "redditUsername": "abat74",
     "messageId": "1564389657536495687",
-    "updatedAt": "2026-10-26 14:26",
+    "lastUpdated": "2026-10-26 14:26",
     "lastUpdateBy": "mgsecure",
     "updateMessageId": "1564389765178982411",
     "redditSynched": "Successfully set Reddit flair"
@@ -572,7 +599,7 @@
     "userId": "1538328405961867284",
     "redditUsername": "Intrepid_Sir_1375",
     "messageId": "1564328533847974029",
-    "updatedAt": "2026-10-26 18:25",
+    "lastUpdated": "2026-10-26 18:25",
     "lastUpdateBy": "sidepicks",
     "updateMessageId": "1564449884298416200"
   },
@@ -585,7 +612,7 @@
     "userId": "1538328405961867284",
     "redditUsername": "Intrepid_Sir_1375",
     "messageId": "1564327785143472239",
-    "updatedAt": "2026-10-26 10:23",
+    "lastUpdated": "2026-10-26 10:23",
     "lastUpdateBy": "LockyJr",
     "updateMessageId": "1564328533847974029"
   },
@@ -597,7 +624,7 @@
     "username": "mgsecure",
     "userId": "671828049540677682",
     "messageId": "1564151808203558945",
-    "updatedAt": "2026-10-25 22:41",
+    "lastUpdated": "2026-10-25 22:41",
     "lastUpdateBy": "mgsecure",
     "updateMessageId": "1564151843016286371"
   },
@@ -609,7 +636,7 @@
     "username": ".auribus",
     "userId": "196082549997568001",
     "messageId": "1564107004396445746",
-    "updatedAt": "2026-10-25 22:51",
+    "lastUpdated": "2026-10-25 22:51",
     "lastUpdateBy": "septclues",
     "updateMessageId": "1564154564419002441"
   },
@@ -621,7 +648,7 @@
     "username": "mgsecure",
     "userId": "671828049540677682",
     "messageId": "1564106742231465996",
-    "updatedAt": "2026-10-25 19:44",
+    "lastUpdated": "2026-10-25 19:44",
     "lastUpdateBy": "mgsecure",
     "updateMessageId": "1564107518144421922"
   },
@@ -633,7 +660,7 @@
     "username": ".auribus",
     "userId": "196082549997568001",
     "messageId": "1564092646496931942",
-    "updatedAt": "2026-10-25 19:04",
+    "lastUpdated": "2026-10-25 19:04",
     "lastUpdateBy": "sidepicks",
     "updateMessageId": "1564097428011880480"
   },
@@ -645,7 +672,7 @@
     "username": "Mitty",
     "userId": "206180996415094784",
     "messageId": "1564042950919331900",
-    "updatedAt": "2026-10-25 16:57",
+    "lastUpdated": "2026-10-25 16:57",
     "lastUpdateBy": "sidepicks",
     "updateMessageId": "1564065384032899133"
   },
@@ -658,7 +685,7 @@
     "userId": "431990927989407744",
     "redditUsername": "UndutifulSteal",
     "messageId": "1563945903398850560",
-    "updatedAt": "2026-10-25 10:07",
+    "lastUpdated": "2026-10-25 10:07",
     "lastUpdateBy": "sidepicks",
     "updateMessageId": "1563962217148186779",
     "redditSynched": "Successfully set Reddit flair"
@@ -671,7 +698,7 @@
     "username": "CyberSecPwner",
     "userId": "1186698077806014494",
     "messageId": "1563869389567037612",
-    "updatedAt": "2026-10-25 04:33",
+    "lastUpdated": "2026-10-25 04:33",
     "lastUpdateBy": "alpama",
     "updateMessageId": "1563878110682681358"
   },
@@ -683,7 +710,7 @@
     "username": "Moriarty",
     "userId": "1538198527518183544",
     "messageId": "1563832292361633896",
-    "updatedAt": "2026-10-25 03:57",
+    "lastUpdated": "2026-10-25 03:57",
     "lastUpdateBy": "mgsecure",
     "updateMessageId": "1563869140362465304"
   },
@@ -695,7 +722,7 @@
     "username": "drew_thomson",
     "userId": "1556261285199478838",
     "messageId": "1563618670180171796",
-    "updatedAt": "2026-10-24 13:28",
+    "lastUpdated": "2026-10-24 13:28",
     "lastUpdateBy": "sidepicks",
     "updateMessageId": "1563650458604544061"
   },
@@ -707,7 +734,7 @@
     "username": "KnightFuryXY",
     "userId": "1091967958869348432",
     "messageId": "1563588237799329864",
-    "updatedAt": "2026-10-24 09:22",
+    "lastUpdated": "2026-10-24 09:22",
     "lastUpdateBy": "septclues",
     "updateMessageId": "1563588542754721833"
   },
@@ -719,7 +746,7 @@
     "username": "ff",
     "userId": "574625521623891999",
     "messageId": "1563568993133142058",
-    "updatedAt": "2026-10-24 08:06",
+    "lastUpdated": "2026-10-24 08:06",
     "lastUpdateBy": "mgsecure",
     "updateMessageId": "1563569471539515455"
   },
@@ -732,7 +759,7 @@
     "userId": "671828049540677682",
     "redditUsername": "mgsecure",
     "messageId": "1563377135014641836",
-    "updatedAt": "2026-10-23 19:22",
+    "lastUpdated": "2026-10-23 19:22",
     "lastUpdateBy": "mgsecure",
     "updateMessageId": "1563377185304092693",
     "redditSynched": "Successfully set Reddit flair"
@@ -746,7 +773,7 @@
     "userId": "205051616687030272",
     "redditUsername": "ToiLanh",
     "messageId": "1563320517321302087",
-    "updatedAt": "2026-10-23 20:32",
+    "lastUpdated": "2026-10-23 20:32",
     "lastUpdateBy": "septclues",
     "updateMessageId": "1563394694593912873",
     "redditSynched": "Successfully set Reddit flair"
@@ -760,7 +787,7 @@
     "userId": "194106754768830474",
     "redditUsername": "abat74",
     "messageId": "1563317300235346031",
-    "updatedAt": "2026-10-23 20:31",
+    "lastUpdated": "2026-10-23 20:31",
     "lastUpdateBy": "septclues",
     "updateMessageId": "1563394514155212904",
     "redditSynched": "Successfully set Reddit flair"
@@ -774,7 +801,7 @@
     "userId": "671828049540677682",
     "redditUsername": "msgecure",
     "messageId": "1563286332837601413",
-    "updatedAt": "2026-10-23 13:32",
+    "lastUpdated": "2026-10-23 13:32",
     "lastUpdateBy": "mgsecure",
     "updateMessageId": "1563288980382945291",
     "redditSynched": "Successfully set Reddit flair"
@@ -788,7 +815,7 @@
     "userId": "1544253158019047456",
     "redditUsername": "Potis_Sum",
     "messageId": "1563262766519820362",
-    "updatedAt": "2026-10-23 12:15",
+    "lastUpdated": "2026-10-23 12:15",
     "lastUpdateBy": "sidepicks",
     "updateMessageId": "1563269596604141621",
     "redditSynched": "Successfully set Reddit flair"
@@ -801,7 +828,7 @@
     "username": "FettsWrath",
     "userId": "517486682216595466",
     "messageId": "1563254734276665517",
-    "updatedAt": "2026-10-23 12:07",
+    "lastUpdated": "2026-10-23 12:07",
     "lastUpdateBy": "sidepicks",
     "updateMessageId": "1563267620046635130"
   },
@@ -813,7 +840,7 @@
     "username": "🫟 InkAddict 🫟",
     "userId": "728673686743154752",
     "messageId": "1563212171654070314",
-    "updatedAt": "2026-10-23 12:06",
+    "lastUpdated": "2026-10-23 12:06",
     "lastUpdateBy": "sidepicks",
     "updateMessageId": "1563267341469618290"
   },
@@ -825,7 +852,7 @@
     "username": "mgsecure",
     "userId": "671828049540677682",
     "messageId": "1563069287495893005",
-    "updatedAt": "2026-10-22 23:01",
+    "lastUpdated": "2026-10-22 23:01",
     "lastUpdateBy": "mgsecure",
     "updateMessageId": "1563069714475778159"
   },
@@ -837,7 +864,7 @@
     "username": "Mitty",
     "userId": "206180996415094784",
     "messageId": "1563048544804405289",
-    "updatedAt": "2026-10-23 12:04",
+    "lastUpdated": "2026-10-23 12:04",
     "lastUpdateBy": "sidepicks",
     "updateMessageId": "1563266913100898506"
   },
@@ -849,7 +876,7 @@
     "username": "mgsecure",
     "userId": "671828049540677682",
     "messageId": "1563033668597981215",
-    "updatedAt": "2026-10-22 20:55",
+    "lastUpdated": "2026-10-22 20:55",
     "lastUpdateBy": "mgsecure",
     "updateMessageId": "1563038167337013329"
   },
@@ -861,7 +888,7 @@
     "username": "Klettus",
     "userId": "793885193126543361",
     "messageId": "1563023460949692506",
-    "updatedAt": "2026-10-22 20:00",
+    "lastUpdated": "2026-10-22 20:00",
     "lastUpdateBy": "alpama",
     "updateMessageId": "1563024223226695731"
   },
@@ -873,7 +900,7 @@
     "username": "CyberSecPwner",
     "userId": "1186698077806014494",
     "messageId": "1562946412730384456",
-    "updatedAt": "2026-10-22 15:04",
+    "lastUpdated": "2026-10-22 15:04",
     "lastUpdateBy": "sidepicks",
     "updateMessageId": "1562949692348694559"
   },
@@ -885,7 +912,7 @@
     "username": "mgsecure!",
     "userId": "671828049540677682",
     "messageId": "1562935667082661913",
-    "updatedAt": "2026-10-22 19:10",
+    "lastUpdated": "2026-10-22 19:10",
     "lastUpdateBy": "mgsecure",
     "updateMessageId": "1563011770631589949"
   },
@@ -897,7 +924,7 @@
     "username": "mgsecure",
     "userId": "671828049540677682",
     "messageId": "1562934893640683642",
-    "updatedAt": "2026-10-22 14:08",
+    "lastUpdated": "2026-10-22 14:08",
     "lastUpdateBy": "mgsecure",
     "updateMessageId": "1562935600229646427"
   },
@@ -909,7 +936,7 @@
     "username": "mgsecure",
     "userId": "671828049540677682",
     "messageId": "1562934320182722633",
-    "updatedAt": "2026-10-22 14:05",
+    "lastUpdated": "2026-10-22 14:05",
     "lastUpdateBy": "mgsecure",
     "updateMessageId": "1562935021742850119"
   },
@@ -921,7 +948,7 @@
     "username": "bingobongo4971",
     "userId": "728673686743154752",
     "messageId": "1562932590397231216",
-    "updatedAt": "2026-10-22 15:01",
+    "lastUpdated": "2026-10-22 15:01",
     "lastUpdateBy": "sidepicks",
     "updateMessageId": "1562949155222069314"
   },
@@ -933,7 +960,7 @@
     "username": "bingobongo4971",
     "userId": "728673686743154752",
     "messageId": "1562907672372711445",
-    "updatedAt": "2026-10-22 13:56",
+    "lastUpdated": "2026-10-22 13:56",
     "lastUpdateBy": "mgsecure",
     "updateMessageId": "1562932590397231216"
   },
@@ -946,7 +973,7 @@
     "userId": "275793699101736960",
     "redditUsername": "JaronWW",
     "messageId": "1562881992431898785",
-    "updatedAt": "2026-10-22 15:06",
+    "lastUpdated": "2026-10-22 15:06",
     "lastUpdateBy": "sidepicks",
     "updateMessageId": "1562950290376884355",
     "redditSynched": "Successfully set Reddit flair"
@@ -960,7 +987,7 @@
     "userId": "1508932571743125658",
     "redditUsername": "Twenty-to-one",
     "messageId": "1562636294591619144",
-    "updatedAt": "2026-10-22 14:56",
+    "lastUpdated": "2026-10-22 14:56",
     "lastUpdateBy": "sidepicks",
     "updateMessageId": "1562947741573718077",
     "redditSynched": "Successfully set Reddit flair"
@@ -973,7 +1000,7 @@
     "username": "mgsecure",
     "userId": "671828049540677682",
     "messageId": "1562573553633726505",
-    "updatedAt": "2026-10-21 14:29",
+    "lastUpdated": "2026-10-21 14:29",
     "lastUpdateBy": "mgsecure",
     "updateMessageId": "1562578664074248333"
   },
@@ -986,7 +1013,7 @@
     "userId": "671828049540677682",
     "redditUsername": "mgsecure",
     "messageId": "1562563535727231047",
-    "updatedAt": "2026-10-21 13:31",
+    "lastUpdated": "2026-10-21 13:31",
     "lastUpdateBy": "mgsecure",
     "updateMessageId": "1562563906852094044"
   },
@@ -999,7 +1026,7 @@
     "userId": "671828049540677682",
     "redditUsername": "mgsecure",
     "messageId": "1562563258060112003",
-    "updatedAt": "2026-10-21 13:29",
+    "lastUpdated": "2026-10-21 13:29",
     "lastUpdateBy": "mgsecure",
     "updateMessageId": "1562563535727231047"
   },
@@ -1012,7 +1039,7 @@
     "userId": "671828049540677682",
     "redditUsername": "mgsecure",
     "messageId": "1562562783466364929",
-    "updatedAt": "2026-10-21 13:28",
+    "lastUpdated": "2026-10-21 13:28",
     "lastUpdateBy": "mgsecure",
     "updateMessageId": "1562563258060112003"
   },
@@ -1025,7 +1052,7 @@
     "userId": "671828049540677682",
     "redditUsername": "mgsecure",
     "messageId": "1562561847939440802",
-    "updatedAt": "2026-10-21 13:26",
+    "lastUpdated": "2026-10-21 13:26",
     "lastUpdateBy": "mgsecure",
     "updateMessageId": "1562562783466364929"
   },
@@ -1037,7 +1064,7 @@
     "username": "drew_thomson_",
     "userId": "1556261285199478838",
     "messageId": "1562543685281784013",
-    "updatedAt": "2026-10-22 16:11",
+    "lastUpdated": "2026-10-22 16:11",
     "lastUpdateBy": "sidepicks",
     "updateMessageId": "1562966644681085031"
   },
@@ -1049,7 +1076,7 @@
     "username": "mgsecure",
     "userId": "671828049540677682",
     "messageId": "1562523704171167756",
-    "updatedAt": "2026-10-21 11:01",
+    "lastUpdated": "2026-10-21 11:01",
     "lastUpdateBy": "mgsecure",
     "updateMessageId": "1562526204903292960"
   },
@@ -1061,7 +1088,7 @@
     "username": "mgsecure",
     "userId": "671828049540677682",
     "messageId": "1562522710981087356",
-    "updatedAt": "2026-10-21 10:51",
+    "lastUpdated": "2026-10-21 10:51",
     "lastUpdateBy": "mgsecure",
     "updateMessageId": "1562523704171167756"
   },
@@ -1074,7 +1101,7 @@
     "userId": "275793699101736960",
     "redditUsername": "JaronWW",
     "messageId": "1562478958308622376",
-    "updatedAt": "2026-10-21 10:31",
+    "lastUpdated": "2026-10-21 10:31",
     "lastUpdateBy": "sidepicks",
     "updateMessageId": "1562518565385670729",
     "redditSynched": "Successfully set Reddit flair"
@@ -1087,7 +1114,7 @@
     "username": "mgsecure",
     "userId": "671828049540677682",
     "messageId": "1562474447070568520",
-    "updatedAt": "2026-10-21 11:01",
+    "lastUpdated": "2026-10-21 11:01",
     "lastUpdateBy": "mgsecure",
     "updateMessageId": "1562526165644738584"
   },
@@ -1099,7 +1126,7 @@
     "username": "mgsecure",
     "userId": "671828049540677682",
     "messageId": "1562470363579945082",
-    "updatedAt": "2026-10-21 11:01",
+    "lastUpdated": "2026-10-21 11:01",
     "lastUpdateBy": "mgsecure",
     "updateMessageId": "1562526265263525941"
   },
@@ -1112,7 +1139,7 @@
     "userId": "671828049540677682",
     "redditUsername": "mgsecure",
     "messageId": "1562458450800283742",
-    "updatedAt": "2026-10-21 06:33",
+    "lastUpdated": "2026-10-21 06:33",
     "lastUpdateBy": "mgsecure",
     "updateMessageId": "1562458833274667152",
     "redditSynched": "Successfully set Reddit flair"
@@ -1133,7 +1160,7 @@
     "username": "mgsecure",
     "userId": "671828049540677682",
     "messageId": "1562456848173371555",
-    "updatedAt": "2026-10-21 06:32",
+    "lastUpdated": "2026-10-21 06:32",
     "lastUpdateBy": "mgsecure",
     "updateMessageId": "1562458450800283742"
   },
@@ -1146,7 +1173,7 @@
     "userId": "431990927989407744",
     "redditUsername": "UndutifulSteal",
     "messageId": "1562450535179886624",
-    "updatedAt": "2026-10-21 10:29",
+    "lastUpdated": "2026-10-21 10:29",
     "lastUpdateBy": "sidepicks",
     "updateMessageId": "1562518092372901919",
     "redditSynched": "Successfully set Reddit flair"
@@ -1159,7 +1186,7 @@
     "username": "snowrivver",
     "userId": "275206589709942784",
     "messageId": "1562448634472173689",
-    "updatedAt": "2026-10-21 06:03",
+    "lastUpdated": "2026-10-21 06:03",
     "lastUpdateBy": "mgsecure",
     "updateMessageId": "1562451280083947601"
   },
@@ -1171,7 +1198,7 @@
     "username": "dokus.",
     "userId": "291177701601968128",
     "messageId": "1562382874412449854",
-    "updatedAt": "2026-10-21 06:56",
+    "lastUpdated": "2026-10-21 06:56",
     "lastUpdateBy": "mgsecure",
     "updateMessageId": "1562464596890226880"
   },
@@ -1183,7 +1210,7 @@
     "username": "mgsecure",
     "userId": "671828049540677682",
     "messageId": "1562349551913013280",
-    "updatedAt": "2026-10-21 06:33",
+    "lastUpdated": "2026-10-21 06:33",
     "lastUpdateBy": "mgsecure",
     "updateMessageId": "1562458833274667152"
   },
@@ -1196,7 +1223,7 @@
     "userId": "319020288559939586",
     "redditUsername": "shugz",
     "messageId": "1562334599076380744",
-    "updatedAt": "2026-10-21 10:25",
+    "lastUpdated": "2026-10-21 10:25",
     "lastUpdateBy": "sidepicks",
     "updateMessageId": "1562517120011600003",
     "redditSynched": "Successfully set Reddit flair"
@@ -1209,7 +1236,7 @@
     "username": "mgsecure",
     "userId": "671828049540677682",
     "messageId": "1562330247247167529",
-    "updatedAt": "2026-10-20 23:19",
+    "lastUpdated": "2026-10-20 23:19",
     "lastUpdateBy": "mgsecure",
     "updateMessageId": "1562349551913013280"
   },
@@ -1222,7 +1249,7 @@
     "redditUsername": "wumaduce",
     "userId": "386182391942742016",
     "messageId": "1562276819426611260",
-    "updatedAt": "2026-10-20 18:41",
+    "lastUpdated": "2026-10-20 18:41",
     "lastUpdateBy": "sidepicks",
     "updateMessageId": "1562279557263003701",
     "redditSynched": "Successfully set Reddit flair"
@@ -1235,7 +1262,7 @@
     "username": "mgsecure",
     "userId": "671828049540677682",
     "messageId": "1562275003960004701",
-    "updatedAt": "2026-10-20 21:51",
+    "lastUpdated": "2026-10-20 21:51",
     "lastUpdateBy": "mgsecure",
     "updateMessageId": "1562327371669971065"
   },
@@ -1247,7 +1274,7 @@
     "username": "mgsecure",
     "userId": "671828049540677682",
     "messageId": "1562274544360624173",
-    "updatedAt": "2026-10-20 18:52",
+    "lastUpdated": "2026-10-20 18:52",
     "lastUpdateBy": "mgsecure",
     "updateMessageId": "1562282373343608885"
   },
@@ -1259,7 +1286,7 @@
     "username": "mgsecure",
     "userId": "671828049540677682",
     "messageId": "1562273995695595521",
-    "updatedAt": "2026-10-20 18:52",
+    "lastUpdated": "2026-10-20 18:52",
     "lastUpdateBy": "mgsecure",
     "updateMessageId": "1562282310559080481"
   },
@@ -1271,7 +1298,7 @@
     "username": "mgsecure",
     "userId": "671828049540677682",
     "messageId": "1562269157024604342",
-    "updatedAt": "2026-10-20 18:51",
+    "lastUpdated": "2026-10-20 18:51",
     "lastUpdateBy": "mgsecure",
     "updateMessageId": "1562282253613269053"
   },
@@ -1284,7 +1311,7 @@
     "redditUsername": "mgsecure",
     "userId": "671828049540677682",
     "messageId": "1562202982727032963",
-    "updatedAt": "2026-10-20 13:37",
+    "lastUpdated": "2026-10-20 13:37",
     "lastUpdateBy": "mgsecure",
     "updateMessageId": "1562203248654553129"
   },
@@ -1296,7 +1323,7 @@
     "username": "mgsecure",
     "userId": "671828049540677682",
     "messageId": "1562190259968811099",
-    "updatedAt": "2026-10-20 13:37",
+    "lastUpdated": "2026-10-20 13:37",
     "lastUpdateBy": "mgsecure",
     "updateMessageId": "1562203191053918412"
   },
@@ -1308,7 +1335,7 @@
     "username": "mgsecure",
     "userId": "671828049540677682",
     "messageId": "1562180541912981535",
-    "updatedAt": "2026-10-20 12:44",
+    "lastUpdated": "2026-10-20 12:44",
     "lastUpdateBy": "mgsecure",
     "updateMessageId": "1562189854589059214"
   },
@@ -1320,7 +1347,7 @@
     "username": "louie_logarithm_03985",
     "userId": "1373838367359500348",
     "messageId": "1562155561498320998",
-    "updatedAt": "2026-10-20 10:39",
+    "lastUpdated": "2026-10-20 10:39",
     "lastUpdateBy": "sidepicks",
     "updateMessageId": "1562158215486120057"
   },
@@ -1333,7 +1360,7 @@
     "redditUsername": "MrDeadlocks",
     "userId": "853309846500540426",
     "messageId": "1562100184538939512",
-    "updatedAt": "2026-10-20 18:21",
+    "lastUpdated": "2026-10-20 18:21",
     "lastUpdateBy": "sidepicks",
     "updateMessageId": "1562274450970382367",
     "redditSynched": "Successfully set Reddit flair"
@@ -1346,7 +1373,7 @@
     "username": "",
     "userId": "",
     "redditUsername": "mgsecure",
-    "updatedAt": "2026-10-19 23:28",
+    "lastUpdated": "2026-10-19 23:28",
     "lastUpdateBy": "mgsecure",
     "messageId": "1561989523494150195"
   },
@@ -1359,7 +1386,7 @@
     "redditUsername": "mgsecure",
     "userId": "671828049540677682",
     "messageId": "1561979815169622107",
-    "updatedAt": "2026-10-19 23:28",
+    "lastUpdated": "2026-10-19 23:28",
     "lastUpdateBy": "mgsecure",
     "updateMessageId": "1561989455412199446"
   },
@@ -1371,7 +1398,7 @@
     "username": "mgsecure",
     "userId": "671828049540677682",
     "messageId": "1561945609550958738",
-    "updatedAt": "2026-10-19 20:35",
+    "lastUpdated": "2026-10-19 20:35",
     "lastUpdateBy": "mgsecure",
     "updateMessageId": "1561945943144665129"
   },
@@ -1384,7 +1411,7 @@
     "redditUsername": "Lensofenchantment",
     "userId": "1375856449770750103",
     "messageId": "1561922051898474626",
-    "updatedAt": "2026-10-20 18:19",
+    "lastUpdated": "2026-10-20 18:19",
     "lastUpdateBy": "sidepicks",
     "updateMessageId": "1562274003089887255"
   },
@@ -1396,7 +1423,7 @@
     "username": "wilrad2",
     "userId": "841448528203087912",
     "messageId": "1561901397304418366",
-    "updatedAt": "2026-10-20 18:14",
+    "lastUpdated": "2026-10-20 18:14",
     "lastUpdateBy": "sidepicks",
     "updateMessageId": "1562272709130457122"
   },
@@ -1409,7 +1436,7 @@
     "redditUsername": "spicycheesecurds",
     "userId": "547220359909212169",
     "messageId": "1561883131064229909",
-    "updatedAt": "2026-10-20 18:37",
+    "lastUpdated": "2026-10-20 18:37",
     "lastUpdateBy": "sidepicks",
     "updateMessageId": "1562278703495512166"
   },
@@ -1421,7 +1448,7 @@
     "username": "lockcrazed",
     "userId": "1476001254789615742",
     "messageId": "1561845741540999312",
-    "updatedAt": "2026-10-20 18:12",
+    "lastUpdated": "2026-10-20 18:12",
     "lastUpdateBy": "sidepicks",
     "updateMessageId": "1562272348818645105"
   },
@@ -1433,7 +1460,7 @@
     "username": "shoggothromance",
     "userId": "426772075319918603",
     "messageId": "1561788158377721896",
-    "updatedAt": "2026-10-19 12:09",
+    "lastUpdated": "2026-10-19 12:09",
     "lastUpdateBy": "sidepicks",
     "updateMessageId": "1561818517312110624"
   },
@@ -1446,7 +1473,7 @@
     "redditUsername": "loko37",
     "userId": "1552104963633578007",
     "messageId": "1561783878757392394",
-    "updatedAt": "2026-10-19 11:51",
+    "lastUpdated": "2026-10-19 11:51",
     "lastUpdateBy": "sidepicks",
     "updateMessageId": "1561814018375815289",
     "redditSynched": "Successfully set Reddit flair"
@@ -1470,7 +1497,7 @@
     "redditUsername": "mgsecure",
     "userId": "671828049540677682",
     "messageId": "1561771498337730675",
-    "updatedAt": "2026-10-19 21:00",
+    "lastUpdated": "2026-10-19 21:00",
     "lastUpdateBy": "mgsecure",
     "updateMessageId": "1561952240699183155"
   },
@@ -1483,7 +1510,7 @@
     "redditUsername": "-maniacal_wombat",
     "userId": "671828049540677682",
     "messageId": "1561771157261389887",
-    "updatedAt": "2026-10-19 21:00",
+    "lastUpdated": "2026-10-19 21:00",
     "lastUpdateBy": "mgsecure",
     "updateMessageId": "1561952302988922944"
   },
@@ -1496,7 +1523,7 @@
     "redditUsername": "-maniacal_wombat",
     "userId": "671828049540677682",
     "messageId": "1561769810382291119",
-    "updatedAt": "2026-10-19 21:01",
+    "lastUpdated": "2026-10-19 21:01",
     "lastUpdateBy": "mgsecure",
     "updateMessageId": "1561952364515299399"
   },
@@ -1509,7 +1536,7 @@
     "redditUsername": "-maniacal_wombat",
     "userId": "671828049540677682",
     "messageId": "1561768901241602101",
-    "updatedAt": "2026-10-19 21:01",
+    "lastUpdated": "2026-10-19 21:01",
     "lastUpdateBy": "mgsecure",
     "updateMessageId": "1561952418353385524"
   },
@@ -1522,7 +1549,7 @@
     "redditUsername": "mummmoo",
     "userId": "333867599928492032",
     "messageId": "1561768303687376936",
-    "updatedAt": "2026-10-19 10:39",
+    "lastUpdated": "2026-10-19 10:39",
     "lastUpdateBy": "sidepicks",
     "updateMessageId": "1561795895551459480",
     "redditSynched": "Successfully set Reddit flair"
@@ -1546,7 +1573,7 @@
     "redditUsername": "Lensofenchantment",
     "userId": "1375856449770750103",
     "messageId": "1561761726884487180",
-    "updatedAt": "2026-10-19 11:47",
+    "lastUpdated": "2026-10-19 11:47",
     "lastUpdateBy": "sidepicks",
     "updateMessageId": "1561812965320032378",
     "redditSynched": "Successfully set Reddit flair"
@@ -1569,7 +1596,7 @@
     "username": "mgsecure",
     "userId": "671828049540677682",
     "messageId": "1561753935184797717",
-    "updatedAt": "2026-10-19 08:31",
+    "lastUpdated": "2026-10-19 08:31",
     "lastUpdateBy": "mgsecure",
     "updateMessageId": "1561763611515293727"
   },
@@ -1581,7 +1608,7 @@
     "username": "maniacalwombat",
     "userId": "211692704634109953",
     "messageId": "1561749551852036126",
-    "updatedAt": "2026-10-19 07:57",
+    "lastUpdated": "2026-10-19 07:57",
     "lastUpdateBy": "sidepicks",
     "updateMessageId": "1561755281980002367"
   },
@@ -1594,7 +1621,7 @@
     "redditUsername": "TheBlacktopGambler",
     "userId": "1553556143668727848",
     "messageId": "1561721073295163472",
-    "updatedAt": "2026-10-19 07:49",
+    "lastUpdated": "2026-10-19 07:49",
     "lastUpdateBy": "sidepicks",
     "updateMessageId": "1561753132151738462",
     "redditSynched": "Successfully set Reddit flair"
@@ -1607,7 +1634,7 @@
     "username": "otherdave",
     "userId": "699420298788864041",
     "messageId": "1561699097902325773",
-    "updatedAt": "2026-10-19 07:12",
+    "lastUpdated": "2026-10-19 07:12",
     "lastUpdateBy": "sidepicks",
     "updateMessageId": "1561743718925734004"
   },
@@ -1619,7 +1646,7 @@
     "username": "glitchcowboy.",
     "userId": "989117335501676624",
     "messageId": "1561692665433821204",
-    "updatedAt": "2026-10-19 06:56",
+    "lastUpdated": "2026-10-19 06:56",
     "lastUpdateBy": "sidepicks",
     "updateMessageId": "1561739725574766635"
   },
@@ -1631,7 +1658,7 @@
     "username": "louie_logarithm_03985",
     "userId": "1373838367359500348",
     "messageId": "1561672318026256404",
-    "updatedAt": "2026-10-19 07:50",
+    "lastUpdated": "2026-10-19 07:50",
     "lastUpdateBy": "sidepicks",
     "updateMessageId": "1561753407939936437"
   },
@@ -1643,7 +1670,7 @@
     "username": "maple_syrup_birb",
     "userId": "1405472490112684215",
     "messageId": "1561635873722859590",
-    "updatedAt": "2026-10-19 06:01",
+    "lastUpdated": "2026-10-19 06:01",
     "lastUpdateBy": "sidepicks",
     "updateMessageId": "1561725850615943210"
   },
@@ -1656,7 +1683,7 @@
     "redditUsername": "mummmoo",
     "userId": "333867599928492032",
     "messageId": "1561633680584351784",
-    "updatedAt": "2026-10-19 07:55",
+    "lastUpdated": "2026-10-19 07:55",
     "lastUpdateBy": "sidepicks",
     "updateMessageId": "1561754623247654964"
   },
@@ -1668,7 +1695,7 @@
     "username": "mgsecure",
     "userId": "671828049540677682",
     "messageId": "1561626867268845661",
-    "updatedAt": "2026-10-19 10:06",
+    "lastUpdated": "2026-10-19 10:06",
     "lastUpdateBy": "mgsecure",
     "updateMessageId": "1561787651265265838"
   },
@@ -1680,7 +1707,7 @@
     "username": "deynemic",
     "userId": "259889978467680256",
     "messageId": "1561621463763656755",
-    "updatedAt": "2026-10-19 21:27",
+    "lastUpdated": "2026-10-19 21:27",
     "lastUpdateBy": "deynemic",
     "updateMessageId": "1561959064492183583"
   },
@@ -1692,7 +1719,7 @@
     "username": "crollama",
     "userId": "438047281422401536",
     "messageId": "1561615939085140049",
-    "updatedAt": "2026-10-18 23:20",
+    "lastUpdated": "2026-10-18 23:20",
     "lastUpdateBy": "deynemic",
     "updateMessageId": "1561625090880315496"
   },
@@ -1704,6 +1731,6 @@
     "username": "deynemic",
     "userId": "259889978467680256",
     "messageId": "1561620541717217291",
-    "updatedAt": "2026-10-18 23:02"
+    "lastUpdated": "2026-10-18 23:02"
   }
 ]

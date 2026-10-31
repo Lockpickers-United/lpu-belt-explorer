@@ -15,6 +15,11 @@ export function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1)
 }
 
+export function truncate(string, maxLength = 1024, indicator = '...') {
+    if (string.length <= maxLength) return string
+    return string.substring(0, maxLength - indicator.length) + indicator
+}
+
 export function isValidRegex(pattern) {
     try {
         new RegExp(pattern)
