@@ -263,8 +263,8 @@ Green,Generic/Unknown,"4 Lever Curtained lock",,Lever,Curtain,,0e97c099
 Green,Generic/Unknown,"4 Lever Uncurtained lock",,Lever,Uncurtained,,d46ac711
 Green,GOAL,P,"Old pinning",Pin-tumbler,,"6 pins with spool drivers and overmilling. This model does not have the plug centering bearing",ed71438c
 Green,greenteQ,Standard,6-pin,Pin-tumbler,,,c2125761
-Green,GTV,"5 Pin",,Pin-tumbler,,"Old pinning",04bd0770
-Green,"GTV,EMR","APS,APS",,Pin-tumbler,,,07151e91
+Green,"GTV,EMR","5 Pin,5 Pin",,Pin-tumbler,,"Old pinning",04bd0770
+Green,GTV,APS,,Pin-tumbler,,,07151e91
 Green,GTV,Dimple,6-pin,Dimple,,,156734db
 Green,,"Guett Dern",,Pin-tumbler,,,3316c7d0
 Green,IKON,"K2 (with IKON Core)",,Pin-tumbler,,,648a3742
@@ -923,7 +923,6 @@ Unranked,"D'Alembert Métal","Serie S","9 pins, 4 sliders","Dimple,Slider","Unsp
 Unranked,DoubleLock,PadlockX/FalconX,,Dimple,,,30827d9d
 Unranked,DoubleLock,Redhawk,,Slider,,,ea00b1f8
 Unranked,,"Duro Lock",,Slider,,,12cfd459
-Unranked,Emhart,"Cam Lock","5 pin",Pin-tumbler,,,c7b7c933
 Unranked,Emhart,LFIC,,Pin-tumbler,,,2693d016
 Unranked,,Enclave,"Andrew Magill",Pin-tumbler,,,25809d7e
 Unranked,EVVA,"Akura 44","no magnet",Dimple,,,327ad74d

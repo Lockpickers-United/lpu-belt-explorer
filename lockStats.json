@@ -7,11 +7,11 @@
         "label": "Ranked"
       },
       {
-        "value": 1125,
+        "value": 1124,
         "label": "All"
       },
       {
-        "value": 263,
+        "value": 262,
         "label": "Unranked"
       }
     ]
@@ -20,68 +20,68 @@
     {
       "belt": "White",
       "count": 18,
-      "value": 0.016,
+      "value": 0.01601423487544484,
       "id": "White"
     },
     {
       "belt": "Yellow",
       "count": 72,
-      "value": 0.064,
+      "value": 0.06405693950177936,
       "id": "Yellow"
     },
     {
       "belt": "Orange",
       "count": 84,
-      "value": 0.07466666666666667,
+      "value": 0.07473309608540925,
       "id": "Orange"
     },
     {
       "belt": "Green",
       "count": 160,
-      "value": 0.14222222222222222,
+      "value": 0.1423487544483986,
       "id": "Green"
     },
     {
       "belt": "Blue",
       "count": 144,
-      "value": 0.128,
+      "value": 0.12811387900355872,
       "id": "Blue"
     },
     {
       "belt": "Purple",
       "count": 124,
-      "value": 0.11022222222222222,
+      "value": 0.1103202846975089,
       "id": "Purple"
     },
     {
       "belt": "Brown",
       "count": 85,
-      "value": 0.07555555555555556,
+      "value": 0.07562277580071175,
       "id": "Brown"
     },
     {
       "belt": "Red",
       "count": 74,
-      "value": 0.06577777777777778,
+      "value": 0.06583629893238434,
       "id": "Red"
     },
     {
       "belt": "Black",
       "count": 101,
-      "value": 0.08977777777777778,
+      "value": 0.0898576512455516,
       "id": "Black"
     },
     {
       "belt": "Unranked",
-      "count": 263,
-      "value": 0.23377777777777778,
+      "count": 262,
+      "value": 0.23309608540925267,
       "id": "Unranked"
     }
   ],
   "lockingMechanisms": [
     {
       "label": "Pin-tumbler",
-      "value": 423,
+      "value": 422,
       "id": "pin-tumbler"
     },
     {
@@ -492,7 +492,7 @@
     "Unranked": [
       {
         "label": "Pin-tumbler",
-        "value": 63,
+        "value": 62,
         "id": "pin-tumbler"
       },
       {
@@ -563,7 +563,7 @@
       },
       {
         "segment": "All locks",
-        "count": 1125,
+        "count": 1124,
         "media": 919,
         "coverage": "81%"
       }
@@ -9731,7 +9731,7 @@
         {
           "label": "Pin-tumbler",
           "id": "Pin-tumbler",
-          "count": 2,
+          "count": 1,
           "value": 1
         }
       ]
@@ -26461,6 +26461,6 @@
   },
   "metadata": {
     "source": "import-data",
-    "updatedDateTime": "2026-11-01 15:15"
+    "updatedDateTime": "2026-11-01 22:03"
   }
 }

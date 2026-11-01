@@ -962,9 +962,9 @@
     ],
     "name": "ABUS 24/70 Diskus",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 89,
+    "views": 90,
     "lastUpdated": "2025-03-19T15:44:57.279Z",
-    "popularityIndex": 89,
+    "popularityIndex": 90,
     "scorecardCount": 16
   },
   "81338028": {
@@ -2850,9 +2850,9 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/52729478224_6d05e7a18a_o.jpg"
       }
     ],
-    "views": 76,
+    "views": 77,
     "lastUpdated": "2025-03-19T15:44:57.277Z",
-    "popularityIndex": 76,
+    "popularityIndex": 77,
     "scorecardCount": 12
   },
   "abdf3acd": {
@@ -7961,10 +7961,10 @@
     ],
     "name": "Master Lock 150, 160, 9150 EURD",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 694,
+    "views": 695,
     "lastUpdated": "2025-03-19T15:44:57.280Z",
     "modelNum": "150",
-    "popularityIndex": 694,
+    "popularityIndex": 695,
     "scorecardCount": 89,
     "currentBeltDate": "2026-08-30T12:00:00.000Z"
   },
@@ -14404,10 +14404,10 @@
     ],
     "name": "Master Lock 410 LOTO (Lockout Tagout)",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 880,
+    "views": 881,
     "lastUpdated": "2025-03-19T15:44:57.286Z",
     "modelNum": "410",
-    "popularityIndex": 880,
+    "popularityIndex": 881,
     "scorecardCount": 107
   },
   "366d5f50": {
@@ -43686,12 +43686,12 @@
     ],
     "name": "Fichet F3D",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 29,
+    "views": 30,
     "lastUpdated": "2025-03-19T01:20:51.393Z",
     "relatedIds": [
       "c0af45f4"
     ],
-    "popularityIndex": 29,
+    "popularityIndex": 30,
     "scorecardCount": 10
   },
   "c0af45f4": {
@@ -43793,12 +43793,12 @@
     ],
     "name": "Fichet F3D",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 32,
+    "views": 33,
     "lastUpdated": "2025-03-19T15:44:57.313Z",
     "relatedIds": [
       "33056c0f"
     ],
-    "popularityIndex": 32,
+    "popularityIndex": 33,
     "scorecardCount": 12
   },
   "f048719a": {
@@ -49843,7 +49843,7 @@
     ],
     "name": "Fichet-Bauche Monopole",
     "dateAdded": "2023-03-02T19:05:25.000Z",
-    "views": 23,
+    "views": 24,
     "lastUpdated": "2025-03-19T01:20:51.381Z",
     "media": [
       {
@@ -49895,7 +49895,7 @@
     "lockingMechanisms": [
       "Pump/push"
     ],
-    "popularityIndex": 23,
+    "popularityIndex": 24,
     "scorecardCount": 8
   },
   "a57c1e9b": {
@@ -53725,7 +53725,7 @@
     "lastUpdated": "2025-03-19T15:44:57.294Z",
     "name": "Yale KM 1 star Superior",
     "dateAdded": "2023-05-05T09:46:31.000Z",
-    "views": 91,
+    "views": 92,
     "media": [
       {
         "title": "By: LockPickingFisherman",
@@ -53756,7 +53756,7 @@
       }
     ],
     "notes": "spooled key pins with 6 gege style drivers",
-    "popularityIndex": 91,
+    "popularityIndex": 92,
     "scorecardCount": 20
   },
   "5c5a2309": {
@@ -61036,17 +61036,13 @@
       {
         "make": "GTV",
         "model": "APS"
-      },
-      {
-        "make": "EMR",
-        "model": "APS"
       }
     ],
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
     "lastUpdated": "2025-01-09T16:22:28.779Z",
-    "name": "GTV APS / EMR APS",
+    "name": "GTV APS",
     "dateAdded": "2025-01-09T16:22:30.000Z",
     "popularityIndex": 11,
     "scorecardCount": 3,
@@ -63202,13 +63198,17 @@
       {
         "make": "GTV",
         "model": "5 Pin"
+      },
+      {
+        "make": "EMR",
+        "model": "5 Pin"
       }
     ],
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
     "notes": "Old pinning",
-    "name": "GTV 5 Pin",
+    "name": "GTV 5 Pin / EMR 5 Pin",
     "dateAdded": "2026-08-06T03:59:39.967Z",
     "popularityIndex": 2,
     "views": 2
@@ -64126,8 +64126,8 @@
     ],
     "name": "ABUS 54TI/40 Titalium, 726TI/40 Titalium",
     "dateAdded": "2026-09-21T22:00:34.417Z",
-    "popularityIndex": 1,
-    "views": 1
+    "popularityIndex": 2,
+    "views": 2
   },
   "f97ad477": {
     "id": "f97ad477",
@@ -64828,7 +64828,8 @@
     "currentBeltDate": "2026-10-12T23:33:54.099Z",
     "dateAdded": "2026-10-12T23:33:54.099Z",
     "popularityIndex": 1,
-    "views": 1
+    "views": 1,
+    "dateDeleted": "2026-11-01T22:03:19.668Z"
   },
   "2693d016": {
     "id": "2693d016",

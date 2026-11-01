@@ -1706,9 +1706,9 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "popularityIndex": 76,
+    "popularityIndex": 77,
     "scorecardCount": 12,
-    "views": 76,
+    "views": 77,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -5285,9 +5285,9 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "popularityIndex": 89,
+    "popularityIndex": 90,
     "scorecardCount": 16,
-    "views": 89,
+    "views": 90,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -8574,9 +8574,9 @@
       "Latest Changelog"
     ],
     "modelNum": "150",
-    "popularityIndex": 694,
+    "popularityIndex": 695,
     "scorecardCount": 89,
-    "views": 694,
+    "views": 695,
     "currentBeltDate": "2026-08-30T12:00:00.000Z",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
@@ -16847,6 +16847,10 @@
       {
         "make": "GTV",
         "model": "5 Pin"
+      },
+      {
+        "make": "EMR",
+        "model": "5 Pin"
       }
     ],
     "lockingMechanisms": [
@@ -16878,7 +16882,7 @@
         "imageTitle": "GTV 5 Pin"
       }
     ],
-    "lastUpdated": "2026-08-07T17:09:23.729Z"
+    "lastUpdated": "2026-11-01T22:03:20.082Z"
   },
   {
     "id": "07151e91",
@@ -16886,10 +16890,6 @@
     "makeModels": [
       {
         "make": "GTV",
-        "model": "APS"
-      },
-      {
-        "make": "EMR",
         "model": "APS"
       }
     ],
@@ -16962,7 +16962,7 @@
         "imageTitle": "GTV APS"
       }
     ],
-    "lastUpdated": "2026-03-01T11:11:26.946Z"
+    "lastUpdated": "2026-11-01T22:03:20.082Z"
   },
   {
     "id": "156734db",
@@ -18161,9 +18161,9 @@
       "Unguttable"
     ],
     "modelNum": "410",
-    "popularityIndex": 880,
+    "popularityIndex": 881,
     "scorecardCount": 107,
-    "views": 880,
+    "views": 881,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -31655,9 +31655,9 @@
       "Pin-tumbler"
     ],
     "notes": "spooled key pins with 6 gege style drivers",
-    "popularityIndex": 91,
+    "popularityIndex": 92,
     "scorecardCount": 20,
-    "views": 91,
+    "views": 92,
     "dateAdded": "2023-05-05T09:46:31.000Z",
     "media": [
       {
@@ -44927,9 +44927,9 @@
     "lockingMechanisms": [
       "Pump/push"
     ],
-    "popularityIndex": 23,
+    "popularityIndex": 24,
     "scorecardCount": 8,
-    "views": 23,
+    "views": 24,
     "dateAdded": "2023-03-02T19:05:25.000Z",
     "media": [
       {
@@ -59320,9 +59320,9 @@
     "lockingMechanisms": [
       "Pump/push"
     ],
-    "popularityIndex": 29,
+    "popularityIndex": 30,
     "scorecardCount": 10,
-    "views": 29,
+    "views": 30,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -59426,9 +59426,9 @@
     "lockingMechanisms": [
       "Pump/push"
     ],
-    "popularityIndex": 32,
+    "popularityIndex": 33,
     "scorecardCount": 12,
-    "views": 32,
+    "views": 33,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -65200,8 +65200,8 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "popularityIndex": 1,
-    "views": 1,
+    "popularityIndex": 2,
+    "views": 2,
     "dateAdded": "2026-09-21T22:00:34.417Z",
     "media": [
       {
@@ -67342,25 +67342,6 @@
     "lockingMechanisms": [
       "Slider"
     ],
-    "currentBeltDate": "2026-10-12T23:33:54.099Z",
-    "dateAdded": "2026-10-12T23:33:54.099Z",
-    "lastUpdated": "2026-10-12T23:33:54.536Z"
-  },
-  {
-    "id": "c7b7c933",
-    "belt": "Unranked",
-    "makeModels": [
-      {
-        "make": "Emhart",
-        "model": "Cam Lock"
-      }
-    ],
-    "version": "5 pin",
-    "lockingMechanisms": [
-      "Pin-tumbler"
-    ],
-    "popularityIndex": 1,
-    "views": 1,
     "currentBeltDate": "2026-10-12T23:33:54.099Z",
     "dateAdded": "2026-10-12T23:33:54.099Z",
     "lastUpdated": "2026-10-12T23:33:54.536Z"

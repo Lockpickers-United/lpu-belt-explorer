@@ -3351,6 +3351,26 @@
     "dateDeleted": "2026-10-12T23:33:54.112Z"
   },
   {
+    "id": "c7b7c933",
+    "belt": "Unranked",
+    "makeModels": [
+      {
+        "make": "Emhart",
+        "model": "Cam Lock"
+      }
+    ],
+    "version": "5 pin",
+    "lockingMechanisms": [
+      "Pin-tumbler"
+    ],
+    "name": "Emhart Cam Lock",
+    "currentBeltDate": "2026-10-12T23:33:54.099Z",
+    "dateAdded": "2026-10-12T23:33:54.099Z",
+    "popularityIndex": 1,
+    "views": 1,
+    "dateDeleted": "2026-11-01T22:03:19.668Z"
+  },
+  {
     "id": "d4f98a26",
     "belt": "Unranked",
     "makeModels": [
