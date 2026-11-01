@@ -14,6 +14,7 @@ import LoadingDisplay from '../../misc/LoadingDisplay.jsx'
 import ErrorMessage from '../../misc/ErrorMessage.jsx'
 import DBContext from '../../app/DBContext.jsx'
 import {Link} from 'react-router-dom'
+import ExportButtonGeneric from '../../misc/ExportButtonGeneric.jsx'
 
 export default function RequestAdmin() {
     usePageTitle('Belt Request Admin')
@@ -77,6 +78,8 @@ export default function RequestAdmin() {
                     onExpand={setEntryExpanded}
                 />
             )}
+
+            <ExportButtonGeneric exportData={{data: visibleEntries}}/>
 
         </React.Fragment>
     )

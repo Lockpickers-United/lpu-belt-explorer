@@ -2,8 +2,7 @@ import fs from 'fs'
 import {initializeApp, cert} from 'firebase-admin/app'
 import {getFirestore} from 'firebase-admin/firestore'
 
-import loadRecords from './loadRecords.json' with {type: 'json'}
-import dayjs from 'dayjs'
+import loadRecords from './firebaseExport.json' with {type: 'json'}
 
 const COLLECTION_NAME = 'belt-requests'
 const DEV = true
@@ -19,23 +18,31 @@ const app = initializeApp({
 // const db = getFirestore(app, 'lpubelts-dev')
 
 const db = DEV ? getFirestore(app, 'lpubelts-dev') : getFirestore(app)
+await loadRecordsToFirestore()
 
-console.log(`${loadRecords.length} records to load\n`)
+async function exportRecordsFromFirestore() {
+    db.collection(COLLECTION_NAME).get().then((querySnapshot) => {
+        const records = []
+        querySnapshot.forEach((doc) => {
+            records.push(doc.data())
+        })
+        console.log(`${records.length} records exported`)
+        fs.writeFileSync('./firebaseExport.json', JSON.stringify(records)+'\n')
 
-const _testRecord = {
-    id: '00011122',
-    name: 'John Doe',
-    email: 'john.doe@example.com',
-    belt: 'White',
-    date: dayjs().format('YYYY-MM-DD')
+    })
 }
 
-if (!DRY_RUN) {
-    loadRecords.forEach(async (record) => {
-        await db.collection(COLLECTION_NAME).doc(record.id).set(record)
-    })
-    console.log(`${loadRecords.length} records loaded`)
 
-} else {
-    console.log('DRY_RUN: Skipping write to Firestore')
+async function loadRecordsToFirestore() {
+    console.log(`${loadRecords.length} records to load\n`)
+
+    if (!DRY_RUN) {
+        loadRecords.forEach(async (record) => {
+            await db.collection(COLLECTION_NAME).doc(record.id).set(record)
+        })
+        console.log(`${loadRecords.length} records loaded`)
+
+    } else {
+        console.log('DRY_RUN: Skipping write to Firestore')
+    }
 }

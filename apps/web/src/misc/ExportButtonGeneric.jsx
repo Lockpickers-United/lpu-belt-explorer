@@ -37,9 +37,6 @@ export default function ExportButtonGeneric({exportData, clipboardExtra}) {
         enqueueSnackbar(`Export downloaded as ${filename}.json`)
     }, [data, filename, handleClose])
 
-
-
-
     const handleExportClipboard = useCallback(() => {
         const exportHeaders = clipboardHeaders || csvHeaders
         const headerRow = exportHeaders?.reduce((acc, col) => {
