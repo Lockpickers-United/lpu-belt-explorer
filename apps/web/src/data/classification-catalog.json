@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": "sha256:b6f85756b45d629faace680ff45bd4058e5461c9396b40ad64595561e1f5e5f8",
-  "generatedAt": "2026-11-01T15:14:58.152Z",
+  "catalogVersion": "sha256:93c15104c4bb2dec5abe42a6c079d940840b2fa3fc6dd358f3a6a6271bdd2c85",
+  "generatedAt": "2026-11-01T22:03:20.115Z",
   "entries": [
     {
       "id": "0082fa4c",
@@ -110,7 +110,7 @@
     },
     {
       "id": "04bd0770",
-      "name": "GTV 5 Pin",
+      "name": "GTV 5 Pin / EMR 5 Pin",
       "version": null,
       "belt": "Green",
       "currentBeltDate": null
@@ -194,7 +194,7 @@
     },
     {
       "id": "07151e91",
-      "name": "GTV APS / EMR APS",
+      "name": "GTV APS",
       "version": null,
       "belt": "Green",
       "currentBeltDate": null
@@ -6148,13 +6148,6 @@
       "version": "12 opposing pins",
       "belt": "Unranked",
       "currentBeltDate": "2026-10-12T23:33:54.100Z"
-    },
-    {
-      "id": "c7b7c933",
-      "name": "Emhart Cam Lock",
-      "version": "5 pin",
-      "belt": "Unranked",
-      "currentBeltDate": "2026-10-12T23:33:54.099Z"
     },
     {
       "id": "c7d2eca1",
