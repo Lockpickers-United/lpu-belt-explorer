@@ -5,7 +5,7 @@ import {enqueueSnackbar} from 'notistack'
 import Tooltip from '@mui/material/Tooltip'
 import DBContext from '../app/DBContext.jsx'
 
-function CopyEntryTextButton({entry}) {
+function CopyEntryIdButton({entry}) {
     const {isBlackBelt} = useContext(DBContext)
 
     const handleClick = useCallback(async () => {
@@ -22,4 +22,4 @@ function CopyEntryTextButton({entry}) {
     )
 }
 
-export default CopyEntryTextButton
+export default CopyEntryIdButton

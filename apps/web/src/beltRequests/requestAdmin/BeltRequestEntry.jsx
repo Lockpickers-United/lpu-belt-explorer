@@ -1,7 +1,6 @@
-import React, {useCallback, useEffect, useRef, useState} from 'react'
+import React, {useCallback, useContext, useEffect, useRef, useState} from 'react'
 import BeltStripe from '../../entries/BeltStripe'
-import {Collapse, useTheme} from '@mui/material'
-import {useNavigate} from 'react-router-dom'
+import {Collapse} from '@mui/material'
 import IconButton from '@mui/material/IconButton'
 import OpenInNewIcon from '@mui/icons-material/OpenInNew'
 import dayjs from 'dayjs'
@@ -21,12 +20,20 @@ import queryString from 'query-string'
 import MenuItem from '@mui/material/MenuItem'
 import Menu from '@mui/material/Menu'
 import ListItemText from '@mui/material/ListItemText'
+import DBContext from './RequestAdminDBContext.jsx'
+import LoadingDisplay from '../../misc/LoadingDisplay.jsx'
+import CopyEntryIdButton from '../../entries/CopyEntryIdButton.jsx'
+import ApproveDenyButton from './ApproveDenyButton.jsx'
 
 function BeltRequestEntry({entry, expanded, onExpand}) {
+    const {
+        profile,
+        handleUpdate
+    } = useContext(DBContext)
     const {isMobile} = useWindowSize()
-    const theme = useTheme()
-    const navigate = useNavigate()
+    const [showDetails, setShowDetails] = useState(false)
     const [scrolled, setScrolled] = useState(false)
+    
     const [anchorEl, setAnchorEl] = useState(null)
     const open = Boolean(anchorEl)
     const handleOpen = useCallback(event => setAnchorEl(event.currentTarget), [])
@@ -35,30 +42,46 @@ function BeltRequestEntry({entry, expanded, onExpand}) {
 
     const {
         status,
+        displayStatus,
         dateAdded,
         id,
         belt,
         username,
         source,
-        platform,
+        _platform,
         messageContent,
-        syncUsername,
-        syncTo,
-        userId,
+        _reply,
+        _syncUsername,
+        _syncTo,
+        _userId,
         messageId,
-        requestId,
-        updatedAt,
-        lastUpdateBy,
-        updateMessageId,
-        reviewerName,
-        reviewerId,
-        fuzzy
+        _requestId,
+        _updatedAt,
+        _lastUpdateBy,
+        _updateMessageId,
+        checkoutBy,
+        _reviewerId,
+        _fuzzy
     } = entry
 
-    const [showDetails, setShowDetails] = useState(false)
+    const [processing, setProcessing] = useState(undefined)
 
-    const {notes, evidence, syncMatch} = parseBeltRequest(messageContent)
+    const handleClick = useCallback(async (request, action, event, force = false) => {
+        event && event.stopPropagation()
+        event && event.preventDefault()
+        if (processing) return
+        setProcessing(action)
+        handleClose()
+        await handleUpdate(request, action, force)
+        setTimeout(() => setProcessing(undefined), 100)
+    }, [handleClose, handleUpdate, processing])
 
+    const handleReply = useCallback(async (action, replyText, event) => {
+        const requestReply = {...entry, reply: replyText}
+        await handleClick(requestReply, action, event)
+    }, [entry, handleClick])
+
+    const {evidence} = parseBeltRequest(messageContent)
     const evidenceMd = evidence
         ? evidence.replaceAll(/(https*:\/\/)(\S+)/g, (_match, p1, p2) => {
             return `[${truncate(p2, isMobile ? 35 : 55)}](${p1 + p2})`
@@ -71,11 +94,11 @@ function BeltRequestEntry({entry, expanded, onExpand}) {
             Discord: `https://discord.com/channels/140129091796992000/282173282546089985/${messageId}`,
             lock: `https://lpubelts.com/#/locks?tab=search&search=${id}&id=${id}}`
         }
-        const newWindow = window.open(links[source], '_blank', 'noopener,noreferrer')
-        if (newWindow) newWindow.opener = null
+        window.open(links[source], '_blank', 'noopener,noreferrer')
     }, [id, messageId, source])
 
-    const handleChange = useCallback((_, isExpanded) => {
+    const toggleExpand = useCallback((_, isExpanded) => {
+        setShowDetails(false)
         onExpand && onExpand(isExpanded ? entry.id : false)
     }, [entry, onExpand])
 
@@ -100,9 +123,7 @@ function BeltRequestEntry({entry, expanded, onExpand}) {
         }
     }, [expanded, entry, scrolled])
 
-    const doNothing = useCallback(() => {
-    }, [])
-
+    const myCheckout = status === 'checked-out' && checkoutBy === profile.displayName
     const handleShowDetails = useCallback(() => {
         setShowDetails(prev => !prev)
     }, [])
@@ -123,15 +144,12 @@ function BeltRequestEntry({entry, expanded, onExpand}) {
 
     const style = {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto', backgroundColor: '#222'}
     return (
-        <Accordion expanded={expanded} onChange={handleChange} style={style} ref={ref}
-                   slots={{heading: 'div'}} role='listitem' aria-label={username}
-                   sx={{
-                       '&.Mui-expanded': {marginTop: '6px', marginBottom: '6px'}
-                   }}>
+        <Accordion expanded={expanded} onChange={toggleExpand} style={style} ref={ref} disableGutters
+                   slots={{heading: 'div'}} role='listitem' aria-label={username}>
             <AccordionSummary component='div'
                               nativeButton={false}
                               expandIcon={<ExpandMoreIcon/>}
-                              sx={{'.MuiAccordionSummary-content': {alignItems: 'center'}}}>
+                              sx={{boxShadow: 3, '.MuiAccordionSummary-content': {alignItems: 'center'}}}>
                 <BeltStripe value={belt}/>
                 <div style={{
                     margin: '0px 16px',
@@ -143,14 +161,11 @@ function BeltRequestEntry({entry, expanded, onExpand}) {
                     flexWrap: 'wrap'
                 }}>
                     <div style={{flexGrow: 1}}>
-                        <div style={{fontSize: '1.2rem', fontWeight: 500}}>
-                            {username}
+                        <div style={{fontSize: '1.2rem', fontWeight: 700, marginBottom: 2}}>
+                            {username} <span style={{fontWeight: 400}}> • {belt}</span>
                         </div>
-                        <div style={{fontSize: '1.1rem', fontWeight: 500, color: '#ddd'}}>
-                            {belt}
-                        </div>
-                        <div style={{fontSize: '0.9rem', fontWeight: 400, color: '#ccc'}}>
-                            {dayjs(dateAdded).format('YYYY-MM-DD')} ({source})
+                        <div style={{fontSize: '0.9rem', fontWeight: 400, color: '#ccc', marginBottom: 4}}>
+                            {dayjs(dateAdded).format('YYYY-MM-DD')} ({source} - {id})
                         </div>
                         <div style={{fontSize: '0.9rem', fontWeight: 400, color: '#ddd'}}>
                             <ReactMarkdown rehypePlugins={[[rehypeExternalLinks, {target: '_blank'}]]}
@@ -161,30 +176,42 @@ function BeltRequestEntry({entry, expanded, onExpand}) {
                             </ReactMarkdown>
                         </div>
                     </div>
-                    {status === 'Open' &&
-                        <div style={{display: 'flex', justifyContent: 'flex-end', margin: '8px 0px'}}>
-                            <Button variant='text'
-                                    style={{color: '#20b924', flexGrow: 0, marginRight: 8}}>Approve</Button>
-                            <Button variant='text'
-                                    style={{color: '#e16936', flexGrow: 0}}>Deny</Button>
-                        </div>
-                    }
-                    {status !== 'Open' &&
-                        <div style={{
-                            alignItems: 'center',
-                            display: 'flex',
-                            justifyContent: 'center',
-                            margin: '8px 0px'
-                        }}>
-                            <div style={{
-                                fontSize: '0.9rem',
-                                fontWeight: 500,
-                                color: status !== 'Checked Out' ? '#ddd' : '#4d7ce3'
-                            }}>
-                                {status}{reviewerName && ` by ${reviewerName}`}
+
+                    <div style={{flexGrow: 1, alignItems: 'center', display: 'flex', justifyContent: 'flex-end'}}>
+
+                        {(status === 'open' || myCheckout) &&
+                            <div style={{display: 'flex', justifyContent: 'flex-end', margin: '8px 0px'}}>
+
+                                <ApproveDenyButton entry={entry} action={'approve'} handleReply={handleReply} processing={processing}/>
+                                <ApproveDenyButton entry={entry} action={'deny'} handleReply={handleReply} processing={processing}/>
+
+                                {myCheckout &&
+                                    <Button onClick={(e) => handleClick(entry, 'checkin', e)}
+                                            disabled={processing}
+                                            variant='text' color='info' style={{flexGrow: 0}}>
+                                        {processing !== 'checkin' ? 'Check In' :
+                                            <LoadingDisplay size={20} white={true}/>}
+                                    </Button>
+                                }
                             </div>
-                        </div>
-                    }
+                        }
+                        {status !== 'open' && !myCheckout &&
+                            <div style={{
+                                alignItems: 'center',
+                                display: 'flex',
+                                justifyContent: 'flex-end',
+                                margin: '8px 0px'
+                            }}>
+                                <div style={{
+                                    fontSize: '0.9rem',
+                                    fontWeight: 500,
+                                    color: status !== 'checked-out' ? '#ddd' : '#4d7ce3'
+                                }}>
+                                    {displayStatus}{checkoutBy && ` by ${checkoutBy}`}&nbsp;
+                                </div>
+                            </div>
+                        }
+                    </div>
                 </div>
                 <div style={{marginRight: 0, alignContent: 'center'}}>
                     <IconButton onClick={(e) => openInNewTab(e)} style={{height: 40}}>
@@ -192,79 +219,108 @@ function BeltRequestEntry({entry, expanded, onExpand}) {
                     </IconButton>
                 </div>
             </AccordionSummary>
+            {expanded &&
+                <AccordionDetails sx={{padding: '12px 16px', backgroundColor: '#222'}}>
+                    <BeltStripe value={belt}/>
+                    <div style={{
+                        margin: '0px 16px',
+                        padding: '0px 0',
+                        display: 'flex',
+                        flexDirection: 'row',
+                        alignContent: 'top',
+                        justifyContent: 'space-between',
+                        width: '100%',
+                        flexWrap: 'wrap-reverse'
+                    }}>
+                        <div><CopyEntryIdButton entry={entry}/></div>
+                        <div>
+                            <Button onClick={handleShowDetails} variant='text'
+                                    style={{color: '#4d7ce3', marginRight: 16}}>
+                                {showDetails ? 'HIDE' : 'SHOW'} DETAILS</Button>
+                            <Collapse in={showDetails} unmountOnExit>
+                                <DataTableSort
+                                    tableData={tableData} tableWidth={310}
+                                    linkFunction={linkFunction} linkColumnId={null}
+                                    largeFontSize={'0.85rem'}/>
+                            </Collapse>
+                        </div>
 
-            <AccordionDetails sx={{padding: '16px 16px 16px 16px', backgroundColor: '#222'}}>
-                <BeltStripe value={belt}/>
-                <div style={{
-                    margin: '0px 16px',
-                    padding: '4px 0',
-                    display: 'flex',
-                    flexDirection: 'row',
-                    alignContent: 'flex-start',
-                    justifyContent: 'space-between',
-                    width: '100%',
-                    flexWrap: 'wrap-reverse'
-                }}>
-
-                    <div>
-                        <Button onClick={handleShowDetails} variant='text'
-                                style={{color: '#4d7ce3', marginRight: 16}}>
-                            {showDetails ? 'HIDE' : 'SHOW'} DETAILS</Button>
-                        <Collapse in={showDetails}>
-                            <DataTableSort
-                                tableData={tableData} tableWidth={310}
-                                linkFunction={linkFunction} linkColumnId={null}
-                                largeFontSize={'0.85rem'}/>
-                        </Collapse>
-                    </div>
-
-                    <div style={{flexGrow: 1, flexDirection: 'row', textAlign: 'right', marginRight: 24}}>
-                        {status === 'Checked Out'
-                            ? <>
-                                <Button onClick={handleOpen} variant='text'
-                                        color='info' style={{flexGrow: 0, marginRight: 16}}>
-                                    Force...</Button>
-                                <Menu
-                                    anchorEl={anchorEl}
-                                    open={open}
-                                    onClose={handleClose}
-                                >
-                                    {status === 'Checked Out'
-                                        ?
-                                        <MenuItem onClick={handleClose}><ListItemText>Check In</ListItemText></MenuItem>
-                                        : null
+                        <div style={{flexGrow: 1, flexDirection: 'row', textAlign: 'right', marginRight: 24}}>
+                            {status === 'checked-out' && !myCheckout
+                                ? <>
+                                    <Button onClick={handleOpen} variant='text'
+                                            color='warning' style={{flexGrow: 0, marginRight: 16}}>
+                                        Force...</Button>
+                                    <Menu
+                                        anchorEl={anchorEl}
+                                        open={open}
+                                        onClose={handleClose}
+                                        slotProps={{
+                                            paper: {
+                                                sx: {
+                                                    minWidth: 140,
+                                                    maxWidth: '100%'
+                                                }
+                                            }
+                                        }}
+                                    >
+                                        {status === 'checked-out'
+                                            ?
+                                            <MenuItem onClick={(e) => handleClick(entry, 'checkin', e, true)}>
+                                                <ListItemText>Check In</ListItemText>
+                                            </MenuItem>
+                                            : null
+                                        }
+                                        <MenuItem onClick={(e) => handleClick(entry, 'approve', e, true)}>
+                                            Approve
+                                        </MenuItem>
+                                        <MenuItem onClick={(e) => handleClick(entry, 'deny', e, true)}>
+                                            Deny
+                                        </MenuItem>
+                                        <MenuItem onClick={(e) => handleClick(entry, 'delete', e, true)}
+                                                  style={{color: '#ff3535'}}>
+                                            Delete
+                                        </MenuItem>
+                                    </Menu>
+                                </>
+                                : <>
+                                    <Button onClick={(e) => handleClick(entry, 'delete', e)}
+                                            variant='text'
+                                            style={{
+                                                color: status === 'deleted' ? '#666' : '#ff0000',
+                                                flexGrow: 0, marginRight: 16
+                                            }}>
+                                        {processing !== 'deleted' ? 'Delete' : <LoadingDisplay size={20} white={true}/>}
+                                    </Button>
+                                    {!['open', 'checked-out'].includes(status) && !myCheckout &&
+                                        <Button onClick={(e) => handleClick(entry, 'reopen', e)}
+                                                disabled={['open', 'checked-out'].includes(status) || processing}
+                                                variant='text' color='success' style={{flexGrow: 0, marginRight: 16}}>
+                                            {processing !== 'reopen' ? 'Re-open' :
+                                                <LoadingDisplay size={20} white={true}/>}
+                                        </Button>
                                     }
-                                    <MenuItem onClick={handleClose}>Approve</MenuItem>
-                                    <MenuItem onClick={handleClose}>Deny</MenuItem>
-                                    <MenuItem onClick={handleClose}>Delete</MenuItem>
-                                </Menu>
-                            </>
-                            : <>
-                                <Button onClick={doNothing} variant='text' disabled={status === 'Deleted'}
-                                        style={{
-                                            color: status === 'Deleted' ? '#666' : '#ff0000',
-                                            flexGrow: 0,
-                                            marginRight: 16
-                                        }}>
-                                    Delete</Button>
-                                <Button onClick={doNothing} variant='text'
-                                        disabled={['Open', 'Checked Out'].includes(status)}
-                                        color='success' style={{flexGrow: 0, marginRight: 16}}>
-                                    Re-Open</Button>
-                            </>
-                        }
-                        {['Open', 'Checked Out'].includes(status) &&
-                            <Button onClick={doNothing} variant='text'
-                                    disabled={['Checked Out'].includes(status)}
-                                    color='success' style={{flexGrow: 0}}>
-                                Check Out</Button>
-                        }
+                                </>
+                            }
+                            {['open'].includes(status) &&
+                                <Button onClick={(e) => handleClick(entry, 'checkout', e)}
+                                        variant='text' color='info' style={{flexGrow: 0}}>
+                                    {processing !== 'checkout' ? 'Check Out' : <LoadingDisplay size={20} white={true}/>}
+                                </Button>
+                            }
+                            {myCheckout && false &&
+                                <Button onClick={(e) => handleClick(entry, 'checkin', e)}
+                                        disabled={processing}
+                                        variant='text' color='info' style={{flexGrow: 0}}>
+                                    {processing !== 'checkin' ? 'Check In' : <LoadingDisplay size={20} white={true}/>}
+                                </Button>
+                            }
+                        </div>
+
                     </div>
 
-                </div>
-
-            </AccordionDetails>
-
+                </AccordionDetails>
+            }
         </Accordion>
     )
 }

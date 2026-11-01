@@ -474,6 +474,7 @@ export function DBProvider({children}) {
 
     const value = useMemo(() => ({
         dbLoaded,
+        dbError,
         adminRole,
         lockCollection,
         profileUserId,
@@ -505,36 +506,7 @@ export function DBProvider({children}) {
         removeDismissedMessages,
         userLockNotes: lockCollection.userLockNotes || {},
         isBlackBelt: lockCollection.blackBeltAwardedAt > 0 || false,
-    }), [dbLoaded,
-        adminRole,
-        lockCollection,
-        profileUserId,
-        addToLockCollection,
-        removeFromLockCollection,
-        getProfile,
-        updateProfileField,
-        updateProfileDisplayName,
-        pickerActivity,
-        addPickerActivity,
-        updatePickerActivity,
-        removePickerActivity,
-        getPickerActivity,
-        refreshPickerActivity,
-        importUnclaimedEvidence,
-        createEvidenceForEntries,
-        deleteAllUserData,
-        oauthState,
-        getBookmarkForRedditUser,
-        advanceBookmarkForRedditUser,
-        setDiscordUserInfo,
-        removeServiceAuth,
-        peekAtDiscordAwards,
-        systemMessages,
-        getAllSystemMessages,
-        updateSystemMessage,
-        updateSystemMessageStatus,
-        removeDismissedMessages,
-    ])
+    }), [dbLoaded, dbError, adminRole, lockCollection, profileUserId, addToLockCollection, removeFromLockCollection, getProfile, updateProfileField, updateProfileDisplayName, pickerActivity, addPickerActivity, updatePickerActivity, removePickerActivity, getPickerActivity, refreshPickerActivity, importUnclaimedEvidence, createEvidenceForEntries, deleteAllUserData, oauthState, getBookmarkForRedditUser, advanceBookmarkForRedditUser, setDiscordUserInfo, removeServiceAuth, peekAtDiscordAwards, systemMessages, getAllSystemMessages, updateSystemMessage, updateSystemMessageStatus, removeDismissedMessages])
 
     return (
         <DBContext.Provider value={value}>

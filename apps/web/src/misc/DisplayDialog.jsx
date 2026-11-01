@@ -24,7 +24,8 @@ export default function DisplayDialog({dialogContent, open, handleClose, width =
                     '.MuiDialog-paper': {
                         backgroundColor: 'transparent', backgroundImage: 'none',
                         padding: '12px', margin: '0px 0px 20px 0px',
-                        width: width
+                        minWidth: width,
+                        width: '90%',
                     },
                     '& .MuiBackdrop-root': {
                         backgroundColor: dark ? 'rgba(0, 0, 0, 0.65)' : 'rgba(0, 0, 0, 0.5)',

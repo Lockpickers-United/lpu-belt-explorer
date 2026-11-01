@@ -61,7 +61,7 @@ const getRootStyle = styleTheme => {
                 color: ${linkTextColor};
             }
             
-            pre{ 
+            pre { 
                 white-space: pre-wrap; 
                 word-break: break-word;
             }

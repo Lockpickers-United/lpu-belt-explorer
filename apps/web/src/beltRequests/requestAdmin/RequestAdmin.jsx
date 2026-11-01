@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react'
+import React, {useCallback, useContext, useState} from 'react'
 import DataContext from '../../context/DataContext.jsx'
 import usePageTitle from '../../util/usePageTitle.jsx'
 import Nav from '../../nav/Nav.jsx'
@@ -9,17 +9,37 @@ import ViewFilterButtons from '../../filters/ViewFilterButtons.jsx'
 import useWindowSize from '../../util/useWindowSize.jsx'
 import {beltRequestSortFields} from '../../data/sortFields.js'
 import FilterContext from '../../context/FilterContext.jsx'
+import LoadingDisplayNav from '../../nav/LoadingDisplayNav.jsx'
+import LoadingDisplay from '../../misc/LoadingDisplay.jsx'
+import ErrorMessage from '../../misc/ErrorMessage.jsx'
+import DBContext from '../../app/DBContext.jsx'
+import {Link} from 'react-router-dom'
 
 export default function RequestAdmin() {
     usePageTitle('Belt Request Admin')
 
+    const {dbLoaded, dbError, viewing, toggleViewAll} = useContext(DBContext)
     const {visibleEntries = []} = useContext(DataContext)
-    console.log('visibleEntries', visibleEntries[0])
-    const {filters} = useContext(FilterContext)
+    const {filters, clearFilters} = useContext(FilterContext)
     const [entryExpanded, setEntryExpanded] = useState(filters.id)
 
+    const toggleView = useCallback(() => {
+        clearFilters()
+        toggleViewAll()
+    }, [clearFilters, toggleViewAll])
 
     const {isMobile} = useWindowSize()
+
+    if (!dbLoaded) return (
+        <LoadingDisplayNav>
+            <LoadingDisplay message={'Loading belt requests'} style={{marginTop: 40}}/>
+        </LoadingDisplayNav>
+    )
+    if (dbError) return (
+        <LoadingDisplayNav>
+            <ErrorMessage errorMessage={`Could not belt requests: ${dbError.message}`}/>
+        </LoadingDisplayNav>
+    )
 
     const extras = (
         <React.Fragment>
@@ -32,10 +52,21 @@ export default function RequestAdmin() {
         </React.Fragment>
     )
 
+    const style = {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto', width: '100%', color: '#ccc'}
+
     return (
         <React.Fragment>
             <Nav title='Request Admin' extras={extras}/>
+
+            <div style={{...style, textAlign: 'right', padding: 16, fontSize: '0.8rem', fontWeight: 400}} id='toggle-all'>
+                <span style={{color: '#999'}}>view:</span>
+                &nbsp;{viewing === 'open' ? 'open requests' : <Link onClick={toggleView} to={null}>open requests</Link>} |
+                &nbsp;{viewing === 'all' ? 'all requests' : <Link onClick={toggleView} to={null}>all requests</Link>}
+            </div>
+
             <AdvancedFilters/>
+
+            <div style={{height: 8}}/>
 
             {visibleEntries.map((entry, index) =>
                 <BeltRequestEntry

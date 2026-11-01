@@ -52,11 +52,11 @@ export default function LoadingDisplayNav({children}) {
                 </Toolbar>
             </AppBar>
 
-            {/* Dummy toolbar to help content place correctly below this */
-            }
+            {/* Dummy toolbar to help content place correctly below this */}
             <Toolbar style={{backgroundColor: 'rgba(255, 255, 255, 0.09)', marginTop: spacer}}/>
-
             {children}
+
+            <div style={{height: 60}}/>
 
         </React.Fragment>
     )

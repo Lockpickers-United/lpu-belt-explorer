@@ -3,7 +3,7 @@ import CircularProgress from '@mui/material/CircularProgress'
 import Box from '@mui/material/Box'
 import {circularProgressClasses} from '@mui/material'
 
-function LoadingDisplay({message = undefined, size = 60, thickness = 4, style = {}}) {
+function LoadingDisplay({message = undefined, size = 60, thickness = 4, style = {}, white = false}) {
     return (
         <React.Fragment>
             <div aria-label={'Loading'} style={{
@@ -36,7 +36,9 @@ function LoadingDisplay({message = undefined, size = 60, thickness = 4, style = 
                             variant='indeterminate'
                             disableShrink
                             sx={{
-                                color: (theme) => (theme.palette.mode === 'light' ? '#1a90ff' : '#308fe8'),
+                                color: !white
+                                    ? (theme) => (theme.palette.mode === 'light' ? '#1a90ff' : '#308fe8')
+                                    : '#fff',
                                 animationDuration: '550ms',
                                 position: 'absolute',
                                 left: 0,

@@ -7,27 +7,28 @@ import searchEntriesForText from '../../filters/searchEntriesForText'
 import {getLockSortComparator} from '../../locks/lockSortComparators'
 import DBContext from '../../app/DBContext.jsx'
 
-export function RequestAdminDataProvider({children, allEntries}) {
-    const {profile} = useContext(DBContext)
+export function RequestAdminDataProvider({children}) {
+    const {profile, beltRequests} = useContext(DBContext)
 
     const {filters: allFilters, activeFilterGroups} = useContext(FilterContext)
     const {search, sort, expandAll} = allFilters
 
-    const mappedEntries = useMemo(() => {
-        return allEntries
-            .map(request => {
+    console.log('beltRequests', beltRequests)
 
-                const status = request.status === 'requested'
+    const mappedEntries = useMemo(() => {
+        return beltRequests
+            .map(request => {
+                const displayStatus = request.status === 'open'
                     ? 'Open'
                     : request.status === 'checked-out'
-                        ? 'Checked Out'
+                        ? 'Checked out'
                         : initialCap(request.status)
-                const filterStatus = status === 'Checked Out'
-                    ? ['Open', 'Checked Out']
-                    : status
+                const filterStatus = displayStatus === 'Checked out'
+                    ? ['Open', 'Checked out']
+                    : displayStatus
                 return {
                     ...request,
-                    status,
+                    displayStatus,
                     filterStatus,
                     fuzzy: removeAccents(
                         [request.username, request.lastUpdateBy]
@@ -35,7 +36,7 @@ export function RequestAdminDataProvider({children, allEntries}) {
                     )
                 }
             })
-    }, [allEntries])
+    }, [beltRequests])
 
     const searchedEntries = useMemo(() => {
         return searchEntriesForText(search, mappedEntries)
