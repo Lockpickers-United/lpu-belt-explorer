@@ -603,7 +603,7 @@ To qualify for a Blue Belt, you must also submit a project that demonstrates you
 - [ABUS Bravus 1000 / ABUS Bravus 2000 / ABUS Bravus 3000](https://lpubelts.com/#/locks?id=ea0efaca)
 - [ABUS C73 / ABUS C83 / ABUS C90](https://lpubelts.com/#/locks?id=85d93eb1) (new pinning: security keypins + serrated and spooled t-pins)
 - [ABUS D10](https://lpubelts.com/#/locks?id=f96de7cc)
-- [ABUS E20 / ABUS E30 / ABUS E60 / ABUS E70 / ABUS NP (6-pin)](https://lpubelts.com/#/locks?id=5c0d870b)
+- [ABUS E20 / ABUS E30 / ABUS E60 / ABUS E70 / Wuerth NP (6-pin)](https://lpubelts.com/#/locks?id=5c0d870b)
 - [ABUS E90](https://lpubelts.com/#/locks?id=ab236116)
 - [ABUS EC 75/50 / ABUS 75IB/50](https://lpubelts.com/#/locks?id=9ec8706c)
 - [ABUS EC550 / ABUS EC660](https://lpubelts.com/#/locks?id=7130d7c3)

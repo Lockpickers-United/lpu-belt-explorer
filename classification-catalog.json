@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": "sha256:3e7bf42c46abe319e5653a7d70709f780249c87c84de0b6c358c3349e25c43cd",
-  "generatedAt": "2026-11-01T15:03:36.854Z",
+  "catalogVersion": "sha256:b6f85756b45d629faace680ff45bd4058e5461c9396b40ad64595561e1f5e5f8",
+  "generatedAt": "2026-11-01T15:14:58.152Z",
   "entries": [
     {
       "id": "0082fa4c",
@@ -2882,7 +2882,7 @@
     },
     {
       "id": "5c0d870b",
-      "name": "ABUS E20, E30, E60, E70, NP (6-pin)",
+      "name": "ABUS E20, E30, E60, E70 / Wuerth NP (6-pin)",
       "version": null,
       "belt": "Blue",
       "currentBeltDate": null
