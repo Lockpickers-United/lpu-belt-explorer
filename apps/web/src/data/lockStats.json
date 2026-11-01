@@ -2014,37 +2014,37 @@
           "label": "Yellow",
           "id": "Yellow",
           "count": 11,
-          "value": 0.083
+          "value": 0.084
         },
         {
           "label": "Orange",
           "id": "Orange",
           "count": 23,
-          "value": 0.174
+          "value": 0.176
         },
         {
           "label": "Green",
           "id": "Green",
           "count": 36,
-          "value": 0.273
+          "value": 0.275
         },
         {
           "label": "Blue",
           "id": "Blue",
-          "count": 40,
-          "value": 0.303
+          "count": 39,
+          "value": 0.298
         },
         {
           "label": "Purple",
           "id": "Purple",
           "count": 4,
-          "value": 0.03
+          "value": 0.031
         },
         {
           "label": "Brown",
           "id": "Brown",
           "count": 6,
-          "value": 0.045
+          "value": 0.046
         },
         {
           "label": "Red",
@@ -2063,14 +2063,14 @@
         {
           "label": "Pin-tumbler",
           "id": "Pin-tumbler",
-          "count": 93,
-          "value": 0.705
+          "count": 92,
+          "value": 0.702
         },
         {
           "label": "Dimple",
           "id": "Dimple",
           "count": 29,
-          "value": 0.22
+          "value": 0.221
         },
         {
           "label": "Multiple",
@@ -2088,7 +2088,7 @@
           "label": "unknown",
           "id": "unknown",
           "count": 4,
-          "value": 0.03
+          "value": 0.031
         }
       ]
     },
@@ -25708,6 +25708,72 @@
         }
       ]
     },
+    "Wuerth": {
+      "belts": [
+        {
+          "label": "White",
+          "id": "White",
+          "count": 0,
+          "value": 0
+        },
+        {
+          "label": "Yellow",
+          "id": "Yellow",
+          "count": 0,
+          "value": 0
+        },
+        {
+          "label": "Orange",
+          "id": "Orange",
+          "count": 0,
+          "value": 0
+        },
+        {
+          "label": "Green",
+          "id": "Green",
+          "count": 0,
+          "value": 0
+        },
+        {
+          "label": "Blue",
+          "id": "Blue",
+          "count": 1,
+          "value": 1
+        },
+        {
+          "label": "Purple",
+          "id": "Purple",
+          "count": 0,
+          "value": 0
+        },
+        {
+          "label": "Brown",
+          "id": "Brown",
+          "count": 0,
+          "value": 0
+        },
+        {
+          "label": "Red",
+          "id": "Red",
+          "count": 0,
+          "value": 0
+        },
+        {
+          "label": "Black",
+          "id": "Black",
+          "count": 0,
+          "value": 0
+        }
+      ],
+      "mechanisms": [
+        {
+          "label": "Pin-tumbler",
+          "id": "Pin-tumbler",
+          "count": 1,
+          "value": 1
+        }
+      ]
+    },
     "Xylok": {
       "belts": [
         {
@@ -26395,6 +26461,6 @@
   },
   "metadata": {
     "source": "import-data",
-    "updatedDateTime": "2026-11-01 15:03"
+    "updatedDateTime": "2026-11-01 15:15"
   }
 }

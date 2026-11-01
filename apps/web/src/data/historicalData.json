@@ -16691,14 +16691,14 @@
         "model": "E70"
       },
       {
-        "make": "ABUS",
+        "make": "Wuerth",
         "model": "NP (6-pin)"
       }
     ],
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "name": "ABUS E20, E30, E60, E70, NP (6-pin)",
+    "name": "ABUS E20, E30, E60, E70 / Wuerth NP (6-pin)",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "views": 112,
     "lastUpdated": "2025-03-19T01:20:51.365Z",
