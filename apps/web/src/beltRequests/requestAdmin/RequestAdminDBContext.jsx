@@ -90,7 +90,7 @@ export function BeltAdminDBProvider({children}) {
             enqueueSnackbar(`Request ${request.id} is being reviewed by ${request.reviewerName}.`, {variant: 'warning'})
             return
         }
-        const update = buildUpdate(request, 'processing-approve', {reply: request.reply, checkoutBy: deleteField()})
+        const update = buildUpdate(request, 'processing-approve', {notes: request.reply, checkoutBy: deleteField()})
         try {
             await updateBeltRequest(update)
             enqueueSnackbar(`${request.id} has been approved!`, {variant: 'success'})
@@ -108,7 +108,7 @@ export function BeltAdminDBProvider({children}) {
             enqueueSnackbar(`Request ${request.id} is being reviewed by ${request.reviewerName}.`, {variant: 'warning'})
             return
         }
-        const update = buildUpdate(request, 'processing-deny', {reply: request.reply, 'checkoutBy': deleteField()})
+        const update = buildUpdate(request, 'processing-deny', {notes: request.reply, 'checkoutBy': deleteField()})
         try {
             await updateBeltRequest(update)
             enqueueSnackbar(`${request.id} has been denied.`, {variant: 'success'})
