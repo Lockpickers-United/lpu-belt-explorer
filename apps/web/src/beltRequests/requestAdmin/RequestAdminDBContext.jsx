@@ -15,20 +15,18 @@ export function BeltAdminDBProvider({children}) {
     const [dbError, setDbError] = useState(null)
 
     const [viewing, setViewing] = useState('open') // ['open' , 'all']
-    const toggleViewAll = useCallback(async () => {
+    const toggleViewAll = useCallback(() => {
+        setRequestsLoaded(false)
         setViewing(prev => prev === 'all' ? 'open' : 'all')
     }, [])
-    const whereClause = useMemo(() => {
-        return viewing === 'all'
-            ? where('status', '!=', false)
-            : where('status', 'in', ['open', 'checked-out'])
-    }, [viewing])
 
-
-    // DEFAULT: OPEN REQUESTS SUBSCRIPTION
     useEffect(() => {
+        const openStatuses = ['open', 'checked-out', 'processing-approve', 'processing-deny']
+
         const colRef = collection(db, 'belt-requests')
-        const q = query(colRef, whereClause)
+        const q = viewing === 'all'
+            ? colRef
+            : query(colRef, where('status', 'in', openStatuses))
         const unsubscribe = onSnapshot(q, querySnapshot => {
             const items = []
             querySnapshot.forEach((doc) => {
@@ -45,7 +43,7 @@ export function BeltAdminDBProvider({children}) {
             })
         })
         return () => unsubscribe()
-    }, [whereClause])
+    }, [viewing])
 
     const updateBeltRequest = useCallback(async (update) => {
         if (globalContext.dbError || dbError) {
@@ -92,7 +90,7 @@ export function BeltAdminDBProvider({children}) {
             enqueueSnackbar(`Request ${request.id} is being reviewed by ${request.reviewerName}.`, {variant: 'warning'})
             return
         }
-        const update = buildUpdate(request, 'approved', {reply: request.reply, checkoutBy: deleteField()})
+        const update = buildUpdate(request, 'processing-approve', {reply: request.reply, checkoutBy: deleteField()})
         try {
             await updateBeltRequest(update)
             enqueueSnackbar(`${request.id} has been approved!`, {variant: 'success'})
@@ -110,7 +108,7 @@ export function BeltAdminDBProvider({children}) {
             enqueueSnackbar(`Request ${request.id} is being reviewed by ${request.reviewerName}.`, {variant: 'warning'})
             return
         }
-        const update = buildUpdate(request, 'denied', {reply: request.reply, 'checkoutBy': deleteField()})
+        const update = buildUpdate(request, 'processing-deny', {reply: request.reply, 'checkoutBy': deleteField()})
         try {
             await updateBeltRequest(update)
             enqueueSnackbar(`${request.id} has been denied.`, {variant: 'success'})

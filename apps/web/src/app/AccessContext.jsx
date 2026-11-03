@@ -12,6 +12,7 @@ const roleLevels = {
     lpuMod: 90,
     blackBelt: 70,
     classificationTeam: 60,
+    beltRequestTeam: 60,
     qaUser: 20
 }
 
@@ -30,7 +31,6 @@ const getHighestRoleLevel = roles => Math.max(
 const getActiveRole = enabledRoles => Object.entries(roleLevels)
     .filter(([role]) => enabledRoles[role])
     .sort(([, firstLevel], [, secondLevel]) => secondLevel - firstLevel)[0]?.[0] || null
-
 
 const isEnabledToday = enabledAt => {
     const enabledDate = dayjs(enabledAt)
@@ -55,6 +55,7 @@ export function AccessProvider({children}) {
             lpuMod: claims.has('lpuMod') || claims.has('admin'),
             blackBelt: claims.has('blackBelt') || claims.has('admin'),
             classificationTeam: claims.has('blackBelt') || claims.has('classificationTeam') || claims.has('admin') || claims.has('owner'),
+            beltRequestTeam: claims.has('blackBelt') || claims.has('beltRequestTeam') || claims.has('admin') || claims.has('owner'),
             qaUser: claims.has('qaUser') || claims.has('admin')
         }
     }, [authLoaded, isLoggedIn, user?.uid, userClaims])

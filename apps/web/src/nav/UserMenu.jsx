@@ -299,6 +299,7 @@ const previewRoleLabels = {
     lpuMod: 'LPU Moderator',
     blackBelt: 'Black Belt',
     classificationTeam: 'Classification Team',
+    beltRequestTeam: 'Belt Request Team',
     qaUser: 'QA User'
 }
 

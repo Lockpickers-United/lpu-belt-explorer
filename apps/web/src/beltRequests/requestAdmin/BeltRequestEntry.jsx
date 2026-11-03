@@ -205,7 +205,7 @@ function BeltRequestEntry({entry, expanded, onExpand}) {
                                 <div style={{
                                     fontSize: '0.9rem',
                                     fontWeight: 500,
-                                    color: status !== 'checked-out' ? '#ddd' : '#4d7ce3'
+                                    color: !['checked-out', 'processing-approve', 'processing-deny'].includes(status) ? '#ddd' : '#4d7ce3'
                                 }}>
                                     {displayStatus}{checkoutBy && ` by ${checkoutBy}`}&nbsp;
                                 </div>
@@ -285,16 +285,15 @@ function BeltRequestEntry({entry, expanded, onExpand}) {
                                 </>
                                 : <>
                                     <Button onClick={(e) => handleClick(entry, 'delete', e)}
+                                            disabled={['processing-approve', 'processing-deny'].includes(status) || processing}
                                             variant='text'
-                                            style={{
-                                                color: status === 'deleted' ? '#666' : '#ff0000',
-                                                flexGrow: 0, marginRight: 16
-                                            }}>
+                                            color='error'
+                                            style={{flexGrow: 0, marginRight: 16}}>
                                         {processing !== 'deleted' ? 'Delete' : <LoadingDisplay size={20} white={true}/>}
                                     </Button>
                                     {!['open', 'checked-out'].includes(status) && !myCheckout &&
                                         <Button onClick={(e) => handleClick(entry, 'reopen', e)}
-                                                disabled={['open', 'checked-out'].includes(status) || processing}
+                                                disabled={['open', 'checked-out', 'processing-approve', 'processing-deny'].includes(status) || processing}
                                                 variant='text' color='success' style={{flexGrow: 0, marginRight: 16}}>
                                             {processing !== 'reopen' ? 'Re-open' :
                                                 <LoadingDisplay size={20} white={true}/>}
@@ -310,7 +309,7 @@ function BeltRequestEntry({entry, expanded, onExpand}) {
                             }
                             {myCheckout && false &&
                                 <Button onClick={(e) => handleClick(entry, 'checkin', e)}
-                                        disabled={processing}
+                                        disabled={processing?.length > 0}
                                         variant='text' color='info' style={{flexGrow: 0}}>
                                     {processing !== 'checkin' ? 'Check In' : <LoadingDisplay size={20} white={true}/>}
                                 </Button>

@@ -15,14 +15,16 @@ export function RequestAdminDataProvider({children}) {
 
     console.log('beltRequests', beltRequests)
 
+    const displayStatuses = {open: 'Open',
+        'checked-out': 'Checked out',
+        'processing-approve': 'Processing Approval',
+        'processing-deny': 'Processing Deny'
+    }
+
     const mappedEntries = useMemo(() => {
         return beltRequests
             .map(request => {
-                const displayStatus = request.status === 'open'
-                    ? 'Open'
-                    : request.status === 'checked-out'
-                        ? 'Checked out'
-                        : initialCap(request.status)
+                const displayStatus = displayStatuses[request.status] ?? initialCap(request.status)
                 const filterStatus = displayStatus === 'Checked out'
                     ? ['Open', 'Checked out']
                     : displayStatus

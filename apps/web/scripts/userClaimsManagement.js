@@ -15,7 +15,7 @@ const databases = [
     {name: 'lpubelts-dev', db: getFirestore(app, 'lpubelts-dev')}
 ]
 
-const WRITE_TO_DB = false
+const WRITE_TO_DB = true
 
 // Custom claims to set
 const _allClaims = {
@@ -31,11 +31,11 @@ const _allClaims = {
     blackBelt: true,
 }
 //const newClaims = {raflAdmin:true, dataAdmin:true, admin: true}
-const newClaims = {classificationTeam: true}
+const newClaims = {lpuMod: true}
 const removeClaims = []
 
 const users = [
-    {uid: 'yLbxfRWSKyWMZm9r2i2gD19J3Hb2', name: 'septclues'},
+    {uid: 'pzSak8xusHdeNlD0JmTru5kMrww2', name: 'Sidepicks'},
 ]
 
 const _allUsers = [

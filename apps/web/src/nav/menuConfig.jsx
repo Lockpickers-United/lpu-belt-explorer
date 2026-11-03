@@ -21,6 +21,7 @@ import LocalLibraryIcon from '@mui/icons-material/LocalLibrary'
 import SpeakerNotesIcon from '@mui/icons-material/SpeakerNotes'
 import MonitorHeartIcon from '@mui/icons-material/MonitorHeart'
 import HowToVoteIcon from '@mui/icons-material/HowToVote'
+import SecurityIcon from '@mui/icons-material/Security'
 
 const {VITE_RAFL_STATE: raflState} = import.meta.env
 
@@ -50,6 +51,18 @@ export default [
         title: 'Safe Locks',
         icon: <AvTimerIcon fontSize='small'/>,
         path: '/safelocks'
+    },
+    {
+        title: 'Belt Request Admin',
+        icon: <SecurityIcon fontSize='small'/>,
+        path: '/beltRequests/admin',
+        allowedRoles: ['admin'],
+    },
+    {
+        title: 'Classification',
+        icon: <HowToVoteIcon fontSize='small'/>,
+        path: '/classification',
+        allowedRoles: ['admin', 'classificationAdmin', 'lpuMod', 'classificationTeam', 'blackBelt'],
     },
     {
         title: 'RAFL',
@@ -107,12 +120,6 @@ export default [
         title: 'Master\'s Projects',
         icon: <ConstructionIcon fontSize='small'/>,
         path: '/projects',
-    },
-    {
-        title: 'Classification',
-        icon: <HowToVoteIcon fontSize='small'/>,
-        path: '/classification',
-        allowedRoles: ['admin', 'classificationAdmin', 'lpuMod', 'classificationTeam', 'blackBelt'],
     },
     {
         title: 'Stats & Insights',
