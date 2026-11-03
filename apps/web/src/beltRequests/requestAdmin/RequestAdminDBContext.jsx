@@ -134,7 +134,7 @@ export function BeltAdminDBProvider({children}) {
         }
     }, [buildUpdate, profile.displayName, updateBeltRequest])
 
-    const reopenRequest = useCallback(async (request) => {
+    const reopenRequest = useCallback(async (request, _force) => {
         if (['open', 'checked-out'].includes(request.status)) {
             enqueueSnackbar(`Request ${request.id} is already open.`, {variant: 'warning'})
             return
@@ -148,8 +148,8 @@ export function BeltAdminDBProvider({children}) {
         }
     }, [buildUpdate, updateBeltRequest])
 
-    const checkoutRequest = useCallback(async (request) => {
-        if (request.status === 'checked-out' && request.checkoutBy !== profile.displayName) {
+    const checkoutRequest = useCallback(async (request, force) => {
+        if (request.status === 'checked-out' && request.checkoutBy !== profile.displayName && !force) {
             enqueueSnackbar(`Request ${request.id} is being reviewed by ${request.checkoutBy}.`, {variant: 'warning'})
             return
         } else if (request.status !== 'open') {
@@ -165,11 +165,11 @@ export function BeltAdminDBProvider({children}) {
         }
     }, [buildUpdate, profile.displayName, updateBeltRequest])
 
-    const checkinRequest = useCallback(async (request) => {
+    const checkinRequest = useCallback(async (request, force) => {
         if (request.status !== 'checked-out') {
             enqueueSnackbar(`Request ${request.id} isn't checked out.`, {variant: 'warning'})
             return
-        } else if (request.status === 'checked-out' && request.checkoutBy !== profile.displayName) {
+        } else if (request.status === 'checked-out' && request.checkoutBy !== profile.displayName && !force) {
             enqueueSnackbar(`Request ${request.id} is being reviewed by ${request.checkoutBy}.`, {variant: 'warning'})
             return
         }
@@ -190,11 +190,11 @@ export function BeltAdminDBProvider({children}) {
         } else if (action === 'delete') {
             await deleteRequest(request, force)
         } else if (action === 'reopen') {
-            await reopenRequest(request)
+            await reopenRequest(request, force)
         } else if (action === 'checkout') {
-            await checkoutRequest(request)
+            await checkoutRequest(request, force)
         } else if (action === 'checkin') {
-            await checkinRequest(request)
+            await checkinRequest(request, force)
         }
     }, [approveRequest, checkinRequest, checkoutRequest, deleteRequest, denyRequest, reopenRequest])
 
