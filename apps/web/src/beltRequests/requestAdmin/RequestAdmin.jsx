@@ -76,7 +76,7 @@ export default function RequestAdmin() {
             {visibleEntries.length === 0
                 ? <>
                 <div style={{...style, textAlign: 'center', color: '#fff',
-                    fontSize: '1.5rem', fontWeight: 700, margin: '32px 0'}}>
+                    fontSize: '1.5rem', fontWeight: 700, marginTop: 32, marginBottom: 32}}>
                     All Clear!</div>
                 </>
                 : <>
