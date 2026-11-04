@@ -15,9 +15,11 @@ import ErrorMessage from '../../misc/ErrorMessage.jsx'
 import DBContext from '../../app/DBContext.jsx'
 import {Link} from 'react-router-dom'
 import ExportButtonGeneric from '../../misc/ExportButtonGeneric.jsx'
+import {useAccess} from '../../app/AccessContext.jsx'
 
 export default function RequestAdmin() {
     usePageTitle('Belt Request Admin')
+    const {accessInfo} = useAccess()
 
     const {dbLoaded, dbError, viewing, toggleViewAll} = useContext(DBContext)
     const {visibleEntries = []} = useContext(DataContext)
@@ -59,9 +61,11 @@ export default function RequestAdmin() {
         <React.Fragment>
             <Nav title='Request Admin' extras={extras}/>
 
-            <div style={{...style, textAlign: 'right', padding: 16, fontSize: '0.8rem', fontWeight: 400}} id='toggle-all'>
+            <div style={{...style, textAlign: 'right', padding: 16, fontSize: '0.8rem', fontWeight: 400}}
+                 id='toggle-all'>
                 <span style={{color: '#999'}}>view:</span>
-                &nbsp;{viewing === 'open' ? 'open requests' : <Link onClick={toggleView} to={null}>open requests</Link>} |
+                &nbsp;{viewing === 'open' ? 'open requests' :
+                <Link onClick={toggleView} to={null}>open requests</Link>} |
                 &nbsp;{viewing === 'all' ? 'all requests' : <Link onClick={toggleView} to={null}>all requests</Link>}
             </div>
 
@@ -69,17 +73,31 @@ export default function RequestAdmin() {
 
             <div style={{height: 8}}/>
 
-            {visibleEntries.map((entry, index) =>
-                <BeltRequestEntry
-                    key={index}
-                    entry={entry}
-                    expanded={entry.id === entryExpanded
-                        || visibleEntries.length === 1}
-                    onExpand={setEntryExpanded}
-                />
-            )}
+            {visibleEntries.length === 0
+                ? <>
+                <div style={{...style, textAlign: 'center', color: '#fff',
+                    fontSize: '1.5rem', fontWeight: 700, margin: '32px 0'}}>
+                    All Clear!</div>
+                </>
+                : <>
+                    {visibleEntries.map((entry, index) =>
+                        <BeltRequestEntry
+                            key={index}
+                            entry={entry}
+                            expanded={entry.id === entryExpanded
+                                || visibleEntries.length === 1}
+                            onExpand={setEntryExpanded}
+                        />
+                    )}
+                </>
+            }
 
-            <ExportButtonGeneric exportData={{data: visibleEntries}}/>
+            {accessInfo.roles.admin &&
+                <div style={{...style, textAlign: 'center', marginTop: 24}}>
+
+                <ExportButtonGeneric exportData={{data: visibleEntries}}/>
+                </div>
+            }
 
         </React.Fragment>
     )

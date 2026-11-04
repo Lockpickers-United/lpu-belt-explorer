@@ -33,7 +33,7 @@ function BeltRequestEntry({entry, expanded, onExpand}) {
     const {isMobile} = useWindowSize()
     const [showDetails, setShowDetails] = useState(false)
     const [scrolled, setScrolled] = useState(false)
-    
+
     const [anchorEl, setAnchorEl] = useState(null)
     const open = Boolean(anchorEl)
     const handleOpen = useCallback(event => setAnchorEl(event.currentTarget), [])
@@ -181,10 +181,6 @@ function BeltRequestEntry({entry, expanded, onExpand}) {
 
                         {(status === 'open' || myCheckout) &&
                             <div style={{display: 'flex', justifyContent: 'flex-end', margin: '8px 0px'}}>
-
-                                <ApproveDenyButton entry={entry} action={'approve'} handleReply={handleReply} processing={processing}/>
-                                <ApproveDenyButton entry={entry} action={'deny'} handleReply={handleReply} processing={processing}/>
-
                                 {myCheckout &&
                                     <Button onClick={(e) => handleClick(entry, 'checkin', e)}
                                             disabled={processing}
@@ -193,6 +189,12 @@ function BeltRequestEntry({entry, expanded, onExpand}) {
                                             <LoadingDisplay size={20} white={true}/>}
                                     </Button>
                                 }
+
+                                <ApproveDenyButton entry={entry} action={'approve'} handleReply={handleReply}
+                                                   processing={processing}/>
+                                <ApproveDenyButton entry={entry} action={'deny'} handleReply={handleReply}
+                                                   processing={processing}/>
+
                             </div>
                         }
                         {status !== 'open' && !myCheckout &&
@@ -213,10 +215,12 @@ function BeltRequestEntry({entry, expanded, onExpand}) {
                         }
                     </div>
                 </div>
-                <div style={{marginRight: 0, alignContent: 'center'}}>
-                    <IconButton onClick={(e) => openInNewTab(e)} style={{height: 40}}>
-                        <OpenInNewIcon style={{color: '#ccc'}}/>
-                    </IconButton>
+                <div style={{marginRight: 0, alignContent: 'center', minWidth: 40}}>
+                    {source === 'Discord' &&
+                        <IconButton onClick={(e) => openInNewTab(e)} style={{height: 40}}>
+                            <OpenInNewIcon style={{color: '#ccc'}}/>
+                        </IconButton>
+                    }
                 </div>
             </AccordionSummary>
             {expanded &&
