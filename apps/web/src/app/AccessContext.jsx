@@ -55,13 +55,13 @@ export function AccessProvider({children}) {
             lpuMod: claims.has('lpuMod') || claims.has('admin'),
             blackBelt: claims.has('blackBelt') || claims.has('admin'),
             classificationTeam: claims.has('blackBelt') || claims.has('classificationTeam') || claims.has('admin') || claims.has('owner'),
-            beltRequestTeam: claims.has('blackBelt') || claims.has('beltRequestTeam') || claims.has('admin') || claims.has('owner'),
+            beltRequestTeam: claims.has('beltRequestTeam') || claims.has('admin') || claims.has('owner'),
             qaUser: claims.has('qaUser') || claims.has('admin')
         }
     }, [authLoaded, isLoggedIn, user?.uid, userClaims])
 
     const previewRole = import.meta.env.DEV && preview && preview.uid === user?.uid &&
-        (preview.role === 'none' || claimedRoles[preview.role])
+    (preview.role === 'none' || claimedRoles[preview.role])
         ? preview.role
         : null
 

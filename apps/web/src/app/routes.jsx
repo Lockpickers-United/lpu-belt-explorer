@@ -429,7 +429,7 @@ export default [
                     const {default: RequestAdminRoute} = await import('../beltRequests/requestAdmin/RequestAdminRoute.jsx')
                     return {
                         element:
-                            <RequireRoles roles={['admin']}>
+                            <RequireRoles roles={['admin', 'lpuMod', 'beltRequestTeam']}>
                                 <RequestAdminRoute/>
                             </RequireRoles>
                     }

@@ -29,13 +29,14 @@ const _allClaims = {
     classificationTeam: true,
     requestAdmin: true,
     blackBelt: true,
+    beltRequestTeam: true
 }
 //const newClaims = {raflAdmin:true, dataAdmin:true, admin: true}
-const newClaims = {lpuMod: true}
+const newClaims = {beltRequestTeam: true}
 const removeClaims = []
 
 const users = [
-    {uid: 'pzSak8xusHdeNlD0JmTru5kMrww2', name: 'Sidepicks'},
+    {uid: 'FGhShmNkxTXC9vwmZwWylOvU8K72', name: 'Alpama'},
 ]
 
 const _allUsers = [
@@ -55,6 +56,7 @@ const _allUsers = [
     {uid: 'f2yySWbxUBXF8k3HgorYhrm76gx2', name: 'Rein'},
     {uid: '8PKfUHTiafgObsQQr162dQRlBCo1', name: 'GravityKarma'},
     {uid: 'T8ZIBbRo2pXkxzybohOPf7McW532', name: 'Spacecadet'},
+    {uid: 'FGhShmNkxTXC9vwmZwWylOvU8K72', name: 'Alpama'},
 
 ]
 
