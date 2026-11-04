@@ -56,7 +56,7 @@ export default [
         title: 'Belt Request Admin',
         icon: <SecurityIcon fontSize='small'/>,
         path: '/beltRequests/admin',
-        allowedRoles: ['admin', 'lpuMod', 'beltRequestTeam'],
+        allowedRoles: ['admin'],
     },
     {
         title: 'Classification',
