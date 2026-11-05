@@ -25,7 +25,7 @@ The detailed findings and recommended changes follow.
 
 ### Blocker 1: generated collection data and API reads use different storage contracts
 
-[`collectionAnalyzer.js`](../src/projects/collections/collectionAnalyzer.js#L231) writes `collectionStatsByIdFull.json` beneath the configurable `COLLECTION_API_DIR`. [`collectionStatsService.js`](../src/api/services/collectionStatsService.js#L5) ignores that configuration and always reads `src/data/collectionStatsByIdFull.json` from the active release.
+[`collectionAnalyzer.js`](../src/projects/collections/collectionAnalyzer.js#L231) writes `collectionStatsByIdFull.json` beneath the configurable `COLLECTION_API_DIR`. [`collectionStatsService.js`](../src/api/services/collectionStatsService.js#L5) ignores that configuration and always reads `../src/data/collectionStatsByIdFull.json` from the active release.
 
 This conflicts with the immutable-release design. If `COLLECTION_API_DIR` points under `shared/generated-data`, the analyzer succeeds but the API continues serving the checked-in snapshot. If it points into `current/src/data`, the cron job mutates an otherwise immutable release, and a deployment or rollback silently replaces the generated result with the copy from that release.
 
@@ -177,7 +177,7 @@ Before production, record the exact tested commit SHA and generated-data configu
 ## Verification performed for this review
 
 - `PATH=<Node 24.13.0>/bin:$PATH corepack yarn test --run`: 59 test files passed, 255 tests passed.
-- `PATH=<Node 24.13.0>/bin:$PATH corepack yarn lint`: passed with two existing warnings in `src/projects/logAnalysis/lpubeltsLogAnalyzer.js`.
+- `PATH=<Node 24.13.0>/bin:$PATH corepack yarn lint`: passed with two existing warnings in `../src/projects/logAnalysis/lpubeltsLogAnalyzer.js`.
 - Node 24 `node --check` on all changed JavaScript files: passed.
 - JSON parsing on all changed JSON files: passed.
 - `git diff --check main...HEAD` and the working-tree diff: failed on whitespace in `public/robots.txt` as described above.

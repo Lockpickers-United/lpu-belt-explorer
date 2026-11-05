@@ -4,7 +4,7 @@
 
 Extend this repo, but keep the new API as a small, isolated module inside the existing Express server.
 
-`../../lpubeltsApiServer.js` is already an Express API process with CORS, Helmet, JSON limits, logging, request IDs, centralized errors, and route registration. `src/routes.js` already uses lazy route loading, which is good for production memory.
+`../../lpubeltsApiServer.js` is already an Express API process with CORS, Helmet, JSON limits, logging, request IDs, centralized errors, and route registration. `../../routes.js` already uses lazy route loading, which is good for production memory.
 
 Starting a second Node service would usually cost more memory because it would require another Node runtime, another Express app, another Firebase client, another logging stack, and related infrastructure. If production memory is tight, one process with lazy routes is usually better than two processes.
 
@@ -57,7 +57,7 @@ src/api/routes/locks.js
 src/api/routes/stats.js
 ```
 
-Then mount it from `src/routes.js`:
+Then mount it from `../../routes.js`:
 
 ```js
 app.use([`${prefix}/api`, `/${prefix}/api`], api)
@@ -151,7 +151,7 @@ If the API is public, keep it read-only and rate-limit/cache aggressively.
 
 For the first version, design the route structure so public endpoints do not require auth middleware.
 
-If later versions expose user-specific or admin data, reuse or adapt the existing Firebase auth flow from `src/util/authenticateRequest.js`, but keep it optional per-route rather than global.
+If later versions expose user-specific or admin data, reuse or adapt the existing Firebase auth flow from `../../util/authenticateRequest.js`, but keep it optional per-route rather than global.
 
 Recommended future grouping:
 

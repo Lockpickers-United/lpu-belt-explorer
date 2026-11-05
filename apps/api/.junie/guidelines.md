@@ -234,7 +234,7 @@ test('GET /flickr-info requires id', async () => {
 - The server uses CORS and JSON body parsing globally; events are logged via a simple EventEmitter with dayjs timestamps.
 
 #### Reddit utilities
-- The active Reddit belt refresh is under `src/projects/redditBelts/` and uses its explicit runtime configuration and OAuth HTTP flow. See that directory's README before running it.
+- The active Reddit belt refresh is under `../src/projects/redditBelts` and uses its explicit runtime configuration and OAuth HTTP flow. See that directory's README before running it.
 - The old Snoowrap-based WIP utilities have been retired.
 
 #### File system and data paths

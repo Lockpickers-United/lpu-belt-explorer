@@ -45,7 +45,7 @@ An interactive web app for exploring the Lockpickers United belt ranking system.
 
 The monorepo is the sole web/API release source. The owner marked the last old API publication final and archived `explore-lpubelts-com-node` on GitHub (authenticated `archived=true` verified). Preserve that repository as history; direct API fixes and dependency changes here. Neal Bayless coordinates release/settings changes. API CI and root Dependabot cover the API workspace through the shared lockfile; retain existing GitHub protection policy. See the [Phase 5 ledger](internal-docs/monorepo/monorepo-phase5-runbook.md) for release identities, retained recovery artifacts and remaining manual-workflow gates.
 
-Existing ignored files under the former root `public/`, `src/data/` or `scripts/` are left untouched and remain ignored. Clean checkout tests use tracked synthetic fixtures; review local generated data before relocating it into app-owned paths. Do not copy live exports into test fixtures.
+Existing ignored files under the former root `public/`, `src/` or `scripts/` are left untouched and remain ignored. Clean checkout tests use tracked synthetic fixtures; review local generated data before relocating it into app-owned paths. Do not copy live exports into test fixtures.
 
 The root keeps common development and verification shortcuts plus API/combined checks. Specialized web commands live only in `apps/web/package.json`: run `npm run <script> --workspace=apps/web -- <args>` from root, or enter `apps/web` and use `npm run <script> -- <args>`.
 

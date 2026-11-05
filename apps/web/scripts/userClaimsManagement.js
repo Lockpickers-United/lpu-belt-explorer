@@ -32,11 +32,12 @@ const _allClaims = {
     beltRequestTeam: true
 }
 //const newClaims = {raflAdmin:true, dataAdmin:true, admin: true}
-const newClaims = {beltRequestTeam: true}
+
+const newClaims = {classificationTeam: true}
 const removeClaims = []
 
 const users = [
-    {uid: 'FGhShmNkxTXC9vwmZwWylOvU8K72', name: 'Alpama'},
+    {uid: 'wt4TtneyB1WXpCu6Ucj50MXP93d2', name: 'LostDiver'},
 ]
 
 const _allUsers = [
@@ -57,6 +58,7 @@ const _allUsers = [
     {uid: '8PKfUHTiafgObsQQr162dQRlBCo1', name: 'GravityKarma'},
     {uid: 'T8ZIBbRo2pXkxzybohOPf7McW532', name: 'Spacecadet'},
     {uid: 'FGhShmNkxTXC9vwmZwWylOvU8K72', name: 'Alpama'},
+    {uid: 'wt4TtneyB1WXpCu6Ucj50MXP93d2', name: 'LostDiver'},
 
 ]
 

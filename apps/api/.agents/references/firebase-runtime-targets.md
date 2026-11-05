@@ -1,6 +1,6 @@
 # Firebase Runtime Targets
 
-Firebase Admin initialization is centralized in `src/api/services/firebaseAdmin.js`. API code must use its exported helpers instead of creating additional Firebase Admin applications.
+Firebase Admin initialization is centralized in `../../src/api/services/firebaseAdmin.js`. API code must use its exported helpers instead of creating additional Firebase Admin applications.
 
 ## Environment contract
 
@@ -29,7 +29,7 @@ The service-account JSON stays outside releases and should be referenced from th
 
 ## Safety guards
 
-`src/api/services/firebaseAdmin.js` treats either of these conditions as production access:
+`../../src/api/services/firebaseAdmin.js` treats either of these conditions as production access:
 
 - `LPU_JOB_ENV=production`
 - `FIRESTORE_DATABASE_ID=(default)`

@@ -20,11 +20,10 @@
     "onModMail": "/internal/triggers/modmail"
   },
   "settings": {
-    "global": {
-      "discordWebhookUrl": {
+    "subreddit": {
+      "installationDiscordWebhookUrl": {
         "type": "string",
-        "label": "Discord Webhook URL",
-        "isSecret": true
+        "label": "Discord Webhook URL"
       }
     }
   },

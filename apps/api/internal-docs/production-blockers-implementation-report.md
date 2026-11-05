@@ -93,7 +93,7 @@ readiness identity, bootstrap file, and optional refresh behavior.
 - Catalog refresh focused tests: 3 files passed, 16 tests passed.
 - Full tests under Node 24.13.0: 65 files passed, 292 tests passed.
 - Full ESLint: passed with the two pre-existing warnings in
-  `src/projects/logAnalysis/lpubeltsLogAnalyzer.js`.
+  `../src/projects/logAnalysis/lpubeltsLogAnalyzer.js`.
 - Node 24 syntax checks for all changed and new JavaScript files: passed.
 - Deployment workflow YAML parse and release-response assertion smoke check: passed.
 - Scoped `git diff --check` for the implementation files: passed.

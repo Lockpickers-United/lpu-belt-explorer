@@ -18,7 +18,7 @@ ln -s ../shared/.env.development /home/lpubelts_api/apps/api-server-dev/current-
 
 Confirm that the destination does not already exist before creating the link. WebStorm must exclude the link path as well as `.env*` so an upload cannot replace it.
 
-Do not create additional environment files under `src/projects`. Standalone jobs and the combined collection runner use the same protected root file, while their config modules validate only the variables each job needs.
+Do not create additional environment files under `../../src/projects`. Standalone jobs and the combined collection runner use the same protected root file, while their config modules validate only the variables each job needs.
 
 The combined web-log job is `scripts/runFetchAnalyzeLogs.js`. It uses the pinned
 Node executable through `process.execPath`, then runs the FTP fetch, daily
@@ -116,7 +116,7 @@ The direct diagnostic command is:
 NODE_ENV=development node /home/lpubelts_api/apps/api-server-dev/current-dev/src/lpubeltsApiServer.js
 ```
 
-The logger intentionally behaves differently under PM2. `src/logger/logger.js` detects `pm_id` and writes production-style JSON output to stdout and stderr; PM2 captures those streams in the configured files. A direct development run uses pretty console output and the development file log.
+The logger intentionally behaves differently under PM2. `../../src/logger/logger.js` detects `pm_id` and writes production-style JSON output to stdout and stderr; PM2 captures those streams in the configured files. A direct development run uses pretty console output and the development file log.
 
 If direct execution works but PM2 does not:
 

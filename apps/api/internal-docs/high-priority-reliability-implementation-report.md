@@ -70,7 +70,7 @@ verifies the newer day remains the publication source.
 - Focused Node 24.13.0 tests: 4 files passed, 11 tests passed.
 - Full Node 24.13.0 test suite: 67 files passed, 298 tests passed.
 - Full ESLint: passed with the two pre-existing warnings in
-  `src/projects/logAnalysis/lpubeltsLogAnalyzer.js`.
+  `../src/projects/logAnalysis/lpubeltsLogAnalyzer.js`.
 - Node 24 syntax checks for changed and new JavaScript files: passed.
 - Production PM2 JSON and deployment-workflow YAML parsing: passed.
 - Scoped working-tree `git diff --check`: passed.

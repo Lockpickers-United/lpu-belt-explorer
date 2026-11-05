@@ -670,9 +670,34 @@ export default [
         }
     },
     {
+        path: '/lockyJr',
+        lazy: async () => {
+            const {default: LockyJrParentRoute} = await import('../bots/LockyJrParentRoute.jsx')
+            return {element: <LockyJrParentRoute/>}
+        },
+        children: [
+            {
+                path: '/lockyJr/reddit/privacy',
+                handle: {route: 'reddit.privacy'},
+                lazy: async () => {
+                    const {default: LockyJrRedditRoute} = await import('../bots/LockyJrRedditRoute.jsx')
+                    return {element: <LockyJrRedditRoute/>}
+                }
+            },
+            {
+                path: '/lockyJr/reddit/tos',
+                handle: {route: 'reddit.tos'},
+                lazy: async () => {
+                    const {default: LockyJrRedditRoute} = await import('../bots/LockyJrRedditRoute.jsx')
+                    return {element: <LockyJrRedditRoute/>}
+                }
+            },
+        ]
+    },
+    {
         path: '/locky',
         lazy: async () => {
-            const {default: LockyRoute} = await import('../locky/LockyRoute.jsx')
+            const {default: LockyRoute} = await import('../bots/LockyRoute.jsx')
             return {element: <LockyRoute/>}
         }
     },

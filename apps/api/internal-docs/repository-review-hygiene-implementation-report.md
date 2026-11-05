@@ -47,7 +47,7 @@ an unrelated repository-wide cleanup.
 ### Atomic JSON writes
 
 Ten collection/export modules now use
-`src/util/writeJsonFileAtomic.js`. The shared helper creates parent directories,
+`../src/util/writeJsonFileAtomic.js`. The shared helper creates parent directories,
 uses collision-resistant temporary names in the destination directory, preserves
 compact or indented JSON output as requested by each caller, atomically renames
 the completed file, and makes a best-effort cleanup without hiding the original
@@ -64,7 +64,7 @@ original failure, and rejection of data that cannot produce top-level JSON text.
 - Focused tests: 12 files passed, 35 tests passed.
 - Full test suite: 68 files passed, 301 tests passed.
 - Root `yarn lint`: passed with the two pre-existing warnings in
-  `src/projects/logAnalysis/lpubeltsLogAnalyzer.js`.
+  `../src/projects/logAnalysis/lpubeltsLogAnalyzer.js`.
 - `node --check` for every changed JavaScript file: passed.
 - Working-tree and full `main` comparison `git diff --check`: passed.
 - `.yarn/install-state.gz` compared with `main`: no difference.

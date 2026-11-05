@@ -227,7 +227,7 @@ Response shape:
 
 Sample:
 
-- `src/api/requirements/samples/locks-lockId-videos.json`
+- `../requirements/samples/locks-lockId-videos.json`
 
 ### GET `/stats/collections/locks`
 
@@ -271,7 +271,7 @@ Response shape:
 
 Sample:
 
-- `src/api/requirements/samples/stats-collections-locks.json`
+- `../requirements/samples/stats-collections-locks.json`
 
 ### GET `/stats/collections/locks/own`
 
@@ -313,7 +313,7 @@ Response shape:
 
 Sample:
 
-- `src/api/requirements/samples/stats-collections-locks-own.json`
+- `../requirements/samples/stats-collections-locks-own.json`
 
 ### GET `/stats/collections/locks/scorecard`
 
@@ -355,7 +355,7 @@ Response shape:
 
 Sample:
 
-- `src/api/requirements/samples/stats-collections-locks-scorecard.json`
+- `../requirements/samples/stats-collections-locks-scorecard.json`
 
 ### GET `/users/{id}/summary`
 
@@ -398,7 +398,7 @@ Response shape:
 
 Sample:
 
-- `src/api/requirements/samples/users-userId-summary.json`
+- `../requirements/samples/users-userId-summary.json`
 
 ### GET `/users/{id}`
 
@@ -442,7 +442,7 @@ Response shape:
 
 Sample:
 
-- `src/api/requirements/samples/users-userId-wishlist.json`
+- `../requirements/samples/users-userId-wishlist.json`
 
 ### GET `/users/{id}/profile`
 
@@ -485,7 +485,7 @@ Response shape:
 
 Sample:
 
-- `src/api/requirements/samples/users-userId-profile.json`
+- `../requirements/samples/users-userId-profile.json`
 
 ## Current Local Test URLs
 

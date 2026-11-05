@@ -130,7 +130,7 @@ Use Supertest with in-memory or temporary files and the real parser to cover:
 - temporary-file cleanup on success and failure;
 - filename/path handling and the stable error-code mapping in `parseForm.js`.
 
-Run the same tests once against the vendored parser and once against Formidable 3.5.4. Any behavior difference must be reviewed before deleting `src/util/formidable/` or `hexoid`.
+Run the same tests once against the vendored parser and once against Formidable 3.5.4. Any behavior difference must be reviewed before deleting `../src/util/formidable` or `hexoid`.
 
 ### Environment loading
 
@@ -228,7 +228,7 @@ Implementation status: complete on 2026-09-23. The same 16 multipart contract te
 
 1. Add the real multipart contract coverage described above while the vendored parser is still active.
 2. Audit the vendored diff against Formidable 3.5.4. The completed comparison found matching application-facing parser contracts and a material default-name generator change from `hexoid` to CUID2.
-3. Change imports in upload, email-form, request-lock, and the tracked Reddit WIP upload utility from `src/util/formidable/src/index.js` to the package export.
+3. Change imports in upload, email-form, request-lock, and the tracked Reddit WIP upload utility from `../src/util/formidable/src/index.js` to the package export.
 4. Preserve endpoint-specific size limits, keep the existing centralized error mapping, and verify temporary-file lifecycle behavior.
 5. Remove the vendored parser and `hexoid` only after the old/new contract comparison passes.
 6. Confirm Formidable remains direct because application code now imports it. Do not rely on Supertest's transitive copy.

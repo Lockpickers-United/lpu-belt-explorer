@@ -39,7 +39,7 @@ The audit entries are:
 - Moderate on the Snoowrap/request branch: `har-validator`, two `qs` advisories, `request`, `request-promise`, `snoowrap`, `tough-cookie`, and the UUID advisory's UUID 3.4.0 path.
 - Other moderate entries: unsupported ESLint 9.39.5, deprecated `glob` 10.5.0, deprecated `node-domexception` 1.0.0, and the UUID advisory's UUID 9.0.1 path through Gaxios 6.7.1.
 
-The two source warnings are both in `src/projects/logAnalysis/lpubeltsLogAnalyzer.js`: `import/no-named-as-default` at line 8 and an unused `logLines` assignment at line 60. ESLint also reports that React version detection cannot find a React package. Phase 4 owns these lint findings.
+The two source warnings are both in `../src/projects/logAnalysis/lpubeltsLogAnalyzer.js`: `import/no-named-as-default` at line 8 and an unused `logLines` assignment at line 60. ESLint also reports that React version detection cannot find a React package. Phase 4 owns these lint findings.
 
 The first test attempt inside the restricted sandbox passed 55 files and failed 13 files because Supertest could not open loopback listeners (`listen EPERM`). Repeating the same complete mocked suite with local loopback access passed all 68 files and 301 tests. No test contacted Firebase, Reddit, Flickr, Google, SMTP, FTP, or another live service.
 
@@ -108,7 +108,7 @@ No server, PM2 process, production deployment, collection job, or live integrati
 
 - Added 16 real multipart contract tests and ran the same tests before and after the parser replacement. They cover valid requests through upload, email-form, and request-lock handlers; repeated field/file shapes; filename/path handling; field-count, field-size, file-count, individual-file-size, and total-file-size limits; missing/malformed boundaries; interrupted streams; stable error status/code mapping; and temporary-file cleanup.
 - Replaced the vendored imports in the three maintained multipart handlers and the tracked Reddit WIP upload utility with the direct `formidable` 3.5.4 package export.
-- Removed the 19-file `src/util/formidable/` copy and the direct `hexoid` dependency. Formidable remains direct in the manifest, while its supported CUID2 dependency now owns default temporary filename generation.
+- Removed the 19-file `../src/util/formidable` copy and the direct `hexoid` dependency. Formidable remains direct in the manifest, while its supported CUID2 dependency now owns default temporary filename generation.
 - Regenerated `yarn.lock`, reducing the root manifest from 41 to 40 direct packages and the resolved tree from 739 to 738 locators.
 - Updated `parseForm.js` to defer rejected-file cleanup until Formidable has registered the current file. This closes the `maxFiles: 0` ordering race that otherwise left an empty temporary file, while retaining the existing HTTP status and numeric error code.
 
@@ -315,7 +315,7 @@ No server, PM2 process, deployment, credential read, Google request, live-data j
 - Verified that commit `59387a3` retired the four WIP files that contained every repository import of `snoowrap` and `fuse.js`. A follow-up static import scan found no remaining JavaScript consumer of either package.
 - Removed direct `snoowrap` 1.23.0 and `fuse.js` 7.5.0 dependencies, along with the Snoowrap/request-owned `form-data@~2.3.2` resolution. Regenerating `yarn.lock` removed 46 locators, reducing the resolved tree from 706 to 660.
 - Confirmed that Snoowrap, Fuse, Request, Request Promise, WebSocket 3, UUID 3, and the deprecated supporting branch are absent from the final dependency tree. The remaining Form-data 4.0.6 is the current branch used by Axios and Superagent, and UUID resolves only to 11.1.1 through the intentional Gaxios 6 compatibility resolution.
-- Removed stale operational guidance that referenced the deleted WIP scripts and Snoowrap. The active Reddit belt refresh under `src/projects/redditBelts/` remains unchanged.
+- Removed stale operational guidance that referenced the deleted WIP scripts and Snoowrap. The active Reddit belt refresh under `../src/projects/redditBelts` remains unchanged.
 - No replacement unit test was added because the deleted scripts were the only behavior owned by these dependencies. Static consumer checks, dependency-tree inspection, the audit, and the unchanged full suite cover this removal.
 
 ### Validation

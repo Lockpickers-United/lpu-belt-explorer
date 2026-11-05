@@ -29,8 +29,6 @@ public/sitemap.txt
 public/sitemap.xml
 public/data/*
 
-src/data/dancache/*
-src/data/linkCache.json
 /public/test
 src/data/data.json
 src/data/rafl.json
@@ -58,8 +56,6 @@ tests-results/*
 /.claude/settings.local.json
 /.local/classification-phase3/
 /.local/classification-phase6/
-/src/data/classification
-/src/data/classification
 
 # Web workspace outputs; retain legacy root ignores for existing local data.
 /apps/web/stats.html
@@ -87,3 +83,4 @@ tests-results/*
 /.pnp.cjs
 /.pnp.loader.mjs
 /.yarn/
+/pre-monorepo

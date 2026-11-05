@@ -13,8 +13,6 @@ export function RequestAdminDataProvider({children}) {
     const {filters: allFilters, activeFilterGroups} = useContext(FilterContext)
     const {search, sort, expandAll} = allFilters
 
-    console.log('beltRequests', beltRequests)
-
     const displayStatuses = {open: 'Open',
         'checked-out': 'Checked out',
         'processing-approve': 'Processing Approval',

@@ -18,18 +18,18 @@ The first phase has been applied to the two active incremental exporters. They n
 These findings describe the state before the first implementation phase:
 
 - At least 26 files use `process.env.USER !== localUser`, meaning any unrecognized username is treated as production.
-- `src/projects/collections/collectionsExport.js` selects production implicitly, reads a service-account file at module scope, initializes Firebase at module scope, and unconditionally executes `getIncrementalData()` at the bottom of the module.
-- `src/projects/collections/awardsEvidenceExport.js` has the same behavior and unconditionally executes `getAllData()`.
+- `../src/projects/collections/collectionsExport.js` selects production implicitly, reads a service-account file at module scope, initializes Firebase at module scope, and unconditionally executes `getIncrementalData()` at the bottom of the module.
+- `../src/projects/collections/awardsEvidenceExport.js` has the same behavior and unconditionally executes `getAllData()`.
 - The exporters' existing `isDirectRun` variables affect activity logging only; they do not prevent export execution after import.
-- `../src/projects/collections/awardsEvidenceProcess.js` and `src/projects/collections/exportCollectionHandler.js` read credentials and initialize Firebase during import even though their primary work is function-based.
-- `src/projects/requestLock/requestLock.js` initializes Firebase and creates its upload directory during import.
-- `src/api/services/firebaseAdmin.js` already demonstrates the preferred lazy-initialization direction: importing it does not read credentials until a Firebase client is requested.
+- `../src/projects/collections/awardsEvidenceProcess.js` and `../src/projects/collections/exportCollectionHandler.js` read credentials and initialize Firebase during import even though their primary work is function-based.
+- `../src/projects/requestLock/requestLock.js` initializes Firebase and creates its upload directory during import.
+- `../src/api/services/firebaseAdmin.js` already demonstrates the preferred lazy-initialization direction: importing it does not read credentials until a Firebase client is requested.
 
 ## Recommended remediation
 
 ### 1. Introduce explicit job configuration
 
-Create a shared module such as `src/config/jobRuntime.js` that validates explicit settings. A possible interface is:
+Create a shared module such as `../src/config/jobRuntime.js` that validates explicit settings. A possible interface is:
 
 ```text
 LPU_JOB_ENV=development|production
@@ -193,8 +193,8 @@ An import-safety test can launch a child Node process with credential variables 
 After the active incremental exporters, migrate modules in this order:
 
 1. `../src/projects/collections/awardsEvidenceProcess.js`
-2. `src/projects/collections/exportCollectionHandler.js`
-3. Routed modules with import-time initialization (`src/projects/requestLock/requestLock.js` is complete; migrate any remaining modules)
+2. `../src/projects/collections/exportCollectionHandler.js`
+3. Routed modules with import-time initialization (`../src/projects/requestLock/requestLock.js` is complete; migrate any remaining modules)
 4. Active collection statistics, RAFL, Reddit, and log processors
 5. Historical and WIP scripts only when they remain operationally relevant
 

@@ -13,7 +13,7 @@ Development and production run on the same DreamHost Managed VPS under the `lpub
 | Development | `api-dev.lpubelts.com` | `10081` | `/home/lpubelts_api/apps/api-server-dev` |
 | Production | `api.lpubelts.com` | `10080` | `/home/lpubelts_api/apps/api-server-prod` |
 
-The application entry point is `src/lpubeltsApiServer.js`.
+The application entry point is `../../src/lpubeltsApiServer.js`.
 
 DreamHost should proxy each HTTPS hostname to its assigned loopback port. The frontend uses the hostname, so the internal production port may temporarily differ during a parallel migration if port `10080` is still occupied by the old backend.
 
@@ -85,7 +85,7 @@ Development needs its own verified local compact snapshot and absolute path.
 Invalid, missing, or unset catalog files fail Classification requests with 503;
 never fall back to test fixtures or a live URL fetch.
 
-Each environment has one protected `.env.<environment>` file linked at the repository root. It contains server and command-line job settings, including `COLLECTION_*`; do not create component-specific environment files inside `src/projects`.
+Each environment has one protected `.env.<environment>` file linked at the repository root. It contains server and command-line job settings, including `COLLECTION_*`; do not create component-specific environment files inside `../../src/projects`.
 
 Do not reorganize the repository into a shared application directory. Sharing source files, manifests, or dependencies between releases defeats immutable deployment and can make the previous release unusable after an update.
 
