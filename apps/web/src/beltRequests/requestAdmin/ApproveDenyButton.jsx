@@ -35,8 +35,9 @@ export default function ApproveDenyButton({entry, action, handleReply, processin
         if (includeRequirements && !entry.belt.includes('Dan')) {
             const reqLink = `https://lpubelts.com/#/locks?tab=${entry.belt.replace(' Belt', '')}&id=beltreqs`
             const fullReply = `${replyText}\n\nCheck out the ${entry.belt} requirements here: ${reqLink}`
-            handleReply && handleReply(
-                action, fullReply, event)
+            handleReply && handleReply(action, fullReply, event)
+        } else {
+            handleReply && handleReply(action, replyText, event)
         }
     }, [action, entry.belt, handleClose, handleReply, includeRequirements, replyText])
 
