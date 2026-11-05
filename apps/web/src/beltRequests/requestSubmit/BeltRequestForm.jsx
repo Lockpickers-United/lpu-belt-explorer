@@ -45,7 +45,7 @@ export default function BeltRequestForm() {
     } = useContext(ScorecardDataContext)
 
 
-    // TODO message is no matching scorecard entries (or none to begin with)
+    // TODO message if no matching scorecard entries (or none to begin with)
 
 
     let form

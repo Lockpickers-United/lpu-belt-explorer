@@ -4,6 +4,9 @@ import LoadingDisplay from '../../misc/LoadingDisplay.jsx'
 import DisplayDialog from '../../misc/DisplayDialog.jsx'
 import TextField from '@mui/material/TextField'
 import useWindowSize from '../../util/useWindowSize.jsx'
+import Checkbox from '@mui/material/Checkbox'
+import FormControlLabel from '@mui/material/FormControlLabel'
+import FormGroup from '@mui/material/FormGroup'
 
 export default function ApproveDenyButton({entry, action, handleReply, processing}) {
     const {isMobile} = useWindowSize()
@@ -16,6 +19,7 @@ export default function ApproveDenyButton({entry, action, handleReply, processin
     }, [])
 
     const [replyText, setReplyText] = useState(action === 'approve' ? getDefaultMessage(entry.belt) : '')
+    const [includeRequirements, setIncludeRequirements] = useState(false)
 
     const handleClose = useCallback(() => {
         setAnchorEl(null)
@@ -28,8 +32,13 @@ export default function ApproveDenyButton({entry, action, handleReply, processin
 
     const handleSubmit = useCallback((event) => {
         handleClose()
-        handleReply && handleReply(action, replyText, event)
-    }, [action, handleClose, handleReply, replyText])
+        if (includeRequirements && !entry.belt.includes('Dan')) {
+            const reqLink = `https://lpubelts.com/#/locks?tab=${entry.belt.replace(' Belt', '')}&id=beltreqs`
+            const fullReply = `${replyText}\n\nCheck out the ${entry.belt} requirements here: ${reqLink}`
+            handleReply && handleReply(
+                action, fullReply, event)
+        }
+    }, [action, entry.belt, handleClose, handleReply, includeRequirements, replyText])
 
     return (
         <>
@@ -48,7 +57,10 @@ export default function ApproveDenyButton({entry, action, handleReply, processin
             <DisplayDialog
                 dialogContent={
                     <>
-                        <div style={{padding: '32px 16px', textAlign: 'center'}}>
+                        <div style={{padding: '24px 16px 24px'}}>
+                            <div style={{fontSize: '1.2rem', fontWeight: 600, marginBottom: 4}}>
+                                {action === 'deny' ? 'Deny' : 'Approve'} Belt Request
+                            </div>
                             <TextField type='text' name='reply' multiline fullWidth
                                        rows={isMobile ? 15 : 10}
                                        value={replyText} onChange={handleChange}
@@ -61,13 +73,27 @@ export default function ApproveDenyButton({entry, action, handleReply, processin
                                            htmlInput: {maxLength: 1200, style: {fontSize: '1.0rem'}}
                                        }}
                             />
+                            {action === 'deny' && !entry.belt.includes('Dan') &&
+                                <FormGroup>
+                                    <FormControlLabel
+                                        control={
+                                            <Checkbox
+                                                checked={includeRequirements}
+                                                onClick={() => setIncludeRequirements(prev => !prev)}
+                                                color='info'
+                                            />
+                                        }
+                                        onClick={() => setIncludeRequirements(prev => !prev)}
+                                        label='Include requirements link with reply.'/>
+                                </FormGroup>
+                            }
                         </div>
                         <div style={{textAlign: 'center'}}>
                             <Button onClick={handleClose} variant='contained' size='small'
-                                style={{marginBottom: 24, marginRight: 16, backgroundColor:'#999', color: '#222'}}>
+                                    style={{marginBottom: 32, marginRight: 16, backgroundColor: '#999', color: '#222'}}>
                                 Cancel
                             </Button>
-                            <Button style={{marginBottom: 24, color: '#222'}}
+                            <Button style={{marginBottom: 32, color: '#222'}}
                                     variant='contained'
                                     disabled={action === 'deny' && replyText.length === 0}
                                     onClick={(e => handleSubmit(e))}
@@ -83,15 +109,15 @@ export default function ApproveDenyButton({entry, action, handleReply, processin
 
 function getDefaultMessage(belt) {
     const defaultMessages = {
-        'White Belt': ' Welcome to LPU! :whitebelt:',
-        'Yellow Belt': ' Nice work! :yellowbelt:',
-        'Orange Belt': ' Way to go! :orangebelt:',
-        'Green Belt': ' Movin\' on up! :greenbelt:',
-        'Blue Belt': ' Awesome! :bluebelt:',
-        'Purple Belt': ' Big milestone! :purplebelt:',
-        'Brown Belt': ' Great work! :brownbelt:',
-        'Red Belt': ' When Black? :redbelt:',
-        'Black Belt': ' What a tremendous accomlishment. :lpu:'
+        'White Belt': ' Welcome to LPU! <:whitebelt:336531963634515972>',
+        'Yellow Belt': ' Nice work! <:yellowbelt:336531963764539393>',
+        'Orange Belt': ' Way to go! <:orangebelt:336531963877785601>',
+        'Green Belt': ' Movin\' on up! <:greenbelt:336531963844362242>',
+        'Blue Belt': ' Awesome! <:bluebelt:336531963835973632>',
+        'Purple Belt': ' Big milestone! <:purplebelt:336531963521531913>',
+        'Brown Belt': ' Great work! <:brownbelt:336531963525464065>',
+        'Red Belt': ' When Black? <:redbelt:336531963869528067>',
+        'Black Belt': ' What a tremendous accomlishment. <:lpu:585997905773461514>'
     }
     return defaultMessages[belt] || 'Nice work!'
 }
