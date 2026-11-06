@@ -32,12 +32,15 @@ export default function ApproveDenyButton({entry, action, handleReply, processin
 
     const handleSubmit = useCallback((event) => {
         handleClose()
+        let fullReply = replyText.replace(/:\w*belt:/i, (match) => {
+            return beltEmoji[match]
+        })
         if (includeRequirements && !entry.belt.includes('Dan')) {
             const reqLink = `https://lpubelts.com/#/locks?tab=${entry.belt.replace(' Belt', '')}&id=beltreqs`
-            const fullReply = `${replyText}\n\nCheck out the ${entry.belt} requirements here: ${reqLink}`
+            fullReply = `${replyText}\n\nCheck out the ${entry.belt} requirements here: ${reqLink}`
             handleReply && handleReply(action, fullReply, event)
         } else {
-            handleReply && handleReply(action, replyText, event)
+            handleReply && handleReply(action, fullReply, event)
         }
     }, [action, entry.belt, handleClose, handleReply, includeRequirements, replyText])
 
@@ -106,6 +109,20 @@ export default function ApproveDenyButton({entry, action, handleReply, processin
         </>
     )
 }
+
+const beltEmoji = {
+    ':whitebelt:': '<:whitebelt:336531963634515972>',
+    ':yellowbelt:': '<:yellowbelt:336531963764539393>',
+    ':orangebelt:': '<:orangebelt:336531963877785601>',
+    ':greenbelt:': '<:greenbelt:336531963844362242>',
+    ':bluebelt:': '<:bluebelt:336531963835973632>',
+    ':purplebelt:': '<:purplebelt:336531963521531913>',
+    ':brownbelt:': '<:brownbelt:336531963525464065>',
+    ':redbelt:': '<:redbelt:336531963869528067>',
+    ':blackbelt:': '<:blackbelt:336531963546566659>',
+    ':luo:': '<:lpu:585997905773461514>',
+}
+
 
 function getDefaultMessage(belt) {
     const defaultMessages = {
