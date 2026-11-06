@@ -10,7 +10,7 @@ import privacyPolicyMd from './lockyJrReddit/PRIVACY.md?raw'
 import termsMd from './lockyJrReddit/TOS.md?raw'
 import {useMatches} from 'react-router-dom'
 
-function LockyPrivacyRoute() {
+export default function LockyJrRedditRoute() {
     usePageTitle('Locky Jr Information')
 
     const content = useMatches().some(match => match.handle?.route === 'reddit.privacy') ? privacyPolicyMd : termsMd
@@ -37,5 +37,3 @@ function LockyPrivacyRoute() {
         </React.Fragment>
     )
 }
-
-export default LockyPrivacyRoute

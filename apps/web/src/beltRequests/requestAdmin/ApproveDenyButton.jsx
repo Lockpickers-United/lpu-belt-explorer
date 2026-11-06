@@ -84,7 +84,6 @@ export default function ApproveDenyButton({entry, action, handleReply, processin
                                                 color='info'
                                             />
                                         }
-                                        onClick={() => setIncludeRequirements(prev => !prev)}
                                         label='Include requirements link with reply.'/>
                                 </FormGroup>
                             }

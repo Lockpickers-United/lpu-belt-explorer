@@ -1,12 +1,12 @@
 import React, {useCallback, useContext, useEffect, useMemo, useState} from 'react'
 import {collection, doc, onSnapshot, query, runTransaction, deleteField, where} from 'firebase/firestore'
-import {db} from '../../auth/firebase.js'
-import DBContext from '../../app/DBContext.jsx'
+import {db} from '../auth/firebase.js'
+import DBContext from '../app/DBContext.jsx'
 import {enqueueSnackbar} from 'notistack'
 import dayjs from 'dayjs'
 import Button from '@mui/material/Button'
 
-export function BeltAdminDBProvider({children}) {
+export function BeltRequestDBProvider({children}) {
     const globalContext = useContext(DBContext)
     const {profile} = useContext(DBContext)
 
