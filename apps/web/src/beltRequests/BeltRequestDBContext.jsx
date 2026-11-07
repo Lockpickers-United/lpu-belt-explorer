@@ -45,6 +45,43 @@ export function BeltRequestDBProvider({children}) {
         return () => unsubscribe()
     }, [viewing])
 
+
+    const createBeltRequest = useCallback(async (requestData) => {
+        if (globalContext.dbError || dbError) {
+            throw new Error('Database error')
+        }
+        const id = genHexString(8)
+        const request = {
+            id,
+            source: 'Site',
+            status: 'incoming',
+            belt: requestData.requestBelt,
+            platform: requestData.platform,
+            messageContent: requestData.messageContent,
+            username: requestData.username, // authed username (currently discord only)
+            userId: requestData.userId, // authed user id (currently discord only)
+            messageId: null, // will be populated by the discord bot
+            requestId: null, // will be populated by the discord bot
+            syncTo: requestData.syncTo,
+            syncUsername: requestData.syncUsername,
+            dateAdded: dayjs().format(),
+            lastUpdated: dayjs().format(),
+            revision: 1
+        }
+
+        const ref = doc(db, 'belt-requests', id)
+        await runTransaction(db, async transaction => {
+            const sfDoc = await transaction.get(ref)
+            if (sfDoc.exists()) {
+                throw new Error(`Error: request ${id} already exists`)
+            } else {
+                transaction.set(ref, request)
+            }
+        })
+
+    }, [dbError, globalContext.dbError])
+
+
     const updateBeltRequest = useCallback(async (update) => {
         if (globalContext.dbError || dbError) {
             throw new Error('Database error')
@@ -204,6 +241,7 @@ export function BeltRequestDBProvider({children}) {
         beltRequests,
         viewing,
         toggleViewAll,
+        createBeltRequest,
         replaceBeltRequest,
         updateBeltRequest,
         handleUpdate,
@@ -213,7 +251,7 @@ export function BeltRequestDBProvider({children}) {
         reopenRequest,
         checkoutRequest,
         checkinRequest
-    }), [globalContext, requestsLoaded, beltRequests, viewing, toggleViewAll, replaceBeltRequest, updateBeltRequest, handleUpdate, approveRequest, denyRequest, deleteRequest, reopenRequest, checkoutRequest, checkinRequest])
+    }), [globalContext, requestsLoaded, beltRequests, viewing, toggleViewAll, createBeltRequest, replaceBeltRequest, updateBeltRequest, handleUpdate, approveRequest, denyRequest, deleteRequest, reopenRequest, checkoutRequest, checkinRequest])
 
     return (
         <DBContext.Provider value={value}>
@@ -223,3 +261,13 @@ export function BeltRequestDBProvider({children}) {
 }
 
 export default DBContext
+
+
+function genHexString(len) {
+    const hex = '0123456789ABCDEF'
+    let output = ''
+    for (let i = 0; i < len; ++i) {
+        output += hex.charAt(Math.floor(Math.random() * hex.length))
+    }
+    return output.toLowerCase()
+}

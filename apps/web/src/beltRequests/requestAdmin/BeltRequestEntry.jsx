@@ -48,7 +48,7 @@ function BeltRequestEntry({entry, expanded, onExpand}) {
         belt,
         username,
         source,
-        _platform,
+        platform,
         messageContent,
         _reply,
         _syncUsername,
@@ -81,7 +81,8 @@ function BeltRequestEntry({entry, expanded, onExpand}) {
         await handleClick(requestReply, action, event)
     }, [entry, handleClick])
 
-    const {evidence} = parseBeltRequest(messageContent)
+    const parsed = parseBeltRequest(messageContent)
+    const evidence = parsed.evidence ?? messageContent
     const evidenceMd = evidence
         ? evidence.replaceAll(/(https*:\/\/)(\S+)/g, (_match, p1, p2) => {
             return `[${truncate(p2, isMobile ? 35 : 55)}](${p1 + p2})`
@@ -133,7 +134,7 @@ function BeltRequestEntry({entry, expanded, onExpand}) {
         {id: 'value', align: 'left', name: 'Value'}
     ]
     const rows = Object.entries(entry).map(([key, value]) => {
-        if (['messageContent'].includes(key)) return null
+        if (['fuzzy'].includes(key)) return null
         return {field: key, value: value}
     }).filter(row => row !== null)
 
@@ -216,7 +217,7 @@ function BeltRequestEntry({entry, expanded, onExpand}) {
                     </div>
                 </div>
                 <div style={{marginRight: 0, alignContent: 'center', minWidth: 40}}>
-                    {source === 'Discord' &&
+                    {platform === 'Discord' && messageId &&
                         <IconButton onClick={(e) => openInNewTab(e)} style={{height: 40}}>
                             <OpenInNewIcon style={{color: '#ccc'}}/>
                         </IconButton>

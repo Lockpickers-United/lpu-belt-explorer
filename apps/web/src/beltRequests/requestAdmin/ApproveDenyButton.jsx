@@ -120,7 +120,7 @@ const beltEmoji = {
     ':brownbelt:': '<:brownbelt:336531963525464065>',
     ':redbelt:': '<:redbelt:336531963869528067>',
     ':blackbelt:': '<:blackbelt:336531963546566659>',
-    ':luo:': '<:lpu:585997905773461514>',
+    ':lpu:': '<:lpu:585997905773461514>',
 }
 
 
