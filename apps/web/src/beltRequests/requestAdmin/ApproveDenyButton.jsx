@@ -126,15 +126,15 @@ const beltEmoji = {
 
 function getDefaultMessage(belt) {
     const defaultMessages = {
-        'White Belt': ' Welcome to LPU! <:whitebelt:336531963634515972>',
-        'Yellow Belt': ' Nice work! <:yellowbelt:336531963764539393>',
-        'Orange Belt': ' Way to go! <:orangebelt:336531963877785601>',
-        'Green Belt': ' Movin\' on up! <:greenbelt:336531963844362242>',
-        'Blue Belt': ' Awesome! <:bluebelt:336531963835973632>',
-        'Purple Belt': ' Big milestone! <:purplebelt:336531963521531913>',
-        'Brown Belt': ' Great work! <:brownbelt:336531963525464065>',
-        'Red Belt': ' When Black? <:redbelt:336531963869528067>',
-        'Black Belt': ' What a tremendous accomlishment. <:lpu:585997905773461514>'
+        'White Belt': ' Welcome to LPU! :whitebelt:',
+        'Yellow Belt': ' Nice work! :yellowbelt:',
+        'Orange Belt': ' Way to go! :orangebelt:',
+        'Green Belt': ' Movin\' on up! :greenbelt:',
+        'Blue Belt': ' Awesome! :bluebelt:',
+        'Purple Belt': ' Big milestone! :purplebelt:',
+        'Brown Belt': ' Great work! :brownbelt:',
+        'Red Belt': ' When Black? :redbelt:',
+        'Black Belt': ' What a tremendous accomlishment. :lpu:'
     }
     return defaultMessages[belt] || 'Nice work!'
 }
