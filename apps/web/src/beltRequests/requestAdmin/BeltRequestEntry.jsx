@@ -24,6 +24,8 @@ import DBContext from '../BeltRequestDBContext.jsx'
 import LoadingDisplay from '../../misc/LoadingDisplay.jsx'
 import CopyEntryIdButton from '../../entries/CopyEntryIdButton.jsx'
 import ApproveDenyButton from './ApproveDenyButton.jsx'
+import LiteYouTubeEmbed from 'react-lite-youtube-embed'
+import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css'
 
 function BeltRequestEntry({entry, expanded, onExpand}) {
     const {
@@ -88,6 +90,11 @@ function BeltRequestEntry({entry, expanded, onExpand}) {
             return `[${truncate(p2, isMobile ? 35 : 55)}](${p1 + p2})`
         })
         : ''
+
+    const youtubeRegex = /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:[^/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/g
+    const matches = [...messageContent.matchAll(youtubeRegex)]
+    const _videoLinks = matches.map(match => match[0]) // Full matched URLs
+    const videoIds = matches.map(match => match[1]) // Extracted 11-character video IDs
 
     const openInNewTab = useCallback((e) => {
         e.stopPropagation()
@@ -250,78 +257,97 @@ function BeltRequestEntry({entry, expanded, onExpand}) {
                             </Collapse>
                         </div>
 
-                        <div style={{flexGrow: 1, flexDirection: 'row', textAlign: 'right', marginRight: 24}}>
-                            {status === 'checked-out' && !myCheckout
-                                ? <>
-                                    <Button onClick={handleOpen} variant='text'
-                                            color='warning' style={{flexGrow: 0, marginRight: 16}}>
-                                        Force...</Button>
-                                    <Menu
-                                        anchorEl={anchorEl}
-                                        open={open}
-                                        onClose={handleClose}
-                                        slotProps={{
-                                            paper: {
-                                                sx: {
-                                                    minWidth: 140,
-                                                    maxWidth: '100%'
+                        <div>
+                            <div style={{flexGrow: 1, flexDirection: 'row', textAlign: 'right', marginRight: 24}}>
+                                {status === 'checked-out' && !myCheckout
+                                    ? <>
+                                        <Button onClick={handleOpen} variant='text'
+                                                color='warning' style={{flexGrow: 0, marginRight: 16}}>
+                                            Force...</Button>
+                                        <Menu
+                                            anchorEl={anchorEl}
+                                            open={open}
+                                            onClose={handleClose}
+                                            slotProps={{
+                                                paper: {
+                                                    sx: {
+                                                        minWidth: 140,
+                                                        maxWidth: '100%'
+                                                    }
                                                 }
+                                            }}
+                                        >
+                                            {status === 'checked-out'
+                                                ?
+                                                <MenuItem onClick={(e) => handleClick(entry, 'checkin', e, true)}>
+                                                    <ListItemText>Check In</ListItemText>
+                                                </MenuItem>
+                                                : null
                                             }
-                                        }}
-                                    >
-                                        {status === 'checked-out'
-                                            ?
-                                            <MenuItem onClick={(e) => handleClick(entry, 'checkin', e, true)}>
-                                                <ListItemText>Check In</ListItemText>
+                                            <MenuItem onClick={(e) => handleClick(entry, 'approve', e, true)}>
+                                                Approve
                                             </MenuItem>
-                                            : null
-                                        }
-                                        <MenuItem onClick={(e) => handleClick(entry, 'approve', e, true)}>
-                                            Approve
-                                        </MenuItem>
-                                        <MenuItem onClick={(e) => handleClick(entry, 'deny', e, true)}>
-                                            Deny
-                                        </MenuItem>
-                                        <MenuItem onClick={(e) => handleClick(entry, 'delete', e, true)}
-                                                  style={{color: '#ff3535'}}>
-                                            Delete
-                                        </MenuItem>
-                                    </Menu>
-                                </>
-                                : <>
-                                    <Button onClick={(e) => handleClick(entry, 'delete', e)}
-                                            disabled={['processing-approve', 'processing-deny'].includes(status) || processing}
-                                            variant='text'
-                                            color='error'
-                                            style={{flexGrow: 0, marginRight: 16}}>
-                                        {processing !== 'deleted' ? 'Delete' : <LoadingDisplay size={20} white={true}/>}
-                                    </Button>
-                                    {!['open', 'checked-out'].includes(status) && !myCheckout &&
-                                        <Button onClick={(e) => handleClick(entry, 'reopen', e)}
-                                                disabled={['open', 'checked-out', 'processing-approve', 'processing-deny'].includes(status) || processing}
-                                                variant='text' color='success' style={{flexGrow: 0, marginRight: 16}}>
-                                            {processing !== 'reopen' ? 'Re-open' :
+                                            <MenuItem onClick={(e) => handleClick(entry, 'deny', e, true)}>
+                                                Deny
+                                            </MenuItem>
+                                            <MenuItem onClick={(e) => handleClick(entry, 'delete', e, true)}
+                                                      style={{color: '#ff3535'}}>
+                                                Delete
+                                            </MenuItem>
+                                        </Menu>
+                                    </>
+                                    : <>
+                                        <Button onClick={(e) => handleClick(entry, 'delete', e)}
+                                                disabled={['processing-approve', 'processing-deny'].includes(status) || processing}
+                                                variant='text'
+                                                color='error'
+                                                style={{flexGrow: 0, marginRight: 16}}>
+                                            {processing !== 'deleted' ? 'Delete' :
                                                 <LoadingDisplay size={20} white={true}/>}
                                         </Button>
-                                    }
-                                </>
-                            }
-                            {['open'].includes(status) &&
-                                <Button onClick={(e) => handleClick(entry, 'checkout', e)}
-                                        variant='text' color='info' style={{flexGrow: 0}}>
-                                    {processing !== 'checkout' ? 'Check Out' : <LoadingDisplay size={20} white={true}/>}
-                                </Button>
-                            }
-                            {myCheckout && false &&
-                                <Button onClick={(e) => handleClick(entry, 'checkin', e)}
-                                        disabled={processing?.length > 0}
-                                        variant='text' color='info' style={{flexGrow: 0}}>
-                                    {processing !== 'checkin' ? 'Check In' : <LoadingDisplay size={20} white={true}/>}
-                                </Button>
-                            }
-                        </div>
+                                        {!['open', 'checked-out'].includes(status) && !myCheckout &&
+                                            <Button onClick={(e) => handleClick(entry, 'reopen', e)}
+                                                    disabled={['open', 'checked-out', 'processing-approve', 'processing-deny'].includes(status) || processing}
+                                                    variant='text' color='success'
+                                                    style={{flexGrow: 0, marginRight: 16}}>
+                                                {processing !== 'reopen' ? 'Re-open' :
+                                                    <LoadingDisplay size={20} white={true}/>}
+                                            </Button>
+                                        }
+                                    </>
+                                }
+                                {['open'].includes(status) &&
+                                    <Button onClick={(e) => handleClick(entry, 'checkout', e)}
+                                            variant='text' color='info' style={{flexGrow: 0}}>
+                                        {processing !== 'checkout' ? 'Check Out' :
+                                            <LoadingDisplay size={20} white={true}/>}
+                                    </Button>
+                                }
+                                {myCheckout && false &&
+                                    <Button onClick={(e) => handleClick(entry, 'checkin', e)}
+                                            disabled={processing?.length > 0}
+                                            variant='text' color='info' style={{flexGrow: 0}}>
+                                        {processing !== 'checkin' ? 'Check In' :
+                                            <LoadingDisplay size={20} white={true}/>}
+                                    </Button>
+                                }
+                            </div>
 
+                        </div>
                     </div>
+
+                    {videoIds.length > 0 &&
+                        <div style={{width: isMobile ? 300 : 600, margin: 16}}>
+                            {videoIds.map((id, index) =>
+                                <LiteYouTubeEmbed
+                                    key={index}
+                                    id={id}
+                                    title={`Video #${index}`}
+                                    lazyLoad={true}
+                                />
+                            )}
+                        </div>
+                    }
 
                 </AccordionDetails>
             }
