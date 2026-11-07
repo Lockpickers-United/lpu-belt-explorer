@@ -26,6 +26,9 @@ import CopyEntryIdButton from '../../entries/CopyEntryIdButton.jsx'
 import ApproveDenyButton from './ApproveDenyButton.jsx'
 import LiteYouTubeEmbed from 'react-lite-youtube-embed'
 import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css'
+import ImgurEmbed from '../../misc/ImgurEmbed.jsx'
+import YouTubeIcon from '@mui/icons-material/YouTube'
+import PhotoSizeSelectActualIcon from '@mui/icons-material/PhotoSizeSelectActual'
 
 function BeltRequestEntry({entry, expanded, onExpand}) {
     const {
@@ -93,8 +96,11 @@ function BeltRequestEntry({entry, expanded, onExpand}) {
 
     const youtubeRegex = /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:[^/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/g
     const matches = [...messageContent.matchAll(youtubeRegex)]
-    const _videoLinks = matches.map(match => match[0]) // Full matched URLs
-    const videoIds = matches.map(match => match[1]) // Extracted 11-character video IDs
+    const videoLinks = matches.map(match => match[0])
+    const videoIds = matches.map(match => match[1])
+
+    const imgurMatches = [...messageContent.matchAll(/(?:https?:\/\/)?(?:www\.)?imgur.com\/a\/([a-zA-Z0-9_-]{7})/g)]
+    const imgurIds = imgurMatches.map(match => match[1])
 
     const openInNewTab = useCallback((e) => {
         e.stopPropagation()
@@ -150,6 +156,8 @@ function BeltRequestEntry({entry, expanded, onExpand}) {
         return string
     }, [])
 
+    const sidePadding = !isMobile ? '16px' : '4px'
+
     const style = {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto', backgroundColor: '#222'}
     return (
         <Accordion expanded={expanded} onChange={toggleExpand} style={style} ref={ref} disableGutters
@@ -160,7 +168,7 @@ function BeltRequestEntry({entry, expanded, onExpand}) {
                               sx={{boxShadow: 3, '.MuiAccordionSummary-content': {alignItems: 'center'}}}>
                 <BeltStripe value={belt}/>
                 <div style={{
-                    margin: '0px 16px',
+                    margin: `0px ${sidePadding}`,
                     padding: '4px 0',
                     display: 'flex',
                     flexDirection: 'row',
@@ -169,8 +177,21 @@ function BeltRequestEntry({entry, expanded, onExpand}) {
                     flexWrap: 'wrap'
                 }}>
                     <div style={{flexGrow: 1}}>
-                        <div style={{fontSize: '1.2rem', fontWeight: 700, marginBottom: 2}}>
-                            {username} <span style={{fontWeight: 400}}> • {belt}</span>
+                        <div style={{
+                            fontSize: '1.2rem',
+                            fontWeight: 700,
+                            marginBottom: 2,
+                            display: 'flex',
+                            alignItems: 'center'
+                        }}>
+                            <span>{username}</span>&nbsp;<span
+                            style={{fontWeight: 400, marginRight: 16}}> • {belt}</span>
+                            {videoLinks.length > 0 &&
+                                <YouTubeIcon style={{marginLeft: 8, color: '#ff7474'}}/>
+                            }
+                            {imgurIds.length > 0 &&
+                                <PhotoSizeSelectActualIcon fontSize='12pt' style={{marginLeft: 8, color: '#7badd0'}}/>
+                            }
                         </div>
                         <div style={{fontSize: '0.9rem', fontWeight: 400, color: '#ccc', marginBottom: 4}}>
                             {dayjs(dateAdded).format('YYYY-MM-DD')} ({source} - {id})
@@ -232,11 +253,11 @@ function BeltRequestEntry({entry, expanded, onExpand}) {
                 </div>
             </AccordionSummary>
             {expanded &&
-                <AccordionDetails sx={{padding: '12px 16px', backgroundColor: '#222'}}>
+                <AccordionDetails sx={{padding: `12px ${sidePadding}`, backgroundColor: '#222'}}>
                     <BeltStripe value={belt}/>
                     <div style={{
-                        margin: '0px 16px',
-                        padding: '0px 0',
+                        margin: `0px ${sidePadding}`,
+                        padding: '0px 4px',
                         display: 'flex',
                         flexDirection: 'row',
                         alignContent: 'top',
@@ -244,19 +265,20 @@ function BeltRequestEntry({entry, expanded, onExpand}) {
                         width: '100%',
                         flexWrap: 'wrap-reverse'
                     }}>
-                        <div><CopyEntryIdButton entry={entry}/></div>
-                        <div>
-                            <Button onClick={handleShowDetails} variant='text'
-                                    style={{color: '#4d7ce3', marginRight: 16}}>
-                                {showDetails ? 'HIDE' : 'SHOW'} DETAILS</Button>
-                            <Collapse in={showDetails} unmountOnExit>
-                                <DataTableSort
-                                    tableData={tableData} tableWidth={310}
-                                    linkFunction={linkFunction} linkColumnId={null}
-                                    largeFontSize={'0.85rem'}/>
-                            </Collapse>
+                        <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
+                            <div><CopyEntryIdButton entry={entry}/></div>
+                            <div>
+                                <Button onClick={handleShowDetails} variant='text'
+                                        style={{color: '#4d7ce3', marginRight: 16}}>
+                                    {showDetails ? 'HIDE' : 'SHOW'} DETAILS</Button>
+                                <Collapse in={showDetails} unmountOnExit>
+                                    <DataTableSort
+                                        tableData={tableData} tableWidth={310}
+                                        linkFunction={linkFunction} linkColumnId={null}
+                                        largeFontSize={'0.85rem'}/>
+                                </Collapse>
+                            </div>
                         </div>
-
                         <div>
                             <div style={{flexGrow: 1, flexDirection: 'row', textAlign: 'right', marginRight: 24}}>
                                 {status === 'checked-out' && !myCheckout
@@ -336,19 +358,30 @@ function BeltRequestEntry({entry, expanded, onExpand}) {
                         </div>
                     </div>
 
-                    {videoIds.length > 0 &&
-                        <div style={{width: isMobile ? 300 : 600, margin: 16}}>
-                            {videoIds.map((id, index) =>
-                                <LiteYouTubeEmbed
-                                    key={index}
-                                    id={id}
-                                    title={`Video #${index}`}
-                                    lazyLoad={true}
-                                />
-                            )}
-                        </div>
-                    }
+                    <div style={{marginLeft: 12}}>
+                        {videoIds.length > 0 &&
+                            <div style={{width: isMobile ? 330 : 600, padding: `8px ${sidePadding}`}}>
+                                <div style={{fontWeight: 600, marginBottom: 2}}>YouTube</div>
+                                {videoIds.map((id, index) =>
+                                    <LiteYouTubeEmbed
+                                        key={index}
+                                        id={id}
+                                        title={`Video #${index}`}
+                                        lazyLoad={true}
+                                    />
+                                )}
+                            </div>
+                        }
 
+                        {imgurIds.length > 0 &&
+                            <div style={{width: isMobile ? 330 : 600, padding: `8px ${sidePadding}`}}>
+                                <div style={{fontWeight: 600, marginBottom: 2}}>Imgur</div>
+                                {imgurIds.map((id, index) =>
+                                    <ImgurEmbed imageId={id} key={index}/>
+                                )}
+                            </div>
+                        }
+                    </div>
                 </AccordionDetails>
             }
         </Accordion>
