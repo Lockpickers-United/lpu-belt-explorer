@@ -8,11 +8,10 @@ export default function ImgurEmbed({imageId}) {
     const blockStyle = {
         width: '100%',
         overflow: 'hidden',
-        borderRadius: '6px',
+        borderRadius: 16,
         display: 'block',
-        marginTop: -70
+        marginTop: -70,
     }
-
 
     useEffect(() => {
         // Check if the script is already loaded; if not, inject it
@@ -30,7 +29,7 @@ export default function ImgurEmbed({imageId}) {
     }, [imageId])
 
     return (
-        <div style={{width: isMobile ? 330 : 600, height: isMobile ? 330 : 600, display: 'block', overflow: 'hidden'}}>
+        <div style={{width: '100%', height: isMobile ? 330 : 600, display: 'block', overflow: 'hidden'}}>
             <div style={blockStyle}>
                 <blockquote className='imgur-embed-pub' lang='en' data-id={`a/${imageId}`}>
                     <a href={`https://imgur.com/a/${imageId}`}>View post on imgur</a>

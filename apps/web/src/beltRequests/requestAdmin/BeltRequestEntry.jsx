@@ -29,6 +29,8 @@ import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css'
 import ImgurEmbed from '../../misc/ImgurEmbed.jsx'
 import YouTubeIcon from '@mui/icons-material/YouTube'
 import PhotoSizeSelectActualIcon from '@mui/icons-material/PhotoSizeSelectActual'
+import Box from '@mui/material/Box'
+import Link from '@mui/material/Link'
 
 function BeltRequestEntry({entry, expanded, onExpand}) {
     const {
@@ -55,16 +57,17 @@ function BeltRequestEntry({entry, expanded, onExpand}) {
         source,
         platform,
         messageContent,
+        messageId,
+        checkoutBy,
+        attachments,
         _reply,
         _syncUsername,
         _syncTo,
         _userId,
-        messageId,
         _requestId,
         _updatedAt,
         _lastUpdateBy,
         _updateMessageId,
-        checkoutBy,
         _reviewerId,
         _fuzzy
     } = entry
@@ -101,6 +104,8 @@ function BeltRequestEntry({entry, expanded, onExpand}) {
 
     const imgurMatches = [...messageContent.matchAll(/(?:https?:\/\/)?(?:www\.)?imgur.com\/a\/([a-zA-Z0-9_-]{7})/g)]
     const imgurIds = imgurMatches.map(match => match[1])
+
+    const attachmentIcon = attachments?.length > 0 ? ' 📎' : ''
 
     const openInNewTab = useCallback((e) => {
         e.stopPropagation()
@@ -189,7 +194,7 @@ function BeltRequestEntry({entry, expanded, onExpand}) {
                             {videoLinks.length > 0 &&
                                 <YouTubeIcon style={{marginLeft: 8, color: '#ff7474'}}/>
                             }
-                            {imgurIds.length > 0 &&
+                            {(imgurIds.length > 0 || attachments?.length > 0) &&
                                 <PhotoSizeSelectActualIcon fontSize='12pt' style={{marginLeft: 8, color: '#7badd0'}}/>
                             }
                         </div>
@@ -201,7 +206,7 @@ function BeltRequestEntry({entry, expanded, onExpand}) {
                                            remarkPlugins={[remarkGfm]}
                                            components={{p: 'div'}}
                             >
-                                {evidenceMd}
+                                {evidenceMd + attachmentIcon}
                             </ReactMarkdown>
                         </div>
                     </div>
@@ -359,8 +364,32 @@ function BeltRequestEntry({entry, expanded, onExpand}) {
                     </div>
 
                     <div style={{marginLeft: 12}}>
+                        {attachments?.length > 0 &&
+                            <div style={{width: '95%', padding: `8px ${sidePadding}`, marginRight: 16}}>
+                                <div style={{fontWeight: 600, marginBottom: 2}}>Attachments</div>
+                                {attachments.map((url, index) =>
+                                    <Link href={url.toString()} key={index} target="_blank">
+                                        <Box
+                                        component="img"
+                                        key={index}
+                                        src={url}
+                                        alt="A beautiful house"
+                                        sx={{
+                                            width: '100%',
+                                            maxWidth: { xs: 350, sm: 700 },
+                                            height: 'auto',
+                                            borderRadius: 2,
+                                            boxShadow: 3,
+                                            objectFit: 'cover',
+                                        }}
+                                    />
+                                    </Link>
+                                )}
+                            </div>
+                        }
+
                         {videoIds.length > 0 &&
-                            <div style={{width: isMobile ? 330 : 600, padding: `8px ${sidePadding}`}}>
+                            <div style={{width: '95%', padding: `8px ${sidePadding}`, marginRight: 16}}>
                                 <div style={{fontWeight: 600, marginBottom: 2}}>YouTube</div>
                                 {videoIds.map((id, index) =>
                                     <LiteYouTubeEmbed
@@ -374,7 +403,7 @@ function BeltRequestEntry({entry, expanded, onExpand}) {
                         }
 
                         {imgurIds.length > 0 &&
-                            <div style={{width: isMobile ? 330 : 600, padding: `8px ${sidePadding}`}}>
+                            <div style={{width: '95%', padding: `8px ${sidePadding}`}}>
                                 <div style={{fontWeight: 600, marginBottom: 2}}>Imgur</div>
                                 {imgurIds.map((id, index) =>
                                     <ImgurEmbed imageId={id} key={index}/>
