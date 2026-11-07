@@ -102,8 +102,8 @@ function BeltRequestEntry({entry, expanded, onExpand}) {
             Discord: `https://discord.com/channels/140129091796992000/282173282546089985/${messageId}`,
             lock: `https://lpubelts.com/#/locks?tab=search&search=${id}&id=${id}}`
         }
-        window.open(links[source], '_blank', 'noopener,noreferrer')
-    }, [id, messageId, source])
+        window.open(links[platform], '_blank', 'noopener,noreferrer')
+    }, [id, messageId, platform])
 
     const toggleExpand = useCallback((_, isExpanded) => {
         setShowDetails(false)
