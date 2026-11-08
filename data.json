@@ -11,9 +11,9 @@
     "lockingMechanisms": [
       "Various"
     ],
-    "popularityIndex": 1476,
+    "popularityIndex": 1482,
     "scorecardCount": 107,
-    "views": 1476,
+    "views": 1482,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -108,9 +108,9 @@
     "lockingMechanisms": [
       "Various"
     ],
-    "popularityIndex": 476,
+    "popularityIndex": 477,
     "scorecardCount": 34,
-    "views": 476,
+    "views": 477,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -272,9 +272,9 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "popularityIndex": 26,
+    "popularityIndex": 27,
     "scorecardCount": 9,
-    "views": 26,
+    "views": 27,
     "dateAdded": "2023-03-02T19:05:25.000Z",
     "media": [
       {
@@ -434,8 +434,8 @@
     "features": [
       "Cabinet lock"
     ],
-    "popularityIndex": 21,
-    "views": 21,
+    "popularityIndex": 22,
+    "views": 22,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -484,9 +484,9 @@
       "Unguttable"
     ],
     "modelNum": "1",
-    "popularityIndex": 582,
+    "popularityIndex": 585,
     "scorecardCount": 69,
-    "views": 582,
+    "views": 585,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -542,9 +542,9 @@
       "Unguttable"
     ],
     "modelNum": "2",
-    "popularityIndex": 52,
+    "popularityIndex": 53,
     "scorecardCount": 5,
-    "views": 52,
+    "views": 53,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -620,9 +620,9 @@
       "Unguttable"
     ],
     "modelNum": "3",
-    "popularityIndex": 1514,
-    "scorecardCount": 172,
-    "views": 1514,
+    "popularityIndex": 1518,
+    "scorecardCount": 173,
+    "views": 1518,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -1139,9 +1139,9 @@
       "Unguttable"
     ],
     "modelNum": "55.3",
-    "popularityIndex": 18,
+    "popularityIndex": 19,
     "scorecardCount": 2,
-    "views": 18,
+    "views": 19,
     "dateAdded": "2025-11-23T19:59:27.060Z",
     "media": [
       {
@@ -1262,9 +1262,9 @@
       "Unguttable"
     ],
     "modelNum": "55.3",
-    "popularityIndex": 400,
+    "popularityIndex": 401,
     "scorecardCount": 52,
-    "views": 400,
+    "views": 401,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -1326,6 +1326,9 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
+    "features": [
+      "Latest Changelog"
+    ],
     "currentBeltDate": "2026-10-29T17:06:32.287Z",
     "dateAdded": "2026-10-24T05:11:57.626Z",
     "lastUpdated": "2026-10-29T17:06:32.733Z"
@@ -1348,9 +1351,9 @@
     ],
     "notes": "Includes 64Ti/20, 64Ti/25, 64Ti/30",
     "modelNum": "64.3",
-    "popularityIndex": 245,
+    "popularityIndex": 247,
     "scorecardCount": 22,
-    "views": 245,
+    "views": 247,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -1397,9 +1400,9 @@
       "Unguttable"
     ],
     "modelNum": "65.35",
-    "popularityIndex": 101,
+    "popularityIndex": 102,
     "scorecardCount": 14,
-    "views": 101,
+    "views": 102,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -2157,7 +2160,7 @@
       "Unguttable"
     ],
     "popularityIndex": 299,
-    "scorecardCount": 38,
+    "scorecardCount": 39,
     "views": 299,
     "dateAdded": "2024-08-28T15:54:46.000Z",
     "media": [
@@ -2236,9 +2239,9 @@
     "features": [
       "Unguttable"
     ],
-    "popularityIndex": 626,
-    "scorecardCount": 91,
-    "views": 626,
+    "popularityIndex": 629,
+    "scorecardCount": 93,
+    "views": 629,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -2615,9 +2618,9 @@
     "features": [
       "Unguttable"
     ],
-    "popularityIndex": 103,
+    "popularityIndex": 104,
     "scorecardCount": 18,
-    "views": 103,
+    "views": 104,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -3310,9 +3313,9 @@
     "features": [
       "Unguttable"
     ],
-    "popularityIndex": 11,
+    "popularityIndex": 12,
     "scorecardCount": 2,
-    "views": 11,
+    "views": 12,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -3802,9 +3805,9 @@
     "lockingMechanisms": [
       "Dimple"
     ],
-    "popularityIndex": 10,
+    "popularityIndex": 12,
     "scorecardCount": 4,
-    "views": 10,
+    "views": 12,
     "dateAdded": "2023-12-28T18:48:59.000Z",
     "media": [
       {
@@ -3987,9 +3990,9 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "popularityIndex": 9,
+    "popularityIndex": 10,
     "scorecardCount": 1,
-    "views": 9,
+    "views": 10,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -4172,9 +4175,9 @@
       "Unguttable"
     ],
     "modelNum": "130",
-    "popularityIndex": 239,
-    "scorecardCount": 29,
-    "views": 239,
+    "popularityIndex": 241,
+    "scorecardCount": 30,
+    "views": 241,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -4226,9 +4229,9 @@
       "Unguttable"
     ],
     "modelNum": "140",
-    "popularityIndex": 1888,
-    "scorecardCount": 251,
-    "views": 1888,
+    "popularityIndex": 1895,
+    "scorecardCount": 253,
+    "views": 1895,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -4526,9 +4529,9 @@
     "features": [
       "Unguttable"
     ],
-    "popularityIndex": 461,
+    "popularityIndex": 464,
     "scorecardCount": 59,
-    "views": 461,
+    "views": 464,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -4827,9 +4830,9 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "popularityIndex": 268,
+    "popularityIndex": 269,
     "scorecardCount": 24,
-    "views": 268,
+    "views": 269,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -5194,9 +5197,9 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "popularityIndex": 3,
+    "popularityIndex": 4,
     "scorecardCount": 1,
-    "views": 3,
+    "views": 4,
     "dateAdded": "2025-12-28T18:08:44.764Z",
     "media": [
       {
@@ -5285,9 +5288,9 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "popularityIndex": 90,
+    "popularityIndex": 93,
     "scorecardCount": 16,
-    "views": 90,
+    "views": 93,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -5324,9 +5327,9 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "popularityIndex": 56,
+    "popularityIndex": 57,
     "scorecardCount": 10,
-    "views": 56,
+    "views": 57,
     "dateAdded": "2023-08-03T13:21:21.000Z",
     "media": [
       {
@@ -5569,9 +5572,9 @@
       "Unguttable"
     ],
     "modelNum": "55.4",
-    "popularityIndex": 1084,
-    "scorecardCount": 150,
-    "views": 1084,
+    "popularityIndex": 1089,
+    "scorecardCount": 151,
+    "views": 1089,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -5659,7 +5662,8 @@
       "Pin-tumbler"
     ],
     "features": [
-      "Unguttable"
+      "Unguttable",
+      "Latest Changelog"
     ],
     "modelNum": "60.5",
     "popularityIndex": 39,
@@ -5725,9 +5729,9 @@
       "Unguttable"
     ],
     "modelNum": "64",
-    "popularityIndex": 548,
+    "popularityIndex": 550,
     "scorecardCount": 45,
-    "views": 548,
+    "views": 550,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -5953,9 +5957,9 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "popularityIndex": 21,
+    "popularityIndex": 22,
     "scorecardCount": 2,
-    "views": 21,
+    "views": 22,
     "dateAdded": "2025-08-15T19:23:33.234Z",
     "media": [
       {
@@ -6028,9 +6032,9 @@
       "Unguttable"
     ],
     "modelNum": "85",
-    "popularityIndex": 161,
+    "popularityIndex": 162,
     "scorecardCount": 20,
-    "views": 161,
+    "views": 162,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -6214,12 +6218,9 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "features": [
-      "Latest Changelog"
-    ],
-    "popularityIndex": 23,
+    "popularityIndex": 24,
     "scorecardCount": 4,
-    "views": 23,
+    "views": 24,
     "currentBeltDate": "2026-08-30T12:00:00.000Z",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
@@ -6330,9 +6331,9 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "popularityIndex": 73,
+    "popularityIndex": 74,
     "scorecardCount": 13,
-    "views": 73,
+    "views": 74,
     "dateAdded": "2023-09-02T16:13:00.000Z",
     "media": [
       {
@@ -6450,6 +6451,8 @@
       "Pin-tumbler"
     ],
     "notes": "without Pfaffenhain barrel pin",
+    "popularityIndex": 1,
+    "views": 1,
     "dateAdded": "2026-09-16T15:48:19.421Z",
     "media": [
       {
@@ -6500,9 +6503,9 @@
     "lockingMechanisms": [
       "Pump/push"
     ],
-    "popularityIndex": 36,
+    "popularityIndex": 38,
     "scorecardCount": 6,
-    "views": 36,
+    "views": 38,
     "dateAdded": "2024-08-28T15:54:46.000Z",
     "media": [
       {
@@ -6916,9 +6919,9 @@
       "Unguttable",
       "Flickr Update"
     ],
-    "popularityIndex": 126,
+    "popularityIndex": 127,
     "scorecardCount": 22,
-    "views": 126,
+    "views": 127,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -7094,9 +7097,9 @@
     "features": [
       "Unguttable"
     ],
-    "popularityIndex": 13,
+    "popularityIndex": 14,
     "scorecardCount": 5,
-    "views": 13,
+    "views": 14,
     "dateAdded": "2025-11-23T19:59:27.061Z",
     "media": [
       {
@@ -7233,9 +7236,9 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "popularityIndex": 26,
+    "popularityIndex": 27,
     "scorecardCount": 6,
-    "views": 26,
+    "views": 27,
     "dateAdded": "2023-08-03T13:21:21.000Z",
     "media": [
       {
@@ -7460,9 +7463,9 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "popularityIndex": 18,
+    "popularityIndex": 19,
     "scorecardCount": 3,
-    "views": 18,
+    "views": 19,
     "dateAdded": "2025-10-04T16:19:03.606Z",
     "media": [
       {
@@ -7664,9 +7667,9 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "popularityIndex": 20,
+    "popularityIndex": 21,
     "scorecardCount": 2,
-    "views": 20,
+    "views": 21,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -7859,8 +7862,8 @@
     "features": [
       "Unguttable"
     ],
-    "popularityIndex": 5,
-    "views": 5,
+    "popularityIndex": 6,
+    "views": 6,
     "dateAdded": "2025-11-23T19:59:27.061Z",
     "media": [
       {
@@ -8148,9 +8151,9 @@
     "features": [
       "Flickr Update"
     ],
-    "popularityIndex": 79,
+    "popularityIndex": 81,
     "scorecardCount": 10,
-    "views": 79,
+    "views": 81,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -8455,9 +8458,9 @@
     "lockingMechanisms": [
       "Wafer"
     ],
-    "popularityIndex": 17,
+    "popularityIndex": 18,
     "scorecardCount": 2,
-    "views": 17,
+    "views": 18,
     "dateAdded": "2023-03-02T19:05:25.000Z",
     "media": [
       {
@@ -8570,8 +8573,7 @@
       "Pin-tumbler"
     ],
     "features": [
-      "Unguttable",
-      "Latest Changelog"
+      "Unguttable"
     ],
     "modelNum": "150",
     "popularityIndex": 695,
@@ -8708,9 +8710,9 @@
     ],
     "notes": "4 pins all spools",
     "modelNum": "1921",
-    "popularityIndex": 72,
+    "popularityIndex": 73,
     "scorecardCount": 15,
-    "views": 72,
+    "views": 73,
     "dateAdded": "2023-03-02T19:05:25.000Z",
     "media": [
       {
@@ -8851,9 +8853,9 @@
     ],
     "notes": "Due to unbalanced stacks, drivers may rest below shear, risking damage to the springs if that chamber is not picked.",
     "modelNum": "570",
-    "popularityIndex": 701,
+    "popularityIndex": 704,
     "scorecardCount": 115,
-    "views": 701,
+    "views": 704,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -9099,7 +9101,7 @@
       "Under Review ⚑"
     ],
     "popularityIndex": 40,
-    "scorecardCount": 10,
+    "scorecardCount": 11,
     "views": 40,
     "dateAdded": "2023-03-02T19:05:25.000Z",
     "media": [
@@ -9736,11 +9738,8 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "features": [
-      "Latest Changelog"
-    ],
-    "popularityIndex": 2,
-    "views": 2,
+    "popularityIndex": 4,
+    "views": 4,
     "currentBeltDate": "2026-08-30T12:00:00.000Z",
     "dateAdded": "2026-08-06T03:59:39.966Z",
     "lastUpdated": "2026-09-01T00:58:56.759Z"
@@ -9834,8 +9833,8 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "popularityIndex": 9,
-    "views": 9,
+    "popularityIndex": 10,
+    "views": 10,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -9888,9 +9887,9 @@
       "Trap element",
       "Flickr Update"
     ],
-    "popularityIndex": 24,
+    "popularityIndex": 25,
     "scorecardCount": 3,
-    "views": 24,
+    "views": 25,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -9994,9 +9993,9 @@
     "lockingMechanisms": [
       "Disc detainer"
     ],
-    "popularityIndex": 76,
+    "popularityIndex": 77,
     "scorecardCount": 6,
-    "views": 76,
+    "views": 77,
     "dateAdded": "2023-08-03T13:21:21.000Z",
     "media": [
       {
@@ -10130,9 +10129,9 @@
     "features": [
       "Unguttable"
     ],
-    "popularityIndex": 82,
+    "popularityIndex": 83,
     "scorecardCount": 15,
-    "views": 82,
+    "views": 83,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -10506,9 +10505,9 @@
       "Picking Risk"
     ],
     "notes": "Due to unbalanced pin stacks, drivers in max lift chambers will rest below shear. This risks spring damage if the driver is not picked.",
-    "popularityIndex": 1054,
-    "scorecardCount": 148,
-    "views": 1054,
+    "popularityIndex": 1060,
+    "scorecardCount": 150,
+    "views": 1060,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -10808,9 +10807,9 @@
     "features": [
       "Unguttable"
     ],
-    "popularityIndex": 427,
-    "scorecardCount": 56,
-    "views": 427,
+    "popularityIndex": 430,
+    "scorecardCount": 57,
+    "views": 430,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -10879,9 +10878,6 @@
     ],
     "lockingMechanisms": [
       "Pin-tumbler"
-    ],
-    "features": [
-      "Latest Changelog"
     ],
     "modelNum": "83.4",
     "popularityIndex": 209,
@@ -10963,9 +10959,9 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "popularityIndex": 7,
+    "popularityIndex": 8,
     "scorecardCount": 1,
-    "views": 7,
+    "views": 8,
     "dateAdded": "2025-06-10T16:49:06.285Z",
     "media": [
       {
@@ -11129,9 +11125,9 @@
     "features": [
       "Flickr Update"
     ],
-    "popularityIndex": 65,
+    "popularityIndex": 67,
     "scorecardCount": 15,
-    "views": 65,
+    "views": 67,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -11240,7 +11236,7 @@
       "Unguttable"
     ],
     "popularityIndex": 215,
-    "scorecardCount": 25,
+    "scorecardCount": 26,
     "views": 215,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
@@ -11843,9 +11839,9 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "popularityIndex": 26,
+    "popularityIndex": 27,
     "scorecardCount": 4,
-    "views": 26,
+    "views": 27,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -12334,9 +12330,9 @@
     "features": [
       "Unguttable"
     ],
-    "popularityIndex": 378,
-    "scorecardCount": 38,
-    "views": 378,
+    "popularityIndex": 380,
+    "scorecardCount": 39,
+    "views": 380,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -12454,9 +12450,9 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "popularityIndex": 1453,
-    "scorecardCount": 279,
-    "views": 1453,
+    "popularityIndex": 1456,
+    "scorecardCount": 280,
+    "views": 1456,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -12566,9 +12562,9 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "popularityIndex": 81,
+    "popularityIndex": 83,
     "scorecardCount": 5,
-    "views": 81,
+    "views": 83,
     "dateAdded": "2023-05-05T09:34:27.000Z",
     "media": [
       {
@@ -12655,9 +12651,9 @@
       "Pin-tumbler"
     ],
     "notes": "The standard, non-bumpstop model of the American Lock 5200 can be distinguished by the angular shape of the bow of its key, compared to the rounded shape of the bumpstop keybow.",
-    "popularityIndex": 262,
+    "popularityIndex": 263,
     "scorecardCount": 34,
-    "views": 262,
+    "views": 263,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -12756,9 +12752,9 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "popularityIndex": 50,
+    "popularityIndex": 49,
     "scorecardCount": 7,
-    "views": 50,
+    "views": 49,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -12896,9 +12892,9 @@
     "lockingMechanisms": [
       "Disc detainer"
     ],
-    "popularityIndex": 101,
+    "popularityIndex": 103,
     "scorecardCount": 17,
-    "views": 101,
+    "views": 103,
     "dateAdded": "2023-03-02T19:05:25.000Z",
     "media": [
       {
@@ -13046,9 +13042,9 @@
     "features": [
       "Tapered drivers"
     ],
-    "popularityIndex": 49,
+    "popularityIndex": 50,
     "scorecardCount": 5,
-    "views": 49,
+    "views": 50,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -13764,9 +13760,9 @@
       "Pin-tumbler"
     ],
     "notes": "The BKS 51-SL is distinguished by a side mechanism",
-    "popularityIndex": 17,
+    "popularityIndex": 19,
     "scorecardCount": 6,
-    "views": 17,
+    "views": 19,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -14047,9 +14043,9 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "popularityIndex": 14,
+    "popularityIndex": 15,
     "scorecardCount": 3,
-    "views": 14,
+    "views": 15,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -14272,8 +14268,8 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "popularityIndex": 5,
-    "views": 5,
+    "popularityIndex": 6,
+    "views": 6,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -14445,9 +14441,9 @@
     "features": [
       "Unguttable"
     ],
-    "popularityIndex": 79,
+    "popularityIndex": 80,
     "scorecardCount": 12,
-    "views": 79,
+    "views": 80,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -14636,9 +14632,6 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "features": [
-      "Latest Changelog"
-    ],
     "scorecardCount": 2,
     "currentBeltDate": "2026-08-30T12:00:00.000Z",
     "dateAdded": "2026-09-01T00:58:56.477Z",
@@ -14666,11 +14659,10 @@
       }
     ],
     "lockingMechanisms": [
-      "Pin-tumbler"
+      "Dimple"
     ],
     "features": [
-      "Trap Element",
-      "Latest Changelog"
+      "Trap Element"
     ],
     "scorecardCount": 2,
     "currentBeltDate": "2026-08-30T12:00:00.000Z",
@@ -14687,7 +14679,7 @@
         "imageTitle": "CES RHM5"
       }
     ],
-    "lastUpdated": "2026-09-02T14:34:33.983Z"
+    "lastUpdated": "2026-11-08T23:19:59.377Z"
   },
   {
     "id": "34a26fbd",
@@ -14700,9 +14692,6 @@
     ],
     "lockingMechanisms": [
       "Pin-tumbler"
-    ],
-    "features": [
-      "Latest Changelog"
     ],
     "popularityIndex": 1,
     "scorecardCount": 2,
@@ -15903,8 +15892,8 @@
       "False gates"
     ],
     "notes": "**Not** the pin-tumbler lock of the same name",
-    "popularityIndex": 10,
-    "views": 10,
+    "popularityIndex": 11,
+    "views": 11,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -16027,9 +16016,9 @@
       "Curtain",
       "False gates"
     ],
-    "popularityIndex": 18,
+    "popularityIndex": 19,
     "scorecardCount": 1,
-    "views": 18,
+    "views": 19,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -16074,6 +16063,11 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
+    "features": [
+      "Latest Changelog"
+    ],
+    "popularityIndex": 1,
+    "views": 1,
     "currentBeltDate": "2026-10-29T17:06:32.289Z",
     "dateAdded": "2026-10-24T05:11:57.627Z",
     "lastUpdated": "2026-10-29T17:06:32.736Z"
@@ -17133,10 +17127,13 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
+    "features": [
+      "Latest Changelog"
+    ],
     "notes": "IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",
-    "popularityIndex": 31,
+    "popularityIndex": 32,
     "scorecardCount": 2,
-    "views": 31,
+    "views": 32,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -17223,10 +17220,13 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
+    "features": [
+      "Latest Changelog"
+    ],
     "notes": "IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",
-    "popularityIndex": 15,
+    "popularityIndex": 16,
     "scorecardCount": 3,
-    "views": 15,
+    "views": 16,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -17484,7 +17484,7 @@
       "Flickr Update"
     ],
     "popularityIndex": 57,
-    "scorecardCount": 6,
+    "scorecardCount": 7,
     "views": 57,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
@@ -17624,9 +17624,9 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "popularityIndex": 85,
+    "popularityIndex": 86,
     "scorecardCount": 13,
-    "views": 85,
+    "views": 86,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -17908,9 +17908,9 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "popularityIndex": 34,
+    "popularityIndex": 35,
     "scorecardCount": 5,
-    "views": 34,
+    "views": 35,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -18161,9 +18161,9 @@
       "Unguttable"
     ],
     "modelNum": "410",
-    "popularityIndex": 881,
-    "scorecardCount": 107,
-    "views": 881,
+    "popularityIndex": 886,
+    "scorecardCount": 108,
+    "views": 886,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -18333,9 +18333,9 @@
       "Pin-tumbler"
     ],
     "modelNum": "911",
-    "popularityIndex": 164,
+    "popularityIndex": 165,
     "scorecardCount": 23,
-    "views": 164,
+    "views": 165,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -18447,9 +18447,9 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "popularityIndex": 196,
+    "popularityIndex": 197,
     "scorecardCount": 24,
-    "views": 196,
+    "views": 197,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -18512,9 +18512,9 @@
     "features": [
       "Unguttable"
     ],
-    "popularityIndex": 83,
+    "popularityIndex": 84,
     "scorecardCount": 7,
-    "views": 83,
+    "views": 84,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -18708,8 +18708,8 @@
     "features": [
       "Flickr Update"
     ],
-    "popularityIndex": 3,
-    "views": 3,
+    "popularityIndex": 4,
+    "views": 4,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -18769,9 +18769,9 @@
       "Active sidebar"
     ],
     "notes": "*** **Special Picking Requirement:** Must be raked prior to picking to reset pin combination",
-    "popularityIndex": 10,
+    "popularityIndex": 12,
     "scorecardCount": 3,
-    "views": 10,
+    "views": 12,
     "dateAdded": "2025-09-29T22:09:57.767Z",
     "media": [
       {
@@ -19014,6 +19014,9 @@
     "lockingMechanisms": [
       "Dimple"
     ],
+    "features": [
+      "Latest Changelog"
+    ],
     "popularityIndex": 1,
     "scorecardCount": 2,
     "views": 1,
@@ -19202,9 +19205,9 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "popularityIndex": 234,
+    "popularityIndex": 235,
     "scorecardCount": 27,
-    "views": 234,
+    "views": 235,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -19390,9 +19393,9 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "popularityIndex": 42,
+    "popularityIndex": 43,
     "scorecardCount": 8,
-    "views": 42,
+    "views": 43,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -19492,9 +19495,9 @@
     "lockingMechanisms": [
       "Disc detainer"
     ],
-    "popularityIndex": 4,
+    "popularityIndex": 5,
     "scorecardCount": 2,
-    "views": 4,
+    "views": 5,
     "dateAdded": "2026-08-06T03:59:39.967Z",
     "media": [
       {
@@ -19865,9 +19868,9 @@
       "Pipe key",
       "Uncurtained"
     ],
-    "popularityIndex": 18,
+    "popularityIndex": 19,
     "scorecardCount": 2,
-    "views": 18,
+    "views": 19,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -19928,9 +19931,9 @@
     "features": [
       "Unguttable"
     ],
-    "popularityIndex": 10,
+    "popularityIndex": 11,
     "scorecardCount": 2,
-    "views": 10,
+    "views": 11,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -20277,9 +20280,9 @@
     "lockingMechanisms": [
       "Dimple"
     ],
-    "popularityIndex": 16,
+    "popularityIndex": 17,
     "scorecardCount": 1,
-    "views": 16,
+    "views": 17,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -20435,9 +20438,9 @@
     "features": [
       "Active element"
     ],
-    "popularityIndex": 9,
+    "popularityIndex": 10,
     "scorecardCount": 3,
-    "views": 9,
+    "views": 10,
     "dateAdded": "2025-02-16T07:00:27.000Z",
     "media": [
       {
@@ -20554,9 +20557,9 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "popularityIndex": 8,
+    "popularityIndex": 9,
     "scorecardCount": 2,
-    "views": 8,
+    "views": 9,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -20697,9 +20700,9 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "popularityIndex": 7,
+    "popularityIndex": 6,
     "scorecardCount": 1,
-    "views": 7,
+    "views": 6,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -20828,9 +20831,9 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "popularityIndex": 10,
+    "popularityIndex": 11,
     "scorecardCount": 4,
-    "views": 10,
+    "views": 11,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -20905,9 +20908,9 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "popularityIndex": 49,
+    "popularityIndex": 50,
     "scorecardCount": 13,
-    "views": 49,
+    "views": 50,
     "dateAdded": "2024-07-12T01:23:05.000Z",
     "media": [
       {
@@ -20954,9 +20957,9 @@
     "lockingMechanisms": [
       "Dimple"
     ],
-    "popularityIndex": 64,
+    "popularityIndex": 65,
     "scorecardCount": 10,
-    "views": 64,
+    "views": 65,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -21011,9 +21014,9 @@
       "Rear tension"
     ],
     "notes": "Can be front tensioned and counterrotated",
-    "popularityIndex": 165,
+    "popularityIndex": 167,
     "scorecardCount": 25,
-    "views": 165,
+    "views": 167,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -21254,9 +21257,9 @@
       "Trap element"
     ],
     "notes": "Requires 360° picking: these locks have traps that require some work to pick",
-    "popularityIndex": 32,
-    "scorecardCount": 7,
-    "views": 32,
+    "popularityIndex": 33,
+    "scorecardCount": 8,
+    "views": 33,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -21385,9 +21388,9 @@
     "features": [
       "Flickr Update"
     ],
-    "popularityIndex": 134,
+    "popularityIndex": 135,
     "scorecardCount": 32,
-    "views": 134,
+    "views": 135,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -21464,9 +21467,9 @@
     "lockingMechanisms": [
       "Dimple"
     ],
-    "popularityIndex": 27,
-    "scorecardCount": 10,
-    "views": 27,
+    "popularityIndex": 28,
+    "scorecardCount": 11,
+    "views": 28,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -21577,9 +21580,9 @@
       "Pin-tumbler"
     ],
     "notes": "Randomized pinning",
-    "popularityIndex": 112,
+    "popularityIndex": 113,
     "scorecardCount": 20,
-    "views": 112,
+    "views": 113,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -21867,9 +21870,9 @@
     "lockingMechanisms": [
       "Dimple"
     ],
-    "popularityIndex": 23,
+    "popularityIndex": 24,
     "scorecardCount": 9,
-    "views": 23,
+    "views": 24,
     "dateAdded": "2025-01-09T16:22:30.000Z",
     "media": [
       {
@@ -22454,9 +22457,9 @@
       "Pin-tumbler"
     ],
     "notes": "requires Pfaffenhain barrel pin, otherwise green",
-    "popularityIndex": 25,
-    "scorecardCount": 10,
-    "views": 25,
+    "popularityIndex": 26,
+    "scorecardCount": 12,
+    "views": 26,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -22617,9 +22620,9 @@
       "Pin-tumbler"
     ],
     "notes": "require 360° picking",
-    "popularityIndex": 18,
+    "popularityIndex": 19,
     "scorecardCount": 7,
-    "views": 18,
+    "views": 19,
     "dateAdded": "2025-02-16T07:00:27.000Z",
     "media": [
       {
@@ -22856,6 +22859,9 @@
       }
     ],
     "version": "Korean Spinny Key, 11 pins",
+    "features": [
+      "Latest Changelog"
+    ],
     "popularityIndex": 1,
     "scorecardCount": 2,
     "views": 1,
@@ -23002,9 +23008,9 @@
       "Barrel drivers",
       "Serrated/threaded milling"
     ],
-    "popularityIndex": 55,
+    "popularityIndex": 56,
     "scorecardCount": 15,
-    "views": 55,
+    "views": 56,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -23158,9 +23164,9 @@
     "features": [
       "Flickr Update"
     ],
-    "popularityIndex": 23,
+    "popularityIndex": 24,
     "scorecardCount": 14,
-    "views": 23,
+    "views": 24,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -23304,6 +23310,7 @@
     ],
     "notes": "6-pin",
     "popularityIndex": 3,
+    "scorecardCount": 1,
     "views": 3,
     "dateAdded": "2023-03-02T19:05:25.000Z",
     "media": [
@@ -23407,9 +23414,9 @@
       "Pin-tumbler"
     ],
     "notes": "Various brands",
-    "popularityIndex": 27,
+    "popularityIndex": 28,
     "scorecardCount": 3,
-    "views": 27,
+    "views": 28,
     "dateAdded": "2023-08-03T13:21:21.000Z",
     "media": [
       {
@@ -23514,8 +23521,7 @@
       "Sidebar"
     ],
     "features": [
-      "Active sidebar",
-      "Latest Changelog"
+      "Active sidebar"
     ],
     "popularityIndex": 10,
     "scorecardCount": 4,
@@ -23701,9 +23707,9 @@
     "features": [
       "Unguttable"
     ],
-    "popularityIndex": 132,
+    "popularityIndex": 133,
     "scorecardCount": 22,
-    "views": 132,
+    "views": 133,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -23880,8 +23886,7 @@
       "Pin-tumbler"
     ],
     "features": [
-      "Trap Element",
-      "Latest Changelog"
+      "Trap Element"
     ],
     "notes": "Must be picked 360°",
     "popularityIndex": 1,
@@ -24123,9 +24128,9 @@
       "Curtain",
       "False gates"
     ],
-    "popularityIndex": 24,
+    "popularityIndex": 25,
     "scorecardCount": 9,
-    "views": 24,
+    "views": 25,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -24216,7 +24221,7 @@
       "Dimple"
     ],
     "popularityIndex": 27,
-    "scorecardCount": 2,
+    "scorecardCount": 3,
     "views": 27,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
@@ -24727,9 +24732,9 @@
       "Interactive element",
       "Flickr Update"
     ],
-    "popularityIndex": 67,
+    "popularityIndex": 68,
     "scorecardCount": 33,
-    "views": 67,
+    "views": 68,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -25204,9 +25209,9 @@
       "Pin-tumbler"
     ],
     "notes": "At least 3 security pins, 2 of them being dumbbell pins, DOM barrel pins, or rattlesnake pins",
-    "popularityIndex": 45,
+    "popularityIndex": 47,
     "scorecardCount": 13,
-    "views": 45,
+    "views": 47,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -25497,9 +25502,9 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "popularityIndex": 17,
+    "popularityIndex": 18,
     "scorecardCount": 5,
-    "views": 17,
+    "views": 18,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -25689,9 +25694,9 @@
       "Curtain",
       "False gates"
     ],
-    "popularityIndex": 10,
+    "popularityIndex": 11,
     "scorecardCount": 2,
-    "views": 10,
+    "views": 11,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -25785,9 +25790,9 @@
     "features": [
       "Padlock"
     ],
-    "popularityIndex": 14,
+    "popularityIndex": 15,
     "scorecardCount": 6,
-    "views": 14,
+    "views": 15,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -26018,9 +26023,9 @@
       "Trap element",
       "Flickr Update"
     ],
-    "popularityIndex": 44,
+    "popularityIndex": 43,
     "scorecardCount": 7,
-    "views": 44,
+    "views": 43,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -26057,9 +26062,9 @@
       "Pin-tumbler"
     ],
     "notes": "The EVVA ALS has a profile restriction plate after pin 4 and its key narrows accordingly.",
-    "popularityIndex": 22,
+    "popularityIndex": 23,
     "scorecardCount": 7,
-    "views": 22,
+    "views": 23,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -26140,6 +26145,9 @@
     ],
     "lockingMechanisms": [
       "Pin-tumbler"
+    ],
+    "features": [
+      "Latest Changelog"
     ],
     "popularityIndex": 3,
     "scorecardCount": 1,
@@ -26303,9 +26311,9 @@
     "lockingMechanisms": [
       "Pump/push"
     ],
-    "popularityIndex": 17,
-    "scorecardCount": 12,
-    "views": 17,
+    "popularityIndex": 19,
+    "scorecardCount": 13,
+    "views": 19,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -26520,8 +26528,8 @@
     "features": [
       "Flickr Update"
     ],
-    "popularityIndex": 8,
-    "views": 8,
+    "popularityIndex": 10,
+    "views": 10,
     "dateAdded": "2026-08-07T15:07:44.518Z",
     "media": [
       {
@@ -26741,9 +26749,6 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "features": [
-      "Latest Changelog"
-    ],
     "popularityIndex": 5,
     "views": 5,
     "currentBeltDate": "2026-08-30T12:00:00.000Z",
@@ -26816,7 +26821,7 @@
       "Pin-tumbler"
     ],
     "popularityIndex": 143,
-    "scorecardCount": 70,
+    "scorecardCount": 71,
     "views": 143,
     "dateAdded": "2023-02-27T16:29:21.000Z",
     "media": [
@@ -26883,9 +26888,9 @@
       "Pin-tumbler"
     ],
     "notes": "IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",
-    "popularityIndex": 20,
+    "popularityIndex": 21,
     "scorecardCount": 4,
-    "views": 20,
+    "views": 21,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -27036,9 +27041,9 @@
       "Sidepins"
     ],
     "notes": "IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",
-    "popularityIndex": 23,
+    "popularityIndex": 24,
     "scorecardCount": 8,
-    "views": 23,
+    "views": 24,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -27291,6 +27296,9 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
+    "features": [
+      "Latest Changelog"
+    ],
     "currentBeltDate": "2026-10-29T17:06:32.291Z",
     "dateAdded": "2026-10-24T05:11:57.628Z",
     "lastUpdated": "2026-10-29T17:06:32.738Z"
@@ -27308,9 +27316,9 @@
     "lockingMechanisms": [
       "Dimple"
     ],
-    "popularityIndex": 49,
+    "popularityIndex": 50,
     "scorecardCount": 15,
-    "views": 49,
+    "views": 50,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -27904,9 +27912,9 @@
       "Random mid tension"
     ],
     "notes": "Readily picked with front tension and counter-rotation",
-    "popularityIndex": 88,
+    "popularityIndex": 89,
     "scorecardCount": 19,
-    "views": 88,
+    "views": 89,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -28046,9 +28054,9 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "popularityIndex": 245,
+    "popularityIndex": 246,
     "scorecardCount": 97,
-    "views": 245,
+    "views": 246,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -28185,9 +28193,9 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "popularityIndex": 33,
-    "scorecardCount": 19,
-    "views": 33,
+    "popularityIndex": 34,
+    "scorecardCount": 20,
+    "views": 34,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -28300,9 +28308,9 @@
       "Trap element"
     ],
     "notes": "Requires 360° picking: these locks have traps that require some work to pick",
-    "popularityIndex": 5,
+    "popularityIndex": 6,
     "scorecardCount": 8,
-    "views": 5,
+    "views": 6,
     "dateAdded": "2023-05-26T19:06:05.000Z",
     "media": [
       {
@@ -28501,9 +28509,9 @@
     "lockingMechanisms": [
       "Wafer"
     ],
-    "popularityIndex": 38,
-    "scorecardCount": 20,
-    "views": 38,
+    "popularityIndex": 39,
+    "scorecardCount": 21,
+    "views": 39,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -28662,9 +28670,9 @@
       "Flickr Update"
     ],
     "notes": "6 pin dimple, 3 spools and 3 T pins, good tolerances",
-    "popularityIndex": 8,
+    "popularityIndex": 10,
     "scorecardCount": 5,
-    "views": 8,
+    "views": 10,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -28838,9 +28846,9 @@
       "Sidebar",
       "Slider"
     ],
-    "popularityIndex": 48,
+    "popularityIndex": 49,
     "scorecardCount": 2,
-    "views": 48,
+    "views": 49,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -29098,6 +29106,9 @@
     "lockingMechanisms": [
       "Dimple"
     ],
+    "features": [
+      "Latest Changelog"
+    ],
     "popularityIndex": 1,
     "scorecardCount": 3,
     "views": 1,
@@ -29117,9 +29128,9 @@
     "lockingMechanisms": [
       "Pump/push"
     ],
-    "popularityIndex": 86,
+    "popularityIndex": 88,
     "scorecardCount": 12,
-    "views": 86,
+    "views": 88,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -29356,9 +29367,9 @@
       "Pin-in-pin"
     ],
     "searchKeywords": "multilock, mtl",
-    "popularityIndex": 61,
+    "popularityIndex": 62,
     "scorecardCount": 16,
-    "views": 61,
+    "views": 62,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -29422,9 +29433,9 @@
       "Pin-in-pin"
     ],
     "searchKeywords": "multilock, mtl",
-    "popularityIndex": 71,
+    "popularityIndex": 72,
     "scorecardCount": 6,
-    "views": 71,
+    "views": 72,
     "dateAdded": "2023-03-23T16:12:54.000Z",
     "media": [
       {
@@ -29527,9 +29538,9 @@
       "Pin-in-pin"
     ],
     "searchKeywords": "multilock, mtl",
-    "popularityIndex": 76,
+    "popularityIndex": 77,
     "scorecardCount": 20,
-    "views": 76,
+    "views": 77,
     "dateAdded": "2024-03-29T20:52:00.000Z",
     "media": [
       {
@@ -29576,9 +29587,9 @@
       "Dimple"
     ],
     "searchKeywords": "multilock, mtl",
-    "popularityIndex": 38,
+    "popularityIndex": 39,
     "scorecardCount": 29,
-    "views": 38,
+    "views": 39,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -29680,9 +29691,6 @@
     ],
     "lockingMechanisms": [
       "Dimple"
-    ],
-    "features": [
-      "Latest Changelog"
     ],
     "popularityIndex": 1,
     "scorecardCount": 2,
@@ -29819,6 +29827,9 @@
     "lockingMechanisms": [
       "Dimple"
     ],
+    "features": [
+      "Latest Changelog"
+    ],
     "popularityIndex": 1,
     "scorecardCount": 2,
     "views": 1,
@@ -29890,9 +29901,9 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "popularityIndex": 819,
-    "scorecardCount": 226,
-    "views": 819,
+    "popularityIndex": 820,
+    "scorecardCount": 229,
+    "views": 820,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -30094,9 +30105,9 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "popularityIndex": 48,
+    "popularityIndex": 49,
     "scorecardCount": 12,
-    "views": 48,
+    "views": 49,
     "dateAdded": "2023-03-02T19:05:25.000Z",
     "media": [
       {
@@ -30171,9 +30182,9 @@
     "features": [
       "High pin count"
     ],
-    "popularityIndex": 7,
+    "popularityIndex": 8,
     "scorecardCount": 4,
-    "views": 7,
+    "views": 8,
     "dateAdded": "2026-08-06T03:59:39.969Z",
     "media": [
       {
@@ -30946,9 +30957,9 @@
     "features": [
       "High pin count"
     ],
-    "popularityIndex": 25,
+    "popularityIndex": 26,
     "scorecardCount": 21,
-    "views": 25,
+    "views": 26,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -31091,7 +31102,7 @@
       "Dimple"
     ],
     "popularityIndex": 12,
-    "scorecardCount": 6,
+    "scorecardCount": 7,
     "views": 12,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
@@ -31384,9 +31395,9 @@
       "Flickr Update"
     ],
     "notes": "dimple, similar to Superior, but 6 pin stacks vertically aligned",
-    "popularityIndex": 28,
-    "scorecardCount": 12,
-    "views": 28,
+    "popularityIndex": 29,
+    "scorecardCount": 13,
+    "views": 29,
     "dateAdded": "2023-03-02T19:05:25.000Z",
     "media": [
       {
@@ -31730,9 +31741,9 @@
       "Active sidebar",
       "Flickr Update"
     ],
-    "popularityIndex": 49,
-    "scorecardCount": 23,
-    "views": 49,
+    "popularityIndex": 50,
+    "scorecardCount": 24,
+    "views": 50,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -32080,9 +32091,9 @@
       "Picking Risk"
     ],
     "notes": "If trap elements are not dealt with, the lock will soft-brick, requiring a gut to fix.",
-    "popularityIndex": 18,
+    "popularityIndex": 19,
     "scorecardCount": 6,
-    "views": 18,
+    "views": 19,
     "dateAdded": "2023-12-28T18:48:59.000Z",
     "media": [
       {
@@ -32326,6 +32337,9 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
+    "features": [
+      "Latest Changelog"
+    ],
     "popularityIndex": 63,
     "scorecardCount": 24,
     "views": 63,
@@ -32554,9 +32568,9 @@
     "lockingMechanisms": [
       "Pump/push"
     ],
-    "popularityIndex": 12,
+    "popularityIndex": 13,
     "scorecardCount": 10,
-    "views": 12,
+    "views": 13,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -32623,9 +32637,9 @@
       "Front tension",
       "False gates"
     ],
-    "popularityIndex": 63,
+    "popularityIndex": 65,
     "scorecardCount": 27,
-    "views": 63,
+    "views": 65,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -32954,9 +32968,9 @@
     "lockingMechanisms": [
       "Slider"
     ],
-    "popularityIndex": 36,
+    "popularityIndex": 38,
     "scorecardCount": 5,
-    "views": 36,
+    "views": 38,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -33256,9 +33270,9 @@
       "Sprung sliders",
       "Active sidebar"
     ],
-    "popularityIndex": 23,
+    "popularityIndex": 24,
     "scorecardCount": 2,
-    "views": 23,
+    "views": 24,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -33375,8 +33389,8 @@
       "Sprung sliders",
       "Active sidebar"
     ],
-    "popularityIndex": 13,
-    "views": 13,
+    "popularityIndex": 14,
+    "views": 14,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -33631,8 +33645,7 @@
       "Slider"
     ],
     "features": [
-      "Unsprung sliders",
-      "Latest Changelog"
+      "Unsprung sliders"
     ],
     "popularityIndex": 9,
     "scorecardCount": 11,
@@ -33732,9 +33745,9 @@
       "High pin count",
       "Interactive element"
     ],
-    "popularityIndex": 10,
+    "popularityIndex": 11,
     "scorecardCount": 2,
-    "views": 10,
+    "views": 11,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -34008,9 +34021,9 @@
     "lockingMechanisms": [
       "Magnet"
     ],
-    "popularityIndex": 11,
-    "scorecardCount": 6,
-    "views": 11,
+    "popularityIndex": 13,
+    "scorecardCount": 7,
+    "views": 13,
     "dateAdded": "2023-03-02T19:05:25.000Z",
     "media": [
       {
@@ -34280,12 +34293,11 @@
     ],
     "features": [
       "Active sidebar",
-      "Trap Element",
-      "Latest Changelog"
+      "Trap Element"
     ],
-    "popularityIndex": 3,
+    "popularityIndex": 4,
     "scorecardCount": 2,
-    "views": 3,
+    "views": 4,
     "currentBeltDate": "2026-08-30T12:00:00.000Z",
     "dateAdded": "2026-09-01T00:58:56.480Z",
     "media": [
@@ -34312,9 +34324,12 @@
       }
     ],
     "version": "7 pin, with 3 pin in pin",
-    "popularityIndex": 2,
+    "features": [
+      "Latest Changelog"
+    ],
+    "popularityIndex": 3,
     "scorecardCount": 2,
-    "views": 2,
+    "views": 3,
     "currentBeltDate": "2026-10-29T17:06:32.292Z",
     "dateAdded": "2026-10-09T23:22:45.036Z",
     "lastUpdated": "2026-10-29T17:06:32.740Z"
@@ -34338,9 +34353,9 @@
       "Curtain",
       "False gates"
     ],
-    "popularityIndex": 26,
+    "popularityIndex": 28,
     "scorecardCount": 14,
-    "views": 26,
+    "views": 28,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -34849,9 +34864,9 @@
       "Pin-in-pin",
       "Interactive element"
     ],
-    "popularityIndex": 111,
+    "popularityIndex": 112,
     "scorecardCount": 58,
-    "views": 111,
+    "views": 112,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -35223,9 +35238,9 @@
       "Magic DOM drivers",
       "Bottlenose keypins"
     ],
-    "popularityIndex": 15,
+    "popularityIndex": 17,
     "scorecardCount": 8,
-    "views": 15,
+    "views": 17,
     "dateAdded": "2024-03-29T20:52:00.000Z",
     "media": [
       {
@@ -35356,9 +35371,9 @@
       "Interactive element",
       "Magic DOM drivers"
     ],
-    "popularityIndex": 19,
+    "popularityIndex": 20,
     "scorecardCount": 13,
-    "views": 19,
+    "views": 20,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -35486,9 +35501,9 @@
     "lockingMechanisms": [
       "Wafer"
     ],
-    "popularityIndex": 9,
+    "popularityIndex": 10,
     "scorecardCount": 5,
-    "views": 9,
+    "views": 10,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -35565,9 +35580,9 @@
     "lockingMechanisms": [
       "Dimple"
     ],
-    "popularityIndex": 9,
+    "popularityIndex": 11,
     "scorecardCount": 8,
-    "views": 9,
+    "views": 11,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -35647,9 +35662,9 @@
       "Flickr Update"
     ],
     "notes": "Must have at least 4 sliders with false gates",
-    "popularityIndex": 54,
+    "popularityIndex": 55,
     "scorecardCount": 28,
-    "views": 54,
+    "views": 55,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -35829,8 +35844,8 @@
     "features": [
       "Flickr Update"
     ],
-    "popularityIndex": 2,
-    "views": 2,
+    "popularityIndex": 3,
+    "views": 3,
     "dateAdded": "2026-08-07T15:07:44.520Z",
     "media": [
       {
@@ -35905,9 +35920,9 @@
       "Overmilling",
       "Flickr Update"
     ],
-    "popularityIndex": 76,
+    "popularityIndex": 77,
     "scorecardCount": 41,
-    "views": 76,
+    "views": 77,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -36355,9 +36370,9 @@
     "features": [
       "Some formats guttable"
     ],
-    "popularityIndex": 115,
+    "popularityIndex": 116,
     "scorecardCount": 49,
-    "views": 115,
+    "views": 116,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -36734,9 +36749,9 @@
     "features": [
       "Flickr Update"
     ],
-    "popularityIndex": 43,
-    "scorecardCount": 14,
-    "views": 43,
+    "popularityIndex": 45,
+    "scorecardCount": 15,
+    "views": 45,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -36859,9 +36874,9 @@
     "features": [
       "High pin count"
     ],
-    "popularityIndex": 28,
+    "popularityIndex": 29,
     "scorecardCount": 7,
-    "views": 28,
+    "views": 29,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -37132,9 +37147,9 @@
     "features": [
       "High pin count"
     ],
-    "popularityIndex": 59,
+    "popularityIndex": 60,
     "scorecardCount": 15,
-    "views": 59,
+    "views": 60,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -37221,9 +37236,9 @@
       "Sprung sliders",
       "Reverse sidebar"
     ],
-    "popularityIndex": 164,
+    "popularityIndex": 165,
     "scorecardCount": 39,
-    "views": 164,
+    "views": 165,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -37363,8 +37378,8 @@
       "Sprung sliders",
       "Reverse sidebar"
     ],
-    "popularityIndex": 18,
-    "views": 18,
+    "popularityIndex": 19,
+    "views": 19,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -37505,9 +37520,9 @@
       "High pin count",
       "Flickr Update"
     ],
-    "popularityIndex": 36,
+    "popularityIndex": 37,
     "scorecardCount": 6,
-    "views": 36,
+    "views": 37,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -37854,9 +37869,9 @@
       "Interactive element"
     ],
     "notes": "***** **Special Picking Requirement:** Exempt from rule regarding maximum number of master wafers",
-    "popularityIndex": 27,
+    "popularityIndex": 28,
     "scorecardCount": 8,
-    "views": 27,
+    "views": 28,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -38463,8 +38478,7 @@
     ],
     "features": [
       "Sprung Sliders",
-      "Active sidebar",
-      "Latest Changelog"
+      "Active sidebar"
     ],
     "popularityIndex": 4,
     "scorecardCount": 3,
@@ -38718,9 +38732,9 @@
       "Active sidebar"
     ],
     "notes": "****** **Special Picking Requirement:** Prior to picking, operate the lock with the key or rake pins to reset rotational orientation.",
-    "popularityIndex": 44,
+    "popularityIndex": 46,
     "scorecardCount": 3,
-    "views": 44,
+    "views": 46,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -38795,9 +38809,9 @@
       "Flickr Update"
     ],
     "notes": "****** **Special Picking Requirement:** Prior to picking, operate the lock with the key or rake pins to reset rotational orientation.",
-    "popularityIndex": 324,
+    "popularityIndex": 325,
     "scorecardCount": 90,
-    "views": 324,
+    "views": 325,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -39041,9 +39055,9 @@
     "features": [
       "Unguttable"
     ],
-    "popularityIndex": 64,
+    "popularityIndex": 65,
     "scorecardCount": 30,
-    "views": 64,
+    "views": 65,
     "dateAdded": "2023-03-02T19:05:25.000Z",
     "media": [
       {
@@ -39377,9 +39391,9 @@
       "Magnetic pins"
     ],
     "notes": "******* **Special Picking Requirement:** Must be picked with bible oriented down",
-    "popularityIndex": 2,
+    "popularityIndex": 3,
     "scorecardCount": 1,
-    "views": 2,
+    "views": 3,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -39485,9 +39499,9 @@
       "Flickr Update"
     ],
     "searchKeywords": "multilock, mtl",
-    "popularityIndex": 28,
+    "popularityIndex": 29,
     "scorecardCount": 16,
-    "views": 28,
+    "views": 29,
     "dateAdded": "2023-03-02T19:05:25.000Z",
     "media": [
       {
@@ -39723,9 +39737,9 @@
       "Flickr Update"
     ],
     "searchKeywords": "multilock, mtl",
-    "popularityIndex": 246,
-    "scorecardCount": 123,
-    "views": 246,
+    "popularityIndex": 247,
+    "scorecardCount": 124,
+    "views": 247,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -40284,7 +40298,7 @@
       "Pump/push"
     ],
     "popularityIndex": 15,
-    "scorecardCount": 9,
+    "scorecardCount": 10,
     "views": 15,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
@@ -40380,7 +40394,8 @@
       "Pump/push"
     ],
     "features": [
-      "Under Review ⚑"
+      "Under Review ⚑",
+      "Latest Changelog"
     ],
     "popularityIndex": 4,
     "scorecardCount": 3,
@@ -40453,9 +40468,9 @@
     "lockingMechanisms": [
       "Dimple"
     ],
-    "popularityIndex": 11,
+    "popularityIndex": 12,
     "scorecardCount": 9,
-    "views": 11,
+    "views": 12,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -40863,9 +40878,12 @@
     "lockingMechanisms": [
       "Dimple"
     ],
-    "popularityIndex": 2,
+    "features": [
+      "Latest Changelog"
+    ],
+    "popularityIndex": 3,
     "scorecardCount": 3,
-    "views": 2,
+    "views": 3,
     "currentBeltDate": "2026-10-29T17:06:32.294Z",
     "dateAdded": "2026-10-12T23:33:54.103Z",
     "lastUpdated": "2026-10-29T17:06:32.742Z"
@@ -41074,9 +41092,9 @@
       "Interactive element",
       "Flickr Update"
     ],
-    "popularityIndex": 84,
+    "popularityIndex": 85,
     "scorecardCount": 35,
-    "views": 84,
+    "views": 85,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -41736,9 +41754,9 @@
       "Active sidebar",
       "Flickr Update"
     ],
-    "popularityIndex": 63,
+    "popularityIndex": 64,
     "scorecardCount": 41,
-    "views": 63,
+    "views": 64,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -41997,9 +42015,9 @@
       "Flickr Update"
     ],
     "notes": "Old models can be front tensioned",
-    "popularityIndex": 180,
+    "popularityIndex": 182,
     "scorecardCount": 32,
-    "views": 180,
+    "views": 182,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -42138,9 +42156,9 @@
       "False gates",
       "Flickr Update"
     ],
-    "popularityIndex": 85,
+    "popularityIndex": 86,
     "scorecardCount": 13,
-    "views": 85,
+    "views": 86,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -42494,7 +42512,7 @@
       "High pin count"
     ],
     "popularityIndex": 18,
-    "scorecardCount": 15,
+    "scorecardCount": 16,
     "views": 18,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
@@ -43048,9 +43066,9 @@
       "Forked keypins",
       "Flickr Update"
     ],
-    "popularityIndex": 133,
+    "popularityIndex": 134,
     "scorecardCount": 38,
-    "views": 133,
+    "views": 134,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -43209,9 +43227,9 @@
       "Active sidebar",
       "Flickr Update"
     ],
-    "popularityIndex": 155,
+    "popularityIndex": 157,
     "scorecardCount": 76,
-    "views": 155,
+    "views": 157,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -43611,9 +43629,9 @@
       "Sprung sliders",
       "Active sidebar"
     ],
-    "popularityIndex": 19,
-    "scorecardCount": 8,
-    "views": 19,
+    "popularityIndex": 20,
+    "scorecardCount": 9,
+    "views": 20,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -43686,9 +43704,9 @@
     "lockingMechanisms": [
       "Pump/push"
     ],
-    "popularityIndex": 28,
+    "popularityIndex": 29,
     "scorecardCount": 8,
-    "views": 28,
+    "views": 29,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -43815,9 +43833,9 @@
       "High pin count",
       "Interactive element"
     ],
-    "popularityIndex": 18,
+    "popularityIndex": 19,
     "scorecardCount": 15,
-    "views": 18,
+    "views": 19,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -43927,9 +43945,9 @@
     "features": [
       "Unguttable"
     ],
-    "popularityIndex": 32,
-    "scorecardCount": 16,
-    "views": 32,
+    "popularityIndex": 33,
+    "scorecardCount": 17,
+    "views": 33,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -44249,9 +44267,9 @@
       "Torpedo keypins",
       "Interactive element"
     ],
-    "popularityIndex": 78,
+    "popularityIndex": 79,
     "scorecardCount": 28,
-    "views": 78,
+    "views": 79,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -44425,9 +44443,9 @@
       "Torpedo keypins",
       "Flickr Update"
     ],
-    "popularityIndex": 97,
-    "scorecardCount": 37,
-    "views": 97,
+    "popularityIndex": 98,
+    "scorecardCount": 38,
+    "views": 98,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -44509,9 +44527,9 @@
       "Torpedo keypins",
       "Flickr Update"
     ],
-    "popularityIndex": 34,
+    "popularityIndex": 35,
     "scorecardCount": 23,
-    "views": 34,
+    "views": 35,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -44585,9 +44603,9 @@
       "Tapered drivers",
       "Flickr Update"
     ],
-    "popularityIndex": 57,
+    "popularityIndex": 56,
     "scorecardCount": 33,
-    "views": 57,
+    "views": 56,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -45072,9 +45090,9 @@
     "lockingMechanisms": [
       "Pump/push"
     ],
-    "popularityIndex": 18,
+    "popularityIndex": 19,
     "scorecardCount": 14,
-    "views": 18,
+    "views": 19,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -45308,9 +45326,9 @@
       "False gates"
     ],
     "notes": "Can be picked with front tension but gated spinner complicates this",
-    "popularityIndex": 32,
+    "popularityIndex": 34,
     "scorecardCount": 17,
-    "views": 32,
+    "views": 34,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -45396,9 +45414,9 @@
       "High pin count",
       "Flickr Update"
     ],
-    "popularityIndex": 24,
+    "popularityIndex": 25,
     "scorecardCount": 10,
-    "views": 24,
+    "views": 25,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -45669,9 +45687,9 @@
       "Rotating fingerpins"
     ],
     "notes": "IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",
-    "popularityIndex": 27,
+    "popularityIndex": 28,
     "scorecardCount": 15,
-    "views": 27,
+    "views": 28,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -45735,7 +45753,7 @@
       "Dimple"
     ],
     "popularityIndex": 42,
-    "scorecardCount": 29,
+    "scorecardCount": 30,
     "views": 42,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
@@ -46409,9 +46427,9 @@
     "features": [
       "High pin count"
     ],
-    "popularityIndex": 46,
+    "popularityIndex": 48,
     "scorecardCount": 16,
-    "views": 46,
+    "views": 48,
     "dateAdded": "2025-02-17T13:29:55.000Z",
     "media": [
       {
@@ -46505,8 +46523,7 @@
       "Dimple"
     ],
     "features": [
-      "High pin count",
-      "Latest Changelog"
+      "High pin count"
     ],
     "popularityIndex": 3,
     "views": 3,
@@ -46652,9 +46669,9 @@
       "High pin count",
       "Flickr Update"
     ],
-    "popularityIndex": 38,
-    "scorecardCount": 18,
-    "views": 38,
+    "popularityIndex": 39,
+    "scorecardCount": 19,
+    "views": 39,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -47031,9 +47048,9 @@
       "Flickr Update"
     ],
     "notes": "*** **Special Picking Requirement:** Must be raked prior to picking to reset pin combination",
-    "popularityIndex": 107,
+    "popularityIndex": 109,
     "scorecardCount": 22,
-    "views": 107,
+    "views": 109,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -47096,9 +47113,9 @@
       "Active sidebar"
     ],
     "notes": "*** **Special Picking Requirement:** Must be raked prior to picking to reset pin combination",
-    "popularityIndex": 61,
+    "popularityIndex": 62,
     "scorecardCount": 23,
-    "views": 61,
+    "views": 62,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -47173,9 +47190,9 @@
       "Active sidebar"
     ],
     "notes": "****** **Special Picking Requirement:** Prior to picking, operate the lock with the key or rake pins to reset rotational orientation.",
-    "popularityIndex": 60,
+    "popularityIndex": 63,
     "scorecardCount": 15,
-    "views": 60,
+    "views": 63,
     "dateAdded": "2025-12-28T18:08:44.771Z",
     "media": [
       {
@@ -47280,9 +47297,9 @@
     "lockingMechanisms": [
       "Magnet"
     ],
-    "popularityIndex": 18,
+    "popularityIndex": 19,
     "scorecardCount": 2,
-    "views": 18,
+    "views": 19,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -47329,8 +47346,8 @@
     "lockingMechanisms": [
       "Slider"
     ],
-    "popularityIndex": 6,
-    "views": 6,
+    "popularityIndex": 7,
+    "views": 7,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -47449,8 +47466,7 @@
     ],
     "features": [
       "Pin-in-pin",
-      "Magnetic pins",
-      "Latest Changelog"
+      "Magnetic pins"
     ],
     "searchKeywords": "multilock, mtl",
     "popularityIndex": 5,
@@ -47533,9 +47549,9 @@
       "Pin-in-pin"
     ],
     "searchKeywords": "multilock, mtl",
-    "popularityIndex": 155,
+    "popularityIndex": 157,
     "scorecardCount": 80,
-    "views": 155,
+    "views": 157,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -47721,9 +47737,9 @@
       "Pin-tumbler",
       "Sidepins"
     ],
-    "popularityIndex": 52,
+    "popularityIndex": 53,
     "scorecardCount": 23,
-    "views": 52,
+    "views": 53,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -47829,9 +47845,9 @@
     "features": [
       "Rotating fingerpins"
     ],
-    "popularityIndex": 137,
+    "popularityIndex": 138,
     "scorecardCount": 46,
-    "views": 137,
+    "views": 138,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -47994,7 +48010,7 @@
     ],
     "notes": "5 pins on main row similar to T60, 5 opposing pins, overlift at rest, 1 interactive on T-12",
     "popularityIndex": 15,
-    "scorecardCount": 9,
+    "scorecardCount": 10,
     "views": 15,
     "dateAdded": "2023-03-02T19:05:25.000Z",
     "media": [
@@ -48108,9 +48124,9 @@
     "lockingMechanisms": [
       "Dimple"
     ],
-    "popularityIndex": 25,
+    "popularityIndex": 26,
     "scorecardCount": 8,
-    "views": 25,
+    "views": 26,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -48239,9 +48255,9 @@
     "lockingMechanisms": [
       "Pump/push"
     ],
-    "popularityIndex": 61,
+    "popularityIndex": 62,
     "scorecardCount": 28,
-    "views": 61,
+    "views": 62,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -48366,9 +48382,9 @@
       "Pipe key",
       "False gates"
     ],
-    "popularityIndex": 25,
+    "popularityIndex": 26,
     "scorecardCount": 9,
-    "views": 25,
+    "views": 26,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -48429,9 +48445,9 @@
     "features": [
       "Flickr Update"
     ],
-    "popularityIndex": 115,
+    "popularityIndex": 117,
     "scorecardCount": 58,
-    "views": 115,
+    "views": 117,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -48669,9 +48685,9 @@
       "False gates"
     ],
     "notes": "Disc 4 needs picking early.  Generally gives muted, subtle feedback",
-    "popularityIndex": 29,
+    "popularityIndex": 30,
     "scorecardCount": 9,
-    "views": 29,
+    "views": 30,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -48746,9 +48762,9 @@
       "Flickr Update"
     ],
     "notes": "Many keyway variations, warded spinners, rear profile spinner and profile discs",
-    "popularityIndex": 77,
+    "popularityIndex": 78,
     "scorecardCount": 14,
-    "views": 77,
+    "views": 78,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -48975,9 +48991,9 @@
       "False gates",
       "Butterfly discs"
     ],
-    "popularityIndex": 134,
+    "popularityIndex": 135,
     "scorecardCount": 41,
-    "views": 134,
+    "views": 135,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -49035,9 +49051,9 @@
       "High pin count",
       "Flickr Update"
     ],
-    "popularityIndex": 54,
+    "popularityIndex": 55,
     "scorecardCount": 26,
-    "views": 54,
+    "views": 55,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -49105,9 +49121,9 @@
       "Undercut milling"
     ],
     "notes": "May include one chamber without milling",
-    "popularityIndex": 178,
+    "popularityIndex": 179,
     "scorecardCount": 88,
-    "views": 178,
+    "views": 179,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -49237,9 +49253,9 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "popularityIndex": 36,
+    "popularityIndex": 37,
     "scorecardCount": 12,
-    "views": 36,
+    "views": 37,
     "dateAdded": "2023-03-02T19:05:25.000Z",
     "media": [
       {
@@ -49527,9 +49543,9 @@
     "features": [
       "Opposing overset stacks"
     ],
-    "popularityIndex": 15,
+    "popularityIndex": 16,
     "scorecardCount": 11,
-    "views": 15,
+    "views": 16,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -49617,9 +49633,9 @@
     "lockingMechanisms": [
       "Dimple"
     ],
-    "popularityIndex": 45,
+    "popularityIndex": 46,
     "scorecardCount": 20,
-    "views": 45,
+    "views": 46,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -49675,9 +49691,9 @@
     "lockingMechanisms": [
       "Pump/push"
     ],
-    "popularityIndex": 8,
+    "popularityIndex": 9,
     "scorecardCount": 5,
-    "views": 8,
+    "views": 9,
     "dateAdded": "2023-08-03T13:21:21.000Z",
     "media": [
       {
@@ -49800,9 +49816,9 @@
       "Magnet",
       "Pump/push"
     ],
-    "popularityIndex": 3,
+    "popularityIndex": 4,
     "scorecardCount": 1,
-    "views": 3,
+    "views": 4,
     "dateAdded": "2023-02-27T16:29:21.000Z",
     "media": [
       {
@@ -50179,9 +50195,9 @@
       "Shark fin keypins",
       "Flickr Update"
     ],
-    "popularityIndex": 62,
+    "popularityIndex": 63,
     "scorecardCount": 46,
-    "views": 62,
+    "views": 63,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -50465,9 +50481,9 @@
       "Active sidebar",
       "Flickr Update"
     ],
-    "popularityIndex": 33,
+    "popularityIndex": 34,
     "scorecardCount": 4,
-    "views": 33,
+    "views": 34,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -50764,9 +50780,9 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "popularityIndex": 11,
+    "popularityIndex": 12,
     "scorecardCount": 9,
-    "views": 11,
+    "views": 12,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -51057,9 +51073,9 @@
       "Torpedo keypins",
       "High pin count"
     ],
-    "popularityIndex": 31,
+    "popularityIndex": 33,
     "scorecardCount": 4,
-    "views": 31,
+    "views": 33,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -51289,9 +51305,9 @@
     "lockingMechanisms": [
       "Dimple"
     ],
-    "popularityIndex": 4,
+    "popularityIndex": 3,
     "scorecardCount": 6,
-    "views": 4,
+    "views": 3,
     "dateAdded": "2023-03-02T19:05:25.000Z",
     "media": [
       {
@@ -51363,9 +51379,9 @@
       "Rotating fingerpins",
       "Active sidebar"
     ],
-    "popularityIndex": 10,
+    "popularityIndex": 9,
     "scorecardCount": 7,
-    "views": 10,
+    "views": 9,
     "dateAdded": "2025-03-18T02:44:04.000Z",
     "media": [
       {
@@ -51479,9 +51495,9 @@
       "Rotating fingerpins"
     ],
     "notes": "IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",
-    "popularityIndex": 12,
+    "popularityIndex": 13,
     "scorecardCount": 6,
-    "views": 12,
+    "views": 13,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -51930,9 +51946,9 @@
     "features": [
       "High pin count"
     ],
-    "popularityIndex": 22,
+    "popularityIndex": 23,
     "scorecardCount": 3,
-    "views": 22,
+    "views": 23,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -52054,7 +52070,7 @@
       "High pin count"
     ],
     "popularityIndex": 15,
-    "scorecardCount": 11,
+    "scorecardCount": 12,
     "views": 15,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
@@ -52127,7 +52143,7 @@
       "High pin count"
     ],
     "popularityIndex": 13,
-    "scorecardCount": 12,
+    "scorecardCount": 13,
     "views": 13,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
@@ -52286,11 +52302,10 @@
       "Dimple"
     ],
     "features": [
-      "High pin count",
-      "Latest Changelog"
+      "High pin count"
     ],
     "popularityIndex": 13,
-    "scorecardCount": 4,
+    "scorecardCount": 5,
     "views": 13,
     "currentBeltDate": "2026-08-30T12:00:00.000Z",
     "dateAdded": "2025-04-18T14:26:37.611Z",
@@ -52568,9 +52583,9 @@
       "Slider",
       "Sidebar"
     ],
-    "popularityIndex": 44,
+    "popularityIndex": 45,
     "scorecardCount": 17,
-    "views": 44,
+    "views": 45,
     "dateAdded": "2023-03-02T19:05:25.000Z",
     "media": [
       {
@@ -52656,9 +52671,9 @@
     "features": [
       "Magnetic pins"
     ],
-    "popularityIndex": 46,
+    "popularityIndex": 47,
     "scorecardCount": 13,
-    "views": 46,
+    "views": 47,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -53116,9 +53131,9 @@
       "Partial gut",
       "Flickr Update"
     ],
-    "popularityIndex": 65,
+    "popularityIndex": 66,
     "scorecardCount": 5,
-    "views": 65,
+    "views": 66,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -53263,9 +53278,9 @@
     "features": [
       "Magnetic sliders"
     ],
-    "popularityIndex": 24,
+    "popularityIndex": 25,
     "scorecardCount": 17,
-    "views": 24,
+    "views": 25,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -53425,9 +53440,9 @@
       "Picking Risk"
     ],
     "notes": "**** **Special Picking Requirement:** requires 360 for belting; Picking risk: Some versions may contain trap pins that will require gutting to fix. ",
-    "popularityIndex": 26,
+    "popularityIndex": 27,
     "scorecardCount": 17,
-    "views": 26,
+    "views": 27,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -53546,8 +53561,7 @@
       "Dimple"
     ],
     "features": [
-      "Pin-in-pin",
-      "Latest Changelog"
+      "Pin-in-pin"
     ],
     "popularityIndex": 4,
     "scorecardCount": 4,
@@ -53686,9 +53700,9 @@
       "Sidepins",
       "Active sidebar"
     ],
-    "popularityIndex": 83,
-    "scorecardCount": 41,
-    "views": 83,
+    "popularityIndex": 84,
+    "scorecardCount": 42,
+    "views": 84,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -53745,9 +53759,9 @@
       "Sidepins",
       "Active sidebar"
     ],
-    "popularityIndex": 72,
+    "popularityIndex": 73,
     "scorecardCount": 41,
-    "views": 72,
+    "views": 73,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -53812,9 +53826,9 @@
       "Flickr Update"
     ],
     "notes": "Hard to navigate and manipulate and often poor feedback",
-    "popularityIndex": 21,
+    "popularityIndex": 23,
     "scorecardCount": 2,
-    "views": 21,
+    "views": 23,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -54011,9 +54025,9 @@
     "features": [
       "Rotating fingerpins"
     ],
-    "popularityIndex": 32,
+    "popularityIndex": 33,
     "scorecardCount": 12,
-    "views": 32,
+    "views": 33,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -54136,9 +54150,9 @@
     "features": [
       "Magnetic pins"
     ],
-    "popularityIndex": 1,
+    "popularityIndex": 2,
     "scorecardCount": 1,
-    "views": 1,
+    "views": 2,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -54437,9 +54451,9 @@
     "features": [
       "High pin count"
     ],
-    "popularityIndex": 17,
+    "popularityIndex": 18,
     "scorecardCount": 6,
-    "views": 17,
+    "views": 18,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -54820,9 +54834,9 @@
       "Bi-directional"
     ],
     "notes": "Two versions, padlock and door lock.",
-    "popularityIndex": 49,
+    "popularityIndex": 50,
     "scorecardCount": 5,
-    "views": 49,
+    "views": 50,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -55095,9 +55109,9 @@
       "Disc controller",
       "Disc blocker system"
     ],
-    "popularityIndex": 56,
+    "popularityIndex": 57,
     "scorecardCount": 10,
-    "views": 56,
+    "views": 57,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -55188,9 +55202,9 @@
       "Disc controller",
       "Disc blocker system"
     ],
-    "popularityIndex": 96,
-    "scorecardCount": 8,
-    "views": 96,
+    "popularityIndex": 98,
+    "scorecardCount": 9,
+    "views": 98,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -55504,7 +55518,7 @@
       "Flickr Update"
     ],
     "popularityIndex": 204,
-    "scorecardCount": 94,
+    "scorecardCount": 95,
     "views": 204,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
@@ -55615,9 +55629,9 @@
       "Serrated/threaded milling",
       "Active sidebar"
     ],
-    "popularityIndex": 64,
+    "popularityIndex": 65,
     "scorecardCount": 20,
-    "views": 64,
+    "views": 65,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -56566,9 +56580,9 @@
       "Sidepins",
       "Flickr Update"
     ],
-    "popularityIndex": 100,
-    "scorecardCount": 64,
-    "views": 100,
+    "popularityIndex": 102,
+    "scorecardCount": 65,
+    "views": 102,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -56687,9 +56701,9 @@
       "Sidepins",
       "Active sidebar"
     ],
-    "popularityIndex": 44,
+    "popularityIndex": 43,
     "scorecardCount": 23,
-    "views": 44,
+    "views": 43,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -56755,9 +56769,9 @@
       "Sprung sliders",
       "Active sidebar"
     ],
-    "popularityIndex": 35,
+    "popularityIndex": 34,
     "scorecardCount": 7,
-    "views": 35,
+    "views": 34,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -56865,9 +56879,9 @@
       "Sprung sliders",
       "Active sidebar"
     ],
-    "popularityIndex": 96,
+    "popularityIndex": 97,
     "scorecardCount": 49,
-    "views": 96,
+    "views": 97,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -57174,9 +57188,9 @@
     "features": [
       "High pin count"
     ],
-    "popularityIndex": 24,
+    "popularityIndex": 25,
     "scorecardCount": 10,
-    "views": 24,
+    "views": 25,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -57223,9 +57237,9 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "popularityIndex": 19,
+    "popularityIndex": 20,
     "scorecardCount": 3,
-    "views": 19,
+    "views": 20,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -58142,9 +58156,9 @@
       "Torpedo keypins",
       "Interactive element"
     ],
-    "popularityIndex": 94,
+    "popularityIndex": 95,
     "scorecardCount": 54,
-    "views": 94,
+    "views": 95,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -58815,9 +58829,9 @@
       "Magnetic rotors"
     ],
     "notes": "IKON AKA Zeiss IKON - more info on [Lockwiki](https://www.lockwiki.com/index.php/IKON)",
-    "popularityIndex": 40,
+    "popularityIndex": 41,
     "scorecardCount": 7,
-    "views": 40,
+    "views": 41,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -59074,9 +59088,9 @@
       "Active sidebar",
       "Flickr Update"
     ],
-    "popularityIndex": 28,
+    "popularityIndex": 29,
     "scorecardCount": 17,
-    "views": 28,
+    "views": 29,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -59190,9 +59204,9 @@
       "Active sidebar",
       "Shutter"
     ],
-    "popularityIndex": 37,
+    "popularityIndex": 38,
     "scorecardCount": 2,
-    "views": 37,
+    "views": 38,
     "dateAdded": "2023-03-02T19:05:25.000Z",
     "media": [
       {
@@ -59895,9 +59909,9 @@
       "High pin count",
       "Torpedo keypins"
     ],
-    "popularityIndex": 75,
+    "popularityIndex": 76,
     "scorecardCount": 20,
-    "views": 75,
+    "views": 76,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -60043,9 +60057,9 @@
       "High pin count",
       "Torpedo keypins"
     ],
-    "popularityIndex": 109,
+    "popularityIndex": 110,
     "scorecardCount": 47,
-    "views": 109,
+    "views": 110,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -60189,9 +60203,9 @@
       "Undercut milling",
       "Flickr Update"
     ],
-    "popularityIndex": 112,
+    "popularityIndex": 113,
     "scorecardCount": 61,
-    "views": 112,
+    "views": 113,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -60353,9 +60367,9 @@
       "High pin count",
       "Torpedo keypins"
     ],
-    "popularityIndex": 18,
+    "popularityIndex": 19,
     "scorecardCount": 9,
-    "views": 18,
+    "views": 19,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -60754,9 +60768,9 @@
       "Serrated/threaded milling",
       "Flickr Update"
     ],
-    "popularityIndex": 27,
+    "popularityIndex": 28,
     "scorecardCount": 19,
-    "views": 27,
+    "views": 28,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -61381,9 +61395,9 @@
     "features": [
       "High pin count"
     ],
-    "popularityIndex": 33,
+    "popularityIndex": 32,
     "scorecardCount": 11,
-    "views": 33,
+    "views": 32,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -61557,7 +61571,7 @@
       "High pin count"
     ],
     "popularityIndex": 11,
-    "scorecardCount": 3,
+    "scorecardCount": 4,
     "views": 11,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
@@ -61759,9 +61773,9 @@
     "lockingMechanisms": [
       "Wafer"
     ],
-    "popularityIndex": 27,
+    "popularityIndex": 28,
     "scorecardCount": 3,
-    "views": 27,
+    "views": 28,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -61941,9 +61955,9 @@
       "High pin count",
       "Flickr Update"
     ],
-    "popularityIndex": 36,
-    "scorecardCount": 40,
-    "views": 36,
+    "popularityIndex": 37,
+    "scorecardCount": 41,
+    "views": 37,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -62290,9 +62304,9 @@
       "Flickr Update"
     ],
     "notes": "upgrade of MIWA PS",
-    "popularityIndex": 15,
+    "popularityIndex": 16,
     "scorecardCount": 1,
-    "views": 15,
+    "views": 16,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -62385,9 +62399,9 @@
       "Flickr Update"
     ],
     "notes": "upgrade of MIWA PS",
-    "popularityIndex": 46,
+    "popularityIndex": 47,
     "scorecardCount": 18,
-    "views": 46,
+    "views": 47,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -62671,7 +62685,7 @@
     ],
     "notes": "Dual sidebar",
     "popularityIndex": 13,
-    "scorecardCount": 3,
+    "scorecardCount": 4,
     "views": 13,
     "dateAdded": "2025-11-11T19:09:04.039Z",
     "media": [
@@ -63614,9 +63628,9 @@
       "Flickr Update"
     ],
     "notes": "Hard to navigate and manipulate and often poor feedback",
-    "popularityIndex": 50,
+    "popularityIndex": 49,
     "scorecardCount": 12,
-    "views": 50,
+    "views": 49,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -63977,7 +63991,7 @@
       "Partial gut"
     ],
     "popularityIndex": 47,
-    "scorecardCount": 21,
+    "scorecardCount": 22,
     "views": 47,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
@@ -64272,9 +64286,9 @@
     "features": [
       "High pin count"
     ],
-    "popularityIndex": 77,
-    "scorecardCount": 41,
-    "views": 77,
+    "popularityIndex": 78,
+    "scorecardCount": 42,
+    "views": 78,
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "media": [
       {
@@ -65454,9 +65468,9 @@
         "model": "Scudo 9000"
       }
     ],
-    "popularityIndex": 2,
+    "popularityIndex": 3,
     "scorecardCount": 1,
-    "views": 2,
+    "views": 3,
     "currentBeltDate": "2026-10-09T16:14:03.523Z",
     "dateAdded": "2026-10-09T16:14:03.523Z",
     "lastUpdated": "2026-10-09T16:14:04.140Z"
@@ -65760,8 +65774,8 @@
       }
     ],
     "version": "Old Trees, 5 Finger Pins",
-    "popularityIndex": 1,
-    "views": 1,
+    "popularityIndex": 2,
+    "views": 2,
     "currentBeltDate": "2026-10-09T23:22:45.036Z",
     "dateAdded": "2026-10-09T23:22:45.036Z",
     "lastUpdated": "2026-10-09T23:22:45.343Z"
@@ -67173,9 +67187,9 @@
       "Under Review ⚑",
       "Interlocking pins"
     ],
-    "popularityIndex": 2,
+    "popularityIndex": 1,
     "scorecardCount": 1,
-    "views": 2,
+    "views": 1,
     "dateAdded": "2023-03-02T19:05:25.000Z",
     "relatedIds": [
       "71bce5b7",
@@ -69249,8 +69263,8 @@
     "lockingMechanisms": [
       "D/W"
     ],
-    "popularityIndex": 1,
-    "views": 1,
+    "popularityIndex": 2,
+    "views": 2,
     "currentBeltDate": "2026-10-12T23:33:54.101Z",
     "dateAdded": "2026-10-12T23:33:54.101Z",
     "lastUpdated": "2026-10-12T23:33:54.541Z"
@@ -70323,6 +70337,8 @@
     "lockingMechanisms": [
       "Disc detainer"
     ],
+    "popularityIndex": 1,
+    "views": 1,
     "currentBeltDate": "2026-10-12T23:33:54.102Z",
     "dateAdded": "2026-10-12T23:33:54.102Z",
     "lastUpdated": "2026-10-12T23:33:54.543Z"
@@ -71793,9 +71809,9 @@
     "lockingMechanisms": [
       "Dimple"
     ],
-    "popularityIndex": 1,
-    "scorecardCount": 1,
-    "views": 1,
+    "popularityIndex": 2,
+    "scorecardCount": 2,
+    "views": 2,
     "currentBeltDate": "2026-10-12T23:33:54.103Z",
     "dateAdded": "2026-10-12T23:33:54.103Z",
     "lastUpdated": "2026-10-12T23:33:54.545Z"
@@ -72175,8 +72191,8 @@
     "lockingMechanisms": [
       "Lever"
     ],
-    "popularityIndex": 1,
-    "views": 1,
+    "popularityIndex": 2,
+    "views": 2,
     "currentBeltDate": "2026-10-12T23:33:54.103Z",
     "dateAdded": "2026-10-12T23:33:54.103Z",
     "lastUpdated": "2026-10-12T23:33:54.546Z"
@@ -72265,8 +72281,8 @@
     "lockingMechanisms": [
       "Lever"
     ],
-    "popularityIndex": 1,
-    "views": 1,
+    "popularityIndex": 3,
+    "views": 3,
     "currentBeltDate": "2026-10-12T23:33:54.103Z",
     "dateAdded": "2026-10-12T23:33:54.103Z",
     "lastUpdated": "2026-10-12T23:33:54.546Z"
@@ -73225,8 +73241,8 @@
     "lockingMechanisms": [
       "Dimple"
     ],
-    "popularityIndex": 1,
-    "views": 1,
+    "popularityIndex": 2,
+    "views": 2,
     "currentBeltDate": "2026-10-12T23:33:54.104Z",
     "dateAdded": "2026-10-12T23:33:54.104Z",
     "lastUpdated": "2026-10-12T23:33:54.547Z"
@@ -73799,6 +73815,7 @@
     ],
     "notes": "8 pin dimple with interactive element on the key",
     "popularityIndex": 2,
+    "scorecardCount": 1,
     "views": 2,
     "dateAdded": "2023-03-02T19:05:25.000Z",
     "media": [
