@@ -81,12 +81,12 @@
   "lockingMechanisms": [
     {
       "label": "Pin-tumbler",
-      "value": 422,
+      "value": 421,
       "id": "pin-tumbler"
     },
     {
       "label": "Dimple",
-      "value": 266,
+      "value": 267,
       "id": "dimple"
     },
     {
@@ -215,12 +215,12 @@
     "Green": [
       {
         "label": "Pin-tumbler",
-        "value": 107,
+        "value": 106,
         "id": "pin-tumbler"
       },
       {
         "label": "Dimple",
-        "value": 29,
+        "value": 30,
         "id": "dimple"
       },
       {
@@ -6395,14 +6395,14 @@
         {
           "label": "Pin-tumbler",
           "id": "Pin-tumbler",
-          "count": 10,
-          "value": 0.833
+          "count": 9,
+          "value": 0.75
         },
         {
           "label": "Dimple",
           "id": "Dimple",
-          "count": 2,
-          "value": 0.167
+          "count": 3,
+          "value": 0.25
         }
       ]
     },
@@ -26461,6 +26461,6 @@
   },
   "metadata": {
     "source": "import-data",
-    "updatedDateTime": "2026-11-01 22:03"
+    "updatedDateTime": "2026-11-08 23:20"
   }
 }
