@@ -15,7 +15,6 @@ const privateCache = 'private, no-store'
 const readerClaims = ['admin', 'classificationAdmin', 'lpuMod', 'classificationTeam', 'blackBelt']
 const writerClaims = ['admin', 'classificationAdmin', 'lpuMod', 'classificationTeam', 'blackBelt']
 const adminClaims = ['admin', 'classificationAdmin']
-const writeStages = {read: 0, vote: 1, action: 2, publish: 3}
 const pageSchema = z.strictObject({
     limit: z.coerce.number().int().min(1).max(100).default(25),
     cursor: z.string().max(512).optional()
@@ -46,14 +45,6 @@ function requireClaims(claims) {
 
 function isAdmin(user) {
     return adminClaims.some(claim => user?.[claim] === true)
-}
-
-function requireWriteStage(required) {
-    return (_req, _res, next) => {
-        const active = writeStages[process.env.CLASSIFICATION_WRITE_STAGE] ?? writeStages.read
-        if (active >= writeStages[required]) return next()
-        return next(apiError(503, 'writes_disabled', 'Classification writes are not enabled at this stage'))
-    }
 }
 
 function idempotencyKey(req) {
@@ -107,55 +98,55 @@ router.get('/publications/:publicationId', requireClaims(readerClaims), async (r
     respond(res, await (await service()).getPublication(id))
 })
 
-router.post('/votes', requireClaims(writerClaims), requireWriteStage('vote'), async (req, res) => {
+router.post('/votes', requireClaims(writerClaims), async (req, res) => {
     const input = parse(voteCreateSchema, req.body)
     respond(res, await (await service()).createVote(req.user, idempotencyKey(req), input), 201)
 })
 
-router.patch('/votes/:voteId', requireClaims(writerClaims), requireWriteStage('vote'), async (req, res) => {
+router.patch('/votes/:voteId', requireClaims(writerClaims), async (req, res) => {
     const id = parse(resourceIdSchema, req.params.voteId)
     const input = parse(voteEditSchema, req.body)
     respond(res, await (await service()).editVote(req.user, idempotencyKey(req), id, input,
         isAdmin(req.user)))
 })
 
-router.post('/votes/:voteId/move', requireClaims(adminClaims), requireWriteStage('vote'), async (req, res) => {
+router.post('/votes/:voteId/move', requireClaims(adminClaims), async (req, res) => {
     const id = parse(resourceIdSchema, req.params.voteId)
     const input = parse(voteMoveSchema, req.body)
     respond(res, await (await service()).moveVote(req.user, idempotencyKey(req), id, input))
 })
 
-router.delete('/votes/:voteId', requireClaims(writerClaims), requireWriteStage('vote'), async (req, res) => {
+router.delete('/votes/:voteId', requireClaims(writerClaims), async (req, res) => {
     const id = parse(resourceIdSchema, req.params.voteId)
     const {expectedRevision} = parse(revisionSchema, req.body)
     respond(res, await (await service()).deleteVote(req.user, idempotencyKey(req), id,
         expectedRevision, isAdmin(req.user)))
 })
 
-router.post('/actions', requireClaims(adminClaims), requireWriteStage('action'), async (req, res) => {
+router.post('/actions', requireClaims(adminClaims), async (req, res) => {
     const input = parse(actionCreateSchema, req.body)
     respond(res, await (await service()).createAction(req.user, idempotencyKey(req), input), 201)
 })
 
-router.patch('/actions/:actionId', requireClaims(adminClaims), requireWriteStage('action'), async (req, res) => {
+router.patch('/actions/:actionId', requireClaims(adminClaims), async (req, res) => {
     const id = parse(resourceIdSchema, req.params.actionId)
     const input = parse(actionEditSchema, req.body)
     respond(res, await (await service()).editAction(req.user, idempotencyKey(req), id, input))
 })
 
-router.delete('/actions/:actionId', requireClaims(adminClaims), requireWriteStage('action'), async (req, res) => {
+router.delete('/actions/:actionId', requireClaims(adminClaims), async (req, res) => {
     const id = parse(resourceIdSchema, req.params.actionId)
     const {expectedRevision} = parse(revisionSchema, req.body)
     respond(res, await (await service()).deleteAction(req.user, idempotencyKey(req), id,
         expectedRevision))
 })
 
-router.post('/publications', requireClaims(adminClaims), requireWriteStage('publish'), async (req, res) => {
+router.post('/publications', requireClaims(adminClaims), async (req, res) => {
     const input = parse(batchPublishSchema, req.body)
     respond(res, await (await service()).publishBatch(req.user, idempotencyKey(req), input), 201)
 })
 
-router.post('/publications/single', requireClaims(adminClaims), requireWriteStage('publish'), async (req, res) => {
+router.post('/publications/single', requireClaims(adminClaims), async (req, res) => {
     const input = parse(singlePublishSchema, req.body)
     parse(actionFieldsSchema, {
         status: 'Staged',
@@ -175,7 +166,7 @@ router.post('/publications/single', requireClaims(adminClaims), requireWriteStag
 })
 
 router.patch('/publications/:publicationId/actions/:actionId/approval',
-    requireClaims(adminClaims), requireWriteStage('publish'), async (req, res) => {
+    requireClaims(adminClaims), async (req, res) => {
         const publicationId = parse(resourceIdSchema, req.params.publicationId)
         const actionId = parse(resourceIdSchema, req.params.actionId)
         const input = parse(publicationApprovalSchema, req.body)

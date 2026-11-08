@@ -125,13 +125,8 @@ only `admin` or `classificationAdmin` may edit/delete another member's vote.
 Admin action and publication writes also require `admin` or `classificationAdmin`. Every
 Classification response uses `Cache-Control: private, no-store`.
 
-The server's protected `CLASSIFICATION_WRITE_STAGE` setting is an additional rollout gate:
-`read` (the default, including missing or invalid values) rejects every mutation;
-`vote` permits vote writes; `action` also permits admin draft/stage/settle writes; and
-`publish` also permits publication and approval updates. A closed stage returns `503
-writes_disabled`. Claims and record ownership checks still apply at every stage.
-Promote the server stage before the frontend's matching
-`VITE_CLASSIFICATION_WRITE_STAGE` build setting, and verify each stage in development.
+Classification writes are available to authorized callers without rollout-stage configuration.
+Verified claims, record ownership, input validation, and revision checks still apply.
 
 | Route | Access | Data |
 | --- | --- | --- |

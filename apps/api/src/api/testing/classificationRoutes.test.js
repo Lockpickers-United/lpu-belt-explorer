@@ -1,6 +1,6 @@
 import express from 'express'
 import request from 'supertest'
-import {afterEach, beforeEach, describe, expect, it, vi} from 'vitest'
+import {beforeEach, describe, expect, it, vi} from 'vitest'
 import api from '../index.js'
 
 const mocks = vi.hoisted(() => ({
@@ -39,7 +39,6 @@ app.use((error, _req, res, _next) => {
 
 beforeEach(() => {
     vi.clearAllMocks()
-    vi.stubEnv('CLASSIFICATION_WRITE_STAGE', 'publish')
     mocks.verifyFirebaseIdToken.mockImplementation(async token => {
         if (token === 'blackbelt') return {uid: 'blackbelt', blackBelt: true}
         if (token === 'admin') return {uid: 'admin', admin: true}
@@ -74,8 +73,6 @@ beforeEach(() => {
         actionId: 'action-a', approved: true})
 })
 
-afterEach(() => vi.unstubAllEnvs())
-
 describe('classification routes', () => {
     it('allows only admins to set a published action approval with a boolean', async () => {
         const patchApproval = token => request(app)
@@ -86,9 +83,6 @@ describe('classification routes', () => {
         expect((await patchApproval('admin').send({approved: 'true'})).status).toBe(400)
         expect((await patchApproval('admin').send({approved: true, status: 'Published'})).status).toBe(400)
         expect(mocks.setPublicationApproval).not.toHaveBeenCalled()
-        vi.stubEnv('CLASSIFICATION_WRITE_STAGE', 'action')
-        expect((await patchApproval('admin').send({approved: true})).status).toBe(503)
-        vi.stubEnv('CLASSIFICATION_WRITE_STAGE', 'publish')
 
         const response = await patchApproval('classification-admin').send({approved: true})
         expect(response.status).toBe(200)
@@ -96,31 +90,24 @@ describe('classification routes', () => {
             {uid: 'classification-admin', classificationAdmin: true}, 'approval-key',
             'publication-a', 'action-a', {approved: true})
     })
-    it('keeps writes closed by default and promotes vote, action, and publication stages separately', async () => {
-        const vote = {entryId: 'lock-a', votedBelt: 'Blue'}
-        const sendVote = () => request(app).post('/api/v1/classification/votes')
-            .set('Authorization', 'Bearer blackbelt').set('Idempotency-Key', 'stage-vote')
-            .send(vote)
-        vi.stubEnv('CLASSIFICATION_WRITE_STAGE', '')
-        expect((await sendVote()).body.error.code).toBe('writes_disabled')
-        vi.stubEnv('CLASSIFICATION_WRITE_STAGE', 'vote')
-        expect((await sendVote()).status).toBe(201)
+    it('allows authorized vote, action, and publication writes without rollout configuration', async () => {
+        const vote = await request(app).post('/api/v1/classification/votes')
+            .set('Authorization', 'Bearer blackbelt').set('Idempotency-Key', 'create-vote')
+            .send({entryId: 'lock-a', votedBelt: 'Blue'})
+        expect(vote.status).toBe(201)
+        expect(mocks.createVote).toHaveBeenCalledTimes(1)
+
         const action = await request(app).post('/api/v1/classification/actions')
-            .set('Authorization', 'Bearer admin').set('Idempotency-Key', 'stage-action')
+            .set('Authorization', 'Bearer admin').set('Idempotency-Key', 'create-action')
             .send({entryId: 'lock-a', status: 'Draft'})
-        expect(action.body.error.code).toBe('writes_disabled')
-        vi.stubEnv('CLASSIFICATION_WRITE_STAGE', 'action')
-        expect((await request(app).post('/api/v1/classification/actions')
-            .set('Authorization', 'Bearer admin').set('Idempotency-Key', 'stage-action')
-            .send({entryId: 'lock-a', status: 'Draft'})).status).toBe(201)
-        const publish = await request(app).post('/api/v1/classification/publications')
-            .set('Authorization', 'Bearer admin').set('Idempotency-Key', 'stage-publish')
+        expect(action.status).toBe(201)
+        expect(mocks.createAction).toHaveBeenCalledTimes(1)
+
+        const publication = await request(app).post('/api/v1/classification/publications')
+            .set('Authorization', 'Bearer admin').set('Idempotency-Key', 'publish-actions')
             .send({actions: [{actionId: 'action-a', expectedRevision: 1}]})
-        expect(publish.body.error.code).toBe('writes_disabled')
-        vi.stubEnv('CLASSIFICATION_WRITE_STAGE', 'publish')
-        expect((await request(app).post('/api/v1/classification/publications')
-            .set('Authorization', 'Bearer admin').set('Idempotency-Key', 'stage-publish')
-            .send({actions: [{actionId: 'action-a', expectedRevision: 1}]})).status).toBe(201)
+        expect(publication.status).toBe(201)
+        expect(mocks.publishBatch).toHaveBeenCalledTimes(1)
     })
     it('requires a verified token and eligible claim for protected reads', async () => {
         const anonymous = await request(app).get('/api/v1/classification/entries/lock-a/votes')

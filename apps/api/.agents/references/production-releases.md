@@ -4,10 +4,9 @@
 
 Production deploys, PM2 starts or restarts, and live-data jobs require explicit user approval under the root `AGENTS.md`. Preparing or reviewing workflow files, release configuration, commands, and documentation does not deploy them.
 
-Keep `CLASSIFICATION_WRITE_STAGE=read` in the protected production environment
-until the separate Classification authorization and rollout gates are complete.
-Later stage changes require the same approved release process and coordinated
-frontend `VITE_CLASSIFICATION_WRITE_STAGE` builds.
+Classification writes no longer use rollout-stage environment settings. Verified
+claims and service ownership checks remain enforced. Deploying this change
+still requires explicit approval through the normal release process.
 
 ## Deployment workflow
 

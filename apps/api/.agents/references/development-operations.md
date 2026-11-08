@@ -40,13 +40,9 @@ file at that path. The API loader detects subsequent replacements without a
 restart. An initial `.env.development` or API-code update still requires the
 normal development PM2 restart below.
 
-`CLASSIFICATION_WRITE_STAGE` defaults to `read`. After the API version with this
-gate is uploaded and restarted, promote the protected development setting through
-`vote`, `action`, and `publish` only after the preceding stage's checks pass; restart
-the development PM2 process after each setting change. Promote the frontend's
-`VITE_CLASSIFICATION_WRITE_STAGE` build setting only after its matching server
-stage is verified. The frontend build workflow reads that value from the
-`github-pages` environment variable; an unset or invalid value stays read-only.
+Classification writes no longer use rollout-stage environment settings. Verified
+claims and service ownership checks govern voting, actions, and publication.
+API code changes still require the normal development PM2 restart below.
 
 Use a manual PM2 restart after an upload:
 
