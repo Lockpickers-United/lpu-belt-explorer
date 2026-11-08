@@ -21,7 +21,7 @@ export function BeltRequestDBProvider({children}) {
     }, [])
 
     useEffect(() => {
-        const openStatuses = ['open', 'checked-out', 'processing-approve', 'processing-deny']
+        const openStatuses = ['open', 'checked-out', 'incoming', 'processing-approve', 'processing-deny']
 
         const colRef = collection(db, 'belt-requests')
         const q = viewing === 'all'
@@ -78,6 +78,7 @@ export function BeltRequestDBProvider({children}) {
                 transaction.set(ref, request)
             }
         })
+        return request
 
     }, [dbError, globalContext.dbError])
 

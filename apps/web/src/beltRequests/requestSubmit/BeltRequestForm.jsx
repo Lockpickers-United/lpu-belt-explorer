@@ -14,10 +14,11 @@ import ScorecardDataContext from '../../scorecard/ScorecardDataProvider.jsx'
 import BeltRequestEntrySelect from './BeltRequestEntrySelect.jsx'
 import AuthContext from '../../app/AuthContext.jsx'
 import APIContext from '../../app/APIContext.jsx'
+import DBContext from '../../app/DBContext.jsx'
 import {enqueueSnackbar} from 'notistack'
 import {useLocation, useNavigate} from 'react-router-dom'
-import {peekDiscordPostingGrant, startDiscordAuth, takeDiscordPostingGrant} from '../../auth/discordAuth.js'
-import handleRequestSubmit from './handleRequestSubmit'
+import {peekDiscordPostingIdentity, peekDiscordPostingGrant, startDiscordAuth, takeDiscordPostingGrant} from '../../auth/discordAuth.js'
+import handleRequestSubmit, {formatDiscordRequest} from './handleRequestSubmit'
 import isValidUrl from '../../util/isValidUrl'
 import BeltRequestEpicQuest from './BeltRequestEpicQuest.jsx'
 import {buildDiscordBeltRequest, clearDiscordBeltRequestDraft, readDiscordBeltRequestDraft,
@@ -35,7 +36,8 @@ const beltRequestsChannelUrl = 'https://discord.com/channels/140129091796992000/
 export default function BeltRequestForm() {
     const {profile} = useContext(ScorecardDataContext)
     const {user} = useContext(AuthContext)
-    const {startDiscordOAuth, postDiscordBeltRequest} = useContext(APIContext)
+    const {startDiscordOAuth} = useContext(APIContext)
+    const {createBeltRequest} = useContext(DBContext)
     const location = useLocation()
     const navigate = useNavigate()
     const userId = user?.uid
@@ -192,9 +194,9 @@ export default function BeltRequestForm() {
 
     const hasPostingGrant = Boolean(userId && peekDiscordPostingGrant(userId))
     const postingStatus = sending
-        ? 'Sending your request to Discord...'
+        ? 'Saving your belt request...'
         : delivery
-            ? 'Your request was delivered to Discord.'
+            ? 'Your request was added to the review queue.'
             : hasPostingGrant
                 ? 'Discord is authorized. Your request is ready to send.'
                 : draftRestored
@@ -203,8 +205,9 @@ export default function BeltRequestForm() {
 
     const sendDiscordRequest = useCallback(async (request) => {
         if (sendingRef.current) return
+        const identity = peekDiscordPostingIdentity(userId)
         const postingGrant = takeDiscordPostingGrant(userId)
-        if (!postingGrant) {
+        if (!postingGrant || !identity?.discordId || !identity?.username) {
             enqueueSnackbar('Discord authorization expired. Click Post to Discord to authorize again.',
                 {variant: 'warning'})
             return
@@ -212,31 +215,32 @@ export default function BeltRequestForm() {
         sendingRef.current = true
         setSending(true)
         try {
-            const result = await postDiscordBeltRequest({postingGrant, request})
+            const {entries, quests, ...details} = request
+            const formattedForm = {
+                ...details,
+                ...Object.fromEntries(entries.map((entry, index) => [`entry${index + 1}`, entry])),
+                ...Object.fromEntries(quests.map((quest, index) => [`quest${index + 1}`, quest])),
+                sync: request.redditUsername
+            }
+            const result = await createBeltRequest({
+                requestBelt: request.requestBelt,
+                platform: 'Discord',
+                username: identity.username,
+                userId: identity.discordId,
+                messageContent: formatDiscordRequest({form: formattedForm}),
+                syncTo: request.redditUsername ? 'Reddit' : null,
+                syncUsername: request.redditUsername || null
+            })
             clearDiscordBeltRequestDraft()
             setDelivery(result)
             setDraftRestored(false)
         } catch (error) {
-            if (['discord_grant_invalid', 'discord_grant_expired', 'discord_grant_forbidden'].includes(error.code)) {
-                enqueueSnackbar('Discord authorization expired or was used. Click Post to Discord to authorize again.',
-                    {variant: 'warning'})
-            } else if (error.code === 'discord_send_uncertain') {
-                enqueueSnackbar('Delivery could not be confirmed. Check the Discord channel before trying again.',
-                    {variant: 'warning'})
-            } else if (error.code === 'discord_rate_limited') {
-                enqueueSnackbar(`Discord is rate limiting requests. Wait ${error.retryAfter || 'a while'} seconds before trying again.`,
-                    {variant: 'warning'})
-            } else if (error.code === 'belt_request_posting_disabled') {
-                enqueueSnackbar('Discord posting is disabled on the API server. Your draft is saved; try again after the test webhook is configured.',
-                    {variant: 'warning'})
-            } else {
-                enqueueSnackbar(`Could not post to Discord: ${error.message}`, {variant: 'error'})
-            }
+            enqueueSnackbar(`Could not save your belt request: ${error.message}`, {variant: 'error'})
         } finally {
             sendingRef.current = false
             setSending(false)
         }
-    }, [userId, postDiscordBeltRequest])
+    }, [userId, createBeltRequest])
 
     useEffect(() => {
         if (!location.state?.discordAutoPost || !userId || autoPostHandled.current) return
@@ -583,10 +587,10 @@ export default function BeltRequestForm() {
             }}>
                 <Paper sx={{padding: '40px', textAlign: 'center'}}>
                     <Typography sx={{fontSize: '1.5rem', fontWeight: 500, marginBottom: 2}}>
-                        Request sent to Discord
+                        Request added to queue
                     </Typography>
                     <Typography sx={{marginBottom: 4}}>
-                        LockyJr is processing it now!
+                        LockyJr will process it and post to Discord.
                     </Typography>
 
                     <Button href={beltRequestsChannelUrl} target='_blank' rel='noopener noreferrer'

@@ -28,13 +28,13 @@ const requestForm = {requestBelt: 'White Belt', readRequirements: true,
     requestPlatform: 'Discord Post', entry1: entry}
 let form
 
-function renderForm({user = {uid: 'firebase-user'}, postDiscordBeltRequest = vi.fn(),
+function renderForm({user = {uid: 'firebase-user'}, createBeltRequest = vi.fn(),
     startDiscordOAuth = vi.fn(), initialEntries} = {}) {
     return renderWithRouter(
         <ScorecardDataContext.Provider value={{profile: {}, visibleEntries: []}}>
             <BeltRequestForm/>
         </ScorecardDataContext.Provider>,
-        {auth: {user}, api: {postDiscordBeltRequest, startDiscordOAuth}, initialEntries}
+        {auth: {user}, db: {createBeltRequest}, api: {startDiscordOAuth}, initialEntries}
     )
 }
 
@@ -53,15 +53,15 @@ describe('Post to Discord button', () => {
     afterEach(() => sessionStorage.clear())
 
     it('saves the draft and starts fresh OAuth before sending', async () => {
-        const postDiscordBeltRequest = vi.fn()
-        renderForm({postDiscordBeltRequest})
+        const createBeltRequest = vi.fn()
+        renderForm({createBeltRequest})
         await userEvent.setup().click(screen.getByRole('button', {name: 'Post to Discord'}))
 
         expect(startDiscordAuth).toHaveBeenCalledWith({
             startDiscordOAuth: expect.any(Function), purpose: 'beltRequest', returnTo: '/beltRequests'
         })
         expect(readDiscordBeltRequestDraft('firebase-user').form).toEqual(requestForm)
-        expect(postDiscordBeltRequest).not.toHaveBeenCalled()
+        expect(createBeltRequest).not.toHaveBeenCalled()
     })
 
     it('prevents repeated authorization while OAuth startup is pending', async () => {
@@ -79,7 +79,7 @@ describe('Post to Discord button', () => {
     it('restores a same-user draft after OAuth', async () => {
         saveDiscordBeltRequestDraft({uid: 'firebase-user', form: requestForm,
             lockCount: 1, questCount: 0})
-        storeDiscordPostingGrant('grant', 'firebase-user')
+        storeDiscordPostingGrant('grant', 'firebase-user', {discordId: 'discord-user', username: 'picker'})
         renderForm()
 
         await waitFor(() => expect(form.restore).toHaveBeenCalledWith(requestForm))
@@ -89,18 +89,19 @@ describe('Post to Discord button', () => {
     it('posts the saved request once after a successful OAuth callback', async () => {
         saveDiscordBeltRequestDraft({uid: 'firebase-user', form: requestForm,
             lockCount: 1, questCount: 0})
-        storeDiscordPostingGrant('grant', 'firebase-user')
-        const postDiscordBeltRequest = vi.fn(async () => ({
+        storeDiscordPostingGrant('grant', 'firebase-user', {discordId: 'discord-user', username: 'picker'})
+        const createBeltRequest = vi.fn(async () => ({
             messageUrl: 'https://discord.com/channels/1/2/3'
         }))
-        renderForm({postDiscordBeltRequest, initialEntries: [{pathname: '/beltRequests',
+        renderForm({createBeltRequest, initialEntries: [{pathname: '/beltRequests',
             state: {discordAutoPost: true}}]})
 
-        await waitFor(() => expect(screen.getByText('Request sent to Discord')).toBeInTheDocument())
+        await waitFor(() => expect(screen.getByText('Request added to queue')).toBeInTheDocument())
         expect(form.restore).toHaveBeenCalledWith(requestForm)
-        expect(postDiscordBeltRequest).toHaveBeenCalledTimes(1)
-        expect(postDiscordBeltRequest).toHaveBeenCalledWith({
-            postingGrant: 'grant', request: expect.objectContaining({requestBelt: 'White Belt'})
+        expect(createBeltRequest).toHaveBeenCalledTimes(1)
+        expect(createBeltRequest).toHaveBeenCalledWith({
+            requestBelt: 'White Belt', platform: 'Discord', username: 'picker', userId: 'discord-user',
+            messageContent: expect.stringContaining('Test Lock'), syncTo: null, syncUsername: null
         })
         expect(readDiscordBeltRequestDraft('firebase-user')).toBeNull()
         expect(startDiscordAuth).not.toHaveBeenCalled()
@@ -109,25 +110,25 @@ describe('Post to Discord button', () => {
     it('does not post after a canceled callback', async () => {
         saveDiscordBeltRequestDraft({uid: 'firebase-user', form: requestForm,
             lockCount: 1, questCount: 0})
-        const postDiscordBeltRequest = vi.fn()
-        renderForm({postDiscordBeltRequest, initialEntries: [{pathname: '/beltRequests',
+        const createBeltRequest = vi.fn()
+        renderForm({createBeltRequest, initialEntries: [{pathname: '/beltRequests',
             state: {discordAuthError: 'Discord authorization was canceled.'}}]})
 
         await waitFor(() => expect(form.restore).toHaveBeenCalledWith(requestForm))
-        expect(postDiscordBeltRequest).not.toHaveBeenCalled()
+        expect(createBeltRequest).not.toHaveBeenCalled()
         expect(readDiscordBeltRequestDraft('firebase-user')).not.toBeNull()
     })
 
     it('does not post if the callback returns without a same-user draft', async () => {
-        storeDiscordPostingGrant('grant', 'firebase-user')
-        const postDiscordBeltRequest = vi.fn()
-        renderForm({postDiscordBeltRequest, initialEntries: [{pathname: '/beltRequests',
+        storeDiscordPostingGrant('grant', 'firebase-user', {discordId: 'discord-user', username: 'picker'})
+        const createBeltRequest = vi.fn()
+        renderForm({createBeltRequest, initialEntries: [{pathname: '/beltRequests',
             state: {discordAutoPost: true}}]})
 
         await waitFor(() => expect(enqueueSnackbar).toHaveBeenCalledWith(
             'Your Discord request could not be resumed. Review your draft and try again.',
             {variant: 'warning'}))
-        expect(postDiscordBeltRequest).not.toHaveBeenCalled()
+        expect(createBeltRequest).not.toHaveBeenCalled()
     })
 
     it('shows a callback error beside the restored draft', async () => {
@@ -141,90 +142,90 @@ describe('Post to Discord button', () => {
     })
 
     it('sends once with the one-use grant and shows a delivery link', async () => {
-        storeDiscordPostingGrant('grant', 'firebase-user')
-        const postDiscordBeltRequest = vi.fn(async () => ({
+        storeDiscordPostingGrant('grant', 'firebase-user', {discordId: 'discord-user', username: 'picker'})
+        const createBeltRequest = vi.fn(async () => ({
             messageUrl: 'https://discord.com/channels/1/2/3'
         }))
-        renderForm({postDiscordBeltRequest})
+        renderForm({createBeltRequest})
         await userEvent.setup().click(screen.getByRole('button', {name: 'Post to Discord'}))
 
-        await waitFor(() => expect(screen.getByText('Request sent to Discord')).toBeInTheDocument())
-        expect(postDiscordBeltRequest).toHaveBeenCalledWith({
-            postingGrant: 'grant',
-            request: {requestBelt: 'White Belt', entries: [{lockId: 'lock-1',
-                lockName: 'Test Lock', belt: 'White', link: 'https://example.com/evidence'}], quests: []}
+        await waitFor(() => expect(screen.getByText('Request added to queue')).toBeInTheDocument())
+        expect(createBeltRequest).toHaveBeenCalledWith({
+            requestBelt: 'White Belt', platform: 'Discord', username: 'picker', userId: 'discord-user',
+            messageContent: expect.stringContaining('https://example.com/evidence'),
+            syncTo: null, syncUsername: null
         })
         expect(startDiscordAuth).not.toHaveBeenCalled()
     })
 
-    it('prevents a repeat send while the API is pending', async () => {
-        storeDiscordPostingGrant('grant', 'firebase-user')
+    it('prevents a repeat send while Firestore is pending', async () => {
+        storeDiscordPostingGrant('grant', 'firebase-user', {discordId: 'discord-user', username: 'picker'})
         let finish
-        const postDiscordBeltRequest = vi.fn(() => new Promise(resolve => { finish = resolve }))
-        renderForm({postDiscordBeltRequest})
+        const createBeltRequest = vi.fn(() => new Promise(resolve => { finish = resolve }))
+        renderForm({createBeltRequest})
         await userEvent.setup().click(screen.getByRole('button', {name: 'Post to Discord'}))
         expect(screen.getByRole('button', {name: 'Post to Discord'})).toBeDisabled()
-        expect(postDiscordBeltRequest).toHaveBeenCalledTimes(1)
+        expect(createBeltRequest).toHaveBeenCalledTimes(1)
         finish({messageUrl: 'https://discord.com/channels/1/2/3'})
-        await waitFor(() => expect(screen.getByText('Request sent to Discord')).toBeInTheDocument())
+        await waitFor(() => expect(screen.getByText('Request added to queue')).toBeInTheDocument())
     })
 
-    it('explains an uncertain send and keeps the copy fallback available', async () => {
-        storeDiscordPostingGrant('grant', 'firebase-user')
-        const postDiscordBeltRequest = vi.fn().mockRejectedValue(Object.assign(
+    it('reports a failed write and keeps the copy fallback available', async () => {
+        storeDiscordPostingGrant('grant', 'firebase-user', {discordId: 'discord-user', username: 'picker'})
+        const createBeltRequest = vi.fn().mockRejectedValue(Object.assign(
             new Error('Timed out'), {code: 'discord_send_uncertain'}))
-        renderForm({postDiscordBeltRequest})
+        renderForm({createBeltRequest})
         await userEvent.setup().click(screen.getByRole('button', {name: 'Post to Discord'}))
 
         await waitFor(() => expect(enqueueSnackbar).toHaveBeenCalledWith(
-            'Delivery could not be confirmed. Check the Discord channel before trying again.',
-            {variant: 'warning'}))
+            'Could not save your belt request: Timed out',
+            {variant: 'error'}))
         expect(screen.getByRole('button', {name: 'Copy Request'})).toBeEnabled()
         expect(readDiscordBeltRequestDraft('firebase-user')).not.toBeNull()
     })
 
-    it('asks for fresh authorization after a rejected grant', async () => {
-        storeDiscordPostingGrant('grant', 'firebase-user')
-        const postDiscordBeltRequest = vi.fn().mockRejectedValue(Object.assign(
+    it('asks for fresh authorization before retrying a failed write', async () => {
+        storeDiscordPostingGrant('grant', 'firebase-user', {discordId: 'discord-user', username: 'picker'})
+        const createBeltRequest = vi.fn().mockRejectedValue(Object.assign(
             new Error('Grant expired'), {code: 'discord_grant_expired'}))
-        renderForm({postDiscordBeltRequest})
+        renderForm({createBeltRequest})
         await userEvent.setup().click(screen.getByRole('button', {name: 'Post to Discord'}))
 
         await waitFor(() => expect(enqueueSnackbar).toHaveBeenCalledWith(
-            'Discord authorization expired or was used. Click Post to Discord to authorize again.',
-            {variant: 'warning'}))
+            'Could not save your belt request: Grant expired',
+            {variant: 'error'}))
         await userEvent.setup().click(screen.getByRole('button', {name: 'Post to Discord'}))
         expect(startDiscordAuth).toHaveBeenCalledTimes(1)
-        expect(postDiscordBeltRequest).toHaveBeenCalledTimes(1)
+        expect(createBeltRequest).toHaveBeenCalledTimes(1)
     })
 
-    it('explains a disabled API posting target and preserves the draft', async () => {
-        storeDiscordPostingGrant('grant', 'firebase-user')
-        const postDiscordBeltRequest = vi.fn().mockRejectedValue(Object.assign(
+    it('preserves the draft when saving fails', async () => {
+        storeDiscordPostingGrant('grant', 'firebase-user', {discordId: 'discord-user', username: 'picker'})
+        const createBeltRequest = vi.fn().mockRejectedValue(Object.assign(
             new Error('Discord posting is unavailable'), {code: 'belt_request_posting_disabled', status: 503}))
-        renderForm({postDiscordBeltRequest})
+        renderForm({createBeltRequest})
         await userEvent.setup().click(screen.getByRole('button', {name: 'Post to Discord'}))
 
         await waitFor(() => expect(enqueueSnackbar).toHaveBeenCalledWith(
-            'Discord posting is disabled on the API server. Your draft is saved; try again after the test webhook is configured.',
-            {variant: 'warning'}))
+            'Could not save your belt request: Discord posting is unavailable',
+            {variant: 'error'}))
         expect(readDiscordBeltRequestDraft('firebase-user')).not.toBeNull()
     })
 
     it('keeps Copy Request available without posting', async () => {
-        const postDiscordBeltRequest = vi.fn()
-        renderForm({postDiscordBeltRequest})
+        const createBeltRequest = vi.fn()
+        renderForm({createBeltRequest})
         await userEvent.setup().click(screen.getByRole('button', {name: 'Copy Request'}))
         expect(form.submit).toHaveBeenCalledTimes(1)
-        expect(postDiscordBeltRequest).not.toHaveBeenCalled()
+        expect(createBeltRequest).not.toHaveBeenCalled()
     })
 
     it('does not authorize or post for a signed-out user', async () => {
-        const postDiscordBeltRequest = vi.fn()
-        renderForm({user: null, postDiscordBeltRequest})
+        const createBeltRequest = vi.fn()
+        renderForm({user: null, createBeltRequest})
         await userEvent.setup().click(screen.getByRole('button', {name: 'Post to Discord'}))
         expect(startDiscordAuth).not.toHaveBeenCalled()
-        expect(postDiscordBeltRequest).not.toHaveBeenCalled()
+        expect(createBeltRequest).not.toHaveBeenCalled()
         expect(enqueueSnackbar).toHaveBeenCalledWith('Sign in to post a belt request to Discord.',
             {variant: 'warning'})
     })

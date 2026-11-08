@@ -19,8 +19,8 @@ export function routeDiscordAuthCallback() {
     window.history.replaceState(window.history.state, '', url.toString())
 }
 
-export function storeDiscordPostingGrant(postingGrant, uid) {
-    sessionStorage.setItem(grantStorageKey, JSON.stringify({postingGrant, uid, savedAt: Date.now()}))
+export function storeDiscordPostingGrant(postingGrant, uid, identity = null) {
+    sessionStorage.setItem(grantStorageKey, JSON.stringify({postingGrant, uid, identity, savedAt: Date.now()}))
 }
 
 export function peekDiscordPostingGrant(uid) {
@@ -72,4 +72,10 @@ export function clearDiscordCallbackQuery() {
         url.searchParams.delete(key)
     }
     window.history.replaceState(window.history.state, '', url.toString())
+}
+
+// Identity returned by the OAuth exchange, scoped to the same session and user.
+export function peekDiscordPostingIdentity(uid) {
+    if (!peekDiscordPostingGrant(uid)) return null
+    return JSON.parse(sessionStorage.getItem(grantStorageKey)).identity || null
 }

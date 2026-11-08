@@ -82,7 +82,7 @@ function AuthDiscordRoute() {
                 const result = await exchangeDiscordOAuth({code, state, nonce})
                 if (result.purpose === 'beltRequest' && result.returnTo === '/beltRequests'
                     && result.postingGrant) {
-                    storeDiscordPostingGrant(result.postingGrant, user.uid)
+                    storeDiscordPostingGrant(result.postingGrant, user.uid, result.identity)
                     navigate(result.returnTo, {replace: true, state: {discordAutoPost: true}})
                     return
                 }
