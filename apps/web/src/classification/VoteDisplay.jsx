@@ -3,7 +3,6 @@ import {Collapse} from '@mui/material'
 import VoteView from './VoteView.jsx'
 import VoteForm from './VoteForm.jsx'
 import Button from '@mui/material/Button'
-import {canWriteVotes} from './writeStage.js'
 import LoadingDisplay from '../misc/LoadingDisplay.jsx'
 
 export default function VoteDisplay({vote = {}, formVote = vote, owner, entry, previous = false, entryRef}) {
@@ -36,7 +35,6 @@ export default function VoteDisplay({vote = {}, formVote = vote, owner, entry, p
                 {entry.classificationStatus !== 'Settled'
                     ? < div style={{width: '100%', display: 'flex', justifyContent: 'center', marginTop: 16}}>
                         <Button onClick={() => handleActive('voteForm')} variant='text' size='small'
-                                disabled={!canWriteVotes}
                                 style={{color: '#ddd'}}>{formVote?.id ? 'Edit Your Belt Ranking Vote' : 'Add Your Belt Ranking Vote'}</Button>
                     </div>
                     : <div style={{width: '100%', display: 'flex', justifyContent: 'center', marginTop: 24, fontWeight: 600}}>

@@ -13,7 +13,6 @@ import AuthContext from '../app/AuthContext.jsx'
 import {useAccess} from '../app/AccessContext.jsx'
 import DBContext from '../app/DBContext.jsx'
 import useClassificationCommand from './useClassificationCommand.js'
-import {canWriteVotes} from './writeStage.js'
 import DeleteButton from '../misc/DeleteButton.jsx'
 import LoadingDisplay from '../misc/LoadingDisplay.jsx'
 import {enqueueSnackbar} from 'notistack'
@@ -155,8 +154,7 @@ export default function VoteForm({entry, vote, handleActive, owner, entryRef}) {
                                  formDefaults={formDefaults}/>
                 </div>
                 {vote.id && <ReassignVoteButton handleMoveVote={handleMoveVote} pending={pending}
-                                                disabled={!canWriteVotes} currentEntryId={entry.id}
-                                                hasUnsavedEdits={form.changed}/>}
+                                                currentEntryId={entry.id} hasUnsavedEdits={form.changed}/>}
             </div>
             <FormElement fieldType={'TextField'}
                          fieldName={'comment'}
@@ -203,19 +201,18 @@ export default function VoteForm({entry, vote, handleActive, owner, entryRef}) {
 
                 : <div style={{display: 'flex', flexGrow: 1, justifyContent: 'right', marginTop: 16, gap: 10}}>
                     {vote.id &&
-                        <DeleteButton variant='text' size='small' color='error' disabled={pending || !canWriteVotes}
+                        <DeleteButton variant='text' size='small' color='error' disabled={pending}
                                       onClick={handleDelete}>Delete</DeleteButton>}
                     <Button variant='text' size='small' style={{color: '#aaa'}}
                             onClick={handleCancel} disabled={pending}>Cancel</Button>
                     <Button variant='text' size='small'
                             onClick={handleSave}
-                            disabled={pending || !canWriteVotes || !form.form.votedBelt || !checkValidUrl(form.form.mediaUrl) ||
+                            disabled={pending || !form.form.votedBelt || !checkValidUrl(form.form.mediaUrl) ||
                                 (Boolean(vote.id) && !form.changed)}
                             color='success' style={{whiteSpace: 'nowrap'}}>{buttonText}</Button>
                 </div>
             }
 
-            {!canWriteVotes && <div role='status'>Classification vote writes are not enabled yet.</div>}
             {error && <div role='alert'>Could not save classification vote: {error.message}
                 {error.status === 409 && ' Reload this lock before trying again.'}</div>}
 

@@ -16,7 +16,6 @@ import DataContext from '../context/DataContext.jsx'
 import APIContext from '../app/APIContext.jsx'
 import AuthContext from '../app/AuthContext.jsx'
 import useClassificationCommand from './useClassificationCommand.js'
-import {canWriteActions, canPublishClassification} from './writeStage.js'
 import LoadingDisplay from '../misc/LoadingDisplay.jsx'
 import DeleteButton from '../misc/DeleteButton.jsx'
 import LogEntryButton from '../entries/LogEntryButton.jsx'
@@ -429,7 +428,7 @@ function EntryClassificationAdminForm({entry, handleToggle, action, onActionChan
                     }}>
                         {adminAction.id &&
                             <DeleteButton variant='text' size='small' color='error'
-                                          disabled={pending || !canWriteActions}
+                                          disabled={pending}
                                           onClick={handleDelete}>Delete</DeleteButton>
                         }
                         <div style={{flexGrow: 1}}/>
@@ -449,12 +448,12 @@ function EntryClassificationAdminForm({entry, handleToggle, action, onActionChan
                             gap: 16
                         }}>
                             <Button variant='text' size='small' onClick={handleSave}
-                                    disabled={pending || !canWriteActions || !form.changed || !validDecision(actionFields()) ||
+                                    disabled={pending || !form.changed || !validDecision(actionFields()) ||
                                         !validTarget(actionFields())}
                                     color='success' style={{whiteSpace: 'nowrap'}}>{buttonText}</Button>
                             <ConfirmButton variant='text' size='small' color='success'
                                            message={'About to publish this change'}
-                                           disabled={pending || !canPublishClassification || !actionFields().action || !validTarget(actionFields()) ||
+                                           disabled={pending || !actionFields().action || !validTarget(actionFields()) ||
                                                Boolean(actionFields().omitChangelog)}
                                            style={{height: 32, marginLeft: 16}}
                                            onClick={handlePublish}>
@@ -462,7 +461,6 @@ function EntryClassificationAdminForm({entry, handleToggle, action, onActionChan
                             </ConfirmButton>
                         </div>
                     </div>
-                    {!canWriteActions && <div role='status'>Classification action writes are not enabled.</div>}
                     {error && <div role='alert'>Could not save: {error.message}
                         {error.status === 409 && ' Reload this lock before trying again.'}</div>}
 

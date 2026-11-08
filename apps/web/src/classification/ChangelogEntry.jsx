@@ -13,7 +13,6 @@ import EntryClassificationAdmin from './EntryClassificationAdmin.jsx'
 import {useAccess} from '../app/AccessContext.jsx'
 import Checkbox from '@mui/material/Checkbox'
 import useClassificationCommand from './useClassificationCommand.js'
-import {canPublishClassification} from './writeStage.js'
 import {Link, useNavigate} from 'react-router-dom'
 import IconButton from '@mui/material/IconButton'
 import OpenInNewIcon from '@mui/icons-material/OpenInNew'
@@ -68,7 +67,7 @@ function ChangelogEntry({entry, historical = false, publicationId, reloadChangel
         ? <div style={{display: 'flex', alignItems: 'center', gap: 1, marginLeft: 16, paddingBottom: 8}}>
             <Checkbox size='small' color='success'
                       checked={pub.approved === true} onChange={toggleApproved}
-                      disabled={!accessInfo.roles.classificationAdmin || !canPublishClassification || pending}/>
+                      disabled={!accessInfo.roles.classificationAdmin || pending}/>
             <div style={{fontSize: '0.85rem', paddingTop: 3, color: color}}>
                 {pub.result?.status} — {pub.result?.detail} ({idBlock})
             </div>

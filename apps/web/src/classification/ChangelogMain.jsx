@@ -26,7 +26,6 @@ import reconcileClassificationAction from './reconcileClassificationAction.js'
 import ErrorMessage from '../misc/ErrorMessage.jsx'
 import LoadingDisplay from '../misc/LoadingDisplay.jsx'
 import useClassificationCommand from './useClassificationCommand.js'
-import {canPublishClassification} from './writeStage.js'
 import {getLockSortComparator} from '../locks/lockSortComparators.js'
 import {enqueueSnackbar} from 'notistack'
 import {pluralize} from '../util/stringUtils.js'
@@ -265,7 +264,7 @@ export default function ChangelogMain() {
                         arrow disableFocusListener>
                         <ConfirmButton variant='outlined' size='small' color='success'
                                        message={`About to publish ${publishable.length > 50 ? 'first 50' : publishable.length} ${pluralize('change', publishable.length)}.`}
-                                       disabled={!canPublishClassification || Boolean(selectedChangelog) || !publishable.length || pending}
+                                       disabled={Boolean(selectedChangelog) || !publishable.length || pending}
                                        style={{height: 32, marginLeft: 16}}
                                        onClick={publishBatch}>
                             Publish{publishable.length > 50 ? ' first 50' : ''}
