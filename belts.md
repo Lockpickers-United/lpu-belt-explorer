@@ -178,7 +178,7 @@ Both photos and videos of your picking accomplishment are accepted for this rank
 - [ACE Laminated padlock](https://lpubelts.com/#/locks?id=abdf3acd) (40mm or larger, 4 pins)
 - [ALPHA 1000](https://lpubelts.com/#/locks?id=82ea52a4) (40mm up to 45mm (4pins / spools))
 - [American Lock 5200](https://lpubelts.com/#/locks?id=a0d1bf97) (bump stop model: all standards + 1 anti-bump pin)
-- [ARFE](https://lpubelts.com/#/locks?id=a1581afe)
+- [ARFE](https://lpubelts.com/#/locks?id=a1581afe) (padlock)
 - [ASSA 8450 / ASSA 10450](https://lpubelts.com/#/locks?id=bc6cc2b5) (camlock)
 - [BASI CO](https://lpubelts.com/#/locks?id=aa15b066)
 - [BASI ST](https://lpubelts.com/#/locks?id=7b4ce02a)
@@ -196,7 +196,7 @@ Both photos and videos of your picking accomplishment are accepted for this rank
 - [Burg W&auml;chter &quot;SecuLock&quot; 405 40](https://lpubelts.com/#/locks?id=b517a7ef)
 - [Burg W&auml;chter &quot;Yacht&quot; 460 Ni 40](https://lpubelts.com/#/locks?id=9a5b3f53)
 - [B&ouml;rkey](https://lpubelts.com/#/locks?id=90267144)
-- [Citadel](https://lpubelts.com/#/locks?id=4938772f)
+- [Citadel](https://lpubelts.com/#/locks?id=4938772f) (padlock)
 - [Classic Standard](https://lpubelts.com/#/locks?id=9f67db53)
 - [Defiant 5-pin Deadbolt](https://lpubelts.com/#/locks?id=5f600c8e) (interior pinning, 1 spool, 4 regular pins)
 - [Dulimex DX](https://lpubelts.com/#/locks?id=a8d996c0)
@@ -237,7 +237,7 @@ Both photos and videos of your picking accomplishment are accepted for this rank
 - [Stabilit](https://lpubelts.com/#/locks?id=9fd77c9a)
 - [Takigen C-187-1](https://lpubelts.com/#/locks?id=938cb7a6)
 - [Thirard Eco](https://lpubelts.com/#/locks?id=110675cf)
-- [Wolfdog](https://lpubelts.com/#/locks?id=4b32e9dd)
+- [Wolfdog](https://lpubelts.com/#/locks?id=4b32e9dd) (padlock)
 
 
 
@@ -383,7 +383,7 @@ process. Remember, [vertical video hurts](https://www.youtube.com/watch?v=dechvh
 - [ABUS 74/40 LOTO](https://lpubelts.com/#/locks?id=e42853c7)
 - [ABUS 76/40](https://lpubelts.com/#/locks?id=47e7cf73)
 - [ABUS 80TI Titalium](https://lpubelts.com/#/locks?id=e1625c4d)
-- [ABUS 83/40](https://lpubelts.com/#/locks?id=3653f376)
+- [ABUS 83/45](https://lpubelts.com/#/locks?id=3653f376)
 - [ABUS A90 / ABUS C95](https://lpubelts.com/#/locks?id=e8bc5023) (new pinning like C83, but 1-2 standard anti-drill stacks)
 - [ABUS Brady 71/40 LOTO (Lock Out Tag Out)](https://lpubelts.com/#/locks?id=9da8ebe0)
 - [ABUS C73 / ABUS C83 / ABUS C90](https://lpubelts.com/#/locks?id=95a9d73c) (old pinning: mostly standard keypins, 4 spools, 1 serrated pin)
