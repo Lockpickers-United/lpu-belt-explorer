@@ -35,7 +35,7 @@ export default function ApproveDenyButton({entry, action, handleReply, processin
         let fullReply = replyText.replace(/:\w*belt:/i, (match) => {
             return beltEmoji[match]
         })
-        if (includeRequirements && !entry.belt.includes('Dan')) {
+        if (includeRequirements && !entry.belt?.includes('Dan')) {
             const reqLink = `https://lpubelts.com/#/locks?tab=${entry.belt.replace(' Belt', '')}&id=beltreqs`
             fullReply = `${replyText}\n\nCheck out the ${entry.belt} requirements here: ${reqLink}`
             handleReply && handleReply(action, fullReply, event)
@@ -77,7 +77,7 @@ export default function ApproveDenyButton({entry, action, handleReply, processin
                                            htmlInput: {maxLength: 1200, style: {fontSize: '1.0rem'}}
                                        }}
                             />
-                            {action === 'deny' && !entry.belt.includes('Dan') &&
+                            {action === 'deny' && !entry.belt?.includes('Dan') &&
                                 <FormGroup>
                                     <FormControlLabel
                                         control={

@@ -478,7 +478,7 @@ export function DBProvider({children}) {
         adminRole,
         lockCollection,
         profileUserId,
-        profile: lockCollection,
+        profile: {userId: user.uid, ...lockCollection},
         addToLockCollection,
         removeFromLockCollection,
         getProfile,

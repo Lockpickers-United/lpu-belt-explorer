@@ -31,6 +31,7 @@ import YouTubeIcon from '@mui/icons-material/YouTube'
 import PhotoSizeSelectActualIcon from '@mui/icons-material/PhotoSizeSelectActual'
 import Box from '@mui/material/Box'
 import Link from '@mui/material/Link'
+import DanStatsWrapper from './DanStatsWrapper.jsx'
 
 function BeltRequestEntry({entry, expanded, onExpand}) {
     const {
@@ -92,7 +93,7 @@ function BeltRequestEntry({entry, expanded, onExpand}) {
     const parsed = parseBeltRequest(messageContent)
     const evidence = parsed.evidence ?? messageContent
     const evidenceMd = evidence
-        ? evidence.replaceAll(/(https*:\/\/)(\S+)/g, (_match, p1, p2) => {
+        ? evidence.replaceAll(/(https*:\/\/)(\S+)\b/g, (_match, p1, p2) => {
             return `[${truncate(p2, isMobile ? 35 : 55)}](${p1 + p2})`
         })
         : ''
@@ -179,7 +180,7 @@ function BeltRequestEntry({entry, expanded, onExpand}) {
                     flexDirection: 'row',
                     alignContent: 'center',
                     width: '100%',
-                    flexWrap: 'wrap'
+                    flexWrap: !isMobile ? 'nowrap' : 'wrap'
                 }}>
                     <div style={{flexGrow: 1}}>
                         <div style={{
@@ -387,6 +388,8 @@ function BeltRequestEntry({entry, expanded, onExpand}) {
                                 )}
                             </div>
                         }
+
+                        { /* <DanStatsWrapper /> */ }
 
                         {videoIds.length > 0 &&
                             <div style={{width: '95%', padding: `8px ${sidePadding}`, marginRight: 16}}>
