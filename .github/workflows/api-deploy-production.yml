@@ -314,6 +314,33 @@ jobs:
             exit 1
           fi
 
+          # Prune only after activation, readiness, and the public smoke check succeed.
+          node - "$deploy_root" <<'RETENTION_SCRIPT'
+          const fs = require('node:fs')
+          const path = require('node:path')
+          const root = fs.realpathSync(process.argv[2])
+          const releasesPath = path.join(root, 'releases')
+          if (fs.lstatSync(releasesPath).isSymbolicLink()) {
+            throw new Error('Refusing to prune a symlinked releases directory')
+          }
+          const current = fs.realpathSync(path.join(root, 'current'))
+          const releases = fs.readdirSync(releasesPath, {withFileTypes: true})
+            .filter(entry => entry.isDirectory() && /^[0-9a-f]{40}-[0-9]+-[0-9]+$/.test(entry.name))
+            .map(entry => {
+              const directory = path.join(releasesPath, entry.name)
+              return {directory, modified: fs.statSync(directory).mtimeMs}
+            })
+            .sort((a, b) => b.modified - a.modified || b.directory.localeCompare(a.directory))
+          const retained = releases.slice(0, 5)
+          if (!retained.some(release => release.directory === current)) {
+            throw new Error('Active release is not among the five newest; refusing to prune')
+          }
+          for (const release of releases.slice(5)) {
+            fs.rmSync(release.directory, {recursive: true})
+            console.log(`Deleted old release ${path.basename(release.directory)}`)
+          }
+          RETENTION_SCRIPT
+
           rm -f "$archive" "$checksum"
           echo "Activated release $release_id"
           REMOTE_SCRIPT

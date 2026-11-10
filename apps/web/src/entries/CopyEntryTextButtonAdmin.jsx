@@ -21,7 +21,7 @@ export default function CopyEntryTextButtonAdmin({entry}) {
     return (
         <Tooltip title='Copy Lock Data' arrow disableFocusListener>
             <IconButton onClick={handleClick}>
-                <ContentCopyIcon style={{color: '#90c274'}}/>
+                <ContentCopyIcon fontSize='small' style={{color: '#90c274'}}/>
             </IconButton>
         </Tooltip>
     )

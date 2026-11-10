@@ -90,7 +90,16 @@ unintended inherited values before saving the process list.
 
 ## Retention and rollback
 
-Retain at least three production releases: the active release and two rollback candidates. The owner ended the monorepo cutover observation early on 2026-10-26 and marked the old source's last publication final/read-only. This ends the observation gate; it does not authorize deleting recovery releases or stopping host processes. Keep the previous current, selected recovery candidates and private Pages/catalog bundles until separately approved maintenance. The current workflow does not prune old releases. Never remove the target of `current` or either rollback candidate.
+After activation, readiness verification, and the public API smoke check succeed,
+the workflow retains the five most recent release directories by directory
+modification time and deletes older releases. Only direct directories with the
+workflow's release-ID format are eligible; symlinks and unrelated entries are
+ignored. Cleanup refuses to run if `releases` is a symlink or the active `current`
+target is outside the five retained directories. Failed deployments do not prune.
+The owner's five-release retention request supersedes the earlier indefinite
+retention of selected recovery releases. Shared state and private Pages/catalog
+recovery bundles remain outside this cleanup. Editing this policy does not
+execute cleanup or authorize a deployment.
 
 The automated rollback covers failures during deployment activation and the readiness check. Readiness remains unavailable during startup and shutdown, verifies that the configured collection-statistics and lock-video files are readable, and reports the release ID written by the workflow. For a later manual rollback:
 
