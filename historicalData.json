@@ -1096,7 +1096,7 @@
       "Magnet"
     ],
     "popularityIndex": 13,
-    "scorecardCount": 7
+    "scorecardCount": 8
   },
   "86703028": {
     "id": "86703028",
@@ -1335,9 +1335,9 @@
     "features": [
       "Magnetic pins"
     ],
-    "views": 3,
+    "views": 4,
     "lastUpdated": "2023-03-23T03:24:22.387Z",
-    "popularityIndex": 3,
+    "popularityIndex": 4,
     "scorecardCount": 2
   },
   "b22bdd44": {
@@ -1431,9 +1431,9 @@
     ],
     "name": "Any Acrylic Padlock",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 1482,
+    "views": 1483,
     "lastUpdated": "2025-03-18T23:29:31.267Z",
-    "popularityIndex": 1482,
+    "popularityIndex": 1483,
     "scorecardCount": 107
   },
   "3ac43ea8": {
@@ -1509,12 +1509,12 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/52754853512_9a50b57915_o.jpg"
       }
     ],
-    "views": 477,
+    "views": 478,
     "lastUpdated": "2025-03-19T15:44:57.276Z",
     "lockingMechanisms": [
       "Various"
     ],
-    "popularityIndex": 477,
+    "popularityIndex": 478,
     "scorecardCount": 34
   },
   "5dc117cd": {
@@ -2535,7 +2535,7 @@
     "lastUpdated": "2025-03-19T01:20:51.354Z",
     "modelNum": "64.3",
     "popularityIndex": 247,
-    "scorecardCount": 22
+    "scorecardCount": 23
   },
   "1ce31c29": {
     "id": "1ce31c29",
@@ -3828,7 +3828,7 @@
     ],
     "name": "Esco",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 3,
+    "views": 4,
     "lastUpdated": "2025-03-19T15:44:57.278Z",
     "media": [
       {
@@ -3874,7 +3874,7 @@
         "url": "https://wiki.koksa.org/Esco_Profilzylinder"
       }
     ],
-    "popularityIndex": 3
+    "popularityIndex": 4
   },
   "1376f489": {
     "id": "1376f489",
@@ -5927,10 +5927,10 @@
     ],
     "name": "ABUS 64Ti Titalium, MyLock T65AL, 70AL45",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 550,
+    "views": 551,
     "lastUpdated": "2025-03-19T01:20:51.356Z",
     "modelNum": "64",
-    "popularityIndex": 550,
+    "popularityIndex": 551,
     "scorecardCount": 45
   },
   "a0e50505": {
@@ -6544,7 +6544,7 @@
     ],
     "name": "Brinks Laminated Padlock",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 358,
+    "views": 359,
     "lastUpdated": "2025-03-19T15:44:57.277Z",
     "media": [
       {
@@ -6603,7 +6603,7 @@
       }
     ],
     "version": "Pin-Tumbler only, 40mm or larger, Weatherproof or not",
-    "popularityIndex": 358,
+    "popularityIndex": 359,
     "scorecardCount": 60
   },
   "171f76e9": {
@@ -9297,14 +9297,14 @@
     ],
     "name": "ABUS 72/40, 34CS55 Platinum",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 1060,
+    "views": 1061,
     "lastUpdated": "2025-03-19T15:44:57.281Z",
     "features": [
       "Picking Risk"
     ],
     "notes": "Due to unbalanced pin stacks, drivers in max lift chambers will rest below shear. This risks spring damage if the driver is not picked.",
     "version": "Guttable version",
-    "popularityIndex": 1060,
+    "popularityIndex": 1061,
     "scorecardCount": 150
   },
   "e42853c7": {
@@ -9905,7 +9905,7 @@
     ],
     "name": "ABUS D6",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 67,
+    "views": 68,
     "lastUpdated": "2025-03-19T15:44:57.281Z",
     "media": [
       {
@@ -9987,7 +9987,7 @@
         "url": "https://www.catalocks.eu/ABUS/ABUS%20D%206_47.html"
       }
     ],
-    "popularityIndex": 67,
+    "popularityIndex": 68,
     "scorecardCount": 15,
     "features": [
       "Flickr Update"
@@ -10679,7 +10679,7 @@
     ],
     "name": "ACE Brass Padlock",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 380,
+    "views": 381,
     "lastUpdated": "2025-03-18T23:29:31.270Z",
     "media": [
       {
@@ -10719,7 +10719,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53851336065_53c7b1f37e_o.jpg"
       }
     ],
-    "popularityIndex": 380,
+    "popularityIndex": 381,
     "scorecardCount": 39
   },
   "200605b9": {
@@ -10880,12 +10880,12 @@
     ],
     "name": "American Lock 1100 / A1100",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 1456,
+    "views": 1457,
     "lastUpdated": "2025-03-19T01:20:51.360Z",
     "relatedIds": [
       "1ae40987"
     ],
-    "popularityIndex": 1456,
+    "popularityIndex": 1457,
     "scorecardCount": 280
   },
   "b16ffe3f": {
@@ -14606,7 +14606,7 @@
     ],
     "name": "Master Lock Pro Series",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 197,
+    "views": 198,
     "lastUpdated": "2025-03-19T01:20:51.363Z",
     "media": [
       {
@@ -14637,7 +14637,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/54259186294_d58dcd0c54_o.jpg"
       }
     ],
-    "popularityIndex": 197,
+    "popularityIndex": 198,
     "scorecardCount": 24
   },
   "efbc853f": {
@@ -14996,9 +14996,9 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/52687457551_eb19059e25_o.jpg"
       }
     ],
-    "views": 7,
+    "views": 8,
     "lastUpdated": "2025-03-19T01:20:51.363Z",
-    "popularityIndex": 7,
+    "popularityIndex": 8,
     "scorecardCount": 5
   },
   "abf55188": {
@@ -15249,9 +15249,9 @@
     ],
     "name": "PACLOCK 90A",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 235,
+    "views": 236,
     "lastUpdated": "2025-03-19T15:44:57.286Z",
-    "popularityIndex": 235,
+    "popularityIndex": 236,
     "scorecardCount": 27
   },
   "31d68cd1": {
@@ -18894,10 +18894,10 @@
       "Trap element",
       "Flickr Update"
     ],
-    "views": 62,
+    "views": 63,
     "lastUpdated": "2025-03-18T23:29:31.273Z",
     "notes": "Requires 360° picking: these locks have traps that require some work to pick",
-    "popularityIndex": 62,
+    "popularityIndex": 63,
     "scorecardCount": 25
   },
   "da54208c": {
@@ -23494,7 +23494,7 @@
       "Pump/push"
     ],
     "popularityIndex": 13,
-    "scorecardCount": 10
+    "scorecardCount": 11
   },
   "bbce33e0": {
     "id": "bbce33e0",
@@ -24371,7 +24371,7 @@
       "Sprung sliders",
       "Active sidebar"
     ],
-    "views": 24,
+    "views": 25,
     "lastUpdated": "2025-03-19T15:44:57.295Z",
     "relatedIds": [
       "1ca633a8",
@@ -24383,7 +24383,7 @@
       "12846cc6",
       "6d2555aa"
     ],
-    "popularityIndex": 24,
+    "popularityIndex": 25,
     "scorecardCount": 2
   },
   "f3666121": {
@@ -28259,7 +28259,7 @@
     "views": 44,
     "lastUpdated": "2025-03-19T01:20:51.376Z",
     "popularityIndex": 44,
-    "scorecardCount": 20
+    "scorecardCount": 21
   },
   "278f2108": {
     "id": "278f2108",
@@ -29730,12 +29730,12 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/52687952838_da4c7b4168_o.jpg"
       }
     ],
-    "views": 64,
+    "views": 65,
     "lastUpdated": "2025-03-19T15:44:57.300Z",
     "relatedIds": [
       "30a4fef5"
     ],
-    "popularityIndex": 64,
+    "popularityIndex": 65,
     "scorecardCount": 41
   },
   "b13f4b57": {
@@ -31002,7 +31002,7 @@
       "Sprung sliders",
       "Active sidebar"
     ],
-    "views": 24,
+    "views": 25,
     "lastUpdated": "2025-03-19T15:44:57.302Z",
     "relatedIds": [
       "1ca633a8",
@@ -31014,7 +31014,7 @@
       "12846cc6",
       "6d2555aa"
     ],
-    "popularityIndex": 24,
+    "popularityIndex": 25,
     "scorecardCount": 3
   },
   "33d6e0df": {
@@ -33578,7 +33578,7 @@
     "views": 34,
     "lastUpdated": "2025-03-19T15:44:57.304Z",
     "popularityIndex": 34,
-    "scorecardCount": 27,
+    "scorecardCount": 28,
     "features": [
       "Interactive element",
       "Flickr Update"
@@ -34106,7 +34106,7 @@
     ],
     "searchKeywords": "multilock, mtl",
     "popularityIndex": 157,
-    "scorecardCount": 80
+    "scorecardCount": 79
   },
   "0ae75ea0": {
     "id": "0ae75ea0",
@@ -35464,7 +35464,7 @@
       "054731a5"
     ],
     "popularityIndex": 55,
-    "scorecardCount": 26
+    "scorecardCount": 27
   },
   "29ab2852": {
     "id": "29ab2852",
@@ -39589,12 +39589,12 @@
     ],
     "name": "Schlage Everest 29 SL Primus XP",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 33,
+    "views": 34,
     "lastUpdated": "2025-03-19T15:44:57.310Z",
     "features": [
       "Rotating fingerpins"
     ],
-    "popularityIndex": 33,
+    "popularityIndex": 34,
     "scorecardCount": 12
   },
   "80b0044b": {
@@ -47725,7 +47725,7 @@
       }
     ],
     "popularityIndex": 4,
-    "scorecardCount": 1
+    "scorecardCount": 2
   },
   "fb51b475": {
     "id": "fb51b475",
@@ -54285,7 +54285,7 @@
     "lastUpdated": "2025-03-19T15:44:57.307Z",
     "name": "Bramah Modern 7 Wafer",
     "dateAdded": "2023-08-03T13:21:21.000Z",
-    "views": 9,
+    "views": 10,
     "media": [
       {
         "title": "By: HVlogic",
@@ -54327,7 +54327,7 @@
     "lockingMechanisms": [
       "Pump/push"
     ],
-    "popularityIndex": 9,
+    "popularityIndex": 10,
     "scorecardCount": 5
   },
   "5995db9e": {
@@ -54391,7 +54391,9 @@
         "dateAdded": "2025-03-06T16:00:00.000Z",
         "fullSizeUrl": "https://live.staticflickr.com/65535/52906566207_fb3b58dc56_o.jpg"
       }
-    ]
+    ],
+    "popularityIndex": 1,
+    "views": 1
   },
   "111062fc": {
     "id": "111062fc",
@@ -54773,7 +54775,7 @@
     "lastUpdated": "2025-03-19T15:44:57.290Z",
     "name": "Dorma DC4300 / Elite DC4300",
     "dateAdded": "2023-08-03T13:21:21.000Z",
-    "views": 11,
+    "views": 12,
     "media": [
       {
         "title": "By: PeaceWeapon",
@@ -54834,7 +54836,7 @@
       "Pin-tumbler"
     ],
     "notes": "Dorma DC4300 can be found as Miller's Dorma",
-    "popularityIndex": 11,
+    "popularityIndex": 12,
     "scorecardCount": 1,
     "features": [
       "Flickr Update"
@@ -61290,8 +61292,8 @@
     "lastUpdated": "2025-01-12T17:30:04.047Z",
     "name": "ABUS Integral, Pfaffenhain Integral",
     "dateAdded": "2025-01-12T17:30:05.000Z",
-    "popularityIndex": 7,
-    "views": 7
+    "popularityIndex": 8,
+    "views": 8
   },
   "53796b40": {
     "id": "53796b40",
@@ -61889,9 +61891,9 @@
     "lastUpdated": "2025-03-19T15:44:57.320Z",
     "name": "Bovii LOTO",
     "dateAdded": "2025-03-06T02:11:05.000Z",
-    "popularityIndex": 27,
+    "popularityIndex": 28,
     "scorecardCount": 7,
-    "views": 27
+    "views": 28
   },
   "b1949215": {
     "id": "b1949215",
@@ -63513,7 +63515,8 @@
     "views": 10,
     "features": [
       "Flickr Update"
-    ]
+    ],
+    "scorecardCount": 1
   },
   "8770b3d8": {
     "id": "8770b3d8",
@@ -63923,8 +63926,8 @@
     "dateAdded": "2026-09-01T00:58:56.479Z",
     "scorecardCount": 2,
     "currentBeltDate": "2026-08-30T12:00:00.000Z",
-    "popularityIndex": 1,
-    "views": 1
+    "popularityIndex": 2,
+    "views": 2
   },
   "6f1fcab5": {
     "id": "6f1fcab5",
@@ -64112,8 +64115,8 @@
     ],
     "name": "ABUS 54TI/40 Titalium, 726TI/40 Titalium",
     "dateAdded": "2026-09-21T22:00:34.417Z",
-    "popularityIndex": 2,
-    "views": 2
+    "popularityIndex": 3,
+    "views": 3
   },
   "f97ad477": {
     "id": "f97ad477",
