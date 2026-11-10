@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": "sha256:f30ff6569417f2626e049d98e21e48dfe46aa822156454a9e03987d950f4fc1c",
-  "generatedAt": "2026-11-10T02:37:46.787Z",
+  "catalogVersion": "sha256:f40a21dfb705091bb8017d6b05d1d80cf3347446d2469e8095bd677e098bd11c",
+  "generatedAt": "2026-11-10T23:55:35.321Z",
   "entries": [
     {
       "id": "0082fa4c",
@@ -1762,7 +1762,7 @@
     },
     {
       "id": "3653f376",
-      "name": "ABUS 83/40",
+      "name": "ABUS 83/45",
       "version": null,
       "belt": "Green",
       "currentBeltDate": "2026-08-30T12:00:00.000Z"
@@ -2288,7 +2288,7 @@
     {
       "id": "4938772f",
       "name": "Citadel",
-      "version": null,
+      "version": "padlock",
       "belt": "Yellow",
       "currentBeltDate": null
     },
@@ -2351,7 +2351,7 @@
     {
       "id": "4b32e9dd",
       "name": "Wolfdog",
-      "version": null,
+      "version": "padlock",
       "belt": "Yellow",
       "currentBeltDate": null
     },
@@ -5102,7 +5102,7 @@
     {
       "id": "a1581afe",
       "name": "ARFE",
-      "version": null,
+      "version": "padlock",
       "belt": "Yellow",
       "currentBeltDate": null
     },

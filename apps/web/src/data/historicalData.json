@@ -585,7 +585,7 @@
     "views": 132,
     "lastUpdated": "2025-03-19T01:20:51.391Z",
     "popularityIndex": 132,
-    "scorecardCount": 59
+    "scorecardCount": 60
   },
   "55511995": {
     "id": "55511995",
@@ -1371,12 +1371,12 @@
     ],
     "name": "Any lock with any tool",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 550,
+    "views": 551,
     "lastUpdated": "2025-03-19T15:44:57.276Z",
     "lockingMechanisms": [
       "Various"
     ],
-    "popularityIndex": 550,
+    "popularityIndex": 551,
     "scorecardCount": 122
   },
   "07034c0f": {
@@ -1431,9 +1431,9 @@
     ],
     "name": "Any Acrylic Padlock",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 1483,
+    "views": 1484,
     "lastUpdated": "2025-03-18T23:29:31.267Z",
-    "popularityIndex": 1483,
+    "popularityIndex": 1484,
     "scorecardCount": 107
   },
   "3ac43ea8": {
@@ -1932,10 +1932,10 @@
     ],
     "name": "Master Lock #3",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 1518,
+    "views": 1519,
     "lastUpdated": "2025-03-19T01:20:51.353Z",
     "modelNum": "3",
-    "popularityIndex": 1518,
+    "popularityIndex": 1519,
     "scorecardCount": 173
   },
   "dff62f52": {
@@ -2091,11 +2091,11 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53956921290_091b54de78_o.jpg"
       }
     ],
-    "views": 509,
+    "views": 510,
     "lastUpdated": "2025-03-19T15:44:57.277Z",
     "modelNum": "5",
-    "popularityIndex": 509,
-    "scorecardCount": 53
+    "popularityIndex": 510,
+    "scorecardCount": 54
   },
   "f10deed6": {
     "id": "f10deed6",
@@ -2196,10 +2196,10 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/52728701687_2a2930156c_o.jpg"
       }
     ],
-    "views": 190,
+    "views": 191,
     "lastUpdated": "2025-03-19T01:20:51.354Z",
     "modelNum": "7",
-    "popularityIndex": 190,
+    "popularityIndex": 191,
     "scorecardCount": 13
   },
   "79adf554": {
@@ -3051,7 +3051,8 @@
       }
     ],
     "popularityIndex": 6,
-    "scorecardCount": 2
+    "scorecardCount": 2,
+    "version": "padlock"
   },
   "4062aefb": {
     "id": "4062aefb",
@@ -3617,7 +3618,8 @@
       }
     ],
     "popularityIndex": 23,
-    "scorecardCount": 6
+    "scorecardCount": 6,
+    "version": "padlock"
   },
   "6719b451": {
     "id": "6719b451",
@@ -5621,7 +5623,8 @@
     "views": 20,
     "lastUpdated": "2025-03-19T01:20:51.356Z",
     "popularityIndex": 20,
-    "scorecardCount": 4
+    "scorecardCount": 4,
+    "version": "padlock"
   },
   "67b285d9": {
     "id": "67b285d9",
@@ -6000,7 +6003,7 @@
     "makeModels": [
       {
         "make": "ABUS",
-        "model": "83/40"
+        "model": "83/45"
       }
     ],
     "lockingMechanisms": [
@@ -6041,7 +6044,7 @@
         "url": "http://lockwiki.com/index.php/ABUS_83"
       }
     ],
-    "name": "ABUS 83/40",
+    "name": "ABUS 83/45",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "views": 209,
     "lastUpdated": "2025-03-19T01:20:51.356Z",
@@ -9880,12 +9883,12 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/52709026203_31fa336a8a_o.jpg"
       }
     ],
-    "views": 135,
+    "views": 136,
     "lastUpdated": "2025-03-19T15:44:57.288Z",
     "relatedIds": [
       "95a9d73c"
     ],
-    "popularityIndex": 135,
+    "popularityIndex": 136,
     "scorecardCount": 32,
     "features": [
       "Flickr Update"
@@ -10880,13 +10883,13 @@
     ],
     "name": "American Lock 1100 / A1100",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 1457,
+    "views": 1458,
     "lastUpdated": "2025-03-19T01:20:51.360Z",
     "relatedIds": [
       "1ae40987"
     ],
-    "popularityIndex": 1457,
-    "scorecardCount": 280
+    "popularityIndex": 1458,
+    "scorecardCount": 281
   },
   "b16ffe3f": {
     "id": "b16ffe3f",
@@ -11782,7 +11785,7 @@
     ],
     "notes": "Also known as BKS PZ 88",
     "popularityIndex": 69,
-    "scorecardCount": 8
+    "scorecardCount": 9
   },
   "ec0a2659": {
     "id": "ec0a2659",
@@ -12352,7 +12355,7 @@
     ],
     "name": "Commando Peacemaker",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 58,
+    "views": 59,
     "lastUpdated": "2025-03-19T01:20:51.357Z",
     "media": [
       {
@@ -12374,7 +12377,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/52949823060_cb20309637_o.jpg"
       }
     ],
-    "popularityIndex": 58,
+    "popularityIndex": 59,
     "scorecardCount": 10
   },
   "73a718cb": {
@@ -12977,7 +12980,7 @@
       "Pin-tumbler"
     ],
     "popularityIndex": 4,
-    "scorecardCount": 1
+    "scorecardCount": 2
   },
   "95b2c7b0": {
     "id": "95b2c7b0",
@@ -16257,7 +16260,7 @@
       "Rear tension"
     ],
     "notes": "Can be front tensioned and counterrotated",
-    "views": 167,
+    "views": 168,
     "lastUpdated": "2025-03-19T01:20:51.365Z",
     "links": [
       {
@@ -16269,7 +16272,7 @@
         "url": "https://youtu.be/XuHCrqNRHlI"
       }
     ],
-    "popularityIndex": 167,
+    "popularityIndex": 168,
     "scorecardCount": 25
   },
   "c1d09460": {
@@ -18898,7 +18901,7 @@
     "lastUpdated": "2025-03-18T23:29:31.273Z",
     "notes": "Requires 360° picking: these locks have traps that require some work to pick",
     "popularityIndex": 63,
-    "scorecardCount": 25
+    "scorecardCount": 26
   },
   "da54208c": {
     "id": "da54208c",
@@ -21537,7 +21540,7 @@
     ],
     "searchKeywords": "multilock, mtl",
     "popularityIndex": 39,
-    "scorecardCount": 29
+    "scorecardCount": 30
   },
   "fb5a9eb7": {
     "id": "fb5a9eb7",
@@ -21603,7 +21606,7 @@
     "views": 820,
     "lastUpdated": "2025-03-19T15:44:57.293Z",
     "popularityIndex": 820,
-    "scorecardCount": 229
+    "scorecardCount": 230
   },
   "74c225d1": {
     "id": "74c225d1",
@@ -22529,7 +22532,7 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "views": 153,
+    "views": 154,
     "lastUpdated": "2025-03-19T15:44:57.294Z",
     "media": [
       {
@@ -22594,7 +22597,7 @@
       }
     ],
     "notes": "On the Yale B, a max lift (Yale 0) will cause the spooled driver to sit entirely within the plug, representing a possible spring risk.",
-    "popularityIndex": 153,
+    "popularityIndex": 154,
     "scorecardCount": 39
   },
   "30a4fef5": {
@@ -23793,7 +23796,7 @@
       "f2d41749"
     ],
     "popularityIndex": 83,
-    "scorecardCount": 34
+    "scorecardCount": 35
   },
   "45e3cde7": {
     "id": "45e3cde7",
@@ -26031,7 +26034,7 @@
       "Interactive element"
     ],
     "popularityIndex": 112,
-    "scorecardCount": 58
+    "scorecardCount": 59
   },
   "3b848976": {
     "id": "3b848976",
@@ -27561,7 +27564,7 @@
       "f1857cef"
     ],
     "popularityIndex": 61,
-    "scorecardCount": 47
+    "scorecardCount": 48
   },
   "883fb3cd": {
     "id": "883fb3cd",
@@ -30680,14 +30683,14 @@
     ],
     "name": "ASSA Desmo",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 157,
+    "views": 158,
     "lastUpdated": "2025-03-18T23:29:31.277Z",
     "relatedIds": [
       "e2742f70",
       "039a239f"
     ],
-    "popularityIndex": 157,
-    "scorecardCount": 76
+    "popularityIndex": 158,
+    "scorecardCount": 77
   },
   "fd7b514a": {
     "id": "fd7b514a",
@@ -33785,7 +33788,7 @@
       }
     ],
     "popularityIndex": 109,
-    "scorecardCount": 22
+    "scorecardCount": 23
   },
   "848940e5": {
     "id": "848940e5",
@@ -34106,7 +34109,7 @@
     ],
     "searchKeywords": "multilock, mtl",
     "popularityIndex": 157,
-    "scorecardCount": 79
+    "scorecardCount": 80
   },
   "0ae75ea0": {
     "id": "0ae75ea0",
@@ -39141,7 +39144,7 @@
       "9da7a5f2"
     ],
     "popularityIndex": 73,
-    "scorecardCount": 41
+    "scorecardCount": 42
   },
   "4a7db3c6": {
     "id": "4a7db3c6",
@@ -40702,7 +40705,7 @@
       "e3bd3faf"
     ],
     "popularityIndex": 204,
-    "scorecardCount": 95
+    "scorecardCount": 96
   },
   "6e59ba12": {
     "id": "6e59ba12",
@@ -40944,7 +40947,7 @@
     "views": 159,
     "lastUpdated": "2025-03-18T23:29:31.283Z",
     "popularityIndex": 159,
-    "scorecardCount": 78
+    "scorecardCount": 79
   },
   "7168d463": {
     "id": "7168d463",
@@ -41193,7 +41196,7 @@
     "views": 104,
     "lastUpdated": "2025-03-19T15:44:57.311Z",
     "popularityIndex": 104,
-    "scorecardCount": 43
+    "scorecardCount": 44
   },
   "f7ad4c89": {
     "id": "f7ad4c89",
@@ -41404,7 +41407,7 @@
     "views": 102,
     "lastUpdated": "2025-03-19T01:20:51.391Z",
     "popularityIndex": 102,
-    "scorecardCount": 65
+    "scorecardCount": 66
   },
   "c8694f3a": {
     "id": "c8694f3a",
@@ -41472,9 +41475,9 @@
     ],
     "name": "ASSA Twin v10",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 43,
+    "views": 44,
     "lastUpdated": "2025-03-19T15:44:57.311Z",
-    "popularityIndex": 43,
+    "popularityIndex": 44,
     "scorecardCount": 23
   },
   "e3058619": {
@@ -44359,7 +44362,7 @@
       "937eb7a8"
     ],
     "popularityIndex": 113,
-    "scorecardCount": 61
+    "scorecardCount": 62
   },
   "e8c7dd5b": {
     "id": "e8c7dd5b",
@@ -53065,7 +53068,7 @@
     ],
     "searchKeywords": "multilock, mtl",
     "popularityIndex": 56,
-    "scorecardCount": 6
+    "scorecardCount": 7
   },
   "895be796": {
     "id": "895be796",
@@ -58358,7 +58361,7 @@
     "features": [
       "Sprung sliders"
     ],
-    "views": 8,
+    "views": 9,
     "lockingMechanisms": [
       "Slider"
     ],
@@ -58436,7 +58439,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53852648068_4c4a381fbf_o.jpg"
       }
     ],
-    "popularityIndex": 8,
+    "popularityIndex": 9,
     "scorecardCount": 7
   },
   "406ac672": {
@@ -62321,9 +62324,9 @@
     ],
     "name": "ABUS A90, C95",
     "dateAdded": "2025-06-10T16:49:06.285Z",
-    "popularityIndex": 8,
+    "popularityIndex": 9,
     "scorecardCount": 1,
-    "views": 8
+    "views": 9
   },
   "e5a61936": {
     "id": "e5a61936",
@@ -63390,8 +63393,8 @@
     "notes": "Picked to either operating or control",
     "name": "ASSA Twin 6000",
     "dateAdded": "2026-08-06T03:59:39.972Z",
-    "popularityIndex": 1,
-    "views": 1
+    "popularityIndex": 2,
+    "views": 2
   },
   "f777a3f2": {
     "id": "f777a3f2",
@@ -66380,8 +66383,8 @@
     "name": "Squire 555",
     "currentBeltDate": "2026-10-12T23:33:54.103Z",
     "dateAdded": "2026-10-12T23:33:54.103Z",
-    "popularityIndex": 1,
-    "views": 1
+    "popularityIndex": 2,
+    "views": 2
   },
   "4709ce45": {
     "id": "4709ce45",
