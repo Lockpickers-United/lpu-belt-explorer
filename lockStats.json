@@ -558,17 +558,17 @@
       {
         "segment": "Ranked locks",
         "count": 862,
-        "media": 827,
-        "coverage": "95%"
+        "media": 829,
+        "coverage": "96%"
       },
       {
         "segment": "All locks",
         "count": 1124,
-        "media": 922,
+        "media": 927,
         "coverage": "82%"
       }
     ],
-    "uniqueImages": 4846,
+    "uniqueImages": 4873,
     "contributors": 322,
     "topPhotographers": [
       {
@@ -589,7 +589,7 @@
       },
       {
         "contributor": "Sidepicks",
-        "images": 157
+        "images": 159
       },
       {
         "contributor": "Luboš Čech",
@@ -620,6 +620,10 @@
         "images": 68
       },
       {
+        "contributor": "MrOrange",
+        "images": 68
+      },
+      {
         "contributor": "Yabende",
         "images": 66
       },
@@ -636,16 +640,12 @@
         "images": 61
       },
       {
-        "contributor": "MrOrange",
+        "contributor": "Septclues",
         "images": 60
       },
       {
         "contributor": "tonysansan",
         "images": 58
-      },
-      {
-        "contributor": "Septclues",
-        "images": 56
       },
       {
         "contributor": "NiXXeD",
@@ -760,6 +760,14 @@
         "images": 20
       },
       {
+        "contributor": "Zehkar",
+        "images": 20
+      },
+      {
+        "contributor": "2nd_choice",
+        "images": 19
+      },
+      {
         "contributor": "GeorgiaJim",
         "images": 19
       },
@@ -784,10 +792,6 @@
         "images": 17
       },
       {
-        "contributor": "2nd_choice",
-        "images": 16
-      },
-      {
         "contributor": "Crispix",
         "images": 16
       },
@@ -797,10 +801,6 @@
       },
       {
         "contributor": "TGT",
-        "images": 16
-      },
-      {
-        "contributor": "Zehkar",
         "images": 16
       },
       {
@@ -1005,6 +1005,10 @@
       },
       {
         "contributor": "MelBrooksKA",
+        "images": 8
+      },
+      {
+        "contributor": "Rev Chewie",
         "images": 8
       },
       {
@@ -1252,10 +1256,6 @@
         "images": 4
       },
       {
-        "contributor": "Rev Chewie",
-        "images": 4
-      },
-      {
         "contributor": "sic!",
         "images": 4
       },
@@ -1393,6 +1393,10 @@
       },
       {
         "contributor": "little_swamp",
+        "images": 3
+      },
+      {
+        "contributor": "Lochabar213",
         "images": 3
       },
       {
@@ -1825,10 +1829,6 @@
       },
       {
         "contributor": "SiskoSpaceman",
-        "images": 1
-      },
-      {
-        "contributor": "Spacecadet",
         "images": 1
       },
       {
@@ -26465,6 +26465,6 @@
   },
   "metadata": {
     "source": "import-data",
-    "updatedDateTime": "2026-11-10 23:55"
+    "updatedDateTime": "2026-11-12 23:11"
   }
 }
