@@ -444,9 +444,9 @@
     ],
     "name": "ISEO R6",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 57,
+    "views": 58,
     "lastUpdated": "2025-03-19T01:20:51.363Z",
-    "popularityIndex": 57,
+    "popularityIndex": 58,
     "scorecardCount": 7,
     "features": [
       "Flickr Update"
@@ -668,7 +668,7 @@
       }
     ],
     "popularityIndex": 65,
-    "scorecardCount": 22
+    "scorecardCount": 23
   },
   "64662298": {
     "id": "64662298",
@@ -1431,9 +1431,9 @@
     ],
     "name": "Any Acrylic Padlock",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 1484,
+    "views": 1485,
     "lastUpdated": "2025-03-18T23:29:31.267Z",
-    "popularityIndex": 1484,
+    "popularityIndex": 1485,
     "scorecardCount": 107
   },
   "3ac43ea8": {
@@ -1932,10 +1932,10 @@
     ],
     "name": "Master Lock #3",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 1519,
+    "views": 1520,
     "lastUpdated": "2025-03-19T01:20:51.353Z",
     "modelNum": "3",
-    "popularityIndex": 1519,
+    "popularityIndex": 1520,
     "scorecardCount": 173
   },
   "dff62f52": {
@@ -6046,10 +6046,10 @@
     ],
     "name": "ABUS 83/45",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 209,
+    "views": 210,
     "lastUpdated": "2025-03-19T01:20:51.356Z",
     "modelNum": "83.4",
-    "popularityIndex": 209,
+    "popularityIndex": 210,
     "scorecardCount": 32,
     "currentBeltDate": "2026-08-30T12:00:00.000Z"
   },
@@ -9489,9 +9489,9 @@
     ],
     "name": "ABUS EC 75/50, 75IB/50",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 244,
+    "views": 245,
     "lastUpdated": "2025-03-19T15:44:57.288Z",
-    "popularityIndex": 244,
+    "popularityIndex": 245,
     "scorecardCount": 42
   },
   "47e7cf73": {
@@ -10889,7 +10889,7 @@
       "1ae40987"
     ],
     "popularityIndex": 1458,
-    "scorecardCount": 281
+    "scorecardCount": 282
   },
   "b16ffe3f": {
     "id": "b16ffe3f",
@@ -11390,7 +11390,7 @@
     ],
     "name": "IKON K2 (with IKON Core)",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 4,
+    "views": 5,
     "lastUpdated": "2025-03-19T01:20:51.362Z",
     "media": [
       {
@@ -11430,7 +11430,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53361133875_ea75939b48_o.jpg"
       }
     ],
-    "popularityIndex": 4,
+    "popularityIndex": 5,
     "scorecardCount": 1
   },
   "bfc7c700": {
@@ -13604,7 +13604,7 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "views": 32,
+    "views": 33,
     "lastUpdated": "2025-03-19T15:44:57.285Z",
     "media": [
       {
@@ -13647,7 +13647,7 @@
     "relatedIds": [
       "d1896bf9"
     ],
-    "popularityIndex": 32,
+    "popularityIndex": 33,
     "scorecardCount": 2,
     "features": [
       "Latest Changelog"
@@ -16260,7 +16260,7 @@
       "Rear tension"
     ],
     "notes": "Can be front tensioned and counterrotated",
-    "views": 168,
+    "views": 169,
     "lastUpdated": "2025-03-19T01:20:51.365Z",
     "links": [
       {
@@ -16272,7 +16272,7 @@
         "url": "https://youtu.be/XuHCrqNRHlI"
       }
     ],
-    "popularityIndex": 168,
+    "popularityIndex": 169,
     "scorecardCount": 25
   },
   "c1d09460": {
@@ -16326,7 +16326,7 @@
     "name": "Any SFIC format lock",
     "dateAdded": "2023-02-21T23:16:05.000Z",
     "notes": "** Blue if picked to one shearline. Check the SFIC filming requirements in the [Reddit belt ranking page](https://www.reddit.com/r/lockpicking/wiki/beltranking/#wiki_sfic_filming_requirements).",
-    "views": 260,
+    "views": 261,
     "lastUpdated": "2025-03-19T15:44:57.288Z",
     "media": [
       {
@@ -16447,7 +16447,7 @@
         "subtitleUrl": "https://www.youtube.com/@LockPickersUnited"
       }
     ],
-    "popularityIndex": 260,
+    "popularityIndex": 261,
     "scorecardCount": 22
   },
   "ea0efaca": {
@@ -18658,7 +18658,7 @@
     "views": 18,
     "lastUpdated": "2025-03-19T01:20:51.368Z",
     "popularityIndex": 18,
-    "scorecardCount": 5
+    "scorecardCount": 6
   },
   "1ede9094": {
     "id": "1ede9094",
@@ -18992,9 +18992,9 @@
     "features": [
       "Trap element"
     ],
-    "views": 36,
+    "views": 37,
     "lastUpdated": "2025-03-19T15:44:57.290Z",
-    "popularityIndex": 36,
+    "popularityIndex": 37,
     "scorecardCount": 8
   },
   "af99d1cb": {
@@ -21275,7 +21275,7 @@
       }
     ],
     "popularityIndex": 116,
-    "scorecardCount": 56
+    "scorecardCount": 57
   },
   "b1834e81": {
     "id": "b1834e81",
@@ -21606,7 +21606,7 @@
     "views": 820,
     "lastUpdated": "2025-03-19T15:44:57.293Z",
     "popularityIndex": 820,
-    "scorecardCount": 230
+    "scorecardCount": 231
   },
   "74c225d1": {
     "id": "74c225d1",
@@ -22629,7 +22629,7 @@
       "Active sidebar",
       "Flickr Update"
     ],
-    "views": 50,
+    "views": 51,
     "lastUpdated": "2025-03-19T01:20:51.372Z",
     "media": [
       {
@@ -22663,7 +22663,7 @@
     "relatedIds": [
       "ebe9ee59"
     ],
-    "popularityIndex": 50,
+    "popularityIndex": 51,
     "scorecardCount": 24
   },
   "a6a225e5": {
@@ -26426,7 +26426,7 @@
       }
     ],
     "popularityIndex": 15,
-    "scorecardCount": 10,
+    "scorecardCount": 11,
     "features": [
       "Flickr Update"
     ]
@@ -28712,7 +28712,7 @@
     "views": 84,
     "lastUpdated": "2025-03-19T15:44:57.299Z",
     "popularityIndex": 84,
-    "scorecardCount": 40
+    "scorecardCount": 41
   },
   "4debdca1": {
     "id": "4debdca1",
@@ -30338,12 +30338,12 @@
       "High pin count",
       "Flickr Update"
     ],
-    "views": 20,
+    "views": 19,
     "lastUpdated": "2025-03-18T23:29:31.277Z",
     "relatedIds": [
       "4223eb26"
     ],
-    "popularityIndex": 20,
+    "popularityIndex": 19,
     "scorecardCount": 4
   },
   "2c58f220": {
@@ -35534,7 +35534,7 @@
     "lastUpdated": "2025-03-19T01:20:51.385Z",
     "notes": "May include one chamber without milling",
     "popularityIndex": 179,
-    "scorecardCount": 88
+    "scorecardCount": 89
   },
   "e3bd3faf": {
     "id": "e3bd3faf",
@@ -43229,7 +43229,7 @@
       "db749615"
     ],
     "popularityIndex": 55,
-    "scorecardCount": 29
+    "scorecardCount": 30
   },
   "5ab25363": {
     "id": "5ab25363",
@@ -45179,12 +45179,12 @@
     "features": [
       "High pin count"
     ],
-    "views": 57,
+    "views": 58,
     "lastUpdated": "2025-03-19T15:44:57.314Z",
     "relatedIds": [
       "10968d37"
     ],
-    "popularityIndex": 57,
+    "popularityIndex": 58,
     "scorecardCount": 14
   },
   "10968d37": {
@@ -48551,7 +48551,7 @@
       }
     ],
     "popularityIndex": 16,
-    "scorecardCount": 1
+    "scorecardCount": 2
   },
   "9423b4a4": {
     "id": "9423b4a4",
@@ -49510,7 +49510,7 @@
       }
     ],
     "popularityIndex": 13,
-    "scorecardCount": 13
+    "scorecardCount": 14
   },
   "4d738de3": {
     "id": "4d738de3",
@@ -53734,7 +53734,7 @@
     "lastUpdated": "2025-03-19T15:44:57.294Z",
     "name": "Yale KM 1 star Superior",
     "dateAdded": "2023-05-05T09:46:31.000Z",
-    "views": 92,
+    "views": 93,
     "media": [
       {
         "title": "By: LockPickingFisherman",
@@ -53765,7 +53765,7 @@
       }
     ],
     "notes": "spooled key pins with 6 gege style drivers",
-    "popularityIndex": 92,
+    "popularityIndex": 93,
     "scorecardCount": 20
   },
   "5c5a2309": {
@@ -62926,9 +62926,9 @@
     "notes": "****** **Special Picking Requirement:** Prior to picking, operate the lock with the key or rake pins to reset rotational orientation.",
     "name": "Medeco Original, Biaxial, M3 / Chubb Biaxial",
     "dateAdded": "2025-12-28T18:08:44.771Z",
-    "popularityIndex": 63,
-    "scorecardCount": 15,
-    "views": 63
+    "popularityIndex": 64,
+    "scorecardCount": 16,
+    "views": 64
   },
   "c1026783": {
     "id": "c1026783",
@@ -66346,7 +66346,9 @@
     ],
     "name": "Squire 220",
     "currentBeltDate": "2026-10-12T23:33:54.103Z",
-    "dateAdded": "2026-10-12T23:33:54.103Z"
+    "dateAdded": "2026-10-12T23:33:54.103Z",
+    "popularityIndex": 1,
+    "views": 1
   },
   "e390a509": {
     "id": "e390a509",
