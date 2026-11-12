@@ -18,12 +18,6 @@ export async function sendModMailToWebhook(event, reddit) {
         throw new Error('Missing ModMail conversationId or messageId')
     }
 
-    const webhook = await settings.get('installationDiscordWebhookUrl')
-
-    if (!webhook) {
-        throw new Error('Discord webhook URL not configured')
-    }
-
     const outgoing = true
     const ignoreListRaw = ''
     const rolePing = undefined
@@ -79,6 +73,12 @@ export async function sendModMailToWebhook(event, reddit) {
     if (error || !requestedBelt) {
         if (error) console.error('Error parsing message:', error)
         return
+    }
+
+    const webhook = await settings.get('installationDiscordWebhookUrl')
+
+    if (!webhook) {
+        throw new Error('Discord webhook URL not configured')
     }
 
     const beltColor = beltDetails[

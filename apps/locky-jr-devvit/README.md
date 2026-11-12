@@ -1,5 +1,17 @@
 # Locky Jr.
 
+## Reddit Verification Notes
+
+**r/lockpicking** is maintained by the organization LockPickers United (LPU) which uses a "karate belt" like system for ranking members based on proven skills. Each belt is represented by a flair, which grow increasingly difficult to earn. Users apply for belt recognition on Reddit via ModMail. The belt system ties together the community through shared skill milestones across Reddit, Discord, and our many sites (most notably https://lpubelts.com/).
+
+We are working on integrating those platforms, and this Devvit app is part of a phased development plan, starting with:
+
+**Have modmail messages that match a specific structure trigger a webhook call to Discord.**
+
+> When users send modmail with the structure `@lockyjr request <Belt Color> <Name of Lock> <link to photo or video evidence>`, the app forwards the modmail details to an admin only channel on discord. That message is then picked up and added to our request queue along with requests submitted on Discord (with the same required structure) and website. The admin team can then review and approve/deny the request, flagging it for follow up on Reddit.
+
+The app has been tested and is running smoothly at https://www.reddit.com/r/locky_jr_dev/?playtest=locky-jr
+
 ## App overview
 
 Locky Jr. helps locksport moderators move belt requests from Reddit modmail (the shared inbox for a community's moderators) into a Discord channel. It is for moderation teams that review belt requests in Discord and want a link back to the original Reddit conversation.

@@ -13,7 +13,7 @@
     },
     "http": {
       "enable": true,
-      "domains": ["discord.com", "api.lpubelts.com"]
+      "domains": ["discord.com"]
     }
   },
   "triggers": {
