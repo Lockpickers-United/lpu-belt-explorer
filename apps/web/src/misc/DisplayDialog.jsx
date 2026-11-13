@@ -6,7 +6,7 @@ import {Zoom} from '@mui/material'
 
 // <DisplayDialog dialogContent={dialogContent} open={showDialog} handleClose={handleDialogClose} width={400}/>
 
-export default function DisplayDialog({dialogContent, open, handleClose, width = 350, dark=true}) {
+export default function DisplayDialog({dialogContent, open, handleClose, width = 350, dark=true, black=false}) {
 
     const stopClick = (e) => {
         e.stopPropagation()
@@ -28,7 +28,11 @@ export default function DisplayDialog({dialogContent, open, handleClose, width =
                         width: '90%',
                     },
                     '& .MuiBackdrop-root': {
-                        backgroundColor: dark ? 'rgba(0, 0, 0, 0.65)' : 'rgba(0, 0, 0, 0.5)',
+                        backgroundColor: black
+                            ? 'rgba(0, 0, 0, 1.0)'
+                            : dark
+                                ? 'rgba(0, 0, 0, 0.65)'
+                                : 'rgba(0, 0, 0, 0.5)',
                         backdropFilter: dark ? 'blur(0.75px)' : 'none'
                     },
 

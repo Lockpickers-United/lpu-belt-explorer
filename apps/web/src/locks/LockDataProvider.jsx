@@ -17,7 +17,7 @@ import {getLockSortComparator} from './lockSortComparators'
 export function DataProvider({children, allEntries, profile}) {
 
     const {filters: allFilters, activeFilterGroups} = useContext(FilterContext)
-    const {search, tab, sort, expandAll} = allFilters
+    const {search, tab, sort, expandAll} = allFilters ?? {}
     const {data, loading, error} = useData({urls})
     const lockbazzarIds = useMemo(() => {
         return data && !loading && !error ? data.lockbazzarEntryIds : []
@@ -175,7 +175,7 @@ export function DataProvider({children, allEntries, profile}) {
     const visibleEntries = useMemo(() => {
         // Filter the data
         const filtered = filterEntriesAdvanced({
-            advancedFilterGroups: activeFilterGroups(),
+            advancedFilterGroups: activeFilterGroups && activeFilterGroups(),
             entries: mappedEntries
         })
         const searched = searchEntriesForText([...filtered])

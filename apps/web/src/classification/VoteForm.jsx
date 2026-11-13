@@ -138,7 +138,6 @@ export default function VoteForm({entry, vote, handleActive, owner, entryRef}) {
                 alignItems: 'flex-start',
                 justifyContent: 'space-between'
             }}>
-
                 <div>
                     <div style={{fontSize: '1.0rem', fontWeight: 600, margin: '0px 0px 2px 0px'}}>
                         {owner ? 'My Vote' : vote.displayName}

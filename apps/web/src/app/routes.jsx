@@ -84,6 +84,13 @@ export default [
         ]
     },
     {
+        path: '/classificationVote',
+        lazy: async () => {
+            const {default: EmailVoteRoute} = await import('../classification/EmailVoteRoute.jsx')
+            return {element: <EmailVoteRoute/>}
+        }
+    },
+    {
         path: '/scorecard/info',
         lazy: async () => {
             const {default: ScorecardInfoRoute} = await import('../scorecard/ScorecardInfoRoute.jsx')
@@ -705,7 +712,6 @@ export default [
         path: '*',
         loader: () => redirect('/locks')
     },
-
     {
         path: '*',
         loader:
