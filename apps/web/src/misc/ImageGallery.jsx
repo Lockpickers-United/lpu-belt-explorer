@@ -1,5 +1,4 @@
 import React, {useCallback, useContext, useEffect, useState} from 'react'
-import ImageList from '@mui/material/ImageList'
 import ImageListItem from '@mui/material/ImageListItem'
 import ImageListItemBar from '@mui/material/ImageListItemBar'
 import Tooltip from '@mui/material/Tooltip'
@@ -12,6 +11,7 @@ import ImageViewer from './ImageViewer'
 import AppContext from '../app/AppContext.jsx'
 import {useAccess} from '../app/AccessContext.jsx'
 import {useLocalStorage} from 'usehooks-ts'
+import Masonry from '@mui/lab/Masonry'
 
 function ImageGallery(props) {
     const {
@@ -88,7 +88,7 @@ function ImageGallery(props) {
                     shareParams={shareParams}
                 />
             }
-            <ImageList variant='masonry' cols={cols} sx={{marginTop: 2}}>
+            <Masonry columns={cols} sx={{marginTop: 2}} sequential>
                 {mediaAnnotated.map(({
                                          title,
                                          subtitle,
@@ -149,7 +149,7 @@ function ImageGallery(props) {
                         />
                     </ImageListItem>
                 )}
-            </ImageList>
+            </Masonry>
         </React.Fragment>
     )
 }
