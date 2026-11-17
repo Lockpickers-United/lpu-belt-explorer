@@ -92,11 +92,9 @@ function RaffleEntry({entry, expanded, onExpand, drawing}) {
                 <div style={{width: '100%', marginBottom: 0}}>
                     <div style={{display: 'flex', alignItems: 'center', flexGrow: 1}}>
                         <div style={{display: 'block', marginBottom: 0, flexGrow: 1}}>
-                            <div style={{display: 'flex', width: '100%', alignItems: 'center'}}>
-                                <div style={{margin: titleMargin, display: 'flex', flexGrow: 1}}>
+                                <div style={{margin: titleMargin, display: 'flex', flexGrow: 1, alignItems: 'center'}}>
                                     <RaffleTitle entry={entry} drawing={drawing}/>
                                 </div>
-                            </div>
                             <div style={{margin: contribMargin, display: 'flex'}}>
                                 <div style={{flexGrow: 1, opacity: infoOpacity}}>
                                     <div style={{

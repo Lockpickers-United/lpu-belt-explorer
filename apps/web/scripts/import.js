@@ -25,8 +25,13 @@ import {createClassificationCatalog} from './classificationCatalog.js'
 import {saveLockStats} from './saveLockStats.js'
 import {setDeepUnique, setDeepPush} from '../src/util/setDeep.js'
 import flickrReport from '../src/data/flickr-replacement-unique-ids.json' with {type: 'json'}
+import path, {dirname} from 'path'
+import {fileURLToPath} from 'url'
 
-const importRaflData = false
+const importRaflData = true
+
+const __dirname = dirname(fileURLToPath(import.meta.url))
+const dataDir = path.resolve(__dirname, '../src/data')
 
 // Helper to load and validate a file
 const importValidate = async (tab, schema) => {
@@ -82,7 +87,7 @@ const raflMediaData = importRaflData ? await importValidate('RAFL Media', raflMe
 const raflCharityData = importRaflData ? await importValidate('RAFL Charities', raflCharitySchema) : []
 
 // Load previous JSON for recently updated checks
-const originalData = JSON.parse(fs.readFileSync('./src/data/data.json', 'utf8'))
+const originalData = JSON.parse(fs.readFileSync(`${dataDir}/data.json`, 'utf8'))
 
 // Transform fields into internal JSON format
 console.log('Processing main data...')
@@ -591,9 +596,10 @@ if (importRaflData) {
             description: datum['Description'],
             descriptionContinued: datum['Description Continued'],
             potContents: datum['Pot Contents'],
+            category: splitCommaValues(datum['Category']),
+            tags: splitCommaValues(datum['Tags']),
             keywords: datum['Keywords'],
             contributedBy: splitCommaValues(datum['Contributed By']),
-            tags: splitCommaValues(datum['Tags']),
             country: splitCommaValues(datum['Country']),
             shippingInfo: datum['Shipping Info Text'],
             splitShipping: datum['Split Shipping'] === 'TRUE' ? 'shippingNotSplit' : 'shippingSplit',

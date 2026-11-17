@@ -8,10 +8,11 @@ import {raffleSortFields} from '../data/sortFields'
 import RaffleIntroBar from './RaffleIntroBar.jsx'
 import RaffleExportButton from './RaffleExportButton.jsx'
 import AdvancedFilters from '../filters/AdvancedFilters.jsx'
+import ExposedFilterSelect from './ExposedFilterSelect.jsx'
 
 function RaffleEntries({drawing = false}) {
     const {visibleEntries = [], expandAll} = useContext(DataContext)
-    const {filters} = useContext(FilterContext)
+    const {filters, showAdvancedSearch} = useContext(FilterContext)
     const {id, shippingType, splitShipping} = filters
     const [expanded, setExpanded] = useState(id)
 
@@ -27,7 +28,13 @@ function RaffleEntries({drawing = false}) {
                 <RaffleIntroBar/>
             }
 
+            <div id='raffleSearchBar' style={{scrollMarginTop: 72}}/>
             <RaffleSearchBar label='Raffle Pots' sortValues={raffleSortFields} entryCount={visibleEntries.length}/>
+
+            {!showAdvancedSearch &&
+                <ExposedFilterSelect field={'category'}/>
+            }
+
             <AdvancedFilters entryType={'Pot'}/>
 
             {(shippingType === 'Intl. shipping included' || splitShipping === 'shippingSplit') &&

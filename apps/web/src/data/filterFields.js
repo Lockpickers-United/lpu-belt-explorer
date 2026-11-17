@@ -89,6 +89,7 @@ export const scorecardExploreFilterFields = [
 
 export const raffleFilterFields = [
     {label: 'Watchlist', fieldName: 'collection', userBased: true},
+    {label: 'Category', fieldName: 'category'},
     {label: 'Tag', fieldName: 'tags'},
     {label: 'Contributor', fieldName: 'contributedBy'},
     {label: 'Country', fieldName: 'country'},
@@ -102,6 +103,7 @@ export const raffleFilterFieldsWinners = [
     {label: 'Winner', fieldName: 'winnerUsernames'},
     {label: 'Winner Status', fieldName: 'winnerStatus', sort: (a, b) => b.localeCompare(a)},
     {label: 'Watchlist', fieldName: 'collection', userBased: true},
+    {label: 'Category', fieldName: 'category'},
     {label: 'Tag', fieldName: 'tags'},
     {label: 'Contributor', fieldName: 'contributedBy'},
     {label: 'Country', fieldName: 'country'},

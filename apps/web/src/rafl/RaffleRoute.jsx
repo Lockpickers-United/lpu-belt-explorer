@@ -51,7 +51,7 @@ function RaffleRoute() {
 
     return (
         <FilterProvider filterFields={currentFilterFields}>
-            <RaffleDataProvider allEntries={allPots}>
+            <RaffleDataProvider allEntries={allPots} filterFields={currentFilterFields}>
                 <div style={style}>
                     <Nav title={navTitle} extras={extras} extrasTwo={extrasTwo}/>
                     <RaffleHeader page={'pots'}/>

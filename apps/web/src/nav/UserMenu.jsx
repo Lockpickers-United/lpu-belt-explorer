@@ -26,7 +26,7 @@ import {useAccess} from '../app/AccessContext.jsx'
 import BoltIcon from '@mui/icons-material/Bolt'
 import {Collapse, useTheme} from '@mui/material'
 import ExpandButton from '../misc/ExpandButton.jsx'
-import OutletIcon from '@mui/icons-material/Outlet'
+import EmojiPeopleIcon from '@mui/icons-material/EmojiPeople'
 
 function UserMenu() {
     const navigate = useNavigate()
@@ -61,7 +61,7 @@ function UserMenu() {
 
     const [previewOpen, setPreviewOpen] = useState(false)
 
-    const ownerIcon = (import.meta.env.DEV && accessInfo.previewRole === 'admin')
+    const ownerIcon = (accessInfo.roles.owner)
 
     return (
         <React.Fragment>
@@ -82,7 +82,7 @@ function UserMenu() {
                             />
                             : !ownerIcon
                                 ? <AccountCircleIcon/>
-                                : <OutletIcon style={{color: '#4c5e75', fontSize: '32px'}}/>
+                                : <EmojiPeopleIcon style={{color: '#50729a', fontSize: '32px'}}/>
                     }
                 </IconButton>
             </Tooltip>

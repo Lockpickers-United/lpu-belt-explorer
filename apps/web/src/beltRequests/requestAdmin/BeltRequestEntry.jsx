@@ -31,7 +31,6 @@ import YouTubeIcon from '@mui/icons-material/YouTube'
 import PhotoSizeSelectActualIcon from '@mui/icons-material/PhotoSizeSelectActual'
 import Box from '@mui/material/Box'
 import Link from '@mui/material/Link'
-import DanStatsWrapper from './DanStatsWrapper.jsx'
 
 function BeltRequestEntry({entry, expanded, onExpand}) {
     const {

@@ -88,15 +88,16 @@ function FilterChip({field, value, label = value, mode, clickable = true, style 
             {(mode === 'div') &&
                 <Box
                     style={{
-                        display: 'inline-block',
+                        display: 'flex',
+                        alignItems: 'center',
                         color: '#fff',
-                        fontSize: '0.85rem',
+                        fontSize: '0.9rem',
+                        fontWeight: 500,
                         border: '1px solid #666',
-                        borderRadius: 16,
-                        padding: '2px 10px',
+                        borderRadius: 2,
+                        padding: '4px 12px',
                         cursor: 'pointer',
-                        marginRight: 4,
-                        marginBottom: 4
+                        textTransform: 'uppercase'
                     }}
                     sx={{
                         '&:hover': {

@@ -14,7 +14,7 @@ export default function RaffleSearchBar({label, sortValues, entryCount = 0}) {
     const borderstyle = label === 'Approved Charities' ? {borderBottom: '1px #555 solid'} : {}
 
     return (
-        <div style={{display: flexStyle, ...style, backgroundColor: '#333', minHeight:72, ...borderstyle}}>
+        <div id='raffleSearchBarX' style={{display: flexStyle, ...style, backgroundColor: '#333', minHeight:72, ...borderstyle}}>
             <div style={{display: 'flex', flexGrow: 1, marginLeft: 8}}>
                 <SearchBox label={label} keepOpen={true} entryCount={entryCount}/>
             </div>

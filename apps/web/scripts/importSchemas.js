@@ -177,6 +177,7 @@ export const raflSchema = Joi.array().items(
         'Description Continued': Joi.string().allow(''),
         'Pot Contents': Joi.string().allow(''),
         'Tags': Joi.string().allow(''),
+        'Category': Joi.string().allow(''),
         'Keywords': Joi.string().allow(''),
         'Country': Joi.string().allow(''),
         'Shipping Info Text': Joi.string().allow(''),

@@ -4,6 +4,7 @@ import RaffleContext from './RaffleContext.jsx'
 import Link from '@mui/material/Link'
 import RaffleDrawButton from './admin/RaffleDrawButton.jsx'
 import FilterContext from '../context/FilterContext.jsx'
+import EntryTypeIcon from './EntryTypeIcon.jsx'
 
 function RaffleTitle({entry, drawing = false}) {
     if (!entry) return null
@@ -12,10 +13,10 @@ function RaffleTitle({entry, drawing = false}) {
     const showFull = ['live', 'post'].includes(raflState) || raffleAdminRole
     const {setFilters} = useContext(FilterContext)
 
-    const {isMobile, flexStyle} = useWindowSize()
+    const {isMobile} = useWindowSize()
 
     let entryName = entry.displayName ? entry.displayName : entry.title
-    const winnersText = (entry.winnerCount > 1 && entry.winners?.length === 0) ? ` (${entry.winnerCount} winners)` : ''
+    const winnersText = (entry.winnerCount > 1 && entry.winners?.length === 0) ? ` (${entry.winnerCount} winners)` : null
     const winnersPlural = (entry.winnerCount > 1) ? 'Winners' : 'Winner'
 
     // Function to open winner pots filter
@@ -29,10 +30,10 @@ function RaffleTitle({entry, drawing = false}) {
 
     const buttonDivWidth = isMobile ? '100%' : 'auto'
 
-    const marginBottom = drawing ? 15 : 0
-    const diameter = !isMobile ? 30 : 28
-    const fontSize = !isMobile ? '1.3rem' : '1.1rem'
-    const lineHeight = !isMobile ? '1rem' : '1rem'
+    const marginBottom = drawing ? 15 : 6
+    const diameter = !isMobile ? 25 : 22
+    const fontSize = !isMobile ? '1.1rem' : '0.9rem'
+    const lineHeight = !isMobile ? '1.rem' : '1rem'
     const paddingLeft = !isMobile ? 0 : 0
 
     const titleSize = !isMobile ? '1.3rem' : '1.15rem'
@@ -41,109 +42,104 @@ function RaffleTitle({entry, drawing = false}) {
     const winnerLineHeight = !isMobile ? '1.3rem' : '1.2rem'
 
     const winnerList = Array.isArray(entry.winners)
-        ? <React.Fragment>
+        ? <div>
             {entry.winners.map((winner, index) => {
-                return <div key={index} style={{display: 'flex', justifyContent: 'right', marginBottom: 4}}>
-                    {index === 0 && <span style={{fontWeight: 400, color: '#fff'}}>{winnersPlural}:&nbsp;</span>}
-                    <Link style={{
-                        color: excessWinners.includes(winner.entryId) ? '#f35454' : '#fff',
-                        textAlign: 'right'
-                    }}
-                          onClick={(e) => openWinnerPots(e, winner)}>{winner.username}</Link>
-                    <RaffleDrawButton entry={entry} drawing={drawing}
-                                      redrawId={winner.entryId} excessWinner={excessWinners.includes(winner.entryId)}/>
-                </div>
+                return (
+                    <div key={index} style={{display: 'flex', justifyContent: 'right', marginBottom: 4}}>
+                        {index === 0 && <span style={{fontWeight: 400, color: '#fff'}}>{winnersPlural}:&nbsp;</span>}
+                        <Link style={{
+                            color: excessWinners.includes(winner.entryId) ? '#f35454' : '#fff',
+                            textAlign: 'right'
+                        }}
+                              onClick={(e) => openWinnerPots(e, winner)}>{winner.username}</Link>
+                        <RaffleDrawButton entry={entry} drawing={drawing}
+                                          redrawId={winner.entryId}
+                                          excessWinner={excessWinners.includes(winner.entryId)}/>
+                    </div>
+                )
             })
             }
-        </React.Fragment>
+        </div>
         : undefined
 
     return (
-        <div style={{width: '100%'}}>
-            <div style={{display: 'flex', alignItems: 'center', width: '100%', marginBottom: marginBottom}}>
-                {showFull &&
-                    <div style={{
-                        borderRadius: '50%',
-                        backgroundColor: '#fff',
-                        color: '#000',
-                        height: diameter,
-                        width: diameter,
-                        minWidth: diameter,
-                        marginTop: 0,
-                        marginBottom: 4,
-                        marginRight: 12,
-                        display: 'flex'
-                    }}>
+        <>
+            <div style={{width: '100%', display: 'flex', flexDirection: 'column'}}>
+
+                <div style={{
+                    display: 'flex', alignItems: 'center', width: '100%',
+                    marginBottom: marginBottom, justifyContent: 'space-between'
+                }}>
+                    {showFull &&
                         <div style={{
-                            margin: 'auto',
-                            paddingTop: 0,
-                            paddingLeft: paddingLeft,
-                            paddingRight: 1,
-                            fontWeight: 700,
-                            fontSize: fontSize,
-                            lineHeight: lineHeight
-                        }}>{entry.potNumber}</div>
-                    </div>
-                }
-                <div style={{display: flexStyle, flexDirection: 'row', flexGrow: 1, alignItems: 'center'}}>
+                            borderRadius: '50%',
+                            backgroundColor: '#fff',
+                            color: '#000',
+                            height: diameter,
+                            width: diameter,
+                            minWidth: diameter,
+                            marginTop: 0,
+                            marginRight: 12,
+                            display: 'flex'
+                        }}>
+                            <div style={{
+                                margin: 'auto',
+                                paddingTop: 0,
+                                paddingLeft: paddingLeft,
+                                paddingRight: 1,
+                                fontWeight: 700,
+                                fontSize: fontSize,
+                                lineHeight: lineHeight
+                            }}>{entry.potNumber}</div>
+                        </div>
+                    }
                     <div style={{
                         display: 'flex',
                         flexGrow: 1,
                         fontWeight: 500,
                         fontSize: titleSize,
                         lineHeight: titleLineHeight,
-                        marginTop: !isMobile ? -3 : 0
+                        marginTop: !isMobile ? 0 : 0,
+                        alignItems: 'center',
+                        width: '100%'
                     }}>
                         {entryName}
-                        <div style={{
-                            whiteSpace: 'nowrap', fontSize: titleSize,
-                            lineHeight: titleLineHeight
-                        }}>&nbsp;{winnersText}</div>
                     </div>
-
-                    {drawing &&
-                        <div style={{display: 'flex', justifyContent: 'right', width: buttonDivWidth}}>
-                            <RaffleDrawButton entry={entry} drawing={drawing}/>
+                    {entry.winners?.length === 0 && winnersText &&
+                        <div style={{display: 'flex', width: '100%', justifyContent: 'flex-end', marginRight: 8}}>
+                            <div style={{
+                                whiteSpace: 'nowrap', fontSize: titleSize,
+                                lineHeight: titleLineHeight, color: '#ccc'
+                            }}>&nbsp;{winnersText}</div>
+                            {drawing &&
+                                <div style={{display: 'flex', justifyContent: 'right', width: buttonDivWidth}}>
+                                    <RaffleDrawButton entry={entry} drawing={drawing}/>
+                                </div>
+                            }
                         </div>
                     }
+                    <EntryTypeIcon entry={entry}/>
                 </div>
-                {entry.winners?.length > 0 &&  !isMobile &&
+
+
+                {entry.winners?.length > 0 &&
                     <div style={{
                         display: 'flex',
+                        width: '100%',
                         flexGrow: 1,
                         fontSize: winnerSize,
                         lineHeight: winnerLineHeight,
-                        marginTop: !isMobile ? 0 : 8,
+                        marginTop: !isMobile ? 8 : 16,
                         marginBottom: 8,
                         marginRight: 12,
                         fontWeight: 600,
-                        justifyItems: 'right'
+                        justifyContent: 'center'
                     }}>
-                        <div style={{width: '100%'}}>
-                            {winnerList}
-                        </div>
+                        {winnerList}
                     </div>
                 }
             </div>
-            {entry.winners?.length > 0 && isMobile &&
-                <div style={{
-                    display: 'flex',
-                    flexGrow: 1,
-                    fontSize: winnerSize,
-                    lineHeight: winnerLineHeight,
-                    marginTop: !isMobile ? 0 : 8,
-                    marginBottom: 8,
-                    marginRight: 12,
-                    fontWeight: 600,
-                    justifyItems: 'right'
-                }}>
-                    <div style={{width: '100%'}}>
-                        {winnerList}
-                    </div>
-                </div>
-            }
-
-        </div>
+        </>
     )
 }
 

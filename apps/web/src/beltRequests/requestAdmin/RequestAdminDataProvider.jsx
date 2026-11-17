@@ -36,7 +36,7 @@ export function RequestAdminDataProvider({children}) {
                     )
                 }
             })
-    }, [beltRequests])
+    }, [beltRequests, displayStatuses])
 
     const searchedEntries = useMemo(() => {
         return searchEntriesForText(search, mappedEntries)

@@ -11,7 +11,7 @@ import ScorecardDanStats from '../../scorecard/ScorecardDanStats.jsx'
 
 export default function DanStatsWrapper() {
     const {profile, getPickerActivity} = useContext(DBContext)
-    const {userId, data, loading, error, isFullProfile} = useContext(ProfileContext)
+    const {data} = useContext(ProfileContext)
 
     const loadFn = useCallback(async () => {
         try {
