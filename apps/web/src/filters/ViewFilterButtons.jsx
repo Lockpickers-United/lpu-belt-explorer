@@ -9,14 +9,14 @@ import ResetFiltersButton from './ResetFiltersButton.jsx'
 
 function ViewFilterButtons({
                                sortValues,
-                               visibleEntries,
                                extraFilters = [],
                                compactMode,
                                resetAll = false,
                                expandAll = false,
                                style,
                                advancedEnabled = false,
-                               entryType='Lock'
+                               entryType='Lock',
+                               extended = false,
                            }) {
 
     const {filters, filterCount, isFiltered} = useContext(FilterContext)
@@ -49,13 +49,15 @@ function ViewFilterButtons({
                  }
              }}
         >
-            <SortTextButton sortValues={sortValues} compactMode={compactMode} expandAll={expandAll}/>
+            <SortTextButton sortValues={sortValues} compactMode={compactMode}
+                            expandAll={expandAll} extended={extended}/>
             {advancedEnabled
-                ? <AdvancedFilterDrawerButton visibleEntries={visibleEntries} extraFilters={extraFilters} entryType={entryType}/>
+                ? <AdvancedFilterDrawerButton entryType={entryType} extended={extended}/>
                 : <FilterTextButton extraFilters={extraFilters}/>
             }
             {!!reset &&
-                <ResetFiltersButton advanced nav/>            }
+                <ResetFiltersButton advanced nav/>
+            }
         </Box>
     )
 }

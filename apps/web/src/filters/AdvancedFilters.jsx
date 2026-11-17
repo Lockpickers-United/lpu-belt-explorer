@@ -13,7 +13,7 @@ import FilterScopeToggle from './FilterScopeToggle.jsx'
 import ResetFiltersButton from './ResetFiltersButton.jsx'
 import useAdvancedFilterRows from './useAdvancedFilterRows.js'
 
-export default function AdvancedFilters() {
+export default function AdvancedFilters({entryType='Lock'}) {
     const {
         showAdvancedSearch,
         setShowAdvancedSearch,
@@ -92,7 +92,7 @@ export default function AdvancedFilters() {
                                         fontWeight: 400,
                                         fontSize: '1.0rem',
                                         marginLeft: 8
-                                    }}>({(visibleBeltEntries || visibleEntries || []).length || 0} Lock{(visibleBeltEntries || visibleEntries || []).length !== 1 && 's'})
+                                    }}>({(visibleBeltEntries || visibleEntries || []).length || 0} {entryType}{(visibleBeltEntries || visibleEntries || []).length !== 1 && 's'})
                                     </div>
                                 </div>
                                 <FilterScopeToggle style={{margin: '16px 0px 0px 0px'}}/>

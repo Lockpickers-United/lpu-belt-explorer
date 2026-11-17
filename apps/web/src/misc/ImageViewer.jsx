@@ -262,6 +262,7 @@ function ImageViewer({media, openIndex, onOpenImage, onClose, shareParams = {}})
                     <Tooltip title='Previous Image' arrow disableFocusListener>
                         <Fab
                             onClick={handleNavigatePrevious}
+                            size='small'
                             sx={{
                                 position: 'fixed', left: 16, top: '50vh', zIndex: 1000
                             }}>
@@ -272,6 +273,7 @@ function ImageViewer({media, openIndex, onOpenImage, onClose, shareParams = {}})
                     <Tooltip title='Next Image' arrow disableFocusListener>
                         <Fab
                             onClick={handleNavigateNext}
+                            size='small'
                             sx={{
                                 position: 'fixed', right: 16, top: '50vh', zIndex: 1000
                             }}>

@@ -28,7 +28,7 @@ function RaffleEntries({drawing = false}) {
             }
 
             <RaffleSearchBar label='Raffle Pots' sortValues={raffleSortFields} entryCount={visibleEntries.length}/>
-            <AdvancedFilters/>
+            <AdvancedFilters entryType={'Pot'}/>
 
             {(shippingType === 'Intl. shipping included' || splitShipping === 'shippingSplit') &&
                 <div style={{margin: '18px 12px', fontSize: '0.9rem', color: '#eee'}}>

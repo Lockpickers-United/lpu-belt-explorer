@@ -14,7 +14,7 @@ import SortIcon from '@mui/icons-material/Sort'
 import AuthContext from '../app/AuthContext.jsx'
 import {ThemeContext} from '@emotion/react'
 
-function SortTextButton({sortValues, compactMode, expandAll}) {
+function SortTextButton({sortValues, compactMode, expandAll, extended}) {
     const theme = useContext(ThemeContext)
     const [anchorEl, setAnchorEl] = useState(null)
     const open = Boolean(anchorEl)
@@ -53,7 +53,7 @@ function SortTextButton({sortValues, compactMode, expandAll}) {
                         invisible={!sort}
                         anchorOrigin={badgeAnchor}
                     >
-                        {!smallWidth ? 'VIEW' : <SortIcon/>}
+                        {(!smallWidth || extended) ? 'VIEW' : <SortIcon/>}
                     </Badge>
                 </Button>
             </Tooltip>

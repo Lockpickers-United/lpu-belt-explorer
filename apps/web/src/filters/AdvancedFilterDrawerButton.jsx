@@ -18,7 +18,7 @@ import FilterScopeToggle from './FilterScopeToggle.jsx'
 import {motion} from 'motion/react'
 import useFilterFieldVisibility from './useFilterFieldVisibility.js'
 
-function AdvancedFilterDrawerButton({entryType='Lock'}) {
+function AdvancedFilterDrawerButton({entryType='Lock', extended}) {
     const [open, setOpen] = useState(false)
 
     const {
@@ -110,7 +110,7 @@ function AdvancedFilterDrawerButton({entryType='Lock'}) {
                         color='warning'
                         anchorOrigin={{vertical: 'top', horizontal: 'right'}}
                     >
-                        {!smallWidth ? 'FILTER' : <FilterAltIcon/>}
+                        {(!smallWidth || extended) ? 'FILTER' : <FilterAltIcon/>}
                     </Badge>
                 </Button>
             </Tooltip>
