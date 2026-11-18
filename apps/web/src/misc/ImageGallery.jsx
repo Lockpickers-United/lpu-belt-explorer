@@ -88,7 +88,7 @@ function ImageGallery(props) {
                     shareParams={shareParams}
                 />
             }
-            <Masonry columns={cols} sx={{marginTop: 2}} sequential>
+            <Masonry columns={cols} sx={{margin:'0px 0 -8px 0'}} sequential>
                 {mediaAnnotated.map(({
                                          title,
                                          subtitle,

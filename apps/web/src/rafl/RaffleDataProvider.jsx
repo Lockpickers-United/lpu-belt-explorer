@@ -63,6 +63,7 @@ export function RaffleDataProvider({children, allEntries = []}) {
             })
             : searched.sort((a, b) => {
                 return b.score - a.score
+                    || parseInt(b.year) - parseInt(a.year)
                     || parseInt(a.sortPotNumber) - parseInt(b.sortPotNumber)
                     || a.title.localeCompare(b.title)
             })

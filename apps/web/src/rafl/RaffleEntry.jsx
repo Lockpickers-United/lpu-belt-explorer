@@ -65,7 +65,7 @@ function RaffleEntry({entry, expanded, onExpand, drawing}) {
     }, [entry.id, onExpand])
 
     const {isMobile, flexStyle} = useWindowSize()
-    const style = {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto'}
+    const style = {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto', scrollMarginTop: 100, backgroundColor: '#1e1e1e'}
     const titleMargin = !isMobile ? '12px 0px 8px 8px' : '12px 0px 8px 0px'
     const contribMargin = !isMobile ? '0px 0px 0px 8px' : '0px 0px 0px 0px'
     const descriptionMargin = !isMobile ? '12px 0px 0px 8px' : '12px 0px 0px 0px'
@@ -82,19 +82,34 @@ function RaffleEntry({entry, expanded, onExpand, drawing}) {
     }
 
     return (
-        <Accordion expanded={expanded} onChange={handleChange} style={style} ref={ref} slots={{heading: 'div'}}>
-            <AccordionSummary component='div' nativeButton={false} expandIcon={<ExpandMoreIcon/>} sx={{
-                '.MuiAccordionSummary-content': {
-                    alignItems: 'center'
-                }
-            }} style={{marginBottom: 10}}>
+        <Accordion expanded={expanded} onChange={handleChange} style={style} ref={ref} slots={{heading: 'div'}}
+                   disableGutters>
+            <AccordionSummary component='div'
+                              nativeButton={false}
+                              expandIcon={
+                                  <div style={{
+                                      display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                      borderRadius: '50%', backgroundColor: '#393939', padding: 2
+                                  }}>
+                                      <ExpandMoreIcon/>
+                                  </div>
+                              }
+                              sx={{
+                                  flexDirection: 'column',
+                                  alignItems: 'center',
+                                  '& .MuiAccordionSummary-content': {
+                                      marginBottom: 1
+                                  },
+                                  boxShadow: '0px 6px 12px -8px rgba(0, 0, 0, 0.8)',
+                                  paddingBottom: 2
+                              }}>
 
                 <div style={{width: '100%', marginBottom: 0}}>
                     <div style={{display: 'flex', alignItems: 'center', flexGrow: 1}}>
                         <div style={{display: 'block', marginBottom: 0, flexGrow: 1}}>
-                                <div style={{margin: titleMargin, display: 'flex', flexGrow: 1, alignItems: 'center'}}>
-                                    <RaffleTitle entry={entry} drawing={drawing}/>
-                                </div>
+                            <div style={{margin: titleMargin, display: 'flex', flexGrow: 1, alignItems: 'center'}}>
+                                <RaffleTitle entry={entry} drawing={drawing}/>
+                            </div>
                             <div style={{margin: contribMargin, display: 'flex'}}>
                                 <div style={{flexGrow: 1, opacity: infoOpacity}}>
                                     <div style={{
@@ -143,14 +158,16 @@ function RaffleEntry({entry, expanded, onExpand, drawing}) {
                                         {entry.country.length > 0 &&
                                             <div style={{marginRight: 10}}>
                                                 <FieldValue name='Country' headerStyle={{marginBottom: 4}} value={
-                                                    entry.country.map((country, index) => {
-                                                        const separator = index < entry.country.length - 1 ? ', ' : ''
-                                                        return (
-                                                            <span key={index}><FilterChip value={country}
-                                                                                          field='country'
-                                                                                          mode={'text'}/>{separator}</span>
-                                                        )
-                                                    })}
+                                                                                                               entry.country.map((country, index) => {
+                                                                                                                   const separator = index < entry.country.length - 1 ? ', ' : ''
+                                                                                                                   return (
+                                                                                                                       <span
+                                                                                                                           key={index}><FilterChip
+                                                                                                                           value={country}
+                                                                                                                           field='country'
+                                                                                                                           mode={'text'}/>{separator}</span>
+                                                                                                                   )
+                                                                                                               })}
                                                 />
                                             </div>
                                         }
@@ -192,135 +209,136 @@ function RaffleEntry({entry, expanded, onExpand, drawing}) {
                 </div>
 
             </AccordionSummary>
-            {expanded &&
-                <React.Fragment>
-                    <AccordionDetails sx={{padding: '0px 16px 0px 16px'}}>
-                        {entry.descriptionContinued?.length > 0 &&
-                            <div style={{
-                                margin: !isMobile ? '0px 0px 12px 8px' : '0px 0px 12px 0px',
-                                fontSize: descriptionFontSize,
-                                opacity: infoOpacity
-                            }}>
-                                <ReactMarkdown rehypePlugins={[[rehypeExternalLinks, {target: '_blank'}]]}
-                                               components={{p: 'div'}}>
-                                    {entry.descriptionContinued}
-                                </ReactMarkdown>
+            <AccordionDetails sx={{padding: '16px 16px 0px 16px', backgroundColor: '#222'}}>
+                {entry.descriptionContinued?.length > 0 &&
+                    <div style={{
+                        margin: !isMobile ? '0px 0px 12px 8px' : '0px 0px 12px 0px',
+                        fontSize: descriptionFontSize,
+                        opacity: infoOpacity
+                    }}>
+                        <ReactMarkdown rehypePlugins={[[rehypeExternalLinks, {target: '_blank'}]]}
+                                       components={{p: 'div'}}>
+                            {entry.descriptionContinued}
+                        </ReactMarkdown>
+                    </div>
+                }
 
-                            </div>
+                <div style={{display: flexStyle}}>
+                    <Stack direction='row' style={{}} sx={{alignItems: 'flex-start'}}>
+                        {!!entry.tags?.length &&
+                            <FieldValue name='Tags' value={
+                                                        <Stack direction='row' spacing={0}
+                                                               sx={{flexWrap: 'wrap'}}>
+                                                            {entry.tags.map((tag, index) =>
+                                                                <FilterChip
+                                                                    key={index}
+                                                                    value={tag}
+                                                                    field='tags'
+                                                                    mode={'simple'}
+                                                                />
+                                                            )}
+                                                        </Stack>
+                                                    } headerStyle={{marginBottom: 4}}/>
                         }
+                    </Stack>
+                </div>
 
-                        <div style={{display: flexStyle}}>
-                            <Stack direction='row' style={{}} sx={{alignItems: 'flex-start'}}>
-                                {!!entry.tags?.length &&
-                                    <FieldValue name='Tags' value={
-                                        <Stack direction='row' spacing={0} sx={{flexWrap: 'wrap'}}>
-                                            {entry.tags.map((tag, index) =>
-                                                <FilterChip
-                                                    key={index}
-                                                    value={tag}
-                                                    field='tags'
-                                                    mode={'simple'}
-                                                />
-                                            )}
-                                        </Stack>
-                                    } headerStyle={{marginBottom: 4}}/>
-                                }
-                            </Stack>
-                        </div>
-
-                        {!shippingFiltered &&
-                            <div style={{display: flexStyle, marginTop: 6}}>
-                                <div style={{display: 'flex'}}>
-                                    {entry.country.length > 0 &&
-                                        <div style={{marginRight: 10}}>
-                                            <FieldValue name='Country' headerStyle={{marginBottom: 4}} value={
-                                                entry.country.map((country, index) => {
-                                                    const separator = index < entry.country.length - 1 ? ', ' : ''
-                                                    return (
-                                                        <span key={index}><FilterChip value={country} field='country'
-                                                                                      mode={'text'}/>{separator}</span>
-                                                    )
-                                                })}
-                                            />
-                                        </div>
-                                    }
-                                    {entry.shippingInfo &&
-                                        <div style={{marginRight: 10}}>
-                                            <FieldValue name='Shipping Info'
-                                                        headerStyle={{marginBottom: 4}}
-                                                        value={entry.shippingInfo}/>
-                                        </div>
-                                    }
+                {!shippingFiltered &&
+                    <div style={{display: flexStyle, marginTop: 6}}>
+                        <div style={{display: 'flex'}}>
+                            {entry.country.length > 0 &&
+                                <div style={{marginRight: 10}}>
+                                    <FieldValue name='Country' headerStyle={{marginBottom: 4}} value={
+                                                                                                   entry.country.map((country, index) => {
+                                                                                                       const separator = index < entry.country.length - 1 ? ', ' : ''
+                                                                                                       return (
+                                                                                                           <span
+                                                                                                               key={index}><FilterChip
+                                                                                                               value={country}
+                                                                                                               field='country'
+                                                                                                               mode={'text'}/>{separator}</span>
+                                                                                                       )
+                                                                                                   })}
+                                    />
                                 </div>
-                                {entry.shipsToUS && entry.shipsToUS !== 'Yes' &&
-                                    <FieldValue name='US Shipping Details'
+                            }
+                            {entry.shippingInfo &&
+                                <div style={{marginRight: 10}}>
+                                    <FieldValue name='Shipping Info'
                                                 headerStyle={{marginBottom: 4}}
-                                                textStyle={{
-                                                    color: usShipColor[entry.shipsToUS],
-                                                    fontWeight: entry.shipsToUS === 'No' ? 500 : 400
-                                                }}
-                                                value={usShipText[entry.shipsToUS]}/>
-                                }
-                            </div>
-                        }
-
-                        {entry.potContents &&
-                            <Stack direction='row' spacing={1} sx={{width: '100%', flexWrap: 'wrap', marginTop: '4px'}}>
-                                <FieldValue name='Contents' textStyle={{fontSize: contentsFontSize}} value={
-                                    <ReactMarkdown rehypePlugins={[[rehypeExternalLinks, {
-                                        target: '_blank',
-                                        rel: ['nofollow', 'noopener', 'noreferrer']
-                                    }]]}>
-                                        {entry.potContents}
-                                    </ReactMarkdown>
-                                }/>
-                            </Stack>
-                        }
-                        {!!entry.media?.length &&
-                            <FieldValue value={
-                                <RaffleImageGallery entry={entry}/>
-                            }/>
-                        }
-                        {!!entry.links?.length &&
-                            <FieldValue name='Links' value={
-                                <Stack direction='row' spacing={1} sx={{flexWrap: 'wrap'}}>
-                                    {entry.links.map(({title, url}, index) =>
-                                        <Button
-                                            key={index}
-                                            href={url}
-                                            target='_blank'
-                                            rel='noopener noreferrer'
-                                            color='secondary'
-                                            variant='outlined'
-                                            sx={{textTransform: 'none'}}
-                                            style={{margin: 4}}
-                                        >
-                                            {title}
-                                        </Button>
-                                    )}
-                                </Stack>
-                            }/>
-                        }
-                        {!expandAll &&
-                            <Tracker feature='raflPot' id={entry.id}/>
-                        }
-                    </AccordionDetails>
-                    <AccordionActions disableSpacing>
-                        <div style={{display: 'flex', width: '100%'}}>
-                            <div style={{flexGrow: 1, justifyItems: 'left'}}>
-                                <CopyEntryIdButton entry={entry}/>
-                                <LogEntryButton entry={entry}/>
-                            </div>
-                            <div style={{display: 'flex'}}>
-                                <CopyPotTextButton entry={entry}/>
-                                {showFull &&
-                                    <CopyLinkToRaflPotButton entry={entry}/>
-                                }
-                            </div>
+                                                value={entry.shippingInfo}/>
+                                </div>
+                            }
                         </div>
-                    </AccordionActions>
-                </React.Fragment>
-            }
+                        {entry.shipsToUS && entry.shipsToUS !== 'Yes' &&
+                            <FieldValue name='US Shipping Details'
+                                        headerStyle={{marginBottom: 4}}
+                                        textStyle={{
+                                            color: usShipColor[entry.shipsToUS],
+                                            fontWeight: entry.shipsToUS === 'No' ? 500 : 400
+                                        }}
+                                        value={usShipText[entry.shipsToUS]}/>
+                        }
+                    </div>
+                }
+
+                {entry.potContents &&
+                    <Stack direction='row' spacing={1} sx={{width: '100%', flexWrap: 'wrap', marginTop: '4px'}}>
+                        <FieldValue name='Contents' textStyle={{fontSize: contentsFontSize}} value={
+                                                                                                  <ReactMarkdown
+                                                                                                     rehypePlugins={[[rehypeExternalLinks, {
+                                                                                                         target: '_blank',
+                                                                                                         rel: ['nofollow', 'noopener', 'noreferrer']
+                                                                                                     }]]}>
+                                                                                                     {entry.potContents}
+                                                                                                 </ReactMarkdown>
+                                                                                             }/>
+                    </Stack>
+                }
+                {!!entry.media?.length &&
+                    <FieldValue value={
+                                    <RaffleImageGallery entry={entry}/>
+                                }/>
+                }
+                {!!entry.links?.length &&
+                    <FieldValue name='Links' value={
+                                                 <Stack direction='row' spacing={1} sx={{flexWrap: 'wrap'}}>
+                                                     {entry.links.map(({title, url}, index) =>
+                                                         <Button
+                                                             key={index}
+                                                             href={url}
+                                                             target='_blank'
+                                                             rel='noopener noreferrer'
+                                                             color='secondary'
+                                                             variant='outlined'
+                                                             sx={{textTransform: 'none'}}
+                                                             style={{margin: 4}}
+                                                         >
+                                                             {title}
+                                                         </Button>
+                                                     )}
+                                                 </Stack>
+                                             }/>
+                }
+                {!expandAll &&
+                    <Tracker feature='raflPot' id={entry.id}/>
+                }
+            </AccordionDetails>
+            <AccordionActions disableSpacing style={{backgroundColor: '#222'}}>
+                <div style={{display: 'flex', width: '100%'}}>
+                    <div style={{flexGrow: 1, justifyItems: 'left'}}>
+                        <CopyEntryIdButton entry={entry}/>
+                        <LogEntryButton entry={entry}/>
+                    </div>
+                    <div style={{display: 'flex'}}>
+                        <CopyPotTextButton entry={entry}/>
+                        {showFull &&
+                            <CopyLinkToRaflPotButton entry={entry}/>
+                        }
+                    </div>
+                </div>
+            </AccordionActions>
+
         </Accordion>
     )
 }

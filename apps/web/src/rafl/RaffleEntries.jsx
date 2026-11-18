@@ -32,7 +32,7 @@ function RaffleEntries({drawing = false}) {
             <RaffleSearchBar label='Raffle Pots' sortValues={raffleSortFields} entryCount={visibleEntries.length}/>
 
             {!showAdvancedSearch &&
-                <ExposedFilterSelect field={'category'}/>
+                <ExposedFilterSelect field={'category'} sequence={['Locks', 'Gift certificates', 'Picks']}/>
             }
 
             <AdvancedFilters entryType={'Pot'}/>

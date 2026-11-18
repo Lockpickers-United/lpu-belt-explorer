@@ -3,7 +3,7 @@ import FilterChip from '../filters/FilterChip.jsx'
 import FilterContext from '../context/FilterContext.jsx'
 import DataContext from '../context/DataContext.jsx'
 
-export default function ExposedFilterSelect({field = 'category'}) {
+export default function ExposedFilterSelect({field, sequence = []}) {
 
     const {filterFields} = useContext(FilterContext)
     const filterField = filterFields.find(f => f.fieldName === field)
@@ -20,14 +20,22 @@ export default function ExposedFilterSelect({field = 'category'}) {
         }
         return acc
     }, {})
-    const fieldValues = Object.keys(values).sort((a, b) => values[b] - values[a])
+    const fieldValues = Object.keys(values).sort((a, b) => {
+        const aIndex = sequence?.indexOf(a) ?? -1
+        const bIndex = sequence?.indexOf(b) ?? -1
+        if (aIndex === -1 && bIndex === -1) return values[b] - values[a]
+        if (aIndex === -1) return 1
+        if (bIndex === -1) return -1
+        return aIndex - bIndex
+    })
 
     return (
         <div style={{
             padding: '16px 8px', marginBottom: 12
         }}>
             <div style={{fontSize: '1.1rem', fontWeight: 700, marginBottom: 6, width: '100%', textAlign: 'center'}}>
-                {filterField.label.toUpperCase()}</div>
+                {filterField.label.toUpperCase()}
+            </div>
             <div style={{
                 display: 'flex', flexDirection: 'row', gap: 12,
                 justifyContent: 'center', padding: 0, flexWrap: 'wrap'

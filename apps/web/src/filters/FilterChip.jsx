@@ -97,7 +97,7 @@ function FilterChip({field, value, label = value, mode, clickable = true, style 
                         borderRadius: 2,
                         padding: '4px 12px',
                         cursor: 'pointer',
-                        textTransform: 'uppercase'
+                        textTransform: 'uppercase',
                     }}
                     sx={{
                         '&:hover': {
