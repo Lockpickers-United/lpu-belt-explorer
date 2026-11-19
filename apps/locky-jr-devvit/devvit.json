@@ -21,9 +21,13 @@
   },
   "settings": {
     "subreddit": {
-      "installationDiscordWebhookUrl": {
+      "installationWebhookUrl": {
         "type": "string",
-        "label": "Discord Webhook URL"
+        "label": "Webhook URL"
+      },
+      "webhookApiKey": {
+        "type": "string",
+        "label": "Webhook API Key"
       }
     }
   },

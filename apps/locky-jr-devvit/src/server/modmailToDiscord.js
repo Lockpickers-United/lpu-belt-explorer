@@ -75,7 +75,7 @@ export async function sendModMailToWebhook(event, reddit) {
         return
     }
 
-    const webhook = await settings.get('installationDiscordWebhookUrl')
+    const webhook = await settings.get('installationWebhookUrl')
 
     if (!webhook) {
         throw new Error('Discord webhook URL not configured')

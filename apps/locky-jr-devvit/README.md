@@ -4,11 +4,27 @@
 
 **r/lockpicking** is maintained by the organization LockPickers United (LPU) which uses a "karate belt" like system for ranking members based on proven skills. Each belt is represented by a flair, which grow increasingly difficult to earn. Users apply for belt recognition on Reddit via ModMail. The belt system ties together the community through shared skill milestones across Reddit, Discord, and our many sites (most notably https://lpubelts.com/).
 
-We are working on integrating those platforms, and this Devvit app is part of a phased development plan, starting with:
+We are working on integrating those platforms, and this Devvit app is part of a phased development plan. Version 0.0.7 has been approved and is running as expected in r/lockpicking. The next phase is:
 
-**Have modmail messages that match a specific structure trigger a webhook call to Discord.**
+**Have modmail messages that match a specific structure trigger a webhook call to our API server (rather than Discord).**
 
-> When users send modmail with the structure `@lockyjr request <Belt Color> <Name of Lock> <link to photo or video evidence>`, the app forwards the modmail details to an admin only channel on discord. That message is then picked up and added to our request queue along with requests submitted on Discord (with the same required structure) and website. The admin team can then review and approve/deny the request, flagging it for follow up on Reddit.
+The only change in this phase is to send the exact same modmail-triggered webhook call to our API server (api.lpubelts.com) instead of discord.com
+
+https://discord.com/api/webhooks/1562548930791739543/a4NDGt9L6-XgwbA90Rrp5Wwof0PNDReyuyGF-kfAHE79wkD5m1oRE13-GlqNJEhaAU8q
+
+```
+{
+	source: 'Reddit',
+	platform: 'Reddit',
+	belt: 'Blue Belt',
+	username: 'lpubelts',
+	currentBelt: 'unknown',
+	requestId: '3vm6d4',
+	messageContent: '@lockyjr request blue https://youtu.be/nQ0oRq8Fd9Y?is=NTbbda_Ale3iFg8z'
+}
+```
+
+> When users send modmail with the structure `@lockyjr request <Belt Color> <Name of Lock> <link to photo or video evidence>`, the app forwards the modmail details to an admin only channel on discord. That message is then picked up and added to our request queue along with requests submitted on Discord (with the same required structure) and website. The admin team can then review and approve/deny the request, flagging it for followup on Reddit.
 
 The app has been tested and is running smoothly at https://www.reddit.com/r/locky_jr_dev/?playtest=locky-jr
 

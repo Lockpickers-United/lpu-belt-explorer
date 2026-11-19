@@ -10,7 +10,7 @@ export default function LogEntryButton({entry}) {
     const {accessInfo} = useAccess()
 
     const handleClick = useCallback(async () => {
-        const name =  entryName(entry)
+        const name = entryName(entry)
         jsonIt(name, entry)
     }, [entry])
 

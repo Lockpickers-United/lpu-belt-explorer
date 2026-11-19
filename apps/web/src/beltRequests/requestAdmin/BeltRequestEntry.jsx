@@ -31,6 +31,7 @@ import YouTubeIcon from '@mui/icons-material/YouTube'
 import PhotoSizeSelectActualIcon from '@mui/icons-material/PhotoSizeSelectActual'
 import Box from '@mui/material/Box'
 import Link from '@mui/material/Link'
+import LogEntryButton from '../../entries/LogEntryButton.jsx'
 
 function BeltRequestEntry({entry, expanded, onExpand}) {
     const {
@@ -272,6 +273,7 @@ function BeltRequestEntry({entry, expanded, onExpand}) {
                     }}>
                         <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
                             <div><CopyEntryIdButton entry={entry}/></div>
+                            <div><LogEntryButton entry={entry}/></div>
                             <div>
                                 <Button onClick={handleShowDetails} variant='text'
                                         style={{color: '#4d7ce3', marginRight: 16}}>
