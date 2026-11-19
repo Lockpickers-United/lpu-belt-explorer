@@ -9,6 +9,7 @@ import FormControlLabel from '@mui/material/FormControlLabel'
 import FormGroup from '@mui/material/FormGroup'
 
 export default function ApproveDenyButton({entry, action, handleReply, processing}) {
+
     const {isMobile} = useWindowSize()
     const [anchorEl, setAnchorEl] = useState(null)
     const open = Boolean(anchorEl)
@@ -18,7 +19,14 @@ export default function ApproveDenyButton({entry, action, handleReply, processin
         setAnchorEl(event.currentTarget)
     }, [])
 
-    const [replyText, setReplyText] = useState(action === 'approve' ? getDefaultMessage(entry.belt) : '')
+
+    const [replyText, setReplyText] = useState(
+        action === 'approve'
+            ? entry.platform === 'Reddit'
+                ? getDefaultMessage(entry.belt).replace(/:\w*:/i, '')
+                : getDefaultMessage(entry.belt)
+            : ''
+    )
     const [includeRequirements, setIncludeRequirements] = useState(false)
 
     const handleClose = useCallback(() => {
@@ -135,7 +143,7 @@ function getDefaultMessage(belt) {
         'Purple Belt': ' Big milestone! :purplebelt:',
         'Brown Belt': ' Great work! :brownbelt:',
         'Red Belt': ' When Black? :redbelt:',
-        'Black Belt': ' What a tremendous accomlishment. :lpu:'
+        'Black Belt': ' What a tremendous accomplishment. :lpu:'
     }
     return defaultMessages[belt] || 'Nice work!'
 }
