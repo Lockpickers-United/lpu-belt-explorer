@@ -582,9 +582,9 @@
     ],
     "name": "ASSA Twin Exclusive, Twin 6000",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 132,
+    "views": 133,
     "lastUpdated": "2025-03-19T01:20:51.391Z",
-    "popularityIndex": 132,
+    "popularityIndex": 133,
     "scorecardCount": 60
   },
   "55511995": {
@@ -1371,12 +1371,12 @@
     ],
     "name": "Any lock with any tool",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 552,
+    "views": 553,
     "lastUpdated": "2025-03-19T15:44:57.276Z",
     "lockingMechanisms": [
       "Various"
     ],
-    "popularityIndex": 552,
+    "popularityIndex": 553,
     "scorecardCount": 123
   },
   "07034c0f": {
@@ -1431,9 +1431,9 @@
     ],
     "name": "Any Acrylic Padlock",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 1489,
+    "views": 1491,
     "lastUpdated": "2025-03-18T23:29:31.267Z",
-    "popularityIndex": 1489,
+    "popularityIndex": 1491,
     "scorecardCount": 108
   },
   "3ac43ea8": {
@@ -1509,12 +1509,12 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/52754853512_9a50b57915_o.jpg"
       }
     ],
-    "views": 478,
+    "views": 479,
     "lastUpdated": "2025-03-19T15:44:57.276Z",
     "lockingMechanisms": [
       "Various"
     ],
-    "popularityIndex": 478,
+    "popularityIndex": 479,
     "scorecardCount": 34
   },
   "5dc117cd": {
@@ -1713,11 +1713,11 @@
     ],
     "name": "Master Lock #1",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 588,
+    "views": 590,
     "lastUpdated": "2025-03-19T01:20:51.353Z",
     "modelNum": "1",
-    "popularityIndex": 588,
-    "scorecardCount": 69
+    "popularityIndex": 590,
+    "scorecardCount": 70
   },
   "38289b36": {
     "id": "38289b36",
@@ -2196,11 +2196,11 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/52728701687_2a2930156c_o.jpg"
       }
     ],
-    "views": 191,
+    "views": 192,
     "lastUpdated": "2025-03-19T01:20:51.354Z",
     "modelNum": "7",
-    "popularityIndex": 191,
-    "scorecardCount": 13
+    "popularityIndex": 192,
+    "scorecardCount": 14
   },
   "79adf554": {
     "id": "79adf554",
@@ -5142,9 +5142,9 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/53955594897_4a6354e9d3_o.jpg"
       }
     ],
-    "views": 269,
+    "views": 271,
     "lastUpdated": "2025-03-19T01:20:51.356Z",
-    "popularityIndex": 269,
+    "popularityIndex": 271,
     "scorecardCount": 24
   },
   "d4299b24": {
@@ -5811,11 +5811,11 @@
     ],
     "name": "ABUS 55/40",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 1090,
+    "views": 1091,
     "lastUpdated": "2025-03-19T01:20:51.356Z",
     "modelNum": "55.4",
-    "popularityIndex": 1090,
-    "scorecardCount": 152
+    "popularityIndex": 1091,
+    "scorecardCount": 153
   },
   "d7188e81": {
     "id": "d7188e81",
@@ -6087,11 +6087,11 @@
     ],
     "name": "ABUS 85",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 162,
+    "views": 163,
     "lastUpdated": "2025-03-19T01:20:51.356Z",
     "modelNum": "85",
     "version": "40mm or larger (≥5 pins)",
-    "popularityIndex": 162,
+    "popularityIndex": 163,
     "scorecardCount": 20
   },
   "d7479fd6": {
@@ -6108,7 +6108,7 @@
     ],
     "name": "ABUS Buffo (Ecoline)",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 28,
+    "views": 29,
     "lastUpdated": "2025-03-19T15:44:57.279Z",
     "media": [
       {
@@ -6145,7 +6145,7 @@
         "url": "https://wiki.koksa.org/ABUS_BUFFO"
       }
     ],
-    "popularityIndex": 28,
+    "popularityIndex": 29,
     "scorecardCount": 5
   },
   "afd3e51d": {
@@ -8243,7 +8243,7 @@
     ],
     "name": "Sargent Mortise",
     "dateAdded": "2023-02-21T23:16:05.000Z",
-    "views": 74,
+    "views": 75,
     "lastUpdated": "2025-03-19T01:20:51.364Z",
     "media": [
       {
@@ -8277,7 +8277,7 @@
     "relatedIds": [
       "8f3f18d8"
     ],
-    "popularityIndex": 74,
+    "popularityIndex": 75,
     "scorecardCount": 14
   },
   "74f65a9c": {
@@ -12023,7 +12023,7 @@
       "Unguttable"
     ],
     "popularityIndex": 133,
-    "scorecardCount": 22
+    "scorecardCount": 23
   },
   "bd9dc1e4": {
     "id": "bd9dc1e4",
@@ -14664,7 +14664,7 @@
     "lockingMechanisms": [
       "Pin-tumbler"
     ],
-    "views": 84,
+    "views": 85,
     "lastUpdated": "2025-03-19T15:44:57.286Z",
     "media": [
       {
@@ -14740,7 +14740,7 @@
         "fullSizeUrl": "https://live.staticflickr.com/65535/52907089430_484fd0810a_o.jpg"
       }
     ],
-    "popularityIndex": 84,
+    "popularityIndex": 85,
     "scorecardCount": 7
   },
   "b8f4f5f5": {
@@ -17390,7 +17390,7 @@
       "f133510b"
     ],
     "popularityIndex": 43,
-    "scorecardCount": 14
+    "scorecardCount": 15
   },
   "08a5799e": {
     "id": "08a5799e",
@@ -28879,7 +28879,7 @@
       }
     ],
     "popularityIndex": 15,
-    "scorecardCount": 11
+    "scorecardCount": 12
   },
   "8e81c2c6": {
     "id": "8e81c2c6",
@@ -31438,7 +31438,7 @@
       }
     ],
     "popularityIndex": 10,
-    "scorecardCount": 11,
+    "scorecardCount": 12,
     "features": [
       "Flickr Update"
     ]
@@ -34109,7 +34109,7 @@
     ],
     "searchKeywords": "multilock, mtl",
     "popularityIndex": 158,
-    "scorecardCount": 80
+    "scorecardCount": 81
   },
   "0ae75ea0": {
     "id": "0ae75ea0",
@@ -37965,9 +37965,9 @@
     "features": [
       "High pin count"
     ],
-    "views": 24,
+    "views": 25,
     "lastUpdated": "2025-03-18T23:29:31.280Z",
-    "popularityIndex": 24,
+    "popularityIndex": 25,
     "scorecardCount": 3
   },
   "c8e86f14": {
@@ -42332,7 +42332,7 @@
       }
     ],
     "popularityIndex": 38,
-    "scorecardCount": 11
+    "scorecardCount": 12
   },
   "48cf387f": {
     "id": "48cf387f",
@@ -45179,12 +45179,12 @@
     "features": [
       "High pin count"
     ],
-    "views": 58,
+    "views": 57,
     "lastUpdated": "2025-03-19T15:44:57.314Z",
     "relatedIds": [
       "10968d37"
     ],
-    "popularityIndex": 58,
+    "popularityIndex": 57,
     "scorecardCount": 14
   },
   "10968d37": {
@@ -48638,7 +48638,7 @@
     "name": "ALPHA 1000",
     "dateAdded": "2023-03-02T19:05:25.000Z",
     "lastUpdated": "2025-03-19T15:44:57.277Z",
-    "views": 17,
+    "views": 18,
     "media": [
       {
         "title": "By: PandaFrog",
@@ -48658,7 +48658,7 @@
       "9423b4a4",
       "bac43ba7"
     ],
-    "popularityIndex": 17,
+    "popularityIndex": 18,
     "scorecardCount": 5
   },
   "bac43ba7": {
@@ -56755,7 +56755,7 @@
       "ec0a2659"
     ],
     "popularityIndex": 10,
-    "scorecardCount": 4,
+    "scorecardCount": 5,
     "currentBeltDate": "2026-08-30T12:00:00.000Z"
   },
   "cadec525": {
@@ -60443,7 +60443,7 @@
       "High pin count"
     ],
     "popularityIndex": 10,
-    "scorecardCount": 9,
+    "scorecardCount": 10,
     "views": 10
   },
   "476995cc": {
@@ -62187,7 +62187,7 @@
       "High pin count"
     ],
     "popularityIndex": 23,
-    "scorecardCount": 10,
+    "scorecardCount": 11,
     "views": 23
   },
   "2eeb9bee": {
@@ -63394,7 +63394,8 @@
     "name": "ASSA Twin 6000",
     "dateAdded": "2026-08-06T03:59:39.972Z",
     "popularityIndex": 2,
-    "views": 2
+    "views": 2,
+    "scorecardCount": 1
   },
   "f777a3f2": {
     "id": "f777a3f2",
@@ -63816,9 +63817,9 @@
     ],
     "name": "Pinball PickProof (Segal)",
     "dateAdded": "2026-08-14T23:56:42.171Z",
-    "popularityIndex": 1,
+    "popularityIndex": 2,
     "scorecardCount": 1,
-    "views": 1
+    "views": 2
   },
   "199e2e7e": {
     "id": "199e2e7e",
@@ -66092,8 +66093,8 @@
     "name": "Potent Pump Lock",
     "currentBeltDate": "2026-10-12T23:33:54.102Z",
     "dateAdded": "2026-10-12T23:33:54.102Z",
-    "popularityIndex": 2,
-    "views": 2
+    "popularityIndex": 1,
+    "views": 1
   },
   "7df18b83": {
     "id": "7df18b83",
