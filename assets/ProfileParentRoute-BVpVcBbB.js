@@ -1,1 +1,0 @@
-import"./rolldown-runtime-B0Z9INg1.js";import{ot as e,q as t}from"./utils-CEbx8FH7.js";import{f as n,r}from"./chunk-OB3PAWPO-K7j71F7m.js";import{n as i}from"./ProfileContext-D0hno-dc.js";e();var a=t();function o(){let{userId:e}=n();return(0,a.jsx)(i,{userId:e,children:(0,a.jsx)(r,{})})}export{o as default};
