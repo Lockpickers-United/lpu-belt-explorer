@@ -1,5 +1,35 @@
 [
   {
+    "id": "2027-001",
+    "year": 2027,
+    "potNumber": 0,
+    "title": "2027 all-inclusive Amvgaert pass",
+    "winnerCount": 1,
+    "displayName": "",
+    "description": "A big chunk of change to a store with a giant array of locks to choose from. Honestly, you may end up with too many locks from this, be careful.",
+    "descriptionContinued": "",
+    "potContents": "$250 store credit to [Adam's Lock Store](https://docs.google.com/spreadsheets/d/1_Dk619Y3Zj_zsLHKLxGZlRdgSUH1pF0u2BxFScgJPXc/edit?gid=32499356#gid=32499356)",
+    "category": [
+      "Gift certificates"
+    ],
+    "tags": [
+      "Gift certificates"
+    ],
+    "keywords": "",
+    "contributedBy": [
+      "Amvgaert"
+    ],
+    "country": [
+      "USA"
+    ],
+    "shippingInfo": "Digital prize",
+    "splitShipping": "shippingSplit",
+    "splitShippingBoolean": false,
+    "shippingType": "Digital prize",
+    "shipsToUS": "Yes",
+    "dateAdded": "20260110"
+  },
+  {
     "id": "2026-052",
     "year": 2026,
     "potNumber": 1,
