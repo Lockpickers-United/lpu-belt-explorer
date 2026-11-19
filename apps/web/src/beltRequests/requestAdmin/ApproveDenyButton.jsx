@@ -42,6 +42,7 @@ export default function ApproveDenyButton({entry, action, handleReply, processin
         } else {
             handleReply && handleReply(action, fullReply, event)
         }
+        setReplyText('')
     }, [action, entry.belt, handleClose, handleReply, includeRequirements, replyText])
 
     return (
