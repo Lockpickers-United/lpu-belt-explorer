@@ -14,8 +14,6 @@ export default function AdvancedFilterField({group = {}, onChange}) {
     const isFilterFieldVisible = useFilterFieldVisibility()
     const {fieldName = '', matchType = 'Is'} = group
 
-    const [filterField, setFilterField] = useState(fieldName)
-
     const options = useMemo(() => filterFields
         .filter(isFilterFieldVisible)
         .filter(field => {
@@ -24,7 +22,6 @@ export default function AdvancedFilterField({group = {}, onChange}) {
 
     const handleSelect = useCallback((event) => {
         const newField = event.target.value
-        setFilterField(newField)
         onChange && onChange({fieldName: newField, values: []})
         setTimeout(() => document.activeElement.blur())
     }, [onChange])
@@ -54,7 +51,7 @@ export default function AdvancedFilterField({group = {}, onChange}) {
                     <FormControl style={{width: 200, marginRight: 0, marginTop: 8}} size='small'>
                         <InputLabel color='info'>Filter</InputLabel>
                         <Select
-                            value={filterField}
+                            value={fieldName}
                             label='Filter'
                             onChange={handleSelect}
                             color='info'

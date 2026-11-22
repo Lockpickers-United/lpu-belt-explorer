@@ -4,7 +4,7 @@ import DBContext from '../app/DBContext'
 import Tracker from '../app/Tracker'
 import collectionOptions from '../data/collectionTypes'
 import allEntries from '../data/data.json'
-import {lockAdditionalFilterKeys, lockFilterFields} from '../data/filterFields'
+import {lockAdditionalFilterKeys, profileFilterFields} from '../data/filterFields'
 import {lockSortFields} from '../data/sortFields'
 import {DataProvider} from '../locks/LockDataProvider'
 import {FilterProvider} from '../context/FilterContext'
@@ -93,7 +93,7 @@ function ProfileRoute() {
     )
 
     return (
-        <FilterProvider filterFields={lockFilterFields} additionalFilterKeys={lockAdditionalFilterKeys}>
+        <FilterProvider filterFields={profileFilterFields} additionalFilterKeys={lockAdditionalFilterKeys}>
             <DataProvider allEntries={entries} profile={profile}>
                 <LockListProvider>
                     <Nav title={title} extras={nav}/>

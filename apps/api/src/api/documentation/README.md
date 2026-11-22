@@ -513,3 +513,30 @@ curl \
 - Use live Firebase reads only when freshness matters.
 - Add an OpenAPI path and schema entry when adding an endpoint.
 - Add or update a sample response when changing an endpoint shape.
+
+### Reddit belt request webhook
+
+`POST /api/v1/belt-requests/reddit` accepts a flat JSON object (not Discord embeds).
+Configure an independently generated, high-entropy `REDDIT_BELT_REQUEST_API_KEY` in
+owner-managed server runtime configuration. Send it as `Authorization: Bearer <key>`
+from Devvit's secret setting over HTTPS. This key authorizes only this ingestion
+endpoint and does not grant Firebase-user or administrative access. Missing server
+configuration disables the endpoint (503); missing/incorrect credentials return 401.
+Never put the key in URLs or payloads. Rotate by updating both server and Devvit.
+
+See `../requirements/samples/reddit-belt-request.json` for the payload. Optional
+`syncTo: "Discord"` and `syncUsername` must be supplied together. Unknown fields,
+including caller-supplied IDs and status, are rejected. Message content is limited
+to 10,000 characters. Responses use `private, no-store` and return
+`{"data":{"id":"reddit-<hash>","created":true}}` (201), or `created:false` (200)
+for an identical validated payload. Validation errors return 400. Storage failures
+return 503; retry the identical payload safely. A changed payload creates a new
+record even within the same modmail conversation; requestId identifies the
+conversation, not a unique message.
+
+The service uses the configured Firebase database and creates `belt-requests`
+records with `status: incoming`, revision 1, ISO timestamps, and a derived
+`reddit-<lowercase username>` userId. The existing LockyJr Firestore listener
+handles replacement of older requests and transitions to open. A success response
+confirms persistence, not completion of bot processing. The bot must watch the
+same database. This phase does not change Devvit or deploy runtime configuration.

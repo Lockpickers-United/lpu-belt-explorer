@@ -76,9 +76,10 @@ export async function sendModMailToWebhook(event, reddit) {
     }
 
     const webhook = await settings.get('installationWebhookUrl')
+    const apiKey = await settings.get('webhookApiKey');
 
     if (!webhook) {
-        throw new Error('Discord webhook URL not configured')
+        throw new Error('Webhook URL not configured')
     }
 
     const beltColor = beltDetails[
@@ -102,7 +103,7 @@ export async function sendModMailToWebhook(event, reddit) {
         ]
         : []
 
-    const payload = {
+    const _discordPayload = {
         ...(rolePing ? {content: `<@&${rolePing}>`} : {}),
         embeds: [{
             author: {
@@ -144,32 +145,50 @@ export async function sendModMailToWebhook(event, reddit) {
         }]
     }
 
-    const response = await fetch(webhook, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(payload)
-    })
+    const payload = {
+      source: 'Reddit',
+      platform: 'Reddit',
+      belt: requestedBelt,
+      username: conversation?.participant?.name ?? authorName,
+      currentBelt: event.messageAuthor?.flair ?? 'unknown',
+      requestId: conversationId.replace(/^ModmailConversation_/, ''),
+      messageContent: truncate(body) || '(empty)',
+    }
+
+    if (syncMatch) {
+      payload.syncUsername = syncMatch;
+      payload.syncTo = 'Discord';
+    }
+
+  console.log('Sending to webhook:', webhook);
+
+  const response = await fetch(webhook, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${apiKey}`,
+      },
+      body: JSON.stringify(payload),
+    });
 
     if (!response.ok) {
-        console.error('Discord webhook failed:', response.status)
+        console.error('Webhook failed:', response.status)
 
         try {
             await reddit.modMail.reply({
                 conversationId,
                 isInternal: true,
                 isAuthorHidden: false,
-                body: `Error sending to Discord, request not entered. Status: ${response.status}`
+                body: `Error sending request, request not entered. Status: ${response.status}`
             })
         } catch (error) {
             console.error('Failed to add moderator note:', error)
         }
 
-        throw new Error(`Discord webhook HTTP ${response.status}`)
+        throw new Error(`Webhook HTTP ${response.status}`)
     }
 
-    console.log('Belt request forwarded to Discord', {
+    console.log('Belt request forwarded', {
         conversationId,
         messageId,
         requestedBelt

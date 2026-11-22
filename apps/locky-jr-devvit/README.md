@@ -6,11 +6,11 @@
 
 We are working on integrating those platforms, and this Devvit app is part of a phased development plan. Version 0.0.7 has been approved and is running as expected in r/lockpicking. The next phase is:
 
-**Have modmail messages that match a specific structure trigger a webhook call to our API server (rather than Discord).**
+*Have modmail messages that match a specific structure trigger a webhook call to our API server (rather than Discord).*
 
-The only change in this phase is to send the exact same modmail-triggered webhook call to our API server (api.lpubelts.com) instead of discord.com
+**The only change in this phase is to send the exact same modmail-triggered webhook call to our dev API server (api-dev.lpubelts.com) instead of discord.com**
 
-https://discord.com/api/webhooks/1562548930791739543/a4NDGt9L6-XgwbA90Rrp5Wwof0PNDReyuyGF-kfAHE79wkD5m1oRE13-GlqNJEhaAU8q
+Sample webhook payload:
 
 ```
 {
@@ -24,9 +24,7 @@ https://discord.com/api/webhooks/1562548930791739543/a4NDGt9L6-XgwbA90Rrp5Wwof0P
 }
 ```
 
-> When users send modmail with the structure `@lockyjr request <Belt Color> <Name of Lock> <link to photo or video evidence>`, the app forwards the modmail details to an admin only channel on discord. That message is then picked up and added to our request queue along with requests submitted on Discord (with the same required structure) and website. The admin team can then review and approve/deny the request, flagging it for followup on Reddit.
-
-The app has been tested and is running smoothly at https://www.reddit.com/r/locky_jr_dev/?playtest=locky-jr
+> When users send modmail with the structure `@lockyjr request <Belt Color> <Name of Lock> <link to photo or video evidence>`, the app forwards the modmail details to our API server. That message is then picked up and added to our request queue along with requests submitted on Discord (with the same required structure) and website. The admin team can then review and approve/deny the request, flagging it for followup on Reddit.
 
 ## App overview
 

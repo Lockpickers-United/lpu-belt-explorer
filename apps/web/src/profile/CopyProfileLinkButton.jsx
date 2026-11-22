@@ -3,23 +3,27 @@ import IconButton from '@mui/material/IconButton'
 import Tooltip from '@mui/material/Tooltip'
 import {enqueueSnackbar} from 'notistack'
 import React, {useCallback, useContext} from 'react'
-import {useParams} from 'react-router-dom'
+import {useParams, useSearchParams} from 'react-router-dom'
 import AuthContext from '../app/AuthContext'
 
 function CopyProfileLinkButton({page, safeName, mostPopular}) {
     const {userId} = useParams()
     const {user} = useContext(AuthContext)
-
+    const [searchParams, _setSearchParams] = useSearchParams()
+    searchParams.set('name', safeName)
+    const searchParamsString = searchParams.toString().length
+        ? `?${searchParams.toString()}`
+        : ''
     const hostname = `${window.location.protocol}//${window.location.host}`
     const handleClick = useCallback(async () => {
         const link = page === 'collection'
-            ? `${hostname}/#/profile/${userId || user?.uid}?name=${safeName}`
+            ? `${hostname}/#/profile/${userId || user?.uid}${searchParamsString}`
             : !mostPopular
-                ? `${hostname}/#/profile/${userId || user?.uid}/${page}?name=${safeName}`
-                : `${hostname}/#/profile/${userId || user?.uid}/scorecard/popular?name=${safeName}`
+                ? `${hostname}/#/profile/${userId || user?.uid}/${page}${searchParamsString}`
+                : `${hostname}/#/profile/${userId || user?.uid}/scorecard/popular${searchParamsString}`
         await navigator.clipboard.writeText(link)
-        enqueueSnackbar('Link copied to clipboard.')
-    }, [page, hostname, userId, user?.uid, safeName, mostPopular])
+        enqueueSnackbar('Profile link copied to clipboard.')
+    }, [page, hostname, userId, user?.uid, mostPopular, searchParamsString])
 
     if (!user) return null
     return (

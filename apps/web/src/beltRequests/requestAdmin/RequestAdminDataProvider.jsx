@@ -13,12 +13,6 @@ export function RequestAdminDataProvider({children}) {
     const {filters: allFilters, activeFilterGroups} = useContext(FilterContext)
     const {search, sort, expandAll} = allFilters
 
-    const displayStatuses = {open: 'Open',
-        'checked-out': 'Checked out',
-        'processing-approve': 'Processing Approval',
-        'processing-deny': 'Processing Deny'
-    }
-
     const mappedEntries = useMemo(() => {
         return beltRequests
             .map(request => {
@@ -36,7 +30,7 @@ export function RequestAdminDataProvider({children}) {
                     )
                 }
             })
-    }, [beltRequests, displayStatuses])
+    }, [beltRequests])
 
     const searchedEntries = useMemo(() => {
         return searchEntriesForText(search, mappedEntries)
@@ -71,6 +65,12 @@ export function RequestAdminDataProvider({children}) {
             {children}
         </DataContext.Provider>
     )
+}
+
+const displayStatuses = {open: 'Open',
+    'checked-out': 'Checked out',
+    'processing-approve': 'Processing Approval',
+    'processing-deny': 'Processing Deny'
 }
 
 function initialCap(str) {

@@ -13,7 +13,7 @@
     "dev:host": "vite --host",
     "build": "NODE_ENV=production vite build",
     "build:test": "vite build --mode test",
-    "build-dev": "NODE_ENV=production npm run lint && npm run versionFile && vite build --mode dev",
+    "build-dev": "NODE_ENV=development npm run lint && npm run versionFile && vite build --mode dev",
     "build-dev-import": "NODE_ENV=production npm run versionFile && npm run import && vite build --mode dev && npm run copyFiles",
     "preview": "vite preview",
     "lint": "eslint \"./src/**\" \"./scripts/**\"",

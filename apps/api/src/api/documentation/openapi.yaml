@@ -22,6 +22,38 @@ tags:
   - name: Users
     description: Firebase-backed user profile data.
 paths:
+  /belt-requests/reddit:
+    post:
+      tags: [Reddit]
+      summary: Receive a Reddit belt request from LockyJr Devvit
+      description: Uses the dedicated REDDIT_BELT_REQUEST_API_KEY as a Bearer token. Writes an incoming record for the existing bot listener. Identical validated payloads are deduplicated without resetting review status.
+      security: [{redditWebhookKey: []}]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              required: [source, platform, belt, username, currentBelt, requestId, messageContent]
+              properties:
+                source: {const: Reddit}
+                platform: {const: Reddit}
+                belt: {type: string, enum: [White Belt, Yellow Belt, Orange Belt, Green Belt, Blue Belt, Purple Belt, Brown Belt, Red Belt, Black Belt, 1st Dan, 2nd Dan, 3rd Dan, 4th Dan, 5th Dan, 6th Dan, 7th Dan, 8th Dan, 9th Dan, 10th Dan, 11th Dan, 12th Dan, 13th Dan, 14th Dan, 15th Dan, 16th Dan, 17th Dan, 18th Dan, 19th Dan, 20th Dan]}
+                username: {type: string, pattern: '^[A-Za-z0-9_-]{1,32}$'}
+                currentBelt: {type: string, minLength: 1, maxLength: 128}
+                requestId: {type: string, pattern: '^[a-zA-Z0-9]{1,64}$'}
+                messageContent: {type: string, minLength: 1, maxLength: 10000}
+                syncTo: {const: Discord, description: Required together with syncUsername.}
+                syncUsername: {type: string, minLength: 1, maxLength: 100}
+      responses:
+        '201':
+          description: Created; returns data containing id and created true. Private, no-store.
+        '200':
+          description: Duplicate; returns data containing existing id and created false. Private, no-store.
+        '400': {description: Invalid payload (belt_request_invalid).}
+        '401': {description: Missing or invalid dedicated Bearer key (unauthorized).}
+        '503': {description: Key unconfigured (belt_request_webhook_disabled) or storage unavailable (belt_request_storage_unavailable). Retry storage failures with the identical payload.}
   /reddit/oauth/start:
     post:
       tags: [Reddit]
@@ -608,6 +640,10 @@ paths:
         '503': {$ref: '#/components/responses/Error'}
 components:
   securitySchemes:
+    redditWebhookKey:
+      type: http
+      scheme: bearer
+      description: Dedicated Reddit webhook API key; not a Firebase ID token.
     firebaseBearerAuth:
       type: http
       scheme: bearer

@@ -22,6 +22,15 @@ export const lockFilterFields = [
     {label: 'Collection', fieldName: 'collection', sort: collectionFieldSort, userBased: true}
 ]
 
+export const profileFilterFields = [
+    {label: 'Make', fieldName: 'makes'},
+    {label: 'Locking Mechanism', fieldName: 'lockingMechanisms'},
+    {label: 'Belt', fieldName: 'filterBelts', sort: beltSort},
+    {label: 'Features', fieldName: 'features'},
+    {label: 'Content', fieldName: 'content'},
+    {label: 'Collection', fieldName: 'collection', sort: collectionFieldSort}
+]
+
 export const beltRequestFilterFields = [
     {label: 'Status', fieldName: 'filterStatus'},
     {label: 'Username', fieldName: 'username'},

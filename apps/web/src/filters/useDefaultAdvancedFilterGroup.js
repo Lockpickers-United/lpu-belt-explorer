@@ -10,11 +10,11 @@ export default function useDefaultAdvancedFilterGroup({
 }) {
     const {activeFilterGroups, setAdvancedFilterGroups} = useContext(FilterContext)
     const location = useLocation()
-    const initializedLocationKeyRef = useRef()
+    const initializedPathnameRef = useRef()
 
     useEffect(() => {
-        if (initializedLocationKeyRef.current === location.key) return
-        initializedLocationKeyRef.current = location.key
+        if (initializedPathnameRef.current === location.pathname) return
+        initializedPathnameRef.current = location.pathname
         if (activeFilterGroups().length > 0) return
 
         setAdvancedFilterGroups([{
@@ -23,5 +23,5 @@ export default function useDefaultAdvancedFilterGroup({
             operator,
             values: [value]
         }])
-    }, [activeFilterGroups, fieldName, location.key, matchType, operator, setAdvancedFilterGroups, value])
+    }, [activeFilterGroups, fieldName, location.pathname, matchType, operator, setAdvancedFilterGroups, value])
 }
