@@ -27,11 +27,13 @@ import {setDeepUnique, setDeepPush} from '../src/util/setDeep.js'
 import flickrReport from '../src/data/flickr-replacement-unique-ids.json' with {type: 'json'}
 import path, {dirname} from 'path'
 import {fileURLToPath} from 'url'
-
-const importRaflData = true
+import dotenv from 'dotenv'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const dataDir = path.resolve(__dirname, '../src/data')
+dotenv.config({path: path.resolve(__dirname, '../.env.keys'), quiet: true})
+
+const importRaflData = true
 
 // Helper to load and validate a file
 const importValidate = async (tab, schema) => {
@@ -87,7 +89,7 @@ const raflMediaData = importRaflData ? await importValidate('RAFL Media', raflMe
 const raflCharityData = importRaflData ? await importValidate('RAFL Charities', raflCharitySchema) : []
 
 // Load previous JSON for recently updated checks
-const originalData = JSON.parse(fs.readFileSync(`${dataDir}/data.json`, 'utf8'))
+const originalData = JSON.parse(fs.readFileSync(path.resolve(dataDir, 'data.json'), 'utf8'))
 
 // Transform fields into internal JSON format
 console.log('Processing main data...')
@@ -168,7 +170,7 @@ const jsonData = mainData
     })
 
 // Find any added or deleted entries
-const historicalData = JSON.parse(fs.readFileSync('./src/data/historicalData.json', 'utf8'))
+const historicalData = JSON.parse(fs.readFileSync(path.resolve(dataDir, 'historicalData.json'), 'utf8'))
 
 // TODO: detect ranking changes
 
@@ -226,10 +228,10 @@ const deletedEntries = Object.values(historicalData).filter(entry => entry.dateD
 // Save historical data & deleted entries
 console.log('Writing historicalData.json')
 console.log(`${changedEntries} additions or deletions found`)
-fs.writeFileSync('./src/data/historicalData.json', JSON.stringify(historicalData, null, 2))
+fs.writeFileSync(path.resolve(dataDir, 'historicalData.json'), JSON.stringify(historicalData, null, 2))
 
 console.log('Writing deletedEntries.json')
-fs.writeFileSync('./src/data/deletedEntries.json', JSON.stringify(deletedEntries, null, 2))
+fs.writeFileSync(path.resolve(dataDir, 'deletedEntries.json'), JSON.stringify(deletedEntries, null, 2))
 
 // Add projects data
 console.log('Processing project data...')
@@ -258,7 +260,7 @@ const projects = projectsData
     .sort((a, b) => a.name.localeCompare(b.name))
 
 console.log('Writing projects.json')
-fs.writeFileSync('./src/data/projects.json', JSON.stringify(projects, null, 2))
+fs.writeFileSync(path.resolve(dataDir, 'projects.json'), JSON.stringify(projects, null, 2))
 
 // Add upgrade data
 console.log('Processing project data...')
@@ -286,7 +288,7 @@ const upgrades = upgradeData
     }, {})
 
 console.log('Writing upgrades.json')
-fs.writeFileSync('./src/data/upgrades.json', JSON.stringify(upgrades, null, 2))
+fs.writeFileSync(path.resolve(dataDir, 'upgrades.json'), JSON.stringify(upgrades, null, 2))
 
 // Collect previous media for updated comparison
 
@@ -361,7 +363,7 @@ orphanedMedia.mediaItems.forEach((item, index) => {
 })
 
 console.log('Writing orphanedMediaEntries.json...')
-fs.writeFileSync('./src/data/orphanedMediaEntries.json', JSON.stringify(orphanedMediaEntries, null, 2))
+fs.writeFileSync(path.resolve(dataDir, 'orphanedMediaEntries.json'), JSON.stringify(orphanedMediaEntries, null, 2))
 
 // Add link data
 console.log('Processing link data...')
@@ -431,9 +433,9 @@ function keyAttributes(entry) {
 console.log('Writing data.json...')
 const dataJson = JSON.stringify(jsonData, null, 2)
 const classificationCatalog = createClassificationCatalog(dataJson)
-fs.writeFileSync('./src/data/data.json', dataJson)
+fs.writeFileSync(path.resolve(dataDir, 'data.json'), dataJson)
 console.log('Writing classification-catalog.json...')
-fs.writeFileSync('./src/data/classification-catalog.json', JSON.stringify(classificationCatalog, null, 2))
+fs.writeFileSync(path.resolve(dataDir, 'classification-catalog.json'), JSON.stringify(classificationCatalog, null, 2))
 
 // Glossary Data
 console.log('Processing glossary data...')
@@ -457,7 +459,7 @@ const glossary = glossaryData
     .sort((a, b) => a.term.localeCompare(b.term))
 
 console.log('Writing glossary.json')
-fs.writeFileSync('./src/data/glossary.json', JSON.stringify(glossary, null, 2))
+fs.writeFileSync(path.resolve(dataDir, 'glossary.json'), JSON.stringify(glossary, null, 2))
 
 // Dials Data
 console.log('Processing Dials data...')
@@ -532,7 +534,7 @@ const introCopyJson = introCopyData.reduce((acc, item) => {
     }
     return acc
 }, {})
-fs.writeFileSync('./src/data/introCopy.json', JSON.stringify(introCopyJson, null, 2))
+fs.writeFileSync(path.resolve(dataDir, 'introCopy.json'), JSON.stringify(introCopyJson, null, 2))
 
 // Platform Belt Count Data
 console.log('Processing Platform Belt Count data...')
@@ -543,11 +545,11 @@ const platformBeltJson = platformBeltData.reduce((acc, item) => {
     acc.reddit[item.Belt] = parseInt(item.Reddit)
     return acc
 }, {})
-fs.writeFileSync('./src/data/platformBeltCounts.json', JSON.stringify(platformBeltJson, null, 2))
+fs.writeFileSync(path.resolve(dataDir, 'platformBeltCounts.json'), JSON.stringify(platformBeltJson, null, 2))
 
 // Recently updated data
 console.log('Processing recenty updated data...')
-const orginalDialsData = JSON.parse(fs.readFileSync('./src/data/safelocks.json', 'utf8'))
+const orginalDialsData = JSON.parse(fs.readFileSync(path.resolve(dataDir, 'safelocks.json'), 'utf8'))
 dialsMainData
     .forEach(entry => {
         const {lastUpdated, ...oldEntry} = orginalDialsData.find(e => e?.id === entry?.id) || {}
@@ -559,7 +561,7 @@ dialsMainData
         }
     })
 
-fs.writeFileSync('./src/data/safelocks.json', JSON.stringify(dialsMainData, null, 2))
+fs.writeFileSync(path.resolve(dataDir, 'safelocks.json'), JSON.stringify(dialsMainData, null, 2))
 
 // Check that all Features are accounted for in Glossary
 const lockFeatures = jsonData
@@ -606,7 +608,9 @@ if (importRaflData) {
             splitShippingBoolean: datum['Split Shipping'] === 'TRUE',
             shippingType: datum['Shipping Type'],
             shipsToUS: datum['Ships To US'],
-            dateAdded: datum['Date Added']
+            dateAdded: datum['Date Added'],
+            startDate: datum['Start Date'],
+            endDate: datum['End Date'],
         })).filter(x => x)
 
     // RAFL Media data
@@ -635,7 +639,7 @@ if (importRaflData) {
             entry.media.push(media)
         })
 
-    fs.writeFileSync('./src/data/rafl.json', JSON.stringify(raflMainData, null, 2))
+    fs.writeFileSync(path.resolve(dataDir, 'rafl.json'), JSON.stringify(raflMainData, null, 2))
 
     // RAFL Charity Data
     console.log('Processing RAFL Charity data...')
@@ -651,7 +655,7 @@ if (importRaflData) {
             disabled: datum['Disable'].length > 0
         })).filter(x => x)
 
-    fs.writeFileSync('./src/data/raflCharities.json', JSON.stringify(raflCharities, null, 2))
+    fs.writeFileSync(path.resolve(dataDir, 'raflCharities.json'), JSON.stringify(raflCharities, null, 2))
 }
 
 console.log('Saving lockStats.json...')

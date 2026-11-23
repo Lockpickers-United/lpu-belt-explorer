@@ -4,9 +4,16 @@ import {
     raflSchema,
     raflMediaSchema,
     raflCharitySchema
-} from './importRaflSchemas.js'
+} from './importSchemas.js'
 import fetch from 'node-fetch'
 import validate from './validate.js'
+import dotenv from 'dotenv'
+import path, {dirname} from 'path'
+import {fileURLToPath} from 'url'
+
+const __dirname = dirname(fileURLToPath(import.meta.url))
+const dataDir = path.resolve(__dirname, '../src/data')
+dotenv.config({path: path.resolve(__dirname, '../.env.keys'), quiet: true})
 
 const importRaflData = true
 
@@ -21,7 +28,7 @@ const importValidate = async (tab, schema) => {
 
     const safeTab = encodeURI(tab)
 
-    const url = (!['RAFL', 'RAFL Media', 'RAFL Pot Contents', 'RAFL Charities'].includes(tab))
+    const url = (!tab.includes('RAFL'))
         ? `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:csv&sheet=${safeTab}&headers=1`
         : `https://docs.google.com/spreadsheets/d/${raflSheetId}/gviz/tq?tqx=out:csv&sheet=${safeTab}&headers=1`
     const csvData = await (await fetch(url)).text()
@@ -39,12 +46,15 @@ const importValidate = async (tab, schema) => {
 
 const raflData = importRaflData ? await importValidate('RAFL', raflSchema) : []
 const raflMediaData = importRaflData ? await importValidate('RAFL Media', raflMediaSchema) : []
+const raflData2026 = importRaflData ? await importValidate('RAFL 2026', raflSchema) : []
+const raflMediaData2026 = importRaflData ? await importValidate('RAFL Media 2026', raflMediaSchema) : []
 const raflCharityData = importRaflData ? await importValidate('RAFL Charities', raflCharitySchema) : []
 
 if (importRaflData) {
     // RAFL Data
     console.log('Processing RAFL data...')
-    const raflMainData = raflData
+    const allRaflData = [...raflData, ...raflData2026]
+    const raflMainData = allRaflData
         //.filter(datum => datum['Year'] === '2026')
         .map(datum => ({
             id: datum['Unique ID'],
@@ -66,12 +76,16 @@ if (importRaflData) {
             splitShippingBoolean: datum['Split Shipping'] === 'TRUE',
             shippingType: datum['Shipping Type'],
             shipsToUS: datum['Ships To US'],
-            dateAdded: datum['Date Added']
+            dateAdded: datum['Date Added'],
+            startDate: datum['Start Date'],
+            endDate: datum['End Date'],
         })).filter(x => x)
 
     // RAFL Media data
     console.log('Processing RAFL Media data...')
-    raflMediaData
+    const allRaflMediaData = [...raflMediaData, ...raflMediaData2026]
+
+    allRaflMediaData
         .sort((a, b) => {
             const one = a['Sequence ID']
             const two = b['Sequence ID']
@@ -95,8 +109,10 @@ if (importRaflData) {
             entry.media.push(media)
         })
 
-    fs.writeFileSync('./src/data/rafl.json', JSON.stringify(raflMainData, null, 2))
+    fs.writeFileSync(path.resolve(dataDir, 'rafl.json'), JSON.stringify(raflMainData, null, 2))
 
+    ///Users/nealbayless/LOCAL/GitHubLocal/lpu-belt-explorer/apps/web/src/data/rafl.json
+    ///Users/nealbayless/LOCAL/GitHubLocal/lpu-belt-explorer/apps/web/src/data/rafl.json
     // RAFL Charity Data
     console.log('Processing RAFL Charity data...')
     const raflCharities = raflCharityData
@@ -111,7 +127,7 @@ if (importRaflData) {
             disabled: datum['Disable'].length > 0
         })).filter(x => x)
 
-    fs.writeFileSync('./src/data/raflCharities.json', JSON.stringify(raflCharities, null, 2))
+    fs.writeFileSync(path.resolve(dataDir, 'raflCharities.json'), JSON.stringify(raflCharities, null, 2))
 }
 
 console.log('Complete.')

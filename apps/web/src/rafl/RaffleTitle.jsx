@@ -118,7 +118,14 @@ function RaffleTitle({entry, drawing = false}) {
                             }
                         </div>
                     }
-                    <EntryTypeIcon entry={entry}/>
+                    {entry.isNew &&
+                        <div style={{
+                            fontSize: '0.85rem', fontWeight: 700, marginLeft: 8, padding: '1px 4px',
+                            color: '#f54040', border: '#f54040 1px solid'
+                        }}>
+                            NEW
+                        </div>
+                    }
                 </div>
 
 

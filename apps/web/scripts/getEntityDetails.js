@@ -1,5 +1,10 @@
 import entryName from '../src/entries/entryName.js'
 import fs from 'fs'
+import path, {dirname} from 'path'
+import {fileURLToPath} from 'url'
+
+const __dirname = dirname(fileURLToPath(import.meta.url))
+const dataDir = path.resolve(__dirname, '../src/data')
 
 let allMedia = []
 
@@ -7,7 +12,7 @@ await lockDetails().then(() => {})
 
 export async function lockDetails() {
 
-    const lockData = JSON.parse(fs.readFileSync('./src/data/data.json', 'utf8'))
+    const lockData = JSON.parse(fs.readFileSync(path.resolve(dataDir, 'data.json'), 'utf8'))
 
     let allSamelineNames = {}
     return lockData.reduce((acc, item) => {
@@ -59,7 +64,7 @@ export async function lockDetails() {
 }
 
 export async function potDetails() {
-    const raflData = JSON.parse(fs.readFileSync('./src/data/rafl.json', 'utf8'))
+    const raflData = JSON.parse(fs.readFileSync(path.resolve(dataDir, 'rafl.json'), 'utf8'))
     return raflData.reduce((acc, item) => {
         acc[item.id] = {...item, shortName: item.title, potName: item.title, fullName: item.title, type: 'raflPot'}
         return acc
@@ -67,7 +72,7 @@ export async function potDetails() {
 }
 
 export async function safelockDetails() {
-    const safelockData = JSON.parse(fs.readFileSync('./src/data/safelocks.json', 'utf8'))
+    const safelockData = JSON.parse(fs.readFileSync(path.resolve(dataDir, 'safelocks.json'), 'utf8'))
     return safelockData.reduce((acc, item) => {
         const sep = item.make ? ' ' : ''
         acc[item.id] = {...item, shortName: `${item.make}${sep}${item.model}`, type: 'safelock'}
@@ -76,7 +81,7 @@ export async function safelockDetails() {
 }
 
 export async function projectDetails() {
-    const projectData = JSON.parse(fs.readFileSync('./src/data/projects.json', 'utf8'))
+    const projectData = JSON.parse(fs.readFileSync(path.resolve(dataDir, 'projects.json'), 'utf8'))
     return projectData.reduce((acc, item) => {
         acc[item.id] = {
             ...item,
@@ -92,7 +97,7 @@ export async function projectDetails() {
 }
 
 export async function awardDetails() {
-    const awardData = JSON.parse(fs.readFileSync('./src/data/awards.json', 'utf8'))
+    const awardData = JSON.parse(fs.readFileSync(path.resolve(dataDir, 'awards.json'), 'utf8'))
     return awardData.reduce((acc, item, index) => {
         acc[item.id] = {
             ...item,
@@ -108,7 +113,7 @@ export async function awardDetails() {
 }
 
 export async function glossaryDetails() {
-    const glossaryData = JSON.parse(fs.readFileSync('./src/data/glossary.json', 'utf8'))
+    const glossaryData = JSON.parse(fs.readFileSync(path.resolve(dataDir, 'glossary.json'), 'utf8'))
     return glossaryData.reduce((acc, item) => {
         allMedia.push(item.media)
         acc[item.term] = {...item, shortName: item.term, type: 'glossary', media: item.media ? [item.media] : undefined}

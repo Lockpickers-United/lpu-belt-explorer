@@ -3,6 +3,10 @@ import {setDeep, setDeepAdd} from '../src/util/setDeep.js'
 import fs from 'fs'
 import {itemDetails} from './getEntityDetails.js'
 import {uniqueBelts} from '../src/data/belts.js'
+import path, {dirname} from 'path'
+import {fileURLToPath} from 'url'
+const __dirname = dirname(fileURLToPath(import.meta.url))
+const dataDir = path.resolve(__dirname, '../src/data')
 
 /**
  * @prop lockBySegmentCounts
@@ -10,7 +14,7 @@ import {uniqueBelts} from '../src/data/belts.js'
 
 export async function saveLockStats() {
 
-    const lockData = JSON.parse(fs.readFileSync('./src/data/data.json', 'utf8'))
+    const lockData = JSON.parse(fs.readFileSync(path.resolve(dataDir, 'data.json'), 'utf8'))
 
     const lockBrandStats = lockData
         .reduce((acc, lock) => {
@@ -198,7 +202,7 @@ export async function saveLockStats() {
     lockStats.metadata = {source: 'import-data', updatedDateTime: dayjs().format('YYYY-MM-DD HH:mm')}
 
 // WRITE TO FILE
-    fs.writeFile('./src/data/lockStats.json', JSON.stringify(lockStats, null, 2), function (err) {
+    fs.writeFile(path.resolve(dataDir, 'lockStats.json'), JSON.stringify(lockStats, null, 2), function (err) {
         if (err) {
             console.error('save lockStats.json error:', err)
             return (`save lockStats.json error: ${err}`)

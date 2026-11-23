@@ -39,7 +39,7 @@ export function DBProviderRaffle({children}) {
             }, [])
             if (!clean.createdAt) clean.createdAt = dayjs().toISOString()
             clean.updatedAt = dayjs().toISOString()
-            clean.raflYear = 2026
+            clean.raflYear = 2027
             const ref = await addDoc(collection(db, 'raffle-entries'), clean)
             console.log('Created Raffle Entry', clean)
             return ref.id
