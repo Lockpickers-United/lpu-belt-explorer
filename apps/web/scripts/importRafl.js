@@ -3,7 +3,8 @@ import {parse} from 'csv-parse/sync'
 import {
     raflSchema,
     raflMediaSchema,
-    raflCharitySchema
+    raflCharitySchema,
+    raflBonusSchema
 } from './importSchemas.js'
 import fetch from 'node-fetch'
 import validate from './validate.js'
@@ -46,6 +47,7 @@ const importValidate = async (tab, schema) => {
 
 const raflData = importRaflData ? await importValidate('RAFL', raflSchema) : []
 const raflMediaData = importRaflData ? await importValidate('RAFL Media', raflMediaSchema) : []
+const raflBonuses = importRaflData ? await importValidate('RAFL Bonuses', raflBonusSchema) : []
 const raflData2026 = importRaflData ? await importValidate('RAFL 2026', raflSchema) : []
 const raflMediaData2026 = importRaflData ? await importValidate('RAFL Media 2026', raflMediaSchema) : []
 const raflCharityData = importRaflData ? await importValidate('RAFL Charities', raflCharitySchema) : []
@@ -108,11 +110,19 @@ if (importRaflData) {
             if (item['Full Image Direct URL']) media.fullSizeUrl = item['Full Image Direct URL']
             entry.media.push(media)
         })
-
     fs.writeFileSync(path.resolve(dataDir, 'rafl.json'), JSON.stringify(raflMainData, null, 2))
 
-    ///Users/nealbayless/LOCAL/GitHubLocal/lpu-belt-explorer/apps/web/src/data/rafl.json
-    ///Users/nealbayless/LOCAL/GitHubLocal/lpu-belt-explorer/apps/web/src/data/rafl.json
+    // RAFL Bonus Data
+    const raflBonusData = raflBonuses.map(bonus => ({
+        id: bonus['Unique ID'],
+        title: bonus['Title'],
+        description: bonus['Description'],
+        target: parseInt(bonus['Target'].replace(/[^0-9]/, '')) || 0,
+        startDate: bonus['Start Date'],
+        endDate: bonus['End Date'],
+    }))
+    fs.writeFileSync(path.resolve(dataDir, 'raflBonuses.json'), JSON.stringify(raflBonusData, null, 2))
+
     // RAFL Charity Data
     console.log('Processing RAFL Charity data...')
     const raflCharities = raflCharityData

@@ -30,7 +30,9 @@ export default function ExposedFilterSelect({field, sequence = [], styles}) {
     })
 
     const newIndex = fieldValues.indexOf('New')
-    const updatedFieldValues = [...fieldValues.toSpliced(newIndex, 1), fieldValues[newIndex]]
+    const updatedFieldValues = newIndex > -1
+        ? [...fieldValues.toSpliced(newIndex, 1), fieldValues[newIndex]]
+        : fieldValues
     const index = updatedFieldValues.indexOf('Ending Soon')
     if (index > -1) {
         updatedFieldValues.push(updatedFieldValues.splice(index, 1)[0])

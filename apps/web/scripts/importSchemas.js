@@ -203,6 +203,19 @@ export const raflMediaSchema = Joi.array().items(
     }).unknown()
 )
 
+export const raflBonusSchema = Joi.array().items(
+    Joi.object({
+            'Unique ID': Joi.string().regex(/\d{4}-B-\d{2}$/),
+            'Year': Joi.number(),
+            'Title': Joi.string(),
+            'Target': Joi.string().allow(''),
+            'Winner Count': Joi.number().allow(''),
+            'Description': Joi.string().allow(''),
+            'Start Date': Joi.string().allow(''),
+            'End Date': Joi.string().allow(''),
+    }).unknown()
+)
+
 export const raflCharitySchema = Joi.array().items(
     Joi.object({
         'Charity ID': Joi.string(),

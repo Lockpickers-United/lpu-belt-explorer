@@ -39,11 +39,11 @@ function UserMenu() {
     const handleOpen = useCallback(event => setAnchorEl(event.currentTarget), [])
     const handleClose = useCallback(() => setAnchorEl(null), [])
 
-    const safeName = lockCollection.displayName && !lockCollection.privacyAnonymous
-        ? lockCollection.displayName.replace(/\s/g, '_')
+    const safeName = lockCollection && lockCollection.displayName && !lockCollection.privacyAnonymous
+        ? lockCollection?.displayName.replace(/\s/g, '_')
         : 'anonymous'
-    const displayName = lockCollection.displayName
-        ? lockCollection.displayName
+    const displayName = lockCollection && lockCollection.displayName
+        ? lockCollection?.displayName
         : 'Your Account'
     const accountTooltip = accessInfo.previewRole
         ? `${displayName} (preview: ${previewRoleLabels[accessInfo.previewRole]})`

@@ -15,6 +15,7 @@ import {
     platformBeltSchema,
     raflSchema,
     raflMediaSchema,
+    raflBonusSchema,
     raflCharitySchema
 } from './importSchemas.js'
 import {allBelts, beltSort} from '../src/data/belts.js'
@@ -88,6 +89,7 @@ const raflData = importRaflData ? await importValidate('RAFL', raflSchema) : []
 const raflMediaData = importRaflData ? await importValidate('RAFL Media', raflMediaSchema) : []
 const raflData2026 = importRaflData ? await importValidate('RAFL 2026', raflSchema) : []
 const raflMediaData2026 = importRaflData ? await importValidate('RAFL Media 2026', raflMediaSchema) : []
+const raflBonuses = importRaflData ? await importValidate('RAFL Bonuses', raflBonusSchema) : []
 const raflCharityData = importRaflData ? await importValidate('RAFL Charities', raflCharitySchema) : []
 
 // Load previous JSON for recently updated checks
@@ -642,8 +644,18 @@ if (importRaflData) {
             if (item['Full Image Direct URL']) media.fullSizeUrl = item['Full Image Direct URL']
             entry.media.push(media)
         })
-
     fs.writeFileSync(path.resolve(dataDir, 'rafl.json'), JSON.stringify(raflMainData, null, 2))
+
+    // RAFL Bonus Data
+    const raflBonusData = raflBonuses.map(bonus => ({
+        id: bonus['Unique ID'],
+        title: bonus['Title'],
+        description: bonus['Description'],
+        target: parseInt(bonus['Target'].replace(/[^0-9]/, '')) || 0,
+        startDate: bonus['Start Date'],
+        endDate: bonus['End Date'],
+    }))
+    fs.writeFileSync(path.resolve(dataDir, 'raflBonuses.json'), JSON.stringify(raflBonusData, null, 2))
 
     // RAFL Charity Data
     console.log('Processing RAFL Charity data...')
@@ -658,7 +670,6 @@ if (importRaflData) {
             donationsPrevious: parseInt(datum['Donations 2025'].replace(/[^0-9]/, '')) || 0,
             disabled: datum['Disable'].length > 0
         })).filter(x => x)
-
     fs.writeFileSync(path.resolve(dataDir, 'raflCharities.json'), JSON.stringify(raflCharities, null, 2))
 }
 

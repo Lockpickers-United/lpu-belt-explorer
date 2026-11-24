@@ -16,12 +16,11 @@ export default function RaffleIntroBar() {
     const endDate = dayjs(import.meta.env.VITE_RAFL_END_DATE).format('dddd, MMMM Do')
 
     const style = isMobile
-        ? {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto', padding: 8}
-        : {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto', padding: 12}
+        ? {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto', padding: 8, fontSize: '0.9rem'}
+        : {maxWidth: 700, marginLeft: 'auto', marginRight: 'auto', padding: 12, fontSize: '1.0rem'}
 
     const openInNewTab = (url) => {
         const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
-        if (newWindow) newWindow.opener = null
     }
 
     // TODO: Make a new state for drawing?
@@ -61,7 +60,7 @@ export default function RaffleIntroBar() {
                         <div style={{fontSize: '1.2rem', fontWeight: 700, marginTop: 1, marginBottom: 7}}>
                             RAFL is on!
                         </div>
-                        <div style={{fontSize: '1rem', marginTop: 1, marginBottom: 15}}>
+                        <div style={{marginTop: 1, marginBottom: 15}}>
                             Welcome to the <strong>2027 Lockpicking Charity Raffle</strong>.
                             You donate to your favorite charity and every dollar donated
                             earns a ticket you can put towards any of the fantastic pots
@@ -77,7 +76,7 @@ export default function RaffleIntroBar() {
                             click here.
                         </Link>
                         </div>
-                        <div style={{fontSize: '1rem', fontWeight: 700}}>
+                        <div style={{fontWeight: 700}}>
                             Entries will be accepted through {endDate},
                             and the primary prize drawing will happen via livestream at 11 a.m. PDT
                             on Monday, February 1st.

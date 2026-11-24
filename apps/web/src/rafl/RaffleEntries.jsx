@@ -10,6 +10,7 @@ import RaffleExportButton from './RaffleExportButton.jsx'
 import AdvancedFilters from '../filters/AdvancedFilters.jsx'
 import ExposedFilterSelect from './ExposedFilterSelect.jsx'
 import {Collapse} from '@mui/material'
+import RaffleBonusBar from './RaffleBonusBar.jsx'
 
 function RaffleEntries({drawing = false}) {
     const {visibleEntries = [], expandAll, allEntries} = useContext(DataContext)
@@ -43,8 +44,9 @@ function RaffleEntries({drawing = false}) {
                 />
             </Collapse>
 
-
             <AdvancedFilters entryType={'Pot'}/>
+
+            <RaffleBonusBar />
 
             {(shippingType === 'Intl. shipping included' || splitShipping === 'shippingSplit') &&
                 <div style={{margin: '18px 12px', fontSize: '0.9rem', color: '#eee'}}>
