@@ -4,7 +4,7 @@ import RaffleContext from './RaffleContext.jsx'
 import Link from '@mui/material/Link'
 import RaffleDrawButton from './admin/RaffleDrawButton.jsx'
 import FilterContext from '../context/FilterContext.jsx'
-import EntryTypeIcon from './EntryTypeIcon.jsx'
+import EndingSoon from './EndingSoon.jsx'
 
 function RaffleTitle({entry, drawing = false}) {
     if (!entry) return null
@@ -121,10 +121,13 @@ function RaffleTitle({entry, drawing = false}) {
                     {entry.isNew &&
                         <div style={{
                             fontSize: '0.85rem', fontWeight: 700, marginLeft: 8, padding: '1px 4px',
-                            color: '#f54040', border: '#f54040 1px solid'
+                            color: '#42b232', border: '#42b232 1px solid'
                         }}>
                             NEW
                         </div>
+                    }
+                    {entry.isEndingSoon &&
+                        <EndingSoon entry={entry}/>
                     }
                 </div>
 

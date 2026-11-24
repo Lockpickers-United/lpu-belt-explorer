@@ -18,7 +18,7 @@ const maxPots = 3
 
 export function RaffleProvider({children}) {
 
-    const {VITE_RAFL_STATE: raflState, VITE_RAFL_START_DATE: raflStartDate} = import.meta.env
+    const {VITE_RAFL_STATE: raflState, VITE_RAFL_START_DATE: raflStartDate, VITE_RAFL_END_DATE: raflEndDate} = import.meta.env
     // preview, setup, live, post, hidden
     const [preview, setPreview] = useLocalStorage('previewMode', false)
     const {lockCollection, summaryData, winnerData} = useContext(DBContext)
@@ -114,9 +114,19 @@ export function RaffleProvider({children}) {
                 const isNew = entry.startDate && dayjs(entry.startDate).isAfter(dayjs(raflStartDate))
                     && dayjs(entry.startDate).isBefore(dayjs().add(3, 'day'))
 
+                const isEndingSoon = entry.endDate
+                    && dayjs(entry.endDate).isBefore(dayjs(raflEndDate))
+                    && dayjs(entry.endDate).isBefore(dayjs().add(1, 'day'))
+
+                const categories = [...entry.category] ?? []
+                if (isNew) categories.push('New')
+                if (isEndingSoon) categories.push('Ending Soon')
+
                 return {
                     ...entry,
+                    category: categories,
                     isNew,
+                    isEndingSoon,
                     totalTickets: summary.pots?.[entry.id]?.totalTickets || 0,
                     uniqueDonorCount: summary.pots?.[entry.id]?.uniqueDonorCount || 0,
                     fuzzy: removeAccents([

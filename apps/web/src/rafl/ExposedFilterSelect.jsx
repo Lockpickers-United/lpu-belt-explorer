@@ -3,7 +3,7 @@ import FilterChip from '../filters/FilterChip.jsx'
 import FilterContext from '../context/FilterContext.jsx'
 import DataContext from '../context/DataContext.jsx'
 
-export default function ExposedFilterSelect({field, sequence = []}) {
+export default function ExposedFilterSelect({field, sequence = [], styles}) {
 
     const {filterFields} = useContext(FilterContext)
     const filterField = filterFields.find(f => f.fieldName === field)
@@ -29,7 +29,14 @@ export default function ExposedFilterSelect({field, sequence = []}) {
         return aIndex - bIndex
     })
 
-    return (
+    const newIndex = fieldValues.indexOf('New')
+    const updatedFieldValues = [...fieldValues.toSpliced(newIndex, 1), fieldValues[newIndex]]
+    const index = updatedFieldValues.indexOf('Ending Soon')
+    if (index > -1) {
+        updatedFieldValues.push(updatedFieldValues.splice(index, 1)[0])
+    }
+
+    if (updatedFieldValues.length) return (
         <div style={{
             padding: '16px 8px', marginBottom: 12
         }}>
@@ -40,7 +47,9 @@ export default function ExposedFilterSelect({field, sequence = []}) {
                 display: 'flex', flexDirection: 'row', gap: 12,
                 justifyContent: 'center', padding: 0, flexWrap: 'wrap'
             }}>
-                {fieldValues.map((val, i) => <FilterChip key={i} value={val} field={field} mode={'div'}/>)}
+                {updatedFieldValues.map((val, i) =>
+                    <FilterChip key={i} value={val} field={field} mode={'div'} style={styles[val]}/>
+                )}
             </div>
         </div>
 

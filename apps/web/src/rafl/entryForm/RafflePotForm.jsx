@@ -10,20 +10,67 @@ import InputAdornment from '@mui/material/InputAdornment'
 import Backdrop from '@mui/material/Backdrop'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import RaffleContext from '../RaffleContext.jsx'
+import {useSearchParams} from 'react-router-dom'
 
 function RafflePotForm({questionStyle, index, potData, handlePotChange, showIssues, removePot}) {
     const {allPots} = useContext(RaffleContext)
     const {isMobile, flexStyle} = useWindowSize()
+    const [searchParams, setSearchParams] = useSearchParams()
     const isMobileFalse = false
     const style = {maxWidth: 700}
     const inputEl = useRef()
 
     const [potDetails, setPotDetails] = useState(potData[index])
 
+    const itemMap = useMemo(() => {
+        let options = []
+        let itemIds = {}
+        let itemIdTitles = {}
+        let itemTitles = {}
+        let itemPotNumbers = {}
+        let itemFormIds = {}
+
+        allPots
+            .sort((a, b) => {
+                return parseInt(a.potNumber) - parseInt(b.potNumber)
+                    || a.title.localeCompare(b.title)
+            })
+            .map((item) => {
+                const fullTitle = `Pot ${item.potNumber} - ${item.title}`
+                itemIdTitles[item.id] = fullTitle
+                itemTitles[fullTitle] = item.title
+                itemIds[fullTitle] = item.id
+                itemPotNumbers[fullTitle] = item.potNumber
+                options.push(fullTitle)
+            })
+            .filter(x => x)
+        return {options, itemIds, itemIdTitles, itemTitles, itemPotNumbers, itemFormIds}
+    }, [allPots])
+
+    const {options, itemIds, itemIdTitles, itemTitles, itemPotNumbers} = itemMap
+
+    console.log('allPots', allPots)
+    console.log('potData', potData)
+    console.log('potDetails', potDetails)
+
+    console.log('potDetails', potDetails)
+
+    const paramsPotFullTitle = itemIdTitles?.[searchParams.get('id')]
     const showDelete = (potData || []).length > 1
 
     useEffect(() => {
         handlePotChange(index, potDetails)
+        if (paramsPotFullTitle && !potDetails?.itemFullTitle) {
+            setPotDetails({
+                itemFullTitle: paramsPotFullTitle,
+                itemTitle: itemTitles[paramsPotFullTitle],
+                itemId: itemIds[paramsPotFullTitle],
+                itemPotNumber: itemPotNumbers[paramsPotFullTitle],
+                itemIndex: options.indexOf(paramsPotFullTitle)
+            })
+        }
+
+
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [index, potDetails])
 
@@ -45,30 +92,6 @@ function RafflePotForm({questionStyle, index, potData, handlePotChange, showIssu
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [index, potData])
 
-    const itemMap = useMemo(() => {
-        let options = []
-        let itemIds = {}
-        let itemTitles = {}
-        let itemPotNumbers = {}
-        let itemFormIds = {}
-
-        allPots
-            .sort((a, b) => {
-                return parseInt(a.potNumber) - parseInt(b.potNumber)
-                    || a.title.localeCompare(b.title)
-            })
-            .map((item) => {
-                const fullTitle = `Pot ${item.potNumber} - ${item.title}`
-                itemTitles[fullTitle] = item.title
-                itemIds[fullTitle] = item.id
-                itemPotNumbers[fullTitle] = item.potNumber
-                options.push(fullTitle)
-            })
-            .filter(x => x)
-        return {options, itemIds, itemTitles, itemPotNumbers, itemFormIds}
-    }, [allPots])
-
-    const {options, itemIds, itemTitles, itemPotNumbers} = itemMap
 
     const handleTicketsChange = useCallback(event => {
         const tickets = parseInt(event.target.value.replace(/[^0-9]/, ''))
@@ -77,6 +100,7 @@ function RafflePotForm({questionStyle, index, potData, handlePotChange, showIssu
     }, [potDetails])
 
     const handlePotChoiceChange = useCallback((_event, value) => {
+        console.log('handlePotChoiceChange', value)
         let item
         if (options.includes(value)) {
             item = {
@@ -86,11 +110,12 @@ function RafflePotForm({questionStyle, index, potData, handlePotChange, showIssu
                 itemPotNumber: itemPotNumbers[value],
                 itemIndex: options.indexOf(value)
             }
+            setPotDetails({...potDetails, ...item})
         } else {
-            item = {}
+            setPotDetails({tickets: potDetails.tickets})
         }
-        setPotDetails({...potDetails, ...item})
     }, [options, potDetails, itemTitles, itemIds, itemPotNumbers])
+
 
     const [open, setOpen] = useState(false)
     const handleClick = useCallback(() => {
@@ -122,7 +147,7 @@ function RafflePotForm({questionStyle, index, potData, handlePotChange, showIssu
 
             <div style={{display: flexStyle, margin: 12}}>
                 <div style={{flexGrow: 1, marginRight: 40, height: 100, minWidth: 280}}>
-                    <div style={{...questionStyle, fontWeight: 600, fontSize:'1.1rem'}}>Selected Pot</div>
+                    <div style={{...questionStyle, fontWeight: 600, fontSize: '1.1rem'}}>Selected Pot</div>
                     <div style={{height: 4}}/>
                     <React.Fragment>
                         {!open && isMobileFalse && <Tooltip title='Search' arrow disableFocusListener>

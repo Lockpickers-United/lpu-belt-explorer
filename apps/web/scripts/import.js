@@ -47,7 +47,7 @@ const importValidate = async (tab, schema) => {
     // Download file
     const safeTab = encodeURI(tab)
 
-    const url = (!['RAFL', 'RAFL Media', 'RAFL Pot Contents', 'RAFL Charities'].includes(tab))
+    const url = (!tab.includes('RAFL'))
         ? `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:csv&sheet=${safeTab}&headers=1`
         : `https://docs.google.com/spreadsheets/d/${raflSheetId}/gviz/tq?tqx=out:csv&sheet=${safeTab}&headers=1`
     const csvData = await (await fetch(url)).text()
@@ -86,6 +86,8 @@ const platformBeltData = await importValidate('Platform Belt Counts', platformBe
 
 const raflData = importRaflData ? await importValidate('RAFL', raflSchema) : []
 const raflMediaData = importRaflData ? await importValidate('RAFL Media', raflMediaSchema) : []
+const raflData2026 = importRaflData ? await importValidate('RAFL 2026', raflSchema) : []
+const raflMediaData2026 = importRaflData ? await importValidate('RAFL Media 2026', raflMediaSchema) : []
 const raflCharityData = importRaflData ? await importValidate('RAFL Charities', raflCharitySchema) : []
 
 // Load previous JSON for recently updated checks
@@ -586,7 +588,8 @@ new Set(dialFeatures).forEach(term => {
 if (importRaflData) {
     // RAFL Data
     console.log('Processing RAFL data...')
-    const raflMainData = raflData
+    const allRaflData = [...raflData, ...raflData2026]
+    const raflMainData = allRaflData
         //.filter(datum => datum['Year'] === '2026')
         .map(datum => ({
             id: datum['Unique ID'],
@@ -615,7 +618,8 @@ if (importRaflData) {
 
     // RAFL Media data
     console.log('Processing RAFL Media data...')
-    raflMediaData
+    const allRaflMediaData = [...raflMediaData, ...raflMediaData2026]
+    allRaflMediaData
         .sort((a, b) => {
             const one = a['Sequence ID']
             const two = b['Sequence ID']

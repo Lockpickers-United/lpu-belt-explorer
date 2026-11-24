@@ -9,9 +9,10 @@ import RaffleIntroBar from './RaffleIntroBar.jsx'
 import RaffleExportButton from './RaffleExportButton.jsx'
 import AdvancedFilters from '../filters/AdvancedFilters.jsx'
 import ExposedFilterSelect from './ExposedFilterSelect.jsx'
+import {Collapse} from '@mui/material'
 
 function RaffleEntries({drawing = false}) {
-    const {visibleEntries = [], expandAll} = useContext(DataContext)
+    const {visibleEntries = [], expandAll, allEntries} = useContext(DataContext)
     const {filters, showAdvancedSearch} = useContext(FilterContext)
     const {id, shippingType, splitShipping} = filters
     const [expanded, setExpanded] = useState(id)
@@ -31,9 +32,17 @@ function RaffleEntries({drawing = false}) {
             <div id='raffleSearchBar' style={{scrollMarginTop: 72}}/>
             <RaffleSearchBar label='Raffle Pots' sortValues={raffleSortFields} entryCount={visibleEntries.length}/>
 
-            {!showAdvancedSearch &&
-                <ExposedFilterSelect field={'category'} sequence={['Locks', 'Gift certificates', 'Picks']}/>
-            }
+            <Collapse in={!showAdvancedSearch}>
+                <ExposedFilterSelect
+                    field={'category'}
+                    sequence={['Locks', 'Gift certificates', 'Picks']}
+                    styles={{
+                        'New': {color: '#42b232', border: '1px solid #42b232'},
+                        'Ending Soon': {color: '#f54040', border: '1px solid #f54040'}
+                    }}
+                />
+            </Collapse>
+
 
             <AdvancedFilters entryType={'Pot'}/>
 
@@ -44,7 +53,8 @@ function RaffleEntries({drawing = false}) {
                     need to pay for any additional tariffs and fees.
                 </div>
             }
-            {visibleEntries.length === 0 && <NoEntriesCard label='Rafl Pots'/>}
+
+            {allEntries.length && visibleEntries.length === 0 && <NoEntriesCard label='Rafl Pots'/>}
 
             {visibleEntries.map(entry =>
                 <RaffleEntry

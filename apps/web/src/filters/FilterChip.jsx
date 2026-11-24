@@ -42,7 +42,7 @@ function FilterChip({field, value, label = value, mode, clickable = true, style 
     }, [navigate, value])
 
     const termFound = useMemo(() => {
-        return !!glossary.find(entry => entry.term.toLowerCase() === value.toLowerCase())
+        return !!glossary.find(entry => entry.term?.toLowerCase() === value?.toLowerCase())
     }, [value])
 
     return (
@@ -98,6 +98,7 @@ function FilterChip({field, value, label = value, mode, clickable = true, style 
                         padding: '4px 12px',
                         cursor: 'pointer',
                         textTransform: 'uppercase',
+                        ...style
                     }}
                     sx={{
                         '&:hover': {
