@@ -1,1 +1,0 @@
-import{it as e,m as t}from"./utils-CEbx8FH7.js";import{p as n}from"./Nav-DKkrOLxI.js";function r({props:r,name:i}){return n({props:r,name:i,defaultTheme:t,themeId:e})}export{r as t};
