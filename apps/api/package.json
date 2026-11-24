@@ -39,7 +39,7 @@
     "geoip-lite": "2.0.3",
     "googleapis": "^182.0.0",
     "helmet": "^8.3.0",
-    "joi": "^18.2.9",
+    "joi": "^18.3.0",
     "json-2-csv": "^5.6.0",
     "node-fetch": "^3.3.2",
     "node-fetch-cookies": "^2.1.1",
