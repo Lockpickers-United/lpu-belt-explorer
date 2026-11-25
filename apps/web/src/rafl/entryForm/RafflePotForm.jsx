@@ -11,11 +11,12 @@ import Backdrop from '@mui/material/Backdrop'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import RaffleContext from '../RaffleContext.jsx'
 import {useSearchParams} from 'react-router-dom'
+import dayjs from 'dayjs'
 
 function RafflePotForm({questionStyle, index, potData, handlePotChange, showIssues, removePot}) {
     const {allPots} = useContext(RaffleContext)
     const {isMobile, flexStyle} = useWindowSize()
-    const [searchParams, setSearchParams] = useSearchParams()
+    const [searchParams, _setSearchParams] = useSearchParams()
     const isMobileFalse = false
     const style = {maxWidth: 700}
     const inputEl = useRef()
@@ -41,19 +42,15 @@ function RafflePotForm({questionStyle, index, potData, handlePotChange, showIssu
                 itemTitles[fullTitle] = item.title
                 itemIds[fullTitle] = item.id
                 itemPotNumbers[fullTitle] = item.potNumber
-                options.push(fullTitle)
+                if (!item.endDate || dayjs(item.endDate).isAfter(dayjs())) {
+                    options.push(fullTitle)
+                }
             })
             .filter(x => x)
         return {options, itemIds, itemIdTitles, itemTitles, itemPotNumbers, itemFormIds}
     }, [allPots])
 
     const {options, itemIds, itemIdTitles, itemTitles, itemPotNumbers} = itemMap
-
-    console.log('allPots', allPots)
-    console.log('potData', potData)
-    console.log('potDetails', potDetails)
-
-    console.log('potDetails', potDetails)
 
     const paramsPotFullTitle = itemIdTitles?.[searchParams.get('id')]
     const showDelete = (potData || []).length > 1
@@ -100,7 +97,6 @@ function RafflePotForm({questionStyle, index, potData, handlePotChange, showIssu
     }, [potDetails])
 
     const handlePotChoiceChange = useCallback((_event, value) => {
-        console.log('handlePotChoiceChange', value)
         let item
         if (options.includes(value)) {
             item = {

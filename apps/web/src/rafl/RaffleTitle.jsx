@@ -5,6 +5,7 @@ import Link from '@mui/material/Link'
 import RaffleDrawButton from './admin/RaffleDrawButton.jsx'
 import FilterContext from '../context/FilterContext.jsx'
 import EndingSoon from './EndingSoon.jsx'
+import dayjs from 'dayjs'
 
 function RaffleTitle({entry, drawing = false}) {
     if (!entry) return null
@@ -27,9 +28,7 @@ function RaffleTitle({entry, drawing = false}) {
         setFilters({winnerEntryIds: entry.entryId})
     }, [setFilters])
 
-
     const buttonDivWidth = isMobile ? '100%' : 'auto'
-
     const marginBottom = drawing ? 15 : 6
     const diameter = !isMobile ? 25 : 22
     const fontSize = !isMobile ? '1.1rem' : '0.9rem'
@@ -65,7 +64,6 @@ function RaffleTitle({entry, drawing = false}) {
     return (
         <>
             <div style={{width: '100%', display: 'flex', flexDirection: 'column'}}>
-
                 <div style={{
                     display: 'flex', alignItems: 'center', width: '100%',
                     marginBottom: marginBottom, justifyContent: 'space-between'
@@ -126,11 +124,10 @@ function RaffleTitle({entry, drawing = false}) {
                             NEW
                         </div>
                     }
-                    {entry.isEndingSoon &&
+                    {(entry.isEndingSoon || dayjs(entry.endDate).isBefore(dayjs())) &&
                         <EndingSoon entry={entry}/>
                     }
                 </div>
-
 
                 {entry.winners?.length > 0 &&
                     <div style={{

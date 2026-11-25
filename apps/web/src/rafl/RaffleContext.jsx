@@ -110,13 +110,11 @@ export function RaffleProvider({children}) {
                     Split: 'US winner splits fees & tariffs',
                     'Winner pays fees': 'US winner pays fees & tariffs '
                 }
-
                 const isNew = entry.startDate && dayjs(entry.startDate).isAfter(dayjs(raflStartDate))
                     && dayjs(entry.startDate).isBefore(dayjs().add(3, 'day'))
-
                 const isEndingSoon = entry.endDate
                     && dayjs(entry.endDate).isBefore(dayjs(raflEndDate))
-                    && dayjs(entry.endDate).isBefore(dayjs().add(1, 'day'))
+                    && dayjs().isBefore(dayjs(entry.endDate).add(1, 'hour'))
 
                 const categories = [...entry.category] ?? []
                 if (isNew) categories.push('New')
@@ -151,7 +149,7 @@ export function RaffleProvider({children}) {
                         : []
                 }
             })
-    }, [preview, allDataLoaded, raflPreviewPots, winnerData, summary.pots, excessWinners, lockCollection])
+    }, [preview, allDataLoaded, raflPreviewPots, winnerData, raflStartDate, raflEndDate, summary.pots, excessWinners, lockCollection])
 
     // Precompute helper structures for winners: counts and a Set for fast checks
     const winnerCounts = useMemo(() => ({...(summary.winnerCounts || {})}), [summary.winnerCounts])

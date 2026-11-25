@@ -44,10 +44,10 @@ function RaffleRoute() {
     }
 
     let navTitle = raflState === 'post'
-        ? 'RAFL 2026 has ended'
+        ? 'RAFL 2027 has ended'
         : ['live', 'setup'].includes(raflState) || !isMobile
-            ? 'RAFL 2026!'
-            : 'Announcing RAFL 2026!'
+            ? 'RAFL 2027!'
+            : 'Announcing RAFL 2027!'
 
     return (
         <FilterProvider filterFields={currentFilterFields}>

@@ -59,7 +59,7 @@ export default function RaffleDrawingRoute() {
             <RaffleAdminDataProviderPots drawing={true}>
                 <div style={style}>
 
-                    <Nav title='RAFL 2026' extras={extras}/>
+                    <Nav title='RAFL 2027' extras={extras}/>
                     <RaffleHeaderDrawing page={'drawing'}/>
 
                     {raffleAdmin &&
