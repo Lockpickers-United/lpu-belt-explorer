@@ -6,7 +6,8 @@ import fetch from 'node-fetch'
 import {
     raflSchema,
     raflCharitySchema,
-    raflMediaSchema
+    raflMediaSchema,
+    raflBonusSchema
 } from './importSchemas.js'
 import {logger} from '../../logger/logger.js'
 
@@ -14,6 +15,7 @@ const log = logger.child({module: 'rafl-preview-import'})
 const maxCsvBytes = 5 * 1024 * 1024
 const outputFilenames = Object.freeze({
     pots: 'raflPreviewPots.json',
+    bonuses: 'raflPreviewBonuses.json',
     charities: 'raflPreviewCharities.json',
     version: 'raflPreviewVersion.json'
 })
@@ -89,27 +91,31 @@ async function fetchSheetData({sheetId, tab, schema, fetchImpl, parseCsv, timeou
 
 function transformPots(raflData, raflMediaData) {
     const errors = []
-    const pots = raflData.map(datum => ({
-        id: datum['Unique ID'],
-        year: +datum['Year'],
-        potNumber: parseInt(datum['Pot Number']),
-        title: datum['Title'],
-        winnerCount: parseInt(datum['Winner Count']) || 1,
-        displayName: datum['Display Name'],
-        description: datum['Description'],
-        descriptionContinued: datum['Description Continued'],
-        potContents: datum['Pot Contents'],
-        keywords: datum['Keywords'],
-        contributedBy: splitCommaValues(datum['Contributed By']),
-        tags: splitCommaValues(datum['Tags']),
-        country: splitCommaValues(datum['Country']),
-        shippingInfo: datum['Shipping Info Text'],
-        splitShipping: datum['Split Shipping'] === 'TRUE' ? 'shippingNotSplit' : 'shippingSplit',
-        splitShippingBoolean: datum['Split Shipping'] === 'TRUE',
-        shippingType: datum['Shipping Type'],
-        shipsToUS: datum['Ships To US'],
-        dateAdded: datum['Date Added']
-    }))
+    const pots = raflData
+        .map(datum => ({
+            id: datum['Unique ID'],
+            year: +datum['Year'],
+            potNumber: parseInt(datum['Pot Number']),
+            title: datum['Title'],
+            winnerCount: parseInt(datum['Winner Count']) || 1,
+            displayName: datum['Display Name'],
+            description: datum['Description'],
+            descriptionContinued: datum['Description Continued'],
+            potContents: datum['Pot Contents'],
+            category: splitCommaValues(datum['Category']),
+            tags: splitCommaValues(datum['Tags']),
+            keywords: datum['Keywords'],
+            contributedBy: splitCommaValues(datum['Contributed By']),
+            country: splitCommaValues(datum['Country']),
+            shippingInfo: datum['Shipping Info Text'],
+            splitShipping: datum['Split Shipping'] === 'TRUE' ? 'shippingNotSplit' : 'shippingSplit',
+            splitShippingBoolean: datum['Split Shipping'] === 'TRUE',
+            shippingType: datum['Shipping Type'],
+            shipsToUS: datum['Ships To US'],
+            dateAdded: datum['Date Added'],
+            startDate: datum['Start Date'],
+            endDate: datum['End Date']
+        })).filter(x => x)
 
     const sortedMedia = [...raflMediaData]
     sortedMedia
@@ -149,15 +155,27 @@ function transformCharities(raflCharityData) {
     }))
 }
 
+function transformBonuses(raflBonusData) {
+    return raflBonusData.map(bonus => ({
+        id: bonus['Unique ID'],
+        title: bonus['Title'],
+        description: bonus['Description'],
+        target: parseCurrency(bonus['Target']),
+        startDate: bonus['Start Date'],
+        endDate: bonus['End Date'],
+    }))
+}
+
 async function removeStagedFiles(fileSystem, stagedFiles) {
     await Promise.allSettled(stagedFiles.map(file => fileSystem.rm(file, {force: true})))
 }
 
-async function publishPreviewFiles({outputDir, pots, charities, version, fileSystem}) {
+async function publishPreviewFiles({outputDir, pots, bonuses, charities, version, fileSystem}) {
     const suffix = `.tmp-${process.pid}-${randomUUID()}`
     const files = [
         {name: outputFilenames.pots, data: pots},
         {name: outputFilenames.charities, data: charities},
+        {name: outputFilenames.bonuses, data: bonuses},
         {name: outputFilenames.version, data: version}
     ].map(file => ({
         ...file,
@@ -182,20 +200,21 @@ async function publishPreviewFiles({outputDir, pots, charities, version, fileSys
 }
 
 export async function runRaflDataImport({
-    sheetId,
-    outputDir,
-    timeoutMs = 15_000,
-    fetchImpl = fetch,
-    parseCsv = parse,
-    schemas = {
-        rafl: raflSchema,
-        media: raflMediaSchema,
-        charities: raflCharitySchema
-    },
-    fileSystem = fs,
-    now = () => new Date(),
-    jobLogger = log
-}) {
+                                            sheetId,
+                                            outputDir,
+                                            timeoutMs = 15_000,
+                                            fetchImpl = fetch,
+                                            parseCsv = parse,
+                                            schemas = {
+                                                rafl: raflSchema,
+                                                media: raflMediaSchema,
+                                                bonuses: raflBonusSchema,
+                                                charities: raflCharitySchema
+                                            },
+                                            fileSystem = fs,
+                                            now = () => new Date(),
+                                            jobLogger = log
+                                        }) {
     if (!sheetId) throw importError('rafl_preview_sheet_id_missing', 'RAFL sheet ID is required')
     if (!outputDir || !path.isAbsolute(outputDir)) {
         throw importError('rafl_preview_output_invalid', 'RAFL preview output directory must be absolute')
@@ -222,6 +241,15 @@ export async function runRaflDataImport({
         }),
         fetchSheetData({
             sheetId,
+            tab: 'RAFL Bonuses',
+            schema: schemas.bonuses,
+            fetchImpl,
+            parseCsv,
+            timeoutMs,
+            jobLogger
+        }),
+        fetchSheetData({
+            sheetId,
             tab: 'RAFL Charities',
             schema: schemas.charities,
             fetchImpl,
@@ -235,25 +263,30 @@ export async function runRaflDataImport({
         return {status: 'Errors', errors: validationErrors}
     }
 
-    const [raflData, raflMediaData, raflCharityData] = sheetResults.map(result => result.data)
-    const {pots, errors: transformationErrors} = transformPots(raflData, raflMediaData)
+    const [raflData, raflMediaData, raflBonusData, raflCharityData] = sheetResults.map(result => result.data)
+    const allRaflData = [...raflData]
+    const allRaflMediaData = [...raflMediaData]
+
+    const {pots, errors: transformationErrors} = transformPots(allRaflData, allRaflMediaData)
     if (transformationErrors.length > 0) {
         return {status: 'Errors', errors: transformationErrors}
     }
+
+    const bonuses = transformBonuses(raflBonusData)
     const charities = transformCharities(raflCharityData)
     const version = {version: now()}
 
     await fileSystem.mkdir(outputDir, {recursive: true})
-    await publishPreviewFiles({outputDir, pots, charities, version, fileSystem})
+    await publishPreviewFiles({outputDir, pots, bonuses, charities, version, fileSystem})
     jobLogger.info({potCount: pots.length, charityCount: charities.length}, 'RAFL preview published')
     return {status: 'All Good!'}
 }
 
 export function createImportRaflDataHandler({
-    runImport = runRaflDataImport,
-    runtimeEnvironment = 'local',
-    ...runOptions
-}) {
+                                                runImport = runRaflDataImport,
+                                                runtimeEnvironment = 'local',
+                                                ...runOptions
+                                            }) {
     let inFlight
 
     return async function importRaflData(req, res) {

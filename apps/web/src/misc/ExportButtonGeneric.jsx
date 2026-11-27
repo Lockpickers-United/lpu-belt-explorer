@@ -28,6 +28,7 @@ export default function ExportButtonGeneric({exportData, clipboardExtra}) {
         filename = 'export',
         textButton = false,
         formats = ['clipboard', 'csv', 'json'],
+        separator = ' | '
     } = exportData
 
     const handleExportJson = useCallback(() => {
@@ -41,37 +42,41 @@ export default function ExportButtonGeneric({exportData, clipboardExtra}) {
         const exportHeaders = clipboardHeaders || csvHeaders
         const headerRow = exportHeaders?.reduce((acc, col) => {
             Object.keys(col).forEach(key => {
-                acc[key] = col[key].trim().toUpperCase()
+                acc[key] = col[key].trim()
             })
             return acc
         }, {})
 
+        const _csvValues = data?.reduce((acc, row) => {
+            const rowValues = Object.keys(headerRow).map(header => row[header].trim())
+            acc.push(rowValues)
+            return acc
+        }, [])
+
         const clipboardData = data.map(row => {
-                return clipboardFormat
-                    ? clipboardFormat(row, exportHeaders)
-                    : exportHeaders.reduce((acc, header) => {
-                        Object.keys(header).forEach(key => {
-                            acc += row[key].trim() + ' | '
-                        })
-                        return acc
-                    }, '')
-            })
+            const rowValues = Object.keys(headerRow).map(header => row[header].trim())
+            return clipboardFormat
+                ? clipboardFormat(row, exportHeaders)
+                : rowValues.join(separator)
+        })
+
         handleClose()
 
         const clipboardText = clipboardContent
             ? clipboardContent
-            : clipboardFormat(headerRow, exportHeaders) + '\n' + clipboardData.join('\n')
+            : Object.keys(headerRow).join(separator) + '\n' + clipboardData.join('\n')
+        console.log('clipboardText', clipboardText)
+
         navigator.clipboard.writeText(clipboardText).then()
         enqueueSnackbar('Export copied to clipboard.')
-    }, [clipboardContent, clipboardFormat, clipboardHeaders, csvHeaders, data, handleClose])
+    }, [clipboardContent, clipboardFormat, clipboardHeaders, csvHeaders, data, handleClose, separator])
 
     const handleClipboardExtra = useCallback(() => {
         navigator.clipboard.writeText(clipboardExtra?.content).then()
         enqueueSnackbar(`${clipboardExtra?.name} copied to clipboard.`)
-    },[clipboardExtra])
+    }, [clipboardExtra])
 
-
-        const handleExportCsv = useCallback(() => {
+    const handleExportCsv = useCallback(() => {
         const csvData = data.map(datum => {
             return csvHeaders.reduce((acc, header) => {
                 Object.entries(header).forEach(([key, value]) => {
@@ -95,7 +100,7 @@ export default function ExportButtonGeneric({exportData, clipboardExtra}) {
                     </Button>
                 </Tooltip>
                 : <Tooltip title='Export' arrow disableFocusListener>
-                    <IconButton onClick={handleOpen}>
+                    <IconButton onClick={handleOpen} style={{height: 32, width: 32}}>
                         <FileDownloadIcon/>
                     </IconButton>
                 </Tooltip>

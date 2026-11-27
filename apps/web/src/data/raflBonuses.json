@@ -4,14 +4,16 @@
     "title": "Locks. Googly Eyes. Calendars!",
     "description": "If we hit a total of [TARGET] in donations by midnight tonight, 10 lucky winners will receive a 2027 calendar featuring googly-eyed locks courtesy of CJ.",
     "target": 37000,
+    "winnerCount": 10,
     "startDate": "11/23/2026 0:00:00",
-    "endDate": "11/24/2026 0:00:00"
+    "endDate": "11/27/2026"
   },
   {
     "id": "2027-B-02",
     "title": "Donation Match",
     "description": "If we hit a total of [TARGET] in donations by midnight tonight, MG will match the donation of a winner chosen at random.",
     "target": 40000,
+    "winnerCount": 1,
     "startDate": "11/24/2026 0:00:00",
     "endDate": "11/25/2026 0:00:00"
   }

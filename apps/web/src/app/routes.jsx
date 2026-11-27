@@ -526,6 +526,7 @@ export default [
                     },
                     {
                         path: '/rafl/admin/drawing',
+                        handle: {route: 'rafl.drawing'},
                         lazy: async () => {
                             const {default: RaffleDrawingRoute} = await import('../rafl/admin/RaffleDrawingRoute.jsx')
                             return {element: <RaffleDrawingRoute/>}

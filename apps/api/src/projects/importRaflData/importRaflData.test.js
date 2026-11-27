@@ -37,6 +37,16 @@ const fixtures = {
         'Subtitle URL': '',
         'Full Image Direct URL': 'https://example.test/original.jpg'
     }],
+    'RAFL Bonuses': [{
+        'Unique ID': '2026-B-01',
+        'Year': '2026',
+        'Title': 'Bonus Drawing',
+        'Target': '$1,250,000',
+        'Winner Count': '1',
+        'Description': 'Bonus prize',
+        'Start Date': '2026-09-12',
+        'End Date': '2026-09-19'
+    }],
     'RAFL Charities': [{
         'Unique ID': 'charity-1',
         'Charity Name': 'Test Charity',
@@ -108,14 +118,16 @@ describe('runRaflDataImport', () => {
         })
 
         expect(result).toEqual({status: 'All Good!'})
-        expect(fetchImpl).toHaveBeenCalledTimes(3)
+        expect(fetchImpl).toHaveBeenCalledTimes(4)
         expect(renameOrder).toEqual([
             'raflPreviewPots.json',
             'raflPreviewCharities.json',
+            'raflPreviewBonuses.json',
             'raflPreviewVersion.json'
         ])
         const pots = JSON.parse(await fs.readFile(path.join(outputDir, 'raflPreviewPots.json'), 'utf8'))
         const charities = JSON.parse(await fs.readFile(path.join(outputDir, 'raflPreviewCharities.json'), 'utf8'))
+        const bonuses = JSON.parse(await fs.readFile(path.join(outputDir, 'raflPreviewBonuses.json'), 'utf8'))
         const version = JSON.parse(await fs.readFile(path.join(outputDir, 'raflPreviewVersion.json'), 'utf8'))
         expect(pots[0]).toMatchObject({
             id: '2026-001',
@@ -124,40 +136,53 @@ describe('runRaflDataImport', () => {
             media: [expect.objectContaining({title: 'Front'})]
         })
         expect(charities[0]).toMatchObject({name: 'Test Charity', donations2024: 1250})
+        expect(bonuses).toEqual([{
+            id: '2026-B-01',
+            title: 'Bonus Drawing',
+            description: 'Bonus prize',
+            target: 1250000,
+            startDate: '2026-09-12',
+            endDate: '2026-09-19'
+        }])
         expect(version).toEqual({version: '2026-09-12T20:00:00.000Z'})
         expect((await fs.readdir(outputDir)).filter(file => file.includes('.tmp-'))).toEqual([])
     })
 
-    it('does not publish when sheet validation fails', async () => {
-        const outputDir = await createOutputDir()
-        const writeFile = vi.fn()
-        const invalidSchema = {
-            validate: () => ({error: {details: [{message: 'invalid RAFL data'}]}})
-        }
-        const validSchema = {validate: () => ({})}
+    it.each([['rafl', 'RAFL'], ['bonuses', 'RAFL Bonuses']])(
+        'does not publish when %s sheet validation fails', async (schemaKey, sheet) => {
+            const outputDir = await createOutputDir()
+            const writeFile = vi.fn()
+            const invalidSchema = {
+                validate: () => ({error: {details: [{message: 'invalid RAFL data'}]}})
+            }
+            const validSchema = {validate: () => ({})}
 
-        const result = await runRaflDataImport({
-            sheetId: 'test-sheet-id-12345',
-            outputDir,
-            fetchImpl: createFetch(),
-            parseCsv: csv => fixtures[csv],
-            schemas: {rafl: invalidSchema, media: validSchema, charities: validSchema},
-            fileSystem: {mkdir: vi.fn(), writeFile},
-            jobLogger: {info: vi.fn()}
+            const result = await runRaflDataImport({
+                sheetId: 'test-sheet-id-12345',
+                outputDir,
+                fetchImpl: createFetch(),
+                parseCsv: csv => fixtures[csv],
+                schemas: {
+                    rafl: validSchema, media: validSchema, bonuses: validSchema, charities: validSchema,
+                    [schemaKey]: invalidSchema
+                },
+                fileSystem: {mkdir: vi.fn(), writeFile},
+                jobLogger: {info: vi.fn()}
+            })
+
+            expect(result.status).toBe('Errors')
+            expect(result.errors).toEqual([
+                {sheet, 'Invalid data found in sheet': [{message: 'invalid RAFL data'}]}
+            ])
+            expect(writeFile).not.toHaveBeenCalled()
         })
-
-        expect(result.status).toBe('Errors')
-        expect(result.errors).toEqual([
-            {sheet: 'RAFL', 'Invalid data found in sheet': [{message: 'invalid RAFL data'}]}
-        ])
-        expect(writeFile).not.toHaveBeenCalled()
-    })
 
     it('preserves existing outputs when staging any new file fails', async () => {
         const outputDir = await createOutputDir()
         const existingFiles = {
             'raflPreviewPots.json': 'old pots',
             'raflPreviewCharities.json': 'old charities',
+            'raflPreviewBonuses.json': 'old bonuses',
             'raflPreviewVersion.json': 'old version'
         }
         await Promise.all(Object.entries(existingFiles).map(([filename, content]) => {
@@ -168,7 +193,7 @@ describe('runRaflDataImport', () => {
             rm: fs.rm,
             rename: fs.rename,
             async writeFile(filename, ...args) {
-                if (filename.includes('raflPreviewCharities.json.tmp-')) {
+                if (filename.includes('raflPreviewBonuses.json.tmp-')) {
                     throw new Error('disk full')
                 }
                 return fs.writeFile(filename, ...args)

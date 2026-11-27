@@ -7,7 +7,6 @@ import raflBonusData from '../data/raflBonuses.json'
 import RaffleContext from './RaffleContext.jsx'
 import {useCountdown} from '../util/useCountdown.jsx'
 
-
 export default function RaffleBonusBar() {
     const navigate = useNavigate()
     const {isMobile} = useWindowSize()

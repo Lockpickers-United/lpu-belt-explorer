@@ -116,7 +116,7 @@ function RaffleTitle({entry, drawing = false}) {
                             }
                         </div>
                     }
-                    {entry.isNew &&
+                    {entry.isNew && !entry.isEndingSoon &&
                         <div style={{
                             fontSize: '0.85rem', fontWeight: 700, marginLeft: 8, padding: '1px 4px',
                             color: '#42b232', border: '#42b232 1px solid'

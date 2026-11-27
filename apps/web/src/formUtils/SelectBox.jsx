@@ -2,7 +2,21 @@ import React, {useCallback, useState} from 'react'
 import {FormControl, InputLabel, Select} from '@mui/material'
 import MenuItem from '@mui/material/MenuItem'
 
-export default function SelectBox({form, name, optionsList, value, label=null, variant='outlined', size='small', width=350, changeHandler, multiple=false, defaultValue, placeholder='Please Choose'}) {
+export default function SelectBox({
+                                      form,
+                                      name,
+                                      optionsList,
+                                      value,
+                                      label = null,
+                                      variant = 'outlined',
+                                      size = 'small',
+                                      fontSize = '1.1rem',
+                                      width = 350,
+                                      changeHandler,
+                                      multiple = false,
+                                      defaultValue,
+                                      placeholder = 'Please Choose'
+                                  }) {
     const [open, setOpen] = useState(false)
     const labelId = `${name}Label`
     const handleClose = useCallback(() => setOpen(false), [])
@@ -13,7 +27,8 @@ export default function SelectBox({form, name, optionsList, value, label=null, v
     }, [changeHandler, handleClose, multiple])
 
     return (
-        <FormControl id={`${name}FormControl`} size={size} color='info' variant={variant} style={{marginBottom: 0, width: width || 'auto' }}>
+        <FormControl id={`${name}FormControl`} size={size} color='info' variant={variant}
+                     style={{marginBottom: 0, width: width || 'auto'}}>
             {label && <InputLabel id={labelId} style={{color: '#bbb'}}>{label}</InputLabel>}
             <Select
                 id={`${name}Select`}
@@ -30,8 +45,9 @@ export default function SelectBox({form, name, optionsList, value, label=null, v
                 style={{
                     fontWeight: 400,
                     color: '#eee',
-                    fontSize: '1.1rem'
+                    fontSize: fontSize
                 }}
+                variant={variant}
             >
                 {optionsList.map((_option, index) =>
                     <MenuItem key={index}

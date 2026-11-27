@@ -13,13 +13,16 @@ export const raflSchema = Joi.array().items(
         'Description Continued': Joi.string().allow(''),
         'Pot Contents': Joi.string().allow(''),
         'Tags': Joi.string().allow(''),
+        'Category': Joi.string().allow(''),
         'Keywords': Joi.string().allow(''),
         'Country': Joi.string().allow(''),
         'Shipping Info Text': Joi.string().allow(''),
         'Split Shipping': Joi.string().allow(''),
         'Shipping Type': Joi.string().allow(''),
         'Ships To US': Joi.string().allow(''),
-        'Date Added': Joi.string().allow('')
+        'Date Added': Joi.string().allow(''),
+        'Start Date': Joi.string().allow(''),
+        'End Date': Joi.string().allow('')
     }).unknown()
 )
 
@@ -36,14 +39,33 @@ export const raflMediaSchema = Joi.array().items(
     }).unknown()
 )
 
-export const raflCharitySchema = Joi.array().items(
+export const raflBonusSchema = Joi.array().items(
     Joi.object({
-        'Charity Name': Joi.string(),
-        'URL': Joi.string().allow('').uri(),
-        'Total Donations 2024': Joi.string().allow('')
+        'Unique ID': Joi.string().regex(/\d{4}-B-\d{2}$/),
+        'Year': Joi.number(),
+        'Title': Joi.string(),
+        'Target': Joi.string().allow(''),
+        'Winner Count': Joi.number().allow(''),
+        'Description': Joi.string().allow(''),
+        'Start Date': Joi.string().allow(''),
+        'End Date': Joi.string().allow('')
     }).unknown()
 )
 
+export const raflCharitySchema = Joi.array().items(
+    Joi.object({
+        'Charity ID': Joi.string(),
+        'Charity Name': Joi.string(),
+        'Disable': Joi.string().allow(''),
+        'URL': Joi.string().allow('').uri(),
+        'Tags': Joi.string().allow(''),
+        'Donations 2024': Joi.string().allow(''),
+        'Donations 2025': Joi.string().allow(''),
+        'Donations 2026': Joi.string().allow('')
+    }).unknown()
+)
+
+// OLD //
 
 export const raflPotStatsSchema = Joi.array().items(
     Joi.object({

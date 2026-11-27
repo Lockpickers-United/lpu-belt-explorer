@@ -18,7 +18,7 @@ export const mainSchema = Joi.array().items(
                 'Black 4',
                 'Black 5',
                 'Unranked',
-                'DELETED',
+                'DELETED'
             ),
         Make: Joi.string().allow(''),
         Model: Joi.string().min(1),
@@ -186,7 +186,7 @@ export const raflSchema = Joi.array().items(
         'Ships To US': Joi.string().allow(''),
         'Date Added': Joi.string().allow(''),
         'Start Date': Joi.string().allow(''),
-        'End Date': Joi.string().allow(''),
+        'End Date': Joi.string().allow('')
     }).unknown()
 )
 
@@ -205,14 +205,14 @@ export const raflMediaSchema = Joi.array().items(
 
 export const raflBonusSchema = Joi.array().items(
     Joi.object({
-            'Unique ID': Joi.string().regex(/\d{4}-B-\d{2}$/),
-            'Year': Joi.number(),
-            'Title': Joi.string(),
-            'Target': Joi.string().allow(''),
-            'Winner Count': Joi.number().allow(''),
-            'Description': Joi.string().allow(''),
-            'Start Date': Joi.string().allow(''),
-            'End Date': Joi.string().allow(''),
+        'Unique ID': Joi.string().regex(/\d{4}-B-\d{2}$/),
+        'Year': Joi.number(),
+        'Title': Joi.string(),
+        'Target': Joi.string().allow(''),
+        'Winner Count': Joi.number().allow(''),
+        'Description': Joi.string().allow(''),
+        'Start Date': Joi.string().allow(''),
+        'End Date': Joi.string().allow('')
     }).unknown()
 )
 
@@ -224,6 +224,7 @@ export const raflCharitySchema = Joi.array().items(
         'URL': Joi.string().allow('').uri(),
         'Tags': Joi.string().allow(''),
         'Donations 2024': Joi.string().allow(''),
-        'Donations 2025': Joi.string().allow('')
+        'Donations 2025': Joi.string().allow(''),
+        'Donations 2026': Joi.string().allow('')
     }).unknown()
 )

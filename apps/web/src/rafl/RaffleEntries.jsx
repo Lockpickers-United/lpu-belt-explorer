@@ -11,13 +11,17 @@ import AdvancedFilters from '../filters/AdvancedFilters.jsx'
 import ExposedFilterSelect from './ExposedFilterSelect.jsx'
 import {Collapse} from '@mui/material'
 import RaffleBonusBar from './RaffleBonusBar.jsx'
+import {useMatches} from 'react-router-dom'
+import RaffleBonusDrawingBar from './RaffleBonusDrawingBar.jsx'
 
 function RaffleEntries({drawing = false}) {
     const {visibleEntries = [], expandAll, allEntries} = useContext(DataContext)
     const {filters, showAdvancedSearch} = useContext(FilterContext)
     const {id, shippingType, splitShipping} = filters
-    const [expanded, setExpanded] = useState(id)
 
+    const isDrawing = useMatches().some(match => match.handle?.route === 'rafl.drawing')
+
+    const [expanded, setExpanded] = useState(id)
     const defExpanded = useDeferredValue(expanded)
     const handleExpand = useCallback(id => {
         setExpanded(id)
@@ -30,10 +34,14 @@ function RaffleEntries({drawing = false}) {
                 <RaffleIntroBar/>
             }
 
+            {isDrawing &&
+                <RaffleBonusDrawingBar />
+            }
+
             <div id='raffleSearchBar' style={{scrollMarginTop: 72}}/>
             <RaffleSearchBar label='Raffle Pots' sortValues={raffleSortFields} entryCount={visibleEntries.length}/>
 
-            <Collapse in={!showAdvancedSearch}>
+            <Collapse in={!showAdvancedSearch && !isDrawing}>
                 <ExposedFilterSelect
                     field={'category'}
                     sequence={['Locks', 'Gift certificates', 'Picks']}
@@ -46,7 +54,9 @@ function RaffleEntries({drawing = false}) {
 
             <AdvancedFilters entryType={'Pot'}/>
 
-            <RaffleBonusBar />
+            { !isDrawing &&
+                <RaffleBonusBar />
+            }
 
             {(shippingType === 'Intl. shipping included' || splitShipping === 'shippingSplit') &&
                 <div style={{margin: '18px 12px', fontSize: '0.9rem', color: '#eee'}}>

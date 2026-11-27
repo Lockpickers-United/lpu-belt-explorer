@@ -13,6 +13,10 @@ import LockEntrySearchBox from './LockEntrySearchBox.jsx'
 import BeltIcon from '../entries/BeltIcon.jsx'
 import ReportProblemIcon from '@mui/icons-material/ReportProblem'
 import CheckCircleIcon from '@mui/icons-material/CheckCircle'
+import {LocalizationProvider} from '@mui/x-date-pickers'
+import dayjs from 'dayjs'
+import {AdapterDayjs} from '@mui/x-date-pickers/AdapterDayjs'
+import {DatePicker} from '@mui/x-date-pickers/DatePicker'
 
 const FORM_DEFAULTS = {
     margin: '0px 20px 32px 0px',
@@ -41,6 +45,7 @@ export default function FormElement({
                                         checkValid,
                                         errorMessage,
                                         after,
+                                        disableFuture,
                                         formDefaults = FORM_DEFAULTS || {}
                                     }) {
 
@@ -111,6 +116,11 @@ export default function FormElement({
         form.update({target: {name: dimension, value: rating}})
     }, [form])
 
+    const handleDateChange = useCallback((event) => {
+        form.update({target: {name: fieldName, value: dayjs(event).format()}})
+    }, [fieldName, form])
+
+
     const handleChangeEntry = useCallback(details => {
         console.log('handleChangeEntry', details)
         if (details.lockName) {
@@ -135,7 +145,7 @@ export default function FormElement({
             {fieldType === 'TextField' &&
                 <div style={{...settings.style, margin: settings.margin}}>
                     {label &&
-                        <Typography sx={{...settings.labelStyle, marginBottom: '2px'}}>{label}</Typography>
+                        <Typography sx={{marginBottom: '2px', ...settings.labelStyle}}>{label}</Typography>
                     }
                     {description &&
                         <Typography sx={{...settings.descriptionStyle, marginBottom: '2px'}}>{description}</Typography>
@@ -143,7 +153,7 @@ export default function FormElement({
                     <div style={{display: 'flex', alignItems: 'center'}}>
                         <TextField type='text'
                                    name={fieldName}
-                                   style={{width: fullWidth ? '100%' : settings.inputWidth, margin: '2px 0px 0px 0px'}}
+                                   style={{width: fullWidth ? '100%' : settings.inputWidth, margin: '0px 0px 0px 0px'}}
                                    multiline={multiline || rows > 0}
                                    fullWidth
                                    rows={rows}
@@ -152,7 +162,12 @@ export default function FormElement({
                                    onChange={form.update}
                                    value={form.form[fieldName] || ''}
                                    color={isValid ? settings.color : 'error'}
-                                   slotProps={settings.slotProps}
+                                   slotProps={{
+                                       htmlInput: {
+                                           style: {fontSize: settings.fontSize || '1.0rem'} // Input text size
+                                       },
+                                       ...settings.slotProps
+                                   }}
                         />
 
                         {checkValid && form.form?.[fieldName] &&
@@ -189,9 +204,11 @@ export default function FormElement({
                                style={{margin: '6px 0px 0px 0px'}}
                                width={fullWidth ? '100%' : settings.inputWidth}
                                size={settings.inputSize}
+                               fontSize={settings.fontSize}
                                changeHandler={form.update}
                                value={form.form[fieldName] || ''}
-                               color={settings.color}/>
+                               color={settings.color}
+                    />
                 </div>
             }
 
@@ -424,6 +441,37 @@ export default function FormElement({
                         </div>
                         <Typography sx={{fontSize: '0.85rem'}}>{options[1]}</Typography>
                     </div>
+                </div>
+            }
+
+            {fieldType === 'DatePicker' &&
+                <div style={{...settings.style, margin: settings.margin}}>
+                    {label &&
+                        <Typography sx={{marginBottom: '2px', ...settings.labelStyle}}>{label}</Typography>
+                    }
+                    {description &&
+                        <Typography sx={{marginBottom: '2px', ...settings.descriptionStyle}}>{description}</Typography>
+                    }
+                    <LocalizationProvider adapterLocale={dayjs.locale()} dateAdapter={AdapterDayjs}>
+                        <DatePicker
+                            name={fieldName}
+                            value={dayjs(form.form[fieldName]) || ''}
+                            onChange={handleDateChange}
+                            sx={{width: 100, fontSize: '0.9px'}}
+                            disableFuture={disableFuture}
+                            slotProps={{
+                                textField: {
+                                    size: 'small',
+                                    sx: {
+                                        width: settings.inputWidth || 200,
+                                        '& .MuiInputBase-input, & .MuiPickersInputBase-sectionsContainer': {
+                                            fontSize: settings.fontSize || '1.0rem',
+                                        },
+                                    }
+                                }
+                            }}
+                        />
+                    </LocalizationProvider>
                 </div>
             }
 

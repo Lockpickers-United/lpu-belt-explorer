@@ -652,6 +652,7 @@ if (importRaflData) {
         title: bonus['Title'],
         description: bonus['Description'],
         target: parseInt(bonus['Target'].replace(/[^0-9]/, '')) || 0,
+        winnerCount: parseInt(bonus['Winner Count'].replace(/[^0-9]/, '')) || 1,
         startDate: bonus['Start Date'],
         endDate: bonus['End Date'],
     }))

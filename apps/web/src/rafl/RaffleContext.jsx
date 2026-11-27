@@ -116,7 +116,7 @@ export function RaffleProvider({children}) {
                     && dayjs(entry.endDate).isBefore(dayjs(raflEndDate))
                     && dayjs().isBefore(dayjs(entry.endDate).add(1, 'hour'))
 
-                const categories = [...entry.category] ?? []
+                const categories = entry.category ? [...entry.category] : []
                 if (isNew) categories.push('New')
                 if (isEndingSoon) categories.push('Ending Soon')
 

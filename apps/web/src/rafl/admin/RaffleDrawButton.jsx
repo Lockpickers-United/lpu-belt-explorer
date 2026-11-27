@@ -5,40 +5,12 @@ import DBContext from '../../app/DBContext.jsx'
 import ReplayIcon from '@mui/icons-material/Replay'
 import IconButton from '@mui/material/IconButton'
 import ScopedDialog from '../../misc/ScopedDialog.jsx'
-
-export function pickWeightedRandomMultiple(entrants = [], count = 1) {
-    const cleaned = (entrants || []).map(e => ({
-        ...e,
-        tickets: Number(e?.potTickets || 0)
-    })).filter(e => e.potTickets > 0)
-    if (!cleaned.length || count <= 0) return []
-    const pool = cleaned.slice()
-    const winners = []
-    const drawOnce = (list) => {
-        const total = list.reduce((acc, e) => acc + e.tickets, 0)
-        if (total <= 0) return null
-        const r = Math.random() * total
-        let acc = 0
-        for (let i = 0; i < list.length; i++) {
-            acc += list[i].tickets
-            if (r < acc) return {winner: list[i], index: i}
-        }
-        return {winner: list[list.length - 1], index: list.length - 1}
-    }
-    while (winners.length < count && pool.length > 0) {
-        const drawn = drawOnce(pool)
-        if (!drawn) break
-        winners.push(drawn.winner)
-        // remove winner from pool to avoid duplicates
-        pool.splice(drawn.index, 1)
-    }
-    return winners
-}
+import {pickWeightedRandomWinners} from './pickRandomWinners.js'
 
 export function pickWinnersForEntry(entry) {
     if (!entry || !Array.isArray(entry.entrants)) return []
     const count = Number(entry?.winnerCount|| 1)
-    return pickWeightedRandomMultiple(entry.entrants, Math.max(1, count))
+    return pickWeightedRandomWinners(entry.entrants, Math.max(1, count))
 }
 
 export default function RaffleDrawButton({entry, drawing=false, redrawId, excessWinner, containerRef}) {
@@ -92,7 +64,7 @@ export default function RaffleDrawButton({entry, drawing=false, redrawId, excess
             }
 
             // Draw exactly one replacement winner from eligible pool, avoiding duplicates
-            const [newWinner] = pickWeightedRandomMultiple(eligible, 1)
+            const [newWinner] = pickWeightedRandomWinners(eligible, 1)
             if (!newWinner) {
                 console.warn('Redraw failed to pick a new winner for pot', entry?.id)
                 return
